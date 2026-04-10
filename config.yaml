@@ -1,0 +1,48 @@
+output_path: "./reports"
+retention_days: 90
+
+categories:
+  - "模型发布"
+  - "研究"
+  - "产品与功能"
+  - "商业动态"
+  - "政策与安全"
+  - "教程与观点"
+
+analysis:
+  dimensions:
+    - name: tags
+      prompt: "提取 3-5 个关键词标签，用于关联分析"
+      type: list
+      render: inline_tags
+
+    - name: practice_suggestions
+      prompt: "如果涉及可上手尝试的产品或功能，给出 1-3 条具体的实践建议，包括操作步骤"
+      condition: "category in ['模型发布', '产品与功能']"
+      type: list
+      render: callout_block
+
+alerting:
+  consecutive_failure_threshold: 3
+  method: github_issue
+
+sources:
+  - name: "Berkeley RDI"
+    type: rss
+    url: "https://berkeleyrdi.substack.com/feed"
+
+  - name: "The Batch"
+    type: web_scraper
+    url: "https://www.deeplearning.ai/the-batch"
+
+  - name: "OpenAI Blog"
+    type: rss
+    url: "https://openai.com/blog/rss.xml"
+
+  - name: "Google AI Blog"
+    type: rss
+    url: "https://blog.google/technology/ai/rss/"
+
+  - name: "Anthropic Blog"
+    type: rss
+    url: "https://www.anthropic.com/blog/rss.xml"
