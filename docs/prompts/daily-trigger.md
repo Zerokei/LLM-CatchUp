@@ -26,7 +26,9 @@ Read `data/health.json`. This tracks each source's health status.
 
 ### Step 3: Fetch Sources
 
-For each source in config:
+**Processing order:** Fetch `role: primary` sources first, then `role: aggregator` sources. This ensures primary/authoritative content enters history before aggregator summaries, so semantic dedup naturally keeps the primary version.
+
+For each source (in the order above):
 
 **If type is `rss`:**
 - Use WebFetch to GET the source URL
