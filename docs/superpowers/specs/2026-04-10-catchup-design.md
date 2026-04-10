@@ -29,7 +29,8 @@ Cloud Scheduled Trigger (定时执行)
 CatchUp/
 ├── config.yaml              # 数据源、分类、分析维度配置
 ├── data/
-│   └── history.json         # 已处理文章记录（URL hash + 分析结果）
+│   ├── history.json         # 已处理文章记录（URL hash + 分析结果）
+│   └── health.json          # 数据源健康状态
 ├── reports/
 │   ├── daily/
 │   │   └── 2026-04-10.md
@@ -258,6 +259,10 @@ analysis:
       type: list
       render: callout_block
 
+alerting:
+  consecutive_failure_threshold: 3
+  method: github_issue
+
 sources:
   - name: "Berkeley RDI"
     type: rss
@@ -285,6 +290,61 @@ sources:
 - 单个数据源抓取失败不阻塞其他源，报告中标注该源本次未能获取
 - WebFetch 超时或返回异常内容时跳过该源
 - 分析失败的文章仍记录到 history.json，标记为未分析，下次运行可补充
+
+## 数据源健康监控与告警
+
+### 问题诊断
+
+Claude 在抓取失败时判断原因类型：
+
+| 问题类型 | 判断依据 | 严重程度 |
+|---------|---------|---------|
+| 临时性故障 | HTTP 超时、5xx 错误 | 低 — 不告警，下次重试 |
+| 源地址变更 | 301/302 重定向、404 | 高 — 立即告警 |
+| 内容结构变化 | RSS 类型源返回非 XML，或解析不出文章 | 高 — 立即告警 |
+| 反爬限制 | 403、captcha 页面 | 中 — 连续失败后告警 |
+
+### 健康状态追踪
+
+在 `data/health.json` 中记录每个源的运行状态，通过 git 持久化：
+
+```json
+{
+  "Berkeley RDI": {
+    "status": "healthy",
+    "last_success": "2026-04-10T09:00:00Z",
+    "consecutive_failures": 0
+  },
+  "The Batch": {
+    "status": "degraded",
+    "last_success": "2026-04-07T09:00:00Z",
+    "consecutive_failures": 3,
+    "last_error": "HTTP 403 - 疑似反爬限制"
+  }
+}
+```
+
+状态定义：
+- `healthy` — 最近一次抓取成功
+- `degraded` — 连续失败但未达告警阈值
+- `alert` — 已触发告警
+
+### 告警机制
+
+达到阈值时自动创建 GitHub Issue：
+
+- 连续失败达到阈值 → 创建 Issue，包含源名称、错误类型、诊断建议
+- Issue 标签 `source-alert`，方便筛选
+- 同一个源不重复创建 Issue（检查是否已有 open 的同源 Issue）
+- 源恢复正常后自动关闭对应 Issue
+
+### 告警配置
+
+```yaml
+alerting:
+  consecutive_failure_threshold: 3
+  method: github_issue
+```
 
 ## 已知限制
 
