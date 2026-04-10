@@ -40,14 +40,35 @@ For each source in config:
 - Extract article titles, URLs, and publication dates
 - For each article URL that is new (not in history), WebFetch the individual article page to get full content
 
+**Newsletter splitting:**
+Some sources (e.g., Substack newsletters) publish a single article that covers multiple independent topics. When you detect this pattern — one page with multiple distinct sections, each about a different subject — split it into separate article entries:
+- Each entry gets its own title (use the section heading or a descriptive title)
+- All entries share the same source URL, but append `#topic-N` to differentiate (e.g., `https://...#topic-1`, `https://...#topic-2`)
+- Each entry is analyzed and categorized independently
+- Mark the `source` as the original source name (e.g., "Berkeley RDI") so the origin is clear
+
 **For all sources:**
-- Compute SHA-256 hash of each article URL
+- Compute SHA-256 hash of each article URL (including the `#topic-N` suffix for split entries)
 - Skip articles whose hash already exists in `data/history.json`
 - Record any fetch errors for health tracking
 
+### Step 3.5: Semantic Deduplication
+
+After fetching all sources, the same topic may appear across multiple sources (e.g., "Google releases Gemma 4" from Google AI Blog AND from Berkeley RDI's weekly roundup). Consolidate overlapping entries:
+
+1. Compare all new articles by title and content — identify groups that cover the same topic
+2. For each group of duplicates, apply source priority:
+   - Sources with `role: primary` take precedence over `role: aggregator`
+   - If multiple primary sources cover the same topic, keep the more detailed one
+   - If only aggregator sources cover a topic (no primary source), keep the aggregator entry
+3. The winning entry becomes the canonical article. Add a `also_covered_by` field in `extras` listing the other sources that covered the same topic (e.g., `["Berkeley RDI", "The Batch"]`)
+4. Being covered by multiple sources is itself a signal — add +1 to the importance score (capped at 5) for articles covered by 3+ sources
+
+Discard the duplicate entries (do not store them in history.json).
+
 ### Step 4: Analyze New Articles
 
-For each new article, determine:
+For each new article (including split newsletter entries), determine:
 1. **summary**: 2-3 sentence Chinese summary capturing the key point
 2. **category**: one of the categories from config (use Chinese names)
 3. **importance**: 1-5 score based on:

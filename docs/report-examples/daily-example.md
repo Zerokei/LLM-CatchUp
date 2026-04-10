@@ -19,7 +19,7 @@
 
 ### 1. [文章标题](https://example.com/article-url)
 
-- **来源**: OpenAI Blog
+- **来源**: OpenAI Blog | 📡 也被 Berkeley RDI, The Batch 报道
 - **分类**: 模型发布
 - **重要性**: ⭐⭐⭐⭐⭐ (5/5)
 - **标签**: `GPT-5` `多模态` `推理能力`
