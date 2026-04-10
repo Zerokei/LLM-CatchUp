@@ -30,7 +30,7 @@ This repo IS the entire system. There is no application code. Cloud Scheduled Tr
 - For `type: web_scraper` sources: WebFetch the URL, extract article titles/links/content from HTML
 - For newsletter-style sources that cover multiple topics in one article, split into separate entries (each independently categorized and analyzed, sharing the source URL with `#topic-N` suffix)
 - Only process articles not already in `data/history.json` (dedup by SHA-256 hash of article URL)
-- After fetching all sources, perform semantic dedup: same topic from multiple sources → keep the `primary` source version, mark `also_covered_by` in extras. Sources have `role: primary` (official blogs) or `role: aggregator` (newsletters/roundups)
+- After fetching all sources, perform semantic dedup in two rounds: (1) compare new articles against recent history.json entries (past 14 days) — if a topic was already covered, update the existing entry's `also_covered_by` instead of creating a duplicate; (2) compare new articles against each other — keep `primary` source version over `aggregator`. Sources have `role: primary` (official blogs) or `role: aggregator` (newsletters/roundups)
 - If a source fails, log the error in `data/health.json` and continue with other sources
 
 ### Analysis

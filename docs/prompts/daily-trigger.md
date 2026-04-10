@@ -54,9 +54,23 @@ Some sources (e.g., Substack newsletters) publish a single article that covers m
 
 ### Step 3.5: Semantic Deduplication
 
-After fetching all sources, the same topic may appear across multiple sources (e.g., "Google releases Gemma 4" from Google AI Blog AND from Berkeley RDI's weekly roundup). Consolidate overlapping entries:
+After fetching all sources, perform two rounds of deduplication:
 
-1. Compare all new articles by title and content — identify groups that cover the same topic
+**Round 1 — Cross-temporal dedup (new articles vs history):**
+
+Aggregator sources (newsletters, roundups) often cover topics that primary sources already reported days earlier. For each new article, compare it against recent articles in `data/history.json` (within the past 14 days) by title and topic:
+
+- If a new article covers the same topic as an existing history entry:
+  - Do NOT create a duplicate entry
+  - Update the existing entry's `extras.also_covered_by` list to append the new source name
+  - If the existing entry had lower importance and this is the 3rd+ source covering it, bump importance by +1 (capped at 5)
+  - The new article is consumed — it will not appear in today's report as a separate entry
+
+**Round 2 — Same-batch dedup (new articles vs each other):**
+
+The same topic may also appear across multiple sources fetched in the same run (e.g., Google AI Blog and Berkeley RDI both fetched today). Consolidate overlapping entries:
+
+1. Compare all remaining new articles by title and content — identify groups that cover the same topic
 2. For each group of duplicates, apply source priority:
    - Sources with `role: primary` take precedence over `role: aggregator`
    - If multiple primary sources cover the same topic, keep the more detailed one
