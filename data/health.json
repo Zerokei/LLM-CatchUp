@@ -1,28 +1,32 @@
 {
   "OpenAI Blog": {
-    "status": "healthy",
+    "status": "degraded",
     "last_success": "2026-04-10T12:00:00Z",
-    "consecutive_failures": 0
+    "consecutive_failures": 1,
+    "last_error": "RSS feed returned HTTP 403; articles discovered via web search fallback"
   },
   "Google AI Blog": {
-    "status": "healthy",
+    "status": "degraded",
     "last_success": "2026-04-10T12:00:00Z",
-    "consecutive_failures": 0
+    "consecutive_failures": 1,
+    "last_error": "RSS feed returned HTTP 403; no new articles found via fallback"
   },
   "Anthropic Blog": {
     "status": "degraded",
     "last_success": "2026-04-10T12:00:00Z",
-    "consecutive_failures": 1,
-    "last_error": "RSS feed (rss.xml) returned HTTP 404, fell back to web scraping of blog page"
+    "consecutive_failures": 2,
+    "last_error": "Web scraper returned HTTP 403; articles discovered via web search fallback"
   },
   "Berkeley RDI": {
-    "status": "healthy",
+    "status": "degraded",
     "last_success": "2026-04-10T12:00:00Z",
-    "consecutive_failures": 0
+    "consecutive_failures": 1,
+    "last_error": "RSS feed returned HTTP 403; articles discovered via web search fallback"
   },
   "The Batch": {
-    "status": "healthy",
+    "status": "degraded",
     "last_success": "2026-04-10T12:00:00Z",
-    "consecutive_failures": 0
+    "consecutive_failures": 1,
+    "last_error": "Web scraper returned HTTP 403; articles discovered via web search fallback"
   }
 }
