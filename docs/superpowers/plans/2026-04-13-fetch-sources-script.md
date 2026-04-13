@@ -6,7 +6,7 @@
 
 **Architecture:** Orchestrator (`scripts/fetch-sources.js`) reads `config.yaml`, dispatches to per-source route modules (`scripts/routes/*.js`) that use a shared HTTP helper with a `Mozilla/5.0 (compatible; CatchUp/1.0; +...)` UA, bounded retry, and 30s timeout. Orchestrator applies a 24-hour publication-date window filter and writes `data/fetch-cache/YYYY-MM-DD.json`. Claude trigger's Step 3 is rewritten to read this file; Step 8 is simplified to two-state health mapping.
 
-**Tech Stack:** Node.js ≥ 20 (built-in fetch), `js-yaml` ^4, `cheerio` ^1, `rss-parser` ^3.
+**Tech Stack:** Node.js ≥ 20 managed via nvm (pinned in `.nvmrc`), `pnpm` as package manager (not npm), deps: `js-yaml` ^4, `cheerio` ^1, `rss-parser` ^3.
 
 **Spec:** `docs/superpowers/specs/2026-04-13-fetch-sources-script-design.md`
 
@@ -15,19 +15,30 @@
 ## Task 1: Project scaffolding
 
 **Files:**
+- Create: `.nvmrc`
 - Create: `package.json`
-- Create: `.gitignore` (modify existing — add `node_modules/`)
+- Modify: `.gitignore` (append `node_modules/`)
 - Create: `scripts/` (directory)
 - Create: `scripts/lib/` (directory)
 - Create: `scripts/routes/` (directory)
 - Create: `data/fetch-cache/` (directory, with `.gitkeep`)
 
-- [ ] **Step 1: Verify Node version**
+**Toolchain note:** This project uses **nvm + pnpm**, not system node + npm. Node is pinned via `.nvmrc`; pnpm is the package manager (produces `pnpm-lock.yaml`, not `package-lock.json`). Non-interactive shells (including Bash-tool invocations) do not automatically source nvm. For any command that needs node/pnpm, prepend `source /opt/homebrew/opt/nvm/nvm.sh &&` so nvm puts Node on PATH.
 
-Run: `node --version`
-Expected: `v20.x.x` or higher. If not, ask Kevin to upgrade via `brew upgrade node` or nvm.
+- [ ] **Step 1: Verify Node version via nvm**
 
-- [ ] **Step 2: Write `package.json`**
+Run: `source /opt/homebrew/opt/nvm/nvm.sh && nvm use 20 && node --version && pnpm --version`
+Expected: Node `v20.x.x` and pnpm `10.x` (or newer). If `pnpm` is missing, report BLOCKED.
+
+- [ ] **Step 2: Create `.nvmrc`**
+
+```
+20
+```
+
+(single line, just the major version — nvm will pick the latest 20.x installed)
+
+- [ ] **Step 3: Write `package.json`**
 
 ```json
 {
@@ -49,43 +60,51 @@ Expected: `v20.x.x` or higher. If not, ask Kevin to upgrade via `brew upgrade no
 }
 ```
 
-- [ ] **Step 3: Append `node_modules/` to `.gitignore`**
+- [ ] **Step 4: Append `node_modules/` to `.gitignore`**
 
 The existing `.gitignore` has:
 ```
 .DS_Store
 *.swp
 *.swo
+.worktrees/
 ```
 
-Append:
+Append a single line `node_modules/`, so the file becomes:
 ```
+.DS_Store
+*.swp
+*.swo
+.worktrees/
 node_modules/
 ```
 
-- [ ] **Step 4: Install dependencies**
+- [ ] **Step 5: Install dependencies with pnpm**
 
-Run from repo root: `npm install`
-Expected: creates `node_modules/` and `package-lock.json`. No errors.
+Run from the worktree root:
+```bash
+source /opt/homebrew/opt/nvm/nvm.sh && nvm use 20 && pnpm install
+```
 
-- [ ] **Step 5: Create directory structure**
+Expected: creates `node_modules/` and `pnpm-lock.yaml`. No errors. (Warnings about peer deps are fine.)
 
-Run:
+- [ ] **Step 6: Create directory structure**
+
 ```bash
 mkdir -p scripts/lib scripts/routes data/fetch-cache
 touch data/fetch-cache/.gitkeep
 ```
 
-- [ ] **Step 6: Verify layout**
+- [ ] **Step 7: Verify layout**
 
 Run: `ls scripts/ scripts/lib/ scripts/routes/ data/fetch-cache/`
 Expected: all directories exist; `data/fetch-cache/` contains `.gitkeep`.
 
-- [ ] **Step 7: Commit**
+- [ ] **Step 8: Commit**
 
 ```bash
-git add package.json package-lock.json .gitignore data/fetch-cache/.gitkeep
-git commit -m "chore(catchup): scaffold fetch-sources script (pkg + dirs)"
+git add .nvmrc package.json pnpm-lock.yaml .gitignore data/fetch-cache/.gitkeep
+git commit -m "chore(catchup): scaffold fetch-sources script (nvm + pnpm + dirs)"
 ```
 
 ---
