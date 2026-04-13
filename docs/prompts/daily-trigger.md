@@ -75,14 +75,49 @@ Discard the duplicate entries (do not store them in history.json).
 ### Step 4: Analyze New Articles
 
 For each new article (including split newsletter entries), determine:
+
 1. **summary**: 2-3 sentence Chinese summary capturing the key point
 2. **category**: one of the categories from config (use Chinese names)
-3. **importance**: 1-5 score based on:
-   - 5: Major model release or breakthrough, will reshape the field
-   - 4: Significant product update or important research result
-   - 3: Notable news worth knowing about
-   - 2: Incremental update or niche topic
-   - 1: Minor or tangential
+3. **importance**: a 1–5 integer score computed in three steps below. The goal is a **quantitative, reproducible** rubric — apply the same two articles through these steps twice, and the scores should match.
+
+**Step 4.3.a — Base score (pick the ONE bucket that best fits the article's primary content type):**
+
+- **5 — NEW MODEL RELEASE**
+  - Official launch of a new foundational model or major version (e.g., GPT-5, Claude 5, Gemini 3, Llama 5)
+  - New open-weight release that advances the SOTA
+- **4 — SIGNIFICANT RESEARCH OR PRODUCT**
+  - Research paper with empirical contribution (new method, new benchmark result, new finding)
+  - Major product launch: new platform, new app, new API, new agent
+  - Minor version of an existing model with meaningful capability improvement (e.g., Claude 4.6, GPT-4.1)
+- **3 — NOTABLE UPDATE**
+  - Feature release in an existing product (e.g., new mode, new tool integration)
+  - Industry-level news: partnerships, funding, policy, regulatory, major hires/departures
+  - Long technical thread / deep-dive analysis from a recognized expert
+- **2 — INCREMENTAL**
+  - Small feature tweak or single-point demo
+  - Single observation, commentary, or short take
+  - Follow-up discussion of a topic already covered
+- **1 — LOW-SIGNAL**
+  - Personal comment, meme, greeting, sign-off ("gm", "good night", "see you")
+  - Retweet with NO added commentary
+  - Reply fragment without standalone meaning
+
+**Step 4.3.b — Modifiers (apply BOTH, each is independent):**
+
+- **+1** if this article already exists in `data/history.json` with `extras.also_covered_by` containing **3 or more** other sources (broad coverage = real significance). This typically applies after Step 3.5 dedup bumps have taken effect.
+- **−1** if the source `role` is `aggregator` AND the raw content starts with `RT @` or `@<handle>` (pure retweet or reply fragment). Do NOT apply this penalty to original threads or standalone quote-tweets.
+
+**Step 4.3.c — Clamp to [1, 5].** Never return a score outside this range.
+
+**Anchor examples (use these to calibrate):**
+
+- "Introducing Claude Opus 4.6" (Anthropic Blog, primary) → base 5 → **5**
+- "@sama: gm" → base 1 → **1**
+- "RT @AnthropicAI: Claude for Excel is now in beta" (by @sama, aggregator) → base 3 (product announcement) → RT modifier −1 → **2**
+- "Our reward-hacking paper is out, here's what we found..." (Lilian Weng, aggregator) → base 4 (research) → **4**
+- "Anthropic raises $13B Series F" (covered by OpenAI Blog, The Batch, Berkeley RDI — 3+ sources) → base 3 → broad-coverage +1 → **4**
+- "Try DeepSeek V3.2" (Qwen RT of DeepSeek official) → base 4 (model release) → RT modifier −1 → **3**
+- "@karpathy: new blog post exploring in-context learning..." (Karpathy, aggregator, his own thread not RT) → base 3 (expert deep dive) → **3**
 
 Then apply each dimension from `config.yaml` `analysis.dimensions`:
 - Check the `condition` field — only apply if condition matches (e.g., category matches)
@@ -93,18 +128,20 @@ Then apply each dimension from `config.yaml` `analysis.dimensions`:
 
 Get today's date in YYYY-MM-DD format.
 
+**Importance threshold filter:** Before writing the report, read `filtering.min_importance` from `config.yaml` (default `2` if absent). **Drop from the report any article whose `importance < min_importance`.** These dropped articles are still added to `history.json` in Step 6 (we don't lose the record), they just don't appear in today's report. Log the drop count to the report's "Data source status" section as a single line note (e.g., "共过滤 7 篇低重要度条目（importance < 2）").
+
 Create the report file at `{output_path}/daily/{YYYY-MM-DD}.md`.
 
 Follow the format in `docs/report-examples/daily-example.md` exactly:
 - Header with date
-- Overview table with article counts by category
+- Overview table with article counts by category (counts are post-filter)
 - Article details sorted by importance (highest first), each with:
   - Title as link
   - Source, category, importance stars, tags (rendered as inline code)
   - Summary paragraph
   - Practice suggestions in blockquote (only if present in extras)
 - Trend summary at the bottom
-- Data source status table
+- Data source status table (includes the importance-filter drop count)
 
 ### Step 6: Update History
 
