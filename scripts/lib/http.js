@@ -5,10 +5,13 @@ const RETRY_DELAY_MS = 3_000;
 
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
+// HTTP status errors we construct here carry no `.code` property, so
+// isRetryable(err) returns false for them in the catch block below.
+// Keep this property — don't attach a `.code` to status errors.
 function isRetryable(err, response) {
   if (response) return response.status >= 500 && response.status < 600;
   const code = err?.cause?.code || err?.code;
-  return ['ECONNRESET', 'ETIMEDOUT', 'ENOTFOUND', 'EAI_AGAIN', 'UND_ERR_CONNECT_TIMEOUT'].includes(code);
+  return ['ECONNRESET', 'ECONNREFUSED', 'ETIMEDOUT', 'ENOTFOUND', 'EAI_AGAIN', 'UND_ERR_CONNECT_TIMEOUT'].includes(code);
 }
 
 async function fetchText(url, { headers = {} } = {}) {
@@ -31,15 +34,40 @@ async function fetchText(url, { headers = {} } = {}) {
       }
       return await res.text();
     } catch (err) {
-      lastErr = err;
-      if (err.name === 'TimeoutError' || err.name === 'AbortError') {
-        lastErr = new Error(`timeout after ${TIMEOUT_MS / 1000}s`);
+      // Issue B: only treat TimeoutError (from AbortSignal.timeout) as a
+      // retriable/relabelable timeout. A real external AbortError means the
+      // caller cancelled — propagate it immediately without retry or relabel.
+      if (err.name === 'AbortError') {
+        throw err;
       }
-      if (attempt < MAX_ATTEMPTS && (isRetryable(err) || err.name === 'TimeoutError' || err.name === 'AbortError')) {
+
+      lastErr = err;
+      const label = attempt === 1 ? '1 attempt' : `${attempt} attempts`;
+
+      if (err.name === 'TimeoutError') {
+        lastErr = new Error(`timeout after ${TIMEOUT_MS / 1000}s (${label})`);
+        if (attempt < MAX_ATTEMPTS) {
+          await sleep(RETRY_DELAY_MS);
+          continue;
+        }
+        throw lastErr;
+      }
+
+      // HTTP status error from the try block above — format with attempt count.
+      // (isRetryable returns false for these since they carry no .code, so they
+      // always land here rather than the retry branch below.)
+      if (err.status != null) {
+        throw new Error(`HTTP ${err.status} after ${label}`);
+      }
+
+      if (attempt < MAX_ATTEMPTS && isRetryable(err)) {
         await sleep(RETRY_DELAY_MS);
         continue;
       }
-      throw lastErr;
+
+      // Network error — include error code when available.
+      const code = err?.cause?.code || err?.code;
+      throw new Error(code ? `network error: ${code}` : `network error: ${err.message}`);
     }
   }
   throw lastErr;
