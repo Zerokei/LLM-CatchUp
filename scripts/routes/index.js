@@ -10,5 +10,5 @@ module.exports = [
   require('./twitter-demis-hassabis'),
   require('./twitter-karpathy'),
   require('./twitter-lilian-weng'),
-  require('./claude-code-releases'),
+  require('./twitter-claude'),
 ];
