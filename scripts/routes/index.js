@@ -11,4 +11,11 @@ module.exports = [
   require('./twitter-karpathy'),
   require('./twitter-lilian-weng'),
   require('./twitter-claude'),
+  require('./twitter-openai'),
+  require('./twitter-meta'),
+  require('./twitter-google-deepmind'),
+  require('./twitter-mistral'),
+  require('./twitter-xai'),
+  require('./twitter-deepseek'),
+  require('./twitter-qwen'),
 ];
