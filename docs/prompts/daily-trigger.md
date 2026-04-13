@@ -24,35 +24,25 @@ Read `data/history.json`. This contains all previously processed articles keyed 
 
 Read `data/health.json`. This tracks each source's health status.
 
-### Step 3: Fetch Sources
+### Step 3: Load Today's Fetch Cache
 
-**Processing order:** Fetch `role: primary` sources first, then `role: aggregator` sources. This ensures primary/authoritative content enters history before aggregator summaries, so semantic dedup naturally keeps the primary version.
+The actual source fetching has been moved to a local Node script (`scripts/fetch-sources.js`). This trigger does NOT fetch external URLs any more — it reads a pre-generated snapshot.
 
-For each source (in the order above):
+1. Determine today's date in Asia/Shanghai timezone (format `YYYY-MM-DD`).
+2. Read the file `data/fetch-cache/{YYYY-MM-DD}.json`.
+3. **If the file does not exist**: abort the run immediately. Do NOT attempt WebFetch. Do NOT use WebSearch to fabricate content. Write a single-line error to stderr (`fetch-cache missing for YYYY-MM-DD — aborting daily run`) and exit without committing anything. Do not generate a report. The missing cache is a signal that the upstream fetch script or its scheduler needs human attention.
+4. Parse the JSON. Its shape is:
+   - `fetched_at`, `window_start`, `window_hours` — metadata
+   - `sources` — an object keyed by source name. Each entry has:
+     - `status`: `"ok"` or `"error"`
+     - `error`: null or string
+     - `fetched_count`, `filtered_count`: numbers (for diagnostics)
+     - `articles`: list of `{ title, url, published_at, description }` (already within the 24h window)
+5. For each source in `sources`:
+   - If `status === "ok"`: iterate `articles[]`. For each article, compute SHA-256 hash of the URL. Skip if already in `data/history.json`. Collect the rest as new articles for this run.
+   - If `status === "error"`: note the error and the source name for Step 8 (health update). This source contributes zero articles to today's report.
 
-**If type is `rss`:**
-- Use WebFetch to GET the source URL
-- Parse the XML response to extract article entries (title, link, published date, content/description)
-- For Substack feeds: entries are in `<item>` tags with `<title>`, `<link>`, `<pubDate>`, `<description>`
-- For Atom feeds: entries are in `<entry>` tags with `<title>`, `<link href="...">`, `<published>`, `<content>`
-
-**If type is `web_scraper`:**
-- Use WebFetch to GET the source URL
-- Examine the HTML structure to identify article listings
-- Extract article titles, URLs, and publication dates
-- For each article URL that is new (not in history), WebFetch the individual article page to get full content
-
-**Newsletter splitting:**
-Some sources (e.g., Substack newsletters) publish a single article that covers multiple independent topics. When you detect this pattern — one page with multiple distinct sections, each about a different subject — split it into separate article entries:
-- Each entry gets its own title (use the section heading or a descriptive title)
-- All entries share the same source URL, but append `#topic-N` to differentiate (e.g., `https://...#topic-1`, `https://...#topic-2`)
-- Each entry is analyzed and categorized independently
-- Mark the `source` as the original source name (e.g., "Berkeley RDI") so the origin is clear
-
-**For all sources:**
-- Compute SHA-256 hash of each article URL (including the `#topic-N` suffix for split entries)
-- Skip articles whose hash already exists in `data/history.json`
-- Record any fetch errors for health tracking
+**Newsletter splitting:** still applies. Berkeley RDI / The Batch may each produce a single newsletter article covering multiple topics. If you detect this pattern in an article's description, split it into separate entries per the existing rules (append `#topic-N` to URL, each entry independently categorized). This happens at this step, before dedup.
 
 ### Step 3.5: Semantic Deduplication
 
@@ -147,9 +137,9 @@ Remove any article from `data/history.json` where `fetched_at` is before the cut
 
 ### Step 8: Update Health Status
 
-For each source in config, update `data/health.json`:
+For each source in config, update `data/health.json` using the `status` field from the fetch-cache JSON loaded in Step 3:
 
-**If fetch succeeded:**
+**If the source's `status === "ok"`:**
 ```json
 {
   "status": "healthy",
@@ -158,11 +148,13 @@ For each source in config, update `data/health.json`:
 }
 ```
 
-**If fetch failed:**
+**If the source's `status === "error"`:**
 - Increment `consecutive_failures`
-- Set `last_error` to a description of the error (HTTP status, timeout, parse error, etc.)
-- If `consecutive_failures` < threshold: set `status` to `"degraded"`
-- If `consecutive_failures` >= threshold: set `status` to `"alert"`
+- Copy the `error` field from the fetch-cache entry into `last_error`
+- If `consecutive_failures` < `alerting.consecutive_failure_threshold` from config: set `status` to `"degraded"`
+- If `consecutive_failures` >= threshold: set `status` to `"alert"` (Step 9 handles GitHub Issue creation)
+
+The previous fallback-aware three-state accounting is retired. Under the new architecture there is no fallback — an error from the fetcher is a real, actionable error.
 
 ### Step 9: Handle Alerts
 
