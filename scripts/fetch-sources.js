@@ -8,7 +8,11 @@ const routes = require('./routes');
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml');
 const CACHE_DIR = path.join(PROJECT_ROOT, 'data', 'fetch-cache');
-const WINDOW_HOURS = 24;
+// 30h > 24h on purpose: daily runs don't fire at exactly the same wall-clock
+// time (GH Actions queue drift, manual triggers). A ≥24h window with 6h of
+// overlap guarantees adjacent runs cover any gap. Dedup-by-URL-hash in
+// history.json absorbs the double-fetching of overlap articles.
+const WINDOW_HOURS = 30;
 
 function toShanghaiISO(date = new Date()) {
   const fmt = new Intl.DateTimeFormat('sv-SE', {

@@ -37,7 +37,7 @@ The actual source fetching has been moved to a local Node script (`scripts/fetch
      - `status`: `"ok"`, `"degraded_stale"`, or `"error"`
      - `error`: null or string (descriptive message for degraded_stale / error)
      - `fetched_count`, `filtered_count`: numbers (for diagnostics)
-     - `articles`: list of `{ title, url, published_at, description }` (already within the 24h window)
+     - `articles`: list of `{ title, url, published_at, description }` (already pre-filtered to `window_hours` of recency; the window is intentionally >24h to cover scheduling drift between daily runs, so expect some overlap with yesterday's articles — history-hash dedup in Step 3 handles it)
 5. For each source in `sources`:
    - If `status === "ok"` or `status === "degraded_stale"`: iterate `articles[]`. For each article, compute SHA-256 hash of the URL. Skip if already in `data/history.json`. Collect the rest as new articles for this run. (Note: `degraded_stale` articles are still valid content — the status just flags upstream freshness for health accounting.)
    - If `status === "error"`: note the error and the source name for Step 8 (health update). This source contributes zero articles to today's report.
