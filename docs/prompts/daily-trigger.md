@@ -34,12 +34,12 @@ The actual source fetching has been moved to a local Node script (`scripts/fetch
 4. Parse the JSON. Its shape is:
    - `fetched_at`, `window_start`, `window_hours` — metadata
    - `sources` — an object keyed by source name. Each entry has:
-     - `status`: `"ok"` or `"error"`
-     - `error`: null or string
+     - `status`: `"ok"`, `"degraded_stale"`, or `"error"`
+     - `error`: null or string (descriptive message for degraded_stale / error)
      - `fetched_count`, `filtered_count`: numbers (for diagnostics)
      - `articles`: list of `{ title, url, published_at, description }` (already within the 24h window)
 5. For each source in `sources`:
-   - If `status === "ok"`: iterate `articles[]`. For each article, compute SHA-256 hash of the URL. Skip if already in `data/history.json`. Collect the rest as new articles for this run.
+   - If `status === "ok"` or `status === "degraded_stale"`: iterate `articles[]`. For each article, compute SHA-256 hash of the URL. Skip if already in `data/history.json`. Collect the rest as new articles for this run. (Note: `degraded_stale` articles are still valid content — the status just flags upstream freshness for health accounting.)
    - If `status === "error"`: note the error and the source name for Step 8 (health update). This source contributes zero articles to today's report.
 
 **Newsletter splitting:** still applies. Berkeley RDI / The Batch may each produce a single newsletter article covering multiple topics. If you detect this pattern in an article's description, split it into separate entries per the existing rules (append `#topic-N` to URL, each entry independently categorized). This happens at this step, before dedup.
