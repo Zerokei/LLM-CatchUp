@@ -1,4 +1,13 @@
-const UA = 'Mozilla/5.0 (compatible; CatchUp/1.0; +https://github.com/Zerokei/LLM-CatchUp)';
+// We used to identify as "compatible; CatchUp/1.0" which Substack (and likely
+// other Cloudflare-fronted sites) 403'd specifically from GH Actions IP ranges.
+// A realistic browser UA plus a minimal Accept/Accept-Language set clears
+// most of those gates. Keep this stable — tests/routes may match on UA.
+const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/125.0.0.0 Safari/537.36';
+const DEFAULT_HEADERS = {
+  'User-Agent': UA,
+  'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'Accept-Language': 'en-US,en;q=0.9',
+};
 const TIMEOUT_MS = 30_000;
 const MAX_ATTEMPTS = 2;
 const RETRY_DELAY_MS = 3_000;
@@ -19,7 +28,7 @@ async function fetchText(url, { headers = {} } = {}) {
   for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: { 'User-Agent': UA, ...headers },
+        headers: { ...DEFAULT_HEADERS, ...headers },
         signal: AbortSignal.timeout(TIMEOUT_MS),
       });
       if (!res.ok) {
