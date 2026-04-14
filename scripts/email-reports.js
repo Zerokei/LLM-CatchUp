@@ -3,6 +3,9 @@
 // Also computes targets for GH Actions push and workflow_dispatch triggers.
 
 const { marked } = require('marked');
+const fs = require('node:fs');
+const path = require('node:path');
+const { execSync } = require('node:child_process');
 
 function subjectFromPath(path) {
   let m = path.match(/reports\/daily\/(\d{4}-\d{2}-\d{2})\.md$/);
@@ -66,4 +69,41 @@ function renderMarkdown(md) {
   return `<!DOCTYPE html><html><head><meta charset="utf-8"></head><body><style>${EMAIL_CSS}</style>${body}</body></html>`;
 }
 
-module.exports = { subjectFromPath, representativeDate, filterBackfill, isoWeekMonday, renderMarkdown };
+function computePushTargets(repoRoot) {
+  // Runs in GH Actions where HEAD~1 exists (checkout with fetch-depth: 2).
+  const out = execSync("git diff --name-only HEAD~1 HEAD -- 'reports/**/*.md'", {
+    cwd: repoRoot,
+    encoding: 'utf8',
+  });
+  const rel = out.split('\n').map((s) => s.trim()).filter(Boolean);
+  return rel
+    .map((r) => path.join(repoRoot, r))
+    .filter((abs) => representativeDate(path.relative(repoRoot, abs)) !== null);
+}
+
+function computeBackfillTargets(repoRoot, today, lastDays) {
+  const out = [];
+  for (const cadence of ['daily', 'weekly', 'monthly']) {
+    const dir = path.join(repoRoot, 'reports', cadence);
+    if (!fs.existsSync(dir)) continue;
+    for (const name of fs.readdirSync(dir)) {
+      if (!name.endsWith('.md')) continue;
+      out.push(path.join(dir, name));
+    }
+  }
+  return filterBackfill(
+    out.map((abs) => path.relative(repoRoot, abs)),
+    today,
+    lastDays,
+  ).map((rel) => path.join(repoRoot, rel));
+}
+
+module.exports = {
+  subjectFromPath,
+  representativeDate,
+  filterBackfill,
+  isoWeekMonday,
+  renderMarkdown,
+  computePushTargets,
+  computeBackfillTargets,
+};

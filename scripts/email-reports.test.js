@@ -105,3 +105,45 @@ test('renderMarkdown: code blocks preserve content', () => {
   const html = renderMarkdown('```\nfoo = 1\n```');
   assert.match(html, /<pre><code[^>]*>foo = 1\n<\/code><\/pre>/);
 });
+
+const fs = require('node:fs');
+const path = require('node:path');
+const os = require('node:os');
+const { computeBackfillTargets } = require('./email-reports');
+
+test('computeBackfillTargets: finds files in fixture reports dir', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'catchup-email-'));
+  try {
+    fs.mkdirSync(path.join(tmp, 'reports/daily'), { recursive: true });
+    fs.mkdirSync(path.join(tmp, 'reports/monthly'), { recursive: true });
+    fs.writeFileSync(path.join(tmp, 'reports/daily/2026-04-14.md'), 'x');
+    fs.writeFileSync(path.join(tmp, 'reports/daily/2026-04-10.md'), 'x');
+    fs.writeFileSync(path.join(tmp, 'reports/daily/2026-04-05.md'), 'x');
+    fs.writeFileSync(path.join(tmp, 'reports/monthly/2026-04.md'), 'x');
+    fs.writeFileSync(path.join(tmp, 'reports/daily/junk.txt'), 'x'); // should be ignored (not .md pattern match)
+
+    const today = new Date('2026-04-14T00:00:00.000Z');
+
+    // 7-day window: cutoff = 2026-04-07 00:00 UTC.
+    // Includes: daily/2026-04-10, daily/2026-04-14.
+    // Excludes: daily/2026-04-05 (out), monthly/2026-04 (anchor 2026-04-01 is out), junk.txt (not a recognized path).
+    const paths7 = computeBackfillTargets(tmp, today, 7);
+    const rel7 = paths7.map((p) => path.relative(tmp, p)).sort();
+    assert.deepEqual(rel7, [
+      'reports/daily/2026-04-10.md',
+      'reports/daily/2026-04-14.md',
+    ]);
+
+    // 14-day window: cutoff = 2026-03-31 00:00 UTC. Now all three daily + monthly qualify.
+    const paths14 = computeBackfillTargets(tmp, today, 14);
+    const rel14 = paths14.map((p) => path.relative(tmp, p)).sort();
+    assert.deepEqual(rel14, [
+      'reports/daily/2026-04-05.md',
+      'reports/daily/2026-04-10.md',
+      'reports/daily/2026-04-14.md',
+      'reports/monthly/2026-04.md',
+    ]);
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+});
