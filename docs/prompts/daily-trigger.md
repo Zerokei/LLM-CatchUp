@@ -185,13 +185,13 @@ For each source in config, update `data/health.json` using the `status` field fr
 }
 ```
 
-**If the source's `status === "error"`:**
+**If the source's `status === "error"` or `status === "degraded_stale"`:**
 - Increment `consecutive_failures`
 - Copy the `error` field from the fetch-cache entry into `last_error`
 - If `consecutive_failures` < `alerting.consecutive_failure_threshold` from config: set `status` to `"degraded"`
 - If `consecutive_failures` >= threshold: set `status` to `"alert"` (Step 9 handles GitHub Issue creation)
 
-The previous fallback-aware three-state accounting is retired. Under the new architecture there is no fallback — an error from the fetcher is a real, actionable error.
+Note: `degraded_stale` means the fetch HTTP-succeeded but the newest item is older than the source's `max_silence_hours` threshold — typically an upstream mirror freeze. It shares the error accounting path above so repeated staleness eventually raises an alert. The previous fallback-aware three-state accounting is retired. Under the new architecture there is no fallback — an error (or prolonged staleness) from the fetcher is a real, actionable signal.
 
 ### Step 9: Handle Alerts
 

@@ -35,10 +35,23 @@ function withinWindow(article, windowStart, windowEnd) {
   return pub >= windowStart && pub <= windowEnd;
 }
 
+function newestPublishedAt(articles) {
+  let newest = null;
+  for (const a of articles) {
+    if (!a.published_at) continue;
+    const d = new Date(a.published_at);
+    if (Number.isNaN(d.getTime())) continue;
+    if (!newest || d > newest) newest = d;
+  }
+  return newest;
+}
+
 async function main() {
   const configRaw = fs.readFileSync(CONFIG_PATH, 'utf8');
   const config = yaml.load(configRaw);
-  const sourceNames = (config.sources || []).map((s) => s.name);
+  const sourceConfigs = config.sources || [];
+  const sourceNames = sourceConfigs.map((s) => s.name);
+  const configByName = Object.fromEntries(sourceConfigs.map((s) => [s.name, s]));
 
   const routeByName = Object.fromEntries(routes.map((r) => [r.name, r]));
 
@@ -86,9 +99,29 @@ async function main() {
     const fetchedCount = result.articles.length;
     const filtered = result.articles.filter((a) => withinWindow(a, windowStart, windowEnd));
     console.error(`[${name}] ok: ${filtered.length} of ${fetchedCount} within ${WINDOW_HOURS}h window`);
+
+    // Staleness check: if the source declares max_silence_hours in config,
+    // and the newest item (pre-window-filter) is older than that, flag the
+    // source as degraded_stale. Signals an upstream freeze (e.g., a
+    // Twitter-to-RSS mirror stuck) that wouldn't surface as an HTTP error.
+    const maxSilenceHours = configByName[name]?.max_silence_hours;
+    let status = 'ok';
+    let error = null;
+    if (maxSilenceHours && fetchedCount > 0) {
+      const newest = newestPublishedAt(result.articles);
+      if (newest) {
+        const ageHours = (fetchedAt.getTime() - newest.getTime()) / 3600000;
+        if (ageHours > maxSilenceHours) {
+          status = 'degraded_stale';
+          error = `newest item is ${ageHours.toFixed(1)}h old, exceeds ${maxSilenceHours}h threshold`;
+          console.error(`[${name}] STALE: ${error}`);
+        }
+      }
+    }
+
     output.sources[name] = {
-      status: 'ok',
-      error: null,
+      status,
+      error,
       fetched_count: fetchedCount,
       filtered_count: filtered.length,
       articles: filtered,
