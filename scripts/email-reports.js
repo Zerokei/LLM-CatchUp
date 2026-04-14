@@ -3,6 +3,7 @@
 // Also computes targets for GH Actions push and workflow_dispatch triggers.
 
 const { marked } = require('marked');
+const { Resend } = require('resend');
 const fs = require('node:fs');
 const path = require('node:path');
 const { execSync } = require('node:child_process');
@@ -98,6 +99,18 @@ function computeBackfillTargets(repoRoot, today, lastDays) {
   ).map((rel) => path.join(repoRoot, rel));
 }
 
+async function sendOne(reportPath, { apiKey, to, from }) {
+  const md = fs.readFileSync(reportPath, 'utf8');
+  const subject = subjectFromPath(path.relative(process.cwd(), reportPath));
+  const html = renderMarkdown(md);
+  const resend = new Resend(apiKey);
+  const { data, error } = await resend.emails.send({ from, to, subject, html });
+  if (error) {
+    throw new Error(`Resend error for ${subject}: ${error.message || JSON.stringify(error)}`);
+  }
+  return { subject, id: data?.id };
+}
+
 module.exports = {
   subjectFromPath,
   representativeDate,
@@ -106,4 +119,59 @@ module.exports = {
   renderMarkdown,
   computePushTargets,
   computeBackfillTargets,
+  sendOne,
 };
+
+async function main() {
+  const apiKey = process.env.RESEND_API_KEY;
+  const to = process.env.RESEND_TO;
+  const from = process.env.RESEND_FROM || 'onboarding@resend.dev';
+  if (!apiKey) throw new Error('missing env RESEND_API_KEY');
+  if (!to) throw new Error('missing env RESEND_TO');
+
+  const repoRoot = process.cwd();
+  let targets = [];
+
+  const cliArg = process.argv[2];
+  if (cliArg) {
+    targets = [path.isAbsolute(cliArg) ? cliArg : path.join(repoRoot, cliArg)];
+  } else {
+    const eventName = process.env.EVENT_NAME;
+    if (eventName === 'push') {
+      targets = computePushTargets(repoRoot);
+    } else if (eventName === 'workflow_dispatch') {
+      const reportPath = (process.env.REPORT_PATH || '').trim();
+      const backfillDays = parseInt(process.env.BACKFILL_DAYS || '0', 10);
+      if (reportPath) {
+        targets = [path.isAbsolute(reportPath) ? reportPath : path.join(repoRoot, reportPath)];
+      } else if (backfillDays > 0) {
+        const now = new Date();
+        const shanghai = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
+        const today = new Date(Date.UTC(shanghai.getFullYear(), shanghai.getMonth(), shanghai.getDate()));
+        targets = computeBackfillTargets(repoRoot, today, backfillDays);
+      } else {
+        throw new Error('workflow_dispatch requires either report_path or backfill_days > 0');
+      }
+    } else {
+      throw new Error('usage: node scripts/email-reports.js <report-path>   (or set EVENT_NAME=push / workflow_dispatch)');
+    }
+  }
+
+  if (targets.length === 0) {
+    console.log('no targets to send');
+    return;
+  }
+
+  console.log(`sending ${targets.length} email(s)`);
+  for (const t of targets) {
+    const { subject, id } = await sendOne(t, { apiKey, to, from });
+    console.log(`  ✓ ${subject}  (id=${id || 'unknown'})`);
+  }
+}
+
+if (require.main === module) {
+  main().catch((err) => {
+    console.error(err.message || err);
+    process.exit(1);
+  });
+}
