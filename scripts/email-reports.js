@@ -145,9 +145,17 @@ async function main() {
       if (reportPath) {
         targets = [path.isAbsolute(reportPath) ? reportPath : path.join(repoRoot, reportPath)];
       } else if (backfillDays > 0) {
-        const now = new Date();
-        const shanghai = new Date(now.toLocaleString('en-US', { timeZone: 'Asia/Shanghai' }));
-        const today = new Date(Date.UTC(shanghai.getFullYear(), shanghai.getMonth(), shanghai.getDate()));
+        // Resolve "today" on the Shanghai calendar robustly — avoid
+        // locale-parsing surprises from toLocaleString()+new Date(string).
+        // Matches the pattern in scripts/fetch-sources.js.
+        const fmt = new Intl.DateTimeFormat('sv-SE', {
+          timeZone: 'Asia/Shanghai',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit',
+        });
+        const [y, m, d] = fmt.format(new Date()).split('-').map(Number);
+        const today = new Date(Date.UTC(y, m - 1, d));
         targets = computeBackfillTargets(repoRoot, today, backfillDays);
       } else {
         throw new Error('workflow_dispatch requires either report_path or backfill_days > 0');
