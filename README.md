@@ -36,8 +36,9 @@ node scripts/fetch-sources.js
 
 外部运行时依赖（见 [`CLAUDE.md`](./CLAUDE.md) 的 "External dependencies" 段落）：
 
-- **`api.xgo.ing`** — Twitter→RSS 镜像，用于所有 `*(Twitter)` 源。
-- **`r.jina.ai`** — Reader 代理，用于绕过 Substack 在 GH Actions IP 段上的 Cloudflare 拦截（见 `scripts/routes/berkeley-rdi.js`）。
+- **`api.xgo.ing`** — Twitter→RSS 镜像，所有 `*(Twitter)` 源都走它。UUID 来自 [BestBlogs OPML](https://github.com/ginobefun/BestBlogs)。**失效信号**：同一批 Twitter 源集体 `degraded_stale`（镜像冻结而非上游真的没发推）。
+- **`r.jina.ai`** — Reader 代理，只有 `scripts/routes/berkeley-rdi.js` 用；Substack 会屏蔽 Azure / GH Actions 出口 IP，jina 从它自己的源抓。**失效信号**：Berkeley RDI 连续 `error` 3 天后触发 `source-alert` issue。
+- **`resend.com`** — 邮件投递，由 `.github/workflows/email-reports.yml` 调用，把新报告发到收件箱。需要两个 GH Actions repo secrets：`RESEND_API_KEY`、`RESEND_TO`（可选 `RESEND_FROM`，默认 `onboarding@resend.dev`）。**失效信号**：workflow 步骤失败；手动重发 `gh workflow run email-reports.yml -f report_path=reports/daily/<date>.md`，回灌多天 `-f backfill_days=7`。
 
 ## License
 
