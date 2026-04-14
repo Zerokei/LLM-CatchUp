@@ -9,7 +9,6 @@ module.exports = [
   require('./twitter-dario-amodei'),
   require('./twitter-demis-hassabis'),
   require('./twitter-karpathy'),
-  require('./twitter-lilian-weng'),
   require('./twitter-claude'),
   require('./twitter-openai'),
   require('./twitter-meta'),
