@@ -82,3 +82,26 @@ test('filterBackfill: unrecognized paths are dropped silently', () => {
   const filtered = filterBackfill(['reports/yearly/2026.md', 'reports/daily/2026-04-14.md'], today, 7);
   assert.deepEqual(filtered, ['reports/daily/2026-04-14.md']);
 });
+
+const { renderMarkdown } = require('./email-reports');
+
+test('renderMarkdown: wraps body in html/head/style/body', () => {
+  const html = renderMarkdown('# Hello\n\nworld.');
+  assert.match(html, /^<!DOCTYPE html>/);
+  assert.match(html, /<style>[\s\S]*font-family[\s\S]*<\/style>/);
+  assert.match(html, /<h1[^>]*>Hello<\/h1>/);
+  assert.match(html, /<p>world\.<\/p>/);
+});
+
+test('renderMarkdown: tables render as <table>', () => {
+  const md = '| a | b |\n|---|---|\n| 1 | 2 |';
+  const html = renderMarkdown(md);
+  assert.match(html, /<table>/);
+  assert.match(html, /<th>a<\/th>/);
+  assert.match(html, /<td>1<\/td>/);
+});
+
+test('renderMarkdown: code blocks preserve content', () => {
+  const html = renderMarkdown('```\nfoo = 1\n```');
+  assert.match(html, /<pre><code[^>]*>foo = 1\n<\/code><\/pre>/);
+});
