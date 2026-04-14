@@ -99,13 +99,18 @@ function computeBackfillTargets(repoRoot, today, lastDays) {
   ).map((rel) => path.join(repoRoot, rel));
 }
 
-async function sendOne(reportPath, { apiKey, to, from }) {
+function buildEmailPayload(reportPath, cwd = process.cwd()) {
   if (!fs.existsSync(reportPath)) {
     throw new Error(`report not found: ${reportPath}`);
   }
   const md = fs.readFileSync(reportPath, 'utf8');
-  const subject = subjectFromPath(path.relative(process.cwd(), reportPath));
+  const subject = subjectFromPath(path.relative(cwd, reportPath));
   const html = renderMarkdown(md);
+  return { subject, html };
+}
+
+async function sendOne(reportPath, { apiKey, to, from }) {
+  const { subject, html } = buildEmailPayload(reportPath);
   const resend = new Resend(apiKey);
   const { data, error } = await resend.emails.send({ from, to, subject, html });
   if (error) {
@@ -123,6 +128,7 @@ module.exports = {
   computePushTargets,
   computeBackfillTargets,
   sendOne,
+  buildEmailPayload,
 };
 
 async function main() {

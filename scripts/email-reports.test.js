@@ -109,7 +109,27 @@ test('renderMarkdown: code blocks preserve content', () => {
 const fs = require('node:fs');
 const path = require('node:path');
 const os = require('node:os');
-const { computeBackfillTargets } = require('./email-reports');
+const { computeBackfillTargets, isoWeekMonday, buildEmailPayload } = require('./email-reports');
+
+test('isoWeekMonday: week 1 of 2021 is Mon 2021-01-04 (Jan 1 was Friday)', () => {
+  assert.equal(isoWeekMonday(2021, 1).toISOString(), '2021-01-04T00:00:00.000Z');
+});
+
+test('isoWeekMonday: week 1 of 2024 is Mon 2024-01-01 (Jan 1 was Monday — exact match)', () => {
+  assert.equal(isoWeekMonday(2024, 1).toISOString(), '2024-01-01T00:00:00.000Z');
+});
+
+test('isoWeekMonday: week 1 of 2020 is Mon 2019-12-30 (ISO week 1 crosses year boundary)', () => {
+  assert.equal(isoWeekMonday(2020, 1).toISOString(), '2019-12-30T00:00:00.000Z');
+});
+
+test('isoWeekMonday: week 53 of 2020 is Mon 2020-12-28 (2020 has 53 ISO weeks)', () => {
+  assert.equal(isoWeekMonday(2020, 53).toISOString(), '2020-12-28T00:00:00.000Z');
+});
+
+test('isoWeekMonday: week 9 of 2024 is Mon 2024-02-26 (leap-year mid-year sanity)', () => {
+  assert.equal(isoWeekMonday(2024, 9).toISOString(), '2024-02-26T00:00:00.000Z');
+});
 
 test('computeBackfillTargets: finds files in fixture reports dir', () => {
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'catchup-email-'));
@@ -146,4 +166,29 @@ test('computeBackfillTargets: finds files in fixture reports dir', () => {
   } finally {
     fs.rmSync(tmp, { recursive: true, force: true });
   }
+});
+
+test('buildEmailPayload: reads file, derives subject, renders HTML', () => {
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), 'catchup-email-payload-'));
+  try {
+    fs.mkdirSync(path.join(tmp, 'reports/daily'), { recursive: true });
+    const reportPath = path.join(tmp, 'reports/daily/2026-04-14.md');
+    fs.writeFileSync(reportPath, '# Hello\n\nworld.');
+
+    const { subject, html } = buildEmailPayload(reportPath, tmp);
+
+    assert.equal(subject, 'CatchUp 日报 2026-04-14');
+    assert.match(html, /^<!DOCTYPE html>/);
+    assert.match(html, /<h1[^>]*>Hello<\/h1>/);
+    assert.match(html, /<p>world\.<\/p>/);
+  } finally {
+    fs.rmSync(tmp, { recursive: true, force: true });
+  }
+});
+
+test('buildEmailPayload: throws clear error when file missing', () => {
+  assert.throws(
+    () => buildEmailPayload('/nonexistent/path/reports/daily/2099-01-01.md', '/nonexistent/path'),
+    /report not found/,
+  );
 });
