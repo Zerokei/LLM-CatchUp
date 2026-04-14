@@ -72,15 +72,16 @@ sources:
 
   # max_silence_hours: if the newest item from this source is older than
   # this threshold, the fetcher marks the source as `degraded_stale` (see
-  # scripts/fetch-sources.js). Tune per-account cadence: very active
-  # official accounts = 72h, moderate = 336h (14d), rare = 720h (30d).
-  # When the upstream Twitter-to-RSS mirror freezes, the 72h tier trips
+  # scripts/fetch-sources.js). Tune per-account cadence: active accounts
+  # = 168h (7d), moderate = 336h (14d), rare = 720h (30d). Even official
+  # AI lab handles regularly skip 3-4 days, so 72h produced false positives.
+  # When the upstream Twitter-to-RSS mirror freezes, the 168h tier trips
   # simultaneously — the signal that it's a mirror issue, not per-account.
   - name: "Sam Altman (Twitter)"
     type: rss
     url: "https://api.xgo.ing/rss/user/e30d4cd223f44bed9d404807105c8927"
     role: aggregator
-    max_silence_hours: 72
+    max_silence_hours: 168
 
   - name: "Dario Amodei (Twitter)"
     type: rss
@@ -104,7 +105,7 @@ sources:
     type: rss
     url: "https://api.xgo.ing/rss/user/01f60d63a61b44d692cc35c7feb0b4a4"
     role: primary
-    max_silence_hours: 72
+    max_silence_hours: 168
 
   - name: "Anthropic (Twitter)"
     type: rss
@@ -116,31 +117,31 @@ sources:
     type: rss
     url: "https://api.xgo.ing/rss/user/0c0856a69f9f49cf961018c32a0b0049"
     role: primary
-    max_silence_hours: 72
+    max_silence_hours: 168
 
   - name: "Meta AI (Twitter)"
     type: rss
     url: "https://api.xgo.ing/rss/user/ef7c70f9568d45f4915169fef4ce90b4"
     role: primary
-    max_silence_hours: 72
+    max_silence_hours: 168
 
   - name: "Google DeepMind (Twitter)"
     type: rss
     url: "https://api.xgo.ing/rss/user/a99538443a484fcc846bdcc8f50745ec"
     role: primary
-    max_silence_hours: 72
+    max_silence_hours: 168
 
   - name: "Mistral AI (Twitter)"
     type: rss
     url: "https://api.xgo.ing/rss/user/8d2d03aea8af49818096da4ea00409d1"
     role: primary
-    max_silence_hours: 336
+    max_silence_hours: 720
 
   - name: "xAI (Twitter)"
     type: rss
     url: "https://api.xgo.ing/rss/user/3953aa71e87a422eb9d7bf6ff1c7c43e"
     role: primary
-    max_silence_hours: 72
+    max_silence_hours: 168
 
   - name: "DeepSeek (Twitter)"
     type: rss
