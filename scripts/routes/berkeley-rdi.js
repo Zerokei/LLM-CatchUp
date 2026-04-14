@@ -1,22 +1,30 @@
 const { fetchText } = require('../lib/http');
 
-// Substack's RSS endpoint (/feed) is aggressively Cloudflare-gated and
-// returns 403 from Azure/GH-Actions IP ranges regardless of browser-like
-// headers. The JSON archive API at /api/v1/archive is less tightly gated
-// and returns richer structured data, so we use it instead.
-const SOURCE_URL = 'https://berkeleyrdi.substack.com/api/v1/archive?sort=new&limit=20';
+// Substack's Cloudflare gate blocks Azure / GH-Actions IP ranges origin-wide
+// — both /feed and /api/v1/archive return 403 there regardless of headers.
+// r.jina.ai is a reader proxy (free tier, no auth needed for low volume) that
+// fetches the upstream from its own infrastructure and returns a JSON envelope:
+//   { code, status, data: { title, description, url, content: "<stringified upstream body>" } }
+// We want Substack's archive JSON, so we read the upstream `/api/v1/archive`
+// path via jina, then JSON.parse the envelope's `data.content`.
+const UPSTREAM_URL = 'https://berkeleyrdi.substack.com/api/v1/archive?sort=new&limit=20';
+const PROXY_URL = `https://r.jina.ai/${UPSTREAM_URL}`;
 const CANONICAL_BASE = 'https://berkeleyrdi.substack.com';
 
 module.exports = {
   name: 'Berkeley RDI',
   sourceType: 'rss',
-  sourceUrl: SOURCE_URL,
+  sourceUrl: UPSTREAM_URL,
   async fetch() {
     try {
-      const raw = await fetchText(SOURCE_URL, { headers: { Accept: 'application/json,*/*;q=0.8' } });
-      const posts = JSON.parse(raw);
+      const raw = await fetchText(PROXY_URL, { headers: { Accept: 'application/json' } });
+      const envelope = JSON.parse(raw);
+      if (envelope?.code !== 200 || typeof envelope?.data?.content !== 'string') {
+        return { articles: [], error: `unexpected jina envelope shape (code=${envelope?.code})` };
+      }
+      const posts = JSON.parse(envelope.data.content);
       if (!Array.isArray(posts)) {
-        return { articles: [], error: 'unexpected archive shape (not an array)' };
+        return { articles: [], error: 'upstream archive is not an array' };
       }
       const articles = posts.map((p) => ({
         title: (p.title || '').trim(),
