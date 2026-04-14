@@ -17,8 +17,8 @@ on:
       backfill_days:
         description: 'Send all reports whose filename-embedded date is within the last N days (Asia/Shanghai). Ignored if report_path is set.'
         required: false
-        type: string
-        default: '0'
+        type: number
+        default: 0
 
 permissions:
   contents: read

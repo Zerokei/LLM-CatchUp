@@ -8,14 +8,14 @@ const fs = require('node:fs');
 const path = require('node:path');
 const { execSync } = require('node:child_process');
 
-function subjectFromPath(path) {
-  let m = path.match(/reports\/daily\/(\d{4}-\d{2}-\d{2})\.md$/);
+function subjectFromPath(reportPath) {
+  let m = reportPath.match(/reports\/daily\/(\d{4}-\d{2}-\d{2})\.md$/);
   if (m) return `CatchUp 日报 ${m[1]}`;
-  m = path.match(/reports\/weekly\/(\d{4}-W\d{2})\.md$/);
+  m = reportPath.match(/reports\/weekly\/(\d{4}-W\d{2})\.md$/);
   if (m) return `CatchUp 周报 ${m[1]}`;
-  m = path.match(/reports\/monthly\/(\d{4}-\d{2})\.md$/);
+  m = reportPath.match(/reports\/monthly\/(\d{4}-\d{2})\.md$/);
   if (m) return `CatchUp 月报 ${m[1]}`;
-  throw new Error(`unrecognized report path: ${path}`);
+  throw new Error(`unrecognized report path: ${reportPath}`);
 }
 
 function isoWeekMonday(year, week) {
@@ -29,12 +29,12 @@ function isoWeekMonday(year, week) {
   return new Date(week1Monday.getTime() + (week - 1) * 7 * 86400_000);
 }
 
-function representativeDate(path) {
-  let m = path.match(/reports\/daily\/(\d{4})-(\d{2})-(\d{2})\.md$/);
+function representativeDate(reportPath) {
+  let m = reportPath.match(/reports\/daily\/(\d{4})-(\d{2})-(\d{2})\.md$/);
   if (m) return new Date(Date.UTC(+m[1], +m[2] - 1, +m[3]));
-  m = path.match(/reports\/weekly\/(\d{4})-W(\d{2})\.md$/);
+  m = reportPath.match(/reports\/weekly\/(\d{4})-W(\d{2})\.md$/);
   if (m) return isoWeekMonday(+m[1], +m[2]);
-  m = path.match(/reports\/monthly\/(\d{4})-(\d{2})\.md$/);
+  m = reportPath.match(/reports\/monthly\/(\d{4})-(\d{2})\.md$/);
   if (m) return new Date(Date.UTC(+m[1], +m[2] - 1, 1));
   return null;
 }
@@ -100,6 +100,9 @@ function computeBackfillTargets(repoRoot, today, lastDays) {
 }
 
 async function sendOne(reportPath, { apiKey, to, from }) {
+  if (!fs.existsSync(reportPath)) {
+    throw new Error(`report not found: ${reportPath}`);
+  }
   const md = fs.readFileSync(reportPath, 'utf8');
   const subject = subjectFromPath(path.relative(process.cwd(), reportPath));
   const html = renderMarkdown(md);
