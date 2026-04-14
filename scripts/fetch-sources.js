@@ -105,20 +105,30 @@ async function main() {
     console.error(`[${name}] ok: ${filtered.length} of ${fetchedCount} within ${WINDOW_HOURS}h window`);
 
     // Staleness check: if the source declares max_silence_hours in config,
-    // and the newest item (pre-window-filter) is older than that, flag the
-    // source as degraded_stale. Signals an upstream freeze (e.g., a
-    // Twitter-to-RSS mirror stuck) that wouldn't surface as an HTTP error.
+    // flag the source as degraded_stale when either (a) fetch returned zero
+    // items at all — the mirror may be silently returning an empty feed —
+    // or (b) the newest item (pre-window-filter) is older than the threshold.
+    // Both cases indicate upstream trouble that wouldn't surface as an HTTP
+    // error. The pre-window-filter check matters because a stale-but-present
+    // article can still pass `withinWindow` and land in articles[]; we want
+    // to flag the source even when window-filtered output is non-empty.
     const maxSilenceHours = configByName[name]?.max_silence_hours;
     let status = 'ok';
     let error = null;
-    if (maxSilenceHours && fetchedCount > 0) {
-      const newest = newestPublishedAt(result.articles);
-      if (newest) {
-        const ageHours = (fetchedAt.getTime() - newest.getTime()) / 3600000;
-        if (ageHours > maxSilenceHours) {
-          status = 'degraded_stale';
-          error = `newest item is ${ageHours.toFixed(1)}h old, exceeds ${maxSilenceHours}h threshold`;
-          console.error(`[${name}] STALE: ${error}`);
+    if (maxSilenceHours) {
+      if (fetchedCount === 0) {
+        status = 'degraded_stale';
+        error = 'no items returned; cannot assess freshness';
+        console.error(`[${name}] STALE: ${error}`);
+      } else {
+        const newest = newestPublishedAt(result.articles);
+        if (newest) {
+          const ageHours = (fetchedAt.getTime() - newest.getTime()) / 3600000;
+          if (ageHours > maxSilenceHours) {
+            status = 'degraded_stale';
+            error = `newest item is ${ageHours.toFixed(1)}h old, exceeds ${maxSilenceHours}h threshold`;
+            console.error(`[${name}] STALE: ${error}`);
+          }
         }
       }
     }
