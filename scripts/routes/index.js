@@ -5,6 +5,7 @@ module.exports = [
   require('./anthropic-research'),
   require('./berkeley-rdi'),
   require('./the-batch'),
+  require('./baoyu'),
   require('./twitter-sama'),
   require('./twitter-dario-amodei'),
   require('./twitter-demis-hassabis'),
