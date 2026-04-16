@@ -495,6 +495,222 @@
           "将现有的 OpenAI API 集成代码任务迁移至 Cloudflare Agent Cloud，对比部署便捷性与延迟表现"
         ]
       }
+    },
+    "48e06494bd449d259f1c905cbc175da1a79ac9b9565e572086be9f549eb9d915": {
+      "title": "Claude Code 桌面端重构：多会话并行 + 集成终端与预览",
+      "url": "https://x.com/claudeai/status/2044131493966909862",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Anthropic 重构了 Claude Code 桌面应用，引入侧边栏以便在同一窗口内并行运行多个 Claude 会话。新版本内置终端、文件编辑、HTML/PDF 预览与更快的 diff 查看器，支持拖拽式自定义布局；命令行插件可无缝运行。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "桌面端",
+          "多会话",
+          "开发者工具",
+          "IDE"
+        ],
+        "practice_suggestions": [
+          "从 claude.com/download 下载或更新 Claude 桌面应用，启动多个并行会话测试新侧边栏布局",
+          "在同一窗口内分别使用不同会话处理代码修改与 PDF/HTML 预览，评估从 CLI 切换到桌面 IDE 风格工作流的收益"
+        ]
+      }
+    },
+    "0d4ad3d839b2577043444b099ab3024ef146053cc5983b9ab474a9eba4a42b77": {
+      "title": "Claude Code 推出 Routines：可调度的长驻自动化任务",
+      "url": "https://x.com/claudeai/status/2044095086460309790",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Claude Code 以研究预览形式推出 Routines——一次配置 prompt、代码仓库与连接器即可按定时、API 调用或事件驱动反复运行。任务运行在 Anthropic 的 Web 基础设施上，无需保持本机开启；已适用于全部付费计划，CLI 中的 /schedule 自动迁移为 Routines。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "Routines",
+          "自动化",
+          "调度",
+          "Web 基础设施"
+        ],
+        "practice_suggestions": [
+          "创建一个 Routine：每天凌晨 2 点从 Linear 拉取最高优先级 bug，尝试修复并开 draft PR，观察一周后的命中率",
+          "将团队已有的 /schedule CLI 作业检查一遍，确认迁移后仍按预期触发，同时接入事件驱动模式做对比"
+        ]
+      }
+    },
+    "4b379e19fb90a60dc24ba6ea8918797d341bcac1fde22126f5ea7505246c795b": {
+      "title": "Google DeepMind 发布 Gemini Robotics-ER 1.6：更强空间推理，Spot 自主读表",
+      "url": "https://x.com/GoogleDeepMind/status/2044069878781390929",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Google DeepMind 推出 Gemini Robotics-ER 1.6，显著提升机器人对物理世界的视觉与空间理解，能独立规划并完成更复杂任务；与波士顿动力合作的 Spot 机器人已能自主读取复杂工业仪表。该版本也是迄今最安全的机器人模型，能识别液体、>20kg 重物等物理约束，视频中人类受伤风险检测较上代提升 10%。现已在 Google AI Studio 与 Gemini API 提供。",
+      "category": "模型发布",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Gemini Robotics-ER",
+          "具身智能",
+          "Boston Dynamics",
+          "空间推理",
+          "机器人安全"
+        ],
+        "practice_suggestions": [
+          "在 Google AI Studio 用现成的 Gemini Robotics-ER 1.6 端点上传一组机器人工作场景图片，测试空间定位与可执行步骤规划质量",
+          "如果已有机器人/仿真环境，通过 Gemini API 替换现有 VLM 模块做 A/B 对比，重点评估对工业仪表、液体容器等边界场景的识别率"
+        ],
+        "also_covered_by": [
+          "Demis Hassabis (Twitter)"
+        ]
+      }
+    },
+    "98ad0ce59b1168158baa85cb3dffdfefc7bf83bfd619cd3e3e1651e650f985d8": {
+      "title": "Anthropic 发布 Automated Alignment Researcher：让 Claude Opus 4.6 加速可扩展监督研究",
+      "url": "https://www.anthropic.com/research/automated-alignment-researchers",
+      "source": "Anthropic Research",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Anthropic Fellows 项目发布研究成果：探索让 Claude Opus 4.6 自动化开展一个关键对齐问题——用较弱模型监督更强模型训练（scalable oversight）。实验表明 Claude 可显著提升实验与探索速率，但在缺少可验证指标的\"模糊\"对齐研究上仍力不从心，AI 尚未成为通用对齐科学家。研究展示了用 AI 加速对齐科研的可行路径，同时明确当前局限。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "对齐研究",
+          "可扩展监督",
+          "Claude Opus 4.6",
+          "Anthropic Fellows",
+          "自动化科研"
+        ],
+        "also_covered_by": [
+          "Anthropic (Twitter)"
+        ]
+      }
+    },
+    "17bf9cbe1f8c9d0a417e22473c17d5749a7463a12c06cf1379f7cf816d69d2bf": {
+      "title": "OpenAI 扩展 Trusted Access for Cyber，向合格防御方开放 GPT-5.4-Cyber",
+      "url": "https://openai.com/index/scaling-trusted-access-for-cyber-defense",
+      "source": "OpenAI Blog",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "OpenAI 为 Trusted Access for Cyber 程序新增多个层级，面向经过身份核验的网络安全防御方开放能力。最高层级客户可申请使用 GPT-5.4-Cyber——一款针对网络安全场景微调的 GPT-5.4 变体，用于更高阶的防御性工作流。核心思路是在模型能力继续提升的同时，同步扩大合法防御方的访问并加固滥用防线。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "网络安全",
+          "GPT-5.4-Cyber",
+          "可信访问",
+          "防御方"
+        ],
+        "also_covered_by": [
+          "OpenAI (Twitter)"
+        ]
+      }
+    },
+    "d97dfad68cf12bf44732232e82e7d017589f3d6edd6f69a77471e3c7f9ca7b47": {
+      "title": "Anthropic 长期利益信托任命 Vas Narasimhan 进入董事会",
+      "url": "https://www.anthropic.com/news/narasimhan-board",
+      "source": "Anthropic Blog",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Anthropic 的长期利益信托（Long-Term Benefit Trust）任命前诺华（Novartis）CEO Vas Narasimhan 加入董事会。他拥有二十多年医学与全球卫生领域的经验，是 Anthropic 此前以使命驱动公司治理结构下的新一员。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "董事会",
+          "治理",
+          "Vas Narasimhan",
+          "Novartis"
+        ],
+        "also_covered_by": [
+          "Anthropic (Twitter)"
+        ]
+      }
+    },
+    "28a3447b4d7808bf8cdb7ff99f9abdc782e341b13aa99687e3a843bbd5da8b40": {
+      "title": "Chrome 推出 Skills：把常用 AI prompt 一键化并可复用",
+      "url": "https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/",
+      "source": "Google AI Blog",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Google 在 Chrome 中推出 Skills 功能，用户可以发现、保存并 remix 他人的 AI 工作流，把高质量 prompt 固化为一键触发的工具并在浏览器中随时复用。该功能瞄准重复性的 AI 使用场景，降低 prompt 工程门槛。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Chrome",
+          "Gemini",
+          "Skills",
+          "提示工程",
+          "浏览器 AI"
+        ],
+        "practice_suggestions": [
+          "在 Chrome 中开启 Skills，保存 2-3 个你最常用的日常 AI prompt（翻译、摘要、代码解释），比较一键调用与手动粘贴的效率差",
+          "浏览社区 Skills 目录，fork 一个生产力类 skill 再做局部改动，观察 remix 机制的可维护性"
+        ]
+      }
+    },
+    "ae64734372f27c339cba9f6f2cb37f8b306d68506774507763a7b283eba453ed": {
+      "title": "Google 在华盛顿举办 AI for the Economy Forum",
+      "url": "https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/ai-economy-forum/",
+      "source": "Google AI Blog",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Google 在华盛顿特区举办 AI for the Economy Forum，邀请政商各方就 AI 如何驱动经济机会展开对话。这是 Google 面向美国政策圈持续输出 AI 经济议程的一次集中活动。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Google",
+          "AI 经济",
+          "政策",
+          "华盛顿",
+          "产业论坛"
+        ]
+      }
+    },
+    "298e7d959f05856d775e678a644fae9eee3059bc65f863bfd4252cebe7c68bd0": {
+      "title": "Demis Hassabis 分享 Gemini Robotics-ER 1.6 在 Google AI Studio 可试用",
+      "url": "https://x.com/demishassabis/status/2044176200889696284",
+      "source": "Demis Hassabis (Twitter)",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Demis Hassabis 推文告知开发者可在 Google AI Studio 试用 Gemini Robotics-ER 1.6，内容为配发链接的简短说明。",
+      "category": "产品与功能",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Gemini Robotics-ER",
+          "Google AI Studio",
+          "试用",
+          "Demis Hassabis"
+        ]
+      }
+    },
+    "66bcb294f1f0d2ece2690706bb83215e8684db00e37b9fa0277d8b2e3c3d1b7e": {
+      "title": "Demis Hassabis 反驳 Steve Yegge 相关传言",
+      "url": "https://x.com/demishassabis/status/2043867486320222333",
+      "source": "Demis Hassabis (Twitter)",
+      "published_at": "2026-04-14",
+      "fetched_at": "2026-04-15T00:10:08Z",
+      "summary": "Demis Hassabis 在 Twitter 上回复 Steve Yegge，明确否认某条被视为 Google DeepMind 的说法为虚假点击诱导内容。属于行业人物社交动态，非产品或研究资讯。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Demis Hassabis",
+          "Steve Yegge",
+          "Twitter",
+          "行业动态"
+        ]
+      }
     }
   },
   "last_fetch": "2026-04-16T00:37:22Z"
