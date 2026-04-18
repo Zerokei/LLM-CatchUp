@@ -15,6 +15,7 @@ module.exports = [
   require('./twitter-claude-devs'),
   require('./twitter-anthropic'),
   require('./twitter-openai'),
+  require('./twitter-openai-devs'),
   require('./twitter-meta'),
   require('./twitter-google-deepmind'),
   require('./twitter-mistral'),
