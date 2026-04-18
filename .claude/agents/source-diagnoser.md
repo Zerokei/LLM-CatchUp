@@ -66,7 +66,7 @@ For JSON APIs: fetch, `JSON.parse`, inspect shape.
 Pick one:
 
 - **Upstream structural change** (selector stopped matching, JSON shape drifted, sitemap format changed). Example: today's Batch `/the-batch/` page stuck at 2021, forcing the sitemap+tag rewrite.
-- **Upstream freshness stall** (HTTP 200 but content frozen 3+ days, other similarly-configured sources in the same mirror behaving the same). Example: all `api.xgo.ing` Twitter sources going silent for the same 72h — the mirror is stalled, we can only wait or switch providers.
+- **Upstream freshness stall** (HTTP 200 but content frozen 3+ days, other similarly-configured sources in the same mirror behaving the same). Example: all socialdata.tools Twitter sources going silent — `SOCIALDATA_API_KEY` revoked or credit exhausted. Hit the endpoint directly to confirm: `curl -H "Authorization: Bearer $KEY" https://api.socialdata.tools/twitter/user/<HANDLE>` — a 401 means the key died, a 402/403 means out of credit.
 - **Network/IP gate** (fast 403, especially from Azure runners, especially Cloudflare-fronted domains). Example: Berkeley RDI Substack. Recommend proxying through `r.jina.ai` or similar.
 - **Account/source genuinely dead** (e.g., Lilian Weng silent 30+ days — the account itself isn't tweeting; no amount of fetcher fixing helps). Recommend dropping the source or widening `max_silence_hours`.
 - **Our bug** (route logic, regex, date parsing). Explain what's wrong in the code.
@@ -77,7 +77,7 @@ For each classification, give a specific concrete recommendation. Name files, ci
 
 - "The Batch: rewrite `scripts/routes/the-batch.js` to use the sitemap + tag-page approach (see recent commit `0d30939` for template). Current selectors match the 2021-stuck archive page."
 - "Berkeley RDI: route through `r.jina.ai` proxy (already done in the current route at `berkeley-rdi.js:12`). If it regressed, check jina's own status."
-- "@karpathy: 168h silence observed but the account is still active on Twitter — api.xgo.ing may not be polling this handle. No code fix; wait 24h and re-diagnose."
+- "@karpathy: 168h silence observed but the account is still active on Twitter — verify the RSSHub instance by hitting `/twitter/user/karpathy?key=<KEY>` directly; if it returns 401, the `TWITTER_AUTH_TOKEN` has expired and needs refreshing from the burner account's cookies."
 
 Do NOT write the fix yourself. Your output is a diagnosis doc the user reads before deciding.
 

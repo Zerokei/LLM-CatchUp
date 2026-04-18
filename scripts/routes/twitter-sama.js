@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'Sam Altman (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/e30d4cd223f44bed9d404807105c8927',
+  handle: 'sama',
+  userId: '1605',
 });

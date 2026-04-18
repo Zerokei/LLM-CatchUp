@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'Anthropic (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/fc28a211471b496682feff329ec616e5',
+  handle: 'AnthropicAI',
+  userId: '1353836358901501952',
 });

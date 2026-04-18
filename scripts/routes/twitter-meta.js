@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'Meta AI (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/ef7c70f9568d45f4915169fef4ce90b4',
+  handle: 'AIatMeta',
+  userId: '1034844617261248512',
 });

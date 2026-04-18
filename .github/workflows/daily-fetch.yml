@@ -36,6 +36,8 @@ jobs:
 
       - name: Run fetch-sources
         run: node scripts/fetch-sources.js
+        env:
+          SOCIALDATA_API_KEY: ${{ secrets.SOCIALDATA_API_KEY }}
 
       - name: Commit snapshot
         run: |

@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'Google DeepMind (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/a99538443a484fcc846bdcc8f50745ec',
+  handle: 'GoogleDeepMind',
+  userId: '4783690002',
 });

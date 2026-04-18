@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'DeepSeek (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/68b610deb24b47ae9a236811563cda86',
+  handle: 'deepseek_ai',
+  userId: '1714580962569588736',
 });

@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'OpenAI (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/0c0856a69f9f49cf961018c32a0b0049',
+  handle: 'OpenAI',
+  userId: '4398626122',
 });

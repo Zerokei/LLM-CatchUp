@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'Andrej Karpathy (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/edf707b5c0b248579085f66d7a3c5524',
+  handle: 'karpathy',
+  userId: '33836629',
 });

@@ -1,6 +1,7 @@
-const { makeRssRoute } = require('../lib/rss-route');
+const { makeTwitterRoute } = require('../lib/socialdata-twitter');
 
-module.exports = makeRssRoute({
+module.exports = makeTwitterRoute({
   name: 'Mistral AI (Twitter)',
-  sourceUrl: 'https://api.xgo.ing/rss/user/8d2d03aea8af49818096da4ea00409d1',
+  handle: 'MistralAI',
+  userId: '1667249535519805451',
 });
