@@ -133,10 +133,15 @@ module.exports = {
 
 async function main() {
   const apiKey = process.env.RESEND_API_KEY;
-  const to = process.env.RESEND_TO;
+  const toRaw = process.env.RESEND_TO;
   const from = process.env.RESEND_FROM || 'onboarding@resend.dev';
   if (!apiKey) throw new Error('missing env RESEND_API_KEY');
-  if (!to) throw new Error('missing env RESEND_TO');
+  if (!toRaw) throw new Error('missing env RESEND_TO');
+  // Support multiple recipients: comma-separated list. Resend's SDK accepts
+  // either a string or an array; single-recipient configs remain backwards
+  // compatible because split(',') on one address yields a one-element array.
+  const to = toRaw.split(',').map((s) => s.trim()).filter(Boolean);
+  if (to.length === 0) throw new Error('RESEND_TO parsed to zero recipients');
 
   const repoRoot = process.cwd();
   let targets = [];
