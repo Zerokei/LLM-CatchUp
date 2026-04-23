@@ -1,4 +1,5 @@
 const crypto = require('node:crypto');
+const { execSync } = require('node:child_process');
 
 function urlHash(url) {
   return crypto.createHash('sha256').update(url).digest('hex');
@@ -77,8 +78,38 @@ function applyRetention(history, now, retentionDays) {
   return removed;
 }
 
+function defaultShell(cmd) {
+  return execSync(cmd, { encoding: 'utf8', stdio: ['ignore', 'pipe', 'pipe'] });
+}
+
+async function manageAlerts(health, prevHealth, { shell } = {}) {
+  const run = shell || defaultShell;
+  for (const [name, h] of Object.entries(health)) {
+    const prev = prevHealth[name] || { status: 'healthy' };
+    if (h.status === 'alert' && prev.status !== 'alert') {
+      const raw = await run(`gh issue list --label source-alert --state open --json number,title`);
+      const issues = JSON.parse(raw || '[]');
+      const hasOpen = issues.some((i) => i.title.includes(name));
+      if (!hasOpen) {
+        const title = `CatchUp: ${name} 连续抓取失败`;
+        const body = `Source: ${name}\nConsecutive failures: ${h.consecutive_failures}\nLast error: ${h.last_error}`;
+        await run(`gh issue create --title ${JSON.stringify(title)} --label source-alert --body ${JSON.stringify(body)}`);
+      }
+    }
+    if (prev.status === 'alert' && h.status === 'healthy') {
+      const raw = await run(`gh issue list --label source-alert --state open --json number,title`);
+      const issues = JSON.parse(raw || '[]');
+      const match = issues.find((i) => i.title.includes(name));
+      if (match) {
+        await run(`gh issue close ${match.number} --comment "Source recovered and is now healthy."`);
+      }
+    }
+  }
+}
+
 module.exports = {
   urlHash,
   filterAlreadyReported, mergeThreads, applyDuplicateOf, filterByImportance,
   appendToHistory, applyRetention,
+  manageAlerts,
 };
