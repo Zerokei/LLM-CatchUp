@@ -113,3 +113,126 @@ module.exports = {
   appendToHistory, applyRetention,
   manageAlerts,
 };
+
+const fs = require('node:fs');
+const path = require('node:path');
+const yaml = require('js-yaml');
+const { renderReport } = require('./lib/render-report');
+const { updateSourceHealth } = require('./lib/health');
+
+const PROJECT_ROOT = path.resolve(__dirname, '..');
+const FETCH_CACHE_DIR = path.join(PROJECT_ROOT, 'data/fetch-cache');
+const ANALYSIS_CACHE_DIR = path.join(PROJECT_ROOT, 'data/analysis-cache');
+const HISTORY_PATH = path.join(PROJECT_ROOT, 'data/history.json');
+const HEALTH_PATH = path.join(PROJECT_ROOT, 'data/health.json');
+const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml');
+const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports/daily');
+
+function shanghaiDate() {
+  return new Intl.DateTimeFormat('sv-SE', {
+    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+  }).format(new Date());
+}
+
+async function main() {
+  const date = process.env.REPORT_DATE || shanghaiDate();
+  const fetchCachePath = path.join(FETCH_CACHE_DIR, `${date}.json`);
+  const analysisCachePath = path.join(ANALYSIS_CACHE_DIR, `${date}.json`);
+
+  if (!fs.existsSync(fetchCachePath)) {
+    console.error(`fetch-cache missing: ${fetchCachePath}`);
+    process.exit(1);
+  }
+  if (!fs.existsSync(analysisCachePath)) {
+    console.error(`analysis-cache missing: ${analysisCachePath} — routine did not produce one; fallback-report.yml is expected to handle this`);
+    process.exit(0);  // not an error condition for this workflow; the fallback path is what handles it
+  }
+
+  const fetchCache = JSON.parse(fs.readFileSync(fetchCachePath, 'utf8'));
+  const analysisCache = JSON.parse(fs.readFileSync(analysisCachePath, 'utf8'));
+  const history = fs.existsSync(HISTORY_PATH)
+    ? JSON.parse(fs.readFileSync(HISTORY_PATH, 'utf8')) : { articles: {}, last_fetch: null };
+  const healthBefore = fs.existsSync(HEALTH_PATH)
+    ? JSON.parse(fs.readFileSync(HEALTH_PATH, 'utf8')) : {};
+  const config = yaml.load(fs.readFileSync(CONFIG_PATH, 'utf8'));
+
+  const minImportance = config.filtering?.min_importance ?? 2;
+  const retentionDays = config.retention_days || 90;
+  const failureThreshold = config.alerting?.consecutive_failure_threshold || 3;
+
+  // Step 1 — filter out articles already reported (URL-hash dedup)
+  const fresh = filterAlreadyReported(analysisCache.articles, history);
+
+  // Step 2 — thread merge (by thread_group_id)
+  const afterThreads = mergeThreads(fresh);
+
+  // Step 3 — duplicate_of → also_covered_by
+  const canonical = applyDuplicateOf(afterThreads);
+
+  // Step 4 — sort by importance desc, then published_at desc
+  canonical.sort((a, b) =>
+    (b.importance - a.importance) || String(b.published_at).localeCompare(String(a.published_at)));
+
+  // Step 5 — importance filter for the report body
+  const articlesInReport = filterByImportance(canonical, minImportance);
+
+  // Step 6 — render markdown
+  const rawFetched = Object.values(fetchCache.sources).reduce((n, s) => n + (s.articles?.length || 0), 0);
+  const sourcesWithContent = Object.values(fetchCache.sources).filter((s) => (s.articles?.length || 0) > 0).length;
+  const sourceStatuses = Object.entries(fetchCache.sources).map(([name, s]) => ({
+    name,
+    status_note: s.status === 'ok'
+      ? `✅ 正常（窗口内 ${s.articles.length} 文）`
+      : s.status === 'degraded_stale'
+        ? `⚠️ 过期（${s.error}）`
+        : `❌ 错误（${s.error}）`,
+  }));
+  const md = renderReport({
+    date,
+    articlesInReport,
+    rawFetched,
+    mergedCount: canonical.length,
+    sourcesWithContent,
+    filteredLowImportance: canonical.length - articlesInReport.length,
+    trendParagraph: analysisCache.trend_paragraph || '（无趋势段）',
+    sourceStatuses,
+  });
+  fs.mkdirSync(REPORTS_DIR, { recursive: true });
+  fs.writeFileSync(path.join(REPORTS_DIR, `${date}.md`), md);
+
+  // Step 7 — append to history
+  appendToHistory(history, canonical, analysisCache.analyzed_at || fetchCache.fetched_at);
+  const removed = applyRetention(history, new Date(), retentionDays);
+  console.error(`retention cleanup: removed ${removed} entries`);
+  fs.writeFileSync(HISTORY_PATH, JSON.stringify(history, null, 2) + '\n');
+
+  // Step 8 — update health
+  const healthAfter = {};
+  for (const [name, entry] of Object.entries(fetchCache.sources)) {
+    healthAfter[name] = updateSourceHealth(healthBefore[name], entry, fetchCache.fetched_at, failureThreshold);
+  }
+  // carry forward any entries in healthBefore that aren't in today's fetch-cache
+  for (const [name, h] of Object.entries(healthBefore)) {
+    if (!(name in healthAfter)) healthAfter[name] = h;
+  }
+  fs.writeFileSync(HEALTH_PATH, JSON.stringify(healthAfter, null, 2) + '\n');
+
+  // Step 9 — issues
+  await manageAlerts(healthAfter, healthBefore);
+
+  // Step 10 — git add / commit / push
+  const run = (c) => execSync(c, { stdio: 'inherit' });
+  run(`git add data/history.json data/health.json reports/daily/${date}.md`);
+  // If the working tree has no changes (idempotent re-run), skip commit
+  try {
+    execSync('git diff --cached --quiet', { stdio: 'ignore' });
+    console.error('no changes to commit');
+  } catch {
+    run(`git commit -m "chore(catchup): daily report ${date}"`);
+    run('git push');
+  }
+}
+
+if (require.main === module) {
+  main().catch((err) => { console.error('fatal:', err); process.exit(2); });
+}
