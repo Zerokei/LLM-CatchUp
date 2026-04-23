@@ -1,0 +1,51 @@
+name: Fallback Report
+
+on:
+  schedule:
+    - cron: '0 4 * * *'  # 12:00 Asia/Shanghai — 4h 23min after daily-fetch
+  workflow_dispatch:
+    inputs:
+      report_date:
+        description: 'YYYY-MM-DD (Asia/Shanghai). Defaults to today if empty.'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+concurrency:
+  group: fallback-report
+  cancel-in-progress: false
+
+jobs:
+  fallback:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Configure git
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Run fallback
+        run: node scripts/fallback-report.js
+        env:
+          REPORT_DATE: ${{ inputs.report_date }}
