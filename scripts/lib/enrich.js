@@ -16,6 +16,7 @@ async function jinaFetch(url, { fetchImpl } = {}) {
 
 const BLOG_ENRICH_SOURCES = new Set([
   'OpenAI Blog', 'Google AI Blog', 'Anthropic Blog', 'Anthropic Research', 'The Batch',
+  '宝玉的分享',
 ]);
 
 const PRIMARY_BLOG_URL_PATTERNS = [
