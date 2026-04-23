@@ -4,6 +4,7 @@ const path = require('node:path');
 const yaml = require('js-yaml');
 
 const routes = require('./routes');
+const { enrichSnapshot } = require('./lib/enrich');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml');
@@ -142,6 +143,10 @@ async function main() {
     };
     anySuccess = true;
   }
+
+  console.error('enriching articles via Jina Reader...');
+  await enrichSnapshot(output, sourceConfigs);
+  console.error('enrichment done');
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   const outPath = path.join(CACHE_DIR, `${shanghaiDateStr(fetchedAt)}.json`);
