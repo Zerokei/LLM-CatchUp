@@ -31,6 +31,7 @@ module.exports = {
         url: p.canonical_url || `${CANONICAL_BASE}/p/${p.slug}`,
         published_at: p.post_date || null,
         description: (p.subtitle || p.description || p.truncated_body_text || '').trim().slice(0, 500) || null,
+        full_text: (p.truncated_body_text || p.description || '').trim() || null,
       }));
       return { articles, error: null };
     } catch (err) {
