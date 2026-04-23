@@ -8,6 +8,7 @@ const {
   urlHash,
   appendToHistory,
   applyRetention,
+  manageAlerts,
 } = require('./build-report');
 
 test('urlHash: sha256 hex of URL — 64-char, deterministic, differs per URL', () => {
@@ -99,4 +100,46 @@ test('applyRetention: removes entries older than cutoff', () => {
   const removed = applyRetention(history, now, 90);
   assert.equal(removed, 1);
   assert.deepEqual(Object.keys(history.articles).sort(), ['h2', 'h3']);
+});
+
+test('manageAlerts: opens new issue when alert source has no existing open issue', async () => {
+  const shellCalls = [];
+  const shell = async (cmd) => {
+    shellCalls.push(cmd);
+    if (cmd.startsWith('gh issue list')) return '[]';  // no existing
+    if (cmd.startsWith('gh issue create')) return 'https://github.com/foo/bar/issues/42';
+    return '';
+  };
+  const health = {
+    'OpenAI Blog': { status: 'alert', consecutive_failures: 3, last_error: 'HTTP 500' },
+    'Google AI Blog': { status: 'healthy', consecutive_failures: 0 },
+  };
+  const prevHealth = { 'OpenAI Blog': { status: 'degraded', consecutive_failures: 2 } };
+  await manageAlerts(health, prevHealth, { shell });
+  assert.ok(shellCalls.some((c) => c.includes('gh issue list')));
+  assert.ok(shellCalls.some((c) => c.startsWith('gh issue create') && c.includes('OpenAI Blog')));
+});
+
+test('manageAlerts: closes issue when previously-alerting source is now healthy', async () => {
+  const shellCalls = [];
+  const shell = async (cmd) => {
+    shellCalls.push(cmd);
+    if (cmd.startsWith('gh issue list')) {
+      return JSON.stringify([{ number: 7, title: 'CatchUp: OpenAI Blog 连续抓取失败' }]);
+    }
+    return '';
+  };
+  const health = { 'OpenAI Blog': { status: 'healthy', consecutive_failures: 0 } };
+  const prevHealth = { 'OpenAI Blog': { status: 'alert', consecutive_failures: 3 } };
+  await manageAlerts(health, prevHealth, { shell });
+  assert.ok(shellCalls.some((c) => c.startsWith('gh issue close 7')));
+});
+
+test('manageAlerts: does nothing for sources that stayed healthy', async () => {
+  const shellCalls = [];
+  const shell = async (cmd) => { shellCalls.push(cmd); return '[]'; };
+  const health = { 'OpenAI Blog': { status: 'healthy', consecutive_failures: 0 } };
+  const prevHealth = { 'OpenAI Blog': { status: 'healthy', consecutive_failures: 0 } };
+  await manageAlerts(health, prevHealth, { shell });
+  assert.equal(shellCalls.length, 0);
 });
