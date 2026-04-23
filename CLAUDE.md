@@ -4,11 +4,15 @@ An automated AI news aggregation system powered by Claude Code Cloud Scheduled T
 
 ## How It Works
 
-This repo has two runtime halves:
+This repo has three runtime stages, in order:
 
-**Fetcher half** — `scripts/fetch-sources.js` runs in a daily GitHub Actions workflow (cron `37 23 * * *` UTC = 07:37 Asia/Shanghai). It reads `config.yaml`, fetches each source using route modules under `scripts/routes/`, filters each source's articles to a 30h window (slight overlap covers cron drift), and writes the snapshot to `data/fetch-cache/{YYYY-MM-DD}.json`.
+**Stage 1 — Fetcher** (`.github/workflows/daily-fetch.yml`, cron `37 23 * * *` UTC = 07:37 Asia/Shanghai). `scripts/fetch-sources.js` reads `config.yaml`, fetches each source via route modules under `scripts/routes/`, filters to a 30h window, enriches blog sources via Jina Reader (`scripts/lib/enrich.js`) and extracts full_text/linked_content where possible, and writes the snapshot to `data/fetch-cache/{YYYY-MM-DD}.json`.
 
-**Reporter half** — Claude Code Cloud Scheduled Triggers run daily / weekly / monthly. The daily trigger reads the pre-built fetch-cache snapshot (it does NOT fetch external URLs), analyzes articles, generates a markdown report in `reports/`, updates `data/history.json` and `data/health.json`, and commits/pushes.
+**Stage 2 — Analyzer** (Claude Code Cloud Scheduled Trigger, runs shortly after fetch). The trigger reads `data/fetch-cache/{date}.json` and writes per-article `{summary, category, importance, tags, practice_suggestions, thread_group_id, duplicate_of}` plus a whole-batch `trend_paragraph` to `data/analysis-cache/{date}.json`. Incrementally persisted per article — partial work survives interruptions. Commits and pushes that single file. Does NOT render the markdown report, touch history/health, or manage issues. Prompt: `docs/prompts/daily-trigger.md`; synced to the live trigger via `.claude/skills/sync-daily-trigger/`.
+
+**Stage 3 — Reporter** (`.github/workflows/build-report.yml`, triggered on push to `data/analysis-cache/**`). `scripts/build-report.js` reads fetch-cache + analysis-cache + history + health + config, does URL-hash dedup against history, merges threads, applies `duplicate_of`, renders the markdown report via `scripts/lib/render-report.js`, updates `data/history.json` + `data/health.json`, opens/closes GitHub issues for alerts, and commits+pushes the report + state files.
+
+**Safety net — Fallback** (`.github/workflows/fallback-report.yml`, cron `0 4 * * *` UTC = 12:00 CST). `scripts/fallback-report.js` checks if `reports/daily/{today}.md` exists; if not (Stage 2 or 3 failed), it renders a title+link-only report from fetch-cache alone and commits+pushes. This guarantees the email subscriber always gets something.
 
 ## Key Files
 
@@ -49,41 +53,21 @@ For newsletter-style sources (Berkeley RDI, The Batch) whose articles bundle mul
 
 After collecting across sources, perform two rounds of semantic dedup: (1) compare new articles against the past 14 days in `history.json` — if a topic was already covered, update the existing entry's `extras.also_covered_by` list instead of creating a duplicate; (2) compare new articles against each other — keep `primary` (official blogs, first-party Twitter) over `aggregator` (newsletters, roundups, personal accounts).
 
-### Analysis
-- For each new article, produce: summary (2-3 sentences), category (from config categories list), importance (1-5)
-- Apply each analysis dimension from `config.yaml` `analysis.dimensions`, respecting `condition` fields
-- Use Chinese for all analysis output
+## Rules for the Daily Trigger (post-slim)
 
-### Report Generation
-- Follow the format in `docs/report-examples/` for the corresponding report type
-- Daily: all today's articles sorted by importance
-- Weekly: aggregate from `data/history.json` articles in the past 7 days
-- Monthly: aggregate from `data/history.json` articles in the past 30 days
+The daily trigger is now "analysis-only". Its full procedure lives in `docs/prompts/daily-trigger.md`. Summary:
 
-### Health Monitoring
+- Read `data/fetch-cache/{date}.json`; abort cleanly if missing (no WebFetch fallback)
+- For each new article, produce `{summary, category, importance, tags, practice_suggestions?, thread_group_id?, duplicate_of?}`
+- Use `linked_content` > `full_text` > `quoted_tweet.text + description` > `description` as summary basis
+- Detect thread groups (self-reply chain within 5 min) and cross-source duplicates
+- Write trend_paragraph
+- Persist incrementally per article into `data/analysis-cache/{date}.json`
+- Commit that one file only
 
-The fetch-cache produces one of three statuses per source:
-- `ok` — HTTP succeeded, newest item within the source's `max_silence_hours` threshold (or no threshold declared).
-- `degraded_stale` — HTTP succeeded, but either the newest item is older than `max_silence_hours` OR the fetch returned zero items with a threshold set. Indicates an upstream freeze (e.g., a Twitter-to-RSS mirror no longer syncing, or an empty feed). Distinct from `error` because the fetcher did not throw.
-- `error` — HTTP error, parse failure, or route logic error. Message in the `error` field.
+Deterministic concerns (report rendering, history/health updates, retention, GH issues, commits of reports) are outside the trigger's scope — see `scripts/build-report.js`.
 
-For each source, update `data/health.json`:
-- `ok` → status "healthy", reset `consecutive_failures` to 0.
-- `degraded_stale` or `error` → increment `consecutive_failures`, copy the `error` field into `last_error`. If `consecutive_failures` < `alerting.consecutive_failure_threshold` from config: status "degraded". If >= threshold: status "alert" (see alert handling below).
-
-For each source with status `"alert"`:
-1. Check `gh issue list --label source-alert --state open` for an existing open issue.
-2. If none exists, open one with `gh issue create --title "CatchUp: [Source Name] 连续失败" --label source-alert --body "<diagnosis>"`. Body should include source name, URL, error type, consecutive_failure count, diagnosis, and fix suggestions.
-
-For each previously-alerting source that is now healthy, close its open issue with a recovery comment.
-
-### Data Cleanup
-- During daily runs, remove articles from `data/history.json` where `fetched_at` is older than `retention_days` from config
-
-### Committing
-- Stage all changed files: `data/history.json`, `data/health.json`, new report files
-- Commit with message: `chore(catchup): daily report YYYY-MM-DD` (or weekly/monthly)
-- Push to the repository
+Weekly and monthly triggers are unchanged (they aggregate from `data/history.json` and are less frequent; they'll be revisited if they start breaking).
 
 ## External dependencies
 
