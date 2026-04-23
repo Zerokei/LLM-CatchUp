@@ -31,23 +31,24 @@ For each source in `fetch-cache.sources` with `status === "ok"` or `status === "
 
 For each article, determine:
 
-1. **summary** — 2-3 Chinese sentences capturing the key point. Prioritize content sources in this order:
+1. **title** — a concise Chinese title (≤ 40 汉字 or ≤ 60 字符) capturing the article's central claim. Do NOT just truncate the raw tweet text / fetch-cache title — synthesize. Examples of good titles: "Anthropic × Amazon 扩大合作：5GW 算力 + 50 亿美元追投", "Qwen3.6-27B：27B 稠密开源模型打平 397B-A17B 代码基准", "OpenAI 推出 Workspace Agents：Codex 驱动的企业 Agent 研究预览". Bad titles (do not produce): raw tweet first-200-chars; abstract hashtag dumps; single words.
+2. **summary** — 2-3 Chinese sentences capturing the key point. Prioritize content sources in this order:
    - `article.linked_content` (Twitter primary, jina-fetched blog body the tweet points to)
    - `article.full_text` (blog, jina-fetched body)
    - `article.quoted_tweet.text + article.description` (when quote-tweet)
    - `article.description` (fallback)
-2. **category** — one of: `模型发布`, `研究`, `产品与功能`, `商业动态`, `政策与安全`, `教程与观点`
-3. **importance** — integer 1-5. Base score:
+3. **category** — one of: `模型发布`, `研究`, `产品与功能`, `商业动态`, `政策与安全`, `教程与观点`
+4. **importance** — integer 1-5. Base score:
    - **5** NEW MODEL RELEASE (GPT-5, Claude 5, Gemini 3, major open-weight SOTA)
    - **4** SIGNIFICANT RESEARCH/PRODUCT (paper with empirical result, major product launch, minor version with real capability gain)
    - **3** NOTABLE UPDATE (feature release, partnership, funding, policy/regulatory, expert deep-dive)
    - **2** INCREMENTAL (small feature tweak, single observation)
    - **1** LOW-SIGNAL (greeting, meme, pure RT, reply fragment)
    Modifier: -1 if source role is `aggregator` AND raw text starts with `RT @` or `@<handle>` (pure retweet/reply).
-4. **tags** — 3-5 Chinese keywords (array).
-5. **practice_suggestions** — 1-3 concrete actionable Chinese suggestions with operating steps, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit the field otherwise.
-6. **thread_group_id** — if this article is one of a self-reply chain of tweets from the same author within 5 minutes covering the same topic, assign them a shared id like `thread-{screen_name}-{YYYYMMDD-HHMM}`. Non-thread articles get `null`.
-7. **duplicate_of** — if this article covers the same topic as another article in today's batch, and that other article is from a `role: primary` source (while this one is aggregator), set `duplicate_of` to the canonical article's URL. Non-duplicates get `null`.
+5. **tags** — 3-5 Chinese keywords (array).
+6. **practice_suggestions** — 1-3 concrete actionable Chinese suggestions with operating steps, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit the field otherwise.
+7. **thread_group_id** — if this article is one of a self-reply chain of tweets from the same author within **5 minutes** covering the same topic, assign them a shared id like `thread-{screen_name}-{YYYYMMDD-HHMM}`. The 5-minute constraint is strict — tweets more than 5 minutes apart are NOT a thread even if they cover the same topic; use `duplicate_of` for those cases instead. Non-thread articles get `null`.
+8. **duplicate_of** — if this article covers the same topic as another article in today's batch, and that other article is from a `role: primary` source (while this one is aggregator), set `duplicate_of` to the canonical article's URL. Non-duplicates get `null`.
 
 ### Step 5: Write incremental progress
 
@@ -63,6 +64,7 @@ The article JSON shape:
 {
   "url": "...",
   "source": "...",
+  "title": "...",
   "summary": "...",
   "category": "...",
   "importance": 4,

@@ -160,6 +160,22 @@ async function main() {
   const retentionDays = config.retention_days || 90;
   const failureThreshold = config.alerting?.consecutive_failure_threshold || 3;
 
+  // Step 0 — backfill published_at from fetch-cache. Title should be an
+  // LLM-generated Chinese title provided by the analyzer (analysis-cache.title);
+  // if missing, fall back to fetch-cache title (raw article/tweet text, often
+  // truncated) so the report is never empty-titled.
+  const fcByUrl = new Map();
+  for (const entry of Object.values(fetchCache.sources)) {
+    for (const a of entry.articles || []) fcByUrl.set(a.url, a);
+  }
+  for (const a of analysisCache.articles) {
+    const fc = fcByUrl.get(a.url);
+    if (fc) {
+      if (!a.title) a.title = fc.title;  // last-resort fallback
+      if (!a.published_at) a.published_at = fc.published_at;
+    }
+  }
+
   // Step 1 — filter out articles already reported (URL-hash dedup)
   const fresh = filterAlreadyReported(analysisCache.articles, history);
 
