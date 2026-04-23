@@ -14,4 +14,18 @@ async function jinaFetch(url, { fetchImpl } = {}) {
   }
 }
 
-module.exports = { jinaFetch, JINA_BASE, MAX_CHARS };
+const BLOG_ENRICH_SOURCES = new Set([
+  'OpenAI Blog', 'Google AI Blog', 'Anthropic Blog', 'Anthropic Research', 'The Batch',
+]);
+
+async function enrichSnapshot(snapshot, sourceConfigs, { fetchImpl } = {}) {
+  for (const [sourceName, entry] of Object.entries(snapshot.sources)) {
+    if (entry.status !== 'ok' && entry.status !== 'degraded_stale') continue;
+    if (!BLOG_ENRICH_SOURCES.has(sourceName)) continue;
+    for (const article of entry.articles) {
+      article.full_text = await jinaFetch(article.url, { fetchImpl });
+    }
+  }
+}
+
+module.exports = { jinaFetch, enrichSnapshot, BLOG_ENRICH_SOURCES, JINA_BASE, MAX_CHARS };
