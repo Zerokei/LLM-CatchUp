@@ -8,7 +8,10 @@
 
 CatchUp has two concurrent reliability issues:
 
-**Issue A — Low-quality input for blog sources.** The fetcher captures only `{title, url, published_at, description}`. For Twitter the tweet IS the content, so `description` is fine. For RSS/web-scraped blog sources (OpenAI Blog, Google AI Blog, Anthropic Blog, Anthropic Research, The Batch), `description` is the RSS summary — usually one to two sentences, often near-identical to the title. Claude's daily "summary" is therefore a paraphrase of an already-terse summary, not of the actual article body. This shows up in reports as shallow blog summaries compared to rich tweet summaries.
+**Issue A — Low-quality input for blog AND Twitter sources.** The fetcher captures only `{title, url, published_at, description}`. Two different gaps:
+
+- *Blog sources* (OpenAI Blog, Google AI Blog, Anthropic Blog, Anthropic Research, The Batch): `description` is the RSS summary — usually one to two sentences, often near-identical to the title. Claude's "summary" is a paraphrase of an already-terse summary, not of the actual article body.
+- *Twitter sources*: `description` is the tweet's `full_text`, which is complete for standalone tweets but strips the **richer context** that socialdata.tools actually returns: `entities.urls[].expanded_url` (t.co → real URL), `quoted_status` (the tweet being quote-tweeted), `in_reply_to_*` fields (reply/thread context), media entities. For primary-source accounts like @AnthropicAI / @OpenAI / @claudeai, most high-signal tweets are announcement pointers — "Read more: https://t.co/xyz" — where **the linked blog IS the content**, not the tweet text. We currently have no way to follow t.co because we don't preserve the expanded URL. Evidence in today's fetch: the Qwen3.6-Max-Preview tweet's `title` was literally truncated mid-word at "instruction followi" because the raw text ends with "Blog: https://t.co/6hDQJhmkjM" — a pointer to a blog we never resolve.
 
 **Issue B — Daily routine keeps hanging.** The Claude Cloud Scheduled Trigger runs a ~220-line prompt spanning 11 sequential steps (load config/state/cache → semantic dedup → per-article analysis → render markdown → update history → retention cleanup → update health → handle gh-issue alerts → commit → push). The routine's failure rate has been high enough that 2026-04-20 and 2026-04-22 produced no daily report, and 2026-04-21 had to be generated manually. The fetcher side (GH Actions) and email side are rock solid; the single Claude run is the only unreliable link.
 
@@ -133,94 +136,175 @@ Blast radius per failure:
 
 ### 5.1 Scope
 
-Enrich the 5 blog-type sources:
+Enrichment has two distinct paths — **blog enrichment** fetches external article bodies via Jina; **Twitter enrichment** operates on both the raw socialdata response (route-level preservation) and selectively follows linked blog announcements (Jina).
+
+**Blog enrichment (via Jina):**
 
 | Source | Current `description` | Enrich? |
 |---|---|---|
-| OpenAI Blog | RSS summary (1-2 sent.) | ✅ |
-| Google AI Blog | RSS summary (1-2 sent.) | ✅ |
-| Anthropic Blog | listing snippet | ✅ |
-| Anthropic Research | listing snippet | ✅ |
-| The Batch | listing snippet | ✅ |
+| OpenAI Blog | RSS summary (1-2 sent.) | ✅ jina → `full_text` |
+| Google AI Blog | RSS summary (1-2 sent.) | ✅ jina → `full_text` |
+| Anthropic Blog | listing snippet | ✅ jina → `full_text` |
+| Anthropic Research | listing snippet | ✅ jina → `full_text` |
+| The Batch | listing snippet | ✅ jina → `full_text` |
 | Berkeley RDI | **already full text** via existing jina route | not in `ENRICH_SOURCES`; its route module `scripts/routes/berkeley-rdi.js` is updated to set `full_text` directly from the jina-fetched markdown (avoid double-fetching through jina). |
 | 宝玉的分享 | RSS `content:encoded` full body | not in `ENRICH_SOURCES`; its route `scripts/routes/baoyu.js` is verified/updated to set `full_text` from `content:encoded` if present. See §10 open question. |
-| 14 Twitter sources | tweet text (== full content) | ❌ |
+
+**Twitter enrichment (two-layer):**
+
+*Layer A — route-level preservation (`scripts/lib/socialdata-twitter.js`):* stop dropping fields that socialdata already returns. Specifically add:
+- `expanded_urls`: array of `{t_co, expanded_url, display_url}` from `t.entities.urls` — enables t.co resolution and the jina-fetch fallback below
+- `quoted_tweet`: `{author, text, url}` extracted from `t.quoted_status` if `t.is_quote_status`, else null
+- `reply_to`: `{screen_name, status_id}` from `t.in_reply_to_*` if present, else null
+- Stop truncating `title` at 200 chars — use the full text, or drop the `title` field entirely since `description == full_text` covers it
+
+*Layer B — linked-content enrichment (shared with blog enrichment via `scripts/lib/enrich.js`):* for tweets from **primary** sources (config `role: primary`), scan `expanded_urls` for URLs pointing to known primary-source blog domains (`anthropic.com/news/*`, `anthropic.com/research/*`, `openai.com/index/*`, `openai.com/research/*`, `blog.google/*`, `deepmind.google/*`, `deeplearning.ai/the-batch/*`) and `github.com/*` announcement repos. For matching URLs, fetch the target via jina and store as `linked_content`. This captures the actual announcement content behind "Read more: https://t.co/..." tweets.
+
+For aggregator Twitter sources (personal accounts like @sama, @karpathy), skip Layer B — their linked content is high-variance and less likely to be primary announcements; the risk of fetching noise outweighs the benefit.
 
 ### 5.2 Where enrichment lives
 
-**Decision: post-processing phase inside `scripts/fetch-sources.js`**, not inside individual route modules, not a separate script.
+**Layer A — route-level (Twitter only)**: modify `scripts/lib/socialdata-twitter.js` directly to preserve fields that already come back in the API response. No new external fetch. Zero new dependencies.
 
-Rationale:
+**Layer B — post-processing phase inside `scripts/fetch-sources.js`**, not inside individual route modules, not a separate script. Called right after the main per-source fetch loop, before writing the JSON file.
+
+Rationale for Layer B placement:
 - **Single GH Actions job, single commit** — fetch-cache is always fully enriched when it lands on disk.
 - **Route modules stay focused** — they answer "what articles exist in the 30h window", they don't need to know about enrichment policy.
-- **Enrichment logic cross-cuts** — per-host selectors/quirks live in one place.
+- **Enrichment logic cross-cuts** — per-host allowlists for primary blog URLs live in one place.
 
 New file: `scripts/lib/enrich.js`
 
 ```js
 // scripts/lib/enrich.js
-const ENRICH_SOURCES = new Set([
-  'OpenAI Blog',
-  'Google AI Blog',
-  'Anthropic Blog',
-  'Anthropic Research',
-  'The Batch',
+const BLOG_ENRICH_SOURCES = new Set([
+  'OpenAI Blog', 'Google AI Blog', 'Anthropic Blog', 'Anthropic Research', 'The Batch',
 ]);
+
+// For Twitter: which domains are worth following t.co → jina on.
+const PRIMARY_BLOG_URL_PATTERNS = [
+  /^https?:\/\/(www\.)?anthropic\.com\/(news|research)\//,
+  /^https?:\/\/(www\.)?openai\.com\/(index|research|blog)\//,
+  /^https?:\/\/blog\.google\//,
+  /^https?:\/\/(www\.)?deepmind\.google\//,
+  /^https?:\/\/(www\.)?deeplearning\.ai\/the-batch\//,
+];
 
 const JINA_BASE = 'https://r.jina.ai/';
 const TIMEOUT_MS = 20_000;
-const MAX_CHARS = 20_000;  // truncate extremely long pages; protects analysis-cache size
+const MAX_CHARS = 20_000;
 
-async function enrichArticle(article) {
+async function jinaFetch(url) {
   try {
-    const res = await fetchWithTimeout(JINA_BASE + article.url, {
+    const res = await fetchWithTimeout(JINA_BASE + url, {
       headers: { 'Accept': 'text/plain' },
     }, TIMEOUT_MS);
     if (!res.ok) return null;
-    const text = await res.text();
-    return text.slice(0, MAX_CHARS);
-  } catch {
-    return null;
-  }
+    return (await res.text()).slice(0, MAX_CHARS);
+  } catch { return null; }
 }
 
-async function enrichSnapshot(snapshot) {
+function isPrimaryBlogUrl(url) {
+  return PRIMARY_BLOG_URL_PATTERNS.some((re) => re.test(url));
+}
+
+async function enrichSnapshot(snapshot, sourceConfigs) {
+  const roleByName = Object.fromEntries(sourceConfigs.map((s) => [s.name, s.role]));
+  const typeByName = Object.fromEntries(sourceConfigs.map((s) => [s.name, s.type]));
+
   for (const [sourceName, entry] of Object.entries(snapshot.sources)) {
-    if (!ENRICH_SOURCES.has(sourceName)) continue;
     if (entry.status !== 'ok' && entry.status !== 'degraded_stale') continue;
+    const role = roleByName[sourceName];
+    const isTwitter = /Twitter/.test(sourceName);  // or detect via type === 'rss' && url host === x.com
+
     for (const article of entry.articles) {
-      article.full_text = await enrichArticle(article);
+      if (BLOG_ENRICH_SOURCES.has(sourceName)) {
+        article.full_text = await jinaFetch(article.url);
+      }
+      if (isTwitter && role === 'primary' && Array.isArray(article.expanded_urls)) {
+        for (const { expanded_url } of article.expanded_urls) {
+          if (isPrimaryBlogUrl(expanded_url)) {
+            article.linked_content = await jinaFetch(expanded_url);
+            break;  // one link is enough; most tweets point to one blog
+          }
+        }
+      }
     }
   }
 }
 
-module.exports = { enrichSnapshot, ENRICH_SOURCES };
+module.exports = { enrichSnapshot, BLOG_ENRICH_SOURCES, PRIMARY_BLOG_URL_PATTERNS };
 ```
 
-Called from `fetch-sources.js` right after the main per-source fetch loop, before writing the JSON file.
+And in `scripts/lib/socialdata-twitter.js`, update the `.map()` to preserve the extra fields:
+
+```js
+const articles = (data.tweets || []).map((t) => {
+  const screen = t.user?.screen_name || handle;
+  const text = (t.full_text || t.text || '').trim();
+  const expandedUrls = (t.entities?.urls || []).map((u) => ({
+    t_co: u.url,
+    expanded_url: u.expanded_url,
+    display_url: u.display_url,
+  }));
+  const quotedTweet = t.is_quote_status && t.quoted_status ? {
+    author: t.quoted_status.user?.screen_name,
+    text: (t.quoted_status.full_text || t.quoted_status.text || '').trim(),
+    url: t.quoted_status.user?.screen_name && t.quoted_status.id_str
+      ? `https://x.com/${t.quoted_status.user.screen_name}/status/${t.quoted_status.id_str}`
+      : null,
+  } : null;
+  const replyTo = t.in_reply_to_status_id_str ? {
+    screen_name: t.in_reply_to_screen_name,
+    status_id: t.in_reply_to_status_id_str,
+  } : null;
+  return {
+    title: text.slice(0, 200),  // kept for backward compatibility with existing history entries
+    url: `https://x.com/${screen}/status/${t.id_str}`,
+    published_at: t.tweet_created_at || null,
+    description: text,
+    expanded_urls: expandedUrls,
+    quoted_tweet: quotedTweet,
+    reply_to: replyTo,
+  };
+});
+```
 
 ### 5.3 fetch-cache schema change (non-breaking)
 
+Blog-source article:
 ```diff
  {
-   "fetched_at": "...",
-   "window_start": "...",
-   "window_hours": 30,
-   "sources": {
-     "OpenAI Blog": {
-       "status": "ok",
-       "articles": [
-         {
-           "title": "...",
-           "url": "...",
-           "published_at": "...",
--          "description": "..."
-+          "description": "...",
-+          "full_text": "..."          // markdown body, null if enrichment failed
-         }
-       ]
-     }
-   }
+   "title": "...",
+   "url": "...",
+   "published_at": "...",
+-  "description": "..."
++  "description": "...",
++  "full_text": "..."               // jina markdown, null if enrichment failed
+ }
+```
+
+Twitter-source article:
+```diff
+ {
+   "title": "...",                   // first 200 chars of description (compat)
+   "url": "...",
+   "published_at": "...",
+-  "description": "..."
++  "description": "...",
++  "expanded_urls": [                // from socialdata entities.urls
++    { "t_co": "https://t.co/xyz", "expanded_url": "https://openai.com/...", "display_url": "openai.com/..." }
++  ],
++  "quoted_tweet": {                 // null if not a quote-tweet
++    "author": "AnthropicAI",
++    "text": "...",
++    "url": "https://x.com/AnthropicAI/status/..."
++  },
++  "reply_to": {                     // null if not a reply
++    "screen_name": "sama",
++    "status_id": "..."
++  },
++  "linked_content": "..."           // present only for primary-role Twitter sources when expanded_urls contains a known primary blog pattern; null otherwise
  }
 ```
 
@@ -230,16 +314,17 @@ Old consumers that ignore unknown fields (every current reader) keep working.
 
 | Failure | Effect | Detection |
 |---|---|---|
-| Jina down | All 5 sources get `full_text: null` | Report quality degrades to today's level; no crash. Can count `null`s in fetch-cache as a health metric later. |
+| Jina down | All enriched sources get `full_text: null` / `linked_content: null` | Report quality degrades to today's level; no crash. Can count `null`s in fetch-cache as a health metric later. |
 | Jina returns partial/garbage | One article has low-quality text | Analysis still works (Claude is robust); noise tolerance. |
-| Individual URL blocked by jina | Single article `full_text: null` | Falls back to `description`. |
-| Jina rate limits | Same as "Jina down" | Not expected at ~10 articles/day (1M tokens/month free tier ≫ our usage). |
+| Individual URL blocked by jina | Single article enrichment field null | Falls back to `description`. |
+| Jina rate limits | Same as "Jina down" | At new expected volume (~10 blog + ~5 primary-Twitter link-follows/day ≈ 15 jina calls/day) still well within 1M tokens/month free tier. |
+| socialdata schema drift (e.g., `entities.urls[].expanded_url` renamed) | Twitter `expanded_urls` become `[]`; linked_content won't fire | Report degrades to today's level; detectable via a per-run log line counting expanded_urls populated. |
 
 ### 5.5 Cost & limits
 
-- Daily volume: ~5–10 blog articles/day × ~5KB/article = ~50KB/day pulled from Jina.
+- Daily volume: ~5–10 blog articles + ~3–7 primary-Twitter link-follows = ~10–17 jina calls/day × ~5KB each = ~85KB/day pulled from Jina.
 - Jina free tier: **1M tokens/month** (their metering unit) ≈ hundreds of articles. We are well under.
-- Added fetch time: ~2–5s per article, serial → +20–50s to daily-fetch (timeout budget 10min, no issue).
+- Added fetch time: ~2–5s per call, serial → +30–90s to daily-fetch (timeout budget 10min, no issue).
 
 ## 6. Phase 2 — Routine slim-down
 
@@ -276,8 +361,8 @@ update history, or manage health — a post-processor handles all that.
 1. Determine today's date (Asia/Shanghai, YYYY-MM-DD).
 2. Read `data/fetch-cache/{date}.json`. If missing, abort (one-line stderr, no commit).
 3. For each new article across all sources with status `ok` or `degraded_stale`:
-   - Determine `summary` (2-3 Chinese sentences, based on `full_text` if present
-     else `description`)
+   - Determine `summary` (2-3 Chinese sentences, prioritizing: `linked_content` (Twitter)
+     > `full_text` (blog) > `quoted_tweet.text` + `description` (Twitter quote) > `description`)
    - Determine `category` (from: 模型发布/研究/产品与功能/商业动态/政策与安全/教程与观点)
    - Determine `importance` (1-5, using the rubric below)
    - Extract `tags` (3-5 Chinese keywords)
