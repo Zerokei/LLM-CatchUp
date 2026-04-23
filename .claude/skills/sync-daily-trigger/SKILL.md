@@ -12,6 +12,8 @@ Pushes the current `docs/prompts/daily-trigger.md` content to the live CatchUp d
 
 The cloud scheduled trigger holds its own copy of the prompt, baked in at trigger-create time. Editing the repo file keeps `CLAUDE.md`'s claim that `docs/prompts/` is "source of truth" honest, but **the running trigger doesn't re-read from git** — it uses the embedded copy. The weekly and monthly triggers have the same property (separate skill if you need those too).
 
+**Prompt shape (as of 2026-04-22):** the daily prompt is now "analysis-only" — it produces `data/analysis-cache/{date}.json` and exits. A separate GH Actions workflow (`build-report.yml`) renders the final markdown report and updates history/health. If you're reading the prompt and it looks much shorter than the weekly/monthly ones, that's intentional — don't restore the removed steps.
+
 ## Procedure
 
 ### 1. List triggers to find the daily one
