@@ -57,17 +57,16 @@ For newsletter-style sources (Berkeley RDI, The Batch) whose articles bundle mul
 
 After collecting across sources, perform two rounds of semantic dedup: (1) compare new articles against the past 14 days in `history.json` — if a topic was already covered, update the existing entry's `extras.also_covered_by` list instead of creating a duplicate; (2) compare new articles against each other — keep `primary` (official blogs, first-party Twitter) over `aggregator` (newsletters, roundups, personal accounts).
 
-## Rules for the Daily Trigger (post-slim)
+## Rules for the Daily Trigger (subagent fan-out)
 
-The daily trigger is now "analysis-only". Its full procedure lives in `docs/prompts/daily-trigger.md`. Summary:
+The daily trigger is now "analysis-only" AND fan-out. Its full procedure lives in `docs/prompts/daily-trigger.md`. Summary:
 
 - Read `data/fetch-cache/{date}.json`; abort cleanly if missing (no WebFetch fallback)
-- For each new article, produce `{summary, category, importance, tags, practice_suggestions?, thread_group_id?, duplicate_of?}`
-- Use `linked_content` > `full_text` > `quoted_tweet.text + description` > `description` as summary basis
-- Detect thread groups (self-reply chain within 5 min) and cross-source duplicates
-- Write trend_paragraph
-- Persist incrementally per article into `data/analysis-cache/{date}.json`
-- Commit that one file only
+- Read `data/analysis-cache/{date}.json` for resume state; skip any URLs already analyzed
+- Chunk remaining articles into groups of ~10; dispatch one Agent subagent per chunk IN PARALLEL (all chunks in a single message)
+- Each subagent produces per-article `{title, summary, category, importance, tags, practice_suggestions?}` (6 fields) and carries through `thread_group_id` / `duplicate_of` UNMODIFIED from fetch-cache — those are deterministic now (see `scripts/lib/derive-refs.js`, populated during fetch)
+- Each subagent writes its chunk to `data/analysis-cache/{date}.chunk-{i}.json`; main agent merges + validates after all return
+- Main writes trend_paragraph, writes final `data/analysis-cache/{date}.json`, cleans up chunk files, commits
 
 Deterministic concerns (report rendering, history/health updates, retention, GH issues, commits of reports) are outside the trigger's scope — see `scripts/build-report.js`.
 
