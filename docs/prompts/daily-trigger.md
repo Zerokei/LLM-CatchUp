@@ -83,11 +83,12 @@ Return just "done" when the file is written.
 ### Step 6: Wait for all subagents, then merge
 
 When all subagent calls return, for each chunk `i` in `[0..chunks-1]`:
-- Read `data/analysis-cache/{date}.chunk-{i}.json`
+- Read `data/analysis-cache/{date}.chunk-{i}.json`.
+- If the file is missing OR JSON.parse throws (subagents occasionally emit unescaped ASCII `"` inside Chinese strings), note the chunk index and continue — the affected articles will be re-tried tomorrow since they won't be in the committed analysis-cache. Do NOT attempt a rescue parse.
 - For each article in the chunk, validate it has the required fields: `url`, `source`, `title` (non-empty string), `summary` (non-empty string), `category` (string), `importance` (integer 1-5), `tags` (array). Drop any article that fails this check and log which URL+reason to stderr — downstream `scripts/build-report.js` will crash on a malformed article, so it's safer to drop and retry tomorrow than to write a broken cache.
 - Append the surviving `articles[]` into the master articles list.
 
-If a chunk file is missing (subagent failed), note the chunk index and continue — the missed articles will be re-tried tomorrow since they won't be in the committed analysis-cache.
+Note: when building the subagent prompt in Step 5, add this sentence near the output-shape block: *"Emit STRICT JSON. If a Chinese summary needs to quote an English term, use corner quotes `「...」` instead of ASCII `\"...\"` — an unescaped ASCII `\"` inside a string breaks the whole chunk file."*
 
 ### Step 7: Assemble resume-merged articles
 
