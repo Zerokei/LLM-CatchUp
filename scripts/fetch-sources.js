@@ -5,6 +5,7 @@ const yaml = require('js-yaml');
 
 const routes = require('./routes');
 const { enrichSnapshot } = require('./lib/enrich');
+const { computeThreadGroups, computeDuplicates } = require('./lib/derive-refs');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml');
@@ -147,6 +148,27 @@ async function main() {
   console.error('enriching articles via Jina Reader...');
   await enrichSnapshot(output, sourceConfigs);
   console.error('enrichment done');
+
+  // Deterministic preprocessing of cross-article references so the LLM
+  // routine only does per-article work. See docs/prompts/daily-trigger.md
+  // Step 3 — these fields are authoritative from fetch-time.
+  const articlesBySource = {};
+  const sourceRoles = {};
+  const allArticles = [];
+  for (const [name, entry] of Object.entries(output.sources)) {
+    articlesBySource[name] = entry.articles || [];
+    sourceRoles[name] = configByName[name]?.role || null;
+    allArticles.push(...(entry.articles || []));
+  }
+  const threadGroups = computeThreadGroups(allArticles);
+  const duplicates = computeDuplicates(articlesBySource, sourceRoles);
+  for (const entry of Object.values(output.sources)) {
+    for (const a of entry.articles || []) {
+      a.thread_group_id = threadGroups.get(a.url) || null;
+      a.duplicate_of = duplicates.get(a.url) || null;
+    }
+  }
+  console.error(`derive-refs: ${threadGroups.size} thread members, ${duplicates.size} duplicates`);
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
   const outPath = path.join(CACHE_DIR, `${shanghaiDateStr(fetchedAt)}.json`);
