@@ -1,4 +1,4 @@
-# CatchUp Daily Trigger — Analysis Only
+# CatchUp Daily Trigger — Analysis Only (Subagent Fan-Out)
 
 You produce structured analysis of today's AI news into `data/analysis-cache/{date}.json`. You do NOT render the report, update history, update health, or manage GitHub issues — a post-processor handles all that.
 
@@ -18,81 +18,102 @@ Read `data/fetch-cache/{date}.json`.
 
 ### Step 3: Check for resume state
 
-Read `data/analysis-cache/{date}.json` if it exists. It is a partial analysis from an earlier run of this same trigger. Collect the URLs already present in `articles[].url` — call this set `analyzed_urls`.
+Read `data/analysis-cache/{date}.json` if it exists. Collect the URLs already present in `articles[].url` — call this set `analyzed_urls`.
 
-If the file does not exist, `analyzed_urls` is empty and you will create the file fresh.
+If the file does not exist, `analyzed_urls` is empty.
 
-### Step 4: Iterate new articles
+### Step 4: Collect remaining articles
 
-For each source in `fetch-cache.sources` with `status === "ok"` or `status === "degraded_stale"`:
-- For each article in `articles[]`:
-  - If `article.url` is in `analyzed_urls`: skip.
-  - Else: perform the analysis below.
+Iterate `fetch-cache.sources`. For each source with `status === "ok"` or `status === "degraded_stale"`, collect each `article` whose `url` is NOT in `analyzed_urls`. Attach the source name onto each article so the subagent can reference it. Call this list `remaining`.
 
-For each article, determine:
+If `remaining` is empty, skip to Step 8 (nothing to analyze; file unchanged).
 
-1. **title** — a concise Chinese title (≤ 40 汉字 or ≤ 60 字符) capturing the article's central claim. Do NOT just truncate the raw tweet text / fetch-cache title — synthesize. Examples of good titles: "Anthropic × Amazon 扩大合作：5GW 算力 + 50 亿美元追投", "Qwen3.6-27B：27B 稠密开源模型打平 397B-A17B 代码基准", "OpenAI 推出 Workspace Agents：Codex 驱动的企业 Agent 研究预览". Bad titles (do not produce): raw tweet first-200-chars; abstract hashtag dumps; single words.
-2. **summary** — 2-3 Chinese sentences capturing the key point. Prioritize content sources in this order:
-   - `article.linked_content` (Twitter primary, jina-fetched blog body the tweet points to)
-   - `article.full_text` (blog, jina-fetched body)
-   - `article.quoted_tweet.text + article.description` (when quote-tweet)
-   - `article.description` (fallback)
-3. **category** — one of: `模型发布`, `研究`, `产品与功能`, `商业动态`, `政策与安全`, `教程与观点`
-4. **importance** — integer 1-5. Base score:
-   - **5** NEW MODEL RELEASE (GPT-5, Claude 5, Gemini 3, major open-weight SOTA)
-   - **4** SIGNIFICANT RESEARCH/PRODUCT (paper with empirical result, major product launch, minor version with real capability gain)
-   - **3** NOTABLE UPDATE (feature release, partnership, funding, policy/regulatory, expert deep-dive)
-   - **2** INCREMENTAL (small feature tweak, single observation)
-   - **1** LOW-SIGNAL (greeting, meme, pure RT, reply fragment)
-   Modifier: -1 if source role is `aggregator` AND raw text starts with `RT @` or `@<handle>` (pure retweet/reply).
-5. **tags** — 3-5 Chinese keywords (array).
-6. **practice_suggestions** — 1-3 concrete actionable Chinese suggestions with operating steps, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit the field otherwise.
-7. **thread_group_id** — if this article is one of a self-reply chain of tweets from the same author within **5 minutes** covering the same topic, assign them a shared id like `thread-{screen_name}-{YYYYMMDD-HHMM}`. The 5-minute constraint is strict — tweets more than 5 minutes apart are NOT a thread even if they cover the same topic; use `duplicate_of` for those cases instead. Non-thread articles get `null`.
-8. **duplicate_of** — if this article covers the same topic as another article in today's batch, and that other article is from a `role: primary` source (while this one is aggregator), set `duplicate_of` to the canonical article's URL. Non-duplicates get `null`.
+### Step 5: Chunk and dispatch subagents
 
-### Step 5: Write incremental progress
+Split `remaining` into chunks of **10 articles** each (the last chunk may be smaller). For each chunk `i` (0-indexed), dispatch ONE subagent using the `Agent` tool. **Dispatch all chunks in a SINGLE message with multiple Agent tool calls** so they run in parallel.
 
-**After analyzing each article**:
-- Read the current contents of `data/analysis-cache/{date}.json` (or treat as `{articles: []}` if missing).
-- Append the new article's analysis to `articles[]`.
-- Write the whole file back.
+Each subagent receives a prompt of this shape:
 
-Keeping progress on disk after each article means a crash or timeout does not require re-analyzing everything.
+````
+You are a news-analyzer subagent for CatchUp. Analyze these {N} articles from today's batch and write your results to `data/analysis-cache/{date}.chunk-{i}.json`.
 
-The article JSON shape:
+For EACH article, produce a JSON object with these 6 fields:
+
+1. title — a concise Chinese title (≤ 40 汉字 or ≤ 60 字符) capturing the article's central claim. Do NOT just truncate the raw tweet text / fetch-cache title — synthesize. Examples of good titles: "Anthropic × Amazon 扩大合作：5GW 算力 + 50 亿美元追投", "Qwen3.6-27B：27B 稠密开源模型打平 397B-A17B 代码基准". Bad: raw tweet first-200-chars; hashtag dumps.
+2. summary — 2-3 Chinese sentences. Prioritize content in this order: `article.linked_content` > `article.full_text` > `article.quoted_tweet.text + article.description` > `article.description`.
+3. category — one of: 模型发布, 研究, 产品与功能, 商业动态, 政策与安全, 教程与观点
+4. importance — integer 1-5:
+   - 5: NEW MODEL RELEASE (GPT-5, Claude 5, Gemini 3, major open-weight SOTA)
+   - 4: SIGNIFICANT RESEARCH/PRODUCT (paper with empirical result, major product launch)
+   - 3: NOTABLE UPDATE (feature release, partnership, funding, policy/regulatory, expert deep-dive)
+   - 2: INCREMENTAL (small feature tweak, single observation)
+   - 1: LOW-SIGNAL (greeting, meme, reply fragment)
+5. tags — 3-5 Chinese keywords (array).
+6. practice_suggestions — 1-3 concrete actionable Chinese suggestions, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit otherwise.
+
+Also carry through two fields UNMODIFIED from the fetch-cache article (do NOT recompute): `thread_group_id`, `duplicate_of`. They are already authoritative.
+
+Write a single JSON file to `data/analysis-cache/{date}.chunk-{i}.json` with shape:
+
 ```json
 {
-  "url": "...",
-  "source": "...",
-  "title": "...",
-  "summary": "...",
-  "category": "...",
-  "importance": 4,
-  "tags": ["..."],
-  "practice_suggestions": ["..."],
-  "thread_group_id": null,
-  "duplicate_of": null
+  "chunk_index": {i},
+  "articles": [
+    {
+      "url": "...", "source": "...", "title": "...", "summary": "...",
+      "category": "...", "importance": N, "tags": ["..."],
+      "practice_suggestions": ["..."] (optional, omit if not applicable),
+      "thread_group_id": null_or_string,
+      "duplicate_of": null_or_string
+    },
+    ...
+  ]
 }
 ```
 
-(Omit `practice_suggestions` when not applicable. Use `null` for `thread_group_id` and `duplicate_of` when not set.)
+Articles to analyze:
 
-### Step 6: Trend paragraph
+{INLINE THE N ARTICLES HERE — full fields: url, source, title, published_at, description, full_text, linked_content, quoted_tweet, expanded_urls, reply_to, thread_group_id, duplicate_of}
 
-Once all articles are analyzed (no unprocessed URLs left), write the whole-batch **trend paragraph** (3-6 Chinese sentences synthesizing the day's themes). Update `data/analysis-cache/{date}.json` to include:
+Return just "done" when the file is written.
+````
+
+### Step 6: Wait for all subagents, then merge
+
+When all subagent calls return, for each chunk `i` in `[0..chunks-1]`:
+- Read `data/analysis-cache/{date}.chunk-{i}.json`
+- Append its `articles[]` into the master articles list
+
+If a chunk file is missing (subagent failed), note the chunk index and continue — the missed articles will be re-tried tomorrow since they won't be in the committed analysis-cache.
+
+### Step 7: Assemble resume-merged articles
+
+Merge:
+- Pre-existing `articles` from `data/analysis-cache/{date}.json` (if it existed at Step 3)
+- Plus the new articles from Step 6
+
+Call the combined list `final_articles`.
+
+### Step 8: Compute trend_paragraph
+
+Write a 3-6 Chinese sentence trend paragraph synthesizing the day's themes, based on `final_articles[*].title` + `summary`. (You do NOT need the raw articles — the summaries are enough.)
+
+### Step 9: Write the analysis-cache
+
+Write `data/analysis-cache/{date}.json`:
 
 ```json
 {
   "analyzed_at": "{ISO 8601 timestamp, Asia/Shanghai}",
   "fetch_cache_ref": "data/fetch-cache/{date}.json",
   "trend_paragraph": "...",
-  "articles": [ ... all articles analyzed above ... ]
+  "articles": [ ...final_articles ]
 }
 ```
 
-If the trigger is re-run and the file already has a `trend_paragraph` but new articles were added, regenerate the trend paragraph to reflect the full current batch.
+### Step 10: Cleanup and commit
 
-### Step 7: Commit and push
+Delete all `data/analysis-cache/{date}.chunk-*.json` scratch files.
 
 ```bash
 git add data/analysis-cache/{date}.json
@@ -100,4 +121,4 @@ git commit -m "chore(catchup): daily analysis {date}"
 git push
 ```
 
-If the file was unchanged (no new articles to add, e.g., resume after full batch was already done), skip the commit.
+If `git diff --cached` is empty (no new articles this run), skip the commit.
