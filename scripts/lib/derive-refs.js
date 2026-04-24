@@ -50,4 +50,30 @@ function computeThreadGroups(articles) {
   return groups;
 }
 
-module.exports = { extractHandleFromUrl, computeThreadGroups };
+function computeDuplicates(articlesBySource, sourceRoles) {
+  const primaryUrls = new Set();
+  for (const [sourceName, articles] of Object.entries(articlesBySource)) {
+    if (sourceRoles[sourceName] === 'primary') {
+      for (const a of articles) primaryUrls.add(a.url);
+    }
+  }
+
+  const dups = new Map();
+  for (const [sourceName, articles] of Object.entries(articlesBySource)) {
+    if (sourceRoles[sourceName] !== 'aggregator') continue;
+    for (const a of articles) {
+      const refs = [];
+      if (a.quoted_tweet?.url) refs.push(a.quoted_tweet.url);
+      if (a.expanded_urls) refs.push(...a.expanded_urls.map((u) => u.expanded_url).filter(Boolean));
+      for (const ref of refs) {
+        if (primaryUrls.has(ref)) {
+          dups.set(a.url, ref);
+          break;
+        }
+      }
+    }
+  }
+  return dups;
+}
+
+module.exports = { extractHandleFromUrl, computeThreadGroups, computeDuplicates };

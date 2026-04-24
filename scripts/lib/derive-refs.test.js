@@ -117,3 +117,73 @@ test('computeThreadGroups: orphan reply (parent not in batch) is own root', () =
   ];
   assert.equal(computeThreadGroups(articles).size, 0);
 });
+
+const { computeDuplicates } = require('./derive-refs');
+
+test('computeDuplicates: aggregator quoting primary → duplicate_of primary URL', () => {
+  const articlesBySource = {
+    'OpenAI (Twitter)': [
+      { url: 'https://x.com/OpenAI/status/100', quoted_tweet: null, expanded_urls: [] },
+    ],
+    'Sam Altman (Twitter)': [
+      {
+        url: 'https://x.com/sama/status/200',
+        quoted_tweet: { url: 'https://x.com/OpenAI/status/100', author: 'OpenAI', text: '...' },
+        expanded_urls: [],
+      },
+    ],
+  };
+  const sourceRoles = { 'OpenAI (Twitter)': 'primary', 'Sam Altman (Twitter)': 'aggregator' };
+  const dups = computeDuplicates(articlesBySource, sourceRoles);
+  assert.equal(dups.get('https://x.com/sama/status/200'), 'https://x.com/OpenAI/status/100');
+});
+
+test('computeDuplicates: aggregator with expanded_url hitting primary', () => {
+  const articlesBySource = {
+    'Anthropic (Twitter)': [
+      { url: 'https://x.com/AnthropicAI/status/100', quoted_tweet: null, expanded_urls: [] },
+    ],
+    'Thariq (Twitter)': [
+      {
+        url: 'https://x.com/Thariq/status/200',
+        quoted_tweet: null,
+        expanded_urls: [
+          { t_co: 'https://t.co/x', expanded_url: 'https://x.com/AnthropicAI/status/100', display_url: 'x.com/...' },
+        ],
+      },
+    ],
+  };
+  const sourceRoles = { 'Anthropic (Twitter)': 'primary', 'Thariq (Twitter)': 'aggregator' };
+  const dups = computeDuplicates(articlesBySource, sourceRoles);
+  assert.equal(dups.get('https://x.com/Thariq/status/200'), 'https://x.com/AnthropicAI/status/100');
+});
+
+test('computeDuplicates: primary articles are never marked duplicate', () => {
+  const articlesBySource = {
+    'OpenAI (Twitter)': [
+      { url: 'https://x.com/OpenAI/status/100', quoted_tweet: null, expanded_urls: [] },
+      {
+        url: 'https://x.com/OpenAI/status/200',
+        quoted_tweet: { url: 'https://x.com/OpenAI/status/100', author: 'OpenAI', text: '...' },
+        expanded_urls: [],
+      },
+    ],
+  };
+  const sourceRoles = { 'OpenAI (Twitter)': 'primary' };
+  const dups = computeDuplicates(articlesBySource, sourceRoles);
+  assert.equal(dups.size, 0);
+});
+
+test('computeDuplicates: aggregator with no ref to any primary → not a duplicate', () => {
+  const articlesBySource = {
+    'OpenAI (Twitter)': [
+      { url: 'https://x.com/OpenAI/status/100', quoted_tweet: null, expanded_urls: [] },
+    ],
+    'Sam Altman (Twitter)': [
+      { url: 'https://x.com/sama/status/200', quoted_tweet: null, expanded_urls: [] },
+    ],
+  };
+  const sourceRoles = { 'OpenAI (Twitter)': 'primary', 'Sam Altman (Twitter)': 'aggregator' };
+  const dups = computeDuplicates(articlesBySource, sourceRoles);
+  assert.equal(dups.size, 0);
+});
