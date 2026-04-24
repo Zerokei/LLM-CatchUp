@@ -34,6 +34,20 @@ function mapTweetsToArticles(tweets, handleFallback) {
   });
 }
 
+// Low-signal tweets we drop at fetch time:
+//   - Pure RTs (`RT @handle ...`): re-posts without commentary, rarely add signal beyond what the primary source already surfaces.
+//   - Replies to OTHER accounts: conversational fragments, usually context-free in isolation.
+// Self-replies are kept — they are how long-form content is threaded on Twitter, and `thread_group_id` merges them at report time.
+function isLowSignalTweet(article, handle) {
+  if ((article.description || '').startsWith('RT @')) return true;
+  if (article.reply_to?.screen_name) {
+    const target = article.reply_to.screen_name.toLowerCase();
+    const self = (handle || '').toLowerCase();
+    if (target !== self) return true;
+  }
+  return false;
+}
+
 function makeTwitterRoute({ name, handle, userId }) {
   if (!handle) throw new Error(`socialdata-twitter: missing handle for ${name}`);
   if (!userId) throw new Error(`socialdata-twitter: missing userId for ${name}`);
@@ -52,7 +66,10 @@ function makeTwitterRoute({ name, handle, userId }) {
           },
         });
         const data = JSON.parse(body);
-        const articles = mapTweetsToArticles(data.tweets, handle);
+        const raw = mapTweetsToArticles(data.tweets, handle);
+        const articles = raw.filter((a) => !isLowSignalTweet(a, handle));
+        const dropped = raw.length - articles.length;
+        if (dropped > 0) console.error(`[${name}] filtered ${dropped} low-signal tweets (RT / reply-to-others)`);
         return { articles, error: null };
       } catch (err) {
         return { articles: [], error: err.message };
@@ -61,4 +78,4 @@ function makeTwitterRoute({ name, handle, userId }) {
   };
 }
 
-module.exports = { makeTwitterRoute, mapTweetsToArticles };
+module.exports = { makeTwitterRoute, mapTweetsToArticles, isLowSignalTweet };

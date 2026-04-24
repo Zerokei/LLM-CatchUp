@@ -1,6 +1,6 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { mapTweetsToArticles } = require('./socialdata-twitter');
+const { mapTweetsToArticles, isLowSignalTweet } = require('./socialdata-twitter');
 
 // One raw socialdata tweet covering the "announcement + linked blog" pattern.
 const TWEET_WITH_URL_AND_QUOTE = {
@@ -89,4 +89,29 @@ test('mapTweetsToArticles: existing fields (title, url, description, published_a
   assert.equal(a.url, 'https://x.com/sama/status/111');
   assert.equal(a.description, 'just a tweet');
   assert.equal(a.published_at, '2026-04-20T12:00:00.000Z');
+});
+
+test('isLowSignalTweet: drops pure RT', () => {
+  const a = { description: 'RT @someone: cool thing', reply_to: null };
+  assert.equal(isLowSignalTweet(a, 'sama'), true);
+});
+
+test('isLowSignalTweet: keeps originals', () => {
+  const a = { description: 'hello world', reply_to: null };
+  assert.equal(isLowSignalTweet(a, 'sama'), false);
+});
+
+test('isLowSignalTweet: drops replies to OTHER accounts', () => {
+  const a = { description: 'yes', reply_to: { screen_name: 'pg', status_id: '1' } };
+  assert.equal(isLowSignalTweet(a, 'sama'), true);
+});
+
+test('isLowSignalTweet: keeps self-replies (thread continuations)', () => {
+  const a = { description: 'and another thing', reply_to: { screen_name: 'sama', status_id: '1' } };
+  assert.equal(isLowSignalTweet(a, 'sama'), false);
+});
+
+test('isLowSignalTweet: self-reply match is case-insensitive', () => {
+  const a = { description: 'continued', reply_to: { screen_name: 'OpenAIDevs', status_id: '1' } };
+  assert.equal(isLowSignalTweet(a, 'openaidevs'), false);
 });

@@ -38,6 +38,8 @@ Fetching itself is done by `scripts/fetch-sources.js` in GH Actions, not by the 
 
 The fetch window is **30h** (not 24h): daily runs don't fire at exactly the same wall-clock time due to GH Actions queue drift. 6h of overlap between consecutive runs guarantees no article falls through the gap; dedup-by-URL-hash in `data/history.json` absorbs the duplicates.
 
+Twitter sources additionally drop low-signal tweets at fetch time (see `scripts/lib/socialdata-twitter.js#isLowSignalTweet`): pure RTs (`RT @...`) and replies to other accounts. Self-replies are kept — they are how long-form is threaded on Twitter, and `thread_group_id` merges them at report time.
+
 For each source entry in the snapshot:
 - If `status === "ok"` or `status === "degraded_stale"`: iterate `articles[]` (already pre-filtered to the 30h window). Skip any whose SHA-256 URL hash is already in `data/history.json`. Collect the rest for analysis.
 - If `status === "error"`: skip for content, note the error for Health Monitoring.
