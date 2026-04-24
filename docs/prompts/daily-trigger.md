@@ -98,6 +98,22 @@ Merge:
 
 Call the combined list `final_articles`.
 
+### Step 7.5: Semantic topic clustering
+
+Scan all articles in `final_articles`. Group articles that cover **the same specific product, release, paper, partnership, or news event**. Examples of valid clusters:
+- All articles about the GPT-5.5 release (the blog + OpenAI tweet + Sam Altman tweet + OpenAI Devs tweet about its launch)
+- All articles about a specific paper (e.g., Google DeepMind DiLoCo)
+- All articles about the same partnership announcement
+
+Do **NOT** cluster merely on shared broad topics ("AI", "models", "OpenAI products"). The test: if removing any one article from the cluster leaves the day's coverage of that specific subject meaningfully poorer, they are NOT duplicates — they cover distinct angles. Only cluster when the articles are near-redundant.
+
+For each cluster of 2+ articles:
+1. Pick the canonical article in this priority order: primary-source blog (OpenAI Blog, Google AI Blog, Anthropic Blog, Anthropic Research, The Batch, Berkeley RDI) > primary-source first-party Twitter (OpenAI, Anthropic, Google DeepMind, Claude, Claude Devs, OpenAI Devs, Meta AI, Mistral AI, xAI, DeepSeek, Qwen) > aggregator Twitter (Sam Altman, Dario Amodei, Demis Hassabis, Andrej Karpathy, Thariq, 宝玉的分享).
+2. Set `duplicate_of = <canonical_url>` for every non-canonical member.
+3. If a non-canonical member already has a `duplicate_of` set (from the deterministic fetch-time preprocessing), leave it alone — that earlier value is already correct and more specific.
+
+Singletons (clusters of 1) get no change. Thread groups (articles sharing a `thread_group_id`) are already collapsed downstream; do NOT set `duplicate_of` among thread siblings.
+
 ### Step 8: Compute trend_paragraph
 
 Write a 3-6 Chinese sentence trend paragraph synthesizing the day's themes, based on `final_articles[*].title` + `summary`. (You do NOT need the raw articles — the summaries are enough.)
