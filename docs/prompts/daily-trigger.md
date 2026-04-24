@@ -26,13 +26,15 @@ If the file does not exist, `analyzed_urls` is empty.
 
 Iterate `fetch-cache.sources`. For each source with `status === "ok"` or `status === "degraded_stale"`, collect each `article` whose `url` is NOT in `analyzed_urls`. Attach the source name onto each article so the subagent can reference it. Call this list `remaining`.
 
-If `remaining` is empty, skip to Step 8 (nothing to analyze; file unchanged).
+If `remaining` is empty, exit cleanly — the analysis-cache, if one exists, is already complete. Do NOT write, commit, or push anything.
 
 ### Step 5: Chunk and dispatch subagents
 
 Split `remaining` into chunks of **10 articles** each (the last chunk may be smaller). For each chunk `i` (0-indexed), dispatch ONE subagent using the `Agent` tool. **Dispatch all chunks in a SINGLE message with multiple Agent tool calls** so they run in parallel.
 
-Each subagent receives a prompt of this shape:
+If the total number of chunks would exceed 12 (i.e., more than 120 remaining articles), reduce to the top 120 by `published_at` desc and let tomorrow's run pick up the rest — this bounds the parallel fan-out to a size the runtime can comfortably handle.
+
+The template below shows what each subagent's prompt should look like. Substitute `{N}` (article count in the chunk), `{date}`, `{i}` (chunk index), and the inlined articles before dispatching.
 
 ````
 You are a news-analyzer subagent for CatchUp. Analyze these {N} articles from today's batch and write your results to `data/analysis-cache/{date}.chunk-{i}.json`.
@@ -82,7 +84,8 @@ Return just "done" when the file is written.
 
 When all subagent calls return, for each chunk `i` in `[0..chunks-1]`:
 - Read `data/analysis-cache/{date}.chunk-{i}.json`
-- Append its `articles[]` into the master articles list
+- For each article in the chunk, validate it has the required fields: `url`, `source`, `title` (non-empty string), `summary` (non-empty string), `category` (string), `importance` (integer 1-5), `tags` (array). Drop any article that fails this check and log which URL+reason to stderr — downstream `scripts/build-report.js` will crash on a malformed article, so it's safer to drop and retry tomorrow than to write a broken cache.
+- Append the surviving `articles[]` into the master articles list.
 
 If a chunk file is missing (subagent failed), note the chunk index and continue — the missed articles will be re-tried tomorrow since they won't be in the committed analysis-cache.
 
