@@ -43,12 +43,14 @@ Twitter sources additionally drop low-signal tweets at fetch time (see `scripts/
 For each source entry in the snapshot:
 - If `status === "ok"` or `status === "degraded_stale"`: iterate `articles[]` (already pre-filtered to the 30h window). Skip any whose SHA-256 URL hash is already in `data/history.json`. Collect the rest for analysis.
 - If `status === "error"`: skip for content, note the error for Health Monitoring.
-- `articles`: list of `{ title, url, published_at, description, full_text?, linked_content?, expanded_urls?, quoted_tweet?, reply_to? }` — already pre-filtered to `window_hours` of recency (overlap with yesterday is handled by URL-hash dedup in history.json).
+- `articles`: list of `{ title, url, published_at, description, full_text?, linked_content?, expanded_urls?, quoted_tweet?, reply_to?, thread_group_id?, duplicate_of? }` — already pre-filtered to `window_hours` of recency (overlap with yesterday is handled by URL-hash dedup in history.json).
   - `full_text` (blog sources): full article body (markdown from Jina Reader or upstream HTML). Null when enrichment failed. Absent for Twitter sources.
   - `linked_content` (primary Twitter sources only): Jina-fetched body of the primary-blog URL the tweet links to, when one exists. Null when no matching URL or fetch failed.
   - `expanded_urls` (Twitter): `[{ t_co, expanded_url, display_url }]` from `entities.urls`.
   - `quoted_tweet` (Twitter): `{ author, text, url }` when the tweet is a quote-tweet, else null.
   - `reply_to` (Twitter): `{ screen_name, status_id }` when the tweet is a reply, else null.
+  - `thread_group_id` (Twitter): `thread-{handle}-{YYYYMMDD-HHMM}` (UTC) when this tweet is part of a self-reply chain whose adjacent links are within 5 minutes; else null. Computed deterministically in `scripts/lib/derive-refs.js` — the routine no longer infers this.
+  - `duplicate_of` (Twitter): URL of a primary-source article when this aggregator article's `quoted_tweet.url` or any `expanded_urls[*].expanded_url` points at one; else null. Also deterministic; the routine no longer infers this.
   - **Summary-source priority when analyzing:** `linked_content` > `full_text` > `quoted_tweet.text + description` > `description`.
 
 For newsletter-style sources (Berkeley RDI, The Batch) whose articles bundle multiple topics, split into separate entries — append `#topic-N` to the URL, each entry independently categorized.
