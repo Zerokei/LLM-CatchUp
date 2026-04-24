@@ -6,7 +6,7 @@
 
 系统分两半：
 
-- **抓取端**：GitHub Actions 每天 07:37（Asia/Shanghai）跑一次 `scripts/fetch-sources.js`，按 `config.yaml` 里声明的源逐个抓取，过滤到近 30 小时窗口，写入 `data/fetch-cache/YYYY-MM-DD.json`。
+- **抓取端**：GitHub Actions 每天 05:37（Asia/Shanghai）跑一次 `scripts/fetch-sources.js`，按 `config.yaml` 里声明的源逐个抓取，过滤到近 30 小时窗口，写入 `data/fetch-cache/YYYY-MM-DD.json`。
 - **分析端**：Claude Code Cloud Scheduled Triggers 每天 / 每周 / 每月跑一次，读取上面那个 snapshot（不再自己抓取），做分析、生成 `reports/` 下的 markdown 报告，commit + push。
 
 完整架构、运行规则和惯例见 [`CLAUDE.md`](./CLAUDE.md)。
