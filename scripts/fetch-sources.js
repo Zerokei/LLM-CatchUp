@@ -76,6 +76,7 @@ async function main() {
 
   for (const name of sourceNames) {
     const route = routeByName[name];
+    const cadence = configByName[name]?.cadence || 'daily';
     if (!route) {
       console.error(`[${name}] no route module found — skipping`);
       output.sources[name] = {
@@ -83,6 +84,7 @@ async function main() {
         error: 'no route module found',
         fetched_count: 0,
         filtered_count: 0,
+        cadence,
         articles: [],
       };
       continue;
@@ -97,6 +99,7 @@ async function main() {
         error: result.error,
         fetched_count: 0,
         filtered_count: 0,
+        cadence,
         articles: [],
       };
       continue;
@@ -140,6 +143,7 @@ async function main() {
       error,
       fetched_count: fetchedCount,
       filtered_count: filtered.length,
+      cadence,
       articles: filtered,
     };
     anySuccess = true;

@@ -18,7 +18,7 @@ This repo has three runtime stages, in order:
 
 ## Key Files
 
-- `config.yaml` — all configuration (sources, categories, analysis dimensions, alerting). Each source may declare `max_silence_hours` for staleness detection.
+- `config.yaml` — all configuration (sources, categories, analysis dimensions, alerting). Each source may declare `max_silence_hours` for staleness detection and `cadence: weekly` to mark the source as weekly-paced (e.g. The Batch newsletter, Berkeley RDI essays). Weekly-cadence content is filtered out of the daily editorial AND skipped by the analyzer's trend computation, but still flows into `data/history.json` so the weekly report picks it up. Sources without `cadence` default to daily.
 - `scripts/fetch-sources.js` — the daily fetcher (GH Actions entry point)
 - `scripts/routes/` — one module per source, exporting `{ name, fetch() }`. See `scripts/routes/index.js` for the loaded list.
 - `data/fetch-cache/YYYY-MM-DD.json` — the daily snapshot consumed by the cloud trigger; produced in CI

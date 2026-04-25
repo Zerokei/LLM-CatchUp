@@ -24,7 +24,7 @@ If the file does not exist, `analyzed_urls` is empty.
 
 ### Step 4: Collect remaining articles
 
-Iterate `fetch-cache.sources`. For each source with `status === "ok"` or `status === "degraded_stale"`, collect each `article` whose `url` is NOT in `analyzed_urls`. Attach the source name onto each article so the subagent can reference it. Call this list `remaining`.
+Iterate `fetch-cache.sources`. For each source with `status === "ok"` or `status === "degraded_stale"`, collect each `article` whose `url` is NOT in `analyzed_urls`. Attach **two** fields onto each article so the subagent and Step 8 can reference them: `source` (the source name) and `cadence` (the source's `cadence` field, defaulting to `"daily"` if absent — sources without a cadence field are daily). Call this list `remaining`.
 
 If `remaining` is empty, exit cleanly — the analysis-cache, if one exists, is already complete. Do NOT write, commit, or push anything.
 
@@ -116,7 +116,7 @@ Singletons (clusters of 1) get no change. Thread groups (articles sharing a `thr
 
 ### Step 8: Compute trend_paragraph
 
-The value MUST be a bulleted markdown list, NOT prose. Synthesize from `final_articles[*].title + summary`.
+The value MUST be a bulleted markdown list, NOT prose. Synthesize **only from articles whose `source.cadence === "daily"`** (i.e. ignore weekly-cadence sources like Berkeley RDI and The Batch — their themes are summarized in the weekly report instead). Use `final_articles[*].title + summary` for the daily-cadence subset.
 
 Shape — 3-5 bullets, one sentence each:
 

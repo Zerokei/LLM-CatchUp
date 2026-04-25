@@ -162,6 +162,14 @@ async function main() {
   const retentionDays = config.retention_days || 90;
   const failureThreshold = config.alerting?.consecutive_failure_threshold || 3;
 
+  // Source name → cadence. Sources marked weekly are filtered out of the
+  // daily editorial below, but still flow into history.json so the weekly
+  // report (which reads from history) picks them up.
+  const cadenceBySource = Object.fromEntries(
+    (config.sources || []).map((s) => [s.name, s.cadence || 'daily']),
+  );
+  const isWeeklyCadence = (a) => cadenceBySource[a.source] === 'weekly';
+
   // Step 0 — backfill published_at from fetch-cache. Title should be an
   // LLM-generated Chinese title provided by the analyzer (analysis-cache.title);
   // if missing, fall back to fetch-cache title (raw article/tweet text, often
@@ -191,8 +199,10 @@ async function main() {
   canonical.sort((a, b) =>
     (b.importance - a.importance) || String(b.published_at).localeCompare(String(a.published_at)));
 
-  // Step 5 — importance filter for the report body
-  const articlesInReport = filterByImportance(canonical, minImportance);
+  // Step 5 — importance filter + drop weekly-cadence sources for the report body
+  // (they still go into history below, so the weekly report sees them).
+  const articlesInReport = filterByImportance(canonical, minImportance)
+    .filter((a) => !isWeeklyCadence(a));
 
   // Step 6 — render markdown
   const rawFetched = Object.values(fetchCache.sources).reduce((n, s) => n + (s.articles?.length || 0), 0);
