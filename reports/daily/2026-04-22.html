@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-04-22 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-04-22" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-04-22</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>图像模型 SOTA 易主</strong>：OpenAI 发布 gpt-image-2 / ChatGPT Images 2.0，登顶 Image Arena 并当日完成 Canva / Figma / Adobe 主流工具链对接。</li>
+<li><strong>OpenAI 双线扩张</strong>：消费侧图像模型升级，同时 Codex WAU 破 4M、与 Accenture / PwC / Infosys 建立企业级合作（Codex Labs）。</li>
+<li><strong>Google 反击 Agent 生态</strong>：DeepMind 推出 Deep Research / Max（Gemini 3.1 Pro 底座），支持 MCP 与原生可视化报告，直接对位 OpenAI。</li>
+<li><strong>DX 工具链升级成主战场</strong>：Claude Devs 推 prompt caching dashboard、Claude Code 加会话 recap，开发者体验被头部厂商提到与模型能力同等优先级。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/OpenAI/status/2046670977145372771">OpenAI 发布 ChatGPT Images 2.0 / gpt-image-2：带推理的 SOTA 图像模型</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | 📡 也被 Sam Altman (Twitter), Sam Altman (Twitter), OpenAI Devs (Twitter) 报道</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>ChatGPT Images 2.0</code> <code>gpt-image-2</code> <code>图像生成</code> <code>SOTA</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 <strong>ChatGPT Images 2.0</strong>（底层模型 gpt-image-2）：带&quot;推理能力&quot;的图像生成模型，提供更清晰的编辑、更丰富的版式、思考级别的理解力，面向真实生产场景。发布当天已登顶 Image Arena 所有榜单，覆盖 Canva / Figma / Adobe Firefly / fal / OpenArt 等多家合作方。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 ChatGPT Plus / Pro / Business 账号试用&quot;with thinking&quot;模式，对比复杂版式/图表/幻灯片输出与 Nano Banana / Flux / Ideogram 的差距。</li>
+<li>若在 API 层接入，切到 <code>gpt-image-2</code>，重点验证多语言文字渲染（尤其中文/日文）和 infographic 输出，把上一代 gpt-image-1 的 prompt 模板逐条回归。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/GoogleDeepMind/status/2046627042335060342">Google DeepMind 推出 Deep Research 与 Deep Research Max（Gemini 3.1 Pro）</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | 📡 也被 Demis Hassabis (Twitter) 报道</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>Deep Research</code> <code>Gemini 3.1 Pro</code> <code>MCP</code> <code>研究 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 推出 <strong>Deep Research</strong> 与 <strong>Deep Research Max</strong>：基于 Gemini 3.1 Pro 的自主研究 Agent，可安全地导航 Web 与用户自定义数据源（内部文档、专业金融资料），生成专业级、带完整引用的报告。 Deep Research vs Deep Research Max：前者优化速度与效率，适合交互式应用；后者使用更长推理时间与搜索，适合穷尽式上下文和后台任务。 Deep Research 新增任意 MCP 支持，可安全接入自有或第三方数据；同时是 Google DeepMind 首个原生生成演示级可视化的 Research Agent。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 AI Studio 或 Gemini API 里用 Deep Research 跑一份行业研究题目，对比 Perplexity Pro / ChatGPT Deep Research 的引文密度与图表生成质量。</li>
+<li>若团队有内部文档索引，尝试 Deep Research Max 的 MCP 连接，把内部知识库纳入研究上下文评估答案质量。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://openai.com/index/scaling-codex-to-enterprises-worldwide">OpenAI 发布 Codex Labs，携手 Accenture/PwC/Infosys 推进企业级部署；周活破 400 万</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | 📡 也被 Sam Altman (Twitter), OpenAI Devs (Twitter) 报道</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Codex</code> <code>Codex Labs</code> <code>企业市场</code> <code>Accenture</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 推出 Codex Labs，与 Accenture、PwC、Infosys 等头部咨询/系统集成商建立合作，把 Codex 纵向打进企业软件开发生命周期各环节；同时宣布 Codex 周活突破 400 万。标志 Codex 正式从开发者工具升级为企业级 AI 工程平台。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>如果组织已在用 Codex，可与对接 Accenture / PwC / Infosys 的 OpenAI 企业账号经理沟通 Codex Labs 的迁移与定制服务。</li>
+<li>评估把 Codex 从&quot;个人 IDE 插件&quot;升级到&quot;团队级工作流&quot;所需的权限/审计/模型路由基建。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/ClaudeDevs/status/2046710816884625509">Claude Developer Console 上线 prompt caching 可视化面板</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>prompt caching</code> <code>开发者工具</code> <code>成本优化</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 在 Claude Developer Console 上线 prompt caching 可视化面板，帮助用户定位缓存命中率、拆解成本与首 token 延迟（TTFT）优化空间。配套官方文章与 @RLanceMartin、@trq212 两篇深度指南。 @RLanceMartin 撰文介绍 prompt caching 在 Claude API 中的机制与适用场景，作为上线 caching dashboard 的配套教程。 @trq212 分享如何最大化 Claude API prompt cache 命中率的实战技巧。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Claude Developer Console 打开新的 caching 面板，定位缓存命中率低于 50% 的场景，对照 @trq212 的指南调整 cache_control 放置位置。</li>
+<li>把 @RLanceMartin 的文章发给团队的 Claude API 接入同事，统一 prompt 结构里系统消息 + 工具定义的缓存边界。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/OpenAI/status/2046691647036227700">OpenAI 研究员讲解 gpt-image-2：Thinking &amp; Intelligence 是关键</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>gpt-image-2</code> <code>图像推理</code> <code>技术分享</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 研究员串讲 gpt-image-2 核心突破：Thinking &amp; Intelligence 是使其区别于前代与同类的决定性能力。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/OpenAIDevs/status/2046671290719944752">gpt-image-2 显著提升多语言文字渲染与结构化图像</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>多语言</code> <code>信息图</code></li>
+</ul>
+<p><strong>摘要</strong>: gpt-image-2 专门优化文字密集场景：多语言文字渲染、结构化图像（图表、信息图、漫画、多格场景）生成显著提升。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/OpenAI/status/2046670994413322435">gpt-image-2 可用性：全量 ChatGPT/Codex + API；thinking 模式限 Plus/Pro/Business</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>可用性</code> <code>API</code></li>
+</ul>
+<p><strong>摘要</strong>: gpt-image-2 的可用性与计划：ChatGPT 与 Codex 全量用户可用；&quot;with thinking&quot;模式限 Plus / Pro / Business（Enterprise 稍后）；API 同步开放。</p>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/OpenAI/status/2046670992123248802">gpt-image-2 真实世界知识：知识截止至 2025 年 12 月</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>真实世界知识</code> <code>端到端</code></li>
+</ul>
+<p><strong>摘要</strong>: gpt-image-2 的 Real-World Intelligence：知识截止到 2025 年 12 月，可端到端处理从文案撰写到分析到设计构图的完整创意流程。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/ClaudeDevs/status/2046613932518023259">Claude Code 终端版新增会话回顾（recap）</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>开发者体验</code> <code>Recap</code> <code>multi-clauding</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 终端版新增&quot;离开-回来&quot;的会话回顾：切换焦点再回到 Claude Code 会显示期间完成的动作摘要，减少上下文切换成本，针对&quot;多 Claude 并行&quot;场景优化。 Claude Devs 补充 Claude Code recap 功能的官方文档链接。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>更新到最新 Claude Code 终端版本后，在多个会话间来回切换，体验回顾摘要的信息密度是否满足&quot;找回思路&quot;的需求。</li>
+<li>把 /ultrareview 或长时任务丢给 Claude Code 后去做别的事，回来时用 recap 快速决定是否接受结果。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/xai/status/2046717120428351809">xAI 转发 SpaceX：SpaceXAI 与 Cursor 合作打造编码/知识工作 AI</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>SpaceX</code> <code>Cursor</code> <code>合作</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 转发 SpaceX 公告：SpaceXAI 与 Cursor 建立紧密合作，目标打造&quot;世界最好的编码与知识工作 AI&quot;。</p>
+<hr>
+<h3 id="h-13">11. <a href="https://x.com/OpenAI/status/2046699281198047403">Image Arena 趋势：gpt-image-2 发布后 OpenAI 重回榜首</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Google DeepMind</code> <code>Image Arena</code> <code>榜单</code></li>
+</ul>
+<p><strong>摘要</strong>: @arena 统计 2026 年 1-4 月 Text-to-Image 榜单趋势：Google DeepMind 与 OpenAI 长期拉锯第一名——gpt-image-2 发布后 OpenAI 重回首位。</p>
+<hr>
+<h3 id="h-14">12. <a href="https://x.com/OpenAIDevs/status/2046698307188392420">gpt-image-2 用例画廊新增多条样例</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>文档</code> <code>用例</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 更新 gpt-image-2 的用例画廊，新增多条可参考样例。</p>
+<hr>
+<h3 id="h-15">13. <a href="https://x.com/OpenAIDevs/status/2046698166645653695">GPT-Image-2 横扫 Image Arena 全部子榜单</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>Arena</code> <code>榜单</code></li>
+</ul>
+<p><strong>摘要</strong>: 转推 @arena：GPT-Image-2 在 Image Arena 全部子榜单上均夺第一，是一次&quot;横扫&quot;式登顶。</p>
+<hr>
+<h3 id="h-16">14. <a href="https://x.com/OpenAI/status/2046691651767476579">gpt-image-2 演示：幻灯片与信息图生成</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>幻灯片</code> <code>信息图</code></li>
+</ul>
+<p><strong>摘要</strong>: gpt-image-2 在幻灯片与信息图生成能力上的演示，由研究员 @yuguang_yang 讲解。</p>
+<hr>
+<h3 id="h-17">15. <a href="https://x.com/OpenAI/status/2046691653453562341">gpt-image-2 演示：长宽比与分辨率控制</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>gpt-image-2</code> <code>分辨率</code> <code>版式</code></li>
+</ul>
+<p><strong>摘要</strong>: gpt-image-2 的长宽比与分辨率控制演示。</p>
+<hr>
+<h3 id="h-18">16. <a href="https://x.com/OpenAIDevs/status/2046620363568890230">OpenAI 开源 Euphony：聊天与 Codex session logs 可视化工具</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Euphony</code> <code>可视化</code> <code>Codex</code> <code>开源工具</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 开源 Euphony：一款可视化聊天数据与 Codex session logs 的工具，粘贴公开 URL 或上传本地文件即可获得易浏览的视图，支持翻译、过滤、编辑。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用 Euphony 打开一条长 Codex session log，对比平铺的 JSON 与结构化可视化在调试上的差异。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-19">17. <a href="https://blog.google/products/ads-commerce/ads-advisor-google-ads/">Google Ads Advisor 新增 3 项 agentic 安全与策略能力</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Google</code> <code>Ads Advisor</code> <code>Agentic AI</code> <code>广告</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 在 Ads Advisor 中新增 3 项 agentic 安全与策略能力，覆盖账户保护与广告投放效率提升。属于 Google 持续把 agentic AI 垂直嵌入旗下产品的典型案例。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Google Ads 控制台中定位 Ads Advisor 入口，开启新增的 agentic 策略审查功能，核对其对现有规则的影响。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-20">18. <a href="https://x.com/demishassabis/status/2046394036781490445">Demis 转推：Google AI Pro/Ultra 订阅已接入 AI Studio</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Google</code> <code>AI Studio</code> <code>订阅</code></li>
+</ul>
+<p><strong>摘要</strong>: Demis Hassabis 转发 @OfficialLoganK，Google AI Pro 与 Ultra 订阅现已与 Google AI Studio 打通，便于开发者直接在 Studio 中 vibe-code。</p>
+<hr>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. OpenAI 发布 ChatGPT Images 2.0 / gpt-image-2：带推理的 SOTA 图像模型</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Google DeepMind 推出 Deep Research 与 Deep Research Max（Gemini 3.1 Pro）</a></li>
+      <li class="toc-h3"><a href="#h-5">3. OpenAI 发布 Codex Labs，携手 Accenture/PwC/Infosys 推进企业级部署；周活破 400 万</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Claude Developer Console 上线 prompt caching 可视化面板</a></li>
+      <li class="toc-h3"><a href="#h-7">5. OpenAI 研究员讲解 gpt-image-2：Thinking &amp; Intelligence 是关键</a></li>
+      <li class="toc-h3"><a href="#h-8">6. gpt-image-2 显著提升多语言文字渲染与结构化图像</a></li>
+      <li class="toc-h3"><a href="#h-9">7. gpt-image-2 可用性：全量 ChatGPT/Codex + API；thinking 模式限 Plus/Pro/Business</a></li>
+      <li class="toc-h3"><a href="#h-10">8. gpt-image-2 真实世界知识：知识截止至 2025 年 12 月</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Claude Code 终端版新增会话回顾（recap）</a></li>
+      <li class="toc-h3"><a href="#h-12">10. xAI 转发 SpaceX：SpaceXAI 与 Cursor 合作打造编码/知识工作 AI</a></li>
+      <li class="toc-h3"><a href="#h-13">11. Image Arena 趋势：gpt-image-2 发布后 OpenAI 重回榜首</a></li>
+      <li class="toc-h3"><a href="#h-14">12. gpt-image-2 用例画廊新增多条样例</a></li>
+      <li class="toc-h3"><a href="#h-15">13. GPT-Image-2 横扫 Image Arena 全部子榜单</a></li>
+      <li class="toc-h3"><a href="#h-16">14. gpt-image-2 演示：幻灯片与信息图生成</a></li>
+      <li class="toc-h3"><a href="#h-17">15. gpt-image-2 演示：长宽比与分辨率控制</a></li>
+      <li class="toc-h3"><a href="#h-18">16. OpenAI 开源 Euphony：聊天与 Codex session logs 可视化工具</a></li>
+      <li class="toc-h3"><a href="#h-19">17. Google Ads Advisor 新增 3 项 agentic 安全与策略能力</a></li>
+      <li class="toc-h3"><a href="#h-20">18. Demis 转推：Google AI Pro/Ultra 订阅已接入 AI Studio</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-04-21.html">2026-04-21</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <a href="../daily/2026-04-23.html">2026-04-23</a>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-22.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,6 +1,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const { buildRSS } = require('./lib/build-rss');
+const { buildPages } = require('./lib/build-pages');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const FETCH_CACHE_DIR = path.join(PROJECT_ROOT, 'data/fetch-cache');
@@ -49,9 +50,11 @@ async function main() {
 
   const rss = buildRSS({ projectRoot: PROJECT_ROOT });
   console.error(`rss: wrote ${path.relative(PROJECT_ROOT, rss.outPath)} — ${rss.included}/${rss.total} items`);
+  const pages = buildPages({ projectRoot: PROJECT_ROOT });
+  console.error(`pages: wrote ${pages.written}/${pages.total} report HTML pages`);
 
   const { execSync } = require('node:child_process');
-  execSync(`git add ${reportPath} feed.xml`, { stdio: 'inherit' });
+  execSync(`git add ${reportPath} feed.xml reports/daily/*.html reports/weekly/*.html reports/monthly/*.html`, { stdio: 'inherit' });
   try {
     execSync('git diff --cached --quiet', { stdio: 'ignore' });
     console.error('no changes to commit');

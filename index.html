@@ -497,6 +497,14 @@
           .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
       }
 
+      // Derive a same-site relative HTML path from the report's iso label and
+      // cadence — independent of feed.xml's `<link>` (which is an absolute Pages
+      // URL, kept that way for off-site RSS readers).
+      function siteHref(it) {
+        const dir = it.kind === 'daily' ? 'daily' : it.kind === 'weekly' ? 'weekly' : 'monthly';
+        return `reports/${dir}/${it.iso}.html`;
+      }
+
       function renderRow(it, total) {
         const issueNo = total - it.i;
         const sub = it.kind === 'weekly' ? weeklyRangeLabel(it.iso) : '';
@@ -507,7 +515,7 @@
              </span>`
           : `<span class="row-date">${escapeHtml(it.iso)}</span>`;
         return `
-          <a class="issue-row" href="${escapeHtml(it.link)}" target="_blank" rel="noopener">
+          <a class="issue-row" href="${escapeHtml(siteHref(it))}">
             ${dateBlock}
             <span class="row-issue-no">Nº ${toRoman(issueNo)}</span>
           </a>

@@ -8,7 +8,8 @@ const path = require('node:path');
 const { marked } = require('marked');
 
 const REPO_URL = 'https://github.com/Zerokei/LLM-CatchUp';
-const FEED_SELF_URL = 'https://raw.githubusercontent.com/Zerokei/LLM-CatchUp/main/feed.xml';
+const PAGES_BASE = 'https://zerokei.github.io/LLM-CatchUp';
+const FEED_SELF_URL = `${PAGES_BASE}/feed.xml`;
 const FEED_TITLE = 'CatchUp — AI 信息聚合';
 const FEED_DESCRIPTION = '每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。';
 const MAX_ITEMS = 30;
@@ -85,11 +86,18 @@ function collectReports(projectRoot) {
 function renderItem(report, projectRoot) {
   const md = fs.readFileSync(path.join(projectRoot, report.rel), 'utf8');
   const html = marked.parse(md);
-  const link = `${REPO_URL}/blob/main/${report.rel}`;
+  // Link points at the rendered HTML page on GitHub Pages so RSS readers and
+  // click-throughs land on the styled report, not the raw markdown on github.com.
+  const htmlPath = report.rel.replace(/\.md$/, '.html');
+  const link = `${PAGES_BASE}/${htmlPath}`;
+  // GUID stays anchored to the markdown URL on GitHub so existing subscribers
+  // (Feedrabbit, etc.) treat the link change as a metadata update rather than
+  // re-delivering every historical item as new.
+  const guid = `${REPO_URL}/blob/main/${report.rel}`;
   return `    <item>
       <title>${escapeXml(report.title)}</title>
       <link>${escapeXml(link)}</link>
-      <guid isPermaLink="true">${escapeXml(link)}</guid>
+      <guid isPermaLink="false">${escapeXml(guid)}</guid>
       <pubDate>${escapeXml(report.date.toUTCString())}</pubDate>
       <category>${escapeXml(report.kind)}</category>
       <description><![CDATA[${escapeCdata(html)}]]></description>

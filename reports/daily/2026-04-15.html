@@ -1,0 +1,458 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-04-15 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-04-15" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-04-15</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>开发者工具智能体化</strong>：Claude Code 桌面端 + Routines、Chrome Skills 同日发布，&quot;一次配置反复执行&quot;成为终端工作流范式。</li>
+<li><strong>具身 AI 安全升级</strong>：Gemini Robotics-ER 1.6 提升空间推理与人身风险检测，机器人基础模型能力与安全同步迭代。</li>
+<li><strong>治理与防御双轨投入</strong>：OpenAI GPT-5.4-Cyber 延伸网络防御，Anthropic 推 Automated Alignment Researcher 与扩董事会同步推进可扩展监督。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/claudeai/status/2044131493966909862">Claude Code 桌面端重构：多会话并行 + 集成终端与预览</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>桌面端</code> <code>多会话</code> <code>开发者工具</code> <code>IDE</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 重构了 Claude Code 桌面应用，引入侧边栏以便在同一窗口内并行运行多个 Claude 会话。新版本内置终端、文件编辑、HTML/PDF 预览与更快的 diff 查看器，支持拖拽式自定义布局；命令行插件可无缝运行。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>从 claude.com/download 下载或更新 Claude 桌面应用，启动多个并行会话测试新侧边栏布局</li>
+<li>在同一窗口内分别使用不同会话处理代码修改与 PDF/HTML 预览，评估从 CLI 切换到桌面 IDE 风格工作流的收益</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/claudeai/status/2044095086460309790">Claude Code 推出 Routines：可调度的长驻自动化任务</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Routines</code> <code>自动化</code> <code>调度</code> <code>Web 基础设施</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 以研究预览形式推出 Routines——一次配置 prompt、代码仓库与连接器即可按定时、API 调用或事件驱动反复运行。任务运行在 Anthropic 的 Web 基础设施上，无需保持本机开启；已适用于全部付费计划，CLI 中的 <code>/schedule</code> 自动迁移为 Routines。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>创建一个 Routine：每天凌晨 2 点从 Linear 拉取最高优先级 bug，尝试修复并开 draft PR，观察一周后的命中率</li>
+<li>将团队已有的 <code>/schedule</code> CLI 作业检查一遍，确认迁移后仍按预期触发，同时接入事件驱动模式做对比</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/GoogleDeepMind/status/2044069878781390929">Google DeepMind 发布 Gemini Robotics-ER 1.6：更强空间推理，波士顿动力 Spot 自主读表</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | 📡 也被 Demis Hassabis (Twitter) 报道</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini Robotics-ER</code> <code>具身智能</code> <code>Boston Dynamics</code> <code>空间推理</code> <code>机器人安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 推出 Gemini Robotics-ER 1.6，显著提升机器人对物理世界的视觉与空间理解，能独立规划并完成更复杂任务；与波士顿动力合作的 Spot 机器人已能自主读取复杂工业仪表。该版本也是迄今最安全的机器人模型，能识别液体、&gt;20kg 重物等物理约束，视频中人类受伤风险检测较上代提升 10%。现已在 Google AI Studio 与 Gemini API 提供。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Google AI Studio 用现成的 Gemini Robotics-ER 1.6 端点上传一组机器人工作场景图片，测试空间定位与可执行步骤规划质量</li>
+<li>如果已有机器人/仿真环境，通过 Gemini API 替换现有 VLM 模块做 A/B 对比，重点评估对工业仪表、液体容器等边界场景的识别率</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://www.anthropic.com/research/automated-alignment-researchers">Anthropic 发布 Automated Alignment Researcher：让 Claude Opus 4.6 加速可扩展监督研究</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research | 📡 也被 Anthropic (Twitter) 报道</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>对齐研究</code> <code>可扩展监督</code> <code>Claude Opus 4.6</code> <code>Anthropic Fellows</code> <code>自动化科研</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic Fellows 项目发布研究成果：探索让 Claude Opus 4.6 自动化开展一个关键对齐问题——用较弱模型监督更强模型训练（scalable oversight）。实验表明 Claude 可显著提升实验与探索速率，但在缺少可验证指标的&quot;模糊&quot;对齐研究上仍力不从心，AI 尚未成为通用对齐科学家。研究展示了用 AI 加速对齐科研的可行路径，同时明确当前局限。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://openai.com/index/scaling-trusted-access-for-cyber-defense">OpenAI 扩展 Trusted Access for Cyber，向合格防御方开放 GPT-5.4-Cyber</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | 📡 也被 OpenAI (Twitter) 报道</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>网络安全</code> <code>GPT-5.4-Cyber</code> <code>可信访问</code> <code>防御方</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 为 Trusted Access for Cyber 程序新增多个层级，面向经过身份核验的网络安全防御方开放能力。最高层级客户可申请使用 GPT-5.4-Cyber——一款针对网络安全场景微调的 GPT-5.4 变体，用于更高阶的防御性工作流。核心思路是在模型能力继续提升的同时，同步扩大合法防御方的访问并加固滥用防线。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/">Chrome 推出 Skills：把常用 AI prompt 一键化并可复用</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Chrome</code> <code>Gemini</code> <code>Skills</code> <code>提示工程</code> <code>浏览器 AI</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 在 Chrome 中推出 Skills 功能，用户可以发现、保存并 remix 他人的 AI 工作流，把高质量 prompt 固化为一键触发的工具并在浏览器中随时复用。该功能瞄准重复性的 AI 使用场景，降低 prompt 工程门槛。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Chrome 中开启 Skills，保存 2-3 个你最常用的日常 AI prompt（翻译、摘要、代码解释），比较一键调用与手动粘贴的效率差</li>
+<li>浏览社区 Skills 目录，fork 一个生产力类 skill 再做局部改动，观察 remix 机制的可维护性</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://www.anthropic.com/news/narasimhan-board">Anthropic 长期利益信托任命 Vas Narasimhan 进入董事会</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | 📡 也被 Anthropic (Twitter) 报道</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>董事会</code> <code>治理</code> <code>Vas Narasimhan</code> <code>Novartis</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 的长期利益信托（Long-Term Benefit Trust）任命前诺华（Novartis）CEO Vas Narasimhan 加入董事会。他拥有二十多年医学与全球卫生领域的经验，是 Anthropic 此前以使命驱动公司治理结构下的新一员。</p>
+<hr>
+<h3 id="h-10">8. <a href="https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/ai-economy-forum/">Google 在华盛顿举办 AI for the Economy Forum</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Google</code> <code>AI 经济</code> <code>政策</code> <code>华盛顿</code> <code>产业论坛</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 在华盛顿特区举办 &quot;AI for the Economy Forum&quot;，邀请政商各方就 AI 如何驱动经济机会展开对话。这是 Google 面向美国政策圈持续输出 AI 经济议程的一次集中活动。</p>
+<hr>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Code 桌面端重构：多会话并行 + 集成终端与预览</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Claude Code 推出 Routines：可调度的长驻自动化任务</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Google DeepMind 发布 Gemini Robotics-ER 1.6：更强空间推理，波士顿动力 Spot 自主读表</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Anthropic 发布 Automated Alignment Researcher：让 Claude Opus 4.6 加速可扩展监督研究</a></li>
+      <li class="toc-h3"><a href="#h-7">5. OpenAI 扩展 Trusted Access for Cyber，向合格防御方开放 GPT-5.4-Cyber</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Chrome 推出 Skills：把常用 AI prompt 一键化并可复用</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Anthropic 长期利益信托任命 Vas Narasimhan 进入董事会</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Google 在华盛顿举办 AI for the Economy Forum</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-04-14.html">2026-04-14</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <a href="../daily/2026-04-16.html">2026-04-16</a>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-15.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
