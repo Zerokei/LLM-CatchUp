@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp · An AI Digest</title>
+  <meta name="description" content="An editorial digest of artificial intelligence — daily, weekly, monthly. 人工智能信息日览。" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="./feed.xml" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --paper: #f3eee4;
+      --paper-deep: #ebe3d2;
+      --ink: #1a1916;
+      --ink-soft: #4a463e;
+      --ink-mute: #837b6d;
+      --rule: #cfc6b3;
+      --rule-soft: #e0d8c6;
+      --accent: #a3211a;
+      --accent-bright: #c33824;
+      --highlight: rgba(163, 33, 26, 0.08);
+
+      --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+      --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+      --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+      --measure: 68ch;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 17px;
+      line-height: 1.65;
+      font-feature-settings: "kern", "liga", "calt", "ss01";
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      position: relative;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* Paper grain — subtle SVG noise overlay */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+      mix-blend-mode: multiply;
+      opacity: 0.18;
+    }
+
+    /* Soft vignette at edges to feel like printed paper */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: clamp(1.25rem, 3vw, 3rem) clamp(1.25rem, 4vw, 4rem);
+    }
+
+    /* ---------- MASTHEAD ---------- */
+
+    .masthead {
+      padding-top: clamp(1.5rem, 4vw, 4rem);
+      text-align: center;
+      animation: enter 1.2s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+
+    @keyframes enter {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .dateline {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .dateline .center {
+      flex: 1;
+      text-align: center;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: clamp(3.5rem, 11vw, 8.5rem);
+      font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+      line-height: 1;
+      letter-spacing: -0.015em;
+      margin: 2rem 0 2.5rem;
+      color: var(--ink);
+      padding-bottom: 0.05em;
+    }
+
+    .title .dot {
+      color: var(--accent);
+      font-style: normal;
+    }
+
+    .tagline {
+      font-family: var(--font-body);
+      font-style: italic;
+      font-size: clamp(1rem, 1.4vw, 1.15rem);
+      font-weight: 400;
+      color: var(--ink-soft);
+      max-width: 42rem;
+      margin: 0 auto 2.25rem;
+      line-height: 1.5;
+    }
+
+    .tagline .sep {
+      display: inline-block;
+      margin: 0 0.5em;
+      color: var(--accent);
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    .triple-rule {
+      border: none;
+      height: 7px;
+      margin: 0 auto 2.5rem;
+      max-width: 100%;
+      background:
+        linear-gradient(var(--ink), var(--ink)) top/100% 2px no-repeat,
+        linear-gradient(var(--ink), var(--ink)) center/100% 1px no-repeat,
+        linear-gradient(var(--ink), var(--ink)) bottom/100% 2px no-repeat;
+      opacity: 0.85;
+    }
+
+    /* ---------- CADENCE NAV ---------- */
+
+    .cadence-nav {
+      display: flex;
+      gap: 0;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: baseline;
+      padding-bottom: 2.75rem;
+      border-bottom: 1px solid var(--rule-soft);
+      margin-bottom: 3.5rem;
+    }
+
+    .cadence-nav button {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      color: var(--ink-mute);
+      padding: 0.6rem 1.5rem;
+      cursor: pointer;
+      transition: color 0.25s ease;
+      position: relative;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .cadence-nav button:hover {
+      color: var(--ink);
+    }
+
+    .cadence-nav button[aria-pressed="true"] {
+      color: var(--accent);
+    }
+
+    .cadence-nav button[aria-pressed="true"]::after {
+      content: "";
+      position: absolute;
+      left: 1.5rem;
+      right: 1.5rem;
+      bottom: -1px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    .cadence-nav button .count {
+      font-weight: 400;
+      color: var(--ink-mute);
+      margin-left: 0.5em;
+      font-size: 0.85em;
+    }
+
+    /* ---------- SECTION HEADER ---------- */
+
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .section-head .label {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .section-head .rule {
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ---------- HERO (latest issue) ---------- */
+
+    .hero {
+      margin-bottom: 4rem;
+      padding-bottom: 4rem;
+      border-bottom: 1px solid var(--rule-soft);
+      animation: enter 1.4s 0.15s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+
+    .hero .meta {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 1.25rem;
+    }
+
+    .hero .meta .cadence {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .hero .meta .issue {
+      font-variant-numeric: tabular-nums;
+    }
+
+    .hero .date {
+      font-family: var(--font-display);
+      font-size: clamp(2.75rem, 7vw, 5.5rem);
+      font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.25rem;
+      color: var(--ink);
+    }
+
+    .hero .iso {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--ink-mute);
+      margin-bottom: 2rem;
+    }
+
+    .hero .excerpt {
+      font-family: var(--font-body);
+      font-size: clamp(1.1rem, 1.4vw, 1.25rem);
+      font-weight: 400;
+      line-height: 1.55;
+      color: var(--ink-soft);
+      max-width: 56ch;
+      margin-bottom: 2rem;
+    }
+
+    .hero .excerpt::first-letter {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-weight: 600;
+      font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+      font-size: 4.5em;
+      line-height: 0.85;
+      float: left;
+      margin: 0.05em 0.12em -0.05em 0;
+      color: var(--accent);
+    }
+
+    .hero .read-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink);
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 0;
+      transition: color 0.2s ease, gap 0.25s ease;
+    }
+
+    .hero .read-cta:hover {
+      color: var(--accent);
+      gap: 1rem;
+    }
+
+    .hero .read-cta .arrow {
+      font-family: var(--font-display);
+      font-style: normal;
+      font-size: 1.4em;
+      line-height: 0;
+      transform: translateY(0.05em);
+    }
+
+    /* ---------- ARCHIVE GRID ---------- */
+
+    .archive {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(min(380px, 100%), 1fr));
+      gap: 0;
+      margin-bottom: 4rem;
+    }
+
+    .issue {
+      padding: 2.25rem 0;
+      border-bottom: 1px solid var(--rule-soft);
+      cursor: pointer;
+      transition: background 0.2s ease;
+      position: relative;
+      animation: enter 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+    }
+
+    /* Card-grid version: alternate rows have a vertical hairline on left */
+    .archive > .issue:not(:first-child) {
+      padding-left: 1.75rem;
+      padding-right: 1.75rem;
+    }
+
+    @media (min-width: 760px) {
+      .archive > .issue {
+        padding-left: 1.75rem;
+        padding-right: 1.75rem;
+      }
+      .archive > .issue + .issue {
+        border-left: 1px solid var(--rule-soft);
+      }
+    }
+
+    .issue:hover {
+      background: var(--highlight);
+    }
+
+    .issue:hover .meta .cadence {
+      letter-spacing: 0.28em;
+    }
+
+    .issue .meta {
+      display: flex;
+      gap: 0.75rem;
+      align-items: baseline;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin-bottom: 0.85rem;
+      transition: letter-spacing 0.4s ease;
+    }
+
+    .issue .meta .cadence {
+      color: var(--accent);
+      font-weight: 600;
+      transition: letter-spacing 0.4s ease;
+    }
+
+    .issue .date {
+      font-family: var(--font-display);
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      font-weight: 500;
+      font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+      line-height: 1.1;
+      letter-spacing: -0.015em;
+      margin: 0 0 0.5rem;
+    }
+
+    .issue .iso {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      color: var(--ink-mute);
+      margin-bottom: 1rem;
+    }
+
+    .issue .excerpt {
+      font-family: var(--font-body);
+      font-size: 0.96rem;
+      line-height: 1.6;
+      color: var(--ink-soft);
+      margin: 0;
+      display: -webkit-box;
+      -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ---------- READER (expanded view) ---------- */
+
+    .reader-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(20, 18, 12, 0.45);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      z-index: 10;
+      display: none;
+      animation: fade-in 0.3s ease both;
+    }
+
+    .reader-overlay.open { display: block; }
+
+    @keyframes fade-in {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .reader {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: min(820px, 100vw);
+      background: var(--paper);
+      z-index: 11;
+      overflow-y: auto;
+      transform: translateX(100%);
+      transition: transform 0.45s cubic-bezier(0.22, 0.7, 0.2, 1);
+      box-shadow: -20px 0 60px rgba(20, 18, 12, 0.22);
+    }
+
+    .reader.open {
+      transform: translateX(0);
+    }
+
+    .reader-inner {
+      padding: clamp(2rem, 4vw, 4rem) clamp(1.5rem, 5vw, 5rem) 6rem;
+      position: relative;
+    }
+
+    .reader-close {
+      position: sticky;
+      top: 1rem;
+      float: right;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 1px solid var(--rule);
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 1.4rem;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+      transition: all 0.2s ease;
+      z-index: 5;
+    }
+
+    .reader-close:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .reader-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: baseline;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      margin: 0 0 1.25rem;
+      padding-top: 0.5rem;
+    }
+
+    .reader-meta .cadence {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .reader-date {
+      font-family: var(--font-display);
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 500;
+      font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
+      line-height: 0.95;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.75rem;
+    }
+
+    .reader-iso {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      color: var(--ink-mute);
+      margin-bottom: 2.5rem;
+    }
+
+    .reader-rule {
+      border: none;
+      height: 1px;
+      background: var(--ink);
+      margin: 0 0 3rem;
+      opacity: 0.7;
+    }
+
+    /* ---------- PROSE STYLES ---------- */
+
+    .prose {
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.75;
+      color: var(--ink);
+      max-width: var(--measure);
+    }
+
+    .prose > h1 { display: none; }   /* duplicates the reader-date */
+
+    .prose h2 {
+      font-family: var(--font-display);
+      font-size: 1.6rem;
+      font-weight: 600;
+      font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+      line-height: 1.25;
+      letter-spacing: -0.01em;
+      margin: 3rem 0 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--rule);
+      color: var(--ink);
+    }
+
+    .prose h3 {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-size: 1.25rem;
+      font-weight: 500;
+      font-variation-settings: "opsz" 48, "SOFT" 80;
+      margin: 2rem 0 0.75rem;
+      color: var(--ink);
+      letter-spacing: -0.005em;
+    }
+
+    .prose h4 {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 1.75rem 0 0.6rem;
+    }
+
+    .prose p {
+      margin: 0 0 1.1rem;
+    }
+
+    .prose > p:first-of-type::first-letter,
+    .prose > h1 + p::first-letter,
+    .prose > h2:first-child + p::first-letter {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-variation-settings: "opsz" 144, "SOFT" 80, "WONK" 1;
+      font-size: 4.4em;
+      line-height: 0.82;
+      float: left;
+      margin: 0.07em 0.1em -0.05em 0;
+      color: var(--accent);
+    }
+
+    .prose strong {
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .prose em {
+      font-style: italic;
+    }
+
+    .prose a {
+      color: var(--ink);
+      text-decoration: none;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-position: 0 100%;
+      background-repeat: no-repeat;
+      background-size: 100% 1px;
+      padding-bottom: 1px;
+      transition: background-size 0.2s ease, color 0.2s ease;
+    }
+
+    .prose a:hover {
+      color: var(--accent);
+      background-size: 100% 2px;
+    }
+
+    .prose ul, .prose ol {
+      margin: 0 0 1.1rem;
+      padding-left: 1.5rem;
+    }
+
+    .prose li {
+      margin-bottom: 0.4rem;
+    }
+
+    .prose ul li::marker {
+      color: var(--accent);
+    }
+
+    .prose code {
+      font-family: var(--font-mono);
+      font-size: 0.88em;
+      background: var(--paper-deep);
+      padding: 0.1em 0.35em;
+      border-radius: 2px;
+      color: var(--ink);
+    }
+
+    .prose pre {
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      line-height: 1.55;
+      background: var(--paper-deep);
+      border-left: 2px solid var(--accent);
+      padding: 1rem 1.25rem;
+      overflow-x: auto;
+      margin: 1.25rem 0;
+    }
+
+    .prose pre code {
+      background: none;
+      padding: 0;
+    }
+
+    .prose blockquote {
+      margin: 1.5rem 0;
+      padding: 0.5rem 0 0.5rem 1.5rem;
+      border-left: 2px solid var(--accent);
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+
+    .prose table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .prose th {
+      text-align: left;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+      padding: 0.6rem 0.75rem 0.5rem 0;
+      border-bottom: 1px solid var(--ink);
+    }
+
+    .prose td {
+      padding: 0.55rem 0.75rem 0.55rem 0;
+      border-bottom: 1px solid var(--rule-soft);
+      vertical-align: top;
+    }
+
+    .prose hr {
+      border: none;
+      text-align: center;
+      margin: 2.5rem 0;
+      height: 1rem;
+      position: relative;
+    }
+    .prose hr::before {
+      content: "§";
+      font-family: var(--font-display);
+      font-size: 1.25rem;
+      color: var(--accent);
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--paper);
+      padding: 0 0.75rem;
+    }
+    .prose hr::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--rule);
+      z-index: -1;
+    }
+
+    /* ---------- LOADING / EMPTY ---------- */
+
+    .status {
+      text-align: center;
+      padding: 4rem 1rem;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ink-mute);
+    }
+
+    /* ---------- FOOTER ---------- */
+
+    footer {
+      margin-top: 5rem;
+      padding-top: 2.5rem;
+      border-top: 7px solid var(--ink);
+      position: relative;
+    }
+    footer::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: 0; right: 0;
+      height: 1px;
+      background: var(--paper);
+    }
+
+    .colophon {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      padding-bottom: 4rem;
+    }
+    @media (min-width: 760px) {
+      .colophon {
+        grid-template-columns: 2fr 1fr 1fr;
+        gap: 3rem;
+      }
+    }
+
+    .colophon h4 {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin: 0 0 1rem;
+    }
+
+    .colophon p, .colophon a {
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--ink-soft);
+      margin: 0 0 0.5rem;
+    }
+    .colophon a {
+      color: var(--ink);
+      text-decoration: none;
+      background: linear-gradient(var(--accent), var(--accent)) 0 100% / 100% 1px no-repeat;
+      transition: background-size 0.2s ease, color 0.2s ease;
+      padding-bottom: 1px;
+    }
+    .colophon a:hover {
+      color: var(--accent);
+      background-size: 100% 2px;
+    }
+    .colophon .signature {
+      font-family: var(--font-display);
+      font-style: italic;
+      font-variation-settings: "opsz" 24, "SOFT" 80, "WONK" 1;
+      font-size: 1.05rem;
+      color: var(--ink);
+    }
+
+    /* ---------- ACCESSIBILITY ---------- */
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    /* ---------- SMALL SCREENS ---------- */
+
+    @media (max-width: 600px) {
+      .dateline { flex-direction: column; gap: 0.4rem; align-items: center; }
+      .dateline .center, .dateline .left, .dateline .right { text-align: center; }
+      .triple-rule { margin-bottom: 1.75rem; }
+      .archive { grid-template-columns: 1fr; }
+      .reader-inner { padding: 1.5rem 1.25rem 4rem; }
+      .reader-close { top: 0.75rem; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+
+    <header class="masthead">
+      <div class="dateline">
+        <span class="left" id="dl-vol">Vol. I</span>
+        <span class="center" id="dl-date">Loading…</span>
+        <span class="right" id="dl-issue">Nº —</span>
+      </div>
+      <h1 class="title"><span>CatchUp</span><span class="dot">.</span></h1>
+      <p class="tagline">An editorial digest of artificial intelligence <span class="sep">§</span> 人工智能信息日览</p>
+      <hr class="triple-rule" />
+    </header>
+
+    <nav class="cadence-nav" aria-label="Filter by cadence">
+      <button data-cadence="all" aria-pressed="true">All <span class="count" id="count-all"></span></button>
+      <button data-cadence="daily" aria-pressed="false">Daily <span class="count" id="count-daily"></span></button>
+      <button data-cadence="weekly" aria-pressed="false">Weekly <span class="count" id="count-weekly"></span></button>
+      <button data-cadence="monthly" aria-pressed="false">Monthly <span class="count" id="count-monthly"></span></button>
+    </nav>
+
+    <section id="content">
+      <div class="status" id="status">Loading the archive…</div>
+    </section>
+
+    <footer>
+      <div class="colophon">
+        <div>
+          <h4>About</h4>
+          <p>CatchUp is an automated editorial digest of artificial intelligence — a daily, weekly, and monthly read built from official model releases, research labs, and primary-source commentary. <span class="signature">Reading what matters, on a quiet schedule.</span></p>
+        </div>
+        <div>
+          <h4>Subscribe</h4>
+          <p><a href="./feed.xml">RSS Feed</a></p>
+          <p><a href="https://feedrabbit.com" target="_blank" rel="noopener">via Feedrabbit (email)</a></p>
+        </div>
+        <div>
+          <h4>Source</h4>
+          <p><a href="https://github.com/Zerokei/LLM-CatchUp" target="_blank" rel="noopener">GitHub Repository</a></p>
+          <p><a href="https://github.com/Zerokei/LLM-CatchUp/tree/main/reports" target="_blank" rel="noopener">Report Archive</a></p>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- Reader overlay -->
+  <div class="reader-overlay" id="reader-overlay" aria-hidden="true"></div>
+  <article class="reader" id="reader" aria-hidden="true" tabindex="-1">
+    <div class="reader-inner">
+      <button class="reader-close" id="reader-close" aria-label="Close">×</button>
+      <div class="reader-meta">
+        <span class="cadence" id="reader-cadence"></span>
+        <span id="reader-issue"></span>
+      </div>
+      <h2 class="reader-date" id="reader-date"></h2>
+      <div class="reader-iso" id="reader-iso"></div>
+      <hr class="reader-rule" />
+      <div class="prose" id="reader-prose"></div>
+    </div>
+  </article>
+
+  <script>
+    (function () {
+      'use strict';
+
+      const CADENCE_LABEL = { daily: '日报', weekly: '周报', monthly: '月报' };
+      const CADENCE_LABEL_EN = { daily: 'Daily', weekly: 'Weekly', monthly: 'Monthly' };
+      const ROMAN_TABLE = [
+        ['M',1000],['CM',900],['D',500],['CD',400],['C',100],['XC',90],
+        ['L',50],['XL',40],['X',10],['IX',9],['V',5],['IV',4],['I',1],
+      ];
+      function toRoman(n) {
+        let out = '';
+        for (const [s, v] of ROMAN_TABLE) {
+          while (n >= v) { out += s; n -= v; }
+        }
+        return out;
+      }
+
+      // Parse RFC 822 date into a Date and into Chinese long-form
+      function fmtChineseDate(d) {
+        // Render in Asia/Shanghai because reports are CST-keyed
+        const fmt = new Intl.DateTimeFormat('zh-CN', {
+          timeZone: 'Asia/Shanghai',
+          year: 'numeric', month: 'long', day: 'numeric', weekday: 'long',
+        });
+        return fmt.format(d);
+      }
+      function fmtIso(d) {
+        return new Intl.DateTimeFormat('sv-SE', {
+          timeZone: 'Asia/Shanghai',
+          year: 'numeric', month: '2-digit', day: '2-digit',
+        }).format(d);
+      }
+      function fmtNiceShort(d) {
+        // "April 25" or for monthly "April" or for weekly "Week 17"
+        return new Intl.DateTimeFormat('en-US', {
+          timeZone: 'UTC', month: 'long', day: 'numeric',
+        }).format(d);
+      }
+
+      function extractExcerpt(html, maxLen) {
+        // Strip HTML, collapse whitespace, take meaningful prose
+        const tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        // Skip the first H1 (which duplicates the title) and tables/headers — find first <p>
+        const paragraphs = tmp.querySelectorAll('p');
+        let text = '';
+        for (const p of paragraphs) {
+          const t = (p.textContent || '').replace(/\s+/g, ' ').trim();
+          if (t.length > 30) { text = t; break; }
+        }
+        if (!text) {
+          text = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+        }
+        if (text.length > maxLen) {
+          text = text.slice(0, maxLen).replace(/[\s。、，,.;]+\S*$/, '') + '…';
+        }
+        return text;
+      }
+
+      function parseTitle(title, category) {
+        // Examples: "CatchUp 日报 2026-04-25", "CatchUp 周报 2026-W17", "CatchUp 月报 2026-04"
+        let m = title.match(/(\d{4}-\d{2}-\d{2})/);
+        if (m) return { kind: 'daily', label: m[1] };
+        m = title.match(/(\d{4})-W(\d{2})/);
+        if (m) return { kind: 'weekly', label: `${m[1]}-W${m[2]}` };
+        m = title.match(/(\d{4}-\d{2})$/);
+        if (m) return { kind: 'monthly', label: m[1] };
+        return { kind: category || 'daily', label: title };
+      }
+
+      function formatHeadingDate(parsed, date) {
+        if (parsed.kind === 'daily') {
+          return fmtChineseDate(date);
+        }
+        if (parsed.kind === 'weekly') {
+          return `${parsed.label.split('-W')[0]} 第 ${parseInt(parsed.label.split('-W')[1], 10)} 周`;
+        }
+        if (parsed.kind === 'monthly') {
+          const [y, mo] = parsed.label.split('-');
+          return `${y}年${parseInt(mo, 10)}月`;
+        }
+        return parsed.label;
+      }
+
+      async function fetchFeed() {
+        const res = await fetch('./feed.xml', { cache: 'no-store' });
+        if (!res.ok) throw new Error(`feed fetch failed: ${res.status}`);
+        const text = await res.text();
+        const xml = new DOMParser().parseFromString(text, 'text/xml');
+        if (xml.querySelector('parsererror')) {
+          throw new Error('feed parse error');
+        }
+        return [...xml.querySelectorAll('item')].map((item, i) => {
+          const title = item.querySelector('title')?.textContent ?? '';
+          const link = item.querySelector('link')?.textContent ?? '';
+          const pubDateRaw = item.querySelector('pubDate')?.textContent ?? '';
+          const cat = item.querySelector('category')?.textContent ?? '';
+          const desc = item.querySelector('description')?.textContent ?? '';
+          const date = new Date(pubDateRaw);
+          const parsed = parseTitle(title, cat);
+          return {
+            i,
+            title, link, cat, desc, date,
+            kind: parsed.kind,
+            label: parsed.label,
+            heading: formatHeadingDate(parsed, date),
+            iso: parsed.label,
+            excerpt: extractExcerpt(desc, 240),
+          };
+        });
+      }
+
+      let allIssues = [];
+      let activeCadence = 'all';
+
+      function render() {
+        const root = document.getElementById('content');
+        const filtered = activeCadence === 'all'
+          ? allIssues
+          : allIssues.filter((it) => it.kind === activeCadence);
+
+        if (filtered.length === 0) {
+          root.innerHTML = '<div class="status">No issues in this cadence yet.</div>';
+          return;
+        }
+
+        const total = allIssues.length;
+        const [hero, ...rest] = filtered;
+        const heroIssueNo = total - hero.i; // most recent gets highest issue number
+
+        let html = '';
+
+        // Hero — featured latest issue
+        html += `
+          <article class="hero" data-i="${hero.i}">
+            <div class="meta">
+              <span class="cadence">${CADENCE_LABEL_EN[hero.kind] || hero.kind}</span>
+              <span class="issue">Nº ${toRoman(heroIssueNo)}</span>
+              <span>·</span>
+              <span>${CADENCE_LABEL[hero.kind] || ''}</span>
+            </div>
+            <h2 class="date">${escapeHtml(hero.heading)}</h2>
+            <div class="iso">ISO · ${escapeHtml(hero.iso)}</div>
+            <p class="excerpt">${escapeHtml(hero.excerpt)}</p>
+            <button class="read-cta" data-i="${hero.i}">
+              <span>Read the issue</span>
+              <span class="arrow">→</span>
+            </button>
+          </article>
+        `;
+
+        if (rest.length > 0) {
+          html += `
+            <div class="section-head">
+              <span class="label">From the Archive</span>
+              <span class="rule"></span>
+              <span class="label">${rest.length} issues</span>
+            </div>
+            <div class="archive">
+              ${rest.map((it) => {
+                const issueNo = total - it.i;
+                return `
+                  <article class="issue" data-i="${it.i}" tabindex="0" role="button" aria-label="Open ${escapeHtml(it.iso)}">
+                    <div class="meta">
+                      <span class="cadence">${CADENCE_LABEL_EN[it.kind] || it.kind}</span>
+                      <span class="issue">Nº ${toRoman(issueNo)}</span>
+                    </div>
+                    <h3 class="date">${escapeHtml(it.heading)}</h3>
+                    <div class="iso">${escapeHtml(it.iso)}</div>
+                    <p class="excerpt">${escapeHtml(it.excerpt)}</p>
+                  </article>
+                `;
+              }).join('')}
+            </div>
+          `;
+        }
+
+        root.innerHTML = html;
+
+        // Wire up open handlers
+        root.querySelectorAll('[data-i]').forEach((el) => {
+          el.addEventListener('click', () => openReader(parseInt(el.dataset.i, 10)));
+          if (el.tagName === 'ARTICLE' && el.classList.contains('issue')) {
+            el.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openReader(parseInt(el.dataset.i, 10));
+              }
+            });
+          }
+        });
+      }
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      // ---------- READER ----------
+
+      const reader = document.getElementById('reader');
+      const overlay = document.getElementById('reader-overlay');
+
+      function openReader(i) {
+        const issue = allIssues[i];
+        if (!issue) return;
+        const total = allIssues.length;
+        const issueNo = total - i;
+
+        document.getElementById('reader-cadence').textContent = `${CADENCE_LABEL_EN[issue.kind] || issue.kind} · ${CADENCE_LABEL[issue.kind] || ''}`;
+        document.getElementById('reader-issue').textContent = `Nº ${toRoman(issueNo)}`;
+        document.getElementById('reader-date').textContent = issue.heading;
+        document.getElementById('reader-iso').textContent = `ISO · ${issue.iso}`;
+        document.getElementById('reader-prose').innerHTML = issue.desc;
+
+        reader.classList.add('open');
+        overlay.classList.add('open');
+        reader.setAttribute('aria-hidden', 'false');
+        overlay.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        reader.focus();
+        reader.scrollTop = 0;
+
+        history.replaceState({ reader: true, i }, '', `#${issue.iso}`);
+      }
+
+      function closeReader() {
+        reader.classList.remove('open');
+        overlay.classList.remove('open');
+        reader.setAttribute('aria-hidden', 'true');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        history.replaceState({}, '', window.location.pathname + window.location.search);
+      }
+
+      document.getElementById('reader-close').addEventListener('click', closeReader);
+      overlay.addEventListener('click', closeReader);
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && reader.classList.contains('open')) closeReader();
+      });
+
+      // ---------- NAV ----------
+
+      document.querySelectorAll('.cadence-nav button').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          activeCadence = btn.dataset.cadence;
+          document.querySelectorAll('.cadence-nav button').forEach((b) => {
+            b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
+          });
+          render();
+        });
+      });
+
+      // ---------- BOOT ----------
+
+      function setMastheadMeta(issues) {
+        const today = new Date();
+        document.getElementById('dl-date').textContent =
+          new Intl.DateTimeFormat('en-US', {
+            timeZone: 'Asia/Shanghai',
+            weekday: 'long', month: 'long', day: 'numeric', year: 'numeric',
+          }).format(today).toUpperCase();
+        document.getElementById('dl-issue').textContent = `Nº ${toRoman(issues.length)}`;
+
+        const counts = { all: issues.length, daily: 0, weekly: 0, monthly: 0 };
+        for (const it of issues) counts[it.kind] = (counts[it.kind] || 0) + 1;
+        for (const k of ['all', 'daily', 'weekly', 'monthly']) {
+          const el = document.getElementById('count-' + k);
+          if (el) el.textContent = `(${counts[k] || 0})`;
+        }
+      }
+
+      fetchFeed()
+        .then((items) => {
+          allIssues = items; // newest first per feed.xml ordering
+          setMastheadMeta(items);
+          render();
+
+          // Deep-link: if URL has #YYYY-MM-DD, open that reader
+          const hash = decodeURIComponent(location.hash.slice(1));
+          if (hash) {
+            const idx = items.findIndex((it) => it.iso === hash);
+            if (idx >= 0) openReader(idx);
+          }
+        })
+        .catch((err) => {
+          console.error(err);
+          document.getElementById('content').innerHTML =
+            `<div class="status">Could not load the archive. <br><br>${escapeHtml(err.message)}</div>`;
+        });
+    })();
+  </script>
+</body>
+</html>
