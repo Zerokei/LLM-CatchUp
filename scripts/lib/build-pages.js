@@ -409,6 +409,8 @@ function renderPage({ report, totalIssues, issueNo, newer, older, projectRoot })
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>${escapeHtml(report.title)} · CatchUp</title>
   <meta name="description" content="CatchUp ${cadenceCn} — ${escapeHtml(report.label)}" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
