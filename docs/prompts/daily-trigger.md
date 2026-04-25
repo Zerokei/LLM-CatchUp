@@ -45,11 +45,11 @@ For EACH article, produce a JSON object with these 6 fields:
 2. summary — 2-3 Chinese sentences. Prioritize content in this order: `article.linked_content` > `article.full_text` > `article.quoted_tweet.text + article.description` > `article.description`.
 3. category — one of: 模型发布, 研究, 产品与功能, 商业动态, 政策与安全, 教程与观点
 4. importance — integer 1-5:
-   - 5: NEW MODEL RELEASE (GPT-5, Claude 5, Gemini 3, major open-weight SOTA)
-   - 4: SIGNIFICANT RESEARCH/PRODUCT (paper with empirical result, major product launch)
-   - 3: NOTABLE UPDATE (feature release, partnership, funding, policy/regulatory, expert deep-dive)
-   - 2: INCREMENTAL (small feature tweak, single observation)
-   - 1: LOW-SIGNAL (greeting, meme, reply fragment)
+   - 5: FLAGSHIP MODEL RELEASE — any new version of a flagship model (GPT-5.x, Claude Opus 4.x/5, Gemini 3.x, Qwen 3.x, DeepSeek V4, Llama 4 等). Minor version bumps (e.g. 4.6 → 4.7) still rate 5 when accompanied by benchmark wins (Terminal-Bench / SWE-Bench / Tau / OSWorld / Artificial Analysis Coding Index, etc.). Major open-weight SOTA also 5.
+   - 4: SIGNIFICANT RESEARCH/PRODUCT — paper with empirical result, major product launch. **Always 4 minimum** for any Claude Code release or feature update (Web & mobile, slash commands, skills, agents, plugins, connectors, performance improvements, etc.).
+   - 3: NOTABLE UPDATE — feature release, partnership, funding, policy/regulatory, expert deep-dive.
+   - 2: INCREMENTAL — small feature tweak, single observation.
+   - 1: LOW-SIGNAL — greeting, meme, reply fragment.
 5. tags — 3-5 Chinese keywords (array).
 6. practice_suggestions — 1-3 concrete actionable Chinese suggestions, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit otherwise.
 
