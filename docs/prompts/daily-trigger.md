@@ -116,22 +116,22 @@ Singletons (clusters of 1) get no change. Thread groups (articles sharing a `thr
 
 ### Step 8: Compute trend_paragraph
 
-Write `trend_paragraph` as a **markdown bulleted list of 3-5 bullets**, NOT prose. Each bullet covers one distinct theme/storyline of the day. Format:
+The value MUST be a bulleted markdown list, NOT prose. Synthesize from `final_articles[*].title + summary`.
+
+Shape — 3-5 bullets, one sentence each:
 
 ```
-- **{theme name in 6-10 chars}**：{1 sentence explanation, ~30-60 Chinese chars}。
-- **{another theme}**：{another sentence}。
-...
+- **{主题词 6-10 汉字}**：{一句话解释 30-60 汉字}。
+- **{下一主题}**：{下一句}。
 ```
 
 Rules:
-- Each bullet is exactly **one sentence**. No commas-as-sentence-breaks; if you need two ideas, that's two bullets.
-- Lead with a **bolded theme keyword/phrase** (Chinese, terse), followed by `：` (full-width colon) and a short explanation.
-- The explanation may name 1-2 specific products/companies as evidence, but should NOT itemize a long list of partner names — keep it scannable.
-- Do NOT write a connecting "今日主线是..." opening or a closing summary sentence. Bullets only.
-- Base the synthesis on `final_articles[*].title` + `summary` (you do NOT need the raw articles — summaries are enough).
+- One sentence per bullet. Two ideas = two bullets, never comma-chained.
+- Each bullet leads with a **加粗主题词** + `：`（全角冒号）+ explanation.
+- Cite 1-2 specific products/companies as evidence; don't itemize partner lists.
+- No "今日主线是…" opener, no closing summary. Bullets only.
 
-The field is still named `trend_paragraph` for back-compat, but the value MUST be a bulleted markdown string (with literal `\n` separators between bullets in the JSON).
+Field name stays `trend_paragraph` for back-compat; the value is a markdown string with `\n`-separated bullets.
 
 ### Step 9: Write the analysis-cache
 
