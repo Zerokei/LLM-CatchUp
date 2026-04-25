@@ -39,7 +39,8 @@ node scripts/fetch-sources.js
 
 - **`api.socialdata.tools`** — 付费 Twitter REST API，所有 `*(Twitter)` 源走它。需一个 GH Actions secret：`SOCIALDATA_API_KEY`（dashboard 里生成）。路由文件硬编码 `handle` 和 `userId`（Twitter 数字 ID 不会随 handle 改名变化）。每次请求约 $0.0002，13 个账号日均 $0.005。**失效信号**：全部 Twitter 源集体 `error`（API key 被吊销、余额耗尽或服务宕机），3 天连续失败后开 `source-alert` issue。
 - **`r.jina.ai`** — Reader 代理，只有 `scripts/routes/berkeley-rdi.js` 用；Substack 会屏蔽 Azure / GH Actions 出口 IP，jina 从它自己的源抓。**失效信号**：Berkeley RDI 连续 `error` 3 天后触发 `source-alert` issue。
-- **`resend.com`** — 邮件投递，由 `.github/workflows/email-reports.yml` 调用，把新报告发到收件箱。需要两个 GH Actions repo secrets：`RESEND_API_KEY`、`RESEND_TO`（可选 `RESEND_FROM`，默认 `onboarding@resend.dev`）。**失效信号**：workflow 步骤失败；手动重发 `gh workflow run email-reports.yml -f report_path=reports/daily/<date>.md`，回灌多天 `-f backfill_days=7`。
+
+分发渠道：repo 根目录的 `feed.xml`（RSS 2.0，由 `scripts/lib/build-rss.js` 在每次报告生成时重建，最近 30 条混合所有 cadence）。订阅地址：`https://raw.githubusercontent.com/Zerokei/LLM-CatchUp/main/feed.xml`。任意 RSS 阅读器可用；想要邮件形式的可以喂给 [Feedrabbit](https://feedrabbit.com) / Blogtrottr。
 
 ## License
 

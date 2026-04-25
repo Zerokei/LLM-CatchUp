@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { buildRSS } = require('./lib/build-rss');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const FETCH_CACHE_DIR = path.join(PROJECT_ROOT, 'data/fetch-cache');
@@ -46,8 +47,11 @@ async function main() {
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
   fs.writeFileSync(reportPath, md);
 
+  const rss = buildRSS({ projectRoot: PROJECT_ROOT });
+  console.error(`rss: wrote ${path.relative(PROJECT_ROOT, rss.outPath)} — ${rss.included}/${rss.total} items`);
+
   const { execSync } = require('node:child_process');
-  execSync(`git add ${reportPath}`, { stdio: 'inherit' });
+  execSync(`git add ${reportPath} feed.xml`, { stdio: 'inherit' });
   try {
     execSync('git diff --cached --quiet', { stdio: 'ignore' });
     console.error('no changes to commit');

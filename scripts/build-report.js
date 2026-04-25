@@ -119,6 +119,7 @@ const path = require('node:path');
 const yaml = require('js-yaml');
 const { renderReport } = require('./lib/render-report');
 const { updateSourceHealth } = require('./lib/health');
+const { buildRSS } = require('./lib/build-rss');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const FETCH_CACHE_DIR = path.join(PROJECT_ROOT, 'data/fetch-cache');
@@ -236,9 +237,14 @@ async function main() {
   // Step 9 — issues
   await manageAlerts(healthAfter, healthBefore);
 
-  // Step 10 — git add / commit / push
+  // Step 10 — regenerate RSS feed (feed.xml at repo root) so subscribers
+  // pick up the new daily report. Bundled into the same commit below.
+  const rss = buildRSS({ projectRoot: PROJECT_ROOT });
+  console.error(`rss: wrote ${path.relative(PROJECT_ROOT, rss.outPath)} — ${rss.included}/${rss.total} items`);
+
+  // Step 11 — git add / commit / push
   const run = (c) => execSync(c, { stdio: 'inherit' });
-  run(`git add data/history.json data/health.json reports/daily/${date}.md`);
+  run(`git add data/history.json data/health.json reports/daily/${date}.md feed.xml`);
   // If the working tree has no changes (idempotent re-run), skip commit
   try {
     execSync('git diff --cached --quiet', { stdio: 'ignore' });
