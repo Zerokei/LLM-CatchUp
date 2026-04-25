@@ -23,14 +23,29 @@ function renderArticleBlock(a, idx) {
   return md;
 }
 
-function renderReport({
+// Editorial: what subscribers / website / RSS see. Lean: trend → articles.
+function renderEditorial({ date, articlesInReport, trendParagraph }) {
+  let md = '';
+  md += `# CatchUp 日报 — ${date}\n\n`;
+  md += '## 今日趋势\n\n';
+  md += (trendParagraph || '').trim() + '\n\n';
+  md += '---\n\n## 文章详情\n\n';
+  if (articlesInReport.length === 0) {
+    md += '今日窗口内无新内容。\n';
+  } else {
+    articlesInReport.forEach((a, i) => { md += renderArticleBlock(a, i + 1); });
+  }
+  return md;
+}
+
+// Ops: counts, category histogram, per-source health. Not surfaced on feed/site.
+function renderOps({
   date,
   articlesInReport,
   rawFetched,
   mergedCount,
   sourcesWithContent,
   filteredLowImportance,
-  trendParagraph,
   sourceStatuses,
 }) {
   const catCounts = Object.fromEntries(CATEGORIES.map((c) => [c, 0]));
@@ -39,7 +54,8 @@ function renderReport({
   }
 
   let md = '';
-  md += `# CatchUp 日报 — ${date}\n\n## 今日概览\n\n`;
+  md += `# CatchUp 日报 · 运维数据 — ${date}\n\n`;
+  md += '## 今日概览\n\n';
   if (mergedCount === rawFetched) {
     md += `共抓取 **${rawFetched}** 篇文章，来自 **${sourcesWithContent}** 个数据源（过滤后在报告中展示 **${articlesInReport.length}** 篇）。\n\n`;
   } else {
@@ -47,20 +63,10 @@ function renderReport({
   }
   md += '| 分类 | 数量 |\n|------|------|\n';
   for (const c of CATEGORIES) md += `| ${c} | ${catCounts[c]} |\n`;
-  md += '\n---\n\n## 文章详情\n\n';
-
-  if (articlesInReport.length === 0) {
-    md += `今日 30h 抓取窗口内全部 ${sourceStatuses.length} 个数据源均未产出新内容，无条目可展示。\n\n---\n\n`;
-  } else {
-    articlesInReport.forEach((a, i) => { md += renderArticleBlock(a, i + 1); });
-  }
-
-  md += '## 今日趋势\n\n';
-  md += trendParagraph.trim() + '\n\n';
-  md += '---\n\n## 数据源状态\n\n| 数据源 | 状态 |\n|--------|------|\n';
+  md += '\n---\n\n## 数据源状态\n\n| 数据源 | 状态 |\n|--------|------|\n';
   for (const s of sourceStatuses) md += `| ${s.name} | ${s.status_note} |\n`;
   md += `\n注：共过滤 ${filteredLowImportance} 篇低重要度条目（importance < 2）——这些条目仍记入 history.json。\n`;
   return md;
 }
 
-module.exports = { renderArticleBlock, renderReport, CATEGORIES };
+module.exports = { renderArticleBlock, renderEditorial, renderOps, CATEGORIES };

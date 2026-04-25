@@ -1,6 +1,6 @@
 const { test } = require('node:test');
 const assert = require('node:assert/strict');
-const { renderArticleBlock, renderReport, CATEGORIES } = require('./render-report');
+const { renderArticleBlock, renderEditorial, renderOps, CATEGORIES } = require('./render-report');
 
 const SAMPLE_ARTICLE = {
   title: 'Introducing Claude Opus 4.7',
@@ -59,53 +59,85 @@ function makeArticle(n, overrides = {}) {
   };
 }
 
-test('renderReport: header with date + totals + category table', () => {
-  const md = renderReport({
+// ---- renderEditorial ----
+
+test('renderEditorial: title + trend-first + articles, no ops blocks', () => {
+  const md = renderEditorial({
+    date: '2026-04-22',
+    articlesInReport: [makeArticle(1), makeArticle(2)],
+    trendParagraph: '今日主题是模型更新。',
+  });
+  assert.match(md, /^# CatchUp 日报 — 2026-04-22/);
+  // trend appears before articles
+  const trendIdx = md.indexOf('## 今日趋势');
+  const articlesIdx = md.indexOf('## 文章详情');
+  assert.ok(trendIdx > 0 && articlesIdx > trendIdx, 'trend section must precede articles');
+  assert.match(md, /今日主题是模型更新。/);
+  assert.match(md, /### 1\. \[文章 1\]/);
+  assert.match(md, /### 2\. \[文章 2\]/);
+  // no ops content leaked in
+  assert.doesNotMatch(md, /今日概览/);
+  assert.doesNotMatch(md, /数据源状态/);
+  assert.doesNotMatch(md, /共抓取/);
+});
+
+test('renderEditorial: empty day renders concise placeholder, not ops counts', () => {
+  const md = renderEditorial({
+    date: '2026-04-22',
+    articlesInReport: [],
+    trendParagraph: '今日所有数据源窗口内均无新内容。',
+  });
+  assert.match(md, /今日窗口内无新内容。/);
+  assert.doesNotMatch(md, /共抓取/);
+});
+
+test('renderEditorial: tolerates empty/whitespace trend paragraph', () => {
+  const md = renderEditorial({
+    date: '2026-04-22',
+    articlesInReport: [makeArticle(1)],
+    trendParagraph: '   ',
+  });
+  // section header still present even when body is empty — caller's contract is to provide the trend
+  assert.match(md, /## 今日趋势/);
+});
+
+// ---- renderOps ----
+
+test('renderOps: ops doc has counts, category table, source health table — no article bodies', () => {
+  const md = renderOps({
     date: '2026-04-22',
     articlesInReport: [makeArticle(1), makeArticle(2, { category: '研究' })],
     rawFetched: 10,
     mergedCount: 7,
     sourcesWithContent: 3,
     filteredLowImportance: 2,
-    trendParagraph: '今日主题是模型更新。',
     sourceStatuses: [
       { name: 'OpenAI Blog', status_note: '✅ 正常（窗口内 2 文）' },
       { name: 'Google AI Blog', status_note: '✅ 正常（窗口内 0 文）' },
     ],
   });
-  assert.match(md, /^# CatchUp 日报 — 2026-04-22/);
+  assert.match(md, /^# CatchUp 日报 · 运维数据 — 2026-04-22/);
   assert.match(md, /共抓取 \*\*10\*\* 篇文章/);
   assert.match(md, /合并多推文线程后为 7 条/);
   assert.match(md, /来自 \*\*3\*\* 个数据源/);
-  assert.match(md, /过滤后在报告中展示 \*\*2\*\* 篇/);
   assert.match(md, /\| 模型发布 \| 1 \|/);
   assert.match(md, /\| 研究 \| 1 \|/);
   assert.match(md, /\| 产品与功能 \| 0 \|/);
+  assert.match(md, /## 数据源状态[\s\S]*?\| OpenAI Blog \| ✅ 正常/);
+  assert.match(md, /共过滤 2 篇低重要度条目/);
+  // no article-level prose leaked
+  assert.doesNotMatch(md, /### 1\./);
+  assert.doesNotMatch(md, /\*\*摘要\*\*/);
 });
 
-test('renderReport: includes each article in body, trend, source status table', () => {
-  const md = renderReport({
+test('renderOps: drops "合并多推文线程" subclause when merge count equals raw fetch', () => {
+  const md = renderOps({
     date: '2026-04-22',
     articlesInReport: [makeArticle(1)],
-    rawFetched: 1, mergedCount: 1, sourcesWithContent: 1,
+    rawFetched: 5, mergedCount: 5, sourcesWithContent: 2,
     filteredLowImportance: 0,
-    trendParagraph: '今日 trend.',
-    sourceStatuses: [{ name: 'OpenAI Blog', status_note: '✅ 正常（窗口内 1 文）' }],
+    sourceStatuses: [],
   });
-  assert.match(md, /### 1\. \[文章 1\]/);
-  assert.match(md, /## 今日趋势[\s\S]*?今日 trend\./);
-  assert.match(md, /## 数据源状态[\s\S]*?\| OpenAI Blog \| ✅ 正常/);
-  assert.match(md, /共过滤 0 篇低重要度条目/);
-});
-
-test('renderReport: zero-article day renders placeholder section', () => {
-  const md = renderReport({
-    date: '2026-04-22',
-    articlesInReport: [],
-    rawFetched: 0, mergedCount: 0, sourcesWithContent: 0,
-    filteredLowImportance: 0,
-    trendParagraph: '今日所有数据源窗口内均无新内容。',
-    sourceStatuses: [{ name: 'OpenAI Blog', status_note: '✅ 正常（窗口内 0 文）' }],
-  });
-  assert.match(md, /今日 30h 抓取窗口内全部 \d+ 个数据源均未产出新内容/);
+  assert.doesNotMatch(md, /合并多推文线程/);
+  assert.match(md, /共抓取 \*\*5\*\* 篇文章，来自 \*\*2\*\* 个数据源/);
 });

@@ -10,7 +10,7 @@ This repo has three runtime stages, in order:
 
 **Stage 2 — Analyzer** (Claude Code Cloud Scheduled Trigger, runs shortly after fetch). The trigger reads `data/fetch-cache/{date}.json` and writes per-article `{summary, category, importance, tags, practice_suggestions, thread_group_id, duplicate_of}` plus a whole-batch `trend_paragraph` to `data/analysis-cache/{date}.json`. Incrementally persisted per article — partial work survives interruptions. Commits and pushes that single file. Does NOT render the markdown report, touch history/health, or manage issues. Prompt: `docs/prompts/daily-trigger.md`; synced to the live trigger via `.claude/skills/sync-daily-trigger/`.
 
-**Stage 3 — Reporter** (`.github/workflows/build-report.yml`, triggered on push to `data/analysis-cache/**`). `scripts/build-report.js` reads fetch-cache + analysis-cache + history + health + config, does URL-hash dedup against history, merges threads, applies `duplicate_of`, renders the markdown report via `scripts/lib/render-report.js`, updates `data/history.json` + `data/health.json`, opens/closes GitHub issues for alerts, regenerates `feed.xml` (RSS 2.0, see `scripts/lib/build-rss.js`), and commits+pushes the report + state files + feed.
+**Stage 3 — Reporter** (`.github/workflows/build-report.yml`, triggered on push to `data/analysis-cache/**`). `scripts/build-report.js` reads fetch-cache + analysis-cache + history + health + config, does URL-hash dedup against history, merges threads, applies `duplicate_of`, renders **two** markdown files via `scripts/lib/render-report.js` — `{date}.md` (editorial: trend + article details, what subscribers see) and `{date}.ops.md` (counts + source health, debug-only) — updates `data/history.json` + `data/health.json`, opens/closes GitHub issues for alerts, regenerates `feed.xml` (RSS 2.0, ops sidecars excluded by glob; see `scripts/lib/build-rss.js`), and commits+pushes the report pair + state files + feed.
 
 **Safety net — Fallback** (`.github/workflows/fallback-report.yml`, cron `0 4 * * *` UTC = 12:00 CST). `scripts/fallback-report.js` checks if `reports/daily/{today}.md` exists; if not (Stage 2 or 3 failed), it renders a title+link-only report from fetch-cache alone, regenerates `feed.xml`, and commits+pushes. This guarantees subscribers always see something on the feed.
 
@@ -24,10 +24,12 @@ This repo has three runtime stages, in order:
 - `data/fetch-cache/YYYY-MM-DD.json` — the daily snapshot consumed by the cloud trigger; produced in CI
 - `data/history.json` — article records keyed by SHA-256 of URL, used for deduplication and report aggregation
 - `data/health.json` — per-source health status (healthy / degraded / alert)
-- `reports/daily/YYYY-MM-DD.md` — daily reports
+- `reports/daily/YYYY-MM-DD.md` — daily report (editorial: trend paragraph + article details). This is what subscribers and the website see.
+- `reports/daily/YYYY-MM-DD.ops.md` — same date, ops-only sidecar (counts, category histogram, per-source health table). NOT included in `feed.xml` — `scripts/lib/build-rss.js` filters it out by regex (`\.md$` after the date doesn't match `.ops.md`).
 - `reports/weekly/YYYY-WNN.md` — weekly reports
 - `reports/monthly/YYYY-MM.md` — monthly reports
-- `feed.xml` — RSS 2.0 feed at repo root, regenerated on every report build (last 30 items, all cadences mixed)
+- `feed.xml` — RSS 2.0 feed at repo root, regenerated on every report build (last 30 items, all cadences mixed; ops sidecars excluded)
+- `index.html` — single-page editorial reader at repo root, served via GitHub Pages. Loads `feed.xml` client-side, renders magazine-style. No build step.
 - `docs/prompts/` — version-controlled trigger prompts (source of truth; live cloud triggers hold their own embedded copies and must be synced after edits — see `.claude/skills/sync-daily-trigger/`)
 - `docs/report-examples/` — reference format for each report type
 - `.claude/skills/` — project-level slash-command skills (`/add-twitter-source`, `/sync-daily-trigger`)

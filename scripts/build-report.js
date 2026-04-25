@@ -117,7 +117,7 @@ module.exports = {
 const fs = require('node:fs');
 const path = require('node:path');
 const yaml = require('js-yaml');
-const { renderReport } = require('./lib/render-report');
+const { renderEditorial, renderOps } = require('./lib/render-report');
 const { updateSourceHealth } = require('./lib/health');
 const { buildRSS } = require('./lib/build-rss');
 
@@ -204,18 +204,23 @@ async function main() {
         ? `⚠️ 过期（${s.error}）`
         : `❌ 错误（${s.error}）`,
   }));
-  const md = renderReport({
+  const editorialMd = renderEditorial({
+    date,
+    articlesInReport,
+    trendParagraph: analysisCache.trend_paragraph || '（无趋势段）',
+  });
+  const opsMd = renderOps({
     date,
     articlesInReport,
     rawFetched,
     mergedCount: canonical.length,
     sourcesWithContent,
     filteredLowImportance: canonical.length - articlesInReport.length,
-    trendParagraph: analysisCache.trend_paragraph || '（无趋势段）',
     sourceStatuses,
   });
   fs.mkdirSync(REPORTS_DIR, { recursive: true });
-  fs.writeFileSync(path.join(REPORTS_DIR, `${date}.md`), md);
+  fs.writeFileSync(path.join(REPORTS_DIR, `${date}.md`), editorialMd);
+  fs.writeFileSync(path.join(REPORTS_DIR, `${date}.ops.md`), opsMd);
 
   // Step 7 — append to history
   appendToHistory(history, canonical, analysisCache.analyzed_at || fetchCache.fetched_at);
@@ -244,7 +249,7 @@ async function main() {
 
   // Step 11 — git add / commit / push
   const run = (c) => execSync(c, { stdio: 'inherit' });
-  run(`git add data/history.json data/health.json reports/daily/${date}.md feed.xml`);
+  run(`git add data/history.json data/health.json reports/daily/${date}.md reports/daily/${date}.ops.md feed.xml`);
   // If the working tree has no changes (idempotent re-run), skip commit
   try {
     execSync('git diff --cached --quiet', { stdio: 'ignore' });
