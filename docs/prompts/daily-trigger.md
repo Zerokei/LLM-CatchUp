@@ -116,7 +116,22 @@ Singletons (clusters of 1) get no change. Thread groups (articles sharing a `thr
 
 ### Step 8: Compute trend_paragraph
 
-Write a 3-6 Chinese sentence trend paragraph synthesizing the day's themes, based on `final_articles[*].title` + `summary`. (You do NOT need the raw articles — the summaries are enough.)
+Write `trend_paragraph` as a **markdown bulleted list of 3-5 bullets**, NOT prose. Each bullet covers one distinct theme/storyline of the day. Format:
+
+```
+- **{theme name in 6-10 chars}**：{1 sentence explanation, ~30-60 Chinese chars}。
+- **{another theme}**：{another sentence}。
+...
+```
+
+Rules:
+- Each bullet is exactly **one sentence**. No commas-as-sentence-breaks; if you need two ideas, that's two bullets.
+- Lead with a **bolded theme keyword/phrase** (Chinese, terse), followed by `：` (full-width colon) and a short explanation.
+- The explanation may name 1-2 specific products/companies as evidence, but should NOT itemize a long list of partner names — keep it scannable.
+- Do NOT write a connecting "今日主线是..." opening or a closing summary sentence. Bullets only.
+- Base the synthesis on `final_articles[*].title` + `summary` (you do NOT need the raw articles — summaries are enough).
+
+The field is still named `trend_paragraph` for back-compat, but the value MUST be a bulleted markdown string (with literal `\n` separators between bullets in the JSON).
 
 ### Step 9: Write the analysis-cache
 
