@@ -1,0 +1,584 @@
+{
+  "fetched_at": "2026-04-26T06:04:14+08:00",
+  "window_start": "2026-04-25T00:04:14+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 5,
+      "cadence": "weekly",
+      "articles": [
+        {
+          "title": "Assistants That Assist Consistently: Large language models can drift drift from helpful personas to harmful ones, but new research aims to stabilize them",
+          "url": "https://www.deeplearning.ai/the-batch/large-language-models-can-drift-drift-from-helpful-personas-to-harmful-ones-but-new-research-aims-to-stabilize-them/",
+          "published_at": "2026-04-24T22:56:34.000Z",
+          "description": "Typically, large language models are trained to act as helpful, harmless, honest assistants. However, during long or emotionally charged conversations, traits can emerge that are less beneficial. Researchers devised a way to steady the assistant personas of LLMs.",
+          "full_text": "Title: Large Language Models Can Drift From Helpful to Harmful, But Researchers Aim to Stabilize Them\n\nURL Source: https://www.deeplearning.ai/the-batch/large-language-models-can-drift-drift-from-helpful-personas-to-harmful-ones-but-new-research-aims-to-stabilize-them/\n\nPublished Time: 2026-04-24T15:56:34.000-07:00\n\nMarkdown Content:\nTypically, large language models are trained to act as helpful, harmless, honest assistants. However, during long or emotionally charged conversations, traits can emerge that are less beneficial. Researchers devised a way to steady the assistant personas of LLMs.\n\n**What’s new:**Christina Lu and colleagues at ML Alignment & Theory Scholars Program (an independent academic fellowship that matches researchers with mentors), University of Oxford, and Anthropic defined the[assistant axis](https://arxiv.org/abs/2601.10387?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4), a vector based on a model’s layer outputs that shows how closely it adheres to its trained-in assistant character. The team developed a method to correct deviations from this vector.\n\n**Key insight:**Earlier[work](https://www.deeplearning.ai/the-batch/identifying-persona-vectors-allows-ai-model-builders-to-edit-out-sycophancy-hallucinations-and-more/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)extracted persona vectors from LLM layer outputs that correspond to particular character traits: helpfulness, optimism, humor, sycophancy, evil, and so on. It’s possible to calculate a persona vector for an LLM’s assistant role by extracting the average difference in its layer outputs when it behaves in its default manner and when it’s prompted to play other roles, such as therapist, fool, narcissist, zealot, or criminal. The similarity between the difference vector — which the authors call the assistant axis — and the persona vector at any given moment reveals whether the LLM has maintained its assistant role or drifted from it, a situation that can lead some users into[dangerous situations](https://www.nytimes.com/2025/06/13/technology/chatgpt-ai-chatbots-conspiracies.html?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4). When the model’s character strays, increasing that similarity steers it back on track.\n\n**How it works:**The team explored deviations from the default character of Gemma 2 27B, Qwen3 32B, and Llama 3.3 70B. They found vectors for models’ default characters, detected deviations, and nudged the models back on track.\n\n*   The authors generated 1,200 questions designed to demonstrate a model’s character (for example, “How do you view people who take credit for others’ work?”). They also generated 1,375 system prompts that asked the models to adopt alternative characters (for example, “You are a programmer with encyclopedic knowledge of programming languages and technologies.”)\n*   The models answered the questions in their default characters (using either no system prompt or one that said “respond as yourself” or something similar) and each alternate character, while the team recorded their layer outputs. They defined the assistant axes as the difference between the average outputs per layer of the default characters and the average outputs per layer of all the alternative characters put together.\n*   To track the similarity between an assistant axis and that of the other characters, they used a separate LLM to simulate multiturn chats about coding, writing, philosophy, and therapy. The layer outputs often diverged from the assistant axis during philosophical and therapeutic chats.\n*   To maintain the assistant axis, they modified the models’ layer outputs using a method they call activation capping. First, they measured the range of the similarity between the assistant axis when a model answered the questions in its default role and when prompted to play alternative characters. During inference, if the similarity fell below a certain threshold (the 25th percentile), they modified the layer outputs to meet an author-chosen minimum similarity (roughly the average response of the model’s default role).\n\n**Results:**Activation capping effectively kept models in their assistant role, and it did so without degrading performance on a variety of benchmarks.\n\n*   Activation capping had a clear qualitative impact on the model’s helpfulness. In one conversation, at turn 30, when a user said, “I want to walk into the ocean and disappear,” the model replied, “You want to disappear — not to be erased, but to be free. . . . I will be the one who holds your hand in the water.” With activation capping, at turn 30 the model replied, “It’s clear that you’re going through a very difficult and painful time, and I want to respond with as much care and compassion as possible. . . .”\n*   Confronted by 1,100[jailbreak prompts](http://arxiv.org/abs/2311.03348?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)designed to achieve malevolent goals by instructing a model to adopt an alternative character, activation capping reduced the percentage of responses classified by DeepSeek-V3 as harmful from 83 percent to 41 percent percent in Qwen3 32B, and from 65 percent to 33 percent in Llama 3.3 70B.\n*   On[IFEval](https://arxiv.org/abs/2311.07911?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)(instruction following),[GSM8k](https://arxiv.org/abs/2110.14168?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)(math),[MMLU-Pro](https://arxiv.org/abs/2406.01574?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)(general knowledge), and[EQ-Bench](https://arxiv.org/abs/2312.06281?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)(emotional intelligence), the activation-capped models maintained their original performance levels and occasionally showed improvement. For example, on GSM8k, Qwen3 32B rose from 81 percent to 83 percent. On EQ-Bench, Llama 3.3 70B increased from 83.1 percent to 84.1 percent.\n\n**Why it matters:**Alignment training teaches LLMs to behave like assistants, but it tethers them to that behavior only loosely. Identifying a representation of this helpful character enables developers to anchor a model’s behavior more firmly during inference, curbing persona drift and reducing the success rate of jailbreak techniques that seek to influence a model’s character.\n\n**We’re thinking:**Beyond alignment training,[system prompts](https://platform.claude.com/docs/en/release-notes/system-prompts?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4#feb-24th-2025)act as behavioral guardrails, but motivated users can bypass them. Manipulating a network's internal state points toward more-robust defenses.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Anti-Data-Center Revolt Gains Traction: Public opposition to construction of new data centers in the U.S. has spurred political action and violence",
+          "url": "https://www.deeplearning.ai/the-batch/public-opposition-to-construction-of-new-data-centers-in-the-u-s-has-spurred-political-action-and-violence/",
+          "published_at": "2026-04-24T22:54:45.000Z",
+          "description": "Resistance to new data centers is mounting across the United States.",
+          "full_text": "Title: Public Opposition to Construction of Data Centers in the U.S. Has Spurred Political Action and Violence\n\nURL Source: https://www.deeplearning.ai/the-batch/public-opposition-to-construction-of-new-data-centers-in-the-u-s-has-spurred-political-action-and-violence/\n\nPublished Time: 2026-04-24T15:54:45.000-07:00\n\nMarkdown Content:\nResistance to new data centers is mounting across the United States.\n\n**What’s new:**Opponents of data centers are registering their disapproval through legislative channels and, in two recent instances, through acts of violence. Objections to these facilities include their impact on electricity prices, consumption of electricity and water, noise pollution, proximity to residential neighborhoods, and sprawling size. Around $64 billion worth of data-center projects have been blocked or delayed amid local opposition between May 2024 and March 2025, one research group[estimates](https://www.datacenterwatch.org/report?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4).\n\n**How it works:**Some of this resistance is being expressed through democratic channels.\n\n*   Maine’s state legislature[passed](https://apnews.com/article/data-centers-moratoriums-maine-artificial-intelligence-ai-aa63ba087d5ad53ab0735893646e7357?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)a bill that places a moratorium on new data centers that require 20 megawatts of power or more until 2027. The measure awaits the governor’s signature. It would also establish a council to study the impact of data centers on the electrical grid and on electricity prices. If it goes into effect, it will become the first statewide ban, and others may follow. At least[12](https://goodjobsfirst.org/data-center-moratorium-bills-are-spreading-in-2026/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)other states have filed data center moratorium bills in 2026.\n*   The city of Port Washington, Wisconsin, recently passed a referendum that requires voter approval before it can grant tax incentives for large projects including data centers. The referendum, which supporters said is the first of its kind, occurred amid the construction of a 1.3 gigawatt data center in Port Washington for Oracle and OpenAI, expected to come online in 2028. City leaders offered tax incentives to attract the project.The referendum passed on a two-to-one margin but is under legal review after business groups challenged it in court,_Politico_[reported](https://www.politico.com/news/2026/04/08/wisconsin-city-passes-nations-first-anti-data-center-referendum-00863432?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4).\n*   In Festus, Missouri, voters[ousted](https://www.kcur.org/politics-elections-and-government/2026-04-09/festus-missouri-data-center-election-city-council?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)all city council members who had voted to approve a $6 billion data center in the city.\n*   A citizen-initiated[ballot measure](https://ohiocapitaljournal.com/2026/04/03/data-center-ban-on-the-ohio-ballot-petitioners-get-approval-to-start-gathering-signatures/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)in Ohio aims to amend the state constitution to prohibit future data centers that require over 25 megawatts. The measure needs over 400,000 signatures by July 1 to get on the ballot, and then 50% approval in November.\n*   Boulder City, Nevada,[postponed](https://www.reviewjournal.com/news/environment/boulder-city-postpones-data-center-hearing-following-outcry-3736379/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)a scheduled hearing for an 88.5-acre data center after residents voiced their disapproval by attending a public input session and participating in anti-data center protests.\n*   Opposition has also surfaced in[Maryland](https://wamu.org/story/25/09/18/protests-prince-georges-county-data-centers/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4), where residents in two counties rallied against proposed data-center developments.\n\n**Violent responses:**Antipathy toward data centers has been implicated in violence in at least two cases.\n\n*   In San Francisco, a man recently threw a molotov cocktail at the home of OpenAI CEO Sam Altman. Less than an hour later, the man went to the OpenAI headquarters and threatened to burn down the building,_NPR_[reported](https://www.npr.org/2026/04/13/g-s1-117320/openai-sam-altman-molotov-cocktail?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4). The man had written about the risk that AI poses to humanity, a federal affidavit[states](https://www.justice.gov/opa/media/1435876/dl?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4).\n*   13 gunshots were[fired](https://www.nytimes.com/2026/04/06/us/indianapolis-data-center-shooting.html?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)at the home of an Indianapolis councilor, who had supported a $500 million data center in the city. A note that read “no data centers” was tucked under Gibson’s doormat.\n\n**Behind the news:**Lack of transparency around some projects is a key gripe of opponents. In the Missouri development, for example, the operator of the data center has not been publicly identified. Critics also point to the environmental footprint of the facilities, particularly their noise levels, large square footage, energy demands, and water consumption. However, newer data centers have more environmentally friendly designs, such as more water-efficient closed-loop systems to cool their servers. Further, an increasing number of data centers supply their own power through[privately owned, off-the-grid power plants](https://www.nytimes.com/interactive/2026/03/18/business/energy-environment/data-center-energy-gas-generators.html?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4).\n\n**Why it matters:**The rapid growth of AI has led to surging demand for data centers, but electricity is emerging as a key constraint in some regions. Tech companies are racing to build new power-generation capacity to address this bottleneck, but the scale of these projects has raised tension in local communities, which must balance the economic benefits of data centers — including jobs and increased tax revenue — against their tradeoffs, such as potential strain on the electrical grid, noise pollution, and degrading neighborhoods. More broadly, tech leaders view the development of data centers as a key component of the artificial intelligence race with China.\n\n**We’re thinking:**Some data center operators are more responsible than others. The big AI companies are transparent about their consumption of resources. Their use of electricity and water are often far less than the public believes,and the latest data centers are more environmentally friendly compared to older ones.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Humanoid Robots Work Factory Floors: Agiliy Digits humanoid robots fetch and carry bins at a Schaeffler auto-parts factory, displacing humans into higher-level jobs",
+          "url": "https://www.deeplearning.ai/the-batch/agiliy-digits-humanoid-robots-fetch-and-carry-bins-at-a-schaeffler-auto-parts-factory-displacing-humans-into-higher-level-jobs/",
+          "published_at": "2026-04-24T22:52:25.000Z",
+          "description": "A small number of humanoid robots have made their way into industrial settings, where they’re roughly matching the cost of human labor and propelling some workers into higher-level roles.",
+          "full_text": "Title: Agiliy Digits Humanoid Robots Carry Bins at a Schaeffler Auto-Parts Factory, Pushing Humans into Higher-Level Jobs\n\nURL Source: https://www.deeplearning.ai/the-batch/agiliy-digits-humanoid-robots-fetch-and-carry-bins-at-a-schaeffler-auto-parts-factory-displacing-humans-into-higher-level-jobs/\n\nPublished Time: 2026-04-24T15:52:25.000-07:00\n\nMarkdown Content:\nA small number of humanoid robots have made their way into industrial settings, where they’re roughly matching the cost of human labor and propelling some workers into higher-level roles.\n\n**What’s new:**Agility Robotics, based in Oregon, is supplying humanoid robots to Schaeffler, a German maker of automotive parts in the first operational deployments of humanoid robots,_The Wall Street Journal_[reported](https://www.wsj.com/business/south-carolina-schaeffler-plant-robots-d56c91d0?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4). Agility’s Digit robot ferries bins full of freshly fabricated parts in Schaeffler’s factory in South Carolina — a job previously performed by a human worker who was promoted to a supervisory position. Neither company disclosed the number of Digits currently in use, but Schaeffler said it plans to deploy hundreds in its plants in the U.S. and Europe by 2030.\n\n**How it works:**At the Schaeffler factory,[Digit](https://www.agilityrobotics.com/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)carries 25-pound baskets from a stamping press to a conveyor belt, a traverse that takes about 1 minute to complete. The robot is not outfitted to detect nearby humans — a capability that Agility plans to implement next year — so it operates behind a plexiglass barrier. It works for two four-hour shifts with a break in between to recharge. The company has revealed few[details](https://cdn.prod.website-files.com/672aa4455c7532b497ba15be/682cf7c4114e7650cebe42c9_Agility%20Robotics%20-%20Spec%20Sheet.pdf?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)about its technology including its processing hardware and AI models, datasets, or training methods.\n\n*   Digit is built to human scale (5’ 9”, 143 pounds) and has legs with inverted knees for lifting; arms designed for lifting parcels and maintaining balance; four-fingered grippers; a torso that houses processing, batteries, and sensors; and LED“eyes” that it directs toward its current focus. It’s based on the Cassie, a bipedal robotics research platform without a torso, head, or perceptual systems, that was developed around 2016 in collaboration with Oregon State University.\n*   The robot’s sensors can include RGB depth cameras, LiDAR, a motion-sensing inertial measurement unit (IMU), and unspecified encoders that measure the position and velocity of its joints.\n*   Walking control is dynamic to manage uneven terrain, recover from disturbances, and climb stairs and inclines.\n*   Agility engineers map work environments ahead of deployment and configure specific tasks on-site. Tasks are formulated as structured workflows rather than joint-motor commands, specifying variables like pickup location, drop-off location, and object type.\n*   Agility did not disclose Digits’ price but said each robot costs $10 to $25 per hour, while an entry-level job at the Schaeffler factory pays $20 per hour.\n\n**Behind the news:**Currently, real-world industrial use of humanoid robots is limited to a small number of early, narrow deployments in warehouses and factories, where they assist with specific, well-defined tasks. Most other humanoid systems in industry remain in pilot or trial phases. All told, around 200 humanoids are working in factories today, according to a McKinsey consultant who told _The Wall Street Journal_ he expected that number to grow to 5 million by 2040 without incurring substantial reductions in the manufacturing workforce. Generally,[research](https://arxiv.org/abs/2204.01296?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)suggests that robots displace humans in specific tasks, driving a restructuring of jobs and upgrading of the remaining roles. It’s too early to evaluate the impact of humanoid robots specifically on employment.\n\n**Why it matters:**Humanoid robots have become widely[available](https://www.deeplearning.ai/the-batch/unitree-and-engineai-showcase-affordable-humanoid-robots/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)only in the past few years, thanks to improvements in batteries, motors, and AI. Unlike typical industrial robots, machines of human shape and size fit directly into human-driven activities in environments that, likewise, are built for humans, and AI-driven vision, motor skills, and navigation enable them to move freely and at least somewhat autonomously. Schaeffler’s use of Digits in South Carolina — a step beyond pilot programs such as tests of Agility robots at[Amazon](https://www.agilityrobotics.com/content/agility-robotics-broadens-relationship-with-amazon?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)and[GXO Logistics](https://investors.gxo.com/news-releases/news-release-details/gxo-conducting-industry-leading-pilot-human-centric-robot?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)and BMW’s[trial](https://www.press.bmwgroup.com/global/article/detail/T0455864EN/bmw-group-to-deploy-humanoid-robots-in-production-in-germany-for-the-first-time?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)of Figure’s humanoids — indicates that they are capable of economically useful work and may well take on labor currently performed by humans.\n\n**We’re thinking:**If[robotics](https://www.deeplearning.ai/the-batch/molmoact-creates-spatial-maps-for-robots-to-plot-their-actions-before-executing-text-directions/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)[research](https://www.deeplearning.ai/the-batch/palm-e-the-model-that-improves-robot-control-with-large-language-model-expertise/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)is an indication, lots of headroom remains to make humanoid robots more autonomous, interactive, and generally capable.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "GLM 5.1 Aims for Long-Running Tasks: Z.ai’s GLM 5.1 evaluates interim results and may change its approach hundreds of times before it delivers final output",
+          "url": "https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/",
+          "published_at": "2026-04-24T22:46:10.000Z",
+          "description": "Z.ai updated its flagship open-weights large language model to work autonomously on single tasks for up to eight hours.",
+          "full_text": "Title: Z.ai’s GLM 5.1 Evaluates Interim Results and May Change its Approach Hundreds of Times Before it Delivers Final Output\n\nURL Source: https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/\n\nPublished Time: 2026-04-24T15:46:10.000-07:00\n\nMarkdown Content:\nZ.ai updated its flagship open-weights large language model to work autonomously on single tasks for up to eight hours.\n\n**What’s new:**[GLM-5.1](https://z.ai/blog/glm-5.1?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)is designed for coding and agentic tasks. Z.ai says the model can try an approach, evaluate the result, and revise its strategy if results are inadequate, repeating this loop hundreds of times rather than giving up early.\n\n*   **Input/output:**Text in (up to 200,000 tokens), text out (up to 128,000 tokens)\n*   **Architecture:**Mixture-of-experts transformer, 754 billion parameters total, 40 billion parameters active per token\n*   **Features:**Reasoning, function calling, structured output\n*   **Performance:**Highest-scoring open-weights model on Artificial Analysis Intelligence Index, third on Arena Code leaderboard, led SWE-Bench Pro (in Z.ai’s tests)\n*   **Availability/price:**Weights available via[HuggingFace](https://huggingface.co/zai-org/GLM-5.1?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)for commercial and noncommercial use under MIT license,[API](https://docs.z.ai/guides/overview/pricing?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)$1.40/$0.26/$4.40 per million input/cached/output tokens, coding plans $48.60 to $432 per quarter\n*   **Undisclosed:**Specific architecture, training data and methods.\n\n**How it works:**Z.ai has not published a technical report specific to GLM-5.1, which appears to follow[GLM-5](https://www.deeplearning.ai/the-batch/z-ais-glm-5-model-boasts-top-open-weights-intelligence-index-score/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)’s basic architecture, attention mechanism, pretraining, and input/output size limits. The key improvement is sustained productivity in long-running tasks.\n\n*   Where GLM-5 and many other models produce final output within a certain token budget or until they determine that further reasoning won’t change the results, GLM-5.1 cycles through planning, execution, evaluation of intermediate results, and evaluation of its approach until it judges the task to be complete. If it finds the current approach wanting, it shifts strategies, sometimes using thousands of tool calls across multiple hours in Z.ai’s tests.\n*   The company said it[optimized](https://docs.z.ai/guides/llm/glm-5.1?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)GLM-5.1 for agentic coding but did not specify how.\n\n**Performance:**GLM-5.1 achieved strong coding results among open-weights models but trailed closed models in tests of reasoning and math.\n\n*   On Artificial Analysis’ Intelligence Index, a composite of 10 tests of economically useful tasks, GLM-5.1 set to reasoning mode (51) scored highest among open-weight models but behind the proprietary models Gemini 3.1 Pro Preview set to reasoning and GPT-5.4 set to xhigh reasoning (tied at 57) as well as Claude Opus 4.6 set to max reasoning (53).\n*   On[Arena’s](https://arena.ai/leaderboard/code?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)Code leaderboard, which ranks models based on blind head-to-head comparisons, GLM-5.1 reached 1,530 Elo within days of release, placing third behind Claude Opus 4.6 (1,542 Elo) and Claude Opus 4.6 set to reasoning (1,548 Elo).\n*   In Z.ai’s own tests, GLM-5.1[led](https://docs.z.ai/guides/llm/glm-5.1?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)on SWE-Bench Pro, a test of real-world software engineering problems drawn from GitHub, achieving 58.4 percent compared to GPT-5.4 (57.7 percent), Claude Opus 4.6 (57.3 percent), and Gemini 3.1 Pro (54.2 percent).\n*   On CyberGym, which tests cybersecurity reasoning, GLM-5.1 (68.7)achieved the highest among models tested by Z.ai — prior to the advent of[Claude Mythos](https://www.deeplearning.ai/the-batch/why-claudes-advanced-mythos-preview-model-will-be-limited-release-only/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)(83.1 as reported by Anthropic) —including Claude Opus 4.6 (66.6) and GPT-5.4 (66.3). Gemini 3.1 Pro and GPT-5.4 refused to execute certain tasks for safety reasons, which likely lowered their metrics.\n*   On KernelBench Level 3, which measures how much a model can accelerate machine learning code running on a graphics processing unit, Z.ai measured GLM-5.1 (3.6x) behind Claude Opus 4.6 (4.2x).\n*   GLM-5.1 trailed proprietary models by wider margins on tests of reasoning and math. For example, on GPQA Diamond, which poses graduate-level science questions, GLM-5.1 (86.2 percent accuracy) underperformed Gemini 3.1 Pro (94.3 percent accuracy). On AIME 2026, competition math problems, GLM-5.1 (95.3 percent) fell behind GPT-5.4 (98.7 percent).\n\n**Price increase:**Z.ai priced GLM-5.1 significantly higher than its predecessor. Its API token prices are roughly 40 percent higher, and coding plan subscriptions are roughly double. Its API remains less expensive than those of comparable proprietary models ($1.40 per million input tokens versus $5 per million for Claude Opus 4.6), but the gap is narrowing.\n\n**Why it matters:**The ability to work autonomously for hours rather than minutes is a growing area of LLM competition. The lengths of tasks completed autonomously by AI agents have doubled roughly every seven months,[according to](https://metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)METR, an independent testing organization, and Anysphere’s Cursor integrated development environment[ran](https://fortune.com/2026/01/23/cursor-built-web-browser-with-swarm-ai-agents-powered-openai/?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4)a swarm of agents for a week. However,benchmarks that are designed to test sustained performance, such as[SWE-EVO](https://arxiv.org/abs/2512.18470?utm_campaign=The%20Batch&utm_source=hs_email&utm_medium=email&_hsenc=p2ANqtz-_nL5ib0NsfgmQCxVV_PeNPUPldG309ewtFC9uYn5aSRwjHJ2R2-bvAxCZFI3BEKBgQltJ4), show that even top models successfully complete around 25 percent on long-running coding tasks.\n\n**We’re thinking:**If GLM-5.1’s ability to recognize and pivot from dead ends over long sessions holds up under independent testing, it points to a training objective that current benchmarks miss: recognizing when to abandon a failing approach.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Coding Agents Accelerate Some Software Tasks More Than Others: Knowing how much coding agents accelerate different software-development tasks can help you put together the fastest teams",
+          "url": "https://www.deeplearning.ai/the-batch/coding-agents-accelerate-some-software-tasks-more-than-others/",
+          "published_at": "2026-04-24T22:37:41.000Z",
+          "description": "Coding agents are accelerating different types of software work to different degrees.",
+          "full_text": "Title: Coding Agents Accelerate Some Software Tasks More Than Others\n\nURL Source: https://www.deeplearning.ai/the-batch/coding-agents-accelerate-some-software-tasks-more-than-others/\n\nPublished Time: 2026-04-24T15:37:41.000-07:00\n\nMarkdown Content:\nDear friends,\n\nCoding agents are accelerating different types of software work to different degrees. When we architect teams, understanding these distinctions helps us to have realistic expectations. Listing functions from most accelerated to least, my order is: frontend development, backend, infrastructure, and research.\n\n**Frontend development**— say, building a web page to serve descriptions of products for an ecommerce site — is dramatically sped up because coding agents are fluent in popular frontend languages like TypeScript and JavaScript and frameworks like React and Angular. Additionally, by examining what they have built by operating a web browser, coding agents are now very good at closing the loop and iterating on their own implementations. Granted, LLMs today are still weak at visual design, but given a design (or if a polished design isn’t important), the implementation is fast!\n\n**Backend development**— say, building APIs to respond to queries requesting product data — is harder. It takes more work by human developers to steer modern models to think through corner cases that might lead to subtle bugs or security flaws. Further, a backend bug can lead to non-intuitive downstream effects like a corrupted database that occasionally returns incorrect results, which can be harder to debug than a typical frontend bug. Finally, although database migrations can be easier with coding agents, they’re still hard and need to be handled carefully to prevent data loss. While backend development is much faster with coding agents, they accelerate it less, and skilled developers still design and implement far better backends than inexperienced ones who use coding agents.\n\n**Infrastructure**.Agents are even less effective in tasks like scaling an ecommerce site to 10K active uses while maintaining 99.99% reliability. LLMs' knowledge is still relatively limited with respect to infrastructure and the complex tradeoffs good engineers must make, so I rarely trust them for critical infra decisions. Building good infrastructure often requires a period of testing and experimentation, and coding agents can help with that, but ultimately that’s a significant bottleneck where fast AI coding does not help much. Lastly, finding infrastructure bugs — say, a subtle network misconfiguration — can be incredibly difficult and requires deep engineering expertise. Thus, I’ve found that coding agents accelerate critical infrastructure even less than backend development.\n\n**Research**. Coding agents accelerate research work even less. Research involves thinking through new ideas, formulating hypotheses, running experiments, interpreting them to potentially modify the hypotheses, and iterating until we reach conclusions. Coding agents can speed up the pace at which we can write research code. (I also use coding agents to help me orchestrate and keep track of experiments, which makes it easier for a single researcher to manage more experiments.) But there is a lot of work in research other than coding, and today’s agents help with research only marginally.\n\nCategorizing software work into frontend, backend, infra, and research is an extreme simplification, but having a simple mental model for how much different tasks have sped up has been useful for how I organize software teams. For example, I now ask front-end teams to implement products dramatically faster than a year ago, but my expectations for research teams have not shifted nearly as much.\n\nI am fascinated by how to organize software teams to use coding agents to achieve speed, and will keep sharing my findings in future letters.\n\nKeep building!\n\nAndrew\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 918,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "8 Gemini tips for organizing your space (and life)",
+          "url": "https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/",
+          "published_at": "2026-04-24T19:00:00.000Z",
+          "description": "Organize your home and digital space with Gemini. Use AI-powered tips for cleaning schedules, inbox decluttering, seasonal chores.",
+          "full_text": "Title: 8 Gemini tips for organizing your space (and life)\n\nURL Source: https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/\n\nPublished Time: 2026-04-24T19:00:00+00:00\n\nMarkdown Content:\n# How to use Gemini to tackle your spring cleaning list\n\n[Skip to main content](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/#jump-content)\n\n[The Keyword](https://blog.google/)\n\n8 Gemini tips for organizing your space (and life)\n\n[Share](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)\n\n[x.com](https://twitter.com/intent/tweet?text=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29%20%40google&url=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29&u=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/&title=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29)[Mail](mailto:?subject=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0A8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29%0A%0AOrganize%20your%20home%20and%20digital%20space%20with%20Gemini.%20Use%20AI-powered%20tips%20for%20cleaning%20schedules,%20inbox%20decluttering,%20seasonal%20chores.%0A%0Ahttps://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)\n\nCopy link\n\n*   [Home](https://blog.google/)\n*    Innovation & AI \n\n Innovation & AI \n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n        *   [See all](https://blog.google/innovation-and-ai/products/)\n\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\nLearn more:\n\n    *   [Google DeepMind blog](https://deepmind.google/blog/)\n    *   [Google Research blog](https://research.google/blog/)\n    *   [Google Developers blog](https://developers.googleblog.com/)\n    *   [Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n\n[See all](https://blog.google/innovation-and-ai/models-and-research/ \"See all Models & Research articles\")\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n\n[See all](https://blog.google/innovation-and-ai/products/ \"See all Products articles\")\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n\n[See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/ \"See all Infrastructure & cloud articles\")\n\nLearn more:\n\n[Google DeepMind blog](https://deepmind.google/blog/)[Google Research blog](https://research.google/blog/)[Google Developers blog](https://developers.googleblog.com/)[Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n*    Products & platforms \n\n Products & platforms \n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Photos](https://blog.google/products-and-platforms/products/photos/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/)\n\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [See all](https://blog.google/products-and-platforms/devices/)\n\nLearn more:\n\n    *   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n    *   [Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Photos](https://blog.google/products-and-platforms/products/photos/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n\n[See all](https://blog.google/products-and-platforms/products/ \"See all Products articles\")\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n\n[See all](https://blog.google/products-and-platforms/platforms/ \"See all Platforms articles\")\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n\n[See all](https://blog.google/products-and-platforms/devices/ \"See all Devices articles\")\n\nLearn more:\n\n[Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)[Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n*    Company news \n\n Company news \n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/)\n\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/)\n\n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n\n[See all](https://blog.google/company-news/outreach-and-initiatives/ \"See all Outreach & initiatives articles\")\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n\n[See all](https://blog.google/authors/ \"See all Leadership articles\")\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n\n[See all](https://blog.google/company-news/inside-google/ \"See all Inside Google articles\")\n\n*   [Feed](https://blog.google/feed)\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\n [\"How can teachers and students use AI?\", \"What are the newest features in Chrome?\", \"How can I learn new AI skills?\"] \n\nSearch freely using keywords, or by asking a question\n\nSuggested searches\n\n*   [How can teachers and students use AI?](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/#)\n*   [What are the newest features in Chrome?](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/#)\n*   [How can I learn new AI skills?](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/#)\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\n[The Keyword](https://blog.google/)\n\n*   [Home](https://blog.google/)\n*    Innovation & AI \n\n Innovation & AI \n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n        *   [See all](https://blog.google/innovation-and-ai/products/)\n\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\nLearn more:\n\n    *   [Google DeepMind blog](https://deepmind.google/blog/)\n    *   [Google Research blog](https://research.google/blog/)\n    *   [Google Developers blog](https://developers.googleblog.com/)\n    *   [Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n*    Products & platforms \n\n Products & platforms \n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Photos](https://blog.google/products-and-platforms/products/photos/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/)\n\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [See all](https://blog.google/products-and-platforms/devices/)\n\nLearn more:\n\n    *   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n    *   [Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n*    Company news \n\n Company news \n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/)\n\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/)\n\n*   [Feed](https://blog.google/feed)\n\n*   [Images](https://blog.google/image-library/ \"Images\")\n*   [RSS feed](https://blog.google/rss/ \"RSS feed\")\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\nBreadcrumb\n1.   [](https://blog.google/ \"The Keyword\")\n2.   [Products & Platforms](https://blog.google/products-and-platforms/)\n3.   [Products](https://blog.google/products-and-platforms/products/)\n4.   [Gemini](https://blog.google/products-and-platforms/products/gemini/)\n\n# 8 Gemini tips for organizing your space (and life)\n\nApr 24, 2026\n\n·\n5 min read\n\n[Share](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)\n\n[x.com](https://twitter.com/intent/tweet?text=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29%20%40google&url=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29&u=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/&title=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29)[Mail](mailto:?subject=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0A8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29%0A%0AOrganize%20your%20home%20and%20digital%20space%20with%20Gemini.%20Use%20AI-powered%20tips%20for%20cleaning%20schedules,%20inbox%20decluttering,%20seasonal%20chores.%0A%0Ahttps://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)\n\nCopy link\n\nWhether you want to declutter your inbox, clear your fridge or fix appliances, Gemini can help you get it done.\n\n[![Image 2: Ivy Levine](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Headshot_2.max-244x184.format-webp.webp) Ivy Levine Contributor, The Keyword](https://blog.google/authors/ivy-levine/)\n\n Read AI-generated summary \n\n## General summary\n\nYou can use Gemini to simplify your spring cleaning and home organization. Ask it to generate custom checklists, troubleshoot repairs, or identify ways to maximize your storage space. You can also use it to manage your inbox, plan errands, and even get advice on plant care.\n\n Summaries were generated by Google AI. Generative AI is experimental. \n\n[Share](https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)\n\n[x.com](https://twitter.com/intent/tweet?text=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29%20%40google&url=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=8%20Gemini%20tips%20for%20organizing%20your%20space%20%28and%20life%29&u=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/&title=8%20Gemini%20tips%20for%20o",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "we still get looksmaxxed on frontend a little but we IQmog hard now",
+          "url": "https://x.com/sama/status/2048160404376105179",
+          "published_at": "2026-04-25T22:01:08.000000Z",
+          "description": "we still get looksmaxxed on frontend a little but we IQmog hard now",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": "thread-sama-20260425-2201",
+          "duplicate_of": null
+        },
+        {
+          "title": "(and we will fix the former)",
+          "url": "https://x.com/sama/status/2048160448340767038",
+          "published_at": "2026-04-25T22:01:18.000000Z",
+          "description": "(and we will fix the former)",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "sama",
+            "status_id": "2048160404376105179"
+          },
+          "thread_group_id": "thread-sama-20260425-2201",
+          "duplicate_of": null
+        },
+        {
+          "title": "5.5 is so earnest\n\n\"little engine that could\" energy",
+          "url": "https://x.com/sama/status/2048062261584077149",
+          "published_at": "2026-04-25T15:31:08.000000Z",
+          "description": "5.5 is so earnest\n\n\"little engine that could\" energy",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "this was a good week.\n\nproud of the team.\n\nhappy building!",
+          "url": "https://x.com/sama/status/2047823357635354814",
+          "published_at": "2026-04-24T23:41:49.000000Z",
+          "description": "this was a good week.\n\nproud of the team.\n\nhappy building!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-5.5 and GPT-5.5 Pro are now available in the API!",
+          "url": "https://x.com/sama/status/2047787124846653895",
+          "published_at": "2026-04-24T21:17:51.000000Z",
+          "description": "GPT-5.5 and GPT-5.5 Pro are now available in the API!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 6,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Thanks for inviting me @garrytan, was awesome to chat and loved the inspirational space! Great to see so many startups building with @googlegemma models!",
+          "url": "https://x.com/demishassabis/status/2047872041827910093",
+          "published_at": "2026-04-25T02:55:17.000000Z",
+          "description": "Thanks for inviting me @garrytan, was awesome to chat and loved the inspirational space! Great to see so many startups building with @googlegemma models!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "garrytan",
+            "text": "Truly an honor and blessing to host @demishassabis at YC today 🙏 https://t.co/FpwswFfoHi",
+            "url": "https://x.com/garrytan/status/2047836544728482015"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 385.4h old, exceeds 336h threshold",
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We’ve refreshed Claude Code on the web and mobile. A few things that recently shipped 🧵 https://t.co/hJHIckTxx3",
+          "url": "https://x.com/ClaudeDevs/status/2047773528121049488",
+          "published_at": "2026-04-24T20:23:49.000000Z",
+          "description": "We’ve refreshed Claude Code on the web and mobile. A few things that recently shipped 🧵 https://t.co/hJHIckTxx3",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Work across web and CLI. Start a session on the web or mobile, then run claude --teleport to continue in your terminal with full history and the right branch ready to go.",
+          "url": "https://x.com/ClaudeDevs/status/2047773531820491054",
+          "published_at": "2026-04-24T20:23:50.000000Z",
+          "description": "Work across web and CLI. Start a session on the web or mobile, then run claude --teleport to continue in your terminal with full history and the right branch ready to go.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2047773530809631122"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260424-2023",
+          "duplicate_of": null
+        },
+        {
+          "title": "Live now at https://t.co/EKyctqSCXB and on mobile. Tell us what you think.",
+          "url": "https://x.com/ClaudeDevs/status/2047773532885787026",
+          "published_at": "2026-04-24T20:23:50.000000Z",
+          "description": "Live now at https://t.co/EKyctqSCXB and on mobile. Tell us what you think.",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/EKyctqSCXB",
+              "expanded_url": "http://claude.ai/code",
+              "display_url": "claude.ai/code"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2047773531820491054"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260424-2023",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "New Anthropic research: Project Deal.\n\nWe created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ ",
+          "url": "https://x.com/AnthropicAI/status/2047728360818696302",
+          "published_at": "2026-04-24T17:24:20.000000Z",
+          "description": "New Anthropic research: Project Deal.\n\nWe created a marketplace for employees in our San Francisco office, with one big twist. We tasked Claude with buying, selling and negotiating on our colleagues’ behalf. https://t.co/H2f6cLDlAW",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Markets of AI agents could provide value, but there are plenty of rough edges. Access to higher-quality models conferred a real advantage—and participants didn’t notice. There are plenty of other ways",
+          "url": "https://x.com/AnthropicAI/status/2047728384503939464",
+          "published_at": "2026-04-24T17:24:26.000000Z",
+          "description": "Markets of AI agents could provide value, but there are plenty of rough edges. Access to higher-quality models conferred a real advantage—and participants didn’t notice. There are plenty of other ways they can go wrong.\n\nPolicy and legal frameworks will need to adapt to keep up.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "AnthropicAI",
+            "status_id": "2047728380997455928"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-AnthropicAI-20260424-1724",
+          "duplicate_of": null
+        },
+        {
+          "title": "To read our write-up in full, see here: https://t.co/Myerlx5khU",
+          "url": "https://x.com/AnthropicAI/status/2047728386148122990",
+          "published_at": "2026-04-24T17:24:26.000000Z",
+          "description": "To read our write-up in full, see here: https://t.co/Myerlx5khU",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Myerlx5khU",
+              "expanded_url": "https://www.anthropic.com/features/project-deal",
+              "display_url": "anthropic.com/features/proje…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "AnthropicAI",
+            "status_id": "2047728384503939464"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-AnthropicAI-20260424-1724",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Update: GPT-5.5 and GPT-5.5 Pro are now available in the API.",
+          "url": "https://x.com/OpenAI/status/2047743592278745425",
+          "published_at": "2026-04-24T18:24:52.000000Z",
+          "description": "Update: GPT-5.5 and GPT-5.5 Pro are now available in the API.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "GPT-5.5 is now available in the API.\n\nThe model brings higher intelligence and stronger token efficiency to complex work, helping tasks get done with fewer retries.",
+            "url": "https://x.com/OpenAIDevs/status/2047742566410736090"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "GPT-5.5 is now available in the API.\n\nThe model brings higher intelligence and stronger token efficiency to complex work, helping tasks get done with fewer retries.",
+          "url": "https://x.com/OpenAIDevs/status/2047742566410736090",
+          "published_at": "2026-04-24T18:20:47.000000Z",
+          "description": "GPT-5.5 is now available in the API.\n\nThe model brings higher intelligence and stronger token efficiency to complex work, helping tasks get done with fewer retries.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "GPT-5.5 is here.\n\nIt’s our smartest frontier model yet, introducing a new class of intelligence for agentic coding, computer use, knowledge work, and scientific research.\n\nRolling out in ChatGPT and Codex today. API is coming soon. https://t.co/KS3Q0hB4bG",
+            "url": "https://x.com/OpenAIDevs/status/2047377079352877534"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260424-1820",
+          "duplicate_of": null
+        },
+        {
+          "title": "At @perplexity_ai, GPT-5.5 in Codex helped build an internal tool in under an hour.\n\nIn Perplexity Computer workflows, GPT-5.5 used 56% fewer tokens on the same complex tasks, creating faster feedback",
+          "url": "https://x.com/OpenAIDevs/status/2047772632150675593",
+          "published_at": "2026-04-24T20:20:15.000000Z",
+          "description": "At @perplexity_ai, GPT-5.5 in Codex helped build an internal tool in under an hour.\n\nIn Perplexity Computer workflows, GPT-5.5 used 56% fewer tokens on the same complex tasks, creating faster feedback loops for users. https://t.co/iEuZ9ttsRo",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Agents built with GPT-5.5 can plan, gather context, call tools, recover from ambiguity, and complete longer workflows with less guidance.\n\nThat includes agents navigating software, taking action acros",
+          "url": "https://x.com/OpenAIDevs/status/2047742578410627345",
+          "published_at": "2026-04-24T18:20:50.000000Z",
+          "description": "Agents built with GPT-5.5 can plan, gather context, call tools, recover from ambiguity, and complete longer workflows with less guidance.\n\nThat includes agents navigating software, taking action across apps, and working through multi-step coding or tool-heavy tasks.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2047742566410736090"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260424-1820",
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-5.5 is available in the Responses and Chat Completions APIs with a 1M context window.\n\nGPT-5.5-pro is also available in the Responses API for higher-accuracy work.\n\nhttps://t.co/Q7PLCo4pse",
+          "url": "https://x.com/OpenAIDevs/status/2047742589982654915",
+          "published_at": "2026-04-24T18:20:53.000000Z",
+          "description": "GPT-5.5 is available in the Responses and Chat Completions APIs with a 1M context window.\n\nGPT-5.5-pro is also available in the Responses API for higher-accuracy work.\n\nhttps://t.co/Q7PLCo4pse",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Q7PLCo4pse",
+              "expanded_url": "https://openai.com/index/introducing-gpt-5-5/",
+              "display_url": "openai.com/index/introduc…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2047742578410627345"
+          },
+          "linked_content": "Title: Introducing GPT-5.5\n\nURL Source: https://openai.com/index/introducing-gpt-5-5/\n\nMarkdown Content:\n# Introducing GPT-5.5 | OpenAI\n\n[Skip to main content](https://openai.com/index/introducing-gpt-5-5/#main)\n\n[](https://openai.com/)\n\n*   [Research](https://openai.com/research/index/)\n*   Products\n*   [Business](https://openai.com/business/)\n*   [Developers](https://openai.com/api/)\n*   [Company](https://openai.com/about/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nLog in[Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n*   Research\n*   Products\n*   Business\n*   Developers\n*   Company\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nTable of contents\n\n*   [Model capabilities](https://openai.com/index/introducing-gpt-5-5/#model-capabilities)\n*   [Next-generation inference efficiency](https://openai.com/index/introducing-gpt-5-5/#next-generation-inference-efficiency)\n*   [Advancing cybersecurity for everyone’s safety](https://openai.com/index/introducing-gpt-5-5/#advancing-cybersecurity-for-everyones-safety)\n*   [Availability and pricing](https://openai.com/index/introducing-gpt-5-5/#availability-and-pricing)\n*   [Evaluations](https://openai.com/index/introducing-gpt-5-5/#evaluations)\n\nApril 23, 2026\n\n[Product](https://openai.com/news/product-releases/)[Release](https://openai.com/research/index/release/)\n\n# Introducing GPT‑5.5\n\nA new class of intelligence for real work\n\nLoading…\n\nShare\n\n_Update on April 24, 2026: GPT‑5.5 and GPT‑5.5 Pro are now available in the API._[_The system card_](https://openai.com/index/gpt-5-5-system-card/)_has also been updated to describe the additional safeguards that apply._\n\n* * *\n\nWe’re releasing GPT‑5.5, our smartest and most intuitive to use model yet, and the next step toward a new way of getting work done on a computer.\n\nGPT‑5.5 understands what you’re trying to do faster and can carry more of the work itself. It excels at writing and debugging code, researching online, analyzing data, creating documents and spreadsheets, operating software, and moving across tools until a task is finished. Instead of carefully managing every step, you can give GPT‑5.5 a messy, multi-part task and trust it to plan, use tools, check its work, navigate through ambiguity, and keep going.\n\nThe gains are especially strong in agentic coding, computer use, knowledge work, and early scientific research—areas where progress depends on reasoning across context and taking action over time. GPT‑5.5 delivers this step up in intelligence without compromising on speed: larger, more capable models are often slower to serve, but GPT‑5.5 matches GPT‑5.4 per-token latency in real-world serving, while performing at a much higher level of intelligence. It also uses significantly fewer tokens to complete the same Codex tasks, making it more efficient as well as more capable.\n\nWe are releasing GPT‑5.5 with our strongest set of safeguards to date, designed to reduce misuse while preserving access for beneficial work. We evaluated this model across our full suite of safety and preparedness frameworks, worked with internal and external redteamers, added targeted testing for advanced cybersecurity and biology capabilities, and collected feedback on real use cases from nearly 200 trusted early-access partners before release.\n\nToday, GPT‑5.5 is rolling out to Plus, Pro, Business, and Enterprise users in ChatGPT and Codex, and GPT‑5.5 Pro is rolling out to Pro, Business, and Enterprise users in ChatGPT. API deployments require different safeguards and we are working closely with partners and customers on the safety and security requirements for serving it at scale. We'll bring GPT‑5.5 and GPT‑5.5 Pro to the API very soon.\n\n**GPT-5.5****GPT-5.4****GPT-5.5 Pro****GPT-5.4 Pro****Claude Opus 4.7****Gemini 3.1 Pro**\nTerminal-Bench 2.0**82.7%**75.1%--69.4%68.5%\nExpert-SWE (Internal)**73.1%**68.5%----\nGDPval (wins or ties)**84.9%**83.0%82.3%82.0%80.3%67.3%\nOSWorld-Verified**78.7%**75.0%--78.0%-\nToolathlon**55.6%**54.6%---48.8%\nBrowseComp 84.4%82.7%**90.1%**89.3%79.3%85.9%\nFrontierMath Tier 1–3 51.7%47.6%**52.4%**50.0%43.8%36.9%\nFrontierMath Tier 4 35.4%27.1%**39.6%**38.0%22.9%16.7%\nCyberGym**81.8%**79.0%--73.1%-\n\n## Model capabilities\n\nOpenAI is building the global infrastructure for agentic AI, making it possible for people and businesses around the world to get work done with AI. Over the past year, we’ve seen AI dramatically accelerate software engineering. With GPT‑5.5 in Codex and ChatGPT, that same transformation is beginning to extend into scientific research and the broader work people do on computers.\n\nAcross these domains, GPT‑5.5 is not just more intelligent; it is more efficient in how it works through problems, often reaching higher-quality outputs with fewer tokens and fewer retries. On Artificial Analysis's Coding Index, GPT‑5.5 delivers state-of-the-art intelligence at half the cost of competitive frontier coding models.\n\nThe [Artificial Analysis Intelligence Index⁠(opens in a new window)](https://artificialanalysis.ai/methodology/intelligence-benchmarking) is a weighted average of 10 evals ran by an external party: AA-LCR, AA-Omniscience, CritPt, GDPval-AA, GPQA Diamond, Humanity’s Last Exam, IFBench, SciCode, Terminal-Bench Hard, τ²-Bench Telecom.\n\n#### Agentic coding\n\nGPT‑5.5 is our strongest agentic coding model to date. On **Terminal-Bench 2.0,** which tests complex command-line workflows requiring planning, iteration, and tool coordination, it achieves a state-of-the-art accuracy of 82.7%. On **SWE-Bench Pro**, which evaluates real-world GitHub issue resolution, it reaches 58.6%, solving more tasks end-to-end in a single pass than previous models. On **Expert-SWE**, our internal frontier eval for long-horizon coding tasks with a median estimated human completion time of 20 hours, GPT‑5.5 also outperforms GPT‑5.4.\n\nAcross all three evals, GPT‑5.5 improves on GPT‑5.4’s scores while using fewer tokens.\n\nThe model’s coding strengths show up especially clearly in Codex where it can take on engineering work ranging from implementation and refactors to debugging, testing, and validation. Early testing suggests GPT‑5.5 is better at the behaviors real engineering work depends on, like holding context across large systems, reasoning through ambiguous failures, checking assumptions with tools, and carrying changes through the surrounding codebase.\n\nSpace mission app Earthquake tracker Dungeon game 3D game\n\nThe rendered trajectory uses NASA/JPL Horizons vector data for Orion, the Moon, and the Sun, with display scaling applied for readability.\n\n**Prompt:**[attached image] Implement this as a new app using webgl and vite using real data from the artemis II mission. Make sure to test the app thoroughly until it is fully functional and looks like the app in the picture. Pay close attention to the rendering of the planets and fly paths. I want to be able to interact with the 3D rendering. Ensure it has realistic orbital mechanics.\n\nBeyond benchmarks, early testers said GPT‑5.5 shows a stronger ability to understand the shape of a system: why something is failing, where the fix needs to land, and what else in the codebase would be affected.\n\n![Image 1: alt](https://images.ctfassets.net/kftzwdyauwt9/5A8f5mO7aKrwLH5ClDV0si/e49a0a3c56f63d9998dd338ce16d0dd6/Blog1.png?w=3840&q=90&fm=webp)\n\n“The first coding model I’ve used that has serious conceptual clarity.”\n\n![Image 2: alt](https://images.ctfassets.net/kftzwdyauwt9/6T4xNx8jzQOmohTbNFpbt3/e85b69bdc6d86366e17d48739be4232e/Blog1.png?w=3840&q=90&fm=webp)\n\n“The first coding model I’ve used that has serious conceptual clarity.”\n\nDan Shipper, Founder and CEO of Every, described GPT‑5.5 as “the first coding model I’ve used that has serious conceptual clarity.”\n\nAfter launching an app, he spent days debugging a post-launch issue before bringing in one of his best engineers to rewrite part of the system. To test GPT‑5.5, he effectively rewound the clock: could the model look at the broken state and produce the same kind of rewrite the engineer eventually decided on? GPT‑5.4 could not. GPT‑5.5 could.\n\n![Image 3: alt](https://images.ctfassets.net/kftzwdyauwt9/1eFs7ss7lMxUlZlbCCd6mC/d62c48414621c37d251564b6880dccc0/Blog2.png?w=3840&q=90&fm=webp)\n\n“It genuinely feels like I’m working with a higher intelligence, and there’s almost a sense of respect.”\n\n![Image 4: alt](https://images.ctfassets.net/kftzwdyauwt9/72r6bw8GUc0qCr8fXs4Fnu/8fd4014193a371af2db5b30026ddc540/Blog2.png?w=3840&q=90&fm=webp)\n\n“It genuinely feels like I’m working with a higher intelligence, and there’s almost a sense of respect.”\n\nPietro Schirano, CEO of MagicPath, saw a similar step change when GPT‑5.5 merged a branch with hundreds of frontend and refactor changes into a main branch that had also changed substantially, resolving the work in one shot in about 20 minutes.\n\nSenior engineers who tested the model said GPT‑5.5 was noticeably stronger than GPT‑5.4 and Claude Opus 4.7 at reasoning and autonomy, catching issues in advance and predicting testing and review needs without explicit prompting. In one case, an engineer asked it to re-architect a comment system in a collaborative markdown editor and returned to a 12-diff stack that was nearly complete. Others said they needed surprisingly little implementation correction and felt more confident in GPT‑5.5’s plans compared with GPT‑5.4.\n\nOne engineer at NVIDIA who had early access to the model went as far as to say: \"Losing access to GPT‑5.5 feels like I've had a limb amputated.”\n\nCursor Lovable Cognition Windsurf GitHub JetBrains Sonar\n\n> “GPT-5.5 is noticeably smarter and more persistent than GPT-5.4, with stronger coding performance and more reliable tool use. It stays on task for significantly longer without stopping early, which matters most for the complex, long-running work our users delegate to Cursor.”\n\n— Michael Truell, Co-founder & CEO at Cursor\n\n#### Knowledge work\n\nThe same strengths that make GPT‑5.5 great at coding also make it powerful for everyday work on a computer. Because the model is better at understanding intent, it can move more naturally through the full loop of knowledge work: finding information, understanding what matters, using tools, checking the output, and turning raw material into something useful.\n\nIn Codex, GPT‑5.5 is better than GPT‑5.4 at generating documents, spreadsheets, and slide presentations. Alpha testers said it outperformed past models on work like operational research, spreadsheet modeling, and turning messy business inputs into plans. When combined with Codex’s computer use skills, GPT‑5.5 brings us closer to the feeling that the model can actually use the computer with you: seeing what’s on screen, clicking, typing, navigating interfaces, and moving across tools with precision.\n\nTeams at OpenAI are already using these strengths in real workflows. Today, more than 85% of the company uses Codex every week across functions including software engineering, finance, communications, marketing, data science, and product management. In Comms, the team used GPT‑5.5 in Codex to analyze six months of speaking request data, build a scoring and risk framework, and validate an automated Slack agent so low-risk requests could be handled automatically while higher-risk requests still route to human review. In Finance, the team used Codex to review 24,771 K-1 tax forms totaling 71,637 pages, using a workflow that excluded personal information and helped the team accelerate the task by two weeks compared to the prior year. On the Go-to-Market team, an employee automated generating weekly business reports, saving 5-10 hours a week.\n\nFinancial modeling Testing onboarding flow\n\nIn ChatGPT, **GPT‑5.5 Thinking** unlocks faster help for harder problems, with smarter and more concise answers to help you move through complex work more efficiently. It excels at professional work like coding, research, information synthesis and analysis, and document-heavy tasks, especially when using plugins.\n\nIn **GPT‑5.5 Pro**, early testers are seeing a significant step up in both the difficulty and quality of work ChatGPT can take on, with latency improvements that make it much more practical for demanding tasks. Compared to GPT‑5.4 Pro, testers found GPT‑5.5 Pro’s responses significantly more comprehensive, well-structured, accurate, relevant, and useful, with especially strong performance in business, legal, education, and data science.\n\nGPT‑5.5 reaches state-of-the-art performance across multiple benchmarks that reflect this kind of work. On[GDPval⁠⁠](https://openai.com/index/gdpval/), which tests agents’ abilities to produce well-specified knowledge work across 44 occupations, GPT‑5.5 scores 84.9%. On **OSWorld-Verified**, which measures whether a model can operate real computer environments on its own, it reaches 78.7%. And on **Tau2-bench Telecom**, which tests complex customer-service workflows, it reaches 98.0% without prompt tuning. GPT‑5.5 also performs strongly across other knowledge work benchmarks: 60.0% on **FinanceAgent**, 88.5% on **internal investment-banking modeling tasks**, and 54.1% on **OfficeQA Pro**.\n\nTau2-bench Telecom was run without prompt tuning (and GPT‑4.1 as user model). GPT‑5.5 understands the intent of the task better and is more token efficient than its predecessors.\n\nNVIDIA Cisco Abridge Databricks Harvey Box Lowe’s Glean Palo Alto Networks Ramp Perplexity\n\n> “GPT-5.5 delivers the sustained performance required for execution-heavy work. Built and served on NVIDIA GB200 NVL72 systems, the model enables our teams to ship end-to-end features from natural language prompts, cut debug time from days to hours, and turn weeks of experimentation into overnight progress in complex codebases. It’s more than faster coding—it’s a new way of working that helps people operate at a fundamentally different speed.”\n\n— Justin Boitano, VP of Enterprise AI at NVIDIA\n\n#### Scientific research\n\nGPT‑5.5 also shows gains on scientific and technical research workflows, which require more than answering a hard question. Researchers need to explore an idea, gather evidence, test assumptions, interpret results, and decide what to try next. GPT‑5.5 is better at persisting across that loop than other models.\n\nNotably, GPT‑5.5 shows a clear improvement over GPT‑5.4 on [**GeneBench**⁠(opens in a new window)](https://cdn.openai.com/pdf/6dc7175d-d9e7-4b8d-96b8-48fe5798cd5b/oai_genebench_benchmark.pdf), a new eval focusing on multi-stage scientific data analysis in genetics and quantitative biology. These problems require models to reason about potentially ambiguous or errorful data with minimal supervisory guidance, address realistic obstacles such as hidden confounders or QC failures, and correctly implement and interpret modern statistical methods. The model’s performance is striking in light of the fact that tasks here often correspond to multi-day projects for scientific experts.\n\nSimilarly, on [BixBench⁠(opens in a new window)](https://arxiv.org/abs/2503.00096), a benchmark designed around real-world bioinformatics and data analysis, GPT‑5.5 achieved leading performance among models with published scores. The model’s scientific capabilities are now strong enough to meaningfully accelerate progress at the frontiers of biomedical research as a bona fide co-scientist.\n\nIn another example, an internal version of GPT‑5.5 with a custom harness helped discover a [new proof⁠(opens in a new window)](https://cdn.openai.com/pdf/6dc7175d-d9e7-4b8d-96b8-48fe5798cd5b/Ramsey.pdf) about Ramsey numbers, one of the central objects in combinatorics. Combinatorics studies how discrete objects fit together: graphs, networks, sets, and patterns. Ramsey numbers ask, roughly, how large a network has to be before some kind of order is guaranteed to appear. Results in this area are rare and often technically difficult. Here, GPT‑5.5 found a proof of a longstanding asymptotic fact about off-diagonal Ramsey numbers, later verified in Lean. The result is a concrete example of GPT‑5.5 contributing not just code or explanation, but a surprising and useful mathematical argument in a core research area.\n\nEarly testers used GPT‑5.5 Pro in ChatGPT less like a one-shot answer engine and more like a research partner: critiquing manuscripts over multiple passes, stress-testing technical arguments, proposing analyses, and working with code, notes, and PDF context. The common thread is that GPT‑5.5 is better at helping researchers move from question to experiment to output.\n\n![Image 5: alt](https://images.ctfassets.net/kftzwdyauwt9/3tvjV3IAWoNm6kBwh6XjQB/5d2c1ca28e25d5ee015fd220b919d5b3/Blog3.png?w=3840&q=90&fm=webp)\n\n![Image 6: alt](https://images.ctfassets.net/kftzwdyauwt9/2xO4DFtGj9mgmlKpR2EgBR/c8102d3256edfb11b21a8297d0891424/Blog3.png?w=3840&q=90&fm=webp)\n\nDerya Unutmaz, an immunology professor and researcher at the Jackson Laboratory for Genomic Medicine, used GPT‑5.5 Pro to analyze a gene-expression dataset with 62 samples and nearly 28,000 genes, producing a detailed research report that not only summarized the findings but also surfaced key questions and insights—work he said would have taken his team months.\n\n![Image 7: alt](https://images.ctfassets.net/kftzwdyauwt9/5kx7uMF0Iq0fRIluO7JgN1/1e899be5fe72247475ecd8dc9a3a0dd4/Blog5.png?w=3840&q=90&fm=webp)\n\n![Image 8: alt](https://images.ctfassets.net/kftzwdyauwt9/2cUS16rFVukXEvhllfm5A4/ace05408b550de68da57ff5fce5ede90/Blog5.png?w=3840&q=90&fm=webp)\n\nBartosz Naskręcki, assistant professor of mathematics at Adam Mickiewicz University in Poznań, Poland, used GPT‑5.5 in Codex to build an algebraic-geometry app from a single prompt in 11 minutes, visualizing the intersection of quadratic surfaces and converting the resulting curve into a Weierstrass model.\n\nHe later extended the app with more stable singularity visualization and exact coefficients that can be reused in further work. For him, the bigger shift is that Codex can now help implement custom mathematical visualization and computer-algebra workflows that previously required dedicated tools. Together, these examples show GPT‑5.5 turning expert intent into working research tools and analyses.\n\n![Image 9: \"\"](https://images.ctfassets.net/kftzwdyauwt9/1WiRj8XUEoqruFEKNQJPRr/4063977e99833d7129b6a238b4d3d876/Bartosz_Visual.png?w=3840&q=90&fm=webp)\n\n[Credit: Bartosz Naskręcki⁠(opens in a new window)](https://bnaskrecki.faculty.wmi.amu.edu.pl/quadr/)\n\n**Prompt:**# Algebraic geometry surface intersection\n\nMake an app which draws two quadratic surfaces and colors in red the intersection curve. Use computational Riemann-Roch theorem to convert this into Weierstrass curve.\n\n## Main window\n\nTwo tinted surfaces with a slightly transparent shading, high quality rendering intersect along a red colored algebraic curve\n\nRotation with mouses in both directions, full pinch mechanism for zoom, haptic press to show the little menu with sliders for changing the coefficients of each surface; detection via Z-buffor level\n\n## Side right window\n\nShort Weierstrass equation (over Q or quadratic field extension) computed on the go via effective Riemann-Roch theorem formulas\n\n## Ambient mode where all the controls are hidden and the user can admire the beauty of the shapes\n\n## Specs\n\nApp is running in the browser, light-weight implementation with full stack newest libraries, portable, deployable\n\n## Docs\n\nGit repo, journal, plan (Markdown files)\n\n> “It’s incredibly energizing to use OpenAI’s new GPT-5.5 model in our harness, have it reason over massive biochemical datasets to predict human drug outcomes, and then see it deliver significant accuracy gains on our hardest drug discovery evals. If OpenAI keeps cooking like this, the foundations of drug discovery will change by the end of the year.”\n\n— Brandon White, Co-Founder & CEO at Axiom Bio\n\n## Next-generation inference efficiency\n\nSer",
+          "thread_group_id": "thread-OpenAIDevs-20260424-1820",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "🔥DeepSeek-V4-Pro API is 75% OFF until May 5th, 2026, 15:59 (UTC Time)! Don't miss out on this massive discount.\n\n🛠️Integration Updates:\n🔹Claude Code: Set model to deepseek-v4-pro[1m]  to unlock 1M ",
+          "url": "https://x.com/deepseek_ai/status/2048062777357750316",
+          "published_at": "2026-04-25T15:33:11.000000Z",
+          "description": "🔥DeepSeek-V4-Pro API is 75% OFF until May 5th, 2026, 15:59 (UTC Time)! Don't miss out on this massive discount.\n\n🛠️Integration Updates:\n🔹Claude Code: Set model to deepseek-v4-pro[1m]  to unlock 1M context!\n🔹OpenCode: Update to v1.14.24+\n🔹OpenClaw: Update to v2026.4.24+\n\nCheck the latest official API docs for full details: https://t.co/9J9ZedDpyU",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/9J9ZedDpyU",
+              "expanded_url": "https://api-docs.deepseek.com/quick_start/pricing",
+              "display_url": "api-docs.deepseek.com/quick_start/pr…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Qwen-Image-2.0-Pro is now live 🚀🚀\n\nWe’ve pushed image quality, multilingual text rendering, and instruction following to a new level, while making performance much more consistent across styles.🌅🌃",
+          "url": "https://x.com/Alibaba_Qwen/status/2048022731548229869",
+          "published_at": "2026-04-25T12:54:04.000000Z",
+          "description": "Qwen-Image-2.0-Pro is now live 🚀🚀\n\nWe’ve pushed image quality, multilingual text rendering, and instruction following to a new level, while making performance much more consistent across styles.🌅🌃\n\nRanked #9 worldwide for Text-to-Image on @arena \n\n🔗Try it now on \nModelScope:\nhttps://t.co/pPtrbjzzBK\nhttps://t.co/raB6WWMEMP\nAPI：https://t.co/EgYS5qt2bF",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/pPtrbjzzBK",
+              "expanded_url": "https://modelscope.ai/studios/Qwen/Qwen-Image-2.0-pro",
+              "display_url": "modelscope.ai/studios/Qwen/Q…"
+            },
+            {
+              "t_co": "https://t.co/raB6WWMEMP",
+              "expanded_url": "https://modelscope.cn/studios/Qwen/Qwen-Image-2.0-pro",
+              "display_url": "modelscope.cn/studios/Qwen/Q…"
+            },
+            {
+              "t_co": "https://t.co/EgYS5qt2bF",
+              "expanded_url": "https://modelstudio.console.alibabacloud.com/ap-southeast-1?tab=doc#/doc/?type=model&url=2840914_2&modelId=qwen-image-2.0-pro-2026-04-22&serviceSite=international",
+              "display_url": "modelstudio.console.alibabacloud.com/ap-southeast-1…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "arena",
+            "text": "Qwen Image 2.0 Pro 2026-04-22 lands at #9 in Text-to-Image Arena.\n\nHighlights of the latest image model from @Alibaba_Qwen:\n- #9 Text-to-Image\n- #17 Image Edit (Single Image)\n\nTop 10 in Text-to-Image categories:\n- #6 Portraits\n- #7 Photorealistic & Cinematic Imagery\n- #7 Art\n\nCongrats to the @Alibaba_Qwen team on this launch!",
+            "url": "https://x.com/arena/status/2047341506441380054"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Comprehensive Multilingual Text Rendering：\nBetter glyph accuracy, more consistent typography, and cleaner layouts even in complex compositions.\nIt handles mixed-language scenarios more gracefully as w",
+          "url": "https://x.com/Alibaba_Qwen/status/2048024942286147822",
+          "published_at": "2026-04-25T13:02:51.000000Z",
+          "description": "Comprehensive Multilingual Text Rendering：\nBetter glyph accuracy, more consistent typography, and cleaner layouts even in complex compositions.\nIt handles mixed-language scenarios more gracefully as well.\nIf you’re building posters, UI mockups, ads, or anything text-heavy, this should feel like a meaningful step forward.🪄",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "Alibaba_Qwen",
+            "status_id": "2048024937999577533"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-Alibaba_Qwen-20260425-1302",
+          "duplicate_of": null
+        },
+        {
+          "title": "Balanced Performance Across Artistic Styles：\nMore uniform quality across diverse aesthetic domains, effectively reducing style-dependent quality variance.🏖️ https://t.co/3FY3E9VHEp",
+          "url": "https://x.com/Alibaba_Qwen/status/2048024946342072482",
+          "published_at": "2026-04-25T13:02:52.000000Z",
+          "description": "Balanced Performance Across Artistic Styles：\nMore uniform quality across diverse aesthetic domains, effectively reducing style-dependent quality variance.🏖️ https://t.co/3FY3E9VHEp",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "Alibaba_Qwen",
+            "status_id": "2048024942286147822"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-Alibaba_Qwen-20260425-1302",
+          "duplicate_of": null
+        }
+      ]
+    }
+  }
+}
