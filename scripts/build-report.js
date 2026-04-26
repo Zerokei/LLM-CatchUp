@@ -262,9 +262,25 @@ async function main() {
 
   // Step 11 — git add / commit / push
   const run = (c) => execSync(c, { stdio: 'inherit' });
-  // Stage the individually-changed inputs plus the regenerated outputs. `reports/daily/*.html`
-  // covers both the new report's page and any neighbor pages whose nav links now point at it.
-  run(`git add data/history.json data/health.json reports/daily/${date}.md reports/daily/${date}.ops.md feed.xml reports/daily/*.html reports/weekly/*.html reports/monthly/*.html`);
+  // Enumerate HTML files explicitly: `reports/monthly/*.html` is empty until the
+  // first monthly report lands, and an unmatched shell glob makes `git add` fail.
+  const htmlPaths = [];
+  for (const cadence of ['daily', 'weekly', 'monthly']) {
+    const dir = path.join(PROJECT_ROOT, 'reports', cadence);
+    if (!fs.existsSync(dir)) continue;
+    for (const f of fs.readdirSync(dir)) {
+      if (f.endsWith('.html')) htmlPaths.push(`reports/${cadence}/${f}`);
+    }
+  }
+  const addPaths = [
+    'data/history.json',
+    'data/health.json',
+    `reports/daily/${date}.md`,
+    `reports/daily/${date}.ops.md`,
+    'feed.xml',
+    ...htmlPaths,
+  ];
+  run(`git add ${addPaths.map((p) => `'${p}'`).join(' ')}`);
   // If the working tree has no changes (idempotent re-run), skip commit
   try {
     execSync('git diff --cached --quiet', { stdio: 'ignore' });
