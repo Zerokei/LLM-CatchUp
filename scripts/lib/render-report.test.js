@@ -36,10 +36,23 @@ test('renderArticleBlock: omits practice_suggestions block when absent', () => {
   assert.doesNotMatch(md, /实践建议/);
 });
 
-test('renderArticleBlock: adds "也被 X, Y 报道" when also_covered_by present', () => {
-  const a = { ...SAMPLE_ARTICLE, also_covered_by: ['Berkeley RDI', 'The Batch'] };
+test('renderArticleBlock: appends 多角度报道 list when cluster_members present', () => {
+  const a = {
+    ...SAMPLE_ARTICLE,
+    cluster_members: [
+      { url: 'https://x.com/AnthropicAI/status/1', title: 'Anthropic 官推', source: 'Anthropic (Twitter)', angle: '官方推文' },
+      { url: 'https://deeplearning.ai/the-batch/issue-350', title: 'The Batch 报道', source: 'The Batch', angle: '' },
+    ],
+  };
   const md = renderArticleBlock(a, 1);
-  assert.match(md, /\| 📡 也被 Berkeley RDI, The Batch 报道/);
+  assert.match(md, /📎 \*\*多角度报道\*\*:/);
+  assert.match(md, /- \[Anthropic 官推\]\(https:\/\/x\.com\/AnthropicAI\/status\/1\) · Anthropic \(Twitter\) · 官方推文/);
+  assert.match(md, /- \[The Batch 报道\]\(https:\/\/deeplearning\.ai\/the-batch\/issue-350\) · The Batch\n/);
+});
+
+test('renderArticleBlock: omits 多角度报道 section when cluster_members absent', () => {
+  const md = renderArticleBlock(SAMPLE_ARTICLE, 1);
+  assert.doesNotMatch(md, /多角度报道/);
 });
 
 test('CATEGORIES: matches config category order', () => {

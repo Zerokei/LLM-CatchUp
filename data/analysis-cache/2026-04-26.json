@@ -71,7 +71,8 @@
         "OpenAI"
       ],
       "thread_group_id": null,
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/OpenAI/status/2047743592278745425",
+      "angle": "Altman 谈 5.5 人格风格"
     },
     {
       "url": "https://x.com/Alibaba_Qwen/status/2048024946342072482",
@@ -111,26 +112,29 @@
         "重点测试中英混排、长句版式与小字号场景下的可读性"
       ],
       "thread_group_id": "thread-Alibaba_Qwen-20260425-1302",
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2048022731548229869",
+      "angle": "多语言文字渲染细节"
     },
     {
       "url": "https://x.com/Alibaba_Qwen/status/2048022731548229869",
       "source": "Qwen (Twitter)",
-      "title": "Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9",
-      "summary": "阿里 Qwen 团队正式发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染与指令跟随，并显著降低跨风格的表现波动。该模型在 LM Arena 文生图榜上排名全球第 9，单图编辑排第 17，肖像、写实电影感、艺术三个细分方向均进入前十。已上线 ModelScope 与阿里云 ModelStudio API。",
+      "title": "Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升",
+      "summary": "阿里 Qwen 团队发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染、指令跟随并显著降低跨风格表现波动。多语言文字方面字形更准确、混合语言排版更整洁，复杂构图下版式更稳，适配海报、UI 草稿、广告等富文本场景。跨艺术风格画质更均衡，有效降低「风格相关质量方差」，避免水墨、像素画等小众风格翻车。在 LM Arena 文生图榜上排名全球第 9，单图编辑第 17，肖像、写实电影感、艺术三个细分方向均进入前十。已上线 ModelScope 与阿里云 ModelStudio API。",
       "category": "模型发布",
       "importance": 4,
       "tags": [
         "Qwen-Image-2.0-Pro",
         "文生图",
-        "ModelScope",
+        "文字渲染",
         "Arena 排名",
+        "ModelScope",
         "阿里"
       ],
       "practice_suggestions": [
-        "通过 ModelScope 体验站快速对比 Qwen-Image-2.0-Pro 与 GPT-Image、Imagen、Flux 等竞品的同 prompt 出图",
+        "通过 ModelScope 体验站对比 Qwen-Image-2.0-Pro 与 GPT-Image、Imagen、Flux 等竞品的同 prompt 出图",
+        "将其接入海报、UI mockup、广告等富文本工作流，重点测中英混排与小字号可读性",
         "在生产管线中通过 ModelStudio API 接入，测试肖像与电影感图像的成本/质量比",
-        "结合其指令跟随提升，将复杂结构化 prompt（多主体+文字标签）作为重点验证场景"
+        "重点验证以往易翻车的小众风格（水墨、像素画）改进幅度"
       ],
       "thread_group_id": null,
       "duplicate_of": null
@@ -278,7 +282,8 @@
         "关注Perplexity报告的「token使用减少56%」效应，在自家Agent链路中验证是否能降低实际推理成本"
       ],
       "thread_group_id": null,
-      "duplicate_of": "https://x.com/OpenAI/status/2047743592278745425"
+      "duplicate_of": "https://x.com/OpenAI/status/2047743592278745425",
+      "angle": "Altman 转推宣布上线 API"
     },
     {
       "url": "https://x.com/ClaudeDevs/status/2047773532885787026",
@@ -316,22 +321,27 @@
         "在团队规范中明确「网页起草、本地落地」的会话切换边界，避免分支冲突"
       ],
       "thread_group_id": "thread-ClaudeDevs-20260424-2023",
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2047773528121049488",
+      "angle": "teleport 跨端接续细节"
     },
     {
       "url": "https://x.com/ClaudeDevs/status/2047773528121049488",
       "source": "Claude Devs (Twitter)",
-      "title": "Claude Code Web与移动端发布更新汇总线程",
-      "summary": "Claude Devs开启线程介绍最近Claude Code在Web与移动端的一系列更新，本条为线程开头预告，详细更新由后续推文逐条展开。",
+      "title": "Claude Code 上线 Web 与移动端，并以 teleport 打通 CLI 跨端会话",
+      "summary": "Anthropic 在 claude.ai/code 正式推出 Claude Code 的网页与移动端，让开发者可在浏览器或手机上发起会话与代码任务。配套引入 `claude --teleport` 命令：在 Web/移动端起草后回到终端运行该命令，会自动同步完整对话历史并切换到正确分支，实现 Web、移动与本地 CLI 三端的无缝衔接。该次发布主打「随时随地起草、回到终端落地」的跨端开发工作流。",
       "category": "产品与功能",
-      "importance": 2,
+      "importance": 4,
       "tags": [
         "ClaudeCode",
-        "产品更新",
-        "Web版"
+        "Web版",
+        "移动端",
+        "teleport",
+        "跨端协作"
       ],
       "practice_suggestions": [
-        "关注ClaudeDevs整条线程，汇总Web/移动端新功能后再决定是否将团队工作流迁移上去"
+        "访问 claude.ai/code 体验 Web 与移动端，评估是否能替代部分本地 CLI 场景",
+        "在通勤时用移动端起草任务、回到办公室用 `claude --teleport` 接管，验证多端协作效率",
+        "在团队规范中明确「网页起草、本地落地」的会话切换边界，避免分支冲突"
       ],
       "thread_group_id": null,
       "duplicate_of": null
@@ -351,7 +361,8 @@
         "Agent工作流"
       ],
       "thread_group_id": null,
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/OpenAI/status/2047743592278745425",
+      "angle": "Perplexity 第三方实测"
     },
     {
       "url": "https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/",
@@ -372,20 +383,23 @@
     {
       "url": "https://x.com/OpenAI/status/2047743592278745425",
       "source": "OpenAI (Twitter)",
-      "title": "OpenAI 官宣：GPT-5.5 与 GPT-5.5 Pro 正式上线 API",
-      "summary": "OpenAI 官方账号确认 GPT-5.5 与 GPT-5.5 Pro 已在 API 中开放。引用的开发者推文强调 GPT-5.5 在复杂任务中具备更高智能与更强 token 效率，能以更少重试完成工作。",
+      "title": "GPT-5.5 全面上线 API：1M 上下文 + Agent 能力跨越式升级",
+      "summary": "OpenAI 正式推出 GPT-5.5 与 GPT-5.5 Pro，同步登陆 Responses 与 Chat Completions API；GPT-5.5 提供 1M token 上下文窗口，GPT-5.5 Pro 仅在 Responses API 提供，面向更高精度任务。基准上 GPT-5.5 在 Terminal-Bench 2.0 拿下 82.7%、GDPval 84.9%、OSWorld-Verified 78.7%，超越 GPT-5.4 与 Claude Opus 4.7；Pro 版在 FrontierMath Tier 4 取得 39.6% SOTA。模型在保持与 5.4 同等延迟下显著提升 agentic coding、计算机操作与科研推理，能更少人为引导自主规划长链路任务。早期合作方 Perplexity 实测显示 Codex 内不到一小时即可搭建内部工具、相同任务 token 消耗下降 56%。Sam Altman 同步评价 5.5 性格「朴实而坚定」。",
       "category": "模型发布",
       "importance": 5,
       "tags": [
         "GPT-5.5",
-        "OpenAI",
-        "API",
-        "前沿模型"
+        "1M 上下文",
+        "Agentic Coding",
+        "Responses API",
+        "Terminal-Bench",
+        "OpenAI"
       ],
       "practice_suggestions": [
-        "在现有 GPT-5.4 工作流中切换到 GPT-5.5，观察重试次数与 token 消耗下降幅度",
-        "对长上下文/Agent 类任务优先试用 GPT-5.5 Pro 走 Responses API",
-        "评估 1M 上下文窗口是否能替代现有的 RAG 分片方案"
+        "在现有 GPT-5.4 工作流中切换到 GPT-5.5，量化重试次数与 token 消耗下降幅度",
+        "高难度数学/法律/金融建模任务改用 GPT-5.5 Pro 走 Responses API",
+        "用 1M 上下文一次性灌入大型代码库或长文档，对比此前的 RAG/Map-Reduce 流水线成本",
+        "重构 Agent prompt 去掉过度的 step-by-step 拆解，让 GPT-5.5 自主规划长链路任务"
       ],
       "thread_group_id": null,
       "duplicate_of": null
@@ -450,7 +464,8 @@
         "在编码/审阅 Agent 中替换 GPT-5.4，监控重试率与失败率变化"
       ],
       "thread_group_id": "thread-OpenAIDevs-20260424-1820",
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/OpenAI/status/2047743592278745425",
+      "angle": "Devs 视角强调 token 效率"
     },
     {
       "url": "https://x.com/AnthropicAI/status/2047728386148122990",
@@ -481,20 +496,23 @@
         "政策"
       ],
       "thread_group_id": "thread-AnthropicAI-20260424-1724",
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/AnthropicAI/status/2047728360818696302",
+      "angle": "实验结论与政策呼吁"
     },
     {
       "url": "https://x.com/AnthropicAI/status/2047728360818696302",
       "source": "Anthropic (Twitter)",
-      "title": "Anthropic Project Deal：让 Claude 替员工买卖谈判",
-      "summary": "Anthropic 公布新研究 Project Deal：在旧金山办公室搭建一个员工市场，由 Claude 代表同事进行买入、卖出与谈判。该实验旨在观察 AI Agent 在真实交易场景中的行为表现与潜在风险。",
+      "title": "Anthropic Project Deal：Claude 在内部市场替员工买卖谈判，揭示 Agent 经济隐形优势",
+      "summary": "Anthropic 公布新研究 Project Deal：在旧金山办公室搭建一个员工市场，由 Claude 代表同事进行买入、卖出与谈判，观察 AI Agent 在真实交易场景中的行为表现与潜在风险。实验发现该 AI Agent 市场具备价值潜力，但仍有大量粗糙边缘；访问更高质量模型的参与者获得了实际优势，但他们自己并未察觉。研究据此呼吁政策与法律框架需跟上 Agent 市场的发展节奏。完整书面报告已同步发布。",
       "category": "研究",
-      "importance": 3,
+      "importance": 4,
       "tags": [
-        "Anthropic",
+        "Project Deal",
+        "AI Agent",
+        "市场机制",
         "Claude",
-        "Agent 谈判",
-        "实验"
+        "政策框架",
+        "Anthropic"
       ],
       "thread_group_id": null,
       "duplicate_of": null

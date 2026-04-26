@@ -41,16 +41,40 @@ test('mergeThreads: groups articles with same thread_group_id under the earliest
   assert.match(thread.summary, /A[\s\S]*B[\s\S]*C/, 'summaries concatenated in time order');
 });
 
-test('applyDuplicateOf: canonical gets also_covered_by entries; duplicates dropped', () => {
+test('mergeThreads: ties on published_at break by URL deterministically', () => {
   const input = [
-    { url: 'https://anthropic.com/news/x', source: 'Anthropic Blog', duplicate_of: null },
-    { url: 'https://x.com/AnthropicAI/status/1', source: 'Anthropic (Twitter)', duplicate_of: 'https://anthropic.com/news/x' },
-    { url: 'https://deeplearning.ai/the-batch/issue-350', source: 'The Batch', duplicate_of: 'https://anthropic.com/news/x' },
+    { url: 'https://x.com/a/2', thread_group_id: 't1', published_at: '2026-04-22T10:00Z', summary: 'B' },
+    { url: 'https://x.com/a/1', thread_group_id: 't1', published_at: '2026-04-22T10:00Z', summary: 'A' },
+  ];
+  const out = mergeThreads(input);
+  assert.equal(out[0].url, 'https://x.com/a/1', 'lowest URL wins on timestamp tie');
+});
+
+test('mergeThreads: propagates duplicate_of from non-leader sibling onto merged entry', () => {
+  const input = [
+    { url: 'https://x.com/a/0', thread_group_id: 't1', published_at: '2026-04-22T10:00Z', summary: 'A', duplicate_of: null },
+    { url: 'https://x.com/a/1', thread_group_id: 't1', published_at: '2026-04-22T10:00Z', summary: 'B', duplicate_of: 'https://canonical.example/x' },
+  ];
+  const out = mergeThreads(input);
+  assert.equal(out.length, 1);
+  assert.equal(out[0].duplicate_of, 'https://canonical.example/x',
+    'merged entry inherits duplicate_of from sibling so cluster collapse survives');
+});
+
+test('applyDuplicateOf: canonical gets cluster_members; non-canonicals dropped from top-level', () => {
+  const input = [
+    { url: 'https://anthropic.com/news/x', title: 'Canonical post', source: 'Anthropic Blog', duplicate_of: null },
+    { url: 'https://x.com/AnthropicAI/status/1', title: 'AnthropicAI tweet', source: 'Anthropic (Twitter)', duplicate_of: 'https://anthropic.com/news/x', angle: '官方推文' },
+    { url: 'https://deeplearning.ai/the-batch/issue-350', title: 'Batch coverage', source: 'The Batch', duplicate_of: 'https://anthropic.com/news/x' },
   ];
   const out = applyDuplicateOf(input);
   assert.equal(out.length, 1);
   assert.equal(out[0].url, 'https://anthropic.com/news/x');
-  assert.deepEqual(out[0].also_covered_by, ['Anthropic (Twitter)', 'The Batch']);
+  assert.equal(out[0].cluster_members.length, 2);
+  assert.equal(out[0].cluster_members[0].source, 'Anthropic (Twitter)');
+  assert.equal(out[0].cluster_members[0].angle, '官方推文');
+  assert.equal(out[0].cluster_members[1].source, 'The Batch');
+  assert.equal(out[0].cluster_members[1].angle, '');
 });
 
 test('filterByImportance: removes articles below threshold', () => {

@@ -21,24 +21,34 @@ function mergeThreads(articles) {
   }
   const merged = [];
   for (const group of byId.values()) {
-    group.sort((x, y) => String(x.published_at).localeCompare(String(y.published_at)));
+    // Sort by published_at, then URL as tiebreak — published_at can tie at second precision.
+    group.sort((x, y) =>
+      String(x.published_at).localeCompare(String(y.published_at))
+      || String(x.url).localeCompare(String(y.url)));
     const [canonical, ...rest] = group;
     const summary = [canonical.summary, ...rest.map((r) => r.summary).filter(Boolean)].filter(Boolean).join(' ');
-    merged.push({ ...canonical, summary, extras: { ...(canonical.extras || {}), thread_urls: group.map((g) => g.url) } });
+    // Propagate duplicate_of from any sibling — Step 7.5 may have marked a non-leader.
+    const duplicate_of = canonical.duplicate_of || rest.find((r) => r.duplicate_of)?.duplicate_of || null;
+    merged.push({ ...canonical, duplicate_of, summary, extras: { ...(canonical.extras || {}), thread_urls: group.map((g) => g.url) } });
   }
   return [...merged, ...standalone];
 }
 
 function applyDuplicateOf(articles) {
   const byUrl = new Map(articles.map((a) => [a.url, a]));
-  const surviving = [];
   for (const a of articles) {
-    if (!a.duplicate_of) { surviving.push(a); continue; }
+    if (!a.duplicate_of) continue;
     const canonical = byUrl.get(a.duplicate_of);
-    if (!canonical) { surviving.push(a); continue; }  // canonical missing: keep the duplicate
-    canonical.also_covered_by = [...(canonical.also_covered_by || []), a.source];
+    if (!canonical) continue;  // canonical missing: leave duplicate as standalone
+    canonical.cluster_members = canonical.cluster_members || [];
+    canonical.cluster_members.push({
+      url: a.url,
+      title: a.title,
+      source: a.source,
+      angle: a.angle || '',
+    });
   }
-  return surviving.filter((a) => !a.duplicate_of || !byUrl.get(a.duplicate_of));
+  return articles.filter((a) => !a.duplicate_of || !byUrl.get(a.duplicate_of));
 }
 
 function filterByImportance(articles, minImportance) {
@@ -49,7 +59,7 @@ function appendToHistory(history, articles, fetchedAtISO) {
   for (const a of articles) {
     const extras = { tags: a.tags || [] };
     if (a.practice_suggestions?.length) extras.practice_suggestions = a.practice_suggestions;
-    if (a.also_covered_by?.length) extras.also_covered_by = a.also_covered_by;
+    if (a.cluster_members?.length) extras.cluster_members = a.cluster_members;
     if (a.extras?.thread_urls) extras.thread_urls = a.extras.thread_urls;
     history.articles[urlHash(a.url)] = {
       title: a.title,
@@ -192,7 +202,7 @@ async function main() {
   // Step 2 — thread merge (by thread_group_id)
   const afterThreads = mergeThreads(fresh);
 
-  // Step 3 — duplicate_of → also_covered_by
+  // Step 3 — duplicate_of → cluster_members on canonical (non-canonicals dropped from top-level)
   const canonical = applyDuplicateOf(afterThreads);
 
   // Step 4 — sort by importance desc, then published_at desc

@@ -98,18 +98,16 @@ Merge:
 
 Call the combined list `final_articles`.
 
-### Step 7.5: Semantic topic clustering
+### Step 7.5: Cluster identification
 
-Scan all articles in `final_articles`. Group articles that share **the same specific product, release, paper, partnership, or news event** — even when each article covers a distinct angle, sub-feature, benchmark, or first-party commentary. **Aggressive clustering is the default: when in doubt, cluster.** Angle differences are NOT a reason to keep them separate.
+Scan all articles in `final_articles`. Group articles that share **the same specific product, release, paper, partnership, or news event** — even when each article covers a distinct angle, sub-feature, benchmark, or first-party commentary. **Aggressive clustering is the default: when in doubt, cluster.** Angle differences are NOT a reason to keep them separate — different angles become different "多角度报道" entries under one event in the rendered report.
 
 Examples of valid clusters:
-- All articles about the GPT-5.5 release: official announcement + Devs API details + Sam Altman's personality commentary + partner reactions + media test reports → all collapse to the canonical announcement.
-- All articles about a specific paper (e.g., Google DeepMind DiLoCo): the paper drop + author thread + secondary commentary.
+- All articles about the GPT-5.5 release: official announcement + Devs API details + Sam Altman's personality commentary + partner reactions + media test reports → one event.
+- All articles about a specific paper (e.g., Google DeepMind DiLoCo): paper drop + author thread + secondary commentary → one event.
 - All tweets in a single product launch from the same official handle (lead announcement + follow-up feature highlights), even when split across multiple threads or standalone tweets.
 
 Do **NOT** cluster merely on shared broad topics ("AI", "models", "OpenAI products", "agentic coding"). The bar is "same specific event/product/paper".
-
-Why this is safe: the renderer surfaces every clustered article via the canonical's `📡 也被 X 报道` source-line annotation, and thread siblings already merge their full text upstream. No content is lost — readers still see the full set of sources, just collapsed under one entry.
 
 For each cluster of 2+ articles:
 1. Pick the canonical article in this priority order: primary-source blog (OpenAI Blog, Google AI Blog, Anthropic Blog, Anthropic Research, The Batch, Berkeley RDI) > primary-source first-party Twitter (OpenAI, Anthropic, Google DeepMind, Claude, Claude Devs, OpenAI Devs, Meta AI, Mistral AI, xAI, DeepSeek, Qwen) > aggregator Twitter (Sam Altman, Dario Amodei, Demis Hassabis, Andrej Karpathy, Thariq, 宝玉的分享). Within the same priority tier, prefer the earliest-published article (usually the lead announcement).
@@ -120,7 +118,25 @@ For each cluster of 2+ articles:
 - The **canonical URL** must be either (a) a standalone article, or (b) the earliest-published member of its thread group. Never use a non-leader thread sibling's URL as canonical — the lookup will fail and the cluster won't collapse.
 - For a non-canonical article inside a thread group, set `duplicate_of` only on the thread leader (earliest-published in that group). The rest of that thread's siblings are already absorbed into the leader by thread merge — leave their `duplicate_of` alone.
 
-Singletons (clusters of 1) get no change.
+Singletons (clusters of 1) get no change. They render the same template as clusters but without the multi-angle list.
+
+### Step 7.6: Cluster synthesis
+
+For each cluster identified in Step 7.5 (i.e. each canonical that has ≥1 non-canonical member pointing at it), **rewrite the canonical's fields** to represent the entire event, and **annotate each non-canonical member** with what angle it contributes. Singletons skip this step.
+
+**On the canonical** (rewrite these fields in place):
+- `title` (≤40 汉字): an event-level title. Not the canonical's original tweet text — synthesize. Example: "GPT-5.5 全面上线：API 开放 + 1M 上下文 + Agent 升级".
+- `summary` (3-5 sentences, Chinese): synthesize across all cluster members. The reader should get the full picture in one read — main facts from the canonical, plus any distinct contributions each member adds (benchmarks, third-party tests, official commentary, sub-feature highlights). Don't list sources by name in the summary — that's what 多角度报道 is for; just weave in the substance.
+- `tags`: union of all members' tags, deduped, capped at 5-7. Order: most-specific first.
+- `practice_suggestions`: union of all members' suggestions, deduped (drop near-duplicates), capped at 3-4. Only present if `category ∈ {模型发布, 产品与功能}`.
+- `importance`: re-evaluate the cluster as a single event using the same 1-5 rubric — broad cross-source coverage often signals real impact and warrants a higher score than any single member. Don't blindly take max; assess the event's overall significance. A flagship release covered by official blog + 3+ first-party threads + commentary should usually be a 5.
+- `category`: usually the canonical's existing category. Only change if the cluster's center-of-gravity is clearly elsewhere (rare).
+
+**On each non-canonical member** (the articles whose `duplicate_of` points at this canonical):
+- Add an `angle` field (≤20 汉字, Chinese): a one-line characterization of what this specific source contributes. Examples: "API 上线细节", "第三方实测", "Altman 人格点评", "Agent 能力侧重", "竞品对比". This is what the reader sees in the 多角度报道 list under the event.
+- Leave all other fields (title, summary, etc.) UNCHANGED — they're not rendered for non-canonical members, but the title is still used as the link text in 多角度报道.
+
+The renderer reads `duplicate_of` to gather members under each canonical and uses the canonical's rewritten fields plus each member's `angle` to render a unified event entry.
 
 ### Step 8: Compute trend_paragraph
 
