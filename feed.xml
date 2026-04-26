@@ -34,8 +34,10 @@
 <p><strong>摘要</strong>: OpenAI 正式推出 GPT-5.5 与 GPT-5.5 Pro，同步登陆 Responses 与 Chat Completions API；GPT-5.5 提供 1M token 上下文窗口，GPT-5.5 Pro 仅在 Responses API 提供，面向更高精度任务。基准上 GPT-5.5 在 Terminal-Bench 2.0 拿下 82.7%、GDPval 84.9%、OSWorld-Verified 78.7%，超越 GPT-5.4 与 Claude Opus 4.7；Pro 版在 FrontierMath Tier 4 取得 39.6% SOTA。模型在保持与 5.4 同等延迟下显著提升 agentic coding、计算机操作与科研推理，能更少人为引导自主规划长链路任务。早期合作方 Perplexity 实测显示 Codex 内不到一小时即可搭建内部工具、相同任务 token 消耗下降 56%。Sam Altman 同步评价 5.5 性格「朴实而坚定」。</p>
 <p>📎 <strong>多角度报道</strong>:</p>
 <ul>
+<li><a href="https://x.com/OpenAIDevs/status/2047742566410736090">GPT-5.5 API 开放：更高智能与 token 效率</a> · OpenAI Devs (Twitter) · Devs 视角强调 token 效率</li>
 <li><a href="https://x.com/sama/status/2048062261584077149">Altman 评 GPT-5.5：朴实，有「小火车终能上山」的劲头</a> · Sam Altman (Twitter) · Altman 谈 5.5 人格风格</li>
 <li><a href="https://x.com/sama/status/2047787124846653895">OpenAI上线GPT-5.5与GPT-5.5 Pro API</a> · Sam Altman (Twitter) · Altman 转推宣布上线 API</li>
+<li><a href="https://x.com/OpenAIDevs/status/2047772632150675593">Perplexity实测GPT-5.5：Codex内不到一小时构建内部工具，token使用降56%</a> · OpenAI Devs (Twitter) · Perplexity 第三方实测</li>
 </ul>
 <blockquote>
 <p><strong>实践建议</strong></p>
@@ -69,7 +71,41 @@
 </ul>
 </blockquote>
 <hr>
-<h3>3. <a href="https://x.com/deepseek_ai/status/2048062777357750316">DeepSeek-V4-Pro API 限时 75% 折扣并支持 1M 上下文</a></h3>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 上线 Web 与移动端，并以 teleport 打通 CLI 跨端会话</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ClaudeCode</code> <code>Web版</code> <code>移动端</code> <code>teleport</code> <code>跨端协作</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 在 claude.ai/code 正式推出 Claude Code 的网页与移动端，让开发者可在浏览器或手机上发起会话与代码任务。配套引入 <code>claude --teleport</code> 命令：在 Web/移动端起草后回到终端运行该命令，会自动同步完整对话历史并切换到正确分支，实现 Web、移动与本地 CLI 三端的无缝衔接。该次发布主打「随时随地起草、回到终端落地」的跨端开发工作流。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2047773531820491054">Claude Code跨端会话：claude --teleport无缝接续Web与CLI</a> · Claude Devs (Twitter) · teleport 跨端接续细节</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>访问 claude.ai/code 体验 Web 与移动端，评估是否能替代部分本地 CLI 场景</li>
+<li>在通勤时用移动端起草任务、回到办公室用 <code>claude --teleport</code> 接管，验证多端协作效率</li>
+<li>在团队规范中明确「网页起草、本地落地」的会话切换边界，避免分支冲突</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/AnthropicAI/status/2047728360818696302">Anthropic Project Deal：Claude 在内部市场替员工买卖谈判，揭示 Agent 经济隐形优势</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Project Deal</code> <code>AI Agent</code> <code>市场机制</code> <code>Claude</code> <code>政策框架</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 公布新研究 Project Deal：在旧金山办公室搭建一个员工市场，由 Claude 代表同事进行买入、卖出与谈判，观察 AI Agent 在真实交易场景中的行为表现与潜在风险。实验发现该 AI Agent 市场具备价值潜力，但仍有大量粗糙边缘；访问更高质量模型的参与者获得了实际优势，但他们自己并未察觉。研究据此呼吁政策与法律框架需跟上 Agent 市场的发展节奏。完整书面报告已同步发布。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2047728384503939464">Project Deal 观察：高质量模型在 Agent 市场中暗中占优</a> · Anthropic (Twitter) · 实验结论与政策呼吁</li>
+</ul>
+<hr>
+<h3>5. <a href="https://x.com/deepseek_ai/status/2048062777357750316">DeepSeek-V4-Pro API 限时 75% 折扣并支持 1M 上下文</a></h3>
 <ul>
 <li><strong>来源</strong>: DeepSeek (Twitter)</li>
 <li><strong>分类</strong>: 产品与功能</li>
@@ -86,23 +122,7 @@
 </ul>
 </blockquote>
 <hr>
-<h3>4. <a href="https://x.com/OpenAIDevs/status/2047742578410627345">GPT-5.5 强化 Agent：少指令完成跨应用长流程</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Agent</code> <code>GPT-5.5</code> <code>工具调用</code> <code>长流程</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Devs 强调基于 GPT-5.5 的 Agent 能够自行规划、收集上下文、调用工具、从歧义中恢复，并以更少的人为引导完成更长链路任务。覆盖软件操作、跨应用执行以及多步编码/工具密集型工作。 GPT-5.5 在 Responses 与 Chat Completions API 均可调用，并提供 1M token 上下文窗口；GPT-5.5 Pro 仅在 Responses API 提供，面向更高精度任务。官方博客披露 GPT-5.5 在 Terminal-Bench 2.0 拿下 82.7%、GDPval 达 84.9%、OSWorld-Verified 78.7%，超越 GPT-5.4 与 Claude Opus 4.7；Pro 版在 FrontierMath Tier 4 取得 39.6% 的 SOTA。模型在保持与 GPT-5.4 相同延迟的同时显著提升 agentic coding、计算机操作与科研推理能力。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>重构现有 Agent prompt，去掉过度的 step-by-step 拆解，让 GPT-5.5 自主规划</li>
-<li>针对计算机操作类 Agent 评估 OSWorld-Verified 78.7% 带来的成功率提升</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://x.com/sama/status/2048160404376105179">Altman：OpenAI 模型「智商」已大幅领先，前端略逊</a></h3>
+<h3>6. <a href="https://x.com/sama/status/2048160404376105179">Altman：OpenAI 模型「智商」已大幅领先，前端略逊</a></h3>
 <ul>
 <li><strong>来源</strong>: Sam Altman (Twitter)</li>
 <li><strong>分类</strong>: 教程与观点</li>
@@ -111,7 +131,7 @@
 </ul>
 <p><strong>摘要</strong>: Sam Altman 用「looksmaxxed / IQmog」的网络黑话概括 OpenAI 当前竞争位置：前端体验仍被对手稍稍压制，但模型智力层面已大幅领先。表态延续他近期对推理与「思考型」模型的重点宣传。 Sam Altman 在自评推文的补充回复中表示团队会修复前端体验的不足。该回复延续上一条「前端被压制一点，但 IQ 已遥遥领先」的自嘲，暗示 OpenAI 当前模型在推理智力上有优势但产品 UI 仍待打磨。</p>
 <hr>
-<h3>6. <a href="https://x.com/demishassabis/status/2047872041827910093">Hassabis 做客 YC：见证大量初创基于 Gemma 构建</a></h3>
+<h3>7. <a href="https://x.com/demishassabis/status/2047872041827910093">Hassabis 做客 YC：见证大量初创基于 Gemma 构建</a></h3>
 <ul>
 <li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
 <li><strong>分类</strong>: 商业动态</li>
@@ -120,29 +140,14 @@
 </ul>
 <p><strong>摘要</strong>: DeepMind CEO Demis Hassabis 感谢 YC 总裁 Garry Tan 在 YC 主持的对谈，并称「很高兴看到许多初创公司基于 Google Gemma 模型进行构建」，强调开源 Gemma 系列在创业生态中的渗透。</p>
 <hr>
-<h3>7. <a href="https://x.com/ClaudeDevs/status/2047773532885787026">Claude Code网页与移动端已上线，征集反馈</a></h3>
+<h3>8. <a href="https://blog.google/products-and-platforms/products/gemini/gemini-spring-cleaning-tips/">Google分享8条Gemini春季整理生活妙招</a></h3>
 <ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
 <li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
-<li><strong>标签</strong>: <code>ClaudeCode</code> <code>Web版</code> <code>移动端</code></li>
+<li><strong>标签</strong>: <code>Gemini</code> <code>Google</code> <code>生活助手</code> <code>使用技巧</code></li>
 </ul>
-<p><strong>摘要</strong>: Claude Devs宣布Claude Code的网页版与移动版已在claude.ai/code正式上线，欢迎用户试用并反馈。本条为线程末尾的简短通告。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>访问claude.ai/code体验网页版Claude Code，评估是否能替代部分本地CLI开发场景</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://x.com/AnthropicAI/status/2047728386148122990">Anthropic 发布 Project Deal 完整研究报告</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>Project Deal</code> <code>Agent 市场</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 给出 Project Deal 实验的完整书面报告链接，详细呈现该 AI 代理市场实验的方法、数据与结论。</p>
+<p><strong>摘要</strong>: Google官方博客介绍8种用Gemini协助生活整理与家居清洁的方式，包括生成定制清单、电器维修排查、收纳空间最大化、邮箱整理、家务规划、植物养护建议等。整体属面向C端用户的轻量使用场景指引，不涉及新模型或新功能。</p>
 <hr>
 ]]></description>
     </item>
