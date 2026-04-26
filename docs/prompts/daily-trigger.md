@@ -100,19 +100,27 @@ Call the combined list `final_articles`.
 
 ### Step 7.5: Semantic topic clustering
 
-Scan all articles in `final_articles`. Group articles that cover **the same specific product, release, paper, partnership, or news event**. Examples of valid clusters:
-- All articles about the GPT-5.5 release (the blog + OpenAI tweet + Sam Altman tweet + OpenAI Devs tweet about its launch)
-- All articles about a specific paper (e.g., Google DeepMind DiLoCo)
-- All articles about the same partnership announcement
+Scan all articles in `final_articles`. Group articles that share **the same specific product, release, paper, partnership, or news event** — even when each article covers a distinct angle, sub-feature, benchmark, or first-party commentary. **Aggressive clustering is the default: when in doubt, cluster.** Angle differences are NOT a reason to keep them separate.
 
-Do **NOT** cluster merely on shared broad topics ("AI", "models", "OpenAI products"). The test: if removing any one article from the cluster leaves the day's coverage of that specific subject meaningfully poorer, they are NOT duplicates — they cover distinct angles. Only cluster when the articles are near-redundant.
+Examples of valid clusters:
+- All articles about the GPT-5.5 release: official announcement + Devs API details + Sam Altman's personality commentary + partner reactions + media test reports → all collapse to the canonical announcement.
+- All articles about a specific paper (e.g., Google DeepMind DiLoCo): the paper drop + author thread + secondary commentary.
+- All tweets in a single product launch from the same official handle (lead announcement + follow-up feature highlights), even when split across multiple threads or standalone tweets.
+
+Do **NOT** cluster merely on shared broad topics ("AI", "models", "OpenAI products", "agentic coding"). The bar is "same specific event/product/paper".
+
+Why this is safe: the renderer surfaces every clustered article via the canonical's `📡 也被 X 报道` source-line annotation, and thread siblings already merge their full text upstream. No content is lost — readers still see the full set of sources, just collapsed under one entry.
 
 For each cluster of 2+ articles:
-1. Pick the canonical article in this priority order: primary-source blog (OpenAI Blog, Google AI Blog, Anthropic Blog, Anthropic Research, The Batch, Berkeley RDI) > primary-source first-party Twitter (OpenAI, Anthropic, Google DeepMind, Claude, Claude Devs, OpenAI Devs, Meta AI, Mistral AI, xAI, DeepSeek, Qwen) > aggregator Twitter (Sam Altman, Dario Amodei, Demis Hassabis, Andrej Karpathy, Thariq, 宝玉的分享).
+1. Pick the canonical article in this priority order: primary-source blog (OpenAI Blog, Google AI Blog, Anthropic Blog, Anthropic Research, The Batch, Berkeley RDI) > primary-source first-party Twitter (OpenAI, Anthropic, Google DeepMind, Claude, Claude Devs, OpenAI Devs, Meta AI, Mistral AI, xAI, DeepSeek, Qwen) > aggregator Twitter (Sam Altman, Dario Amodei, Demis Hassabis, Andrej Karpathy, Thariq, 宝玉的分享). Within the same priority tier, prefer the earliest-published article (usually the lead announcement).
 2. Set `duplicate_of = <canonical_url>` for every non-canonical member.
 3. If a non-canonical member already has a `duplicate_of` set (from the deterministic fetch-time preprocessing), leave it alone — that earlier value is already correct and more specific.
 
-Singletons (clusters of 1) get no change. Thread groups (articles sharing a `thread_group_id`) are already collapsed downstream; do NOT set `duplicate_of` among thread siblings.
+**Thread-group constraint** (gets silently wrong otherwise): the renderer collapses each `thread_group_id` to its earliest-published member BEFORE resolving `duplicate_of`. So:
+- The **canonical URL** must be either (a) a standalone article, or (b) the earliest-published member of its thread group. Never use a non-leader thread sibling's URL as canonical — the lookup will fail and the cluster won't collapse.
+- For a non-canonical article inside a thread group, set `duplicate_of` only on the thread leader (earliest-published in that group). The rest of that thread's siblings are already absorbed into the leader by thread merge — leave their `duplicate_of` alone.
+
+Singletons (clusters of 1) get no change.
 
 ### Step 8: Compute trend_paragraph
 
