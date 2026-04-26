@@ -28,17 +28,34 @@ function renderArticleBlock(a, idx) {
   return md;
 }
 
-// Editorial: what subscribers / website / RSS see. Lean: trend → articles.
-function renderEditorial({ date, articlesInReport, trendParagraph }) {
+// Compact one-liner for low-importance (★★) articles. Bundled together at the
+// bottom under "## 速览" so they don't clutter the editorial flow but readers
+// can still scan them.
+function renderBriefBlock(a) {
+  const tags = (a.tags || []).map((t) => '`' + t + '`').join(' ');
+  const oneLine = (a.summary || '').replace(/\s*\n+\s*/g, ' ').trim();
+  return `- **${a.category}** | ${tags} — ${oneLine} · [${a.source}](${a.url})\n`;
+}
+
+// Editorial: what subscribers / website / RSS see.
+// Articles split by importance: ≥3 render as full blocks; ==2 collapse into a
+// trailing "## 速览" list. Singletons of either tier still go through history.
+function renderEditorial({ date, articlesInReport, briefArticles = [], trendParagraph }) {
   let md = '';
   md += `# CatchUp 日报 — ${date}\n\n`;
   md += '## 今日趋势\n\n';
   md += (trendParagraph || '').trim() + '\n\n';
   md += '---\n\n## 文章详情\n\n';
-  if (articlesInReport.length === 0) {
+  if (articlesInReport.length === 0 && briefArticles.length === 0) {
     md += '今日窗口内无新内容。\n';
-  } else {
-    articlesInReport.forEach((a, i) => { md += renderArticleBlock(a, i + 1); });
+    return md;
+  }
+  articlesInReport.forEach((a, i) => { md += renderArticleBlock(a, i + 1); });
+  if (briefArticles.length) {
+    md += '## 速览\n\n';
+    md += '以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。\n\n';
+    for (const a of briefArticles) md += renderBriefBlock(a);
+    md += '\n';
   }
   return md;
 }
@@ -74,4 +91,4 @@ function renderOps({
   return md;
 }
 
-module.exports = { renderArticleBlock, renderEditorial, renderOps, CATEGORIES };
+module.exports = { renderArticleBlock, renderBriefBlock, renderEditorial, renderOps, CATEGORIES };

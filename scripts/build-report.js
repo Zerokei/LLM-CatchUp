@@ -211,8 +211,11 @@ async function main() {
 
   // Step 5 — importance filter + drop weekly-cadence sources for the report body
   // (they still go into history below, so the weekly report sees them).
-  const articlesInReport = filterByImportance(canonical, minImportance)
+  // Split into "full block" (importance ≥3) and "brief one-liner" (importance ==2).
+  const reportable = filterByImportance(canonical, minImportance)
     .filter((a) => !isWeeklyCadence(a));
+  const articlesInReport = reportable.filter((a) => (a.importance || 0) >= 3);
+  const briefArticles = reportable.filter((a) => (a.importance || 0) === 2);
 
   // Step 6 — render markdown
   const rawFetched = Object.values(fetchCache.sources).reduce((n, s) => n + (s.articles?.length || 0), 0);
@@ -228,15 +231,16 @@ async function main() {
   const editorialMd = renderEditorial({
     date,
     articlesInReport,
+    briefArticles,
     trendParagraph: analysisCache.trend_paragraph || '（无趋势段）',
   });
   const opsMd = renderOps({
     date,
-    articlesInReport,
+    articlesInReport: [...articlesInReport, ...briefArticles],
     rawFetched,
     mergedCount: canonical.length,
     sourcesWithContent,
-    filteredLowImportance: canonical.length - articlesInReport.length,
+    filteredLowImportance: canonical.length - reportable.length,
     sourceStatuses,
   });
   fs.mkdirSync(REPORTS_DIR, { recursive: true });

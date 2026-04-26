@@ -44,7 +44,8 @@
         "评审场景下用 Web 端先看 Diff/讨论，再 teleport 到 CLI 直接修改并提交"
       ],
       "thread_group_id": "thread-ClaudeDevs-20260424-2023",
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2047773528121049488",
+      "angle": "--teleport 跨端会话续接"
     },
     {
       "url": "https://x.com/ClaudeDevs/status/2047773532885787026",
@@ -70,20 +71,23 @@
     {
       "url": "https://x.com/ClaudeDevs/status/2047773528121049488",
       "source": "Claude Devs (Twitter)",
-      "title": "Claude Code Web/移动端能力刷新：发布更新合集",
-      "summary": "Anthropic 发布 Claude Code 在 Web 与移动端最近上线的更新合集，以推特长串形式介绍新功能集合。本条为线程起始，后续推文展开 「--teleport」 等具体改动细节。",
+      "title": "Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘",
+      "summary": "Anthropic 在 claude.ai/code 正式发布 Claude Code 的 Web 与移动端，让开发者可在浏览器或手机上发起会话与代码任务，并以 `claude --teleport` 命令打通 Web/移动与本地 CLI 三端 —— 起草后回到终端运行 teleport 即可同步完整对话历史并切换到正确分支。同时同步处理 v2.1.115 引入的质量回归事故：v2.1.116+ 已修复，所有订阅用户当周用量被重置以作补偿，官方发布完整事故复盘。Anthropic 还介绍了改进后的回归检测机制 —— 更细粒度的端到端基准、对每次依赖更新跑差异回归测试、改进发布前灰度采样，以更早捕捉此类质量回退。",
       "category": "产品与功能",
-      "importance": 3,
+      "importance": 4,
       "tags": [
         "Claude Code",
-        "更新",
-        "Web",
+        "Web版",
         "移动端",
+        "--teleport",
+        "事故复盘",
+        "质量回归",
         "Anthropic"
       ],
       "practice_suggestions": [
-        "关注线程内列出的全部新特性，挑选与自身工作流契合的功能逐一试用",
-        "组织内部分享会，统一团队对 Claude Code 跨端使用方式的认知"
+        "升级到 Claude Code v2.1.116+ 拿回被重置的订阅用量，并体验 Web/移动端新入口",
+        "通勤时用移动端起草任务、回到办公室用 `claude --teleport` 接管，验证多端协作效率",
+        "如果维护自建 LLM 链路，参考事故复盘中介绍的差异回归测试方法"
       ],
       "thread_group_id": null,
       "duplicate_of": null
@@ -471,20 +475,20 @@
     {
       "url": "https://x.com/OpenAIDevs/status/2047436655863464011",
       "source": "OpenAI Devs (Twitter)",
-      "title": "OpenAI Codex 新增 Auto-review 模式：减少审批、长任务更安全",
-      "summary": "OpenAI 发布 Codex 的 Auto-review 新模式：允许 Codex 在更少人工审批下持续执行测试、构建等长任务与自动化流程，同时由独立的审查 Agent 在上下文中对高风险步骤进行把关后再放行。该设计在放宽人机交互瓶颈的同时，通过分工控制破坏性操作风险。",
+      "title": "OpenAI Codex 多线推进：Auto-review 模式 + 与 NVIDIA 全公司部署",
+      "summary": "OpenAI Codex 在同一天双线推进：产品上线 Auto-review 模式，让 Codex 可在长任务中减少人为审批节点、自动校验更安全地推进多步操作；商业上 OpenAI 与 NVIDIA 宣布在 NVIDIA 全公司范围部署 Codex，覆盖工程团队的代码审查、生成与重构等日常环节。两条更新合在一起呈现 OpenAI 当日把 Codex 同步推到「自动化能力 +大型企业部署」两端的节奏。",
       "category": "产品与功能",
-      "importance": 3,
+      "importance": 4,
       "tags": [
-        "OpenAI",
-        "Codex",
+        "OpenAI Codex",
         "Auto-review",
-        "编码 Agent",
-        "安全执行"
+        "NVIDIA",
+        "企业部署",
+        "Agent"
       ],
       "practice_suggestions": [
-        "在长时间自动化代码任务中开启 Auto-review，观察哪些步骤被评审 Agent 拦截以校准策略",
-        "将 Auto-review 与 Claude Code 的权限模型对比，选择更契合团队风险偏好的编码 Agent"
+        "在长任务流水线中评估启用 Codex Auto-review，量化减少了多少人工审批回合",
+        "若公司有大规模工程团队，参考 NVIDIA 的全员 Codex 部署模式做内部试点"
       ],
       "thread_group_id": null,
       "duplicate_of": null
@@ -647,7 +651,8 @@
         "合作"
       ],
       "thread_group_id": null,
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2047436655863464011",
+      "angle": "× NVIDIA 全公司 Codex 部署"
     },
     {
       "url": "https://x.com/sama/status/2047392357482639749",
@@ -951,7 +956,8 @@
         "post-mortem"
       ],
       "thread_group_id": "thread-ClaudeDevs-20260423-1744",
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2047773528121049488",
+      "angle": "质量回归检测机制改进"
     },
     {
       "url": "https://x.com/ClaudeDevs/status/2047371126503047578",
@@ -989,7 +995,8 @@
         "关注本月用量被重置的额度，合理安排重负载任务在重置后窗口期使用"
       ],
       "thread_group_id": null,
-      "duplicate_of": null
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2047773528121049488",
+      "angle": "v2.1.116 事故修复"
     }
   ]
 }

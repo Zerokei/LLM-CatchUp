@@ -114,6 +114,36 @@ test('renderEditorial: tolerates empty/whitespace trend paragraph', () => {
   assert.match(md, /## 今日趋势/);
 });
 
+test('renderEditorial: briefArticles render as a 速览 list at the bottom', () => {
+  const md = renderEditorial({
+    date: '2026-04-22',
+    articlesInReport: [makeArticle(1, { importance: 4 })],
+    briefArticles: [
+      makeArticle(10, { importance: 2, category: '商业动态', tags: ['投融资'], summary: '某公司完成 B 轮融资。' }),
+      makeArticle(11, { importance: 2, category: '教程与观点', tags: ['观点'], summary: 'X 谈论 Y。' }),
+    ],
+    trendParagraph: 'trend',
+  });
+  // Hi-importance article gets a full block
+  assert.match(md, /### 1\. \[文章 1\]/);
+  // 速览 section header appears once
+  assert.match(md, /## 速览/);
+  // Brief items render as compact one-liners with category, tags, summary, source link
+  assert.match(md, /- \*\*商业动态\*\* \| `投融资` — 某公司完成 B 轮融资。 · \[OpenAI Blog\]\(https:\/\/example\.com\/10\)/);
+  assert.match(md, /- \*\*教程与观点\*\* \| `观点` — X 谈论 Y。 · \[OpenAI Blog\]\(https:\/\/example\.com\/11\)/);
+  // Brief items don't get ### headers
+  assert.doesNotMatch(md, /### \d+\. \[文章 10\]/);
+});
+
+test('renderEditorial: 速览 section omitted when no briefArticles', () => {
+  const md = renderEditorial({
+    date: '2026-04-22',
+    articlesInReport: [makeArticle(1)],
+    trendParagraph: 'trend',
+  });
+  assert.doesNotMatch(md, /## 速览/);
+});
+
 // ---- renderOps ----
 
 test('renderOps: ops doc has counts, category table, source health table — no article bodies', () => {
