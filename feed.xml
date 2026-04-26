@@ -5,8 +5,161 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sat, 25 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 26 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-04-26</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-26.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-26.md</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-26</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>GPT-5.5 API 全面开放</strong>：OpenAI 同步上线 GPT-5.5 与 GPT-5.5 Pro 至 Responses 与 Chat Completions 接口，提供 1M 上下文，早期合作方称在编码、Agent 与计算机使用任务上明显跨过 GPT-5.4。</li>
+<li><strong>Qwen-Image-2.0-Pro 文生图升级</strong>：阿里 Qwen 推出图像 2.0 Pro，多语言文字渲染与跨风格画质一致性显著提升，Arena 文生图榜单升至全球第 9。</li>
+<li><strong>Claude Code 跨端体验重构</strong>：Anthropic 重新打磨 Claude Code 网页与移动端，并以 <code>claude --teleport</code> 让 Web/移动会话与 CLI 终端无缝接续。</li>
+<li><strong>Agent 市场首次实证</strong>：Anthropic Project Deal 让 Claude 替员工在公司内部市场买卖谈判，发现高质量模型可获得用户难以察觉的隐性优势，凸显 Agent 经济亟需法律与政策框架。</li>
+<li><strong>DeepSeek 限时大幅降价</strong>：DeepSeek-V4-Pro API 5 月 5 日前 75% 折扣，并新增 1M 上下文支持及 Claude Code、OpenCode 集成。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/OpenAI/status/2047743592278745425">OpenAI 官宣：GPT-5.5 与 GPT-5.5 Pro 正式上线 API</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | 📡 也被 Sam Altman (Twitter) 报道</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>OpenAI</code> <code>API</code> <code>前沿模型</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 官方账号确认 GPT-5.5 与 GPT-5.5 Pro 已在 API 中开放。引用的开发者推文强调 GPT-5.5 在复杂任务中具备更高智能与更强 token 效率，能以更少重试完成工作。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在现有 GPT-5.4 工作流中切换到 GPT-5.5，观察重试次数与 token 消耗下降幅度</li>
+<li>对长上下文/Agent 类任务优先试用 GPT-5.5 Pro 走 Responses API</li>
+<li>评估 1M 上下文窗口是否能替代现有的 RAG 分片方案</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/Alibaba_Qwen/status/2048022731548229869">Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Qwen-Image-2.0-Pro</code> <code>文生图</code> <code>ModelScope</code> <code>Arena 排名</code> <code>阿里</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里 Qwen 团队正式发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染与指令跟随，并显著降低跨风格的表现波动。该模型在 LM Arena 文生图榜上排名全球第 9，单图编辑排第 17，肖像、写实电影感、艺术三个细分方向均进入前十。已上线 ModelScope 与阿里云 ModelStudio API。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>通过 ModelScope 体验站快速对比 Qwen-Image-2.0-Pro 与 GPT-Image、Imagen、Flux 等竞品的同 prompt 出图</li>
+<li>在生产管线中通过 ModelStudio API 接入，测试肖像与电影感图像的成本/质量比</li>
+<li>结合其指令跟随提升，将复杂结构化 prompt（多主体+文字标签）作为重点验证场景</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/deepseek_ai/status/2048062777357750316">DeepSeek-V4-Pro API 限时 75% 折扣并支持 1M 上下文</a></h3>
+<ul>
+<li><strong>来源</strong>: DeepSeek (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>DeepSeek</code> <code>V4-Pro</code> <code>API 折扣</code> <code>1M 上下文</code> <code>Claude Code</code></li>
+</ul>
+<p><strong>摘要</strong>: DeepSeek 宣布 V4-Pro API 至 5 月 5 日 UTC 15:59 享 75% 优惠。同时更新生态集成：Claude Code 中将模型设为 「deepseek-v4-pro[1m]」即可解锁 1M token 上下文，OpenCode 需升至 v1.14.24+，OpenClaw 需升至 v2026.4.24+。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 5 月 5 日截止前评估将批量推理任务迁移到 DeepSeek-V4-Pro API 以利用 75% 折扣窗口</li>
+<li>在 Claude Code 中设置模型为 deepseek-v4-pro[1m] 以启用 1M token 上下文，适合长代码库或长文档分析</li>
+<li>升级 OpenCode 至 v1.14.24+、OpenClaw 至 v2026.4.24+ 以兼容最新接口</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/Alibaba_Qwen/status/2048024942286147822">Qwen-Image-2.0-Pro：多语言文字渲染与混排排版显著改进</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Qwen-Image-2.0-Pro</code> <code>文字渲染</code> <code>多语言</code> <code>海报设计</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen-Image-2.0-Pro 在多语言文字渲染上有较大进步：字形更准确、排版更一致、复杂构图下版式更整洁，并能更优雅地处理混合语言场景。官方建议在海报、UI 草稿、广告等富文本场景中尝试。 Qwen 在 Qwen-Image-2.0-Pro 的发布串中强调跨艺术风格的均衡表现：在多种美学领域提供更一致的画质，有效降低了「风格相关质量方差」，避免某些风格画得好、另一些画得差的问题。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>将 Qwen-Image-2.0-Pro 接入海报、UI mockup、广告等需要嵌入文字的工作流，对比此前模型的字形准确率</li>
+<li>重点测试中英混排、长句版式与小字号场景下的可读性</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/OpenAIDevs/status/2047742578410627345">GPT-5.5 强化 Agent：少指令完成跨应用长流程</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Agent</code> <code>GPT-5.5</code> <code>工具调用</code> <code>长流程</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 强调基于 GPT-5.5 的 Agent 能够自行规划、收集上下文、调用工具、从歧义中恢复，并以更少的人为引导完成更长链路任务。覆盖软件操作、跨应用执行以及多步编码/工具密集型工作。 GPT-5.5 在 Responses 与 Chat Completions API 均可调用，并提供 1M token 上下文窗口；GPT-5.5 Pro 仅在 Responses API 提供，面向更高精度任务。官方博客披露 GPT-5.5 在 Terminal-Bench 2.0 拿下 82.7%、GDPval 达 84.9%、OSWorld-Verified 78.7%，超越 GPT-5.4 与 Claude Opus 4.7；Pro 版在 FrontierMath Tier 4 取得 39.6% 的 SOTA。模型在保持与 GPT-5.4 相同延迟的同时显著提升 agentic coding、计算机操作与科研推理能力。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>重构现有 Agent prompt，去掉过度的 step-by-step 拆解，让 GPT-5.5 自主规划</li>
+<li>针对计算机操作类 Agent 评估 OSWorld-Verified 78.7% 带来的成功率提升</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/sama/status/2048160404376105179">Altman：OpenAI 模型「智商」已大幅领先，前端略逊</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Sam Altman</code> <code>OpenAI</code> <code>竞争格局</code> <code>模型能力</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 用「looksmaxxed / IQmog」的网络黑话概括 OpenAI 当前竞争位置：前端体验仍被对手稍稍压制，但模型智力层面已大幅领先。表态延续他近期对推理与「思考型」模型的重点宣传。 Sam Altman 在自评推文的补充回复中表示团队会修复前端体验的不足。该回复延续上一条「前端被压制一点，但 IQ 已遥遥领先」的自嘲，暗示 OpenAI 当前模型在推理智力上有优势但产品 UI 仍待打磨。</p>
+<hr>
+<h3>7. <a href="https://x.com/sama/status/2048062261584077149">Altman 评 GPT-5.5：朴实，有「小火车终能上山」的劲头</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Sam Altman</code> <code>GPT-5.5</code> <code>模型人格</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 表示「5.5 非常诚恳，带有『小火车终能上山』的能量」，用儿童读物的隐喻形容 GPT-5.5 模型的性格风格。这是他近日对 5.5 系列性格调优的又一次轻松表态。</p>
+<hr>
+<h3>8. <a href="https://x.com/demishassabis/status/2047872041827910093">Hassabis 做客 YC：见证大量初创基于 Gemma 构建</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Demis Hassabis</code> <code>Google DeepMind</code> <code>Gemma</code> <code>YC</code> <code>开源生态</code></li>
+</ul>
+<p><strong>摘要</strong>: DeepMind CEO Demis Hassabis 感谢 YC 总裁 Garry Tan 在 YC 主持的对谈，并称「很高兴看到许多初创公司基于 Google Gemma 模型进行构建」，强调开源 Gemma 系列在创业生态中的渗透。</p>
+<hr>
+<h3>9. <a href="https://x.com/ClaudeDevs/status/2047773532885787026">Claude Code网页与移动端已上线，征集反馈</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>ClaudeCode</code> <code>Web版</code> <code>移动端</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs宣布Claude Code的网页版与移动版已在claude.ai/code正式上线，欢迎用户试用并反馈。本条为线程末尾的简短通告。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>访问claude.ai/code体验网页版Claude Code，评估是否能替代部分本地CLI开发场景</li>
+</ul>
+</blockquote>
+<hr>
+<h3>10. <a href="https://x.com/AnthropicAI/status/2047728386148122990">Anthropic 发布 Project Deal 完整研究报告</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Project Deal</code> <code>Agent 市场</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 给出 Project Deal 实验的完整书面报告链接，详细呈现该 AI 代理市场实验的方法、数据与结论。</p>
+<hr>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-04-25</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-25.html</link>
