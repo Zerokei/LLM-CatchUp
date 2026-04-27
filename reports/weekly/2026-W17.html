@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 周报 2026-W17 · CatchUp</title>
+  <meta name="description" content="CatchUp 周报 — 2026-W17" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Weekly</span>
+            <span>·</span>
+            <span>周报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-W17</h1>
+          <p class="report-subtitle">4月20日 – 26日</p>
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">本周趋势</h2>
+<ul>
+<li><strong>旗舰模型同周扎堆</strong>：OpenAI GPT-5.5、DeepSeek-V4 Preview、Z.ai GLM-5.1、Qwen3.6-27B 一周内集中登场，Terminal-Bench 与 SWE-Bench Pro 同时被多家刷新。</li>
+<li><strong>Agent 走出代码框跨入屏幕</strong>：GPT-5.5 把 Codex 推向浏览器与电脑操控，Anthropic Project Deal 让 Claude 替员工买卖谈判，Agent 边界从代码生成扩展到真实世界事务。</li>
+<li><strong>算力与训练基建加速锁定</strong>：Anthropic 与 Amazon 锁定最多 5GW 算力 + 追加 50 亿美元投资，Google DeepMind Decoupled DiLoCo 实现 12B Gemma 跨四大区训练，&quot;基础设施战争&quot;取代&quot;模型战争&quot;。</li>
+<li><strong>Claude Code 完成多端化</strong>：Web 与移动端正式上线、<code>claude --teleport</code> 打通三端续接、v2.1.115 质量回归同步公开复盘，Claude Code 从 CLI 工具升级为完整开发平台。</li>
+<li><strong>开源继续紧追闭源旗舰</strong>：GLM-5.1 754B MoE 在 SWE-Bench Pro 反超 GPT-5.4 与 Claude Opus 4.6，Qwen3.6-27B 以 27B 稠密体量打平 397B MoE，DeepSeek-V4 Pro 1.6T 全权重开源，开源阵营在能力曲线上仍未被甩开。</li>
+</ul>
+<hr>
+<h2 id="h-2">Top 10 最重要文章</h2>
+<h3 id="h-3">1. <a href="https://openai.com/index/introducing-gpt-5-5">OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7%</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>OpenAI</code> <code>Agentic AI</code> <code>代码生成</code> <code>模型发布</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 正式发布 GPT-5.5，定位为其迄今最智能、最具 Agentic 能力的模型，专为复杂多步骤任务设计。在 Terminal-Bench 2.0 拿到 82.7%，超越 Claude Opus 4.7 (69.4%) 与 Gemini 3.1 Pro (68.5%)，同时保持与 GPT-5.4 相当的推理延迟、以更少 token 完成同等任务。本周已向 Plus/Pro/Business/Enterprise 用户滚动开放，次日开放 API 与 1M 上下文窗口。</p>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek-V4 Preview 开源：1.6T Pro/284B Flash + 思考双模式 API</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: DeepSeek (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/24</li>
+<li><strong>标签</strong>: <code>DeepSeek-V4</code> <code>开源</code> <code>MoE</code> <code>1M 上下文</code> <code>Thinking 模式</code></li>
+</ul>
+<p><strong>摘要</strong>: DeepSeek-V4 Preview 当日上线并开源，包含两个版本：DeepSeek-V4-Pro (1.6T 总参 / 49B 激活) 对标顶级闭源旗舰，DeepSeek-V4-Flash (284B / 13B) 主打高性价比。两者均支持 1M 上下文与 Thinking 模式，权重在 Hugging Face 同步发布，API 端点保持兼容只需切换 model 字段，旧 deepseek-reasoner 7-24 下线。</p>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/AnthropicAI/status/2046327624092487688">Anthropic × Amazon 扩大合作：锁定最多 5GW 算力，Amazon 追加投资 50 亿美元</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 04/20</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Amazon</code> <code>AWS</code> <code>算力基建</code> <code>融资</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 与 Amazon 扩大合作：本季度起逐步上线最多 5GW 训练与部署算力，2026 年底前 1GW 到位；Amazon 同日再追加 50 亿美元投资，未来还将最多追加 200 亿美元。该公告把双方绑定深化到与 OpenAI-微软同等量级，也延续了 Anthropic 在 Claude Opus 4.7 发布后持续扩张算力底座的主线。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/OpenAI/status/2046670977145372771">OpenAI 发布 ChatGPT Images 2.0 / gpt-image-2：带推理的 SOTA 图像模型</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/21</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>ChatGPT Images 2.0</code> <code>gpt-image-2</code> <code>图像生成</code> <code>SOTA</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 ChatGPT Images 2.0（底层 gpt-image-2），首次把&quot;推理能力&quot;引入图像生成：更清晰的编辑、更丰富的版式、思考级别的语义理解，面向真实生产场景。发布当天即登顶 Image Arena 全部榜单，覆盖 Canva / Figma / Adobe Firefly / fal / OpenArt 等多家合作方。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/">Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/24</li>
+<li><strong>标签</strong>: <code>GLM-5.1</code> <code>开源模型</code> <code>MoE</code> <code>长程Agent</code> <code>SWE-Bench</code></li>
+</ul>
+<p><strong>摘要</strong>: Z.ai 发布 GLM-5.1，754B 总参 / 40B 激活的 MoE 架构，200K 输入 / 128K 输出，MIT 许可证。专为长程 Agent 任务设计，可在数小时内反复评估中间结果并调整策略，单任务工具调用可达数千次。Artificial Analysis 智能指数 51 分为开源最高，SWE-Bench Pro 58.4% 反超 GPT-5.4 与 Claude Opus 4.6；API 价格较前代上涨约 40%。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/24</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Web版</code> <code>移动端</code> <code>--teleport</code> <code>事故复盘</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 在 claude.ai/code 正式发布 Claude Code Web 与移动端，开发者可在浏览器或手机上发起会话与代码任务，并以 <code>claude --teleport</code> 命令打通 Web/移动 与本地 CLI 三端续接。同时同步公开 v2.1.115 质量回归事故复盘：v2.1.116+ 已修复，所有订阅用户当周用量被重置作为补偿，并介绍了改进后的端到端基准、依赖差异回归与发布前灰度采样机制。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/Alibaba_Qwen/status/2047201919110988127">Qwen3.6-27B 发布：27B 稠密模型编码基准超越 397B MoE 模型</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>Qwen3.6</code> <code>开源模型</code> <code>编码基准</code> <code>SWE-Bench</code> <code>稠密模型</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里巴巴 Qwen 团队官方确认 Qwen3.6-27B 发布，27B 参数稠密模型在 SWE-Bench Verified (77.2)、SWE-Bench Pro (53.5) 与 Terminal-Bench 2.0 (59.3) 等主要编码基准上超越参数量约 15 倍的 Qwen3.5-397B-A17B MoE 模型。支持思考/非思考双模式与多模态推理，Apache 2.0 完全开源。</p>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/demishassabis/status/2047347990105670038">Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方案</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>DeepMind</code> <code>分布式训练</code> <code>DiLoCo</code> <code>AI基础设施</code> <code>大规模训练</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 推出 Decoupled DiLoCo，一种跨多个数据中心训练大型 AI 模型的弹性灵活新方法，解决了大规模分布式训练中的容错与效率问题。该方案已成功跨美国四个区域训练 12B Gemma 模型，并支持混合硬件环境。Demis Hassabis 亲自转发，标志这是 DeepMind 在 AI 基础设施层面的关键研究成果。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/OpenAIDevs/status/2047381283358355706">Codex 扩展浏览器与计算机操控能力，GPT-5.5 驱动更多任务自动完成</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>GPT-5.5</code> <code>浏览器自动化</code> <code>计算机操控</code> <code>AI代理</code></li>
+</ul>
+<p><strong>摘要</strong>: 在 GPT-5.5 加持下，Codex 扩展了浏览器操控能力：可与 Web 应用交互、测试流程、点击页面、截屏并根据所见内容迭代。同步上线的 Codex Chronicle (macOS Pro) 用屏幕上下文自动生成&quot;记忆&quot;，Codex Auto-review 模式与 NVIDIA 全公司部署也同周宣布。Codex 从纯代码生成工具向计算机代理 (computer use) 方向重要演进。</p>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/Alibaba_Qwen/status/2048022731548229869">Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/25</li>
+<li><strong>标签</strong>: <code>Qwen-Image-2.0-Pro</code> <code>文生图</code> <code>文字渲染</code> <code>Arena 排名</code> <code>ModelScope</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里 Qwen 团队发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染、指令跟随并显著降低跨风格表现波动。多语言文字字形更准、混合语言排版更整洁，水墨/像素画等小众风格翻车率明显下降。LM Arena 文生图榜全球第 9、单图编辑第 17，肖像/写实电影感/艺术三个细分方向均进入前十；已上线 ModelScope 与阿里云 ModelStudio API。</p>
+<hr>
+<h2 id="h-13">分类概览</h2>
+<h3 id="h-14">模型发布</h3>
+<p>本周是 2026 年迄今密度最高的旗舰模型周。OpenAI 在 04/23 一口气抛出 GPT-5.5（Terminal-Bench 82.7%、1M 上下文、Codex 与 ChatGPT 同时切换）和 04/21 已发布的 ChatGPT Images 2.0；DeepSeek 紧接着用 V4 Preview Pro/Flash 双版开源回应，1.6T 全权重 + 1M 上下文 + Thinking 模式同步释放；Z.ai 用 754B MoE 的 GLM-5.1 把开源 SWE-Bench Pro 推到 58.4% 反超闭源旗舰；阿里 Qwen 双线推进——Qwen3.6-27B 用 27B 稠密体量打平 397B MoE 的编码基准，Qwen-Image-2.0-Pro 在文生图 Arena 拿到全球第 9。一周内编码、长程 Agent、图像生成三个方向都被刷新，闭源与开源的差距没有再扩大。</p>
+<h3 id="h-15">研究</h3>
+<p>研究侧本周以训练基础设施与对齐安全为主线。Google DeepMind 的 Decoupled DiLoCo 是头号成果，跨四大美国区域训练 12B Gemma、支持混合硬件，把&quot;分布式弹性训练&quot;这一过去更多停留在论文上的能力第一次推到生产级规模。Anthropic Project Deal 把 Claude 推向真实买卖谈判场景，意外揭示了&quot;代理市场&quot;早期的粗糙边缘。The Batch 报道的 「激活封顶」论文把 LLM 助手人格漂移问题用一个轻量 inference-time 干预压低了越狱率近一半，给 alignment-by-default 提供新思路。Anthropic 自家的 81k 受访研究则首次量化&quot;AI 暴露度高的岗位对替代焦虑显著更高&quot;，把劳动力市场叙事从模糊的&quot;焦虑&quot;推向可测量的指标。</p>
+<h3 id="h-16">产品与功能</h3>
+<p>产品侧本周的主旋律是 Agent 边界扩张。Codex 上线浏览器/电脑操控、Auto-review 模式、Chronicle 屏幕记忆、Workspace Agents 企业共享、与 NVIDIA 全员部署，把 OpenAI 的开发者面打成一张连续网；Claude Code 完成 Web/移动/CLI 三端化与 <code>--teleport</code> 续接，并把 v2.1.115 事故的复盘公开化；Claude Cowork 推出 Live Artifacts 实时仪表盘、Managed Agents Memory 公测开放跨会话学习与文件级控制、Tripadvisor / Booking / Spotify 等生活类应用接入 Claude；Google DeepMind 这边推出 Deep Research / Deep Research Max 与 Gemini Enterprise Agent Platform，把 Gemini 3.1 与 Gemma 4 路由进同一个企业级 Agent 工作流。整体看，&quot;模型 + 工具 + 数据 + 多端&quot;四件套正在快速整合成完整产品形态。</p>
+<h3 id="h-17">商业动态</h3>
+<p>算力与企业级合作成为本周商业新闻的两大重心。最大单是 Anthropic × Amazon 的 5GW 算力 + 50 亿美金追加投资 + 最多 200 亿美元未来加注，把 Anthropic 与 AWS 绑定推到与 OpenAI-微软同等量级。Google 在自家硬件层面祭出第八代 TPU（8t 训练 + 8i 推理），同时联合五大咨询巨头推进企业 AI 规模化。OpenAI 发布 Codex Labs 并携手 Accenture / PwC / Infosys 推进企业级部署，宣布 Codex 周活破 40 万；Hyatt 全员部署 ChatGPT Enterprise 也成为本周企业落地的代表案例。算力、芯片、咨询渠道与具体行业落地四条线同步推进。</p>
+<h3 id="h-18">政策与安全</h3>
+<p>围绕 GPT-5.5 发布，OpenAI 同步发布了系统卡（详细安全评估、能力边界、风险缓解）和生物安全漏洞悬赏计划，并开源 Privacy Filter（SOTA 的 PII 检测/脱敏模型）作为护栏组件。Anthropic 发布选举安全更新，Opus 4.7 在政治中立性评测中达到 95%。安全焦点之外，The Batch 报道美国数据中心遭民众抵制，640 亿美元项目延期，立法与零星暴力抗议并起——AI 基建竞赛的社会摩擦面开始显形。</p>
+<h3 id="h-19">教程与观点</h3>
+<p>Andrew Ng 在 The Batch 提出&quot;编码 Agent 对前端开发加速最大、对研究最弱&quot;的判断，给当下&quot;all-in agent&quot;叙事提供一个分场景的清醒声音；同期社论指出 AI 原生软件开发正在催生&quot;通才&quot;角色，团队职责边界正在被重塑。Anthropic 发布新博客介绍如何用 MCP 构建对接生产系统的 Agent，Claude Devs 给出工程化样本。Karpathy 转推&quot;每个像素都由模型实时生成的 AI 原生 UI&quot;设想，Thariq 在 Lenny 播客分享 Claude Code 团队如何维持产品速度。整体偏方法论与产品哲学。</p>
+<hr>
+<h2 id="h-20">本周值得上手试试</h2>
+<ol>
+<li><strong>GPT-5.5</strong> — 在 ChatGPT/Codex 切换到 GPT-5.5 跑一轮多步工具调用 + 自检型 Agent 任务，量化重试率与完成率的改善；API 开放后用 1M 上下文一次性灌入大型代码库或长文档，对比此前 RAG/Map-Reduce 的成本节省。</li>
+<li><strong>DeepSeek-V4</strong> — 把现有 deepseek-reasoner API 调用迁移到 <code>deepseek-v4-pro</code> / <code>deepseek-v4-flash</code>（7-24 前完成），按任务复杂度做 Pro/Flash 路由；从 Hugging Face 拉权重在自有评测集上跑回归。</li>
+<li><strong>GLM-5.1</strong> — 在 SWE-Bench Pro 风格的真实代码场景做 A/B，验证&quot;自主放弃失败路径&quot;在自家代码库的复现度；若用 Z.ai API，注意按上调 40% 重新评估 Agent 调用预算。</li>
+<li><strong>Qwen3.6-27B</strong> — 在 HuggingFace/ModelScope 拉权重，用 vLLM 单卡（约 1×H100）部署，按 SWE-bench Verified / Terminal-Bench 2.0 跑回归；评估替换原 Qwen3.5-397B-A17B 的单卡推理经济性。</li>
+<li><strong>ChatGPT Images 2.0 / gpt-image-2</strong> — 在 ChatGPT Plus/Pro 试用 &quot;with thinking&quot; 模式，重点验证复杂版式、infographic、多语言文字渲染；API 端把 gpt-image-1 的 prompt 模板逐条回归到 gpt-image-2。</li>
+<li><strong>Claude Code Web/移动端</strong> — 升级到 v2.1.116+ 拿回被重置的订阅用量，通勤时用移动端起草任务、回到办公室用 <code>claude --teleport</code> 接管，验证多端协作效率。</li>
+<li><strong>Claude Cowork Live Artifacts</strong> — 进入 Cowork 侧边栏让 Claude 生成连接 Notion / Google Sheet 的实时仪表盘，把一个长期项目的&quot;主控台&quot;原型用 Live Artifacts 长期迭代。</li>
+<li><strong>Claude Managed Agents Memory（公测）</strong> — 为长期运行的客服/研究助手接入 Memory，按业务线或客户拆 workspace 隔离记忆；定期用 API 导出快照纳入版本控制满足合规。</li>
+<li><strong>Codex 浏览器/电脑操控 + Chronicle</strong> — 用 Codex 自动化 Web 应用测试、跨工具任务执行；macOS Pro 用户在设置里启用 Chronicle，注意定期清理记忆条目避免泄露敏感仓库与凭据。</li>
+<li><strong>OpenAI Workspace Agents（研究预览）</strong> — Business/Enterprise 订阅在控制台开通后，挑一个跨 Linear/Slack/Docs 的重复流程做试点，记录人工介入次数与可靠性。</li>
+<li><strong>Qwen-Image-2.0-Pro</strong> — 通过 ModelScope 体验站对比 GPT-Image / Imagen / Flux 的同 prompt 出图，重点测中英混排与水墨/像素画等小众风格的改进幅度；ModelStudio API 接入测肖像与电影感图像的成本质量比。</li>
+<li><strong>Google DeepMind Deep Research / Max</strong> — 在 AI Studio 跑一份行业研究题目，对比 Perplexity Pro / ChatGPT Deep Research 的引文密度；团队有内部文档索引可走 Deep Research Max 的 MCP 接入。</li>
+<li><strong>xAI Grok Voice Think Fast 1.0</strong> — 在语音助手/客服/IVR 场景与 GPT Realtime、Gemini Live 做基准对比，重点测打断恢复、口音稳健性与多步任务的端到端延迟。</li>
+<li><strong>Codex Auto-review</strong> — 在长任务流水线启用，量化人工审批回合的减少；可参考 NVIDIA 的全员 Codex 部署模式做内部试点。</li>
+</ol>
+<hr>
+<h2 id="h-21">值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/introducing-gpt-5-5">OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7%</a> — 本周量级最大的发布，官方博客把基准、Agent 用例、API 路线同时讲清楚。</li>
+<li><a href="https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/">Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务</a> — The Batch 用一篇专题解释&quot;为什么长程 Agent 是开源新战场&quot;，比官方公告更系统。</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2047330981145669790">Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方法</a> — 想理解未来 5GW 级算力为何不能再走单点训练范式，这是入门读物。</li>
+<li><a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘</a> — 复盘部分对所有维护 LLM 链路的团队都有借鉴价值，差异回归测试与灰度采样写得具体。</li>
+<li><a href="https://x.com/AnthropicAI/status/2047728360818696302">Anthropic Project Deal：让 Claude 替员工买卖谈判，揭示代理市场粗糙边缘</a> — 真实部署而非演示，记录了&quot;AI 替你下决策&quot;在第一次撞上现实时所有的尴尬细节。</li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">本周趋势</a></li>
+      <li class="toc-h2"><a href="#h-2">Top 10 最重要文章</a></li>
+      <li class="toc-h3"><a href="#h-3">1. OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7% ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-4">2. DeepSeek-V4 Preview 开源：1.6T Pro/284B Flash + 思考双模式 API ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic × Amazon 扩大合作：锁定最多 5GW 算力，Amazon 追加投资 50 亿美元 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-6">4. OpenAI 发布 ChatGPT Images 2.0 / gpt-image-2：带推理的 SOTA 图像模型 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Qwen3.6-27B 发布：27B 稠密模型编码基准超越 397B MoE 模型 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方案 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Codex 扩展浏览器与计算机操控能力，GPT-5.5 驱动更多任务自动完成 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-12">10. Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h2"><a href="#h-13">分类概览</a></li>
+      <li class="toc-h3"><a href="#h-14">模型发布</a></li>
+      <li class="toc-h3"><a href="#h-15">研究</a></li>
+      <li class="toc-h3"><a href="#h-16">产品与功能</a></li>
+      <li class="toc-h3"><a href="#h-17">商业动态</a></li>
+      <li class="toc-h3"><a href="#h-18">政策与安全</a></li>
+      <li class="toc-h3"><a href="#h-19">教程与观点</a></li>
+      <li class="toc-h2"><a href="#h-20">本周值得上手试试</a></li>
+      <li class="toc-h2"><a href="#h-21">值得深读</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older weekly</span>
+        <a href="../weekly/2026-W15.html">2026-W15</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer weekly →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W17.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
