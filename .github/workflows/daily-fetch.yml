@@ -2,7 +2,7 @@ name: Daily Fetch
 
 on:
   schedule:
-    - cron: '37 21 * * *'  # 05:37 Asia/Shanghai (UTC+8) — odd minute to avoid GH Actions congestion at :00/:30. Scheduled 3.5h before the 09:06 CST analyzer trigger; GH Actions drift has been observed up to ~90min so this leaves ~2h buffer.
+    - cron: '37 21 * * *'  # 05:37 Asia/Shanghai (UTC+8) — odd minute to avoid GH Actions congestion at :00/:30. Scheduled ~3h before the 08:30 CST analyzer trigger; GH Actions drift has been observed up to ~90min so this leaves ~75min buffer.
   workflow_dispatch:
 
 permissions:
