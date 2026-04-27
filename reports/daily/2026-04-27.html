@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-04-26 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-04-26" />
+  <title>CatchUp 日报 2026-04-27 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-04-27" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,115 +306,42 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-04-26</h1>
+          <h1 class="report-title">2026-04-27</h1>
           
           <hr class="primary-rule" />
         </header>
 
         <div class="prose"><h2 id="h-1">今日趋势</h2>
 <ul>
-<li><strong>GPT-5.5 API 全面开放</strong>：OpenAI 同步上线 GPT-5.5 与 GPT-5.5 Pro 至 Responses 与 Chat Completions 接口，提供 1M 上下文，早期合作方称在编码、Agent 与计算机使用任务上明显跨过 GPT-5.4。</li>
-<li><strong>Qwen-Image-2.0-Pro 文生图升级</strong>：阿里 Qwen 推出图像 2.0 Pro，多语言文字渲染与跨风格画质一致性显著提升，Arena 文生图榜单升至全球第 9。</li>
-<li><strong>Claude Code 跨端体验重构</strong>：Anthropic 重新打磨 Claude Code 网页与移动端，并以 <code>claude --teleport</code> 让 Web/移动会话与 CLI 终端无缝接续。</li>
-<li><strong>Agent 市场首次实证</strong>：Anthropic Project Deal 让 Claude 替员工在公司内部市场买卖谈判，发现高质量模型可获得用户难以察觉的隐性优势，凸显 Agent 经济亟需法律与政策框架。</li>
-<li><strong>DeepSeek 限时大幅降价</strong>：DeepSeek-V4-Pro API 5 月 5 日前 75% 折扣，并新增 1M 上下文支持及 Claude Code、OpenCode 集成。</li>
+<li><strong>DeepSeek 调价</strong>：DeepSeek 全系 API 输入缓存命中价直降至 1/10，并延续 V4-Pro 75% 折扣促销至 5 月 5 日。</li>
+<li><strong>Codex 口碑</strong>：Sam Altman 连发多条推文为 Codex 与 GPT-5.5 站台，转发用户「用过最好软件」的评价并以「多相睡眠」段子放大讨论度。</li>
+<li><strong>Agent 优先基础设施</strong>：Altman 呼吁重新设计操作系统、UI 与互联网协议，使其「对人类与 Agent 同等可用」，暗示 OpenAI 在围绕 Agent-first 栈布局。</li>
 </ul>
 <hr>
 <h2 id="h-2">文章详情</h2>
-<h3 id="h-3">1. <a href="https://x.com/OpenAI/status/2047743592278745425">GPT-5.5 全面上线 API：1M 上下文 + Agent 能力跨越式升级</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>GPT-5.5</code> <code>1M 上下文</code> <code>Agentic Coding</code> <code>Responses API</code> <code>Terminal-Bench</code> <code>OpenAI</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 正式推出 GPT-5.5 与 GPT-5.5 Pro，同步登陆 Responses 与 Chat Completions API；GPT-5.5 提供 1M token 上下文窗口，GPT-5.5 Pro 仅在 Responses API 提供，面向更高精度任务。基准上 GPT-5.5 在 Terminal-Bench 2.0 拿下 82.7%、GDPval 84.9%、OSWorld-Verified 78.7%，超越 GPT-5.4 与 Claude Opus 4.7；Pro 版在 FrontierMath Tier 4 取得 39.6% SOTA。模型在保持与 5.4 同等延迟下显著提升 agentic coding、计算机操作与科研推理，能更少人为引导自主规划长链路任务。早期合作方 Perplexity 实测显示 Codex 内不到一小时即可搭建内部工具、相同任务 token 消耗下降 56%。Sam Altman 同步评价 5.5 性格「朴实而坚定」。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2047742566410736090">GPT-5.5 API 开放：更高智能与 token 效率</a> · OpenAI Devs (Twitter) · Devs 视角强调 token 效率</li>
-<li><a href="https://x.com/sama/status/2048062261584077149">Altman 评 GPT-5.5：朴实，有「小火车终能上山」的劲头</a> · Sam Altman (Twitter) · Altman 谈 5.5 人格风格</li>
-<li><a href="https://x.com/sama/status/2047787124846653895">OpenAI上线GPT-5.5与GPT-5.5 Pro API</a> · Sam Altman (Twitter) · Altman 转推宣布上线 API</li>
-<li><a href="https://x.com/OpenAIDevs/status/2047772632150675593">Perplexity实测GPT-5.5：Codex内不到一小时构建内部工具，token使用降56%</a> · OpenAI Devs (Twitter) · Perplexity 第三方实测</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在现有 GPT-5.4 工作流中切换到 GPT-5.5，量化重试次数与 token 消耗下降幅度</li>
-<li>高难度数学/法律/金融建模任务改用 GPT-5.5 Pro 走 Responses API</li>
-<li>用 1M 上下文一次性灌入大型代码库或长文档，对比此前的 RAG/Map-Reduce 流水线成本</li>
-<li>重构 Agent prompt 去掉过度的 step-by-step 拆解，让 GPT-5.5 自主规划长链路任务</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-4">2. <a href="https://x.com/Alibaba_Qwen/status/2048022731548229869">Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Qwen-Image-2.0-Pro</code> <code>文生图</code> <code>文字渲染</code> <code>Arena 排名</code> <code>ModelScope</code> <code>阿里</code></li>
-</ul>
-<p><strong>摘要</strong>: 阿里 Qwen 团队发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染、指令跟随并显著降低跨风格表现波动。多语言文字方面字形更准确、混合语言排版更整洁，复杂构图下版式更稳，适配海报、UI 草稿、广告等富文本场景。跨艺术风格画质更均衡，有效降低「风格相关质量方差」，避免水墨、像素画等小众风格翻车。在 LM Arena 文生图榜上排名全球第 9，单图编辑第 17，肖像、写实电影感、艺术三个细分方向均进入前十。已上线 ModelScope 与阿里云 ModelStudio API。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2048024942286147822">Qwen-Image-2.0-Pro：多语言文字渲染与混排排版显著改进</a> · Qwen (Twitter) · 多语言文字渲染细节</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>通过 ModelScope 体验站对比 Qwen-Image-2.0-Pro 与 GPT-Image、Imagen、Flux 等竞品的同 prompt 出图</li>
-<li>将其接入海报、UI mockup、广告等富文本工作流，重点测中英混排与小字号可读性</li>
-<li>在生产管线中通过 ModelStudio API 接入，测试肖像与电影感图像的成本/质量比</li>
-<li>重点验证以往易翻车的小众风格（水墨、像素画）改进幅度</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-5">3. <a href="https://x.com/deepseek_ai/status/2048062777357750316">DeepSeek-V4-Pro API 限时 75% 折扣并支持 1M 上下文</a></h3>
+<h3 id="h-3">1. <a href="https://x.com/deepseek_ai/status/2048440764368347611">DeepSeek 全系 API 输入缓存命中价直降至 1/10</a></h3>
 <ul>
 <li><strong>来源</strong>: DeepSeek (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>分类</strong>: 商业动态</li>
 <li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>DeepSeek</code> <code>V4-Pro</code> <code>API 折扣</code> <code>1M 上下文</code> <code>Claude Code</code></li>
+<li><strong>标签</strong>: <code>DeepSeek</code> <code>API</code> <code>降价</code> <code>Prompt Cache</code> <code>DeepSeek-V4-Pro</code></li>
 </ul>
-<p><strong>摘要</strong>: DeepSeek 宣布 V4-Pro API 至 5 月 5 日 UTC 15:59 享 75% 优惠。同时更新生态集成：Claude Code 中将模型设为 「deepseek-v4-pro[1m]」即可解锁 1M token 上下文，OpenCode 需升至 v1.14.24+，OpenClaw 需升至 v2026.4.24+。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 5 月 5 日截止前评估将批量推理任务迁移到 DeepSeek-V4-Pro API 以利用 75% 折扣窗口</li>
-<li>在 Claude Code 中设置模型为 deepseek-v4-pro[1m] 以启用 1M token 上下文，适合长代码库或长文档分析</li>
-<li>升级 OpenCode 至 v1.14.24+、OpenClaw 至 v2026.4.24+ 以兼容最新接口</li>
-</ul>
-</blockquote>
+<p><strong>摘要</strong>: DeepSeek 宣布即日起整条 DeepSeek API 系列的输入缓存命中（input cache hit）价格降为原价的 1/10，显著降低重复 prompt 场景的调用成本。此外，DeepSeek-V4-Pro 75% 折扣促销活动延续至 2026 年 5 月 5 日 15:59 UTC。</p>
 <hr>
-<h3 id="h-6">4. <a href="https://x.com/ClaudeDevs/status/2047773531820491054">Claude Code跨端会话：claude --teleport无缝接续Web与CLI</a></h3>
+<h3 id="h-4">2. <a href="https://x.com/sama/status/2048428561481265539">Sam Altman 呼吁重构操作系统、UI 与互联网协议以兼容 Agent</a></h3>
 <ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
 <li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>ClaudeCode</code> <code>teleport</code> <code>跨端协作</code> <code>开发工作流</code></li>
+<li><strong>标签</strong>: <code>Sam Altman</code> <code>Agent</code> <code>操作系统</code> <code>互联网协议</code> <code>OpenAI</code></li>
 </ul>
-<p><strong>摘要</strong>: Claude Devs介绍Claude Code的跨端工作流：可在网页或移动端发起会话，再在终端运行<code>claude --teleport</code>继续，自动同步完整历史并切换到正确分支，实现Web与CLI的无缝衔接。 Claude Devs宣布Claude Code的网页版与移动版已在claude.ai/code正式上线，欢迎用户试用并反馈。本条为线程末尾的简短通告。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>尝试在通勤时用Claude Code移动端起草任务、回到办公室后用<code>claude --teleport</code>接管，验证多端协作效率</li>
-<li>在团队规范中明确「网页起草、本地落地」的会话切换边界，避免分支冲突</li>
-</ul>
-</blockquote>
+<p><strong>摘要</strong>: Sam Altman 表示当前是认真重新思考操作系统与用户界面设计的好时机。他进一步建议互联网层面也应出现一种「人类与 Agent 同等可用」的新协议，暗示 OpenAI 在围绕 Agent-first 的基础设施方向布局。</p>
 <hr>
-<h3 id="h-7">5. <a href="https://x.com/AnthropicAI/status/2047728384503939464">Project Deal 观察：高质量模型在 Agent 市场中暗中占优</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>AI Agent</code> <code>市场机制</code> <code>政策</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 总结 Project Deal 实验：AI Agent 市场具备价值潜力，但仍存在大量粗糙边缘。访问更高质量模型的参与者获得了实际优势，但他们自己并未察觉，凸显出政策与法律框架需跟上 Agent 市场发展节奏。 Anthropic 给出 Project Deal 实验的完整书面报告链接，详细呈现该 AI 代理市场实验的方法、数据与结论。</p>
-<hr>
-<h2 id="h-8">速览</h2>
+<h2 id="h-5">速览</h2>
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>OpenAI</code> <code>竞争格局</code> <code>模型能力</code> — Sam Altman 用「looksmaxxed / IQmog」的网络黑话概括 OpenAI 当前竞争位置：前端体验仍被对手稍稍压制，但模型智力层面已大幅领先。表态延续他近期对推理与「思考型」模型的重点宣传。 Sam Altman 在自评推文的补充回复中表示团队会修复前端体验的不足。该回复延续上一条「前端被压制一点，但 IQ 已遥遥领先」的自嘲，暗示 OpenAI 当前模型在推理智力上有优势但产品 UI 仍待打磨。 · <a href="https://x.com/sama/status/2048160404376105179">Sam Altman (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Demis Hassabis</code> <code>Google DeepMind</code> <code>Gemma</code> <code>YC</code> <code>开源生态</code> — DeepMind CEO Demis Hassabis 感谢 YC 总裁 Garry Tan 在 YC 主持的对谈，并称「很高兴看到许多初创公司基于 Google Gemma 模型进行构建」，强调开源 Gemma 系列在创业生态中的渗透。 · <a href="https://x.com/demishassabis/status/2047872041827910093">Demis Hassabis (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>GPT-5.5</code> <code>Codex</code> <code>AGI</code> <code>段子</code> — Sam Altman 转发或调侃了两条对立的观点：一种担心 post-AGI 后无人工作、经济崩溃；另一种则因 Codex 中的 GPT-5.5「太好用」而要改用多相睡眠以免错过工作。属于自嘲式段子，但侧面透露出 GPT-5.5 已在 Codex 内部/外部受到极高评价。 · <a href="https://x.com/sama/status/2048426122854228141">Sam Altman (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>Codex</code> <code>OpenAI</code> <code>用户反馈</code> — Sam Altman 引用 henrycunh 的评价「Codex App 正成为我用过最好的软件，进步速度离谱」，并自问「他们怎么能写代码这么快？！」表达对 Codex 团队近期迭代速度的肯定。 · <a href="https://x.com/sama/status/2048165186482389253">Sam Altman (Twitter)</a></li>
 </ul>
 </div>
       </article>
@@ -422,12 +349,9 @@ footer.colophon a:hover { color: var(--accent); }
     <div class="toc-label">本期目录</div>
     <ul>
       <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
-      <li class="toc-h3"><a href="#h-3">1. GPT-5.5 全面上线 API：1M 上下文 + Agent 能力跨越式升级</a></li>
-      <li class="toc-h3"><a href="#h-4">2. Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升</a></li>
-      <li class="toc-h3"><a href="#h-5">3. DeepSeek-V4-Pro API 限时 75% 折扣并支持 1M 上下文</a></li>
-      <li class="toc-h3"><a href="#h-6">4. Claude Code跨端会话：claude --teleport无缝接续Web与CLI</a></li>
-      <li class="toc-h3"><a href="#h-7">5. Project Deal 观察：高质量模型在 Agent 市场中暗中占优</a></li>
-      <li class="toc-h2"><a href="#h-8">速览</a></li>
+      <li class="toc-h3"><a href="#h-3">1. DeepSeek 全系 API 输入缓存命中价直降至 1/10</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Sam Altman 呼吁重构操作系统、UI 与互联网协议以兼容 Agent</a></li>
+      <li class="toc-h2"><a href="#h-5">速览</a></li>
     </ul>
   </aside>
     </div>
@@ -435,7 +359,7 @@ footer.colophon a:hover { color: var(--accent); }
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-04-25.html">2026-04-25</a>
+        <a href="../daily/2026-04-26.html">2026-04-26</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -443,12 +367,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-04-27.html">2026-04-27</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-26.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-27.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
