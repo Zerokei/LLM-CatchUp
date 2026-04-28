@@ -5,8 +5,118 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 27 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-04-28</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-28.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-28.md</guid>
+      <pubDate>Tue, 28 Apr 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-28</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>OpenAI 商业版图重组</strong>：与微软修订协议、获得 FedRAMP 20x Moderate、新增 Choco 食品分销案例，全面拓宽企业与政府入口。</li>
+<li><strong>Codex 编排化</strong>：Symphony 开源后将 GitHub/Linear 工单交给常驻代理处理，意味着 Coding Agent 正从「按需调用」走向「常驻执行」。</li>
+<li><strong>实时语音 SDK 升级</strong>：gpt-realtime-1.5 演示用语音直接控制应用状态，OpenAI 同步开源参考仓库供二次开发。</li>
+<li><strong>推理基础设施降本</strong>：DeepSeek 全系 API 输入缓存命中价直降至原价 1/10，进一步压低长上下文 / 多轮 Agent 的运行成本。</li>
+<li><strong>AI 教育与公共合作</strong>：Google × Kaggle 推出 5 日 Vibe Coding 公开课、DeepMind 携手韩国政府推进科研落地，平台方加速「AI 普惠」叙事。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/next-phase-of-microsoft-partnership">OpenAI × 微软新协议：开放多云、IP 至 2032、AGI 验证机制</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>微软合作</code> <code>Azure</code> <code>多云分发</code> <code>IP 许可</code> <code>PBC 重组</code> <code>AGI 验证</code></li>
+</ul>
+<p><strong>摘要</strong>: 微软与 OpenAI 修订协议：OpenAI 可在 Azure 之外的云上分发其产品（API 仍 Azure 独家），微软对 OpenAI IP 的访问权延至 2032 年并涵盖未来研究模型，AGI 主张需经独立专家小组验证。OpenAI 同步承诺购买 2500 亿美元 Azure 服务，其重组为公益公司（PBC）后，微软在新结构中持有约 1350 亿美元股权。Sam Altman 同步发推强调微软仍为「主要云伙伴」，但产品级合作已松绑、可全云分发。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/sama/status/2048755148361707946">Altman 宣布与微软新协议：可在所有云上分发产品</a> · Sam Altman (Twitter) · Altman 官方解读</li>
+</ul>
+<hr>
+<h3>2. <a href="https://openai.com/index/open-source-codex-orchestration-symphony">OpenAI 开源 Symphony：Codex 工单驱动的常驻编排框架</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>编排框架</code> <code>开源</code> <code>Agent</code> <code>GitHub/Linear</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 开源 Symphony，把 GitHub/Linear 工单当作真正的工作单元——每条 issue 由一个 Codex 代理常驻负责，自动维护上下文、读写状态、开 PR、回复评论。它通过统一接口连接代码托管与项目管理，让代理像团队成员一样在工程协作中长期运行。OpenAI Devs 同步在 Twitter 推介称要「让每条 open issue 都有一个 Codex 代理」，强调可 Fork 开源仓库接入自有工具二开。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2048825010371039648">OpenAI 推出开源 Codex 编排器 Symphony</a> · OpenAI Devs (Twitter) · OpenAI Devs 架构详解</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在自己的 issue 跟踪仓库上 Fork Symphony，配置 Codex API key 后挑一个高重复度的 issue 类型试跑</li>
+<li>关注 Symphony 的 Linear 适配，将 Codex 代理嵌入产品工单流可显著降低人工分诊负担</li>
+<li>阅读 OpenAI Devs Twitter 上披露的架构细节，评估常驻代理对算力 / token 成本的长期占用</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/OpenAIDevs/status/2048871260512473385">OpenAI Devs 演示 gpt-realtime-1.5 语音控制交互应用</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>gpt-realtime-1.5</code> <code>语音交互</code> <code>OpenAI</code> <code>实时 API</code> <code>应用演示</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 官方账号展示基于 gpt-realtime-1.5 构建的交互式应用：用户可通过语音更自然地控制应用状态，演示中以「Hi Chappy」为例呈现实时语音交互场景，强调了 realtime 模型在 voice-first 应用中的潜力。 OpenAI Devs 在 Symphony 发布串中追加贴出实时语音组件的开源仓库 「openai/realtime-voice-component」，鼓励开发者 fork、接入自有工具并在其上构建。该推文为线程片段，内容偏短，主要价值在于提供仓库入口。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>若有语音助手或家居控制类产品，可基于 gpt-realtime-1.5 重做交互层，把 UI 状态映射到工具调用</li>
+<li>在原型中比较 realtime-1.5 与之前 realtime 模型在延迟与中断恢复上的差异，再决定是否迁移</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://openai.com/index/openai-available-at-fedramp-moderate">OpenAI 通过 FedRAMP 20x Moderate 授权，开放给美联邦机构</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>FedRAMP</code> <code>政府合规</code> <code>ChatGPT Enterprise</code> <code>联邦云</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布 ChatGPT Enterprise 与 API Platform 已获得 FedRAMP 20x Moderate 授权，标志着前沿 AI 在满足联邦安全、隐私与治理要求的前提下进入美国政府机构。FedRAMP 20x 流程通过云原生安全证据与自动化校验，让授权过程兼顾速度与严格性，已支持太平洋西北国家实验室加速许可审批等场景。</p>
+<hr>
+<h3>5. <a href="https://blog.google/innovation-and-ai/technology/developers-tools/kaggle-genai-intensive-course-vibe-coding-june-2026/">Google 与 Kaggle 推出 5 日 AI Agents Vibe Coding 公开课</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google</code> <code>Kaggle</code> <code>AI Agents</code> <code>Vibe Coding</code> <code>公开课</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 与 Kaggle 宣布于 6 月 15-19 日重启免费的「AI Agents Intensive」5 日课程，本届主打 Vibe Coding：以自然语言为主要工具构建生产级 AI agent。课程包含专家直播、更新讲义与动手 capstone 项目，重点是连接工具与 API 形成可用的 agent 系统，注册即日开放。</p>
+<hr>
+<h3>6. <a href="https://x.com/GoogleDeepMind/status/2048714939125109178">Google DeepMind 携手韩国政府推动 AI 科研落地</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>韩国</code> <code>政企合作</code> <code>AI for Science</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 回顾十年前 AlphaGo 在韩国展现 AI 潜力，宣布与韩国政府合作，探索如何利用 AI 加速科学发现并为该地区创造新的经济增长机会。推文为合作公告级信息，未披露具体项目细节。</p>
+<hr>
+<h3>7. <a href="https://openai.com/index/choco">Choco 用 OpenAI 自动化食品分销：年处理 880 万订单</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI API</code> <code>Choco</code> <code>AI agent</code> <code>食品供应链</code> <code>客户案例</code></li>
+</ul>
+<p><strong>摘要</strong>: 食品分销平台 Choco 基于 OpenAI API 构建 agent 系统，年处理订单超 880 万、生产环境消耗超 2000 亿 tokens，将人工录单工作量减半，并将订单处理产能提升至原来的 2 倍。该案例展示了 AI agent 在传统供应链中规模化、全天候运行的可行性。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>公司原则</code> <code>Sam Altman</code> <code>AI 治理</code> — Sam Altman 公开了 OpenAI 的五项核心原则：民主化（Democratization）、赋权（Empowerment）、普遍繁荣（Universal Prosperity）、韧性（Resilience）与适应性（Adaptability），并附上 openai.com/index/our-principles 完整说明页。属于公司价值观层面的对外表态。 · <a href="https://x.com/sama/status/2048552677433643427">Sam Altman (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-04-27</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-27.html</link>
