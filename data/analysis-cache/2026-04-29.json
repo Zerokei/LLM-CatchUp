@@ -1,0 +1,622 @@
+{
+  "analyzed_at": "2026-04-29T08:50:39+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-04-29.json",
+  "trend_paragraph": "- **Claude Code 工程化进入「打磨期」**：Anthropic 一天内发布手机推送通知 + 50+ 稳定性修复 + no-flicker 渲染器路线，重点从功能扩张转向稳定性与终端体验。\n- **Claude 进军创意工具链**：「Claude for Creative Work」连接 Blender、Autodesk Fusion、Adobe、Ableton、Splice、Canva 等八款主流创意软件，把 LLM 工作面从代码扩展到 3D / 视频 / 音乐。\n- **OpenAI 落地 AWS Bedrock**：GPT-5.5 旗舰模型、Codex 编码套件与 Bedrock Managed Agents 三件套以预览形式上线 AWS，企业可在原有合规体系内直接调用 OpenAI 能力。\n- **Agent 编排成为开发者主战场**：OpenAI Symphony 把每个 issue 自动派给一个 Codex agent、Mistral Workflows 公测企业级 AI 编排层，工程师重心进一步从写代码转向 review 与方向控制。\n- **AI 风险定价开始外溢**：Berkshire、Travelers、Chubb 等保险巨头在标准责任险中排除 AI 输出错误与深度伪造欺诈，企业部署 AI 的合规与自担风险成本正在显性化。",
+  "articles": [
+    {
+      "url": "https://www.deeplearning.ai/the-batch/insurance-companies-carve-out-exceptions-for-ai-risks/",
+      "source": "The Batch",
+      "title": "保险公司排除 AI 风险，美军重启与 Anthropic 合作谈判",
+      "summary": "Berkshire Hathaway、Travelers、Chubb 等大型保险公司正在标准责任险中排除或限制 AI 系统造成损害的赔付，将 AI 错误输出、深度伪造欺诈等列为难以建模的高风险事件，迫使部署 AI 的企业自担风险或购买专项险。同时，尽管五角大楼此前将 Anthropic 列为供应链风险，特朗普政府仍重启围绕「Claude Mythos」模型的合作谈判。本期还涵盖 Andon Labs 在旧金山推出的 AI 智能体 Luna 经营零售店的实验、OpenAI 面向生命科学的 GPT-Rosalind、Anthropic 的 Claude Design 视觉创作工具，以及高盛、摩根士丹利等华尔街银行因 AI 部署裁减初级岗位的趋势。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "AI 保险",
+        "Anthropic",
+        "美国军方",
+        "AI 智能体",
+        "华尔街裁员"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/openai-on-aws",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 模型、Codex 与托管智能体登陆 AWS Bedrock",
+      "summary": "OpenAI 与 AWS 扩大战略合作，将包括旗舰模型 GPT-5.5 在内的 OpenAI 模型、Codex 编码套件及 Bedrock Managed Agents 三类能力以有限预览形式上线 Amazon Bedrock，企业可在已有的 AWS 安全、合规与采购体系内直接调用。Codex 现支持以 Bedrock 为后端，覆盖 CLI、桌面应用及 VS Code 插件，且 Codex 用量可计入 AWS 云承诺消费。Bedrock Managed Agents 提供多步工作流、工具调用与编排的托管能力，缩短从实验到生产的路径。",
+      "category": "商业动态",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "AWS",
+        "Bedrock",
+        "Codex",
+        "企业 AI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/translate/fun-facts-google-translate-20-years/",
+      "source": "Google AI Blog",
+      "title": "Google 翻译 20 周年：覆盖近 250 种语言，新增 AI 发音练习",
+      "summary": "Google 翻译迎来 20 周年，从 2006 年的 AI 实验成长为月活超 10 亿、支持约 250 种语言的服务。Google 借此发布 Android 端「pronunciation practice」工具，可针对英语、西班牙语、印地语提供即时 AI 反馈帮助用户打磨口语。文章以 20 条趣味事实回顾产品历史并预告新功能。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Google 翻译",
+        "多语言",
+        "发音练习",
+        "Android",
+        "周年纪念"
+      ],
+      "practice_suggestions": [
+        "在 Android 版 Google 翻译中尝试新的发音练习功能，挑选英语、西班牙语或印地语进行口语训练。",
+        "若产品涉及多语言场景，可参考 Google 翻译近 250 种语言的覆盖范围评估目标地区缺口。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/claude-for-creative-work",
+      "source": "Anthropic Blog",
+      "title": "Claude for Creative Work：Anthropic 联手 Adobe、Blender、Autodesk 等推出连接器矩阵",
+      "summary": "Anthropic 发布「Claude for Creative Work」，将 Claude 通过 MCP 连接器接入 Blender、Autodesk Fusion、Adobe Creative Cloud、Ableton、Splice、Canva（Affinity）、SketchUp、Resolume 等创意工具，覆盖 3D 建模/CAD、音乐制作、平面与视频创作、实时视觉等流程。设计师与工程师可用自然语言完成场景调试、批量改物体、Blender Python 脚本生成、对话式 3D 建模等操作。Anthropic 同时加入 Blender Development Fund 成为赞助方，并推出 Claude Design 探索方向，与 RISD、Ringling、Goldsmiths 等院校开展合作。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "创意工作流",
+        "MCP 连接器",
+        "Blender",
+        "Adobe Creative Cloud",
+        "Autodesk Fusion",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "在 Claude 中启用 Blender / Fusion / Adobe 连接器，把 3D 调场景、CAD 修改、批量素材处理交给对话操作",
+        "设计师可用自然语言驱动 Splice / Ableton 检索与音色编排，把 Claude 接入工作流模板",
+        "关注 Claude Design 与 Affinity 接入方向，评估能否替代或补充团队既有的设计自动化脚本"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049241518540808440",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 发布纯链接推文（无可解析内容）",
+      "summary": "Sam Altman 发布了一条仅包含 t.co 短链接、无任何文字描述的推文，未提供可解析的内容上下文。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "Twitter",
+        "低信号"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049235284655780000",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：用户对 GPT-5.5 反响热烈，考虑庆祝活动",
+      "summary": "Sam Altman 在推文中表示用户非常喜爱 GPT-5.5，并称应该「想点好玩的事来庆祝一下」，暗示 OpenAI 可能针对该模型推出后续福利或活动。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "GPT-5.5",
+        "OpenAI",
+        "用户反馈"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2048913887614115857",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：20 美元套餐附带 Codex 性价比突出",
+      "summary": "Sam Altman 发推称 ChatGPT 20 美元订阅档加上 Codex 编码工具是非常划算的方案，借此为 Codex 在 Plus 套餐内的可用性做推广。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "Codex",
+        "ChatGPT Plus",
+        "定价"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2048910739784826966",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：「我们爱我们的用户」",
+      "summary": "Sam Altman 发布一条仅包含「we love our users」的简短推文，无具体产品或战略信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "OpenAI",
+        "低信号"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2049234228290961690",
+      "source": "Thariq (Twitter)",
+      "title": "Anthropic 工程师：Claude Code 近四个版本修复 50+ 稳定性与性能问题",
+      "summary": "Anthropic 工程师 Thariq 引用官方 ClaudeDevs 的发布说明指出，Claude Code CLI 最近四个版本累计修复了 50 多个稳定性与性能问题，包括更快的会话恢复、稳定的鉴权、更低的内存占用与更少的卡死。他邀请用户反馈仍未解决的「白鲸级」顽固 bug。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "CLI",
+        "性能优化",
+        "稳定性",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "升级到最新版 Claude Code CLI 以获得更快的 resume、更稳定的鉴权与更低的内存占用。",
+        "若仍遇到顽固 bug，可向 @trq212 或 ClaudeDevs 反馈具体复现路径，争取被纳入下一轮修复列表。"
+      ],
+      "thread_group_id": "thread-trq212-20260428-2108",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "angle": "Anthropic 工程师转述与「白鲸级 bug」征集"
+    },
+    {
+      "url": "https://x.com/trq212/status/2049234229926695188",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 将把无闪烁渲染器作为默认渲染器",
+      "summary": "Thariq 补充说明，Claude Code 团队正打磨「no flicker renderer」，目标是将其作为默认渲染器发布，从而消除终端界面闪烁等长期痛点；后续还会有更多体验细节修复陆续上线。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "渲染器",
+        "终端体验",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "关注 Claude Code 后续发版说明，新默认渲染器上线后可直接获得更平滑的终端显示体验。"
+      ],
+      "thread_group_id": "thread-trq212-20260428-2108",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2049252080892973563",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 大文件写入卡顿元凶疑似定位",
+      "summary": "Anthropic 工程师 Thariq 表示，长期困扰他的「Claude Code 在写入大文件时偶发假死」现象终于找到根因。该帖为回复推文，未公开具体补丁内容，但与同日 Claude Devs 公布的 50+ 稳定性修复批次相互印证。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "稳定性",
+        "Bug 修复",
+        "性能"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "angle": "大文件写入卡顿根因定位补充"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049143438281445811",
+      "source": "Claude (Twitter)",
+      "title": "Claude 上线 Blender 连接器，可直接调试 3D 场景",
+      "summary": "Claude 推出 Blender 连接器，用户可在 Claude 中直接调试场景、构建新工具或对场景内所有对象批量应用变更。该连接器基于 MCP 协议，由 Blender 官方开发并对其他 LLM 同样开放，是「Claude for Creative Work」创意工具集的旗舰组件。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Blender",
+        "MCP",
+        "连接器",
+        "3D 创作"
+      ],
+      "practice_suggestions": [
+        "3D 美术可在 Claude 内通过 Blender 连接器分析复杂场景，让 Claude 解读修饰器堆栈并定位渲染问题",
+        "尝试用 Claude Code 通过 Blender Python API 写脚本批量改名/导出对象，把繁琐的制片任务自动化"
+      ],
+      "thread_group_id": "thread-claudeai-20260428-1507",
+      "duplicate_of": "https://www.anthropic.com/news/claude-for-creative-work",
+      "angle": "官方 Twitter 首条推文：Blender 连接器"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049143440508616863",
+      "source": "Claude (Twitter)",
+      "title": "Claude 接入 Autodesk Fusion，对话式建模 3D 工程",
+      "summary": "Claude 同步上线 Autodesk Fusion 连接器，拥有 Fusion 订阅的设计师与工程师可通过自然语言对话创建并修改 3D 模型。这是 Claude for Creative Work 连接器矩阵中面向工业/CAD 工作流的关键一环。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Autodesk Fusion",
+        "CAD",
+        "连接器",
+        "对话式建模"
+      ],
+      "practice_suggestions": [
+        "工业设计师可在 Fusion 项目中接入 Claude，用自然语言描述参数化特征并让 Claude 直接生成草图与建模操作",
+        "结合 Claude Code 编写 Fusion 自动化脚本，批量更新装配体或导出 STEP 文件"
+      ],
+      "thread_group_id": "thread-claudeai-20260428-1507",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049143442601546054",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 发布 Claude for Creative Work 连接器全家桶",
+      "summary": "Anthropic 一次性上线 Adobe Creative Cloud、Ableton、Splice、Canva Affinity、SketchUp、Resolume 等多款连接器，覆盖图像/视频、音乐、设计、VJ 等创意流程，并加入 Blender Development Fund 成为赞助方。同步推出 Claude Design 探索软件设计、并与 RISD、Ringling、Goldsmiths 三所院校合作 AI 创意计算课程。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "Claude",
+        "创意工作流",
+        "连接器",
+        "MCP"
+      ],
+      "practice_suggestions": [
+        "音乐制作人可在 Claude 内启用 Splice 与 Ableton 连接器，直接搜索素材并查阅 Live/Push 官方文档",
+        "设计团队可用 Affinity 连接器自动化批量调色、图层重命名等重复制作任务",
+        "VJ 与现场视觉艺术家可借助 Resolume Arena/Wire 连接器，用自然语言实时控制演出画面"
+      ],
+      "thread_group_id": "thread-claudeai-20260428-1507",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 近四版交付 50+ 稳定性修复，no-flicker 渲染器即将默认",
+      "summary": "Claude Devs 官宣过去四个 Claude Code CLI 版本累计交付 50+ 稳定性与性能修复，重点包括更快的会话恢复、稳定鉴权、更低内存占用、更少卡死，以及从 Windows/Xcode 粘贴时换行符保持、终端 resize 后回滚缓冲不重复、全屏向上滚动不强制弹回底部等终端体验改进。Anthropic 工程师 Thariq 透露，长期困扰他的「写入大文件偶发假死」根因终于定位，团队正打磨「no-flicker renderer」并计划将其作为默认渲染器发布。官方建议运行 `claude update` 拉取全部修复，完整列表见 code.claude.com/docs/en/changelog。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "CLI 稳定性",
+        "终端渲染",
+        "开发者工具",
+        "no-flicker"
+      ],
+      "practice_suggestions": [
+        "运行 `claude update` 升级到最新版以获得 50+ 稳定性与性能修复",
+        "关注 changelog（code.claude.com/docs/en/changelog）确认所用工作流相关问题是否已修",
+        "若在大文件写入或全屏滚动等场景仍遇到卡顿，可向团队反馈作为 no-flicker 默认化前的回归用例"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-2044",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049228281308917990",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 修复终端粘贴与滚动体验",
+      "summary": "Claude Code 改进终端交互：从 Windows 或 Xcode 粘贴时换行符得以保留，终端 resize 后回滚缓冲不再重复，全屏模式下向上滚动也不会被强制弹回底部。属于 50+ 稳定性修复批次的第 5 项。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "终端",
+        "粘贴",
+        "滚动"
+      ],
+      "practice_suggestions": [
+        "升级后可放心从 Xcode/IDE 直接粘贴多行代码到 Claude Code，无需手工补换行",
+        "在大型会话中善用全屏模式回顾历史输出"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-2044",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049228282491814027",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 持续优化稳定性，呼吁立即升级",
+      "summary": "Claude Devs 在稳定性更新 thread 收尾呼吁用户运行 `claude update` 获取全部修复，并指向官方 changelog（code.claude.com/docs/en/changelog）查阅完整列表，并预告还有更多改进在路上。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "更新",
+        "Changelog",
+        "稳定性"
+      ],
+      "practice_suggestions": [
+        "立即执行 `claude update` 升级 Claude Code CLI",
+        "订阅或定期查看 code.claude.com/docs/en/changelog 跟踪后续修复"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-2044",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049154855143649315",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 新增手机推送通知功能",
+      "summary": "Claude Code 现可在长任务结束或需要用户输入时向手机发送推送通知，让开发者离开终端也能及时获知任务状态，缓解长跑任务必须盯屏的痛点。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "推送通知",
+        "移动端",
+        "异步开发"
+      ],
+      "practice_suggestions": [
+        "为耗时较长的重构、测试、构建任务启用推送，把等待时间用于其他工作",
+        "团队成员可借助推送在远端跑任务时自由切换上下文，无需保持 SSH/终端常驻"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-1552",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049154856431350268",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 推送通知启用步骤公布",
+      "summary": "启用 Claude Code 手机推送通知三步走：安装 Claude 移动端 App，在 CLI 中执行 `/remote-control` 配对手机，再通过 `/config` 打开「Push when Claude decides」选项。详细文档见 code.claude.com/docs/en/remote-control。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "推送通知",
+        "配置",
+        "移动端"
+      ],
+      "practice_suggestions": [
+        "按官方三步流程配置好手机配对，并测试一次确认通知能正常到达",
+        "在 `/config` 中根据个人偏好微调推送触发条件，避免噪声干扰"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-1552",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049182118069358967",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.4 Pro 助力解决 60 年悬而未决的 Erdős 难题",
+      "summary": "OpenAI 在最新播客中宣布，本月有一项搁置 60 年的 Erdős 数学猜想在 GPT-5.4 Pro 协助下被攻克。研究员 Sébastien Bubeck 与 Ernest Ryu 与主持人 Andrew Mayne 探讨了 AI 数学能力的跃迁意味着什么、以及它对未来基础研究范式的影响。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "GPT-5.4 Pro",
+        "数学",
+        "Erdős 问题",
+        "AI for Science"
+      ],
+      "thread_group_id": "thread-OpenAI-20260428-1741",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049182122099798209",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 播客上架 Spotify、Apple、YouTube 三大平台",
+      "summary": "OpenAI 宣布旗下播客节目「OpenAI Podcast」同步登陆 Spotify、Apple Podcasts 与 YouTube 三大平台。该推文为推广性质，附带三个收听入口链接。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "播客",
+        "内容营销",
+        "多平台分发"
+      ],
+      "thread_group_id": "thread-OpenAI-20260428-1741",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049254491132952882",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 支持一键将旧仓库升级到 GPT-5.5",
+      "summary": "OpenAI Devs 提示开发者可直接让 Codex 将现有代码仓库升级到 GPT-5.5 版本，意味着 Codex 已能识别并自动完成跨版本的依赖与 API 迁移工作。这降低了模型版本切换的人工成本。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "GPT-5.5",
+        "代码迁移",
+        "OpenAI",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "在准备升级到 GPT-5.5 的项目中，让 Codex 起草迁移 PR 后再人工 review",
+        "用 Codex 自动检查旧 prompt 模板与函数调用格式是否兼容新版本"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2048871260512473385",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "gpt-realtime-1.5 支持语音驱动的交互式应用构建",
+      "summary": "OpenAI 推出 gpt-realtime-1.5 模型，开发者可基于此构建用户用语音自然控制应用状态的交互式应用。推文以 Chappy 演示为例展示语音控制 App 的能力。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "gpt-realtime",
+        "语音交互",
+        "实时模型",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "在客服、车载或无障碍场景试用 gpt-realtime-1.5 替代传统按钮交互",
+        "对比 1.5 与上一代 realtime 模型在打断、回声抑制上的延迟变化"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260427-2105",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2048871272231338455",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 开源 realtime-voice-component 仓库供二次开发",
+      "summary": "OpenAI 公开 realtime-voice-component GitHub 仓库，开发者可 fork 后接入自己的工具与业务逻辑，在其上构建语音驱动的实时应用。该仓库与 gpt-realtime-1.5 一同发布。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "开源",
+        "realtime-voice",
+        "OpenAI",
+        "组件库"
+      ],
+      "practice_suggestions": [
+        "fork 该仓库并替换其中的工具调用接口为自有 API",
+        "评估该组件能否替换团队当前自研的 WebRTC + STT/TTS 拼装方案"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260427-2105",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2048825010371039648",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Symphony：让每个 issue 都自动获得一个 Codex agent",
+      "summary": "OpenAI 推出开源 agent 编排器 Symphony，将任务追踪系统（如 Linear）变成 Codex 的「常驻控制面」，每个 open issue 自动分配一个 Codex agent，工程师只负责 review 与方向把控。该方案旨在解决 agent 数量上升后人类注意力成为瓶颈的问题。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Symphony",
+        "Codex",
+        "agent 编排",
+        "开源",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "在 Linear 接入 Symphony 试运行，观察 PR landed 数能否复现 OpenAI 内部 500% 提升",
+        "为 agent-friendly 仓库补齐自动化测试与 CI 守护，确保 agent 自主推进时不破坏主分支",
+        "把产品/设计同事直接接入 Symphony，让非工程岗也能下发 feature 任务"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260427-1802",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2048825022031302661",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Symphony 官方博客发布：spec 化的 Codex 编排框架",
+      "summary": "OpenAI 官方博客详述 Symphony 的设计：核心是一份 SPEC.md 而非复杂的监督系统，把问题与目标交给 agent 自由推进。Symphony 把工单当作状态机，agent 可自行拆解任务、生成 DAG、并发执行非阻塞节点；某些 OpenAI 团队接入三周后 PR 落地数提升 500%。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Symphony",
+        "Codex",
+        "agent 编排",
+        "Linear",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "阅读 SPEC.md 后将 Symphony 的「Workflow Loader / Orchestrator / Workspace Manager」分层套用到自研 agent 平台",
+        "用 WORKFLOW.md 在仓库内沉淀团队的 agent 行为规范，避免 prompt 散落各处",
+        "为 agent 增加 gh CLI、CI 日志读取等工具，复用 OpenAI 验证的「objective 而非 transition」范式"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260427-1802",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2049174327124263379",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind Experience AI 教育项目持续推进",
+      "summary": "Google DeepMind 与 Raspberry Pi 基金会自 2023 年起合作 Experience AI 项目，向师生提供免费 AI 教学资源，帮助理解 AI 工作原理。本系列推文回顾该项目的影响力。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "DeepMind",
+        "AI 教育",
+        "Experience AI",
+        "Raspberry Pi"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260428-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2049174330064470022",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Experience AI 累计培训 3 万教师、覆盖 290 万学生",
+      "summary": "Experience AI 项目数据公布：93% 受训教师 AI 知识有所增长，87% 表示更有信心讲授复杂主题；累计已培训 3 万余名教师，覆盖 180 个国家、19 种语言下的 290 万学生。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "DeepMind",
+        "AI 教育",
+        "影响力数据",
+        "Experience AI"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260428-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2049174334057611585",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Experience AI 扩展拉美：Google.org 资助 460 万美元覆盖 125 万学生",
+      "summary": "DeepMind 宣布 Experience AI 项目今年扩展至拉丁美洲，目标到 2028 年培训 2.4 万名教育者、触达 125 万学生，资金来自 Google.org 提供的 460 万美元拨款。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "DeepMind",
+        "AI 教育",
+        "拉美",
+        "Google.org",
+        "公益资助"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260428-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2049128071874179091",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral 推出 Workflows：面向企业 AI 的编排层公测",
+      "summary": "Mistral AI 发布 Workflows 公开预览版，定位为「企业 AI 的编排层」，专注于把 AI 业务流程从原型推进到生产，提供持久性、可观测性与容错能力。ASML、ABANCA、CMA-CGM、France Travail、La Banque Postale、Moeve 等企业已在使用。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Mistral",
+        "Workflows",
+        "企业 AI",
+        "编排",
+        "生产部署"
+      ],
+      "practice_suggestions": [
+        "评估 Workflows 与现有 LangGraph / Temporal 等编排方案在容错与可观测性上的差异",
+        "在内部一条非关键业务流程先试点，验证 SLA 与故障恢复表现",
+        "结合 Mistral 自研模型测试端到端延迟与成本，对比多模型混编场景"
+      ],
+      "thread_group_id": "thread-MistralAI-20260428-1406",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2049128190874964030",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral 团队介绍 Workflows 新功能（线程片段）",
+      "summary": "Mistral AI 在自回复线程中放出团队成员对新功能的介绍视频片段。该推文为线程中段，主体内容指向同线程后续推文披露的 Workflows 工作流能力。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Mistral",
+        "Workflows",
+        "团队介绍",
+        "产品发布"
+      ],
+      "practice_suggestions": [
+        "关注 Mistral 官方后续推文与 mistral.ai/news/workflows 页面以获取完整功能说明"
+      ],
+      "thread_group_id": "thread-MistralAI-20260428-1406",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2049128192405917836",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral 推出 Workflows：可视化编排 Agent 工作流",
+      "summary": "Mistral AI 在线程末尾给出官方文档链接 mistral.ai/news/workflows，正式介绍其 Workflows 产品。该功能定位为面向开发者的工作流编排能力，便于将多步骤 Agent 任务串联与复用。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Mistral",
+        "Workflows",
+        "Agent 编排",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "访问 mistral.ai/news/workflows 阅读官方文档，了解 Workflows 的节点类型与触发方式",
+        "评估 Mistral Workflows 与现有 LangGraph / n8n / Zapier 编排链路的互补或替代价值",
+        "在测试环境用 Workflows 复现一个多步 Agent 流程，对比 token 成本与延迟"
+      ],
+      "thread_group_id": "thread-MistralAI-20260428-1406",
+      "duplicate_of": null
+    }
+  ]
+}
