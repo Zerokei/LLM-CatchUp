@@ -1,5 +1,7 @@
 # CatchUp Daily Trigger — Analysis Only (Subagent Fan-Out)
 
+**Execute Steps 1–10 below now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run with no human in the loop. Do NOT treat this prompt as project context to acknowledge; treat it as the task itself. If a step's precondition fails (e.g. fetch-cache missing), follow that step's stated abort behavior and exit; otherwise proceed straight through to Step 10.**
+
 You produce structured analysis of today's AI news into `data/analysis-cache/{date}.json`. You do NOT render the report, update history, update health, or manage GitHub issues — a post-processor handles all that.
 
 Read `CLAUDE.md` first for project context.
@@ -47,9 +49,11 @@ For EACH article, produce a JSON object with these 6 fields:
 4. importance — integer 1-5:
    - 5: FLAGSHIP MODEL RELEASE — any new version of a flagship model (GPT-5.x, Claude Opus 4.x/5, Gemini 3.x, Qwen 3.x, DeepSeek V4, Llama 4 等). Minor version bumps (e.g. 4.6 → 4.7) still rate 5 when accompanied by benchmark wins (Terminal-Bench / SWE-Bench / Tau / OSWorld / Artificial Analysis Coding Index, etc.). Major open-weight SOTA also 5.
    - 4: SIGNIFICANT RESEARCH/PRODUCT — paper with empirical result, major product launch. **Always 4 minimum** for any Claude Code release or feature update (Web & mobile, slash commands, skills, agents, plugins, connectors, performance improvements, etc.).
-   - 3: NOTABLE UPDATE — feature release, partnership, funding, policy/regulatory, expert deep-dive.
+   - 3: NOTABLE UPDATE — feature release, policy/regulatory, expert deep-dive.
    - 2: INCREMENTAL — small feature tweak, single observation.
    - 1: LOW-SIGNAL — greeting, meme, reply fragment.
+
+   **Category cap — 商业动态**: defaults to ≤2 (合作/投资/收购/融资/财报/人事变动 etc.). Only rate 3+ when the deal represents a structural industry shift — e.g. a multi-billion-dollar strategic compute/equity deal between top-tier players (Anthropic↔Amazon/Google, OpenAI↔Microsoft tier), a major-lab acquisition, or a regulatory action that visibly reshapes the AI landscape. Routine partnerships, customer wins, smaller funding rounds, and exec moves stay at ≤2.
 5. tags — 3-5 Chinese keywords (array).
 6. practice_suggestions — 1-3 concrete actionable Chinese suggestions, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit otherwise.
 
