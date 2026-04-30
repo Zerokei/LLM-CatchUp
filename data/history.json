@@ -5142,7 +5142,591 @@
           "低信号"
         ]
       }
+    },
+    "adb004e6a3a9646373df20c48e8cc02e19ec01c2344b72de89036316540c99e9": {
+      "title": "The Batch 周报：OpenAI 解除微软独家、DeepSeek V4 表现平庸、Google/Amazon 加注 Anthropic",
+      "url": "https://www.deeplearning.ai/the-batch/openai-and-microsoft-sever-their-exclusive-relationship/",
+      "source": "The Batch",
+      "published_at": "2026-04-29T21:06:22.000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 与微软修订合作：微软仍是主要云伙伴至 2032 年，但 OpenAI 模型可在 AWS、Google Cloud 等平台分发，AGI 终止条款被取消。DeepSeek V4 推出 1.6T 总参/49B 激活的 Pro Preview，针对华为昇腾优化，但在 Artificial Analysis 智能指数上落后于 Kimi K2.6、Xiaomi MiMo-V2.5-Pro 与 Qwen3.6。Google 承诺向 Anthropic 投资最高 400 亿美元、Amazon 追加 250 亿美元；另有 Verkor 用 Agent 在 12 小时内自动设计出 1.48GHz RISC-V CPU。",
+      "category": "商业动态",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "微软",
+          "DeepSeek V4",
+          "Anthropic",
+          "云合作"
+        ]
+      }
+    },
+    "af7d1e3d028416d3f2a5632c262c1cbad3be4662ded64ad9f77e8aa03001ede7": {
+      "title": "Responses API 引入 WebSocket 模式，Agent 工作流端到端提速 40%",
+      "url": "https://x.com/OpenAIDevs/status/2049595890395152728",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-04-29T21:05:14.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 在 Responses API 中引入 WebSocket 模式，通过持久连接缓存对话状态，避免每次工具调用都重传完整历史，从而将 Agent 端到端速度提升约 40%。配合为 GPT-5.3-Codex-Spark 准备的 Cerebras 硬件，推理速度从 65 TPS 提升至 1000 TPS（峰值 4000 TPS）。开发者无需改变 API 形态，只需通过 「previous_response_id」 在同一连接上延续上下文；Vercel AI SDK、Cline、Cursor 等已实测获得 30-40% 的提速。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "Responses API",
+          "WebSocket",
+          "Codex",
+          "推理加速"
+        ],
+        "practice_suggestions": [
+          "将 Codex 类长链路 Agent 应用切换到 Responses API 的 WebSocket 模式，并通过 previous_response_id 复用会话状态。",
+          "在长上下文或多工具循环场景中评估端到端延迟，优先迁移高频工具调用路径。",
+          "若使用 Vercel AI SDK、Cline 等下游集成，升级到已支持 WebSocket 模式的版本以获得直接收益。"
+        ]
+      }
+    },
+    "e9b0469f8445d8dfec21a5cf2f47529ebe73206de1629623248318061577e37c": {
+      "title": "Anthropic Fellows 推出「内省适配器」,让模型自报训练中习得行为",
+      "url": "https://x.com/AnthropicAI/status/2049576143653929153",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-04-29T19:46:46.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Anthropic Fellows 最新研究提出「introspection adapters」(内省适配器):一种可让语言模型自我报告训练中习得行为(包括潜在错位)的工具。引用的研究表明,单一内省适配器在微调模型上即可泛化到检测隐藏错位、后门以及安全防护被移除等场景。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Anthropic Fellows",
+          "内省适配器",
+          "对齐",
+          "后门检测",
+          "安全研究"
+        ]
+      }
+    },
+    "5311c1d6aaff5c7bc9d31d6414eb5862e560fa7ac1e7c814e6e1d53e59a0332e": {
+      "title": "Claude Code 内置 Claude Platform Skill：自然语言驱动 API 集成与最佳实践",
+      "url": "https://x.com/ClaudeDevs/status/2049575802568839648",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-04-29T19:45:25.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Claude Code 现内置一个名为 Claude Platform 的官方 Skill：开发者可用自然语言（如「为这个项目添加 prompt caching」）触发，由 Skill 自动套用 Claude API 的最佳实践。Skill 完全开源，覆盖 Claude SDK 在七种语言下的实现，并支持多家第三方框架的集成路径，把官方做法直接搬到日常编码工作流中。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "Claude Platform",
+          "Skill",
+          "API",
+          "SDK"
+        ],
+        "practice_suggestions": [
+          "在 Claude Code 中尝试「Add prompt caching with the Claude API」自然语言指令，让 Skill 自动改写代码。",
+          "查阅开源 Skill 仓库，确认你常用语言（七种 SDK 之一）的迁移与集成模板，复用而不是重写。",
+          "将 Claude Platform Skill 纳入团队规范：新接 Claude API 项目优先走 Skill 模板，避免踩 caching/agents/connectors 的常见坑。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/ClaudeDevs/status/2049575806620639325",
+            "title": "通过自然语言指令即可触发 Claude Platform Skill",
+            "source": "Claude Devs (Twitter)",
+            "angle": "自然语言触发 + 七语言 SDK 全开源"
+          }
+        ]
+      }
+    },
+    "a43aa0276e286b68ea073523ab9fd3aaf74fc258fd57279b25eaea527e910d61": {
+      "title": "Qwen 开源 FlashQLA：TileLang 实现的高性能线性注意力内核",
+      "url": "https://x.com/Alibaba_Qwen/status/2049462666734026923",
+      "source": "Qwen (Twitter)",
+      "published_at": "2026-04-29T12:15:51.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Qwen 团队开源 FlashQLA——一组基于 TileLang 构建的高性能线性注意力内核，目标是在常见配置下显著降低长序列前向与反向算力开销。仓库给出的基准结果展示 FlashQLA 相对常用基线在多种配置下的吞吐与显存优势，定位为端侧/长上下文 Agent 的底层算子库。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Qwen",
+          "FlashQLA",
+          "TileLang",
+          "线性注意力",
+          "开源"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/Alibaba_Qwen/status/2049462758211772663",
+            "title": "Qwen 发布 FlashQLA：基于 TileLang 的高性能线性注意力内核",
+            "source": "Qwen (Twitter)",
+            "angle": "TileLang 实现 + 前后向基准结果"
+          }
+        ]
+      }
+    },
+    "561e5786e28d1506af06b1991ea50d148aefdbfec452ae89177f40aa6f441d98": {
+      "title": "Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限",
+      "url": "https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering",
+      "source": "宝玉的分享",
+      "published_at": "2026-04-29T00:00:00.000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Karpathy 在 Sequoia AI Ascent 访谈中称 2025 年 12 月起 AI 生成代码已不再需要人工修补，进入完全 Vibe Coding 状态，并提出 Software 3.0 即「向 LLM 解释器复制粘贴上下文」的新范式。他用 MenuGen 案例说明许多 App 会被模型原生能力直接吞掉，并指出 LLM 是「锯齿状智能」——能重构十万行代码却答错洗车常识题，能力分布取决于实验室 RL 数据决策。Vibe Coding 抬高所有人做软件的下限，Agentic Engineering 则负责在 Agent 加速时守住质量、安全和规格设计的上限。",
+      "category": "教程与观点",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Karpathy",
+          "Vibe Coding",
+          "Agentic Engineering",
+          "Software 3.0",
+          "RL"
+        ]
+      }
+    },
+    "6c5ade233b3666fde04b08d10e36fac51baec4fc990c7434905c0f92e287ebec": {
+      "title": "Anthropic 推 BioMysteryBench：Claude 在生信任务上已达专家水平",
+      "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+      "source": "Anthropic Research",
+      "published_at": "2026-04-29T00:00:00.000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Anthropic discovery 团队发布 BioMysteryBench，由领域专家基于真实生物数据撰写 99 道有客观答案的生信题目，让 Claude 在容器中自主下载工具、访问 NCBI/Ensembl 完成分析。结果显示 Claude 各代能力快速提升，在 76 道人类可解题上接近甚至超越专家面板，而 Claude Mythos 在 23 道「人类难解」题上达到约 30% 解题率。Claude 常用的两类策略是「调用海量预训练知识做元分析」与「不确定时多方法交叉验证」，但难题的成功多为低稳定性「侥幸路径」。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "Claude",
+          "BioMysteryBench",
+          "生物信息学",
+          "科学评测"
+        ]
+      }
+    },
+    "339abde4c97207735c89912c5ddfaa64d71208a333e935d0541b01a493163f43": {
+      "title": "Claude Code 团队最近四个版本累计修复 50+ 稳定性与性能问题",
+      "url": "https://x.com/trq212/status/2049234228290961690",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-04-28T21:08:07.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Anthropic 工程师 Thariq 转发 ClaudeDevs 官方推文确认：Claude Code CLI 在最近四次发布中已累计修复 50 余项稳定性与性能问题，包括更快的 resume、更稳的鉴权、更低的内存占用与更少的卡顿。他还表示团队正在专项「狩猎」最棘手的 bug，并向社区征集仍未解决的「白鲸」问题。 Thariq 透露 Claude Code 团队正在打磨「无闪烁渲染器」（no flicker renderer），目标是把它作为默认渲染器发布，未来将有更多更新。除此之外还会持续修复其他「papercut」类小痛点。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "性能优化",
+          "稳定性",
+          "Anthropic"
+        ],
+        "practice_suggestions": [
+          "升级到最新版 Claude Code CLI 以获取最近四个版本累计的 50+ 项稳定性与性能修复，尤其是 resume、鉴权与内存占用相关改进。",
+          "如果在使用中遇到长期未被解决的体验问题，可在该推文下回复你的「白鲸」case，团队正在主动收集疑难 bug。"
+        ],
+        "thread_urls": [
+          "https://x.com/trq212/status/2049234228290961690",
+          "https://x.com/trq212/status/2049234229926695188"
+        ]
+      }
+    },
+    "f87930b70a9403f4cb2e55c60776bdab0bc929919b6c9877db047b74933722c2": {
+      "title": "Codex 接入 Figma 插件，可将实现计划转为 FigJam 可视化白板",
+      "url": "https://x.com/OpenAIDevs/status/2049605820351230158",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-04-29T21:44:42.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI Devs 宣布 Codex 通过 Figma 插件，可以把实现计划直接生成为 FigJam 上的可视化白板。引用的 Figma 官方推文进一步说明 MCP 在 FigJam 中的更新：包括 「generate_diagram」 用于生成架构图与 ERD、「figma-use-figjam」 技能用于直接在白板添加注释与代码块，以及 「get_figjam」 工具用于读取白板并规划下一步。这让 Codex 不再只是读写代码，还可以同步可视化系统设计。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Codex",
+          "Figma",
+          "FigJam",
+          "MCP",
+          "可视化"
+        ],
+        "practice_suggestions": [
+          "在 Figma 中安装最新 MCP 插件，并在 Codex 实现计划生成后调用 generate_diagram 自动产出架构图。",
+          "结合 figma-use-figjam 技能让团队的设计与代码评审在同一块 FigJam 板上进行。"
+        ]
+      }
+    },
+    "9b580192c67e163a85022988b467a1abb51a56d0f10fb1f279a39fc4d578d64c": {
+      "title": "OpenAI 集中推广 Codex 用例：研究、表格、幻灯片、迁移到 GPT-5.5",
+      "url": "https://x.com/OpenAI/status/2049583167406064115",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-04-29T20:14:41.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 与 OpenAI Devs 同日发起 Codex 全场景用法推广：覆盖研究整理、数据导出分析、自定义标准下的方案对比、表格幻灯片与摘要起草等日常生产工作。OpenAI Devs 还给出一个具体落地路径——让 Codex 一键将现有仓库升级到 GPT-5.5，把模型迁移这件事直接交给 Agent。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Codex",
+          "OpenAI",
+          "用例",
+          "GPT-5.5",
+          "生产力"
+        ],
+        "practice_suggestions": [
+          "挑一个数据分析或方案选型场景，用 Codex 跑一次「分析→标注变化→起草解读」的端到端流程，对比手工成本。",
+          "在升级到 GPT-5.5 前，先让 Codex 自动改写仓库中的模型字符串与 prompt 调用，再人工 review。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2049583308305252620",
+            "title": "Codex 用例：分析数据导出、标注变化并起草解读报告",
+            "source": "OpenAI (Twitter)",
+            "angle": "数据分析与方案对比示例"
+          }
+        ]
+      }
+    },
+    "48ca8d38e37ffc7a1461a9b2da7c476ac759090757eca1718720af5817938847": {
+      "title": "OpenAI DevDay 2026 定档 9 月 29 日旧金山，早鸟票创意竞赛同步开放",
+      "url": "https://x.com/OpenAI/status/2049534651702956103",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-04-29T17:01:54.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 宣布 DevDay 2026 将于 9 月 29 日回到旧金山举办，注册预告页与邮件提醒登记同步上线。同时启动早鸟票创意竞赛：18 岁以上的合规参赛者用 GPT-5.5 与 Image Gen 构建作品即可争取早鸟票，规则与提交细节随官方公告释出。 OpenAI 在 openai.com/index/devday-2026/ 上线 DevDay 2026 预告页，提示活动将于 9 月 29 日在旧金山举办，并开放邮件提醒登记，让感兴趣的开发者在报名通道开放时第一时间获知。页面侧栏列出近期模型如 GPT-5.5、GPT-5.4、GPT-5.3 Instant 与 GPT-5.3-Codex。",
+      "category": "商业动态",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "DevDay 2026",
+          "GPT-5.5",
+          "Image Gen",
+          "开发者活动"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2049535650626785334",
+            "title": "OpenAI 推出 DevDay 2026 早鸟票竞赛：用 GPT-5.5 与 Image Gen 构建作品",
+            "source": "OpenAI (Twitter)",
+            "angle": "早鸟票创意竞赛与官方规则"
+          }
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAI/status/2049534651702956103",
+          "https://x.com/OpenAI/status/2049534663329485141"
+        ]
+      }
+    },
+    "2d2ed82ced29bc6622259084a73d640dbfab49a4bbe3da26f3f16c9f72f9c423": {
+      "title": "Anthropic Claude Code 黑客松落幕：Opus 4.7 一周构建作品揭晓",
+      "url": "https://x.com/claudeai/status/2049523899918934384",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-04-29T16:19:10.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Anthropic 在本周举办的 Claude Code 黑客松正式落幕，参赛者用 Opus 4.7 在一周内完成多类作品。其中 Idriss Benguezzou 与 Adam Hnaien 团队的 ARIA 摘得「最佳 Claude Managed Agents 应用」奖项——一个面向工业维护场景的智能工单代理。Anthropic 同步推出开发者通讯订阅入口，预告未来更多面向开发者的活动。",
+      "category": "商业动态",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "黑客松",
+          "Managed Agents",
+          "Opus 4.7",
+          "开发者社区"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/claudeai/status/2049523910173966597",
+            "title": "ARIA 获 Claude Managed Agents 最佳应用奖:智能维护工单系统",
+            "source": "Claude (Twitter)",
+            "angle": "ARIA 最佳应用奖与开发者通讯入口"
+          }
+        ]
+      }
+    },
+    "62db13be39d4e29b6a8924a241dea0830a4d603c0e17612810edce697991bce7": {
+      "title": "Codex 推出 0 美元席位费，按 Token 计费的团队定价",
+      "url": "https://x.com/OpenAIDevs/status/2049505143218217048",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-04-29T15:04:38.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 宣布 ChatGPT Business 与 Enterprise 客户在 6 月底前可零席位费添加 「Codex-only」 席位，仅按 Token 用量计费、无速率限制，便于在小团队内开展试点并按量扩张。同时将 ChatGPT Business 年付价格由 25 美元/席降至 20 美元/席，并对每位新加入并使用 Codex 的成员给予 100 美元额度（每团队最多 500 美元）。官方表示自 1 月以来 ChatGPT Business 与 Enterprise 内的 Codex 用户数已增长 6 倍，每周有超 200 万开发者使用 Codex。 作为 Codex 0 席位费推文的延续，OpenAI 详细说明 ChatGPT Business / Enterprise 团队可零席位费添加 Codex-only 席位，仅按 Token 用量计费，并配合 100-500 美元额度激励团队拓展。文章也确认 ChatGPT Business 年价从 25 美元降至 20 美元，并强调通过 Codex 桌面应用、Plugins、Automations 等让 Codex 更易嵌入现有系统。Notion、Ramp、Braintrust、Wasmer 等团队已在使用 Codex 加速工程工作流。",
+      "category": "商业动态",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "Codex",
+          "定价",
+          "企业版",
+          "ChatGPT Business"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAIDevs/status/2049505143218217048",
+          "https://x.com/OpenAIDevs/status/2049505154932887557"
+        ]
+      }
+    },
+    "180302e63d71fe712432d5edd6f81710b39fc0562549ecb5828b0def7e9c5541": {
+      "title": "OpenAI 发布《智能时代网络安全行动计划》：五大支柱普及 AI 防御",
+      "url": "https://openai.com/index/cybersecurity-in-the-intelligence-age",
+      "source": "OpenAI Blog",
+      "published_at": "2026-04-29T04:00:00.000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 发布《智能时代网络安全行动计划》，由与美联邦及州政府、主要商业机构的网安/国安专家访谈形成，围绕五个支柱展开：普及网络防御、政企协调、强化前沿网络能力安全、保留部署可见性与控制力、赋能用户自我防护。OpenAI 强调要为可信防御者构建基础设施，把 AI 防御工具广泛分发到社会信任行为者手中，与民主制度配合提升关键系统韧性。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "网络安全",
+          "AI 防御",
+          "国家安全",
+          "政策"
+        ]
+      }
+    },
+    "4b530327eb72c1329097c63e784859a88c2f2072db6d733a3ffaf791abcca78c": {
+      "title": "Hassabis 访韩：会见李在明总统、签署科技部 MoU 推动 AI 科研合作",
+      "url": "https://x.com/demishassabis/status/2049291051266142574",
+      "source": "Demis Hassabis (Twitter)",
+      "published_at": "2026-04-29T00:53:55.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Google DeepMind CEO Demis Hassabis 在首尔会见韩国总统李在明，就 AI 安全、产业政策等议题深度交流，是韩国新一届政府首次与前沿 AI 实验室高层的正式接触。同期 DeepMind 与韩国科技部（MSIT）签署谅解备忘录，将围绕 AI 基础研究、人才培养与本地科研项目展开合作；详细方案在 DeepMind 官博同步发布。 Demis Hassabis 在首尔行程相关推文中感叹 Google DeepMind 在 AlphaGo 之后十年仍在持续登上报纸头条。属于场景化的感想性发言，无具体技术或产品信息。",
+      "category": "商业动态",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Google DeepMind",
+          "韩国",
+          "AI 政策",
+          "Hassabis",
+          "国际合作"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/demishassabis/status/2049465379039416637",
+            "title": "DeepMind 与韩国科技部签署 MoU 推动 AI 科研合作",
+            "source": "Demis Hassabis (Twitter)",
+            "angle": "科技部 MoU 签署 + 官博细节"
+          }
+        ],
+        "thread_urls": [
+          "https://x.com/demishassabis/status/2049291051266142574",
+          "https://x.com/demishassabis/status/2049291054487409143"
+        ]
+      }
+    },
+    "0bd5003ea688093649849a991cc1fa44d61addc69a20f5b13aaedb77f1859b2a": {
+      "title": "深度拆解 Hermes Agent 四层记忆系统：缓存优先的冷热分离设计",
+      "url": "https://baoyu.io/blog/2026-04-29/manthanguptaa-2034849672985288957",
+      "source": "宝玉的分享",
+      "published_at": "2026-04-29T00:00:00.000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Manthan Gupta 阅读开源 Hermes Agent 源码，发现其拥有四套记忆系统：固化在 `MEMORY.md`（2200 字符）和 `USER.md`（1375 字符）的高度浓缩提示词记忆、SQLite 历史会话档加 `session_search` 工具、技能索引式程序记忆，以及可选的 Honcho 用户建模层。核心设计原则是「保持提示词稳定以利用缓存，其他繁杂信息交给工具」，会话压缩前还会先做一次「记忆冲刷」把关键事实落盘。相比 OpenClaw 的流水账日志，Hermes 强调记忆是「精选状态」而非「日记」，只保存偏好与稳定事实，不保存任务进度。",
+      "category": "教程与观点",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Hermes Agent",
+          "Agent 记忆",
+          "提示词缓存",
+          "OpenClaw",
+          "Honcho"
+        ]
+      }
+    },
+    "2a7a3d4e113c5c2ef1ddab6ffe9436f7665b27bf143f29a6b5e98108ae72dd0b": {
+      "title": "Claude Code 大文件写入「假死」问题已被定位",
+      "url": "https://x.com/trq212/status/2049252080892973563",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-04-28T22:19:04.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Thariq 表示自己心目中的「白鲸」bug——Claude Code 在写入大文件时偶尔看上去像卡死——团队认为已经定位到根因。这一问题长期困扰大文件编辑场景的用户，修复后将明显改善长内容写入时的体验确定感。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "大文件写入",
+          "Bug修复",
+          "Anthropic"
+        ],
+        "practice_suggestions": [
+          "如果之前因 Claude Code 大文件写入「假死」而养成手动中止重试的习惯，可在后续版本中重新尝试，问题预期将被修复。"
+        ]
+      }
+    },
+    "0b2c0cbbabe2f19e230c7bb6a52555fa8f50d96d9628d9f22d1a04c2d98f2797": {
+      "title": "Claude Code 修复粘贴与滚动体验:支持 Windows/Xcode 换行保留",
+      "url": "https://x.com/ClaudeDevs/status/2049228281308917990",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-04-28T20:44:29.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "新版 Claude Code 改进了终端交互细节:从 Windows 或 Xcode 粘贴的内容现在能保留换行符;终端 resize 时回滚缓冲不再重复显示;全屏模式下支持向上滚动浏览历史而不会被自动拉回底部。 Anthropic 在线程末尾再次强调持续投入 Claude Code 的可靠性与稳定性建设,后续仍有更多改进在路上。建议用户运行 `claude update` 获取最新修复,完整变更可在 code.claude.com/docs/en/changelog 查阅。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "终端体验",
+          "粘贴",
+          "滚动",
+          "Bug 修复"
+        ],
+        "practice_suggestions": [
+          "升级 CLI 后,在 Windows/Xcode 工作流中验证粘贴换行是否正确保留",
+          "尝试调整窗口大小或切换全屏,确认滚动行为符合预期"
+        ],
+        "thread_urls": [
+          "https://x.com/ClaudeDevs/status/2049228281308917990",
+          "https://x.com/ClaudeDevs/status/2049228282491814027"
+        ]
+      }
+    },
+    "97401c6a732f8818c4b414b005da4cf3c028949f6245127e5d9807bb5e5a6223": {
+      "title": "Berkeley RDI Agentic AI 周报：AgentX-AgentBeats 第二阶段冲刺 3 截止",
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-april-d82",
+      "source": "Berkeley RDI",
+      "published_at": "2026-04-29T16:02:31.524Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Berkeley RDI 发布 4 月 29 日 Agentic AI 周报，提醒 AgentX-AgentBeats 第二阶段冲刺 3 截止日期为 5 月 3 日，并公布 Sprint 1 获奖者。同时通告 Agentic AI Summit 早鸟票与赞助合作机会。",
+      "category": "教程与观点",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Berkeley RDI",
+          "AgentX",
+          "Agentic AI",
+          "黑客松",
+          "AgentBeats"
+        ]
+      }
+    },
+    "8f8a2141a9d8017ce9e9fa97dc6c8c2488e598f6f538051a2f73b60823b7b2e1": {
+      "title": "Altman 喊话：Codex 正在迎来「ChatGPT 时刻」",
+      "url": "https://x.com/sama/status/2049493609028923826",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-04-29T14:18:48.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Sam Altman 在推特上断言 Codex 正在迎来一个「ChatGPT 时刻」（随后自更正为玩笑式的「goblin moment」），暗示 Codex 用户量与口碑出现拐点级跃升。Altman 同步转发开发者反馈，强调 Codex 在用量耗尽情况下仍能坚持完成长任务，把 Agent 的自驱性作为核心卖点。 Altman 在前一条推文「Codex 正迎来 ChatGPT 时刻」之后自我回复，戏谑地说「我本意是 goblin moment（小妖精时刻），抱歉」。属于轻度玩梗，无实质信息。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "Codex",
+          "OpenAI",
+          "Agent",
+          "用户增长"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/sama/status/2049492646792757552",
+            "title": "Altman 转发：Codex 在用量耗尽后仍坚持完成长任务",
+            "source": "Sam Altman (Twitter)",
+            "angle": "Codex 用量耗尽后仍坚持完成长任务"
+          }
+        ],
+        "thread_urls": [
+          "https://x.com/sama/status/2049493609028923826",
+          "https://x.com/sama/status/2049493797114126484"
+        ]
+      }
+    },
+    "9f69991657a6410d9ddf3e0d176faf1e23175beacaa4c695ab75e538531885d1": {
+      "title": "DeepSeek-V4-Pro 75% 折扣延期至 5 月 31 日",
+      "url": "https://x.com/deepseek_ai/status/2049312932014813344",
+      "source": "DeepSeek (Twitter)",
+      "published_at": "2026-04-29T02:20:52.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "DeepSeek 宣布将 DeepSeek-V4-Pro API 75% 折扣延期至 2026 年 5 月 31 日 15:59 UTC。此前公告还提及该模型在 Claude Code 中可通过设置 「deepseek-v4-pro[1m]」 解锁 1M 上下文，并要求 OpenCode 升级到 v1.14.24+、OpenClaw 升级到 v2026.4.24+ 才能使用最新集成。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "DeepSeek",
+          "DeepSeek-V4-Pro",
+          "API 定价",
+          "折扣"
+        ]
+      }
+    },
+    "c919ab9aa6fb072f2408e3e9ac3bb0fe22c3862fc4098a4e3071bd31127f4b06": {
+      "title": "Experience AI 已培训 3 万教师、覆盖 290 万学生",
+      "url": "https://x.com/GoogleDeepMind/status/2049174330064470022",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-04-28T17:10:06.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Google DeepMind 公布 Experience AI 项目数据：93% 教育者表示培训提升了其 AI 概念知识，87% 表示更有信心讲授复杂主题；累计培训 3 万余名教师，并以 19 种语言覆盖 180 个国家共 290 万学生。 Google DeepMind 宣布 Experience AI 项目今年将扩张至拉丁美洲，目标到 2028 年培训 24,000 名教育者并覆盖 125 万学生，资金来自 Google.org 提供的 460 万美元支持。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Google DeepMind",
+          "AI 教育",
+          "Experience AI",
+          "数据"
+        ],
+        "thread_urls": [
+          "https://x.com/GoogleDeepMind/status/2049174330064470022",
+          "https://x.com/GoogleDeepMind/status/2049174334057611585"
+        ]
+      }
+    },
+    "39519cb80899e9979f919bb0023a80c6ed486217b17d521bd6bc1139f98c7bad": {
+      "title": "OpenAI Devs 转发回归推文：「我们回来了」",
+      "url": "https://x.com/OpenAIDevs/status/2049535440617967754",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-04-29T17:05:02.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 开发者账号转发官方 DevDay 2026 回归公告，配文「We're so back.」表达对活动重启的兴奋。该推文本身不含新增信息，仅为开发者团队对官方公告的呼应。",
+      "category": "商业动态",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "DevDay 2026",
+          "转发"
+        ]
+      }
+    },
+    "1642d02f9e9019b9d7dec90903419aae5a8355e3340159f75f2f4a30690ae1f2": {
+      "title": "Altman 发布仅含图片链接的推文",
+      "url": "https://x.com/sama/status/2049314532892475791",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-04-29T02:27:13.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "Altman 发了一条仅包含 t.co 图片短链的推文，无文字内容、无引用、无回复对象，正文不可解析。属于低信噪片段。 Sam Altman 在自家推文回复中调侃同事「mogmogging」，并提示「享受接下来的几次更新」。这是一条暗示 OpenAI 即将连续放出新功能或新模型的预告性发言，未提供具体内容。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "推文"
+        ],
+        "thread_urls": [
+          "https://x.com/sama/status/2049314532892475791",
+          "https://x.com/sama/status/2049315574120055054"
+        ]
+      }
+    },
+    "42d534e64d41c8cdbff1b1ca286c44bf6e3efdc27da223384c8e098a8b72dc72": {
+      "title": "OpenAI 播客上线 Spotify、Apple Podcasts 与 YouTube 三大平台",
+      "url": "https://x.com/OpenAI/status/2049182122099798209",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-04-28T17:41:04.000000Z",
+      "fetched_at": "2026-04-30T09:00:04+08:00",
+      "summary": "OpenAI 公布其官方播客在 Spotify、Apple Podcasts 与 YouTube 的收听链接，方便听众在不同平台订阅最新一期围绕 AI 与数学研究的对谈节目。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "播客",
+          "分发渠道"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAI/status/2049182122099798209"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-04-29T08:50:39+08:00"
+  "last_fetch": "2026-04-30T09:00:04+08:00"
 }

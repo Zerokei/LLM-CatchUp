@@ -5,8 +5,261 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 29 Apr 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-04-30</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-30.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-30.md</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-30</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>Claude Code 全面迭代</strong>：Platform Skill 内置触发 Claude API 最佳实践，CLI 近四个版本累计 50+ 稳定性与性能修复。</li>
+<li><strong>OpenAI DevDay 2026 定档</strong>：9 月 29 日重返旧金山，早鸟票创意竞赛要求参赛者用 GPT-5.5 与 Image Gen 构建作品。</li>
+<li><strong>Codex 与 Responses API 同日扩能</strong>：Codex 推出 0 美元团队席位与 Figma 插件，Responses API 引入 WebSocket 让 Agent 工作流端到端提速 40%。</li>
+<li><strong>AI 攻入科研「研究员席」</strong>：Anthropic BioMysteryBench 实测 Claude 已达生信专家水平，GPT-5.4 Pro 协助破解 60 年悬而未决的 Erdős 难题。</li>
+<li><strong>底层算子继续开源化</strong>：Qwen 释出 FlashQLA 线性注意力内核，瞄准端侧与长上下文 Agent 的算力底座。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/OpenAIDevs/status/2049595890395152728">Responses API 引入 WebSocket 模式，Agent 工作流端到端提速 40%</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Responses API</code> <code>WebSocket</code> <code>Codex</code> <code>推理加速</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在 Responses API 中引入 WebSocket 模式，通过持久连接缓存对话状态，避免每次工具调用都重传完整历史，从而将 Agent 端到端速度提升约 40%。配合为 GPT-5.3-Codex-Spark 准备的 Cerebras 硬件，推理速度从 65 TPS 提升至 1000 TPS（峰值 4000 TPS）。开发者无需改变 API 形态，只需通过 「previous_response_id」 在同一连接上延续上下文；Vercel AI SDK、Cline、Cursor 等已实测获得 30-40% 的提速。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>将 Codex 类长链路 Agent 应用切换到 Responses API 的 WebSocket 模式，并通过 previous_response_id 复用会话状态。</li>
+<li>在长上下文或多工具循环场景中评估端到端延迟，优先迁移高频工具调用路径。</li>
+<li>若使用 Vercel AI SDK、Cline 等下游集成，升级到已支持 WebSocket 模式的版本以获得直接收益。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/AnthropicAI/status/2049576143653929153">Anthropic Fellows 推出「内省适配器」,让模型自报训练中习得行为</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic Fellows</code> <code>内省适配器</code> <code>对齐</code> <code>后门检测</code> <code>安全研究</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic Fellows 最新研究提出「introspection adapters」(内省适配器):一种可让语言模型自我报告训练中习得行为(包括潜在错位)的工具。引用的研究表明,单一内省适配器在微调模型上即可泛化到检测隐藏错位、后门以及安全防护被移除等场景。</p>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2049575802568839648">Claude Code 内置 Claude Platform Skill：自然语言驱动 API 集成与最佳实践</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Claude Platform</code> <code>Skill</code> <code>API</code> <code>SDK</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 现内置一个名为 Claude Platform 的官方 Skill：开发者可用自然语言（如「为这个项目添加 prompt caching」）触发，由 Skill 自动套用 Claude API 的最佳实践。Skill 完全开源，覆盖 Claude SDK 在七种语言下的实现，并支持多家第三方框架的集成路径，把官方做法直接搬到日常编码工作流中。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2049575806620639325">通过自然语言指令即可触发 Claude Platform Skill</a> · Claude Devs (Twitter) · 自然语言触发 + 七语言 SDK 全开源</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Claude Code 中尝试「Add prompt caching with the Claude API」自然语言指令，让 Skill 自动改写代码。</li>
+<li>查阅开源 Skill 仓库，确认你常用语言（七种 SDK 之一）的迁移与集成模板，复用而不是重写。</li>
+<li>将 Claude Platform Skill 纳入团队规范：新接 Claude API 项目优先走 Skill 模板，避免踩 caching/agents/connectors 的常见坑。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/Alibaba_Qwen/status/2049462666734026923">Qwen 开源 FlashQLA：TileLang 实现的高性能线性注意力内核</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Qwen</code> <code>FlashQLA</code> <code>TileLang</code> <code>线性注意力</code> <code>开源</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 团队开源 FlashQLA——一组基于 TileLang 构建的高性能线性注意力内核，目标是在常见配置下显著降低长序列前向与反向算力开销。仓库给出的基准结果展示 FlashQLA 相对常用基线在多种配置下的吞吐与显存优势，定位为端侧/长上下文 Agent 的底层算子库。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2049462758211772663">Qwen 发布 FlashQLA：基于 TileLang 的高性能线性注意力内核</a> · Qwen (Twitter) · TileLang 实现 + 前后向基准结果</li>
+</ul>
+<hr>
+<h3>5. <a href="https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering">Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Karpathy</code> <code>Vibe Coding</code> <code>Agentic Engineering</code> <code>Software 3.0</code> <code>RL</code></li>
+</ul>
+<p><strong>摘要</strong>: Karpathy 在 Sequoia AI Ascent 访谈中称 2025 年 12 月起 AI 生成代码已不再需要人工修补，进入完全 Vibe Coding 状态，并提出 Software 3.0 即「向 LLM 解释器复制粘贴上下文」的新范式。他用 MenuGen 案例说明许多 App 会被模型原生能力直接吞掉，并指出 LLM 是「锯齿状智能」——能重构十万行代码却答错洗车常识题，能力分布取决于实验室 RL 数据决策。Vibe Coding 抬高所有人做软件的下限，Agentic Engineering 则负责在 Agent 加速时守住质量、安全和规格设计的上限。</p>
+<hr>
+<h3>6. <a href="https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench">Anthropic 推 BioMysteryBench：Claude 在生信任务上已达专家水平</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>BioMysteryBench</code> <code>生物信息学</code> <code>科学评测</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic discovery 团队发布 BioMysteryBench，由领域专家基于真实生物数据撰写 99 道有客观答案的生信题目，让 Claude 在容器中自主下载工具、访问 NCBI/Ensembl 完成分析。结果显示 Claude 各代能力快速提升，在 76 道人类可解题上接近甚至超越专家面板，而 Claude Mythos 在 23 道「人类难解」题上达到约 30% 解题率。Claude 常用的两类策略是「调用海量预训练知识做元分析」与「不确定时多方法交叉验证」，但难题的成功多为低稳定性「侥幸路径」。</p>
+<hr>
+<h3>7. <a href="https://x.com/trq212/status/2049234228290961690">Claude Code 团队最近四个版本累计修复 50+ 稳定性与性能问题</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>性能优化</code> <code>稳定性</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 工程师 Thariq 转发 ClaudeDevs 官方推文确认：Claude Code CLI 在最近四次发布中已累计修复 50 余项稳定性与性能问题，包括更快的 resume、更稳的鉴权、更低的内存占用与更少的卡顿。他还表示团队正在专项「狩猎」最棘手的 bug，并向社区征集仍未解决的「白鲸」问题。 Thariq 透露 Claude Code 团队正在打磨「无闪烁渲染器」（no flicker renderer），目标是把它作为默认渲染器发布，未来将有更多更新。除此之外还会持续修复其他「papercut」类小痛点。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>升级到最新版 Claude Code CLI 以获取最近四个版本累计的 50+ 项稳定性与性能修复，尤其是 resume、鉴权与内存占用相关改进。</li>
+<li>如果在使用中遇到长期未被解决的体验问题，可在该推文下回复你的「白鲸」case，团队正在主动收集疑难 bug。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>8. <a href="https://x.com/OpenAIDevs/status/2049605820351230158">Codex 接入 Figma 插件，可将实现计划转为 FigJam 可视化白板</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Figma</code> <code>FigJam</code> <code>MCP</code> <code>可视化</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 宣布 Codex 通过 Figma 插件，可以把实现计划直接生成为 FigJam 上的可视化白板。引用的 Figma 官方推文进一步说明 MCP 在 FigJam 中的更新：包括 「generate_diagram」 用于生成架构图与 ERD、「figma-use-figjam」 技能用于直接在白板添加注释与代码块，以及 「get_figjam」 工具用于读取白板并规划下一步。这让 Codex 不再只是读写代码，还可以同步可视化系统设计。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Figma 中安装最新 MCP 插件，并在 Codex 实现计划生成后调用 generate_diagram 自动产出架构图。</li>
+<li>结合 figma-use-figjam 技能让团队的设计与代码评审在同一块 FigJam 板上进行。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>9. <a href="https://x.com/OpenAI/status/2049583167406064115">OpenAI 集中推广 Codex 用例：研究、表格、幻灯片、迁移到 GPT-5.5</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>OpenAI</code> <code>用例</code> <code>GPT-5.5</code> <code>生产力</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 与 OpenAI Devs 同日发起 Codex 全场景用法推广：覆盖研究整理、数据导出分析、自定义标准下的方案对比、表格幻灯片与摘要起草等日常生产工作。OpenAI Devs 还给出一个具体落地路径——让 Codex 一键将现有仓库升级到 GPT-5.5，把模型迁移这件事直接交给 Agent。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2049583308305252620">Codex 用例：分析数据导出、标注变化并起草解读报告</a> · OpenAI (Twitter) · 数据分析与方案对比示例</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>挑一个数据分析或方案选型场景，用 Codex 跑一次「分析→标注变化→起草解读」的端到端流程，对比手工成本。</li>
+<li>在升级到 GPT-5.5 前，先让 Codex 自动改写仓库中的模型字符串与 prompt 调用，再人工 review。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>10. <a href="https://x.com/OpenAI/status/2049534651702956103">OpenAI DevDay 2026 定档 9 月 29 日旧金山，早鸟票创意竞赛同步开放</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>DevDay 2026</code> <code>GPT-5.5</code> <code>Image Gen</code> <code>开发者活动</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布 DevDay 2026 将于 9 月 29 日回到旧金山举办，注册预告页与邮件提醒登记同步上线。同时启动早鸟票创意竞赛：18 岁以上的合规参赛者用 GPT-5.5 与 Image Gen 构建作品即可争取早鸟票，规则与提交细节随官方公告释出。 OpenAI 在 openai.com/index/devday-2026/ 上线 DevDay 2026 预告页，提示活动将于 9 月 29 日在旧金山举办，并开放邮件提醒登记，让感兴趣的开发者在报名通道开放时第一时间获知。页面侧栏列出近期模型如 GPT-5.5、GPT-5.4、GPT-5.3 Instant 与 GPT-5.3-Codex。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2049535650626785334">OpenAI 推出 DevDay 2026 早鸟票竞赛：用 GPT-5.5 与 Image Gen 构建作品</a> · OpenAI (Twitter) · 早鸟票创意竞赛与官方规则</li>
+</ul>
+<hr>
+<h3>11. <a href="https://x.com/claudeai/status/2049523899918934384">Anthropic Claude Code 黑客松落幕：Opus 4.7 一周构建作品揭晓</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>黑客松</code> <code>Managed Agents</code> <code>Opus 4.7</code> <code>开发者社区</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 在本周举办的 Claude Code 黑客松正式落幕，参赛者用 Opus 4.7 在一周内完成多类作品。其中 Idriss Benguezzou 与 Adam Hnaien 团队的 ARIA 摘得「最佳 Claude Managed Agents 应用」奖项——一个面向工业维护场景的智能工单代理。Anthropic 同步推出开发者通讯订阅入口，预告未来更多面向开发者的活动。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2049523910173966597">ARIA 获 Claude Managed Agents 最佳应用奖:智能维护工单系统</a> · Claude (Twitter) · ARIA 最佳应用奖与开发者通讯入口</li>
+</ul>
+<hr>
+<h3>12. <a href="https://x.com/OpenAIDevs/status/2049505143218217048">Codex 推出 0 美元席位费，按 Token 计费的团队定价</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Codex</code> <code>定价</code> <code>企业版</code> <code>ChatGPT Business</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布 ChatGPT Business 与 Enterprise 客户在 6 月底前可零席位费添加 「Codex-only」 席位，仅按 Token 用量计费、无速率限制，便于在小团队内开展试点并按量扩张。同时将 ChatGPT Business 年付价格由 25 美元/席降至 20 美元/席，并对每位新加入并使用 Codex 的成员给予 100 美元额度（每团队最多 500 美元）。官方表示自 1 月以来 ChatGPT Business 与 Enterprise 内的 Codex 用户数已增长 6 倍，每周有超 200 万开发者使用 Codex。 作为 Codex 0 席位费推文的延续，OpenAI 详细说明 ChatGPT Business / Enterprise 团队可零席位费添加 Codex-only 席位，仅按 Token 用量计费，并配合 100-500 美元额度激励团队拓展。文章也确认 ChatGPT Business 年价从 25 美元降至 20 美元，并强调通过 Codex 桌面应用、Plugins、Automations 等让 Codex 更易嵌入现有系统。Notion、Ramp、Braintrust、Wasmer 等团队已在使用 Codex 加速工程工作流。</p>
+<hr>
+<h3>13. <a href="https://openai.com/index/cybersecurity-in-the-intelligence-age">OpenAI 发布《智能时代网络安全行动计划》：五大支柱普及 AI 防御</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>网络安全</code> <code>AI 防御</code> <code>国家安全</code> <code>政策</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布《智能时代网络安全行动计划》，由与美联邦及州政府、主要商业机构的网安/国安专家访谈形成，围绕五个支柱展开：普及网络防御、政企协调、强化前沿网络能力安全、保留部署可见性与控制力、赋能用户自我防护。OpenAI 强调要为可信防御者构建基础设施，把 AI 防御工具广泛分发到社会信任行为者手中，与民主制度配合提升关键系统韧性。</p>
+<hr>
+<h3>14. <a href="https://x.com/demishassabis/status/2049291051266142574">Hassabis 访韩：会见李在明总统、签署科技部 MoU 推动 AI 科研合作</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>韩国</code> <code>AI 政策</code> <code>Hassabis</code> <code>国际合作</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind CEO Demis Hassabis 在首尔会见韩国总统李在明，就 AI 安全、产业政策等议题深度交流，是韩国新一届政府首次与前沿 AI 实验室高层的正式接触。同期 DeepMind 与韩国科技部（MSIT）签署谅解备忘录，将围绕 AI 基础研究、人才培养与本地科研项目展开合作；详细方案在 DeepMind 官博同步发布。 Demis Hassabis 在首尔行程相关推文中感叹 Google DeepMind 在 AlphaGo 之后十年仍在持续登上报纸头条。属于场景化的感想性发言，无具体技术或产品信息。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/demishassabis/status/2049465379039416637">DeepMind 与韩国科技部签署 MoU 推动 AI 科研合作</a> · Demis Hassabis (Twitter) · 科技部 MoU 签署 + 官博细节</li>
+</ul>
+<hr>
+<h3>15. <a href="https://baoyu.io/blog/2026-04-29/manthanguptaa-2034849672985288957">深度拆解 Hermes Agent 四层记忆系统：缓存优先的冷热分离设计</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Hermes Agent</code> <code>Agent 记忆</code> <code>提示词缓存</code> <code>OpenClaw</code> <code>Honcho</code></li>
+</ul>
+<p><strong>摘要</strong>: Manthan Gupta 阅读开源 Hermes Agent 源码，发现其拥有四套记忆系统：固化在 <code>MEMORY.md</code>（2200 字符）和 <code>USER.md</code>（1375 字符）的高度浓缩提示词记忆、SQLite 历史会话档加 <code>session_search</code> 工具、技能索引式程序记忆，以及可选的 Honcho 用户建模层。核心设计原则是「保持提示词稳定以利用缓存，其他繁杂信息交给工具」，会话压缩前还会先做一次「记忆冲刷」把关键事实落盘。相比 OpenClaw 的流水账日志，Hermes 强调记忆是「精选状态」而非「日记」，只保存偏好与稳定事实，不保存任务进度。</p>
+<hr>
+<h3>16. <a href="https://x.com/trq212/status/2049252080892973563">Claude Code 大文件写入「假死」问题已被定位</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>大文件写入</code> <code>Bug修复</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Thariq 表示自己心目中的「白鲸」bug——Claude Code 在写入大文件时偶尔看上去像卡死——团队认为已经定位到根因。这一问题长期困扰大文件编辑场景的用户，修复后将明显改善长内容写入时的体验确定感。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>如果之前因 Claude Code 大文件写入「假死」而养成手动中止重试的习惯，可在后续版本中重新尝试，问题预期将被修复。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>17. <a href="https://x.com/ClaudeDevs/status/2049228281308917990">Claude Code 修复粘贴与滚动体验:支持 Windows/Xcode 换行保留</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>终端体验</code> <code>粘贴</code> <code>滚动</code> <code>Bug 修复</code></li>
+</ul>
+<p><strong>摘要</strong>: 新版 Claude Code 改进了终端交互细节:从 Windows 或 Xcode 粘贴的内容现在能保留换行符;终端 resize 时回滚缓冲不再重复显示;全屏模式下支持向上滚动浏览历史而不会被自动拉回底部。 Anthropic 在线程末尾再次强调持续投入 Claude Code 的可靠性与稳定性建设,后续仍有更多改进在路上。建议用户运行 <code>claude update</code> 获取最新修复,完整变更可在 code.claude.com/docs/en/changelog 查阅。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>升级 CLI 后,在 Windows/Xcode 工作流中验证粘贴换行是否正确保留</li>
+<li>尝试调整窗口大小或切换全屏,确认滚动行为符合预期</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>Sam Altman</code> <code>Codex</code> <code>OpenAI</code> <code>Agent</code> <code>用户增长</code> — Sam Altman 在推特上断言 Codex 正在迎来一个「ChatGPT 时刻」（随后自更正为玩笑式的「goblin moment」），暗示 Codex 用户量与口碑出现拐点级跃升。Altman 同步转发开发者反馈，强调 Codex 在用量耗尽情况下仍能坚持完成长任务，把 Agent 的自驱性作为核心卖点。 Altman 在前一条推文「Codex 正迎来 ChatGPT 时刻」之后自我回复，戏谑地说「我本意是 goblin moment（小妖精时刻），抱歉」。属于轻度玩梗，无实质信息。 · <a href="https://x.com/sama/status/2049493609028923826">Sam Altman (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>DeepSeek</code> <code>DeepSeek-V4-Pro</code> <code>API 定价</code> <code>折扣</code> — DeepSeek 宣布将 DeepSeek-V4-Pro API 75% 折扣延期至 2026 年 5 月 31 日 15:59 UTC。此前公告还提及该模型在 Claude Code 中可通过设置 「deepseek-v4-pro[1m]」 解锁 1M 上下文，并要求 OpenCode 升级到 v1.14.24+、OpenClaw 升级到 v2026.4.24+ 才能使用最新集成。 · <a href="https://x.com/deepseek_ai/status/2049312932014813344">DeepSeek (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Google DeepMind</code> <code>AI 教育</code> <code>Experience AI</code> <code>数据</code> — Google DeepMind 公布 Experience AI 项目数据：93% 教育者表示培训提升了其 AI 概念知识，87% 表示更有信心讲授复杂主题；累计培训 3 万余名教师，并以 19 种语言覆盖 180 个国家共 290 万学生。 Google DeepMind 宣布 Experience AI 项目今年将扩张至拉丁美洲，目标到 2028 年培训 24,000 名教育者并覆盖 125 万学生，资金来自 Google.org 提供的 460 万美元支持。 · <a href="https://x.com/GoogleDeepMind/status/2049174330064470022">Google DeepMind (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-04-29</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-29.html</link>
