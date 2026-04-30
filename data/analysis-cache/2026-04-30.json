@@ -1,0 +1,932 @@
+{
+  "analyzed_at": "2026-04-30T09:00:04+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-04-30.json",
+  "trend_paragraph": "- **Claude Code 全面迭代**：Platform Skill 内置触发 Claude API 最佳实践，CLI 近四个版本累计 50+ 稳定性与性能修复。\n- **OpenAI DevDay 2026 定档**：9 月 29 日重返旧金山，早鸟票创意竞赛要求参赛者用 GPT-5.5 与 Image Gen 构建作品。\n- **Codex 与 Responses API 同日扩能**：Codex 推出 0 美元团队席位与 Figma 插件，Responses API 引入 WebSocket 让 Agent 工作流端到端提速 40%。\n- **AI 攻入科研「研究员席」**：Anthropic BioMysteryBench 实测 Claude 已达生信专家水平，GPT-5.4 Pro 协助破解 60 年悬而未决的 Erdős 难题。\n- **底层算子继续开源化**：Qwen 释出 FlashQLA 线性注意力内核，瞄准端侧与长上下文 Agent 的算力底座。",
+  "articles": [
+    {
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-april-d82",
+      "source": "Berkeley RDI",
+      "title": "Berkeley RDI Agentic AI 周报：AgentX-AgentBeats 第二阶段冲刺 3 截止",
+      "summary": "Berkeley RDI 发布 4 月 29 日 Agentic AI 周报，提醒 AgentX-AgentBeats 第二阶段冲刺 3 截止日期为 5 月 3 日，并公布 Sprint 1 获奖者。同时通告 Agentic AI Summit 早鸟票与赞助合作机会。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Berkeley RDI",
+        "AgentX",
+        "Agentic AI",
+        "黑客松",
+        "AgentBeats"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/openai-and-microsoft-sever-their-exclusive-relationship/",
+      "source": "The Batch",
+      "title": "The Batch 周报：OpenAI 解除微软独家、DeepSeek V4 表现平庸、Google/Amazon 加注 Anthropic",
+      "summary": "OpenAI 与微软修订合作：微软仍是主要云伙伴至 2032 年，但 OpenAI 模型可在 AWS、Google Cloud 等平台分发，AGI 终止条款被取消。DeepSeek V4 推出 1.6T 总参/49B 激活的 Pro Preview，针对华为昇腾优化，但在 Artificial Analysis 智能指数上落后于 Kimi K2.6、Xiaomi MiMo-V2.5-Pro 与 Qwen3.6。Google 承诺向 Anthropic 投资最高 400 亿美元、Amazon 追加 250 亿美元；另有 Verkor 用 Agent 在 12 小时内自动设计出 1.48GHz RISC-V CPU。",
+      "category": "商业动态",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "微软",
+        "DeepSeek V4",
+        "Anthropic",
+        "云合作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering",
+      "source": "宝玉的分享",
+      "title": "Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限",
+      "summary": "Karpathy 在 Sequoia AI Ascent 访谈中称 2025 年 12 月起 AI 生成代码已不再需要人工修补，进入完全 Vibe Coding 状态，并提出 Software 3.0 即「向 LLM 解释器复制粘贴上下文」的新范式。他用 MenuGen 案例说明许多 App 会被模型原生能力直接吞掉，并指出 LLM 是「锯齿状智能」——能重构十万行代码却答错洗车常识题，能力分布取决于实验室 RL 数据决策。Vibe Coding 抬高所有人做软件的下限，Agentic Engineering 则负责在 Agent 加速时守住质量、安全和规格设计的上限。",
+      "category": "教程与观点",
+      "importance": 4,
+      "tags": [
+        "Karpathy",
+        "Vibe Coding",
+        "Agentic Engineering",
+        "Software 3.0",
+        "RL"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://baoyu.io/blog/2026-04-29/manthanguptaa-2034849672985288957",
+      "source": "宝玉的分享",
+      "title": "深度拆解 Hermes Agent 四层记忆系统：缓存优先的冷热分离设计",
+      "summary": "Manthan Gupta 阅读开源 Hermes Agent 源码，发现其拥有四套记忆系统：固化在 `MEMORY.md`（2200 字符）和 `USER.md`（1375 字符）的高度浓缩提示词记忆、SQLite 历史会话档加 `session_search` 工具、技能索引式程序记忆，以及可选的 Honcho 用户建模层。核心设计原则是「保持提示词稳定以利用缓存，其他繁杂信息交给工具」，会话压缩前还会先做一次「记忆冲刷」把关键事实落盘。相比 OpenClaw 的流水账日志，Hermes 强调记忆是「精选状态」而非「日记」，只保存偏好与稳定事实，不保存任务进度。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Hermes Agent",
+        "Agent 记忆",
+        "提示词缓存",
+        "OpenClaw",
+        "Honcho"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/cybersecurity-in-the-intelligence-age",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 发布《智能时代网络安全行动计划》：五大支柱普及 AI 防御",
+      "summary": "OpenAI 发布《智能时代网络安全行动计划》，由与美联邦及州政府、主要商业机构的网安/国安专家访谈形成，围绕五个支柱展开：普及网络防御、政企协调、强化前沿网络能力安全、保留部署可见性与控制力、赋能用户自我防护。OpenAI 强调要为可信防御者构建基础设施，把 AI 防御工具广泛分发到社会信任行为者手中，与民主制度配合提升关键系统韧性。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "网络安全",
+        "AI 防御",
+        "国家安全",
+        "政策"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench",
+      "source": "Anthropic Research",
+      "title": "Anthropic 推 BioMysteryBench：Claude 在生信任务上已达专家水平",
+      "summary": "Anthropic discovery 团队发布 BioMysteryBench，由领域专家基于真实生物数据撰写 99 道有客观答案的生信题目，让 Claude 在容器中自主下载工具、访问 NCBI/Ensembl 完成分析。结果显示 Claude 各代能力快速提升，在 76 道人类可解题上接近甚至超越专家面板，而 Claude Mythos 在 23 道「人类难解」题上达到约 30% 解题率。Claude 常用的两类策略是「调用海量预训练知识做元分析」与「不确定时多方法交叉验证」，但难题的成功多为低稳定性「侥幸路径」。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "Claude",
+        "BioMysteryBench",
+        "生物信息学",
+        "科学评测"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049493609028923826",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 喊话：Codex 正在迎来「ChatGPT 时刻」",
+      "summary": "Sam Altman 在推特上断言 Codex 正在迎来一个「ChatGPT 时刻」（随后自更正为玩笑式的「goblin moment」），暗示 Codex 用户量与口碑出现拐点级跃升。Altman 同步转发开发者反馈，强调 Codex 在用量耗尽情况下仍能坚持完成长任务，把 Agent 的自驱性作为核心卖点。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "Codex",
+        "OpenAI",
+        "Agent",
+        "用户增长"
+      ],
+      "thread_group_id": "thread-sama-20260429-1418",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049493797114126484",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 自更正：本意是「goblin moment」",
+      "summary": "Altman 在前一条推文「Codex 正迎来 ChatGPT 时刻」之后自我回复，戏谑地说「我本意是 goblin moment（小妖精时刻），抱歉」。属于轻度玩梗，无实质信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "Codex",
+        "玩梗"
+      ],
+      "thread_group_id": "thread-sama-20260429-1418",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049492646792757552",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 转发：Codex 在用量耗尽后仍坚持完成长任务",
+      "summary": "Altman 引用用户 @Mugilan_SS 的反馈称赞 Codex 团队：与 Claude Code 不同，当用户在配额仅剩 8-10% 时下发超长任务，Codex 即便配额耗尽仍会坚持把任务跑完。Altman 表示「喜欢团队做这样的事」。这是对 Codex 工程取舍（任务完整性优先于硬性配额截断）的公开认可。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "AI 编程",
+        "配额策略"
+      ],
+      "practice_suggestions": [
+        "在使用 Codex 跑长任务时，可大胆在配额尾段下发，任务有较大概率被完整执行完毕。",
+        "对比 Claude Code 与 Codex 在「超出限额」时的行为差异，纳入团队工作流选择的评估维度。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/sama/status/2049493609028923826",
+      "angle": "Codex 用量耗尽后仍坚持完成长任务"
+    },
+    {
+      "url": "https://x.com/sama/status/2049314532892475791",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 发布仅含图片链接的推文",
+      "summary": "Altman 发了一条仅包含 t.co 图片短链的推文，无文字内容、无引用、无回复对象，正文不可解析。属于低信噪片段。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "推文"
+      ],
+      "thread_group_id": "thread-sama-20260429-0227",
+      "duplicate_of": "https://x.com/sama/status/2049235284655780000",
+      "angle": "预告未来几天密集推送更新"
+    },
+    {
+      "url": "https://x.com/sama/status/2049315574120055054",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 预告 OpenAI 接下来几天将密集推送更新",
+      "summary": "Sam Altman 在自家推文回复中调侃同事「mogmogging」，并提示「享受接下来的几次更新」。这是一条暗示 OpenAI 即将连续放出新功能或新模型的预告性发言，未提供具体内容。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Sam Altman",
+        "更新预告"
+      ],
+      "thread_group_id": "thread-sama-20260429-0227",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049241518540808440",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 发布仅含图片链接的推文",
+      "summary": "Sam Altman 发布了一条仅含 t.co 短链的推文，没有文字说明，附带的图片或视频未被抓取到正文中。属于低信号内容。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "Sam Altman",
+        "社媒"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049235284655780000",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 自夸 GPT-5.5 用户反响热烈，预告未来几天密集推送更新",
+      "summary": "Sam Altman 表示 GPT-5.5 上线后用户反响远超预期，正在与团队商量「做点什么来庆祝」；同时预告 OpenAI 接下来几天会有一系列密集更新连续推送。结合同期对 Codex 与 DevDay 的造势，构成 OpenAI 一波节奏明显的产品宣发窗口。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "GPT-5.5",
+        "OpenAI",
+        "产品宣发",
+        "更新预告"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2049291051266142574",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 访韩：会见李在明总统、签署科技部 MoU 推动 AI 科研合作",
+      "summary": "Google DeepMind CEO Demis Hassabis 在首尔会见韩国总统李在明，就 AI 安全、产业政策等议题深度交流，是韩国新一届政府首次与前沿 AI 实验室高层的正式接触。同期 DeepMind 与韩国科技部（MSIT）签署谅解备忘录，将围绕 AI 基础研究、人才培养与本地科研项目展开合作；详细方案在 DeepMind 官博同步发布。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "韩国",
+        "AI 政策",
+        "Hassabis",
+        "国际合作"
+      ],
+      "thread_group_id": "thread-demishassabis-20260429-0053",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2049465379039416637",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "DeepMind 与韩国科技部签署 MoU 推动 AI 科研合作",
+      "summary": "Demis Hassabis 宣布与韩国科学技术信息通信部（MSIT）合作，利用 AI 加速科学发现并培养韩国下一代 AI 人才。引用的韩国科技部长推文进一步披露双方在曾举办 AlphaGo 对决的四季酒店签署 MoU，重点覆盖科学技术合作、人才培养与 AI 安全三大方向。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "韩国MSIT",
+        "MoU",
+        "AI科研",
+        "AI安全"
+      ],
+      "thread_group_id": "thread-demishassabis-20260429-1226",
+      "duplicate_of": "https://x.com/demishassabis/status/2049291051266142574",
+      "angle": "科技部 MoU 签署 + 官博细节"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2049465381837013180",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "DeepMind 发布与韩国合作的官方博客详情",
+      "summary": "Demis Hassabis 在 MoU 公告的后续推文中给出官方博客链接 deepmind.google/blog/announcing-our-partnership-with-the-republic-of-korea/，作为合作公告的更多信息入口。补充信息性短推文，没有新增实质内容。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Google DeepMind",
+        "韩国",
+        "合作公告"
+      ],
+      "thread_group_id": "thread-demishassabis-20260429-1226",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2049291054487409143",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 感慨 DeepMind 在 AlphaGo 十年后仍登上头条",
+      "summary": "Demis Hassabis 在首尔行程相关推文中感叹 Google DeepMind 在 AlphaGo 之后十年仍在持续登上报纸头条。属于场景化的感想性发言，无具体技术或产品信息。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Google DeepMind",
+        "AlphaGo",
+        "Demis Hassabis"
+      ],
+      "thread_group_id": "thread-demishassabis-20260429-0053",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2049234228290961690",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 团队最近四个版本累计修复 50+ 稳定性与性能问题",
+      "summary": "Anthropic 工程师 Thariq 转发 ClaudeDevs 官方推文确认：Claude Code CLI 在最近四次发布中已累计修复 50 余项稳定性与性能问题，包括更快的 resume、更稳的鉴权、更低的内存占用与更少的卡顿。他还表示团队正在专项「狩猎」最棘手的 bug，并向社区征集仍未解决的「白鲸」问题。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "性能优化",
+        "稳定性",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "升级到最新版 Claude Code CLI 以获取最近四个版本累计的 50+ 项稳定性与性能修复，尤其是 resume、鉴权与内存占用相关改进。",
+        "如果在使用中遇到长期未被解决的体验问题，可在该推文下回复你的「白鲸」case，团队正在主动收集疑难 bug。"
+      ],
+      "thread_group_id": "thread-trq212-20260428-2108",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "angle": "Thariq 团队内部回顾"
+    },
+    {
+      "url": "https://x.com/trq212/status/2049234229926695188",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 计划将无闪烁渲染器作为默认渲染器",
+      "summary": "Thariq 透露 Claude Code 团队正在打磨「无闪烁渲染器」（no flicker renderer），目标是把它作为默认渲染器发布，未来将有更多更新。除此之外还会持续修复其他「papercut」类小痛点。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "终端渲染",
+        "用户体验",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "关注 Claude Code 后续 release notes 中关于「no flicker renderer」的切换公告，新默认渲染器将显著改善终端输出闪烁问题。",
+        "如果当前在使用中遇到细碎的 UI/输出小问题，可整理后反馈给团队，他们正在批量清理这类 papercut。"
+      ],
+      "thread_group_id": "thread-trq212-20260428-2108",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2049252080892973563",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 大文件写入「假死」问题已被定位",
+      "summary": "Thariq 表示自己心目中的「白鲸」bug——Claude Code 在写入大文件时偶尔看上去像卡死——团队认为已经定位到根因。这一问题长期困扰大文件编辑场景的用户，修复后将明显改善长内容写入时的体验确定感。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "大文件写入",
+        "Bug修复",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "如果之前因 Claude Code 大文件写入「假死」而养成手动中止重试的习惯，可在后续版本中重新尝试，问题预期将被修复。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "angle": "大文件写入「假死」根因定位"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049523899918934384",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic Claude Code 黑客松落幕：Opus 4.7 一周构建作品揭晓",
+      "summary": "Anthropic 在本周举办的 Claude Code 黑客松正式落幕，参赛者用 Opus 4.7 在一周内完成多类作品。其中 Idriss Benguezzou 与 Adam Hnaien 团队的 ARIA 摘得「最佳 Claude Managed Agents 应用」奖项——一个面向工业维护场景的智能工单代理。Anthropic 同步推出开发者通讯订阅入口，预告未来更多面向开发者的活动。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "黑客松",
+        "Managed Agents",
+        "Opus 4.7",
+        "开发者社区"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049523910173966597",
+      "source": "Claude (Twitter)",
+      "title": "ARIA 获 Claude Managed Agents 最佳应用奖:智能维护工单系统",
+      "summary": "来自法国的 Idriss Benguezzou 与 Adam Hnaien 凭借 ARIA 项目摘得「Claude Managed Agents 最佳应用奖」。该系统会读取机器手册,在故障发生时自动为技术员生成工单,并附带历史上有效的修复方案。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Claude Managed Agents",
+        "ARIA",
+        "工业维护",
+        "黑客松",
+        "智能体应用"
+      ],
+      "thread_group_id": "thread-claudeai-20260429-1619",
+      "duplicate_of": "https://x.com/claudeai/status/2049523899918934384",
+      "angle": "ARIA 最佳应用奖与开发者通讯入口"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049523911730028968",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 推开发者通讯订阅入口,预告未来黑客松",
+      "summary": "Anthropic 在黑客松宣传线程末尾呼吁感兴趣的开发者订阅其开发者通讯,以便第一时间获知未来类似活动信息。订阅入口位于 claude.com/newsletter/developers。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "开发者通讯",
+        "Anthropic",
+        "社区运营"
+      ],
+      "thread_group_id": "thread-claudeai-20260429-1619",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049575802568839648",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 内置 Claude Platform Skill：自然语言驱动 API 集成与最佳实践",
+      "summary": "Claude Code 现内置一个名为 Claude Platform 的官方 Skill：开发者可用自然语言（如「为这个项目添加 prompt caching」）触发，由 Skill 自动套用 Claude API 的最佳实践。Skill 完全开源，覆盖 Claude SDK 在七种语言下的实现，并支持多家第三方框架的集成路径，把官方做法直接搬到日常编码工作流中。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Claude Platform",
+        "Skill",
+        "API",
+        "SDK"
+      ],
+      "practice_suggestions": [
+        "在 Claude Code 中尝试「Add prompt caching with the Claude API」自然语言指令，让 Skill 自动改写代码。",
+        "查阅开源 Skill 仓库，确认你常用语言（七种 SDK 之一）的迁移与集成模板，复用而不是重写。",
+        "将 Claude Platform Skill 纳入团队规范：新接 Claude API 项目优先走 Skill 模板，避免踩 caching/agents/connectors 的常见坑。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049575806620639325",
+      "source": "Claude Devs (Twitter)",
+      "title": "通过自然语言指令即可触发 Claude Platform Skill",
+      "summary": "开发者无需手动配置,只需输入类似「Add prompt caching with the Claude API」这样的自然语言请求,Claude Code 即会自动触发 Claude Platform Skill 并应用对应的最佳实践代码改动。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "Skill",
+        "自然语言指令",
+        "prompt caching"
+      ],
+      "practice_suggestions": [
+        "使用「为我加上 prompt caching」等口语化指令验证 Skill 触发是否生效",
+        "将该 Skill 作为团队 API 接入的统一入口,减少最佳实践不一致"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260429-1945",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2049575802568839648",
+      "angle": "自然语言触发 + 七语言 SDK 全开源"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049575807845310578",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Platform Skill 全开源,覆盖 7 种语言 SDK 与多家第三方工具",
+      "summary": "该 Skill 已完全开源,覆盖 Claude 在七种编程语言下的 SDK 以及官方 CLI,同时也已集成进 CodeRabbit、JetBrains、Resolve AI 与 Warp 等第三方工具。详细工作原理见 claude.com/blog/claude-api-skill。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform Skill",
+        "开源",
+        "SDK",
+        "CodeRabbit",
+        "JetBrains"
+      ],
+      "practice_suggestions": [
+        "在 JetBrains、Warp 等已集成环境中直接启用该 Skill,避免重复配置",
+        "查阅官方博客了解 Skill 内部实现,以便为自家工具链定制类似 Skill",
+        "参考开源仓库,作为构建自有 Platform 类 Skill 的模板"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260429-1945",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 近四版本累计 50+ 修复，稳定性专项推进",
+      "summary": "Anthropic 在过去四个 Claude Code CLI 版本中累计推送了 50+ 项稳定性与性能修复，覆盖粘贴行为、滚动、渲染等长期高频痛点。Claude Code 团队成员 Thariq 同步给出更具体的两个里程碑：无闪烁渲染器即将作为默认选项推出，以及大文件写入时偶发的「假死」问题已被定位并提交修复。Anthropic 同时强调持续可靠性投入，并提示用户运行 `claude update` 拿到最新版本。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "稳定性",
+        "性能优化",
+        "渲染器",
+        "CLI"
+      ],
+      "practice_suggestions": [
+        "运行 `claude update` 升级到最新 Claude Code CLI，获取累计 50+ 修复与性能提升。",
+        "若曾遇到大文件写入卡顿或粘贴换行被破坏，先升级再复测，问题大概率已闭合。",
+        "在 GitHub 关注 Claude Code 仓库 Release Notes，跟踪「无闪烁渲染器」默认开启的版本节点。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049228281308917990",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 修复粘贴与滚动体验:支持 Windows/Xcode 换行保留",
+      "summary": "新版 Claude Code 改进了终端交互细节:从 Windows 或 Xcode 粘贴的内容现在能保留换行符;终端 resize 时回滚缓冲不再重复显示;全屏模式下支持向上滚动浏览历史而不会被自动拉回底部。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "终端体验",
+        "粘贴",
+        "滚动",
+        "Bug 修复"
+      ],
+      "practice_suggestions": [
+        "升级 CLI 后,在 Windows/Xcode 工作流中验证粘贴换行是否正确保留",
+        "尝试调整窗口大小或切换全屏,确认滚动行为符合预期"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-2044",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2049228273813750030",
+      "angle": "粘贴/滚动具体修复 + claude update 升级提示"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2049228282491814027",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic 强调持续改进 Claude Code 可靠性,呼吁运行 claude update",
+      "summary": "Anthropic 在线程末尾再次强调持续投入 Claude Code 的可靠性与稳定性建设,后续仍有更多改进在路上。建议用户运行 `claude update` 获取最新修复,完整变更可在 code.claude.com/docs/en/changelog 查阅。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "可靠性",
+        "更新",
+        "Changelog"
+      ],
+      "practice_suggestions": [
+        "定期运行 `claude update` 跟进最新修复",
+        "订阅或定期查阅官方 changelog,了解新增能力与已知问题"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260428-2044",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2049576143653929153",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic Fellows 推出「内省适配器」,让模型自报训练中习得行为",
+      "summary": "Anthropic Fellows 最新研究提出「introspection adapters」(内省适配器):一种可让语言模型自我报告训练中习得行为(包括潜在错位)的工具。引用的研究表明,单一内省适配器在微调模型上即可泛化到检测隐藏错位、后门以及安全防护被移除等场景。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Anthropic Fellows",
+        "内省适配器",
+        "对齐",
+        "后门检测",
+        "安全研究"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049535650626785334",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 推出 DevDay 2026 早鸟票竞赛：用 GPT-5.5 与 Image Gen 构建作品",
+      "summary": "OpenAI 启动 DevDay 2026 早鸟票活动：开发者可使用 GPT-5.5 与 Image Gen 构建作品参赛，每周由 Codex 协助筛选并由团队最终评选 2-3 名优胜者，赢得 9 月 29 日旧金山 DevDay 的免费门票。参赛者须在回复中带 #OpenAIDevDay2026 标签、附可玩链接以及构建说明。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "DevDay",
+        "GPT-5.5",
+        "Image Gen",
+        "开发者活动"
+      ],
+      "thread_group_id": "thread-OpenAI-20260429-1705",
+      "duplicate_of": "https://x.com/OpenAI/status/2049534651702956103",
+      "angle": "早鸟票创意竞赛与官方规则"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049583167406064115",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 集中推广 Codex 用例：研究、表格、幻灯片、迁移到 GPT-5.5",
+      "summary": "OpenAI 与 OpenAI Devs 同日发起 Codex 全场景用法推广：覆盖研究整理、数据导出分析、自定义标准下的方案对比、表格幻灯片与摘要起草等日常生产工作。OpenAI Devs 还给出一个具体落地路径——让 Codex 一键将现有仓库升级到 GPT-5.5，把模型迁移这件事直接交给 Agent。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "用例",
+        "GPT-5.5",
+        "生产力"
+      ],
+      "practice_suggestions": [
+        "挑一个数据分析或方案选型场景，用 Codex 跑一次「分析→标注变化→起草解读」的端到端流程，对比手工成本。",
+        "在升级到 GPT-5.5 前，先让 Codex 自动改写仓库中的模型字符串与 prompt 调用，再人工 review。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049583308305252620",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 用例：分析数据导出、标注变化并起草解读报告",
+      "summary": "OpenAI 演示 Codex 的具体用法之一：读取数据导出文件，自动标注其中的变化点，并协助起草后续解读报告。该用例聚焦数据分析师与运营场景的减负。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "数据分析",
+        "报告生成"
+      ],
+      "practice_suggestions": [
+        "将周期性的数据导出交给 Codex 做差异比对，再人工审核关键结论",
+        "用 Codex 生成数据解读初稿以加速汇报准备"
+      ],
+      "thread_group_id": "thread-OpenAI-20260429-2015",
+      "duplicate_of": "https://x.com/OpenAI/status/2049583167406064115",
+      "angle": "数据分析与方案对比示例"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049583379709124865",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 用例：基于自定义标准对比候选方案并跟踪权衡",
+      "summary": "OpenAI 推介 Codex 的另一项用法：根据用户给出的评估标准，对多个备选方案进行对比，并持续记录其中的权衡取舍，帮助用户在复杂决策中保持思路清晰。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "决策支持",
+        "方案评估"
+      ],
+      "practice_suggestions": [
+        "在选型或采购决策时让 Codex 维护一张对比表并自动更新权衡说明",
+        "把决策标准显式写入提示，便于 Codex 复用"
+      ],
+      "thread_group_id": "thread-OpenAI-20260429-2015",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049535662807023885",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI DevDay 2026 早鸟票竞赛官方规则",
+      "summary": "OpenAI 公布 DevDay 2026 票务竞赛的正式规则：参赛者须年满 18 岁，员工与直系亲属除外；获奖者将通过私信通知，须在 7 月 1 日前提交表格确认，奖品仅含门票，差旅食宿自理。多个受制裁地区的居民不具备参赛资格。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "DevDay",
+        "活动规则"
+      ],
+      "thread_group_id": "thread-OpenAI-20260429-1705",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049534651702956103",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI DevDay 2026 定档 9 月 29 日旧金山，早鸟票创意竞赛同步开放",
+      "summary": "OpenAI 宣布 DevDay 2026 将于 9 月 29 日回到旧金山举办，注册预告页与邮件提醒登记同步上线。同时启动早鸟票创意竞赛：18 岁以上的合规参赛者用 GPT-5.5 与 Image Gen 构建作品即可争取早鸟票，规则与提交细节随官方公告释出。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "DevDay 2026",
+        "GPT-5.5",
+        "Image Gen",
+        "开发者活动"
+      ],
+      "thread_group_id": "thread-OpenAI-20260429-1701",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049534663329485141",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI DevDay 2026 注册预告页上线，开放邮件提醒登记",
+      "summary": "OpenAI 在 openai.com/index/devday-2026/ 上线 DevDay 2026 预告页，提示活动将于 9 月 29 日在旧金山举办，并开放邮件提醒登记，让感兴趣的开发者在报名通道开放时第一时间获知。页面侧栏列出近期模型如 GPT-5.5、GPT-5.4、GPT-5.3 Instant 与 GPT-5.3-Codex。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "DevDay 2026",
+        "注册",
+        "开发者活动"
+      ],
+      "thread_group_id": "thread-OpenAI-20260429-1701",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049182118069358967",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 播客探讨 GPT-5.4 Pro 协助破解 60 年悬而未决的 Erdős 难题",
+      "summary": "本月早些时候，一道悬而未决长达 60 年的 Erdős 数学难题在 GPT-5.4 Pro 的辅助下被解决。OpenAI 研究员 Sebastien Bubeck 与 Ernest Ryu 做客 OpenAI 播客，与主持人 Andrew Mayne 讨论 AI 在数学领域的最新进展，以及它对未来研究范式的潜在影响。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "GPT-5.4 Pro",
+        "数学研究",
+        "Erdős 问题",
+        "播客"
+      ],
+      "thread_group_id": "thread-OpenAI-20260428-1741",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049182122099798209",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 播客上线 Spotify、Apple Podcasts 与 YouTube 三大平台",
+      "summary": "OpenAI 公布其官方播客在 Spotify、Apple Podcasts 与 YouTube 的收听链接，方便听众在不同平台订阅最新一期围绕 AI 与数学研究的对谈节目。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "播客",
+        "分发渠道"
+      ],
+      "thread_group_id": "thread-OpenAI-20260428-1741",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049535440617967754",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Devs 转发回归推文：「我们回来了」",
+      "summary": "OpenAI 开发者账号转发官方 DevDay 2026 回归公告，配文「We're so back.」表达对活动重启的兴奋。该推文本身不含新增信息，仅为开发者团队对官方公告的呼应。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "DevDay 2026",
+        "转发"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049605820351230158",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 接入 Figma 插件，可将实现计划转为 FigJam 可视化白板",
+      "summary": "OpenAI Devs 宣布 Codex 通过 Figma 插件，可以把实现计划直接生成为 FigJam 上的可视化白板。引用的 Figma 官方推文进一步说明 MCP 在 FigJam 中的更新：包括 「generate_diagram」 用于生成架构图与 ERD、「figma-use-figjam」 技能用于直接在白板添加注释与代码块，以及 「get_figjam」 工具用于读取白板并规划下一步。这让 Codex 不再只是读写代码，还可以同步可视化系统设计。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "Figma",
+        "FigJam",
+        "MCP",
+        "可视化"
+      ],
+      "practice_suggestions": [
+        "在 Figma 中安装最新 MCP 插件，并在 Codex 实现计划生成后调用 generate_diagram 自动产出架构图。",
+        "结合 figma-use-figjam 技能让团队的设计与代码评审在同一块 FigJam 板上进行。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049595890395152728",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Responses API 引入 WebSocket 模式，Agent 工作流端到端提速 40%",
+      "summary": "OpenAI 在 Responses API 中引入 WebSocket 模式，通过持久连接缓存对话状态，避免每次工具调用都重传完整历史，从而将 Agent 端到端速度提升约 40%。配合为 GPT-5.3-Codex-Spark 准备的 Cerebras 硬件，推理速度从 65 TPS 提升至 1000 TPS（峰值 4000 TPS）。开发者无需改变 API 形态，只需通过 「previous_response_id」 在同一连接上延续上下文；Vercel AI SDK、Cline、Cursor 等已实测获得 30-40% 的提速。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Responses API",
+        "WebSocket",
+        "Codex",
+        "推理加速"
+      ],
+      "practice_suggestions": [
+        "将 Codex 类长链路 Agent 应用切换到 Responses API 的 WebSocket 模式，并通过 previous_response_id 复用会话状态。",
+        "在长上下文或多工具循环场景中评估端到端延迟，优先迁移高频工具调用路径。",
+        "若使用 Vercel AI SDK、Cline 等下游集成，升级到已支持 WebSocket 模式的版本以获得直接收益。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049505143218217048",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 推出 0 美元席位费，按 Token 计费的团队定价",
+      "summary": "OpenAI 宣布 ChatGPT Business 与 Enterprise 客户在 6 月底前可零席位费添加 「Codex-only」 席位，仅按 Token 用量计费、无速率限制，便于在小团队内开展试点并按量扩张。同时将 ChatGPT Business 年付价格由 25 美元/席降至 20 美元/席，并对每位新加入并使用 Codex 的成员给予 100 美元额度（每团队最多 500 美元）。官方表示自 1 月以来 ChatGPT Business 与 Enterprise 内的 Codex 用户数已增长 6 倍，每周有超 200 万开发者使用 Codex。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "定价",
+        "企业版",
+        "ChatGPT Business"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260429-1504",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049505154932887557",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 团队按量计费方案落地，附加额度与价格调整",
+      "summary": "作为 Codex 0 席位费推文的延续，OpenAI 详细说明 ChatGPT Business / Enterprise 团队可零席位费添加 Codex-only 席位，仅按 Token 用量计费，并配合 100-500 美元额度激励团队拓展。文章也确认 ChatGPT Business 年价从 25 美元降至 20 美元，并强调通过 Codex 桌面应用、Plugins、Automations 等让 Codex 更易嵌入现有系统。Notion、Ramp、Braintrust、Wasmer 等团队已在使用 Codex 加速工程工作流。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "团队定价",
+        "按量计费",
+        "企业采用"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260429-1504",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2049254491132952882",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "可让 Codex 一键升级现有仓库到 GPT-5.5",
+      "summary": "OpenAI Devs 简短演示：开发者可以直接让 Codex 把已有仓库升级到 GPT-5.5。该推文未附带额外说明，主要意图是展示 Codex 在迁移与版本升级类任务上的可用性。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "GPT-5.5",
+        "代码迁移"
+      ],
+      "practice_suggestions": [
+        "在升级到 GPT-5.5 时，可让 Codex 自动扫描旧调用代码并改写至新模型，再人工 review 关键路径。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049583167406064115",
+      "angle": "一键升级仓库到 GPT-5.5"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2049174327124263379",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google DeepMind 与 Raspberry Pi 基金会 Experience AI 项目持续推进",
+      "summary": "Google DeepMind 介绍其与 Raspberry Pi 基金会自 2023 年起合作的 Experience AI 项目，向学生与教师免费提供帮助理解 AI 的资源。本条为系列推文的开篇，强调 AI 演进背景下教育也需同步跟进。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Google DeepMind",
+        "AI 教育",
+        "Experience AI",
+        "Raspberry Pi"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260428-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2049174330064470022",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Experience AI 已培训 3 万教师、覆盖 290 万学生",
+      "summary": "Google DeepMind 公布 Experience AI 项目数据：93% 教育者表示培训提升了其 AI 概念知识，87% 表示更有信心讲授复杂主题；累计培训 3 万余名教师，并以 19 种语言覆盖 180 个国家共 290 万学生。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Google DeepMind",
+        "AI 教育",
+        "Experience AI",
+        "数据"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260428-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2049174334057611585",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Experience AI 扩张至拉丁美洲，目标 2028 年覆盖 125 万学生",
+      "summary": "Google DeepMind 宣布 Experience AI 项目今年将扩张至拉丁美洲，目标到 2028 年培训 24,000 名教育者并覆盖 125 万学生，资金来自 Google.org 提供的 460 万美元支持。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Google DeepMind",
+        "AI 教育",
+        "拉丁美洲",
+        "Google.org"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260428-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/deepseek_ai/status/2049312932014813344",
+      "source": "DeepSeek (Twitter)",
+      "title": "DeepSeek-V4-Pro 75% 折扣延期至 5 月 31 日",
+      "summary": "DeepSeek 宣布将 DeepSeek-V4-Pro API 75% 折扣延期至 2026 年 5 月 31 日 15:59 UTC。此前公告还提及该模型在 Claude Code 中可通过设置 「deepseek-v4-pro[1m]」 解锁 1M 上下文，并要求 OpenCode 升级到 v1.14.24+、OpenClaw 升级到 v2026.4.24+ 才能使用最新集成。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "DeepSeek",
+        "DeepSeek-V4-Pro",
+        "API 定价",
+        "折扣"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2049462758211772663",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 发布 FlashQLA：基于 TileLang 的高性能线性注意力内核",
+      "summary": "Qwen 团队发布 FlashQLA，一套基于 TileLang 的高性能线性注意力内核，前向加速 2-3 倍、反向加速 2 倍，专为个人设备上的 Agent AI 优化。关键技术包括门控驱动的卡内自动 CP、硬件友好的代数重构，以及 TileLang 融合的 warp 专用内核；反向通过 16 阶段 warp 专用流水线在严格片上内存约束下实现 2 倍以上加速。在 TP 设置、小模型与长上下文工作负载下收益尤为明显，已在 GitHub 开源。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Qwen",
+        "FlashQLA",
+        "线性注意力",
+        "TileLang",
+        "推理加速"
+      ],
+      "thread_group_id": "thread-Alibaba_Qwen-20260429-1216",
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2049462666734026923",
+      "angle": "TileLang 实现 + 前后向基准结果"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2049462776247247310",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 公布 FlashQLA 在常见配置下的前后向基准结果",
+      "summary": "Qwen 团队在 FlashQLA 发布的延续推文中给出了在常见配置下的前向与反向传播基准对比。该结果作为 FlashQLA 主推文的补充,直观展示其在不同硬件与模型规模上的性能优势。",
+      "category": "研究",
+      "importance": 2,
+      "tags": [
+        "Qwen",
+        "FlashQLA",
+        "基准测试",
+        "线性注意力"
+      ],
+      "thread_group_id": "thread-Alibaba_Qwen-20260429-1216",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2049462666734026923",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 开源 FlashQLA：TileLang 实现的高性能线性注意力内核",
+      "summary": "Qwen 团队开源 FlashQLA——一组基于 TileLang 构建的高性能线性注意力内核，目标是在常见配置下显著降低长序列前向与反向算力开销。仓库给出的基准结果展示 FlashQLA 相对常用基线在多种配置下的吞吐与显存优势，定位为端侧/长上下文 Agent 的底层算子库。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Qwen",
+        "FlashQLA",
+        "TileLang",
+        "线性注意力",
+        "开源"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
