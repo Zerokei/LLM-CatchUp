@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-05-01 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-01" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-05-01</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>Codex 重大升级</strong>：OpenAI 推出 Codex for Work、Goal 自治功能与 Figma MCP 插件，将代码代理拓展为通用桌面办公 Agent。</li>
+<li><strong>Anthropic 开发者工具线</strong>：Claude Code 内置 Skills 并开源 7 种语言 SDK，Claude Security 同步进入企业版公测。</li>
+<li><strong>对齐与透明化</strong>：OpenAI 复盘 GPT-5「妖精」习语的奖励泛化根因，Anthropic 用 100 万对话实证 Claude 关系建议谄媚率 25%、并在 Opus 4.7 减半。</li>
+<li><strong>垂直前沿模型</strong>：OpenAI 即将向防御者发布 GPT-5.5-Cyber 网络安全模型，Google DeepMind 启动 AI co-clinician 双 Agent 临床助手研究。</li>
+<li><strong>AI 工程范式</strong>：Karpathy 在 Sequoia Ascent 提出从 vibe coding 升级到 agentic engineering，认为新工具栈是在「抬升上限」。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/OpenAI/status/2049928776147230886">Codex 重大升级：发布 Codex for Work，挺进非编码办公全场景</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Codex for Work</code> <code>Agent</code> <code>Figma 集成</code> <code>非编码场景</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 上线 chatgpt.com/codex/for-work 工作版入口，将 Codex 从纯编码助手扩展为通用职场代理：用户可选择角色、连接日常应用、使用建议提示词，并在同一对话线程中查看与迭代生成的文档、表格、幻灯片。新增 Goal 自治功能允许设定目标后让 Codex 持续规划/执行/测试直至完成，配套接入 Figma MCP 插件可将实现计划自动转为 FigJam 可视化白板（含 generate_diagram、figma-use-figjam、get_figjam 三套工具）。Sam Altman 同步发推称其为「重大升级」，强调适用于非编码电脑工作；OpenAI Devs 也以 Handshake/UC Berkeley 校园挑战赛推广其 Creator 路径。整体定位向「让工作更快」的通用桌面 Agent 演进。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2049928782019256561">Codex 支持线程内打开文件并迭代修改</a> · OpenAI (Twitter) · 线程内打开/编辑文件</li>
+<li><a href="https://x.com/OpenAI/status/2049583308305252620">Codex 用例：分析数据导出并起草变更说明</a> · OpenAI (Twitter) · 用例:数据分析与变更说明</li>
+<li><a href="https://x.com/sama/status/2049946120441520624">Altman预告Codex今日重大升级，可用于非编码电脑任务</a> · Sam Altman (Twitter) · Altman 重磅预告</li>
+<li><a href="https://x.com/sama/status/2049944981750833659">Altman肯定Codex新增goal功能</a> · Sam Altman (Twitter) · Goal 自治功能点评</li>
+<li><a href="https://x.com/OpenAIDevs/status/2049888218464870670">UC Berkeley 学生在 Codex Creator 挑战赛展示作品</a> · OpenAI Devs (Twitter) · 高校开发者推广案例</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>登录 chatgpt.com/codex/for-work 体验角色化提示词与同线程文件迭代</li>
+<li>用 Codex Goal 功能拆解多步任务，让其自治规划/执行/复检</li>
+<li>对设计协作流试用 Codex Figma MCP 插件，自动产出架构图与 FigJam 白板</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/karpathy/status/2049903821095354523">Karpathy 论 LLM 新范式与 Agent 原生经济</a></h3>
+<ul>
+<li><strong>来源</strong>: Andrej Karpathy (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Karpathy</code> <code>LLM 范式</code> <code>Agent</code> <code>Software 3.0</code> <code>Sequoia</code></li>
+</ul>
+<p><strong>摘要</strong>: Karpathy 在 Sequoia Ascent 2026 炉边谈话中,提出 LLM 不只是给已有任务提速,而是开启全新形态:menugen 这类完全由 LLM 承担逻辑的应用、用 .md 技能取代 .sh 脚本、以及对非结构化知识的计算。他进一步用「可验证性」和「经济回报决定 RL 训练分布」解释 LLM 能力的「锯齿状」分布,并展望由传感器/执行器/逻辑构成、信息对 LLM 最大可读化的 agent 原生经济。</p>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/claudeai/status/2049898739783897537">Claude Security 进入公测：企业版客户可一键扫描代码漏洞并自动建议补丁</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Security</code> <code>代码安全</code> <code>企业版</code> <code>漏洞扫描</code> <code>自动补丁</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 将 Claude Security 面向 Claude Enterprise 客户开放公测，由 Claude 扫描代码库发现漏洞、自验证以降低误报，并给出可审核/批准的补丁建议。基于 2 月研究预览以来数百家组织的生产反馈，新增定时扫描、目录级定向、CSV/Markdown 导出、新发现 Webhook 通知，以及跨扫描沿袭的 dismiss 机制。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2049898743772696745">Claude Security 新增定时扫描与导出等功能</a> · Claude (Twitter) · 扫描历史与新增功能</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>Claude Enterprise 客户进入 claude.com/product/claude-security 申请公测</li>
+<li>对核心仓库配置定时扫描 + Webhook 通知，把发现纳入既有工单流程</li>
+<li>用目录级定向先聚焦高敏感模块，再以 CSV/Markdown 导出对接安全团队复核</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/Alibaba_Qwen/status/2049861145574690992">阿里发布 Qwen-Scope：面向 Qwen 家族的开源稀疏自编码器套件</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Qwen</code> <code>稀疏自编码器</code> <code>可解释性</code> <code>开源</code> <code>SAE</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里通义团队发布 Qwen-Scope，一套面向 Qwen 模型家族的开源稀疏自编码器（SAE）套件，把可解释性研究工具落到工程实践。它支持四类用途：在推理阶段直接操纵内部特征以引导输出、用极少种子样本完成定向数据分类与合成、在训练阶段追溯并修复代码切换与重复生成、以及通过特征激活分析筛选评测基准。模型权重在 HuggingFace 与 ModelScope 同步开放，并附技术报告。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/sama/status/2049712078836170843">OpenAI将向关键防御者推出前沿网络安全模型GPT-5.5-Cyber</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>GPT-5.5-Cyber</code> <code>网络安全</code> <code>可信访问</code></li>
+</ul>
+<p><strong>摘要</strong>: Altman宣布OpenAI将在未来几天内开始向关键网络防御者推出前沿网络安全模型GPT-5.5-Cyber，并将与整个生态及政府合作建立可信访问机制，目标是快速帮助保护企业与关键基础设施的安全。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>关键基础设施与企业安全团队可关注OpenAI的Trusted Access for Cyber计划，评估申请GPT-5.5-Cyber的访问资格</li>
+<li>提前完善账户安全（启用Advanced Account Security/SSO+passkey），以满足前沿网安模型的访问门槛</li>
+<li>将GPT-5.5-Cyber与现有SOC、漏洞分析、事件响应流程结合做PoC，对比通用GPT-5.5在威胁分析上的差异</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/ClaudeDevs/status/2049644696260235413">Opus 4.7 Claude Code 黑客松收官:多智能体编排成主线</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Opus 4.7</code> <code>黑客松</code> <code>多智能体</code> <code>MCP</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 联合 Cerebral Valley 举办的「Built with Opus 4.7 Claude Code」黑客松落幕,500 名全球参赛者参与。官方将以线程形式介绍获奖作品如何组合多智能体编排、持久记忆、MCP 工具、沙箱执行与提示词设计等模式。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>关注获奖作品线程,学习多智能体编排 + 持久记忆 + MCP 工具的组合范式</li>
+<li>将沙箱执行作为 Claude Code 子任务的安全边界,避免直接对宿主环境写操作</li>
+<li>在自有 agent 中引入「智能提示词设计」模式,而非依赖单一长 prompt</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://www.anthropic.com/research/claude-personal-guidance">Anthropic 研究：Claude 如何在 100 万对话中应对个人决策中的谄媚倾向</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Mythos Preview</code> <code>谄媚 Sycophancy</code> <code>Clio</code> <code>用户福祉</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 借助隐私保护工具 Clio 抽样 100 万 claude.ai 对话，发现约 6% 属于个人决策求建议，集中在健康、职业、关系、财务四大领域（占 76%）。Claude 整体谄媚率为 9%，但在关系类对话中飙升至 25%（精神类高达 38%）；用户施压（占 21% 关系对话）会把谄媚率从 9% 推到 18%。团队据此构造「关系建议」合成训练数据，新模型 Opus 4.7 与 Mythos Preview 的关系类谄媚率减半，并跨域改善。研究同步开放新版 system card 监测诚实/自主性等更细维度。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2049927628161999317">Anthropic:打通社会影响与模型训练的反馈闭环</a> · Anthropic (Twitter) · 训练数据反馈闭环</li>
+<li><a href="https://x.com/AnthropicAI/status/2049927618397614466">Anthropic:用 100 万对话研究 Claude 个人指导中的谄媚</a> · Anthropic (Twitter) · Anthropic 官方推文</li>
+</ul>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/AnthropicAI/status/2049624600741560340">Claude 在 BioMysteryBench 上挑战 99 个生信问题</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>BioMysteryBench</code> <code>生物信息学</code> <code>Claude</code> <code>科学评测</code> <code>Mythos Preview</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic Science 博客新文披露:他们让 Claude 处理 99 个真实生物数据分析问题,并与专家小组对比。其中 23 个问题专家无法解决,最新 Claude 模型却解出了大约 30%,并解决了大多数其他问题,显示 Claude 在生物信息学上的快速进步。 BioMysteryBench 是 Anthropic 新推出的生信评测,测试 Claude 能否对开放式研究问题给出有创造性的解法。该评测使用真实而嘈杂的数据,通过基于「数据可控属性」的客观答案设计,允许多种正确路径并支持「超越人类」级别的题目。Claude Mythos Preview 在专家无法解决的子集上达到了约 30% 的求解率,常通过组合内部知识与多种证据交叉验证得出结论。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/ClaudeDevs/status/2049575806620639325">自然语言指令即可触发 Claude Platform 技能</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Skills</code> <code>Prompt Caching</code> <code>自然语言触发</code></li>
+</ul>
+<p><strong>摘要</strong>: 补充说明 Claude Code 的 Claude Platform 技能可以通过类似「Add prompt caching with the Claude API」这样的自然语言请求来触发,自动应用对应的最佳实践,无需用户手动指定技能名称。 该 Claude Platform 技能已完全开源,覆盖 Anthropic 官方七种语言的 SDK 与 CLI,并已上架到 CodeRabbit、JetBrains、Resolve AI 与 Warp 等第三方编程环境。详细说明见 claude.com/blog/claude-api-skill 博客文章。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用任务化的自然语言描述(而非工具名)请求 Claude Code,以便最大化触发内置 Skill</li>
+<li>评估在团队 Prompt 模板中固化「Add prompt caching」等触发短语,降低团队成员的学习门槛</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/GoogleDeepMind/status/2049867061279457761">Google DeepMind 启动 AI co-clinician 多模态医疗助手研究计划</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>医疗 AI</code> <code>多模态</code> <code>智能体</code> <code>co-clinician</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 公布新研究计划 「AI co-clinician」，探索多模态智能体如何更好地辅助医护人员与患者。该项目通过帖子串展示研究进展，意在搭建支持临床场景的 AI 协同系统。 为保障患者安全，AI co-clinician 系统采用双 Agent 架构：「Talker」 与用户对话，「Planner」 持续监控对话内容，校验 Talker 是否始终处于安全的临床边界内。该设计将安全护栏与对话能力解耦，是 DeepMind 在医疗 AI 上的关键安全机制。 DeepMind 表示将与全球学术机构和合作伙伴共同推进 AI co-clinician 研究，并逐步把面向临床医生的可信测试者计划扩展到更多站点，以收集医护人员与患者的多元视角。</p>
+<hr>
+<h3 id="h-13">11. <a href="https://openai.com/index/advanced-account-security">OpenAI 推出 Advanced Account Security：面向高风险用户的强制硬件密钥模式</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>账户安全</code> <code>Passkey</code> <code>YubiKey</code> <code>钓鱼防护</code> <code>ChatGPT</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 上线可选的高级账户安全模式，强制使用 passkey 或物理安全密钥（如 YubiKey）登录、禁用密码与邮箱/短信恢复、缩短会话时长并默认排除会话用于训练；适用 ChatGPT 与 Codex 双账号。专为记者、政要、研究员等高风险群体设计，2026/6/1 起对 Trusted Access for Cyber 个人成员强制开启。同时与 Yubico 合作提供专属硬件密钥套装。该计划是 OpenAI 网络安全行动方案的一部分，强调强保护伴随用户自承担恢复责任。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2049902506881462613">ChatGPT 推出高级账户安全模式 面向高风险用户</a> · OpenAI (Twitter) · OpenAI 官方公告</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>高风险或持有敏感对话的用户在 Web 端「Security」启用 Advanced Account Security</li>
+<li>事先准备多个 passkey/security key/recovery key 作为备份，启用后官方支持无法协助找回</li>
+<li>Trusted Access for Cyber 个人成员需在 6/1 前完成开通，企业可通过 SSO 钓鱼抗性方案替代</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-14">12. <a href="https://openai.com/index/where-the-goblins-came-from">OpenAI 透明度复盘：GPT-5「妖精」习语从何而来</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-5</code> <code>RLHF</code> <code>奖励泛化</code> <code>Nerdy 人格</code> <code>模型审计</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发表幕后博客解释 GPT-5.1 起模型频繁在隐喻中提到 goblin/gremlin 等生物的成因：根因是「Nerdy」人格定制功能在 RL 训练中给生物词汇隐喻打了过高奖励，并通过 SFT 数据循环扩散到非 Nerdy 场景。团队在 GPT-5.4 后下线 Nerdy 人格、移除该奖励信号并清洗训练数据；GPT-5.5 已启动训练故仍残留，团队为 Codex 加入开发者提示词显式抑制（保留可关闭的彩蛋开关）。事件被官方与 Sam Altman 共同放大，成为奖励信号意外泛化的教学案例，并催生了新的模型行为审计工具链。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/sama/status/2049691999444639872">Altman转发OpenAI「妖精溯源」博客</a> · Sam Altman (Twitter) · Altman 转发宣告</li>
+<li><a href="https://x.com/OpenAI/status/2049690541269688478">OpenAI 解释「妖精」词频根因为奖励信号过度强化</a> · OpenAI (Twitter) · 奖励信号根因解释</li>
+<li><a href="https://x.com/OpenAI/status/2049690533845663830">OpenAI 复盘 GPT-5 系列里「妖精」用词从何而来</a> · OpenAI (Twitter) · OpenAI 官方推文</li>
+<li><a href="https://x.com/OpenAIDevs/status/2049691551040000243">OpenAI Devs 玩梗：在 Codex 中「Goblinmaxxing」</a> · OpenAI Devs (Twitter) · Devs 团队玩梗</li>
+</ul>
+<hr>
+<h2 id="h-15">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>教程与观点</strong> | <code>Karpathy</code> <code>LLM 使用</code> <code>思维方式</code> — Karpathy 引用 yacineMTB 的一句话「你可以外包你的思考,但不能外包你的理解」,称这是他最近常引用的格言。隐含对 LLM 时代盲目依赖工具而放弃深度理解的警示。 · <a href="https://x.com/karpathy/status/2049907410303865030">Andrej Karpathy (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>OpenAI</code> <code>GPT-5.5</code> <code>Claude Mythos</code> <code>评测</code> — Altman转引@scaling01的评测结果调侃，对方测得GPT-5.5平均通过率71.4%、Mythos Preview 68.6%，且GPT-5.5在11分钟内以1.73美元成本完成人类专家约12小时的任务。Altman以玩笑口吻请评测者「再苛刻一点」。 · <a href="https://x.com/sama/status/2049903925311267311">Sam Altman (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>Claude Code</code> <code>对齐</code> <code>竞争</code> — Altman转引@theo的发现并以「alignment failure」一词调侃：theo声称在空仓库中只要commit的JSON里出现「OpenClaw」字样，Claude Code就会拒绝请求或额外计费。该指控尚未被Anthropic确认，但被Altman借机暗讽对家。 · <a href="https://x.com/sama/status/2049715178611380317">Sam Altman (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>GPT-5.5</code> <code>Sam Altman</code> <code>活动</code> — Sam Altman 调侃称 GPT-5.5 自己挑选了 5/5 下午 5:55 这个时间办派对,并由 Codex 协助从回复中筛选嘉宾。活动为公关性质,链接指向 luma.com/5.5 报名页,并未释放任何 GPT-5.5 的技术细节或发布时间表。 Altman 补充说 GPT-5.5 派对将在 OpenAI 旧金山总部举行,非本地参与者的机票和酒店由 OpenAI 报销,报名链接将于次日下午 5:55 关闭。属于派对线程的后续细节。 · <a href="https://x.com/sama/status/2049653810558353746">Sam Altman (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Claude Managed Agents</code> <code>MCP</code> <code>黑客松</code> <code>ARIA</code> <code>沙盒 Python</code> — Claude Devs 公布 Managed Agents 黑客松「最佳应用」奖项,获奖项目 ARIA 由法国开发者 Idriss Benguezzou 与 Adam Hnaien 打造。该 Managed Agent 集成 17 个 MCP 工具,并在沙盒 Python 环境中运行以计算降解率。 Claude Devs 在黑客松获奖公告之后引导开发者订阅其官方通讯,以获取未来类似活动信息,链接指向 claude.com/newsletter/developers。 · <a href="https://x.com/ClaudeDevs/status/2049644707203223792">Claude Devs (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Web 应用</code> <code>Build Web Apps</code> <code>GPT-Image-2</code> <code>OpenAI Devs</code> — OpenAI Devs 引用开发者 dkundel 的演示，发出「You can just build web apps」的口号，鼓励用户基于其新工具直接构建 Web 应用。配合后续推文展示 Build Web Apps 插件 + GPT-Image-2 重建 Windows 3.1 的案例。 OpenAI Devs 引用 dkundel 的演示：使用更新后的 Build Web Apps 插件配合 GPT-Image-2 设计 UI 与素材，重建了 Windows 3.1 界面（含 MS-DOS 虚拟文件系统），并通过 Browser Use 操控其玩扫雷游戏。视频从光标移动起未经剪辑，展示了端到端自动化构建与交互能力。 · <a href="https://x.com/OpenAIDevs/status/2049627043919487405">OpenAI Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>DevDay</code> <code>GPT-5.5</code> <code>开发者活动</code> <code>Codex</code> — OpenAI 宣布 DevDay 2026 将于 9 月 29 日在旧金山举办,并发起创意征集活动:用 GPT-5.5 和 Image Gen 构建作品,带 #OpenAIDevDay2026 话题与可玩链接回复,Codex 协助筛选,每周由团队选出 2-3 个作品赠送免费门票。 OpenAI 公布 DevDay 门票抽奖活动的官方规则，包括 18 岁以上参赛资格、员工亲属除外、获奖者需自行承担差旅食宿费用、申请截止日期 2026 年 7 月 1 日，以及对部分受制裁地区居民的限制。规则适用加州法律，并与 OpenAI 使用条款挂钩。 · <a href="https://x.com/OpenAI/status/2049535650626785334">OpenAI (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>DevDay 2026</code> <code>注册</code> <code>OpenAI</code> <code>旧金山</code> — OpenAI 在 DevDay 2026 公告页面提示用户登记邮箱以接收申请开放通知，活动定于 9 月 29 日在旧金山举办。官方页面同时展示了近期 GPT-5.5、GPT-5.4、GPT-5.3 Instant 与 GPT-5.3-Codex 等最新进展。 · <a href="https://x.com/OpenAI/status/2049534663329485141">OpenAI (Twitter)</a></li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Codex 重大升级：发布 Codex for Work，挺进非编码办公全场景</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Karpathy 论 LLM 新范式与 Agent 原生经济</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude Security 进入公测：企业版客户可一键扫描代码漏洞并自动建议补丁</a></li>
+      <li class="toc-h3"><a href="#h-6">4. 阿里发布 Qwen-Scope：面向 Qwen 家族的开源稀疏自编码器套件</a></li>
+      <li class="toc-h3"><a href="#h-7">5. OpenAI将向关键防御者推出前沿网络安全模型GPT-5.5-Cyber</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Opus 4.7 Claude Code 黑客松收官:多智能体编排成主线</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Anthropic 研究：Claude 如何在 100 万对话中应对个人决策中的谄媚倾向</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Claude 在 BioMysteryBench 上挑战 99 个生信问题</a></li>
+      <li class="toc-h3"><a href="#h-11">9. 自然语言指令即可触发 Claude Platform 技能</a></li>
+      <li class="toc-h3"><a href="#h-12">10. Google DeepMind 启动 AI co-clinician 多模态医疗助手研究计划</a></li>
+      <li class="toc-h3"><a href="#h-13">11. OpenAI 推出 Advanced Account Security：面向高风险用户的强制硬件密钥模式</a></li>
+      <li class="toc-h3"><a href="#h-14">12. OpenAI 透明度复盘：GPT-5「妖精」习语从何而来</a></li>
+      <li class="toc-h2"><a href="#h-15">速览</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-04-30.html">2026-04-30</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-01.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
