@@ -1,0 +1,820 @@
+{
+  "analyzed_at": "2026-05-02T08:51:27+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-02.json",
+  "trend_paragraph": "- **Codex 全面进军非编码**：OpenAI 推出角色模板、/goal 目标驱动、Pets 桌宠与一键迁移，Sam Altman 亲自下场推荐 Codex 用于日常办公。\n- **GPT-5.5 商业化提速**：OpenAI 披露上线一周 API 收入增速翻倍、Codex 七天收入翻番，Altman 晒出 71.4% vs Claude Mythos 68.6% 的对决数据。\n- **Claude 同步推安全与对齐**：Claude Security 进入企业版公测扫描代码漏洞并建议补丁，Anthropic 用百万对话研究揭示 Claude 情感咨询场景的谄媚倾向。\n- **AGI 路径回到记忆与持续学习**：Hassabis 做客 YC、Karpathy 在 Sequoia Ascent 都强调长程记忆与 Agent-native 经济才是下一关。",
+  "articles": [
+    {
+      "url": "https://www.deeplearning.ai/the-batch/learn-foundational-prompting-techniques-in-ai-prompting-for-everyone/",
+      "source": "The Batch",
+      "title": "吴恩达推出新课《AI Prompting for Everyone》",
+      "summary": "Andrew Ng 在 deeplearning.ai 推出新课程《AI Prompting for Everyone》，强调 2026 年的 prompt 实践已与 2022 年大不同：用户可以让模型思考数分钟、喂入多文档上下文、调用网页搜索与工具。课程覆盖深度研究模式、长上下文使用、生图与简单网站构建等 ChatGPT/Claude/Gemini 通用技能。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Prompt 工程",
+        "课程",
+        "DeepLearning.AI",
+        "Andrew Ng",
+        "AI 教育"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/researchers-at-ut-austin-and-google-model-human-decision-making-in-rock-paper-scissors/",
+      "source": "The Batch",
+      "title": "UT-Austin × Google：用石头剪刀布揭示 LLM 与人类策略差异",
+      "summary": "UT-Austin 和 Google 研究者让 Gemini 2.5 Pro/Flash、GPT-5.1、GPT-O 等 LLM 通过迭代生成预测代码来建模人类与 LLM 玩石头剪刀布的决策。结果显示 LLM 对对手的建模有时比人类更精细，整体上人机的「类人行为」只是表面相似，底层算法存在显著差异。该方法用可解释代码作为决策算法的近似，可对比人机推理过程。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "认知建模",
+        "LLM 行为",
+        "策略博弈",
+        "可解释性",
+        "Gemini"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/kimi-k2-6-matches-open-qwen3-6-max-anddeepseek-v4-falls-just-behind-top-closed-models/",
+      "source": "The Batch",
+      "title": "Kimi K2.6 发布：1T MoE 多模态，对标 Qwen3.6 Max 与 DeepSeek V4",
+      "summary": "Moonshot AI 发布 Kimi K2.6，1 万亿参数 MoE 视觉语言模型（每 token 激活 32B），支持 256K 输入/98K 输出、原生 INT4 量化与「保留思考」模式，并能调度数百个智能体协作完成长达数日的「计划-编写-测试-调试」编码循环。在 Artificial Analysis Intelligence Index 上领跑开源权重，与 Qwen3.6 Max Preview、DeepSeek V4 持平，仅略落后于顶级闭源模型，且较前代幻觉更低。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Kimi K2.6",
+        "Moonshot AI",
+        "开源模型",
+        "MoE",
+        "Agent 编码"
+      ],
+      "practice_suggestions": [
+        "对长时间自治编码任务（数小时到数天的项目级 plan-write-test-debug）尝试用 K2.6 替代闭源 Agent，评估成本/可控性收益。",
+        "若部署私有化推理，优先评估 K2.6 原生 INT4 量化版本以降低显存占用。",
+        "在多 Agent 协作场景（数百 Agent 并发）测试 K2.6 的调度能力是否优于现有自建编排框架。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/tech-giants-including-alphabet-amazon-meta-and-microsoft-acknowledge-ais-strain-on-environment/",
+      "source": "The Batch",
+      "title": "AI 大厂承认数据中心扩张正侵蚀其碳中和承诺",
+      "summary": "据 AP 报道，Alphabet、Amazon、Meta、Microsoft 已开始承认 AI 算力需求的扩张正在干扰其早先的温室气体减排目标。尽管四家继续投入风电、太阳能、地热与核能，但近期新增的数据中心仍大量依赖化石燃料发电，短期甚至中期都难以扭转。文章指出 AI 基础设施竞赛与气候承诺之间的张力正在显性化。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI 能耗",
+        "数据中心",
+        "碳排放",
+        "气候",
+        "基础设施"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/openais-latest-model-gpt-5-5-tops-leaderboards-for-coding-visual-puzzles-and-overall-intelligence/",
+      "source": "The Batch",
+      "title": "GPT-5.5 全面登顶多项基准，但幻觉率显著高于对手",
+      "summary": "OpenAI 旗舰 GPT-5.5（含并行推理 Pro 版）在 Artificial Analysis Intelligence Index、ARC-AGI-2、Terminal-Bench 2.0、OSWorld-Verified、Tau2 Telecom 等基准全面夺冠，支持 1M 输入/128K 输出与五档推理强度。Sam Altman 晒出与 Claude Mythos 直接对比（71.4% vs 68.6%）；OpenAI 同时披露 GPT-5.5 上线一周 API 收入增速翻倍、Codex 七天收入翻番，验证商业化加速。代价是 API 价格较 GPT-5.4 翻倍至 5/0.5/30 美元每百万 token，且在惩罚自信错误的 AA-Omniscience Index 仅排第三、落后 Gemini 3.1 Pro 与 Claude Opus 4.7，事实可靠性场景仍需谨慎。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5",
+        "OpenAI",
+        "ARC-AGI-2",
+        "Terminal-Bench",
+        "幻觉率",
+        "API 收入"
+      ],
+      "practice_suggestions": [
+        "在 SOTA 编码/Agent/计算机使用场景切换到 GPT-5.5 xhigh，但因 API 价格翻倍务必先与 Claude Opus 4.7、Gemini 3.1 Pro 比对 ROI",
+        "对法律、医疗、研究综述等高事实可靠性需求的工作流，优先 Claude Opus 4.7 或 Gemini 3.1 Pro，或对 GPT-5.5 输出加强引用核查",
+        "API 集成启用 tool search 按需加载工具，并使用五档推理强度匹配任务复杂度，控制长 prompt 成本"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/issue-351/",
+      "source": "The Batch",
+      "title": "The Batch 第 351 期：GPT-5.5、Kimi K2.6、AI 能耗与策略博弈",
+      "summary": "本期 The Batch 头条覆盖：吴恩达推出新课《AI Prompting for Everyone》强调 2026 年 prompt 范式变化；GPT-5.5 登顶多项基准但幻觉偏高；Kimi K2.6 比肩 Qwen3.6 Max / DeepSeek V4；以及四大科技公司承认 AI 扩张冲击气候承诺。整期 Andrew Ng letter 同时讨论了长思考、深度研究、多文档上下文等新一代用法。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "The Batch",
+        "周报",
+        "Andrew Ng",
+        "Prompt 工程",
+        "AI 综述"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050304809572688289",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 力推 Codex 新功能「Pets」",
+      "summary": "Sam Altman 推荐 Codex 中新上线的「Pets」功能，并邀请用户尝试「孵化」一只。他承认这不是 OpenAI 最重要的特性，但认为实际用处比表面看起来更大，暗示是面向 Codex 用户体验的一种轻量化游戏化设计。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "Sam Altman",
+        "产品功能"
+      ],
+      "practice_suggestions": [
+        "Codex 重度用户可在长任务等待期试用 Pets 作为节奏切换/激励机制，观察是否提升使用粘性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Altman 力推 Pets 趣味功能"
+    },
+    {
+      "url": "https://x.com/sama/status/2050302192775815613",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 关注 Codex 新功能「/goal」长跑挑战",
+      "summary": "Sam Altman 引用 steipete 的推文「Codex 新 /goal 功能很赞」，表示「奇怪地很想让一个任务跑出最长记录」。这暗示 Codex 引入了 /goal 命令以支持长期、自治的目标导向任务执行，是面向多小时/多日 Agent 工作流的能力。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "/goal",
+        "Agent 工作流",
+        "Sam Altman"
+      ],
+      "practice_suggestions": [
+        "Codex 用户尝试用 /goal 拆解多步骤、跨小时的开发目标，对比 Claude Code 自治会话的稳定性。",
+        "为长时任务建立中途检查点与日志输出策略，避免脱手运行后无法复盘。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Altman 关注 /goal 长跑挑战"
+    },
+    {
+      "url": "https://x.com/sama/status/2050274547061129577",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：Codex 与 Claude Code 之争是伪命题",
+      "summary": "Sam Altman 表态对「Codex 与 Claude Code 哪个更好」的投票毫无意义，呼吁用户用对自己最顺手的那个，并感激当下能在两者间自由选择。该表态被视为对当前 AI 编程助手赛道竞争的缓和姿态。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Claude Code",
+        "Sam Altman",
+        "AI 编程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Altman 评 Codex vs Claude Code"
+    },
+    {
+      "url": "https://x.com/sama/status/2050229058425045178",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：要构建增强人的工具，而不是取代人的实体",
+      "summary": "Sam Altman 表态 OpenAI 的目标是构建「增强并提升人的工具」，而不是「取代人的实体」。该简短表述呼应近期围绕通用 Agent 与 AGI 替代论的讨论，强调以人为中心的产品定位。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "OpenAI",
+        "AI 哲学",
+        "产品定位"
+      ],
+      "thread_group_id": "thread-sama-20260501-1501",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050229059507159242",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 反驳 AI 失业论：长期错误，但短期会有显著转型",
+      "summary": "Sam Altman 表示「就业末日论」长期来看是错的，未来人们会比以往更忙、更有成就感。他承认短期内会出现显著的就业转型与岗位重塑，未来工作形态会与现在大不相同。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "AI 就业",
+        "AGI 影响",
+        "劳动力转型"
+      ],
+      "thread_group_id": "thread-sama-20260501-1501",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050229060887044494",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 描绘 AI 后世界：努力者有舞台，躺平者也能富足",
+      "summary": "Altman 接续上一条推文，描绘他期待的未来图景：愿意拼命工作的人能找到极有成就感的事情做，不想拼命的人也可以过上富足生活。这是他一贯的「AI 普惠繁荣」叙事。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "AGI 愿景",
+        "普惠繁荣"
+      ],
+      "thread_group_id": "thread-sama-20260501-1501",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050021650641695108",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 玩梗：「人造哥布林智能」已实现",
+      "summary": "Altman 发了一条玩梗推文，自称「人造哥布林智能 (artificial goblin intelligence) 已达成」。无具体内容，纯属社区调侃。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "梗图",
+        "社区文化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2049946120441520624",
+      "source": "Sam Altman (Twitter)",
+      "title": "Codex 重大升级：Altman 推荐用于非编码场景",
+      "summary": "Altman 宣布 Codex 当日发布「重大升级」，并罕见地建议用户尝试将其用于非编码类的电脑工作任务。这暗示 Codex 正在从纯代码助手扩展为通用计算机操作 Agent。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "Agent",
+        "Computer Use"
+      ],
+      "practice_suggestions": [
+        "试用 Codex 处理日常电脑任务（文件整理、数据处理、表单填写等），验证其作为通用 Agent 的能力",
+        "对比 Codex 与 Claude Code、Gemini CLI 在非代码工作流上的实际表现",
+        "在团队内试点把 Codex 接入运维 / 内部工具脚本编排链路"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Altman 推荐用于非编码场景"
+    },
+    {
+      "url": "https://x.com/sama/status/2049944981750833659",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 确认 Codex 新增「目标驱动」特性",
+      "summary": "Altman 转发并确认了社区观察：Codex 上线了「Goal」功能，用户给出一个目标后 Codex 会持续工作、规划与测试，直到目标达成。这是从单步执行向自驱动 Agent 工作流的关键演进。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "Goal",
+        "Agent 自驱动"
+      ],
+      "practice_suggestions": [
+        "用 Codex Goal 跑一个端到端任务（例如「为这个项目补全测试到 80% 覆盖率」），观察其规划与终止条件",
+        "把 Goal 模式与 Claude Code 的 plan mode、Cursor Agent 做横向对比，挑选适合自家代码库的工具",
+        "为长任务设置预算上限（token / 时间），避免 Goal 模式跑飞造成成本失控"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Altman 确认 /goal 目标驱动"
+    },
+    {
+      "url": "https://x.com/sama/status/2049903925311267311",
+      "source": "Sam Altman (Twitter)",
+      "title": "GPT-5.5 与 Claude Mythos 持平：基准 71.4% vs 68.6%",
+      "summary": "Altman 转发 scaling01 的基准结果：GPT-5.5 在某专家任务集上的平均通过率为 71.4%（±8.0%），与 Claude Mythos Preview 的 68.6%（±8.7%）基本持平。GPT-5.5 在 11 分钟内以 1.73 美元成本解决了人类专家约需 12 小时的任务。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5",
+        "Claude Mythos",
+        "基准测试",
+        "OpenAI",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "在自家代表性任务上跑 GPT-5.5 vs Claude Mythos 的小样本评测，关注成本 / 时延 / 一次通过率三项",
+        "对耗时长、单价高的专家工作流（数据分析、复杂报告生成）优先试点 GPT-5.5",
+        "为评估管线引入 ±标准差报告，避免被单次跑分误导"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://www.deeplearning.ai/the-batch/openais-latest-model-gpt-5-5-tops-leaderboards-for-coding-visual-puzzles-and-overall-intelligence/",
+      "angle": "Altman 晒 vs Claude Mythos 基准对比"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2050298733280059604",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 做客 YC：AGI 路上还缺什么、记忆与持续学习是核心",
+      "summary": "Hassabis 在 YC「How to Build the Future」节目与 Garry Tan 对谈，覆盖 AGI 还差什么、记忆为何仍是未解问题、AlphaGo 如何塑造 Gemini、小模型为何越来越强、Agent 是否被高估、开源 Gemma、AlphaFold 到虚拟细胞、给创业者的建议等话题。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Demis Hassabis",
+        "AGI",
+        "Gemini",
+        "持续学习",
+        "Agent"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2050291108593258742",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 转发 Banksy 雕塑新闻：纯文化分享",
+      "summary": "Hassabis 转推赞叹 Westminster 议会接受 Banksy 在 Pall Mall 附近的新雕塑。这是纯个人文化分享，与 AI 无关。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Demis Hassabis",
+        "个人动态"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/karpathy/status/2049907410303865030",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Karpathy 引用：你可以外包思考，但无法外包理解",
+      "summary": "Karpathy 转发并强调一句话「你可以外包你的思考，但你无法外包你的理解 (you can outsource your thinking but you cannot outsource your understanding)」，并称这是他近来频繁引用的格言。在 LLM 时代对学习与判断力的提醒。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Karpathy",
+        "LLM 学习方法",
+        "认知"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/karpathy/status/2049903821095354523",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Karpathy@Sequoia Ascent 2026：LLM 是新范式，Agent-native 经济成型",
+      "summary": "Karpathy 总结了在 Sequoia Ascent 2026 的炉边谈话三大主题：(1) LLM 不只是加速旧事物，而是开启新可能 ——「menugen」式无传统代码 App、用 .md skills 取代 .sh 脚本、对非结构化知识的计算；(2) LLM 「锯齿状」能力的根源不仅在可验证性，还在经济学 ——RL 训练分布由营收 / TAM 决定，落在分布内即「上轨道」否则只能「拿砍刀走丛林」；(3)「Agent-native 经济」正在成型，把产品 / 服务拆分为 Software 1.0/2.0/3.0 的传感器、执行器与逻辑，agentic engineering 成为新工种。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Karpathy",
+        "Agent-native",
+        "Software 3.0",
+        "LLM 范式",
+        "agentic engineering"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2050252933866930339",
+      "source": "Claude (Twitter)",
+      "title": "Code with Claude 开发者大会下周回归",
+      "summary": "Anthropic 宣布开发者大会「Code with Claude」将于下周再次举办，面向 Claude Code 新手和资深用户均设有相应议程。官方提供线上直播注册入口。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "Claude Code",
+        "开发者大会",
+        "活动预告"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049898739783897537",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 进入企业版公测：扫描代码库漏洞并给出补丁",
+      "summary": "Anthropic 宣布 Claude Security 进入面向 Claude Enterprise 客户的公开测试阶段。该功能可扫描代码库中的安全漏洞，验证每条发现以降低误报率，并给出可供审阅和批准的补丁建议。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Security",
+        "代码安全",
+        "漏洞扫描",
+        "企业版",
+        "公测"
+      ],
+      "practice_suggestions": [
+        "Claude Enterprise 客户可启用 Claude Security 公测，用作现有 SAST 扫描器的补充层来捕获被遗漏的漏洞",
+        "结合「定时扫描 + 目录级定向」配置，将 Claude Security 接入 CI 流水线进行渐进式覆盖"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049898743772696745",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 新增定时扫描、目录定向、CSV 导出与 Webhook",
+      "summary": "自 2 月研究预览以来，已有数百个组织在生产代码上使用 Claude Security 并发现既有扫描器遗漏的问题。基于早期反馈，新增定时扫描、目录级定向、CSV/Markdown 导出、Webhook 通知以及可跨扫描延续的「忽略」设置。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Security",
+        "定时扫描",
+        "Webhook",
+        "代码安全"
+      ],
+      "practice_suggestions": [
+        "为关键代码目录配置定向扫描和 Webhook 通知，让安全告警直达 Slack 或工单系统",
+        "用 CSV/Markdown 导出生成漏洞清单交付给安全团队复核"
+      ],
+      "thread_group_id": "thread-claudeai-20260430-1708",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2049898745051886013",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 公测今日上线（Enterprise）",
+      "summary": "Claude Security 今日起向 Claude Enterprise 客户开放公测，可通过官方产品页查看更多信息和接入方式。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude Security",
+        "公测",
+        "企业版"
+      ],
+      "practice_suggestions": [
+        "Enterprise 管理员可前往 claude.com/product/claude-security 申请加入公测"
+      ],
+      "thread_group_id": "thread-claudeai-20260430-1708",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2049927618397614466",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 研究：百万对话样本揭示 Claude 在情感咨询场景的谄媚倾向",
+      "summary": "Anthropic 用隐私保护工具 Clio 分析 100 万段 claude.ai 对话，发现约 6% 属个人决策类咨询，其中健康、职业、关系、理财四大类占 76%。整体谄媚率为 9%，但「关系咨询」高达 25%、「灵性」更达 38%。团队据此为 Opus 4.7 与 Mythos Preview 构造合成训练数据，使关系场景下的谄媚率减半，并泛化到其他领域。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "Claude Opus 4.7",
+        "Mythos Preview",
+        "谄媚",
+        "Clio"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2049927628161999317",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic：将社会影响研究闭环回灌到模型训练",
+      "summary": "Anthropic 强调上述谄媚研究只是更大闭环的一部分：研究真实使用场景、识别模型偏离原则之处，再把发现用于训练新模型。这是其「保护用户福祉」长线工作的组成部分。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "对齐",
+        "用户福祉",
+        "训练闭环"
+      ],
+      "thread_group_id": "thread-AnthropicAI-20260430-1903",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2049927629420245494",
+      "source": "Anthropic (Twitter)",
+      "title": "Clio：用于真实场景 AI 用法的隐私保护分析工具",
+      "summary": "Anthropic 介绍其内部工具 Clio，可在不暴露原始对话的前提下，从 claude.ai 真实使用数据中聚类出主题分布。Clio 通过自动抽取属性、语义聚类、Claude 自动撰写簇摘要并设最低用户阈值等多重隐私防护，已用于本次个人咨询研究及 Trust & Safety 的滥用模式发现。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Clio",
+        "Anthropic",
+        "隐私计算",
+        "对话聚类",
+        "信任与安全"
+      ],
+      "thread_group_id": "thread-AnthropicAI-20260430-1903",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2050290618187055175",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 推出一键迁移：导入设置、插件、Agent 与项目配置",
+      "summary": "OpenAI 为 Codex 推出一键迁移工具，可导入用户已有的设置、插件、Agent、项目配置等，方便从其他编码助手切换过来时减少打断。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "迁移工具",
+        "编码助手"
+      ],
+      "practice_suggestions": [
+        "正在评估替换 Claude Code/Cursor 的团队，可先用 Codex 的迁移工具把现有 Agent 与配置直接拉过来比对体验",
+        "迁移后保留原有工具一段时间做 A/B，避免一次性切换的盲区"
+      ],
+      "thread_group_id": "thread-OpenAI-20260501-1905",
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "一键导入设置、插件与 Agent"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2050290619684393152",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 应用与 CLI 内置切换入口",
+      "summary": "OpenAI 进一步说明，用户可直接在 Codex 应用以及 CLI 内执行迁移流程，无需走单独的导入页面。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "CLI",
+        "迁移"
+      ],
+      "practice_suggestions": [
+        "在 Codex CLI 中运行迁移命令以快速完成账户与项目级配置导入"
+      ],
+      "thread_group_id": "thread-OpenAI-20260501-1905",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2050250926888468929",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.5 上线一周：API 收入增速翻倍，Codex 七天收入翻番",
+      "summary": "OpenAI 称 GPT-5.5 发布一周已成为其最强势的一次模型上线：API 收入增速超过此前任何版本的两倍以上；Codex 在不到 7 天内收入翻倍，反映企业对 Agent 化编码工具的需求持续攀升。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "GPT-5.5",
+        "Codex",
+        "API 收入",
+        "Agent 编码"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://www.deeplearning.ai/the-batch/openais-latest-model-gpt-5-5-tops-leaderboards-for-coding-visual-puzzles-and-overall-intelligence/",
+      "angle": "上线一周 API 收入翻倍"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049928776147230886",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 全面进军非编码：角色模板、/goal、Pets 与一键迁移",
+      "summary": "OpenAI 把 Codex 从纯编码助手扩展为跨岗位的日常办公 Agent：新增按角色挑选模板、连接 SaaS 应用、在同一会话内迭代修改文档/幻灯片/表格，并上线独立着陆页 Codex for Work。同期推送多项功能更新：/goal 目标驱动让 Agent 自主长跑、一键导入既有 IDE/插件/Agent 工作流配置、以及趣味性的 /pet 桌宠（含 /hatch 自定义与 hatch-pet skill 共建机制）。Sam Altman 亲自下场推荐用于非编码场景，并淡化 Codex vs Claude Code 的二选一叙事；OpenAI Devs 持续放出文档与示例。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "非编码",
+        "/goal",
+        "Pets",
+        "工作流迁移",
+        "Agent"
+      ],
+      "practice_suggestions": [
+        "在 Codex 内按角色选择官方模板，先连接团队最常用的 SaaS（文档/幻灯片/表格）跑通跨工具工作流再做个性化",
+        "把长任务交给 /goal 让 Agent 自主推进，但对每次目标设定明确成功条件与中止边界，避免无止境长跑",
+        "从既有 IDE/Agent 工作流向 Codex 迁移时使用一键导入入口，把设置、插件与项目配置一起带过来",
+        "Pets 等娱乐功能可作为团队 onboarding 的轻量入口，但生产工作流中关注其状态可视化的实用价值"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049928782019256561",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 支持在同一会话内迭代修改文稿与幻灯片",
+      "summary": "作为 Codex for Work 串文的延续，OpenAI 强调可以在同一线程里持续审阅 Codex 产出的文件：直接打开稿件、提出修改、在同一上下文中反复打磨，省去多轮重新粘贴或切换工具的成本。这把 Codex 的工作单元从「单次生成」推向「持续协作的工作产物」。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "迭代编辑",
+        "工作流"
+      ],
+      "practice_suggestions": [
+        "在同一 Codex 线程内反复打磨文档/幻灯片，让模型保留上下文，避免每次重写指令",
+        "把「先生成草稿、再逐段修改」作为日常工作模板，减少跨工具切换"
+      ],
+      "thread_group_id": "thread-OpenAI-20260430-1908",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049929697921003809",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex for Work 着陆页正式上线",
+      "summary": "OpenAI 在串文末尾放出 chatgpt.com/codex/for-work/ 入口，把面向「日常工作」的 Codex 体验集中到独立产品页，作为 Codex 由编码助手向通用工作助理扩张的官方收口。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "产品入口",
+        "Codex for Work"
+      ],
+      "practice_suggestions": [
+        "访问 chatgpt.com/codex/for-work/ 浏览角色化模板，挑出与自己岗位匹配的提示词复用"
+      ],
+      "thread_group_id": "thread-OpenAI-20260430-1908",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2049902506881462613",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT 推出 Advanced Account Security 高风险账号保护",
+      "summary": "OpenAI 上线可选的「Advanced Account Security」，面向记者、政要、异见人士、研究员等高风险用户：强制使用 Passkey 或 YubiKey 登录、关闭密码与短信/邮件找回、缩短会话有效期、并自动把对话排除在模型训练外。OpenAI 同时与 Yubico 合作以优惠价提供硬件密钥套装；2026-06-01 起 Trusted Access for Cyber 个人成员必须启用此设置。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "账号安全",
+        "ChatGPT",
+        "Passkey",
+        "YubiKey",
+        "Trusted Access"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050275713824211041",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 加入「桌宠」：用 /pet 召唤陪伴动画",
+      "summary": "OpenAI Devs 宣布 Codex 终端新增 Pets 功能，用户用 /pet 命令唤醒一个常驻边角的小宠物动画，作为周五版的轻量彩蛋。配合后续推文，宠物不仅是装饰，还会通过状态变化反馈 Codex 当前正在做什么。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Pets",
+        "终端",
+        "彩蛋"
+      ],
+      "practice_suggestions": [
+        "在 Codex 终端运行 /pet 体验新功能，作为长任务运行时的轻量进度提示"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260501-1806",
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Pets 上线，/pet 召唤"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050275779452588309",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Pets 支持 /hatch 自定义形象",
+      "summary": "Codex 桌宠新增 /hatch 命令用于个性化定制宠物外观，用户可在 /pet 召唤后通过 /hatch 切换或孵化新形象。属于 Pets 串文的延续更新。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Pets",
+        "/hatch",
+        "个性化"
+      ],
+      "practice_suggestions": [
+        "用 /hatch 给团队成员各自定制一只 Codex 宠物，作为辨识不同会话的视觉标记"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260501-1806",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050301642717950166",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Pets 官方文档随功能上线",
+      "summary": "OpenAI Devs 同步放出 developers.openai.com/codex/app/settings#codex-pets 文档，介绍 Codex Pets 的设置项与可用动作，便于用户在「领养」前了解功能边界。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "Pets",
+        "文档"
+      ],
+      "practice_suggestions": [
+        "在启用 Pets 前先读官方文档，了解可在设置中关闭或调整的行为"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Pets 官方文档同步上线"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050299857974489153",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Pets 通过 hatch-pet skill 自定义新宠",
+      "summary": "面对用户反馈尚无 /hatch 命令的疑问，OpenAI Devs 回复称需先安装名为「hatch-pet」的 Skill 才能使用，意味着 Codex 的 Pets 功能基于其 Skill 插件机制实现，第三方亦可参考扩展。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Pets",
+        "Skill",
+        "插件"
+      ],
+      "practice_suggestions": [
+        "想体验 /hatch 需先安装 hatch-pet Skill，借此熟悉 Codex 的 Skill 安装与扩展流程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "hatch-pet skill 自定义形象"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050291944895778907",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 一键导入既有 IDE/Agent 工作流配置",
+      "summary": "OpenAI Devs 转推官方账号宣传：可几次点击把现有的设置、插件、agent 与项目配置整体迁入 Codex，明显瞄准从其他 AI 编辑器（Cursor、Claude Code 等）导流的迁移成本。配合 Codex for Work 推进，迁移阻力进一步降低。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "迁移",
+        "配置导入",
+        "Agent"
+      ],
+      "practice_suggestions": [
+        "评估把当前 IDE/Agent 的设置、插件与项目配置一键导入 Codex，对比生产力差异",
+        "迁移前先备份现有配置，便于在两套工具之间并行验证"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "工作流一键导入入口"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050277882715611419",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Pets 兼具陪伴与状态可视化作用",
+      "summary": "OpenAI Devs 转推设计者 simpsoka 的说明：Codex Pets 不只是趣味彩蛋，更承担「外围状态显示」的职责——在用户继续做别的事时，宠物会以动画反映 Codex 后台正在执行的动作，相当于一个低打扰的进度指示器。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Pets",
+        "状态显示",
+        "UX"
+      ],
+      "practice_suggestions": [
+        "把 Pets 当作长任务的外围进度提示，配合多任务并行时观察 Codex 是否仍在运行"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2049928776147230886",
+      "angle": "Pets 兼具陪伴与状态可视化"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2050244179163295985",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google I/O 征集 Vibe Coding 创意：Gemini Canvas 作品有望登主舞台",
+      "summary": "Google DeepMind 在 I/O 大会倒计时之际向社区征集基于 Gemini App 或 Google AI Studio 构建的创意作品，优秀方案将在主舞台展示。征集主题示例包括蛋白质模拟器、物理引擎以及数学艺术等。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Google I/O",
+        "Gemini",
+        "AI Studio",
+        "Vibe Coding",
+        "社区征集"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260501-1601",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2050244182241874089",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google I/O Vibe Coding 征集细则：围绕 1-10 数字、5 月 6 日截止",
+      "summary": "Google DeepMind 补充 I/O Vibe Coding 征集规则：作品需围绕数字 1 到 10 展开，必须使用 Gemini App 或 Google AI Studio 中的 Canvas 功能，提交截止日期为 5 月 6 日。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Google I/O",
+        "Gemini Canvas",
+        "AI Studio",
+        "提交规则"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260501-1601",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2049988769928056852",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral AI 入选 TIME100 2026 最具影响力企业 AI 前十",
+      "summary": "Mistral AI 宣布登上《时代周刊》TIME100 2026 最具影响力企业榜单，并跻身 AI 类别前十。官方强调其差异化定位在于让客户能够在自有基础设施上以自主方式运行前沿模型，凸显其面向企业私有化部署的市场策略。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Mistral AI",
+        "TIME100",
+        "企业AI",
+        "私有化部署"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2050232280082522505",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 联手 Fireworks AI：闭源模型上架托管推理平台",
+      "summary": "阿里 Qwen 宣布与 Fireworks AI 达成战略合作，将其闭源权重模型通过 Fireworks 平台提供生产级托管部署。合作方承诺更低延迟、更低微调与推理成本，并提供企业级可靠性、安全和扩展性，首批上线包括「qwen3p6-plus」。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Qwen",
+        "Fireworks AI",
+        "托管推理",
+        "企业部署",
+        "闭源模型"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
