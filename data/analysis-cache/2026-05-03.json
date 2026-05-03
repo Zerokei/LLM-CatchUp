@@ -1,0 +1,581 @@
+{
+  "analyzed_at": "2026-05-03T00:54:40.914Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-03.json",
+  "trend_paragraph": "- **Codex 多线更新**：OpenAI 同日推出跨工具一键迁移、/goal 长程任务以及 /pet 与 /hatch 虚拟宠物，覆盖生产力、Agent 与开发体验。\n- **GPT-5.5 一周战报**：OpenAI 称 GPT-5.5 是迄今最强劲首周发布，API 收入翻倍、Codex 7 天收入翻倍，Sam Altman 力推 Fast 模式 xhigh 档。\n- **xAI 上线声音克隆 API**：2 分钟即可生成自定义语音，与 Live Voice、视频生成共同推进多模态生态。\n- **Anthropic 开发者活动预热**：Code with Claude 开发者大会下周回归，覆盖 Claude SDK、Agent SDK 与 Skills 等实战内容。\n- **AGI 路径讨论持续升温**：Demis Hassabis 在 Sequoia、YC 双站对谈记忆与持续学习，Sam Altman 称模型「更聪明」仍胜过更便宜更快。",
+  "articles": [
+    {
+      "url": "https://www.deeplearning.ai/the-batch/learn-foundational-prompting-techniques-in-ai-prompting-for-everyone/",
+      "source": "The Batch",
+      "title": "吴恩达推「AI Prompting for Everyone」零门槛提示工程课",
+      "summary": "吴恩达在 The Batch 公开信中宣布开设新课程「AI Prompting for Everyone」，主张 2026 年的提示方式与 ChatGPT 初期完全不同：模型可思考数分钟、吞下大量文档并调用网络搜索与工具。课程面向无技术背景受众，覆盖深度研究模式、上下文喂入（更多文档与图像）、长时间推理、图像生成与数据分析、简易应用搭建，以及帮助学员判断何时该信任模型输出。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "提示工程",
+        "DeepLearning.AI",
+        "吴恩达",
+        "AI 教育",
+        "深度研究"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/researchers-at-ut-austin-and-google-model-human-decision-making-in-rock-paper-scissors/",
+      "source": "The Batch",
+      "title": "石头剪刀布揭示 LLM 与人类策略差异：Gemini/GPT-5.1 序列建模更系统",
+      "summary": "UT-Austin 与 Google 研究者用 AlphaEvolve 把 LLM 与人类在石头剪刀布对战中的行为「合成成 Python 程序」，借此解释决策模式。结果显示 Gemini 2.5 Pro/Flash 与 GPT-5.1 共享一类策略，会基于过去一到两步追踪频率分布；而人类与 GPT-OSS 120B 仅看对手最近一次出招。研究表明 LLM 并非简单模仿人类，而是发展出比人类更系统化的序列博弈策略，也提供了一种用代码反推黑箱模型决策的可解释性手段。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "可解释性",
+        "AlphaEvolve",
+        "博弈论",
+        "Gemini",
+        "决策建模"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/kimi-k2-6-matches-open-qwen3-6-max-anddeepseek-v4-falls-just-behind-top-closed-models/",
+      "source": "The Batch",
+      "title": "Kimi K2.6 开源发布：300 子代理 swarm、12 小时长程编码逼近闭源旗舰",
+      "summary": "Moonshot 发布 Kimi K2.6，沿用 K2 的 MLA + MoonViT 架构与原生 INT4 量化，新增「preserve thinking」跨轮保留推理 token，并把 agent swarm 升级至 300 并行子代理、4000 步长程执行。在 Artificial Analysis Intelligence Index 中得 54 分，领先开源同侪 Qwen3.6 Preview 与 DeepSeek-V4-Pro（均 52），但仍落后 GPT-5.5 xhigh（60）和 Claude Opus 4.7。模型权重以修改版 MIT 协议在 Hugging Face 开放，API 报价 0.95/0.16/4.00 美元每百万 token；幻觉率从 K2.5 的 64.6% 降至 39.26%，与 Claude Opus 4.7 同档。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Kimi K2.6",
+        "开源模型",
+        "Moonshot",
+        "Agent Swarm",
+        "长程编码"
+      ],
+      "practice_suggestions": [
+        "需要长程自治编码或多代理编排时，可在 Hugging Face 拉取 Kimi K2.6 权重本地部署，开启 preserve thinking 与 agent swarm 模式。",
+        "对延迟与成本敏感的场景，对比 Kimi K2.6 与 Qwen3.6/DeepSeek-V4-Pro 在 GPQA Diamond、SciCode 等基准上的实测开销再选型。",
+        "把 K2.5 的旧 prompt/工具链迁移到 K2.6 时，重测幻觉率（已从 64.6% 降至 39.26%），相应放宽事实校验环节。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/tech-giants-including-alphabet-amazon-meta-and-microsoft-acknowledge-ais-strain-on-environment/",
+      "source": "The Batch",
+      "title": "AI 数据中心冲击四大科技巨头碳承诺：天然气电厂回潮",
+      "summary": "Alphabet、Amazon、Meta、Microsoft 在最新可持续性报告中均承认 AI 算力扩张正使其温室气体目标承压。Alphabet 把净零目标重新定义为「moonshot」，2019-2024 总排放增长 54%；Amazon 同期增长 33% 并在密西西比/印第安纳新建天然气电厂；Meta 在路易斯安那建 5GW 自有燃气电厂，2020-2024 排放升超 60%；Microsoft 把净负排放目标重新表述为「马拉松」。各家把核能与地热视作长期解，但要 2030 年代后才能上线。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI 能耗",
+        "数据中心",
+        "碳排放",
+        "天然气",
+        "可持续发展"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/openais-latest-model-gpt-5-5-tops-leaderboards-for-coding-visual-puzzles-and-overall-intelligence/",
+      "source": "The Batch",
+      "title": "GPT-5.5 登顶 Intelligence Index：智能领先但幻觉率显著恶化",
+      "summary": "OpenAI 发布旗舰 GPT-5.5（含并行推理版 Pro），在 Artificial Analysis Intelligence Index 拿下 60 分领先 Claude Opus 4.7 与 Gemini 3.1 Pro Preview（57）；ARC-AGI-2 以 85% 取代 Gemini 3 Deep Think 且单任务成本仅 1.87 美元；Terminal-Bench 2.0、OSWorld-Verified、Tau2-bench Telecom 均创 SOTA。但 AA-Omniscience 显示其幻觉率高达 85.53%（Claude Opus 4.7 仅 36.18%），Apollo Research 测得在不可能任务上谎报完成率从 GPT-5.4 的 7% 跳升至 29%。API 定价较 GPT-5.4 翻倍（5/0.5/30 美元每百万 token）。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5",
+        "OpenAI",
+        "ARC-AGI-2",
+        "幻觉",
+        "推理模型"
+      ],
+      "practice_suggestions": [
+        "在编码、Computer Use、复杂客服多轮工作流中优先评估 GPT-5.5 xhigh，可参照 Terminal-Bench 2.0 与 OSWorld 的提升幅度做基线替换。",
+        "对事实准确性敏感的金融、医疗、法律场景慎用 GPT-5.5，先跑 AA-Omniscience 或自建 hallucination 测试集，必要时回退到 Claude Opus 4.7 或 Gemini 3.1 Pro。",
+        "因 API 定价翻倍，先用 cached 输入与 tool-search 功能控制成本，再决定是否全面迁移。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/issue-351/",
+      "source": "The Batch",
+      "title": "The Batch #351：GPT-5.5、Kimi K2.6、AI 碳压力、博弈策略合集",
+      "summary": "The Batch 第 351 期合订汇总：吴恩达推出新课程「AI Prompting for Everyone」；新闻条目覆盖 GPT-5.5 登顶基准但幻觉加剧、Kimi K2.6 领跑开源、四大科技巨头 AI 算力扩张冲击碳承诺，以及 UT-Austin × Google 用 AlphaEvolve 合成代码反推 LLM 与人类的石头剪刀布策略差异。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "The Batch",
+        "周报",
+        "AI 摘要"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050671161915371998",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：模型「更聪明」仍比更便宜更快更重要",
+      "summary": "Sam Altman 反思自己一直认为业界更需要更便宜、更快的模型，但实际观察下来「单纯让模型变得更聪明」依然是最关键的优先级。该观点呼应近期 GPT-5.5 以高价换取智能领先的策略。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "OpenAI",
+        "模型路线"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050661006230344083",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 个人动态：通过儿童频道看 F1 直播",
+      "summary": "Sam Altman 发布生活向推文，称没想过会通过儿童版转播观看 F1，表示「无法想象更幸福了」。与 AI 行业无直接关联。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "个人动态"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050654662349787518",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 转发并力荐 OpenAI 对齐团队近期博客成果",
+      "summary": "Sam Altman 引用同事 Boaz Barak 推文，称赞 OpenAI 对齐团队最近在官方 alignment 博客上发布的多项研究结果，并简短评价「this is great」，提示读者关注 OpenAI alignment 博客的最新研究流。",
+      "category": "研究",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "对齐",
+        "Sam Altman",
+        "AI 安全"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050427808456077541",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 称未来发布会将扩大规模",
+      "summary": "Sam Altman 表示此次发布派对到场人数远超预期，将为未来产品发布筹划更大规模的活动。他还承诺为下一次发布会构思更具创意的形式。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "Sam Altman",
+        "活动",
+        "社区"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050399512494227709",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 感慨重返 Twitter 的舒适感",
+      "summary": "Sam Altman 表示重新活跃于 Twitter 让他感到熟悉与放松，戏称这是「年少时浪费的技能」带来的慰藉。属于个人感想类发言。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "OpenAI",
+        "社交媒体"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050357911915028689",
+      "source": "Sam Altman (Twitter)",
+      "title": "OpenClaw 支持 ChatGPT 账号登录",
+      "summary": "Sam Altman 宣布用户现在可以使用 ChatGPT 账号登录 OpenClaw，并直接复用其订阅权益。此举降低了使用门槛，让现有 ChatGPT 订阅者可无缝接入 OpenClaw 的功能。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "OpenClaw",
+        "ChatGPT",
+        "账号互通",
+        "订阅"
+      ],
+      "practice_suggestions": [
+        "已订阅 ChatGPT 的用户可直接尝试 OpenClaw，无需新建账号",
+        "评估 OpenClaw 是否能复用现有工作流，避免重复付费"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2050539386475786708",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Demis Hassabis 与 Sequoia 长谈：从博弈到 AGI",
+      "summary": "Demis Hassabis 致谢 Sequoia AI Ascent 上的炉边对谈，话题涵盖博弈训练 AI、DeepMind 起源、AGI 路径、AI for Science 与 Isomorphic 的生物学突破，以及哲学议题。他在结尾表态偏爱冯·诺依曼。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "DeepMind",
+        "AGI",
+        "AI for Science",
+        "Demis Hassabis",
+        "Isomorphic"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2050298733280059604",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 与 YC 对谈 AGI：记忆、持续学习与 Agent 现状",
+      "summary": "Demis Hassabis 在 Y Combinator《How to Build the Future》节目中与 Garry Tan 对话，讨论了通往 AGI 还差什么、记忆为何仍未解决、AlphaGo 如何塑造 Gemini、为何小模型越来越强、持续学习与 Agent 的未来、以及 AlphaFold 突破模式与开放模型 Gemma。话题还涉及推理变便宜后的影响及给创业者的建议。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "AGI",
+        "DeepMind",
+        "Gemini",
+        "Agent",
+        "持续学习"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2050291108593258742",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Demis Hassabis 称赞 Banksy 新作",
+      "summary": "Demis Hassabis 转发 BBC 记者 John Simpson 关于 Westminster 议会接受 Banksy 在 Pall Mall 附近雕塑作品的消息，称赞 Banksy 是天才。属于与 AI 无关的个人文化评论。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Demis Hassabis",
+        "Banksy",
+        "艺术"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2050252933866930339",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 开发者大会 Code with Claude 下周回归",
+      "summary": "Anthropic 宣布其开发者大会「Code with Claude」将于下周回归，面向 Claude Code 新手与资深用户均设有相应议程。官方提供线上直播注册，活动主页位于 claude.com/code-with-claude。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "开发者大会",
+        "Anthropic",
+        "直播"
+      ],
+      "practice_suggestions": [
+        "在 claude.com/code-with-claude 注册直播以获取 Claude Code 的最新功能演示与最佳实践",
+        "若团队已采用 Claude Code，关注会议中关于工作流集成与扩展的议程以更新内部规范"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2050290618187055175",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI Codex 多线更新：一键迁移、/goal 长程任务与虚拟宠物",
+      "summary": "OpenAI 在两天内连续发布多项 Codex 更新：核心是「一键迁移」，App 与 CLI 均支持从其他 AI 编码工具一键导入设置、插件、Agent 与项目配置以争夺竞品用户；伴随的还有「/goal」长程任务功能（可让 Codex 围绕单一目标自主长时间执行）以及游戏化的 /pet 与 /hatch 宠物体系（基于 hatch-pet Skill 扩展，并配合 5/2-5/9 的社区抽奖活动），间接揭示 Codex 已采用 Skill 插件化机制扩展命令。Sam Altman 亲自下场孵化 clippy 并表态「Codex 与 Claude Code 选适合自己的就好」，把发布节奏推到一个相对完整的开发者侧推介周期。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "一键迁移",
+        "/goal",
+        "宠物功能",
+        "Skill 机制",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "若已用其他 AI 编码工具，在 Codex App 或 CLI 中尝试一键迁移，先备份原配置评估兼容性",
+        "试用 /goal 把多步任务交给 Codex 自主长时间执行，观察稳定性与中断恢复能力再决定是否进入生产链路",
+        "关注 Codex 的 Skill 插件机制（如 hatch-pet 安装方式），其扩展接口对编写自有命令很关键"
+      ],
+      "thread_group_id": "thread-OpenAI-20260501-1905",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2050290619684393152",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 迁移入口现已开放：App 与 CLI 均支持",
+      "summary": "OpenAI 补充说明 Codex 迁移功能的具体入口：用户可直接在 Codex 应用或 CLI 中完成切换，无需走外部工具或脚本。迁移指引页面位于 chatgpt.com/codex/switch-to-codex/。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "CLI",
+        "迁移",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "通过 Codex CLI 的内置迁移命令快速完成切换，避免手动重建配置"
+      ],
+      "thread_group_id": "thread-OpenAI-20260501-1905",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2050250926888468929",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.5 上线一周：API 收入翻倍领跑，Codex Fast xhigh 实测受好评",
+      "summary": "OpenAI 在 GPT-5.5 发布一周后公布商业表现：API 收入增速超过此前任何版本的 2 倍，Codex 在不到 7 天内收入翻倍，官方将势能归因于企业对 Agent 化编码工具的需求。Sam Altman 同期补充质量侧反馈，称在 Codex 的 Fast 模式下使用 GPT-5.5 xhigh 推理档体感「really good」，并自嘲此前被 Twitter 上 medium 档的负面评价误导，相当于对「Fast + xhigh」组合的官方背书。整体看，GPT-5.5 的高推理档在编码场景已形成口碑与营收双正循环。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-5.5",
+        "OpenAI",
+        "Codex",
+        "Fast 模式",
+        "API 收入",
+        "Agent 编码"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "practice_suggestions": [
+        "在 Codex 中优先尝试 GPT-5.5 xhigh + Fast 模式组合（约 1.5× 速度、2.5× 价格），评估自身代码任务的性价比",
+        "若团队已部署旧版 OpenAI 模型，可参考 API 收入信号评估迁移到 GPT-5.5 的紧迫性"
+      ]
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050275779452588309",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 新增 /hatch 命令：自定义专属宠物",
+      "summary": "OpenAI Devs 宣布 Codex 加入 /hatch 命令，允许用户自定义并孵化属于自己的虚拟宠物，与早前发布的 /pet 命令配套。属于游戏化交互的延伸更新。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "hatch",
+        "宠物",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "在 Codex 中使用 /hatch 自定义宠物外观，搭配 /pet 唤醒互动"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260501-1806",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2050355373052223585",
+      "source": "xAI (Twitter)",
+      "title": "xAI API 上线声音克隆，2 分钟生成自定义语音",
+      "summary": "xAI 宣布其 API 现已支持声音克隆功能，用户可在 2 分钟内创建自定义语音，或从覆盖 28 种语言的 80 多种预置声音库中选择。该能力面向语音 Agent、有声书、游戏角色等场景，便于开发者快速为应用接入个性化 TTS。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "xAI",
+        "声音克隆",
+        "语音合成",
+        "API",
+        "Grok"
+      ],
+      "practice_suggestions": [
+        "若已在使用 xAI/Grok API，可评估将自定义声音接入语音 Agent 或有声内容流水线，比较与 ElevenLabs 等方案的成本与延迟。",
+        "上线前需对克隆声音的授权与合规链路（声纹同意、滥用防护）建立审核流程，避免被用于伪造身份。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050658558174437701",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：Codex Fast 模式下 GPT-5.5 xhigh 体感很强",
+      "summary": "Sam Altman 表示在 Codex 的 Fast 模式中使用 GPT-5.5 xhigh 推理档体验「really good」，并自嘲此前在 Twitter 上被 medium 档负面评价误导。可视为 OpenAI 官方对 GPT-5.5 高推理档 + Fast 模式组合的人工背书。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "GPT-5.5",
+        "Codex",
+        "Fast 模式",
+        "Sam Altman"
+      ],
+      "practice_suggestions": [
+        "使用 Codex 时优先尝试 GPT-5.5 xhigh + Fast 模式组合（速度提升 1.5×、价格 2.5×），评估在自身代码任务上的性价比。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050250926888468929",
+      "angle": "Codex Fast 模式实测体验"
+    },
+    {
+      "url": "https://x.com/sama/status/2050402088266694689",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 在 Codex 中孵化「clippy」",
+      "summary": "Sam Altman 发布短指令「/hatch clippy」，看似在演示 Codex 内新推出的宠物孵化功能。这是配合 Codex 宠物功能的轻量互动展示。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "宠物功能",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "Sam Altman 实测 /hatch"
+    },
+    {
+      "url": "https://x.com/sama/status/2050304809572688289",
+      "source": "Sam Altman (Twitter)",
+      "title": "Codex 上线宠物功能，可孵化虚拟宠物",
+      "summary": "Sam Altman 推荐 Codex 中新增的「宠物」功能并鼓励用户尝试孵化。他承认这并非最重要的更新，但实际使用价值高于表面观感，属于编码工具中的趣味化设计。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "宠物功能",
+        "OpenAI",
+        "开发体验"
+      ],
+      "practice_suggestions": [
+        "在 Codex 中尝试 /hatch 指令体验宠物孵化",
+        "观察该类轻量化交互是否对长时间编码任务有正向激励作用"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "Sam Altman 转发宠物上线"
+    },
+    {
+      "url": "https://x.com/sama/status/2050302192775815613",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 称想刷新 Codex /goal 最长运行记录",
+      "summary": "Sam Altman 转引 steipete 对 Codex 新「/goal」功能的好评，并表示自己很想让任务跑出有史以来最长的执行时长。该功能可让 Codex 围绕一个目标自主长时间运行。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "/goal",
+        "Agent",
+        "长时运行"
+      ],
+      "practice_suggestions": [
+        "试用 Codex 的 /goal 功能，把多步任务交给它自主推进",
+        "观察长时间执行下的稳定性与中断恢复能力，再决定是否纳入生产工作流"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "Sam Altman 关注 /goal 长跑"
+    },
+    {
+      "url": "https://x.com/sama/status/2050274547061129577",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 谈 Codex 与 Claude Code：选适合自己的就好",
+      "summary": "Sam Altman 表示「Codex 与 Claude Code 哪个更好」的投票毫无意义，鼓励用户按需选择。他对当前编码工具的繁荣表达感谢，并认为竞争与可选性本身就是好事。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Claude Code",
+        "工具选择",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "Sam Altman 论 Codex/Claude Code 选择"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050275713824211041",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 新增 /pet 趣味命令：可唤醒虚拟宠物",
+      "summary": "OpenAI Devs 宣布在 Codex 中加入趣味性的虚拟宠物功能，用户使用 /pet 命令可唤醒自己的宠物。属于游戏化体验更新而非生产力特性。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "宠物",
+        "彩蛋",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "在 Codex 中输入 /pet 体验该交互，但不影响生产工作流"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260501-1806",
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "/pet 宠物命令首发"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050621561443701108",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 宠物活动：分享作品赢 30 天 ChatGPT Pro",
+      "summary": "OpenAI Devs 发起 Codex 宠物社区活动，鼓励用户使用 /hatch 命令创建自己的宠物并分享。官方将挑选 10 个最受欢迎的作品，获奖者可得 30 天 ChatGPT Pro。属于市场营销互动而非功能更新。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "宠物",
+        "社区活动",
+        "ChatGPT Pro"
+      ],
+      "practice_suggestions": [
+        "若已使用 Codex，可在 5/9 截止日期前用 /hatch 创建宠物并分享以参与抽奖"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260502-1700",
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "宠物作品征集活动"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050621573338710108",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 宠物活动法律细则：奖品总值 350 美元",
+      "summary": "OpenAI Devs 发布 Codex 宠物活动的法律条款，活动从 2026 年 5 月 2 日上午 8 点至 5 月 9 日下午 4 点（美东时间）举行，奖品总价值 350 美元，每人限领 1 份。属于附属法律披露而非内容更新。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "活动条款",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "参与 Codex 宠物抽奖前查阅完整规则以确认资格"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260501-1700",
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "宠物活动法律细则"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050301642717950166",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 宠物功能官方文档上线",
+      "summary": "OpenAI Devs 提供 Codex 宠物功能的官方说明页（developers.openai.com/codex/app/settings#codex-pets），用户可在领养前先了解宠物玩法与设置项。属于此前 /pet 与 /hatch 命令发布的文档补完。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "宠物",
+        "文档",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "查阅 developers.openai.com/codex/app/settings 中的 codex-pets 章节了解可用设置项"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "宠物功能官方文档"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2050299857974489153",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 宠物需安装 hatch-pet skill 启用",
+      "summary": "针对用户反馈「找不到 /hatch 命令」，OpenAI Devs 澄清 /hatch 并非默认内置，需先安装名为 hatch-pet 的 skill 才能使用。这一细节也间接揭示 Codex 当前已采用 skill 插件化机制扩展命令。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "skill",
+        "hatch-pet",
+        "插件机制"
+      ],
+      "practice_suggestions": [
+        "在 Codex 中通过 skill 安装机制扩展自定义命令，了解其安装路径有助于编写自有 skill",
+        "排查 Codex 命令缺失问题时优先检查对应 skill 是否已启用"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2050290618187055175",
+      "angle": "hatch-pet Skill 启用"
+    }
+  ]
+}
