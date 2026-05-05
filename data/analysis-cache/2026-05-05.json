@@ -1,0 +1,123 @@
+{
+  "analyzed_at": "2026-05-05T07:30:00+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-05.json",
+  "trend_paragraph": "- **企业 AI 落地提速**：Anthropic 联手 Blackstone、高盛设立专攻中型企业 Claude 部署的服务公司，并同步上线 Claude Platform 无密钥认证降低集成摩擦。\n- **Google agentic 全栈推进**：4 月月报集中展示 Gemini Enterprise Agent Platform、第八代 TPU 与 Gemma 4 开源，今日 Gemini API Webhooks 进一步补齐长任务异步通道。\n- **实时与异步基础设施并进**：OpenAI 公开 WebRTC 重构方案撑起 9 亿周活低延迟语音，Webhooks 与 Realtime 让行业把同步异步通道同时做厚。\n- **GPT-5.5 与 Agents SDK 2.0 信号**：Sam Altman 谈到 GPT-5.5 派对申请补偿与 Agents SDK 2.0「被低估」，暗示 OpenAI 下一波发布节奏正在铺垫。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/delivering-low-latency-voice-ai-at-scale",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 重构 WebRTC 栈：支撑 9 亿周活的低延迟语音",
+      "summary": "OpenAI 工程团队公开 ChatGPT voice 与 Realtime API 的底层 WebRTC 重构方案，应对 9 亿+ 周活规模下的低延迟语音交互。核心架构是分离 relay + transceiver：transceiver（Go + Pion 实现）持有完整 WebRTC 会话状态，relay 是轻量级 UDP 转发层，用 ICE ufrag 做 first-packet 路由。结合 SO_REUSEPORT、runtime.LockOSThread、预分配缓冲区在用户态优化 packet 处理，并通过 Cloudflare geo proximity steering 将信令路由到最近集群，避免内核 bypass。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": ["WebRTC", "实时语音", "OpenAI", "基础设施", "低延迟"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-april-2026/",
+      "source": "Google AI Blog",
+      "title": "Google 4 月 AI 月报：Gemma 4 开源与第八代 TPU 齐发",
+      "summary": "Google 月度回顾 Cloud Next '26 主要发布：Gemini Enterprise Agent Platform 让企业构建管理自治 agent，第八代 TPU 专为 agentic AI 算力设计。模型层 Gemma 4 开源（按字节算最强开源模型，系列累计 5 亿次下载），Deep Research Max 处理高强度数据综合。产品端 Google Vids 全员免费每月 10 个视频生成、Colab 推出 Learn Mode 编程导师；公益侧覆盖 TOEIC 备考、Google Translate 20 周年、农村医疗工作者 1000 万美元 AI 培训。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["Google", "Gemma 4", "TPU", "Agent 平台", "月度回顾"],
+      "practice_suggestions": [
+        "评估 Gemma 4 是否能在边缘或私有部署场景替代当前使用的中小开源模型",
+        "试用 Colab Learn Mode 作为团队新人 Python/数据分析入门的辅助工具",
+        "关注 Gemini Enterprise Agent Platform 的多步业务流程能力，对比现有 RPA/Agent 方案"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/event-driven-webhooks/",
+      "source": "Google AI Blog",
+      "title": "Gemini API 新增事件驱动 Webhooks 替代轮询",
+      "summary": "Gemini API 推出事件驱动 Webhooks（push-based 通知），用于长时间运行的 agentic 应用。开发者无需再轮询作业状态，Gemini API 在任务完成或状态变化时主动 push 到注册的 webhook 端点，降低延迟和开发摩擦。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["Gemini API", "Webhooks", "Agent 开发", "异步任务"],
+      "practice_suggestions": [
+        "把现有基于 polling 的 Gemini 长任务调用迁移到 Webhook，降低无效请求与延迟",
+        "在多步 agent 工作流中用 Webhook 触发下一步骤，简化状态机管理"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/enterprise-ai-services-company",
+      "source": "Anthropic Blog",
+      "title": "Anthropic 联手 Blackstone、高盛设企业 AI 服务公司",
+      "summary": "Anthropic 与 Blackstone、Hellman & Friedman、Goldman Sachs 共同组建一家新的企业 AI 服务公司，专注把 Claude 部署到中型企业核心业务流程，目标客户为社区银行、中型制造商、区域医疗系统等无法自建前沿 AI 的机构。Applied AI 工程师将与新公司团队合作做定制方案，并加入包含 Accenture、Deloitte、PwC 的 Claude Partner Network。CFO Krishna Rao 表示企业对 Claude 的需求已超出单一交付模式承载能力。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": ["Anthropic", "Claude", "企业 AI", "Blackstone", "高盛"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2051318922805436896",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 暗示将补偿落选 GPT-5.5 派对申请者",
+      "summary": "Sam Altman 在推文中表示将为申请 GPT-5.5 派对但未获名额的人提供「一些好东西」作为补偿，未透露具体形式。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": ["Sam Altman", "GPT-5.5", "OpenAI"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2050998576671859003",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：Agents SDK 2.0 被低估",
+      "summary": "Sam Altman 一句话评论 OpenAI Agents SDK 2.0「被低估」，未提供具体功能或基准细节。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": ["Sam Altman", "Agents SDK", "OpenAI"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2051393709619732758",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Platform 推出无密钥认证：浏览器登录与云身份联合",
+      "summary": "Anthropic 在 Claude Platform 上线 keyless auth 解决客户最关心的 API key 管理安全问题。开发者可通过 CLI 浏览器登录认证，工作负载也可直接复用现有云身份（AWS、GCP、Azure 或任意 OIDC token provider），无需再分发与轮换静态 API key。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude Platform", "无密钥认证", "OIDC", "工作负载身份", "安全"],
+      "practice_suggestions": [
+        "在 CI/CD 与服务端工作负载中以 Workload Identity Federation 替换硬编码的 Claude API Key",
+        "为开发者本地环境启用 CLI 浏览器登录，避免长生命周期个人 token 泄露",
+        "把 Claude API Key 纳入密钥轮换/退役计划，逐步迁移至联合身份"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260504-2009",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2051393711226159118",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Devs 补充：Workload Identity Federation 文档链接",
+      "summary": "Claude Devs 在 keyless auth 公告下追加自回复，指向 platform.claude.com 上 workload-identity-federation 的官方文档，方便开发者查阅集成细节。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": ["Claude Platform", "文档", "Workload Identity Federation"],
+      "practice_suggestions": [
+        "阅读 workload-identity-federation 文档，确认目标云厂商（AWS/GCP/Azure）支持的 token 交换流程"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260504-2009",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2051410088171385015",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Cal State East Bay 学生用 Codex 完成 Creator Challenge",
+      "summary": "OpenAI Devs 分享 Cal State East Bay 学生在与 Handshake 合办的 Codex Creator Challenge 中，使用 Codex 构建从竞选追踪器到财务规划工具等项目的活动花絮，强调「Build it. Break it. Fix it.」的迭代理念。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": ["Codex", "OpenAI", "学生项目", "Handshake"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
