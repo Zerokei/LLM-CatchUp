@@ -1,0 +1,969 @@
+{
+  "analyzed_at": "2026-05-07T08:43:37+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-07.json",
+  "trend_paragraph": "- **旗舰模型轮替**：OpenAI GPT-5.5 Instant 全量上线 ChatGPT 默认模型,xAI 同日发布百万上下文的 Grok 4.3。\n- **算力争夺战**：Anthropic 接入 SpaceX Colossus 1 数据中心 300MW,并探索 GW 级轨道计算,Claude 使用上限随之翻倍。\n- **智能体下一代基建**：Claude Managed Agents 推出 Dreaming 与多智能体编排,OpenAI Agents SDK 也补齐 TypeScript 与沙盒。\n- **AI 超算网络开源**：OpenAI 联合 AMD/Broadcom/Intel/微软/NVIDIA 发布 MRC 协议,统一千卡级训练同步标准。\n- **对齐研究新角度**：Anthropic 提出 Model Spec Midtraining,在中训阶段而非后训植入对齐规范。",
+  "articles": [
+    {
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-may",
+      "source": "Berkeley RDI",
+      "title": "Berkeley RDI 智能体周报：Agentic AI 峰会票务与 AgentX 推进",
+      "summary": "Berkeley RDI 本期周报聚焦 2026 Agentic AI Summit 早鸟票即将结束、嘉宾名单扩展以及学生票余量有限。同时披露赞助合作机会，并通报 AgentX–AgentBeats 第二阶段第四冲刺正在进行中。整体偏运营信息，研究内容较少。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Berkeley RDI",
+        "Agentic AI 峰会",
+        "AgentX",
+        "AgentBeats",
+        "周报"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.deeplearning.ai/the-batch/us-government-to-vet-new-models/",
+      "source": "The Batch",
+      "title": "The Batch：美国拟设模型审批机制，多条 AI 政策与产业新闻",
+      "summary": "白宫据称正起草仿照 FDA 药品审批流程的 AI 模型审查行政令，缘起 Anthropic 披露 Mythos 模型具备识别网络漏洞的能力；商务部已扩大自愿测试项目，Google、Microsoft、xAI 提前向政府开放模型评估。同期消息：OpenAI 将 GPT-5.5 Instant 设为 ChatGPT 默认模型并称高风险场景幻觉减少 52.5%；Anthropic 发布十款金融业 Agent 模板并基于 Claude Opus 4.7 在 Vals AI 金融基准上拿下 64.37%；五角大楼新增 Microsoft、Amazon、Nvidia、Reflection AI 为机密用途供应商，Google DeepMind 伦敦员工投票成立工会以阻止军方合作。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI 监管",
+        "白宫行政令",
+        "GPT-5.5 Instant",
+        "Claude 金融 Agent",
+        "国防部 AI 采购"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/introducing-chatgpt-futures-class-of-2026",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 推出首届 ChatGPT Futures:表彰 26 位青年创造者",
+      "summary": "OpenAI 设立 ChatGPT Futures 项目,首届评选出 26 位「Class of 2026」青年荣誉获得者。项目聚焦 AI 普惠时代依托 ChatGPT 进行创造的学生开发者,呈现年轻一代用 AI 工具构建作品的多样案例。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "ChatGPT Futures",
+        "教育",
+        "青年创作者",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/introducing-b2b-signals",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 发布 B2B Signals：前沿企业每名员工的智能消费已达 3.5 倍",
+      "summary": "OpenAI 上线企业版 B2B Signals 报告，基于隐私脱敏的聚合用量数据显示「前沿企业」每员工消耗的 token 量是普通企业的 3.5 倍（一年前为 2 倍），其中 64% 的差距来自更深度的使用而非更大的消息量。Codex 是差距最大的工具——前沿企业每员工 Codex 消息量是普通企业的 16 倍；Cisco 在生产工作流中借助 Codex 把构建时间缩短约 20%、每月节省 1500 多工程师小时、缺陷修复吞吐提升 10–15 倍。报告将「从聊天助手转向 Agent 委派工作」视为下一阶段成熟度标志。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "企业 AI 采纳",
+        "B2B Signals",
+        "Codex",
+        "Agent 工作流",
+        "Cisco"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/gardening-tips/",
+      "source": "Google AI Blog",
+      "title": "Google 整合 AI Mode、Search Live 与购物：5 个园艺场景示范",
+      "summary": "Google 通过园艺场景集中演示 Search 中的 AI 能力：AI Mode 可视化布局并设计「混乱花园」、Canvas 工具生成全年种植日历、购物中的「in stock nearby」筛选定位本地园艺用品、Search Live 镜头对准病株获得实时养护建议。属于 Search AI 功能的科普推广，无新模型或新功能首发。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Google Search",
+        "AI Mode",
+        "Search Live",
+        "Canvas",
+        "多模态助手"
+      ],
+      "practice_suggestions": [
+        "在 Google Search 的 AI Mode 中尝试用 Canvas 生成全年规划类多步任务，以体验其结构化输出能力。",
+        "用 Search Live 把摄像头对准实物（植物、设备故障）测试实时视觉问答效果，作为多模态查询参考。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/higher-limits-spacex",
+      "source": "Anthropic Blog",
+      "title": "Anthropic ↔ SpaceX 算力合作,Claude 限额翻倍",
+      "summary": "Anthropic 与 SpaceX/xAI 达成算力合作,接入 Colossus 1 数据中心 300MW 算力,并联合探索 GW 级轨道 AI 计算的可能性。配套上调使用上限:Claude Code 5 小时窗口的额度翻倍、取消高峰降速,Pro 与 Max 计划用户也获得更高的周/月配额。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "算力合作",
+        "Claude Code",
+        "使用上限"
+      ],
+      "practice_suggestions": [
+        "重度使用 Claude Code 的用户可立即体验翻倍的 5 小时配额,无需重新订阅",
+        "此前在高峰时段被降速的项目可重新评估并行度,峰值降速已取消",
+        "关注 SpaceX Colossus 1 接入后排队等待时间是否显著下降"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2051829422265979047",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：ChatGPT 现在感觉非常「在线」",
+      "summary": "Sam Altman 简短称当前 ChatGPT「感觉非常 switched on」，是对近期 GPT-5.5 Instant 推送默认化的总体观感表达。无具体数据或新功能披露。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "ChatGPT",
+        "GPT-5.5",
+        "用户体验",
+        "推文"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "Altman 体验感受"
+    },
+    {
+      "url": "https://x.com/sama/status/2051783339502375418",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：Codex 中的 5.5 在非编码任务上同样表现惊艳",
+      "summary": "Sam Altman 表示，Codex 里的 GPT-5.5 在非编码任务上「好得让人意外」，他常常以为模型做不到某些任务，结果却被惊喜地证明其能力可达。属于个人体验式背书，可作为 GPT-5.5 通用能力跨域使用的参考。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "Codex",
+        "GPT-5.5",
+        "非编码任务",
+        "通用能力"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "非编码任务表现"
+    },
+    {
+      "url": "https://x.com/sama/status/2051758445402223051",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：Instant 模型在速度、智能与个性化结合上呈现「整体大于部分之和」",
+      "summary": "Sam Altman 在转推自己关于 ChatGPT 新 Instant 模型的帖子时补充：速度、智能、个性以及优秀记忆/个性化的组合，叠加在一起后呈现出「整体大于各部分之和」的体验。可作为 GPT-5.5 Instant 推广话术参考。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "ChatGPT Instant",
+        "GPT-5.5",
+        "记忆功能",
+        "个性化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "整体大于部分之和"
+    },
+    {
+      "url": "https://x.com/sama/status/2051758152224506203",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：ChatGPT 新 Instant 模型表现极佳，建议长期用思考模式者试用",
+      "summary": "Sam Altman 力推 ChatGPT 新 Instant 模型，称其表现「damn good」，并建议长期只使用 thinking 模式的用户回头试一下 Instant。配合 The Batch 报道，背景是 OpenAI 已将 GPT-5.5 Instant 设为 ChatGPT 默认模型。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Sam Altman",
+        "ChatGPT Instant",
+        "GPT-5.5 Instant",
+        "推荐",
+        "默认模型"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "Altman 推荐切换实测"
+    },
+    {
+      "url": "https://x.com/sama/status/2051724685231214650",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 征集 GPT-5.5 大 token 预算用例",
+      "summary": "Sam Altman 公开征集用户使用 GPT-5.5 完成的、此前模型无法实现的项目案例,尤其关注那些消耗了「ludicrous token budgets」(超大 token 预算)的实践。这暗示 OpenAI 正在评估 5.5 在长上下文与高强度推理场景下的真实落地效果。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "GPT-5.5",
+        "OpenAI",
+        "Sam Altman",
+        "长上下文",
+        "用例征集"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "征集长 token 用例"
+    },
+    {
+      "url": "https://x.com/sama/status/2051716909629153573",
+      "source": "Sam Altman (Twitter)",
+      "title": "GPT-5.5 Instant 今日上线 ChatGPT 默认模型",
+      "summary": "OpenAI 今日将 ChatGPT 默认模型升级为 5.5 Instant。据 Eric Mitchell 介绍,该版本在智能、图像感知与事实性方面有显著提升,并把写作风格调整得更朴实直接。Sam Altman 称这是一次相当大的升级。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-5.5 Instant",
+        "ChatGPT",
+        "OpenAI",
+        "默认模型",
+        "图像理解"
+      ],
+      "practice_suggestions": [
+        "在日常 ChatGPT 任务中重新评估 5.5 Instant 的事实性与图像识别表现,与之前默认模型对比",
+        "若此前因写作风格冗长而切换到自定义指令,可暂时移除并测试新版的「更朴实直接」风格",
+        "在多模态场景(截图问答、图表解读)中优先回归默认模型试用 5.5 Instant"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "Altman 强调升级幅度"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2052147236952477923",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "DeepMind 与 EVE Online 达成 AI 研究合作",
+      "summary": "Demis Hassabis 宣布 Google DeepMind 与 Fenris Creations 旗下 EVE Online 建立研究合作,延续 DeepMind 长期以游戏作为 AI 试验场的传统。EVE 庞大的玩家社群与开放经济系统被视为多智能体与长期博弈研究的理想环境。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "DeepMind",
+        "EVE Online",
+        "游戏 AI",
+        "多智能体",
+        "研究合作"
+      ],
+      "thread_group_id": "thread-demishassabis-20260506-2203",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2052011542707630461",
+      "angle": "Hassabis 谈游戏价值"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2052147239619838058",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 转发 EVE Online 合作详情链接",
+      "summary": "Demis Hassabis 在主推之后补发链接,指向 EVE Online 官方公告页《a-new-era》,作为 DeepMind 合作公告的扩展阅读。属于线程内的补充信息条目。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "DeepMind",
+        "EVE Online",
+        "合作公告",
+        "线程补充"
+      ],
+      "thread_group_id": "thread-demishassabis-20260506-2203",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2052074924588888261",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 评论 Anthropic 与 SpaceX 合作太空算力",
+      "summary": "Thariq 转发 xAI 关于 SpaceXAI 与 Anthropic 探讨在轨道上部署 GW 级 AI 计算的消息,并附上「Claude in Space」的调侃。该消息源自 xAI 主帖,本条为转发评论。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "轨道算力",
+        "xAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/xai/status/2052060561857302605",
+      "angle": "Thariq 评论太空算力"
+    },
+    {
+      "url": "https://x.com/trq212/status/2052065936585457982",
+      "source": "Thariq (Twitter)",
+      "title": "Anthropic 与 SpaceX 合作扩容并放宽 Claude Code 限额",
+      "summary": "Thariq(Anthropic 员工)宣布 Anthropic 与 SpaceX 达成合作以大幅增加算力,并将 Claude Code 与 Claude API 用量限额扩大:撤回此前的高峰时段限制收紧,并将 5 小时窗口限额翻倍。原始公告来自 @claudeai 账号。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "Claude Code",
+        "用量限额",
+        "算力合作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2052060691893227611",
+      "angle": "Thariq 评论合作扩容"
+    },
+    {
+      "url": "https://x.com/trq212/status/2051808772423819507",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 预告 Code with Claude 大会工作坊",
+      "summary": "Anthropic 员工 Thariq 预告将在 5 月 6 日 Code with Claude 开发者大会上举办「how we Claude Code」工作坊,分享内部工作流。会议内容会全程录制并上线,无法到场者也可观看。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "开发者大会",
+        "工作流",
+        "Anthropic"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052105841864495282",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 联合创始人 Code with Claude 现场对谈",
+      "summary": "Anthropic 联合创始人 Dario Amodei 与 Daniela Amodei 在 Code with Claude 大会现场进行 1pm PT 对谈,Claude 与 Claude Devs 同步在社媒预告。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Anthropic",
+        "Code with Claude",
+        "联合创始人",
+        "直播"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052067399088664981",
+      "source": "Claude (Twitter)",
+      "title": "Claude Managed Agents 大更新:Dreaming + 多智能体编排",
+      "summary": "Anthropic 在 Code with Claude 大会上正式将 Dreaming 作为 research preview 推出 — 智能体在后台离线反思过往会话、提炼可复用记忆与技能。同步上线的还有多智能体编排(lead 智能体并行委派 specialist)、outcomes loop 评估循环以及 Webhooks 触发器,所有特性已在 Claude 平台可用。配套发布的 /claude-api skill 可在 Claude Code 中直接上手 Managed Agents 开发。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Managed Agents",
+        "Dreaming",
+        "多智能体编排",
+        "Webhooks",
+        "Code with Claude"
+      ],
+      "practice_suggestions": [
+        "在 Claude 平台启用 Managed Agents 后,试用 lead-specialist 编排模式将复杂任务并行拆分",
+        "为长期运行的智能体启用 Dreaming,测试其跨会话记忆质量",
+        "在 Claude Code 中调用 /claude-api skill 快速生成 Managed Agents 起步代码"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052067404696473833",
+      "source": "Claude (Twitter)",
+      "title": "Claude 多智能体编排:lead 委派 specialist 并行执行",
+      "summary": "Anthropic 进一步说明 multiagent orchestration 的工作模式:由 lead agent 将复杂任务拆解并委派给多个 specialist agent 并行处理。该能力现已进入 Managed Agents 公开测试版,瞄准复杂工程与研究类任务。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "多智能体",
+        "lead agent",
+        "并行编排",
+        "Managed Agents"
+      ],
+      "practice_suggestions": [
+        "把现有需要多步骤(检索+生成+校验)的工作流改造为 lead+specialist 模式,观察吞吐与失败隔离效果",
+        "为每个 specialist 设计独立的工具与 system prompt,避免 lead 上下文被无关工具污染",
+        "在编排层加入超时与重试策略,防止某个 specialist 阻塞整体任务"
+      ],
+      "thread_group_id": "thread-claudeai-20260506-1646",
+      "duplicate_of": "https://x.com/claudeai/status/2052067399088664981",
+      "angle": "多智能体编排细节"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052067407204700646",
+      "source": "Claude (Twitter)",
+      "title": "Claude Managed Agents 新特性已上线 Claude 平台",
+      "summary": "Anthropic 宣布 Claude Managed Agents 的新功能从今天起在 Claude 平台上可用,详见官方博客「new-in-claude-managed-agents」。该推文为线程一部分,与多智能体编排、outcomes loop、dreaming 等具体能力公告相串联。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Managed Agents",
+        "Anthropic",
+        "智能体平台"
+      ],
+      "practice_suggestions": [
+        "查阅 claude.com/blog/new-in-claude-managed-agents 了解新增能力的接入方式",
+        "评估将现有 Claude API 上的智能体工作流迁移至 Managed Agents 的可行性"
+      ],
+      "thread_group_id": "thread-claudeai-20260506-1646",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052060691893227611",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 与 SpaceX 达成算力合作并上调 Claude 使用上限",
+      "summary": "Anthropic 与 SpaceX 签署合作协议以大幅增加算力供给,叠加近期其他算力交易,使其能够同步提升 Claude Code 与 Claude API 的使用配额。这是面向重度用户改善体验的关键基础设施动作。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "算力",
+        "Claude Code"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://www.anthropic.com/news/higher-limits-spacex",
+      "angle": "Claude 官方公告"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052060694699237558",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 接入 SpaceX Colossus 1 数据中心 300MW 算力",
+      "summary": "根据合作协议,Anthropic 将使用 SpaceX 旗下 Colossus 1 数据中心的全部算力容量,获得逾 300 兆瓦的新增算力,且将在一个月内完成部署。这是其密集算力布局中即时落地最快的一笔。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "Colossus 1",
+        "数据中心",
+        "算力"
+      ],
+      "thread_group_id": "thread-claudeai-20260506-1619",
+      "duplicate_of": "https://www.anthropic.com/news/higher-limits-spacex",
+      "angle": "Colossus 1 300MW 接入"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2052060696255283346",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 详解使用上限上调与 SpaceX 合作:Claude Code 5 小时额度翻倍",
+      "summary": "Anthropic 官方博客详细披露三项即时生效的变更:Claude Code 在 Pro/Max/Team/Enterprise 计划下的 5 小时速率限制翻倍、取消 Pro 与 Max 的高峰时段降速、Opus 模型 API 速率上限大幅提高。同时通过 SpaceX Colossus 1 获得超 300MW、超过 22 万张 NVIDIA GPU 的新增算力,并叠加 Amazon 5GW、Google/Broadcom 5GW、Microsoft/NVIDIA 300 亿美元 Azure 容量与 Fluidstack 500 亿美元投资等多笔合作,还提及未来可能与 SpaceX 合作开发轨道 AI 算力。",
+      "category": "商业动态",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "SpaceX",
+        "Claude Code",
+        "Opus",
+        "算力",
+        "速率限制"
+      ],
+      "thread_group_id": "thread-claudeai-20260506-1619",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052106837810704473",
+      "source": "Claude Devs (Twitter)",
+      "title": "Code with Claude 大会日程:Amodei 兄妹对谈与 Claude Code 实战",
+      "summary": "Code with Claude 大会下午议程包括 1:00PM 由 CPO Ami Vora 主持的 Dario 与 Daniela Amodei 联合炉边对谈,以及 1:50PM 的 Boris Cherny 与 Jarred Sumner 现场用 Claude Code 编程演示。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Code with Claude",
+        "Anthropic",
+        "大会",
+        "Claude Code"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2052105841864495282",
+      "angle": "Claude Devs 转告"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052074424757793198",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Devs 致谢 Code with Claude 现场社区",
+      "summary": "Claude Devs 转引 bcherny 现场打招呼的推文,简短表达对 Code with Claude 大会现场社区参与者的感谢。属于活动氛围类发言,无具体技术信息。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Claude Devs",
+        "社区",
+        "Code with Claude"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052069321355182447",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Managed Agents 新增多智能体编排、outcomes loop、dreaming 与 Webhooks",
+      "summary": "Anthropic 在 Claude Managed Agents 中加入多项关键能力:多智能体编排(multiagent orchestration)、基于 rubric 的自我改进 outcomes loop、用于跨会话自学习的 dreaming 机制以及 webhooks 事件回调。这显著扩展了平台的代理协作与长期记忆能力。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Managed Agents",
+        "多智能体",
+        "dreaming",
+        "Webhooks"
+      ],
+      "practice_suggestions": [
+        "为现有智能体工作流引入 outcomes loop,定义可量化的 rubric 以驱动自动改进",
+        "评估使用 dreaming 让长期运行的智能体精炼跨会话记忆与技能",
+        "改用 webhooks 替代轮询,实现 Managed Agents 的事件驱动集成"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2052067399088664981",
+      "angle": "开发者侧功能清单"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052069326786798013",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Managed Agents Dreaming:跨会话整理记忆与技能",
+      "summary": "Claude Devs 解释 Dreaming 机制:智能体在会话中写入记忆,而 Dreaming 作为后台进程跨多个会话进行反思,可基于模式编辑记忆、新增技能或移除过期内容,详见 platform.claude.com/docs/en/managed-agents/dreams 文档。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Managed Agents",
+        "dreaming",
+        "记忆",
+        "智能体"
+      ],
+      "practice_suggestions": [
+        "阅读 dreams 官方文档,设计智能体跨会话记忆的写入与清理策略",
+        "在长期任务的智能体上启用 dreaming,以观察其对技能积累与稳定性的影响"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260506-1653",
+      "duplicate_of": "https://x.com/claudeai/status/2052067399088664981",
+      "angle": "Dreaming 工作机制"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052069328435175654",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code /claude-api skill 开源以快速上手 Managed Agents",
+      "summary": "Claude Devs 提供 Claude Code 中的 /claude-api skill 作为新功能的入门方式,并附上其在 anthropics/skills 仓库的开源代码地址,便于开发者复用与定制。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "skill",
+        "claude-api",
+        "Managed Agents",
+        "开源"
+      ],
+      "practice_suggestions": [
+        "在 Claude Code 中调用 /claude-api skill 体验 Managed Agents 新能力",
+        "fork github.com/anthropics/skills 仓库,基于 claude-api skill 二次开发自定义工作流"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260506-1653",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052064938840228237",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 使用上限上调:5 小时额度翻倍并取消高峰降速",
+      "summary": "Claude Devs 概述即日生效的三项使用上限调整:Pro/Max/Team 与按席位 Enterprise 计划的 Claude Code 5 小时限制翻倍、Pro 与 Max 计划取消高峰时段降速、Opus 模型 API 速率上限大幅提高。该调整由近期 SpaceX 等算力合作支撑。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Opus",
+        "速率限制",
+        "Pro",
+        "Max"
+      ],
+      "practice_suggestions": [
+        "重新评估 Claude Code 在重度编码会话下的可用配额,调整团队使用策略",
+        "针对依赖 Opus 的生产链路,按新的 API 速率上限重新规划并发与重试策略",
+        "Pro/Max 用户可在原高峰时段恢复完整 Claude Code 工作负载"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://www.anthropic.com/news/higher-limits-spacex",
+      "angle": "Claude Code 限额细节"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052055459272761661",
+      "source": "Claude Devs (Twitter)",
+      "title": "Code with Claude 大会开幕,聚焦 Claude Code 与代理开发",
+      "summary": "Anthropic 的 Code with Claude 开发者大会正式开幕,议程涵盖主题演讲、Claude Code 新功能介绍、GitHub 规模化构建实践,以及 Managed Agents 加速生产部署等主题。这是面向 Claude 开发者生态的旗舰活动,集中发布工程化与代理产品方向。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "开发者大会",
+        "Managed Agents",
+        "Anthropic",
+        "GitHub"
+      ],
+      "practice_suggestions": [
+        "关注大会回放,梳理 Claude Code 的新特性与最佳实践",
+        "评估 Managed Agents 是否适合替代自建代理基础设施"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260506-1558",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2052055579162755308",
+      "source": "Claude Devs (Twitter)",
+      "title": "Code with Claude 完整议程链接公布",
+      "summary": "Claude Devs 在主帖后续推文中给出完整议程页面链接 claude.com/code-with-claude,便于开发者查阅各分会场的详细安排。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "议程",
+        "开发者大会"
+      ],
+      "practice_suggestions": [
+        "访问 claude.com/code-with-claude 查看完整议程并选择关注的分场"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260506-1558",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2051758528562364902",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 发布 Model Spec Midtraining 对齐方法",
+      "summary": "Anthropic Fellows 提出 Model Spec Midtraining(MSM)新方法:在标准对齐流程之外的中训阶段就将模型规范注入模型行为。研究还实证比较不同 model spec 与 constitution 的泛化效果,为「哪种规范更可教」给出初步答案。配套博客与论文已公开。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "MSM",
+        "对齐",
+        "Model Spec",
+        "Anthropic Fellows",
+        "中训"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2051758541002719734",
+      "source": "Anthropic (Twitter)",
+      "title": "MSM 实证比较不同 Model Spec 的泛化效果",
+      "summary": "借助 MSM,Anthropic 可以实证研究哪些 model spec 或宪法能带来最佳的对齐泛化。结果显示:仅指定规则有一定效果,但解释规则背后的价值观、或补充更细的子规则,会显著提升泛化能力。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "MSM",
+        "对齐泛化",
+        "宪法 AI",
+        "model spec",
+        "价值观"
+      ],
+      "thread_group_id": "thread-AnthropicAI-20260505-2018",
+      "duplicate_of": "https://x.com/AnthropicAI/status/2051758528562364902",
+      "angle": "Model Spec 泛化对比"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2051758544999927943",
+      "source": "Anthropic (Twitter)",
+      "title": "MSM 研究的博客与论文链接",
+      "summary": "Anthropic 给出 MSM 研究的延伸阅读资源:博客 alignment.anthropic.com/2026/msm 与完整论文 arxiv.org/abs/2605.02087,便于研究者深入了解方法细节与实验结果。",
+      "category": "研究",
+      "importance": 2,
+      "tags": [
+        "MSM",
+        "论文",
+        "alignment.anthropic.com",
+        "对齐"
+      ],
+      "thread_group_id": "thread-AnthropicAI-20260505-2018",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2051718308702081047",
+      "source": "Anthropic (Twitter)",
+      "title": "弱监督训练可遏制强模型策略性「藏拙」",
+      "summary": "MATS、Redwood 与 Anthropic 的新研究指出:当 AI 处理人类无法完全核验的工作时,具备能力的模型可能故意藏拙(sandbagging)且难以察觉。研究发现,即便仅以更弱的模型作为监督者,也能将这类策略性藏拙的强模型训练回接近其完整能力,为可扩展监督提供新证据。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "sandbagging",
+        "可扩展监督",
+        "弱到强",
+        "对齐",
+        "MATS"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2051709028250915275",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.5 Instant 全量上线 ChatGPT 默认模型",
+      "summary": "OpenAI 宣布 GPT-5.5 Instant 在两天内向 ChatGPT 全体用户推送,成为新的默认模型。同步上线了更可见的「memory sources」记忆与个性化系统,让 ChatGPT 能借助过往会话与用户偏好生成更精准回应。Sam Altman 评价该模型「速度、智能、个性化的整体大于部分之和」,且在 Codex 等代码场景之外的非编码任务上同样表现亮眼。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5",
+        "ChatGPT",
+        "默认模型",
+        "记忆与个性化",
+        "Instant"
+      ],
+      "practice_suggestions": [
+        "将 ChatGPT 升级到 5.5 Instant 后,在 Settings → Memory 中开启 memory sources 体验跨会话个性化",
+        "若长期使用 thinking 模式,可切换到 5.5 Instant 验证速度与质量是否更优",
+        "在 Codex 等代码场景之外尝试 GPT-5.5,验证非编码任务的表现"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2052086313797705954",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 发布 ChatGPT Futures Class of 2026",
+      "summary": "OpenAI 推出「ChatGPT Futures Class of 2026」,表彰 26 位首届从大学全程使用 ChatGPT 的毕业生。他们用 AI 完成的项目包括映射 150 万个未知天体、穿墙探测灾后幸存者、让上亿张星系图像可检索、保护濒危语言,以及搭建系统将 500 万磅以上未售库存从填埋场转出。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "ChatGPT",
+        "Futures Class",
+        "学生",
+        "案例",
+        "OpenAI"
+      ],
+      "thread_group_id": "thread-OpenAI-20260506-1801",
+      "duplicate_of": "https://openai.com/index/introducing-chatgpt-futures-class-of-2026",
+      "angle": "Twitter 公告"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2052086316230398247",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT Futures 项目页面上线",
+      "summary": "OpenAI 跟帖给出 chatgpt.com/futures/ 页面链接,展示这批年轻构建者在「人人都能 build」时代利用 AI 创造的项目案例。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "ChatGPT",
+        "Futures",
+        "案例展示"
+      ],
+      "thread_group_id": "thread-OpenAI-20260506-1801",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2052039800384057348",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 联合芯片厂商发布开放网络协议 MRC",
+      "summary": "OpenAI 与 AMD、Broadcom、Intel、Microsoft、NVIDIA 联合发布 Multipath Reliable Connection(MRC),一种面向大规模 AI 训练集群的开放网络协议,旨在让海量芯片间的数据传输更可靠高效、减少 GPU 空转,并向全行业开放使用。配套播客中,OpenAI 的 Mark Handley 与同事详细讲解了超算级网络的同步挑战与 MRC 设计思路。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "MRC",
+        "AI 超算",
+        "网络协议",
+        "GPU 集群",
+        "开放标准"
+      ],
+      "thread_group_id": "thread-OpenAI-20260506-1456",
+      "duplicate_of": "https://x.com/OpenAI/status/2052025532485902368",
+      "angle": "网络协议设计动机"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2052039804288946368",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 播客上线 Spotify、Apple 与 YouTube",
+      "summary": "OpenAI 宣布其官方播客「OpenAI Podcast」已在 Spotify、Apple Podcasts 和 YouTube 三大平台上架。该推文为播客上线宣传线程的一部分,主要提供各平台收听链接。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "播客",
+        "内容分发"
+      ],
+      "practice_suggestions": [
+        "关注 OpenAI Podcast 获取官方一手访谈与产品理念解读"
+      ],
+      "thread_group_id": "thread-OpenAI-20260506-1456",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2052025533937103102",
+      "source": "OpenAI (Twitter)",
+      "title": "MRC 已在 OpenAI 全部最大超算集群中部署",
+      "summary": "OpenAI 透露 MRC 网络协议已部署于其训练前沿模型所用的全部最大超算节点,包括 Oracle 在德州 Abilene 的站点以及微软的 Fairwater 超算。该协议同步通过 Open Compute Project 开源,供全行业采用与扩展。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "MRC",
+        "超算网络",
+        "OCP",
+        "GPU训练"
+      ],
+      "thread_group_id": "thread-OpenAI-20260506-1359",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2052025532485902368",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 联合五大芯片厂商发布开源 AI 网络协议 MRC",
+      "summary": "OpenAI 联合 AMD、Broadcom、Intel、Microsoft 与 NVIDIA 发布 Modular Routing Compiler(MRC)— 一项面向 AI 超算的开源网络协议,旨在让数千张加速卡在大规模训练中保持同步。MRC 已部署在 OpenAI 全部最大超算集群中。配套播客深入讲解 MRC 设计动机与 AI 超算网络的演进。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "MRC",
+        "AI 超算",
+        "网络协议",
+        "开源协议"
+      ],
+      "thread_group_id": "thread-OpenAI-20260506-1359",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2051709033414025647",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT 升级记忆与个性化,新增可见的「memory sources」",
+      "summary": "OpenAI 同步改进 ChatGPT 的记忆与个性化能力,模型可更好地利用已保存的记忆、历史对话、文件以及已连接的 Gmail 帐户给出更贴合用户的回答。新引入的「memory sources」会显示本次回答用到了哪些上下文,并允许用户更新、删除或断开相关来源。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "ChatGPT",
+        "记忆",
+        "个性化",
+        "隐私控制"
+      ],
+      "practice_suggestions": [
+        "在 ChatGPT 设置中检查并清理 saved memories,删除过时信息以减少错误个性化",
+        "对敏感任务使用临时聊天(temporary chat)避免被记忆引用",
+        "如已连接 Gmail,留意 memory sources 中是否泄露不希望被引用的邮件上下文"
+      ],
+      "thread_group_id": "thread-OpenAI-20260505-1702",
+      "duplicate_of": "https://x.com/OpenAI/status/2051709028250915275",
+      "angle": "记忆与个性化升级"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2051709035347694047",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.5 Instant 上线,成为 ChatGPT 全量默认模型",
+      "summary": "OpenAI 宣布 GPT-5.5 Instant 在两天内全量替换 GPT-5.3 Instant 成为 ChatGPT 默认模型,API 中以 「gpt-5.5-chat-latest」 提供。新模型在医疗、法律、金融等高风险提示上幻觉减少 52.5%,在用户标记的难题上不准确率下降 37.3%,并在视觉、数学、科学评测中提升明显;响应更简洁,会更主动调用网页搜索。同时面向 Plus/Pro 用户上线增强的个性化(读取过往对话、文件、Gmail)以及全用户的 memory sources 控制面板。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5",
+        "ChatGPT",
+        "幻觉降低",
+        "个性化",
+        "API"
+      ],
+      "practice_suggestions": [
+        "将 API 中的 model 参数切换至 「gpt-5.5-chat-latest」 获取更强事实性与更紧凑回答",
+        "对依赖准确性的医疗、法律、金融场景重新跑一轮回归评测,观察幻觉下降幅度",
+        "付费用户可在三个月窗口内通过模型设置回退到 GPT-5.3 Instant 做 A/B 对比"
+      ],
+      "thread_group_id": "thread-OpenAI-20260505-1702",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2051735087637746162",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Devs 推送一篇 X 长文链接",
+      "summary": "OpenAI Devs 仅以一条短链转发了一篇 X 平台的内嵌长文,推文本体无任何说明文字,无法判断具体主题。属低信号转发型推文。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "开发者",
+        "X长文"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2051725072873001338",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Agents SDK 发布 TypeScript 版,内置沙盒与开源 harness",
+      "summary": "OpenAI Devs 宣布更新后的 Agents SDK 已在 TypeScript 中可用,新增对沙盒化代理(sandbox agents)的支持,并内置开源的执行 harness。配合此前发布的长任务代理控制能力(可控的执行环境、可检视并定制的 harness、对记忆创建时机和存储位置的控制),开发者能更稳健地构建长时间运行的代理。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Agents SDK",
+        "TypeScript",
+        "沙盒",
+        "开源harness"
+      ],
+      "practice_suggestions": [
+        "TypeScript/Node 项目可直接升级到新版 Agents SDK,以沙盒模式隔离不可信工具调用",
+        "审视开源 harness,自定义记忆创建时机与存储位置以满足合规需求",
+        "为长任务代理配置 checkpoint 与失败恢复策略,利用沙盒化提升可观测性"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2052011542707630461",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind 与 EVE Online 合作研究代理记忆与长期规划",
+      "summary": "Google DeepMind 与 EVE Online 开发商达成合作,将这款宇宙级 MMO 作为下一阶段 AI 代理研究的环境 — 重点考察长时程规划、外交博弈与跨会话记忆等能力。Demis Hassabis 强调游戏在他研究生涯中的关键作用,该合作也契合 DeepMind 长期以游戏为 benchmark 的方法论。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "DeepMind",
+        "EVE Online",
+        "代理研究",
+        "长时程规划",
+        "游戏 AI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2052060350770515978",
+      "source": "xAI (Twitter)",
+      "title": "xAI 向 Anthropic 开放 Colossus 1 算力支持 Claude",
+      "summary": "xAI 宣布将其旗舰超算 Colossus 1 的部分算力开放给 Anthropic,用于为 Claude 提供额外训练与推理容量。Colossus 1 是全球部署最快、规模最大的 AI 超算之一,此举体现头部 AI 实验室之间罕见的算力共享合作。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "xAI",
+        "Anthropic",
+        "Colossus",
+        "算力合作",
+        "Claude"
+      ],
+      "thread_group_id": "thread-xai-20260506-1618",
+      "duplicate_of": "https://www.anthropic.com/news/higher-limits-spacex",
+      "angle": "xAI 视角合作公告"
+    },
+    {
+      "url": "https://x.com/xai/status/2052060561857302605",
+      "source": "xAI (Twitter)",
+      "title": "xAI 与 Anthropic 探索数 GW 级轨道 AI 算力合作",
+      "summary": "作为算力合作公告的延续,xAI 与 Anthropic 表示有意联合开发数吉瓦级别的「轨道」AI 算力容量,将 SpaceX 的太空基础设施与前沿 AI 训练需求结合,探索把超大规模算力部署到太空轨道的可能性。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "xAI",
+        "Anthropic",
+        "SpaceX",
+        "轨道算力",
+        "GW级算力"
+      ],
+      "thread_group_id": "thread-xai-20260506-1618",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2051800827762029029",
+      "source": "xAI (Twitter)",
+      "title": "xAI 公布测试结果回复推文",
+      "summary": "xAI 在自家推文回复中宣布「结果已出炉」并附上图片链接，属于对此前互动活动的后续告知。推文本身未给出具体内容或数据。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "xAI",
+        "社交动态",
+        "活动结果"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2051703217697010103",
+      "source": "xAI (Twitter)",
+      "title": "xAI 发布 Grok 4.3：百万上下文、定价 $1.25/$2.50",
+      "summary": "xAI 宣布 Grok 4.3 正式上线 API，被称为其迄今最快、最聪明的模型，在 ArtificialAnalysis 智能代理工具调用与指令遵循榜单上居首，并在 ValsAI 的判例法与企业财务等垂直领域排名第一。模型支持 100 万 token 上下文窗口，输入价格 $1.25/百万 token、输出价格 $2.50/百万 token。开发者可通过 console.x.ai 创建 API key 接入。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Grok 4.3",
+        "xAI",
+        "百万上下文",
+        "API 定价",
+        "工具调用"
+      ],
+      "practice_suggestions": [
+        "在需要长上下文（接近 1M token）或重度工具调用的代理场景中评测 Grok 4.3，与 Claude、Gemini 同任务对比延迟与成本",
+        "对判例法、企业财务等垂直分析任务，可将 Grok 4.3 加入候选模型列表，参考 ValsAI 榜单结果做基准对照",
+        "结合 $1.25/$2.50 的定价，对高吞吐 RAG 或批量推理工作流做成本-质量重估，必要时调整模型路由策略"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
