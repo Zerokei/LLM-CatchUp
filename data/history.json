@@ -8400,7 +8400,512 @@
           "活动结果"
         ]
       }
+    },
+    "a505eac8f113b65987d4c127d19c7c9ab82bd4d6f80a1f018c10d66ee2895b4c": {
+      "title": "OpenAI 推出 GPT-5.5-Cyber：面向关键基础设施防御者的限定预览",
+      "url": "https://openai.com/index/gpt-5-5-with-trusted-access-for-cyber",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-07T13:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "OpenAI 在已上线的 GPT-5.5 之外，向负责关键基础设施安全的认证防御者限定预览 GPT-5.5-Cyber，专门支持漏洞研究、事件响应等高强度网络防御工作流。该模型通过 Trusted Access for Cyber（TAC）的身份与信任框架发放，普通 GPT-5.5+TAC 仍是大多数防御团队的主力选项，配合上周发布的「智能时代网络安全」行动计划共同推进。",
+      "category": "模型发布",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "GPT-5.5-Cyber",
+          "OpenAI",
+          "网络安全",
+          "Trusted Access",
+          "关键基础设施"
+        ],
+        "practice_suggestions": [
+          "若所在机构负责关键基础设施安全，关注 Trusted Access for Cyber 的认证流程并评估申请预览资格。",
+          "对比 GPT-5.5 + TAC 与 GPT-5.5-Cyber 在漏洞分析、攻防推理任务上的输出差异，决定是否值得升级集成。",
+          "把 GPT-5.5-Cyber 视为高敏感场景的专用模型，制定与通用模型隔离的访问审计与日志策略。"
+        ]
+      }
+    },
+    "24a3c172de484200700965435ba59946cc59775be15d5d74fcf62353f1f2180f": {
+      "title": "OpenAI 发布 GPT-Realtime-2：GPT-5 级推理首次进入语音 API",
+      "url": "https://openai.com/index/advancing-voice-intelligence-with-new-models-in-the-api",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-07T10:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "OpenAI 在 Realtime API 同步推出三款语音模型，旗舰 gpt-realtime-2 首次将 GPT-5 级推理能力带入实时语音通道，长上下文与多说话人切换显著强化，定位为「实时协作者」级语音代理基座。配套上线 gpt-realtime-whisper 流式转写与下一代 TTS，覆盖客服、教育、辅助驾驶等典型场景，Sam Altman 称其为语音交互的关键跃迁。OpenAI 同时暗示 ChatGPT 端语音将基于该底座更新，企业客户 Parloa 已用前代模型搭建 AMP 客服平台作为商用范例。",
+      "category": "模型发布",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "GPT-Realtime-2",
+          "语音模型",
+          "Realtime API",
+          "语音代理",
+          "流式转写"
+        ],
+        "practice_suggestions": [
+          "把现有 ChatGPT 文本工作流中需要低延迟人机对话的环节切到 Realtime API，评估 GPT-Realtime-2 是否能替代自建 STT+LLM+TTS 管线",
+          "使用 gpt-realtime-whisper 替换旧 Whisper 部署，验证流式转写在客服/会议场景下的尾延迟与准确率",
+          "盯住 ChatGPT 语音的下一次更新——若底座切到 Realtime-2，可重测应用层语音交互体验是否需要改写提示与中断逻辑"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/sama/status/2052462271667028211",
+            "title": "GPT-Realtime-2 上线 API：语音交互大步前进",
+            "source": "Sam Altman (Twitter)",
+            "angle": "Altman 个人解读"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2052440957258489859",
+            "title": "GPT-Realtime-Whisper 上线：低延迟流式语音转写",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "gpt-realtime-whisper 流式转写"
+          },
+          {
+            "url": "https://x.com/OpenAI/status/2052438194625593804",
+            "title": "GPT-Realtime-2 正式发布：语音代理迈入「实时协作者」时代",
+            "source": "OpenAI (Twitter)",
+            "angle": "OpenAI 官宣实时协作者"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2052440907933474954",
+            "title": "OpenAI 三款语音模型同步上线 Realtime API",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "三款模型上线汇总"
+          }
+        ]
+      }
+    },
+    "05120a9d8cfd49d6bad71d1898826852c4b622b5a126fd3e465ee02547519e32": {
+      "title": "Claude Managed Agents 全面升级：多智能体编排 + Dreaming + Webhooks",
+      "url": "https://x.com/ClaudeDevs/status/2052069321355182447",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-05-06T16:53:46.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic 在 Code with Claude 大会上为 Claude Managed Agents 带来近期最大一次能力扩展：lead 智能体可委派多名 specialist 子代理并行作业、Webhook 触发器接入外部事件、Dreaming 研究预览让代理在跨会话间「自我学习」更新内部知识。Claude 平台与 Claude Code 同步更新——Claude Code 推出 /claude-api skill 一键搭建 Managed Agents 工作流，Claude for Microsoft 365 也面向所有付费计划开放（与本次 Office 集成同期）。Amodei 兄妹炉边谈与社区现场氛围共同烘托此次发布的规模感。",
+      "category": "产品与功能",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "Claude Managed Agents",
+          "多智能体编排",
+          "Dreaming",
+          "Webhooks",
+          "Claude Code",
+          "Code with Claude"
+        ],
+        "practice_suggestions": [
+          "把现有单 Agent 工作流升级成 lead+specialist 编排，评估并行子任务（搜索/编码/审阅）能否替代手写 orchestration",
+          "试用 Webhooks 把 Managed Agents 接到 GitHub/Slack 事件，用事件驱动取代轮询触发",
+          "在 Claude Code 中调用 /claude-api skill，快速生成 Managed Agents 接入样板代码",
+          "关注 Dreaming 研究预览，把适合长期记忆/跨会话学习的代理迁移过去做对比 A/B"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/ClaudeDevs/status/2052069326786798013",
+            "title": "Claude Managed Agents 推出 Dreaming：跨会话自我学习",
+            "source": "Claude Devs (Twitter)",
+            "angle": "Dreaming 跨会话自我学习"
+          },
+          {
+            "url": "https://x.com/claudeai/status/2052067404696473833",
+            "title": "Claude Managed Agents 多智能体编排：lead 委派 specialist 并行作业",
+            "source": "Claude (Twitter)",
+            "angle": "多智能体编排细节"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2052106837810704473",
+            "title": "Code with Claude 大会议程更新：Amodei 兄妹炉边谈 + Claude Code 实战",
+            "source": "Claude Devs (Twitter)",
+            "angle": "大会议程更新"
+          }
+        ]
+      }
+    },
+    "f4ea596e0c3008089e231eb398dc99ac09c5006211d63c60e381bf42aa8fed6a": {
+      "title": "OpenAI Codex 进驻 Chrome：浏览器内并行调试 Web 应用",
+      "url": "https://x.com/OpenAI/status/2052480800004956323",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-05-07T20:08:50.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "OpenAI Codex 上线官方 Chrome 扩展，支持在 macOS 与 Windows 后台多标签并行操控浏览器，让代理可直接登录、点击、调试用户的 Web 应用，绕过部分纯 API 自动化的鉴权与状态难题。Codex 会按场景智能切换工具：默认走 Codex 插件，遇到登录态站点自动切到 Chrome，避免重复登录。扩展即日生效，欧盟与英国地区暂未开放。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Codex",
+          "Chrome 扩展",
+          "浏览器代理",
+          "Web 调试",
+          "工具选择"
+        ],
+        "practice_suggestions": [
+          "把现有 Playwright/Puppeteer 自动化里的「登录后操作」步骤迁移给 Codex Chrome 扩展，避免维护 cookie 池",
+          "在前端调试场景试用并行多标签：Codex 同时打开主站、staging、文档比对结果",
+          "若身处欧盟/英国，盯住地区可用性更新，再决定是否在团队工作流中正式启用"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2052480803318468770",
+            "title": "Codex 智能选工具：插件优先，登录态站点切到 Chrome",
+            "source": "OpenAI (Twitter)",
+            "angle": "插件 vs Chrome 切换逻辑"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2052481136971125158",
+            "title": "Codex 推出 Chrome 插件：可并行操控浏览器调试 Web 应用",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "OpenAI Devs 技术解读"
+          }
+        ]
+      }
+    },
+    "a9541129e8e3581e8afa7263ad9d6068d995f99ebd8a90ec14b34ead76a52ff2": {
+      "title": "Claude 全面接入 Microsoft Office：Excel/PPT/Word 正式版上线，Outlook 公测",
+      "url": "https://x.com/claudeai/status/2052445786651168849",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-05-07T17:49:42.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic 宣布 Claude for Excel、PowerPoint 和 Word 正式可用 (GA)，Claude for Outlook 进入公开测试阶段。Claude 在不同 Microsoft 应用之间切换时会保留完整的对话上下文，意味着用户可在邮件、文档、表格和幻灯片之间共享同一份会话状态。 Claude 官方宣布「Claude for Microsoft 365」整合在所有付费计划中均已可用，并附上试用入口 claude.com/claude-for-microsoft-365。这意味着付费用户可以在 Microsoft 365 工作流（如 Word、Outlook、Teams 等）中调用 Claude。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude",
+          "Microsoft Office",
+          "Excel",
+          "Outlook",
+          "办公集成"
+        ],
+        "practice_suggestions": [
+          "在企业 Microsoft 365 环境中评估 Claude 插件，重点测试跨应用上下文连续性是否能替代现有 Copilot 工作流。",
+          "针对财务/咨询团队，先在 Excel 上跑通数据建模与摘要场景，再扩展到 PPT 草稿生成。",
+          "Outlook 公测可申请试用，验证邮件分类、回复草稿与 Word/Excel 联动效果。"
+        ],
+        "thread_urls": [
+          "https://x.com/claudeai/status/2052445786651168849",
+          "https://x.com/claudeai/status/2052445787930468704"
+        ]
+      }
+    },
+    "2bbe148f9157c8493acc52637a74cc34d7688bfa992b908cd41d4b194f5ce0ca": {
+      "title": "Anthropic 发布 NLA：把 Claude 的「思考」翻译成可读自然语言",
+      "url": "https://www.anthropic.com/research/natural-language-autoencoders",
+      "source": "Anthropic Research",
+      "published_at": "2026-05-07T00:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic 公布自然语言自编码器（NLA）成果，能将 Claude 内部激活解码为人类可读文本，相当于直接「读」出模型在想什么，比传统稀疏自编码器更接近端到端的可解释性。研究配套上线博客与论文细节，并与 Neuronpedia 联合开源体验入口，让外部研究者可以直接探查具体输入下模型的「思路」。这一工作把 Anthropic 在机制可解释性上的路径推进到「自然语言级」窥视，是对齐研究中关键一步。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "NLA",
+          "可解释性",
+          "Anthropic",
+          "机制对齐",
+          "Neuronpedia"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2052435458580193726",
+            "title": "Anthropic 发布 NLA 详细博客：直接「读」出 Claude 在想什么",
+            "source": "Anthropic (Twitter)",
+            "angle": "官推详细解读"
+          },
+          {
+            "url": "https://x.com/AnthropicAI/status/2052435436157452769",
+            "title": "Anthropic 新研究：用自然语言自动编码器读取 Claude 的「想法」",
+            "source": "Anthropic (Twitter)",
+            "angle": "研究综述推文"
+          }
+        ]
+      }
+    },
+    "1c57be74476f58fb8df78ef8aa7101ec2a93947633c2f0c1f56e4a582704a94c": {
+      "title": "AlphaEvolve 一周年：Gemini 编码智能体加速跨学科算法发现",
+      "url": "https://x.com/GoogleDeepMind/status/2052403306257940967",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-05-07T15:00:54.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Google DeepMind 回顾 Gemini 驱动的编码智能体 AlphaEvolve 过去一年的进展，已在量子计算、生物技术、物流以及 Google 自身 AI 基础设施等领域加速算法改进。该项目展示了大模型作为「算法发现工具」在自然科学与工业系统中的横向落地能力。",
+      "category": "研究",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "AlphaEvolve",
+          "Gemini",
+          "编码智能体",
+          "算法发现",
+          "Google DeepMind"
+        ]
+      }
+    },
+    "fa002821b90d7a82b8e2c912348c6d7caa28b41549d1ede8a97b5d8719d2e9c2": {
+      "title": "Parloa 用 GPT-5.4 打造企业级语音客服 AMP 平台",
+      "url": "https://openai.com/index/parloa",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-07T11:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "柏林初创 Parloa 把 OpenAI 模型集成进其 AI Agent Management Platform（AMP），让业务专家以自然语言而非代码定义客服 Agent 的角色、工具与边界，再由 GPT-5.4 执行模拟通话、自动评估，最终在生产环境端到端运行。OpenAI 把它作为「面向企业的可评估语音 Agent」的样板案例。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Parloa",
+          "OpenAI",
+          "语音客服",
+          "Agent",
+          "GPT-5.4"
+        ],
+        "practice_suggestions": [
+          "如果在做企业语音 Agent，借鉴 Parloa「先模拟、后部署」的双模型自评估模式（一个模型扮演用户、另一个跑被测 Agent）。",
+          "用确定性检查 + LLM-as-a-Judge 组合做对话质量评估，比纯人工抽样更易扩展到生产规模。",
+          "让业务专家通过自然语言而非意图树定义 Agent 行为，可降低跨部门协作门槛。"
+        ]
+      }
+    },
+    "23a5cc356ff37da46e2f67b5a943c94085cc4f405670ae46e4cbe7974369ddac": {
+      "title": "xAI 开放图像生成 Quality Mode API：累计已生成 3 亿张",
+      "url": "https://x.com/xai/status/2052193877675983031",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-05-07T01:08:43.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "xAI 把 Image Generation Quality Mode 上线 API，该模型已在 Grok 上累计生成超过 3 亿张图像。相比基础模式，它在写实度、文字渲染与创意可控性上更强，主打企业商务用户。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "xAI",
+          "图像生成",
+          "Quality Mode",
+          "Grok",
+          "API"
+        ],
+        "practice_suggestions": [
+          "在需要海报、广告物料等含文字元素的图像生成场景，优先评估 xAI Quality Mode 的文字渲染表现。",
+          "对比 Quality Mode 与现有 SDXL/Flux/Imagen 管线的成本与可控性，决定是否纳入企业素材生产链。"
+        ]
+      }
+    },
+    "a6fcbba288389a6bed0784e51b2a6533997556bfefbc243d2ee039cee3f44c8c": {
+      "title": "ChatGPT 新增 Trusted Contact：自残风险信号可触达指定亲友",
+      "url": "https://openai.com/index/introducing-trusted-contact-in-chatgpt",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-07T00:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "OpenAI 推出 Trusted Contact 可选安全功能：成年用户可指定一位信任的亲友、监护人或照护者，当系统与人工审核发现用户存在严重自残风险信号时，会向该联系人发出通知。该功能由临床医生和安全专家共同设计，作为已有本地化求助热线之外的额外人际支持层，并扩展自此前面向青少年的家长安全通知能力。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "ChatGPT",
+          "Trusted Contact",
+          "心理安全",
+          "OpenAI",
+          "自残干预"
+        ]
+      }
+    },
+    "b19ec562c455e753267b0e04107e2217c787cdc2a4884378a6d93cdc79d11f47": {
+      "title": "ChatGPT 广告试点扩展至英、墨、巴、日、韩五国",
+      "url": "https://openai.com/index/testing-ads-in-chatgpt",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-07T00:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "OpenAI 宣布将 ChatGPT 广告试点扩展到英国、墨西哥、巴西、日本和韩国，仅面向 Free 与 Go 订阅层的成年登录用户，Plus、Pro、Business、Enterprise、Education 仍无广告。OpenAI 强调答案独立、对话不与广告主共享、用户可随时关闭个性化或删除广告数据，敏感话题（医疗、心理、政治）和未成年账户不会展示广告。早期试点显示信任指标无下滑、广告关闭率低，因此进入下一阶段。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "ChatGPT",
+          "广告",
+          "OpenAI",
+          "商业化",
+          "免费层"
+        ],
+        "practice_suggestions": [
+          "若使用 Free/Go 层，可在「Ads controls」中关闭个性化或一键删除广告数据，必要时升级 Plus 屏蔽广告。",
+          "面向 C 端的产品团队可参考 OpenAI 的「答案与广告强分离 + 聚合归因」策略，思考对话式广告位的合规方案。"
+        ]
+      }
+    },
+    "04eef9e16814da8ae09c0f0cc546f0451d53f1b9cf11a5de90ce3d12452ec5db": {
+      "title": "Anthropic 将对齐工具 Petri 3.0 捐赠给 Meridian Labs 并开源",
+      "url": "https://www.anthropic.com/research/donating-open-source-petri",
+      "source": "Anthropic Research",
+      "published_at": "2026-05-07T00:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic 宣布把内部对齐评测工具 Petri 升级到 3.0，并将其作为开源项目正式捐赠给独立组织 Meridian Labs，由后者承担长期维护与生态推进。这意味着 Petri 从 Anthropic 内部工具走向社区共有，意在让更多对齐与评测研究者基于同一基准复现、扩展实验。配套博客阐述了 3.0 的能力扩展与治理安排。",
+      "category": "研究",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Petri",
+          "开源捐赠",
+          "Meridian Labs",
+          "对齐评测"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2052494460966019137",
+            "title": "Anthropic 将开源对齐工具 Petri 捐赠给 Meridian Labs 并发布 3.0",
+            "source": "Anthropic (Twitter)",
+            "angle": "Anthropic 官推转介"
+          }
+        ]
+      }
+    },
+    "24545504aa1ee92f0e49c0517676ec6eb9c631da85ef4b1bbf3f8f660f127457": {
+      "title": "Anthropic Institute 公布研究议程：经济扩散、威胁韧性、野外 AI、AI 驱动 R&D",
+      "url": "https://www.anthropic.com/research/anthropic-institute-agenda",
+      "source": "Anthropic Research",
+      "published_at": "2026-05-07T00:00:00.000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic Institute 首次系统性披露未来研究议程，聚焦四大方向：AI 经济扩散与劳动力影响、对抗滥用与威胁韧性、野外（in-the-wild）AI 行为研究，以及 AI 驱动 R&D 的人类可见性与控制。配套推出 4 个月期 Fellowship，资助 TAI（变革性 AI）方向的外部研究者加入议程。这是 Anthropic 把「Institute」定位为长期对齐与社会影响研究中枢的里程碑。",
+      "category": "研究",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Anthropic Institute",
+          "研究议程",
+          "TAI Fellowship",
+          "AI 经济扩散",
+          "可控 R&D"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2052385821332742609",
+            "title": "Anthropic 直面 AI 自我改进：研究人类对 R&D 的可见性与控制",
+            "source": "Anthropic (Twitter)",
+            "angle": "AI 驱动 R&D 控制研究"
+          },
+          {
+            "url": "https://x.com/AnthropicAI/status/2052385812881228218",
+            "title": "Anthropic Institute 公布研究议程：经济扩散、威胁韧性、野外 AI、AI 驱动 R&D",
+            "source": "Anthropic (Twitter)",
+            "angle": "四大方向官推总结"
+          }
+        ]
+      }
+    },
+    "0e702161145f993be67a47874a92594de8925122532b08340b2653ac5555f1fc": {
+      "title": "Anthropic 与 SpaceX 达成算力合作：放宽峰值限速、5 小时配额翻倍",
+      "url": "https://x.com/trq212/status/2052065936585457982",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-05-06T16:40:19.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic 工程师 Thariq 转发官方公告并补充实操影响：得益于与 SpaceX 等近期一系列算力合作，Anthropic 撤回此前的高峰期限速削减，并把 Claude Code/API 的 5 小时使用配额翻倍。这把「算力到位」直接体现为开发者可见的额度提升，也明确将继续投资于「全球最佳编码 agent」。",
+      "category": "商业动态",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "SpaceX",
+          "算力",
+          "Claude Code",
+          "速率限制"
+        ]
+      }
+    },
+    "0dccdd7af9f68778ffb46583008025c0dac926815c533887ab9efe28e011c9cd": {
+      "title": "Anthropic 安全漏洞赏金计划在 HackerOne 公开",
+      "url": "https://x.com/AnthropicAI/status/2052466175540629965",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-05-07T19:10:43.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Anthropic 把此前在安全研究圈内私下运行的漏洞赏金计划升级为 HackerOne 上的公开项目，任何研究者都可上报漏洞并获得奖励。Anthropic 称私有阶段的研究人员发现已在持续强化其产品安全。",
+      "category": "政策与安全",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "漏洞赏金",
+          "HackerOne",
+          "安全研究"
+        ]
+      }
+    },
+    "480fa60c6d3ba6087d4e5fd940cc59deff073b1eaaba853485e0bd1a8b79e915": {
+      "title": "DeepMind 与 EVE Online 开发商达成 AI 研究合作",
+      "url": "https://x.com/demishassabis/status/2052147236952477923",
+      "source": "Demis Hassabis (Twitter)",
+      "published_at": "2026-05-06T22:03:22.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Demis Hassabis 宣布 Google DeepMind 与 EVE Online 开发商 Fenris Creations 建立研究合作，将这款大型多人在线宇宙作为 AI 训练与测试的「试验场」。Hassabis 强调游戏在 DeepMind 历史中长期扮演 AI 验证场的角色，并对与 CEO Hilmar Veigar 团队的合作表示期待。 Demis Hassabis 在自回复中给出 DeepMind 与 Fenris Creations 旗下 EVE Online 研究合作的详情链接，指向 eveonline.com 的官方公告页。该推文为合作官宣线程的延续，强调游戏作为 AI 测试场的意义。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "DeepMind",
+          "EVE Online",
+          "游戏 AI",
+          "Hassabis",
+          "合作"
+        ],
+        "thread_urls": [
+          "https://x.com/demishassabis/status/2052147236952477923",
+          "https://x.com/demishassabis/status/2052147239619838058"
+        ]
+      }
+    },
+    "3d20bd6c187d4187c9bd5d6de728b8ba22cd81cc465a0e6317b5d019a841ee6a": {
+      "title": "OpenAI 公布 ChatGPT Futures 2026 届：26 位 AI 原生大学生用例",
+      "url": "https://x.com/OpenAI/status/2052086313797705954",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-05-06T18:01:17.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "OpenAI 推出首届「ChatGPT Futures Class of 2026」，表彰 26 位在四年大学生涯中全程使用 ChatGPT 的毕业生。他们的 AI 应用场景包括：绘制 150 万颗未知天体、用 AI 穿墙探测灾难幸存者、检索 1 亿张星系图像、保护濒危语言，以及构建系统将 500 万磅滞销库存从填埋场分流。该项目展示了 ChatGPT 作为完整大学周期工具被使用后产生的科研与社会效益样本。 OpenAI 在自回复线程中宣传 ChatGPT Futures 项目，展示「人人皆可构建」时代下年轻构建者用 AI 做出的产品，附 chatgpt.com/futures 入口。该推文为 ChatGPT Futures: Class of 2026 公告的引流。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "ChatGPT",
+          "教育",
+          "AI 应用",
+          "学生案例"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAI/status/2052086313797705954",
+          "https://x.com/OpenAI/status/2052086316230398247"
+        ]
+      }
+    },
+    "e341064f93dade5b116be27acaac4ea5f5a0d3097d6f702fd11dd41b8cc69a92": {
+      "title": "Altman：AI 让顶尖开发者「神奇宝贝进化」而非被替代",
+      "url": "https://x.com/sama/status/2052485051812909530",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-05-07T20:25:44.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Sam Altman 发推称，比起替代软件开发者，让他们借助 AI「宝可梦进化」成超级开发者要酷得多。他强调如今一位真正优秀的工程师所能完成的工作量「令人难以置信」，呼应了近期 OpenAI 与同行围绕 Codex 等编码 Agent 的产品叙事。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "开发者生产力",
+          "AI 编程",
+          "观点"
+        ]
+      }
+    },
+    "e1015a2f47805ced20049ee79221242e48fc8cf991a61e0fc3860663f0445603": {
+      "title": "Thariq 转述：xAI 团队正全力收购更多算力",
+      "url": "https://x.com/trq212/status/2052250816720056604",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-05-07T04:54:58.000000Z",
+      "fetched_at": "2026-05-08T08:43:07.949+08:00",
+      "summary": "Thariq 引用一段 xAI 表态：「我们每天都在尝试获取更多算力转交给你们，抱歉需要一些时间，但我们会尽可能多地拿下」。这是社区对 xAI 持续买卡、扩 Colossus 集群叙事的二次传播。",
+      "category": "商业动态",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "xAI",
+          "算力",
+          "GPU",
+          "推文转述"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-05-07T08:43:37+08:00"
+  "last_fetch": "2026-05-08T08:43:07.949+08:00"
 }
