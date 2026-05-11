@@ -1,0 +1,741 @@
+{
+  "fetched_at": "2026-05-12T06:34:32+08:00",
+  "window_start": "2026-05-11T00:34:32+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "no recent article URLs found in sitemap",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Codex 的野心，MCP 和 Skill 的下一步",
+          "url": "https://baoyu.io/blog/2026-05-11/skill-next-codex",
+          "published_at": "2026-05-11T00:00:00.000Z",
+          "description": "Codex 右侧工作区的演进不只是 UI 变化，而是在为插件生态铺路。",
+          "full_text": "Title: Codex 的野心，MCP 和 Skill 的下一步\n\nURL Source: https://baoyu.io/blog/2026-05-11/skill-next-codex\n\nMarkdown Content:\n这段时间我在密集使用 Codex App、Cursor 等 Agent 应用，有件事越来越觉得有意思。\n\n![Image 1](https://s.baoyu.io/imgs/2026-05-11/skill-next-codex/00-codex.jpeg)\n\n去年大家争的是谁家模型更强，今年争的好像变成了谁家窗口右侧更好用。\n\nCodex、Claude 桌面版、Cursor 3.0、TRAE SOLO，这几家最顶尖的 Agent，在完全没有协商的情况下，几乎同时收敛到了同一个界面布局：左侧是项目和会话列表，中间是和 Agent 的对话，右侧是工作区，放着文件浏览、网页预览、文件变更审查这些功能。\n\n肯定不是相互之间的抄袭，**更像是当前 Agent 交互的最优解**。\n\n![Image 2: Agent 应用的三栏收敛](https://s.baoyu.io/imgs/2026-05-11/skill-next-codex/01-infographic-three-column-agent.png)\n\n## 为什么是三栏\n\n传统 Chatbot 只需要两栏，左边会话历史，右边对话窗口，你问它答，用完走人。\n\n到了 Agent 时代，Agent 能自己写代码、改文件、调工具了。它做完之后，你得看看有没有做对——**右侧工作区就是为这件事出现的**。\n\n但这只是第一阶段。\n\n随着用户越来越多时间是在指挥 Agent，打开 VSCode 这类专业工具的时间自然越来越少。那个问题迟早会冒出来：Agent 帮你写完代码、做完 PPT，你想微调几个字，还要专门切出去打开另一个软件？\n\n没有人愿意这样。用户的自然期待是：能不能直接在 Agent 里改？这也是目前 Codex App 呼声最高的功能之一（另一个呼声高的是手机版，马上要出了）。\n\n于是各家开始悄悄升级右侧工作区，让它从只能看文件编辑记录，变成了一个多功能区。Codex 在 4 月 16 日的大版本更新里，右侧工作区的改动幅度是所有功能里最大的。\n\n交互细节上各家略有差异。Codex 和 Cursor 用 Tab 切换，Claude 用浮动面板。我自己用下来觉得 Codex 最顺手，Claude 的浮动面板方案设计感有余、实用性不足，迟早要改。\n\n![Image 3: 右侧工作区的演进](https://s.baoyu.io/imgs/2026-05-11/skill-next-codex/02-flowchart-right-panel-evolution.png)\n\n## Codex 的真正野心\n\n但如果只把这个变化读成“设计界面进化”，就低估 Codex 了。\n\nCodex 4 月大版本发布时的口号是“Codex for (almost) everything”——几乎任何任务都能做。你可以把它理解成一句广告口号，但更像是一个产品方向的声明。\n\n要兑现这句话，**Codex 不能只是个擅长写代码的 Agent**，它必须能处理各种文件格式，支持各领域的专业工作流，还要让用户能在它里面完成全程闭环，包括最后的人工微调。\n\n目前 Codex 还做不到最后一步：生成之后无法编辑，代码、Markdown、PPTX 都不行。这可能是产品上有意为之的克制，可能是技术上还没跑通，也可能是在等一个统一的解决方案出现。\n\n我猜是第三种。\n\n## MCP 和 Skill 都只解决了一半\n\n要理解 Codex 在等什么，得先想清楚 Agent 能力拼图里现在差哪一块。\n\n*   MCP 解决了“连接”问题：Agent 通过统一规范接入各种工具，数据库、日历、代码仓库，都能打通。\n*   Agent Skills 解决了“怎么做”的问题：Agent 学会了它没训练过的领域知识和最佳实践，比如怎么写特定风格的文章，怎么处理某类复杂任务。\n\n这两件事做得都还不错。但有一块缺口始终没补上：**用户的二次编辑**。\n\n你让 AI 写完一篇文章，最后还是要自己打开编辑器改几处，毕竟很多时候最后那 5% 的精准度，只有自己动手才能到位。就算将来 AI 再聪明，它也做不到百分百的懂你，还是少不了要手动去做修改。\n\n于是最近 Markdown 编辑器又火了，各种 Vibe Coding 出来的 Markdown 产品满天飞。\n\n但 Codex 不会自己做一个 Markdown 编辑器，因为每个人的偏好都不一样，做出来永远有人不满意；更何况它也不可能把每个垂直领域的专业编辑器都集成进来。\n\n**最合理的路，是插件机制。**\n\n![Image 4: Agent 能力拼图：还缺哪一块？](https://s.baoyu.io/imgs/2026-05-11/skill-next-codex/03-framework-capability-gap.png)\n\n## 下一步：Agent 版 App Store\n\n**把 Agent 做成平台，让社区来贡献插件**，就像 VSCode 和 Chrome 那样。\n\nCodex 只需要聚焦在 Agent 调度这一层，把文件预览、二次编辑、垂直领域的专业能力都交给插件来扩展。用户按需安装，做设计的装设计插件，写作者装写作插件。\n\n插件机制还能顺手解决一个长期没有答案的问题：**Skill 没办法商业化**。\n\n我自己的 baoyu-skills 快 2 万 Star 了，但从中赚到的钱是 $0。Skill 这东西几乎是透明的，对 Agent 透明，对人也透明，复刻成本极低，不管你写得再好，护城河都很浅。\n\n插件不一样。App Store 和 Chrome 插件市场已经跑通了一套收费和版权保护机制，把它移植到 Agent 插件市场完全可行。好插件可以收费，开发者才有持续打磨的动力，生态才真正能转起来。\n\nCodex 现在已经有了一个非常原始的插件市场。从这里到成熟的收费插件生态，还有很长的路，但方向是对的。\n\n想做这件事的不止 Codex 一家。Cursor 我能看到类似的影子。唯独 Claude Code 和 Cowork，目前没看到这个方向的产品迹象——也许他们不屑于做，也许只是还没走到这一步。\n\n![Image 5: Agent 版 App Store](https://s.baoyu.io/imgs/2026-05-11/skill-next-codex/04-framework-agent-app-store.png)\n\n## 留给中小团队的窗口\n\n如果 Codex 真的跑通了插件生态，对中小团队意味着什么？\n\n除了自己做一个垂直 Agent，还有另一条路：在 Codex 这样的平台上做插件。不用自己搭 Agent 调度层，不用解决 Token 接入，用户分发也靠平台。你只需要专注在那个“最后一公里”——**帮用户把 Agent 生成的结果处理好、编辑好、用得顺手**。\n\n![Image 6: 留给中小团队的窗口](https://s.baoyu.io/imgs/2026-05-11/skill-next-codex/05-comparison-small-team-window.png)\n\n这个窗口不会开太久。先进去的能拿到冷启动红利，晚进去的只剩存量竞争。\n\n时间点不会太远，也许就在这几个月。\n\nCodex 的野心摆在那里，“几乎任何任务”这个口号要真正兑现，**插件机制是绕不过去的一步**。如果 OpenAI 在这件事上继续犹豫，那才是真的失误。\n\n你觉得这个插件生态最后会是哪家先跑通？或者说你觉得有更适合 Agent 的产品表现形式？欢迎留言分享！\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 951,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How ChatGPT adoption broadened in early 2026",
+          "url": "https://openai.com/signals/research/2026q1-update",
+          "published_at": "2026-05-11T15:00:00.000Z",
+          "description": "ChatGPT adoption surged in Q1 2026, with fastest growth among users over 35 and more balanced gender usage, signaling broader mainstream AI adoption.",
+          "full_text": "Title: How ChatGPT adoption broadened in early 2026\n\nURL Source: https://openai.com/signals/research/2026q1-update\n\nMarkdown Content:\nHow ChatGPT adoption broadened in early 2026 | OpenAI\n\nMay 11, 2026\n\nQ1 data shows consumer adoption growth across inferred gender, age, and geography.\n\nIn the first quarter of 2026, consumer ChatGPT growth broadened across age groups, continued to rise among users with typically feminine names, and deepened in more countries.\n\nThis analysis covers the messages sent on ChatGPT consumer plans (Free, Go, Plus, and Pro). Because it excludes Codex and ChatGPT enterprise and education products, it understates total workplace and educational usage.\n\n## ChatGPT usage broadened beyond early adopters\n\nUsers with typically feminine names represented a growing share of ChatGPT usage this quarter after reaching approximate parity last year. These users account for over half of users for whom we’re able to infer gender (see gender inference methodology [here⁠](https://openai.com/signals/data-download/)).\n\nThe share of users with typically feminine names increased in early 2026\n\nSeries\n\nThe number of messages from all age groups increased with ChatGPT’s [overall growth⁠](https://openai.com/index/scaling-ai-for-everyone/). In Q1, users under the age of 35 still accounted for the largest share of total messages, but messages from users over 35 gained share this quarter.\n\nThe share of older users grew in early 2026\n\nAge group\n\n## ChatGPT use spread beyond the largest and most established markets\n\nWe [rank countries⁠](https://openai.com/signals/data/) by the number of messages sent per capita to track relative country-level usage patterns. Many of the largest gains in rank this quarter came from countries outside the most established markets. The 10 fastest-rising countries point to a broadening pattern of adoption across Latin America and the Caribbean, Asia-Pacific, and Africa. These changes reflect relative movement, not total usage.\n\n**Country****2025Q4 Rank****2026Q1 Rank****Change**\n**Dominican Republic**53 44+9\n**Haiti**91 82+9\n**Japan**43 35+8\n**Mexico**60 54+6\n**Tanzania**102 96+6\n**Brazil**47 42+5\n**Costa Rica**38 33+5\n**Myanmar**99 94+5\n**Papua New Guinea**109 104+5\n**Austria**15 11+4\n\n## Workplace use evolved\n\nWithin work-related usage on consumer plans, creating written and visual materials continued to lead, but decreased over time while more specialized tasks became more popular. This analysis excludes Codex usage, which is likely shifting technical work toward coding agents.\n\nThe fastest-growing workplace tasks included content creation, health-related documentation, and information retrieval. These trends point to expanding adoption across professions or industries.\n\nOverall, 2026Q1 data suggests ChatGPT is becoming a more mainstream tool: used by a broader mix of people, in more countries, and for increasingly recurring tasks. It reflects wider adoption and more embedded use.\n\nDuring the first quarter, the balance between work-related and non-work use on consumer accounts continued in line with past trends. Users appeared to leverage repeatable use cases.\n\n## Stay engaged\n\nOpenAI Signals is an ongoing effort to ensure that researchers and policymakers have the best data at their fingertips to understand how AI is and will impact the economy.\n\n*   **If you’re a researcher**interested in leveraging ChatGPT usage data, download it for your own research and exploration [here⁠](https://openai.com/signals/data-download/).\n*   **If you’re interested in how enterprises use AI**, you can find the data [here⁠](https://openai.com/signals/b2b/).\n*   **If you want to stay up-to-date** on data releases, subscribe for updates [here⁠](https://openai.com/signals/data-download/).\n\n## Keep reading\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "How enterprises are scaling AI",
+          "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+          "published_at": "2026-05-11T10:00:00.000Z",
+          "description": "How enterprises scale AI: from early experiments to compounding impact through trust, governance, workflow design, and quality at scale.",
+          "full_text": "Title: How enterprises are scaling AI\n\nURL Source: https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai\n\nMarkdown Content:\n# How enterprises are scaling AI | OpenAI\n\n[Skip to main content](https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai#main)\n\n[](https://openai.com/)\n\n*   [Research](https://openai.com/research/index/)\n*   Products\n*   [Business](https://openai.com/business/)\n*   [Developers](https://openai.com/api/)\n*   [Company](https://openai.com/about/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nLog in[Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n*   Research\n*   Products\n*   Business\n*   Developers\n*   Company\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nTable of contents\n\n*   [Five patterns we saw repeatedly](https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai#five-patterns-we-saw-repeatedly)\n*   [What this signals for leaders](https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai#what-this-signals-for-leaders)\n\nMay 11, 2026\n\nGuides\n\n# How enterprises are scaling AI\n\nPractical insights from European enterprise leaders\n\n[Download the guide (opens in a new window)](https://cdn.openai.com/pdf/025ecc00-e528-48dc-95f7-90a96c7be449/frontiers-of-ai-leadership-lessons-guide.pdf)\n\nShare\n\nInterviews with executives at Philips, BBVA, Mirakl, Scout24, Jetbrains and Scania converged on a shared reality for leaders: scaling AI is less about “rolling out AI” and more about building the conditions where people trust it, adopt it, and improve it over time.\n\nThe organizations pulling ahead aren’t simply moving faster. They’re moving more deliberately—treating AI as an operating layer and leadership discipline grounded in workflow design, governance that enables speed, and proof that holds up under production pressure.\n\n## Five patterns we saw repeatedly\n\n**1) Culture before tooling**\n\nThe fastest path to adoption wasn’t a technical rollout—it was building literacy, confidence, and permission to experiment safely.\n\n**2) Governance as an enabler**\n\nWhere security, legal, compliance, and IT were involved early as design partners, teams moved faster later—with fewer reversals and more trust.\n\n**3) Ownership over consumption**\n\nAI scaled when teams could redesign workflows and build with AI—not just use it as a feature.\n\n**4) Quality before scale**\n\nThe organizations that earned trust defined what “good” meant early, invested in evaluation, and were willing to delay launches when the bar wasn’t met.\n\n**5) Protecting judgment work**\n\nThe most durable gains came from hybrid workflows—using AI to lift the ceiling on expert reasoning and review, not just increase throughput.\n\n## What this signals for leaders\n\nThe direction of travel is consistent: organizations are moving beyond individual productivity toward AI embedded in end-to-end workflows, with human oversight in place.\n\nSustained impact requires trust, ownership, and quality built in from the start.\n\n[**Download the Frontiers of AI Executive Guide**⁠(opens in a new window)](https://cdn.openai.com/pdf/025ecc00-e528-48dc-95f7-90a96c7be449/frontiers-of-ai-leadership-lessons-guide.pdf), containing practical insights from European enterprise leaders in the field, for expanded case detail, a practical leadership checklist, and the questions we’ve seen leaders use to pressure-test readiness to scale AI responsibly.\n\n**What the guide includes:**\n\n*   A one-page leadership diagnostic (accountability, trust, workflow fit, quality)\n*   Deeper case detail and metrics from the series\n*   A practical checklist leaders can use with their teams\n\n*   2026\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n![Image 1: Business guides > Layout > Carousel > ChatGPT usage and adoption patterns at work > media > asset](https://images.ctfassets.net/kftzwdyauwt9/2rUSG4XSMDGLJMBdfgtVH/97f5474b4822fccb60211817a5cceb65/chatgpt-usage-and-adoption-patterns-at-work-IMAGE.png?w=3840&q=90&fm=webp)\n\n[ChatGPT usage and adoption patterns at work Guides Jan 22, 2026](https://openai.com/business/guides-and-resources/chatgpt-usage-and-adoption-patterns-at-work/)\n\n![Image 2: State of Enterprise AI 2025 > cover image](https://images.ctfassets.net/kftzwdyauwt9/1zzmHm4xiyh99UAioTRe3o/448a21b0cb11cfbdf90198f231ee7bff/homepage_feature_v2.png?w=3840&q=90&fm=webp)\n\n[The state of enterprise AI Guides Dec 17, 2025](https://openai.com/business/guides-and-resources/the-state-of-enterprise-ai-2025-report/)\n\n![Image 3: 1x1 staying ahead](https://images.ctfassets.net/kftzwdyauwt9/5uCs5mXCel0eJTL8ahQ7TA/10959a8edd7a3753c5ff473c0ad460a9/1x1_staying_ahead.png?w=3840&q=90&fm=webp)\n\n[Staying ahead in the age of AI Guides Dec 16, 2025](https://openai.com/business/guides-and-resources/staying-ahead-in-the-age-of-ai/)\n\nOur Research\n*   [Research Index](https://openai.com/research/index/)\n*   [Research Overview](https://openai.com/research/)\n*   [Research Residency](https://openai.com/residency/)\n*   [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n*   [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n*   [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n*   [GPT-5.3 Instant](https://openai.com/index/gpt-5-3-instant/)\n*   [GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/)\n\nSafety\n*   [Safety Approach](https://openai.com/safety/)\n*   [Security & Privacy](https://openai.com/security-and-privacy/)\n*   [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nChatGPT\n*   [Explore ChatGPT(opens in a new window)](https://chatgpt.com/overview)\n*   [Business](https://chatgpt.com/business/business-plan)\n*   [Enterprise](https://chatgpt.com/business/enterprise)\n*   [Education](https://chatgpt.com/business/education)\n*   [Pricing(opens in a new window)](https://chatgpt.com/pricing)\n*   [Download(opens in a new window)](https://chatgpt.com/download)\n\nAPI Platform\n*   [Platform Overview](https://openai.com/api/)\n*   [Pricing](https://openai.com/api/pricing/)\n*   [API log in(opens in a new window)](https://platform.openai.com/login)\n*   [Documentation(opens in a new window)](https://developers.openai.com/api/docs)\n*   [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nFor Business\n*   [Business Overview](https://openai.com/business/)\n*   [Solutions](https://openai.com/solutions/)\n*   [Contact Sales](https://openai.com/contact-sales/)\n\nCompany\n*   [About Us](https://openai.com/about/)\n*   [Our Charter](https://openai.com/charter/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n*   [Careers](https://openai.com/careers/)\n*   [Brand](https://openai.com/brand/)\n\nSupport\n*   [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n*   [News](https://openai.com/news/)\n*   [Stories](https://openai.com/stories/)\n*   [Academy](https://openai.com/academy/)\n*   [Livestreams](https://openai.com/live/)\n*   [Podcast](https://openai.com/podcast/)\n*   [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n*   [Terms of Use](https://openai.com/policies/terms-of-use/)\n*   [Privacy Policy](https://openai.com/policies/privacy-policy/)\n*   [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI)[(opens in a new window)](https://www.youtube.com/OpenAI)[(opens in a new window)](https://www.linkedin.com/company/openai)[(opens in a new window)](https://github.com/openai)[(opens in a new window)](https://www.instagram.com/openai/)[(opens in a new window)](https://www.tiktok.com/@openai)[(opens in a new window)](https://discord.gg/openai)\n\nOpenAI © 2015–2026 Your privacy choices\n\nEnglish United States\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "OpenAI Campus Network: Student club interest form",
+          "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
+          "published_at": "2026-05-11T10:00:00.000Z",
+          "description": "Join the OpenAI Campus Network—connect student clubs worldwide, access AI tools, host events, and build an AI-powered campus community.",
+          "full_text": "Title: OpenAI Campus Network: Student club interest form\n\nURL Source: https://openai.com/index/openai-campus-network-student-club-interest-form\n\nMarkdown Content:\n# OpenAI Campus Network: Student club interest form | OpenAI\n\n[Skip to main content](https://openai.com/index/openai-campus-network-student-club-interest-form#main)\n\n[](https://openai.com/)\n\n*   [Research](https://openai.com/research/index/)\n*   Products\n*   [Business](https://openai.com/business/)\n*   [Developers](https://openai.com/api/)\n*   [Company](https://openai.com/about/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nLog in[Try ChatGPT(opens in a new window)](https://chatgpt.com/?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n\n*   Research\n*   Products\n*   Business\n*   Developers\n*   Company\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nOpenAI Campus Network: Student club interest form | OpenAI\n\nMay 11, 2026\n\n[Company](https://openai.com/news/company-announcements/)\n\n# OpenAI Campus Network: Student club interest form\n\nJoin a global network of student leaders building AI-native campuses.\n\nShare\n\nWe’re partnering with student clubs across universities worldwide to:\n\n*   Bring hands-on AI learning to campus\n*   Support student-led events, workshops, and research\n*   Share early access to tools, programs, and opportunities\n*   Connect student leaders shaping the future of learning and work\n\nWhether you're running events, building projects, or leading a community — we’d love to work with you.\n\n## Tell us about your student club\n\nUniversity name*\n\n \n\nCountry*\n\n \n\nClub name*\n\n \n\nType of club*\n\n \n\nHow active is your club?*\n\n \n\nSize of your community (approximate number of active members or reach)*\n\n \n\nFirst name*\n\n \n\nLast name*\n\n \n\nWhat is your role in your club (e.g., president, lead, organizer)?*\n\n \n\nEmail*\n\n \n\nLinkedIn profile or club website*\n\n \n\nWhat are your club’s main focus areas today?*\n\n \n\nHow is your club currently using AI tools, if at all?*\n\n \n500 characters max.\n\nWhat are you most excited to explore next with AI?*\n\n \n500 characters max.\n\nWhat types of opportunities are you interested in receiving support for?*\n\n \n\nWould you like to be considered for student ambassador programs*\n\n \n\n Anything else we should know about your club? (Optional: Include any key achievements, unique focuses, or pressing needs.)\n\n \n500 characters max.\n\nSubmit\n\n*\n\nUniversity Name \n\n*\n\nCountry \n\n*\n\nClub name \n\n*\n\nClub type \n\n*\n\nClub activity level \n\n*\n\nCommunity size \n\n*\n\nFirst Name \n\n*\n\nLast Name \n\n*\n\nClub role \n\n*\n\nEmail \n\n*\n\nLinkedIn or club website \n\n*\n\nClub focus \n\n*\n\nClub AI tool use \n\n*\n\nClub exploration \n\n*\n\nClub support \n\n*\n\nStudent ambassador consideration \n\n*\n\nClub extra information \n\nSubmit\n\nOur Research\n*   [Research Index](https://openai.com/research/index/)\n*   [Research Overview](https://openai.com/research/)\n*   [Research Residency](https://openai.com/residency/)\n*   [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n*   [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n*   [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n*   [GPT-5.3 Instant](https://openai.com/index/gpt-5-3-instant/)\n*   [GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/)\n\nSafety\n*   [Safety Approach](https://openai.com/safety/)\n*   [Security & Privacy](https://openai.com/security-and-privacy/)\n*   [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nChatGPT\n*   [Explore ChatGPT(opens in a new window)](https://chatgpt.com/overview?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n*   [Business](https://chatgpt.com/business/business-plan?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n*   [Enterprise](https://chatgpt.com/business/enterprise?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n*   [Education](https://chatgpt.com/business/education?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n*   [Pricing(opens in a new window)](https://chatgpt.com/pricing?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n*   [Download(opens in a new window)](https://chatgpt.com/download?openaicom-did=88c0a873-26d1-4b23-86a4-62f3ac75a6f5&openaicom_referred=true)\n\nAPI Platform\n*   [Platform Overview](https://openai.com/api/)\n*   [Pricing](https://openai.com/api/pricing/)\n*   [API log in(opens in a new window)](https://platform.openai.com/login)\n*   [Documentation(opens in a new window)](https://developers.openai.com/api/docs)\n*   [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nFor Business\n*   [Business Overview](https://openai.com/business/)\n*   [Solutions](https://openai.com/solutions/)\n*   [Contact Sales](https://openai.com/contact-sales/)\n\nCompany\n*   [About Us](https://openai.com/about/)\n*   [Our Charter](https://openai.com/charter/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n*   [Careers](https://openai.com/careers/)\n*   [Brand](https://openai.com/brand/)\n\nSupport\n*   [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n*   [News](https://openai.com/news/)\n*   [Stories](https://openai.com/stories/)\n*   [Academy](https://openai.com/academy/)\n*   [Livestreams](https://openai.com/live/)\n*   [Podcast](https://openai.com/podcast/)\n*   [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n*   [Terms of Use](https://openai.com/policies/terms-of-use/)\n*   [Privacy Policy](https://openai.com/policies/privacy-policy/)\n*   [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI)[(opens in a new window)](https://www.youtube.com/OpenAI)[(opens in a new window)](https://www.linkedin.com/company/openai)[(opens in a new window)](https://github.com/openai)[(opens in a new window)](https://www.instagram.com/openai/)[(opens in a new window)](https://www.tiktok.com/@openai)[(opens in a new window)](https://discord.gg/openai)\n\nOpenAI © 2015–2026 Your privacy choices\n\nEnglish United States\n\n![Image 1](https://bat.bing.com/action/0?ti=187204252&Ver=2&mid=a041cdb8-4bb3-47c1-9382-3e4e7f334ecf&bo=1&sid=90154c304d8911f1a0a7bd7e65b8df55&vid=901554d04d8911f19a88211cf6fab86d&vids=1&msclkid=N&pi=918639831&lg=en-US&sw=800&sh=600&sc=24&tl=OpenAI%20Campus%20Network%3A%20Student%20club%20interest%20form%20%7C%20OpenAI&p=https%3A%2F%2Fopenai.com%2Findex%2Fopenai-campus-network-student-club-interest-form%2F&r=&lt=495&evt=pageLoad&sv=2&cdb=AQAQ&rn=483448)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "OpenAI launches DeployCo to help businesses build around intelligence",
+          "url": "https://openai.com/index/openai-launches-the-deployment-company",
+          "published_at": "2026-05-11T06:00:00.000Z",
+          "description": "OpenAI launches DeployCo, a new enterprise deployment company built to help organizations bring frontier AI into production and turn it into measurable business impact.",
+          "full_text": "Title: OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence\n\nURL Source: https://openai.com/index/openai-launches-the-deployment-company\n\nMarkdown Content:\nOpenAI is launching the [OpenAI Deployment Company](https://openai.com/business/the-openai-deployment-company/), a new company designed to help organizations build and deploy AI systems they can rely on every day across their most important work.\n\nSuccessful AI deployment is about empowering people and teams to do more. The OpenAI Deployment Company will extend OpenAI’s ability to embed engineers specialized in frontier AI deployment, known as Forward Deployed Engineers, or FDEs, into organizations working on complex problems in demanding environments. These FDEs will work closely with business leaders, operators, and frontline teams to identify where AI can make the biggest impact, redesign organizational infrastructure and critical workflows around it, and turn those gains into durable systems.\n\nIn connection with the OpenAI Deployment Company’s launch, OpenAI has agreed to acquire Tomoro, an applied AI consulting and engineering firm that helps enterprises turn AI into operational advantage. The acquisition will bring approximately 150 experienced Forward Deployed Engineers and Deployment Specialists to the OpenAI Deployment Company from day one.\n\nThe OpenAI Deployment Company is a committed partnership between OpenAI and 19 leading global investment firms, consultancies, and system integrators. The partnership is led by TPG, with Advent, Bain Capital, and Brookfield as co-lead founding partners, and B Capital, BBVA, Emergence Capital, Goanna, Goldman Sachs, SoftBank Corp., Warburg Pincus, and WCAS as founding partners.\n\nInvestors also include leading consulting and systems integration firms, including Bain & Company, Capgemini, and McKinsey & Company. The Deployment Company will also work closely with and alongside OpenAI’s Frontier Alliance partners and the broader industry to drive AI adoption and change management globally.\n\nThe OpenAI Deployment Company is majority-owned and controlled by OpenAI, giving customers a unified experience whether they work with OpenAI, the OpenAI Deployment Company, or both. It will launch with more than $4 billion of initial investment, which it will use to scale operations and acquire firms that can accelerate our mission of ensuring that artificial general intelligence benefits all of humanity.\n\n## Why deployment matters\n\nOpenAI was founded as a research and deployment company. From the beginning, we have believed that building powerful AI models is only part of the work. Real impact comes from helping people and organizations use those systems safely, effectively, and at scale.\n\nOver the past several years, more than one million businesses have adopted OpenAI’s products and APIs. Across those deployments, one pattern has become increasingly clear: the next stage of enterprise AI will be defined by how effectively businesses can deploy this technology into real-world use cases, and how well we and our Alliance partner ecosystem can help them.\n\nAs models become more capable, businesses can apply AI to larger, more important parts of how they operate. The work now is helping organizations rethink critical workflows around intelligence that can reason, act, and deliver measurable results.\n\n## Building for where frontier AI is headed\n\nWe launched the OpenAI Deployment Company as a standalone business unit so it can develop the operating model, pace, and customer focus this work requires. At the same time, the OpenAI Deployment Company will operate as an extension of OpenAI, keeping customers closely connected to the research, product, and in-house deployment teams shaping frontier AI.\n\nThat connection is a major advantage. The OpenAI Deployment Company FDEs will be able to build for where OpenAI’s frontier capabilities are headed, giving customers systems designed to improve as new models, tools, and deployment patterns come online. Customers can move faster from day one, spend capital on durable systems, and stay ahead of competitors by building around the capabilities that are coming next.\n\nFDEs will work alongside business leaders, technology leaders, operators, and frontline teams to rethink critical operations, processes, and workflows from the ground up. Their role is to help organizations move from identifying high-value AI opportunities to building production systems that deliver measurable results.\n\nA typical OpenAI Deployment Company engagement will begin with a focused diagnostic of where AI can create the most value, followed by a small number of priority workflows selected with the customer’s leadership and operating teams. The OpenAI Deployment Company FDEs will then work inside the organization to design, build, test, and deploy production systems, connecting OpenAI models to the customer’s data, tools, controls, and business processes so teams can use them reliably in day-to-day work.\n\n## Accelerating deployment from day one\n\nThe Tomoro team will bring deep experience building and operating real-time AI systems in complex enterprise environments. Its work spans mission-critical workflows for companies such as Tesco, Virgin Atlantic and Supercell, where reliability, integration, governance, and measurable business impact matter from the start.\n\nAs part of the OpenAI Deployment Company after closing, the team will strengthen OpenAI’s ability to help customers move from use case selection to production deployment faster. Its engineers will help connect OpenAI models to customers’ data, tools, controls, and core business processes, accelerating DeployCo’s ability to deploy AI systems that work in day-to-day operations.\n\nThe acquisition is subject to customary closing conditions, including applicable regulatory approvals, and is expected to close in the coming months.\n\n## Scaling deployment across the economy\n\nThe OpenAI Deployment Company’s investment and consulting partners sponsor more than 2,000 businesses around the world, and its consulting and integrator partners work with many thousands more. These organizations span industries, company sizes, and workflows, giving the OpenAI Deployment Company a broad view of where AI can create value and which deployment patterns can scale.\n\nThe private equity sponsors also bring deep, repeatable experience helping companies execute operating transformation and change management across their portfolios. That capability is highly complementary to OpenAI and the OpenAI Deployment Company’s technical, product, and frontier AI deployment expertise. Together, the partnership can help customers identify and build the right AI systems, redesign workflows around them, drive adoption across teams, and turn AI deployment into durable operating change.\n\nThe OpenAI Deployment Company benefits from this combination: OpenAI’s visibility into where frontier AI capabilities are headed, and its partners’ practical experience helping companies execute complex transformations at scale. That will help OpenAI and the OpenAI Deployment Company learn faster, generalize the most effective solution patterns, and bring those lessons to more organizations across the economy.\n\n> “AI is becoming capable of doing increasingly meaningful work inside organizations. The challenge now is helping companies integrate these systems into the infrastructure and workflows that power their businesses. DeployCo is designed to help organizations bridge that gap and turn AI capability into real operational impact.”\n\n— Denise Dresser, Chief Revenue Officer at OpenAI\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "The new AI-powered Google Finance is expanding to Europe.",
+          "url": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
+          "published_at": "2026-05-11T06:00:00.000Z",
+          "description": "This week, the new, AI-powered Google Finance is launching across Europe, with full local language support. This reimagined experience offers a suite of powerful capabil…",
+          "full_text": "Title: The new AI-powered Google Finance is expanding to Europe.\n\nURL Source: https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/\n\nPublished Time: 2026-05-11T06:00:00+00:00\n\nMarkdown Content:\n# The new AI-powered Google Finance is expanding to Europe.\n\n[Skip to main content](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/#jump-content)\n\n[The Keyword](https://blog.google/)\n\nThe new AI-powered Google Finance is expanding to Europe.\n\n[Share](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/)\n\n[x.com](https://twitter.com/intent/tweet?text=The%20new%20AI-powered%20Google%20Finance%20is%20expanding%20to%20Europe.%20%40google&url=https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=The%20new%20AI-powered%20Google%20Finance%20is%20expanding%20to%20Europe.&u=https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/&title=The%20new%20AI-powered%20Google%20Finance%20is%20expanding%20to%20Europe.)[Mail](mailto:?subject=The%20new%20AI-powered%20Google%20Finance%20is%20expanding%20to%20Europe.&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AThe%20new%20AI-powered%20Google%20Finance%20is%20expanding%20to%20Europe.%0A%0Ahttps://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/)\n\nCopy link\n\n*   [Home](https://blog.google/)\n*    Innovation & AI \n\n Innovation & AI \n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n        *   [See all](https://blog.google/innovation-and-ai/products/)\n\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\nLearn more:\n\n    *   [Google DeepMind blog](https://deepmind.google/blog/)\n    *   [Google Research blog](https://research.google/blog/)\n    *   [Google Developers blog](https://developers.googleblog.com/)\n    *   [Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n\n[See all](https://blog.google/innovation-and-ai/models-and-research/ \"See all Models & Research articles\")\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n\n[See all](https://blog.google/innovation-and-ai/products/ \"See all Products articles\")\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n\n[See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/ \"See all Infrastructure & cloud articles\")\n\nLearn more:\n\n[Google DeepMind blog](https://deepmind.google/blog/)[Google Research blog](https://research.google/blog/)[Google Developers blog](https://developers.googleblog.com/)[Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n*    Products & platforms \n\n Products & platforms \n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/)\n\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [See all](https://blog.google/products-and-platforms/devices/)\n\nLearn more:\n\n    *   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n    *   [Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n\n[See all](https://blog.google/products-and-platforms/products/ \"See all Products articles\")\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n\n[See all](https://blog.google/products-and-platforms/platforms/ \"See all Platforms articles\")\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n\n[See all](https://blog.google/products-and-platforms/devices/ \"See all Devices articles\")\n\nLearn more:\n\n[Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)[Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n*    Company news \n\n Company news \n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/)\n\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/)\n\n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n\n[See all](https://blog.google/company-news/outreach-and-initiatives/ \"See all Outreach & initiatives articles\")\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n\n[See all](https://blog.google/authors/ \"See all Leadership articles\")\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n\n[See all](https://blog.google/company-news/inside-google/ \"See all Inside Google articles\")\n\n*   [Feed](https://blog.google/feed)\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\n [\"How can teachers and students use AI?\", \"What are the newest features in Chrome?\", \"How can I learn new AI skills?\"] \n\nSearch freely using keywords, or by asking a question\n\nSuggested searches\n\n*   [How can teachers and students use AI?](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/#)\n*   [What are the newest features in Chrome?](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/#)\n*   [How can I learn new AI skills?](https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/#)\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\n[The Keyword](https://blog.google/)\n\n*   [Home](https://blog.google/)\n*    Innovation & AI \n\n Innovation & AI \n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n        *   [See all](https://blog.google/innovation-and-ai/products/)\n\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\nLearn more:\n\n    *   [Google DeepMind blog](https://deepmind.google/blog/)\n    *   [Google Research blog](https://research.google/blog/)\n    *   [Google Developers blog](https://developers.googleblog.com/)\n    *   [Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n*    Products & platforms \n\n Products & platforms \n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/)\n\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [See all](https://blog.google/products-and-platforms/devices/)\n\nLearn more:\n\n    *   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n    *   [Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n*    Company news \n\n Company news \n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/)\n\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/)\n\n*   [Feed](https://blog.google/feed)\n\n*   [Images](https://blog.google/image-library/ \"Images\")\n*   [RSS feed](https://blog.google/rss/ \"RSS feed\")\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\nBreadcrumb\n1.   [](https://blog.google/ \"The Keyword\")\n2.   [Products & Platforms](https://blog.google/products-and-platforms/)\n3.   [Products](https://blog.google/products-and-platforms/products/)\n4.   [Search](https://blog.google/products-and-platforms/products/search/)\n\nMay 11, 2026\n\n# The new AI-powered Google Finance is expanding to Europe.\n\nThis week, the [new, AI-powered Google Finance](https://www.google.com/finance/beta/) is launching [across Europe](https://support.google.com/websearch/answer/16490185?hl=en#zippy=:~:text=Google%20Finance%20availability), with full local language support. This reimagined experience offers a suite of powerful capabilities designed to help you better understand the financial world.\n\n**AI-powered research:** Ask about anything, from individual stocks to broader market trends. You’ll get a comprehensive AI response, with links to learn more. For more complex questions, try [Deep Search](https://blog.google/products-and-platforms/products/search/new-google-finance-ai-deep-search/), now globally available in Google Finance.\n\n**Advanced visualizations:** New charting tools let you go beyond basic historical performance. View technical indicators, like moving average envelopes, or tap [key moments](https://x.com/thefox/status/2051700174582653351) on stock charts to learn why the price changed that day.\n\n**Real-time intel:** A revamped news feed and expanded data for commodities and cryptocurrencies keep you informed as markets move.\n\n**Live earnings:** Follow corporate earnings calls with live audio, synchronized transcripts and AI-generated insights, including annotated highlights that help you hone in on what matters.\n\n![Image 1: A screenshot of the AI-powered experience on Google Finance.](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/UK_1920x1080.width-1000.format-webp.webp)\n\nPOSTED IN:\n\n*   [Search](https://blog.google/products-and-platforms/products/search/)\n*   [AI](https://blog.google/innovation-and-ai/technology/ai/)\n\n## Related stories\n\n*   ### [See what happens when creative legends use AI to make ads for small businesses. Today we're launching The Small Brief, an initiative bringing together three ad industry icons to champion a local businesses they lov…](https://blog.google/company-news/inside-google/company-announcements/the-small-brief/) \n*   ### [5 gardening tips you can try right in Search](https://blog.google/products-and-platforms/products/search/gardening-tips/) \n*   ### [5 new ways to explore the web with generative AI in Search](https://blog.google/products-and-platforms/products/search/explore-web-generative-ai-search/) \n*   ### [Google is partnering with XPRIZE and Range Media Partners on the $3.5 million Future Vision film competition.](https://blog.google/innovation-and-ai/technology/ai/future-vision-film-competition-xprize/) \n\n![Image 2](https://blog.google/static/blogv2/images/newsletter_toast.svg?version=pr20260507-1819)\n\nLet’s stay in touch. Get the latest news from Google in your inbox.\n\n[Subscribe](https://blog.google/newsletter-subscribe/)No thank",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "OpenAI is launching Daybreak, our effort to accelerate cyber defense and continuously secure software.\n\nAI is already good and about to get super good at cybersecurity; we'd like to start working with",
+          "url": "https://x.com/sama/status/2053951874408276193",
+          "published_at": "2026-05-11T21:34:22.000000Z",
+          "description": "OpenAI is launching Daybreak, our effort to accelerate cyber defense and continuously secure software.\n\nAI is already good and about to get super good at cybersecurity; we'd like to start working with as many companies as possible now to help them continuously secure themselves.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": "thread-sama-20260511-2134",
+          "duplicate_of": null
+        },
+        {
+          "title": "Please get in touch if this sounds interesting!\n\nhttps://t.co/xbJsamECrL",
+          "url": "https://x.com/sama/status/2053951875654054011",
+          "published_at": "2026-05-11T21:34:22.000000Z",
+          "description": "Please get in touch if this sounds interesting!\n\nhttps://t.co/xbJsamECrL",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/xbJsamECrL",
+              "expanded_url": "https://openai.com/daybreak/",
+              "display_url": "openai.com/daybreak/"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "sama",
+            "status_id": "2053951874408276193"
+          },
+          "thread_group_id": "thread-sama-20260511-2134",
+          "duplicate_of": null
+        },
+        {
+          "title": "what if we name the next model \"goblin\"\n\nalmost worth it to make you all happy...",
+          "url": "https://x.com/sama/status/2053572868936761350",
+          "published_at": "2026-05-10T20:28:20.000000Z",
+          "description": "what if we name the next model \"goblin\"\n\nalmost worth it to make you all happy...",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "interesting",
+          "url": "https://x.com/sama/status/2053566155571560868",
+          "published_at": "2026-05-10T20:01:39.000000Z",
+          "description": "interesting",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "chatgpt21",
+            "text": "Codex made me money without me doing anything..\n\nHuge turning point for me today, I asked Codex to go off and make me $5. It went out, found a small open-source security/audit bounty path, made a legit PR, followed up with the maintainer, kept my payment details private - (without me asking), handled the GitHub proof/verification loop, and got the work merged.\n\nit spent about 22 hours working on multiple security audits.\n\nToday I received my first payment from that experiment: $16.88.\n\nThat’s a $506.40/month run-rate if repeated daily.\n\nNot life-changing money yet, but it's deeply exciting to live out Sam Altman's vision for AI, where it will just go out and make money for you. It's awesome to start to see the beginning of that.",
+            "url": "https://x.com/chatgpt21/status/2053556436475461786"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 820.3h old, exceeds 720h threshold",
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "This works really well btw, at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser. I've also had some success asking the LLM to prese",
+          "url": "https://x.com/karpathy/status/2053872850101285137",
+          "published_at": "2026-05-11T16:20:21.000000Z",
+          "description": "This works really well btw, at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser. I've also had some success asking the LLM to present its output as slideshows, etc.\n\nMore generally, imo audio is the human-preferred input to AIs but vision (images/animations/video) is the preferred output from them. Around a ~third of our brains are a massively parallel processor dedicated to vision, it is the 10-lane superhighway of information into brain. As AI improves, I think we'll see a progression that takes advantage:\n\n1) raw text (hard/effortful to read)\n2) markdown (bold, italic, headings, tables, a bit easier on the eyes) <-- current default\n3) HTML (still procedural with underlying code, but a lot more flexibility on the graphics, layout, even interactivity) <-- early but forming new good default\n...4,5,6,...\nn) interactive neural videos/simulations\n\nImo the extrapolation (though the technology doesn't exist just yet) ends in some kind of interactive videos generated directly by a diffusion neural net. Many open questions as to how exact/procedural \"Software 1.0\" artifacts (e.g. interactive simulations) may be woven together with neural artifacts (diffusion grids), but generally something in the direction of the recently viral https://t.co/z21CP5iQfu\n\nThere are also improvements necessary and pending at the input. Audio nor text nor video alone are not enough, e.g. I feel a need to point/gesture to things on the screen, similar to all the things you would do with a person physically next to you and your computer screen.\n\nTLDR The input/output mind meld between humans and AIs is ongoing and there is a lot of work to do and significant progress to be made, way before jumping all the way into neuralink-esque BCIs and all that. For what's worth exploring at the current stage, hot tip try ask for HTML.",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/z21CP5iQfu",
+              "expanded_url": "https://x.com/zan2434/status/2046982383430496444",
+              "display_url": "x.com/zan2434/status…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "https://t.co/MXt5XS4xBX",
+            "url": "https://x.com/trq212/status/2052809885763747935"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "you can make something good\n\nty @aadilpickle @FarzaTV https://t.co/ivNyvZwhjk",
+          "url": "https://x.com/trq212/status/2053869803501404511",
+          "published_at": "2026-05-11T16:08:14.000000Z",
+          "description": "you can make something good\n\nty @aadilpickle @FarzaTV https://t.co/ivNyvZwhjk",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "I've been using HTML for planning, speccing, exploration, code review, reports and a lot more.\n\nhttps://t.co/1V3pRFQL5M",
+          "url": "https://x.com/trq212/status/2053632475294040084",
+          "published_at": "2026-05-11T00:25:11.000000Z",
+          "description": "I've been using HTML for planning, speccing, exploration, code review, reports and a lot more.\n\nhttps://t.co/1V3pRFQL5M",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/1V3pRFQL5M",
+              "expanded_url": "https://x.com/trq212/status/2052809885763747935",
+              "display_url": "x.com/trq212/status/…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "https://t.co/MXt5XS4xBX",
+            "url": "https://x.com/trq212/status/2052809885763747935"
+          },
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2044873898572001376"
+          },
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Jarred tried rewriting Bun in Rust and it passes 99.8% of the existing test suite\n\nwe're not being ambitious enough",
+          "url": "https://x.com/trq212/status/2053559397654348159",
+          "published_at": "2026-05-10T19:34:48.000000Z",
+          "description": "Jarred tried rewriting Bun in Rust and it passes 99.8% of the existing test suite\n\nwe're not being ambitious enough",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "jarredsumner",
+            "text": "there will be a blog post about this. on what this means for bun, benchmarks, memory usage, maintainability going forward, and also the literal process of doing this (it wasn’t just “claude, rewrite bun in rust. make no mistakes”)\n\nthis is a 960,000 LOC rewrite, the code truly works, passing the test suite on Linux and soon other platforms. e2e I started working on this 6 days ago. this would’ve been a massive amount of work by hand.",
+            "url": "https://x.com/jarredsumner/status/2053063524826620129"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+          "url": "https://x.com/claudeai/status/2053940934736228454",
+          "published_at": "2026-05-11T20:50:53.000000Z",
+          "description": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "See what's running, what's waiting on you, and what's done at a glance. Reply inline to unblock, or jump in and out of any session without losing your place.",
+          "url": "https://x.com/claudeai/status/2053940937554788750",
+          "published_at": "2026-05-11T20:50:54.000000Z",
+          "description": "See what's running, what's waiting on you, and what's done at a glance. Reply inline to unblock, or jump in and out of any session without losing your place.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2053940935906439444"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-2050",
+          "duplicate_of": null
+        },
+        {
+          "title": "Available on all paid plans.\n\nRead more: https://t.co/nOrCwKwTwL",
+          "url": "https://x.com/claudeai/status/2053940938666279028",
+          "published_at": "2026-05-11T20:50:54.000000Z",
+          "description": "Available on all paid plans.\n\nRead more: https://t.co/nOrCwKwTwL",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/nOrCwKwTwL",
+              "expanded_url": "https://claude.com/blog/agent-view-in-claude-code",
+              "display_url": "claude.com/blog/agent-vie…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2053940937554788750"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-2050",
+          "duplicate_of": null
+        },
+        {
+          "title": "Build and deploy agents at scale with Claude Managed Agents, or use features like the advisor strategy, code execution, web search, and more.\n\nAnthropic operates the service, and all new features ship",
+          "url": "https://x.com/claudeai/status/2053868595394879553",
+          "published_at": "2026-05-11T16:03:26.000000Z",
+          "description": "Build and deploy agents at scale with Claude Managed Agents, or use features like the advisor strategy, code execution, web search, and more.\n\nAnthropic operates the service, and all new features ship the same day they go live on the native Claude API.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2053868592286822443"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-1603",
+          "duplicate_of": null
+        },
+        {
+          "title": "The Claude Platform on AWS is available today. Claude also remains available on Amazon Bedrock, where AWS is the data processor.\n\nRead more: https://t.co/cEFftPcYPL",
+          "url": "https://x.com/claudeai/status/2053868596615356577",
+          "published_at": "2026-05-11T16:03:27.000000Z",
+          "description": "The Claude Platform on AWS is available today. Claude also remains available on Amazon Bedrock, where AWS is the data processor.\n\nRead more: https://t.co/cEFftPcYPL",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/cEFftPcYPL",
+              "expanded_url": "https://claude.com/blog/claude-platform-on-aws",
+              "display_url": "claude.com/blog/claude-pl…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2053868595394879553"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-1603",
+          "duplicate_of": null
+        },
+        {
+          "title": "The Claude Platform on AWS is now generally available.\n\nAWS customers get the full set of Claude API features, with AWS authentication, billing, and commitment retirement. https://t.co/9WPrEgCpkg",
+          "url": "https://x.com/claudeai/status/2053868592286822443",
+          "published_at": "2026-05-11T16:03:26.000000Z",
+          "description": "The Claude Platform on AWS is now generally available.\n\nAWS customers get the full set of Claude API features, with AWS authentication, billing, and commitment retirement. https://t.co/9WPrEgCpkg",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-1603",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Agent view is built to run more sessions in parallel with less to keep in your head.",
+          "url": "https://x.com/ClaudeDevs/status/2053944194386051128",
+          "published_at": "2026-05-11T21:03:51.000000Z",
+          "description": "Agent view is built to run more sessions in parallel with less to keep in your head.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+            "url": "https://x.com/claudeai/status/2053940934736228454"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+          "duplicate_of": null
+        },
+        {
+          "title": "Turn your common workflows into skills and dispatch many at once. Claude pushes ahead until your skill says to stop and ask. Peek and reply for a quick unblock, open the transcript only when you need ",
+          "url": "https://x.com/ClaudeDevs/status/2053944195812143413",
+          "published_at": "2026-05-11T21:03:51.000000Z",
+          "description": "Turn your common workflows into skills and dispatch many at once. Claude pushes ahead until your skill says to stop and ask. Peek and reply for a quick unblock, open the transcript only when you need it.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053944194386051128"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+          "duplicate_of": null
+        },
+        {
+          "title": "Get started by running \"claude agents\" today!",
+          "url": "https://x.com/ClaudeDevs/status/2053944196864897196",
+          "published_at": "2026-05-11T21:03:51.000000Z",
+          "description": "Get started by running \"claude agents\" today!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053944195812143413"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+          "duplicate_of": null
+        },
+        {
+          "title": "We're introducing the Claude Platform on AWS. This gives developers access to the same models and features as our native API, including Claude Managed Agents! Workloads, billing, and IAM stay inside A",
+          "url": "https://x.com/ClaudeDevs/status/2053892878167072914",
+          "published_at": "2026-05-11T17:39:56.000000Z",
+          "description": "We're introducing the Claude Platform on AWS. This gives developers access to the same models and features as our native API, including Claude Managed Agents! Workloads, billing, and IAM stay inside AWS.  \n\nLearn more: https://t.co/JihmaHyOp2 https://t.co/XQKF9o5uiF",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/JihmaHyOp2",
+              "expanded_url": "https://claude.com/blog/claude-platform-on-aws",
+              "display_url": "claude.com/blog/claude-pl…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Build and deploy agents at scale with Claude Managed Agents, or use features like the advisor strategy, code execution, web search, and more.\n\nAnthropic operates the service, and all new features ship the same day they go live on the native Claude API.",
+            "url": "https://x.com/claudeai/status/2053868595394879553"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+          "duplicate_of": null
+        },
+        {
+          "title": "We've had Claude models available through Bedrock since 2023. With Claude Platform on AWS, all of our Platform features - including context management (prompt caching), pre-built tools, and Claude Man",
+          "url": "https://x.com/ClaudeDevs/status/2053892880306229603",
+          "published_at": "2026-05-11T17:39:56.000000Z",
+          "description": "We've had Claude models available through Bedrock since 2023. With Claude Platform on AWS, all of our Platform features - including context management (prompt caching), pre-built tools, and Claude Managed Agents - are now available.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053892878167072914"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+          "duplicate_of": null
+        },
+        {
+          "title": "Auth to access these features flows through AWS-managed API Gateway. Pricing and rate limits are the same as accessing directly through the Claude API.",
+          "url": "https://x.com/ClaudeDevs/status/2053892881396691394",
+          "published_at": "2026-05-11T17:39:57.000000Z",
+          "description": "Auth to access these features flows through AWS-managed API Gateway. Pricing and rate limits are the same as accessing directly through the Claude API.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053892880306229603"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude's Constitution is now an audiobook, read by two of its authors, Amanda Askell and Joe Carlsmith.\n\nIt includes a Q&amp;A on the writing process, the philosophies that shaped the document, and ho",
+          "url": "https://x.com/AnthropicAI/status/2053881827396653207",
+          "published_at": "2026-05-11T16:56:01.000000Z",
+          "description": "Claude's Constitution is now an audiobook, read by two of its authors, Amanda Askell and Joe Carlsmith.\n\nIt includes a Q&amp;A on the writing process, the philosophies that shaped the document, and how it might change as models become more capable.\n\nListen at https://t.co/dKMfpeOblm https://t.co/792RQ4sAxc",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/dKMfpeOblm",
+              "expanded_url": "http://anthropic.com/constitution",
+              "display_url": "anthropic.com/constitution"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Today we’re launching the OpenAI Deployment Company to help businesses build and deploy AI.\n\nIt's majority-owned and controlled by OpenAI. It brings together 19 leading investment firms, consultancies",
+          "url": "https://x.com/OpenAI/status/2053824997777457651",
+          "published_at": "2026-05-11T13:10:12.000000Z",
+          "description": "Today we’re launching the OpenAI Deployment Company to help businesses build and deploy AI.\n\nIt's majority-owned and controlled by OpenAI. It brings together 19 leading investment firms, consultancies, and system integrators to help organizations deploy frontier AI to production for business impact. https://t.co/GnyjGFaLLA",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/GnyjGFaLLA",
+              "expanded_url": "https://openai.com/index/openai-launches-the-deployment-company/",
+              "display_url": "openai.com/index/openai-l…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: OpenAI launches the OpenAI Deployment Company to help businesses build around intelligence\n\nURL Source: https://openai.com/index/openai-launches-the-deployment-company/\n\nMarkdown Content:\nOpenAI is launching the [OpenAI Deployment Company](https://openai.com/business/the-openai-deployment-company/), a new company designed to help organizations build and deploy AI systems they can rely on every day across their most important work.\n\nSuccessful AI deployment is about empowering people and teams to do more. The OpenAI Deployment Company will extend OpenAI’s ability to embed engineers specialized in frontier AI deployment, known as Forward Deployed Engineers, or FDEs, into organizations working on complex problems in demanding environments. These FDEs will work closely with business leaders, operators, and frontline teams to identify where AI can make the biggest impact, redesign organizational infrastructure and critical workflows around it, and turn those gains into durable systems.\n\nIn connection with the OpenAI Deployment Company’s launch, OpenAI has agreed to acquire Tomoro, an applied AI consulting and engineering firm that helps enterprises turn AI into operational advantage. The acquisition will bring approximately 150 experienced Forward Deployed Engineers and Deployment Specialists to the OpenAI Deployment Company from day one.\n\nThe OpenAI Deployment Company is a committed partnership between OpenAI and 19 leading global investment firms, consultancies, and system integrators. The partnership is led by TPG, with Advent, Bain Capital, and Brookfield as co-lead founding partners, and B Capital, BBVA, Emergence Capital, Goanna, Goldman Sachs, SoftBank Corp., Warburg Pincus, and WCAS as founding partners.\n\nInvestors also include leading consulting and systems integration firms, including Bain & Company, Capgemini, and McKinsey & Company. The Deployment Company will also work closely with and alongside OpenAI’s Frontier Alliance partners and the broader industry to drive AI adoption and change management globally.\n\nThe OpenAI Deployment Company is majority-owned and controlled by OpenAI, giving customers a unified experience whether they work with OpenAI, the OpenAI Deployment Company, or both. It will launch with more than $4 billion of initial investment, which it will use to scale operations and acquire firms that can accelerate our mission of ensuring that artificial general intelligence benefits all of humanity.\n\n## Why deployment matters\n\nOpenAI was founded as a research and deployment company. From the beginning, we have believed that building powerful AI models is only part of the work. Real impact comes from helping people and organizations use those systems safely, effectively, and at scale.\n\nOver the past several years, more than one million businesses have adopted OpenAI’s products and APIs. Across those deployments, one pattern has become increasingly clear: the next stage of enterprise AI will be defined by how effectively businesses can deploy this technology into real-world use cases, and how well we and our Alliance partner ecosystem can help them.\n\nAs models become more capable, businesses can apply AI to larger, more important parts of how they operate. The work now is helping organizations rethink critical workflows around intelligence that can reason, act, and deliver measurable results.\n\n## Building for where frontier AI is headed\n\nWe launched the OpenAI Deployment Company as a standalone business unit so it can develop the operating model, pace, and customer focus this work requires. At the same time, the OpenAI Deployment Company will operate as an extension of OpenAI, keeping customers closely connected to the research, product, and in-house deployment teams shaping frontier AI.\n\nThat connection is a major advantage. The OpenAI Deployment Company FDEs will be able to build for where OpenAI’s frontier capabilities are headed, giving customers systems designed to improve as new models, tools, and deployment patterns come online. Customers can move faster from day one, spend capital on durable systems, and stay ahead of competitors by building around the capabilities that are coming next.\n\nFDEs will work alongside business leaders, technology leaders, operators, and frontline teams to rethink critical operations, processes, and workflows from the ground up. Their role is to help organizations move from identifying high-value AI opportunities to building production systems that deliver measurable results.\n\nA typical OpenAI Deployment Company engagement will begin with a focused diagnostic of where AI can create the most value, followed by a small number of priority workflows selected with the customer’s leadership and operating teams. The OpenAI Deployment Company FDEs will then work inside the organization to design, build, test, and deploy production systems, connecting OpenAI models to the customer’s data, tools, controls, and business processes so teams can use them reliably in day-to-day work.\n\n## Accelerating deployment from day one\n\nThe Tomoro team will bring deep experience building and operating real-time AI systems in complex enterprise environments. Its work spans mission-critical workflows for companies such as Tesco, Virgin Atlantic and Supercell, where reliability, integration, governance, and measurable business impact matter from the start.\n\nAs part of the OpenAI Deployment Company after closing, the team will strengthen OpenAI’s ability to help customers move from use case selection to production deployment faster. Its engineers will help connect OpenAI models to customers’ data, tools, controls, and core business processes, accelerating DeployCo’s ability to deploy AI systems that work in day-to-day operations.\n\nThe acquisition is subject to customary closing conditions, including applicable regulatory approvals, and is expected to close in the coming months.\n\n## Scaling deployment across the economy\n\nThe OpenAI Deployment Company’s investment and consulting partners sponsor more than 2,000 businesses around the world, and its consulting and integrator partners work with many thousands more. These organizations span industries, company sizes, and workflows, giving the OpenAI Deployment Company a broad view of where AI can create value and which deployment patterns can scale.\n\nThe private equity sponsors also bring deep, repeatable experience helping companies execute operating transformation and change management across their portfolios. That capability is highly complementary to OpenAI and the OpenAI Deployment Company’s technical, product, and frontier AI deployment expertise. Together, the partnership can help customers identify and build the right AI systems, redesign workflows around them, drive adoption across teams, and turn AI deployment into durable operating change.\n\nThe OpenAI Deployment Company benefits from this combination: OpenAI’s visibility into where frontier AI capabilities are headed, and its partners’ practical experience helping companies execute complex transformations at scale. That will help OpenAI and the OpenAI Deployment Company learn faster, generalize the most effective solution patterns, and bring those lessons to more organizations across the economy.\n\n> “AI is becoming capable of doing increasingly meaningful work inside organizations. The challenge now is helping companies integrate these systems into the infrastructure and workflows that power their businesses. DeployCo is designed to help organizations bridge that gap and turn AI capability into real operational impact.”\n\n— Denise Dresser, Chief Revenue Officer at OpenAI\n",
+          "thread_group_id": "thread-OpenAI-20260511-1310",
+          "duplicate_of": null
+        },
+        {
+          "title": "Introducing Daybreak: frontier AI for cyber defenders.\n\nDaybreak brings together the most capable OpenAI models, Codex, and our security partners to accelerate cyber defense and continuously secure so",
+          "url": "https://x.com/OpenAI/status/2053939702110269822",
+          "published_at": "2026-05-11T20:45:59.000000Z",
+          "description": "Introducing Daybreak: frontier AI for cyber defenders.\n\nDaybreak brings together the most capable OpenAI models, Codex, and our security partners to accelerate cyber defense and continuously secure software.\n\nA step toward a future where security teams can move at the speed defense demands.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Automate security detection, validation, and response with Daybreak https://t.co/ULtSrmE5zu",
+          "url": "https://x.com/OpenAI/status/2053939706468139481",
+          "published_at": "2026-05-11T20:46:01.000000Z",
+          "description": "Automate security detection, validation, and response with Daybreak https://t.co/ULtSrmE5zu",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2053939705146945887"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260511-2046",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/EoO5fF9pcT",
+          "url": "https://x.com/OpenAI/status/2053939707818692907",
+          "published_at": "2026-05-11T20:46:01.000000Z",
+          "description": "https://t.co/EoO5fF9pcT",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/EoO5fF9pcT",
+              "expanded_url": "https://openai.com/daybreak/",
+              "display_url": "openai.com/daybreak/"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2053939706468139481"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260511-2046",
+          "duplicate_of": null
+        },
+        {
+          "title": "We’ve also agreed to acquire Tomoro, which will bring 150 experienced Forward Deployed Engineers and Deployment Specialists to the OpenAI Deployment Company from day one.",
+          "url": "https://x.com/OpenAI/status/2053824999736410415",
+          "published_at": "2026-05-11T13:10:12.000000Z",
+          "description": "We’ve also agreed to acquire Tomoro, which will bring 150 experienced Forward Deployed Engineers and Deployment Specialists to the OpenAI Deployment Company from day one.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2053824997777457651"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260511-1310",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 7,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "What if your team gave standup updates, and GPT-Realtime-2 moved the tickets? https://t.co/I0f3JfD42m",
+          "url": "https://x.com/OpenAIDevs/status/2053964133570412826",
+          "published_at": "2026-05-11T22:23:04.000000Z",
+          "description": "What if your team gave standup updates, and GPT-Realtime-2 moved the tickets? https://t.co/I0f3JfD42m",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+          "duplicate_of": null
+        },
+        {
+          "title": "Fork the repo and build your own voice-to-action workflow.\n\nhttps://t.co/G3ag8QeBl8",
+          "url": "https://x.com/OpenAIDevs/status/2053964145155068025",
+          "published_at": "2026-05-11T22:23:07.000000Z",
+          "description": "Fork the repo and build your own voice-to-action workflow.\n\nhttps://t.co/G3ag8QeBl8",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/G3ag8QeBl8",
+              "expanded_url": "https://github.com/openai/openai-realtime-meeting-assistant",
+              "display_url": "github.com/openai/openai-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2053964133570412826"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+          "duplicate_of": null
+        },
+        {
+          "title": "Codex can now help you build AI apps and agents faster with OpenAI APIs using the OpenAI Developers plugin. https://t.co/KxG14rL8lS",
+          "url": "https://x.com/OpenAIDevs/status/2053925962287583379",
+          "published_at": "2026-05-11T19:51:24.000000Z",
+          "description": "Codex can now help you build AI apps and agents faster with OpenAI APIs using the OpenAI Developers plugin. https://t.co/KxG14rL8lS",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 418.5h old, exceeds 168h threshold",
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "📣We're calling for ambassadors!\n\nWhether you're a developer with great technical taste or a local community leader who loves bringing people together, we'd love to have you join us.\n\nVisit the websit",
+          "url": "https://x.com/Alibaba_Qwen/status/2053835267061301316",
+          "published_at": "2026-05-11T13:51:00.000000Z",
+          "description": "📣We're calling for ambassadors!\n\nWhether you're a developer with great technical taste or a local community leader who loves bringing people together, we'd love to have you join us.\n\nVisit the website below for more details and to apply. In return, ambassadors will receive early access to Qwen models, API credits, annual merchandise, and more.\n\nCome and check it out!👇\nhttps://t.co/UqNQ8dAKUg",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/UqNQ8dAKUg",
+              "expanded_url": "https://qwen.ai/ambassador",
+              "display_url": "qwen.ai/ambassador"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    }
+  }
+}
