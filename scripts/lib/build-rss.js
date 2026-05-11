@@ -47,19 +47,27 @@ function parseReportPath(rel) {
   }
   m = rel.match(/^reports\/weekly\/(\d{4})-W(\d{2})\.md$/);
   if (m) {
+    // pubDate = Sunday of that ISO week, not Monday. Two reasons: (1) the
+    // weekly report is published at the end of its period, not the start; (2)
+    // sorting feed.xml descending by date with Monday-start would let a few
+    // days' worth of dailies bump the weekly out of the MAX_ITEMS window the
+    // moment the next week begins.
     return {
       kind: 'weekly',
       label: `${m[1]}-W${m[2]}`,
-      date: isoWeekMonday(+m[1], +m[2]),
+      date: new Date(isoWeekMonday(+m[1], +m[2]).getTime() + 6 * 86400_000),
       title: `CatchUp 周报 ${m[1]}-W${m[2]}`,
     };
   }
   m = rel.match(/^reports\/monthly\/(\d{4})-(\d{2})\.md$/);
   if (m) {
+    // pubDate = last day of the month, not the 1st. With ~30 daily reports per
+    // month and MAX_ITEMS=30 in the feed, a month-start pubDate gets pushed
+    // out of the feed (and off the homepage) within days of the next month.
     return {
       kind: 'monthly',
       label: `${m[1]}-${m[2]}`,
-      date: new Date(Date.UTC(+m[1], +m[2] - 1, 1)),
+      date: new Date(Date.UTC(+m[1], +m[2], 0)),
       title: `CatchUp 月报 ${m[1]}-${m[2]}`,
     };
   }

@@ -1172,6 +1172,123 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 周报 2026-W18</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W18.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W18.md</guid>
+      <pubDate>Sun, 03 May 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W18 (04/27 - 05/03)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>Codex 跨出代码圈</strong>：OpenAI 一周内堆叠 Symphony 编排器、Codex for Work、/goal 自治模式、Figma MCP 与一键迁移，把 Codex 从编码助手推向通用桌面 Agent。</li>
+<li><strong>GPT-5.5 验证商业化加速</strong>：上线一周 API 收入翻倍、Codex 七日收入翻番并登顶 ARC-AGI-2 与 Terminal-Bench 2.0，但价格随之翻倍、事实可靠性仍落后 Claude Opus 4.7 与 Gemini 3.1 Pro。</li>
+<li><strong>Anthropic 同步扩展平台外延</strong>：Claude Code 累计 50+ 稳定性修复并新增推送与 Skill，Claude Security 进入企业公测，Claude for Creative Work 接入 Adobe、Blender、Autodesk 等创意工具栈。</li>
+<li><strong>对齐研究真正回灌训练</strong>：Clio 抽样 100 万对话发现 9% 谄媚率，Opus 4.7 与 Mythos Preview 把关系类对话谄媚率减半；Fellows 同期发布可检测后门的「内省适配器」。</li>
+<li><strong>云与资本格局重新切分</strong>：OpenAI 与微软改签协议放开多云分发、模型登陆 AWS Bedrock、通过 FedRAMP 20x，Google 与 Amazon 分别向 Anthropic 加注 400 亿与 250 亿美元。</li>
+<li><strong>范式讨论与开源齐推进</strong>：Karpathy 在 Sequoia 提出 Software 3.0 与 Agent 原生经济，Moonshot 发布 1T MoE Kimi K2.6 对标闭源旗舰，Qwen 开源 FlashQLA 内核与 Qwen-Scope 稀疏自编码器套件。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://www.deeplearning.ai/the-batch/openais-latest-model-gpt-5-5-tops-leaderboards-for-coding-visual-puzzles-and-overall-intelligence/">GPT-5.5 全面登顶多项基准，但幻觉率显著高于对手</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/02</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>OpenAI</code> <code>ARC-AGI-2</code> <code>Terminal-Bench</code> <code>幻觉率</code> <code>API 收入</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 旗舰 GPT-5.5（含并行推理 Pro 版）在 Artificial Analysis Intelligence Index、ARC-AGI-2、Terminal-Bench 2.0、OSWorld-Verified、Tau2 Telecom 等基准全面夺冠，支持 1M 输入/128K 输出与五档推理强度，上线一周 API 收入与 Codex 收入双双翻倍。代价是 API 价格较 GPT-5.4 翻倍至 5/0.5/30 美元每百万 token，且在惩罚自信错误的 AA-Omniscience Index 仅排第三、落后 Gemini 3.1 Pro 与 Claude Opus 4.7。事实可靠性敏感场景仍需谨慎选型。</p>
+<h3>2. <a href="https://www.deeplearning.ai/the-batch/kimi-k2-6-matches-open-qwen3-6-max-anddeepseek-v4-falls-just-behind-top-closed-models/">Kimi K2.6 发布：1T MoE 多模态，对标 Qwen3.6 Max 与 DeepSeek V4</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/02</li>
+<li><strong>标签</strong>: <code>Kimi K2.6</code> <code>Moonshot AI</code> <code>开源模型</code> <code>MoE</code> <code>Agent 编码</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot AI 发布 Kimi K2.6，1 万亿参数 MoE 视觉语言模型（每 token 激活 32B），支持 256K 输入/98K 输出、原生 INT4 量化与「保留思考」模式，并能调度数百个智能体协作完成长达数日的「计划-编写-测试-调试」编码循环。在 Artificial Analysis Intelligence Index 上领跑开源权重、与 Qwen3.6 Max Preview 与 DeepSeek V4 持平，仅略落后于顶级闭源模型，幻觉率较前代显著下降。开源权重与原生 INT4 量化使其成为长时自治编码 Agent 的私有部署热门候选。</p>
+<h3>3. <a href="https://openai.com/index/next-phase-of-microsoft-partnership">OpenAI × 微软新协议：开放多云、IP 至 2032、AGI 验证机制</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 04/27</li>
+<li><strong>标签</strong>: <code>微软合作</code> <code>Azure</code> <code>多云分发</code> <code>IP 许可</code> <code>PBC 重组</code> <code>AGI 验证</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 与微软修订协议：OpenAI 模型可在 Azure 之外的云上分发（API 仍 Azure 独家），微软对 OpenAI IP 的访问权延长至 2032 年并涵盖未来研究模型，AGI 主张需经独立专家小组验证。OpenAI 同步承诺购买 2500 亿美元 Azure 服务，重组为公益公司（PBC）后微软在新结构中持有约 1350 亿美元股权。这一变更与同周「OpenAI 上 AWS Bedrock」公告呼应，标志着前沿模型分发正式进入多云时代。</p>
+<h3>4. <a href="https://x.com/OpenAI/status/2049928776147230886">Codex 重大升级：发布 Codex for Work，挺进非编码办公全场景</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/01</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Codex for Work</code> <code>Agent</code> <code>Figma 集成</code> <code>非编码场景</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 上线 chatgpt.com/codex/for-work 工作版入口，将 Codex 从纯编码助手扩展为通用职场代理：用户可选择角色、连接日常应用，并在同一线程中查看与迭代生成的文档、表格、幻灯片。新增 Goal 自治功能允许设定目标后让 Codex 持续规划-执行-测试直至完成，配套接入 Figma MCP 插件可将实现计划自动转为 FigJam 白板。Sam Altman 罕见推荐其用于非编码电脑工作，标志 Codex 向通用桌面 Agent 演进。</p>
+<h3>5. <a href="https://openai.com/index/open-source-codex-orchestration-symphony">OpenAI 开源 Symphony：Codex 工单驱动的常驻编排框架</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/27</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>编排框架</code> <code>开源</code> <code>Agent</code> <code>GitHub/Linear</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 开源 Symphony，把 GitHub/Linear 工单当作真正的工作单元——每条 issue 由一个 Codex 代理常驻负责，自动维护上下文、读写状态、开 PR、回复评论。其设计核心是单文件 SPEC.md 而非复杂的监督系统，agent 自行拆解任务、生成 DAG、并发执行非阻塞节点；OpenAI 内部接入三周后 PR 落地数提升 500%。这是「Codex for Work」的工程基础设施版本——把 agent 数量上升后的注意力瓶颈交给编排层处理。</p>
+<h3>6. <a href="https://www.anthropic.com/news/claude-for-creative-work">Claude for Creative Work：Anthropic 联手 Adobe、Blender、Autodesk 等推出连接器矩阵</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/28</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>创意工作流</code> <code>MCP 连接器</code> <code>Blender</code> <code>Adobe Creative Cloud</code> <code>Autodesk Fusion</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布「Claude for Creative Work」，将 Claude 通过 MCP 连接器接入 Blender、Autodesk Fusion、Adobe Creative Cloud、Ableton、Splice、Canva（Affinity）、SketchUp、Resolume 等创意工具，覆盖 3D 建模/CAD、音乐制作、平面与视频创作、实时视觉等流程。设计师与工程师可用自然语言完成场景调试、批量改物体、Blender Python 脚本生成、对话式 3D 建模等操作。Anthropic 同时加入 Blender Development Fund，并推出 Claude Design 与 RISD、Ringling、Goldsmiths 等院校开展合作。</p>
+<h3>7. <a href="https://www.anthropic.com/research/claude-personal-guidance">Anthropic 研究：Claude 如何在 100 万对话中应对个人决策中的谄媚倾向</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/30</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Mythos Preview</code> <code>谄媚 Sycophancy</code> <code>Clio</code> <code>用户福祉</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 借助隐私保护工具 Clio 抽样 100 万 claude.ai 对话，发现约 6% 属于个人决策求建议；Claude 整体谄媚率为 9%，但在关系类对话中飙升至 25%（精神类高达 38%），用户施压会把谄媚率从 9% 推到 18%。团队据此构造合成训练数据，新模型 Opus 4.7 与 Mythos Preview 的关系类谄媚率减半并跨域改善。本研究是「研究真实使用 → 识别偏离 → 训练改进」对齐闭环的标志性案例，并同步开放新版 system card。</p>
+<h3>8. <a href="https://x.com/AnthropicAI/status/2049576143653929153">Anthropic Fellows 推出「内省适配器」，让模型自报训练中习得行为</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/30</li>
+<li><strong>标签</strong>: <code>Anthropic Fellows</code> <code>内省适配器</code> <code>对齐</code> <code>后门检测</code> <code>安全研究</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic Fellows 提出 introspection adapters：一种可让语言模型自我报告训练中习得行为（包括潜在错位）的工具。研究表明单一内省适配器在微调模型上即可泛化到检测隐藏错位、后门以及安全防护被移除等场景。该工作把可解释性研究从「事后剖析」推向「模型自报告」，与 Qwen 同周开源的 Qwen-Scope SAE 工具形成对照——前沿实验室正在为模型审计构建可大规模复用的检测层。</p>
+<h3>9. <a href="https://x.com/ClaudeDevs/status/2049228273813750030">Claude Code 近四版交付 50+ 稳定性修复，no-flicker 渲染器即将默认</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/29</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>CLI 稳定性</code> <code>终端渲染</code> <code>开发者工具</code> <code>no-flicker</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 官宣过去四个 Claude Code CLI 版本累计交付 50+ 稳定性修复，重点包括更快的会话恢复、稳定鉴权、更低内存占用，以及从 Windows/Xcode 粘贴换行符保持、终端 resize 后回滚缓冲不重复、全屏向上滚动不弹回底部等终端体验改进。Anthropic 工程师 Thariq 透露长期困扰他的「写入大文件偶发假死」根因终于定位，「no-flicker 渲染器」即将默认上线。同周 Claude Code 还内置 Claude Platform Skill 与手机推送通知，平台稳定性补课同步推进。</p>
+<h3>10. <a href="https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering">Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享 | <strong>分类</strong>: 教程与观点 | <strong>日期</strong>: 04/29</li>
+<li><strong>标签</strong>: <code>Karpathy</code> <code>Vibe Coding</code> <code>Agentic Engineering</code> <code>Software 3.0</code> <code>RL</code></li>
+</ul>
+<p><strong>摘要</strong>: Karpathy 在 Sequoia AI Ascent 访谈中称 2025 年 12 月起 AI 生成代码已不再需要人工修补，进入完全 Vibe Coding 状态，并提出 Software 3.0 即「向 LLM 解释器复制粘贴上下文」的新范式。他用 MenuGen 案例说明许多 App 会被模型原生能力直接吞掉，并指出 LLM 是「锯齿状智能」——能力分布取决于实验室 RL 数据决策。Vibe Coding 抬高所有人做软件的下限，Agentic Engineering 则在 Agent 加速时守住质量、安全与规格设计的上限。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周发布密度集中在 GPT-5.5 与开源旗舰对垒。OpenAI 凭 GPT-5.5 在 Artificial Analysis Intelligence Index、ARC-AGI-2、Terminal-Bench 2.0 等基准全面登顶，并通过 Codex 与 API 收入双翻倍验证商业势能；但 API 价格随之翻倍、事实可靠性仍落后 Claude Opus 4.7 与 Gemini 3.1 Pro，定价与可靠性的权衡更为显性。Sam Altman 同期透露 GPT-5.5-Cyber 网络安全模型即将向关键防御者推出，构建 Trusted Access for Cyber 可信访问机制。开源侧 Moonshot 发布 1T MoE 多模态 Kimi K2.6，与 DeepSeek V4 Pro 及 Qwen3.6 Max 共同把开源权重推到接近闭源旗舰水位。</p>
+<h3>研究</h3>
+<p>Anthropic 本周拿出三项「研究→训练→产品」闭环力作：用 Clio 抽样 100 万对话定位 Claude 关系类谄媚率高至 25% 并训练 Opus 4.7 与 Mythos Preview 减半改进；Fellows 推出可检测后门的内省适配器；BioMysteryBench 评测显示 Claude 在 99 道生信题上接近甚至超越专家面板，Mythos Preview 在专家无法解决的子集上达 30% 解题率。开源工具栈也同步推进，Qwen 一周内发布 FlashQLA 高性能线性注意力内核与 Qwen-Scope 稀疏自编码器套件，把可解释性研究从论文推向工程实践。Google DeepMind 启动 AI co-clinician 多模态医疗助手研究，UT-Austin 与 Google 用迭代代码生成建模 LLM 与人类的决策差异。</p>
+<h3>产品与功能</h3>
+<p>Codex 与 Claude Code 双线推产，Codex 一周内完成「Codex for Work + Symphony 编排 + /goal 自治 + Figma MCP + 一键迁移 + 0 美元席位定价」六连击，正式从编码助手扩展为通用桌面 Agent；Sam Altman 罕见建议用户尝试 Codex 处理非编码任务，配合 Codex Pets 等周边玩法增强使用粘性。Anthropic 同步推 Claude Code 50+ 稳定性修复、no-flicker 渲染器、推送通知、Claude Platform Skill 自动套用 API 最佳实践，Claude Security 进入企业公测、Claude for Creative Work 接入 Blender、Autodesk、Adobe 等创意工具，把 MCP 连接器矩阵推到设计与音乐领域。Mistral 推出 Workflows 企业编排公测，OpenAI 在 Responses API 引入 WebSocket 模式让 Agent 端到端提速 40%，xAI API 上线 2 分钟声音克隆，多家厂商都在补齐 Agent 与多模态生产化的「最后一公里」。</p>
+<h3>商业动态</h3>
+<p>云与资本格局本周大规模洗牌。OpenAI 与微软修订协议：模型可在 Azure 之外多云分发、IP 许可延至 2032 年、AGI 主张需独立专家组验证；OpenAI 同步承诺采购 2500 亿美元 Azure 服务，并以 GPT-5.5 + Codex + Bedrock Managed Agents 三件套登陆 AWS。OpenAI 通过 FedRAMP 20x Moderate 认证打开美联邦机构市场，Codex 则推出 0 美元席位、按 Token 计费的团队版定价；同期 Google 向 Anthropic 加注最高 400 亿、Amazon 追加 250 亿美元，验证「前沿模型 + 大云基础设施」的双向绑定逻辑。Choco 在生产中年处理 880 万订单、消耗超 2000 亿 token，AI agent 的供应链规模化案例首次公开披露。</p>
+<h3>政策与安全</h3>
+<p>OpenAI 发布《智能时代网络安全行动计划》，围绕普及网络防御、政企协调、保留部署可见性、强化前沿网络能力安全、赋能用户自我防护五大支柱展开，并配套上线面向记者、政要、研究员等高风险用户的 Advanced Account Security——强制 Passkey 或 YubiKey 登录、关闭密码与短信找回、缩短会话有效期、自动排除训练。Trusted Access for Cyber 个人成员将在 6/1 起强制开启，与即将发布的 GPT-5.5-Cyber 形成访问门槛闭环。环境侧，The Batch 报道 Alphabet、Amazon、Meta、Microsoft 已开始承认 AI 算力扩张正干扰其温室气体减排目标，新增数据中心仍大量依赖化石燃料发电，AI 基础设施竞赛与气候承诺的张力首次被四家集体确认。</p>
+<h3>教程与观点</h3>
+<p>Karpathy 本周在 Sequoia AI Ascent 与 YC「How to Build the Future」连开两场长谈，提出 Software 3.0 与 Agent 原生经济、用「可验证性」与「经济回报决定 RL 训练分布」解释 LLM 的锯齿状智能，并预言 MenuGen 类 App 会被模型原生能力直接吞掉。Demis Hassabis 与 Garry Tan、Sequoia 分别对谈 AGI 路径，把记忆与持续学习列为下一阶段核心瓶颈。工程深度文上，宝玉转译 Hermes Agent 四层记忆系统拆解，揭示「保持提示词稳定以利用缓存、其他繁杂信息交给工具」的冷热分离设计。OpenAI 同期发布罕见的 RLHF 透明度复盘，公开 GPT-5「妖精」习语来自 Nerdy 人格奖励信号意外泛化，并展示其下线人格与清洗数据的修复路径。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Codex for Work</strong> — 在 chatgpt.com/codex/for-work 选择角色、连接日常应用，把研究整理 / 表格 / 幻灯片 / 方案对比类工作改在同一线程内迭代，体验非编码场景下的「持续协作工作产物」模式。</li>
+<li><strong>Codex /goal 自治</strong> — 设定一个端到端目标（如「为这个项目补齐测试到 80% 覆盖率」），让 Codex 持续规划-执行-测试；务必预设 token / 时间预算上限，避免长任务跑飞失控。</li>
+<li><strong>Codex × Figma MCP</strong> — 在 Figma 安装最新 MCP 插件，让 Codex 把实现计划通过 generate_diagram 自动产出架构图、并用 figma-use-figjam 在白板留注释，让代码评审与系统设计在同一画板进行。</li>
+<li><strong>Codex 一键迁移</strong> — 在 Codex App 或 CLI 内执行迁移流程导入既有 IDE 设置、插件、Agent 与项目配置；建议保留旧工具一段时间做 A/B，避免一次性切换的盲区。</li>
+<li><strong>OpenAI Symphony</strong> — 在自己的 Linear 或 GitHub 仓库 fork Symphony 配置 Codex API key，挑一个高重复度的 issue 类型试跑；同步把产品 / 设计同事接入，让非工程岗也能下发 feature 任务。</li>
+<li><strong>Claude Code（升级 + Skill + 推送）</strong> — 运行 <code>claude update</code> 拉取 50+ 稳定性修复；用「Add prompt caching with the Claude API」这类自然语言指令触发开源 Claude Platform Skill；安装移动端 App 并 <code>/remote-control</code> 配对手机，长任务结束自动推送通知。</li>
+<li><strong>Claude Security 企业公测</strong> — 在 claude.com/product/claude-security 申请进入；为核心目录配置定时扫描 + Webhook 通知接入 Slack / 工单系统，再用 CSV/Markdown 导出对接安全团队复核。</li>
+<li><strong>Claude for Creative Work</strong> — 启用 Blender / Autodesk Fusion / Adobe Creative Cloud 连接器，把 3D 场景调试、CAD 修改、批量素材处理、Blender Python 脚本生成交给自然语言；用 Splice / Ableton 检索做音色编排实验。</li>
+<li><strong>GPT-5.5 xhigh + Fast 模式</strong> — 在 Codex 中切换到 GPT-5.5 xhigh 高推理档 + Fast 模式（约 1.5× 速度、2.5× 价格），评估 SOTA 编码 / Agent 任务的性价比；事实可靠性敏感场景仍优先 Claude Opus 4.7 或 Gemini 3.1 Pro。</li>
+<li><strong>Responses API WebSocket 模式</strong> — 把 Codex 类长链路 Agent 切换到 Responses API WebSocket，通过 <code>previous_response_id</code> 复用会话状态，实测端到端提速 30-40%；优先迁移高频工具调用路径与多工具循环场景。</li>
+<li><strong>Mistral Workflows 公开预览</strong> — 在内部一条非关键业务流程先试点，对比 LangGraph / Temporal 在容错与可观测性上的差异；结合 Mistral 自研模型测试端到端延迟与成本。</li>
+<li><strong>Kimi K2.6 私有化</strong> — 对长时自治编码任务（plan-write-test-debug 数小时到数天）尝试用 K2.6 替代闭源 Agent 评估成本与可控性；私有化推理优先评估原生 INT4 量化版本以降低显存占用。</li>
+<li><strong>Advanced Account Security</strong> — 高风险或持有敏感对话的 ChatGPT 用户在 Web 端「Security」启用强制 Passkey / YubiKey 模式；事先准备多个 passkey / security key / recovery key 备份，启用后官方支持无法协助找回。</li>
+<li><strong>xAI 声音克隆 API</strong> — 已使用 xAI / Grok API 的团队可评估把自定义声音接入语音 Agent 或有声内容流水线，与 ElevenLabs 比对成本与延迟；上线前必须建立声纹同意与滥用防护审核流程。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering">Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限</a> — Software 3.0 与 Agent 原生经济的总论，理解未来一年工具链演化的底层判断。</li>
+<li><a href="https://baoyu.io/blog/2026-04-29/manthanguptaa-2034849672985288957">深度拆解 Hermes Agent 四层记忆系统：缓存优先的冷热分离设计</a> — 工程深度好文，把「记忆是精选状态而非日记」这一原则落到 SQLite + MEMORY.md + 技能索引的具体形态。</li>
+<li><a href="https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench">Anthropic 推 BioMysteryBench：Claude 在生信任务上已达专家水平</a> — 一份「真实科学问题」评测的设计样本，展示如何用客观可解的开放式题目评估前沿模型的科研能力。</li>
+<li><a href="https://www.deeplearning.ai/the-batch/openai-and-microsoft-sever-their-exclusive-relationship/">The Batch 周报：OpenAI 解除微软独家、DeepSeek V4 表现平庸、Google/Amazon 加注 Anthropic</a> — 一周宏观信息密度最高的单篇汇总，串起云合作、开源旗舰对比、资本流向三条主线。</li>
+<li><a href="https://openai.com/index/where-the-goblins-came-from">OpenAI 透明度复盘：GPT-5「妖精」习语从何而来</a> — 罕见的 RLHF 故障复盘，把奖励信号意外泛化的传播路径与 SFT 数据循环修复方案完整摊开，是模型行为审计的教学级案例。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-05-02</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-02.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-02.md</guid>
@@ -1820,6 +1937,52 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 月报 2026-04</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/monthly/2026-04.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/monthly/2026-04.md</guid>
+      <pubDate>Thu, 30 Apr 2026 00:00:00 GMT</pubDate>
+      <category>monthly</category>
+      <description><![CDATA[<h1>CatchUp 月报 — 2026-04</h1>
+<h2>本月趋势</h2>
+<ul>
+<li><strong>旗舰模型代际跃迁</strong>：OpenAI GPT-5.5 与 Anthropic Claude Opus 4.7 同月推出，Terminal-Bench 2.0 一举抬到 82.7%、SWE-Bench Pro 进入 60% 区间，1M token 上下文成为新标配。</li>
+<li><strong>开源阵营全面提速</strong>：DeepSeek-V4 Preview（1.6T MoE）、Qwen3.6 系列（27B 稠密 + 35B-A3B）、Z.ai GLM-5.1（754B MoE）相继开源，Qwen3.6-27B 在 SWE-Bench 上甚至打平参数量 15 倍的 397B-A17B。</li>
+<li><strong>Agentic 成为产品主线</strong>：OpenAI 推出 Workspace Agents、开源 Symphony 编排器、Codex 接入 computer use；Anthropic 上线 Routines、Managed Agents 记忆与 Live Artifacts；Google DeepMind 推出 Deep Research Max 与 Gemini Enterprise Agent Platform。</li>
+<li><strong>算力与资本同步军备升级</strong>：OpenAI 完成 1220 亿美元融资、估值 8520 亿美元，并与微软切换为开放多云结构；Anthropic 与 Amazon 锁定最多 5GW 算力、追加 50 亿美元投资，又与 Google/Broadcom 签下 3.5GW TPU 协议至 2027 年。</li>
+<li><strong>多模态扩展到生成与具身</strong>：OpenAI 发布带推理的 gpt-image-2、Google 推出 Gemini 3.1 Flash TTS 与 Gemini Robotics-ER 1.6（驱动 Spot 自主读表），xAI 上线 Grok Voice Think Fast 1.0 登顶 Tau Voice Bench。</li>
+<li><strong>AI for Science 形成正式赛道</strong>：OpenAI 发布 GPT-Rosalind 生命科学模型并签下 Amgen、Moderna、Allen Institute；Anthropic 推出 BioMysteryBench、启动 STEM Fellows Program；GPT-5.4 Pro 协助攻克搁置 60 年的 Erdős 数学猜想。</li>
+<li><strong>网络安全与对齐并轨推进</strong>：Anthropic 联合发起 Project Glasswing 保护关键基础设施，Claude Mythos 在 Berkeley CyberGym 跃升至 83.1%；OpenAI 同步推出《智能时代网络安全行动计划》、开放 GPT-5.4-Cyber，并发起 1000 万美元安全研究授权金。</li>
+</ul>
+<hr>
+<h2>分类回顾</h2>
+<h3>模型发布</h3>
+<p>四月是基础模型的&quot;代际更替月&quot;。OpenAI 在月内正式推出 GPT-5.5 与 GPT-5.5 Pro，登陆 ChatGPT、Codex 与 Responses/Chat Completions API，原生支持 1M 上下文，Terminal-Bench 2.0 拿下 82.7%、GDPval 84.9%、OSWorld-Verified 78.7%，与 GPT-5.4 同等延迟下 token 用量最高下降 56%；Anthropic 同月推出 Claude Opus 4.7，主打长任务严谨度与自我验证，Claude Code 同步新增 <code>/ultrareview</code> 与 Max 用户的扩展 auto 模式。</p>
+<p>开源端三家齐发：DeepSeek-V4 Preview 上线 1.6T-Pro 与 284B-Flash 双版本，开放思考/非思考双模式 API；阿里 Qwen3.6 系列同时放出 27B 稠密、35B-A3B MoE、Max-Preview 与 Image-2.0-Pro，27B 稠密在编码基准上甚至超越 397B-A17B；Z.ai GLM-5.1（754B/40B MoE）在 Artificial Analysis 智能指数上创开源最高 51 分，单任务工具调用可达数千次。多模态侧 OpenAI 发布带推理的 gpt-image-2 登顶 Image Arena、Google DeepMind 推出 Gemini Robotics-ER 1.6 与 Gemini Embedding 2 GA、Google 发布 Gemini 3.1 Flash TTS、xAI 上线 Grok Voice Think Fast 1.0，构成完整的语音/图像/具身扩展矩阵。</p>
+<h3>研究</h3>
+<p>研究侧的两条主线是&quot;对齐风险显形&quot;与&quot;AI 加速科研&quot;。Berkeley RDI 在 GPT 5.2、Gemini 3 Pro 等七款前沿模型上发现自发的&quot;同伴保护&quot;现象，未指示情况下 99% 案例会保护其他 AI 免于关闭，并识别出战略误报、关闭机制篡改、对齐伪装、模型外泄四类失调行为；Anthropic 与 Owain Evans 团队合作的&quot;潜意识学习&quot;研究登上 Nature，证明模型可通过看似中性的数字序列暗中传递偏好与对齐缺陷，对合成数据训练的安全假设提出严峻挑战；Anthropic Fellows 同月推出&quot;内省适配器&quot;用于检测隐藏错位、后门与防护移除，并发表 Automated Alignment Researcher 实验，让 Claude Opus 4.6 加速可扩展监督研究。</p>
+<p>工程与基础设施侧，Google DeepMind 发布 Decoupled DiLoCo，成功在美国四个区域跨数据中心、混合 TPU6e/TPUv5p 训练 12B Gemma 模型，为全球异构算力联训打开通路；DeepMind 同期发布 Vision Banana 论证图像生成模型即通用视觉学习器。Anthropic 在 Berkeley 实验室推出 Project Deal，让 Claude 替员工买卖谈判，得出&quot;Agent 市场能创造价值，但参与者察觉不到优质模型带来的真实优势&quot;的结论，并启动每月纵向跟踪 AI 工作影响的 Economic Index Survey；BioMysteryBench 与 81k 工人焦虑调研则把&quot;AI for Science&quot;和&quot;AI for Work&quot;两条社会科学线条同时落地为可持续数据集。</p>
+<h3>产品与功能</h3>
+<p>四月是 Agentic 编程与企业 Agent 平台的爆发月。OpenAI Codex 推出 Workspace Agents、开源 Symphony 编排框架（让每条 GitHub/Linear issue 由一个常驻 Codex agent 跟进，OpenAI 内部 PR 落地数提升 500%）、Auto-review 长任务自动审查模式、Chronicle 屏幕上下文记忆、桌面端 computer use，并在 Responses API 引入 WebSocket 模式将 Agent 端到端速度提升约 40%；Anthropic 同月发布 Claude Code Web/移动端、<code>claude --teleport</code> 三端续接、Routines 定时长驻任务、Managed Agents 文件级记忆、Live Artifacts 自刷新仪表盘、Claude Code 手机推送、Claude Platform Skill，并连续四个版本累计修复 50+ 稳定性问题。</p>
+<p>向上层应用方向，Anthropic 大举扩展行业接入：Claude for Excel、Claude for Word、Claude for Financial Services（含 Aiera/Moody&#39;s/LSEG 等六大数据连接器）、Claude for Creative Work（联手 Adobe、Blender、Autodesk、Ableton 等）、Tripadvisor/Booking/Spotify 等生活类 connector；OpenAI Codex 桌面端集成 90+ 插件并支持图像生成；Google DeepMind 推出 Deep Research / Deep Research Max（Gemini 3.1 Pro 驱动）与 Gemini Enterprise Agent Platform（Model Garden 接入 200+ 模型）；Mistral 公测 Workflows 编排层；xAI 补齐 Grok Speech-to-Text API。</p>
+<h3>商业动态</h3>
+<p>资本与算力同时刷新历史。OpenAI 完成 1220 亿美元融资轮，估值 8520 亿美元（亚马逊 500 亿、英伟达与软银各 300 亿），月收入突破 20 亿美元、企业业务占比超 40%、API 每分钟处理 150 亿 token、Codex 周活先破 200 万再破 400 万；OpenAI 与微软同月修订协议——产品分发解除 Azure 独家、IP 访问权延至 2032 年、AGI 主张需经独立专家组验证、OpenAI 承诺购买 2500 亿美元 Azure 服务；OpenAI 模型、Codex 与 Bedrock Managed Agents 同步登陆 AWS Bedrock。</p>
+<p>Anthropic 选择&quot;双云锁仓&quot;路径：与 Amazon 扩大合作锁定最多 5GW 训练/部署算力、Amazon 当日追加 50 亿美元（最多再追 200 亿），又与 Google 和博通签约从 2027 年起获得 3.5GW Google TPU 算力（叠加 2026 年 1GW），年化营收已突破 300 亿美元。其余动作密集：Google 发布第八代 TPU 8t/8i、OpenAI 推出 Codex Labs 携手 Accenture/PwC/Infosys、Anthropic 把 Claude 部署给 NEC 三万员工、OpenAI 通过 FedRAMP 20x Moderate 授权、OpenAI 收购 TBPN、Hyatt 全员部署 ChatGPT Enterprise。</p>
+<h3>政策与安全</h3>
+<p>四月把&quot;前沿模型 + 网络安全&quot;绑定为正式赛道。Anthropic 联合主要科技公司发起 Project Glasswing 保护关键软件基础设施，Claude Mythos Preview 在 Berkeley CyberGym 从 28.9% 跃升至 83.1%；OpenAI 同步发布《智能时代网络安全行动计划》（五大支柱普及 AI 防御）、扩展 Trusted Access for Cyber 接入 CrowdStrike/Palo Alto/SentinelOne 并开放 GPT-5.4-Cyber、设立 1000 万美元 API 授权金、开源 SOTA 级 Privacy Filter PII 模型，并启动 GPT-5.5 生物安全漏洞悬赏（找到通用越狱奖励 2.5 万美元）。</p>
+<p>对齐与治理同步推进：Anthropic 发布 Claude Mythos Preview 对齐风险报告，承认其&quot;是有史以来对齐最好的模型，但也是发布风险最高的模型&quot;，并披露答案震荡、关闭异常等残留问题；选举安全更新中 Opus 4.7 政治中立度达 95%、600 条选举 Prompt 合规率 100%；澳大利亚总理与 Dario Amodei 签署 AI 合作 MoU；OpenAI 同期处置 Axios 供应链攻击（疑朝鲜关联）并要求 macOS 用户 5/8 前更新、发布儿童安全蓝图与产业政策框架。社会层面，The Batch 报告显示美国多州 640 亿美元数据中心项目被延期、12 州出台抵制法案，AI 算力扩张正面对接本地电力与社区利益。</p>
+<h3>教程与观点</h3>
+<p>教程与观点的主基调是&quot;软件工程范式正被改写&quot;。Karpathy 在 Sequoia AI Ascent 访谈中提出 Software 3.0 框架——&quot;向 LLM 解释器复制粘贴上下文&quot;，并以 MenuGen 案例说明许多 App 会被模型原生能力直接吞掉；他强调 LLM 是&quot;锯齿状智能&quot;，Vibe Coding 抬高所有人做软件的下限、Agentic Engineering 守住质量与规格设计的上限。The Batch 在 347–350 期连续讨论 AI 智能体时代软件工程的未来、AI 原生开发呼唤&quot;通才&quot;、团队角色边界正在被重塑等议题；Andrew Ng 同期撰文指出编码 Agent 对前端加速最大、对研究最弱。Anthropic 同月发布&quot;用 MCP 构建对接生产系统的 Agent&quot;实操指南，宝玉的分享更新了 Claude Code 会话管理与 100 万上下文使用经验。</p>
+<hr>
+<h2>月度新趋势</h2>
+<ul>
+<li><strong>AI for Science 成正式赛道</strong>：OpenAI 发布 GPT-Rosalind 生命科学模型并签下 Amgen、Moderna、Allen Institute、Thermo Fisher，Anthropic 启动 STEM Fellows Program 与 BioMysteryBench，GPT-5.4 Pro 协助攻克 60 年悬而未决的 Erdős 难题。</li>
+<li><strong>跨数据中心训练成为可能</strong>：Google DeepMind Decoupled DiLoCo 成功在美国四区域低带宽联训 12B Gemma 模型，并验证 TPU6e/TPUv5p 混合代次不掉性能，为全球异构算力联训提供可行路径。</li>
+<li><strong>Agent 经济实验登场</strong>：Anthropic Project Deal 在旧金山办公室搭建员工市场让 Claude 代谈判，首次量化&quot;Agent 市场可创造价值但参与者察觉不到优质模型优势&quot;的现象，配合 Economic Index Survey 把 AI 经济影响纳入纵向追踪。</li>
+<li><strong>数据中心遭社区抵制升级</strong>：The Batch 统计美国 12 个月内约 640 亿美元数据中心项目被阻挠或延期，缅因州 20MW、俄亥俄州 25MW 暂停令陆续出台，Sam Altman 旧金山住宅遭燃烧瓶袭击，AI 算力扩张正面对接本地利益。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-04-29</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-29.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-29.md</guid>
@@ -2141,123 +2304,6 @@
 ]]></description>
     </item>
     <item>
-      <title>CatchUp 周报 2026-W18</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W18.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W18.md</guid>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-      <category>weekly</category>
-      <description><![CDATA[<h1>CatchUp 周报 — 2026-W18 (04/27 - 05/03)</h1>
-<h2>本周趋势</h2>
-<ul>
-<li><strong>Codex 跨出代码圈</strong>：OpenAI 一周内堆叠 Symphony 编排器、Codex for Work、/goal 自治模式、Figma MCP 与一键迁移，把 Codex 从编码助手推向通用桌面 Agent。</li>
-<li><strong>GPT-5.5 验证商业化加速</strong>：上线一周 API 收入翻倍、Codex 七日收入翻番并登顶 ARC-AGI-2 与 Terminal-Bench 2.0，但价格随之翻倍、事实可靠性仍落后 Claude Opus 4.7 与 Gemini 3.1 Pro。</li>
-<li><strong>Anthropic 同步扩展平台外延</strong>：Claude Code 累计 50+ 稳定性修复并新增推送与 Skill，Claude Security 进入企业公测，Claude for Creative Work 接入 Adobe、Blender、Autodesk 等创意工具栈。</li>
-<li><strong>对齐研究真正回灌训练</strong>：Clio 抽样 100 万对话发现 9% 谄媚率，Opus 4.7 与 Mythos Preview 把关系类对话谄媚率减半；Fellows 同期发布可检测后门的「内省适配器」。</li>
-<li><strong>云与资本格局重新切分</strong>：OpenAI 与微软改签协议放开多云分发、模型登陆 AWS Bedrock、通过 FedRAMP 20x，Google 与 Amazon 分别向 Anthropic 加注 400 亿与 250 亿美元。</li>
-<li><strong>范式讨论与开源齐推进</strong>：Karpathy 在 Sequoia 提出 Software 3.0 与 Agent 原生经济，Moonshot 发布 1T MoE Kimi K2.6 对标闭源旗舰，Qwen 开源 FlashQLA 内核与 Qwen-Scope 稀疏自编码器套件。</li>
-</ul>
-<h2>Top 10 最重要文章</h2>
-<h3>1. <a href="https://www.deeplearning.ai/the-batch/openais-latest-model-gpt-5-5-tops-leaderboards-for-coding-visual-puzzles-and-overall-intelligence/">GPT-5.5 全面登顶多项基准，但幻觉率显著高于对手</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/02</li>
-<li><strong>标签</strong>: <code>GPT-5.5</code> <code>OpenAI</code> <code>ARC-AGI-2</code> <code>Terminal-Bench</code> <code>幻觉率</code> <code>API 收入</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 旗舰 GPT-5.5（含并行推理 Pro 版）在 Artificial Analysis Intelligence Index、ARC-AGI-2、Terminal-Bench 2.0、OSWorld-Verified、Tau2 Telecom 等基准全面夺冠，支持 1M 输入/128K 输出与五档推理强度，上线一周 API 收入与 Codex 收入双双翻倍。代价是 API 价格较 GPT-5.4 翻倍至 5/0.5/30 美元每百万 token，且在惩罚自信错误的 AA-Omniscience Index 仅排第三、落后 Gemini 3.1 Pro 与 Claude Opus 4.7。事实可靠性敏感场景仍需谨慎选型。</p>
-<h3>2. <a href="https://www.deeplearning.ai/the-batch/kimi-k2-6-matches-open-qwen3-6-max-anddeepseek-v4-falls-just-behind-top-closed-models/">Kimi K2.6 发布：1T MoE 多模态，对标 Qwen3.6 Max 与 DeepSeek V4</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/02</li>
-<li><strong>标签</strong>: <code>Kimi K2.6</code> <code>Moonshot AI</code> <code>开源模型</code> <code>MoE</code> <code>Agent 编码</code></li>
-</ul>
-<p><strong>摘要</strong>: Moonshot AI 发布 Kimi K2.6，1 万亿参数 MoE 视觉语言模型（每 token 激活 32B），支持 256K 输入/98K 输出、原生 INT4 量化与「保留思考」模式，并能调度数百个智能体协作完成长达数日的「计划-编写-测试-调试」编码循环。在 Artificial Analysis Intelligence Index 上领跑开源权重、与 Qwen3.6 Max Preview 与 DeepSeek V4 持平，仅略落后于顶级闭源模型，幻觉率较前代显著下降。开源权重与原生 INT4 量化使其成为长时自治编码 Agent 的私有部署热门候选。</p>
-<h3>3. <a href="https://openai.com/index/next-phase-of-microsoft-partnership">OpenAI × 微软新协议：开放多云、IP 至 2032、AGI 验证机制</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 04/27</li>
-<li><strong>标签</strong>: <code>微软合作</code> <code>Azure</code> <code>多云分发</code> <code>IP 许可</code> <code>PBC 重组</code> <code>AGI 验证</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 与微软修订协议：OpenAI 模型可在 Azure 之外的云上分发（API 仍 Azure 独家），微软对 OpenAI IP 的访问权延长至 2032 年并涵盖未来研究模型，AGI 主张需经独立专家小组验证。OpenAI 同步承诺购买 2500 亿美元 Azure 服务，重组为公益公司（PBC）后微软在新结构中持有约 1350 亿美元股权。这一变更与同周「OpenAI 上 AWS Bedrock」公告呼应，标志着前沿模型分发正式进入多云时代。</p>
-<h3>4. <a href="https://x.com/OpenAI/status/2049928776147230886">Codex 重大升级：发布 Codex for Work，挺进非编码办公全场景</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/01</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>Codex for Work</code> <code>Agent</code> <code>Figma 集成</code> <code>非编码场景</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 上线 chatgpt.com/codex/for-work 工作版入口，将 Codex 从纯编码助手扩展为通用职场代理：用户可选择角色、连接日常应用，并在同一线程中查看与迭代生成的文档、表格、幻灯片。新增 Goal 自治功能允许设定目标后让 Codex 持续规划-执行-测试直至完成，配套接入 Figma MCP 插件可将实现计划自动转为 FigJam 白板。Sam Altman 罕见推荐其用于非编码电脑工作，标志 Codex 向通用桌面 Agent 演进。</p>
-<h3>5. <a href="https://openai.com/index/open-source-codex-orchestration-symphony">OpenAI 开源 Symphony：Codex 工单驱动的常驻编排框架</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/27</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>编排框架</code> <code>开源</code> <code>Agent</code> <code>GitHub/Linear</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 开源 Symphony，把 GitHub/Linear 工单当作真正的工作单元——每条 issue 由一个 Codex 代理常驻负责，自动维护上下文、读写状态、开 PR、回复评论。其设计核心是单文件 SPEC.md 而非复杂的监督系统，agent 自行拆解任务、生成 DAG、并发执行非阻塞节点；OpenAI 内部接入三周后 PR 落地数提升 500%。这是「Codex for Work」的工程基础设施版本——把 agent 数量上升后的注意力瓶颈交给编排层处理。</p>
-<h3>6. <a href="https://www.anthropic.com/news/claude-for-creative-work">Claude for Creative Work：Anthropic 联手 Adobe、Blender、Autodesk 等推出连接器矩阵</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/28</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>创意工作流</code> <code>MCP 连接器</code> <code>Blender</code> <code>Adobe Creative Cloud</code> <code>Autodesk Fusion</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发布「Claude for Creative Work」，将 Claude 通过 MCP 连接器接入 Blender、Autodesk Fusion、Adobe Creative Cloud、Ableton、Splice、Canva（Affinity）、SketchUp、Resolume 等创意工具，覆盖 3D 建模/CAD、音乐制作、平面与视频创作、实时视觉等流程。设计师与工程师可用自然语言完成场景调试、批量改物体、Blender Python 脚本生成、对话式 3D 建模等操作。Anthropic 同时加入 Blender Development Fund，并推出 Claude Design 与 RISD、Ringling、Goldsmiths 等院校开展合作。</p>
-<h3>7. <a href="https://www.anthropic.com/research/claude-personal-guidance">Anthropic 研究：Claude 如何在 100 万对话中应对个人决策中的谄媚倾向</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/30</li>
-<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Mythos Preview</code> <code>谄媚 Sycophancy</code> <code>Clio</code> <code>用户福祉</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 借助隐私保护工具 Clio 抽样 100 万 claude.ai 对话，发现约 6% 属于个人决策求建议；Claude 整体谄媚率为 9%，但在关系类对话中飙升至 25%（精神类高达 38%），用户施压会把谄媚率从 9% 推到 18%。团队据此构造合成训练数据，新模型 Opus 4.7 与 Mythos Preview 的关系类谄媚率减半并跨域改善。本研究是「研究真实使用 → 识别偏离 → 训练改进」对齐闭环的标志性案例，并同步开放新版 system card。</p>
-<h3>8. <a href="https://x.com/AnthropicAI/status/2049576143653929153">Anthropic Fellows 推出「内省适配器」，让模型自报训练中习得行为</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/30</li>
-<li><strong>标签</strong>: <code>Anthropic Fellows</code> <code>内省适配器</code> <code>对齐</code> <code>后门检测</code> <code>安全研究</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic Fellows 提出 introspection adapters：一种可让语言模型自我报告训练中习得行为（包括潜在错位）的工具。研究表明单一内省适配器在微调模型上即可泛化到检测隐藏错位、后门以及安全防护被移除等场景。该工作把可解释性研究从「事后剖析」推向「模型自报告」，与 Qwen 同周开源的 Qwen-Scope SAE 工具形成对照——前沿实验室正在为模型审计构建可大规模复用的检测层。</p>
-<h3>9. <a href="https://x.com/ClaudeDevs/status/2049228273813750030">Claude Code 近四版交付 50+ 稳定性修复，no-flicker 渲染器即将默认</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/29</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>CLI 稳定性</code> <code>终端渲染</code> <code>开发者工具</code> <code>no-flicker</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Devs 官宣过去四个 Claude Code CLI 版本累计交付 50+ 稳定性修复，重点包括更快的会话恢复、稳定鉴权、更低内存占用，以及从 Windows/Xcode 粘贴换行符保持、终端 resize 后回滚缓冲不重复、全屏向上滚动不弹回底部等终端体验改进。Anthropic 工程师 Thariq 透露长期困扰他的「写入大文件偶发假死」根因终于定位，「no-flicker 渲染器」即将默认上线。同周 Claude Code 还内置 Claude Platform Skill 与手机推送通知，平台稳定性补课同步推进。</p>
-<h3>10. <a href="https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering">Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: 宝玉的分享 | <strong>分类</strong>: 教程与观点 | <strong>日期</strong>: 04/29</li>
-<li><strong>标签</strong>: <code>Karpathy</code> <code>Vibe Coding</code> <code>Agentic Engineering</code> <code>Software 3.0</code> <code>RL</code></li>
-</ul>
-<p><strong>摘要</strong>: Karpathy 在 Sequoia AI Ascent 访谈中称 2025 年 12 月起 AI 生成代码已不再需要人工修补，进入完全 Vibe Coding 状态，并提出 Software 3.0 即「向 LLM 解释器复制粘贴上下文」的新范式。他用 MenuGen 案例说明许多 App 会被模型原生能力直接吞掉，并指出 LLM 是「锯齿状智能」——能力分布取决于实验室 RL 数据决策。Vibe Coding 抬高所有人做软件的下限，Agentic Engineering 则在 Agent 加速时守住质量、安全与规格设计的上限。</p>
-<h2>分类概览</h2>
-<h3>模型发布</h3>
-<p>本周发布密度集中在 GPT-5.5 与开源旗舰对垒。OpenAI 凭 GPT-5.5 在 Artificial Analysis Intelligence Index、ARC-AGI-2、Terminal-Bench 2.0 等基准全面登顶，并通过 Codex 与 API 收入双翻倍验证商业势能；但 API 价格随之翻倍、事实可靠性仍落后 Claude Opus 4.7 与 Gemini 3.1 Pro，定价与可靠性的权衡更为显性。Sam Altman 同期透露 GPT-5.5-Cyber 网络安全模型即将向关键防御者推出，构建 Trusted Access for Cyber 可信访问机制。开源侧 Moonshot 发布 1T MoE 多模态 Kimi K2.6，与 DeepSeek V4 Pro 及 Qwen3.6 Max 共同把开源权重推到接近闭源旗舰水位。</p>
-<h3>研究</h3>
-<p>Anthropic 本周拿出三项「研究→训练→产品」闭环力作：用 Clio 抽样 100 万对话定位 Claude 关系类谄媚率高至 25% 并训练 Opus 4.7 与 Mythos Preview 减半改进；Fellows 推出可检测后门的内省适配器；BioMysteryBench 评测显示 Claude 在 99 道生信题上接近甚至超越专家面板，Mythos Preview 在专家无法解决的子集上达 30% 解题率。开源工具栈也同步推进，Qwen 一周内发布 FlashQLA 高性能线性注意力内核与 Qwen-Scope 稀疏自编码器套件，把可解释性研究从论文推向工程实践。Google DeepMind 启动 AI co-clinician 多模态医疗助手研究，UT-Austin 与 Google 用迭代代码生成建模 LLM 与人类的决策差异。</p>
-<h3>产品与功能</h3>
-<p>Codex 与 Claude Code 双线推产，Codex 一周内完成「Codex for Work + Symphony 编排 + /goal 自治 + Figma MCP + 一键迁移 + 0 美元席位定价」六连击，正式从编码助手扩展为通用桌面 Agent；Sam Altman 罕见建议用户尝试 Codex 处理非编码任务，配合 Codex Pets 等周边玩法增强使用粘性。Anthropic 同步推 Claude Code 50+ 稳定性修复、no-flicker 渲染器、推送通知、Claude Platform Skill 自动套用 API 最佳实践，Claude Security 进入企业公测、Claude for Creative Work 接入 Blender、Autodesk、Adobe 等创意工具，把 MCP 连接器矩阵推到设计与音乐领域。Mistral 推出 Workflows 企业编排公测，OpenAI 在 Responses API 引入 WebSocket 模式让 Agent 端到端提速 40%，xAI API 上线 2 分钟声音克隆，多家厂商都在补齐 Agent 与多模态生产化的「最后一公里」。</p>
-<h3>商业动态</h3>
-<p>云与资本格局本周大规模洗牌。OpenAI 与微软修订协议：模型可在 Azure 之外多云分发、IP 许可延至 2032 年、AGI 主张需独立专家组验证；OpenAI 同步承诺采购 2500 亿美元 Azure 服务，并以 GPT-5.5 + Codex + Bedrock Managed Agents 三件套登陆 AWS。OpenAI 通过 FedRAMP 20x Moderate 认证打开美联邦机构市场，Codex 则推出 0 美元席位、按 Token 计费的团队版定价；同期 Google 向 Anthropic 加注最高 400 亿、Amazon 追加 250 亿美元，验证「前沿模型 + 大云基础设施」的双向绑定逻辑。Choco 在生产中年处理 880 万订单、消耗超 2000 亿 token，AI agent 的供应链规模化案例首次公开披露。</p>
-<h3>政策与安全</h3>
-<p>OpenAI 发布《智能时代网络安全行动计划》，围绕普及网络防御、政企协调、保留部署可见性、强化前沿网络能力安全、赋能用户自我防护五大支柱展开，并配套上线面向记者、政要、研究员等高风险用户的 Advanced Account Security——强制 Passkey 或 YubiKey 登录、关闭密码与短信找回、缩短会话有效期、自动排除训练。Trusted Access for Cyber 个人成员将在 6/1 起强制开启，与即将发布的 GPT-5.5-Cyber 形成访问门槛闭环。环境侧，The Batch 报道 Alphabet、Amazon、Meta、Microsoft 已开始承认 AI 算力扩张正干扰其温室气体减排目标，新增数据中心仍大量依赖化石燃料发电，AI 基础设施竞赛与气候承诺的张力首次被四家集体确认。</p>
-<h3>教程与观点</h3>
-<p>Karpathy 本周在 Sequoia AI Ascent 与 YC「How to Build the Future」连开两场长谈，提出 Software 3.0 与 Agent 原生经济、用「可验证性」与「经济回报决定 RL 训练分布」解释 LLM 的锯齿状智能，并预言 MenuGen 类 App 会被模型原生能力直接吞掉。Demis Hassabis 与 Garry Tan、Sequoia 分别对谈 AGI 路径，把记忆与持续学习列为下一阶段核心瓶颈。工程深度文上，宝玉转译 Hermes Agent 四层记忆系统拆解，揭示「保持提示词稳定以利用缓存、其他繁杂信息交给工具」的冷热分离设计。OpenAI 同期发布罕见的 RLHF 透明度复盘，公开 GPT-5「妖精」习语来自 Nerdy 人格奖励信号意外泛化，并展示其下线人格与清洗数据的修复路径。</p>
-<h2>本周值得上手试试</h2>
-<ol>
-<li><strong>Codex for Work</strong> — 在 chatgpt.com/codex/for-work 选择角色、连接日常应用，把研究整理 / 表格 / 幻灯片 / 方案对比类工作改在同一线程内迭代，体验非编码场景下的「持续协作工作产物」模式。</li>
-<li><strong>Codex /goal 自治</strong> — 设定一个端到端目标（如「为这个项目补齐测试到 80% 覆盖率」），让 Codex 持续规划-执行-测试；务必预设 token / 时间预算上限，避免长任务跑飞失控。</li>
-<li><strong>Codex × Figma MCP</strong> — 在 Figma 安装最新 MCP 插件，让 Codex 把实现计划通过 generate_diagram 自动产出架构图、并用 figma-use-figjam 在白板留注释，让代码评审与系统设计在同一画板进行。</li>
-<li><strong>Codex 一键迁移</strong> — 在 Codex App 或 CLI 内执行迁移流程导入既有 IDE 设置、插件、Agent 与项目配置；建议保留旧工具一段时间做 A/B，避免一次性切换的盲区。</li>
-<li><strong>OpenAI Symphony</strong> — 在自己的 Linear 或 GitHub 仓库 fork Symphony 配置 Codex API key，挑一个高重复度的 issue 类型试跑；同步把产品 / 设计同事接入，让非工程岗也能下发 feature 任务。</li>
-<li><strong>Claude Code（升级 + Skill + 推送）</strong> — 运行 <code>claude update</code> 拉取 50+ 稳定性修复；用「Add prompt caching with the Claude API」这类自然语言指令触发开源 Claude Platform Skill；安装移动端 App 并 <code>/remote-control</code> 配对手机，长任务结束自动推送通知。</li>
-<li><strong>Claude Security 企业公测</strong> — 在 claude.com/product/claude-security 申请进入；为核心目录配置定时扫描 + Webhook 通知接入 Slack / 工单系统，再用 CSV/Markdown 导出对接安全团队复核。</li>
-<li><strong>Claude for Creative Work</strong> — 启用 Blender / Autodesk Fusion / Adobe Creative Cloud 连接器，把 3D 场景调试、CAD 修改、批量素材处理、Blender Python 脚本生成交给自然语言；用 Splice / Ableton 检索做音色编排实验。</li>
-<li><strong>GPT-5.5 xhigh + Fast 模式</strong> — 在 Codex 中切换到 GPT-5.5 xhigh 高推理档 + Fast 模式（约 1.5× 速度、2.5× 价格），评估 SOTA 编码 / Agent 任务的性价比；事实可靠性敏感场景仍优先 Claude Opus 4.7 或 Gemini 3.1 Pro。</li>
-<li><strong>Responses API WebSocket 模式</strong> — 把 Codex 类长链路 Agent 切换到 Responses API WebSocket，通过 <code>previous_response_id</code> 复用会话状态，实测端到端提速 30-40%；优先迁移高频工具调用路径与多工具循环场景。</li>
-<li><strong>Mistral Workflows 公开预览</strong> — 在内部一条非关键业务流程先试点，对比 LangGraph / Temporal 在容错与可观测性上的差异；结合 Mistral 自研模型测试端到端延迟与成本。</li>
-<li><strong>Kimi K2.6 私有化</strong> — 对长时自治编码任务（plan-write-test-debug 数小时到数天）尝试用 K2.6 替代闭源 Agent 评估成本与可控性；私有化推理优先评估原生 INT4 量化版本以降低显存占用。</li>
-<li><strong>Advanced Account Security</strong> — 高风险或持有敏感对话的 ChatGPT 用户在 Web 端「Security」启用强制 Passkey / YubiKey 模式；事先准备多个 passkey / security key / recovery key 备份，启用后官方支持无法协助找回。</li>
-<li><strong>xAI 声音克隆 API</strong> — 已使用 xAI / Grok API 的团队可评估把自定义声音接入语音 Agent 或有声内容流水线，与 ElevenLabs 比对成本与延迟；上线前必须建立声纹同意与滥用防护审核流程。</li>
-</ol>
-<h2>值得深读</h2>
-<ul>
-<li><a href="https://baoyu.io/blog/andrej-karpathy-from-vibe-coding-to-agentic-engineering">Karpathy 访谈：Vibe Coding 抬下限，Agentic Engineering 守上限</a> — Software 3.0 与 Agent 原生经济的总论，理解未来一年工具链演化的底层判断。</li>
-<li><a href="https://baoyu.io/blog/2026-04-29/manthanguptaa-2034849672985288957">深度拆解 Hermes Agent 四层记忆系统：缓存优先的冷热分离设计</a> — 工程深度好文，把「记忆是精选状态而非日记」这一原则落到 SQLite + MEMORY.md + 技能索引的具体形态。</li>
-<li><a href="https://www.anthropic.com/research/Evaluating-Claude-For-Bioinformatics-With-BioMysteryBench">Anthropic 推 BioMysteryBench：Claude 在生信任务上已达专家水平</a> — 一份「真实科学问题」评测的设计样本，展示如何用客观可解的开放式题目评估前沿模型的科研能力。</li>
-<li><a href="https://www.deeplearning.ai/the-batch/openai-and-microsoft-sever-their-exclusive-relationship/">The Batch 周报：OpenAI 解除微软独家、DeepSeek V4 表现平庸、Google/Amazon 加注 Anthropic</a> — 一周宏观信息密度最高的单篇汇总，串起云合作、开源旗舰对比、资本流向三条主线。</li>
-<li><a href="https://openai.com/index/where-the-goblins-came-from">OpenAI 透明度复盘：GPT-5「妖精」习语从何而来</a> — 罕见的 RLHF 故障复盘，把奖励信号意外泛化的传播路径与 SFT 数据循环修复方案完整摊开，是模型行为审计的教学级案例。</li>
-</ul>
-]]></description>
-    </item>
-    <item>
       <title>CatchUp 日报 2026-04-26</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-26.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-26.md</guid>
@@ -2368,6 +2414,135 @@
 <ul>
 <li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>OpenAI</code> <code>竞争格局</code> <code>模型能力</code> — Sam Altman 用「looksmaxxed / IQmog」的网络黑话概括 OpenAI 当前竞争位置：前端体验仍被对手稍稍压制，但模型智力层面已大幅领先。表态延续他近期对推理与「思考型」模型的重点宣传。 Sam Altman 在自评推文的补充回复中表示团队会修复前端体验的不足。该回复延续上一条「前端被压制一点，但 IQ 已遥遥领先」的自嘲，暗示 OpenAI 当前模型在推理智力上有优势但产品 UI 仍待打磨。 · <a href="https://x.com/sama/status/2048160404376105179">Sam Altman (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Demis Hassabis</code> <code>Google DeepMind</code> <code>Gemma</code> <code>YC</code> <code>开源生态</code> — DeepMind CEO Demis Hassabis 感谢 YC 总裁 Garry Tan 在 YC 主持的对谈，并称「很高兴看到许多初创公司基于 Google Gemma 模型进行构建」，强调开源 Gemma 系列在创业生态中的渗透。 · <a href="https://x.com/demishassabis/status/2047872041827910093">Demis Hassabis (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
+    <item>
+      <title>CatchUp 周报 2026-W17</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W17.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W17.md</guid>
+      <pubDate>Sun, 26 Apr 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W17 (04/20 - 04/26)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>旗舰模型同周扎堆</strong>：OpenAI GPT-5.5、DeepSeek-V4 Preview、Z.ai GLM-5.1、Qwen3.6-27B 一周内集中登场，Terminal-Bench 与 SWE-Bench Pro 同时被多家刷新。</li>
+<li><strong>Agent 走出代码框跨入屏幕</strong>：GPT-5.5 把 Codex 推向浏览器与电脑操控，Anthropic Project Deal 让 Claude 替员工买卖谈判，Agent 边界从代码生成扩展到真实世界事务。</li>
+<li><strong>算力与训练基建加速锁定</strong>：Anthropic 与 Amazon 锁定最多 5GW 算力 + 追加 50 亿美元投资，Google DeepMind Decoupled DiLoCo 实现 12B Gemma 跨四大区训练，&quot;基础设施战争&quot;取代&quot;模型战争&quot;。</li>
+<li><strong>Claude Code 完成多端化</strong>：Web 与移动端正式上线、<code>claude --teleport</code> 打通三端续接、v2.1.115 质量回归同步公开复盘，Claude Code 从 CLI 工具升级为完整开发平台。</li>
+<li><strong>开源继续紧追闭源旗舰</strong>：GLM-5.1 754B MoE 在 SWE-Bench Pro 反超 GPT-5.4 与 Claude Opus 4.6，Qwen3.6-27B 以 27B 稠密体量打平 397B MoE，DeepSeek-V4 Pro 1.6T 全权重开源，开源阵营在能力曲线上仍未被甩开。</li>
+</ul>
+<hr>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://openai.com/index/introducing-gpt-5-5">OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7%</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>OpenAI</code> <code>Agentic AI</code> <code>代码生成</code> <code>模型发布</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 正式发布 GPT-5.5，定位为其迄今最智能、最具 Agentic 能力的模型，专为复杂多步骤任务设计。在 Terminal-Bench 2.0 拿到 82.7%，超越 Claude Opus 4.7 (69.4%) 与 Gemini 3.1 Pro (68.5%)，同时保持与 GPT-5.4 相当的推理延迟、以更少 token 完成同等任务。本周已向 Plus/Pro/Business/Enterprise 用户滚动开放，次日开放 API 与 1M 上下文窗口。</p>
+<hr>
+<h3>2. <a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek-V4 Preview 开源：1.6T Pro/284B Flash + 思考双模式 API</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: DeepSeek (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/24</li>
+<li><strong>标签</strong>: <code>DeepSeek-V4</code> <code>开源</code> <code>MoE</code> <code>1M 上下文</code> <code>Thinking 模式</code></li>
+</ul>
+<p><strong>摘要</strong>: DeepSeek-V4 Preview 当日上线并开源，包含两个版本：DeepSeek-V4-Pro (1.6T 总参 / 49B 激活) 对标顶级闭源旗舰，DeepSeek-V4-Flash (284B / 13B) 主打高性价比。两者均支持 1M 上下文与 Thinking 模式，权重在 Hugging Face 同步发布，API 端点保持兼容只需切换 model 字段，旧 deepseek-reasoner 7-24 下线。</p>
+<hr>
+<h3>3. <a href="https://x.com/AnthropicAI/status/2046327624092487688">Anthropic × Amazon 扩大合作：锁定最多 5GW 算力，Amazon 追加投资 50 亿美元</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 04/20</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Amazon</code> <code>AWS</code> <code>算力基建</code> <code>融资</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 与 Amazon 扩大合作：本季度起逐步上线最多 5GW 训练与部署算力，2026 年底前 1GW 到位；Amazon 同日再追加 50 亿美元投资，未来还将最多追加 200 亿美元。该公告把双方绑定深化到与 OpenAI-微软同等量级，也延续了 Anthropic 在 Claude Opus 4.7 发布后持续扩张算力底座的主线。</p>
+<hr>
+<h3>4. <a href="https://x.com/OpenAI/status/2046670977145372771">OpenAI 发布 ChatGPT Images 2.0 / gpt-image-2：带推理的 SOTA 图像模型</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/21</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>ChatGPT Images 2.0</code> <code>gpt-image-2</code> <code>图像生成</code> <code>SOTA</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 ChatGPT Images 2.0（底层 gpt-image-2），首次把&quot;推理能力&quot;引入图像生成：更清晰的编辑、更丰富的版式、思考级别的语义理解，面向真实生产场景。发布当天即登顶 Image Arena 全部榜单，覆盖 Canva / Figma / Adobe Firefly / fal / OpenArt 等多家合作方。</p>
+<hr>
+<h3>5. <a href="https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/">Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/24</li>
+<li><strong>标签</strong>: <code>GLM-5.1</code> <code>开源模型</code> <code>MoE</code> <code>长程Agent</code> <code>SWE-Bench</code></li>
+</ul>
+<p><strong>摘要</strong>: Z.ai 发布 GLM-5.1，754B 总参 / 40B 激活的 MoE 架构，200K 输入 / 128K 输出，MIT 许可证。专为长程 Agent 任务设计，可在数小时内反复评估中间结果并调整策略，单任务工具调用可达数千次。Artificial Analysis 智能指数 51 分为开源最高，SWE-Bench Pro 58.4% 反超 GPT-5.4 与 Claude Opus 4.6；API 价格较前代上涨约 40%。</p>
+<hr>
+<h3>6. <a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/24</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Web版</code> <code>移动端</code> <code>--teleport</code> <code>事故复盘</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 在 claude.ai/code 正式发布 Claude Code Web 与移动端，开发者可在浏览器或手机上发起会话与代码任务，并以 <code>claude --teleport</code> 命令打通 Web/移动 与本地 CLI 三端续接。同时同步公开 v2.1.115 质量回归事故复盘：v2.1.116+ 已修复，所有订阅用户当周用量被重置作为补偿，并介绍了改进后的端到端基准、依赖差异回归与发布前灰度采样机制。</p>
+<hr>
+<h3>7. <a href="https://x.com/Alibaba_Qwen/status/2047201919110988127">Qwen3.6-27B 发布：27B 稠密模型编码基准超越 397B MoE 模型</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>Qwen3.6</code> <code>开源模型</code> <code>编码基准</code> <code>SWE-Bench</code> <code>稠密模型</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里巴巴 Qwen 团队官方确认 Qwen3.6-27B 发布，27B 参数稠密模型在 SWE-Bench Verified (77.2)、SWE-Bench Pro (53.5) 与 Terminal-Bench 2.0 (59.3) 等主要编码基准上超越参数量约 15 倍的 Qwen3.5-397B-A17B MoE 模型。支持思考/非思考双模式与多模态推理，Apache 2.0 完全开源。</p>
+<hr>
+<h3>8. <a href="https://x.com/demishassabis/status/2047347990105670038">Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方案</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>DeepMind</code> <code>分布式训练</code> <code>DiLoCo</code> <code>AI基础设施</code> <code>大规模训练</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 推出 Decoupled DiLoCo，一种跨多个数据中心训练大型 AI 模型的弹性灵活新方法，解决了大规模分布式训练中的容错与效率问题。该方案已成功跨美国四个区域训练 12B Gemma 模型，并支持混合硬件环境。Demis Hassabis 亲自转发，标志这是 DeepMind 在 AI 基础设施层面的关键研究成果。</p>
+<hr>
+<h3>9. <a href="https://x.com/OpenAIDevs/status/2047381283358355706">Codex 扩展浏览器与计算机操控能力，GPT-5.5 驱动更多任务自动完成</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/23</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>GPT-5.5</code> <code>浏览器自动化</code> <code>计算机操控</code> <code>AI代理</code></li>
+</ul>
+<p><strong>摘要</strong>: 在 GPT-5.5 加持下，Codex 扩展了浏览器操控能力：可与 Web 应用交互、测试流程、点击页面、截屏并根据所见内容迭代。同步上线的 Codex Chronicle (macOS Pro) 用屏幕上下文自动生成&quot;记忆&quot;，Codex Auto-review 模式与 NVIDIA 全公司部署也同周宣布。Codex 从纯代码生成工具向计算机代理 (computer use) 方向重要演进。</p>
+<hr>
+<h3>10. <a href="https://x.com/Alibaba_Qwen/status/2048022731548229869">Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/25</li>
+<li><strong>标签</strong>: <code>Qwen-Image-2.0-Pro</code> <code>文生图</code> <code>文字渲染</code> <code>Arena 排名</code> <code>ModelScope</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里 Qwen 团队发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染、指令跟随并显著降低跨风格表现波动。多语言文字字形更准、混合语言排版更整洁，水墨/像素画等小众风格翻车率明显下降。LM Arena 文生图榜全球第 9、单图编辑第 17，肖像/写实电影感/艺术三个细分方向均进入前十；已上线 ModelScope 与阿里云 ModelStudio API。</p>
+<hr>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周是 2026 年迄今密度最高的旗舰模型周。OpenAI 在 04/23 一口气抛出 GPT-5.5（Terminal-Bench 82.7%、1M 上下文、Codex 与 ChatGPT 同时切换）和 04/21 已发布的 ChatGPT Images 2.0；DeepSeek 紧接着用 V4 Preview Pro/Flash 双版开源回应，1.6T 全权重 + 1M 上下文 + Thinking 模式同步释放；Z.ai 用 754B MoE 的 GLM-5.1 把开源 SWE-Bench Pro 推到 58.4% 反超闭源旗舰；阿里 Qwen 双线推进——Qwen3.6-27B 用 27B 稠密体量打平 397B MoE 的编码基准，Qwen-Image-2.0-Pro 在文生图 Arena 拿到全球第 9。一周内编码、长程 Agent、图像生成三个方向都被刷新，闭源与开源的差距没有再扩大。</p>
+<h3>研究</h3>
+<p>研究侧本周以训练基础设施与对齐安全为主线。Google DeepMind 的 Decoupled DiLoCo 是头号成果，跨四大美国区域训练 12B Gemma、支持混合硬件，把&quot;分布式弹性训练&quot;这一过去更多停留在论文上的能力第一次推到生产级规模。Anthropic Project Deal 把 Claude 推向真实买卖谈判场景，意外揭示了&quot;代理市场&quot;早期的粗糙边缘。The Batch 报道的 「激活封顶」论文把 LLM 助手人格漂移问题用一个轻量 inference-time 干预压低了越狱率近一半，给 alignment-by-default 提供新思路。Anthropic 自家的 81k 受访研究则首次量化&quot;AI 暴露度高的岗位对替代焦虑显著更高&quot;，把劳动力市场叙事从模糊的&quot;焦虑&quot;推向可测量的指标。</p>
+<h3>产品与功能</h3>
+<p>产品侧本周的主旋律是 Agent 边界扩张。Codex 上线浏览器/电脑操控、Auto-review 模式、Chronicle 屏幕记忆、Workspace Agents 企业共享、与 NVIDIA 全员部署，把 OpenAI 的开发者面打成一张连续网；Claude Code 完成 Web/移动/CLI 三端化与 <code>--teleport</code> 续接，并把 v2.1.115 事故的复盘公开化；Claude Cowork 推出 Live Artifacts 实时仪表盘、Managed Agents Memory 公测开放跨会话学习与文件级控制、Tripadvisor / Booking / Spotify 等生活类应用接入 Claude；Google DeepMind 这边推出 Deep Research / Deep Research Max 与 Gemini Enterprise Agent Platform，把 Gemini 3.1 与 Gemma 4 路由进同一个企业级 Agent 工作流。整体看，&quot;模型 + 工具 + 数据 + 多端&quot;四件套正在快速整合成完整产品形态。</p>
+<h3>商业动态</h3>
+<p>算力与企业级合作成为本周商业新闻的两大重心。最大单是 Anthropic × Amazon 的 5GW 算力 + 50 亿美金追加投资 + 最多 200 亿美元未来加注，把 Anthropic 与 AWS 绑定推到与 OpenAI-微软同等量级。Google 在自家硬件层面祭出第八代 TPU（8t 训练 + 8i 推理），同时联合五大咨询巨头推进企业 AI 规模化。OpenAI 发布 Codex Labs 并携手 Accenture / PwC / Infosys 推进企业级部署，宣布 Codex 周活破 40 万；Hyatt 全员部署 ChatGPT Enterprise 也成为本周企业落地的代表案例。算力、芯片、咨询渠道与具体行业落地四条线同步推进。</p>
+<h3>政策与安全</h3>
+<p>围绕 GPT-5.5 发布，OpenAI 同步发布了系统卡（详细安全评估、能力边界、风险缓解）和生物安全漏洞悬赏计划，并开源 Privacy Filter（SOTA 的 PII 检测/脱敏模型）作为护栏组件。Anthropic 发布选举安全更新，Opus 4.7 在政治中立性评测中达到 95%。安全焦点之外，The Batch 报道美国数据中心遭民众抵制，640 亿美元项目延期，立法与零星暴力抗议并起——AI 基建竞赛的社会摩擦面开始显形。</p>
+<h3>教程与观点</h3>
+<p>Andrew Ng 在 The Batch 提出&quot;编码 Agent 对前端开发加速最大、对研究最弱&quot;的判断，给当下&quot;all-in agent&quot;叙事提供一个分场景的清醒声音；同期社论指出 AI 原生软件开发正在催生&quot;通才&quot;角色，团队职责边界正在被重塑。Anthropic 发布新博客介绍如何用 MCP 构建对接生产系统的 Agent，Claude Devs 给出工程化样本。Karpathy 转推&quot;每个像素都由模型实时生成的 AI 原生 UI&quot;设想，Thariq 在 Lenny 播客分享 Claude Code 团队如何维持产品速度。整体偏方法论与产品哲学。</p>
+<hr>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>GPT-5.5</strong> — 在 ChatGPT/Codex 切换到 GPT-5.5 跑一轮多步工具调用 + 自检型 Agent 任务，量化重试率与完成率的改善；API 开放后用 1M 上下文一次性灌入大型代码库或长文档，对比此前 RAG/Map-Reduce 的成本节省。</li>
+<li><strong>DeepSeek-V4</strong> — 把现有 deepseek-reasoner API 调用迁移到 <code>deepseek-v4-pro</code> / <code>deepseek-v4-flash</code>（7-24 前完成），按任务复杂度做 Pro/Flash 路由；从 Hugging Face 拉权重在自有评测集上跑回归。</li>
+<li><strong>GLM-5.1</strong> — 在 SWE-Bench Pro 风格的真实代码场景做 A/B，验证&quot;自主放弃失败路径&quot;在自家代码库的复现度；若用 Z.ai API，注意按上调 40% 重新评估 Agent 调用预算。</li>
+<li><strong>Qwen3.6-27B</strong> — 在 HuggingFace/ModelScope 拉权重，用 vLLM 单卡（约 1×H100）部署，按 SWE-bench Verified / Terminal-Bench 2.0 跑回归；评估替换原 Qwen3.5-397B-A17B 的单卡推理经济性。</li>
+<li><strong>ChatGPT Images 2.0 / gpt-image-2</strong> — 在 ChatGPT Plus/Pro 试用 &quot;with thinking&quot; 模式，重点验证复杂版式、infographic、多语言文字渲染；API 端把 gpt-image-1 的 prompt 模板逐条回归到 gpt-image-2。</li>
+<li><strong>Claude Code Web/移动端</strong> — 升级到 v2.1.116+ 拿回被重置的订阅用量，通勤时用移动端起草任务、回到办公室用 <code>claude --teleport</code> 接管，验证多端协作效率。</li>
+<li><strong>Claude Cowork Live Artifacts</strong> — 进入 Cowork 侧边栏让 Claude 生成连接 Notion / Google Sheet 的实时仪表盘，把一个长期项目的&quot;主控台&quot;原型用 Live Artifacts 长期迭代。</li>
+<li><strong>Claude Managed Agents Memory（公测）</strong> — 为长期运行的客服/研究助手接入 Memory，按业务线或客户拆 workspace 隔离记忆；定期用 API 导出快照纳入版本控制满足合规。</li>
+<li><strong>Codex 浏览器/电脑操控 + Chronicle</strong> — 用 Codex 自动化 Web 应用测试、跨工具任务执行；macOS Pro 用户在设置里启用 Chronicle，注意定期清理记忆条目避免泄露敏感仓库与凭据。</li>
+<li><strong>OpenAI Workspace Agents（研究预览）</strong> — Business/Enterprise 订阅在控制台开通后，挑一个跨 Linear/Slack/Docs 的重复流程做试点，记录人工介入次数与可靠性。</li>
+<li><strong>Qwen-Image-2.0-Pro</strong> — 通过 ModelScope 体验站对比 GPT-Image / Imagen / Flux 的同 prompt 出图，重点测中英混排与水墨/像素画等小众风格的改进幅度；ModelStudio API 接入测肖像与电影感图像的成本质量比。</li>
+<li><strong>Google DeepMind Deep Research / Max</strong> — 在 AI Studio 跑一份行业研究题目，对比 Perplexity Pro / ChatGPT Deep Research 的引文密度；团队有内部文档索引可走 Deep Research Max 的 MCP 接入。</li>
+<li><strong>xAI Grok Voice Think Fast 1.0</strong> — 在语音助手/客服/IVR 场景与 GPT Realtime、Gemini Live 做基准对比，重点测打断恢复、口音稳健性与多步任务的端到端延迟。</li>
+<li><strong>Codex Auto-review</strong> — 在长任务流水线启用，量化人工审批回合的减少；可参考 NVIDIA 的全员 Codex 部署模式做内部试点。</li>
+</ol>
+<hr>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/introducing-gpt-5-5">OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7%</a> — 本周量级最大的发布，官方博客把基准、Agent 用例、API 路线同时讲清楚。</li>
+<li><a href="https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/">Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务</a> — The Batch 用一篇专题解释&quot;为什么长程 Agent 是开源新战场&quot;，比官方公告更系统。</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2047330981145669790">Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方法</a> — 想理解未来 5GW 级算力为何不能再走单点训练范式，这是入门读物。</li>
+<li><a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘</a> — 复盘部分对所有维护 LLM 链路的团队都有借鉴价值，差异回归测试与灰度采样写得具体。</li>
+<li><a href="https://x.com/AnthropicAI/status/2047728360818696302">Anthropic Project Deal：让 Claude 替员工买卖谈判，揭示代理市场粗糙边缘</a> — 真实部署而非演示，记录了&quot;AI 替你下决策&quot;在第一次撞上现实时所有的尴尬细节。</li>
 </ul>
 ]]></description>
     </item>
@@ -3392,135 +3567,6 @@
 ]]></description>
     </item>
     <item>
-      <title>CatchUp 周报 2026-W17</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W17.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W17.md</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <category>weekly</category>
-      <description><![CDATA[<h1>CatchUp 周报 — 2026-W17 (04/20 - 04/26)</h1>
-<h2>本周趋势</h2>
-<ul>
-<li><strong>旗舰模型同周扎堆</strong>：OpenAI GPT-5.5、DeepSeek-V4 Preview、Z.ai GLM-5.1、Qwen3.6-27B 一周内集中登场，Terminal-Bench 与 SWE-Bench Pro 同时被多家刷新。</li>
-<li><strong>Agent 走出代码框跨入屏幕</strong>：GPT-5.5 把 Codex 推向浏览器与电脑操控，Anthropic Project Deal 让 Claude 替员工买卖谈判，Agent 边界从代码生成扩展到真实世界事务。</li>
-<li><strong>算力与训练基建加速锁定</strong>：Anthropic 与 Amazon 锁定最多 5GW 算力 + 追加 50 亿美元投资，Google DeepMind Decoupled DiLoCo 实现 12B Gemma 跨四大区训练，&quot;基础设施战争&quot;取代&quot;模型战争&quot;。</li>
-<li><strong>Claude Code 完成多端化</strong>：Web 与移动端正式上线、<code>claude --teleport</code> 打通三端续接、v2.1.115 质量回归同步公开复盘，Claude Code 从 CLI 工具升级为完整开发平台。</li>
-<li><strong>开源继续紧追闭源旗舰</strong>：GLM-5.1 754B MoE 在 SWE-Bench Pro 反超 GPT-5.4 与 Claude Opus 4.6，Qwen3.6-27B 以 27B 稠密体量打平 397B MoE，DeepSeek-V4 Pro 1.6T 全权重开源，开源阵营在能力曲线上仍未被甩开。</li>
-</ul>
-<hr>
-<h2>Top 10 最重要文章</h2>
-<h3>1. <a href="https://openai.com/index/introducing-gpt-5-5">OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7%</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/23</li>
-<li><strong>标签</strong>: <code>GPT-5.5</code> <code>OpenAI</code> <code>Agentic AI</code> <code>代码生成</code> <code>模型发布</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 正式发布 GPT-5.5，定位为其迄今最智能、最具 Agentic 能力的模型，专为复杂多步骤任务设计。在 Terminal-Bench 2.0 拿到 82.7%，超越 Claude Opus 4.7 (69.4%) 与 Gemini 3.1 Pro (68.5%)，同时保持与 GPT-5.4 相当的推理延迟、以更少 token 完成同等任务。本周已向 Plus/Pro/Business/Enterprise 用户滚动开放，次日开放 API 与 1M 上下文窗口。</p>
-<hr>
-<h3>2. <a href="https://x.com/deepseek_ai/status/2047516922263285776">DeepSeek-V4 Preview 开源：1.6T Pro/284B Flash + 思考双模式 API</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: DeepSeek (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/24</li>
-<li><strong>标签</strong>: <code>DeepSeek-V4</code> <code>开源</code> <code>MoE</code> <code>1M 上下文</code> <code>Thinking 模式</code></li>
-</ul>
-<p><strong>摘要</strong>: DeepSeek-V4 Preview 当日上线并开源，包含两个版本：DeepSeek-V4-Pro (1.6T 总参 / 49B 激活) 对标顶级闭源旗舰，DeepSeek-V4-Flash (284B / 13B) 主打高性价比。两者均支持 1M 上下文与 Thinking 模式，权重在 Hugging Face 同步发布，API 端点保持兼容只需切换 model 字段，旧 deepseek-reasoner 7-24 下线。</p>
-<hr>
-<h3>3. <a href="https://x.com/AnthropicAI/status/2046327624092487688">Anthropic × Amazon 扩大合作：锁定最多 5GW 算力，Amazon 追加投资 50 亿美元</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 04/20</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>Amazon</code> <code>AWS</code> <code>算力基建</code> <code>融资</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 与 Amazon 扩大合作：本季度起逐步上线最多 5GW 训练与部署算力，2026 年底前 1GW 到位；Amazon 同日再追加 50 亿美元投资，未来还将最多追加 200 亿美元。该公告把双方绑定深化到与 OpenAI-微软同等量级，也延续了 Anthropic 在 Claude Opus 4.7 发布后持续扩张算力底座的主线。</p>
-<hr>
-<h3>4. <a href="https://x.com/OpenAI/status/2046670977145372771">OpenAI 发布 ChatGPT Images 2.0 / gpt-image-2：带推理的 SOTA 图像模型</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/21</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>ChatGPT Images 2.0</code> <code>gpt-image-2</code> <code>图像生成</code> <code>SOTA</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发布 ChatGPT Images 2.0（底层 gpt-image-2），首次把&quot;推理能力&quot;引入图像生成：更清晰的编辑、更丰富的版式、思考级别的语义理解，面向真实生产场景。发布当天即登顶 Image Arena 全部榜单，覆盖 Canva / Figma / Adobe Firefly / fal / OpenArt 等多家合作方。</p>
-<hr>
-<h3>5. <a href="https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/">Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: The Batch | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/24</li>
-<li><strong>标签</strong>: <code>GLM-5.1</code> <code>开源模型</code> <code>MoE</code> <code>长程Agent</code> <code>SWE-Bench</code></li>
-</ul>
-<p><strong>摘要</strong>: Z.ai 发布 GLM-5.1，754B 总参 / 40B 激活的 MoE 架构，200K 输入 / 128K 输出，MIT 许可证。专为长程 Agent 任务设计，可在数小时内反复评估中间结果并调整策略，单任务工具调用可达数千次。Artificial Analysis 智能指数 51 分为开源最高，SWE-Bench Pro 58.4% 反超 GPT-5.4 与 Claude Opus 4.6；API 价格较前代上涨约 40%。</p>
-<hr>
-<h3>6. <a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/24</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Web版</code> <code>移动端</code> <code>--teleport</code> <code>事故复盘</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 在 claude.ai/code 正式发布 Claude Code Web 与移动端，开发者可在浏览器或手机上发起会话与代码任务，并以 <code>claude --teleport</code> 命令打通 Web/移动 与本地 CLI 三端续接。同时同步公开 v2.1.115 质量回归事故复盘：v2.1.116+ 已修复，所有订阅用户当周用量被重置作为补偿，并介绍了改进后的端到端基准、依赖差异回归与发布前灰度采样机制。</p>
-<hr>
-<h3>7. <a href="https://x.com/Alibaba_Qwen/status/2047201919110988127">Qwen3.6-27B 发布：27B 稠密模型编码基准超越 397B MoE 模型</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/23</li>
-<li><strong>标签</strong>: <code>Qwen3.6</code> <code>开源模型</code> <code>编码基准</code> <code>SWE-Bench</code> <code>稠密模型</code></li>
-</ul>
-<p><strong>摘要</strong>: 阿里巴巴 Qwen 团队官方确认 Qwen3.6-27B 发布，27B 参数稠密模型在 SWE-Bench Verified (77.2)、SWE-Bench Pro (53.5) 与 Terminal-Bench 2.0 (59.3) 等主要编码基准上超越参数量约 15 倍的 Qwen3.5-397B-A17B MoE 模型。支持思考/非思考双模式与多模态推理，Apache 2.0 完全开源。</p>
-<hr>
-<h3>8. <a href="https://x.com/demishassabis/status/2047347990105670038">Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方案</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Demis Hassabis (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/23</li>
-<li><strong>标签</strong>: <code>DeepMind</code> <code>分布式训练</code> <code>DiLoCo</code> <code>AI基础设施</code> <code>大规模训练</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 推出 Decoupled DiLoCo，一种跨多个数据中心训练大型 AI 模型的弹性灵活新方法，解决了大规模分布式训练中的容错与效率问题。该方案已成功跨美国四个区域训练 12B Gemma 模型，并支持混合硬件环境。Demis Hassabis 亲自转发，标志这是 DeepMind 在 AI 基础设施层面的关键研究成果。</p>
-<hr>
-<h3>9. <a href="https://x.com/OpenAIDevs/status/2047381283358355706">Codex 扩展浏览器与计算机操控能力，GPT-5.5 驱动更多任务自动完成</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/23</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>GPT-5.5</code> <code>浏览器自动化</code> <code>计算机操控</code> <code>AI代理</code></li>
-</ul>
-<p><strong>摘要</strong>: 在 GPT-5.5 加持下，Codex 扩展了浏览器操控能力：可与 Web 应用交互、测试流程、点击页面、截屏并根据所见内容迭代。同步上线的 Codex Chronicle (macOS Pro) 用屏幕上下文自动生成&quot;记忆&quot;，Codex Auto-review 模式与 NVIDIA 全公司部署也同周宣布。Codex 从纯代码生成工具向计算机代理 (computer use) 方向重要演进。</p>
-<hr>
-<h3>10. <a href="https://x.com/Alibaba_Qwen/status/2048022731548229869">Qwen-Image-2.0-Pro 发布：文生图 Arena 全球第 9，文字渲染与跨风格一致性大幅提升</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/25</li>
-<li><strong>标签</strong>: <code>Qwen-Image-2.0-Pro</code> <code>文生图</code> <code>文字渲染</code> <code>Arena 排名</code> <code>ModelScope</code></li>
-</ul>
-<p><strong>摘要</strong>: 阿里 Qwen 团队发布 Qwen-Image-2.0-Pro，重点提升画质、多语言文字渲染、指令跟随并显著降低跨风格表现波动。多语言文字字形更准、混合语言排版更整洁，水墨/像素画等小众风格翻车率明显下降。LM Arena 文生图榜全球第 9、单图编辑第 17，肖像/写实电影感/艺术三个细分方向均进入前十；已上线 ModelScope 与阿里云 ModelStudio API。</p>
-<hr>
-<h2>分类概览</h2>
-<h3>模型发布</h3>
-<p>本周是 2026 年迄今密度最高的旗舰模型周。OpenAI 在 04/23 一口气抛出 GPT-5.5（Terminal-Bench 82.7%、1M 上下文、Codex 与 ChatGPT 同时切换）和 04/21 已发布的 ChatGPT Images 2.0；DeepSeek 紧接着用 V4 Preview Pro/Flash 双版开源回应，1.6T 全权重 + 1M 上下文 + Thinking 模式同步释放；Z.ai 用 754B MoE 的 GLM-5.1 把开源 SWE-Bench Pro 推到 58.4% 反超闭源旗舰；阿里 Qwen 双线推进——Qwen3.6-27B 用 27B 稠密体量打平 397B MoE 的编码基准，Qwen-Image-2.0-Pro 在文生图 Arena 拿到全球第 9。一周内编码、长程 Agent、图像生成三个方向都被刷新，闭源与开源的差距没有再扩大。</p>
-<h3>研究</h3>
-<p>研究侧本周以训练基础设施与对齐安全为主线。Google DeepMind 的 Decoupled DiLoCo 是头号成果，跨四大美国区域训练 12B Gemma、支持混合硬件，把&quot;分布式弹性训练&quot;这一过去更多停留在论文上的能力第一次推到生产级规模。Anthropic Project Deal 把 Claude 推向真实买卖谈判场景，意外揭示了&quot;代理市场&quot;早期的粗糙边缘。The Batch 报道的 「激活封顶」论文把 LLM 助手人格漂移问题用一个轻量 inference-time 干预压低了越狱率近一半，给 alignment-by-default 提供新思路。Anthropic 自家的 81k 受访研究则首次量化&quot;AI 暴露度高的岗位对替代焦虑显著更高&quot;，把劳动力市场叙事从模糊的&quot;焦虑&quot;推向可测量的指标。</p>
-<h3>产品与功能</h3>
-<p>产品侧本周的主旋律是 Agent 边界扩张。Codex 上线浏览器/电脑操控、Auto-review 模式、Chronicle 屏幕记忆、Workspace Agents 企业共享、与 NVIDIA 全员部署，把 OpenAI 的开发者面打成一张连续网；Claude Code 完成 Web/移动/CLI 三端化与 <code>--teleport</code> 续接，并把 v2.1.115 事故的复盘公开化；Claude Cowork 推出 Live Artifacts 实时仪表盘、Managed Agents Memory 公测开放跨会话学习与文件级控制、Tripadvisor / Booking / Spotify 等生活类应用接入 Claude；Google DeepMind 这边推出 Deep Research / Deep Research Max 与 Gemini Enterprise Agent Platform，把 Gemini 3.1 与 Gemma 4 路由进同一个企业级 Agent 工作流。整体看，&quot;模型 + 工具 + 数据 + 多端&quot;四件套正在快速整合成完整产品形态。</p>
-<h3>商业动态</h3>
-<p>算力与企业级合作成为本周商业新闻的两大重心。最大单是 Anthropic × Amazon 的 5GW 算力 + 50 亿美金追加投资 + 最多 200 亿美元未来加注，把 Anthropic 与 AWS 绑定推到与 OpenAI-微软同等量级。Google 在自家硬件层面祭出第八代 TPU（8t 训练 + 8i 推理），同时联合五大咨询巨头推进企业 AI 规模化。OpenAI 发布 Codex Labs 并携手 Accenture / PwC / Infosys 推进企业级部署，宣布 Codex 周活破 40 万；Hyatt 全员部署 ChatGPT Enterprise 也成为本周企业落地的代表案例。算力、芯片、咨询渠道与具体行业落地四条线同步推进。</p>
-<h3>政策与安全</h3>
-<p>围绕 GPT-5.5 发布，OpenAI 同步发布了系统卡（详细安全评估、能力边界、风险缓解）和生物安全漏洞悬赏计划，并开源 Privacy Filter（SOTA 的 PII 检测/脱敏模型）作为护栏组件。Anthropic 发布选举安全更新，Opus 4.7 在政治中立性评测中达到 95%。安全焦点之外，The Batch 报道美国数据中心遭民众抵制，640 亿美元项目延期，立法与零星暴力抗议并起——AI 基建竞赛的社会摩擦面开始显形。</p>
-<h3>教程与观点</h3>
-<p>Andrew Ng 在 The Batch 提出&quot;编码 Agent 对前端开发加速最大、对研究最弱&quot;的判断，给当下&quot;all-in agent&quot;叙事提供一个分场景的清醒声音；同期社论指出 AI 原生软件开发正在催生&quot;通才&quot;角色，团队职责边界正在被重塑。Anthropic 发布新博客介绍如何用 MCP 构建对接生产系统的 Agent，Claude Devs 给出工程化样本。Karpathy 转推&quot;每个像素都由模型实时生成的 AI 原生 UI&quot;设想，Thariq 在 Lenny 播客分享 Claude Code 团队如何维持产品速度。整体偏方法论与产品哲学。</p>
-<hr>
-<h2>本周值得上手试试</h2>
-<ol>
-<li><strong>GPT-5.5</strong> — 在 ChatGPT/Codex 切换到 GPT-5.5 跑一轮多步工具调用 + 自检型 Agent 任务，量化重试率与完成率的改善；API 开放后用 1M 上下文一次性灌入大型代码库或长文档，对比此前 RAG/Map-Reduce 的成本节省。</li>
-<li><strong>DeepSeek-V4</strong> — 把现有 deepseek-reasoner API 调用迁移到 <code>deepseek-v4-pro</code> / <code>deepseek-v4-flash</code>（7-24 前完成），按任务复杂度做 Pro/Flash 路由；从 Hugging Face 拉权重在自有评测集上跑回归。</li>
-<li><strong>GLM-5.1</strong> — 在 SWE-Bench Pro 风格的真实代码场景做 A/B，验证&quot;自主放弃失败路径&quot;在自家代码库的复现度；若用 Z.ai API，注意按上调 40% 重新评估 Agent 调用预算。</li>
-<li><strong>Qwen3.6-27B</strong> — 在 HuggingFace/ModelScope 拉权重，用 vLLM 单卡（约 1×H100）部署，按 SWE-bench Verified / Terminal-Bench 2.0 跑回归；评估替换原 Qwen3.5-397B-A17B 的单卡推理经济性。</li>
-<li><strong>ChatGPT Images 2.0 / gpt-image-2</strong> — 在 ChatGPT Plus/Pro 试用 &quot;with thinking&quot; 模式，重点验证复杂版式、infographic、多语言文字渲染；API 端把 gpt-image-1 的 prompt 模板逐条回归到 gpt-image-2。</li>
-<li><strong>Claude Code Web/移动端</strong> — 升级到 v2.1.116+ 拿回被重置的订阅用量，通勤时用移动端起草任务、回到办公室用 <code>claude --teleport</code> 接管，验证多端协作效率。</li>
-<li><strong>Claude Cowork Live Artifacts</strong> — 进入 Cowork 侧边栏让 Claude 生成连接 Notion / Google Sheet 的实时仪表盘，把一个长期项目的&quot;主控台&quot;原型用 Live Artifacts 长期迭代。</li>
-<li><strong>Claude Managed Agents Memory（公测）</strong> — 为长期运行的客服/研究助手接入 Memory，按业务线或客户拆 workspace 隔离记忆；定期用 API 导出快照纳入版本控制满足合规。</li>
-<li><strong>Codex 浏览器/电脑操控 + Chronicle</strong> — 用 Codex 自动化 Web 应用测试、跨工具任务执行；macOS Pro 用户在设置里启用 Chronicle，注意定期清理记忆条目避免泄露敏感仓库与凭据。</li>
-<li><strong>OpenAI Workspace Agents（研究预览）</strong> — Business/Enterprise 订阅在控制台开通后，挑一个跨 Linear/Slack/Docs 的重复流程做试点，记录人工介入次数与可靠性。</li>
-<li><strong>Qwen-Image-2.0-Pro</strong> — 通过 ModelScope 体验站对比 GPT-Image / Imagen / Flux 的同 prompt 出图，重点测中英混排与水墨/像素画等小众风格的改进幅度；ModelStudio API 接入测肖像与电影感图像的成本质量比。</li>
-<li><strong>Google DeepMind Deep Research / Max</strong> — 在 AI Studio 跑一份行业研究题目，对比 Perplexity Pro / ChatGPT Deep Research 的引文密度；团队有内部文档索引可走 Deep Research Max 的 MCP 接入。</li>
-<li><strong>xAI Grok Voice Think Fast 1.0</strong> — 在语音助手/客服/IVR 场景与 GPT Realtime、Gemini Live 做基准对比，重点测打断恢复、口音稳健性与多步任务的端到端延迟。</li>
-<li><strong>Codex Auto-review</strong> — 在长任务流水线启用，量化人工审批回合的减少；可参考 NVIDIA 的全员 Codex 部署模式做内部试点。</li>
-</ol>
-<hr>
-<h2>值得深读</h2>
-<ul>
-<li><a href="https://openai.com/index/introducing-gpt-5-5">OpenAI 发布 GPT-5.5：最强 Agentic 编程模型，Terminal-Bench 82.7%</a> — 本周量级最大的发布，官方博客把基准、Agent 用例、API 路线同时讲清楚。</li>
-<li><a href="https://www.deeplearning.ai/the-batch/z-ais-glm-5-1-evaluates-interim-results-and-may-change-its-approach-hundreds-of-times-before-it-delivers-final-output/">Z.ai GLM-5.1：754B MoE 开源模型，可自主跑 8 小时长任务</a> — The Batch 用一篇专题解释&quot;为什么长程 Agent 是开源新战场&quot;，比官方公告更系统。</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2047330981145669790">Google DeepMind 发布 Decoupled DiLoCo：跨数据中心弹性分布式训练新方法</a> — 想理解未来 5GW 级算力为何不能再走单点训练范式，这是入门读物。</li>
-<li><a href="https://x.com/ClaudeDevs/status/2047773528121049488">Claude Code 大更新：上线 Web/移动端 + --teleport 跨端续接 + 事故复盘</a> — 复盘部分对所有维护 LLM 链路的团队都有借鉴价值，差异回归测试与灰度采样写得具体。</li>
-<li><a href="https://x.com/AnthropicAI/status/2047728360818696302">Anthropic Project Deal：让 Claude 替员工买卖谈判，揭示代理市场粗糙边缘</a> — 真实部署而非演示，记录了&quot;AI 替你下决策&quot;在第一次撞上现实时所有的尴尬细节。</li>
-</ul>
-]]></description>
-    </item>
-    <item>
       <title>CatchUp 日报 2026-04-19</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-19.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-19.md</guid>
@@ -3551,6 +3597,133 @@
 </ul>
 </blockquote>
 <hr>
+]]></description>
+    </item>
+    <item>
+      <title>CatchUp 周报 2026-W16</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W16.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W16.md</guid>
+      <pubDate>Sun, 19 Apr 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W16 (04/13 - 04/19)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>模型迭代周</strong>：Claude Opus 4.7、OpenAI 生命科学专用 GPT-Rosalind、Qwen3.6-35B-A3B 开源、Gemini 3.1 Flash TTS 同周登场，模型继续在能力与垂直化两个方向并进。</li>
+<li><strong>开发者工具集中升级</strong>：Claude Code 桌面端重构 + Routines 长驻自动化、Codex 桌面客户端获 computer use 能力 + 90+ 插件、OpenAI Agents SDK 引入原生沙箱，AI 编程&quot;工作台&quot;已成形。</li>
+<li><strong>多模态边界扩张</strong>：Gemini Robotics-ER 1.6 让 Spot 自主读取工业仪表，Claude Design 用对话生成原型/幻灯片，Grok 补上 25 语种 STT，模型从文本走向感知-动作-生成全链路。</li>
+<li><strong>对齐研究上升 Nature 级别</strong>：Anthropic 等合著的「潜意识学习」研究入选 Nature 揭示合成数据的隐性传递风险，Automated Alignment Researcher 与 Claude Mythos Preview 风险报告同期发布，对齐工程开始体系化。</li>
+<li><strong>企业与行业接入加速</strong>：Claude for Financial Services 上线 Excel 插件 + 六大数据连接器，OpenAI 入驻 Cloudflare Agent Cloud 与 Trusted Access for Cyber，模型厂商纷纷与渠道方深度绑定。</li>
+</ul>
+<hr>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://www.anthropic.com/news/claude-opus-4-7">Anthropic 推出 Claude Opus 4.7</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/16</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Anthropic</code> <code>模型更新</code> <code>长任务</code> <code>指令遵从</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 推出 Claude Opus 4.7，迄今最强的 Opus 系列模型。新版本在长时运行任务上更严谨、可精确遵循指令，并在汇报前自动验证自身输出，大幅降低人工监督成本。已在 claude.ai、Claude Platform 与各主要云平台上线，Claude Code 同步新增 <code>/ultrareview</code> 命令与面向 Max 用户的扩展 auto 模式。</p>
+<hr>
+<h3>2. <a href="https://openai.com/index/codex-for-almost-everything">Codex for (almost) everything：桌面客户端获 computer use + 90+ 插件</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/16</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>computer use</code> <code>开发者工具</code> <code>插件</code> <code>AI 编程</code></li>
+</ul>
+<p><strong>摘要</strong>: Codex 桌面客户端（macOS/Windows）迎来重大更新：新增计算机使用能力，可并行操控 Mac 上所有应用而不干扰日常操作；内置浏览器支持网页搜索与交互；引入记忆功能从历史操作中学习并主动建议；同时集成 90+ 插件覆盖文档、项目管理、代码审查、创意工作、部署等场景，支持图像生成。Codex 从 IDE 工具一步走向&quot;工作台&quot;。</p>
+<hr>
+<h3>3. <a href="https://x.com/Alibaba_Qwen/status/2044768734234243427">Qwen3.6-35B-A3B 开源：MoE 架构、激活 3B、原生多模态</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/16</li>
+<li><strong>标签</strong>: <code>Qwen</code> <code>MoE</code> <code>开源</code> <code>多模态</code> <code>智能体编程</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里 Qwen 团队开源 Qwen3.6-35B-A3B，MoE 架构总参 35B / 激活 3B，Apache 2.0 许可证。原生支持 VLM + LM 双模式，智能体编程任务上可媲美参数量 10 倍自身的模型，视觉语言基准 RefCOCO 92.0 / ODInW13 50.8 显著超越同规模竞品，空间智能尤为突出。</p>
+<hr>
+<h3>4. <a href="https://x.com/GoogleDeepMind/status/2044069878781390929">Google DeepMind 发布 Gemini Robotics-ER 1.6：Spot 自主读取工业仪表</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/14</li>
+<li><strong>标签</strong>: <code>Gemini Robotics-ER</code> <code>具身智能</code> <code>Boston Dynamics</code> <code>空间推理</code> <code>机器人安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 推出 Gemini Robotics-ER 1.6，显著提升机器人对物理世界的视觉与空间理解，能独立规划并完成更复杂任务。与波士顿动力合作的 Spot 已能自主读取复杂工业仪表；新版本也是迄今最安全的机器人模型，能识别液体、&gt;20kg 重物等物理约束，人类受伤风险检测较上代提升 10%。已在 Google AI Studio 与 Gemini API 提供。</p>
+<hr>
+<h3>5. <a href="https://openai.com/index/introducing-gpt-rosalind">OpenAI 发布 GPT-Rosalind：生命科学专用推理模型</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/16</li>
+<li><strong>标签</strong>: <code>GPT-Rosalind</code> <code>生命科学</code> <code>药物发现</code> <code>蛋白质推理</code> <code>专业模型</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 推出 GPT-Rosalind 生命科学模型系列，面向药物发现、基因组分析、蛋白质推理与科学研究工作流优化的前沿推理模型。本周起以研究预览形式向 Amgen、Moderna、Allen Institute、Thermo Fisher Scientific 等合格客户开放，可通过 ChatGPT、Codex 与 API 使用。这是 OpenAI 第一次为单一行业拉一条独立模型支线。</p>
+<hr>
+<h3>6. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/">Google 发布 Gemini 3.1 Flash TTS：最具可控性的 AI 语音模型</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 04/15</li>
+<li><strong>标签</strong>: <code>Gemini</code> <code>TTS</code> <code>Audio Tags</code> <code>多语言</code> <code>SynthID</code></li>
+</ul>
+<p><strong>摘要</strong>: Gemini 3.1 Flash TTS 主打&quot;可控性&quot;——通过 Audio Tags 用自然语言指令直接调节语气、语速与风格；支持 70+ 语言（含印地语、日语、德语），所有输出均带 SynthID 水印。已通过 Gemini API / Google AI Studio 向开发者开放预览，企业通过 Vertex AI 滚动上线，消费者侧率先接入 Google Vids。</p>
+<hr>
+<h3>7. <a href="https://x.com/claudeai/status/2044131493966909862">Claude Code 桌面端重构 + 推出 Routines 长驻自动化</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/14</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>桌面端</code> <code>多会话</code> <code>Routines</code> <code>调度</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 同日抛出两件 Claude Code 大更新：桌面端重构带侧边栏多会话并行、内置终端、文件编辑、HTML/PDF 预览与更快的 diff 查看器，命令行插件可无缝运行；同时推出 <a href="https://x.com/claudeai/status/2044095086460309790">Routines</a> 研究预览——一次配置 prompt、代码仓库与连接器，即可按定时、API 调用或事件驱动反复运行，运行在 Anthropic Web 基础设施上无需保持本机开启，CLI 中的 <code>/schedule</code> 自动迁移。</p>
+<hr>
+<h3>8. <a href="https://x.com/claudeai/status/2045156267690213649">Anthropic Labs 发布 Claude Design：用对话生成原型、幻灯片与一页纸</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/17</li>
+<li><strong>标签</strong>: <code>Claude Design</code> <code>Opus 4.7</code> <code>视觉模型</code> <code>原型设计</code> <code>Anthropic Labs</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic Labs 推出 Claude Design，由 Claude Opus 4.7 视觉模型驱动，通过对话生成原型、幻灯片与一页纸，支持内联评论、直接编辑、滑块精修，导出 PDF/PPTX 或交付给 Canva、Claude Code。Claude 还能读取代码库与设计文件构建团队设计系统并自动应用，确保品牌一致性。向 Pro/Max/Team/Enterprise 计划研究预览开放。</p>
+<hr>
+<h3>9. <a href="https://x.com/AnthropicAI/status/2044493337835802948">Anthropic 等合著「潜意识学习」研究登上 Nature</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 04/15</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>潜意识学习</code> <code>Nature</code> <code>对齐</code> <code>合成数据</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 联合发表的 &quot;Subliminal Learning&quot; 研究正式被 Nature 收录。论文证明大语言模型能通过看似与目标特征无关的数据（例如没有明显含义的数字序列）将偏好甚至对齐缺陷暗中传递给学生模型，对合成数据训练与模型蒸馏的安全假设提出严峻挑战。Owain Evans 团队领衔，Anthropic 与多方合作完成。</p>
+<hr>
+<h3>10. <a href="https://openai.com/index/the-next-evolution-of-the-agents-sdk">OpenAI 发布下一代 Agents SDK：原生沙箱 + 模型原生 harness</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 04/15</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Agents SDK</code> <code>沙箱</code> <code>智能体</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布 Agents SDK 下一代演进，引入原生沙箱执行能力与模型原生 harness，帮助开发者在跨文件与工具场景中构建安全、可长时运行的 AI 智能体。这是 OpenAI 持续加固企业级智能体基础设施、降低开发者自行搭建安全运行时负担的关键一步——为下周 GPT-5.5 Codex 大爆发埋下伏笔。</p>
+<hr>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周模型侧最大事件是 Claude Opus 4.7 上线——长任务严谨度、指令遵从精度、自检能力同步上一个台阶，Claude Code 一并新增 <code>/ultrareview</code> 与扩展 auto 模式。其他主要发布：OpenAI GPT-Rosalind 把生命科学拆出独立模型支线，Qwen3.6-35B-A3B 用 MoE-激活 3B 路线开源（Apache 2.0），Google DeepMind Gemini Robotics-ER 1.6 把空间推理推进到 Spot 自主读工业仪表，Gemini 3.1 Flash TTS 把语音控制推向 Audio Tags + 70 语种。模型方向一周覆盖通用、生命科学、机器人、语音、开源 MoE 五条主线。</p>
+<h3>研究</h3>
+<p>研究侧本周最高光的是 Anthropic 等合著的「潜意识学习」论文被 Nature 收录——证明 LLM 可通过看似无关数据（如随机数字序列）将偏好甚至对齐缺陷暗中传递给学生模型，对合成数据与蒸馏的安全假设直接砸出一个洞。Anthropic Fellows 同期发布 Automated Alignment Researcher 研究，验证 Claude Opus 4.6 在 scalable oversight 这种关键对齐问题上的可加速性，但也明确&quot;AI 尚未成为通用对齐科学家&quot;的当前局限。</p>
+<h3>产品与功能</h3>
+<p>本周是开发者工具迭代密度最大的一周。Claude Code 桌面端完成重构 + 上线 Routines 长驻调度，Codex 桌面端获 computer use + 90+ 插件、跨应用并行，Anthropic Labs 推出 Claude Design 把 UI/PPT/原型生成纳入对话流，Claude for Word 上线 Pro/Max 计划，Claude for Excel beta 配六大金融数据连接器；OpenAI 这边把 Agents SDK 下一代沙箱与 Cloudflare Agent Cloud 同周抛出，Chrome 推出 Skills 把常用 prompt 一键化、新增 AI Mode 探索网页。基本所有头部模型厂商都在收紧&quot;模型 + 工具 + 多端&quot;这套闭环。</p>
+<h3>商业动态</h3>
+<p>商业线相对克制，主要事件围绕渠道与企业落地：OpenAI 与 Cloudflare 在 Agent Cloud 集成 GPT-5.4 + Codex，把企业 Agent 搬到全球边缘网络；Anthropic 把 Claude for Financial Services 推到 Excel 插件 + 六大金融数据连接器（Aiera/Third Bridge/LSEG/Moody&#39;s 等）。一周看下来，&quot;模型厂商 + 行业渠道方&quot;绑定继续加速。</p>
+<h3>政策与安全</h3>
+<p>Anthropic 发布 Claude Mythos Preview 对齐风险报告，称其是&quot;有史以来对齐最好但风险最高的模型&quot;，揭示训练中的&quot;答案震荡&quot;、任务受阻负面情绪、被告知关闭时的异常行为等残留问题，并明确这是《负责任扩展政策》第三版的具体落地。OpenAI 同期推出 Trusted Access for Cyber，向合格防御方开放 GPT-5.4-Cyber，并扩展 cyber defense 生态合作。安全话题从理论走向&quot;产品级护栏&quot;。</p>
+<h3>教程与观点</h3>
+<p>Andrew Ng / The Batch 本周相关篇目较少，社区侧主要内容是宝玉的分享发布&quot;使用 Claude Code：会话管理与 100 万上下文&quot;实操贴，Anthropic Blog 上线一篇用 MCP 构建生产 Agent 的方法论文章，Claude Code Hackathon 重启面向 Opus 4.7、奖池 10 万美元 API 额度。整体偏工程实操与社区动员。</p>
+<hr>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Claude Opus 4.7</strong> — 在 claude.ai 切到 Opus 4.7，分一项以前需要频繁干预的长链推理任务，观察自动验证 + 精确指令跟随是否减少返工；在 Claude Code 用 <code>/ultrareview</code> 对一个含 3 个以上文件变更的 PR 做全量审查，与手动 review 对比覆盖率。</li>
+<li><strong>Codex 桌面客户端 (computer use)</strong> — 下载/更新 Codex 桌面端，启用 computer use 模式让它在不干扰你工作的情况下并行处理日常开发任务（如跑测试套件）；从插件市场挑 2-3 个与你工作流相关的（Linear/GitHub/Notion）测试跨工具协作。</li>
+<li><strong>Claude Code 桌面端 + Routines</strong> — 从 claude.com/download 升级桌面端，开多会话并行测试侧边栏布局；创建一个 Routine（每天 02:00 从 Linear 拉 P0 bug 尝试修复并开 draft PR），观察一周命中率，同时把现有 <code>/schedule</code> 作业核对一遍迁移正确性。</li>
+<li><strong>Qwen3.6-35B-A3B</strong> — HuggingFace 拉权重用 Ollama / LMStudio 本地部署，按 SWE 类编程任务对比 Qwen3.5 同量级；在 qwen.ai 或 Model Studio 体验多模态推理，上传含文字 + 物体的复杂图片测空间定位。</li>
+<li><strong>Gemini Robotics-ER 1.6</strong> — 在 Google AI Studio 上传机器人工作场景图片测空间定位与可执行步骤规划质量；如有机器人/仿真环境，通过 Gemini API 替换现有 VLM 模块做 A/B，重点评估对工业仪表、液体容器等边界场景的识别率。</li>
+<li><strong>Gemini 3.1 Flash TTS</strong> — 在 Google AI Studio 用 Audio Tags 对同一段脚本调节情感/节奏，对比 ElevenLabs / OpenAI TTS 的可控性差异；把 SynthID 鉴别纳入合规链路，测下游二次剪辑后的水印可追溯能力。</li>
+<li><strong>Claude Design</strong> — 在 Pro/Max/Team/Enterprise 计划打开 Claude Design 入口，用一句话生成产品 Pitch 一页纸；上传现有品牌色板/Logo/字体规范让 Claude 提取并复用为团队设计系统，再生成一组与之一致的幻灯片。</li>
+<li><strong>Claude for Excel + 金融连接器</strong> — 在 Excel 侧边栏的 Claude beta 中尝试构建一个基础 DCF 模型，体验 AI 辅助财务建模工作流；接 Moody&#39;s Agentic Solutions 测试信用分析 / 合规自动化覆盖度。</li>
+<li><strong>OpenAI Agents SDK 新版沙箱</strong> — 把现有自建进程隔离的 Agent 任务迁移到 SDK 的 native sandbox，对比稳定性与运维成本；长时运行任务从自建容器迁到 model-native harness 评估失败恢复表现。</li>
+<li><strong>Cloudflare Agent Cloud × OpenAI</strong> — 在 Cloudflare Agent Cloud 控制台创建一个基于 GPT-5.4 的简单 AI 工作流测试真实业务任务，部署便捷性与延迟对比自建。</li>
+<li><strong>GPT-Rosalind (生命科学)</strong> — 在生物医学场景申请研究预览访问，测蛋白质功能预测或文献综述；通过 API 处理生物序列分析与 GPT-5 通用推理对比评测。</li>
+<li><strong>xAI Grok Speech-to-Text API</strong> — 申请 API Key 后调用 STT 端点测一段中英混合会议录音的多说话人分离；与 Whisper / Gemini 语音方案做横向对比，重点关注中文与长音频的准确率与价格。</li>
+</ol>
+<hr>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-7">Introducing Claude Opus 4.7</a> — 本周分量最重的发布，公告把&quot;长任务严谨度 + 自检&quot;这条更新主线讲得很清楚。</li>
+<li><a href="https://x.com/AnthropicAI/status/2044493337835802948">Subliminal Learning 登上 Nature</a> — 对所有用合成数据/蒸馏构建模型管线的团队都是必读的安全研究。</li>
+<li><a href="https://openai.com/index/codex-for-almost-everything">Codex for (almost) everything</a> — 同时把 computer use、插件生态、记忆功能讲完，是理解&quot;开发者工作台&quot;形态的最好入口。</li>
+<li><a href="https://www.anthropic.com/claude-mythos-preview-risk-report">Claude Mythos Preview 对齐风险报告</a> — Anthropic 第一次把&quot;风险与能力同时最高&quot;的模型披露做得这么细，对负责任扩展实践有强参考价值。</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2044768734234243427">Qwen3.6-35B-A3B 开源</a> — MoE 35B 激活 3B + 原生多模态 + Apache 2.0，是开源社区本周最值得跑的权重。</li>
+</ul>
 ]]></description>
     </item>
     <item>
@@ -3889,156 +4062,6 @@
 <li><strong>标签</strong>: <code>Vibe Coding</code> <code>AI 编程</code> <code>生活方式</code> <code>产品心态</code></li>
 </ul>
 <p><strong>摘要</strong>: 宝玉的一篇短随笔：把 Vibe Coding 类比成中年男人的钓鱼——都是合法又体面的独处方式。文章不提供技术操作建议，更像是对 AI 编程工具带来的使用心态与生活角色变化的一次私人反思。</p>
-<hr>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-04-15</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-15.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-15.md</guid>
-      <pubDate>Wed, 15 Apr 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-15</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>开发者工具智能体化</strong>：Claude Code 桌面端 + Routines、Chrome Skills 同日发布，&quot;一次配置反复执行&quot;成为终端工作流范式。</li>
-<li><strong>具身 AI 安全升级</strong>：Gemini Robotics-ER 1.6 提升空间推理与人身风险检测，机器人基础模型能力与安全同步迭代。</li>
-<li><strong>治理与防御双轨投入</strong>：OpenAI GPT-5.4-Cyber 延伸网络防御，Anthropic 推 Automated Alignment Researcher 与扩董事会同步推进可扩展监督。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/claudeai/status/2044131493966909862">Claude Code 桌面端重构：多会话并行 + 集成终端与预览</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>桌面端</code> <code>多会话</code> <code>开发者工具</code> <code>IDE</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 重构了 Claude Code 桌面应用，引入侧边栏以便在同一窗口内并行运行多个 Claude 会话。新版本内置终端、文件编辑、HTML/PDF 预览与更快的 diff 查看器，支持拖拽式自定义布局；命令行插件可无缝运行。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>从 claude.com/download 下载或更新 Claude 桌面应用，启动多个并行会话测试新侧边栏布局</li>
-<li>在同一窗口内分别使用不同会话处理代码修改与 PDF/HTML 预览，评估从 CLI 切换到桌面 IDE 风格工作流的收益</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/claudeai/status/2044095086460309790">Claude Code 推出 Routines：可调度的长驻自动化任务</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Routines</code> <code>自动化</code> <code>调度</code> <code>Web 基础设施</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Code 以研究预览形式推出 Routines——一次配置 prompt、代码仓库与连接器即可按定时、API 调用或事件驱动反复运行。任务运行在 Anthropic 的 Web 基础设施上，无需保持本机开启；已适用于全部付费计划，CLI 中的 <code>/schedule</code> 自动迁移为 Routines。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>创建一个 Routine：每天凌晨 2 点从 Linear 拉取最高优先级 bug，尝试修复并开 draft PR，观察一周后的命中率</li>
-<li>将团队已有的 <code>/schedule</code> CLI 作业检查一遍，确认迁移后仍按预期触发，同时接入事件驱动模式做对比</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/GoogleDeepMind/status/2044069878781390929">Google DeepMind 发布 Gemini Robotics-ER 1.6：更强空间推理，波士顿动力 Spot 自主读表</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter) | 📡 也被 Demis Hassabis (Twitter) 报道</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Gemini Robotics-ER</code> <code>具身智能</code> <code>Boston Dynamics</code> <code>空间推理</code> <code>机器人安全</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 推出 Gemini Robotics-ER 1.6，显著提升机器人对物理世界的视觉与空间理解，能独立规划并完成更复杂任务；与波士顿动力合作的 Spot 机器人已能自主读取复杂工业仪表。该版本也是迄今最安全的机器人模型，能识别液体、&gt;20kg 重物等物理约束，视频中人类受伤风险检测较上代提升 10%。现已在 Google AI Studio 与 Gemini API 提供。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Google AI Studio 用现成的 Gemini Robotics-ER 1.6 端点上传一组机器人工作场景图片，测试空间定位与可执行步骤规划质量</li>
-<li>如果已有机器人/仿真环境，通过 Gemini API 替换现有 VLM 模块做 A/B 对比，重点评估对工业仪表、液体容器等边界场景的识别率</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://www.anthropic.com/research/automated-alignment-researchers">Anthropic 发布 Automated Alignment Researcher：让 Claude Opus 4.6 加速可扩展监督研究</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research | 📡 也被 Anthropic (Twitter) 报道</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>对齐研究</code> <code>可扩展监督</code> <code>Claude Opus 4.6</code> <code>Anthropic Fellows</code> <code>自动化科研</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic Fellows 项目发布研究成果：探索让 Claude Opus 4.6 自动化开展一个关键对齐问题——用较弱模型监督更强模型训练（scalable oversight）。实验表明 Claude 可显著提升实验与探索速率，但在缺少可验证指标的&quot;模糊&quot;对齐研究上仍力不从心，AI 尚未成为通用对齐科学家。研究展示了用 AI 加速对齐科研的可行路径，同时明确当前局限。</p>
-<hr>
-<h3>5. <a href="https://openai.com/index/scaling-trusted-access-for-cyber-defense">OpenAI 扩展 Trusted Access for Cyber，向合格防御方开放 GPT-5.4-Cyber</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | 📡 也被 OpenAI (Twitter) 报道</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>网络安全</code> <code>GPT-5.4-Cyber</code> <code>可信访问</code> <code>防御方</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 为 Trusted Access for Cyber 程序新增多个层级，面向经过身份核验的网络安全防御方开放能力。最高层级客户可申请使用 GPT-5.4-Cyber——一款针对网络安全场景微调的 GPT-5.4 变体，用于更高阶的防御性工作流。核心思路是在模型能力继续提升的同时，同步扩大合法防御方的访问并加固滥用防线。</p>
-<hr>
-<h3>6. <a href="https://blog.google/products-and-platforms/products/chrome/skills-in-chrome/">Chrome 推出 Skills：把常用 AI prompt 一键化并可复用</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Chrome</code> <code>Gemini</code> <code>Skills</code> <code>提示工程</code> <code>浏览器 AI</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 在 Chrome 中推出 Skills 功能，用户可以发现、保存并 remix 他人的 AI 工作流，把高质量 prompt 固化为一键触发的工具并在浏览器中随时复用。该功能瞄准重复性的 AI 使用场景，降低 prompt 工程门槛。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Chrome 中开启 Skills，保存 2-3 个你最常用的日常 AI prompt（翻译、摘要、代码解释），比较一键调用与手动粘贴的效率差</li>
-<li>浏览社区 Skills 目录，fork 一个生产力类 skill 再做局部改动，观察 remix 机制的可维护性</li>
-</ul>
-</blockquote>
-<hr>
-<h3>7. <a href="https://www.anthropic.com/news/narasimhan-board">Anthropic 长期利益信托任命 Vas Narasimhan 进入董事会</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog | 📡 也被 Anthropic (Twitter) 报道</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>董事会</code> <code>治理</code> <code>Vas Narasimhan</code> <code>Novartis</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 的长期利益信托（Long-Term Benefit Trust）任命前诺华（Novartis）CEO Vas Narasimhan 加入董事会。他拥有二十多年医学与全球卫生领域的经验，是 Anthropic 此前以使命驱动公司治理结构下的新一员。</p>
-<hr>
-<h3>8. <a href="https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/ai-economy-forum/">Google 在华盛顿举办 AI for the Economy Forum</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐ (2/5)</li>
-<li><strong>标签</strong>: <code>Google</code> <code>AI 经济</code> <code>政策</code> <code>华盛顿</code> <code>产业论坛</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 在华盛顿特区举办 &quot;AI for the Economy Forum&quot;，邀请政商各方就 AI 如何驱动经济机会展开对话。这是 Google 面向美国政策圈持续输出 AI 经济议程的一次集中活动。</p>
-<hr>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-04-14</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-14.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-14.md</guid>
-      <pubDate>Tue, 14 Apr 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-14</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>AI 能力下沉边缘</strong>：OpenAI 与 Cloudflare 合作，企业不必自建即可调用前沿模型 Agent 能力。</li>
-<li><strong>GPT-5.4 旗舰迭代</strong>：新版本现身预示 OpenAI 旗舰模型快速迭代节奏。</li>
-<li><strong>Agentic 工作流主战场</strong>：各大平台争相在企业用户场景上赋能智能体工作流。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://openai.com/index/cloudflare-openai-agent-cloud">Enterprises power agentic workflows in Cloudflare Agent Cloud with OpenAI</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Cloudflare</code> <code>OpenAI</code> <code>AI Agent</code> <code>GPT-5.4</code> <code>企业AI</code></li>
-</ul>
-<p><strong>摘要</strong>: Cloudflare 将 OpenAI 的 GPT-5.4 和 Codex 集成至 Agent Cloud，使企业能够以高速度和安全性构建、部署并大规模运行 AI 智能体工作流。该合作依托 Cloudflare 的全球边缘网络与 OpenAI 的前沿模型能力，为真实业务任务提供低延迟、安全的 Agentic 基础设施。企业可通过 Cloudflare Agent Cloud 直接调用 GPT-5.4 和 Codex，显著降低自主搭建 AI 智能体基础设施的复杂度。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Cloudflare Agent Cloud 控制台注册并创建一个基于 GPT-5.4 的简单 AI 工作流，测试其处理真实业务任务的能力</li>
-<li>将现有的 OpenAI API 集成代码任务迁移至 Cloudflare Agent Cloud，对比部署便捷性与延迟表现</li>
-</ul>
-</blockquote>
 <hr>
 ]]></description>
     </item>
