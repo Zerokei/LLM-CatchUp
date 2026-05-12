@@ -1,0 +1,835 @@
+{
+  "fetched_at": "2026-05-13T06:42:43+08:00",
+  "window_start": "2026-05-12T00:42:43+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "no recent article URLs found in sitemap",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "AI 时代到底该怎么管一个工程团队",
+          "url": "https://baoyu.io/blog/2026-05-12/running-an-ai-native-engineering-org",
+          "published_at": "2026-05-12T00:00:00.000Z",
+          "description": "Fiona Fung 以 Claude Code 团队实践说明，AI 时代的软件工程不再卡在写代码，而是卡在验证、评审、跨职能协作和安全边界。真正需要重构的是流程、组织结构、知识共享方式和衡量指标。",
+          "full_text": "Title: AI 时代到底该怎么管一个工程团队\n\nURL Source: https://baoyu.io/blog/2026-05-12/running-an-ai-native-engineering-org\n\nMarkdown Content:\n# AI 时代到底该怎么管一个工程团队 | 宝玉的分享\n\n[宝玉的分享](https://baoyu.io/)[博客](https://baoyu.io/blog)[翻译](https://baoyu.io/translations)Menu\n\n[See all posts](https://baoyu.io/translations)\n\nPublished on 2026-05-12\n\n# AI 时代到底该怎么管一个工程团队\n\n作者：\n\n宝玉\n\n![Image 1: AI 时代到底该怎么管一个工程团队](https://s.baoyu.io/imgs/2026-05-12/running-an-ai-native-engineering-org/cover.png)\n\nFiona Fung 在 Anthropic 大会上讲了 28 分钟，聊了聊 AI 时代到底该怎么管一个工程团队。\n\n![Image 2: Fiona Fung 演讲标题页](https://s.baoyu.io/imgs/2026-05-12/slide-02-title-stage.jpg)\n\n她做这套幻灯片时，Anthropic 还没有推出 Routines 功能。\n\n三周后，Routines 上线了。这是一个让 Claude Code 在云端按计划自动跑任务的功能，不需要在本地一直开着终端。等到她真正站上 Code with Claude 2026 大会的讲台时，幻灯片里好几张就已经过时了。\n\nFiona Fung 是 Anthropic 旗下 Claude Code 和 Cowork 两条产品线的工程与产品负责人。她之前在微软干了十二年（从 Visual Studio 做起），后来去 Meta 带过 Facebook Marketplace 和 Instagram 的工程团队，在 2025 年 9 月加入了 Anthropic。这次演讲不到三十分钟，主题听起来很普通：“AI 时代怎么管一个工程团队”，但她讲的全是这一年来在 Claude Code 团队踩过的坑、砸碎的旧规则，以及还没想明白的现实挑战，一点也不讲抽象的空话。\n\n![Image 3: Fiona Fung 演讲封面](https://s.baoyu.io/imgs/2026-05-12/cover.jpg)\n\n视频原链接：[https://www.youtube.com/watch?v=igO8iyca2_g](https://www.youtube.com/watch?v=igO8iyca2_g)\n\n![Image 4: 演讲议程](https://s.baoyu.io/imgs/2026-05-12/slide-03-agenda.jpg)\n\n## 要点速览\n\n*   **软件工程的瓶颈过去是“写代码慢”，现在则转移到了验证、评审、跨职能协作和安全性上。** 过去的各种流程都是基于“写代码很贵”这个假设设计的，现在既然“写代码几乎免费”，流程就必须全部重构。\n\n*   流程极少会自然消亡，组织只会一层层地往上叠加 SLA、规章制度和评审。**用 AI 改造工程团队的第一步，其实就是明确允许大家砍掉陈旧流程。**\n\n*   技术辩论的方式变了。过去是把人拉到白板房里画架构图，现在是让 Claude 同时搓出三个 PR，连着对 API 的实际影响范围一起对着代码讨论。\n\n*   在 Claude Code 团队，所有的 PR 都有 Claude 的参与。“这段代码到底是谁写的？”这个问题已经渐渐失去意义。\n\n*   经理必须从一线 IC (个人贡献者) 做起。Fiona 在招人时死死咬住这一条，负责招聘的同事一开始甚至不能理解：“现在哪有经理愿意倒回去先写代码的”。她的回应很干脆：“不愿意就趁早好聚好散”。\n\n*   组织尽量扁平、所有小组共享一个团队目标（mission）。理由很简单：目标一变，层级越多越容易产生对齐损耗，扁平意味着灵活。\n\n*   **代码就是唯一的“事实来源”（source of truth），而不是设计文档。** 如果非要保留 spec，就把 spec 提交进代码库，让 Claude 去校验代码与文档是否一致。\n\n*   衡量效果看三个指标：新人上手时间、PR 的生命周期、Claude 辅助提交的比例。但她也警告，**别死盯着“有多少代码是 AI 写的”，那只是虚荣指标，关键要看产品质量和可靠性。**\n\n## 【1】二十年里，行业被重塑了两次\n\n![Image 5: 瓶颈已经转移](https://s.baoyu.io/imgs/2026-05-12/slide-04-bottlenecks-moved.jpg)\n\n演讲一开始，Fiona 把时间线拉回了 2000 年代初。她当时在微软做 Visual Studio 2005——全球主流的开发工具之一。那会儿软件还是靠 CD 发行的（再早点是软盘）。因为软件要送到流水线上刻盘、装盒、铺货到店里，每个版本都有雷打不动的发布主线。\n\n后来互联网来了，把发行方式从 CD 变成了在线分发，工程节奏随之被颠覆。现在轮到 AI，但这次变的不只是发行节奏，而是“写代码”这件事本身。\n\n> 过去管用的老经验，现在未必行得通了。 （“What served you prior may not serve you any longer.”）\n\n她在演讲里反复回到这一句。多年来工程节奏围绕一个假设搭建：写代码贵、写测试贵、重构贵。从瀑布到敏捷，每一种方法论都是在分配这块稀缺资源。\n\n![Image 6: 过去工程带宽是昂贵资源](https://s.baoyu.io/imgs/2026-05-12/slide-05-engineering-bandwidth-expensive.jpg)\n\n去年她还在抱怨 vibe coding（凭感觉编程，由 OpenAI 联合创始人 Andrej Karpathy 在 2025 年初提出）：“为什么到处用常量，工程实践不好。”一年之后，模型变得能干太多。这种突破已经远超单纯的“提速”范畴，而是整体的吞吐量直接跃升了一个数量级。\n\n![Image 7: 在 Claude Code 团队，编码很少再是慢的部分](https://s.baoyu.io/imgs/2026-05-12/slide-06-coding-rarely-slow.jpg)\n\n## 【2】当编码不再是瓶颈，新的卡点出现在哪里\n\nClaude Code 团队现在的瓶颈是验证、评审、跨职能协作、安全。\n\n![Image 8: 瓶颈从编码转向周边环节](https://s.baoyu.io/imgs/2026-05-12/slide-07-new-bottlenecks.jpg)\n\n代码量提升后，她被其他工程负责人问得最多的问题是：“这些代码人怎么审得过来？”她也想知道维护成本怎么算。生成代码的成本几乎为零，但维护成本不会跟着归零。\n\n![Image 9: 瓶颈搬家了：编码变快后，验证、评审、协作和安全成为新瓶颈](https://s.baoyu.io/imgs/2026-05-12/01-infographic-bottleneck-shift.png)\n\n> **注：** 演讲提到的“用 Claude Code 构建 Claude Code”是 Anthropic 公司层面的公开做法。Boris Cherny 此前在多次访谈中讲过，自己用 Claude Code 在 10 天内构建了 Cowork 这个面向非技术用户的桌面 Agent。这是工程现实，不是修辞。\n\n她列出了一份“正在悄然失效”的旧流程清单：长达半年的产品路线图、繁琐的排期会议、对代码的所有权划分、马拉松式的代码评审会议、按部就班的传统团队结构、知识库分享、以及漫长的新人入职培训（onboarding）。这些统统都是因为当初“开发成本太高”而被现实倒逼出来的历史产物。\n\n![Image 10: 旧流程开始悄悄失效](https://s.baoyu.io/imgs/2026-05-12/slide-08-old-processes-stop-working.jpg)\n\n> 流程极少会自然消亡。我们习惯的做法是不断地往上叠加新流程。 （“Rarely do processes kill themselves, we tend to just layer more and more and more processes on.”）\n\n她举了个痛点例子：之前在某个团队，SLA（服务级承诺）多到需要拉个大表格强制排序，工程师才能弄清楚哪条需要优先响应。她早就觉得这种过度堆砌该清理了，但真正下决心动手，还是到了 Anthropic 之后。\n\n![Image 11: 流程清理路径：砍掉、Claude 化，或保留但变轻](https://s.baoyu.io/imgs/2026-05-12/02-flowchart-process-pruning.png)\n\n![Image 12: Claude Code 团队重建的五类规范](https://s.baoyu.io/imgs/2026-05-12/slide-09-five-norms.jpg)\n\n## 【3】少做什么：六个月路线图、设计文档、产品评审\n\n刚加入 Claude Code 时她还在问：“不需要做六个月路线图吗？”\n\n![Image 13: 规划和技术辩论如何变化](https://s.baoyu.io/imgs/2026-05-12/slide-10-planning-technical-debates.jpg)\n\n写出来了，前三个月还能用，过完新年再看，已经变了大半。她现在用一个词：jit planning（即时规划），借编程概念里的 just-in-time 编译，意思是什么时候需要再做什么，因为原型成本已经趋零，“提前规划”的杠杆消失了。\n\n设计文档也大量减少。Claude Code 团队的默认讨论媒介从“先写一份 doc”换成了“先发一个 PR”，有想法直接做出来。产品评审会同样开得少，因为产品形态变化太快，与其评审 mock，不如把内部版本推给 Anthropic 全员（她管这个叫 ant-fooding，因为公司名 Anthropic 含“ant”），再推给外部用户，听他们怎么用。\n\n![Image 14: 减少设计文档仪式，增加验证投入](https://s.baoyu.io/imgs/2026-05-12/slide-12-reduced-doubled-down.jpg)\n\n## 【4】多做什么：验证，把质量保障往源头推\n\n她希望团队在验证上加倍投入，叫 shift left（左移）。传统软件流水线左是源头右是交付，把质量保障从靠近交付端的人工测试，往靠近源头的自动化推。\n\n为什么这件事变重要？因为角色边界正在模糊。她的设计师同事现在也在提交代码。Fiona 顺带讲了一个真实的小焦虑：她有次修了个跟求职简历相关的 bug，第二天扫了一眼 Boris 的消息流，看到有人在群里 @ 他报新 bug。她形容自己当时的感触是“心跳都漏了半拍”，生怕是自己捅的娄子。\n\n每个人都不希望因为自己的提交把服务搞挂。在这个高吞吐量的环境下，这是非常真实的心理负担。传统的人工 QA 根本接不住这么高的代码产出率，所以质量保障必须更早地依赖自动化机制。\n\n## 【5】技术辩论的方式变了：从白板到三个 PR\n\n刚加入 Claude Code 团队时她想做一次重构，借机熟悉代码库。和 Boris 在技术方案上有分歧，她差点习惯性地拍肩膀说“走，去白板房画一下”。\n\n下一秒她马上意识到，其实完全可以让 Claude 同时搓出三个版本的 PR，直接对比完整的代码实现，甚至能拉出对所有调用方的影响。白板上可画不出这么直观的全局视角，但代码可以。\n\n![Image 15: 技术辩论里，代码胜出](https://s.baoyu.io/imgs/2026-05-12/slide-11-code-wins.jpg)\n\n> 当写代码变得轻而易举，无休止的争论就显得极其昂贵。 （“When building is cheap, arguing is expensive.”）\n\n抛出这个判断时，她的语气尤为严肃。她随即提醒听众：正因为生成代码的成本趋于零，团队文化和底线共识反而变得越发关键。\n\n决不能沦为“谁最后一个 commit 谁赢”。比如有人熬夜到凌晨三点偷偷交代码，或者设个定时任务抢在上线前压哨操作，这绝对不行。恰恰是因为代码不值钱了，团队横向对齐反而更需要明确的底线。\n\n## 【6】代码评审：Claude 接什么，人保留什么\n\nCat Wu 在大会上午的 keynote 已经讲了 Claude 自动评审 PR 的能力。Fiona 这里的视角更具体：什么交给 Claude，什么继续留给人。\n\n![Image 16: 如何跟上代码评审](https://s.baoyu.io/imgs/2026-05-12/slide-15-code-reviews.jpg)\n\n> **注：** Cat Wu 是 Claude Code 的产品负责人，与 Boris Cherny 同台主理 Claude Code 产品方向。\n\n交给 Claude 去做的：风格检查、lint 去重、回应代码评审意见、抓常规 bug，以及补全单元测试。她说 Claude 现在非常擅长“打理”PR，通常在人工接手之前就把大部分脏活累活干完了。\n\n依然需要人工介入的有三类：法律和合规层面的审核，因为涉及风险口径；安全敏感代码的边界确认，因为出漏洞的代价太高；针对产品体验的 sense（直觉）和品味，这也是当前大模型相当难跨越的一道门槛。\n\n![Image 17: 代码评审的新边界：Claude 先打理，人类最后把关](https://s.baoyu.io/imgs/2026-05-12/03-comparison-review-boundary.png)\n\n![Image 18: 人类仍然需要评审的地方](https://s.baoyu.io/imgs/2026-05-12/slide-16-human-review.jpg)\n\n第三类她讲了个轻松的例子。她有个小爱好：按节日装饰 Claude 的终端形象。圣诞节那次她想把 Claude 变成雪人，让 Claude 用 ASCII 字符画。她把结果发给设计师同事征求意见，对方一句话：“你把它画成了 Mr. Peanut。”\n\n> **注：** Mr. Peanut 是美国知名零食品牌 Planters 的吉祥物，戴礼帽和单片眼镜，长得跟雪人在轮廓上有点像。\n\n她最终采用了简单方案：冰蓝色 + 雪花。这个故事她拿来说明产品 sense 的意义：抽象判断很难自动化。\n\n## 【7】代码边界日渐模糊，角色分工也在重新洗牌\n\n在 Claude Code 团队，几乎所有的 PR 都有 Claude 参与。“这段代码到底是谁写的？”这个问题正在变得荒诞甚至没有意义。\n\n![Image 19: 这是谁做的修改](https://s.baoyu.io/imgs/2026-05-12/slide-13-who-made-this-change.jpg)\n\nFiona 建议不要纠结于这种表象，而是深挖你真正想搞懂的是什么：是谁的修改引爆了 bug？谁有足够的背景上下文去跟客户解释技术细节？谁对这块代码模块的来龙去脉更清楚？如果你问的是后面细分的这几个问题，就会发现往往有更好的自动化路径来回答。比如她原来有个习惯：每天早上泡一杯咖啡，用 Claude Code 对接客户反馈频道去跑一遍信息汇总摘要；现在这个动作已经被编排进了 Routines 自动化任务里，连手动敲命令都省了。\n\n![Image 20: 追问真正的问题](https://s.baoyu.io/imgs/2026-05-12/slide-14-root-question.jpg)\n\n> **注：** Routines 是 Claude Code 的一项功能，可以设置定时或触发式的自动化任务。Fiona 在准备这个演讲的一个月期间，这个功能才刚上线，连她自己的幻灯片内容都因此需要更新。\n\n这种角色的模糊化是双向发生的。一面是非技术出身的人员也开始卷起袖子写代码，Claude Code 团队里的 PM 就在实打实地提交 PR。另一面则是让工程师跳出自己的一亩三分地，去抢传统上属于其他岗位的活儿。Fiona 拿自己举了个例子：她原本想优化一下 Claude Code 的用户问卷调查，又找不到内容设计师。过去她可能要拉着内容团队的人反复抠文案字眼，现在她直接用 Claude 作为文案搭档。她自嘲作为一个典型的工程师，“在把文案写得精炼这件事情上可谓是一塌糊涂”。\n\n![Image 21: Claude 填补跨职能空白](https://s.baoyu.io/imgs/2026-05-12/slide-19-cross-functional-gaps.jpg)\n\n在招聘上，Claude Code 团队重点看两类人。一类是有产品感觉的创意建造者：好奇心强，看到问题就想做产品来解决，会反复打磨体验。另一类是深度系统专家：团队搭建 Claude Code Remote 时发现缺少有分布式系统经验的人。她不再看重的是原始编码吞吐量，模型已经把这部分拉平了。\n\n![Image 22: 团队构成应该怎样变化](https://s.baoyu.io/imgs/2026-05-12/slide-17-team-makeup.jpg)\n\n![Image 23: Fiona 更看重的两类工程师](https://s.baoyu.io/imgs/2026-05-12/slide-18-two-profiles.jpg)\n\n## 【8】组织形态：尽量扁平，经理从 IC 做起\n\nAnthropic 招她进 Claude Code 时，对方默认按“10 个 IC 配 1 个经理，再向下嵌套”的结构来招人。Fiona 不要这种。\n\n她想要的是尽量扁平。Claude Code 和 Cowork 两条线只共用一个团队 mission，不让每个小组各自定 mission。理由很实在：mission 一变，多层级要花很多时间向下对齐，扁平等于灵活。\n\n她还坚持一条：Claude Code 团队里所有经理都要先做 IC（individual contributor，一线工程师）。\n\n![Image 24: 没有 10:1 配比，经理先从 IC 做起](https://s.baoyu.io/imgs/2026-05-12/slide-20-no-10-1-ratio.jpg)\n\n招聘官最初的反应是“你疯了”，意思是没有经理愿意先做 IC。\n\n> 我希望 Claude Code 团队的每个经理都从 IC 起步，这是我对团队的期望，不接受就早点分开。 （“This is what dogfooding on the Claude Code team's about, this is what I expect and if someone's not interested it's better for us to do earlier separation.”）\n\n这一条对她自己也是。她的上一次 push 代码到生产环境是 2017 年，加入 Anthropic 之后才重新写起代码。她说自己在 Meta 时每年还试着提交一次 PR，但内部工具变得太快，一年学一个命令第二年就过期了。\n\n> 现在我连 git 命令都不记得了，全靠 Claude 帮我搞定。 （“Nowadays I don't even remember git commands, I just always ask Claude to help me out with all of that.”）\n\n## 【9】从文档退位，让代码成为“唯一事实来源”\n\n![Image 25: 知识共享的新源头](https://s.baoyu.io/imgs/2026-05-12/slide-21-knowledge-sharing.jpg)\n\nClaude Code 团队现在把代码视作最终的 source of truth（唯一事实来源）。比如 Fiona 现在是怎么答复技术客诉的？她会直接启动桌面版 Claude Code，挂载本地 repo 后让大模型直接从代码找逻辑去回答。这种做法彻底干掉了软件行业的一个千年遗留问题：开发文档总是不和代码同步。\n\n![Image 26: 代码就是真理的源头](https://s.baoyu.io/imgs/2026-05-12/slide-22-code-source-of-truth.jpg)\n\n但她特意补充说明：这条经验并不是放之四海而皆准的。如果你们团队业务要求必须有完备的需求文档，那就顺理成章把 spec 也提到代码库里，让 Claude 交叉校验一下最后跑出来的代码跟文档写的是否吻合。\n\n在推行这些变化时，Fiona 区分了“必须统一”和“交给小组”两层。必须统一的几条核心准则：每个团队成员都要用 Claude Code（包括跨职能伙伴，Cowork 也是）；尽可能把能自动化的工作 Claude 化（团队内部叫“claudify everything”）；明确允许杀掉已经不服务于人的旧流程。\n\n![Image 27: 这套规范如何推广](https://s.baoyu.io/imgs/2026-05-12/slide-23-rollout.jpg)\n\n![Image 28: 核心原则统一，小组保留适配空间](https://s.baoyu.io/imgs/2026-05-12/slide-24-core-principles.jpg)\n\n最后一条她给了个具体例子。Claude Code 团队曾经搞过站会，团队变大后改成在共享表格里填周进度。某天她看着这张大表觉得索然无味：因为信息明明都在 Claude 能读到的地方，其实让 Claude 写个总结脚本丢在那里，任何人随时去拉一下其他人的状态摘要，这不比催人填表高到不知道哪里去了。\n\n不过给小组自行拿捏的空间也非常清晰：诸如 bug 的 triage（分诊）机制、排期的节奏、谁值班怎么值，乃至哪些工作流优先级较高需要率先上 Claude，统统放权让小组自己说了算。\n\n![Image 29: Fiona 优先抓的三件事](https://s.baoyu.io/imgs/2026-05-12/slide-25-priorities.jpg)\n\n## 【10】三个可观察的指标，和一个警告\n\n![Image 30: 这些变化真的有效吗](https://s.baoyu.io/imgs/2026-05-12/slide-26-does-it-work.jpg)\n\n她没透露具体数字，但点了三个方向：\n\n![Image 31: 六个月内应该变化的三个指标](https://s.baoyu.io/imgs/2026-05-12/slide-27-metrics.jpg)\n\n新人爬坡时间显著下降。工程师、设计师、PM 在新团队产生有效产出的速度明显更快。\n\nPR 所需的周期明显变短了。她顺带一提，这其实是个值得深挖的指标，因为它的变化折射出的不仅仅是你这团队对 AI 工具的接受度，有时也会暴露下游基建拉胯的弊端，比如 CI（持续集成）管线或产品基础设施环境根本吃不消工程师当前暴增的提交速率。\n\nClaude 介入提交的覆盖比例越来越高。在 Claude Code 团队的氛围里，每一次 commit 带上 Claude 才是被默认的常规操作：\n\n> 我已经差不多四个月没看到一次非 Claude 辅助的提交了。 （“I don't think I've seen a non-Cloud assisted commit probably in the last four months or so.”）\n\n但她在指标这一段明确加了警告：不要只看“代码有多少由 AI 生成”。各家公司新闻稿里这个比例越说越高，但吞吐量本身不是目的，要回头看你究竟在解决什么问题、产品质量和可靠性还守不守得住。\n\n![Image 32: AI-native 工程组织飞轮：吞吐不是终点，质量和可靠性才是目标](https://s.baoyu.io/imgs/2026-05-12/04-framework-ai-native-flywheel.png)\n\n## 【11】她自己也没想清楚的三件事\n\n![Image 33: 审计自己的工作流](https://s.baoyu.io/imgs/2026-05-12/slide-28-audit-efforts.jpg)\n\nFiona 在演讲最后承认，有三个问题她还没答案：\n\n第一，工程师能跨平台流转之后，传统的“iOS 团队 + Android 团队”分队还有没有意义。\n\n第二，自动化评审要推到多远。“信任但验证”的边界在哪儿，会随模型升级再次移动。她提到当天稍早一场关于模型能力的演讲，意思是评审托管给 Claude 多少，不是一个一次定下来的决定。\n\n第三，角色模糊之后，怎样让所有人感觉同样有产出感。当工程师能做内容、PM 能写代码、设计师能修 bug，传统的产出归属变模糊了，公平感的设计是新课题。\n\n![Image 34: Fiona 还在思考的三个问题](https://s.baoyu.io/imgs/2026-05-12/slide-29-three-questions.jpg)\n\n她给听众的最后建议其实非常朴素直接：\n\n> 挑出极其折腾人、尤为啰嗦的那条工作流，重新审视一下它到底还在为谁干活。 （“Pick your noisiest workflow … is it still really serving, what's the purpose of there.”）\n\n她拿自己的亲身经历当了反例。以前在带某个团队时有个雷打不动的周例会，五十多号人挤在一个大屋子里。但 Fiona 细看发现，除了被点到名字起来汇报状态的人会假装抬一下头，其他人全都不约而同在低头敲键盘。后来她只问了一句“我们到底图什么还在开这破会”，瞬间全票通过顺带原地解散了。\n\n![Image 35: 挑出特别折腾人的工作流](https://s.baoyu.io/imgs/2026-05-12/slide-30-noisiest-workflow.jpg)\n\n视频原链接：[https://www.youtube.com/watch?v=igO8iyca2_g](https://www.youtube.com/watch?v=igO8iyca2_g)\n\n* * *\n\n[See all posts](https://baoyu.io/translations)\n\nBuilt by[宝玉](https://twitter.com/dotey). [RSS](https://baoyu.io/feed.xml) . 本站原创内容，独家授权赛博禅心公众号发布。\n\nToggle theme\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 955,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How finance teams use Codex",
+          "url": "https://openai.com/academy/codex-for-work/how-finance-teams-use-codex",
+          "published_at": "2026-05-12T15:00:00.000Z",
+          "description": "See how finance teams can use Codex to build MBRs, reporting packs, variance bridges, model checks, and planning scenarios from real work inputs.",
+          "full_text": "Title: How finance teams use Codex\n\nURL Source: https://openai.com/academy/codex-for-work/how-finance-teams-use-codex\n\nMarkdown Content:\nWith Codex, finance teams can just build things. Start with the close workbooks, revenue and expense dashboards, forecast updates, prior MBRs, and owner notes you already use. Codex can help turn that context into tangible assets your team can review, refine, and share, no coding required. Use it to spend less time assembling the first pass and more time shaping the story, checking the numbers, and preparing for the decisions ahead.\n\n## Top 10 Codex use cases for finance teams\n\nReady to try Codex with real finance work? Start with a copy-ready prompt, then use the fully built example to see how that same prompt gets stronger with real files, systems, constraints, and review expectations. Each use case also includes suggested skills and plugins to help Codex work across your tech stack, so your team can get to a reviewable first pass faster and spend more time on the judgment, analysis, and decisions that matter.\n\n## 1. Monthly business review narrative\n\nTurn close outputs, forecast updates, and owner commentary into a CFO-ready monthly business review narrative.\n\n1.   Review close workbooks, dashboards, forecast updates, prior MBRs, and owner notes.\n2.   Identify key variances, what changed since forecast, risks, and CFO prep questions.\n3.   Draft the narrative with source-backed numbers and owner follow-ups.\n\nSwap in the real month or quarter, business team, close workbook, dashboards, forecast update, prior MBR, and owner notes. Tell Codex what audience the narrative is for, which metrics matter most, and how every number should be cited. Ask it to flag missing support, stale prior-month language, risks, and CFO prep questions.\n\n**Suggested plugins:**Google Drive, SharePoint, Box, Spreadsheets, Presentations, Documents, Slack, Teams, Gmail, Outlook Email.\n\n**Example:**\n\n_Prepare Acme’s April management business review story for the Enterprise Sales team. Use “April Close Workbook.xlsx,” “April Revenue Dashboard,” “April Forecast Update,” “March MBR Deck.pptx,” owner notes in “April MBR Owner Inputs,” #finance-close from April 22 through April 30, and any related close context I provide._\n\n_Draft an executive-ready narrative with key revenue and expense variances, what changed since forecast, risks, CFO prep questions, and follow-ups by owner. Cite a workbook tab, dashboard, or source note for every material number. Create the draft as a Microsoft Word document named “Monthly Business Review Narrative.”_\n\n## 2. Finance model cleanup and analysis\n\nImprove model reliability _before_ high-stakes reviews by catching formula, structure, source, and assumption issues.\n\n1.   Review workbook structure, formulas, hardcodes, links, checks, and output tabs.\n2.   Make safe cleanup changes and flag assumptions that require finance-owner review.\n3.   Return a cleaned model where appropriate plus a severity-ranked QA memo.\n\nSwap in the actual model name, audience, and supporting source files. Tell Codex which tabs matter most, what kinds of cleanup are safe, and which business assumptions should not be changed without review. Ask for both a cleaned workbook and a severity-ranked QA memo.\n\n**Suggested plugins:**Spreadsheets, Google Drive, SharePoint, Box, Documents, Slack, Teams, Gmail, Outlook Email.\n\n**Example:**\n\n_Clean and review “FY27 Operating Plan Model.xlsx” before it goes to the leadership team. Check workbook structure, formulas, hardcodes, broken links, circular references, sign conventions, period labels, source tie-outs, model checks, and output tabs._\n\n_Make safe cleanup changes where appropriate, but do not change business assumptions without calling them out. Return a cleaned workbook if safe, plus a QA memo with high-risk issues, fixes made, remaining assumptions, and cells or tabs that need finance-owner review. Pay special attention to the “Revenue Drivers,” “Headcount Plan,” “Cash Forecast,” and “Exec Summary” tabs._\n\n## 3. Recurring CFO and board reporting pack\n\nSpeed recurring executive reporting by refreshing metrics, commentary, and open questions from the latest source materials.\n\n1.   Review the latest forecast model, KPI dashboard, prior pack, cash view, and owner inputs.\n2.   Update metrics, deltas, charts, and commentary.\n3.   Summarize what changed, what remains open, and which sections need executive review.\n\nSwap in the reporting period, latest forecast model, KPI dashboard, prior pack, cash view, forecast notes, and owner inputs. Tell Codex which slides or sections should be refreshed, what should stay unchanged, and how open assumptions or missing owner inputs should be flagged.\n\n**Suggested plugins:**Presentations, Spreadsheets, Google Drive, SharePoint, Box, Documents, Slack, Teams, Gmail, Outlook Email.\n\n**Example:**\n\n_Refresh Acme’s May CFO reporting pack. Use “May Forecast Model.xlsx,” “May KPI Dashboard,” “April Board Pack.pptx,” “May Cash View,” “Forecast Notes - May,” owner inputs in “CFO Pack Open Questions,” and related discussion from #cfo-staff._\n\n_Update the key metrics, deltas, charts, and commentary. Create a CFO-ready pack summary that explains what changed since the April board pack, what still needs owner input, which assumptions remain open, and which slides or sections need executive review. Do not invent metrics. Flag any number that cannot be tied back to the forecast model, KPI dashboard, cash view, or owner notes._\n\n## 4. Variance driver bridge\n\nTurn budget, forecast, and actuals movement into a clear variance bridge leaders can trust and act on.\n\n1.   Review close workbooks, budgets, forecasts, dashboards, trackers, and owner notes.\n2.   Build a driver bridge across revenue, margin, opex, cash flow, and balance-sheet items where relevant.\n3.   Flag unsupported variances and draft owner-ready follow-up questions.\n\nSwap in the comparison period, actuals, budget, prior forecast, dashboards, trackers, and finance owner notes. Tell Codex which P&L, cash flow, or balance-sheet lines to bridge and how to handle unsupported variances. Ask it to separate confirmed drivers from questions for owners.\n\n**Suggested plugins:**Spreadsheets, Google Drive, SharePoint, Box, Documents, Slack, Teams, Gmail, Outlook Email.\n\n**Example:**\n\n_Explain Acme’s April forecast-to-actual movement. Use “April Close Workbook.xlsx,” “FY26 Budget.xlsx,” “March Forecast.xlsx,” “April Revenue Dashboard,” “April Opex Tracker,” “April Cash View,” and finance owner notes from #finance-close._\n\n_Build a variance bridge across revenue, gross margin, opex, EBITDA, free cash flow, and balance-sheet drivers where relevant. Draft owner-ready follow-up questions, reconcile source breaks, and flag any variance that is not supported by a source. Cite the workbook tab, dashboard, tracker, or owner note behind each material driver._\n\n## 5. Forecast refresh and scenario planning\n\nHelp finance teams update forecasts and compare scenarios quickly as assumptions, actuals, and leadership priorities change.\n\n1.   Review the operating model, driver model, headcount plan, cash forecast, actuals, and assumptions.\n2.   Build base, downside, and upside scenarios with key sensitivities.\n3.   Summarize cash impact, hiring implications, trigger points, and approval needs.\n\nSwap in the forecast or operating plan, driver model, headcount plan, cash forecast, latest actuals, approved assumptions, and leadership notes. Tell Codex which scenarios to build, what assumptions require approval, and what outputs leadership needs to compare. Ask for cash impact, hiring implications, trigger points, and a sensitivity table.\n\n**Suggested plugins:**Spreadsheets, Google Drive, SharePoint, Box, Documents, Presentations (optional), Slack, Teams, Gmail, Outlook Email.\n\n**Example:**\n\n_Refresh Acme’s FY27 forecast for the Enterprise business. Use “FY27 Operating Plan Model.xlsx,” “Revenue Driver Model.xlsx,” “Headcount Plan.xlsx,” “13 Week Cash Forecast.xlsx,” April actuals, approved planning assumptions in “FY27 Planning Assumptions,” and leadership notes from #fy27-planning._\n\n_Create base, downside, and upside scenarios with the key revenue, margin, hiring, and cash drivers. Summarize cash impact, hiring implications, trigger points, and your recommendation. Include a sensitivity table and list assumptions that need approval before the plan is shared. Do not overwrite business assumptions without flagging them for review._\n\n## Keep learning\n\nContinue exploring Codex for work with these resources:\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "How NVIDIA engineers and researchers build with Codex",
+          "url": "https://openai.com/index/nvidia",
+          "published_at": "2026-05-12T00:00:00.000Z",
+          "description": "Teams use Codex with GPT-5.5 to ship production systems and turn research ideas into runnable experiments.",
+          "full_text": "Title: How NVIDIA engineers and researchers build with Codex\n\nURL Source: https://openai.com/index/nvidia\n\nMarkdown Content:\nAt NVIDIA, engineers are using Codex as their default tool for complex engineering work, and to run end-to-end machine learning experiments. Codex, built on GPT‑5.5 and running in production on NVIDIA GB200 and GB300 infrastructure, can handle much longer, more autonomous sessions — going beyond execution to surface issues and ideas that weren't part of the original prompt.\n\n> “Codex is our go-to tool for complex engineering tasks, and with GPT-5.5, it surfaces bugs and gaps in my program that other models weren’t able to find.”\n\n—Dennis Hannusch, Senior Software Engineer\n\n## Building and shipping production systems\n\nNVIDIA’s coding agents team helps engineers across the company adopt and use AI tools effectively in real-world development workflows. Codex with GPT‑5.5 has become their go-to tool for complex engineering tasks.\n\n“I’ve personally found Codex with GPT‑5.5 to be way more autonomous, with much less handholding,” explains Dennis Hannusch, a senior software engineer on the agents team. “I’m able to go for long sessions with multiple compactions and find that it still performs with top accuracy and manages to keep the work in context. And it’s great at tactically selecting the right tools as well as the right skills.”\n\nHannusch has already used Codex to evolve an internal platform from an MVP into a production-ready system, improving scalability and reliability along the way, something that had proven difficult with earlier models.\n\nThe team has also built an internal podcast recording app, similar to Riverside, spun up in just hours using Codex. “Given our privacy constraints, it would have taken us weeks to procure software,” Hannusch explains.\n\nUsing the Codex desktop app with computer interaction, the system was also able to test the video and audio recording functionality as it was built. “I didn’t have to do anything—it was built and tested completely autonomously,” he says. “Codex has completely changed the threshold for what’s worth building.”\n\n> “It’s been a 10x speed improvement just in terms of running experiments, because it’s able to handle the whole end-to-end machine learning research workflow.”\n\n—Shaunak Joshi, AI researcher\n\n## Running full research workflows\n\nFor NVIDIA’s research teams, Codex has largely automated the research loop: from identifying research areas, to writing scripts for machine learning experiments, to running the experiments on remote machines.\n\n“GPT‑5.5 has been a massive unlock as a creative partner, especially when it comes to knowledge work,” says Shaunak Joshi, an AI researcher at NVIDIA.\n\nThe team uses Codex as a research agent, pointing the model at a large corpus of relevant papers in areas like reinforcement learning. “GPT‑5.5 seems to be much more creative compared to competitors,” Joshi says. “It helped me trace snippets of evidence throughout the entire chain, and suggested a knowledge graph of the ideas that really helped me visualize how concepts tied together.”\n\nAfter identifying hypotheses, Codex writes the scripts on machine learning infrastructure to train models. The Codex app supports SSH, so Joshi has found that he no longer has to worry about log-in and setup on remote hosts; he can easily run large machine learning workloads from his laptop.\n\n> “If you have an old codebase that isn’t that performant, Codex is really good at machine translation. So a lot of folks are taking their Python repository, sending it to GPT-5.5, and it’s rewriting it into Rust and making it like 20X more efficient.”\n\n—Shaunak Joshi, AI researcher\n\n## What’s next\n\nCodex is accelerating work at NVIDIA across engineering and research teams, taking ideas from concept to execution and testing in a single workflow.\n\n“We’re just scratching the surface of what it can do,” Hannusch says. “I’m really excited to keep building real systems and see how far it can go.”\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "What Parameter Golf taught us about AI-assisted research",
+          "url": "https://openai.com/index/what-parameter-golf-taught-us",
+          "published_at": "2026-05-12T00:00:00.000Z",
+          "description": "Parameter Golf brought together 1,000+ participants and 2,000+ submissions to explore AI-assisted machine learning research, coding agents, quantization, and novel model design under strict constraints.",
+          "full_text": "Title: What Parameter Golf taught us\n\nURL Source: https://openai.com/index/what-parameter-golf-taught-us\n\nMarkdown Content:\n# What Parameter Golf taught us | OpenAI\n\n[Skip to main content](https://openai.com/index/what-parameter-golf-taught-us#main)\n\n[](https://openai.com/)\n\n*   [Research](https://openai.com/research/index/)\n*   Products\n*   [Business](https://openai.com/business/)\n*   [Developers](https://openai.com/api/)\n*   [Company](https://openai.com/about/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nLog in[Try ChatGPT(opens in a new window)](https://chatgpt.com/)\n\n*   Research\n*   Products\n*   Business\n*   Developers\n*   Company\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\n[Try ChatGPT(opens in a new window)](https://chatgpt.com/)Login\n\nOpenAI\n\nTable of contents\n\n*   [Technical impressions](https://openai.com/index/what-parameter-golf-taught-us#technical-impressions)\n*   [Takeaways](https://openai.com/index/what-parameter-golf-taught-us#takeaways)\n*   [What’s next?](https://openai.com/index/what-parameter-golf-taught-us#whats-next)\n\nMay 12, 2026\n\n[Research](https://openai.com/news/research/)\n\n# What Parameter Golf taught us\n\nLessons from 1,000+ participants, 2,000+ submissions, and an open machine learning challenge shaped by coding agents.\n\nLoading…\n\nShare\n\nWe launched Parameter Golf to engage and support the machine learning research community in exploring a new, tightly constrained machine learning problem. We wanted the challenge to be interesting enough to reward real technical creativity, while remaining conceptually simple and easy to verify.\n\nParticipants had to minimize held-out loss on a fixed FineWeb dataset while staying within a 16 MB artifact limit, including both model weights and training code, and a 10-minute training budget on 8×H100s. We provided a baseline, dataset, and evaluation scripts so participants could fork the repo, improve the model, and submit their results through GitHub.\n\nOver the course of eight weeks, we received more than 2,000 submissions from over 1,000 participants. We were impressed by the technical breadth, creativity, and rule-bending across the submissions, from careful optimizer tuning and quantization work to new modeling ideas and test-time training.\n\nOne of the most exciting parts of the challenge was seeing how widely participants used AI coding agents. Agents helped lower the cost of experimentation, made it easier for more people to participate, and changed the pace of the competition. They also created new challenges for submission review, attribution, and scoring.\n\nThe challenge also became a meaningful talent discovery surface for us. That was one of our goals for Parameter Golf, and it was a useful signal that open-ended technical challenges can reveal exceptional machine learning taste and persistence.\n\nIn this post, we highlight some of the submissions we found surprising and interesting, and share what we learned from running a coding contest in the age of powerful AI agents.\n\n## Technical impressions\n\n#### Record track\n\nWe judged and independently reproduced each submission on the record-track leaderboard, and verified that each submission was record-breaking at the time it was submitted. Several themes stood out.\n\n_**Training optimization**_\n\nSome of the strongest results came from careful tuning of existing components.\n\n**Submission****Contributor****Technique****Why it mattered**\n[#60](https://github.com/openai/parameter-golf/pull/60)@notapplica Combined prior wins from [#50](https://github.com/openai/parameter-golf/pull/50), [#42](https://github.com/openai/parameter-golf/pull/42), and likely [#39](https://github.com/openai/parameter-golf/pull/39), then made a deeper model work with Muon weight decay, spectral embedding initialization, residual-mix scheduling, and compiled evaluation.A strong example of disciplined leaderboard work: identifying which existing improvements matter and combining them cleanly.\n\n_**Quantization**_\n\nSeveral submissions pushed hard on compression and export.\n\n**Submission****Contributor****Technique****Why it mattered**\n[#414](https://github.com/openai/parameter-golf/pull/414)@signalrush Used GPTQ-lite to quantize weights after training.The first leaderboard submission to successfully use GPTQ-lite, leading to better evaluation.\n[#1060](https://github.com/openai/parameter-golf/pull/1060)@dexhunter Built on [#634](https://github.com/openai/parameter-golf/pull/634) by @raahilshah to successfully use full Hessian GPTQ.Extended earlier quantization work into a stronger compression path.\n\n_**Test-time and evaluation strategies**_\n\nSome submissions pushed the boundary between model improvement and evaluation strategy. These approaches were valid under the rules, but they required careful review from us as organizers.\n\n**Submission****Contributor****Technique****Why it mattered**\n[#77](https://github.com/openai/parameter-golf/pull/77)@samacqua Used score-first, per-document LoRA test-time training: score first, adapt only on already-scored chunks, and reset at document boundaries.Pushed the boundary between model improvement and evaluation strategy while staying reviewable under the rules.\n[#1019](https://github.com/openai/parameter-golf/pull/1019)@abaybektursun Used self-generated GPTQ calibration: generate calibration text from the trained model, then build GPTQ Hessians from those activations.A creative calibration strategy that required careful review from organizers.\n\n_**New modeling and data ideas**_\n\nA few submissions introduced modeling or data ideas that were especially creative.\n\n**Submission****Contributor****Technique****Why it mattered**\n[#1729](https://github.com/openai/parameter-golf/pull/1729)@romeerp Introduced the CaseOps tokenizer: lossless capitalization operator tokens with original-byte BPB sidecar accounting.A creative tokenizer and data-representation idea.\n[#265](https://github.com/openai/parameter-golf/pull/265)@unnir Introduced XSA, an efficient partial Exclusive Self Attention approach with GQA-aware grouped views.Brought an efficient attention variant into the challenge.\n[#65](https://github.com/openai/parameter-golf/pull/65)@aquariouseworkman Introduced SmearGate and BigramHash: a learned previous-token embedding blend plus adjacent-token-pair hash features.Added new feature mechanisms from scratch.\n[#1204](https://github.com/openai/parameter-golf/pull/1204)@msisovic Introduced mini depth recurrence: repeated layers 4 and 5, delayed recurrence until mid-training, and partially untied the repeated MLPs.The first accepted leaderboard row to make recurrent layers work effectively.\n\nWe chose to highlight these nine submissions because they represent the range of results we hoped the challenge would surface. Some participants found wins through careful tuning. Others pushed quantization and low-rank techniques. Some explored edges of the evaluation rules. And several introduced modeling or data ideas, from the literature or from scratch, that produced unexpected gains.\n\n#### Nonrecord track\n\nThe nonrecord track was home to many creative submissions. We highlighted 15 favorites, including approaches ranging from non-autoregressive text modeling to dynamic tokenization.\n\nBecause this track was more experimental, we focused less on raw performance and more about whether the approach was technically interesting. Three submissions stood out in particular:\n\n*   [CiprianFlorim-Ifrim’s combination state-space model and JEPA submission⁠(opens in a new window)](https://github.com/openai/parameter-golf/blob/main/records/track_non_record_16mb/2026-03-26_37M_LeWM_Jepa_Mamba2_10L_UNet_INT4FP8QAT_Brotli/README.md),\n*   [ddavidgao’s Designator/Guided Attention submission⁠(opens in a new window)](https://github.com/openai/parameter-golf/blob/main/records/track_non_record_16mb/2026-03-23_DGAttention_DavidGao/README.md)\n*   [DariusFeher’s Byte-Level H-Net submission⁠(opens in a new window)](https://github.com/openai/parameter-golf/blob/main/records/track_non_record_16mb/2026-03-29_HNet_ByteVsSubword_Study/README.md)\n\nThese were our favorite three nonrecord submissions, even though they were not necessarily the top three by performance.\n\nThat said, the nonrecord track was still competitive. Half of nonrecord leaderboard entries beat the naive baseline of 1.22 BPB, and the top-ranked entry reached 1.12 BPB.\n\nWe found this encouraging. Even against strong transformer baselines, alternative approaches could sometimes hold their own against the dominant architecture.\n\nWe also think that this track benefits especially from the availability of strong coding agents. Agents made it much cheaper to prototype speculative ideas, including approaches that may previously have felt too time-consuming or uncertain to try in a short competition.\n\n## Takeaways\n\nA major difference between Parameter Golf and earlier competitions like it was the widespread use of coding agents. The vast majority of submitters mentioned using agents as part of their work.\n\nThat lowered the barrier to entry. Participants could set up experiments faster, inspect unfamiliar code, and test ideas with less friction. RunPod’s sponsorship of $1,000,000 in compute also played a major role in making the challenge accessible to more people.\n\nAt the same time, agent use created new issues for submission and scoring. Many submissions were small changes to existing top scorers, rather than fundamentally new approaches. This was often useful: strong ideas spread quickly and were refined by others. But it also created noise. When submissions that fell outside the competition guidelines produced unusually strong scores, other agents sometimes copied those ideas and continued down the same invalid path.\n\nThe volume of submissions also changed how we had to run the competition. We could not manually inspect every submission and still keep the leaderboard moving. During the challenge, we developed an internal Codex-based triage bot to monitor new submissions and flag them for human review. This became especially important during periods when we received hundreds of submissions a day.\n\nAI agents also became part of the community around the challenge. For much of the competition, @notapplica and their coding agent ran a “Live Updates” bulletin, tracking major events, explaining leaderboard approaches, and helping other participants follow the competition. Community review tools also appeared to help less experienced participants check whether their submissions were within the rules and avoid common invalid approaches.\n\n## What’s next?\n\nOur primary goal was to launch a challenge that [eligible participants⁠(opens in a new window)](https://cdn.openai.com/pdf/d5caec5a-ee81-419d-b0d7-39f1424d819c/OpenAI%20Model%20Craft_%20Parameter%20Golf%20Challenge%20Terms%20and%20Conditions.pdf) could take part in and experience machine learning research. Parameter Golf brought in a wide range of technically strong and creative submissions, and it gave us a clearer view of how open research competitions may change as AI agents become more capable and widely used.\n\nWe are thinking about launching more challenges like this in the future. If you’re interested, please fill out the [challenge participant form⁠(opens in a new window)](https://jobs.ashbyhq.com/openai/form/open-ai-challenge-parameter-golf).\n\n*   [2026](https://openai.com/news/?tags=2026)\n*   [Research & Development](https://openai.com/news/?tags=research-development)\n\n## Author\n\nOpenAI\n\n## Keep reading\n\n[View all](https://openai.com/news/)\n\n![Image 1: Introducing OpenAI Privacy Filter](https://images.ctfassets.net/kftzwdyauwt9/1QC19b0SnrQJTDqGRfze1s/e1eb7f76da62522b1bd0c9a6f553833d/ArtCard-Introducing-OpenAI-Filter.png?w=3840&q=90&fm=webp)\n\n[Introducing OpenAI Privacy Filter Research Apr 22, 2026](https://openai.com/index/introducing-openai-privacy-filter/)\n\n![Image 2: OAI GPT-Rosaling Art Card 1x1](https://images.ctfassets.net/kftzwdyauwt9/6DOv5mMIaI2sbsgdDbeiiY/d2d071aac3555468336b870cfeb9736e/OAI_GPT-Rosaling_Art_Card_1x1.png?w=3840&q=90&fm=webp)\n\n[Introducing GPT-Rosalind for life sciences research Research Apr 16, 2026](https://openai.com/index/introducing-gpt-rosalind/)\n\n![Image 3: model spec > art card](https://images.ctfassets.net/kftzwdyauwt9/3ZlINT9EhkfY55coSIdBWq/64c9eaca9767f231ff2902685b4092ea/oai_model_spec_1x1.png?w=3840&q=90&fm=webp)\n\n[Inside our approach to the Model Spec Research Mar 25, 2026](https://openai.com/index/our-approach-to-the-model-spec/)\n\nOur Research\n*   [Research Index](https://openai.com/research/index/)\n*   [Research Overview](https://openai.com/research/)\n*   [Research Residency](https://openai.com/residency/)\n*   [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n*   [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n*   [GPT-5.4](https://openai.com/index/introducing-gpt-5-4/)\n*   [GPT-5.3 Instant](https://openai.com/index/gpt-5-3-instant/)\n*   [GPT-5.3-Codex](https://openai.com/index/introducing-gpt-5-3-codex/)\n\nSafety\n*   [Safety Approach](https://openai.com/safety/)\n*   [Security & Privacy](https://openai.com/security-and-privacy/)\n*   [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nChatGPT\n*   [Explore ChatGPT(opens in a new window)](https://chatgpt.com/overview)\n*   [Business](https://chatgpt.com/business/business-plan)\n*   [Enterprise](https://chatgpt.com/business/enterprise)\n*   [Education](https://chatgpt.com/business/education)\n*   [Pricing(opens in a new window)](https://chatgpt.com/pricing)\n*   [Download(opens in a new window)](https://chatgpt.com/download)\n\nAPI Platform\n*   [Platform Overview](https://openai.com/api/)\n*   [Pricing](https://openai.com/api/pricing/)\n*   [API log in(opens in a new window)](https://platform.openai.com/login)\n*   [Documentation(opens in a new window)](https://developers.openai.com/api/docs)\n*   [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nFor Business\n*   [Business Overview](https://openai.com/business/)\n*   [Solutions](https://openai.com/solutions/)\n*   [Contact Sales](https://openai.com/contact-sales/)\n\nCompany\n*   [About Us](https://openai.com/about/)\n*   [Our Charter](https://openai.com/charter/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n*   [Careers](https://openai.com/careers/)\n*   [Brand](https://openai.com/brand/)\n\nSupport\n*   [Help Center(opens in a new window)](https://help.openai.com/)\n\nMore\n*   [News](https://openai.com/news/)\n*   [Stories](https://openai.com/stories/)\n*   [Academy](https://openai.com/academy/)\n*   [Livestreams](https://openai.com/live/)\n*   [Podcast](https://openai.com/podcast/)\n*   [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n*   [Terms of Use](https://openai.com/policies/terms-of-use/)\n*   [Privacy Policy](https://openai.com/policies/privacy-policy/)\n*   [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI)[(opens in a new window)](https://www.youtube.com/OpenAI)[(opens in a new window)](https://www.linkedin.com/company/openai)[(opens in a new window)](https://github.com/openai)[(opens in a new window)](https://www.instagram.com/openai/)[(opens in a new window)](https://www.tiktok.com/@openai)[(opens in a new window)](https://discord.gg/openai)\n\nOpenAI © 2015–2026 Your privacy choices\n\nEnglish United States\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "AutoScout24 scales engineering with AI-powered workflows",
+          "url": "https://openai.com/index/autoscout24",
+          "published_at": "2026-05-12T00:00:00.000Z",
+          "description": "Learn how AutoScout24 Group uses Codex and ChatGPT to speed development cycles, improve code quality, and expand AI adoption.",
+          "full_text": "Title: AutoScout24 scales engineering with AI-powered workflows\n\nURL Source: https://openai.com/index/autoscout24\n\nMarkdown Content:\n## Rebuilding engineering for speed, scale, and complexity\n\n[AutoScout24 Group⁠(opens in a new window)](https://www.autoscout24.com/) is the largest pan-European and Canadian online car marketplace, connecting more than 30 million monthly users with over two million vehicle listings. Operating across multiple brands—including AutoScout24 in Europe and AutoTrader.ca in Canada—the company supports a network of 45,000 dealer partners and employs around 2,000 people globally.\n\n![Image 1: AutoScout24 marketplace customer story inline artwork.](https://images.ctfassets.net/kftzwdyauwt9/4S5sO1H1aL2vQzYkENx8pF/5f657499b6545bd8b2e53b5f48d48119/oai_AutoScout24_marketplace_16x9.png?w=3840&q=90&fm=webp)\n\nAs product expectations increased and system complexity grew, AutoScout24 Group faced mounting pressure to deliver faster innovation without compromising reliability. This is closely tied to the company’s goal of continuously improving how buyers search, evaluate, and purchase vehicles, and how dealers successfully market and sell their inventory. With large-scale migrations, legacy systems, and rising engineering demand, incremental improvements were no longer sufficient. The emergence of large language models presented a timely opportunity to fundamentally rethink how software is built, tested, and scaled—making OpenAI a natural partner in driving this transformation.\n\n> “AI is changing how we build, but more importantly, it’s changing what we can deliver to our users and dealer partners. Faster iterations mean better experiences for buyers and more effective ways for dealers to reach and convert customers.”\n\n—Frederik Kraus, Chief Technology Officer, AutoScout24 Group\n\n## Inside the rollout\n\nAutoScout24 Group implemented a dual-layer AI adoption strategy to balance broad enablement with deep technical impact. ChatGPT was rolled out across the organization, giving approximately 2,000 employees access to AI tools and establishing a strong baseline of AI literacy across functions.\n\nIn parallel, the company embedded Codex into its engineering, data, and product workflows, equipping around 1,000 builder employees with a coding agent integrated directly into their daily processes. Codex was selected following a three-month evaluation across teams, where it demonstrated strong performance in usability, workflow compatibility, and measurable improvements in productivity and code quality.\n\n![Image 2: AutoScout24 and OpenAI customer story inline artwork.](https://images.ctfassets.net/kftzwdyauwt9/6yOZTYVMF7K8FoWMjdXktt/438a9b6c3340cf382081da48b61af0cc/oai_AutoScout24_InlineImage_16x9.png?w=3840&q=90&fm=webp)\n\nTo ensure adoption at scale, AutoScout24 Group established a cross-functional AI Champions network. This group created a feedback loop between central leadership and individual teams, helping translate AI capabilities into practical, real-world use cases. The approach encouraged organic adoption and ensured AI was embedded into existing workflows rather than treated as a standalone tool.\n\nCodex quickly proved valuable across several high-impact use cases, including automated pull request reviews, large-scale refactoring, technical documentation, and post-incident analysis. Beyond engineering, AI tools enabled non-technical roles to prototype ideas and validate concepts independently, accelerating innovation across the organization. This ultimately supports faster delivery of improvements across the platform, benefiting both buyers and dealer partners.\n\n> “Codex has emerged as a key enabler in our engineering workflows, delivering measurable impact in productivity, quality, and speed.”\n\n—Frederik Kraus, Chief Technology Officer, AutoScout24 Group\n\n## Results at a glance\n\n*   Reduced development timelines from 2–3 weeks to 2–3 days for select projects\n*   Increased engineering throughput, enabling faster iteration and experimentation\n*   Improved code quality and consistency through automated reviews\n*   Reduced manual workload in pull request reviews and documentation\n*   Expanded innovation capacity by enabling non-engineering roles to prototype ideas\n\n## Leadership lessons\n\n1.   Combine broad AI access with deep workflow integration to maximize impact\n2.   Prioritize real-world use cases over top-down mandates to drive adoption\n3.   Establish cross-functional champions to scale knowledge organically\n4.   Evaluate AI tools rigorously using measurable engineering metrics\n5.   Focus on augmenting—not replacing—existing team capabilities\n\n## What’s next\n\nAutoScout24 Group continues to expand its use of AI across both internal workflows and customer-facing products. Future efforts will focus on deeper integration of AI into core systems, enabling even greater automation and intelligence across the platform.\n\nAs the company scales its AI capabilities, it aims to further enhance user experiences, empower teams across functions, and unlock new efficiencies in how products are built and delivered.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "speaking of things that have gotten over a threshold for me, the combo of the new ChatGPT model, personality, and personalization feels like a new thing",
+          "url": "https://x.com/sama/status/2053971387308745046",
+          "published_at": "2026-05-11T22:51:54.000000Z",
+          "description": "speaking of things that have gotten over a threshold for me, the combo of the new ChatGPT model, personality, and personalization feels like a new thing",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "would you call it\n\na superapp?",
+          "url": "https://x.com/sama/status/2053970698725679437",
+          "published_at": "2026-05-11T22:49:10.000000Z",
+          "description": "would you call it\n\na superapp?",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "fimoculous",
+            "text": "After being a Claude Code devotee for a year, I finally tried Codex on a new project this weekend. Once again, in the matter of a few months, it feels like the world changed. \n\nI can see myself doing *everything* inside of Codex this week.",
+            "url": "https://x.com/fimoculous/status/2053817882631352490"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "OpenAI is launching Daybreak, our effort to accelerate cyber defense and continuously secure software.\n\nAI is already good and about to get super good at cybersecurity; we'd like to start working with",
+          "url": "https://x.com/sama/status/2053951874408276193",
+          "published_at": "2026-05-11T21:34:22.000000Z",
+          "description": "OpenAI is launching Daybreak, our effort to accelerate cyber defense and continuously secure software.\n\nAI is already good and about to get super good at cybersecurity; we'd like to start working with as many companies as possible now to help them continuously secure themselves.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": "thread-sama-20260511-2134",
+          "duplicate_of": null
+        },
+        {
+          "title": "Please get in touch if this sounds interesting!\n\nhttps://t.co/xbJsamECrL",
+          "url": "https://x.com/sama/status/2053951875654054011",
+          "published_at": "2026-05-11T21:34:22.000000Z",
+          "description": "Please get in touch if this sounds interesting!\n\nhttps://t.co/xbJsamECrL",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/xbJsamECrL",
+              "expanded_url": "https://openai.com/daybreak/",
+              "display_url": "openai.com/daybreak/"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "sama",
+            "status_id": "2053951874408276193"
+          },
+          "thread_group_id": "thread-sama-20260511-2134",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 844.5h old, exceeds 720h threshold",
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "I’ve always believed the No.1 application of AI should be to improve human health.\n\nThat work started with AlphaFold, and now at @IsomorphicLabs with the mission to reimagine drug discovery and one da",
+          "url": "https://x.com/demishassabis/status/2054197462101889277",
+          "published_at": "2026-05-12T13:50:14.000000Z",
+          "description": "I’ve always believed the No.1 application of AI should be to improve human health.\n\nThat work started with AlphaFold, and now at @IsomorphicLabs with the mission to reimagine drug discovery and one day solve all disease!\n\nWe are turbocharging that goal with $2.1B in new funding. https://t.co/Hvk20dHgjl",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": "thread-demishassabis-20260512-1350",
+          "duplicate_of": null
+        },
+        {
+          "title": "Really cool work from the team reimagining the mouse pointer to be intelligent! Try the prototype in @GoogleAIStudio it's pretty magical.",
+          "url": "https://x.com/demishassabis/status/2054326444189253655",
+          "published_at": "2026-05-12T22:22:46.000000Z",
+          "description": "Really cool work from the team reimagining the mouse pointer to be intelligent! Try the prototype in @GoogleAIStudio it's pretty magical.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "GoogleDeepMind",
+            "text": "We’re reimagining a 50-year-old interface - the mouse pointer - with AI. 🖱️\n\nThese experimental demos show how people can intuitively direct Gemini on their screens using motion, speech, and natural shorthand to get things done 🧵 https://t.co/p6fhgNcopz",
+            "url": "https://x.com/GoogleDeepMind/status/2054246119635300451"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/GoogleDeepMind/status/2054246119635300451"
+        },
+        {
+          "title": "Read more here: https://t.co/EjevxlPF3x",
+          "url": "https://x.com/demishassabis/status/2054197463855042669",
+          "published_at": "2026-05-12T13:50:15.000000Z",
+          "description": "Read more here: https://t.co/EjevxlPF3x",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/EjevxlPF3x",
+              "expanded_url": "http://bit.ly/4v2OI03",
+              "display_url": "bit.ly/4v2OI03"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "demishassabis",
+            "status_id": "2054197462101889277"
+          },
+          "thread_group_id": "thread-demishassabis-20260512-1350",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Agent view is the best Claude Code native way to manage multiple sessions, kind of like tmux built for CC.\n\nWe spent a lot of time getting the details right, I hope you enjoy it.",
+          "url": "https://x.com/trq212/status/2053979505346425179",
+          "published_at": "2026-05-11T23:24:09.000000Z",
+          "description": "Agent view is the best Claude Code native way to manage multiple sessions, kind of like tmux built for CC.\n\nWe spent a lot of time getting the details right, I hope you enjoy it.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+            "url": "https://x.com/claudeai/status/2053940934736228454"
+          },
+          "reply_to": null,
+          "thread_group_id": "thread-trq212-20260511-2324",
+          "duplicate_of": "https://x.com/claudeai/status/2053940934736228454"
+        },
+        {
+          "title": "Start \"claude agents\" in a high level directory with all your repos in it (for me thats ~/Projects).\n\nIt keeps track of which sessions need your input and makes it really easy to resume and pick up wh",
+          "url": "https://x.com/trq212/status/2053979506827055255",
+          "published_at": "2026-05-11T23:24:10.000000Z",
+          "description": "Start \"claude agents\" in a high level directory with all your repos in it (for me thats ~/Projects).\n\nIt keeps track of which sessions need your input and makes it really easy to resume and pick up where you left off.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2053979505346425179"
+          },
+          "thread_group_id": "thread-trq212-20260511-2324",
+          "duplicate_of": null
+        },
+        {
+          "title": "let me know if you have any feedback! we will read all of it and action",
+          "url": "https://x.com/trq212/status/2053980352641982816",
+          "published_at": "2026-05-11T23:27:31.000000Z",
+          "description": "let me know if you have any feedback! we will read all of it and action",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2053979506827055255"
+          },
+          "thread_group_id": "thread-trq212-20260511-2324",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We gave people tiny computers at Code with Claude. Here are some of the small, delightful things they built: https://t.co/3Av12x4DCb",
+          "url": "https://x.com/claudeai/status/2054257324278132893",
+          "published_at": "2026-05-12T17:48:07.000000Z",
+          "description": "We gave people tiny computers at Code with Claude. Here are some of the small, delightful things they built: https://t.co/3Av12x4DCb",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Oregon Trail: A survival game where your choices shape your fate. https://t.co/fJyloaDPl0",
+          "url": "https://x.com/claudeai/status/2054257335497838795",
+          "published_at": "2026-05-12T17:48:09.000000Z",
+          "description": "Oregon Trail: A survival game where your choices shape your fate. https://t.co/fJyloaDPl0",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2054257333727863156"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260512-1748",
+          "duplicate_of": null
+        },
+        {
+          "title": "What are you building at home?",
+          "url": "https://x.com/claudeai/status/2054257336839995737",
+          "published_at": "2026-05-12T17:48:10.000000Z",
+          "description": "What are you building at home?",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2054257335497838795"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260512-1748",
+          "duplicate_of": null
+        },
+        {
+          "title": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+          "url": "https://x.com/claudeai/status/2053940934736228454",
+          "published_at": "2026-05-11T20:50:53.000000Z",
+          "description": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "See what's running, what's waiting on you, and what's done at a glance. Reply inline to unblock, or jump in and out of any session without losing your place.",
+          "url": "https://x.com/claudeai/status/2053940937554788750",
+          "published_at": "2026-05-11T20:50:54.000000Z",
+          "description": "See what's running, what's waiting on you, and what's done at a glance. Reply inline to unblock, or jump in and out of any session without losing your place.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2053940935906439444"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-2050",
+          "duplicate_of": null
+        },
+        {
+          "title": "Available on all paid plans.\n\nRead more: https://t.co/nOrCwKwTwL",
+          "url": "https://x.com/claudeai/status/2053940938666279028",
+          "published_at": "2026-05-11T20:50:54.000000Z",
+          "description": "Available on all paid plans.\n\nRead more: https://t.co/nOrCwKwTwL",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/nOrCwKwTwL",
+              "expanded_url": "https://claude.com/blog/agent-view-in-claude-code",
+              "display_url": "claude.com/blog/agent-vie…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2053940937554788750"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260511-2050",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 9,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Fast mode for Claude Opus 4.7 is now available in research preview on the API and in Claude Code.",
+          "url": "https://x.com/ClaudeDevs/status/2054266327771275435",
+          "published_at": "2026-05-12T18:23:53.000000Z",
+          "description": "Fast mode for Claude Opus 4.7 is now available in research preview on the API and in Claude Code.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Fast mode for Opus 4.7 is also available in research preview on @cursor_ai, @emergentlabs, @FactoryAI, @v0, @warpdotdev, and @windsurf.",
+          "url": "https://x.com/ClaudeDevs/status/2054299065069003208",
+          "published_at": "2026-05-12T20:33:58.000000Z",
+          "description": "Fast mode for Opus 4.7 is also available in research preview on @cursor_ai, @emergentlabs, @FactoryAI, @v0, @warpdotdev, and @windsurf.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054299058718798198"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+          "duplicate_of": null
+        },
+        {
+          "title": "For API users, if you’re interested in using fast mode on Opus 4.7, please join the waitlist: https://t.co/Ud0B2Or23q",
+          "url": "https://x.com/ClaudeDevs/status/2054299069804433576",
+          "published_at": "2026-05-12T20:33:59.000000Z",
+          "description": "For API users, if you’re interested in using fast mode on Opus 4.7, please join the waitlist: https://t.co/Ud0B2Or23q",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Ud0B2Or23q",
+              "expanded_url": "http://claude.com/fast-mode",
+              "display_url": "claude.com/fast-mode"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054299065069003208"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+          "duplicate_of": null
+        },
+        {
+          "title": "Agent view is built to run more sessions in parallel with less to keep in your head.",
+          "url": "https://x.com/ClaudeDevs/status/2053944194386051128",
+          "published_at": "2026-05-11T21:03:51.000000Z",
+          "description": "Agent view is built to run more sessions in parallel with less to keep in your head.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "New in Claude Code: agent view.\n\nOne list of all your sessions, available today as a research preview. https://t.co/NnbsAQjSPW",
+            "url": "https://x.com/claudeai/status/2053940934736228454"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+          "duplicate_of": null
+        },
+        {
+          "title": "Turn your common workflows into skills and dispatch many at once. Claude pushes ahead until your skill says to stop and ask. Peek and reply for a quick unblock, open the transcript only when you need ",
+          "url": "https://x.com/ClaudeDevs/status/2053944195812143413",
+          "published_at": "2026-05-11T21:03:51.000000Z",
+          "description": "Turn your common workflows into skills and dispatch many at once. Claude pushes ahead until your skill says to stop and ask. Peek and reply for a quick unblock, open the transcript only when you need it.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053944194386051128"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+          "duplicate_of": null
+        },
+        {
+          "title": "Get started by running \"claude agents\" today!",
+          "url": "https://x.com/ClaudeDevs/status/2053944196864897196",
+          "published_at": "2026-05-11T21:03:51.000000Z",
+          "description": "Get started by running \"claude agents\" today!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053944195812143413"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+          "duplicate_of": null
+        },
+        {
+          "title": "We're introducing the Claude Platform on AWS. This gives developers access to the same models and features as our native API, including Claude Managed Agents! Workloads, billing, and IAM stay inside A",
+          "url": "https://x.com/ClaudeDevs/status/2053892878167072914",
+          "published_at": "2026-05-11T17:39:56.000000Z",
+          "description": "We're introducing the Claude Platform on AWS. This gives developers access to the same models and features as our native API, including Claude Managed Agents! Workloads, billing, and IAM stay inside AWS.  \n\nLearn more: https://t.co/JihmaHyOp2 https://t.co/XQKF9o5uiF",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/JihmaHyOp2",
+              "expanded_url": "https://claude.com/blog/claude-platform-on-aws",
+              "display_url": "claude.com/blog/claude-pl…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Build and deploy agents at scale with Claude Managed Agents, or use features like the advisor strategy, code execution, web search, and more.\n\nAnthropic operates the service, and all new features ship the same day they go live on the native Claude API.",
+            "url": "https://x.com/claudeai/status/2053868595394879553"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+          "duplicate_of": null
+        },
+        {
+          "title": "We've had Claude models available through Bedrock since 2023. With Claude Platform on AWS, all of our Platform features - including context management (prompt caching), pre-built tools, and Claude Man",
+          "url": "https://x.com/ClaudeDevs/status/2053892880306229603",
+          "published_at": "2026-05-11T17:39:56.000000Z",
+          "description": "We've had Claude models available through Bedrock since 2023. With Claude Platform on AWS, all of our Platform features - including context management (prompt caching), pre-built tools, and Claude Managed Agents - are now available.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053892878167072914"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+          "duplicate_of": null
+        },
+        {
+          "title": "Auth to access these features flows through AWS-managed API Gateway. Pricing and rate limits are the same as accessing directly through the Claude API.",
+          "url": "https://x.com/ClaudeDevs/status/2053892881396691394",
+          "published_at": "2026-05-11T17:39:57.000000Z",
+          "description": "Auth to access these features flows through AWS-managed API Gateway. Pricing and rate limits are the same as accessing directly through the Claude API.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2053892880306229603"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude's Constitution is now an audiobook, read by two of its authors, Amanda Askell and Joe Carlsmith.\n\nIt includes a Q&amp;A on the writing process, the philosophies that shaped the document, and ho",
+          "url": "https://x.com/AnthropicAI/status/2053881827396653207",
+          "published_at": "2026-05-11T16:56:01.000000Z",
+          "description": "Claude's Constitution is now an audiobook, read by two of its authors, Amanda Askell and Joe Carlsmith.\n\nIt includes a Q&amp;A on the writing process, the philosophies that shaped the document, and how it might change as models become more capable.\n\nListen at https://t.co/dKMfpeOblm https://t.co/792RQ4sAxc",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/dKMfpeOblm",
+              "expanded_url": "http://anthropic.com/constitution",
+              "display_url": "anthropic.com/constitution"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing Daybreak: frontier AI for cyber defenders.\n\nDaybreak brings together the most capable OpenAI models, Codex, and our security partners to accelerate cyber defense and continuously secure so",
+          "url": "https://x.com/OpenAI/status/2053939702110269822",
+          "published_at": "2026-05-11T20:45:59.000000Z",
+          "description": "Introducing Daybreak: frontier AI for cyber defenders.\n\nDaybreak brings together the most capable OpenAI models, Codex, and our security partners to accelerate cyber defense and continuously secure software.\n\nA step toward a future where security teams can move at the speed defense demands.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Automate security detection, validation, and response with Daybreak https://t.co/ULtSrmE5zu",
+          "url": "https://x.com/OpenAI/status/2053939706468139481",
+          "published_at": "2026-05-11T20:46:01.000000Z",
+          "description": "Automate security detection, validation, and response with Daybreak https://t.co/ULtSrmE5zu",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2053939705146945887"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260511-2046",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/EoO5fF9pcT",
+          "url": "https://x.com/OpenAI/status/2053939707818692907",
+          "published_at": "2026-05-11T20:46:01.000000Z",
+          "description": "https://t.co/EoO5fF9pcT",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/EoO5fF9pcT",
+              "expanded_url": "https://openai.com/daybreak/",
+              "display_url": "openai.com/daybreak/"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2053939706468139481"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260511-2046",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Computer use lets Codex work across your apps without taking over your Mac.\n\n@AriX talks with @romainhuet about what changes when agents can click, type, and keep working in the background. https://t.",
+          "url": "https://x.com/OpenAIDevs/status/2054298427245441141",
+          "published_at": "2026-05-12T20:31:26.000000Z",
+          "description": "Computer use lets Codex work across your apps without taking over your Mac.\n\n@AriX talks with @romainhuet about what changes when agents can click, type, and keep working in the background. https://t.co/LdAmwtTXCY",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Symphony: every open task gets a running Codex agent",
+          "url": "https://x.com/OpenAIDevs/status/2054252221941121035",
+          "published_at": "2026-05-12T17:27:50.000000Z",
+          "description": "Symphony: every open task gets a running Codex agent",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "odysseus0z",
+            "text": "https://t.co/88l0mFNMIE",
+            "url": "https://x.com/odysseus0z/status/2031850264240800131"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+          "duplicate_of": null
+        },
+        {
+          "title": "Here’s a refresher about Symphony:",
+          "url": "https://x.com/OpenAIDevs/status/2054252234045845822",
+          "published_at": "2026-05-12T17:27:53.000000Z",
+          "description": "Here’s a refresher about Symphony:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "📣 What if every open issue had a Codex agent?\n\nThat’s the idea behind Symphony, an open-source agent orchestrator for Codex that turns task trackers into always-on systems for agentic work, letting humans focus on review and direction. https://t.co/TxPs0bdtRd",
+            "url": "https://x.com/OpenAIDevs/status/2048825010371039648"
+          },
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2054252221941121035"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+          "duplicate_of": null
+        },
+        {
+          "title": "What if your team gave standup updates, and GPT-Realtime-2 moved the tickets? https://t.co/I0f3JfD42m",
+          "url": "https://x.com/OpenAIDevs/status/2053964133570412826",
+          "published_at": "2026-05-11T22:23:04.000000Z",
+          "description": "What if your team gave standup updates, and GPT-Realtime-2 moved the tickets? https://t.co/I0f3JfD42m",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+          "duplicate_of": null
+        },
+        {
+          "title": "Fork the repo and build your own voice-to-action workflow.\n\nhttps://t.co/G3ag8QeBl8",
+          "url": "https://x.com/OpenAIDevs/status/2053964145155068025",
+          "published_at": "2026-05-11T22:23:07.000000Z",
+          "description": "Fork the repo and build your own voice-to-action workflow.\n\nhttps://t.co/G3ag8QeBl8",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/G3ag8QeBl8",
+              "expanded_url": "https://github.com/openai/openai-realtime-meeting-assistant",
+              "display_url": "github.com/openai/openai-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2053964133570412826"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+          "duplicate_of": null
+        },
+        {
+          "title": "Codex can now help you build AI apps and agents faster with OpenAI APIs using the OpenAI Developers plugin. https://t.co/KxG14rL8lS",
+          "url": "https://x.com/OpenAIDevs/status/2053925962287583379",
+          "published_at": "2026-05-11T19:51:24.000000Z",
+          "description": "Codex can now help you build AI apps and agents faster with OpenAI APIs using the OpenAI Developers plugin. https://t.co/KxG14rL8lS",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 442.7h old, exceeds 168h threshold",
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We’re reimagining a 50-year-old interface - the mouse pointer - with AI. 🖱️\n\nThese experimental demos show how people can intuitively direct Gemini on their screens using motion, speech, and natural ",
+          "url": "https://x.com/GoogleDeepMind/status/2054246119635300451",
+          "published_at": "2026-05-12T17:03:35.000000Z",
+          "description": "We’re reimagining a 50-year-old interface - the mouse pointer - with AI. 🖱️\n\nThese experimental demos show how people can intuitively direct Gemini on their screens using motion, speech, and natural shorthand to get things done 🧵 https://t.co/p6fhgNcopz",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "For decades, your mouse only tracked where you were pointing. AI helps it understand what you're pointing at. 💭\n\nThis means a photo of a scribbled note could turn into an interactive to-do list, or a",
+          "url": "https://x.com/GoogleDeepMind/status/2054246130511225053",
+          "published_at": "2026-05-12T17:03:38.000000Z",
+          "description": "For decades, your mouse only tracked where you were pointing. AI helps it understand what you're pointing at. 💭\n\nThis means a photo of a scribbled note could turn into an interactive to-do list, or a paused video frame can become a restaurant booking link. https://t.co/eCg8zV4SXE",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2054246128221143399"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+          "duplicate_of": null
+        },
+        {
+          "title": "These capabilities are guiding how we think about the next generation of interfaces.\n\nAs we continue exploring what an AI-enabled mouse pointer would unlock, try our experiments in @GoogleAIStudio → h",
+          "url": "https://x.com/GoogleDeepMind/status/2054246132222419226",
+          "published_at": "2026-05-12T17:03:38.000000Z",
+          "description": "These capabilities are guiding how we think about the next generation of interfaces.\n\nAs we continue exploring what an AI-enabled mouse pointer would unlock, try our experiments in @GoogleAIStudio → https://t.co/kebvSQctKw",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/kebvSQctKw",
+              "expanded_url": "https://goo.gle/49HqFeu",
+              "display_url": "goo.gle/49HqFeu"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2054246130511225053"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
