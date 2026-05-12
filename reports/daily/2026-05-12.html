@@ -311,140 +311,198 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>Claude Code 走向并行</strong>：Anthropic 同日发布 Agent View 与 Skills 批量派发，把 Claude Code 从单会话工具升级为可同时调度多任务的轻量 Agent 控制台。</li>
+<li><strong>Claude Platform 登陆 AWS</strong>：在 Bedrock 之外正式 GA，AWS 客户获完整 API 与 Managed Agents、Prompt Caching 等高阶特性，企业部署多一条原生通道。</li>
+<li><strong>OpenAI 把「落地」独立成公司</strong>：DeployCo 以 40 亿美元起步并收购 Tomoro 带 150 名 FDE，显式把模型研究与企业落地拆分加速大客户进度。</li>
+<li><strong>AI 网络安全升级为产品线</strong>：OpenAI 推出 Daybreak 主攻网络防御自动化，Sam Altman 亲自背书，标志安全运营正成为前沿模型的关键应用场景。</li>
+<li><strong>HTML 重回 LLM 输出最佳实践</strong>：Karpathy 与 Thariq 同步推介让 LLM「structure your response as HTML」，提示输出格式工程的新一轮转向。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/claudeai/status/2053940934736228454">Claude Code 推出 Agent View：并行会话统一面板 + Skills 批量派发</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Agent View</code> <code>Skills</code> <code>并行会话</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 正式发布 Claude Code 的 Agent View，把所有正在运行、等待回复、已完成的会话集中到一个仪表面板，支持内联回复解锁阻塞或直接跳入对应会话，研究预览版即日起在全付费方案可用。同步上线的 Skills 能力允许把常用工作流封装为 skill 并一次性派发多个并行执行，Claude 会持续推进直至 skill 自报完成。开发者现在运行 <code>claude agents</code> 即可体验，定位是把 Claude Code 从单线程对话升级为可并行调度的轻量 Agent 控制台。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2053940937554788750">Agent View 详解：内联回复与无缝切换</a> · Claude (Twitter) · 会话面板交互细节</li>
+<li><a href="https://x.com/ClaudeDevs/status/2053944194386051128">Claude Code 推出 Agent View：并行会话统一视图</a> · Claude Devs (Twitter) · Skills 批量派发能力</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>更新 Claude Code 后运行 <code>claude agents</code> 打开 Agent View，把多个长时任务并行委派而不需要切窗口</li>
+<li>把团队常用流程（代码审查、报告生成、回归测试）封装为 skill，配合 Agent View 的 dispatch many 同时跑多份</li>
+<li>利用内联回复机制：会话挂起等待你确认时直接在面板里回一句继续，省去回到原终端的上下文切换</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">宝玉的分享</h2>
+<h3 id="h-4">2. <a href="https://x.com/OpenAI/status/2053939702110269822">OpenAI 推出 Daybreak：前沿 AI 加速网络防御</a></h3>
 <ul>
-<li><a href="https://baoyu.io/blog/2026-05-11/skill-next-codex">Codex 的野心，MCP 和 Skill 的下一步</a></li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Daybreak</code> <code>网络安全</code> <code>OpenAI</code> <code>AI 防御</code> <code>SOC 自动化</code></li>
 </ul>
-<h2 id="h-2">OpenAI Blog</h2>
+<p><strong>摘要</strong>: OpenAI 发布 Daybreak，把最强 OpenAI 模型与全球顶尖安全专家组合起来，专门服务于网络防御者，目标是把检测、验证、响应等安全工作流自动化。Sam Altman 亲自发文强调 AI 会显著加剧网络威胁速度，&quot;Daybreak 是 OpenAI 加速网络防御、持续保障软件安全的努力&quot;，并向潜在合作方公开发出邀约。配套官网与 OpenAI 平台上线，定位是把企业级 SOC 团队的重复劳动交给 AI，让人专注高难度判断。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://openai.com/signals/research/2026q1-update">How ChatGPT adoption broadened in early 2026</a></li>
-<li><a href="https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai">How enterprises are scaling AI</a></li>
-<li><a href="https://openai.com/index/openai-campus-network-student-club-interest-form">OpenAI Campus Network: Student club interest form</a></li>
-<li><a href="https://openai.com/index/openai-launches-the-deployment-company">OpenAI launches DeployCo to help businesses build around intelligence</a></li>
+<li><a href="https://x.com/sama/status/2053951874408276193">OpenAI 推出 Daybreak：用 AI 加速网络防御与持续安全</a> · Sam Altman (Twitter) · Sam Altman 的战略表态</li>
+<li><a href="https://x.com/OpenAI/status/2053939706468139481">Daybreak 自动化能力：安全检测、验证、响应一体化</a> · OpenAI (Twitter) · 自动化能力细节</li>
 </ul>
-<h2 id="h-3">Google AI Blog</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/">The new AI-powered Google Finance is expanding to Europe.</a></li>
+<li>安全团队可以关注 Daybreak 的接入方式，把告警分流、误报过滤、初步取证等重复工作交给 AI 流水线</li>
+<li>评估 Daybreak 与现有 SIEM/SOAR 平台的集成边界，避免双重工具链造成的运维割裂</li>
+<li>如做安全研究，可主动联系 OpenAI 合作通道，争取早期数据与基线测试机会</li>
 </ul>
-<h2 id="h-4">Sam Altman (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/claudeai/status/2053868592286822443">Claude Platform on AWS 正式 GA：超越 Bedrock 的完整 API + AWS 计费</a></h3>
 <ul>
-<li>[OpenAI is launching Daybreak, our effort to accelerate cyber defense and continuously secure software.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Platform</code> <code>AWS</code> <code>Managed Agents</code> <code>Prompt Caching</code> <code>企业部署</code></li>
 </ul>
-<p>AI is already good and about to get super good at cybersecurity; we&#39;d like to start working with](<a href="https://x.com/sama/status/2053951874408276193">https://x.com/sama/status/2053951874408276193</a>)</p>
+<p><strong>摘要</strong>: Anthropic 宣布 Claude Platform 在 AWS 上正式 GA，AWS 客户可直接使用完整的 Claude API 能力——包括 Claude Managed Agents、advisor strategy、code execution、Prompt Caching 等此前只在原生 API 提供的高阶特性，数据全程驻留在 AWS 账户内。鉴权通过 AWS 托管的 API Gateway 完成，价格和速率限制与 Anthropic 原生 API 保持一致；Claude 模型仍然在 Amazon Bedrock 上继续提供。Claude Devs 强调这是 2023 年起 Bedrock 接入后又一次重大扩展，目标是让 AWS 上的开发者享受与原生客户对齐的功能矩阵。 Anthropic 介绍 Claude Managed Agents，可大规模构建和部署智能体，并提供 advisor 策略、代码执行、网页搜索等内置能力。该服务由 Anthropic 自身运营，所有新特性会与原生 Claude API 同日上线，确保托管版始终与最新能力保持同步。 Anthropic 宣布 Claude Platform 在 AWS 上正式上线，数据处理方为 AWS。Claude 同时继续在 Amazon Bedrock 上提供服务，开发者可按需选择接入路径。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Please get in touch if this sounds interesting!</li>
+<li><a href="https://x.com/ClaudeDevs/status/2053892878167072914">Claude Platform on AWS：Managed Agents 等全特性同步登陆</a> · Claude Devs (Twitter) · 开发者侧能力对齐解读</li>
 </ul>
-<p><a href="https://t.co/xbJsamECrL%5D(https://x.com/sama/status/2053951875654054011)">https://t.co/xbJsamECrL](https://x.com/sama/status/2053951875654054011)</a></p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[what if we name the next model &quot;goblin&quot;</li>
+<li>已在 Bedrock 上跑 Claude 的团队可评估迁到 Claude Platform on AWS，以解锁 Managed Agents、Prompt Caching 等额外特性</li>
+<li>把鉴权流量挂到 AWS API Gateway，可复用既有 IAM 与日志审计设施而不必单独管理 Anthropic key</li>
+<li>注意原生 API 价格一致，因此切换决策主要看哪边的合规、网络与计费结算更顺手</li>
 </ul>
-<p>almost worth it to make you all happy...](<a href="https://x.com/sama/status/2053572868936761350">https://x.com/sama/status/2053572868936761350</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/OpenAIDevs/status/2053964133570412826">GPT-Realtime-2 演示：语音 standup 自动移动看板工单</a></h3>
 <ul>
-<li><a href="https://x.com/sama/status/2053566155571560868">interesting</a></li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-Realtime-2</code> <code>语音助手</code> <code>会议助手</code> <code>OpenAI Devs</code> <code>工作流自动化</code></li>
 </ul>
-<h2 id="h-5">Andrej Karpathy (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI Devs 团队演示了用 GPT-Realtime-2 驱动的会议助手：团队成员口述每日 standup，模型实时把工单在项目看板上自动移动。展示语音转动作（voice-to-action）工作流的可行性。 OpenAI Devs 公开 GitHub 仓库 openai/openai-realtime-meeting-assistant，鼓励开发者 fork 后构建自定义的语音转动作工作流。是 GPT-Realtime-2 standup 演示的代码配套。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/karpathy/status/2053872850101285137">This works really well btw, at the end of your query ask your LLM to &quot;structure your response as HTML&quot;, then view the generated file in your browser. I&#39;ve also had some success asking the LLM to prese</a></li>
+<li>克隆 openai/openai-realtime-meeting-assistant 仓库，在内部 standup/复盘场景做语音转动作 PoC</li>
+<li>评估 GPT-Realtime-2 与项目管理 API（Jira/Linear）打通的延迟与可靠性</li>
 </ul>
-<h2 id="h-6">Thariq (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/OpenAIDevs/status/2053925962287583379">Codex 接入 OpenAI Developers 插件：加速 AI 应用与 Agent 构建</a></h3>
 <ul>
-<li>[you can make something good</li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>OpenAI Developers 插件</code> <code>Agent 构建</code> <code>API</code></li>
 </ul>
-<p>ty @aadilpickle @FarzaTV <a href="https://t.co/ivNyvZwhjk%5D(https://x.com/trq212/status/2053869803501404511)">https://t.co/ivNyvZwhjk](https://x.com/trq212/status/2053869803501404511)</a></p>
+<p><strong>摘要</strong>: OpenAI Devs 宣布 Codex 通过新发布的 OpenAI Developers 插件，可以直接调用 OpenAI API 帮助开发者更快构建 AI 应用与 Agent，降低样板代码与文档查阅成本。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[I&#39;ve been using HTML for planning, speccing, exploration, code review, reports and a lot more.</li>
+<li>在 Codex 环境启用 OpenAI Developers 插件，让其自动生成 Responses/Tools API 调用骨架</li>
+<li>对比启用插件前后，从原型到运行 Agent 的耗时差异</li>
 </ul>
-<p><a href="https://t.co/1V3pRFQL5M%5D(https://x.com/trq212/status/2053632475294040084)">https://t.co/1V3pRFQL5M](https://x.com/trq212/status/2053632475294040084)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://openai.com/signals/research/2026q1-update">OpenAI Signals：2026Q1 ChatGPT 使用人群进一步主流化</a></h3>
 <ul>
-<li>[Jarred tried rewriting Bun in Rust and it passes 99.8% of the existing test suite</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>用户增长</code> <code>使用画像</code> <code>OpenAI Signals</code> <code>市场扩张</code></li>
 </ul>
-<p>we&#39;re not being ambitious enough](<a href="https://x.com/trq212/status/2053559397654348159">https://x.com/trq212/status/2053559397654348159</a>)</p>
-<h2 id="h-7">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI Signals 报告显示 2026 年第一季度 ChatGPT 消费版使用增长进一步扩散——35 岁以上用户消息占比上升，女性化姓名用户去年达到平价后继续增长，多米尼加、海地、日本、墨西哥等市场每千人发送量排名上升最快。工作场景中内容创作仍居首但有所下降，健康类文档与信息检索是增长最快的工作任务，整体反映 ChatGPT 正在成为「更主流、更嵌入」的工具。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://openai.com/index/openai-launches-the-deployment-company">OpenAI 成立 DeployCo：40 亿美元起步 + 收购 Tomoro 攻克企业落地</a></h3>
 <ul>
-<li>[New in Claude Code: agent view.</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>DeployCo</code> <code>OpenAI</code> <code>Tomoro 收购</code> <code>企业落地</code> <code>商业化</code></li>
 </ul>
-<p>One list of all your sessions, available today as a research preview. <a href="https://t.co/NnbsAQjSPW%5D(https://x.com/claudeai/status/2053940934736228454)">https://t.co/NnbsAQjSPW](https://x.com/claudeai/status/2053940934736228454)</a></p>
+<p><strong>摘要</strong>: OpenAI 推出 OpenAI Deployment Company (DeployCo)——多数股权由 OpenAI 控股的独立子公司，专门帮助企业基于 OpenAI 模型构建、部署 AI 应用。启动阶段配置 40 亿美元资金，并联合 19 家顶级 PE 与咨询机构作为首批合作伙伴；同日宣布收购英国 AI 部署公司 Tomoro，带 150 名 Forward Deployed Engineers 与 Deployment 团队加入 DeployCo。结构上类似 OpenAI 把&quot;模型研究&quot;与&quot;企业落地&quot;显式拆分，借此加速大客户的端到端落地节奏。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2053940937554788750">See what&#39;s running, what&#39;s waiting on you, and what&#39;s done at a glance. Reply inline to unblock, or jump in and out of any session without losing your place.</a></li>
-<li>[Available on all paid plans.</li>
+<li><a href="https://x.com/OpenAI/status/2053824997777457651">OpenAI 成立 Deployment Company：40 亿美元启动金 + 19 家顶级 PE/咨询</a> · OpenAI (Twitter) · 官方公告与 Tomoro 收购</li>
 </ul>
-<p>Read more: <a href="https://t.co/nOrCwKwTwL%5D(https://x.com/claudeai/status/2053940938666279028)">https://t.co/nOrCwKwTwL](https://x.com/claudeai/status/2053940938666279028)</a></p>
+<hr>
+<h3 id="h-10">8. <a href="https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/">AI 版 Google Finance 登陆欧洲，本地语言全面支持</a></h3>
 <ul>
-<li>[Build and deploy agents at scale with Claude Managed Agents, or use features like the advisor strategy, code execution, web search, and more.</li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google Finance</code> <code>AI 搜索</code> <code>金融工具</code> <code>Deep Search</code> <code>欧洲市场</code></li>
 </ul>
-<p>Anthropic operates the service, and all new features ship](<a href="https://x.com/claudeai/status/2053868595394879553">https://x.com/claudeai/status/2053868595394879553</a>)</p>
+<p><strong>摘要</strong>: Google 将全新 AI 版 Google Finance 推广至欧洲，支持本地语言。新版聚焦四类能力：AI 研究问答与 Deep Search 全球可用、可叠加技术指标与「关键节点」的高级图表、覆盖大宗商品与加密的实时新闻与数据、以及带实时音频、同步转写和 AI 注释亮点的财报电话会议跟踪。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[The Claude Platform on AWS is available today. Claude also remains available on Amazon Bedrock, where AWS is the data processor.</li>
+<li>用 Deep Search 对持仓个股做季报与行业对比研究，把生成结果作为人工分析的起点。</li>
+<li>在财报季用 AI 注释的财报电话会议跟踪关键问答，节省听会时间。</li>
+<li>把「关键节点」叠加到长期 K 线上，复盘价格异动背后的事件驱动因素。</li>
 </ul>
-<p>Read more: <a href="https://t.co/cEFftPcYPL%5D(https://x.com/claudeai/status/2053868596615356577)">https://t.co/cEFftPcYPL](https://x.com/claudeai/status/2053868596615356577)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/trq212/status/2053632475294040084">HTML 正成为 LLM 输出新主载体：Karpathy × Thariq 联手力推</a></h3>
 <ul>
-<li>[The Claude Platform on AWS is now generally available.</li>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>HTML 输出</code> <code>Prompt 工程</code> <code>Karpathy</code> <code>人机交互</code> <code>LLM 实践</code></li>
 </ul>
-<p>AWS customers get the full set of Claude API features, with AWS authentication, billing, and commitment retirement. <a href="https://t.co/9WPrEgCpkg%5D(https://x.com/claudeai/status/2053868592286822443)">https://t.co/9WPrEgCpkg](https://x.com/claudeai/status/2053868592286822443)</a></p>
-<h2 id="h-8">Claude Devs (Twitter)</h2>
+<p><strong>摘要</strong>: Thariq 总结自己已经把 HTML 作为 LLM 输出的主要格式，覆盖规划、规格说明、探索、代码评审、报告等多场景，认为这能让模型的回复带上版面、链接、可视层级，远胜纯 markdown。Andrej Karpathy 紧随其后引用并背书：在 query 末尾追加&quot;structure your response as HTML&quot;，效果&quot;非常好&quot;，再用浏览器即可获得带交互的视觉化界面。两位资深从业者几乎同步推这一技巧，预示 HTML 作为 LLM⇄人交互层正在被重新认知。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2053944194386051128">Agent view is built to run more sessions in parallel with less to keep in your head.</a></li>
-<li><a href="https://x.com/ClaudeDevs/status/2053944195812143413">Turn your common workflows into skills and dispatch many at once. Claude pushes ahead until your skill says to stop and ask. Peek and reply for a quick unblock, open the transcript only when you need </a></li>
-<li><a href="https://x.com/ClaudeDevs/status/2053944196864897196">Get started by running &quot;claude agents&quot; today!</a></li>
-<li><a href="https://x.com/ClaudeDevs/status/2053892878167072914">We&#39;re introducing the Claude Platform on AWS. This gives developers access to the same models and features as our native API, including Claude Managed Agents! Workloads, billing, and IAM stay inside A</a></li>
-<li><a href="https://x.com/ClaudeDevs/status/2053892880306229603">We&#39;ve had Claude models available through Bedrock since 2023. With Claude Platform on AWS, all of our Platform features - including context management (prompt caching), pre-built tools, and Claude Man</a></li>
-<li><a href="https://x.com/ClaudeDevs/status/2053892881396691394">Auth to access these features flows through AWS-managed API Gateway. Pricing and rate limits are the same as accessing directly through the Claude API.</a></li>
+<li><a href="https://x.com/karpathy/status/2053872850101285137">Karpathy：让 LLM 用 HTML 输出，视觉化人机交互</a> · Andrej Karpathy (Twitter) · Karpathy 的实操推荐</li>
 </ul>
-<h2 id="h-9">Anthropic (Twitter)</h2>
+<hr>
+<h3 id="h-12">10. <a href="https://baoyu.io/blog/2026-05-11/skill-next-codex">Codex 的下一步：从右侧工作区走向 Agent 版 App Store</a></h3>
 <ul>
-<li>[Claude&#39;s Constitution is now an audiobook, read by two of its authors, Amanda Askell and Joe Carlsmith.</li>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Agent 应用</code> <code>MCP</code> <code>Skill</code> <code>插件生态</code></li>
 </ul>
-<p>It includes a Q&amp;A on the writing process, the philosophies that shaped the document, and ho](<a href="https://x.com/AnthropicAI/status/2053881827396653207">https://x.com/AnthropicAI/status/2053881827396653207</a>)</p>
-<h2 id="h-10">OpenAI (Twitter)</h2>
+<p><strong>摘要</strong>: 宝玉观察到 Codex、Claude 桌面版、Cursor 3.0、TRAE SOLO 等顶级 Agent 应用几乎同时收敛到「左侧会话/中间对话/右侧工作区」的三栏布局，认为这是 Agent 交互的最优解。文章指出 MCP 解决了「连接」、Skill 解决了「怎么做」，但用户「二次编辑」这一环仍是缺口，Codex 的真正野心是借助插件机制让社区贡献垂直编辑能力，形成 Agent 版 App Store，同时为 Skill 商业化提供路径。作者认为这是留给中小团队冷启动的窗口，时间窗只有几个月。</p>
+<hr>
+<h2 id="h-13">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[Today we’re launching the OpenAI Deployment Company to help businesses build and deploy AI.</li>
+<li><strong>教程与观点</strong> | <code>Anthropic</code> <code>Claude Constitution</code> <code>AI 对齐</code> <code>有声书</code> — Anthropic 将 Claude 宪法制作为有声书，由作者 Amanda Askell 与 Joe Carlsmith 亲自朗读，并附带关于写作过程、文档背后哲学以及随模型能力提升如何演化的 Q&amp;A。听众可在 anthropic.com/constitution 收听。 · <a href="https://x.com/AnthropicAI/status/2053881827396653207">Anthropic (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>企业 AI</code> <code>工作流重设计</code> <code>治理</code> <code>AI 落地</code> <code>OpenAI Guide</code> — OpenAI 与 Philips、BBVA、Mirakl、Scout24、JetBrains、Scania 等欧洲企业高管访谈后总结出 AI 规模化的五大模式：先文化后工具、把治理当作加速器、从消费转向所有权、规模化前先抓质量、保护人类判断工作。报告指出领跑的组织把 AI 视为「运营层」与「领导力学科」，把工作流重设计、可验证质量与早期合规协作作为关键，而非单纯加快推进速度。 · <a href="https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai">OpenAI Blog</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>校园计划</code> <code>学生社群</code> <code>AI 教育</code> <code>开发者关系</code> — OpenAI 推出 Campus Network，面向全球高校学生俱乐部开放报名，承诺提供动手实操的 AI 学习内容、支持学生主导的活动与研究、并分享工具与项目早期访问，同时连接全球学生领袖。计划还配套学生大使项目，旨在打造「AI 原生校园」社区。 · <a href="https://openai.com/index/openai-campus-network-student-club-interest-form">OpenAI Blog</a></li>
 </ul>
-<p>It&#39;s majority-owned and controlled by OpenAI. It brings together 19 leading investment firms, consultancies](<a href="https://x.com/OpenAI/status/2053824997777457651">https://x.com/OpenAI/status/2053824997777457651</a>)</p>
-<ul>
-<li>[Introducing Daybreak: frontier AI for cyber defenders.</li>
-</ul>
-<p>Daybreak brings together the most capable OpenAI models, Codex, and our security partners to accelerate cyber defense and continuously secure so](<a href="https://x.com/OpenAI/status/2053939702110269822">https://x.com/OpenAI/status/2053939702110269822</a>)</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2053939706468139481">Automate security detection, validation, and response with Daybreak https://t.co/ULtSrmE5zu</a></li>
-<li><a href="https://x.com/OpenAI/status/2053939707818692907">https://t.co/EoO5fF9pcT</a></li>
-<li><a href="https://x.com/OpenAI/status/2053824999736410415">We’ve also agreed to acquire Tomoro, which will bring 150 experienced Forward Deployed Engineers and Deployment Specialists to the OpenAI Deployment Company from day one.</a></li>
-</ul>
-<h2 id="h-11">OpenAI Devs (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2053964133570412826">What if your team gave standup updates, and GPT-Realtime-2 moved the tickets? https://t.co/I0f3JfD42m</a></li>
-<li>[Fork the repo and build your own voice-to-action workflow.</li>
-</ul>
-<p><a href="https://t.co/G3ag8QeBl8%5D(https://x.com/OpenAIDevs/status/2053964145155068025)">https://t.co/G3ag8QeBl8](https://x.com/OpenAIDevs/status/2053964145155068025)</a></p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2053925962287583379">Codex can now help you build AI apps and agents faster with OpenAI APIs using the OpenAI Developers plugin. https://t.co/KxG14rL8lS</a></li>
-</ul>
-<h2 id="h-12">Qwen (Twitter)</h2>
-<ul>
-<li>[📣We&#39;re calling for ambassadors!</li>
-</ul>
-<p>Whether you&#39;re a developer with great technical taste or a local community leader who loves bringing people together, we&#39;d love to have you join us.</p>
-<p>Visit the websit](<a href="https://x.com/Alibaba_Qwen/status/2053835267061301316">https://x.com/Alibaba_Qwen/status/2053835267061301316</a>)</p>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">宝玉的分享</a></li>
-      <li class="toc-h2"><a href="#h-2">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-3">Google AI Blog</a></li>
-      <li class="toc-h2"><a href="#h-4">Sam Altman (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Andrej Karpathy (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-9">Anthropic (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-10">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-11">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-12">Qwen (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Code 推出 Agent View：并行会话统一面板 + Skills 批量派发</a></li>
+      <li class="toc-h3"><a href="#h-4">2. OpenAI 推出 Daybreak：前沿 AI 加速网络防御</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude Platform on AWS 正式 GA：超越 Bedrock 的完整 API + AWS 计费</a></li>
+      <li class="toc-h3"><a href="#h-6">4. GPT-Realtime-2 演示：语音 standup 自动移动看板工单</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Codex 接入 OpenAI Developers 插件：加速 AI 应用与 Agent 构建</a></li>
+      <li class="toc-h3"><a href="#h-8">6. OpenAI Signals：2026Q1 ChatGPT 使用人群进一步主流化</a></li>
+      <li class="toc-h3"><a href="#h-9">7. OpenAI 成立 DeployCo：40 亿美元起步 + 收购 Tomoro 攻克企业落地</a></li>
+      <li class="toc-h3"><a href="#h-10">8. AI 版 Google Finance 登陆欧洲，本地语言全面支持</a></li>
+      <li class="toc-h3"><a href="#h-11">9. HTML 正成为 LLM 输出新主载体：Karpathy × Thariq 联手力推</a></li>
+      <li class="toc-h3"><a href="#h-12">10. Codex 的下一步：从右侧工作区走向 Agent 版 App Store</a></li>
+      <li class="toc-h2"><a href="#h-13">速览</a></li>
     </ul>
   </aside>
     </div>
