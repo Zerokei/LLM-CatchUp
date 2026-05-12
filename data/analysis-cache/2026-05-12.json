@@ -1,0 +1,683 @@
+{
+  "analyzed_at": "2026-05-12T14:52:21+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-12.json",
+  "trend_paragraph": "- **Claude Code 走向并行**：Anthropic 同日发布 Agent View 与 Skills 批量派发，把 Claude Code 从单会话工具升级为可同时调度多任务的轻量 Agent 控制台。\n- **Claude Platform 登陆 AWS**：在 Bedrock 之外正式 GA，AWS 客户获完整 API 与 Managed Agents、Prompt Caching 等高阶特性，企业部署多一条原生通道。\n- **OpenAI 把「落地」独立成公司**：DeployCo 以 40 亿美元起步并收购 Tomoro 带 150 名 FDE，显式把模型研究与企业落地拆分加速大客户进度。\n- **AI 网络安全升级为产品线**：OpenAI 推出 Daybreak 主攻网络防御自动化，Sam Altman 亲自背书，标志安全运营正成为前沿模型的关键应用场景。\n- **HTML 重回 LLM 输出最佳实践**：Karpathy 与 Thariq 同步推介让 LLM「structure your response as HTML」，提示输出格式工程的新一轮转向。",
+  "articles": [
+    {
+      "url": "https://baoyu.io/blog/2026-05-11/skill-next-codex",
+      "source": "宝玉的分享",
+      "title": "Codex 的下一步：从右侧工作区走向 Agent 版 App Store",
+      "summary": "宝玉观察到 Codex、Claude 桌面版、Cursor 3.0、TRAE SOLO 等顶级 Agent 应用几乎同时收敛到「左侧会话/中间对话/右侧工作区」的三栏布局，认为这是 Agent 交互的最优解。文章指出 MCP 解决了「连接」、Skill 解决了「怎么做」，但用户「二次编辑」这一环仍是缺口，Codex 的真正野心是借助插件机制让社区贡献垂直编辑能力，形成 Agent 版 App Store，同时为 Skill 商业化提供路径。作者认为这是留给中小团队冷启动的窗口，时间窗只有几个月。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "Agent 应用",
+        "MCP",
+        "Skill",
+        "插件生态"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/signals/research/2026q1-update",
+      "source": "OpenAI Blog",
+      "title": "OpenAI Signals：2026Q1 ChatGPT 使用人群进一步主流化",
+      "summary": "OpenAI Signals 报告显示 2026 年第一季度 ChatGPT 消费版使用增长进一步扩散——35 岁以上用户消息占比上升，女性化姓名用户去年达到平价后继续增长，多米尼加、海地、日本、墨西哥等市场每千人发送量排名上升最快。工作场景中内容创作仍居首但有所下降，健康类文档与信息检索是增长最快的工作任务，整体反映 ChatGPT 正在成为「更主流、更嵌入」的工具。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "ChatGPT",
+        "用户增长",
+        "使用画像",
+        "OpenAI Signals",
+        "市场扩张"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 总结欧洲企业规模化 AI 的五大模式",
+      "summary": "OpenAI 与 Philips、BBVA、Mirakl、Scout24、JetBrains、Scania 等欧洲企业高管访谈后总结出 AI 规模化的五大模式：先文化后工具、把治理当作加速器、从消费转向所有权、规模化前先抓质量、保护人类判断工作。报告指出领跑的组织把 AI 视为「运营层」与「领导力学科」，把工作流重设计、可验证质量与早期合规协作作为关键，而非单纯加快推进速度。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "企业 AI",
+        "工作流重设计",
+        "治理",
+        "AI 落地",
+        "OpenAI Guide"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/openai-campus-network-student-club-interest-form",
+      "source": "OpenAI Blog",
+      "title": "OpenAI Campus Network 启动：面向高校学生俱乐部",
+      "summary": "OpenAI 推出 Campus Network，面向全球高校学生俱乐部开放报名，承诺提供动手实操的 AI 学习内容、支持学生主导的活动与研究、并分享工具与项目早期访问，同时连接全球学生领袖。计划还配套学生大使项目，旨在打造「AI 原生校园」社区。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "校园计划",
+        "学生社群",
+        "AI 教育",
+        "开发者关系"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/openai-launches-the-deployment-company",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 成立 DeployCo：40 亿美元起步 + 收购 Tomoro 攻克企业落地",
+      "summary": "OpenAI 推出 OpenAI Deployment Company (DeployCo)——多数股权由 OpenAI 控股的独立子公司，专门帮助企业基于 OpenAI 模型构建、部署 AI 应用。启动阶段配置 40 亿美元资金，并联合 19 家顶级 PE 与咨询机构作为首批合作伙伴；同日宣布收购英国 AI 部署公司 Tomoro，带 150 名 Forward Deployed Engineers 与 Deployment 团队加入 DeployCo。结构上类似 OpenAI 把\"模型研究\"与\"企业落地\"显式拆分，借此加速大客户的端到端落地节奏。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "DeployCo",
+        "OpenAI",
+        "Tomoro 收购",
+        "企业落地",
+        "商业化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/ai-powered-google-finance-in-europe/",
+      "source": "Google AI Blog",
+      "title": "AI 版 Google Finance 登陆欧洲，本地语言全面支持",
+      "summary": "Google 将全新 AI 版 Google Finance 推广至欧洲，支持本地语言。新版聚焦四类能力：AI 研究问答与 Deep Search 全球可用、可叠加技术指标与「关键节点」的高级图表、覆盖大宗商品与加密的实时新闻与数据、以及带实时音频、同步转写和 AI 注释亮点的财报电话会议跟踪。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google Finance",
+        "AI 搜索",
+        "金融工具",
+        "Deep Search",
+        "欧洲市场"
+      ],
+      "practice_suggestions": [
+        "用 Deep Search 对持仓个股做季报与行业对比研究，把生成结果作为人工分析的起点。",
+        "在财报季用 AI 注释的财报电话会议跟踪关键问答，节省听会时间。",
+        "把「关键节点」叠加到长期 K 线上，复盘价格异动背后的事件驱动因素。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053951874408276193",
+      "source": "Sam Altman (Twitter)",
+      "title": "OpenAI 推出 Daybreak：用 AI 加速网络防御与持续安全",
+      "summary": "Sam Altman 宣布 OpenAI 推出 Daybreak 项目，专注用 AI 加速企业网络防御并持续保障软件安全。他认为 AI 在网络安全方向已经表现良好且即将「超级好」，希望尽早与尽可能多的公司合作，帮助其持续完成自我安全加固。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "网络安全",
+        "AI 防御",
+        "Sam Altman"
+      ],
+      "practice_suggestions": [
+        "关注 Daybreak 后续白皮书或合作公告，评估其与现有 SAST/DAST 工具链的差异化。",
+        "在内部安全团队中盘点适合 AI 持续扫描的代码与配置仓库，准备接入试点。"
+      ],
+      "thread_group_id": "thread-sama-20260511-2134",
+      "duplicate_of": "https://x.com/OpenAI/status/2053939702110269822",
+      "angle": "Sam Altman 的战略表态"
+    },
+    {
+      "url": "https://x.com/sama/status/2053951875654054011",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 邀请有兴趣公司联系 Daybreak 合作",
+      "summary": "Sam Altman 在 Daybreak 公告推文的自回复中附上 openai.com/daybreak 链接，邀请感兴趣的公司主动联系 OpenAI 加入合作。属于 Daybreak 发布的后续招募补充信息。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "合作招募",
+        "网络安全"
+      ],
+      "thread_group_id": "thread-sama-20260511-2134",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053572868936761350",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 调侃下一代模型可能命名为 「goblin」",
+      "summary": "Sam Altman 半开玩笑地表示「要不要把下一个模型命名为 goblin」，称几乎值得这么做来让大家开心。属于轻量级互动型推文，不涉及实际产品发布。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "OpenAI",
+        "模型命名",
+        "玩梗"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053566155571560868",
+      "source": "Sam Altman (Twitter)",
+      "title": "Codex 自主完成开源安全审计赚得 16.88 美元",
+      "summary": "用户让 OpenAI Codex 自主「去赚 5 美元」，Codex 自行寻找开源安全审计赏金路径，花约 22 小时完成多项审计并提交 PR、与维护者沟通、走完 GitHub 验证流程，最终收到首笔 16.88 美元收入。Sam Altman 转发表示「有趣」，被视为 Altman 此前「AI 自主为你赚钱」愿景的早期落地实证。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "自主智能体",
+        "开源赏金",
+        "OpenAI",
+        "实践案例"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/karpathy/status/2053872850101285137",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Karpathy：让 LLM 用 HTML 输出，视觉化人机交互",
+      "summary": "Karpathy 建议在 prompt 末尾追加「structure your response as HTML」并在浏览器中查看生成文件，效果显著优于纯文本或 Markdown。他认为音频是人到 AI 的最佳输入，而视觉（图像/动画/视频）是 AI 到人的最佳输出，未来人机交互将沿「文本 → Markdown → HTML → 交互式神经视频」演进，扩散网络生成的可交互模拟是终极形态。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Karpathy",
+        "HTML 输出",
+        "人机交互",
+        "Prompt 工程",
+        "多模态"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/trq212/status/2053632475294040084",
+      "angle": "Karpathy 的实操推荐"
+    },
+    {
+      "url": "https://x.com/trq212/status/2053869803501404511",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 致谢合作者推介 HTML 输出技巧",
+      "summary": "Thariq 简短转发致谢 @aadilpickle 与 @FarzaTV，呼应「让 LLM 用 HTML 输出」的工作流分享，附带演示链接。属于话题扩散性贴文，本身信息量有限。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "HTML 输出",
+        "Prompt",
+        "社区分享"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2053632475294040084",
+      "source": "Thariq (Twitter)",
+      "title": "HTML 正成为 LLM 输出新主载体：Karpathy × Thariq 联手力推",
+      "summary": "Thariq 总结自己已经把 HTML 作为 LLM 输出的主要格式，覆盖规划、规格说明、探索、代码评审、报告等多场景，认为这能让模型的回复带上版面、链接、可视层级，远胜纯 markdown。Andrej Karpathy 紧随其后引用并背书：在 query 末尾追加\"structure your response as HTML\"，效果\"非常好\"，再用浏览器即可获得带交互的视觉化界面。两位资深从业者几乎同步推这一技巧，预示 HTML 作为 LLM⇄人交互层正在被重新认知。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "HTML 输出",
+        "Prompt 工程",
+        "Karpathy",
+        "人机交互",
+        "LLM 实践"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2053559397654348159",
+      "source": "Thariq (Twitter)",
+      "title": "Claude 改写 Bun 为 Rust：96 万行代码通过 99.8% 测试",
+      "summary": "Bun 作者 Jarred Sumner 使用 Claude 在 6 天内将 96 万行 JavaScript 运行时 Bun 改写为 Rust，新代码可通过现有 99.8% 测试套件，Linux 平台已验证、其他平台跟进中。Jarred 将发博文详述对 Bun 在基准、内存、可维护性方面的意义，以及具体的 AI 辅助改写流程；Thariq 转发感叹「我们还不够有野心」，被视为 AI 辅助大型代码迁移的里程碑。",
+      "category": "教程与观点",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Bun",
+        "Rust",
+        "代码迁移",
+        "AI 辅助开发"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053940934736228454",
+      "source": "Claude (Twitter)",
+      "title": "Claude Code 推出 Agent View：并行会话统一面板 + Skills 批量派发",
+      "summary": "Anthropic 正式发布 Claude Code 的 Agent View，把所有正在运行、等待回复、已完成的会话集中到一个仪表面板，支持内联回复解锁阻塞或直接跳入对应会话，研究预览版即日起在全付费方案可用。同步上线的 Skills 能力允许把常用工作流封装为 skill 并一次性派发多个并行执行，Claude 会持续推进直至 skill 自报完成。开发者现在运行 `claude agents` 即可体验，定位是把 Claude Code 从单线程对话升级为可并行调度的轻量 Agent 控制台。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "Skills",
+        "并行会话",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "更新 Claude Code 后运行 `claude agents` 打开 Agent View，把多个长时任务并行委派而不需要切窗口",
+        "把团队常用流程（代码审查、报告生成、回归测试）封装为 skill，配合 Agent View 的 dispatch many 同时跑多份",
+        "利用内联回复机制：会话挂起等待你确认时直接在面板里回一句继续，省去回到原终端的上下文切换"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053940937554788750",
+      "source": "Claude (Twitter)",
+      "title": "Agent View 详解：内联回复与无缝切换",
+      "summary": "Anthropic 进一步说明 Agent View 的交互细节：开发者可一眼掌握哪些 agent 在运行、哪些在等待输入、哪些已完成；可直接内联回复来解除阻塞，也可在多个会话间随意进出而不丢失进度。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "工作流",
+        "多任务"
+      ],
+      "practice_suggestions": [
+        "用 Agent View 的内联回复机制处理审批/确认类阻塞，避免频繁切换终端",
+        "把待办 agent 任务排队启动，依赖 Agent View 跟踪并回收完成结果"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-2050",
+      "duplicate_of": "https://x.com/claudeai/status/2053940934736228454",
+      "angle": "会话面板交互细节"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053940938666279028",
+      "source": "Claude (Twitter)",
+      "title": "Agent View 全付费方案开放，公告博文上线",
+      "summary": "Anthropic 确认 Claude Code Agent View 已对所有付费方案开放，并发布配套博文「agent-view-in-claude-code」介绍具体使用方式与最佳实践。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "付费方案",
+        "发布"
+      ],
+      "practice_suggestions": [
+        "阅读 claude.com/blog/agent-view-in-claude-code 官方博文，了解 Agent View 的完整能力边界",
+        "评估团队的 Claude Code 付费方案，确认能否启用新功能"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-2050",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053868595394879553",
+      "source": "Claude (Twitter)",
+      "title": "Claude Managed Agents：Anthropic 托管的智能体构建服务",
+      "summary": "Anthropic 介绍 Claude Managed Agents，可大规模构建和部署智能体，并提供 advisor 策略、代码执行、网页搜索等内置能力。该服务由 Anthropic 自身运营，所有新特性会与原生 Claude API 同日上线，确保托管版始终与最新能力保持同步。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Managed Agents",
+        "智能体",
+        "Anthropic",
+        "代码执行",
+        "advisor"
+      ],
+      "practice_suggestions": [
+        "评估将自建 agent 编排迁移至 Claude Managed Agents 的成本/收益，重点关注托管运维与新特性同步优势",
+        "试用 advisor 策略 + 代码执行 + 网页搜索组合，构建端到端的研究型 agent"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-1603",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053868596615356577",
+      "source": "Claude (Twitter)",
+      "title": "Claude Platform 登陆 AWS：数据由 AWS 托管",
+      "summary": "Anthropic 宣布 Claude Platform 在 AWS 上正式上线，数据处理方为 AWS。Claude 同时继续在 Amazon Bedrock 上提供服务，开发者可按需选择接入路径。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Platform",
+        "AWS",
+        "云服务",
+        "企业部署"
+      ],
+      "practice_suggestions": [
+        "评估将现有 Claude 工作负载从原生 API 迁移到 AWS 上的 Claude Platform，以复用 AWS IAM 与计费体系",
+        "对比 Bedrock 与 Claude Platform on AWS 的功能差异，选择更贴合团队架构的接入方式"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-1603",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053868592286822443",
+      "source": "Claude (Twitter)",
+      "title": "Claude Platform on AWS 正式 GA：超越 Bedrock 的完整 API + AWS 计费",
+      "summary": "Anthropic 宣布 Claude Platform 在 AWS 上正式 GA，AWS 客户可直接使用完整的 Claude API 能力——包括 Claude Managed Agents、advisor strategy、code execution、Prompt Caching 等此前只在原生 API 提供的高阶特性，数据全程驻留在 AWS 账户内。鉴权通过 AWS 托管的 API Gateway 完成，价格和速率限制与 Anthropic 原生 API 保持一致；Claude 模型仍然在 Amazon Bedrock 上继续提供。Claude Devs 强调这是 2023 年起 Bedrock 接入后又一次重大扩展，目标是让 AWS 上的开发者享受与原生客户对齐的功能矩阵。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "AWS",
+        "Managed Agents",
+        "Prompt Caching",
+        "企业部署"
+      ],
+      "practice_suggestions": [
+        "已在 Bedrock 上跑 Claude 的团队可评估迁到 Claude Platform on AWS，以解锁 Managed Agents、Prompt Caching 等额外特性",
+        "把鉴权流量挂到 AWS API Gateway，可复用既有 IAM 与日志审计设施而不必单独管理 Anthropic key",
+        "注意原生 API 价格一致，因此切换决策主要看哪边的合规、网络与计费结算更顺手"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-1603",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053944194386051128",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 推出 Agent View：并行会话统一视图",
+      "summary": "Claude Code 新增 Agent View 功能，将所有会话集中为一个列表，方便同时并行运行多个会话而不必在多个窗口间切换。当前以研究预览形式上线。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "并行会话",
+        "开发工具"
+      ],
+      "practice_suggestions": [
+        "运行 `claude agents` 试用 Agent View，将多任务开发流（如重构、写测试、查 bug）拆为并行会话",
+        "把高频流程封装成 Skill，让多个 agent 会话各自推进直至需要人工确认"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+      "duplicate_of": "https://x.com/claudeai/status/2053940934736228454",
+      "angle": "Skills 批量派发能力"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053944195812143413",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Skills 支持批量派发与按需打断",
+      "summary": "Claude Code 允许把常用工作流封装为 Skill 并一次性派发多个。Claude 会持续推进直到 Skill 明确要求停下来询问；用户可用 Peek and reply 快速解阻，仅在需要时再打开完整 transcript。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Skills",
+        "Agent 工作流",
+        "并行执行"
+      ],
+      "practice_suggestions": [
+        "把重复性研发流程（构建、测试、PR 审查）写成 Skill，让 agent 自主推进减少人工切换成本",
+        "在 Skill 中显式声明何时需要打断询问，避免 agent 在关键决策点上自作主张"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053944196864897196",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Agent View 即刻可用：运行 claude agents 体验",
+      "summary": "用户现在即可通过运行 `claude agents` 命令体验 Agent View 功能，开始管理并行会话。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "CLI",
+        "上手指引"
+      ],
+      "practice_suggestions": [
+        "在终端运行 `claude agents` 立即进入新的会话管理界面，验证并行工作流的实用性"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053892878167072914",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Platform on AWS：Managed Agents 等全特性同步登陆",
+      "summary": "Anthropic 推出 Claude Platform on AWS，开发者可获得与原生 API 同等的全部模型与特性，包括 Claude Managed Agents、advisor 策略、代码执行、网页搜索等。服务由 Anthropic 运营，新特性与原生 API 同日上线，工作负载、计费与 IAM 全部留在 AWS 内。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "AWS",
+        "Managed Agents",
+        "企业部署"
+      ],
+      "practice_suggestions": [
+        "在 AWS 环境内直接调用 Claude Managed Agents 构建生产级 agent，避免自建编排基础设施",
+        "利用 advisor 策略、code execution、web search 等内置工具，减少自行集成第三方组件的工作量"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+      "duplicate_of": "https://x.com/claudeai/status/2053868592286822443",
+      "angle": "开发者侧能力对齐解读"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053892880306229603",
+      "source": "Claude Devs (Twitter)",
+      "title": "Bedrock 之外：Claude Platform 在 AWS 补齐 Prompt Caching 等高阶特性",
+      "summary": "Claude 自 2023 年起即通过 Bedrock 在 AWS 可用，此次 Claude Platform on AWS 进一步补齐所有 Platform 级特性，包括上下文管理（prompt caching）、预置工具集和 Claude Managed Agents。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "AWS",
+        "Prompt Caching",
+        "Managed Agents"
+      ],
+      "practice_suggestions": [
+        "对长上下文重复调用场景启用 prompt caching，显著降低 token 成本",
+        "若此前因功能缺失停留在 Bedrock，可重新评估迁移到 Claude Platform on AWS 以使用最新工具集"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053892881396691394",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Platform on AWS：经 AWS API Gateway 鉴权，价格与原生 API 一致",
+      "summary": "Claude Platform on AWS 的鉴权通过 AWS 托管的 API Gateway 流转，定价与速率限制与直接通过 Claude API 访问完全相同，开发者无需为接入方式额外付费。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Platform",
+        "AWS API Gateway",
+        "鉴权",
+        "定价"
+      ],
+      "practice_suggestions": [
+        "通过 AWS IAM 与 API Gateway 策略集中管控 Claude 调用权限，统一审计日志",
+        "由于价格无差，按团队现有 AWS 治理与采购流程决定是否切换到 Claude Platform on AWS"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2053881827396653207",
+      "source": "Anthropic (Twitter)",
+      "title": "Claude 宪法（Constitution）推出有声书版本",
+      "summary": "Anthropic 将 Claude 宪法制作为有声书，由作者 Amanda Askell 与 Joe Carlsmith 亲自朗读，并附带关于写作过程、文档背后哲学以及随模型能力提升如何演化的 Q&A。听众可在 anthropic.com/constitution 收听。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "Claude Constitution",
+        "AI 对齐",
+        "有声书"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053824997777457651",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 成立 Deployment Company：40 亿美元启动金 + 19 家顶级 PE/咨询",
+      "summary": "OpenAI 推出由其控股的「OpenAI Deployment Company」(DeployCo)，专门帮助企业把前沿 AI 落地到关键工作流。该公司由 TPG 领投，Advent、Bain Capital、Brookfield 联合发起，麦肯锡、Bain、Capgemini 等顾问机构和高盛、软银等 19 家伙伴参与，初始投资逾 40 亿美元，主要通过 Forward Deployed Engineer 模式驻场服务。同期宣布收购英国应用 AI 咨询公司 Tomoro，预计 150 名 FDE 加入团队。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "DeployCo",
+        "企业 AI",
+        "Forward Deployed Engineer",
+        "Tomoro 收购"
+      ],
+      "thread_group_id": "thread-OpenAI-20260511-1310",
+      "duplicate_of": "https://openai.com/index/openai-launches-the-deployment-company",
+      "angle": "官方公告与 Tomoro 收购"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053939702110269822",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 推出 Daybreak：前沿 AI 加速网络防御",
+      "summary": "OpenAI 发布 Daybreak，把最强 OpenAI 模型与全球顶尖安全专家组合起来，专门服务于网络防御者，目标是把检测、验证、响应等安全工作流自动化。Sam Altman 亲自发文强调 AI 会显著加剧网络威胁速度，\"Daybreak 是 OpenAI 加速网络防御、持续保障软件安全的努力\"，并向潜在合作方公开发出邀约。配套官网与 OpenAI 平台上线，定位是把企业级 SOC 团队的重复劳动交给 AI，让人专注高难度判断。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Daybreak",
+        "网络安全",
+        "OpenAI",
+        "AI 防御",
+        "SOC 自动化"
+      ],
+      "practice_suggestions": [
+        "安全团队可以关注 Daybreak 的接入方式，把告警分流、误报过滤、初步取证等重复工作交给 AI 流水线",
+        "评估 Daybreak 与现有 SIEM/SOAR 平台的集成边界，避免双重工具链造成的运维割裂",
+        "如做安全研究，可主动联系 OpenAI 合作通道，争取早期数据与基线测试机会"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053939706468139481",
+      "source": "OpenAI (Twitter)",
+      "title": "Daybreak 自动化能力：安全检测、验证、响应一体化",
+      "summary": "OpenAI 在 Daybreak 发布线程中补充说明：该平台可自动完成安全告警的检测、验证与响应闭环，减少安全运营人员的重复劳动。属于 Daybreak 主线程的追加细节贴。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Daybreak",
+        "SOC 自动化",
+        "安全响应",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "在 SOC 流程中识别哪些告警分类与响应步骤可交给 Daybreak 类工具自动处理"
+      ],
+      "thread_group_id": "thread-OpenAI-20260511-2046",
+      "duplicate_of": "https://x.com/OpenAI/status/2053939702110269822",
+      "angle": "自动化能力细节"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053939707818692907",
+      "source": "OpenAI (Twitter)",
+      "title": "Daybreak 产品页链接（openai.com/daybreak）",
+      "summary": "Daybreak 发布线程的第三条，仅含产品落地页链接 openai.com/daybreak，未提供额外内容。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Daybreak",
+        "OpenAI",
+        "产品链接"
+      ],
+      "thread_group_id": "thread-OpenAI-20260511-2046",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053824999736410415",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 收购 Tomoro：150 名 FDE 加入 DeployCo",
+      "summary": "OpenAI 同时宣布收购应用 AI 咨询公司 Tomoro，约 150 名 Forward Deployed Engineer 和部署专家将于交割日起并入新成立的 OpenAI Deployment Company。Tomoro 曾为 Tesco、Virgin Atlantic、Supercell 等企业部署实时 AI 系统。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Tomoro",
+        "收购",
+        "DeployCo",
+        "FDE"
+      ],
+      "thread_group_id": "thread-OpenAI-20260511-1310",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2053964133570412826",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Realtime-2 演示：语音 standup 自动移动看板工单",
+      "summary": "OpenAI Devs 团队演示了用 GPT-Realtime-2 驱动的会议助手：团队成员口述每日 standup，模型实时把工单在项目看板上自动移动。展示语音转动作（voice-to-action）工作流的可行性。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "GPT-Realtime-2",
+        "语音助手",
+        "会议助手",
+        "OpenAI Devs",
+        "工作流自动化"
+      ],
+      "practice_suggestions": [
+        "克隆 openai/openai-realtime-meeting-assistant 仓库，在内部 standup/复盘场景做语音转动作 PoC",
+        "评估 GPT-Realtime-2 与项目管理 API（Jira/Linear）打通的延迟与可靠性"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2053964145155068025",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "openai-realtime-meeting-assistant 仓库开源可 Fork 自建",
+      "summary": "OpenAI Devs 公开 GitHub 仓库 openai/openai-realtime-meeting-assistant，鼓励开发者 fork 后构建自定义的语音转动作工作流。是 GPT-Realtime-2 standup 演示的代码配套。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "GPT-Realtime-2",
+        "开源仓库",
+        "语音工作流",
+        "GitHub"
+      ],
+      "practice_suggestions": [
+        "Fork 仓库后改造为面向本团队工具栈（Slack/Notion 等）的语音助手"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2053925962287583379",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 接入 OpenAI Developers 插件：加速 AI 应用与 Agent 构建",
+      "summary": "OpenAI Devs 宣布 Codex 通过新发布的 OpenAI Developers 插件，可以直接调用 OpenAI API 帮助开发者更快构建 AI 应用与 Agent，降低样板代码与文档查阅成本。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI Developers 插件",
+        "Agent 构建",
+        "API"
+      ],
+      "practice_suggestions": [
+        "在 Codex 环境启用 OpenAI Developers 插件，让其自动生成 Responses/Tools API 调用骨架",
+        "对比启用插件前后，从原型到运行 Agent 的耗时差异"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2053835267061301316",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 招募 Ambassador：开发者与社区领袖可获模型早期访问",
+      "summary": "阿里 Qwen 团队启动 Ambassador 计划，面向有技术品味的开发者以及社区组织者招募。入选者将获得 Qwen 模型早期访问权限、API credits、年度周边等回馈，意在扩大全球开源社区生态。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Qwen",
+        "Ambassador",
+        "开发者社区",
+        "阿里巴巴"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
