@@ -1,0 +1,831 @@
+{
+  "analyzed_at": "2026-05-13T10:48:00+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-13.json",
+  "trend_paragraph": "- **Claude Code 平台拼图加速集齐**：同日推出 Agent View、Skills 并发分派、`claude agents` 命令、Opus 4.7 Fast Mode 与 Claude Platform on AWS，覆盖会话管理到云端部署。\n- **OpenAI Codex 走向「常驻执行体」**：NVIDIA 把 Codex 设为复杂工程默认工具，AutoScout24 万人全员化，Symphony 让每个 open issue 都配一个 Agent。\n- **AI 走进网络防御**：OpenAI 发布 Daybreak，把最强模型、Codex 与安全伙伴整合为检测·验证·响应一体化平台。\n- **Agent 接管 UI 元素的早期试验**：Google DeepMind 用 Gemini 重构 50 年历史的鼠标指针，让光标理解屏幕内容并直接执行任务。\n- **AI 制药融资潮持续**：Demis Hassabis 旗下 Isomorphic Labs 完成 21 亿美元新融资，重申「攻克所有疾病」目标。",
+  "articles": [
+    {
+      "url": "https://x.com/claudeai/status/2053940937554788750",
+      "source": "Claude (Twitter)",
+      "title": "Claude Code Agent View：会话总览面板可内联回复并随时切换",
+      "summary": "Claude 详细介绍 Agent View 的交互细节：一眼看清正在跑、等待用户、已完成的所有 session；可直接内联回复来解锁阻塞，也可以随时跳入跳出任意会话而不丢失上下文。该面板面向并行使用多个 agent 的开发者。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "多会话管理",
+        "开发者体验"
+      ],
+      "practice_suggestions": [
+        "用 Agent View 跟踪多个并行 agent 的状态，集中处理「waiting on you」的会话以减少切换成本",
+        "通过内联回复机制为长跑 agent 设置中间检查点，而不是中断整个 session"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-2050",
+      "duplicate_of": "https://x.com/claudeai/status/2053940934736228454",
+      "angle": "Agent View 交互细节深入"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053940938666279028",
+      "source": "Claude (Twitter)",
+      "title": "Agent View 面向所有 Claude 付费计划开放",
+      "summary": "Claude 宣布 Agent View 在所有付费计划中均可使用，并附上官方博客 claude.com/blog/agent-view-in-claude-code 的详细介绍链接。该功能与同一线程中的 research preview 公告一起发布。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "付费计划",
+        "research preview"
+      ],
+      "practice_suggestions": [
+        "升级到任意 Claude 付费计划即可在 Claude Code 中体验 Agent View",
+        "查阅官方博客了解 Agent View 与现有 session 管理工具的差异点"
+      ],
+      "thread_group_id": "thread-claudeai-20260511-2050",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2053940934736228454",
+      "source": "Claude (Twitter)",
+      "title": "Claude Code 一日多更：Agent View 上线 + Skills 并发 + agents 命令",
+      "summary": "Anthropic 在同一天密集发布 Claude Code 多项核心功能。Agent View 以 research preview 形式上线，将所有正在运行、等待用户与已完成的 session 汇总到单一列表，可内联回复解锁阻塞，也可随时跳入跳出任意会话不丢上下文，并面向所有付费计划开放。Skills 支持批量并发分派，开发者可一次启动多个 skill，Claude 自动推进并在需要询问时停下。在终端运行 「claude agents」 即可启用整套并行能力，Anthropic 工程师 Thariq 建议在仓库根目录启动以跨项目跟踪会话。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "Skills",
+        "并发会话",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "在 ~/Projects 等仓库根目录运行 「claude agents」 体验跨项目会话管理",
+        "把常用工作流封装为 skill 并使用批量并发分派加速重复任务",
+        "通过 peek-and-reply 内联回复解锁等待用户的 session，无需打开完整 transcript"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054299069804433576",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Opus 4.7 Fast Mode 面向 API 用户开放候补名单",
+      "summary": "Anthropic 宣布 API 用户可通过 claude.com/fast-mode 加入 Opus 4.7「快速模式」的候补名单。该模式此前已在 Claude Code 内 research preview 上线，本次扩展到外部 API 调用。Fast mode 旨在以更低延迟提供 Opus 4.7 的旗舰能力。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Opus 4.7",
+        "Fast Mode",
+        "API",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "在 claude.com/fast-mode 加入候补名单，争取尽早获得 API 访问权限",
+        "评估 Fast Mode 在低延迟交互（如代码补全、对话）场景下相对于标准 Opus 4.7 的延迟/质量权衡"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054299065069003208",
+      "source": "Claude Devs (Twitter)",
+      "title": "Opus 4.7 Fast Mode 同步登陆 Cursor、Windsurf 等六家合作平台",
+      "summary": "Anthropic 宣布 Claude Opus 4.7 Fast Mode 已在 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 六家合作伙伴的 IDE/Agent 平台上以 research preview 形式上线。这表明 Fast Mode 首发即获得主流 AI 编码工具链的全面对接。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Opus 4.7",
+        "Fast Mode",
+        "Cursor",
+        "Windsurf",
+        "AI 编码"
+      ],
+      "practice_suggestions": [
+        "在 Cursor、Windsurf、Warp 等已支持的工具中切换到 Opus 4.7 Fast Mode 实测代码任务延迟",
+        "对比 Fast Mode 与默认 Opus 4.7 在同一编码任务上的吞吐与正确率"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2054266327771275435",
+      "angle": "六家 IDE/Agent 合作平台同步上线 + API 候补入口"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054266327771275435",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Opus 4.7 Fast Mode 全面登陆 API、Claude Code 及 6 家合作 IDE",
+      "summary": "Anthropic 正式将 Claude Opus 4.7 Fast Mode 以 research preview 形式同时推向 API、Claude Code 及主要第三方 AI 编码工具。Fast Mode 是 Opus 4.7 的低延迟变体，目标是在保留旗舰能力的同时缩短大模型推理对开发循环的阻塞。首批合作伙伴包括 Cursor、Emergent Labs、Factory AI、v0、Warp 与 Windsurf；API 用户可通过 claude.com/fast-mode 加入候补名单。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Opus 4.7",
+        "Fast Mode",
+        "Anthropic",
+        "AI 编码",
+        "research preview"
+      ],
+      "practice_suggestions": [
+        "在 Cursor / Windsurf 等已接入的 IDE 直接切换到 Fast Mode 体验更低延迟",
+        "通过 claude.com/fast-mode 申请 API Fast Mode 候补名单",
+        "在交互密集的 Claude Code 场景中默认启用 Fast Mode"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053944194386051128",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Agent View：降低并行会话心智负担",
+      "summary": "Claude Devs 官方账号补充说明 Agent View 的设计目标：以更少的心智负担并行运行更多会话。引用 「@claudeai」 的研究预览公告，强调统一会话列表带来的多任务管理收益。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "多会话",
+        "并行",
+        "研究预览"
+      ],
+      "practice_suggestions": [
+        "在日常多项目开发中启用 Agent View，把不同仓库的 Claude Code 会话统一在一个面板里跟踪",
+        "结合「需要输入」状态过滤，让长时间运行的 agent 任务在后台跑，仅在需要决策时切回"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+      "duplicate_of": "https://x.com/claudeai/status/2053940934736228454",
+      "angle": "Claude Devs 同帖：Skills 并发分派 + agents 命令上线"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053944195812143413",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Skills 支持批量分派：常用流程一键并发执行",
+      "summary": "Claude Devs 介绍 Skills 的并发分派能力：可将常用工作流封装成 skill 并一次派发多个，Claude 会自动推进直到 skill 指示需要停下询问。开发者可在主界面通过「peek and reply」进行快速解锁，只在需要时才打开完整 transcript。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Skills",
+        "并发分派",
+        "工作流自动化"
+      ],
+      "practice_suggestions": [
+        "把重复出现的开发流程（如 PR 审查、依赖升级、日报生成）打包成 skill，再用并发分派一次跑多份",
+        "在 skill 内部明确写出「需要人工确认时停下」的触发条件，避免 Claude 长时间无人监督地推进"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053944196864897196",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Agents 上线：运行 `claude agents` 即可启用",
+      "summary": "Claude Devs 提示开发者今日即可通过运行命令 `claude agents` 启用 agents 功能，这是同一线程中前条 Skills 并发分派公告的入口指引。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agents",
+        "CLI",
+        "上手指引"
+      ],
+      "practice_suggestions": [
+        "在最新版 Claude Code 终端中运行 `claude agents` 体验新的 agent 视图与并发分派",
+        "结合自定义 skills 验证多 agent 并行执行时的资源占用与 token 成本"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-2103",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053892878167072914",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic 推出 Claude Platform on AWS：原生 API 全功能进驻 AWS",
+      "summary": "Anthropic 发布「Claude Platform on AWS」，让开发者在 AWS 内即可使用与原生 Claude API 完全一致的模型与功能，包括 Claude Managed Agents、advisor 策略、代码执行、网页搜索等。工作负载、计费与 IAM 全部留在 AWS 账户内，由 Anthropic 运维服务，新功能与原生 API 同日发布。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "AWS",
+        "Managed Agents",
+        "企业部署",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "已在 AWS 上跑 Bedrock-Claude 的团队可评估迁移到 Claude Platform，以同日获得 prompt caching、内置工具等原生 API 能力。",
+        "构建多步骤 Agent 工作流的团队可试用 Claude Managed Agents，把编排与执行交由 Anthropic 托管，减少自建 agent runtime 成本。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053939702110269822",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 推出 Daybreak：面向网络防御者的 AI 安全平台",
+      "summary": "OpenAI 正式发布 Daybreak，把旗下最强模型、Codex 与安全合作伙伴整合到统一平台，自动化检测、验证与响应安全事件。CEO Sam Altman 强调 AI 在网络安全领域即将「超级好」，希望尽早与尽可能多企业部署持续防护。产品定位是「让安全团队以防御所需的速度行动」，官方主页位于 openai.com/daybreak，企业可通过该入口申请合作。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "AI 安全",
+        "网络防御",
+        "Codex"
+      ],
+      "practice_suggestions": [
+        "访问 openai.com/daybreak 评估其在自家安全运营中的接入价值",
+        "梳理检测·验证·响应三环节，识别可被 AI 自动化替代的人工步骤"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/nvidia",
+      "source": "OpenAI Blog",
+      "title": "NVIDIA 把 Codex + GPT-5.5 设为复杂工程默认工具",
+      "summary": "NVIDIA 工程师将基于 GPT-5.5 的 Codex 设为复杂工程任务的默认工具，并在 GB200/GB300 基础设施上运行端到端机器学习实验。工程师 Dennis Hannusch 称 Codex 「更自主、需要的手把手指导更少」，已将一个内部 MVP 平台演进为生产系统，并用桌面应用自动测试音视频功能。研究员 Shaunak Joshi 表示 Codex 在实验环节带来 10 倍提速，能从论文语料构建知识图谱、远程 SSH 跑大型训练任务。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "GPT-5.5",
+        "NVIDIA",
+        "编码 Agent"
+      ],
+      "practice_suggestions": [
+        "在 GPT-5.5 上评估 Codex 处理超长自主会话（多次 compaction）下的上下文保持能力",
+        "尝试用 Codex 桌面版结合 computer use 自动验证带 UI 的功能（如音视频录制）",
+        "把 Codex 作为研究 Agent，让其在大规模论文语料上识别关键证据并生成可视化知识图谱"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054298427245441141",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Codex Computer Use：Agent 跨应用操作 Mac 而不接管屏幕",
+      "summary": "OpenAI Devs 发布 AriX 与 Romain Huet 的对谈视频，展示 Codex 的 Computer Use 能力——Agent 可以在用户的 Mac 上跨应用点击、输入和后台持续工作，但不会「接管」用户当前的屏幕焦点。这区别于此前需要独占控制权的 Computer Use 实现。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "Computer Use",
+        "Agent",
+        "Mac"
+      ],
+      "practice_suggestions": [
+        "在自动化工作流（邮件、表格、研究汇总）中试用 Codex Computer Use 的后台模式",
+        "评估非接管式 Computer Use 与 Anthropic Claude Computer Use 在多任务并发上的差异"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2053979505346425179",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code Agent View：原生多会话管理工具",
+      "summary": "Thariq 引用 「@claudeai」 官方公告，介绍 Agent View 是 Claude Code 原生管理多会话的最佳方式，类似为 CC 打造的 tmux。团队投入大量精力打磨细节，今日以研究预览形式上线。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "多会话",
+        "研究预览"
+      ],
+      "practice_suggestions": [
+        "升级到最新 Claude Code 客户端，体验 Agent View 多会话管理",
+        "在包含所有项目仓库的根目录下启动 「claude agents」 命令，集中查看哪些会话待响应"
+      ],
+      "thread_group_id": "thread-trq212-20260511-2324",
+      "duplicate_of": "https://x.com/claudeai/status/2053940934736228454",
+      "angle": "工程师 Thariq 解读 + 仓库根目录启动技巧"
+    },
+    {
+      "url": "https://baoyu.io/blog/2026-05-12/running-an-ai-native-engineering-org",
+      "source": "宝玉的分享",
+      "title": "Fiona Fung：AI 时代工程团队管理的瓶颈与重构",
+      "summary": "Anthropic Claude Code 与 Cowork 产品负责人 Fiona Fung 在 Code with Claude 2026 演讲中指出，软件工程的瓶颈已从「写代码慢」转向验证、评审、跨职能协作和安全性，旧流程必须被允许砍掉。她强调代码而非设计文档才是唯一事实来源，并建议关注新人上手时间、PR 生命周期、Claude 辅助提交比例三项指标，警告不要把「AI 代码占比」当作虚荣指标。她还坚持经理必须从一线 IC 做起，并推动扁平化、共享 mission 的组织结构。",
+      "category": "教程与观点",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "Claude Code",
+        "工程管理",
+        "AI 原生组织",
+        "Fiona Fung"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053892881396691394",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 新功能经 AWS API Gateway 鉴权：价格与限速对齐直连 API",
+      "summary": "Claude Devs 说明新发布功能的访问鉴权通过 AWS 托管的 API Gateway 进行，定价与速率限制与直接走 Claude API 完全一致。该公告解决了开发者对额外计费与配额隔离的疑问。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude API",
+        "AWS API Gateway",
+        "鉴权",
+        "定价"
+      ],
+      "practice_suggestions": [
+        "使用 AWS 通道接入 Claude 新功能时沿用现有 API key 的额度规划，无需重新核算成本",
+        "在 IAM 与 API Gateway 层补齐审计与限流配置，避免账号粒度的额度被单一应用耗尽"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2053892880306229603",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Platform on AWS 覆盖 Bedrock 缺失的平台特性",
+      "summary": "作为 Claude Platform on AWS 发布串的补充说明，Anthropic 指出自 2023 年起 Claude 模型已通过 Bedrock 上架，但此前 Bedrock 缺少原生 API 的平台能力。新平台补齐了上下文管理（prompt caching）、预置工具集以及 Claude Managed Agents，使 AWS 用户首次能在云内获得完整的 Claude 平台体验。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Platform",
+        "AWS Bedrock",
+        "prompt caching",
+        "工具调用"
+      ],
+      "practice_suggestions": [
+        "长 prompt、重复上下文的应用建议在 Claude Platform on AWS 上启用 prompt caching，对比 Bedrock 现有调用成本评估迁移收益。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260511-1739",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2054326444189253655",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Google DeepMind 重构鼠标指针：AI 智能光标原型登陆 AI Studio",
+      "summary": "Demis Hassabis 转推 Google DeepMind 团队对沿用 50 年的鼠标指针交互的 AI 重构尝试，新的实验性 Demo 允许用户用动作、语音和自然语言简写来「指挥」Gemini 在屏幕上完成任务。原型已在 Google AI Studio 上线，可直接试玩。这是把 Agent 能力直接嵌入桌面 UI 元素的早期探索。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "Gemini",
+        "智能指针",
+        "AI Studio",
+        "桌面 Agent"
+      ],
+      "practice_suggestions": [
+        "在 Google AI Studio 中体验智能指针原型，评估其对自家产品交互的启发",
+        "关注将 LLM 能力嵌入到基础 UI 原语（指针、菜单、滚动条）的产品方向"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2054246119635300451",
+      "angle": "Demis Hassabis 转推推广 + 试玩入口"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2054246130511225053",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind AI 鼠标：让光标识别屏幕内容并触发操作",
+      "summary": "Google DeepMind 演示了一种由 AI 驱动的下一代鼠标指针，光标不再只追踪位置，而是理解所指内容。示例包括把手写便条照片转为可交互的待办清单，或将暂停的视频帧变为餐厅预订链接。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "Gemini",
+        "人机交互",
+        "AI 界面",
+        "鼠标指针"
+      ],
+      "practice_suggestions": [
+        "关注 Google AI Studio 中放出的实验 Demo，体验把屏幕内容直接转为可执行操作的交互范式",
+        "在产品设计中考虑「指向即理解」的交互模式，用多模态模型识别用户当前焦点上下文"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2054246119635300451",
+      "angle": "技术细节：光标理解屏幕内容"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2054246119635300451",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google DeepMind 用 AI 重构鼠标指针：动作语音直驱 Gemini",
+      "summary": "Google DeepMind 以 50 年未变的鼠标指针为切口，推出 AI 驱动的下一代光标实验。新指针不再只跟踪位置，而是理解屏幕内容：手写便条照片可即时变成可交互的待办列表，暂停的视频画面可被转为餐厅预订入口，用户也可用动作、语音或自然简写直接驱动 Gemini 完成屏幕任务。实验性 Demo 已在 Google AI Studio 上线，CEO Demis Hassabis 亲自转推推广，公司将其作为下一代人机交互的方向探索。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "Gemini",
+        "鼠标指针",
+        "Agent UI",
+        "AI Studio"
+      ],
+      "practice_suggestions": [
+        "在 Google AI Studio 试玩 AI 鼠标 Demo 体验 Agent 直接接管屏幕的范式",
+        "评估该交互模型在自家产品中替代手动 UI 操作的可行性"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053939706468139481",
+      "source": "OpenAI (Twitter)",
+      "title": "Daybreak 自动化安全：检测、验证与响应一体化",
+      "summary": "OpenAI 介绍 Daybreak 的核心能力：将安全事件的检测、验证与响应流程自动化，作为前一条 Daybreak 总公告的功能延伸。该产品定位于持续保障软件安全。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "网络安全",
+        "自动化响应"
+      ],
+      "practice_suggestions": [
+        "评估 Daybreak 与现有 SIEM/SOAR 工具的接入方式，判断能否替换或补强既有告警-响应链路",
+        "在小范围试点中测量 Daybreak 在误报抑制与响应延迟上的效果"
+      ],
+      "thread_group_id": "thread-OpenAI-20260511-2046",
+      "duplicate_of": "https://x.com/OpenAI/status/2053939702110269822",
+      "angle": "产品能力详解：检测·验证·响应一体化"
+    },
+    {
+      "url": "https://openai.com/academy/codex-for-work/how-finance-teams-use-codex",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 发布财务团队使用 Codex 的 10 大场景",
+      "summary": "OpenAI Academy 发布财务团队 Codex 实践指南，列出十大用例：月度业务回顾叙事、财务模型清理与分析、收入与费用方差分析、预测更新、规划场景等。每个用例提供可直接复用的 Prompt 与示例，并推荐配套插件（Google Drive、SharePoint、Spreadsheets、Slack 等），让财务团队无需写代码即可让 Codex 起草「可审阅的初稿」。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "财务自动化",
+        "企业应用",
+        "Prompt 工程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/what-parameter-golf-taught-us",
+      "source": "OpenAI Blog",
+      "title": "Parameter Golf 复盘：AI Agent 时代的 ML 竞赛新挑战",
+      "summary": "OpenAI 公布 Parameter Golf 复盘：八周内吸引 1000+ 参赛者、提交 2000+ 方案。比赛要求在 8×H100、10 分钟训练预算、16 MB 模型 + 训练代码限制下最小化 FineWeb 留出损失。优胜方案集中在优化器精调、量化和创新建模上；同时大量参赛者使用 AI Coding Agent，显著降低了实验成本、改变竞赛节奏，也给提交审核、归属与评分带来新挑战。OpenAI 视该挑战为有效的人才发现通道。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Parameter Golf",
+        "ML 竞赛",
+        "Coding Agent",
+        "量化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054252234045845822",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 回顾 Symphony：把任务追踪器变成 Codex Agent 的常驻调度器",
+      "summary": "OpenAI Devs 在新 thread 中重新介绍 Symphony——其开源的 Codex Agent 编排器，目标是给「每一个 open issue」都配一个 Codex Agent。Symphony 把 task tracker（如 GitHub Issues）变成一个「always-on」的 Agent 工作系统，让人类专注于审阅与方向把控而非执行。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "Symphony",
+        "Agent 编排",
+        "issue tracker"
+      ],
+      "practice_suggestions": [
+        "在内部仓库的 GitHub Issues 上接入 Symphony，观察 Codex Agent 对低优先级长尾 issue 的清理效率",
+        "对比 Symphony 与 Claude Code Web/GitHub Action 等同类 issue-driven Agent 编排方案"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054252221941121035",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Symphony 定位重申：每个 open task 都有一个常驻 Codex Agent",
+      "summary": "OpenAI Devs 重述 Symphony 的核心定位——「每一个 open task 都对应一个运行中的 Codex Agent」，强调把 Agent 视为任务的「常驻执行体」而非一次性调用。该推文作为 Symphony 复盘线程的入口，呼应早前 odysseus0z 的引用。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "Symphony",
+        "Agent",
+        "任务调度"
+      ],
+      "practice_suggestions": [
+        "参考 Symphony 的「每任务一 Agent」模型，评估自家 Agent 系统是否仍停留在一次性会话范式",
+        "在小规模实验中给团队 backlog 的 5-10 个低优先级任务分别绑定 Codex Agent，量化吞吐"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2053964145155068025",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 开源 Realtime 会议助手示例仓库",
+      "summary": "OpenAI Devs 公布了 「openai-realtime-meeting-assistant」 开源仓库，鼓励开发者 fork 并基于 GPT-Realtime-2 构建自己的语音转操作工作流。是配套的演示参考实现。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Realtime",
+        "GPT-Realtime-2",
+        "语音",
+        "开源"
+      ],
+      "practice_suggestions": [
+        "Fork 「openai/openai-realtime-meeting-assistant」 仓库，参考其架构搭建语音转工单/转操作的应用",
+        "评估 GPT-Realtime-2 在会议纪要、自动派单等团队协同场景下的延迟与准确率"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2053964133570412826",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Realtime-2 演示：站会语音自动推动工单",
+      "summary": "OpenAI Devs 演示了一种新场景：团队成员口述 standup 更新，GPT-Realtime-2 实时听取并自动移动看板上的工单状态。展示了实时语音模型在团队协同自动化中的落地形态。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "GPT-Realtime-2",
+        "语音",
+        "自动化",
+        "团队协作"
+      ],
+      "practice_suggestions": [
+        "在站会或客户访谈场景接入 GPT-Realtime-2，实时把口述内容转成 Jira/Linear 工单变更",
+        "评估实时语音 + 工具调用相比传统会议纪要后处理的时效与准确率收益"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260511-2223",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2053925962287583379",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 推出 OpenAI Developers 插件：加速 AI 应用与 Agent 开发",
+      "summary": "OpenAI Devs 宣布 Codex 新增 OpenAI Developers 插件，开发者可以借此更快地基于 OpenAI APIs 构建 AI 应用与 agents。该插件把官方 API 文档、SDK 调用与 Codex 的代码生成能力直接打通。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI Developers",
+        "插件",
+        "Agent 开发"
+      ],
+      "practice_suggestions": [
+        "在 Codex 中启用 OpenAI Developers 插件，直接生成与最新 API 兼容的样板代码",
+        "用该插件搭配 Responses API 快速搭建工具调用与 agent 原型"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053951874408276193",
+      "source": "Sam Altman (Twitter)",
+      "title": "OpenAI 推出 Daybreak：AI 驱动的网络安全防御计划",
+      "summary": "Sam Altman 宣布 OpenAI 推出 「Daybreak」 计划，旨在用 AI 加速网络防御并持续保护软件安全。他认为 AI 在网络安全领域已经表现优秀且即将变得「超级好」，希望尽早与尽可能多的企业合作部署持续安全防护。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "网络安全",
+        "AI 安全",
+        "防御"
+      ],
+      "thread_group_id": "thread-sama-20260511-2134",
+      "duplicate_of": "https://x.com/OpenAI/status/2053939702110269822",
+      "angle": "Sam Altman 招募合作企业"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2053881827396653207",
+      "source": "Anthropic (Twitter)",
+      "title": "Claude 宪法发布有声书版，作者亲述写作哲学",
+      "summary": "Anthropic 将「Claude 宪法」(Claude's Constitution) 制成有声书，由两位作者 Amanda Askell 与 Joe Carlsmith 亲自朗读。内容除文档本身外，还包含一段 Q&A，讨论写作过程、塑造文档的哲学考量，以及随着模型能力增强宪法可能如何演化。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude 宪法",
+        "AI 对齐",
+        "Amanda Askell",
+        "有声书"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2054257324278132893",
+      "source": "Claude (Twitter)",
+      "title": "Code with Claude 现场：tiny computers 活动合辑与社区互动",
+      "summary": "Anthropic 在 Code with Claude 活动现场向参与者发放「tiny computers」，开发者基于 Claude 现场制作了一系列短小有趣的项目，包括一款仿 Oregon Trail 的文字生存游戏。Claude 官方账号发布合辑入口，并邀请社区分享自己「在家里用 Claude 做什么」。整体属于活动衍生的轻量内容，无实质功能更新。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Code with Claude",
+        "社区活动",
+        "tiny computers",
+        "Demo"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2054197462101889277",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Isomorphic Labs 完成 21 亿美元新融资加速 AI 制药",
+      "summary": "Demis Hassabis 宣布旗下 Isomorphic Labs 完成 21 亿美元新一轮融资。他重申 AI 的头号应用应是改善人类健康，从 AlphaFold 出发，Isomorphic Labs 的使命是重塑药物发现流程，最终目标是「攻克所有疾病」。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Isomorphic Labs",
+        "Demis Hassabis",
+        "AI 制药",
+        "融资",
+        "AlphaFold"
+      ],
+      "thread_group_id": "thread-demishassabis-20260512-1350",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2054246132222419226",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind 邀用户在 AI Studio 试玩 AI 鼠标实验",
+      "summary": "DeepMind 表示这些能力将指引其下一代交互界面的设计方向，并邀请用户在 Google AI Studio 上试用「AI 增强鼠标指针」的实验性 Demo，继续探索这种新型操作方式的潜力。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Google DeepMind",
+        "Google AI Studio",
+        "实验 Demo",
+        "AI 界面"
+      ],
+      "practice_suggestions": [
+        "前往 Google AI Studio 试用相关 Demo，评估「AI 鼠标」能否融入自家产品的交互流程"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2053939707818692907",
+      "source": "OpenAI (Twitter)",
+      "title": "Daybreak 官方主页发布：openai.com/daybreak",
+      "summary": "OpenAI 在 Daybreak 发布线程中放出官方主页链接 openai.com/daybreak，供安全团队与合作伙伴查阅产品详情与申请使用。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "产品主页"
+      ],
+      "practice_suggestions": [
+        "访问 openai.com/daybreak 了解 Daybreak 当前可用能力与申请流程"
+      ],
+      "thread_group_id": "thread-OpenAI-20260511-2046",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/autoscout24",
+      "source": "OpenAI Blog",
+      "title": "AutoScout24 用 Codex + ChatGPT 全员 AI 化",
+      "summary": "欧洲最大汽车交易平台 AutoScout24 Group 采用双层 AI 策略：约 2000 名员工普及 ChatGPT 建立 AI 素养，约 1000 名工程/数据/产品人员深度集成 Codex，并经过三个月评估后正式选型。公司组建跨职能「AI Champions」网络驱动落地，Codex 已在 PR 自动审核、大规模重构、技术文档与事故复盘等高价值场景中产生明显收益。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "ChatGPT",
+        "AutoScout24",
+        "企业落地"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053971387308745046",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：新版 ChatGPT 体验跨过质变阈值",
+      "summary": "Sam Altman 表示，最新 ChatGPT 模型、人格设定与个性化能力的组合，让他感觉这是「全新的东西」，已经越过了某种体验阈值。属于非正式的产品口风预热。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "ChatGPT",
+        "OpenAI",
+        "个性化",
+        "Sam Altman"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053970698725679437",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 自问：Codex 是「超级应用」吗？",
+      "summary": "Sam Altman 引用一位老 Claude Code 用户切换到 Codex 后的高度评价（「这一周可以在 Codex 里做所有事」），抛出反问「这算不算 superapp？」，暗示 Codex 正承担更广泛的工作流入口角色。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "OpenAI",
+        "Claude Code",
+        "Superapp"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2053951875654054011",
+      "source": "Sam Altman (Twitter)",
+      "title": "Daybreak 计划征集合作企业",
+      "summary": "Sam Altman 在 Daybreak 公告推文之后补充链接「openai.com/daybreak/」，呼吁有兴趣的企业联系 OpenAI 加入合作。是 Daybreak 计划的招募入口。",
+      "category": "政策与安全",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Daybreak",
+        "网络安全",
+        "合作"
+      ],
+      "thread_group_id": "thread-sama-20260511-2134",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2053979506827055255",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code Agent View 使用技巧：在仓库根目录启动",
+      "summary": "Thariq 建议在包含所有项目仓库的高层目录（例如 「~/Projects」）下启动 「claude agents」 命令。Agent View 能跟踪哪些会话需要用户输入，方便随时恢复上下文继续工作。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "工作流",
+        "多会话"
+      ],
+      "thread_group_id": "thread-trq212-20260511-2324",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2054257336839995737",
+      "source": "Claude (Twitter)",
+      "title": "Claude 官方互动：你在家里用 Claude 做什么？",
+      "summary": "Claude 官方账号的轻互动推文，作为 Code with Claude 活动「tiny computers」线程的收尾，邀请社区分享自己在家里基于 Claude 搭建的小项目。无实质内容。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Claude",
+        "社区互动",
+        "Code with Claude"
+      ],
+      "thread_group_id": "thread-claudeai-20260512-1748",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2054257335497838795",
+      "source": "Claude (Twitter)",
+      "title": "Claude 案例：用 Claude 复刻 Oregon Trail 生存游戏",
+      "summary": "Claude 官方分享 Code with Claude 活动上社区成员的作品——一个仿 Oregon Trail 的文字生存游戏，玩家的选择会改变命运走向。属于活动衍生的 demo 展示，体量很小。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Claude",
+        "Code with Claude",
+        "生存游戏",
+        "demo"
+      ],
+      "thread_group_id": "thread-claudeai-20260512-1748",
+      "duplicate_of": "https://x.com/claudeai/status/2054257324278132893",
+      "angle": "Oregon Trail 仿作 + 社区互动收尾"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2054197463855042669",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Demis Hassabis 附 Isomorphic Labs 融资详情链接",
+      "summary": "Demis Hassabis 在自回复中附上 Isomorphic Labs 21 亿美元新融资的详细阅读链接，引导读者进一步了解这一在 AI 制药领域的重要进展。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Demis Hassabis",
+        "Isomorphic Labs",
+        "AI 制药"
+      ],
+      "thread_group_id": "thread-demishassabis-20260512-1350",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2053980352641982816",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code Agent View 反馈征集",
+      "summary": "Anthropic 工程师 Thariq 在介绍 Claude Code Agent View 的推文串中追加补充，邀请用户提交使用反馈。表示团队会阅读并处理所有反馈意见。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Claude Code",
+        "Agent View",
+        "反馈"
+      ],
+      "thread_group_id": "thread-trq212-20260511-2324",
+      "duplicate_of": null
+    }
+  ]
+}
