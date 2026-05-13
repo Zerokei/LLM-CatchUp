@@ -1,0 +1,600 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-05-13 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-13" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-05-13</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>Claude Code 平台化扩张</strong>：Anthropic 同日上线 Agent View 多会话面板、Opus 4.7 Fast Mode 与 Claude Platform on AWS，把旗舰编码 Agent 推向更高并发与更低延迟。</li>
+<li><strong>OpenAI Codex 多线进击</strong>：NVIDIA 与 AutoScout24 宣布将 Codex 作为工程默认工具，并同步推出 Computer Use、Symphony 编排器与 Developers 插件，加速代理化开发落地。</li>
+<li><strong>AI 防御化网络安全</strong>：OpenAI 推出 Daybreak 计划，把最强模型、Codex 与安全伙伴整合为「检测—验证—响应」自动化闭环。</li>
+<li><strong>AI 重塑界面交互</strong>：Google DeepMind 用 Gemini 重新设计 50 年历史的鼠标指针，让光标从「指哪」进化到「理解所指」。</li>
+<li><strong>AI 重构工程组织</strong>：Anthropic 工程负责人 Fiona Fung 在 Code with Claude 2026 指出，软件开发瓶颈正从写代码转向验证与跨职能协作，旧流程必须重构。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/ClaudeDevs/status/2054266327771275435">Claude Opus 4.7 Fast Mode 研究预览上线：API、Claude Code 与 6 大合作平台同步</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Fast Mode</code> <code>低延迟</code> <code>Claude Code</code> <code>研究预览</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 推出 Opus 4.7 的 Fast Mode，针对需要更低延迟的旗舰模型场景提供加速推理路径。该模式同时登陆 Anthropic API、Claude Code，以及 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 六家合作平台。开发者可通过 claude.com/fast-mode 加入 API 候补名单接入自有应用，当前仅限研究预览。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2054299065069003208">Opus 4.7 Fast Mode 同步登陆 Cursor、Windsurf 等六家集成平台</a> · Claude Devs (Twitter) · 六大合作 IDE 同步上线</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Claude Code 中切换到 Fast Mode 评估对自身工作流的延迟收益</li>
+<li>通过 claude.com/fast-mode 提交 API 候补名单申请，为线上应用预留接入窗口</li>
+<li>在 Cursor、Windsurf 等合作 IDE 中直接体验 Opus 4.7 Fast Mode</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/OpenAIDevs/status/2054298427245441141">Codex新增Computer Use：可后台跨应用操作Mac</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Computer Use</code> <code>代理</code> <code>OpenAI</code> <code>Mac</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs介绍Codex的Computer Use新能力，使Codex能在用户Mac上跨多个应用执行点击、输入等操作，并在后台持续工作而不抢占主桌面。AriX与romainhuet在视频中讨论代理具备此能力后开发工作流将如何改变。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>尝试用Codex Computer Use自动化日常重复的跨应用任务，如表格搬运、数据录入</li>
+<li>评估在专用账户或虚拟机中运行该能力，以隔离敏感数据与浏览状态</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/trq212/status/2053979505346425179">Claude Code 推出 Agent View：原生多会话管理（类 tmux）</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Agent View</code> <code>多会话管理</code> <code>Anthropic</code> <code>研究预览</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 工程师 Thariq 介绍 Claude Code 新功能 Agent View：在一个列表中统一管理所有 Claude Code 会话，类似为 CC 打造的「tmux」。团队称在交互细节上投入了大量时间打磨，目前作为研究预览版上线。 Thariq 给出 Agent View 的推荐用法：在包含所有仓库的高层目录（例如 ~/Projects）下运行「claude agents」，它会跟踪哪些会话在等待用户输入，方便随时恢复并接续之前的工作。 Thariq 在 Agent View 发布线程末尾邀请用户提交反馈，承诺团队会逐条阅读并跟进改进。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>升级 Claude Code 后试用 Agent View，将多个项目/分支的并行会话集中管理</li>
+<li>把 Agent View 作为长任务的「值班面板」：让需要人工输入的会话浮到顶部，减少上下文切换成本</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/ClaudeDevs/status/2053944194386051128">Claude Code agent view 设计目标：并行更多会话、心智负担更低</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>agent view</code> <code>并行会话</code> <code>开发者体验</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 解读新发布的「agent view」：该视图旨在让开发者并行运行更多 Claude Code 会话，同时把需要在大脑中维护的状态降到最低。配合官方公告「One list of all your sessions」，agent view 作为研究预览开放。 Claude Devs 介绍 agent view 的核心交互：把常用工作流封装为 Skills 后可一次批量派发多个会话，Claude 会自主推进直至 Skill 主动要求停顿询问。用户可通过「Peek and reply」快速解阻塞，仅在需要时再打开完整 transcript。 Claude Devs 提示用户运行命令「claude agents」即可立即体验 agent view 的多会话统一管理界面。该功能作为研究预览面向付费用户开放。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把日常重复的多任务（构建、测试、修复）拆分为独立 Claude Code 会话，在 agent view 中并行调度</li>
+<li>建立一份「会话状态命名」规范，让 agent view 列表能快速被人脑扫描</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/ClaudeDevs/status/2053892878167072914">Anthropic 推出 Claude Platform on AWS，原生 API 全特性落地 AWS</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Platform</code> <code>AWS</code> <code>Managed Agents</code> <code>Anthropic</code> <code>云生态</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布「Claude Platform on AWS」，开发者可在 AWS 内获得与原生 API 一致的模型与平台特性，包括 Claude Managed Agents、advisor 策略、代码执行与 Web 搜索。工作负载、计费与 IAM 保留在 AWS 内，由 Anthropic 自身运维该服务，且新特性与原生 API 同日上线。 Anthropic 说明：Claude 模型自 2023 年起已通过 Bedrock 提供，但此次的 Claude Platform on AWS 首次把上下文管理（prompt caching）、预置工具与 Claude Managed Agents 等完整平台能力带入 AWS 生态，补齐了 Bedrock 长期缺位的特性矩阵。 Anthropic 披露 Claude Platform on AWS 的接入细节：鉴权流量经由 AWS-managed API Gateway 路由，定价与速率限制与直接访问 Claude API 完全一致。这意味着迁移到 AWS 通道不会额外提升 token 成本，但可继承 AWS 的网络与合规边界。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>评估将既有基于 Bedrock 的 Claude 调用迁移到 Claude Platform on AWS，以解锁 Managed Agents 等高级特性</li>
+<li>在 AWS IAM 体系内为 Claude Platform 设计专用角色与配额，沿用现有合规与计费流程</li>
+<li>对依赖最新 Anthropic 特性的产品线，优先试点 Claude Platform on AWS 以缩短特性可用窗口</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/OpenAIDevs/status/2054252221941121035">Symphony：为每个未完成任务分配一个Codex代理</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Symphony</code> <code>Codex</code> <code>代理编排</code> <code>开源</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs重新推介Symphony——一个开源的Codex代理编排器，理念是「让每个待办任务都对应一个常驻Codex代理」。它把任务追踪器（如Issue面板）变成永远在线的代理工作系统，开发者只需负责审查与方向。 作为Symphony串推的补充，OpenAI Devs引用早期推文回顾该项目核心理念：把每个Issue都配上一个Codex代理，让任务追踪器成为持续运转的代理化工作系统，人类专注于审查与方向把控。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在团队GitHub Issue上试用Symphony，让Codex代理预先尝试解决简单issue并产出PR草稿</li>
+<li>为代理设定明确的review门禁，避免低质量自动PR淹没人类评审</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/GoogleDeepMind/status/2054246119635300451">Google DeepMind 重塑鼠标指针：让 AI 理解「你指的是什么」</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>Gemini</code> <code>AI 指针</code> <code>界面交互</code> <code>AI Studio</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 用 Gemini 重新构想了已有 50 年历史的鼠标指针，把光标交互从「定位坐标」升级为「理解意图」。用户可用动作、语音和自然简写直接指挥光标完成任务，例如把潦草便签照片转为可交互待办、或将视频暂停帧自动转为餐厅预订链接。实验性原型已在 Google AI Studio 开放试用，作为新一代界面的探索起点。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/GoogleDeepMind/status/2054246130511225053">AI 指针:从「指哪」到「理解所指内容」</a> · Google DeepMind (Twitter) · 理念阐释：从「指哪」到「指什么」</li>
+<li><a href="https://x.com/demishassabis/status/2054326444189253655">Google DeepMind 重新设计鼠标指针：用 Gemini 让光标变智能</a> · Demis Hassabis (Twitter) · Hassabis 转发评注</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>前往 Google AI Studio 试用 AI 指针实验原型</li>
+<li>在产品设计中思考「定位 → 理解意图」的指针交互升级路径</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-10">8. <a href="https://openai.com/academy/codex-for-work/how-finance-teams-use-codex">OpenAI 推出 Codex for Work：财务团队十大用例指南</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>OpenAI</code> <code>财务自动化</code> <code>企业应用</code> <code>用例指南</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Academy 发布面向财务团队的 Codex 使用指南，列出十大具体用例，包括月度业务回顾叙述、预算差异桥接、模型检查、计划情景分析等，覆盖财务月结到 CFO 汇报全流程。每个用例提供可复用提示词、真实文件示例，并建议接入 Google Drive、SharePoint、Slack、Outlook 等插件，无需编码即可让 Codex 从财务底稿自动生成可审阅的初稿。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>财务团队可参考十大用例的提示词模板，从月度业务回顾（MBR）这一高频场景切入试点 Codex。</li>
+<li>提前接入 Google Drive、SharePoint 等数据源插件，让 Codex 可直接读取真实底稿而非粘贴文本。</li>
+<li>明确要求 Codex 标注数字来源并标记缺失支撑，将节省的时间用于判断与决策。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-11">9. <a href="https://baoyu.io/blog/2026-05-12/running-an-ai-native-engineering-org">Anthropic Fiona Fung：AI 时代工程团队管理的重构</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>AI 工程团队</code> <code>Claude Code</code> <code>Anthropic</code> <code>组织管理</code> <code>流程重构</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic Claude Code 与 Cowork 产品负责人 Fiona Fung 在 Code with Claude 2026 大会演讲指出，软件工程的瓶颈已从「写代码慢」转移到验证、评审、跨职能协作和安全性，过去基于「写代码很贵」假设设计的所有流程都必须重构。她强调用 AI 改造工程团队的第一步是明确允许大家砍掉陈旧流程，并分享了 Claude Code 团队一年来踩过的坑和未解决的现实挑战。</p>
+<hr>
+<h3 id="h-12">10. <a href="https://openai.com/index/what-parameter-golf-taught-us">OpenAI Parameter Golf 挑战赛：编码 Agent 加速 ML 研究的实证</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Parameter Golf</code> <code>OpenAI</code> <code>编码 Agent</code> <code>ML 研究</code> <code>小模型</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 公布 Parameter Golf 挑战赛结果：1,000 多位参赛者提交 2,000 多份方案，在 16MB 模型+训练代码、8×H100 上 10 分钟训练预算约束下，最小化 FineWeb 数据集留出损失。OpenAI 借此观察编码 Agent 如何驱动新颖的模型设计、量化与训练技巧探索，并复盘了技术亮点、研究方法论收获与下一步方向。</p>
+<hr>
+<h3 id="h-13">11. <a href="https://x.com/OpenAIDevs/status/2053964145155068025">OpenAI开源Realtime会议助手仓库可Fork</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-Realtime-2</code> <code>开源</code> <code>会议助手</code> <code>语音</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs放出Realtime会议助手的开源仓库openai-realtime-meeting-assistant，鼓励开发者fork并构建自己的语音转动作工作流。这是上文GPT-Realtime-2站会演示的可落地实现。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>Fork openai-realtime-meeting-assistant仓库，将其接入团队常用的项目管理工具（Linear、Jira等）</li>
+<li>在仓库基础上扩展自定义动作，如自动生成会议纪要并归档至Notion</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-14">12. <a href="https://x.com/sama/status/2053951874408276193">OpenAI 推出 Daybreak：用 AI 加速网络防御</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI Daybreak</code> <code>网络安全</code> <code>AI 防御</code> <code>Sam Altman</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 宣布 OpenAI 启动 Daybreak 计划，致力于加速网络防御并持续守护软件安全。他表示 AI 在网络安全领域已经表现良好且即将变得「超级好」，希望尽早与尽可能多的企业合作，帮助它们实现持续的自我安全加固。 Sam Altman 紧接前一条推文补充，邀请对 Daybreak 网络安全计划感兴趣的企业通过 openai.com/daybreak/ 与 OpenAI 取得联系。这是 Daybreak 公告 thread 中的合作征集环节。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>关注 Daybreak 计划合作渠道，安全团队可评估将 AI 持续防御能力接入现有 SOC 工作流。</li>
+<li>对照自身代码库与基础设施风险面，识别可由 AI 持续扫描与修复的高频漏洞类型，准备试点数据。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-15">13. <a href="https://x.com/claudeai/status/2053940937554788750">Agent View 功能细节：内联回复解阻塞、无缝切换会话</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Agent View</code> <code>内联回复</code> <code>会话切换</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 进一步说明 Agent View 的能力：一眼可见哪些会话在运行、哪些在等待用户、哪些已完成；可直接在列表中内联回复以解除阻塞，也可在任意会话间跳转而不丢失上下文。 Anthropic 宣布 Claude Code 新功能「agent view」已在全部付费方案上可用，配套博客文章 claude.com/blog/agent-view-in-claude-code 介绍了使用细节。该功能旨在让用户在统一视图中管理多个 Claude Code 会话。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>使用 Agent View 的内联回复快速解阻塞，减少打开终端切换会话的开销</li>
+<li>把 Agent View 当作多任务调度面板：完成态会话立即归档，运行态保留监控</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-16">14. <a href="https://x.com/OpenAI/status/2053939706468139481">Daybreak自动化安全检测、验证与响应</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Daybreak</code> <code>安全运营</code> <code>自动化</code> <code>SOC</code></li>
+</ul>
+<p><strong>摘要</strong>: 作为Daybreak发布串推的补充，OpenAI强调该系统可自动化执行安全检测、验证及响应三大核心环节。这意味着Daybreak不仅做漏洞发现，还覆盖完整的SOC运营闭环。 OpenAI在Daybreak发布串推的末尾给出官方项目主页链接openai.com/daybreak/，方便用户获取产品详情与申请入口。属于发布串推的导流环节。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>梳理团队现有的检测-验证-响应流程，识别哪些环节最适合接入Daybreak类自动化代理</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="h-17">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>教程与观点</strong> | <code>Code with Claude</code> <code>迷你电脑</code> <code>Claude Code</code> <code>社区项目</code> — Anthropic 在 Code with Claude 2026 大会上向参与者发放小型电脑，整理展示了一批用户基于此搭建的 Claude 创意小项目，包括复刻经典「Oregon Trail」选择驱动生存游戏等。官方把项目合集作为 Claude Code 日常使用场景的灵感库，并邀请社区分享各自在家里基于 Claude 构建的项目。 · <a href="https://x.com/claudeai/status/2054257324278132893">Claude (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Isomorphic Labs</code> <code>AI 制药</code> <code>Demis Hassabis</code> <code>融资</code> <code>AlphaFold</code> — DeepMind CEO Demis Hassabis 宣布旗下 Isomorphic Labs 获得 21 亿美元新融资，用于推进以 AI 重塑药物发现、并最终「攻克所有疾病」的使命。他将该工作视为 AlphaFold 之后的延续，重申 AI 的头号应用应是改善人类健康。 Hassabis 在自己上一条推文之后的回复，仅附上一条 bit.ly 短链作为延伸阅读，无独立内容信息量。 · <a href="https://x.com/demishassabis/status/2054197462101889277">Demis Hassabis (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>NVIDIA</code> <code>Codex</code> <code>GPT-5.5</code> <code>客户案例</code> <code>编码 Agent</code> — NVIDIA 工程师将基于 GPT-5.5 的 Codex 作为复杂工程任务的默认工具，运行在自家 GB200 / GB300 基础设施上，能进行更长、更自主的多轮压缩会话并主动发现 bug 与上下文中遗漏的问题。案例包括将内部 MVP 平台演进为生产级系统、几小时内搭建类似 Riverside 的内部播客录制 App，并利用 Codex 桌面端的计算机交互能力自动测试音视频功能。 · <a href="https://openai.com/index/nvidia">OpenAI Blog</a></li>
+<li><strong>商业动态</strong> | <code>AutoScout24</code> <code>Codex</code> <code>ChatGPT</code> <code>企业 AI 转型</code> <code>客户案例</code> — 欧洲及加拿大最大汽车在线市场 AutoScout24（含 AutoTrader.ca），服务 3000 万月活、45000 经销商、约 2000 员工，采用 ChatGPT 广泛赋能 + Codex 深度技术改造的双层 AI 策略，应对大规模迁移、遗留系统和工程需求增长，将 CTO 团队对 LLM 重塑软件构建测试与扩展方式的设想落地，加速迭代周期并提升代码质量。 · <a href="https://openai.com/index/autoscout24">OpenAI Blog</a></li>
+<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>ChatGPT</code> <code>个性化</code> <code>OpenAI</code> — OpenAI CEO Sam Altman 表示，新 ChatGPT 模型、个性（personality）与个性化（personalization）三者结合，让他觉得「越过了某个阈值，是一种全新的东西」。他将其作为最近达到拐点的事物之一公开发声，但未给出具体模型版本或功能细节。 · <a href="https://x.com/sama/status/2053971387308745046">Sam Altman (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Codex</code> <code>Claude Code</code> <code>Sam Altman</code> <code>开发者体验</code> <code>Superapp</code> — Sam Altman 转引 fimoculous 的体验贴并反问「这算不算 superapp？」。被引用的开发者称自己做了一年 Claude Code 的死忠，这个周末试用 Codex 后感觉「世界又变了」，预计本周所有事情都将在 Codex 内完成，反映出 Codex 在编码 Agent 竞争中正加速侵蚀 Claude Code 的用户心智。 · <a href="https://x.com/sama/status/2053970698725679437">Sam Altman (Twitter)</a></li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Opus 4.7 Fast Mode 研究预览上线：API、Claude Code 与 6 大合作平台同步</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Codex新增Computer Use：可后台跨应用操作Mac</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude Code 推出 Agent View：原生多会话管理（类 tmux）</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Claude Code agent view 设计目标：并行更多会话、心智负担更低</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Anthropic 推出 Claude Platform on AWS，原生 API 全特性落地 AWS</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Symphony：为每个未完成任务分配一个Codex代理</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Google DeepMind 重塑鼠标指针：让 AI 理解「你指的是什么」</a></li>
+      <li class="toc-h3"><a href="#h-10">8. OpenAI 推出 Codex for Work：财务团队十大用例指南</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Anthropic Fiona Fung：AI 时代工程团队管理的重构</a></li>
+      <li class="toc-h3"><a href="#h-12">10. OpenAI Parameter Golf 挑战赛：编码 Agent 加速 ML 研究的实证</a></li>
+      <li class="toc-h3"><a href="#h-13">11. OpenAI开源Realtime会议助手仓库可Fork</a></li>
+      <li class="toc-h3"><a href="#h-14">12. OpenAI 推出 Daybreak：用 AI 加速网络防御</a></li>
+      <li class="toc-h3"><a href="#h-15">13. Agent View 功能细节：内联回复解阻塞、无缝切换会话</a></li>
+      <li class="toc-h3"><a href="#h-16">14. Daybreak自动化安全检测、验证与响应</a></li>
+      <li class="toc-h2"><a href="#h-17">速览</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-05-12.html">2026-05-12</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-13.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
