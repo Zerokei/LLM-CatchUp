@@ -1,0 +1,654 @@
+{
+  "fetched_at": "2026-05-14T06:47:22+08:00",
+  "window_start": "2026-05-13T00:47:22+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "weekly",
+      "articles": [
+        {
+          "title": "Agentic AI Weekly | Berkeley RDI | May 13, 2026",
+          "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-may-85b",
+          "published_at": "2026-05-13T16:03:00.615Z",
+          "description": "Agentic AI Summit Early Bird Tickets and Expanded Speaker List, AgentX–AgentBeats Phase 2, Sprint 2 + OpenEnv Custom Track Winners Announced",
+          "full_text": "Agentic AI Summit 2026 (More Featured Speakers Announced, Early-Bird Pricing Ending Soon, and Limited Number of Tickets Left!)",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "no recent article URLs found in sitemap",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 956,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Building a safe, effective sandbox to enable Codex on Windows",
+          "url": "https://openai.com/index/building-codex-windows-sandbox",
+          "published_at": "2026-05-13T11:00:00.000Z",
+          "description": "Learn how OpenAI built a secure sandbox for Codex on Windows, enabling safe, efficient coding agents with controlled file access and network restrictions.",
+          "full_text": "Title: Building a safe, effective sandbox to enable Codex on Windows\n\nURL Source: https://openai.com/index/building-codex-windows-sandbox\n\nMarkdown Content:\nWhen I joined the Codex engineering team in September 2025, Codex for Windows didn’t have a sandbox implementation meaning that Windows users were forced to choose between two subpar options when using OpenAI's coding agents:\n\n1.   Approving nearly every command (even reads) that a coding agent wanted to run, which is inefficient and pesky. A major benefit of using Codex is that you don’t have to do all the tedious work yourself.\n2.   Enabling Full Access mode: letting Codex run all commands without approval or restrictions, which removes friction at the expense of oversight.\n\n[Codex⁠](https://openai.com/codex/), our coding agent, runs on developer laptops—whether that's through the CLI, the IDE extension, or the desktop app. It manages a conversation between a human at a keyboard and a model running in the cloud to handle inference.\n\nCodex runs with the permissions of a real user by default, meaning it can do everything the user can do. This is powerful and potentially dangerous. The coding model may tell the harness to run commands locally, from running tests to reading or editing a file to creating a Git branch, so Codex's default mode attempts to find the right balance between effectiveness and safety. This default mode allows Codex to read files almost anywhere and write files within your workspace (i.e., the directory where you're running Codex), with no internet access unless you specify you want it. To achieve this automatic constraint of writing files and accessing the network within safe bounds, Codex needs a sandbox environment that actually enforces these constraints.\n\nA _sandbox_ is a constrained execution environment. When a developer uses Codex, their computer's operating system launches a command with reduced permissions, and those constraints propagate down the process tree. Every Codex command is sandboxed from the start, and every descendant process stays inside the same boundary.\n\nCodex needs isolation features enforced by the computer's operating system to implement an effective sandbox. Some operating systems provide utilities that do this well (e.g., Seatbelt on MacOs, seccomp or bubblewrap on Linux); however, Windows doesn't currently provide this type of capability out of the box.\n\nTo make Codex just as safe and delightful to use on Windows as it already is everywhere else, we needed to implement our own sandbox.\n\n## Where existing Windows tools fell short\n\nWindows offers some tools and primitives for isolation. While none of them quite met our requirements, we looked at a number of potential solutions—namely, AppContainer, Windows Sandbox, and Mandatory Integrity Control labeling.\n\n**AppContainer**\n\n*   **What:** AppContainer is the native Windows sandbox, a capability-based isolation model built for apps that know, up front, exactly what they need to access.\n*   **Why**: Appealing because it offers a real OS boundary instead of best-effort restrictions.\n*   **Why not**: Codex is not one tightly scoped app. It drives open-ended developer workflows: shells, Git, Python, package managers, build tools, and whatever other binaries the agent decides it needs. In practice, that made AppContainer the wrong shape for the problem. It was strong isolation, but for a much narrower class of workloads than “let an agent operate like a developer.”\n\n**Windows Sandbox**\n\n*   **What:** Windows Sandbox is Microsoft’s disposable lightweight VM. You get a fresh Windows desktop with a strong isolation boundary, and whatever you do inside it disappears when the session ends.\n*   **Why**: Interesting for obvious reasons—far more compatible with arbitrary software than AppContainer, and from a security perspective it's a much stronger box.\n*   **Why not**: Codex needs to act directly on the user’s actual checkout, tools, and environment, not inside a separate throwaway desktop that would need setup and host/guest bridging. It also had a fundamental product problem: Windows Sandbox isn't even available on Windows Home SKUs.\n\n**Mandatory Integrity Control (MIC) integrity labeling**\n\n*   **What**: Windows has a concept called “integrity levels,” such as low, medium, and high, that determine how much the system trusts objects and processes. The basic rule is that a lower-integrity process cannot write to an object with a higher integrity level, even if the normal ACL would otherwise allow it. For example, a low-integrity process is treated as less trusted, so Windows blocks it from writing to normal medium-integrity objects, unless those objects are explicitly relabeled to allow it.\n*   **Why**: MIC looked elegant on paper—run Codex at low integrity, relabel the writable roots as low integrity, and let Windows enforce no-writes everywhere else. That would've given us a non-admin path with a real OS mechanism behind it.\n*   **Why not**: Like ACLs, integrity labels modify the real host filesystem, and in this case the semantic change is especially broad. Marking a workspace as low integrity does not just mean “Codex can write here.” It means low-integrity processes _in general_ can write there. On a real developer machine, that turns the user’s actual checkout into a low-integrity sink for the host, which is much riskier than granting carefully targeted ACLs to one sandbox design. Even if medium-integrity developer tools continue to work, the underlying trust model of the workspace has changed in a way that's hard to contain and harder to justify.\n\nHaving evaluated all of the options as non-starters, we started designing our own solution to bring a good Codex experience to Windows users.\n\n## The first prototype: the \"unelevated sandbox\"\n\nOur first working prototype used a combination of Windows concepts and tools to implement the isolation we needed. From the beginning, one goal was to make this work without requiring _elevation_, meaning that Codex would not need to prompt the user for administrator privileges just to set up or run the sandbox. That meant figuring out how to put reasonable limits on two things: file writes and network access.\n\nIf we didn't limit file writes at all, we'd have a safety issue. If we limited file writes too much, the sandbox would hurt user productivity, needing to ask for constant approval. To solve this problem, we relied on two important Windows building blocks: SIDs and write-restricted tokens.\n\nA SID, or security identifier, is the identity Windows ties to permissions. Each user has a SID, groups have SIDs, and even a single login session gets its own SID. For example, a current logged-in session might have a SID like `S-1-5-5-X-Y`. The SID assigned to the local administrators group might be `S-1-5-32-544`.\n\nWindows also lets you create synthetic SIDs that don't correspond to a real user but can still appear in ACLs (access control lists), which define who can read/write/execute specific files or directories. That makes SIDs a useful primitive for our sandbox: we can create SIDs exclusively for the Codex sandbox to use, without interfering with anything else on the machine.\n\nProcess tokens are security objects in Windows that define identity and privileges for a running process. They determine what actions a process can perform. A _write-restricted token_ is a particular type of process token that makes Windows perform an additional access check on write operations.\n\nIn order for a write to succeed, two checks must pass:\n\n1.   The normal user identity (the token “owner”) must be allowed to do it\n2.   At least one SID in the token’s restricted SID list must also be granted access\n\nIn practice, these checks let us use ACLs to define exactly where the sandbox could modify the filesystem, which offered the granularity we needed around write operations.\n\nWith SIDs and write-restricted tokens, our unelevated sandbox worked like this:\n\n1.   The sandbox setup created a synthetic SID called `sandbox-write`.\n2.   The `sandbox-write` SID was granted write, execute, and delete access to\n    1.   The current working directory\n    2.   Any additional `writable_roots` configured in `config.toml`.\n\n3.   The sandbox setup explicitly denied that same SID write access to “read-only within writable” locations such as:\n    1.   `<cwd>/.git`\n    2.   `<cwd>/.codex`\n    3.   `<cwd>/.agents`\n\n4.   Codex launched commands under a write-restricted token whose restricted SID list includes `Everyone`, the current logged in session SID, and the `sandbox-write` synthetic SID.\n\nThis flow effectively solved limiting file writes and seemed promising. Now we needed a solution for limiting the sandbox's network access.\n\nLimiting network access is an important part of the sandbox; without it, malicious code could exfiltrate data from the machine up to the internet. Because we wanted to avoid an elevation requirement, we had limited options to strongly block network traffic. The tools we wanted to use, like Windows Firewall, generally could not be installed without admin permissions.\n\nWithout Windows Firewall as an option, we limited what we could control. We tried to make the child environment fail-closed for the kinds of networked tools developers actually use, so that Git commands, package installers, etc., would fail in the sandbox and the user would have to approve any internet-facing operations. The idea was to poison the obvious escape hatches: send proxy-aware traffic to a dead endpoint, make Git’s HTTP(S) transport do the same, and make Git over SSH fail immediately. On top of that, we prepended a small `denybin` directory to PATH and reordered `PATHEXT` so stub SSH and SCP scripts would resolve before the real binaries.\n\nFor example, here are some of the specific environment overrides we used to limit network access:\n\n*   `HTTPS_PROXY=http://127.0.0.1:9`\n*   `ALL_PROXY=http://127.0.0.1:9`\n*   `GIT_HTTPS_PROXY=http://127.0.0.1:9`\n*   `NO_PROXY=localhost,127.0.0.1,::1`\n*   `GIT_SSH_COMMAND=cmd /c exit 1`\n\nThat caught a lot of normal tool-driven traffic, but it was still only advisory. A process could ignore the environment, bypass PATH, or just open sockets directly—too risky.\n\nAs with any interesting software implementation, the first prototype had some pros and cons. While it got the job done with only a few standard Windows capabilities, allowed for very explicit and granular filesystem writes, and ran unelevated—cutting the need for users to accept excessive elevation prompts or be admins on their local machine—it had some real drawbacks, some of which disqualified it from becoming our final design:\n\n*   Speed of setup: Applying workspace ACLs can be expensive depending on the topology of the workspace directory.\n*   Footprint: We applied real ACLs to the developer’s system, although the footprint is not particularly invasive because all the applied ACLs pertain to a custom-created synthetic SID that is used only by the sandbox.\n*   Difficult-to-change semantics: The reliance on ACLs for file-based restrictions means it's expensive and complex to change sandbox semantics. Whereas on macOS, we can dynamically change how we generate the `.sbpl` file used to configure Seatbelt, the Windows sandbox could require a slow and intense operation to adjust ACLs.\n*   Network protection is weak. As mentioned before, it was “advisory,” would definitely be circumvented by some programs that implemented their own networking stack, and wasn't designed to hold up to adversarial code.\n\nThe first three issues are inherent to a custom sandbox implementation that's flexible enough for agentic flows. The network suppression story was different, though.\n\nIn addition to a malicious agent being able to easily circumvent the environment-based network suppression, plenty of good-intentioned code/binaries would also circumvent it simply if they didn’t honor the environment proxy variables, or if they implemented their own socket-based network code. We felt that this aspect was enough to consider investing in a better sandbox mode.\n\nTo gain better network suppression, we wanted to use Windows Firewall, which allows us to block outbound network traffic for users or programs. Unfortunately, we couldn't effectively create a functional firewall rule that applied only to the commands spawned by the Codex harness for a few reasons:\n\n*   Windows doesn't allow matching a firewall rule to the non-principal identity of a restricted token. This means we couldn't apply a firewall rule to “any token that includes our synthetic SID in its restricted SID list.\"\n*   While we could create a firewall rule that matches a specific binary, that only allows us to limit networking for `codex.exe` itself. It wouldn't apply to the processes that the agent spawns on behalf of the user, like Git or Python processes.\n*   Other firewall match dimensions were the wrong shape, too. User-scoped rules still matched the real Windows user in the unelevated design, not just the restricted child. Program-path rules were too coarse: they could block `codex.exe` or `python.exe` generally, but not this one sandboxed invocation of `python.exe`. Port- or address-based rules were also the wrong policy entirely. For instance, we didn't want to block port 443; we wanted to block arbitrary outbound access for this specific restricted process tree.\n\nTo apply a firewall rule specifically to our sandboxed commands, we needed to run them as a separate principal, not as the “real” user. This approach led us down a new path, one in which we relaxed our “no elevation” constraint.\n\n## The redesign: the \"elevated sandbox\"\n\nThe next iteration of the sandbox, which is our current implementation, requires elevated admin permissions at setup time. I therefore refer to it as “the elevated sandbox.” At the boundary where Codex spawns a command on the system, the elevated sandbox looks like the unelevated one. It still runs child processes under a restricted token—similarly a `write_restricted` token with the same restricted SID list of `[Everyone, Logon,``Synthetic``]`—however, the principal of this token is no longer the actual Windows user but one of two local users created by Codex itself:\n\n*   `CodexSandboxOffline` (the one targeted by firewall rules)\n*   `CodexSandboxOnline` (the one not targeted by firewall rules)\n\nThis seemingly small detail actually has big implications for the sandbox, who can use it, and the complexity of its setup and runtime execution.\n\nIt’s visually similar to the unelevated prototype, with the introduction of firewall rules and a dedicated Windows user, which actually runs the commands. (However, the introduction of these new concepts, means that there is more setup work to do before the sandbox can start running and protecting commands.)\n\nThe unelevated sandbox design had a simple setup step, but it was relatively small:\n\n*   Create a synthetic SID if needed\n*   Apply ACLs for the sandbox-write synthetic SID\n\nThe elevated sandbox, however, has more to do.\n\n*   Create a synthetic SID, if not already created\n*   Create the online and offline sandbox users, if not already created\n*   Store the newly-created users’ credentials locally and encrypt using the Windows Data Protection API (DPAPI) in a place where the sandbox users cannot actually read\n*   Create firewall rules that block all outbound network access for the `CodexSandboxOffline` user or, if they already exist, validate they're correct\n\nThere's an additional wrinkle in the setup stage. Codex’s sandbox is expected to have read access equivalent to the actual Windows user. In the unelevated sandbox, where the restricted token’s principal SID was the Windows user, this was achieved. However, that doesn't come for free when the principal becomes a new `CodexSandbox` user. Many relevant directories on Windows will grant read/execute permissions to “Authenticated Users”. One notable example is the user’s profile directory. By default, Windows users cannot read the profile directories of other Windows users, so even simple file reads in many scenarios would fail.\n\nTo address this, we added another layer to the sandbox setup process—one for granting _read_ ACLs to the sandbox users where such ACLs might not already exist. For example, to some commonly used Windows directories:\n\n*   `C:\\Users\\<real-user>`\n*   `C:\\Windows\\`\n*   `C:\\Program Files\\`\n*   `C:\\Program Files (x86)\\`\n*   `C:\\ProgramData\\`\n\nBecause this list of directories is best-effort and installing ACLs on each one can be quite expensive, we run this logic asynchronously so the sandbox setup step, which is blocking to users, doesn't have to wait for them to complete.\n\nWe encapsulated the setup logic in its own binary partly to cross the UAC boundary only when needed. But the deeper reason was architectural: sandbox setup has a fundamentally different job from `codex.exe`. Keeping the sandbox setup logic in a dedicated binary let `codex.exe` stay a normal, unelevated harness; kept the Windows-only setup machinery from bloating `codex.exe` on other platforms; decoupled longer-running setup work from the lifetime of the main process; and gave us one place to handle the different setup paths the sandbox needed.\n\nBecause of how Windows user and token login boundaries work, we couldn't continue to create a restricted token and spawn a process under it the way we could with the unelevated sandbox. To actually spawn commands as a different Windows user, our first idea was the following flow:\n\n*   `codex.exe` runs as the real Windows user. Then, in a sequence, Codex:\n    *   Calls `LogonUserW(...)` for the sandbox user.\n    *   Calls `CreateRestrictedToken(...)` on that sandbox-user token.\n    *   Using that restricted sandbox-user token, calls `CreateProcessAsUserW(...)` to launch the final child.\n\nIn practice, that desired flow didn't work because of a privilege wall at `CreateProcessAsUserW(...)`. This means `codex.exe` could create a restricted token for the sandbox user, but it couldn't reliably launch a child with that token from the real-user side of the boundary. We needed a process that was already running as the sandbox user—this would let the restriction step and final spawn happen on the sandbox-user side of the boundary instead of the real-user side.\n\nThat requirement led to `codex-command-runner.exe`, a new binary whose only job is to mint a restricted token and spawn the requested command. Instead of asking `codex.exe` to do the entire flow itself (real user → sandbox user → restricted token → child process), we split the flow in two:\n\n**Part 1**\n\n*   `codex.exe` calls `CreateProcessWithLogonW(...)` to launch `codex-command-runner.exe` as the sandbox user, without using a restricted token yet.\n\n**Part 2**\n\n*   Inside the runner, `OpenProcessToken(GetCurrentProcess(), ...)` opens the runner’s own token, which already belongs to the sandbox user.\n*   The runner calls `GetTokenInformation(...)` to extract the sandbox logon SID, then `CreateRestrictedToken(...)` to build the final restricted token.\n*   Still inside the runner, it calls `CreateProcessAsUserW(...)` with that restricted token to launch the real child.\n\nAlbert Einstein said, “Everything should be made as simple as possible, but no simpler.” In that spirit, our design adequately solved each problem. The final architecture has the four layers we have previously covered:\n\n*   `codex.exe` itself\n*   `codex-windows-sandbox-setup.exe` for handling all elevated setup related work\n*   `codex-command-runner.exe` for running restricted token commands\n*   The child process\n\nWhen I first approached this project, I did not have a strong sense of where it would wind up. My approach was to start by instrumenting the sandboxing capability in the boundary between Codex and the operating system. This approach closely matches how Codex’s sandbox is implemented on MacOs and Linux.\n\nAs I learned more about the specific tools that Windows provides, and thro",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing Claude for Small Business",
+          "url": "https://www.anthropic.com/news/claude-for-small-business",
+          "published_at": "2026-05-13T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Introducing Claude for Small Business\n\nURL Source: https://www.anthropic.com/news/claude-for-small-business\n\nMarkdown Content:\nWe're launching [Claude for Small Business](https://claude.com/solutions/small-business)—a package of connectors and ready-to-run workflows that put Claude inside the tools small businesses depend on—to help small business owners take full advantage of AI and cross off items on the to-do list.\n\nSmall businesses account for 44% of U.S. GDP and employ nearly half the private-sector workforce, but their adoption of AI has lagged behind larger enterprises. Tools and training are rarely tailored to the ways small businesses operate, and as a result their use often stops at the chat window. As part of our public benefit mission, we are committed to helping business owners harness AI more fully and effectively for their most important work.\n\nClaude for Small Business is a toggle install that puts Claude to work inside the tools small business owners already use: Intuit Quickbooks, PayPal, HubSpot, Canva, Docusign, Google Workspace, and Microsoft 365. From these tools, it can plan payroll, close the month, run a sales campaign, chase invoices, and more.\n\n_“Small businesses make up nearly half the American economy, but they've never had the resources of bigger companies. AI is the first technology that can finally close that gap, which is why we're launching Claude for Small Business, alongside training and partnerships to make sure AI shows up for the entrepreneurs and communities who need it most. Claude for Small Business runs inside the tools owners already rely on, like QuickBooks, PayPal, and HubSpot, and takes on the work that piles up after hours, like planning payroll, chasing invoices, or kicking off a marketing project. People run the business, and Claude helps take the late-night work off their plates.”_\n\n_—Daniela Amodei, Co-founder and President of Anthropic_\n\n## **How it works**\n\nToggle on Claude for Small Business inside Claude Cowork, connect the tools you already use, and pick the job. Claude does the work; you approve before anything sends, posts, or pays.\n\nIt ships with **15 ready-to-run [agentic workflows](http://claude.com/plugins/small-business)** across finance, operations, sales, marketing, HR, and customer service. It also includes **15 skills built on the repeatable tasks** owners told us slow them down most.\n\nThese include:\n\n*   **Planning payroll with confidence.** Settle your QuickBooks cash position against incoming PayPal settlements, build a 30-day forecast, rank what's overdue, and queue the reminders for you to approve and send.\n*   **Closing the month with fewer errors.** Reconcile your books against settlements, flag what doesn't match, write a plain-English P&L, and export a close packet you can forward straight to your accountant through Intuit QuickBooks.\n*   **Getting a pulse on your business.** Surface your most important business insights on a schedule, all on one page: view your cash position through Intuit QuickBooks, sales trend, pipeline movement, this week's commitments, and more.\n*   **Running your next campaign.** Find the slow stretch in your revenue, analyze your HubSpot campaign performance, draft the promo strategy, and generate the assets in Canva to prepare your next send.\n\nThere's also an invoice chaser, margin analyzer, month-end prepper, tax-season organizer, contract reviewer, lead triager, content strategist, and more.\n\n![Image 1: Purity Coffee logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6e652b4a53149faa6fbba9866584e3bca6c113ec-917x853.png&w=256&q=75)\n\n> Not only could it problem-solve for me, it also showed me problems I didn't know I had.\n\n![Image 2: Simple Modern logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/4580f41e900eace291a4272a92e94920e9c41d6e-125x48.svg)\n\n> What we used to think were the constraints are just not constraints anymore. It's empowering. Hours of looking at stuff that doesn't matter are gone. I want an entire organization where everybody is using these tools daily.\n\n![Image 3: MidCentral Energy logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F67068cfb506dee23296d1f195f13ac0609242bb9-410x125.webp&w=256&q=75)\n\n> It's freeing up things that used to be a lot of very tedious clerical work for more value-add tasks.\n\n01 /\n\n03\n\n### **Connect to your stack**\n\nRunning through Claude Cowork, each connected tool handles a specific job:\n\n*   **PayPal** powers settlements, invoicing, disputes, and refunds inside Claude.\n*   **Intuit QuickBooks** handles payroll planning, the monthly close, and cash-flow, along with tools to help businesses prepare for tax season, and reconciliation work that touches every other system.\n*   **HubSpot** runs lead triage, customer pulse, and campaign attribution.\n*   **Canva**generates content for every channel, with the ability to collaborate and edit with your team, publish assets, and track performance.\n*   **Docusign** sends contracts out for signature, tracks status, and files the executed copy back where it belongs.\n\nThe full list of skills, automations, and connectors is available on [the solutions page](http://claude.com/solutions/small-business).\n\n![Image 4: Intuit QuickBooks logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F8b8585ff7c43d50c9b98099a3c8435076afbbc53-1100x300.png&w=256&q=75)\n\n> Small and mid-market businesses fuel our economies, and for decades, QuickBooks has been proud to be their trusted financial partner. By integrating the agentic AI capabilities of our QuickBooks platform into Claude for Small Business, we're providing small businesses with AI-powered automations and experiences that allow them to remove the complexities of managing their finances, accelerate payroll workflows, and generate data-backed insights that help them grow and scale with speed and confidence.\n\n![Image 5: HubSpot logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F9d3cc48409d490a361b2ca9b37f4c32d506165f4-3840x1124.png&w=256&q=75)\n\n> At HubSpot, our mission is to help scaling companies grow with AI. We partnered with Anthropic to build the first CRM connector for Claude so go-to-market teams can access their HubSpot context wherever they work. For small businesses, that means getting tailored answers, summaries, and visualizations directly from their customer platform so they can segment smarter, run better campaigns, and drive more leads.\n\n![Image 6: Canva logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fdbe8719833c72c2740a7c7d8e8cb6427b63b9351-2560x825.png&w=256&q=75)\n\n> Small businesses need AI that moves at the speed they do. With Canva powering content creation in Claude for Small Business, a business owner can go from idea to published, on-brand design in one flow, while AI streamlines the work in between. It's part of our vision to make complex AI workflows simple, so we can help people achieve their goals through design.\n\n01 /\n\n03\n\n## **Built for trust**\n\nIn a survey we ran with small business owners, half named data security as their single biggest hesitation about AI.\n\nWith Claude for Small Business:\n\n*   **You stay in the loop.** Every task and workflow you run within Claude is initiated by you. You approve the plan first or, when you're ready, let it run end-to-end.\n*   **Your existing permissions hold.** If an employee can't see something in QuickBooks or Drive today, they can't see it through Claude.\n*   **We don't train on your data by default** on our Team and Enterprise Plans.\n\nFull details are in the [Trust Center](https://trust.anthropic.com/).\n\n## **AI Fluency for Small Business**\n\nTools aren't enough on their own. Owners and their teams need to know when and how to use them, and most haven’t had the opportunity to learn.\n\nThat's why we partnered with **PayPal** on **AI Fluency for Small Business**, a free online course on using AI to run a small business. It's taught by owners who've built it into their own operations—[Prospect Butcher Co.](https://www.prospectbutcher.com/) in Brooklyn, [MAKS TIPM Rebuilders](https://tipmrebuilders.com/) in California, and others—with step-by-step guidance on how to use AI in your business safely, responsibly, and ethically. We'll cover topics like knowing which tasks in your business are right for AI and how you can get started.\n\n_“PayPal is proud to partner with Anthropic to help small and medium-sized businesses harness the full potential of the AI-led economy. Together, we are equipping these business owners and entrepreneurs with the tools, expertise, and trusted infrastructure they need to compete and thrive in a rapidly evolving digital economy and creating new opportunities for them to innovate, grow and better serve their customers.” — Amy Bonitatibus, Chief Corporate Affairs Officer at PayPal_\n\nThe course is available [on-demand](https://anthropic.skilljar.com/ai-fluency-for-small-businesses) starting today.\n\n## **The Claude SMB Tour**\n\nStarting May 14 in Chicago, we're taking Claude for Small Business on the road. The tour is a free, half-day live AI fluency training and hands-on workshop for 100 local small business leaders per stop. Anthropic and partner [Tenex.co](https://urldefense.com/v3/__http:/tenex.co__;!!O2kDR7mm-zSJ!v3-kRuVPOHD90OZIZdaen9CTKCNbgWvw86UQk0DD9QnsZhl71Q0nwBAUFehj3mP3kFmEMaIRlfU_$) are hosting the tour, with local partners at each stop. Attendees get a one-month Claude Max subscription to start integrating AI into their day-to-day workflows.\n\nSpring stops include: [Chicago](https://anthropic.swoogo.com/smb-workshops-chicago/details), [Tulsa](https://anthropic.swoogo.com/smb-workshop-tulsa/details), [Dallas](https://anthropic.swoogo.com/smb-workshop-dallas), [Hamilton Township](https://anthropic.swoogo.com/smb-workshop-new-jersey-2026/rta), [Baton Rouge](https://anthropic.swoogo.com/smb-workshop-baton-rouge/details), [Birmingham](https://anthropic.swoogo.com/claude-smb-workshop-birmingham/rta?), [Salt Lake City](https://anthropic.swoogo.com/smb-workshop-salt-lake-city-2026/register), [Baltimore](https://anthropic.swoogo.com/smb-workshop-baltimore-2026/register), [San Jose](https://anthropic.swoogo.com/smb-workshop-san-jose-2026/register), and [Indianapolis](https://anthropic.swoogo.com/smb-workshop-indianapolis-2026/register).\n\nThank you to the Greater Cleveland Partnership and the National Talent Collaborative for piloting the concept with us in March. More cities will be added in the fall.\n\n## **Partnering with small business–focused nonprofits**\n\nAs a public benefit corporation, part of Anthropic's mission is to make sure the gains from AI reach all people and communities, especially those who have historically been last in line for new technology. Small business owners—and the local institutions that fund and advise them—are exactly that audience. So alongside Claude for Small Business, we're investing in partnerships that put Claude directly in the hands of small business owners and the organizations that help them grow.\n\nWe believe AI can meaningfully expand what's possible for the smallest businesses, including solo entrepreneurs. Together with Workday and the Local Initiatives Support Corporation (LISC), we're supporting the [Workday Foundation Solopreneurship Accelerator Program](https://www.lisc.org/our-initiatives/small-business/our-work/workday-foundation-solopreneurship-accelerator-program/), which in 2026 will equip an initial cohort of 15 aspiring solopreneurs with seed funding from the Workday Foundation, Claude credits from Anthropic, and an AI-first entrepreneurship curriculum developed by LISC.\n\nSmall businesses also depend on an enabling environment, including access to capital. That's why we're partnering with three Community Development Financial Institutions (CDFIs) that are deploying AI in their own operations and services: [Accion Opportunity Fund](https://aofund.org/), [Community Reinvestment Fund USA](https://www.anthropic.com/news/claude-for-small-business), and [Pacific Community Ventures](https://www.pacificcommunityventures.org/). With Claude credits and hands-on technical support from our team, these CDFIs are building tools that help more small businesses get funded. Pacific Community Ventures, for example, is using Claude to power its Radiant Data Hub—a shared resource for a network of CDFIs—to collect and synthesize voice-based feedback from its small business clients and their workers to improve products and services.\n\n## **Getting started**\n\nTo learn more about Claude for Small Business and access the AI Fluency for Small Business course, get started [here](http://claude.com/solutions/small-business).\n\n## Related content\n\n### Higher usage limits for Claude and a compute deal with SpaceX\n\nWe’ve raised Claude's usage limits and agreed a new compute partnership with SpaceX that will substantially increase our capacity in the near term.\n\n[Read more](https://www.anthropic.com/news/higher-limits-spacex)\n\n### Agents for financial services\n\nWe're releasing ten new Cowork and Claude Code plugins, integrations with the Microsoft 365 suite, new connectors, and an MCP app for financial services and insurance organizations.\n\n[Read more](https://www.anthropic.com/news/finance-agents)\n\n### Building a new enterprise AI services company with Blackstone, Hellman & Friedman, and Goldman Sachs\n\n[Read more](https://www.anthropic.com/news/enterprise-ai-services-company)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "i get some anxiety not using the smartest-available model/settings.\n\nbut sometimes i dont mind if it's really slow.\n\ni wonder if we should focus more on a price/speed tradeoff relative to a price/inte",
+          "url": "https://x.com/sama/status/2054627102922797323",
+          "published_at": "2026-05-13T18:17:29.000000Z",
+          "description": "i get some anxiety not using the smartest-available model/settings.\n\nbut sometimes i dont mind if it's really slow.\n\ni wonder if we should focus more on a price/speed tradeoff relative to a price/intelligence tradeoff.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "codex is the best AI coding product and we want to make it easy to try.\n\nfor the next 30 days, we are giving companies that want to try switching over two months of free codex usage.",
+          "url": "https://x.com/sama/status/2054626219858293128",
+          "published_at": "2026-05-13T18:13:58.000000Z",
+          "description": "codex is the best AI coding product and we want to make it easy to try.\n\nfor the next 30 days, we are giving companies that want to try switching over two months of free codex usage.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 868.6h old, exceeds 720h threshold",
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Really cool work from the team reimagining the mouse pointer to be intelligent! Try the prototype in @GoogleAIStudio it's pretty magical.",
+          "url": "https://x.com/demishassabis/status/2054326444189253655",
+          "published_at": "2026-05-12T22:22:46.000000Z",
+          "description": "Really cool work from the team reimagining the mouse pointer to be intelligent! Try the prototype in @GoogleAIStudio it's pretty magical.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "GoogleDeepMind",
+            "text": "We’re reimagining a 50-year-old interface - the mouse pointer - with AI. 🖱️\n\nThese experimental demos show how people can intuitively direct Gemini on their screens using motion, speech, and natural shorthand to get things done 🧵 https://t.co/p6fhgNcopz",
+            "url": "https://x.com/GoogleDeepMind/status/2054246119635300451"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/GoogleDeepMind/status/2054246119635300451"
+        }
+      ]
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We gave people tiny computers at Code with Claude. Here are some of the small, delightful things they built: https://t.co/3Av12x4DCb",
+          "url": "https://x.com/claudeai/status/2054257324278132893",
+          "published_at": "2026-05-12T17:48:07.000000Z",
+          "description": "We gave people tiny computers at Code with Claude. Here are some of the small, delightful things they built: https://t.co/3Av12x4DCb",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Oregon Trail: A survival game where your choices shape your fate. https://t.co/fJyloaDPl0",
+          "url": "https://x.com/claudeai/status/2054257335497838795",
+          "published_at": "2026-05-12T17:48:09.000000Z",
+          "description": "Oregon Trail: A survival game where your choices shape your fate. https://t.co/fJyloaDPl0",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2054257333727863156"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260512-1748",
+          "duplicate_of": null
+        },
+        {
+          "title": "What are you building at home?",
+          "url": "https://x.com/claudeai/status/2054257336839995737",
+          "published_at": "2026-05-12T17:48:10.000000Z",
+          "description": "What are you building at home?",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2054257335497838795"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260512-1748",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 12,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude Code weekly limits are increasing 50%, now through July 13.\n\nLive now for all Pro, Max, Team, and seat-based Enterprise users. https://t.co/5nU0XX4RZY",
+          "url": "https://x.com/ClaudeDevs/status/2054639777685934564",
+          "published_at": "2026-05-13T19:07:51.000000Z",
+          "description": "Claude Code weekly limits are increasing 50%, now through July 13.\n\nLive now for all Pro, Max, Team, and seat-based Enterprise users. https://t.co/5nU0XX4RZY",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-1907",
+          "duplicate_of": null
+        },
+        {
+          "title": "Details:\n- Applies everywhere you use Claude Code — CLI, IDE extensions, desktop, and the web\n- Live now, runs through July 13 at 6PM PDT / 1AM GMT\n- Nothing to opt into, it’s already applied to your ",
+          "url": "https://x.com/ClaudeDevs/status/2054639779195830285",
+          "published_at": "2026-05-13T19:07:51.000000Z",
+          "description": "Details:\n- Applies everywhere you use Claude Code — CLI, IDE extensions, desktop, and the web\n- Live now, runs through July 13 at 6PM PDT / 1AM GMT\n- Nothing to opt into, it’s already applied to your account\n- This stacks with the 2x increase to 5-hour limits announced last week",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054639777685934564"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-1907",
+          "duplicate_of": null
+        },
+        {
+          "title": "We're excited to see what everyone builds!",
+          "url": "https://x.com/ClaudeDevs/status/2054639780252844045",
+          "published_at": "2026-05-13T19:07:51.000000Z",
+          "description": "We're excited to see what everyone builds!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054639779195830285"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-1907",
+          "duplicate_of": null
+        },
+        {
+          "title": "Starting June 15, paid Claude plans can claim a dedicated monthly credit for programmatic usage.\n\nThe credit covers usage of:\n- Claude Agent SDK\n- claude -p\n- Claude Code GitHub Actions\n- Third-party ",
+          "url": "https://x.com/ClaudeDevs/status/2054610152817619388",
+          "published_at": "2026-05-13T17:10:07.000000Z",
+          "description": "Starting June 15, paid Claude plans can claim a dedicated monthly credit for programmatic usage.\n\nThe credit covers usage of:\n- Claude Agent SDK\n- claude -p\n- Claude Code GitHub Actions\n- Third-party apps built on the Agent SDK",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "This means that third-party tools built on the Agent SDK like Conductor and OpenClaw work with your Claude plan, but will draw from your credit the same way your own scripts do.",
+          "url": "https://x.com/ClaudeDevs/status/2054610157364289906",
+          "published_at": "2026-05-13T17:10:08.000000Z",
+          "description": "This means that third-party tools built on the Agent SDK like Conductor and OpenClaw work with your Claude plan, but will draw from your credit the same way your own scripts do.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054610156214956455"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-1710",
+          "duplicate_of": null
+        },
+        {
+          "title": "There’s nothing you need to do today. Users will get an email on June 8 to claim their credits, and this change goes into effect on June 15.\n\nMore info: https://t.co/VQ98tRsrvW",
+          "url": "https://x.com/ClaudeDevs/status/2054610158458904769",
+          "published_at": "2026-05-13T17:10:09.000000Z",
+          "description": "There’s nothing you need to do today. Users will get an email on June 8 to claim their credits, and this change goes into effect on June 15.\n\nMore info: https://t.co/VQ98tRsrvW",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/VQ98tRsrvW",
+              "expanded_url": "https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan",
+              "display_url": "support.claude.com/en/articles/15…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054610157364289906"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-1710",
+          "duplicate_of": null
+        },
+        {
+          "title": "How do you keep Claude working until the job is done? Claude Code helps with this in a few ways, including one we shipped recently: /goal. https://t.co/QtVPmwoKct",
+          "url": "https://x.com/ClaudeDevs/status/2054351031279186040",
+          "published_at": "2026-05-13T00:00:28.000000Z",
+          "description": "How do you keep Claude working until the job is done? Claude Code helps with this in a few ways, including one we shipped recently: /goal. https://t.co/QtVPmwoKct",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "A stop hook gives programmatic control over when Claude is allowed to finish. Run your test suite, hit a CI endpoint, gate on whatever you want.",
+          "url": "https://x.com/ClaudeDevs/status/2054351038690545758",
+          "published_at": "2026-05-13T00:00:30.000000Z",
+          "description": "A stop hook gives programmatic control over when Claude is allowed to finish. Run your test suite, hit a CI endpoint, gate on whatever you want.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054351037398675684"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-0000",
+          "duplicate_of": null
+        },
+        {
+          "title": "Long-running only works if Claude doesn't have to wait on you. That's why we have auto mode, which you can enable with shift + tab in CLI or by using the mode selector on desktop.\n\nDocs here: https://",
+          "url": "https://x.com/ClaudeDevs/status/2054351039978226149",
+          "published_at": "2026-05-13T00:00:30.000000Z",
+          "description": "Long-running only works if Claude doesn't have to wait on you. That's why we have auto mode, which you can enable with shift + tab in CLI or by using the mode selector on desktop.\n\nDocs here: https://t.co/g9R3v5f8UJ",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/g9R3v5f8UJ",
+              "expanded_url": "https://code.claude.com/docs/en/goal",
+              "display_url": "code.claude.com/docs/en/goal"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054351038690545758"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260513-0000",
+          "duplicate_of": null
+        },
+        {
+          "title": "Fast mode for Claude Opus 4.7 is now available in research preview on the API and in Claude Code.",
+          "url": "https://x.com/ClaudeDevs/status/2054266327771275435",
+          "published_at": "2026-05-12T18:23:53.000000Z",
+          "description": "Fast mode for Claude Opus 4.7 is now available in research preview on the API and in Claude Code.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Fast mode for Opus 4.7 is also available in research preview on @cursor_ai, @emergentlabs, @FactoryAI, @v0, @warpdotdev, and @windsurf.",
+          "url": "https://x.com/ClaudeDevs/status/2054299065069003208",
+          "published_at": "2026-05-12T20:33:58.000000Z",
+          "description": "Fast mode for Opus 4.7 is also available in research preview on @cursor_ai, @emergentlabs, @FactoryAI, @v0, @warpdotdev, and @windsurf.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054299058718798198"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+          "duplicate_of": null
+        },
+        {
+          "title": "For API users, if you’re interested in using fast mode on Opus 4.7, please join the waitlist: https://t.co/Ud0B2Or23q",
+          "url": "https://x.com/ClaudeDevs/status/2054299069804433576",
+          "published_at": "2026-05-12T20:33:59.000000Z",
+          "description": "For API users, if you’re interested in using fast mode on Opus 4.7, please join the waitlist: https://t.co/Ud0B2Or23q",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Ud0B2Or23q",
+              "expanded_url": "http://claude.com/fast-mode",
+              "display_url": "claude.com/fast-mode"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2054299065069003208"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Another reason to switch to Codex.",
+          "url": "https://x.com/OpenAI/status/2054620621255192719",
+          "published_at": "2026-05-13T17:51:43.000000Z",
+          "description": "Another reason to switch to Codex.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "Want to (officially) use Codex at work?\n\nSend this post to your CTO to bring your team to Codex. Eligible enterprise customers who switch in the next 30 days get 2 free months of Codex usage for new users. https://t.co/38e8y7MAmg",
+            "url": "https://x.com/OpenAIDevs/status/2054586214112780518"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Want to (officially) use Codex at work?\n\nSend this post to your CTO to bring your team to Codex. Eligible enterprise customers who switch in the next 30 days get 2 free months of Codex usage for new u",
+          "url": "https://x.com/OpenAIDevs/status/2054586214112780518",
+          "published_at": "2026-05-13T15:35:00.000000Z",
+          "description": "Want to (officially) use Codex at work?\n\nSend this post to your CTO to bring your team to Codex. Eligible enterprise customers who switch in the next 30 days get 2 free months of Codex usage for new users. https://t.co/38e8y7MAmg",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260513-1535",
+          "duplicate_of": null
+        },
+        {
+          "title": "Get started:\nhttps://t.co/vlxRfe981g",
+          "url": "https://x.com/OpenAIDevs/status/2054586226855100663",
+          "published_at": "2026-05-13T15:35:03.000000Z",
+          "description": "Get started:\nhttps://t.co/vlxRfe981g",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/vlxRfe981g",
+              "expanded_url": "https://www.openai.com/form/codex-enterprise-promo",
+              "display_url": "openai.com/form/codex-ent…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2054586214112780518"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260513-1535",
+          "duplicate_of": null
+        },
+        {
+          "title": "Computer use lets Codex work across your apps without taking over your Mac.\n\n@AriX talks with @romainhuet about what changes when agents can click, type, and keep working in the background. https://t.",
+          "url": "https://x.com/OpenAIDevs/status/2054298427245441141",
+          "published_at": "2026-05-12T20:31:26.000000Z",
+          "description": "Computer use lets Codex work across your apps without taking over your Mac.\n\n@AriX talks with @romainhuet about what changes when agents can click, type, and keep working in the background. https://t.co/LdAmwtTXCY",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Symphony: every open task gets a running Codex agent",
+          "url": "https://x.com/OpenAIDevs/status/2054252221941121035",
+          "published_at": "2026-05-12T17:27:50.000000Z",
+          "description": "Symphony: every open task gets a running Codex agent",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "odysseus0z",
+            "text": "https://t.co/88l0mFNMIE",
+            "url": "https://x.com/odysseus0z/status/2031850264240800131"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+          "duplicate_of": null
+        },
+        {
+          "title": "Here’s a refresher about Symphony:",
+          "url": "https://x.com/OpenAIDevs/status/2054252234045845822",
+          "published_at": "2026-05-12T17:27:53.000000Z",
+          "description": "Here’s a refresher about Symphony:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "📣 What if every open issue had a Codex agent?\n\nThat’s the idea behind Symphony, an open-source agent orchestrator for Codex that turns task trackers into always-on systems for agentic work, letting humans focus on review and direction. https://t.co/TxPs0bdtRd",
+            "url": "https://x.com/OpenAIDevs/status/2048825010371039648"
+          },
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2054252221941121035"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 466.7h old, exceeds 168h threshold",
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We’re reimagining a 50-year-old interface - the mouse pointer - with AI. 🖱️\n\nThese experimental demos show how people can intuitively direct Gemini on their screens using motion, speech, and natural ",
+          "url": "https://x.com/GoogleDeepMind/status/2054246119635300451",
+          "published_at": "2026-05-12T17:03:35.000000Z",
+          "description": "We’re reimagining a 50-year-old interface - the mouse pointer - with AI. 🖱️\n\nThese experimental demos show how people can intuitively direct Gemini on their screens using motion, speech, and natural shorthand to get things done 🧵 https://t.co/p6fhgNcopz",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "For decades, your mouse only tracked where you were pointing. AI helps it understand what you're pointing at. 💭\n\nThis means a photo of a scribbled note could turn into an interactive to-do list, or a",
+          "url": "https://x.com/GoogleDeepMind/status/2054246130511225053",
+          "published_at": "2026-05-12T17:03:38.000000Z",
+          "description": "For decades, your mouse only tracked where you were pointing. AI helps it understand what you're pointing at. 💭\n\nThis means a photo of a scribbled note could turn into an interactive to-do list, or a paused video frame can become a restaurant booking link. https://t.co/eCg8zV4SXE",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2054246128221143399"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+          "duplicate_of": null
+        },
+        {
+          "title": "These capabilities are guiding how we think about the next generation of interfaces.\n\nAs we continue exploring what an AI-enabled mouse pointer would unlock, try our experiments in @GoogleAIStudio → h",
+          "url": "https://x.com/GoogleDeepMind/status/2054246132222419226",
+          "published_at": "2026-05-12T17:03:38.000000Z",
+          "description": "These capabilities are guiding how we think about the next generation of interfaces.\n\nAs we continue exploring what an AI-enabled mouse pointer would unlock, try our experiments in @GoogleAIStudio → https://t.co/kebvSQctKw",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/kebvSQctKw",
+              "expanded_url": "https://goo.gle/49HqFeu",
+              "display_url": "goo.gle/49HqFeu"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2054246130511225053"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "🚀Qwen3.6-Plus is on Nous Portal now and FREE for a limited time.\nHermes Agent, here we go!! ⚡️ @NousResearch",
+          "url": "https://x.com/Alibaba_Qwen/status/2054397617015271738",
+          "published_at": "2026-05-13T03:05:35.000000Z",
+          "description": "🚀Qwen3.6-Plus is on Nous Portal now and FREE for a limited time.\nHermes Agent, here we go!! ⚡️ @NousResearch",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "NousResearch",
+            "text": "Qwen 3.6 Plus by @Alibaba_Qwen is now FREE for a limited time on Nous Portal!\n\nNous Portal is one easy subscription that gives you access to 300+ models, exclusive discounts, and bundles your tokens and paid tools together for hassle-free setup and simple billing. https://t.co/nHFuB02xzI",
+            "url": "https://x.com/NousResearch/status/2053876496045920601"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    }
+  }
+}
