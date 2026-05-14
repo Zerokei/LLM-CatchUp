@@ -1,0 +1,384 @@
+{
+  "analyzed_at": "2026-05-14T08:41:36+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-14.json",
+  "trend_paragraph": "- **Claude Code 单日三连更**：周用量上限上调 50%、6 月 15 日起新增程序化月度配额、上线「/goal」与 stop hook 等长任务命令。\n- **OpenAI Codex 攻势加速**：限时 30 天为迁移企业赠送 2 个月免费用量，OpenAI 主账号与 Sam Altman 齐站台。\n- **Codex Windows 沙箱设计公开**：OpenAI 工程团队详解四层架构「elevated sandbox」，应对 Windows 缺失隔离原语的安全难题。\n- **Google DeepMind 重塑鼠标指针**：AI 让指针理解屏幕语义，Gemini 可被手势、语音和自然简写驱动，Demis Hassabis 转推背书。\n- **Anthropic 进军中小企业**：Claude for Small Business 接入 QuickBooks、PayPal、HubSpot 等核心工具，配 15 套现成 Agent 工作流。",
+  "articles": [
+    {
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-may-85b",
+      "source": "Berkeley RDI",
+      "title": "Berkeley RDI 周报：Agentic AI 峰会嘉宾扩容、AgentX 第二阶段开启",
+      "summary": "Berkeley RDI 公布 2026 Agentic AI 峰会更多重磅嘉宾名单并提示早鸟票即将售罄、余票有限。同时宣布 AgentX–AgentBeats 进入第二阶段，并公布 Sprint 2 与 OpenEnv Custom Track 的获胜者。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": ["Berkeley RDI", "Agentic AI", "峰会", "AgentX", "OpenEnv"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/building-codex-windows-sandbox",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent",
+      "summary": "OpenAI 工程团队披露了为 Codex 编码 Agent 打造的 Windows 沙箱方案：因 AppContainer、Windows Sandbox、MIC 完整性标签等原生隔离原语均不够用，团队自研「elevated sandbox」，通过创建 CodexSandboxOffline / CodexSandboxOnline 两个本地用户并配合防火墙规则强制隔离网络。架构分为 codex.exe、setup.exe、command-runner.exe 与子进程四层，先以「CreateProcessWithLogonW」启动 runner，再由 runner 调用「CreateRestrictedToken」+「CreateProcessAsUserW」绕过跨用户特权墙，实现可靠的文件与网络管控。",
+      "category": "研究",
+      "importance": 4,
+      "tags": ["OpenAI", "Codex", "Windows 沙箱", "Agent 安全", "进程隔离"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/claude-for-small-business",
+      "source": "Anthropic Blog",
+      "title": "Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具",
+      "summary": "Anthropic 发布面向中小企业的 Claude for Small Business，提供连接器与开箱即用的工作流，把 Claude 嵌入 QuickBooks、PayPal、HubSpot、Canva、Docusign、Google Workspace、Microsoft 365 等常用工具。首发 15 个跨财务、运营、销售、市场、HR、客服的 Agent 工作流与 15 项技能，例如核对 QuickBooks 与 PayPal 现金、自动生成月结 P&L、营销活动效果分析等，所有操作均需用户审批，Team/Enterprise 默认不用于训练。配套推出 AI Fluency 免费课程，并于 5 月 14 日在芝加哥启动 Claude SMB Tour。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Anthropic", "Claude", "中小企业", "Agent 工作流", "连接器"],
+      "practice_suggestions": [
+        "中小企业可优先试用「月结」与「现金流预测」两条工作流，评估 Claude 在财务核对中的可靠性",
+        "对接 HubSpot + Canva 的营销活动 Agent，验证营销文案与素材生成是否可替代现有外包",
+        "关注 Claude SMB Tour 巡演活动，免费获取一个月 Claude Max 额度做内部试点"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2054627102922797323",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：模型选择应更多权衡价格/速度而非价格/智能",
+      "summary": "Sam Altman 表示自己不使用「最聪明可用」模型时会有些焦虑，但有时也不在意推理速度变慢。他提出一个观点：业界或许应该把价格/速度的权衡放在比价格/智能更显眼的位置上。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": ["Sam Altman", "模型权衡", "推理速度", "定价"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2054626219858293128",
+      "source": "Sam Altman (Twitter)",
+      "title": "OpenAI 限时 30 天为企业提供两个月 Codex 免费试用",
+      "summary": "Sam Altman 宣布 Codex 是「最好的 AI 编码产品」，未来 30 天内，希望切换的企业可获赠两个月免费 Codex 使用额度。该优惠用以吸引企业从其它编码助手迁移到 Codex。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["OpenAI", "Codex", "企业试用", "AI 编码"],
+      "angle": "Sam Altman 站台力推",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2054586214112780518"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2054326444189253655",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Demis Hassabis 转推：Google DeepMind 用 AI 重构鼠标指针",
+      "summary": "Demis Hassabis 推荐 Google DeepMind 在 AI Studio 中上线的「智能鼠标指针」原型 demo。该实验展示如何让用户通过动作、语音和自然简写「指挥」Gemini 完成屏幕上的任务，重新想象沿用 50 年的鼠标交互。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["Google DeepMind", "Gemini", "AI 交互", "鼠标指针", "AI Studio"],
+      "angle": "Demis Hassabis 转推背书",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2054246119635300451"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2054257324278132893",
+      "source": "Claude (Twitter)",
+      "title": "Code with Claude 大会展示「迷你电脑」上的小而美项目",
+      "summary": "Anthropic 官方账号分享了 Code with Claude 活动现场亮点：主办方为参与者发放了「tiny computers」，参与者在其上构建了一系列精巧有趣的小项目，官方挑选若干进行展示。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": ["Claude", "Code with Claude", "Hackathon", "迷你电脑"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2054257335497838795",
+      "source": "Claude (Twitter)",
+      "title": "Claude 推介社区作品「Oregon Trail」：选择驱动剧情的生存游戏",
+      "summary": "Claude 官方账号在 Code with Claude 系列推文中展示一款由开发者基于 Claude 构建的生存游戏「Oregon Trail」，玩家的每个选择都会改变角色命运。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": ["Claude", "生存游戏", "Oregon Trail", "社区项目"],
+      "thread_group_id": "thread-claudeai-20260512-1748",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2054257336839995737",
+      "source": "Claude (Twitter)",
+      "title": "Claude 官方提问：你在家里在用 Claude 构建什么？",
+      "summary": "Claude 官方账号在 Code with Claude 展示线程末尾抛出开放式问题：「你在家里在 build 什么？」邀请社区分享自己用 Claude 构建的个人项目。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": ["Claude", "社区", "个人项目"],
+      "thread_group_id": "thread-claudeai-20260512-1748",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054639777685934564",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 单日三连更：周限上调 50%、新增程序化配额、上线长任务命令",
+      "summary": "Anthropic 同日为 Claude Code 推出三项关键更新。首先，所有 Pro、Max、Team 与按席位计费的 Enterprise 用户的 Claude Code 周用量上限即日上调 50%，覆盖 CLI、IDE 扩展、桌面端与 Web 四端，叠加上周的 5 小时窗口扩容，活动持续至 7 月 13 日。其次，6 月 15 日起付费 Claude 计划将获得一份专门用于程序化用途的月度配额，覆盖 Claude Agent SDK、「claude -p」、Claude Code GitHub Actions，以及 Conductor、OpenClaw 等基于 Agent SDK 的第三方应用，统一了第一方与第三方调用的计费模型，用户将于 6 月 8 日收到领取邮件。最后，官方介绍了让 Claude 持续推进长任务的工具链：「/goal」斜杠命令声明终态、stop hook 用代码门控收工时机、auto 模式（shift+tab）让任务无需人工等待，三者组合可构成端到端自驱工作流。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude Code", "用量上限", "程序化配额", "Agent SDK", "/goal", "stop hook", "auto 模式"],
+      "practice_suggestions": [
+        "重度 Claude Code 用户立即重新规划本周大型任务，把 50% 增量用在原本被限额卡住的批量改造或重构",
+        "6 月 8 日邮件到达后及时领取月度程序化配额，并审视 CI、自动化脚本与第三方 Agent SDK 工具（如 Conductor、OpenClaw）的调用频率",
+        "在长任务工作流中用「/goal」声明终态、配 stop hook 跑测试套件做门控、用 auto 模式（CLI 中 shift+tab）减少人工等待，建立目标-验收闭环"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260513-1907",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054639779195830285",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 限额临时提升：覆盖全平台至 7 月 13 日",
+      "summary": "Anthropic 宣布临时上调 Claude Code 使用限额，适用于 CLI、IDE 扩展、桌面端与 Web 全平台。无需手动开启，已自动应用于所有账户，活动持续至 7 月 13 日 18:00 PDT。本次提升在上周 5 小时窗口 2 倍扩容的基础上叠加。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude Code", "使用限额", "全平台", "限时活动"],
+      "thread_group_id": "thread-ClaudeDevs-20260513-1907",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054639780252844045",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic 期待开发者用扩容额度构建新应用",
+      "summary": "Anthropic 团队对 Claude Code 限额提升后开发者将带来的新作品表达期待。该推文为限额提升公告主线程的收尾跟帖。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": ["Claude Code", "社区", "开发者"],
+      "thread_group_id": "thread-ClaudeDevs-20260513-1907",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054610152817619388",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 付费计划 6 月 15 日起新增编程用量月度配额",
+      "summary": "从 6 月 15 日起，付费 Claude 计划用户可领取一份专门用于编程用途的月度配额。该配额覆盖 Claude Agent SDK、「claude -p」命令、Claude Code GitHub Actions，以及基于 Agent SDK 构建的第三方应用。这意味着付费订阅首次明确区分对话与程序化调用的额度池。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude 订阅", "Agent SDK", "Claude Code", "编程配额", "GitHub Actions"],
+      "angle": "新增程序化用量月度配额",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2054639777685934564"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054610157364289906",
+      "source": "Claude Devs (Twitter)",
+      "title": "Agent SDK 第三方工具共享你的 Claude 编程配额",
+      "summary": "基于 Claude Agent SDK 构建的第三方工具（如 Conductor、OpenClaw）将可使用你的 Claude 订阅计划工作，但其消耗会从你的编程配额中扣减，与自写脚本扣费方式一致。这统一了第一方与第三方调用的计费模型。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["Agent SDK", "第三方工具", "配额计费", "Conductor", "OpenClaw"],
+      "angle": "第三方 Agent SDK 工具同源扣额",
+      "thread_group_id": "thread-ClaudeDevs-20260513-1710",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2054639777685934564"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054610158458904769",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 编程配额：6 月 8 日发邮件，6 月 15 日生效",
+      "summary": "用户今日无需任何操作。Anthropic 将于 6 月 8 日发送邮件让用户领取编程配额，新政策自 6 月 15 日起正式生效。官方支持文档同步给出了使用 Claude Agent SDK 与订阅计划配合的细节。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": ["Claude 订阅", "编程配额", "时间线", "Agent SDK"],
+      "thread_group_id": "thread-ClaudeDevs-20260513-1710",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054351031279186040",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 新增「/goal」让任务持续推进至完成",
+      "summary": "Anthropic 介绍了让 Claude 持续工作直到任务完成的多种机制，其中包括最近上线的「/goal」斜杠命令。该命令旨在让长任务在没有人为干预时也能稳定推进。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude Code", "/goal", "长任务", "斜杠命令"],
+      "angle": "新增 /goal 推动长任务",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2054639777685934564"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054351038690545758",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code stop hook：用代码控制何时允许收工",
+      "summary": "Claude Code 的 stop hook 给开发者程序化控制 Claude 何时能结束任务的能力。用户可在 hook 中跑测试套件、调用 CI 端点或任何自定义检查，作为允许收工的门控条件。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude Code", "stop hook", "CI 集成", "自动化"],
+      "angle": "stop hook 程序化收工",
+      "thread_group_id": "thread-ClaudeDevs-20260513-0000",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2054639777685934564"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054351039978226149",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code「auto 模式」：长任务免去人工等待",
+      "summary": "为支撑长时运行任务，Claude Code 提供 auto 模式，CLI 中通过 shift+tab 切换，桌面端则通过模式选择器开启。该模式让 Claude 不必停下来等用户回应，是配合「/goal」与 stop hook 实现端到端自动化的关键一环。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Claude Code", "auto 模式", "长任务", "自动化"],
+      "thread_group_id": "thread-ClaudeDevs-20260513-0000",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054266327771275435",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Opus 4.7「Fast 模式」研究预览上线，同步登陆 Cursor 等多家平台",
+      "summary": "Anthropic 推出 Claude Opus 4.7 的「Fast 模式」研究预览，可在 API 与 Claude Code 中使用，并同步在 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 等第三方平台上线。该模式面向延迟敏感场景，在保留 Opus 4.7 旗舰能力的同时追求更快响应。API 用户需通过 claude.com/fast-mode 加入等候名单获取早期访问。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": ["Claude Opus 4.7", "Fast 模式", "研究预览", "API", "Cursor", "低延迟"],
+      "practice_suggestions": [
+        "在交互式 Agent、IDE 集成等延迟敏感场景切换 Fast 模式，与标准 Opus 4.7 做 A/B，量化延迟收益与质量代价",
+        "API 高负载用户先到 claude.com/fast-mode 提交等候名单，争取早期访问",
+        "对长链推理任务保留标准 Opus 4.7，将 Fast 模式仅用于明确低延迟需求的子步骤"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054299065069003208",
+      "source": "Claude Devs (Twitter)",
+      "title": "Opus 4.7 Fast 模式同步登陆 Cursor、v0、Warp 等第三方",
+      "summary": "Claude Opus 4.7 的 Fast 模式同时在 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 等多家第三方平台以研究预览形式上线。这让外部 IDE 与编码工具的用户也能直接体验低延迟版 Opus 4.7。",
+      "category": "模型发布",
+      "importance": 3,
+      "tags": ["Claude Opus 4.7", "Fast 模式", "Cursor", "Warp", "Windsurf"],
+      "angle": "Cursor/Warp/Windsurf 同步上线",
+      "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2054266327771275435"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2054299069804433576",
+      "source": "Claude Devs (Twitter)",
+      "title": "Opus 4.7「Fast Mode」面向 API 用户开放等候名单",
+      "summary": "Claude Devs 宣布 Opus 4.7 的「Fast Mode」开始接受 API 用户的等候名单申请，开发者可通过 claude.com/fast-mode 注册。该模式预计为高负载场景提供更低延迟的推理选项。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["Claude", "Opus 4.7", "Fast Mode", "API", "等候名单"],
+      "thread_group_id": "thread-ClaudeDevs-20260512-2033",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2054620621255192719",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 推 Codex 企业迁移促销：30 天内切换送 2 个月用量",
+      "summary": "OpenAI 主账号转发 OpenAIDevs 的企业推广信息：符合条件的企业客户在 30 天内迁移至 Codex，可为新用户获得 2 个月的免费 Codex 使用额度，意在加速企业 IDE 工具替换。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": ["OpenAI", "Codex", "企业版", "促销", "迁移"],
+      "angle": "OpenAI 主账号转发推广",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2054586214112780518"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054586214112780518",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Codex 抢企业市场：30 天内迁移送 2 个月免费用量",
+      "summary": "OpenAIDevs 面向企业客户推出限时促销：未来 30 天内切换到 Codex 的合格企业，可获得 2 个月新用户免费 Codex 使用额度。OpenAI 主账号与 Sam Altman 亲自下场转推，为「最好的 AI 编码产品」站台。报名入口为 openai.com/form/codex-enterprise-promo，意在借助经济激励抢占企业开发工具市场。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": ["OpenAI", "Codex", "企业销售", "免费额度", "迁移"],
+      "thread_group_id": "thread-OpenAIDevs-20260513-1535",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054586226855100663",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 企业促销报名入口公布",
+      "summary": "作为企业 Codex 促销线程的后续推文，OpenAIDevs 公布了报名表链接 openai.com/form/codex-enterprise-promo，企业客户可经此申请 2 个月免费用量。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": ["Codex", "企业表单", "促销入口", "OpenAI"],
+      "thread_group_id": "thread-OpenAIDevs-20260513-1535",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054298427245441141",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 引入「Computer Use」：跨应用后台操作不接管 Mac",
+      "summary": "OpenAI 介绍 Codex 的「Computer Use」能力：Agent 可在用户的多个应用中点击、输入并在后台持续工作，而无需接管整台 Mac。@AriX 与 @romainhuet 在视频中讨论了 Agent 具备 GUI 操作能力后工作流程的变化。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Codex", "Computer Use", "Agent", "GUI 自动化", "macOS"],
+      "practice_suggestions": [
+        "评估把多步骤、跨 App 的重复性任务（表单填写、报表汇总）交给 Codex 后台 Agent，并保留主操作焦点",
+        "为「Computer Use」类 Agent 建立清晰的权限边界与审计日志，避免 Agent 在敏感应用（邮件、银行）中无意操作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054252221941121035",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Symphony：每个 open issue 都配一个常驻 Codex Agent",
+      "summary": "OpenAIDevs 再次推广开源项目「Symphony」——一个 Codex 的 Agent 编排器，可将任务追踪系统转化为始终在线的 agentic 工作平台，让每个开放任务都有专属 Codex Agent 持续推进，人类只负责审阅与方向把控。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["Symphony", "Codex", "Agent 编排", "开源", "Issue Tracker"],
+      "practice_suggestions": [
+        "在团队工作流中试点 Symphony，将 GitHub Issues 等任务列表与 Codex Agent 绑定，由 Agent 自动起草 PR",
+        "为 Symphony Agent 设定明确的 review gate，确保所有 Agent 产出在合入前经过人工审阅"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054252234045845822",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Symphony 回顾：把任务追踪器变成常驻 Agent 系统",
+      "summary": "OpenAIDevs 在 Symphony 线程中重发早期介绍：Symphony 是 Codex 的开源 Agent 编排器，理念是让每个 open issue 都获得一个 Codex Agent，使任务追踪系统成为 always-on 的 agentic 平台。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": ["Symphony", "Codex", "开源", "Agent", "任务管理"],
+      "thread_group_id": "thread-OpenAIDevs-20260512-1727",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2054246119635300451",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google DeepMind 重塑 50 年鼠标指针：AI 让指针理解屏幕语义",
+      "summary": "Google DeepMind 发布实验性 demo，重新设计沿用 50 年的鼠标指针交互范式。AI 让指针从仅追踪位置升级为「理解所指对象」：手写便签照片可自动转为可交互待办列表，暂停的视频帧可变成餐厅预订链接。用户可通过手势、语音和自然简写指挥 Gemini 完成屏幕任务。相关 demo 已在 Google AI Studio 平台开放试用，Demis Hassabis 也转推为该工作背书。",
+      "category": "研究",
+      "importance": 4,
+      "tags": ["Google DeepMind", "Gemini", "AI 指针", "人机交互", "多模态", "AI Studio"],
+      "practice_suggestions": [
+        "进入 Google AI Studio 体验 AI 指针 demo，评估能力边界与潜在的产品集成机会",
+        "在无障碍、浏览器自动化等场景思考是否引入屏幕级语义理解 Agent"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2054246130511225053",
+      "source": "Google DeepMind (Twitter)",
+      "title": "AI 鼠标：从「指到哪」升级为「理解指什么」",
+      "summary": "Google DeepMind 解释 AI 鼠标的核心转变：过去鼠标只追踪位置，AI 则让它理解所指对象的语义。例如手写便签照片可被自动转为可交互的待办列表，暂停的视频帧能变成餐厅预订链接。",
+      "category": "研究",
+      "importance": 3,
+      "tags": ["AI 鼠标", "Gemini", "语义理解", "多模态", "交互设计"],
+      "angle": "AI 让指针理解所指内容",
+      "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2054246119635300451"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2054246132222419226",
+      "source": "Google DeepMind (Twitter)",
+      "title": "AI 指针实验上线 Google AI Studio 供开发者试玩",
+      "summary": "Google DeepMind 表示这些 AI 鼠标指针能力正指导其对下一代交互界面的思考，相关实验性 demo 已在 @GoogleAIStudio 平台开放试用（goo.gle/49HqFeu），邀请开发者亲身体验。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": ["Google AI Studio", "AI 指针", "demo", "下一代界面", "Gemini"],
+      "thread_group_id": "thread-GoogleDeepMind-20260512-1703",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2054397617015271738",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.6-Plus 限时免费上线 Nous Portal",
+      "summary": "阿里巴巴 Qwen 团队宣布 Qwen3.6-Plus 已登陆 Nous Research 的 Nous Portal，并在限时期内免费开放使用。Nous Portal 是一个聚合订阅平台，通过单一订阅即可访问 300+ 模型，并提供独家折扣以及将 token 与付费工具统一打包的简化计费方案。此次合作同时为 Hermes Agent 的接入铺路。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": ["Qwen3.6-Plus", "Nous Portal", "模型聚合", "限时免费", "阿里巴巴"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
