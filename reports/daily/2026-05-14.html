@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-05-14 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-14" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-05-14</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>Claude Code 单日三连更</strong>：周用量上限上调 50%、6 月 15 日起新增程序化月度配额、上线「/goal」与 stop hook 等长任务命令。</li>
+<li><strong>OpenAI Codex 攻势加速</strong>：限时 30 天为迁移企业赠送 2 个月免费用量，OpenAI 主账号与 Sam Altman 齐站台。</li>
+<li><strong>Codex Windows 沙箱设计公开</strong>：OpenAI 工程团队详解四层架构「elevated sandbox」，应对 Windows 缺失隔离原语的安全难题。</li>
+<li><strong>Google DeepMind 重塑鼠标指针</strong>：AI 让指针理解屏幕语义，Gemini 可被手势、语音和自然简写驱动，Demis Hassabis 转推背书。</li>
+<li><strong>Anthropic 进军中小企业</strong>：Claude for Small Business 接入 QuickBooks、PayPal、HubSpot 等核心工具，配 15 套现成 Agent 工作流。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/ClaudeDevs/status/2054639777685934564">Claude Code 单日三连更：周限上调 50%、新增程序化配额、上线长任务命令</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>用量上限</code> <code>程序化配额</code> <code>Agent SDK</code> <code>/goal</code> <code>stop hook</code> <code>auto 模式</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 同日为 Claude Code 推出三项关键更新。首先，所有 Pro、Max、Team 与按席位计费的 Enterprise 用户的 Claude Code 周用量上限即日上调 50%，覆盖 CLI、IDE 扩展、桌面端与 Web 四端，叠加上周的 5 小时窗口扩容，活动持续至 7 月 13 日。其次，6 月 15 日起付费 Claude 计划将获得一份专门用于程序化用途的月度配额，覆盖 Claude Agent SDK、「claude -p」、Claude Code GitHub Actions，以及 Conductor、OpenClaw 等基于 Agent SDK 的第三方应用，统一了第一方与第三方调用的计费模型，用户将于 6 月 8 日收到领取邮件。最后，官方介绍了让 Claude 持续推进长任务的工具链：「/goal」斜杠命令声明终态、stop hook 用代码门控收工时机、auto 模式（shift+tab）让任务无需人工等待，三者组合可构成端到端自驱工作流。 Anthropic 宣布临时上调 Claude Code 使用限额，适用于 CLI、IDE 扩展、桌面端与 Web 全平台。无需手动开启，已自动应用于所有账户，活动持续至 7 月 13 日 18:00 PDT。本次提升在上周 5 小时窗口 2 倍扩容的基础上叠加。 Anthropic 团队对 Claude Code 限额提升后开发者将带来的新作品表达期待。该推文为限额提升公告主线程的收尾跟帖。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2054610157364289906">Agent SDK 第三方工具共享你的 Claude 编程配额</a> · Claude Devs (Twitter) · 第三方 Agent SDK 工具同源扣额</li>
+<li><a href="https://x.com/ClaudeDevs/status/2054351038690545758">Claude Code stop hook：用代码控制何时允许收工</a> · Claude Devs (Twitter) · stop hook 程序化收工</li>
+<li><a href="https://x.com/ClaudeDevs/status/2054610152817619388">Claude 付费计划 6 月 15 日起新增编程用量月度配额</a> · Claude Devs (Twitter) · 新增程序化用量月度配额</li>
+<li><a href="https://x.com/ClaudeDevs/status/2054351031279186040">Claude Code 新增「/goal」让任务持续推进至完成</a> · Claude Devs (Twitter) · 新增 /goal 推动长任务</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>重度 Claude Code 用户立即重新规划本周大型任务，把 50% 增量用在原本被限额卡住的批量改造或重构</li>
+<li>6 月 8 日邮件到达后及时领取月度程序化配额，并审视 CI、自动化脚本与第三方 Agent SDK 工具（如 Conductor、OpenClaw）的调用频率</li>
+<li>在长任务工作流中用「/goal」声明终态、配 stop hook 跑测试套件做门控、用 auto 模式（CLI 中 shift+tab）减少人工等待，建立目标-验收闭环</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://openai.com/index/building-codex-windows-sandbox">OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Codex</code> <code>Windows 沙箱</code> <code>Agent 安全</code> <code>进程隔离</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 工程团队披露了为 Codex 编码 Agent 打造的 Windows 沙箱方案：因 AppContainer、Windows Sandbox、MIC 完整性标签等原生隔离原语均不够用，团队自研「elevated sandbox」，通过创建 CodexSandboxOffline / CodexSandboxOnline 两个本地用户并配合防火墙规则强制隔离网络。架构分为 codex.exe、setup.exe、command-runner.exe 与子进程四层，先以「CreateProcessWithLogonW」启动 runner，再由 runner 调用「CreateRestrictedToken」+「CreateProcessAsUserW」绕过跨用户特权墙，实现可靠的文件与网络管控。</p>
+<hr>
+<h3 id="h-5">3. <a href="https://www.anthropic.com/news/claude-for-small-business">Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>中小企业</code> <code>Agent 工作流</code> <code>连接器</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布面向中小企业的 Claude for Small Business，提供连接器与开箱即用的工作流，把 Claude 嵌入 QuickBooks、PayPal、HubSpot、Canva、Docusign、Google Workspace、Microsoft 365 等常用工具。首发 15 个跨财务、运营、销售、市场、HR、客服的 Agent 工作流与 15 项技能，例如核对 QuickBooks 与 PayPal 现金、自动生成月结 P&amp;L、营销活动效果分析等，所有操作均需用户审批，Team/Enterprise 默认不用于训练。配套推出 AI Fluency 免费课程，并于 5 月 14 日在芝加哥启动 Claude SMB Tour。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>中小企业可优先试用「月结」与「现金流预测」两条工作流，评估 Claude 在财务核对中的可靠性</li>
+<li>对接 HubSpot + Canva 的营销活动 Agent，验证营销文案与素材生成是否可替代现有外包</li>
+<li>关注 Claude SMB Tour 巡演活动，免费获取一个月 Claude Max 额度做内部试点</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/demishassabis/status/2054326444189253655">Demis Hassabis 转推：Google DeepMind 用 AI 重构鼠标指针</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>Gemini</code> <code>AI 交互</code> <code>鼠标指针</code> <code>AI Studio</code></li>
+</ul>
+<p><strong>摘要</strong>: Demis Hassabis 推荐 Google DeepMind 在 AI Studio 中上线的「智能鼠标指针」原型 demo。该实验展示如何让用户通过动作、语音和自然简写「指挥」Gemini 完成屏幕上的任务，重新想象沿用 50 年的鼠标交互。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/ClaudeDevs/status/2054299065069003208">Opus 4.7 Fast 模式同步登陆 Cursor、v0、Warp 等第三方</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Fast 模式</code> <code>Cursor</code> <code>Warp</code> <code>Windsurf</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Opus 4.7 的 Fast 模式同时在 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 等多家第三方平台以研究预览形式上线。这让外部 IDE 与编码工具的用户也能直接体验低延迟版 Opus 4.7。 Claude Devs 宣布 Opus 4.7 的「Fast Mode」开始接受 API 用户的等候名单申请，开发者可通过 claude.com/fast-mode 注册。该模式预计为高负载场景提供更低延迟的推理选项。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/GoogleDeepMind/status/2054246130511225053">AI 鼠标：从「指到哪」升级为「理解指什么」</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>AI 鼠标</code> <code>Gemini</code> <code>语义理解</code> <code>多模态</code> <code>交互设计</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 解释 AI 鼠标的核心转变：过去鼠标只追踪位置，AI 则让它理解所指对象的语义。例如手写便签照片可被自动转为可交互的待办列表，暂停的视频帧能变成餐厅预订链接。 Google DeepMind 表示这些 AI 鼠标指针能力正指导其对下一代交互界面的思考，相关实验性 demo 已在 @GoogleAIStudio 平台开放试用（goo.gle/49HqFeu），邀请开发者亲身体验。</p>
+<hr>
+<h2 id="h-9">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>模型权衡</code> <code>推理速度</code> <code>定价</code> — Sam Altman 表示自己不使用「最聪明可用」模型时会有些焦虑，但有时也不在意推理速度变慢。他提出一个观点：业界或许应该把价格/速度的权衡放在比价格/智能更显眼的位置上。 · <a href="https://x.com/sama/status/2054627102922797323">Sam Altman (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>Codex</code> <code>企业销售</code> <code>免费额度</code> <code>迁移</code> — OpenAIDevs 面向企业客户推出限时促销：未来 30 天内切换到 Codex 的合格企业，可获得 2 个月新用户免费 Codex 使用额度。OpenAI 主账号与 Sam Altman 亲自下场转推，为「最好的 AI 编码产品」站台。报名入口为 openai.com/form/codex-enterprise-promo，意在借助经济激励抢占企业开发工具市场。 作为企业 Codex 促销线程的后续推文，OpenAIDevs 公布了报名表链接 openai.com/form/codex-enterprise-promo，企业客户可经此申请 2 个月免费用量。 · <a href="https://x.com/OpenAIDevs/status/2054586214112780518">OpenAI Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Qwen3.6-Plus</code> <code>Nous Portal</code> <code>模型聚合</code> <code>限时免费</code> <code>阿里巴巴</code> — 阿里巴巴 Qwen 团队宣布 Qwen3.6-Plus 已登陆 Nous Research 的 Nous Portal，并在限时期内免费开放使用。Nous Portal 是一个聚合订阅平台，通过单一订阅即可访问 300+ 模型，并提供独家折扣以及将 token 与付费工具统一打包的简化计费方案。此次合作同时为 Hermes Agent 的接入铺路。 · <a href="https://x.com/Alibaba_Qwen/status/2054397617015271738">Qwen (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Symphony</code> <code>Codex</code> <code>开源</code> <code>Agent</code> <code>任务管理</code> — OpenAIDevs 在 Symphony 线程中重发早期介绍：Symphony 是 Codex 的开源 Agent 编排器，理念是让每个 open issue 都获得一个 Codex Agent，使任务追踪系统成为 always-on 的 agentic 平台。 · <a href="https://x.com/OpenAIDevs/status/2054252234045845822">OpenAI Devs (Twitter)</a></li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Code 单日三连更：周限上调 50%、新增程序化配额、上线长任务命令</a></li>
+      <li class="toc-h3"><a href="#h-4">2. OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Demis Hassabis 转推：Google DeepMind 用 AI 重构鼠标指针</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Opus 4.7 Fast 模式同步登陆 Cursor、v0、Warp 等第三方</a></li>
+      <li class="toc-h3"><a href="#h-8">6. AI 鼠标：从「指到哪」升级为「理解指什么」</a></li>
+      <li class="toc-h2"><a href="#h-9">速览</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-05-13.html">2026-05-13</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-14.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
