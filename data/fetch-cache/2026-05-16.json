@@ -1,0 +1,466 @@
+{
+  "fetched_at": "2026-05-16T06:32:23+08:00",
+  "window_start": "2026-05-15T00:32:23+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "no recent article URLs found in sitemap",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？",
+          "url": "https://baoyu.io/blog/2026-05-15/forward-deployed-engineer",
+          "published_at": "2026-05-15T00:00:00.000Z",
+          "description": "FDE 正成为 AI 公司争抢的新岗位，关键不是写模型，而是把模型真正接进企业业务。",
+          "full_text": "Title: Forward Deployed Engineer：AI 时代的新宠岗位，到底干什么？\n\nURL Source: https://baoyu.io/blog/2026-05-15/forward-deployed-engineer\n\nMarkdown Content:\n## 一场 AI 岗位的“军备竞赛”\n\n先看看最近 AI 圈的一个关于新职位 Forward Deployed Engineer（FDE）的新闻。\n\nGoogle 正在 FDE 岗位上加倍投入，并且大幅简化了面试流程。Google Cloud 的 CEO 托马斯·库里安（Thomas Kurian）[宣布](https://www.linkedin.com/posts/thomas-kurian-469b6219_today-we-announced-a-new-ai-focused-organization-share-7460023646418489344-5xWp?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAIk0KwBsmE3oBadWSg2ettxmEyKbqZKG34)，他们在市场营销（Go-To-Market）团队下成立了一个全新的、以 AI 为核心的部门，并且正在为此疯狂招募 FDE。\n\n![Image 1: Thomas Kurian 关于 Google Cloud 扩招 FDE 的 LinkedIn 动态截图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/06-screenshot-google-linkedin-news.png)\n\n听说，他们的面试流程[已经被大幅压缩](https://x.com/sanjeed_i/status/2054418365159178371)，从过去长达数周、多达 4-6 轮的面试，缩短到了仅仅两天内的两轮面试。看来 Google 对填补这些空缺不仅是渴望，简直可以说是迫不及待了。\n\n![Image 2: Google FDE 面试流程压缩传闻截图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/07-screenshot-google-fde-x-news.png)\n\n就在周一（5 月 11 日），OpenAI [宣布](https://openai.com/index/openai-launches-the-deployment-company/)成立了“OpenAI 部署公司”（The OpenAI Deployment Company）。这是一家[由私募股权基金投资 40 亿美元](https://openai.com/index/openai-launches-the-deployment-company/)成立的独立实体，**估值高达 140 亿美元**，投资方包括 TPG、Advent 等。看起来 OpenAI 本身并不是直接的投资方，而是扮演着合作伙伴的角色。\n\n![Image 3: OpenAI 部署公司官方公告截图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/08-screenshot-openai-deployment-news.png)\n\n公告特别提到了 FDE，并表示他们的职责是“与业务领导者、运营人员和一线团队紧密合作，精准定位 AI 能产生最大价值的领域，并围绕 AI 重新设计组织的基础设施和关键工作流程，最终将这些收益转化为持久稳定的系统”。\n\n由此可见，**FDE 将在 OpenAI 的企业销售业务中扮演极其关键的角色**，他们的任务就是确保公司的 AI 系统能在客户的真实业务中跑通，并实实在在地创造价值。将这块业务外包给新成立的“部署公司”，也能让 OpenAI 腾出手来，专心研发更强大的 AI 模型；而面对客户的那些繁琐对接，就交给合作伙伴和他们的 FDE 去搞定吧。\n\n与此相关的一个动态是，OpenAI 收购了 Tomoro。这是一家总部位于英国、成立于 2023 年的 AI 公司，在英国、亚洲和澳大利亚拥有 150 名 FDE。这也是“OpenAI 部署公司”成立以来的第一笔收购。\n\nAnthropic 也在如法炮制，创建属于自己的独立 FDE 咨询公司。上周一（5 月 4 日），Anthropic 发布了一份[极其含糊的公告](https://www.anthropic.com/news/enterprise-ai-services-company)，宣布了这项新业务，但连名字都没透露，投资细节也寥寥无几。\n\n![Image 4: Anthropic 企业 AI 服务公司官方公告截图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/09-screenshot-anthropic-enterprise-news.png)\n\n已知的投资方包括 Anthropic 本身、黑石（Blackstone）、Hellman & Friedman 以及高盛（Goldman Sachs）。这家新公司的使命是与“各行各业的中型企业合作，将大语言模型（LLM）Claude 引入他们最重要的业务运营中”。\n\nAnthropic 的算盘似乎和 OpenAI 打得一模一样：拉外资建个独立公司，让里面的 FDE 帮企业把 Claude 整合进系统。可以预见，这么一来，这些企业购买的 Claude Token 数量绝对会创下历史新高。\n\n## 用大白话给你讲清楚 FDE 到底是啥\n\n那么 FDE 到底是啥？全称是 Forward Deployed Engineer，简称 FDE。这个名字直译过来是“前线部署工程师”，但光看名字很难理解它到底干什么。\n\n> 一句话版：**驻扎在客户公司现场写代码的工程师。**\n\n详细点说，这个岗位介于软件工程师、方案架构师和咨询顾问之间，但更实操。他们直接坐在客户公司里，用自家 AI 技术帮客户搞定实际问题。\n\n你可能会问，这不就是咨询顾问？还真不太一样。顾问通常给你 PPT，告诉你“怎么做最好”，**FDE 直接给你代码，帮你做到最好**。方案架构师一般画架构图、写技术方案，FDE 除了这些，还得上手敲代码、调接口、现场 debug。\n\n如果要给具体的比例，大概是：25% 写代码，50% 集成和调试，25% 开会和沟通。实际上，真正安静写代码的时间可能更少。\n\n![Image 5: FDE 岗位职责比例示意图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/01-infographic-fde-role.png)\n\n## 其实，Palantir 才是鼻祖\n\n说起 FDE，这其实不是 AI 时代新冒出来的，而是 Palantir 在 2010 年代就玩熟的招数。\n\nPalantir 做数据分析平台，早期服务的全是美军和情报部门，客户需求都是机密，根本不能用常规方法沟通。于是 Palantir 干脆把工程师派到客户那里常驻，近距离观察客户需求，现场快速迭代。\n\n这些驻场工程师（Palantir 叫他们 Delta）干得不仅仅是交付项目，还有更重要的任务：**在客户端提炼出通用需求，反馈回产品团队做成标准化功能**。\n\n到 2016 年，Palantir 的 FDE 已经比普通工程师还多了，真正定义了这个岗位。\n\n![Image 6: Palantir FDE 现场反馈环示意图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/02-framework-palantir-loop.png)\n\n## 同样押注 FDE，三家公司走了三条不同的路\n\n**OpenAI 最猛。**成立 OpenAI Deployment Company，TPG、麦肯锡、贝恩、凯捷全来了，连估值都搞到 140 亿美元，直接买了一家英国公司，150 名 FDE 到位即用。承诺 17.5% 的最低回报率，更像在投基建。\n\n**Anthropic 稳一些。**找了黑石、高盛、Apollo 等华尔街巨头成立合资公司，先期投入 15 亿美元，主攻中型企业市场。这些投资方手里一大堆企业，天然就是 Claude 模型最好的用户池。\n\n**Google 最传统。**自己雇人，FDE 岗位分布全球，薪资还不低——在美国高阶的总包能到 40 万美元以上。但最大的区别是，Google 的 FDE 拿的是 Google 股票，OpenAI 和 Anthropic 的 FDE 则在独立公司，跟母公司利益没直接关系。\n\n![Image 7: OpenAI Anthropic Google 的 FDE 路线对比](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/03-comparison-three-paths.png)\n\n## 给你翻译一下 Google FDE 招聘启事背后的“人话”\n\n企业招聘启事这种东西，经常让人看不懂，咱们翻译一下：\n\n![Image 8: Google FDE JD 原文截图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/10-screenshot-google-jd.png)\n\n| 原文 | 翻译 |\n| --- | --- |\n| “你是客户环境中的嵌入式建设者” | “你要去客户公司里坐着写代码。” |\n| “不同于传统咨询，你是创新者兼建设者” | “活确实很像咨询，但我们想让你多写点代码。” |\n| “你得有创始人心态” | “没人写需求文档，需求变了、项目拖了，都是你的锅。” |\n| “高能动性” | “别指望额外资源，啥都得靠自己。” |\n| “白手套级复杂 AI 系统部署” | “客户怎么要求你都得接着，哪怕要求很离谱。” |\n| “把真实世界的洞察反馈给产品路线图” | “你提的工单，产品经理可能会偶尔瞄一眼。” |\n\n虽然听起来有点吐槽，但实际上每家公司的 JD 都类似。有个心理准备，才更清楚自己适不适合。\n\n![Image 9: Google FDE 招聘启事人话翻译图](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/04-comparison-jd-translation.png)\n\n## 灵魂拷问：FDE 到底还是不是咨询？\n\n看三个维度。\n\n1.   **一是组织归属。**Palantir 的 FDE 归产品团队，跟母公司同进退。但 OpenAI、Anthropic 的 FDE 属于独立公司，信息流通、身份认同和发展路径都会打折。\n\n2.   **二是反馈环。**FDE 最大的价值是发现客户需求后反哺给产品。但独立公司和母公司间隔着一道组织鸿沟，这个反馈通道可能会受阻，FDE 就容易沦为纯“写代码的咨询”。\n\n3.   **三是利益绑定。**Google 的 FDE 拿母公司股票，利益一致。OpenAI、Anthropic 的 FDE 就拿独立公司的收益了，跟母公司估值涨到天上去也没你份。\n\n**结论就是，OpenAI 和 Anthropic 的 FDE 已经更接近咨询，Google 则更接近传统的 FDE 模式。**\n\n## 谁该关注 FDE？\n\n分三类人看：\n\n*   **新毕业生**：绝佳机会，大厂的软件岗越来越少，但 FDE 大量招人，你能快速接触到企业级 AI 项目，成长更快。\n*   **资深工程师**：可能会觉得“降级”，客户换得勤，缺乏长期归属感；但如果你正想创业或者更接近业务，FDE 是个深入企业需求的绝佳窗口。\n*   **非技术背景**：门槛仍然挺高，不是学几个月 Python 就能搞定的事。\n\n## AI 行业的竞赛，已经悄然转向\n\n过去三年，AI 行业一直拼的是模型大小、跑分高低。现在问题变了——**大多数企业不缺模型，缺的是有人帮他们把模型接进业务**。\n\nOpenAI 一出手就是 40 亿美元，Anthropic 也拿了 15 亿，Google 招聘流程压到两天。这些巨额投入表明：**AI 公司的赚钱方式变了，从卖模型到卖落地**。\n\n往大了说，每花 1 块钱训练模型，就可能得再花 1 块钱让模型真正跑起来。\n\n![Image 10: AI 行业从模型竞赛转向落地竞赛](https://s.baoyu.io/imgs/2026-05-15/forward-deployed-engineer/05-flowchart-ai-deployment-shift.png)\n\n**FDE，恰好就站在这个转折点的最前沿。**\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 961,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "A new personal finance experience in ChatGPT",
+          "url": "https://openai.com/index/personal-finance-chatgpt",
+          "published_at": "2026-05-15T00:00:00.000Z",
+          "description": "Preview a new personal finance experience in ChatGPT for Pro users in the U.S. Securely connect your financial accounts and get AI-powered insights and guidance grounded in your financial context, goals, and priorities.",
+          "full_text": "Title: A new personal finance experience in ChatGPT\n\nURL Source: https://openai.com/index/personal-finance-chatgpt\n\nMarkdown Content:\nToday we’re releasing a preview of a new personal finance experience in ChatGPT to Pro users in the U.S. Now you can securely connect your financial accounts, see a dashboard of where your money is going, and ask ChatGPT questions grounded in your financial context – all while staying in control of your data. We’re starting with a preview to a smaller group so we can learn from real-world use, improve the experience, and expand thoughtfully.\n\nMoney touches nearly every part of life: where we live, what decisions we make, how we care for loved ones, what future we imagine. But managing finances today often means piecing together accounts, apps, cards, loans, and spreadsheets just to know where things stand. Even then, it can be hard to see the full picture or know what to do next.\n\nPeople are already turning to ChatGPT for help:more than 200 million people come to ChatGPT every month for budgeting, questions about their investments, comparing different paths, planning for future goals, and more. Recent advances in GPT‑5.5 make ChatGPT stronger at reasoning through the complex, context-dependent questions that personal finance often requires.\n\nWith your financial accounts connected, ChatGPT can combine that reasoning with your real financial context and what you’ve shared about your goals, lifestyle, and priorities, helping you spot patterns, understand tradeoffs, and plan for big decisions in a way that feels more personal and complete. Now you can ask questions like:\n\nChatGPT can help you stay informed and feel more confident managing your finances, but it is not a replacement for professional financial advice.\n\nStarting today, we’re rolling out the ability for Pro users in the U.S. to connect their financial accounts in ChatGPT on web and iOS, with support for more than 12,000 financial institutions. We’ll learn and improve from early use before rolling it out to Plus, with the goal of making it available to everyone.\n\n## How to get started\n\n**_Connect your financial information_**\n\nTo get started, open Finances from the sidebar in ChatGPT and select ‘Get started’ or start a conversation from anywhere in ChatGPT by saying ‘@Finances, connect my accounts’.\n\nChatGPT will then guide you through securely linking accounts through Plaid, with Intuit support coming soon. After you authenticate, ChatGPT will begin syncing and categorizing your data, which may take a few minutes.\n\n![Image 1: Four mobile app screens showing the process of connecting financial accounts to ChatGPT](https://images.ctfassets.net/kftzwdyauwt9/7yt3eHKhaDHyE3CB4Jp970/e71fd6b45a7311b181e640cbf0d3353e/OAI-ChatGPT-Personal-Finances-Connecting-accounts-16x9.png?w=3840&q=90&fm=webp)\n\nOnce your accounts are synced, you can see a dashboard that gives you an up-to-date view of where you stand across portfolio performance, spending, subscriptions, upcoming payments, and more.\n\nBeyond connected accounts, you can share important context about your financial life, like a mortgage, a savings goal, or a major purchase you’re planning for. For example, you might tell ChatGPT: “I’m saving up to buy a car early next year” or “I still owe my parents [X amount] for the loan they gave me.” ChatGPT can save that context to your Financial memories to inform future conversations.\n\nThat broader context is part of what makes this experience useful – instead of treating each question in isolation, ChatGPT can help connect the dots across your accounts, your goals, and what you’ve already shared, so the guidance is more personal and complete.\n\n## With Finances connected\n\n**@Finances Help me come up with a plan to save a little bit more in the next few months.**\n\nI’ll look at recent spending, recurring charges, and cash-flow patterns, then turn that into a practical “save a little more” plan rather than a harsh budget.\n\nHere’s the plan I’d use for the next few months. May is still early, so I’m anchoring this mostly on February–April plus the May-to-date spending.\n\nAt a $110K salary, the goal is not to make life feel overly restricted. It’s to create more consistency across normal spending categories so saving happens before the month gets away from you.\n\nYour biggest flexible spending levers recently are:\n\n**Area****Feb 1–May 9 spend****What it suggests**\nGroceries & household~$2,150 Normal, but worth tightening with a weekly target\nShopping~$1,250 Good opportunity, especially Target/Amazon/clothing runs\nTransportation~$1,450 Gas, parking, rideshare, and car costs add up\nDining & drinks~$1,620 Very actionable without cutting it entirely\nSubscriptions & bills~$420 Small, but easy cleanup\n\n**Target: save an extra $500–$750/month**\n\nI would not start by trying to eliminate every small pleasure. Your biggest wins are **dining**, **shopping**, **transportation**, and **grocery****pacing**.\n\n**1. Dining: cap at $450/month**\n\nDining has been one of the easiest places for spending to drift. I’d set a realistic cap of **$450/month**, which still leaves room for takeout, coffee, and a few meals out.\n\nExpected savings: **$150–$250/month**.\n\nUse a simple rule: pick 2–3 meals out per week, then default to groceries for the rest.\n\n**2. Shopping: cap at $300/month**\n\nShopping is not extreme, but it’s the kind of category that can quietly turn into **$500–$700** months through Amazon, Target, clothes, and household extras. I’d set a **$300/month** cap through August.\n\nExpected savings: **$150–$250/month**.\n\nUse a simple rule: anything over **$75** waits 24 hours before buying.\n\n**3. Transportation: set a monthly ceiling**\n\nBetween gas, parking, car maintenance, and occasional rideshare, transportation can become a bigger budget item than it feels in the moment. I’d set a **$400/month** transportation target, excluding true emergencies or required repairs.\n\nExpected savings: **$100–$200/month**.\n\nThe rule I’d use: rideshare is for late nights, bad weather, carrying things, or when it saves 25+ minutes. Otherwise default to driving, walking, transit, or planning ahead.\n\n**4. Groceries: use a weekly target, not a strict diet**\n\nGroceries and household basics are necessary, so I wouldn’t treat this as “bad spending.” But I would set a weekly grocery target of about **$125–$150** and try to avoid extra midweek convenience runs.\n\nExpected savings: **$100–$150/month**.\n\n**5. Subscriptions: small cleanup only**\n\nThe recurring charges are not where the big money is, but they’re still worth checking: streaming, apps, news, fitness, cloud storage, and memberships. Canceling one or two might save **$20–$50/month**. Useful, but not the main plan.\n\n**The monthly savings formula**\n\nFor June–August:\n\nLe**ver****Monthly target**\nDining cap+$200\nShopping cap+$200\nTransportation ceiling+$150\nGrocery pacing+$125\nSubscription cleanup+$30\n**Total potential**~$705/month\n\nTo make it stick, I’d automate **$500/month** to savings first. Then treat the extra **$200–$250** as the stretch goal when dining, shopping, or transportation comes in lighter.\n\nBest version of the plan: **auto-save $500/month, cap dining at $450, cap shopping at $300, set a transportation ceiling, and use weekly grocery targets so the plan feels realistic instead of restrictive**.\n\n## From answers to action, with ecosystem partners like Intuit\n\nThe vision for ChatGPT is to go beyond answering questions to help users take action towards improving their financial lives, and we’re working with trusted ecosystem partners like Intuit to do this. For example, a user could go from getting a credit card recommendation to understanding their approval odds and submitting an application, or from asking about tax implications of a stock sale to getting a trusted tax estimate and scheduling a session with a live, local tax expert, powered by Intuit and all inside ChatGPT.\n\n## Keeping your information private and secure\n\nYour financial data is sensitive, and we have built this experience to respect your privacy and ensure that you’re in control of your information.\n\nWhen you connect your accounts, ChatGPT can access your balances, transactions, investments, and liabilities to help visualize your finances or answer your questions. It cannot see full account numbers or make any changes to your accounts.\n\nYour conversations with connected financial accounts follow the same model training settings you choose across ChatGPT. You can change this setting anytime in [Settings > Data controls⁠(opens in a new window)](https://chatgpt.com/#settings/DataControls).\n\nYou are always in control of your information:\n\n*   **Disconnecting accounts:**You can disconnect your financial accounts at any time in Settings > Apps > Finances, or from the Finances page. Once disconnected, your synced account data will be deleted from OpenAI’s systems within 30 days. Disconnecting an account will not affect financial information in your ChatGPT conversation history, but you can delete individual conversations at any time.\n*   **Deleting financial memories:**ChatGPT can remember key details you share, like goals, obligations, or context about your money, to make future financial conversations across ChatGPT more relevant and personalized. These are saved as financial memories, a dedicated type of memory used specifically to inform financial conversations. You can view or delete them at any time from the Finances page.\n*   **Temporary chats:**When you use temporary chats, ChatGPT won’t access your connected financial accounts. Temporary chats will not appear in your history.\n\n## Designed and evaluated for accuracy and quality\n\nConversations with connected financial accounts default to [GPT‑5.5 Thinking⁠](https://openai.com/index/introducing-gpt-5-5/), our latest reasoning model in ChatGPT.\n\nFinancial questions are personal, complex, and highly context-dependent. A helpful response needs to account for someone’s income, spending, balances, debts, goals, and timing, while being clear about uncertainty, assumptions, and when more information is needed.\n\nTo better understand how well ChatGPT serves people in these moments, we built an internal benchmark that helps us evaluate response quality holistically based on criteria developed with experts. We worked with over 50 finance professionals across leading institutions to evaluate this experience and grade ChatGPT’s performance on challenging personal finance tasks.\n\nGPT‑5.5 Thinking outperforms earlier models on complex personal finance tasks. GPT‑5.5 Pro, available for people on ChatGPT Pro, achieves the best overall performance.\n\n* Personal finance benchmark score across challenging finance tasks. This is a weighted composite of expert-graded response quality and response accuracy; higher is better. GPT‑5.5 Thinking, the default model in Finances, scored 79 out of 100 across the benchmark. GPT‑5.5 Pro scored 82.5 out of 100.\n\nThis benchmark gives us a clearer way to measure progress, and we will continue to improve how ChatGPT handles complex personal finance tasks over time.\n\n## What our ChatGPT Pro community testers are saying\n\n> “Connecting my finances in ChatGPT helped me figure out how to pay off our mortgage with a realistic monthly plan I could actually follow.”\n\n—Richard K. Sohn, PsyD, psychologist\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Sea's View on the Future of Agentic Software Development with Codex",
+          "url": "https://openai.com/index/sea-david-chen",
+          "published_at": "2026-05-14T20:30:00.000Z",
+          "description": "Sea Limited's CPO explains why the company is deploying Codex across engineering teams to accelerate AI-native software development in Asia.",
+          "full_text": "Title: Sea's View on the Future of Agentic Software Development with Codex\n\nURL Source: https://openai.com/index/sea-david-chen\n\nMarkdown Content:\n#### Our Executive Function series features perspectives from leaders driving transformation through AI.\n\nSea Limited (Sea) is a leading global tech company founded in Singapore, with businesses spanning digital entertainment, e-commerce, and digital financial services. Its engineering teams build and operate products at significant scale across some of the world’s most dynamic markets.\n\nSea is rolling out Codex across its developer organisation, with our internal data showing 87% of users are weekly active users. For the company, AI-assisted software development is not simply a way to improve productivity at the margins, but a deeper shift in how engineering teams navigate complexity, build resilient systems, and move from ideas to implementation.\n\nWe spoke with David Chen, Co-Founder of Sea and Chief Product Officer at Sea's e-commerce business, Shopee, about why the company is making this bet, how AI agents are changing how its developers work, and what AI-native software development could mean for Southeast Asia and the broader Asia Pacific region.\n\n#### David, Sea operates across some of the most dynamic markets in Southeast Asia. What was the strategic thinking behind rolling out Codex across your entire development organisation, and what stood out about the product?\n\nAt Sea’s scale, engineering isn't just about writing code. It’s about managing large-scale systemic complexity across fragmented, hyper-localized markets. We see the ongoing developments in AI leading to a fundamental shift in how software is created and how our engineering teams operate at scale.\n\nAgentic AI coding tools like Codex are not just about improving localised productivity. They represent a structural multiplier that can help our engineering organisation ramp up speed, responsiveness, and effectiveness amid an increasingly complex operating environment.\n\n#### What stood out about Codex in particular?\n\nWhat stood out was its ability to go beyond autocomplete and provide deep contextual awareness of our large and disparate codebases. In a massive microservices architecture, the friction is not typing syntax. It is tracing dependencies, understanding legacy logic, and maintaining reliability under peak loads.\n\nCodex acts as a localised knowledge engine, drastically reducing the time it takes an engineer to navigate unfamiliar services and allowing our teams to shift their cognitive load to higher-level tasks such as architectural design and product innovation.\n\n#### Internal feedback points to strong usage across code understanding, debugging, and feature development. What does that reveal about how developers are using Codex day to day, and how AI agents are beginning to change software development at Sea?\n\nIt has been encouraging to see the Codex adoption trends among our developers, particularly among frequent users, with many citing improvements in experimentation speed and development workflows. Based on internal feedback among developers who rated Codex 4 or 5 out of 5, 73% said they would recommend it to colleagues.\n\nThe most profound shift is realizing our developers are using Codex to 'think better', not just type faster. We are actively transitioning from using AI as a passive autocomplete mechanism to integrated agentic workflows.\n\nIn practical terms, this means AI agents are increasingly operating within our CI/CD pipelines—reasoning through product requirements, autonomously proposing test-driven implementations, surfacing edge cases in distributed systems, and accelerating debugging loops.\n\nMany assume AI simply increases velocity. But at Sea, we are also using it to drive engineering discipline. By allowing AI to rapidly prototype alternative implementations and generate exhaustive test coverage, we are moving faster and are systematically paying down technical debt and shipping more resilient systems.\n\n#### Looking ahead, what role do you think Southeast Asia and the broader Asia region will play in shaping the next generation of AI-native software development? How do you see AI agents changing the structure of software teams, and what would you say to other technology leaders in Asia considering this shift?\n\nIf you look at past technology revolutions, Southeast Asia has consistently leapfrogged traditional technology adoption cycles, such as the move directly to mobile-first and super-app ecosystems. Because developers here must solve highly complex, multilingual problems across fragmented commerce, payment, logistics, and communication networks, Southeast Asia is the perfect proving ground for AI-native software development.\n\nLooking ahead, I foresee a fundamental reconfiguring of engineering teams. Software teams will become increasingly more leveraged as AI agents take on more operational execution work. As agents abstract away the implementation layer, the 'developer' evolves into a 'system orchestrator' who spends the bulk of their time on tasks such as product judgment, system design, and orchestrating AI-driven workflows.\n\nAt the same time, development cycles will likely become more iterative and continuous as the cost of experimentation and execution continues to fall.\n\nFor technology leaders, I would say that this is not simply a tooling upgrade; it is an organizational paradigm shift. The winners will be those who relentlessly redesign their engineering culture and workflows around human-AI collaboration today, rather than bolting it onto legacy processes tomorrow.\n\n#### Beyond Sea’s own internal adoption, the company has partnered with OpenAI to host the first regional Codex Hackathon Series across Asia, beginning in Singapore before heading to markets including Indonesia, Taiwan, and Vietnam. Why was it important to bring this to the broader developer community?\n\nSoutheast Asia has an incredibly vibrant builder ecosystem, but the tooling gap has historically constrained execution speed. Internally, we have seen how AI-assisted workflows can help engineers learn faster, experiment more freely, and move from ideas to implementation more efficiently.\n\nBy bringing this Codex Hackathon Series to the broader developer community outside the company, we are democratizing access to the world's most advanced AI primitives. Doing so can drastically lower the barrier to entry for local developers, enabling them to move from raw curiosity to deploying scalable, AI-native applications in a matter of hours.\n\nThis is about building a compounding AI-native talent ecosystem. By upskilling the region’s developers today, we are collectively accelerating Southeast Asia’s trajectory as a global hub for AI-driven innovation.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "i appreciate how seriously the team always takes these reports (even when the answer turns out to be 'i got used to the current level of magic and now i'd like more please')",
+          "url": "https://x.com/sama/status/2055356452286640630",
+          "published_at": "2026-05-15T18:35:39.000000Z",
+          "description": "i appreciate how seriously the team always takes these reports (even when the answer turns out to be 'i got used to the current level of magic and now i'd like more please')",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thsottiaux",
+            "text": "Codex team is aware of reports of GPT-5.5 performing worse for some users and investigating. We don't have anything conclusive yet and systems are healthy but we will share updates as we go.",
+            "url": "https://x.com/thsottiaux/status/2055316274394300829"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "also all this:",
+          "url": "https://x.com/sama/status/2055034714231345475",
+          "published_at": "2026-05-14T21:17:11.000000Z",
+          "description": "also all this:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "Codex is getting easier to automate and customize around your code.\n\n🪝 Hooks customize the Codex loop with scripts that run at key points in a task:\n• Run validators before or after work\n• Scan prompts for secrets\n• Log conversations to internal systems\n• Create memories or customize behavior by repo or directory\n\n⚙️ Programmatic access tokens provide scoped credentials for Business and Enterprise teams:\n• Create tokens from ChatGPT workspace settings\n• Use them in CI, release workflows, and internal automations\n• Set expirations or revoke access when needed\n• Keep usage tied back to the workspace",
+            "url": "https://x.com/OpenAIDevs/status/2055032115964870838"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/OpenAIDevs/status/2055032115964870838"
+        },
+        {
+          "title": "Codex in the ChatGPT mobile app!",
+          "url": "https://x.com/sama/status/2055034461591588916",
+          "published_at": "2026-05-14T21:16:10.000000Z",
+          "description": "Codex in the ChatGPT mobile app!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 916.3h old, exceeds 720h threshold",
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Happy Friday! We've reset everyone's 5-hour and weekly rate limits.",
+          "url": "https://x.com/ClaudeDevs/status/2055347539923308703",
+          "published_at": "2026-05-15T18:00:14.000000Z",
+          "description": "Happy Friday! We've reset everyone's 5-hour and weekly rate limits.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Useful tip to cut time-to-first-token on longer prompts in the API: pre-warm the prompt cache.\n\nSend your system prompt before the user prompt. Claude writes it to the cache, but skips generating any ",
+          "url": "https://x.com/ClaudeDevs/status/2055069548672631218",
+          "published_at": "2026-05-14T23:35:36.000000Z",
+          "description": "Useful tip to cut time-to-first-token on longer prompts in the API: pre-warm the prompt cache.\n\nSend your system prompt before the user prompt. Claude writes it to the cache, but skips generating any output.\n\nWhen the real user request lands, it'll hit a warm cache. https://t.co/6BdEzbamr2",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260514-2335",
+          "duplicate_of": null
+        },
+        {
+          "title": "See docs here:\nhttps://t.co/TwBI01DDdu",
+          "url": "https://x.com/ClaudeDevs/status/2055069550505583055",
+          "published_at": "2026-05-14T23:35:36.000000Z",
+          "description": "See docs here:\nhttps://t.co/TwBI01DDdu",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/TwBI01DDdu",
+              "expanded_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache",
+              "display_url": "platform.claude.com/docs/en/build-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2055069548672631218"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260514-2335",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We've published a paper that explains our views on AI competition between the US and China.\n\nThe US and democratic allies hold the lead in frontier AI today. Read more on what it’ll take to keep that ",
+          "url": "https://x.com/AnthropicAI/status/2054987444664377374",
+          "published_at": "2026-05-14T18:09:21.000000Z",
+          "description": "We've published a paper that explains our views on AI competition between the US and China.\n\nThe US and democratic allies hold the lead in frontier AI today. Read more on what it’ll take to keep that lead: https://t.co/TgJBeodWYK",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/TgJBeodWYK",
+              "expanded_url": "https://www.anthropic.com/research/2028-ai-leadership",
+              "display_url": "anthropic.com/research/2028-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: 2028: Two scenarios for global AI leadership\n\nURL Source: https://www.anthropic.com/research/2028-ai-leadership\n\nMarkdown Content:\nWe’re releasing a new paper that explains our views on the competition on AI between the US and China.\n\nIt’s essential that the US and its allies stay ahead of authoritarian governments like the Chinese Communist Party, or CCP. AI will soon become [powerful enough](https://www.darioamodei.com/essay/the-adolescence-of-technology) to be used to repress citizens at unprecedented scale, and even to alter the balance of power [among nations](https://www.anthropic.com/news/disrupting-AI-espionage). And since AI is advancing more quickly by the day, we have only a limited period of time to set the conditions of the competition—and determine whether and how those threats materialize. It’s with this in mind that we outline what’s required to ensure America stays ahead.\n\nThe most important ingredient for developing AI is access to the computer chips on which the models are trained (or “compute”). Since the most capable chips are developed by American companies, the US government currently limits China’s supply by enforcing tight export controls on them. Recent history suggests these controls have been incredibly successful. In fact, AI labs in China have only built models close in intelligence to America’s because of their talent, their knack for exploiting loopholes _around_ these export controls, and their [large-scale distillation attacks](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks) that illicitly extract the innovations of American companies.\n\nIn this post, we present two scenarios for what the world might look like in 2028, when we expect transformative AI systems to have arrived.\n\nIn the first scenario, America has successfully defended its compute advantage. Policymakers have acted to tighten export controls further, disrupt China’s distillation attacks, and further accelerate democracies’ adoption of AI. In this world, democracies set the rules and norms around AI. It’s also in this scenario that we’re most likely to successfully engage with China on safety, which we’re supportive of to the extent this is possible.\n\nIn the second scenario, America has chosen not to act. Policymakers have not tightened loopholes on the CCP’s access to compute, and AI firms in China have quickly taken advantage—catching up to the frontier and even overtaking America. In this world, AI norms and rules are shaped by authoritarian regimes, and the best models enable automated repression at scale. It will be no solace that this authoritarian triumph has happened on the back of American compute.\n\nAmerica and its allies approach AI competition from a position of great strength. The tools for AI dominance have been built by an exceptionally innovative ecosystem of companies in democratic nations. Our past success means that our present task is largely to avoid squandering our advantage: to decide not to make it easier for the CCP to catch up.\n\n## Two scenarios for the US and China in 2028\n\n## Summary\n\nDemocracies, not authoritarian regimes, must lead in AI development and deployment. These countries and political systems can shape the rules and norms that govern these systems.\n\nDemocracies currently hold a substantial lead in compute, the most important ingredient for developing frontier AI models. That lead exists thanks to American and allied innovation, and to bipartisan US export controls that defend those innovations. But on model intelligence, AI labs in the People’s Republic of China (PRC), under the jurisdiction and control of the Chinese Communist Party (CCP), are not far behind. We focus on the CCP as it is the regime that is most able to use frontier AI to cement authoritarianism; we do not seek to undermine the interests or ingenuity of the Chinese people. Already, the CCP is using AI to censor speech, repress dissidents, hack governments and corporations across the world, and strengthen the People’s Liberation Army (PLA).\n\nAI labs in China have world-class talent. It is compute constraints that limit their ability to keep up. Labs in China have remained close by exploiting loopholes in US export control policies, and by carrying out large-scale distillation attacks that harvest the innovations of US models in order to mimic their capabilities.\n\nWith the supply of compute expanding rapidly, and with AI being used increasingly to augment the training of new AI models, we’re entering a period of great acceleration in AI capabilities. The “country of geniuses in a data center”—the level of intelligence we associate with transformative AI—may be close at hand. This acceleration makes policy action more urgent. To date, by allowing export control evasions and distillation attacks, we have let the CCP’s AI efforts trail closely up the frontier curve. But if the US and its allies act now to address both issues, it may be possible to lock in a 12-24 month lead in frontier capabilities. A lead that large by 2028 would be enormously advantageous. Such a lead would also augment efforts to engage with AI experts in China on AI safety and governance, which we support. But the window of opportunity to lock in that lead will not necessarily remain open for long.\n\nHere, we present two potential scenarios for the state of US-China AI competition in 2028. The first scenario is one in which democracies have established a commanding lead in model intelligence, adoption, and global distribution. This scenario can be achieved if policymakers act now to tighten controls on advanced compute to PRC labs, disrupt their efforts to distill America’s best AI models, and accelerate democracies’ adoption of AI.\n\nThe second scenario is one in which the CCP is competitive at the near-frontier. This scenario happens if policymakers don’t build on our existing lead, or if they loosen restrictions on access to compute for PRC firms.\n\nMany in Congress and the Trump administration have championed export controls, curbing distillation attacks, and exporting American AI. In advancing these policies, we are hopeful that democracies can secure a commanding lead by 2028, and avoid a destabilizing neck-and-neck race with the CCP two years from now.\n\n## The imperatives of staying ahead\n\nWe expect frontier AI to have transformational economic and societal impacts in the coming years, as described in [_Machines of Loving Grace_](https://www.darioamodei.com/essay/machines-of-loving-grace) and [_The Adolescence of Technology_](https://www.darioamodei.com/essay/the-adolescence-of-technology). Our mission is to ensure that humanity navigates the transition to transformative AI safely and beneficially. We believe that a successful transition can lead to astonishing breakthroughs in medicine, invention, and economic growth.\n\nWhether that transition goes well depends in part on where the most capable systems are built first. The political systems in which the most advanced AI is created will shape the rules and norms for how the technology is developed and deployed. In turn, those rules and norms will help determine whether the technology is safe, whose security it protects, and whose interests it ultimately serves. We believe that responsibility should rest with democratically elected governments, not authoritarian regimes.\n\nIf the frontier is set by regimes that treat AI as an instrument of repression, military advantage over democracies, and domestic control, the [transition](https://www.darioamodei.com/essay/the-adolescence-of-technology) is less likely to go well, for those regimes’ own citizens or anyone else.\n\nHistorically, the reach of authoritarian rule has been limited by its dependence on human enforcers to carry out surveillance and repression. Powerful AI systems may remove that dependency, enabling automated repression on a far greater scale. For that reason, the prospect of the CCP leading in AI is among the greatest threats to a successful transition.\n\nThe CCP holds enormous power and influence at the helm of China’s economy, military, and the largest authoritarian state structure on Earth. It is also the [only country besides the US](https://hai.stanford.edu/ai-index/2026-ai-index-report) with well-resourced, highly talented AI labs chasing the frontier. Furthermore, the CCP is [highly motivated](https://cset.georgetown.edu/publication/xi-politburo-collective-study-ai-2025/) to establish China as the leading AI power. Beijing has [poured](https://merics.org/en/report/chinas-drive-toward-self-reliance-artificial-intelligence-chips-large-language-models) tens of billions of dollars into China’s AI and semiconductor sectors.\n\nAlready, the [CCP uses AI systems](https://www.aspi.org.au/report/the-partys-ai-how-chinas-new-ai-systems-are-reshaping-human-rights/) to censor speech, enforce draconian policies on ethnic minorities, and [hack](https://assets.anthropic.com/m/ec212e6566a0d47/original/Disrupting-the-first-reported-AI-orchestrated-cyber-espionage-campaign.pdf) major corporations and government agencies. The CCP’s vision of AI-enabled techno-authoritarianism has been extensively [documented](https://cset.georgetown.edu/publication/chinas-system-of-oppression-in-xinjiang-how-it-developed-and-how-to-curb-it/) in Xinjiang, where state security agencies have [systematically deployed](https://www.nytimes.com/2019/05/22/world/asia/china-surveillance-xinjiang.html) facial recognition technology, biometric data collection, and communications surveillance, enabling repression at a scale that humans alone could not achieve. Frontier AI systems will make those capabilities cheaper to maintain, far more pervasive, and more sophisticated. The CCP’s [export](https://www.nytimes.com/2019/04/24/technology/ecuador-surveillance-cameras-police-government.html) of these technologies has enabled autocrats in other countries to more effectively stifle dissent, [entrenching](https://www.cambridge.org/core/journals/perspectives-on-politics/article/exporting-the-tools-of-dictatorship-the-politics-of-chinas-technology-transfers/D1A5B1D7C7A21FB5E601A553E6E8833F) authoritarianism. A CCP-led AI frontier could dramatically strengthen repression around the world.\n\n### AI is a dual-use technology\n\nFrontier AI will shape the future military balance. CCP leadership already operates on that premise, and is building its military for an AI-enabled battlefield. PLA strategists view the [“intelligentization”](https://www.foreignaffairs.com/china/chinas-artificial-intelligence-arsenal) of their military forces as the means with which to [catch up and eventually surpass](https://media.defense.gov/2024/Dec/18/2003615520/-1/-1/0/MILITARY-AND-SECURITY-DEVELOPMENTS-INVOLVING-THE-PEOPLES-REPUBLIC-OF-CHINA-2024.PDF) the US military. The PLA is already [procuring](https://cset.georgetown.edu/wp-content/uploads/CSET-Chinas-Military-AI-Wish-List.pdf) commercially developed Chinese AI systems for military use, including DeepSeek models [deployed](https://eto.tech/blog/pla-procurement-case-for-limiting-china-advanced-compute/) to coordinate swarms of unmanned vehicles and enable cyber offense capabilities. These capabilities will not diffuse slowly. When a new model reaches a new capability in autonomous targeting, vulnerability discovery, or swarm coordination, for example, the regime that controls it can [put it onto the field in weeks](https://www.csis.org/analysis/russia-ukraine-drone-war-innovation-frontlines-and-beyond), not years.\n\nThe risk compounds because frontier AI will be an [accelerant for other critical technologies](https://hai.stanford.edu/ai-index/2025-ai-index-report/science-and-medicine). Advanced AI models will be able to compress research and development (R&D) cycles in semiconductors, biotech, and advanced materials. A lead in frontier AI will enable a widening lead across the full national security technology stack.\n\nIf a PRC AI lab had developed a model at the level of [Claude Mythos Preview](https://red.anthropic.com/2026/mythos-preview/) before an American one, the CCP would have had first access to a system that can autonomously [discover and chain](https://red.anthropic.com/2026/mythos-preview/) software vulnerabilities, which it could have used to further [penetrate](https://www.cisa.gov/news-events/cybersecurity-advisories/aa24-038a) critical American infrastructure. Future models will be exponentially more capable, and therefore have commensurately greater implications for the national security interests of the US and other democracies.\n\n### Neck-and-neck competition risks disincentivizing responsible AI\n\nA neck-and-neck race between American and Chinese AI labs could make industry and government-led safety and governance efforts more difficult, and less likely. If PRC labs are either close behind or at par with models in the US, private AI firms in the US and China are likely to feel more pressure to release new models and products faster, without taking prudent pre-deployment safety measures. Governments could become reluctant to enact policies to encourage responsible AI development and deployment, for fear of falling behind.\n\nWhile increasing numbers of researchers in China’s AI labs and policy community are concerned with AI safety risks, this trend has not translated into safety practices on par with labs in the US. [As of last year](https://concordia-ai.com/wp-content/uploads/2025/07/State-of-AI-Safety-in-China-2025.pdf), only 3 out of 13 top Chinese AI labs published any safety evaluation results, and none disclosed evaluations for Chemical, Biological, Radiological, and Nuclear (CBRN) risks. The [Center for AI Standards and Innovation](https://www.nist.gov/news-events/news/2025/09/caisi-evaluation-deepseek-ai-models-finds-shortcomings-and-risks) (CAISI) found that DeepSeek’s R1-0528 model complied with 94% of overtly malicious requests under a common jailbreaking technique, compared with 8% for US reference models. This pattern has continued in more recent releases. For example, [an independent assessment](https://arxiv.org/html/2604.03121v1) of Moonshot’s Kimi K2.5 published in April found that the model failed to refuse CBRN-related requests at a far higher rate than US frontier models. Compounding the problem, labs in China often release dual-use capable models as open-weight. Once a model is open-weight, safeguards that do exist can be removed, making the model available to any state or non-state actor to use for malicious purposes, including the cyber and CBRN misuse those safeguards were built to prevent.\n\n### Our policy objective: creating and maintaining a lead for democracies\n\nWe support policies in the US and other countries that build and maintain a safe, near-term lead over the CCP in intelligence, domestic adoption, and global distribution. This lead is key to avoiding authoritarian AI leadership and protecting the national security interests of the US and other democracies. Doing so is a fundamental prerequisite to ensuring that democratic states can achieve favorable terms with authoritarian states.\n\nAnthropic deeply respects the Chinese people and the accomplishments of the Chinese AI community. We hope for peaceful relations between China and the world. Our concerns are specifically with the risks to humanity posed by any powerful authoritarian political systems with access to frontier AI systems.\n\n### Opportunities for engagement on AI safety\n\nAnthropic supports international AI safety dialogue with AI experts in China, when possible. The world has a vested interest in safe AI, regardless of where it is developed and deployed. There are a range of risks that could emerge from frontier AI systems requiring engagement between the US and China. Efforts that identify shared challenges and advance ideas to prepare for and mitigate these risks are in our shared interests.\n\nThe prospects for productive engagement are best when the US [maintains](https://www.cnbc.com/2026/05/14/us-china-ai-rules-bessent-us-lead.html) a large capabilities advantage. Responsibly building a lead in developing and deploying the most advanced AI augments our ability to influence AI safety in China and elsewhere.\n\n## The Mythos Preview wake-up call\n\nMythos Preview, a model that we released to select partners as part of [Project Glasswing](https://www.anthropic.com/glasswing) in April, signals the arrival of an acceleration period that makes policy action even more urgent. With access to the model, [Firefox](https://hacks.mozilla.org/2026/05/behind-the-scenes-hardening-firefox/) was able to fix more security bugs last month than it had in all of 2025, and [almost 20 times more](https://www.theregister.com/security/2026/05/08/mozilla-says-ai-helped-squash-423-firefox-security-bugs/5235438) than its monthly average security bug fixes in 2025. In response to the model, one [PRC cybersecurity analyst](https://perma.cc/8JP4-FWC5) wrote that China is “still sharpening our swords while the other side has suddenly mounted a fully automatic Gatling gun.”\n\nFrontier AI capabilities will quickly approach the “[country of geniuses in a datacenter](https://www.darioamodei.com/essay/the-adolescence-of-technology)” portrayal of transformative AI. This acceleration will be driven by the [logic of scaling laws](https://arxiv.org/abs/2001.08361), in which model performance improves predictably with increases in computing power and data inputs, and by AI itself [increasingly](https://jack-clark.net/2026/05/04/import-ai-455-automating-ai-research/) being used to accelerate the development of new models.\n\nThere is a high likelihood that we will look back on 2026 as the breakaway opportunity for American AI. American labs have the most advanced AI models, a [large lead](https://www.cfr.org/articles/chinas-ai-chip-deficit-why-huawei-cant-catch-nvidia-and-us-export-controls-should-remain) in both the quantity and quality of the advanced AI chips required to push the frontier, and a colossal capital advantage from revenues and financing to back the necessary investments to achieve it. PRC labs have real strengths: world-class, innovative talent, abundant and cheap energy, and plenty of data. All are requirements for developing frontier intelligence. But they simply do not have sufficient domestic compute to compete, nor do they have the revenues and capital to fund it.\n\n## Four fronts of the competition\n\nThe US and China are engaged in a competition for strategic advantage in frontier technologies like AI. Statements from both [Beijing](https://cset.georgetown.edu/wp-content/uploads/t0643_politburo_collective_study_ai_EN.pdf) and [Washington](https://www.whitehouse.gov/wp-content/uploads/2025/07/Americas-AI-Action-Plan.pdf) reflect that view. Calling that competition a “race” can give the false impression that there is a finish line, after which one side will conclusively secure victory. Rather, the competition will be an ongoing contest for advantage, in which either democracies or authoritarian regimes successfully position themselves to shape the values, rules, and norms of an AI-enabled future.\n\nThis competition is playing out on four fronts:\n\n1.   **Intelligence**: which countries develop the most capable AI models.\n2.   **Domestic adoption**: which countries integrate AI most effectively across commercial and public sectors.\n3.   **Global****distribution**: which countries deploy the global AI stack on which the world economy runs.\n4.   **Resilience**: which countries sustain political stability through the economic transition.\n\nIntelligence is the most important of the four fronts. We anticipate that frontier model capabilities will drive the most consequential changes for geopolitical competition. Model capabilities are also a primary driver of market adoption and global distribution.\n\nBut intelligence alone is not sufficient. If the CCP integrates near-frontier AI systems quicker and more effectively into China’s economy and the CCP secu",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "You've been asking for this one...\n\nNow in preview: Codex in the ChatGPT mobile app.\n\nStart new work, review outputs, steer execution, and approve next steps, all from the ChatGPT mobile app. Codex wi",
+          "url": "https://x.com/OpenAI/status/2055016850849993072",
+          "published_at": "2026-05-14T20:06:12.000000Z",
+          "description": "You've been asking for this one...\n\nNow in preview: Codex in the ChatGPT mobile app.\n\nStart new work, review outputs, steer execution, and approve next steps, all from the ChatGPT mobile app. Codex will keep running on your laptop, Mac mini, or devbox. https://t.co/9i2Jckjt9z",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260514-2006",
+          "duplicate_of": null
+        },
+        {
+          "title": "Rolling out today as a preview on iOS and Android in all supported regions.\n\nSupport for connecting your phone to the Codex app on Windows is coming soon.\n\nhttps://t.co/jGNH2CUXih",
+          "url": "https://x.com/OpenAI/status/2055016852133417389",
+          "published_at": "2026-05-14T20:06:12.000000Z",
+          "description": "Rolling out today as a preview on iOS and Android in all supported regions.\n\nSupport for connecting your phone to the Codex app on Windows is coming soon.\n\nhttps://t.co/jGNH2CUXih",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/jGNH2CUXih",
+              "expanded_url": "https://openai.com/index/work-with-codex-from-anywhere/",
+              "display_url": "openai.com/index/work-wit…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2055016850849993072"
+          },
+          "linked_content": "Title: Work with Codex from anywhere\n\nURL Source: https://openai.com/index/work-with-codex-from-anywhere/\n\nMarkdown Content:\nCodex is now in the ChatGPT mobile app so you can stay in the loop from anywhere while Codex gets work done across your laptops, devboxes, or remote environments.\n\nAs agents take on longer-running work, a new rhythm for collaboration is emerging. To keep work moving, you need to be able to easily answer a question, review what Codex found, change direction, approve what comes next, or add a new idea.\n\nMore than 4 million people now use Codex every week, and we’re seeing how much those small moments matter. A quick check-in can keep a thread moving, prevent unnecessary rework, or help Codex make progress with the right context. Now you can do that from your phone. Get started [here⁠(opens in a new window)](https://developers.openai.com/codex/remote-connections).\n\n## Stay connected to active work from anywhere\n\nCodex in the ChatGPT mobile app is a fully-featured mobile experience for getting work done with Codex. When you connect to any of your machines where Codex is running (whether that’s your laptop, a dedicated Mac mini, or a managed remote environment), the app loads the live state from that environment so you can work fluidly across active threads, approvals, plugins, and project context.\n\nThis is more than the ability to remotely control a single task or dispatch new tasks to your computer. From your phone, you can work across all of your threads, review outputs, approve commands, change models, or start something new. Your files, credentials, permissions, and local setup stay on the machine where Codex is operating, while updates flow back to your phone in real time, including screenshots, terminal output, diffs, test results, and approvals.\n\nUnder the hood, Codex uses a secure relay layer that keeps trusted machines reachable across devices without exposing them directly to the public internet. That relay also keeps active session state and context synced anywhere you’re signed in with ChatGPT.\n\n## Step in when it matters\n\nAs Codex handles work over longer stretches, timely guidance becomes a bigger part of keeping that work useful. From your phone, you can start work when it is top of mind, unblock it when your judgment is needed, and stay close to the result as it takes shape.\n\nWith Codex in your pocket, now you can:\n\n*   **Start investigating a bug while waiting for your coffee.** Because Codex is running from your development environment, it can begin inspecting the relevant files, reproduce the issue in the browser, run tests, and begin working toward a fix. If Codex needs clarification or permission to continue, you can answer or approve from your phone. And as it works, you can follow along with screenshots, terminal output, test results, and eventually review the resulting diff before you are back at your computer.\n*   **Reach a decision point during your commute.** Before leaving for the office, you ask Codex to take on a refactor that will need time to work through, expecting to review the result when you get to your desk. Mid-commute, Codex finds two viable approaches and needs your direction before it can continue. From your phone, you review the tradeoffs, choose a path, and by the time you arrive, the task has kept moving in the direction you wanted.\n*   **Head into a fast-moving customer conversation better prepared.** You come out of back-to-back meetings to find a support issue evolving across Slack, email, documents, and browser-based tools, with a customer call coming up next. From your phone, you ask Codex to synthesize the latest updates, flag the key open questions, and prepare a concise briefing for the conversation. If new details come in, you can ask Codex to refresh the summary before you join.\n*   **Turn a new idea into forward motion while it is still fresh.** Whether you are at lunch, out for a walk, or listening to something that sparks a thought, you can send it to Codex from your phone by starting a new thread or adding it to active work. The task can begin taking shape before you return to your desk, without pulling you fully out of the moment that sparked it.\n\n## Run Codex in enterprise environments\n\nMany teams already develop inside managed remote environments that provide approved dependencies, credentials, security policies, and compute resources.\n\nWith Remote SSH now generally available, Codex can connect directly into those environments. The desktop app automatically detects hosts from your SSH configuration and lets you create projects and run threads inside remote machines just like you would locally.\n\nOnce connected, those environments can become accessible across your authorized ChatGPT devices through the same secure relay infrastructure. That means you can start work on your desktop, steer execution from your phone, and keep long-running tasks moving without staying tied to a single machine.\n\nWe’re also releasing several updates that expand how teams can automate, customize, and manage Codex at scale:\n\n*   [**Programmatic access tokens**⁠(opens in a new window)](https://developers.openai.com/codex/enterprise/access-tokens) provide scoped credentials that can be issued directly from ChatGPT workspace settings for CI pipelines, release workflows, and internal automations.\n*   [**Hooks**⁠(opens in a new window)](https://developers.openai.com/codex/hooks) are now generally available and can be used to scan prompts for secrets, run validators, log conversations, create memories, or customize Codex behavior for specific repositories and directories.\n*   **Support for HIPAA-compliant use of Codex in local environments** (CLI, IDE, App) for ChatGPT Enterprise workspaces, enabling healthcare organizations to support patient care and operational workflows with greater speed and confidence.\n\n## Availability\n\nCodex in the ChatGPT mobile app is rolling out in preview on iOS and Android across all plans, including Free and Go, in all supported regions. Update the ChatGPT mobile app and the Codex app on macOS to try it out. Support for connecting your phone to the Codex app on Windows is coming soon.\n\nRemote SSH and Hooks are available on all plans as well. Programmatic access tokens are available on Enterprise and Business plans. HIPAA-compliant use is supported for eligible ChatGPT Enterprise workspaces only when Codex is used in local environments.\n",
+          "thread_group_id": "thread-OpenAI-20260514-2006",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Step away from your laptop. Keep building with Codex on your phone.\n\nCodex keeps working on your computer, with your files and project context still in place.\n\nPocket-sized access. Full Codex working ",
+          "url": "https://x.com/OpenAIDevs/status/2055016926213181608",
+          "published_at": "2026-05-14T20:06:30.000000Z",
+          "description": "Step away from your laptop. Keep building with Codex on your phone.\n\nCodex keeps working on your computer, with your files and project context still in place.\n\nPocket-sized access. Full Codex working state.\n\nhttps://t.co/vGsw5wnHnG",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/vGsw5wnHnG",
+              "expanded_url": "https://x.com/OpenAI/status/2055016850849993072",
+              "display_url": "x.com/OpenAI/status/…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "You've been asking for this one...\n\nNow in preview: Codex in the ChatGPT mobile app.\n\nStart new work, review outputs, steer execution, and approve next steps, all from the ChatGPT mobile app. Codex will keep running on your laptop, Mac mini, or devbox. https://t.co/9i2Jckjt9z",
+            "url": "https://x.com/OpenAI/status/2055016850849993072"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260514-2006",
+          "duplicate_of": null
+        },
+        {
+          "title": "Codex is getting easier to automate and customize around your code.\n\n🪝 Hooks customize the Codex loop with scripts that run at key points in a task:\n• Run validators before or after work\n• Scan promp",
+          "url": "https://x.com/OpenAIDevs/status/2055032115964870838",
+          "published_at": "2026-05-14T21:06:51.000000Z",
+          "description": "Codex is getting easier to automate and customize around your code.\n\n🪝 Hooks customize the Codex loop with scripts that run at key points in a task:\n• Run validators before or after work\n• Scan prompts for secrets\n• Log conversations to internal systems\n• Create memories or customize behavior by repo or directory\n\n⚙️ Programmatic access tokens provide scoped credentials for Business and Enterprise teams:\n• Create tokens from ChatGPT workspace settings\n• Use them in CI, release workflows, and internal automations\n• Set expirations or revoke access when needed\n• Keep usage tied back to the workspace",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "And with Remote SSH now generally available, you can seamlessly connect Codex to devboxes and other managed remote environments too.\n\nhttps://t.co/tozZ2WfFki",
+          "url": "https://x.com/OpenAIDevs/status/2055016938217377945",
+          "published_at": "2026-05-14T20:06:33.000000Z",
+          "description": "And with Remote SSH now generally available, you can seamlessly connect Codex to devboxes and other managed remote environments too.\n\nhttps://t.co/tozZ2WfFki",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/tozZ2WfFki",
+              "expanded_url": "https://openai.com/index/work-with-codex-from-anywhere/",
+              "display_url": "openai.com/index/work-wit…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2055016926213181608"
+          },
+          "linked_content": "Title: Work with Codex from anywhere\n\nURL Source: https://openai.com/index/work-with-codex-from-anywhere/\n\nMarkdown Content:\nCodex is now in the ChatGPT mobile app so you can stay in the loop from anywhere while Codex gets work done across your laptops, devboxes, or remote environments.\n\nAs agents take on longer-running work, a new rhythm for collaboration is emerging. To keep work moving, you need to be able to easily answer a question, review what Codex found, change direction, approve what comes next, or add a new idea.\n\nMore than 4 million people now use Codex every week, and we’re seeing how much those small moments matter. A quick check-in can keep a thread moving, prevent unnecessary rework, or help Codex make progress with the right context. Now you can do that from your phone. Get started [here⁠(opens in a new window)](https://developers.openai.com/codex/remote-connections).\n\n## Stay connected to active work from anywhere\n\nCodex in the ChatGPT mobile app is a fully-featured mobile experience for getting work done with Codex. When you connect to any of your machines where Codex is running (whether that’s your laptop, a dedicated Mac mini, or a managed remote environment), the app loads the live state from that environment so you can work fluidly across active threads, approvals, plugins, and project context.\n\nThis is more than the ability to remotely control a single task or dispatch new tasks to your computer. From your phone, you can work across all of your threads, review outputs, approve commands, change models, or start something new. Your files, credentials, permissions, and local setup stay on the machine where Codex is operating, while updates flow back to your phone in real time, including screenshots, terminal output, diffs, test results, and approvals.\n\nUnder the hood, Codex uses a secure relay layer that keeps trusted machines reachable across devices without exposing them directly to the public internet. That relay also keeps active session state and context synced anywhere you’re signed in with ChatGPT.\n\n## Step in when it matters\n\nAs Codex handles work over longer stretches, timely guidance becomes a bigger part of keeping that work useful. From your phone, you can start work when it is top of mind, unblock it when your judgment is needed, and stay close to the result as it takes shape.\n\nWith Codex in your pocket, now you can:\n\n*   **Start investigating a bug while waiting for your coffee.** Because Codex is running from your development environment, it can begin inspecting the relevant files, reproduce the issue in the browser, run tests, and begin working toward a fix. If Codex needs clarification or permission to continue, you can answer or approve from your phone. And as it works, you can follow along with screenshots, terminal output, test results, and eventually review the resulting diff before you are back at your computer.\n*   **Reach a decision point during your commute.** Before leaving for the office, you ask Codex to take on a refactor that will need time to work through, expecting to review the result when you get to your desk. Mid-commute, Codex finds two viable approaches and needs your direction before it can continue. From your phone, you review the tradeoffs, choose a path, and by the time you arrive, the task has kept moving in the direction you wanted.\n*   **Head into a fast-moving customer conversation better prepared.** You come out of back-to-back meetings to find a support issue evolving across Slack, email, documents, and browser-based tools, with a customer call coming up next. From your phone, you ask Codex to synthesize the latest updates, flag the key open questions, and prepare a concise briefing for the conversation. If new details come in, you can ask Codex to refresh the summary before you join.\n*   **Turn a new idea into forward motion while it is still fresh.** Whether you are at lunch, out for a walk, or listening to something that sparks a thought, you can send it to Codex from your phone by starting a new thread or adding it to active work. The task can begin taking shape before you return to your desk, without pulling you fully out of the moment that sparked it.\n\n## Run Codex in enterprise environments\n\nMany teams already develop inside managed remote environments that provide approved dependencies, credentials, security policies, and compute resources.\n\nWith Remote SSH now generally available, Codex can connect directly into those environments. The desktop app automatically detects hosts from your SSH configuration and lets you create projects and run threads inside remote machines just like you would locally.\n\nOnce connected, those environments can become accessible across your authorized ChatGPT devices through the same secure relay infrastructure. That means you can start work on your desktop, steer execution from your phone, and keep long-running tasks moving without staying tied to a single machine.\n\nWe’re also releasing several updates that expand how teams can automate, customize, and manage Codex at scale:\n\n*   [**Programmatic access tokens**⁠(opens in a new window)](https://developers.openai.com/codex/enterprise/access-tokens) provide scoped credentials that can be issued directly from ChatGPT workspace settings for CI pipelines, release workflows, and internal automations.\n*   [**Hooks**⁠(opens in a new window)](https://developers.openai.com/codex/hooks) are now generally available and can be used to scan prompts for secrets, run validators, log conversations, create memories, or customize Codex behavior for specific repositories and directories.\n*   **Support for HIPAA-compliant use of Codex in local environments** (CLI, IDE, App) for ChatGPT Enterprise workspaces, enabling healthcare organizations to support patient care and operational workflows with greater speed and confidence.\n\n## Availability\n\nCodex in the ChatGPT mobile app is rolling out in preview on iOS and Android across all plans, including Free and Go, in all supported regions. Update the ChatGPT mobile app and the Codex app on macOS to try it out. Support for connecting your phone to the Codex app on Windows is coming soon.\n\nRemote SSH and Hooks are available on all plans as well. Programmatic access tokens are available on Enterprise and Business plans. HIPAA-compliant use is supported for eligible ChatGPT Enterprise workspaces only when Codex is used in local environments.\n",
+          "thread_group_id": "thread-OpenAIDevs-20260514-2006",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/l9OZrEYGAL",
+          "url": "https://x.com/OpenAIDevs/status/2054973436280418521",
+          "published_at": "2026-05-14T17:13:41.000000Z",
+          "description": "https://t.co/l9OZrEYGAL",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 514.5h old, exceeds 168h threshold",
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "You can now use your @grok subscription inside @NousResearch Hermes Agent.\n\nhttps://t.co/UYKGws8zzH https://t.co/myqsaSq4k3",
+          "url": "https://x.com/xai/status/2055375676656783733",
+          "published_at": "2026-05-15T19:52:03.000000Z",
+          "description": "You can now use your @grok subscription inside @NousResearch Hermes Agent.\n\nhttps://t.co/UYKGws8zzH https://t.co/myqsaSq4k3",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/UYKGws8zzH",
+              "expanded_url": "http://x.ai/news/grok-hermes",
+              "display_url": "x.ai/news/grok-herm…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "An early beta of Grok Build, an agentic CLI for coding, building apps, and automating workflows is now available for SuperGrok Heavy subscribers.\n\nThrough this early beta, we will improve the model an",
+          "url": "https://x.com/xai/status/2054993285152989373",
+          "published_at": "2026-05-14T18:32:33.000000Z",
+          "description": "An early beta of Grok Build, an agentic CLI for coding, building apps, and automating workflows is now available for SuperGrok Heavy subscribers.\n\nThrough this early beta, we will improve the model and product based on your feedback.\n\nTry it at https://t.co/bpTHpjivWD https://t.co/Rlg4qMLkrv",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/bpTHpjivWD",
+              "expanded_url": "http://x.ai/cli",
+              "display_url": "x.ai/cli"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
