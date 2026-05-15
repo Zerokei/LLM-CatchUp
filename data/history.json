@@ -10951,7 +10951,272 @@
           "https://x.com/claudeai/status/2054257336839995737"
         ]
       }
+    },
+    "18f13afbd6901fb3b6c8fb8c5d86216ac93cba492115f670c42efea20148a14e": {
+      "title": "Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱",
+      "url": "https://openai.com/index/work-with-codex-from-anywhere",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-14T13:00:00.000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "OpenAI 在同一日将编码 Agent Codex 推上新阶段：ChatGPT 移动 App 接入 Codex，可远程操控笔电、Mac mini 或 devbox，实时同步截图、终端输出与 diff，并支持在手机上审批命令、切换模型。同期 Hooks 与 Remote SSH 进入 GA，Hooks 可在任务关键节点运行验证器/扫描密钥/按仓库定制行为，Remote SSH 让 Codex 直接接入企业受管环境；可编程访问令牌为 Business/Enterprise 团队提供作用域凭证，ChatGPT Enterprise 还获得 Codex 本地环境的 HIPAA 合规支持。同步博文《Building a safe, effective sandbox to enable Codex on Windows》披露 OpenAI 为 Windows 自研「elevated sandbox」——通过合成 SID、写受限令牌与 CodexSandboxOffline/Online 双用户配合防火墙规则，实现文件写入与网络访问的强约束。OpenAI 还宣布 30 天迁移窗口，从其他编码工具切换的合规企业客户可为新增用户获得 2 个月免费用量；推广上线 3 小时就吸引 2000 名开发者咨询。Codex 周活已突破 400 万。",
+      "category": "产品与功能",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "Codex",
+          "编码 Agent",
+          "移动端",
+          "Hooks",
+          "Remote SSH",
+          "Windows 沙箱",
+          "企业迁移"
+        ],
+        "practice_suggestions": [
+          "更新 ChatGPT 移动 App 与 macOS Codex 桌面端，关联本地或远程开发机，体验「手机审批 + 远端执行」的新协作节奏",
+          "在仓库根目录配置 Codex Hooks，把现有 secrets 扫描、lint 校验与会话记录接入任务关键点，并按目录定制 Agent 行为",
+          "若团队在 Windows 上使用 Codex，规划首次 elevated sandbox 安装的 UAC 弹窗与 ACL 应用时间，并评估 CodexSandboxOffline/Online 与现有防火墙策略的冲突",
+          "如团队目前使用 Cursor / Claude Code，可评估 30 天迁移窗口的 2 个月免费用量是否值得做一次 PoC"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2055016850849993072",
+            "title": "OpenAI 官宣 Codex 入驻 ChatGPT 移动端",
+            "source": "OpenAI (Twitter)",
+            "angle": "OpenAI 官号公告"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2055016926213181608",
+            "title": "OpenAIDevs 公告 Codex 接入手机：周活破 400 万",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "开发者视角公告与用量数据"
+          },
+          {
+            "url": "https://x.com/sama/status/2055034461591588916",
+            "title": "Altman 官宣 Codex 上线 ChatGPT 移动 App",
+            "source": "Sam Altman (Twitter)",
+            "angle": "CEO 移动端官宣"
+          },
+          {
+            "url": "https://x.com/sama/status/2054626219858293128",
+            "title": "Altman：30 天迁移到 Codex 送 2 个月免费用量",
+            "source": "Sam Altman (Twitter)",
+            "angle": "CEO 推广迁移补贴"
+          },
+          {
+            "url": "https://x.com/OpenAI/status/2054620621255192719",
+            "title": "OpenAI 转推：企业切换 Codex 享 2 个月免费",
+            "source": "OpenAI (Twitter)",
+            "angle": "官方账号背书迁移补贴"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2055032115964870838",
+            "title": "Codex 新增 Hooks 与编程访问令牌：增强自动化与企业管控",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "Hooks 与编程访问令牌细节"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2054735161166819377",
+            "title": "OpenAI 揭秘 Codex Windows 沙箱：自研双用户隔离方案",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "Windows 沙箱设计揭秘"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2054698500143927357",
+            "title": "Codex 企业推广 3 小时引 2000 名开发者咨询",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "企业迁移热度数据"
+          }
+        ]
+      }
+    },
+    "5ee7f009950134424036e7294c99c23800cb87d7775dfc56b67194238df44f3b": {
+      "title": "xAI 发布 Grok Build：面向 SuperGrok Heavy 的代理式 CLI",
+      "url": "https://x.com/xai/status/2054993285152989373",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-05-14T18:32:33.000000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "xAI 推出 Grok Build 早期 Beta，一款用于编码、构建应用与自动化工作流的代理式命令行工具，目前仅向 SuperGrok Heavy 订阅者开放。xAI 计划在 Beta 期间根据用户反馈迭代模型与产品，入口为 x.ai/cli。这意味着继 Codex 与 Claude Code 之后，xAI 也正式入场代理式编码 CLI 赛道。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "xAI",
+          "Grok Build",
+          "代理式 CLI",
+          "SuperGrok Heavy"
+        ],
+        "practice_suggestions": [
+          "SuperGrok Heavy 订阅者可前往 x.ai/cli 试用 Grok Build 早期 Beta，与 Codex / Claude Code 在同一仓库做小型对照实验",
+          "记录 Grok Build 在 Beta 期的能力边界与反馈渠道，便于在正式版上线后快速复用脚手架"
+        ]
+      }
+    },
+    "0dd9fed146f74a8de81684585575cbb05c96fae6b54bef163130143a59fcff36": {
+      "title": "Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景",
+      "url": "https://www.anthropic.com/research/2028-ai-leadership",
+      "source": "Anthropic Research",
+      "published_at": "2026-05-14T00:00:00.000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "Anthropic 发布政策论文《2028: Two scenarios for global AI leadership》，主张美国与盟友通过收紧算力出口管制、阻断「蒸馏攻击」、加速民主国家 AI 采用，锁定 12–24 个月的前沿能力领先；否则 CCP 将在「near-frontier」追平并主导 AI 规则与军用部署。文章把 Claude「Mythos Preview」（让 Firefox 单月修复的安全漏洞数超过 2025 全年）描述为加速期警钟，并援引 CAISI 数据指 DeepSeek R1-0528 对越狱式恶意请求的服从率达 94%（美参考模型为 8%）。Anthropic 将竞争拆为「智能、国内采用、全球分发、韧性」四条战线，强调「智能」是其余三条的源头，同时呼吁与中国 AI 安全专家保持对话——后者「在美国保持较大能力优势」时最为可行。",
+      "category": "政策与安全",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "中美 AI 竞争",
+          "出口管制",
+          "蒸馏攻击",
+          "前沿安全"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2054987444664377374",
+            "title": "Anthropic 推文宣告《2028》白皮书发布",
+            "source": "Anthropic (Twitter)",
+            "angle": "官方推文宣告"
+          }
+        ]
+      }
+    },
+    "5280b6fe5b1e8d5d28fd169da3beb19d058331175860594dfdaef94619e87ae8": {
+      "title": "Claude Code 全平台限额临时上调，叠加先前 2 倍 5 小时窗口",
+      "url": "https://x.com/ClaudeDevs/status/2054639779195830285",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-05-13T19:07:51.000000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "Anthropic 宣布对 Claude Code 全平台（CLI、IDE 扩展、桌面端、Web）的使用额度临时上调，无需手动开启，已自动应用到账户。本次调整自即刻起生效至 7 月 13 日 18:00 PDT，并与上周宣布的 5 小时窗口 2 倍提升叠加。 Claude Devs 在限额上调公告的串联推文中，简短表达对开发者将利用新额度构建什么的期待。属于推文串的收尾发言，无独立信息量。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "全平台限额",
+          "临时上调"
+        ],
+        "thread_urls": [
+          "https://x.com/ClaudeDevs/status/2054639779195830285",
+          "https://x.com/ClaudeDevs/status/2054639780252844045"
+        ]
+      }
+    },
+    "a0c47c0da666a8015a0d8028846f8fff7c1884bf16f8049af037564ec9495368": {
+      "title": "Claude 付费订阅 6 月 15 日起含编程式调用专属月度额度",
+      "url": "https://x.com/ClaudeDevs/status/2054610152817619388",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-05-13T17:10:07.000000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "自 6 月 15 日起，Claude 付费订阅将获得专门用于编程式调用的每月独立额度，覆盖 Claude Agent SDK、claude -p 命令、Claude Code GitHub Actions 以及基于 Agent SDK 构建的第三方应用。这意味着订阅用户可以在不消耗交互式额度的前提下运行自动化脚本与第三方 Agent 工具。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude",
+          "Agent SDK",
+          "编程式额度",
+          "订阅"
+        ]
+      }
+    },
+    "a1312e54bd28a28cba89641a0832efcc7bfe67652966746a0326d8729b2c7e12": {
+      "title": "ChatGPT 上线「安全摘要」：跨会话识别风险升级信号",
+      "url": "https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations",
+      "source": "OpenAI Blog",
+      "published_at": "2026-05-14T00:00:00.000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "OpenAI 与全球医生网络合作，训练 ChatGPT 在多轮甚至跨会话中识别自伤、伤人等渐进式风险信号，引入由安全推理模型生成的「safety summaries」——短期保留、范围受限的安全相关上下文摘要。内部评测显示，长对话场景下自杀/自伤的安全响应提升 50%，伤人场景提升 16%；GPT-5.5 Instant 上对应提升为 39% 与 52%；安全摘要在 4000 余次评估中相关性 4.93、事实性 4.34。日常对话体验保持不变，未来还可能扩展到生物与网络安全等高风险领域。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "ChatGPT",
+          "安全摘要",
+          "心理健康",
+          "跨会话上下文",
+          "GPT-5.5"
+        ]
+      }
+    },
+    "205059c840346de47c2743683068f0e8889b34a44b7be0b7311e874aac693f01": {
+      "title": "第三方 Agent SDK 工具将共享 Claude 订阅的编程式额度",
+      "url": "https://x.com/ClaudeDevs/status/2054610157364289906",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-05-13T17:10:08.000000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "Anthropic 澄清，基于 Agent SDK 构建的第三方工具（如 Conductor、OpenClaw）可以使用用户的 Claude 订阅运行，但消耗的是订阅自带的编程式额度，与用户自有脚本走同一池。这进一步明确了第三方生态在新计费体系下的位置。 Anthropic 提示用户当前无需操作，将在 6 月 8 日通过邮件向付费订阅用户发送领取链接，编程式额度变更正式于 6 月 15 日生效，并附上官方支持文档。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Agent SDK",
+          "第三方工具",
+          "编程式额度"
+        ],
+        "thread_urls": [
+          "https://x.com/ClaudeDevs/status/2054610157364289906",
+          "https://x.com/ClaudeDevs/status/2054610158458904769"
+        ]
+      }
+    },
+    "d6f6970b30183c40f63a05cc33166e7279f4eccc49301781be8938c5ad430260": {
+      "title": "Anthropic × 盖茨基金会：4 年 2 亿美元投向健康、教育与经济流动",
+      "url": "https://www.anthropic.com/news/gates-foundation-partnership",
+      "source": "Anthropic Blog",
+      "published_at": "2026-05-14T00:00:00.000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "Anthropic 与盖茨基金会签订 4 年期 2 亿美元合作，以资金、Claude 额度与工程支持覆盖全球健康、生命科学、教育、农业与经济流动五大方向。健康领域将为脊髓灰质炎、HPV、子痫前期等高负担疾病构建药物/疫苗筛选与建模工具，并与 IDM 合作改进疟疾、结核病的传播预测模型，发布健康智能 connectors、基准与评测框架。教育方面将向美国 K-12、撒哈拉以南非洲与印度提供 AI 辅导和数学/读写算应用，作为 GAILA 联盟的一部分；经济流动板块包括可携带技能档案、农业模型与就业链路追踪。这是 Anthropic「Beneficial Deployments」团队迄今最大规模的公益部署承诺。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "盖茨基金会",
+          "公益部署",
+          "全球健康",
+          "教育"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2054941901900611787",
+            "title": "Anthropic 推文宣告盖茨基金会 4 年 2 亿美元合作",
+            "source": "Anthropic (Twitter)",
+            "angle": "官方推文宣告"
+          }
+        ]
+      }
+    },
+    "4fda6ddc474a3483737d2fab698efdfcfd8e2f0036f986889e6dd164275be740": {
+      "title": "OpenAI Devs 发布短链推文（无正文）",
+      "url": "https://x.com/OpenAIDevs/status/2054973436280418521",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-05-14T17:13:41.000000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "OpenAI Devs 账号发布了一条仅含短链的推文，正文与展开内容均为空，无法从抓取数据判断具体主题。属于低信号社媒片段。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "OpenAI Devs",
+          "短链",
+          "低信号"
+        ]
+      }
+    },
+    "09fe766a83add57fad958855424dd6e40276513d36efcc397272faa84822e229": {
+      "title": "Altman 个人感言：当爸爸是最超预期的体验",
+      "url": "https://x.com/sama/status/2054773491522822264",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-05-14T03:59:10.000000Z",
+      "fetched_at": "2026-05-15T06:25:00+08:00",
+      "summary": "Sam Altman 发推称「当爸爸」是他人生中最超出已经很高预期的事，纯个人感言，无技术或产品信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "个人感言"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-05-14T08:41:36+08:00"
+  "last_fetch": "2026-05-15T06:25:00+08:00"
 }

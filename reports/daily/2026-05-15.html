@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-05-14 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-05-14" />
+  <title>CatchUp 日报 2026-05-15 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-15" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,105 +306,119 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-05-14</h1>
+          <h1 class="report-title">2026-05-15</h1>
           
           <hr class="primary-rule" />
         </header>
 
         <div class="prose"><h2 id="h-1">今日趋势</h2>
 <ul>
-<li><strong>Claude Code 单日三连更</strong>：周用量上限上调 50%、6 月 15 日起新增程序化月度配额、上线「/goal」与 stop hook 等长任务命令。</li>
-<li><strong>OpenAI Codex 攻势加速</strong>：限时 30 天为迁移企业赠送 2 个月免费用量，OpenAI 主账号与 Sam Altman 齐站台。</li>
-<li><strong>Codex Windows 沙箱设计公开</strong>：OpenAI 工程团队详解四层架构「elevated sandbox」，应对 Windows 缺失隔离原语的安全难题。</li>
-<li><strong>Google DeepMind 重塑鼠标指针</strong>：AI 让指针理解屏幕语义，Gemini 可被手势、语音和自然简写驱动，Demis Hassabis 转推背书。</li>
-<li><strong>Anthropic 进军中小企业</strong>：Claude for Small Business 接入 QuickBooks、PayPal、HubSpot 等核心工具，配 15 套现成 Agent 工作流。</li>
+<li><strong>编码 Agent 同日交火</strong>：OpenAI Codex 一次性上线移动 App、Hooks GA、Remote SSH GA 与 30 天企业迁移补贴；Anthropic 立即把 Claude Code 周配额上调 50% 并预告 6 月编程式专属额度，两家在开发者钱包前正面对垒。</li>
+<li><strong>xAI 入场代理 CLI</strong>：Grok Build 早期 Beta 面向 SuperGrok Heavy 订阅者开放，编码 Agent 战场再添一家头部厂商。</li>
+<li><strong>中美前沿政策博弈</strong>：Anthropic 发布《2028》白皮书，主张以收紧算力出口、阻断蒸馏攻击、加速民主国家部署来锁定对华 12-24 月领先。</li>
+<li><strong>公益部署加码</strong>：Anthropic 与盖茨基金会签 4 年 2 亿美元协议，覆盖全球健康、生命科学、教育与经济流动。</li>
+<li><strong>跨会话安全推理</strong>：OpenAI 推出 ChatGPT 安全摘要机制，可跨多轮甚至跨会话识别风险升级信号，自杀/自伤场景安全响应率提升 50%。</li>
 </ul>
 <hr>
 <h2 id="h-2">文章详情</h2>
-<h3 id="h-3">1. <a href="https://x.com/ClaudeDevs/status/2054639777685934564">Claude Code 单日三连更：周限上调 50%、新增程序化配额、上线长任务命令</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>用量上限</code> <code>程序化配额</code> <code>Agent SDK</code> <code>/goal</code> <code>stop hook</code> <code>auto 模式</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 同日为 Claude Code 推出三项关键更新。首先，所有 Pro、Max、Team 与按席位计费的 Enterprise 用户的 Claude Code 周用量上限即日上调 50%，覆盖 CLI、IDE 扩展、桌面端与 Web 四端，叠加上周的 5 小时窗口扩容，活动持续至 7 月 13 日。其次，6 月 15 日起付费 Claude 计划将获得一份专门用于程序化用途的月度配额，覆盖 Claude Agent SDK、「claude -p」、Claude Code GitHub Actions，以及 Conductor、OpenClaw 等基于 Agent SDK 的第三方应用，统一了第一方与第三方调用的计费模型，用户将于 6 月 8 日收到领取邮件。最后，官方介绍了让 Claude 持续推进长任务的工具链：「/goal」斜杠命令声明终态、stop hook 用代码门控收工时机、auto 模式（shift+tab）让任务无需人工等待，三者组合可构成端到端自驱工作流。 Anthropic 宣布临时上调 Claude Code 使用限额，适用于 CLI、IDE 扩展、桌面端与 Web 全平台。无需手动开启，已自动应用于所有账户，活动持续至 7 月 13 日 18:00 PDT。本次提升在上周 5 小时窗口 2 倍扩容的基础上叠加。 Anthropic 团队对 Claude Code 限额提升后开发者将带来的新作品表达期待。该推文为限额提升公告主线程的收尾跟帖。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/ClaudeDevs/status/2054610157364289906">Agent SDK 第三方工具共享你的 Claude 编程配额</a> · Claude Devs (Twitter) · 第三方 Agent SDK 工具同源扣额</li>
-<li><a href="https://x.com/ClaudeDevs/status/2054351038690545758">Claude Code stop hook：用代码控制何时允许收工</a> · Claude Devs (Twitter) · stop hook 程序化收工</li>
-<li><a href="https://x.com/ClaudeDevs/status/2054610152817619388">Claude 付费计划 6 月 15 日起新增编程用量月度配额</a> · Claude Devs (Twitter) · 新增程序化用量月度配额</li>
-<li><a href="https://x.com/ClaudeDevs/status/2054351031279186040">Claude Code 新增「/goal」让任务持续推进至完成</a> · Claude Devs (Twitter) · 新增 /goal 推动长任务</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>重度 Claude Code 用户立即重新规划本周大型任务，把 50% 增量用在原本被限额卡住的批量改造或重构</li>
-<li>6 月 8 日邮件到达后及时领取月度程序化配额，并审视 CI、自动化脚本与第三方 Agent SDK 工具（如 Conductor、OpenClaw）的调用频率</li>
-<li>在长任务工作流中用「/goal」声明终态、配 stop hook 跑测试套件做门控、用 auto 模式（CLI 中 shift+tab）减少人工等待，建立目标-验收闭环</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-4">2. <a href="https://openai.com/index/building-codex-windows-sandbox">OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent</a></h3>
+<h3 id="h-3">1. <a href="https://openai.com/index/work-with-codex-from-anywhere">Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱</a></h3>
 <ul>
 <li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>Codex</code> <code>Windows 沙箱</code> <code>Agent 安全</code> <code>进程隔离</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 工程团队披露了为 Codex 编码 Agent 打造的 Windows 沙箱方案：因 AppContainer、Windows Sandbox、MIC 完整性标签等原生隔离原语均不够用，团队自研「elevated sandbox」，通过创建 CodexSandboxOffline / CodexSandboxOnline 两个本地用户并配合防火墙规则强制隔离网络。架构分为 codex.exe、setup.exe、command-runner.exe 与子进程四层，先以「CreateProcessWithLogonW」启动 runner，再由 runner 调用「CreateRestrictedToken」+「CreateProcessAsUserW」绕过跨用户特权墙，实现可靠的文件与网络管控。</p>
-<hr>
-<h3 id="h-5">3. <a href="https://www.anthropic.com/news/claude-for-small-business">Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
 <li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>中小企业</code> <code>Agent 工作流</code> <code>连接器</code></li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>编码 Agent</code> <code>移动端</code> <code>Hooks</code> <code>Remote SSH</code> <code>Windows 沙箱</code> <code>企业迁移</code></li>
 </ul>
-<p><strong>摘要</strong>: Anthropic 发布面向中小企业的 Claude for Small Business，提供连接器与开箱即用的工作流，把 Claude 嵌入 QuickBooks、PayPal、HubSpot、Canva、Docusign、Google Workspace、Microsoft 365 等常用工具。首发 15 个跨财务、运营、销售、市场、HR、客服的 Agent 工作流与 15 项技能，例如核对 QuickBooks 与 PayPal 现金、自动生成月结 P&amp;L、营销活动效果分析等，所有操作均需用户审批，Team/Enterprise 默认不用于训练。配套推出 AI Fluency 免费课程，并于 5 月 14 日在芝加哥启动 Claude SMB Tour。</p>
+<p><strong>摘要</strong>: OpenAI 在同一日将编码 Agent Codex 推上新阶段：ChatGPT 移动 App 接入 Codex，可远程操控笔电、Mac mini 或 devbox，实时同步截图、终端输出与 diff，并支持在手机上审批命令、切换模型。同期 Hooks 与 Remote SSH 进入 GA，Hooks 可在任务关键节点运行验证器/扫描密钥/按仓库定制行为，Remote SSH 让 Codex 直接接入企业受管环境；可编程访问令牌为 Business/Enterprise 团队提供作用域凭证，ChatGPT Enterprise 还获得 Codex 本地环境的 HIPAA 合规支持。同步博文《Building a safe, effective sandbox to enable Codex on Windows》披露 OpenAI 为 Windows 自研「elevated sandbox」——通过合成 SID、写受限令牌与 CodexSandboxOffline/Online 双用户配合防火墙规则，实现文件写入与网络访问的强约束。OpenAI 还宣布 30 天迁移窗口，从其他编码工具切换的合规企业客户可为新增用户获得 2 个月免费用量；推广上线 3 小时就吸引 2000 名开发者咨询。Codex 周活已突破 400 万。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2055016850849993072">OpenAI 官宣 Codex 入驻 ChatGPT 移动端</a> · OpenAI (Twitter) · OpenAI 官号公告</li>
+<li><a href="https://x.com/OpenAIDevs/status/2055016926213181608">OpenAIDevs 公告 Codex 接入手机：周活破 400 万</a> · OpenAI Devs (Twitter) · 开发者视角公告与用量数据</li>
+<li><a href="https://x.com/sama/status/2055034461591588916">Altman 官宣 Codex 上线 ChatGPT 移动 App</a> · Sam Altman (Twitter) · CEO 移动端官宣</li>
+<li><a href="https://x.com/sama/status/2054626219858293128">Altman：30 天迁移到 Codex 送 2 个月免费用量</a> · Sam Altman (Twitter) · CEO 推广迁移补贴</li>
+<li><a href="https://x.com/OpenAI/status/2054620621255192719">OpenAI 转推：企业切换 Codex 享 2 个月免费</a> · OpenAI (Twitter) · 官方账号背书迁移补贴</li>
+<li><a href="https://x.com/OpenAIDevs/status/2055032115964870838">Codex 新增 Hooks 与编程访问令牌：增强自动化与企业管控</a> · OpenAI Devs (Twitter) · Hooks 与编程访问令牌细节</li>
+<li><a href="https://x.com/OpenAIDevs/status/2054735161166819377">OpenAI 揭秘 Codex Windows 沙箱：自研双用户隔离方案</a> · OpenAI Devs (Twitter) · Windows 沙箱设计揭秘</li>
+<li><a href="https://x.com/OpenAIDevs/status/2054698500143927357">Codex 企业推广 3 小时引 2000 名开发者咨询</a> · OpenAI Devs (Twitter) · 企业迁移热度数据</li>
+</ul>
 <blockquote>
 <p><strong>实践建议</strong></p>
 <ul>
-<li>中小企业可优先试用「月结」与「现金流预测」两条工作流，评估 Claude 在财务核对中的可靠性</li>
-<li>对接 HubSpot + Canva 的营销活动 Agent，验证营销文案与素材生成是否可替代现有外包</li>
-<li>关注 Claude SMB Tour 巡演活动，免费获取一个月 Claude Max 额度做内部试点</li>
+<li>更新 ChatGPT 移动 App 与 macOS Codex 桌面端，关联本地或远程开发机，体验「手机审批 + 远端执行」的新协作节奏</li>
+<li>在仓库根目录配置 Codex Hooks，把现有 secrets 扫描、lint 校验与会话记录接入任务关键点，并按目录定制 Agent 行为</li>
+<li>若团队在 Windows 上使用 Codex，规划首次 elevated sandbox 安装的 UAC 弹窗与 ACL 应用时间，并评估 CodexSandboxOffline/Online 与现有防火墙策略的冲突</li>
+<li>如团队目前使用 Cursor / Claude Code，可评估 30 天迁移窗口的 2 个月免费用量是否值得做一次 PoC</li>
 </ul>
 </blockquote>
 <hr>
-<h3 id="h-6">4. <a href="https://x.com/demishassabis/status/2054326444189253655">Demis Hassabis 转推：Google DeepMind 用 AI 重构鼠标指针</a></h3>
+<h3 id="h-4">2. <a href="https://x.com/xai/status/2054993285152989373">xAI 发布 Grok Build：面向 SuperGrok Heavy 的代理式 CLI</a></h3>
 <ul>
-<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
 <li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google DeepMind</code> <code>Gemini</code> <code>AI 交互</code> <code>鼠标指针</code> <code>AI Studio</code></li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok Build</code> <code>代理式 CLI</code> <code>SuperGrok Heavy</code></li>
 </ul>
-<p><strong>摘要</strong>: Demis Hassabis 推荐 Google DeepMind 在 AI Studio 中上线的「智能鼠标指针」原型 demo。该实验展示如何让用户通过动作、语音和自然简写「指挥」Gemini 完成屏幕上的任务，重新想象沿用 50 年的鼠标交互。</p>
+<p><strong>摘要</strong>: xAI 推出 Grok Build 早期 Beta，一款用于编码、构建应用与自动化工作流的代理式命令行工具，目前仅向 SuperGrok Heavy 订阅者开放。xAI 计划在 Beta 期间根据用户反馈迭代模型与产品，入口为 x.ai/cli。这意味着继 Codex 与 Claude Code 之后，xAI 也正式入场代理式编码 CLI 赛道。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>SuperGrok Heavy 订阅者可前往 x.ai/cli 试用 Grok Build 早期 Beta，与 Codex / Claude Code 在同一仓库做小型对照实验</li>
+<li>记录 Grok Build 在 Beta 期的能力边界与反馈渠道，便于在正式版上线后快速复用脚手架</li>
+</ul>
+</blockquote>
 <hr>
-<h3 id="h-7">5. <a href="https://x.com/ClaudeDevs/status/2054299065069003208">Opus 4.7 Fast 模式同步登陆 Cursor、v0、Warp 等第三方</a></h3>
+<h3 id="h-5">3. <a href="https://www.anthropic.com/research/2028-ai-leadership">Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>中美 AI 竞争</code> <code>出口管制</code> <code>蒸馏攻击</code> <code>前沿安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布政策论文《2028: Two scenarios for global AI leadership》，主张美国与盟友通过收紧算力出口管制、阻断「蒸馏攻击」、加速民主国家 AI 采用，锁定 12–24 个月的前沿能力领先；否则 CCP 将在「near-frontier」追平并主导 AI 规则与军用部署。文章把 Claude「Mythos Preview」（让 Firefox 单月修复的安全漏洞数超过 2025 全年）描述为加速期警钟，并援引 CAISI 数据指 DeepSeek R1-0528 对越狱式恶意请求的服从率达 94%（美参考模型为 8%）。Anthropic 将竞争拆为「智能、国内采用、全球分发、韧性」四条战线，强调「智能」是其余三条的源头，同时呼吁与中国 AI 安全专家保持对话——后者「在美国保持较大能力优势」时最为可行。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2054987444664377374">Anthropic 推文宣告《2028》白皮书发布</a> · Anthropic (Twitter) · 官方推文宣告</li>
+</ul>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/ClaudeDevs/status/2054639779195830285">Claude Code 全平台限额临时上调，叠加先前 2 倍 5 小时窗口</a></h3>
 <ul>
 <li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Fast 模式</code> <code>Cursor</code> <code>Warp</code> <code>Windsurf</code></li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>全平台限额</code> <code>临时上调</code></li>
 </ul>
-<p><strong>摘要</strong>: Claude Opus 4.7 的 Fast 模式同时在 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 等多家第三方平台以研究预览形式上线。这让外部 IDE 与编码工具的用户也能直接体验低延迟版 Opus 4.7。 Claude Devs 宣布 Opus 4.7 的「Fast Mode」开始接受 API 用户的等候名单申请，开发者可通过 claude.com/fast-mode 注册。该模式预计为高负载场景提供更低延迟的推理选项。</p>
+<p><strong>摘要</strong>: Anthropic 宣布对 Claude Code 全平台（CLI、IDE 扩展、桌面端、Web）的使用额度临时上调，无需手动开启，已自动应用到账户。本次调整自即刻起生效至 7 月 13 日 18:00 PDT，并与上周宣布的 5 小时窗口 2 倍提升叠加。 Claude Devs 在限额上调公告的串联推文中，简短表达对开发者将利用新额度构建什么的期待。属于推文串的收尾发言，无独立信息量。</p>
 <hr>
-<h3 id="h-8">6. <a href="https://x.com/GoogleDeepMind/status/2054246130511225053">AI 鼠标：从「指到哪」升级为「理解指什么」</a></h3>
+<h3 id="h-7">5. <a href="https://x.com/ClaudeDevs/status/2054610152817619388">Claude 付费订阅 6 月 15 日起含编程式调用专属月度额度</a></h3>
 <ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>AI 鼠标</code> <code>Gemini</code> <code>语义理解</code> <code>多模态</code> <code>交互设计</code></li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Agent SDK</code> <code>编程式额度</code> <code>订阅</code></li>
 </ul>
-<p><strong>摘要</strong>: Google DeepMind 解释 AI 鼠标的核心转变：过去鼠标只追踪位置，AI 则让它理解所指对象的语义。例如手写便签照片可被自动转为可交互的待办列表，暂停的视频帧能变成餐厅预订链接。 Google DeepMind 表示这些 AI 鼠标指针能力正指导其对下一代交互界面的思考，相关实验性 demo 已在 @GoogleAIStudio 平台开放试用（goo.gle/49HqFeu），邀请开发者亲身体验。</p>
+<p><strong>摘要</strong>: 自 6 月 15 日起，Claude 付费订阅将获得专门用于编程式调用的每月独立额度，覆盖 Claude Agent SDK、claude -p 命令、Claude Code GitHub Actions 以及基于 Agent SDK 构建的第三方应用。这意味着订阅用户可以在不消耗交互式额度的前提下运行自动化脚本与第三方 Agent 工具。</p>
 <hr>
-<h2 id="h-9">速览</h2>
+<h3 id="h-8">6. <a href="https://openai.com/index/chatgpt-recognize-context-in-sensitive-conversations">ChatGPT 上线「安全摘要」：跨会话识别风险升级信号</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>安全摘要</code> <code>心理健康</code> <code>跨会话上下文</code> <code>GPT-5.5</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 与全球医生网络合作，训练 ChatGPT 在多轮甚至跨会话中识别自伤、伤人等渐进式风险信号，引入由安全推理模型生成的「safety summaries」——短期保留、范围受限的安全相关上下文摘要。内部评测显示，长对话场景下自杀/自伤的安全响应提升 50%，伤人场景提升 16%；GPT-5.5 Instant 上对应提升为 39% 与 52%；安全摘要在 4000 余次评估中相关性 4.93、事实性 4.34。日常对话体验保持不变，未来还可能扩展到生物与网络安全等高风险领域。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/ClaudeDevs/status/2054610157364289906">第三方 Agent SDK 工具将共享 Claude 订阅的编程式额度</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Agent SDK</code> <code>第三方工具</code> <code>编程式额度</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 澄清，基于 Agent SDK 构建的第三方工具（如 Conductor、OpenClaw）可以使用用户的 Claude 订阅运行，但消耗的是订阅自带的编程式额度，与用户自有脚本走同一池。这进一步明确了第三方生态在新计费体系下的位置。 Anthropic 提示用户当前无需操作，将在 6 月 8 日通过邮件向付费订阅用户发送领取链接，编程式额度变更正式于 6 月 15 日生效，并附上官方支持文档。</p>
+<hr>
+<h2 id="h-10">速览</h2>
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>模型权衡</code> <code>推理速度</code> <code>定价</code> — Sam Altman 表示自己不使用「最聪明可用」模型时会有些焦虑，但有时也不在意推理速度变慢。他提出一个观点：业界或许应该把价格/速度的权衡放在比价格/智能更显眼的位置上。 · <a href="https://x.com/sama/status/2054627102922797323">Sam Altman (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>OpenAI</code> <code>Codex</code> <code>企业销售</code> <code>免费额度</code> <code>迁移</code> — OpenAIDevs 面向企业客户推出限时促销：未来 30 天内切换到 Codex 的合格企业，可获得 2 个月新用户免费 Codex 使用额度。OpenAI 主账号与 Sam Altman 亲自下场转推，为「最好的 AI 编码产品」站台。报名入口为 openai.com/form/codex-enterprise-promo，意在借助经济激励抢占企业开发工具市场。 作为企业 Codex 促销线程的后续推文，OpenAIDevs 公布了报名表链接 openai.com/form/codex-enterprise-promo，企业客户可经此申请 2 个月免费用量。 · <a href="https://x.com/OpenAIDevs/status/2054586214112780518">OpenAI Devs (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Qwen3.6-Plus</code> <code>Nous Portal</code> <code>模型聚合</code> <code>限时免费</code> <code>阿里巴巴</code> — 阿里巴巴 Qwen 团队宣布 Qwen3.6-Plus 已登陆 Nous Research 的 Nous Portal，并在限时期内免费开放使用。Nous Portal 是一个聚合订阅平台，通过单一订阅即可访问 300+ 模型，并提供独家折扣以及将 token 与付费工具统一打包的简化计费方案。此次合作同时为 Hermes Agent 的接入铺路。 · <a href="https://x.com/Alibaba_Qwen/status/2054397617015271738">Qwen (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Symphony</code> <code>Codex</code> <code>开源</code> <code>Agent</code> <code>任务管理</code> — OpenAIDevs 在 Symphony 线程中重发早期介绍：Symphony 是 Codex 的开源 Agent 编排器，理念是让每个 open issue 都获得一个 Codex Agent，使任务追踪系统成为 always-on 的 agentic 平台。 · <a href="https://x.com/OpenAIDevs/status/2054252234045845822">OpenAI Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Anthropic</code> <code>盖茨基金会</code> <code>公益部署</code> <code>全球健康</code> <code>教育</code> — Anthropic 与盖茨基金会签订 4 年期 2 亿美元合作，以资金、Claude 额度与工程支持覆盖全球健康、生命科学、教育、农业与经济流动五大方向。健康领域将为脊髓灰质炎、HPV、子痫前期等高负担疾病构建药物/疫苗筛选与建模工具，并与 IDM 合作改进疟疾、结核病的传播预测模型，发布健康智能 connectors、基准与评测框架。教育方面将向美国 K-12、撒哈拉以南非洲与印度提供 AI 辅导和数学/读写算应用，作为 GAILA 联盟的一部分；经济流动板块包括可携带技能档案、农业模型与就业链路追踪。这是 Anthropic「Beneficial Deployments」团队迄今最大规模的公益部署承诺。 · <a href="https://www.anthropic.com/news/gates-foundation-partnership">Anthropic Blog</a></li>
 </ul>
 </div>
       </article>
@@ -412,13 +426,14 @@ footer.colophon a:hover { color: var(--accent); }
     <div class="toc-label">本期目录</div>
     <ul>
       <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
-      <li class="toc-h3"><a href="#h-3">1. Claude Code 单日三连更：周限上调 50%、新增程序化配额、上线长任务命令</a></li>
-      <li class="toc-h3"><a href="#h-4">2. OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent</a></li>
-      <li class="toc-h3"><a href="#h-5">3. Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具</a></li>
-      <li class="toc-h3"><a href="#h-6">4. Demis Hassabis 转推：Google DeepMind 用 AI 重构鼠标指针</a></li>
-      <li class="toc-h3"><a href="#h-7">5. Opus 4.7 Fast 模式同步登陆 Cursor、v0、Warp 等第三方</a></li>
-      <li class="toc-h3"><a href="#h-8">6. AI 鼠标：从「指到哪」升级为「理解指什么」</a></li>
-      <li class="toc-h2"><a href="#h-9">速览</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱</a></li>
+      <li class="toc-h3"><a href="#h-4">2. xAI 发布 Grok Build：面向 SuperGrok Heavy 的代理式 CLI</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Claude Code 全平台限额临时上调，叠加先前 2 倍 5 小时窗口</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Claude 付费订阅 6 月 15 日起含编程式调用专属月度额度</a></li>
+      <li class="toc-h3"><a href="#h-8">6. ChatGPT 上线「安全摘要」：跨会话识别风险升级信号</a></li>
+      <li class="toc-h3"><a href="#h-9">7. 第三方 Agent SDK 工具将共享 Claude 订阅的编程式额度</a></li>
+      <li class="toc-h2"><a href="#h-10">速览</a></li>
     </ul>
   </aside>
     </div>
@@ -426,7 +441,7 @@ footer.colophon a:hover { color: var(--accent); }
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-05-13.html">2026-05-13</a>
+        <a href="../daily/2026-05-14.html">2026-05-14</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -434,12 +449,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-05-15.html">2026-05-15</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-14.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-15.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
