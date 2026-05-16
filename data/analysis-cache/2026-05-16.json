@@ -1,0 +1,355 @@
+{
+  "analyzed_at": "2026-05-16T08:37:00+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-16.json",
+  "trend_paragraph": "- **Codex 移动化与企业化**：OpenAI 一日推送移动端预览、Hooks GA、Remote SSH GA 与企业作用域 Token，把代码 Agent 工作流推向「随处可控」。\n- **ChatGPT 进军个人理财**：Pro 用户可连接 1.2 万家金融机构，由 GPT‑5.5 Thinking 在专家基准上拿到 79 分给出预算与规划建议。\n- **Agentic CLI 赛道扩容**：xAI 推出 Grok Build 早期 Beta 向 SuperGrok Heavy 开放，对标 Claude Code 与 Codex CLI 抢入口。\n- **中美 AI 竞争白皮书**：Anthropic 发布《2028 两情景》报告，呼吁收紧算力出口管制与压制 DeepSeek 类蒸馏攻击。\n- **FDE 岗位军备竞赛**：OpenAI 部署公司 140 亿美元估值、Anthropic 联合黑石/高盛、Google 自营三条路径同时抢夺前线工程师。",
+  "articles": [
+    {
+      "url": "https://baoyu.io/blog/2026-05-15/forward-deployed-engineer",
+      "source": "宝玉的分享",
+      "title": "FDE 岗位崛起：OpenAI/Anthropic/Google 把工程师送进客户现场",
+      "summary": "文章解析了 Forward Deployed Engineer（FDE）这一岗位为何成为 AI 公司争抢焦点：OpenAI 以 40 亿美元独立设立估值 140 亿美元的「部署公司」并收购英国 Tomoro 拿下 150 名 FDE；Anthropic 联合黑石、高盛成立 15 亿美元合资公司主攻中型企业；Google 则在自家市场营销组织下扩招并把面试流程压到两天。作者指出，AI 行业的竞争已从「比模型大小」转向「把模型接进业务」，每花 1 美元训练模型就要再花 1 美元做落地，FDE 处在这一转折点的最前沿。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "FDE",
+        "企业落地",
+        "OpenAI",
+        "Anthropic",
+        "AI 岗位"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/personal-finance-chatgpt",
+      "source": "OpenAI Blog",
+      "title": "ChatGPT 上线个人理财：Pro 用户可连 1.2 万家金融机构",
+      "summary": "OpenAI 向美国 ChatGPT Pro 用户开放个人理财预览：通过 Plaid 安全连接超过 12,000 家金融机构的账户，自动汇总余额、消费、订阅与投资形成仪表盘，并基于 GPT-5.5 Thinking 给出预算、储蓄、还贷等个性化建议（专家基准上拿到 79/100，GPT-5.5 Pro 为 82.5/100）。后续将与 Intuit 整合，把信用卡推荐、税务估算等动作闭环到 ChatGPT 内，并支持随时断开账户、删除「财务记忆」。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT",
+        "个人理财",
+        "Plaid",
+        "GPT-5.5",
+        "AI 助理"
+      ],
+      "practice_suggestions": [
+        "美国 Pro 用户可通过侧栏「Finances」或 @Finances 连接账户，先用一个非主力账户测试归类准确度再决定是否全量接入",
+        "在 Settings > Data controls 中关闭模型训练开关，并将敏感目标信息写入「财务记忆」而非长对话以便随时删除",
+        "把 ChatGPT 给出的预算分项（如 dining、shopping、transportation 上限）导出后接入自动转账，验证储蓄目标是否真的能落地"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/sea-david-chen",
+      "source": "OpenAI Blog",
+      "title": "Sea Limited：Codex 周活 87%，开发者转向「系统编排者」",
+      "summary": "Sea（Shopee 母公司）联合创始人兼 CPO David Chen 在 OpenAI「Executive Function」访谈中披露：Codex 已在 Sea 工程组织全面铺开，周活跃用户达 87%，4-5 分用户中 73% 愿向同事推荐。他认为 Codex 真正的价值不是写得更快，而是在大型微服务架构中追踪依赖、理解遗留逻辑，让工程师把认知负载转向架构设计；AI agent 正进入 CI/CD 流水线自主提案 TDD 实现并补足边角用例。Sea 还与 OpenAI 合作在新加坡、印尼、台湾、越南举办 Codex Hackathon Series，押注东南亚成为 AI-native 开发的样板市场。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "Sea",
+        "Shopee",
+        "企业落地",
+        "东南亚"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2055016850849993072",
+      "angle": "Sea 客户采用案例"
+    },
+    {
+      "url": "https://x.com/sama/status/2055356452286640630",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 回应 GPT-5.5 在 Codex 中变差的用户投诉",
+      "summary": "Sam Altman 转发 Codex 团队成员 thsottiaux 的声明：团队已注意到部分用户反映 GPT-5.5 在 Codex 中表现退化，正在调查，目前系统指标正常但暂无定论。Altman 调侃用户「习惯了当前的魔法水平、想要更多」，肯定团队认真对待这类反馈。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "GPT-5.5",
+        "Codex",
+        "OpenAI",
+        "模型回归"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2055034714231345475",
+      "source": "Sam Altman (Twitter)",
+      "title": "Codex 新增 Hooks 与作用域 API Token",
+      "summary": "Altman 转发 OpenAI Devs 公告：Codex 推出 Hooks，可在任务关键节点运行脚本（任务前后跑校验器、扫描提示词中的密钥、把对话记录到内部系统、按仓库或目录定制行为或写入记忆）；同时为 Business/Enterprise 工作区放出「Programmatic access tokens」——可在 ChatGPT 工作区设置中生成、用于 CI 与发布流水线、支持过期与撤销，使用量可追溯回工作区。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "Hooks",
+        "API Token",
+        "CI/CD",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "在 Codex Hooks 中接入 pre-task 密钥扫描脚本，避免提示词将凭据无意泄漏到模型上下文",
+        "把 Programmatic access tokens 与 CI 集成时设置短期过期并按仓库分发，离职或权限调整时可一键撤销",
+        "用 Hooks 在 post-task 阶段调用自家测试套件，让 Codex 输出在合入前必须通过本地验证器"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2055032115964870838",
+      "angle": "Altman 转发 Hooks/Token"
+    },
+    {
+      "url": "https://x.com/sama/status/2055034461591588916",
+      "source": "Sam Altman (Twitter)",
+      "title": "Codex 登陆 ChatGPT 手机端",
+      "summary": "Sam Altman 宣布 Codex 已集成进 ChatGPT 移动 App，开发者可以在手机上直接调度 Codex 任务。这是 Codex 从桌面/CLI/Web 扩展到移动端的关键节点，意味着代码任务可以随时被发起和审阅。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "ChatGPT",
+        "移动端",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "将长跑 Codex 任务（如重构、测试覆盖）放在手机端发起，离开电脑也能持续推进",
+        "在 ChatGPT mobile 中绑定常用仓库，便于路上 review PR 与回复 AI 工程师的中间产物"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2055016850849993072",
+      "angle": "Altman 力推上线"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2055347539923308703",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 重置全员 5 小时与周限速额度",
+      "summary": "Claude Devs 周五宣布重置所有用户的 5 小时窗口与周限速额度，让被限流卡住的开发者立即恢复全额配额。这是面向 Claude API/Claude Code 用户的善意运营动作，但未公布具体诱因或限速结构变化。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "限速",
+        "Anthropic",
+        "开发者运营"
+      ],
+      "practice_suggestions": [
+        "如果近期被 Claude 限速阻塞，可立即重试此前失败的批量任务",
+        "结合 X-RateLimit 响应头记录实际配额恢复情况，作为容量规划依据"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2055069548672631218",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude API 技巧：预热 prompt cache 降低首 token 延迟",
+      "summary": "Claude Devs 分享 API 优化技巧：对于较长的系统提示，可以「预热」prompt cache——先单独发送 system prompt，让 Claude 把它写入缓存但不生成输出；之后真实用户请求到达时即可命中热缓存，显著降低 time-to-first-token。适合需要稳定低延迟的对话/Agent 场景。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Claude API",
+        "prompt cache",
+        "延迟优化",
+        "Anthropic"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260514-2335",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2055069550505583055",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 文档新增 prompt cache 预热说明",
+      "summary": "作为上一条预热技巧的补充，Claude Devs 给出官方文档链接 platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache，详述如何通过预先发送 system prompt 以零输出方式写入缓存，并在后续请求中复用以降低首 token 延迟。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "prompt cache",
+        "文档",
+        "Anthropic"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260514-2335",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2054987444664377374",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 发布 2028 中美 AI 竞争两情景白皮书",
+      "summary": "Anthropic 发表政策论文「2028: Two scenarios for global AI leadership」，主张美国及盟友须维护对中国的算力领先。文章描绘两种 2028 情景：一是收紧出口管制、阻断蒸馏攻击并加速民主国家 AI 采用，从而锁定 12-24 个月的能力领先；二是放松限制，导致 CCP 追上甚至超越前沿，全球 AI 规范由威权政体主导。论文以「Mythos Preview」为加速期信号（Firefox 借其单月修复的安全 bug 接近其 2025 全年总和），并提出 intelligence、domestic adoption、global distribution、resilience 四条竞争主线。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "AI 政策",
+        "中美竞争",
+        "出口管制",
+        "蒸馏攻击"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2055016850849993072",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 登陆 ChatGPT 移动端，并推出 Hooks/Remote SSH/企业 Token",
+      "summary": "OpenAI 在 ChatGPT 移动应用中预览推出 Codex，全套餐覆盖 iOS 与 Android，可跨笔记本、Mac mini 与 devbox 通过安全中继同步活动会话，并把终端输出、截图、diff、测试结果回传到手机。同日上线一揽子配套更新：Hooks 正式可用（在 Codex 循环关键节点插入脚本，支持密钥扫描、验证器、按仓库自定义行为），Programmatic 访问令牌为 Business/Enterprise 提供可作用域的 CI 凭证，Remote SSH 正式可用并自动识别 SSH 配置中的远端主机，本地环境（CLI/IDE/App）支持 HIPAA 合规使用。Sea Limited 同期披露其工程组织 Codex 周活跃比例已达 87%，将开发者定位从「打字加速」推向「系统编排者」。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "移动端",
+        "Hooks",
+        "Remote SSH",
+        "企业 Token",
+        "代码 Agent"
+      ],
+      "practice_suggestions": [
+        "更新 ChatGPT 移动应用与 macOS Codex 桌面端，将 devbox/远端主机加入 SSH 配置后从手机审阅与指挥任务",
+        "在 CI 与发布流程中接入 Hooks 做密钥扫描或前后置验证器，按仓库目录自定义 Codex 行为",
+        "Business/Enterprise 工作区生成 Programmatic 访问令牌替代长期凭证，并按需设置过期或撤销"
+      ],
+      "thread_group_id": "thread-OpenAI-20260514-2006",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2055016852133417389",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 移动版 iOS/Android 全区预览，Windows 互联待发",
+      "summary": "Codex 移动端今日以预览形式在所有支持地区的 iOS 与 Android 上线，与桌面 macOS 客户端通过安全 relay 保持会话状态同步。Codex 周活用户已超 400 万，OpenAI 同步推出 Remote SSH GA、Hooks GA、可编程访问令牌以及 ChatGPT Enterprise 本地环境的 HIPAA 合规支持，连通桌面 Windows 的能力即将到来。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "Remote SSH",
+        "Hooks",
+        "HIPAA",
+        "Enterprise"
+      ],
+      "practice_suggestions": [
+        "企业团队启用 Programmatic Access Tokens 替代长存凭据，用于 CI 流水线与内部自动化",
+        "为代码仓库配置 Codex Hooks 在任务关键节点跑校验或扫描密钥，强化合规审计",
+        "医疗等合规场景的 Enterprise workspace 可在本地 CLI/IDE 启用 HIPAA-compliant Codex"
+      ],
+      "thread_group_id": "thread-OpenAI-20260514-2006",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2055016926213181608",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Devs：口袋里的 Codex，电脑端继续工作",
+      "summary": "OpenAI Devs 转推强调 Codex 手机端体验：脱离笔电仍可继续推进开发任务，所有文件与项目上下文仍在原机器上，手机端获得完整的 Codex 工作状态。本质是对同步发布的 Codex 移动预览的开发者侧推广。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "OpenAI Devs",
+        "移动端",
+        "开发者工作流"
+      ],
+      "practice_suggestions": [
+        "开发者在常用的 Mac/笔电上保持 Codex 后台运行，将手机作为远程审批与纠偏入口"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260514-2006",
+      "duplicate_of": "https://x.com/OpenAI/status/2055016850849993072",
+      "angle": "开发者侧详解"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2055032115964870838",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 推出 Hooks 与可编程访问令牌，强化企业自动化",
+      "summary": "Codex 同步上线两项面向工程化的能力：Hooks 允许在任务关键节点插入脚本，用于校验、密钥扫描、对话日志、按仓库定制行为或写入记忆；可编程访问令牌则在 ChatGPT 工作区设置中生成受限凭据，可设过期与撤销，便于将 Codex 接入 CI、发布流水线和企业内部自动化。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex Hooks",
+        "Access Token",
+        "CI/CD",
+        "企业自动化",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "为关键仓库配置 Codex Hooks 在提示注入前扫描密钥、在提交前跑 lint/test",
+        "为 CI 与发布流水线签发 scoped Codex 访问令牌，避免使用个人长效凭据",
+        "用 Hooks 按目录或仓库注入团队规范，例如统一 commit message 或代码风格"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2055016850849993072",
+      "angle": "Hooks 与企业 Token"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2055016938217377945",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Remote SSH GA：无缝接入 devbox 与远端环境",
+      "summary": "OpenAI 宣布 Codex 的 Remote SSH 能力正式 GA，可基于本地 SSH 配置自动发现主机，并像在本地一样在远端机器上创建项目与运行任务。结合移动 App 的 secure relay，开发者可在桌面发起、在手机指挥长任务，跨设备不中断。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "Remote SSH",
+        "devbox",
+        "远端开发",
+        "AI Agent"
+      ],
+      "practice_suggestions": [
+        "将团队 devbox 加入本地 ~/.ssh/config，Codex 桌面客户端会自动识别为可连接主机",
+        "把对算力或敏感数据有要求的任务迁到远端环境运行，本地仅保留控制平面"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260514-2006",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2054973436280418521",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Devs 发布纯媒体推文（无正文）",
+      "summary": "推文仅含一条 t.co 短链且未展开为可解析内容，描述为空，无可分析的实质信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI Devs",
+        "媒体推文"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2055016850849993072",
+      "angle": "预告媒体物料"
+    },
+    {
+      "url": "https://x.com/xai/status/2055375676656783733",
+      "source": "xAI (Twitter)",
+      "title": "Grok 订阅可在 Nous Research Hermes Agent 中使用",
+      "summary": "xAI 宣布用户的 Grok 订阅现已可直接在 Nous Research 的 Hermes Agent 中调用，相当于把 Grok 模型接入第三方开源 Agent 框架，扩大订阅价值与生态分发面。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "xAI",
+        "Grok",
+        "Nous Research",
+        "Hermes Agent",
+        "生态合作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2054993285152989373",
+      "source": "xAI (Twitter)",
+      "title": "Grok Build 早期 Beta：xAI 推出 Agentic 编码 CLI",
+      "summary": "xAI 面向 SuperGrok Heavy 订阅者推出 Grok Build 早期 Beta —— 一款用于编码、构建应用、自动化工作流的 Agentic CLI 工具。xAI 将基于早期用户反馈迭代模型与产品，与 Codex CLI、Claude Code 等正面对位。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "xAI",
+        "Grok Build",
+        "Agentic CLI",
+        "编程助手",
+        "SuperGrok"
+      ],
+      "practice_suggestions": [
+        "SuperGrok Heavy 订阅者可在 x.ai/cli 试用 Grok Build，对比 Codex CLI / Claude Code 的任务执行效果",
+        "在沙箱仓库内试跑 Grok Build 自动化工作流，评估是否纳入团队工具链"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
