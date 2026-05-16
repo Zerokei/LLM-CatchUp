@@ -5,8 +5,102 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 15 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 16 May 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-05-16</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-16.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-16.md</guid>
+      <pubDate>Sat, 16 May 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-16</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>Codex 移动化与企业化</strong>：OpenAI 一日推送移动端预览、Hooks GA、Remote SSH GA 与企业作用域 Token，把代码 Agent 工作流推向「随处可控」。</li>
+<li><strong>ChatGPT 进军个人理财</strong>：Pro 用户可连接 1.2 万家金融机构，由 GPT‑5.5 Thinking 在专家基准上拿到 79 分给出预算与规划建议。</li>
+<li><strong>Agentic CLI 赛道扩容</strong>：xAI 推出 Grok Build 早期 Beta 向 SuperGrok Heavy 开放，对标 Claude Code 与 Codex CLI 抢入口。</li>
+<li><strong>中美 AI 竞争白皮书</strong>：Anthropic 发布《2028 两情景》报告，呼吁收紧算力出口管制与压制 DeepSeek 类蒸馏攻击。</li>
+<li><strong>FDE 岗位军备竞赛</strong>：OpenAI 部署公司 140 亿美元估值、Anthropic 联合黑石/高盛、Google 自营三条路径同时抢夺前线工程师。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/personal-finance-chatgpt">ChatGPT 上线个人理财：Pro 用户可连 1.2 万家金融机构</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>个人理财</code> <code>Plaid</code> <code>GPT-5.5</code> <code>AI 助理</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 向美国 ChatGPT Pro 用户开放个人理财预览：通过 Plaid 安全连接超过 12,000 家金融机构的账户，自动汇总余额、消费、订阅与投资形成仪表盘，并基于 GPT-5.5 Thinking 给出预算、储蓄、还贷等个性化建议（专家基准上拿到 79/100，GPT-5.5 Pro 为 82.5/100）。后续将与 Intuit 整合，把信用卡推荐、税务估算等动作闭环到 ChatGPT 内，并支持随时断开账户、删除「财务记忆」。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>美国 Pro 用户可通过侧栏「Finances」或 @Finances 连接账户，先用一个非主力账户测试归类准确度再决定是否全量接入</li>
+<li>在 Settings &gt; Data controls 中关闭模型训练开关，并将敏感目标信息写入「财务记忆」而非长对话以便随时删除</li>
+<li>把 ChatGPT 给出的预算分项（如 dining、shopping、transportation 上限）导出后接入自动转账，验证储蓄目标是否真的能落地</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/OpenAI/status/2055016850849993072">Codex 登陆 ChatGPT 移动端，并推出 Hooks/Remote SSH/企业 Token</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>移动端</code> <code>Hooks</code> <code>Remote SSH</code> <code>企业 Token</code> <code>代码 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在 ChatGPT 移动应用中预览推出 Codex，全套餐覆盖 iOS 与 Android，可跨笔记本、Mac mini 与 devbox 通过安全中继同步活动会话，并把终端输出、截图、diff、测试结果回传到手机。同日上线一揽子配套更新：Hooks 正式可用（在 Codex 循环关键节点插入脚本，支持密钥扫描、验证器、按仓库自定义行为），Programmatic 访问令牌为 Business/Enterprise 提供可作用域的 CI 凭证，Remote SSH 正式可用并自动识别 SSH 配置中的远端主机，本地环境（CLI/IDE/App）支持 HIPAA 合规使用。Sea Limited 同期披露其工程组织 Codex 周活跃比例已达 87%，将开发者定位从「打字加速」推向「系统编排者」。 Codex 移动端今日以预览形式在所有支持地区的 iOS 与 Android 上线，与桌面 macOS 客户端通过安全 relay 保持会话状态同步。Codex 周活用户已超 400 万，OpenAI 同步推出 Remote SSH GA、Hooks GA、可编程访问令牌以及 ChatGPT Enterprise 本地环境的 HIPAA 合规支持，连通桌面 Windows 的能力即将到来。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2055016926213181608">OpenAI Devs：口袋里的 Codex，电脑端继续工作</a> · OpenAI Devs (Twitter) · 开发者侧详解</li>
+<li><a href="https://openai.com/index/sea-david-chen">Sea Limited：Codex 周活 87%，开发者转向「系统编排者」</a> · OpenAI Blog · Sea 客户采用案例</li>
+<li><a href="https://x.com/sama/status/2055034461591588916">Codex 登陆 ChatGPT 手机端</a> · Sam Altman (Twitter) · Altman 力推上线</li>
+<li><a href="https://x.com/OpenAIDevs/status/2055032115964870838">Codex 推出 Hooks 与可编程访问令牌，强化企业自动化</a> · OpenAI Devs (Twitter) · Hooks 与企业 Token</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>更新 ChatGPT 移动应用与 macOS Codex 桌面端，将 devbox/远端主机加入 SSH 配置后从手机审阅与指挥任务</li>
+<li>在 CI 与发布流程中接入 Hooks 做密钥扫描或前后置验证器，按仓库目录自定义 Codex 行为</li>
+<li>Business/Enterprise 工作区生成 Programmatic 访问令牌替代长期凭证，并按需设置过期或撤销</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://baoyu.io/blog/2026-05-15/forward-deployed-engineer">FDE 岗位崛起：OpenAI/Anthropic/Google 把工程师送进客户现场</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>FDE</code> <code>企业落地</code> <code>OpenAI</code> <code>Anthropic</code> <code>AI 岗位</code></li>
+</ul>
+<p><strong>摘要</strong>: 文章解析了 Forward Deployed Engineer（FDE）这一岗位为何成为 AI 公司争抢焦点：OpenAI 以 40 亿美元独立设立估值 140 亿美元的「部署公司」并收购英国 Tomoro 拿下 150 名 FDE；Anthropic 联合黑石、高盛成立 15 亿美元合资公司主攻中型企业；Google 则在自家市场营销组织下扩招并把面试流程压到两天。作者指出，AI 行业的竞争已从「比模型大小」转向「把模型接进业务」，每花 1 美元训练模型就要再花 1 美元做落地，FDE 处在这一转折点的最前沿。</p>
+<hr>
+<h3>4. <a href="https://x.com/ClaudeDevs/status/2055069548672631218">Claude API 技巧：预热 prompt cache 降低首 token 延迟</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude API</code> <code>prompt cache</code> <code>延迟优化</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 分享 API 优化技巧：对于较长的系统提示，可以「预热」prompt cache——先单独发送 system prompt，让 Claude 把它写入缓存但不生成输出；之后真实用户请求到达时即可命中热缓存，显著降低 time-to-first-token。适合需要稳定低延迟的对话/Agent 场景。 作为上一条预热技巧的补充，Claude Devs 给出官方文档链接 platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache，详述如何通过预先发送 system prompt 以零输出方式写入缓存，并在后续请求中复用以降低首 token 延迟。</p>
+<hr>
+<h3>5. <a href="https://x.com/AnthropicAI/status/2054987444664377374">Anthropic 发布 2028 中美 AI 竞争两情景白皮书</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>AI 政策</code> <code>中美竞争</code> <code>出口管制</code> <code>蒸馏攻击</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发表政策论文「2028: Two scenarios for global AI leadership」，主张美国及盟友须维护对中国的算力领先。文章描绘两种 2028 情景：一是收紧出口管制、阻断蒸馏攻击并加速民主国家 AI 采用，从而锁定 12-24 个月的能力领先；二是放松限制，导致 CCP 追上甚至超越前沿，全球 AI 规范由威权政体主导。论文以「Mythos Preview」为加速期信号（Firefox 借其单月修复的安全 bug 接近其 2025 全年总和），并提出 intelligence、domestic adoption、global distribution、resilience 四条竞争主线。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>xAI</code> <code>Grok</code> <code>Nous Research</code> <code>Hermes Agent</code> <code>生态合作</code> — xAI 宣布用户的 Grok 订阅现已可直接在 Nous Research 的 Hermes Agent 中调用，相当于把 Grok 模型接入第三方开源 Agent 框架，扩大订阅价值与生态分发面。 · <a href="https://x.com/xai/status/2055375676656783733">xAI (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>GPT-5.5</code> <code>Codex</code> <code>OpenAI</code> <code>模型回归</code> — Sam Altman 转发 Codex 团队成员 thsottiaux 的声明：团队已注意到部分用户反映 GPT-5.5 在 Codex 中表现退化，正在调查，目前系统指标正常但暂无定论。Altman 调侃用户「习惯了当前的魔法水平、想要更多」，肯定团队认真对待这类反馈。 · <a href="https://x.com/sama/status/2055356452286640630">Sam Altman (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>限速</code> <code>Anthropic</code> <code>开发者运营</code> — Claude Devs 周五宣布重置所有用户的 5 小时窗口与周限速额度，让被限流卡住的开发者立即恢复全额配额。这是面向 Claude API/Claude Code 用户的善意运营动作，但未公布具体诱因或限速结构变化。 · <a href="https://x.com/ClaudeDevs/status/2055347539923308703">Claude Devs (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-05-15</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-15.html</link>
@@ -4318,25 +4412,6 @@
 <li><strong>标签</strong>: <code>Sam Altman</code> <code>OpenAI</code> <code>Telepathy</code> <code>产品预告</code></li>
 </ul>
 <p><strong>摘要</strong>: Sam Altman 发帖称&quot;这件事内部代号是 telepathy，用起来也确实有那种感觉&quot;，时间点紧贴 Anthropic 与 OpenAI 一轮消费级/开发者产品更新。帖子语义含糊、无直接链接或截图，信息量主要在&quot;代号本身&quot;——结合 OpenAI Devs 同日推出的 Chronicle（基于屏幕上下文的记忆功能），相当可能指向同一条主线或后续消费端发布。</p>
-<hr>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-04-20</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-20.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-20.md</guid>
-      <pubDate>Mon, 20 Apr 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-20</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>零内容日</strong>：23 个数据源 status: ok 但 30h 窗口过滤后 0 篇，与北美周末凌晨作息吻合。</li>
-<li><strong>管线健康正常</strong>：抓取均成功（OpenAI Blog RSS 940 条、Twitter 源 12-21 条），无源状态恶化。</li>
-<li><strong>预期信号回升</strong>：明日起北美工作日恢复，信号量预期回到正常水位。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<p>今日 30h 抓取窗口内全部 23 个数据源均未产出新内容，无条目可展示。</p>
 <hr>
 ]]></description>
     </item>
