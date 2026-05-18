@@ -1,0 +1,97 @@
+{
+  "analyzed_at": "2026-05-18T06:35:00+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-18.json",
+  "trend_paragraph": "- **Codex 工程体验升级**：OpenAI 同日放出 Codex 大仓库 Git 操作 10-50× 提速、可自定义快捷键与本地服务器列表优化，编码 Agent 进入精细化运营阶段。\n- **AI Agent × 社交数据**：xAI 将 Grok / X Premium 订阅与 X 帖子搜索能力接入 Nous Research 的 Hermes Agent，第三方 Agent 框架首次正式打通 X 实时数据。\n- **开发者声音**：Thariq 一句「HTML 依旧未被击败」折射出 AI 工程师对原生 Web 技术栈韧性的持续认可。",
+  "articles": [
+    {
+      "url": "https://x.com/trq212/status/2055903660476129723",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 短评：HTML 依旧未被击败",
+      "summary": "Thariq 发推称「HTML 依旧未被击败」（HTML continues to be undefeated），配图但无更多上下文。属于开发者对 Web 技术栈韧性的随手感慨，无具体论据或新信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": ["HTML", "Web", "开发者观点"],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2055717793841221796",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 上线可自定义键盘快捷键",
+      "summary": "OpenAI Devs 宣布 Codex 桌面端的键盘快捷键现已支持用户自定义，可在设置中按个人习惯改键，而非被迫适应默认配置。团队表示正在持续根据社区反馈迭代。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": ["Codex", "OpenAI", "快捷键", "开发者体验"],
+      "practice_suggestions": [
+        "在 Codex 设置中将高频命令（提交、运行、切换线程）绑定到顺手的组合键，减少鼠标切换",
+        "团队内统一一份快捷键映射，便于结对编程时互相接管会话"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2055717993460732191",
+      "angle": "快捷键自定义"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2055717993460732191",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 同日多项升级：大仓库 Git 提速 10-50× + 自定义快捷键 + 服务器列表优化",
+      "summary": "OpenAI 在同一时间窗集中放出 Codex 的三项工程体验改进。性能侧，针对大型 monorepo 与活跃编码会话，线程切换重渲染减少约 75%，部分流式路径降至零无效重渲染，大仓库的昂贵 Git 操作按类型加速 10-50×，启动与首次交互更快可用。交互侧，键盘快捷键全面开放自定义，用户可在设置中按个人工作流改键。多服务调试场景下，本地服务器列表清理了过滤、记忆排序、空状态与连接路由的可视化，并以 120 秒为间隔自动刷新非列表端口。整体路线呈现编码 Agent 进入「不发新模型也持续打磨工程体验」的精细化运营阶段。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Codex", "OpenAI", "性能优化", "Git", "大仓库", "快捷键", "开发者体验"],
+      "practice_suggestions": [
+        "在大型 monorepo 中升级 Codex 后重新评估之前因卡顿放弃的工作流（频繁切换线程、长流式输出）",
+        "在 Codex 设置中将高频命令绑定到顺手的组合键，并在团队内统一映射",
+        "依赖临时端口的开发者可借助 120 秒自动刷新及时发现新启动的本地服务"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260516-1832",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2055718005309575431",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 全面性能优化：大仓库 Git 操作提速 10-50 倍",
+      "summary": "OpenAI 公布 Codex 一轮覆盖大仓库与活跃编码会话的性能改进：线程切换重渲染减少约 75%，部分流式路径降至零无效重渲染，大仓库的昂贵 Git 操作根据类型加速 10-50 倍，流式响应、线程切换与侧栏交互的 UI 抖动也大幅减少，启动与首次交互更快可用。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": ["Codex", "OpenAI", "性能优化", "Git", "大仓库"],
+      "practice_suggestions": [
+        "在大型 monorepo 中升级 Codex 后重新评估之前因卡顿放弃的工作流（如频繁切换线程、长流式输出）",
+        "对此前因 Git 操作慢而拆分的仓库，可重新考虑回归单仓库工作模式",
+        "把 Codex 的启动作为日常开发起点，利用更快的「首次交互可用」缩短上下文加载时间"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260516-1832",
+      "duplicate_of": null,
+      "angle": "性能数据细节"
+    },
+    {
+      "url": "https://x.com/xai/status/2055745332919808181",
+      "source": "xAI (Twitter)",
+      "title": "xAI × Nous：Grok 订阅接入 Hermes Agent 并支持搜索 X",
+      "summary": "xAI 宣布 X Premium / Grok 订阅现可在 Nous Research 的 Hermes Agent 内使用，同时 Hermes Agent 获得搜索 X 平台帖子的能力。这意味着第三方 Agent 框架首次正式打通 Grok 订阅权益与 X 实时社交数据。详情见 x.ai/news/grok-hermes。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": ["xAI", "Grok", "Hermes Agent", "Nous Research", "X 搜索"],
+      "practice_suggestions": [
+        "已有 Grok / X Premium 订阅的用户可在 Hermes Agent 中直接调用，无需重复付费",
+        "构建社交舆情或实时事件类 Agent 时，可考虑用 Hermes + Grok 替换自建 Twitter 抓取链路",
+        "在 grok.com 中绑定 X 账号以打通订阅与 Agent 调用"
+      ],
+      "thread_group_id": "thread-xai-20260516-2020",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2055745334513672284",
+      "source": "xAI (Twitter)",
+      "title": "xAI 提示：在 grok.com 绑定 X 账号以启用集成",
+      "summary": "xAI 在 Hermes Agent 集成公告的后续推文中提醒用户，需要在 grok.com 上完成 X 账号连接，才能使用 Grok 订阅与 X 搜索能力。属于上一条公告的操作指引补充。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": ["xAI", "Grok", "账号绑定", "Hermes Agent"],
+      "practice_suggestions": [
+        "在 grok.com 的账号设置中完成 X 账号 OAuth 绑定，再进入 Hermes Agent 测试 Grok 与 X 搜索功能"
+      ],
+      "thread_group_id": "thread-xai-20260516-2020",
+      "duplicate_of": null
+    }
+  ]
+}
