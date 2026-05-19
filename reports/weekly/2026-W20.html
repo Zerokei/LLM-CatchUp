@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 周报 2026-W20 · CatchUp</title>
+  <meta name="description" content="CatchUp 周报 — 2026-W20" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Weekly</span>
+            <span>·</span>
+            <span>周报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-W20</h1>
+          <p class="report-subtitle">5月11日 – 17日</p>
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">本周趋势</h2>
+<ul>
+<li><strong>Codex 全栈进军移动与企业</strong>：ChatGPT 手机 App 接入 Codex 远程操控笔电，Hooks/Remote SSH GA、Windows elevated sandbox 披露与 Mac Computer Use 同日齐发，大仓 Git 操作提速 10-50×，周活破 400 万，NVIDIA 与 Sea Limited（工程组织周活 87%）全量切换。</li>
+<li><strong>Claude 同周交付编排面板与 AWS GA</strong>：Opus 4.7 Fast Mode 同步登陆六家合作 IDE，Agent View 多会话面板配 Skills 批量派发，Claude Platform on AWS GA 把 Managed Agents、Prompt Caching、advisor 策略与代码执行完整下放 AWS。</li>
+<li><strong>AI 落地形态从工具升级为基建</strong>：OpenAI 以 40 亿美元成立 DeployCo 并收购 Tomoro 拿下 150 名 FDE，Anthropic 推出 Claude for Small Business 15 套开箱工作流并联手盖茨基金会 4 年 2 亿美元覆盖健康/教育/经济流动。</li>
+<li><strong>ChatGPT 同周进入个人金融与长会话安全</strong>：Pro 用户通过 Plaid 接入 1.2 万家金融机构形成理财仪表盘并预告 Intuit 信用卡/税务闭环；safety summaries 让长对话中自伤识别提升 50%、伤人识别提升 16%。</li>
+<li><strong>政策与防御进入产品化阶段</strong>：Anthropic《2028》白皮书主张对华锁定 12-24 月领先并阻断蒸馏攻击，OpenAI 推出 Daybreak 自动化检测/验证/响应，CoT 评分研究分析交由 Redwood/Apollo/METR 三方独立审计。</li>
+<li><strong>交互与编程范式齐变</strong>：DeepMind 用 Gemini 重做的 AI 鼠标让光标「理解意图」，Karpathy 与 Thariq 联手力推 HTML 取代 Markdown 作为 LLM 输出主载体；Bun 作者用 AI 6 天 96 万行 Rust 重写通过 99.8% 测试，Jim Fan 宣告 VLA 终结并以 140 亿参数 DreamZero 开启世界动作模型 WAM。</li>
+</ul>
+<h2 id="h-2">Top 10 最重要文章</h2>
+<h3 id="h-3">1. <a href="https://openai.com/index/work-with-codex-from-anywhere">Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/14</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>编码 Agent</code> <code>移动端</code> <code>Hooks</code> <code>Remote SSH</code> <code>Windows 沙箱</code> <code>企业迁移</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在同一日把编码 Agent Codex 推上新阶段——ChatGPT 移动 App 接入 Codex 后可远程操控笔电、Mac mini 与 devbox 并实时同步截图/终端输出/diff，并支持手机审批命令与切换模型。同期 Hooks 与 Remote SSH 进入 GA：Hooks 可在任务关键节点运行验证器/扫描密钥/按仓库定制行为，Remote SSH 让 Codex 直接接入企业受管环境；Programmatic 访问令牌为 Business/Enterprise 提供作用域凭证，ChatGPT Enterprise 还获得 Codex 本地环境 HIPAA 合规支持。同步博文披露的 Windows「elevated sandbox」通过合成 SID、写受限令牌与 CodexSandboxOffline/Online 双用户配合防火墙规则强制隔离文件与网络。OpenAI 同时启动 30 天迁移窗口，从 Cursor / Claude Code 切换的合规企业新增用户可获 2 个月免费用量，Codex 周活已突破 400 万。</p>
+<h3 id="h-4">2. <a href="https://x.com/ClaudeDevs/status/2054266327771275435">Claude Opus 4.7 Fast Mode 研究预览上线：API、Claude Code 与 6 大合作平台同步</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/12</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Fast Mode</code> <code>低延迟</code> <code>Claude Code</code> <code>研究预览</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 推出 Opus 4.7 的 Fast Mode，专门为需要更低延迟的旗舰模型场景提供加速推理路径。该模式同时登陆 Anthropic API、Claude Code，以及 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 六家合作平台。开发者可通过 claude.com/fast-mode 加入 API 候补名单接入自有应用。当前仅限研究预览——这是把「同一旗舰、不同延迟档位」做成产品轴的第一步，对实时交互、Agent 调度和编码 IDE 内交互体感的影响最直接。</p>
+<h3 id="h-5">3. <a href="https://x.com/claudeai/status/2053868592286822443">Anthropic 推出 Claude Platform on AWS：完整 API 特性 + AWS 计费正式 GA</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/11</li>
+<li><strong>标签</strong>: <code>Claude Platform</code> <code>AWS</code> <code>Managed Agents</code> <code>Prompt Caching</code> <code>企业部署</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 宣布 Claude Platform 在 AWS 上正式 GA，AWS 客户可直接使用完整 Claude API 能力——包括 Claude Managed Agents、advisor strategy、code execution、Prompt Caching、Web 搜索等此前只在原生 API 提供的高阶特性，数据全程驻留在 AWS 账户内。鉴权通过 AWS 托管的 API Gateway 完成，价格与速率限制与原生 API 一致；Claude 模型仍继续在 Amazon Bedrock 上提供。这是 Anthropic 把多云分发的「特性差」补齐——Bedrock 长期缺位的特性首次在 AWS 上对齐，并由 Anthropic 自身运营、新特性同日上线，企业 IT 在合规、网络、计费三层都不再为 Anthropic 高级特性额外做让步。</p>
+<h3 id="h-6">4. <a href="https://x.com/claudeai/status/2053940934736228454">Claude Code 推出 Agent View：原生多会话面板 + Skills 批量派发</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/11</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Agent View</code> <code>Skills</code> <code>并行会话</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 正式发布 Claude Code 的 Agent View——把所有正在运行、等待回复、已完成的会话集中到一个仪表面板，支持内联回复解锁阻塞或直接跳入对应会话，研究预览版即日起对全付费方案开放。同步上线的 Skills 能力允许把常用工作流封装为 skill 并一次性派发多个并行执行，Claude 持续推进直至 skill 自报完成。开发者运行 <code>claude agents</code> 即可体验，定位是把 Claude Code 从单线程对话升级为可并行调度的轻量 Agent 控制台。这与同周 OpenAI Symphony「每个 Issue 一个 Codex 代理」的开源编排器构成正面对位，编排层已成为 Agent 数量上升后的新主战场。</p>
+<h3 id="h-7">5. <a href="https://openai.com/index/openai-launches-the-deployment-company">OpenAI 成立 DeployCo：40 亿美元起步 + 收购 Tomoro 拿下 150 FDE</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 05/11</li>
+<li><strong>标签</strong>: <code>DeployCo</code> <code>OpenAI</code> <code>Tomoro 收购</code> <code>企业落地</code> <code>商业化</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 推出 OpenAI Deployment Company (DeployCo)——多数股权由 OpenAI 控股的独立子公司，专门帮助企业基于 OpenAI 模型构建并部署 AI 应用。启动阶段配置 40 亿美元资金，联合 19 家顶级 PE 与咨询机构作为首批合作伙伴；同日宣布收购英国 AI 部署公司 Tomoro，带 150 名 Forward Deployed Engineers 与 Deployment 团队加入。结构上 OpenAI 把「模型研究」与「企业落地」显式拆分，借此加速大客户的端到端落地节奏，与上周 Anthropic + 黑石 + 高盛合资公司形成同位竞争——AI 公司开始把「现场工程师」当成一类需要被产品化、被估值、被融资的核心资产。</p>
+<h3 id="h-8">6. <a href="https://www.anthropic.com/research/2028-ai-leadership">Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 05/14</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>中美 AI 竞争</code> <code>出口管制</code> <code>蒸馏攻击</code> <code>前沿安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布政策论文《2028: Two scenarios for global AI leadership》，主张美国与盟友通过收紧算力出口管制、阻断「蒸馏攻击」、加速民主国家 AI 采用，锁定 12-24 个月的前沿能力领先；否则 CCP 将在「near-frontier」追平并主导 AI 规则与军用部署。文章把 Claude「Mythos Preview」（让 Firefox 单月修复的安全漏洞数超过 2025 全年）描述为加速期警钟，并援引 CAISI 数据指 DeepSeek R1-0528 对越狱式恶意请求的服从率达 94%（美参考模型为 8%）。Anthropic 将竞争拆为「智能、国内采用、全球分发、韧性」四条战线，同时呼吁与中国 AI 安全专家保持对话——后者「在美国保持较大能力优势」时最为可行。</p>
+<h3 id="h-9">7. <a href="https://www.anthropic.com/news/claude-for-small-business">Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/13</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>中小企业</code> <code>Agent 工作流</code> <code>连接器</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布面向中小企业的 Claude for Small Business，提供连接器与开箱即用的工作流，把 Claude 嵌入 QuickBooks、PayPal、HubSpot、Canva、Docusign、Google Workspace、Microsoft 365 等常用工具。首发 15 个跨财务、运营、销售、市场、HR、客服的 Agent 工作流与 15 项技能，例如核对 QuickBooks 与 PayPal 现金、自动生成月结 P&amp;L、营销活动效果分析等，所有操作均需用户审批，Team/Enterprise 默认不用于训练。配套推出 AI Fluency 免费课程并于 5 月 14 日启动 Claude SMB Tour 巡演——继 Microsoft 365 接入与 SpaceX 算力合作之后，Anthropic 把入口从「大型企业 + 开发者」扩展到长尾市场。</p>
+<h3 id="h-10">8. <a href="https://openai.com/index/personal-finance-chatgpt">ChatGPT 上线个人理财：Pro 用户可连 1.2 万家金融机构</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/15</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>个人理财</code> <code>Plaid</code> <code>GPT-5.5</code> <code>AI 助理</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 向美国 ChatGPT Pro 用户开放个人理财预览——通过 Plaid 安全连接 12,000+ 家金融机构账户，自动汇总余额、消费、订阅与投资形成仪表盘，并基于 GPT-5.5 Thinking 给出预算、储蓄、还贷等个性化建议（专家基准上拿到 79/100，GPT-5.5 Pro 为 82.5/100）。后续将与 Intuit 整合把信用卡推荐、税务估算等动作闭环到 ChatGPT 内，并支持随时断开账户、删除「财务记忆」。这是 ChatGPT 从「通用助手」首次切入高价值垂直领域，对独立 PFM 应用的存活空间和「消费者敏感数据 + 模型训练隔离」的边界设计都将形成长期影响。</p>
+<h3 id="h-11">9. <a href="https://x.com/ClaudeDevs/status/2054639777685934564">Claude Code 单日三连更：周限上调 50% + 程序化配额 + 长任务命令</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/13</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>用量上限</code> <code>程序化配额</code> <code>Agent SDK</code> <code>/goal</code> <code>stop hook</code> <code>auto 模式</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 同日为 Claude Code 推出三项关键更新。首先，所有 Pro、Max、Team 与按席位计费的 Enterprise 用户的 Claude Code 周用量上限即日上调 50%，覆盖 CLI、IDE 扩展、桌面端与 Web 四端，叠加上周 5 小时窗口 2 倍扩容，活动持续至 7 月 13 日。其次，6 月 15 日起付费 Claude 计划获得一份专用于程序化用途的月度配额，覆盖 Agent SDK、<code>claude -p</code>、Claude Code GitHub Actions 与 Conductor/OpenClaw 等基于 Agent SDK 的第三方应用，统一了第一方与第三方调用的计费模型，用户 6 月 8 日收到领取邮件。最后，官方介绍了让 Claude 持续推进长任务的工具链：<code>/goal</code> 命令声明终态、stop hook 用代码门控收工时机、auto 模式（shift+tab）让任务无需人工等待，三者组合可构成端到端自驱工作流。</p>
+<h3 id="h-12">10. <a href="https://baoyu.io/blog/robotics-end-game-nvidias-jim-fan">Jim Fan 宣告 VLA 时代结束，提出世界动作模型 WAM</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享 | <strong>分类</strong>: 研究 | <strong>日期</strong>: 05/10</li>
+<li><strong>标签</strong>: <code>机器人</code> <code>世界模型</code> <code>WAM</code> <code>DreamZero</code> <code>缩放定律</code></li>
+</ul>
+<p><strong>摘要</strong>: 英伟达 GEAR Lab 负责人 Jim Fan 在 Sequoia AI Ascent 2026 演讲中宣布 VLA 路线过时，新范式叫世界动作模型（WAM），代表作是 140 亿参数的 DreamZero——执行动作前先「梦境」预测未来几秒。配套的 EgoScale 用 21,000 小时人类第一人称视频预训练，发现灵巧操作的神经缩放定律达到 R²=0.998；Dream Dojo 则用 44,000 小时视频训练出完全绕过物理引擎的神经仿真器。Jim 给出 2040 年达到「物理自动研究」终局的预测，置信度 95%。机器人领域继 VLA 之后再一次范式迁移，影响从端到端控制到仿真训练堆栈的整条研究脉络。</p>
+<h2 id="h-13">分类概览</h2>
+<h3 id="h-14">模型发布</h3>
+<p>本周旗舰发布权重落在 Anthropic 一侧——Opus 4.7 Fast Mode 以研究预览身份上线 Anthropic API、Claude Code，并同步登陆 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 六家合作 IDE，开发者可通过 claude.com/fast-mode 加入 API 候补名单。OpenAI 没有放出新的旗舰底模，Sam Altman 仅以推文暗示 GPT-5.5 是「带有奇怪命名审美的自闭天才」，并戏言下代干脆叫 goblin。模型节奏相对克制，「在已有模型外扩展运行时（移动、远端、沙箱、并行编排）」成为本周真正的主战场——Anthropic 通过 Fast Mode 把「同一旗舰、不同延迟档位」做成产品轴，OpenAI 则把 GPT-5.5 + Codex 推成 NVIDIA 工程团队的默认工具，验证「现有底模 + 强化运行时」对企业生产力的杠杆。</p>
+<h3 id="h-15">研究</h3>
+<p>研究板块呈现「机制可解释性 → 工程可控性 → 范式迁移」三条线并进。Jim Fan 在 Sequoia AI Ascent 2026 宣告 VLA 路线终结，提出 140 亿参数的 DreamZero「梦境预测未来几秒后再行动」，配套 EgoScale 21,000 小时一人称视频和 Dream Dojo 44,000 小时神经仿真器，为灵巧操作的神经缩放定律确立 R²=0.998，并给出 2040 年「物理自动研究」终局预测。OpenAI 工程团队公开 Codex Windows 沙箱设计——AppContainer、Windows Sandbox、MIC 完整性标签等原生隔离原语都不够用，团队自研「elevated sandbox」通过 CodexSandboxOffline/Online 双用户配合防火墙规则强制隔离网络，是少有的 Agent 端到端进程隔离案例。Parameter Golf 挑战赛（1000+ 参赛者、16MB 模型 + 训练代码、8×H100 10 分钟训练预算）实证编码 Agent 加速 ML 研究的可行性，OpenAI 同周把 CoT 评分研究分析交由 Redwood Research、Apollo AI Evals、METR 三家第三方独立审计，把对齐结论的可信度从「实验室内说」扩展到「行业第三方互审」。Google DeepMind 用 Gemini 重做的 AI 鼠标原型让指针从「定位坐标」转向「理解意图」（手写便签照片→可交互待办、暂停视频帧→餐厅预订链接），并暗示这正引导其下一代界面思路。OpenAI Signals 2026Q1 报告显示 ChatGPT 用户进一步主流化（35 岁以上、女性化姓名用户占比上升，多米尼加、海地、日本、墨西哥等市场每千人发送量增速领先），健康类文档与信息检索是工作场景增长最快的任务。</p>
+<h3 id="h-16">产品与功能</h3>
+<p>产品与功能是 W20 的绝对主轴。OpenAI Codex 在一周内完成「移动 + 远端 + Windows + 跨应用 + 大仓提速 + 编排器」的全栈升级：ChatGPT 移动 App 接入 Codex 后可远程操控笔电/Mac mini/devbox 并实时同步截图/diff/终端，Hooks（关键节点插脚本）与 Remote SSH 进入 GA，Windows elevated sandbox 设计被首次披露，Mac Computer Use 让 Codex 在后台跨应用操作不抢主桌面，大仓 Git 操作提速 10-50×、UI 重渲染减少 75%，Symphony 开源「每个 Issue 一个 Codex Agent」编排器，OpenAI Developers 插件让 Codex 直接生成 API 调用骨架，Codex for Work 给财务团队 10 大用例提示词模板，Codex 周活破 400 万，NVIDIA 把 GPT-5.5+Codex 设为复杂工程任务默认工具、Sea Limited 工程组织 Codex 周活已达 87%。Anthropic 同周的关键词是「编排面板 + 平台扩张 + 长尾下放」：Claude Code 推出 Agent View（<code>claude agents</code>）把多会话集中到一个仪表盘、Skills 一次性派发多个并行任务、内联回复解阻塞，周限即日上调 50% 至 7/13、6/15 起付费订阅含编程式调用专属月度额度（覆盖 SDK / <code>claude -p</code> / GitHub Actions / 第三方）、配套 <code>/goal</code>/stop hook/auto 模式构成长任务自驱闭环；Claude Platform on AWS GA 把 Managed Agents、Prompt Caching、advisor strategy、code execution 完整带入 AWS 通道（同日上线、价格一致）；Claude for Small Business 提供 15 套跨财务/运营/销售/营销/HR/客服开箱工作流连 QuickBooks/PayPal/HubSpot/Canva/Docusign。OpenAI 在 Codex 之外还把 ChatGPT 推进个人金融（Pro 用户接入 1.2 万家金融机构构建理财仪表盘、预告 Intuit 信用卡/税务闭环）、推出 Daybreak 把检测/验证/响应交给 AI 流水线；Google 把 AI 版 Google Finance 推广到欧洲并加入 Deep Search、关键节点叠加与财报会议跟踪、DeepMind AI 鼠标进入 AI Studio；xAI 入场代理式 CLI 赛道发布 Grok Build 早期 Beta（SuperGrok Heavy 限定），并把 Grok 订阅与 Nous Research Hermes Agent 联通、开放 X 帖子检索。</p>
+<h3 id="h-17">商业动态</h3>
+<p>本周关键词是「专业落地公司」与「跨域生态合作」。OpenAI 启动 OpenAI Deployment Company (DeployCo)：40 亿美元启动资金、19 家 PE/咨询合作方、同日收购英国 Tomoro 把 150 名 Forward Deployed Engineers 并入，把「模型研究」与「企业落地」显式拆分；同步推出 30 天迁移 2 月免费用量针对已有 Cursor / Claude Code 用户的促销并由 Altman 亲自下场转推，NVIDIA 把 GPT-5.5+Codex 设为复杂工程任务默认工具（运行在自家 GB200/GB300）、AutoScout24（3000 万月活欧洲汽车市场）走「ChatGPT 横向广覆盖 + Codex 深度技术改造」双层 AI 策略。Anthropic 同周与盖茨基金会签 4 年 2 亿美元公益部署覆盖全球健康/教育/经济流动五大方向（脊髓灰质炎、HPV、子痫前期等高负担疾病的药物/疫苗筛选与建模），Isomorphic Labs 拿 21 亿美元新融资把 AlphaFold 余势推向药物发现，OpenAI 与马耳他政府签全球首例「全民 ChatGPT Plus」（公民完成 AI 素养课程获 1 年免费 Plus，George Osborne 表述「智能正成为国家公共设施」），构成「研究/部署/普惠」三档企业 AI 商业路径的 W20 范本。Codex 与 Hermes 的生态合作、Qwen3.6-Plus 在 Nous Portal 限时免费、OpenAI Campus Network 校园计划构成本周中段的渠道/分发动作，OpenAI 同期借 Philips/BBVA/Mirakl/Scout24/JetBrains/Scania 等欧洲企业访谈总结出「先文化后工具、把治理当加速器、从消费转向所有权、规模化前先抓质量、保护人类判断」五大企业 AI 规模化模式。</p>
+<h3 id="h-18">政策与安全</h3>
+<p>监管与安全本周以 Anthropic《2028: Two scenarios for global AI leadership》为主轴：政策论文主张美国及盟友通过收紧算力出口管制、阻断「蒸馏攻击」、加速民主国家 AI 采用，锁定 12-24 个月的前沿能力领先；否则 CCP 将在「near-frontier」追平并主导 AI 规则与军用部署。论文把 Claude「Mythos Preview」（让 Firefox 单月修复的安全漏洞数超过 2025 全年）作为加速期警钟，并援引 CAISI 数据指 DeepSeek R1-0528 对越狱式恶意请求的服从率达 94%（美参考模型为 8%），把竞争拆为「智能、国内采用、全球分发、韧性」四条战线，强调智能是其余三条的源头，同时主张与中国 AI 安全专家保持对话——后者「在美国保持较大能力优势」时最为可行。产品安全侧 OpenAI 与全球医生网络合作让 ChatGPT 在多轮甚至跨会话中识别自伤、伤人等渐进式风险信号——「safety summaries」由安全推理模型生成、短期保留、范围受限，内部评测显示长对话中自杀/自伤的安全响应提升 50%、伤人场景提升 16%，GPT-5.5 Instant 上分别提升 39%/52%，安全摘要在 4000+ 次评估中相关性 4.93、事实性 4.34，未来将扩展到生物与网络安全等高风险领域。</p>
+<h3 id="h-19">教程与观点</h3>
+<p>教程与观点维度本周展开「编程范式」与「组织范式」双线讨论。Andrej Karpathy 紧随 Thariq 后引用并背书「HTML 是新的 Markdown」——在 query 末尾追加「structure your response as HTML」即可获得带版面、链接、可视层级的输出（thariqs.github.io/html-effectiveness/ 给出示例集），LLM⇄人交互层正在被重新认知。Bun 创始人 Jarred Sumner 用 AI 6 天把 Bun 从 Zig 重写为 Rust 共 96 万行代码、Linux 上通过 99.8% 测试套件，Thariq 评论「我们的野心还不够大」。宝玉本周连续发出三篇深度解析：FDE 岗位崛起（OpenAI 40 亿美元 DeployCo + 收购 Tomoro 150 FDE / Anthropic + 黑石 + 高盛合资公司 / Google 面试压到两天，「每花 1 美元训练模型就要再花 1 美元做落地」）、Codex 下一步是「Agent 版 App Store」（左侧会话 + 中间对话 + 右侧工作区三栏已成 Agent 最优解，二次编辑生态是插件机制的真正窗口）、AI 裁员潮本质（每天百美元级 Token 烧钱叠加对齐税让企业被迫瘦身）。Anthropic Claude Code 与 Cowork 产品负责人 Fiona Fung 在 Code with Claude 2026 给出 AI 原生工程团队管理重构指南：瓶颈已从「写代码慢」转移到验证/评审/跨职能协作/安全性，过去基于「写代码很贵」假设的所有流程都要重构，第一步是明确允许大家砍掉陈旧流程。Sam Altman 全周高频发声——Codex 22 小时自主接安全赏金赚 16.88 美元/折合 506 美元每月、价格/速度权衡比价格/智能更值得显眼放置、新 ChatGPT 模型 + 个性 + 个性化「越过某个阈值」、并多次回应 GPT-5.5 在 Codex 中变差的用户投诉。Berkeley RDI 公布 2026 Agentic AI 峰会更多嘉宾名单与 AgentX–AgentBeats 第二阶段获胜者，Demis Hassabis 重访韩国与李世石、申真谞复盘 AlphaGo 十周年。</p>
+<h2 id="h-20">本周值得上手试试</h2>
+<ol>
+<li><strong>Codex 移动端 + 远端开发机联动</strong> — 更新 ChatGPT 移动 App 与 macOS Codex 桌面端，关联本地或远程开发机，把 devbox/远端主机加入 SSH 配置后从手机审阅与指挥任务，体验「手机审批 + 远端执行」的新协作节奏。</li>
+<li><strong>Codex Hooks + 企业 Token</strong> — 在仓库根目录配置 Codex Hooks，把现有 secrets 扫描、lint 校验、验证器与会话记录接入任务关键点，按目录定制 Agent 行为；Business/Enterprise 工作区生成 Programmatic 访问令牌替代长期凭证并按需设置过期或撤销。</li>
+<li><strong>Codex Windows elevated sandbox</strong> — 若团队在 Windows 上使用 Codex，规划首次 elevated sandbox 安装的 UAC 弹窗与 ACL 应用时间，并评估 CodexSandboxOffline/Online 与现有防火墙策略的冲突；安全负责人可对照博文复盘哪些操作仍需在虚拟机或单独账户中隔离。</li>
+<li><strong>Codex 30 天迁移窗口</strong> — 如团队目前使用 Cursor / Claude Code，可评估 30 天迁移窗口 2 个月免费用量是否值得做一次 PoC；在大型 monorepo 上重新评测 10-50× Git 加速与启动延迟的实际收益，再决定预算迁移节奏。</li>
+<li><strong>Codex Computer Use 与自主接活</strong> — 在专用账户或虚拟机中试用 Codex Computer Use 自动化跨应用任务（表格搬运、数据录入、UI 测试），隔离敏感数据与浏览状态；可在开源/赏金平台试跑 Codex 自主接 issue 的完整闭环，按 SEV 风险等级把关 merge 节点。</li>
+<li><strong>Codex for Work（财务团队）</strong> — 财务团队参考 OpenAI Academy 十大用例提示词模板，从月度业务回顾（MBR）切入试点，提前接入 Google Drive、SharePoint 数据源插件让 Codex 读取真实底稿，并明确要求 Codex 标注数字来源与缺失支撑。</li>
+<li><strong>OpenAI Symphony + Developers 插件</strong> — 在团队 GitHub Issue 上试用 Symphony 让 Codex 代理预先尝试解决简单 issue 并产出 PR 草稿，配明确 review 门禁避免低质量 PR 淹没人类评审；Codex 环境启用 OpenAI Developers 插件自动生成 Responses/Tools API 调用骨架。</li>
+<li><strong>GPT-Realtime-2 会议助手与 CRM 语音</strong> — Fork <code>openai/openai-realtime-meeting-assistant</code> 在内部 standup/复盘场景做语音转动作 PoC，评估与 Linear/Jira/Notion 的延迟与可靠性；在 CRM/工单系统加一层 Realtime API 语音入口，并评测中文识别与函数调用稳定性。</li>
+<li><strong>Claude Opus 4.7 Fast Mode</strong> — 在 Claude Code 中切换到 Fast Mode 评估对自身工作流的延迟收益；通过 claude.com/fast-mode 提交 API 候补名单申请，为线上应用预留接入窗口；在 Cursor、Windsurf 等合作 IDE 中直接体验。</li>
+<li><strong>Claude Code Agent View + Skills</strong> — 升级 Claude Code 后在包含所有仓库的高层目录（如 <code>~/Projects</code>）下运行 <code>claude agents</code> 启用 Agent View，把多个长任务并行委派；把团队常用流程（代码审查、报告生成、回归测试）封装为 skill 配合 dispatch many 同时跑多份；建立「会话状态命名」规范方便扫描。</li>
+<li><strong>Claude Code 限额三连更</strong> — 重度用户立即重新规划本周大型任务，把 50% 增量用在原本被限额卡住的批量改造或重构；6 月 8 日邮件到达后及时领取月度程序化配额并审视 CI、自动化脚本与第三方 Agent SDK 工具（Conductor、OpenClaw）的调用频率；用 <code>/goal</code> 声明终态、配 stop hook 跑测试套件门控、用 auto 模式（shift+tab）减少人工等待。</li>
+<li><strong>Claude Platform on AWS</strong> — 已在 Bedrock 上跑 Claude 的团队评估迁到 Claude Platform on AWS 解锁 Managed Agents、Prompt Caching 等额外特性；把鉴权流量挂到 AWS API Gateway 复用既有 IAM 与日志审计设施，不再单独管理 Anthropic key；优先把依赖最新特性的产品线试点迁入以缩短特性可用窗口。</li>
+<li><strong>Claude for Small Business</strong> — 中小企业优先试用「月结 P&amp;L」与「现金流核对」工作流评估财务可靠性；HubSpot + Canva 营销活动 Agent 验证文案与素材是否可替代现有外包；关注 Claude SMB Tour 巡演免费获取一个月 Claude Max 额度做内部试点。</li>
+<li><strong>Claude API prompt cache 预热</strong> — 对较长系统提示预先发送一次 system prompt 以零输出方式写入 cache，让真实用户请求命中热缓存显著降低 time-to-first-token；参考 platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache。</li>
+<li><strong>ChatGPT 个人理财 + 安全摘要</strong> — 美国 Pro 用户通过侧栏「Finances」或 @Finances 连接账户，先用一个非主力账户测试归类准确度再决定全量接入；在 Settings → Data controls 关闭模型训练开关并把敏感目标信息写入「财务记忆」便于随时删除；高风险用户可同步启用 Trusted Contact 与 ChatGPT 安全摘要识别长会话风险信号。</li>
+<li><strong>xAI Grok Build CLI + Hermes Agent</strong> — SuperGrok Heavy 订阅者前往 <code>x.ai/cli</code> 试用 Grok Build 早期 Beta，与 Codex/Claude Code 在同一仓库做小型对照实验；Grok 订户在 grok.com 绑定 X 账号后启用 Hermes Agent 中的 X 帖子检索做实时舆情。</li>
+<li><strong>Google AI 版 Finance（欧洲）+ AI 鼠标原型</strong> — 用 Deep Search 对持仓个股做季报与行业对比研究、把「关键节点」叠加到长期 K 线复盘价格异动、AI 注释的财报电话会议跟踪节省听会时间；同步前往 Google AI Studio 试用 AI 指针实验原型，思考产品里「定位 → 理解意图」的指针交互升级路径。</li>
+</ol>
+<h2 id="h-21">值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/work-with-codex-from-anywhere">Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱</a> — 一篇博文把「移动 + 远端 + Windows + 企业 Token + 30 天迁移」全部拼齐，是理解 Codex 如何从「桌面 Agent」转向「全栈编码运行时」的入口文档。</li>
+<li><a href="https://www.anthropic.com/research/2028-ai-leadership">Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景</a> — 把「智能、国内采用、全球分发、韧性」拆成可操作的政策战线，附 Mythos Preview 与 DeepSeek R1-0528 越狱服从率等关键数据，是中美 AI 竞争形势判断绕不开的一份原文。</li>
+<li><a href="https://baoyu.io/blog/robotics-end-game-nvidias-jim-fan">Jim Fan 宣告 VLA 时代结束，提出世界动作模型 WAM</a> — DreamZero 140 亿参数 + EgoScale 21,000 小时 + Dream Dojo 44,000 小时神经仿真器，把机器人学的缩放定律压到 R²=0.998，并指向 2040「物理自动研究」终局，是理解机器人范式迁移的必读演讲。</li>
+<li><a href="https://openai.com/index/building-codex-windows-sandbox">OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent</a> — 把 AppContainer/Windows Sandbox/MIC 都验证不够用后自研 elevated sandbox 的完整工程纪要，是少有的 Agent 端到端进程隔离案例，对在 Windows 上部署 Agent 的团队极其稀缺。</li>
+<li><a href="https://baoyu.io/blog/2026-05-15/forward-deployed-engineer">FDE 岗位崛起：OpenAI/Anthropic/Google 把工程师送进客户现场</a> — 把 DeployCo、Tomoro 收购、黑石/高盛合资、Google FDE 招聘四条新闻串成一条主线，揭示 AI 行业竞争已从「比模型大小」转向「把模型接进业务」，每花 1 美元训练就要再花 1 美元落地。</li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">本周趋势</a></li>
+      <li class="toc-h2"><a href="#h-2">Top 10 最重要文章</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Claude Opus 4.7 Fast Mode 研究预览上线：API、Claude Code 与 6 大合作平台同步 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic 推出 Claude Platform on AWS：完整 API 特性 + AWS 计费正式 GA ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Claude Code 推出 Agent View：原生多会话面板 + Skills 批量派发 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-7">5. OpenAI 成立 DeployCo：40 亿美元起步 + 收购 Tomoro 拿下 150 FDE ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-10">8. ChatGPT 上线个人理财：Pro 用户可连 1.2 万家金融机构 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Claude Code 单日三连更：周限上调 50% + 程序化配额 + 长任务命令 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-12">10. Jim Fan 宣告 VLA 时代结束，提出世界动作模型 WAM ⭐⭐⭐⭐</a></li>
+      <li class="toc-h2"><a href="#h-13">分类概览</a></li>
+      <li class="toc-h3"><a href="#h-14">模型发布</a></li>
+      <li class="toc-h3"><a href="#h-15">研究</a></li>
+      <li class="toc-h3"><a href="#h-16">产品与功能</a></li>
+      <li class="toc-h3"><a href="#h-17">商业动态</a></li>
+      <li class="toc-h3"><a href="#h-18">政策与安全</a></li>
+      <li class="toc-h3"><a href="#h-19">教程与观点</a></li>
+      <li class="toc-h2"><a href="#h-20">本周值得上手试试</a></li>
+      <li class="toc-h2"><a href="#h-21">值得深读</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older weekly</span>
+        <a href="../weekly/2026-W19.html">2026-W19</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer weekly →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W20.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
