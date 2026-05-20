@@ -311,251 +311,308 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>Google I/O 全面押注智能体</strong>：I/O 2026 一口气发布世界模型 Gemini Omni 与主打「智能 + 行动」的 Gemini 3.5 Flash，并把智能体能力铺进 Search、Workspace 与 Antigravity 平台。</li>
+<li><strong>企业级 Agent 基础设施成军</strong>：Anthropic 为 Claude Managed Agents 加入自托管沙箱与 MCP 隧道，让 Agent 能在企业自有安全边界内运行并安全访问内网服务。</li>
+<li><strong>算力确定性被明码标价</strong>：OpenAI 推出 Guaranteed Capacity 让客户以 1-3 年承诺锁定算力，与 Google 千亿美元级资本支出共同凸显算力长期紧张。</li>
+<li><strong>AI 内容溯源走向跨平台</strong>：OpenAI 通过 C2PA 认证、联合 Google 嵌入 SynthID 水印并预览公开验证工具，推动生成内容的可识别与可验证。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5 Flash 发布：前沿智能 + 行动力，速度达同级 4 倍</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Gemini 3.5 Flash</code> <code>Gemini 3.5</code> <code>编码模型</code> <code>智能体</code> <code>Terminal-Bench</code> <code>Gemini API</code> <code>Antigravity</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 在 I/O 2026 发布 Gemini 3.5 系列首款模型 3.5 Flash，主打前沿智能与现实行动能力的结合，被称为其迄今最强的 agent 与编码模型。它在 Terminal-Bench 2.1（76.2%）、GDPval-AA（1656 Elo）、MCP Atlas（83.6%）、CharXiv Reasoning（84.2%）等编码与智能体基准上超越 Gemini 3.1 Pro，输出速度达其他前沿模型的 4 倍、成本常不足一半。模型已全量上线 Gemini App、Search AI Mode、Antigravity 及 Google AI Studio 的 Gemini API。官方还演示了 3.5 Flash 在 Antigravity 中部署多个子代理协作完成复杂构建，并预告更高规格的 Gemini 3.5 Pro 将于下月发布。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/GoogleDeepMind/status/2056826903957504136">Gemini 3.5 Flash 接入 Antigravity，多子代理协作建造整座城市</a> · Google DeepMind (Twitter) · Antigravity 多子代理实测</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056794514564751490">Google 预告 Gemini 3.5 Pro 将于下月发布</a> · Google DeepMind (Twitter) · 3.5 Pro 下月发布预告</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056787992363372606">Gemini 3.5 Flash 全量上线 Gemini App 与 Search AI Mode</a> · Google DeepMind (Twitter) · 全量上线 App 与 Search</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056787987774816525">Gemini 3.5 发布：首发 3.5 Flash，主打 agent 与编码</a> · Google DeepMind (Twitter) · 模型家族官方发布</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Google AI Studio 通过 Gemini API 接入 3.5 Flash，评估其长程编码与智能体工作流表现</li>
+<li>针对成本/延迟敏感场景，对比 3.5 Flash 与现有前沿模型的性价比并考虑混合调度</li>
+<li>在 Antigravity 中试用 3.5 Flash 的多子代理模式处理复杂构建任务</li>
+<li>为深度推理需求预留下月发布的 Gemini 3.5 Pro 的迁移评估</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">OpenAI Blog</h2>
+<h3 id="h-4">2. <a href="https://x.com/GoogleDeepMind/status/2056786446636212467">Google 发布 Gemini Omni：从任意输入生成任意内容的世界模型</a></h3>
 <ul>
-<li><a href="https://openai.com/index/advancing-content-provenance">Advancing content provenance for a safer, more transparent AI ecosystem</a></li>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Gemini Omni</code> <code>Omni Flash</code> <code>世界模型</code> <code>视频生成</code> <code>多模态</code> <code>视频编辑</code> <code>Google Flow</code></li>
 </ul>
-<h2 id="h-2">Google AI Blog</h2>
+<p><strong>摘要</strong>: Google 在 I/O 2026 推出 Gemini Omni，称其为迈向「从任意输入生成任意内容」模型的第一步，首先聚焦视频。它将 Gemini 的智能与 Google 的生成式媒体系统结合，在世界理解、多模态及编辑能力上实现飞跃——可接收照片、视频、音频并构建全新场景，用户还能用自然语言重新构想自己拍摄视频中的动作与环境。家族首款模型 Omni Flash 已在 Gemini App、Flow 与 YouTube Shorts 开放体验，未来几周还将通过 API 开放；Google Flow 同步接入 Omni，带来批量编辑与更强的角色一致性。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/">I/O 2026</a></li>
-<li><a href="https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/">How AI Mode is changing the way people search in the U.S.</a></li>
-<li><a href="https://blog.google/products-and-platforms/products/workspace/workspace-updates/">New ways to create and get things done in Google Workspace</a></li>
-<li><a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">I/O 2026: Welcome to the agentic Gemini era</a></li>
-<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5: frontier intelligence with action</a></li>
-<li><a href="https://blog.google/products-and-platforms/products/search/search-io-2026/">A new era for AI Search</a></li>
-<li><a href="https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/">Everything new in our Google AI subscriptions, fresh from I/O 2026</a></li>
+<li><a href="https://x.com/demishassabis/status/2056831486251380783">Google 发布 Gemini Omni：多模态世界理解与场景编辑大跃进</a> · Demis Hassabis (Twitter) · Hassabis 解读多模态飞跃</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056786454517317733">Gemini Omni 可重新构想你拍摄视频中的动作与环境</a> · Google DeepMind (Twitter) · 视频动作重构演示</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056804306653794336">Google Flow 接入 Gemini Omni：支持批量编辑与更强角色一致性</a> · Google DeepMind (Twitter) · Flow 集成与批量编辑</li>
 </ul>
-<h2 id="h-3">Anthropic Blog</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://www.anthropic.com/news/anthropic-kpmg">KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance</a></li>
+<li>在 Gemini App 或 Flow 中试用 Omni Flash 的视频生成与编辑能力</li>
+<li>用 Omni 的视频改写功能探索内容创作与原型设计场景</li>
+<li>等待 Omni API 开放后规划多模态内容生成的集成方案</li>
 </ul>
-<h2 id="h-4">Sam Altman (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/ClaudeDevs/status/2056835339193561170">Anthropic 发布 Claude 计算机/浏览器操作生产实践指南</a></h3>
 <ul>
-<li>[customers are increasingly asking us for certainty on capacity. as models get better, we expect that the world will be capacity-constrained for some time.</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Computer Use</code> <code>浏览器操作</code> <code>Agent</code> <code>Anthropic</code></li>
 </ul>
-<p>we are offering discounted tokens for 1-3 ye](<a href="https://x.com/sama/status/2056827105401614656">https://x.com/sama/status/2056827105401614656</a>)</p>
+<p><strong>摘要</strong>: Anthropic 发布新博客，介绍如何让 Claude 的 Computer Use 在生产环境中可靠运行。内容涵盖提升点击准确率、选择合适的「thinking effort」级别、控制长会话不超出上下文窗口，以及录制可供 Claude 回放的演示操作。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[we will offer this until we sell out of our current allocation for this program. (we will make sure to leave enough capacity for ChatGPT, Codex, etc.)</li>
+<li>在生产部署 Computer Use 时按任务难度分级设置 thinking effort，避免简单任务过度推理</li>
+<li>对长会话主动做上下文压缩或分段，防止超出上下文窗口导致失效</li>
+<li>录制关键操作演示供 Claude 回放，以提升重复性 UI 任务的点击准确率</li>
 </ul>
-<p>we plan to offer it again in the future; our int](<a href="https://x.com/sama/status/2056834734915977382">https://x.com/sama/status/2056834734915977382</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/GoogleDeepMind/status/2056808869242826957">Google DeepMind 发布 Gemini for Science：AI 加速科研工具套件</a></h3>
 <ul>
-<li><a href="https://x.com/sama/status/2056804900017947046">if this tweet gets 1 like, tibo will reset codex rate limits</a></li>
-<li>[chatgpt has gotten soooo much better with the latest update.</li>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini for Science</code> <code>Co-Scientist</code> <code>AlphaEvolve</code> <code>科学研究</code> <code>多智能体</code> <code>假设生成</code></li>
 </ul>
-<p>really proud of the team for this one.](<a href="https://x.com/sama/status/2056435834333934051">https://x.com/sama/status/2056435834333934051</a>)</p>
-<h2 id="h-5">Demis Hassabis (Twitter)</h2>
+<p><strong>摘要</strong>: Google DeepMind 推出 Gemini for Science，一套面向科研的实验性工具，旨在帮助科学家更快取得突破——探索更多假设、大规模验证工作、轻松梳理文献。其中「假设生成」系统基于 Co-Scientist，以多智能体「点子锦标赛」机制对研究思路进行生成、辩论与评估；「计算式发现」原型则基于 AlphaEvolve，可并行开发并评分数千个代码变体，在远短于以往的时间内为流行病学等复杂领域测试新的建模方法。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/demishassabis/status/2056831486251380783">Gemini Omni is a major leap in world understanding &amp; multimodal editing! It can take photos, video &amp; audio and build entirely new scenes. Over time it’ll be able to handle any input &amp; any </a></li>
-<li>[It’s super fun to play with - can’t wait to see what people create!</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056808885709602855">Gemini for Science 之「假设生成」：Co-Scientist 多智能体「点子锦标赛」</a> · Google DeepMind (Twitter) · 假设生成与计算式发现子系统</li>
 </ul>
-<p>Try Gemini Omni Flash in @GeminiApp and @FlowByGoogle</p>
-<p>More info in the blog: <a href="https://t.co/NLvsxWySMS">https://t.co/NLvsxWySMS</a> <a href="https://t.co/vAml9DM2yJ%5D(https://x.com/demishassabis/status/2056831487836889178)">https://t.co/vAml9DM2yJ](https://x.com/demishassabis/status/2056831487836889178)</a></p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/demishassabis/status/2056531492080435452">Locked in! 🚀</a></li>
+<li>科研人员可尝试用 Gemini for Science 加速假设探索与文献综述</li>
+<li>评估将大规模实验验证环节交由 AI 智能体处理以提升研究吞吐量</li>
 </ul>
-<h2 id="h-6">Andrej Karpathy (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/">Google I/O 2026：智能体时代全面开启，两款新模型领衔</a></h3>
 <ul>
-<li><a href="https://x.com/karpathy/status/2056753169888334312">Personal update: I&#39;ve joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&amp;D. I remain deepl</a></li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Google I/O 2026</code> <code>Gemini Omni</code> <code>Gemini 3.5 Flash</code> <code>Antigravity</code> <code>AI 智能体</code> <code>TPU</code></li>
 </ul>
-<h2 id="h-7">Thariq (Twitter)</h2>
+<p><strong>摘要</strong>: Google I/O 2026 以「智能体 Gemini 时代」为主题集中发布数十项更新。核心是两款新模型——可从任意输入生成任意内容的世界模型 Gemini Omni，以及结合前沿智能与行动力、速度达同级 4 倍的 Gemini 3.5 Flash。Google 升级了智能体优先开发平台 Antigravity 2.0，并把智能体能力铺进 Search（信息智能体、生成式 UI）、Gemini App（Gemini Spark、Daily Brief）与购物（Universal Cart）。Pichai 在主题演讲中透露 Google 月处理 token 已达 3.2 千万亿、13 款产品月活过十亿，今年资本支出预计 1800–1900 亿美元，并发布第八代 TPU 8t/8i。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/trq212/status/2056843158965858380">Now also on the Claude Blog: https://t.co/EHu7smfCqX</a></li>
-<li><a href="https://x.com/trq212/status/2056777186062032964">the future is bright, lets get to work</a></li>
-<li><a href="https://x.com/trq212/status/2056432663125545082">continuing my HTML era, I had so much fun talking with Claire at Code w/ Claude about staying in the loop with long running agents</a></li>
-<li>[okay this is going kinda viral and tbh my original text was kind of messy, so here&#39;s a second pass with the help of Claude:</li>
+<li><a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">Pichai I/O 2026 主题演讲：Gemini 智能体时代全面开启</a> · Google AI Blog · Pichai 主题演讲：TPU 与资本支出</li>
 </ul>
-<p>--
-Implement <SPEC>. As you work maintain a running implementation-notes.ht](<a href="https://x.com/trq212/status/2056418157305454805">https://x.com/trq212/status/2056418157305454805</a>)</p>
-<h2 id="h-8">Claude (Twitter)</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Scott Wu (@ScottWu46) runs @cognition, the team behind Devin, an AI software engineer built on Claude.</li>
+<li>浏览 I/O 2026 合集，梳理与自身业务相关的智能体能力并排定落地优先级</li>
+<li>评估将部分工作负载迁移到 Gemini 3.5 Flash 以降低 token 成本</li>
+<li>关注 Antigravity 2.0 的多智能体编排能力用于加速开发流程</li>
 </ul>
-<p>He wants to make building software 10x faster for every engineering team: <a href="https://t.co/5AKOp2vX%5D(https://x.com/claudeai/status/2056805728774402428)">https://t.co/5AKOp2vX](https://x.com/claudeai/status/2056805728774402428)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/claudeai/status/2056645485696315581">Claude Managed Agents 上线自托管沙箱与 MCP 隧道</a></h3>
 <ul>
-<li><a href="https://x.com/claudeai/status/2056805730359931007">From The Problem Solvers, a new series featuring founders taking on hard problems with Claude: https://t.co/lXWwc2eHPe</a></li>
-<li><a href="https://x.com/claudeai/status/2056645485696315581">Live from Code with Claude London: we&#39;re launching self-hosted sandboxes (public beta) and MCP tunnels (research preview) in Claude Managed Agents.
-Run agents inside your own perimeter, with your secu</a></li>
-<li><a href="https://x.com/claudeai/status/2056645491207655584">With MCP tunnels, your agents reach MCP servers inside your private network without exposing them to the public internet. https://t.co/Fl18mTb5QU</a></li>
-<li><a href="https://x.com/claudeai/status/2056645493493575681">Try self-hosted sandboxes today on the Claude Platform, and request access to MCP tunnels: https://t.co/S9VJ8F64dq</a></li>
-<li>[You can now create more with Claude Design.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>自托管沙箱</code> <code>MCP 隧道</code> <code>企业部署</code> <code>MCP</code> <code>上下文管理</code></li>
 </ul>
-<p>We&#39;ve doubled token limits across every plan. <a href="https://t.co/d2AemkZUxW%5D(https://x.com/claudeai/status/2056460045756309820)">https://t.co/d2AemkZUxW](https://x.com/claudeai/status/2056460045756309820)</a></p>
-<h2 id="h-9">Claude Devs (Twitter)</h2>
+<p><strong>摘要</strong>: 在「Code with Claude London」活动现场，Anthropic 为 Claude Managed Agents 发布两项安全能力：自托管沙箱（公开测试版）让 Agent 的执行环境运行在用户自有基础设施或托管沙箱提供商处，用户可在自有安全边界内运行 Agent 并默认套用自有安全策略；MCP 隧道（研究预览）则允许 Agent 访问私有网络内部的 MCP 服务器，而无需将其暴露到公网。此外 Managed Agents 还新增多项通用改进：可在不重启会话的情况下热替换工具、MCP 服务器或 vault ID，超过 10 万 token 的大型 MCP 工具输出会自动卸载到 Sandbox 文件以避免占满上下文。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Computer use turns Claude into an agent that can operate real UIs.</li>
+<li><a href="https://x.com/ClaudeDevs/status/2056740350690316738">Claude Managed Agents 通用改进：会话内热插工具与 MCP 大输出自动卸载</a> · Claude Devs (Twitter) · 工具热插拔等通用改进</li>
+<li><a href="https://x.com/claudeai/status/2056645491207655584">MCP 隧道：Agent 无需暴露公网即可访问私有网络内的 MCP 服务器</a> · Claude (Twitter) · MCP 隧道能力详解</li>
+<li><a href="https://x.com/ClaudeDevs/status/2056740346529468717">Claude Managed Agents 新增两项安全能力：自托管沙箱与 MCP 隧道</a> · Claude Devs (Twitter) · London 现场安全能力发布</li>
 </ul>
-<p>New blog post on making it reliable in production: getting click accuracy right, choosing thinking effort levels, keeping long sess](<a href="https://x.com/ClaudeDevs/status/2056835339193561170">https://x.com/ClaudeDevs/status/2056835339193561170</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2056753265346564259">Welcome to the team, Andrej!</a></li>
-<li>[We’ve added two security improvements to Claude Managed Agents.</li>
+<li>对数据驻留/合规要求高的团队，用自托管沙箱在自有安全边界内运行 Agent</li>
+<li>通过 MCP 隧道让 Agent 安全访问内网服务，无需将服务暴露公网</li>
+<li>长会话中需切换工具或 MCP 配置时直接热替换，无需中断重启会话</li>
+<li>对会产生超大输出的 MCP 工具，依赖自动卸载到 Sandbox 文件控制上下文占用</li>
 </ul>
-<p>Self-hosted sandboxes keep the agent’s execution environment in your infrastructure or with a managed sandbox provider.</p>
-<p>MCP tunnels l](<a href="https://x.com/ClaudeDevs/status/2056740346529468717">https://x.com/ClaudeDevs/status/2056740346529468717</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/ClaudeDevs/status/2056454360780222615">Claude Code 快速模式：质量不变、速度约 2.5 倍、按更高费率计费</a></h3>
 <ul>
-<li>[We also made some general improvements in Claude Managed Agents:</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Fast 模式</code> <code>响应速度</code> <code>计费</code></li>
 </ul>
-<ol>
-<li><p>It&#39;s now possible to swap a live session&#39;s tools, MCP servers, or vault IDs without restarting the session.</p>
-</li>
-<li><p>Large MCP tool out](<a href="https://x.com/ClaudeDevs/status/2056740350690316738">https://x.com/ClaudeDevs/status/2056740350690316738</a>)</p>
-</li>
-</ol>
+<p><strong>摘要</strong>: Anthropic 进一步说明 Claude Code 的 Fast 模式：它提供与 Opus 完全相同的质量，但响应速度约为常规模式的 2.5 倍，按更高的每 token 费率计费。建议在延迟比成本更重要的场景使用，如快速迭代、实时调试和时间敏感的工作。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[To learn more, check out our docs:
-<a href="https://t.co/Nfi8INBNFy">https://t.co/Nfi8INBNFy</a></li>
+<li>权衡延迟与成本：对时间敏感的任务用 Fast 模式，对成本敏感的批量任务用常规模式</li>
+<li>查阅 code.claude.com/docs/en/fast-mode 了解 Fast 模式的计费细节后再大规模启用</li>
 </ul>
-<p>See our launch blog:
-<a href="https://t.co/3VGrEYe9Ym">https://t.co/3VGrEYe9Ym</a></p>
-<p>And try our claude-api skill (bundled with Claude Code):
-<a href="https://t.co/37UMzHJjRU%5D(https://x.com/ClaudeDevs/status/2056740352950997351)">https://t.co/37UMzHJjRU](https://x.com/ClaudeDevs/status/2056740352950997351)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/trq212/status/2056843158965858380">Claude 博客发布《用 Claude Code 体会 HTML 的惊人效力》</a></h3>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2056711020920385751">So good to see you, London!🇬🇧</a></li>
-<li>[We&#39;ve renamed &quot;extra usage&quot; to &quot;usage credits&quot; across Claude.</li>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>HTML</code> <code>Anthropic</code> <code>开发实践</code></li>
 </ul>
-<p>Your spending limits, auto-reload settings, and any credits you&#39;ve already bought carry over exactly as they were.](<a href="https://x.com/ClaudeDevs/status/2056543965672083966">https://x.com/ClaudeDevs/status/2056543965672083966</a>)</p>
+<p><strong>摘要</strong>: Anthropic 的 Thariq 提示其关于 Claude Code 的文章现已同步发布到 Claude 官方博客。文章标题为《Using Claude Code: the unreasonable effectiveness of HTML》，探讨了用 Claude Code 生成 HTML 的实践效果。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/xai/status/2056826183745253663">xAI 推出 openclaw：Grok / X Premium 订阅可直接调用 AI 智能体</a></h3>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2056543966963839405">Why the change? &quot;Extra usage&quot; originally meant paying when you hit a plan limit. Usage credits do more than that now—they power features like fast mode directly.</a></li>
-<li>[Fast mode now defaults to Opus 4.7 in Claude Code.</li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok</code> <code>openclaw</code> <code>AI智能体</code> <code>X Premium</code></li>
 </ul>
-<p>Try it out today with /fast <a href="https://t.co/i0roMdEgEg%5D(https://x.com/ClaudeDevs/status/2056454359685476491)">https://t.co/i0roMdEgEg](https://x.com/ClaudeDevs/status/2056454359685476491)</a></p>
+<p><strong>摘要</strong>: xAI 宣布即日起 Grok 与 X Premium 订阅用户可在 openclaw 中使用其订阅权益。用户可与自己的 AI 智能体对话、生成图像和视频，并检索 X 平台上的帖子。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Fast mode is identical Opus quality at ~2.5× the response speed, billed at a higher per-token rate. Use it when latency matters more than cost: rapid iteration, live debugging, time-sensitive work.</li>
+<li>持有 Grok 或 X Premium 订阅的用户可登录 openclaw 体验智能体对话与多模态生成</li>
+<li>对比 openclaw 的图像/视频生成质量与现有工具，评估是否纳入内容创作流程</li>
 </ul>
-<p>h](<a href="https://x.com/ClaudeDevs/status/2056454360780222615">https://x.com/ClaudeDevs/status/2056454360780222615</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/OpenAI/status/2056823271774101907">OpenAI 推出 Guaranteed Capacity：客户可锁定长期算力供应</a></h3>
 <ul>
-<li>[Prompt cache diagnostics are now in Claude Console.</li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Guaranteed Capacity</code> <code>算力</code> <code>代币定价</code> <code>企业服务</code></li>
 </ul>
-<p>When a request misses the cache, you can now see exactly which part of your prompt changed and how many tokens it cost you. <a href="https://t.co/z0dV6zzLPm%5D(https://x.com/ClaudeDevs/status/2056434422229123106)">https://t.co/z0dV6zzLPm](https://x.com/ClaudeDevs/status/2056434422229123106)</a></p>
+<p><strong>摘要</strong>: OpenAI 发布新产品 Guaranteed Capacity，让客户为关键工作负载锁定对 OpenAI 算力的长期访问权。Sam Altman 解读称，客户日益要求算力确定性，而 OpenAI 预计世界将长期处于算力受限状态——该项目让客户以 1-3 年承诺换取折扣代币，同时帮助 OpenAI 做产能规划，是双赢安排。当前额度售完即止，未来会再次开放，OpenAI 也承诺为 ChatGPT、Codex 等保留足够算力并继续尽快扩建基础设施。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Check it out in Claude Console:
-<a href="https://t.co/4Hufi5PiUI">https://t.co/4Hufi5PiUI</a></li>
+<li><a href="https://x.com/sama/status/2056834734915977382">Sam Altman：保障算力额度售完即止，未来将再次开放</a> · Sam Altman (Twitter) · Altman 补充：当前额度售完即止</li>
+<li><a href="https://x.com/sama/status/2056827105401614656">OpenAI 推出保障算力：1-3 年承诺可享折扣代币</a> · Sam Altman (Twitter) · Altman 解读：算力受限下的双赢</li>
 </ul>
-<p>See our docs to learn more:
-<a href="https://t.co/1jXAd7ppaj%5D(https://x.com/ClaudeDevs/status/2056434423982444801)">https://t.co/1jXAd7ppaj](https://x.com/ClaudeDevs/status/2056434423982444801)</a></p>
-<h2 id="h-10">Anthropic (Twitter)</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Anthropic is acquiring @stainlessapi, an SDK and MCP server platform that has powered every Anthropic SDK since the earliest days of our API.</li>
+<li>有大规模、关键性推理负载的企业可评估申请 Guaranteed Capacity 锁定算力</li>
+<li>结合业务峰值需求测算长期算力预留量，规避算力受限导致的服务中断</li>
 </ul>
-<p>Read more: <a href="https://t.co/ZQbsZKnicv%5D(https://x.com/AnthropicAI/status/2056419620643541012)">https://t.co/ZQbsZKnicv](https://x.com/AnthropicAI/status/2056419620643541012)</a></p>
-<h2 id="h-11">OpenAI (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-13">11. <a href="https://blog.google/products-and-platforms/products/workspace/workspace-updates/">Google Workspace 更新：Gmail/Docs/Keep 语音功能与图像工具 Google Pics</a></h3>
 <ul>
-<li>[People are generating over 1.5 billion images a week in ChatGPT.</li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google Workspace</code> <code>语音AI</code> <code>Google Pics</code> <code>AI Inbox</code> <code>Nano Banana</code></li>
 </ul>
-<p>Researcher @kenjihata joins Product lead @adele__li and host @AndrewMayne to explore the new use cases and trends emerging since the l](<a href="https://x.com/OpenAI/status/2056849157860831239">https://x.com/OpenAI/status/2056849157860831239</a>)</p>
+<p><strong>摘要</strong>: Google 为 Workspace 带来多项 AI 更新：Gmail、Docs、Keep 新增对话式语音能力（Gmail Live 语音搜邮件、Docs Live 语音起草、Keep 语音转笔记）；推出基于 Nano Banana 模型的全新图像创作与编辑工具「Google Pics」，支持对象分割、文字编辑翻译等精确控制；AI Inbox 扩展至 AI Plus 与 Pro 订阅者并新增草稿回复等功能；并预告 24/7 个人 AI 智能体 Gemini Spark。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/OpenAI/status/2056849160704503961">Listen to the OpenAI Podcast on—
-Spotify
-https://t.co/hLcRdGrfUX
-Apple
-https://t.co/0AdZ1ZteOV
-YouTube
-https://t.co/hDMl0SFHRu</a></li>
-<li>[Introducing OpenAI Guaranteed Capacity: a new offering that enables customers to guarantee long-term access to OpenAI compute.</li>
+<li>AI Plus/Pro 订阅者可启用 Gmail AI Inbox 的草稿回复与任务管理功能，提升邮件处理效率</li>
+<li>关注 Google Pics 的对象分割与文字翻译能力，待夏季全量开放后在 Slides/Drive 图像编辑中试用</li>
 </ul>
-<p>We’ve made long-term investments in infrastructure, partnerships, and ca](<a href="https://x.com/OpenAI/status/2056823271774101907">https://x.com/OpenAI/status/2056823271774101907</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-14">12. <a href="https://blog.google/products-and-platforms/products/search/search-io-2026/">Google Search 进入智能体时代：信息智能体 + 生成式 UI</a></h3>
 <ul>
-<li>[We’re adding new ways for people to identify AI-generated images and understand where they came from.</li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google Search</code> <code>AI Mode</code> <code>信息智能体</code> <code>生成式 UI</code> <code>Gemini 3.5 Flash</code></li>
 </ul>
-<p>In addition to C2PA Content Credentials, images now also contain a SynthID watermark, and can be](<a href="https://x.com/OpenAI/status/2056793648571011232">https://x.com/OpenAI/status/2056793648571011232</a>)</p>
-<h2 id="h-12">OpenAI Devs (Twitter)</h2>
+<p><strong>摘要</strong>: Google 宣布 Search 迎来 25 年来最大升级，以 Gemini 3.5 Flash 作为 AI Mode 全球默认模型，并推出支持文本、图像、文件、视频及 Chrome 标签页的多模态智能搜索框。新增 24/7 后台运行的「信息智能体」持续监控用户关心的话题，并借助 Antigravity 的编码能力即时生成定制化 UI、可视化工具乃至持久化迷你应用。AI Mode 推出一周年的使用数据显示，美国用户正从传统关键词查询明显转向更自然、更口语化的长问题提问；个人智能已扩展至近 200 个国家、98 种语言。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Scientific data is often multimodal and complex.</li>
+<li><a href="https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/">Google 公布 AI Mode 一周年数据：用户从关键词转向自然语言提问</a> · Google AI Blog · AI Mode 一周年使用数据</li>
 </ul>
-<p>@altaratech is using OpenAI models to help scientists and engineers move through multi-step R&amp;D workflows with more transparency.](<a href="https://x.com/OpenAIDevs/status/2056489138799681900">https://x.com/OpenAIDevs/status/2056489138799681900</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Your Mac can hold down the fort while you work from your phone.</li>
+<li>试用升级后的 AI 搜索框，体验多模态输入与建议式提问</li>
+<li>评估 Search 信息智能体的后台监控能力在信息追踪类需求中的应用</li>
 </ul>
-<p>Enable remote connection in the Codex desktop app, then turn on “Keep this Mac awake.”</p>
-<p>When your Mac is powered on and plugged in, Cod](<a href="https://x.com/OpenAIDevs/status/2056442456800141424">https://x.com/OpenAIDevs/status/2056442456800141424</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-15">13. <a href="https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/">Google 订阅调整：新增 100 美元 AI Ultra 套餐，顶级套餐降至 200 美元</a></h3>
 <ul>
-<li><a href="https://x.com/OpenAIDevs/status/2056442469114687858">https://t.co/xVm4LpQzrU</a></li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google</code> <code>AI订阅</code> <code>AI Ultra</code> <code>定价</code> <code>Gemini</code></li>
 </ul>
-<h2 id="h-13">Google DeepMind (Twitter)</h2>
+<p><strong>摘要</strong>: Google I/O 2026 公布 AI 订阅更新：推出面向开发者与技术人员的 100 美元/月 AI Ultra 套餐，含 Gemini 应用与 Antigravity 5 倍用量、20TB 存储与 YouTube Premium；同时将顶级 AI Ultra 套餐从 250 美元降至 200 美元。所有套餐获 Gemini Omni 与 Gemini 3.5 Flash 访问权，并引入「按算力计费」的用量模型，每 5 小时刷新一次额度。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[We’re dropping Gemini Omni: our first step towards a model that can create anything from anything - starting with video.</li>
+<li>对比 100 美元与 200 美元 AI Ultra 套餐的用量额度与功能差异，按团队开发强度选择合适层级</li>
+<li>了解新的「按算力计费」用量模型，规划复杂编码/视频提示的额度消耗</li>
 </ul>
-<p>It combines Gemini’s intelligence with our generative media systems - represen](<a href="https://x.com/GoogleDeepMind/status/2056786446636212467">https://x.com/GoogleDeepMind/status/2056786446636212467</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-16">14. <a href="https://openai.com/index/advancing-content-provenance">OpenAI 强化内容溯源：C2PA 认证 + SynthID 水印 + 公开验证工具</a></h3>
 <ul>
-<li>[Gemini 3.5 Flash 🤝 @Antigravity</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>内容溯源</code> <code>C2PA</code> <code>SynthID</code> <code>AI 水印</code> <code>AI 透明度</code></li>
 </ul>
-<p>Watch how the model deploys multiple subagents to design and build an entire city. <a href="https://t.co/jI1e5ND8md%5D(https://x.com/GoogleDeepMind/status/2056826903957504136)">https://t.co/jI1e5ND8md](https://x.com/GoogleDeepMind/status/2056826903957504136)</a></p>
+<p><strong>摘要</strong>: OpenAI 推出多层级内容溯源方案以提升 AI 生成内容的可识别性。它已成为 C2PA 合规生成产品，使内容凭证可被其他平台读取并跨平台传递；同时与 Google 合作，为 ChatGPT、Codex 和 API 生成的图像加入 DeepMind 的不可见 SynthID 水印，弥补元数据易被剥离的缺陷——水印在截图等变换后仍能保留，与元数据互补。OpenAI 还预览了一款面向公众的验证工具，可检测上传图像是否由 OpenAI 工具生成，初期仅支持 OpenAI 内容，未来计划扩展至跨平台。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2056826905505247393">Find out more → https://t.co/fs5hnPSMfF</a></li>
-<li>[We want to help scientists discover their next breakthrough with AI.</li>
+<li><a href="https://x.com/OpenAI/status/2056793648571011232">OpenAI 强化内容溯源：C2PA 认证 + SynthID 水印 + 公开验证工具</a> · OpenAI (Twitter) · 官方推特要点速览</li>
 </ul>
-<p>Gemini for Science is our new suite of experimental tools to help them explore more hypotheses, validate work at scale, unpack lit](<a href="https://x.com/GoogleDeepMind/status/2056808869242826957">https://x.com/GoogleDeepMind/status/2056808869242826957</a>)</p>
+<hr>
+<h2 id="h-17">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[2️⃣ Hypothesis Generation</li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>ChatGPT</code> <code>图像生成</code> <code>Images 2.0</code> <code>播客</code> — OpenAI 透露 ChatGPT 每周图像生成量已超过 15 亿张。在最新一期 OpenAI 播客中，研究员 kenjihata 与产品负责人 adele__li 探讨了自 Images 2.0 发布以来涌现的新用例与使用趋势。 OpenAI 提供了其官方播客在 Spotify、Apple Podcasts 和 YouTube 三个平台的收听链接。该推文为上一条 Images 2.0 播客介绍的补充自回复。 · <a href="https://x.com/OpenAI/status/2056849157860831239">OpenAI (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Cognition</code> <code>Devin</code> <code>Claude</code> <code>AI软件工程师</code> <code>Scott Wu</code> — Anthropic 在「The Problem Solvers」系列中介绍 Cognition 创始人 Scott Wu，其团队打造了基于 Claude 的 AI 软件工程师 Devin。Scott Wu 希望让每个工程团队的软件构建速度提升 10 倍。 Anthropic 宣布推出全新系列「The Problem Solvers」，专题报道那些借助 Claude 解决棘手问题的创始人。相关内容已发布于 claude.com/problem-solvers。 · <a href="https://x.com/claudeai/status/2056805728774402428">Claude (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Google</code> <code>Gemini</code> <code>黑客松</code> <code>XPRIZE</code> <code>开发者活动</code> — Google DeepMind 宣布举办「Build with Gemini」XPRIZE 黑客松，奖金池高达 200 万美元。开发者受邀使用 Gemini 工具构建解决全球重大挑战的实际应用，涵盖减少食物浪费、辅助科学研究等方向。 · <a href="https://x.com/GoogleDeepMind/status/2056794085680468294">Google DeepMind (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Antigravity</code> <code>Google DeepMind</code> <code>开发者工具</code> <code>AI 编程</code> — Google DeepMind 宣布扩展其 Antigravity 开发者生态系统，目标是帮助开发者把精力从繁琐的调试中解放出来，转而专注于架构与设计等真正重要的工作。该推文为相关公告线程的开端。 Google DeepMind 宣布为 Antigravity 推出三种全新交互方式：Antigravity 2.0 提供多智能体可同时协作于同一项目的「任务控制台」；CLI 提供终端界面用于与智能体协作；SDK 工具包让软件可自动接入并调用 Google 的 AI 智能体。 · <a href="https://x.com/GoogleDeepMind/status/2056790405937856791">Google DeepMind (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Andrej Karpathy</code> <code>Anthropic</code> <code>人事变动</code> <code>LLM 研发</code> — 知名 AI 研究者 Andrej Karpathy 发布个人动态，宣布已加入 Anthropic。他认为未来几年将是 LLM 前沿发展的关键塑形期，对加入团队、重回前沿研发工作感到非常兴奋，同时表示仍对教育充满热情并计划在适当时机继续相关工作。Anthropic 官方账号 Claude Devs 及公司员工随即发文表示欢迎。 · <a href="https://x.com/karpathy/status/2056753169888334312">Andrej Karpathy (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>usage credits</code> <code>用量积分</code> <code>命名调整</code> <code>Claude</code> <code>计费</code> — Claude 已在全平台将「extra usage」更名为「usage credits」。用户的支出限额、自动充值设置以及已购买的积分均原样保留，不受改名影响。 Claude 说明将「extra usage」更名为「usage credits」的原因：该机制最初仅指触及套餐上限后的付费，但如今用量积分的作用已扩展，可直接驱动如快速模式等功能。 · <a href="https://x.com/ClaudeDevs/status/2056543965672083966">Claude Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>KPMG</code> <code>Anthropic</code> <code>企业部署</code> <code>Claude</code> <code>私募股权</code> — 审计与咨询巨头 KPMG 宣布与 Anthropic 达成全球战略联盟，将 Claude 嵌入其客户工作平台 Digital Gateway，并向全球 27.6 万名员工全员开放。双方将共建面向私募股权组合公司的 Claude 产品，KPMG 成为 Anthropic 在 PE 领域的首选合作伙伴，并把 Claude Code、Cowork 与 Managed Agents 用于税务、法律与网络安全等场景。 · <a href="https://www.anthropic.com/news/anthropic-kpmg">Anthropic Blog</a></li>
+<li><strong>产品与功能</strong> | <code>OpenAI</code> <code>Codex</code> <code>远程连接</code> <code>文档</code> — OpenAI Devs 在推文串中给出 Codex 远程连接功能的官方文档链接（developers.openai.com/codex/remote-connections），配合此前介绍的在 Mac 上保持 Codex 运行、从手机端继续工作的能力。 · <a href="https://x.com/OpenAIDevs/status/2056442469114687858">OpenAI Devs (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>提示缓存</code> <code>Console</code> <code>诊断</code> — Anthropic 在推文串中给出 Claude 提示缓存诊断功能的入口与文档链接：可在 Claude Console（platform.claude.com/usage/cache）查看，并通过 cache-diagnostics 文档了解更多用法。 · <a href="https://x.com/ClaudeDevs/status/2056434423982444801">Claude Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Anthropic</code> <code>收购</code> <code>Stainless</code> <code>SDK</code> <code>MCP</code> — Anthropic 宣布收购 Stainless——一家专注 SDK 与 MCP 服务器工具的公司，自 API 早期起便驱动每一代官方 Anthropic SDK 的生成。Stainless 能把 API 规范转换为 TypeScript、Python、Go、Java 等多语言的原生级 SDK、CLI 与 MCP 服务器，此次收购旨在增强 Claude 平台连接数据与工具的能力、推进 Agent 连接性。 · <a href="https://x.com/AnthropicAI/status/2056419620643541012">Anthropic (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>提示词</code> <code>Claude</code> <code>规格实现</code> <code>实现笔记</code> <code>工作流</code> — Thariq 在 Claude 协助下重写了一条走红的提示词模板，要求 Agent 在实现规格的过程中持续维护一个 implementation-notes.html 文件。该笔记需记录设计决策（规格模糊时的取舍）、有意偏离规格之处及原因、考虑过的替代方案与权衡，以及希望人类确认或修订的开放问题。 · <a href="https://x.com/trq212/status/2056418157305454805">Thariq (Twitter)</a></li>
 </ul>
-<p>Built with Co-Scientist, this system can help brainstorm and evaluate novel research ideas for open challenges.</p>
-<p>Using a multi-agent “idea tournament”, the system generates,](<a href="https://x.com/GoogleDeepMind/status/2056808885709602855">https://x.com/GoogleDeepMind/status/2056808885709602855</a>)</p>
-<ul>
-<li>[3️⃣ Computational Discovery</li>
-</ul>
-<p>An agentic prototype built with AlphaEvolve and Empirical Research Assistance to develop and score thousands of code variations in parallel. </p>
-<p>This can enable testing of n](<a href="https://x.com/GoogleDeepMind/status/2056808892575932630">https://x.com/GoogleDeepMind/status/2056808892575932630</a>)</p>
-<ul>
-<li>[Google Flow 🤝 Gemini Omni</li>
-</ul>
-<p>Create more cinematic stories with our latest model, which brings batch editing, improved character consistency and more. Here’s what else is new for @FlowbyGoogle → https:](<a href="https://x.com/GoogleDeepMind/status/2056804306653794336">https://x.com/GoogleDeepMind/status/2056804306653794336</a>)</p>
-<ul>
-<li>[Introducing Gemini 3.5: our newest family of models combining frontier intelligence with real-world action.</li>
-</ul>
-<p>The first release is 3.5 Flash, our strongest model yet for agents and coding 🧵](<a href="https://x.com/GoogleDeepMind/status/2056787987774816525">https://x.com/GoogleDeepMind/status/2056787987774816525</a>)</p>
-<ul>
-<li>[We’re rolling out 3.5 Flash to everyone in the @GeminiApp and AI Mode in @Google Search.</li>
-</ul>
-<p>Developers can start building in @Antigravity and via the Gemini API in @GoogleAIStudio. #GoogleIO](<a href="https://x.com/GoogleDeepMind/status/2056787992363372606">https://x.com/GoogleDeepMind/status/2056787992363372606</a>)</p>
-<ul>
-<li>[@GeminiApp @Google @antigravity @GoogleAIStudio This is just the start – Gemini 3.5 Pro is coming next month.</li>
-</ul>
-<p>Find out more ↓ <a href="https://t.co/fs5hnPSMfF">https://t.co/fs5hnPSMfF</a> #GoogleIO](<a href="https://x.com/GoogleDeepMind/status/2056794514564751490">https://x.com/GoogleDeepMind/status/2056794514564751490</a>)</p>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2056790405937856791">We’re expanding the @Antigravity ecosystem to help developers shift their energy away from tedious debugging and focus on what actually matters: architecture and design. 🧵 https://t.co/Dr4EkIDVcF</a></li>
-<li><a href="https://x.com/GoogleDeepMind/status/2056790408689287180">We’ve created new easy ways to interact with Antigravity:
-💻  2.0: A mission control where agents can work together simultaneously on a project
-⌨️ CLI: A terminal interface to work with agents
-⚙️ SDK:</a></li>
-<li>[We’re also launching the Build with Gemini XPRIZE Hackathon.</li>
-</ul>
-<p>With a $2M prize pool, developers are invited to use these tools to build real-world applications that tackle major global challenges, fro](<a href="https://x.com/GoogleDeepMind/status/2056794085680468294">https://x.com/GoogleDeepMind/status/2056794085680468294</a>)</p>
-<ul>
-<li>[You can even reimagine the action in a video you took by asking Gemini Omni.</li>
-</ul>
-<p>Transform your world instantly - change the environment, add new objects, or create something completely unexpected. https](<a href="https://x.com/GoogleDeepMind/status/2056786454517317733">https://x.com/GoogleDeepMind/status/2056786454517317733</a>)</p>
-<ul>
-<li>[You can try Gemini Omni Flash - the first model in the Omni family - in the @GeminiApp, @FlowbyGoogle and @YouTube Shorts.</li>
-</ul>
-<p>In the coming weeks, we&#39;ll also be rolling it out via APIs. #GoogleIO](<a href="https://x.com/GoogleDeepMind/status/2056786456404783319">https://x.com/GoogleDeepMind/status/2056786456404783319</a>)</p>
-<h2 id="h-14">xAI (Twitter)</h2>
-<ul>
-<li>[Starting today, use your Grok or X Premium subscription in @openclaw.</li>
-</ul>
-<p>Chat with your agent, generate images and videos, or search for X posts.</p>
-<p><a href="https://t.co/GSNl9KrH45">https://t.co/GSNl9KrH45</a> <a href="https://t.co/2utObz8z58%5D(https://x.com/xai/status/2056826183745253663)">https://t.co/2utObz8z58](https://x.com/xai/status/2056826183745253663)</a></p>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-2">Google AI Blog</a></li>
-      <li class="toc-h2"><a href="#h-3">Anthropic Blog</a></li>
-      <li class="toc-h2"><a href="#h-4">Sam Altman (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Demis Hassabis (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">Andrej Karpathy (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-9">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-10">Anthropic (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-11">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-12">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-13">Google DeepMind (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-14">xAI (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Gemini 3.5 Flash 发布：前沿智能 + 行动力，速度达同级 4 倍</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Google 发布 Gemini Omni：从任意输入生成任意内容的世界模型</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic 发布 Claude 计算机/浏览器操作生产实践指南</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Google DeepMind 发布 Gemini for Science：AI 加速科研工具套件</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Google I/O 2026：智能体时代全面开启，两款新模型领衔</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Claude Managed Agents 上线自托管沙箱与 MCP 隧道</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Claude Code 快速模式：质量不变、速度约 2.5 倍、按更高费率计费</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Claude 博客发布《用 Claude Code 体会 HTML 的惊人效力》</a></li>
+      <li class="toc-h3"><a href="#h-11">9. xAI 推出 openclaw：Grok / X Premium 订阅可直接调用 AI 智能体</a></li>
+      <li class="toc-h3"><a href="#h-12">10. OpenAI 推出 Guaranteed Capacity：客户可锁定长期算力供应</a></li>
+      <li class="toc-h3"><a href="#h-13">11. Google Workspace 更新：Gmail/Docs/Keep 语音功能与图像工具 Google Pics</a></li>
+      <li class="toc-h3"><a href="#h-14">12. Google Search 进入智能体时代：信息智能体 + 生成式 UI</a></li>
+      <li class="toc-h3"><a href="#h-15">13. Google 订阅调整：新增 100 美元 AI Ultra 套餐，顶级套餐降至 200 美元</a></li>
+      <li class="toc-h3"><a href="#h-16">14. OpenAI 强化内容溯源：C2PA 认证 + SynthID 水印 + 公开验证工具</a></li>
+      <li class="toc-h2"><a href="#h-17">速览</a></li>
     </ul>
   </aside>
     </div>
