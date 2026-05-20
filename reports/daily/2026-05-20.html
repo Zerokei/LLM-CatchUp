@@ -1,0 +1,583 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-05-20 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-20" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-05-20</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><blockquote>
+<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+</blockquote>
+<hr>
+<h2 id="h-1">OpenAI Blog</h2>
+<ul>
+<li><a href="https://openai.com/index/advancing-content-provenance">Advancing content provenance for a safer, more transparent AI ecosystem</a></li>
+</ul>
+<h2 id="h-2">Google AI Blog</h2>
+<ul>
+<li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/">I/O 2026</a></li>
+<li><a href="https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/">How AI Mode is changing the way people search in the U.S.</a></li>
+<li><a href="https://blog.google/products-and-platforms/products/workspace/workspace-updates/">New ways to create and get things done in Google Workspace</a></li>
+<li><a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">I/O 2026: Welcome to the agentic Gemini era</a></li>
+<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5: frontier intelligence with action</a></li>
+<li><a href="https://blog.google/products-and-platforms/products/search/search-io-2026/">A new era for AI Search</a></li>
+<li><a href="https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/">Everything new in our Google AI subscriptions, fresh from I/O 2026</a></li>
+</ul>
+<h2 id="h-3">Anthropic Blog</h2>
+<ul>
+<li><a href="https://www.anthropic.com/news/anthropic-kpmg">KPMG integrates Claude across its core business and workforce of more than 276,000 in strategic alliance</a></li>
+</ul>
+<h2 id="h-4">Sam Altman (Twitter)</h2>
+<ul>
+<li>[customers are increasingly asking us for certainty on capacity. as models get better, we expect that the world will be capacity-constrained for some time.</li>
+</ul>
+<p>we are offering discounted tokens for 1-3 ye](<a href="https://x.com/sama/status/2056827105401614656">https://x.com/sama/status/2056827105401614656</a>)</p>
+<ul>
+<li>[we will offer this until we sell out of our current allocation for this program. (we will make sure to leave enough capacity for ChatGPT, Codex, etc.)</li>
+</ul>
+<p>we plan to offer it again in the future; our int](<a href="https://x.com/sama/status/2056834734915977382">https://x.com/sama/status/2056834734915977382</a>)</p>
+<ul>
+<li><a href="https://x.com/sama/status/2056804900017947046">if this tweet gets 1 like, tibo will reset codex rate limits</a></li>
+<li>[chatgpt has gotten soooo much better with the latest update.</li>
+</ul>
+<p>really proud of the team for this one.](<a href="https://x.com/sama/status/2056435834333934051">https://x.com/sama/status/2056435834333934051</a>)</p>
+<h2 id="h-5">Demis Hassabis (Twitter)</h2>
+<ul>
+<li><a href="https://x.com/demishassabis/status/2056831486251380783">Gemini Omni is a major leap in world understanding &amp; multimodal editing! It can take photos, video &amp; audio and build entirely new scenes. Over time it’ll be able to handle any input &amp; any </a></li>
+<li>[It’s super fun to play with - can’t wait to see what people create!</li>
+</ul>
+<p>Try Gemini Omni Flash in @GeminiApp and @FlowByGoogle</p>
+<p>More info in the blog: <a href="https://t.co/NLvsxWySMS">https://t.co/NLvsxWySMS</a> <a href="https://t.co/vAml9DM2yJ%5D(https://x.com/demishassabis/status/2056831487836889178)">https://t.co/vAml9DM2yJ](https://x.com/demishassabis/status/2056831487836889178)</a></p>
+<ul>
+<li><a href="https://x.com/demishassabis/status/2056531492080435452">Locked in! 🚀</a></li>
+</ul>
+<h2 id="h-6">Andrej Karpathy (Twitter)</h2>
+<ul>
+<li><a href="https://x.com/karpathy/status/2056753169888334312">Personal update: I&#39;ve joined Anthropic. I think the next few years at the frontier of LLMs will be especially formative. I am very excited to join the team here and get back to R&amp;D. I remain deepl</a></li>
+</ul>
+<h2 id="h-7">Thariq (Twitter)</h2>
+<ul>
+<li><a href="https://x.com/trq212/status/2056843158965858380">Now also on the Claude Blog: https://t.co/EHu7smfCqX</a></li>
+<li><a href="https://x.com/trq212/status/2056777186062032964">the future is bright, lets get to work</a></li>
+<li><a href="https://x.com/trq212/status/2056432663125545082">continuing my HTML era, I had so much fun talking with Claire at Code w/ Claude about staying in the loop with long running agents</a></li>
+<li>[okay this is going kinda viral and tbh my original text was kind of messy, so here&#39;s a second pass with the help of Claude:</li>
+</ul>
+<p>--
+Implement <SPEC>. As you work maintain a running implementation-notes.ht](<a href="https://x.com/trq212/status/2056418157305454805">https://x.com/trq212/status/2056418157305454805</a>)</p>
+<h2 id="h-8">Claude (Twitter)</h2>
+<ul>
+<li>[Scott Wu (@ScottWu46) runs @cognition, the team behind Devin, an AI software engineer built on Claude.</li>
+</ul>
+<p>He wants to make building software 10x faster for every engineering team: <a href="https://t.co/5AKOp2vX%5D(https://x.com/claudeai/status/2056805728774402428)">https://t.co/5AKOp2vX](https://x.com/claudeai/status/2056805728774402428)</a></p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2056805730359931007">From The Problem Solvers, a new series featuring founders taking on hard problems with Claude: https://t.co/lXWwc2eHPe</a></li>
+<li><a href="https://x.com/claudeai/status/2056645485696315581">Live from Code with Claude London: we&#39;re launching self-hosted sandboxes (public beta) and MCP tunnels (research preview) in Claude Managed Agents.
+Run agents inside your own perimeter, with your secu</a></li>
+<li><a href="https://x.com/claudeai/status/2056645491207655584">With MCP tunnels, your agents reach MCP servers inside your private network without exposing them to the public internet. https://t.co/Fl18mTb5QU</a></li>
+<li><a href="https://x.com/claudeai/status/2056645493493575681">Try self-hosted sandboxes today on the Claude Platform, and request access to MCP tunnels: https://t.co/S9VJ8F64dq</a></li>
+<li>[You can now create more with Claude Design.</li>
+</ul>
+<p>We&#39;ve doubled token limits across every plan. <a href="https://t.co/d2AemkZUxW%5D(https://x.com/claudeai/status/2056460045756309820)">https://t.co/d2AemkZUxW](https://x.com/claudeai/status/2056460045756309820)</a></p>
+<h2 id="h-9">Claude Devs (Twitter)</h2>
+<ul>
+<li>[Computer use turns Claude into an agent that can operate real UIs.</li>
+</ul>
+<p>New blog post on making it reliable in production: getting click accuracy right, choosing thinking effort levels, keeping long sess](<a href="https://x.com/ClaudeDevs/status/2056835339193561170">https://x.com/ClaudeDevs/status/2056835339193561170</a>)</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2056753265346564259">Welcome to the team, Andrej!</a></li>
+<li>[We’ve added two security improvements to Claude Managed Agents.</li>
+</ul>
+<p>Self-hosted sandboxes keep the agent’s execution environment in your infrastructure or with a managed sandbox provider.</p>
+<p>MCP tunnels l](<a href="https://x.com/ClaudeDevs/status/2056740346529468717">https://x.com/ClaudeDevs/status/2056740346529468717</a>)</p>
+<ul>
+<li>[We also made some general improvements in Claude Managed Agents:</li>
+</ul>
+<ol>
+<li><p>It&#39;s now possible to swap a live session&#39;s tools, MCP servers, or vault IDs without restarting the session.</p>
+</li>
+<li><p>Large MCP tool out](<a href="https://x.com/ClaudeDevs/status/2056740350690316738">https://x.com/ClaudeDevs/status/2056740350690316738</a>)</p>
+</li>
+</ol>
+<ul>
+<li>[To learn more, check out our docs:
+<a href="https://t.co/Nfi8INBNFy">https://t.co/Nfi8INBNFy</a></li>
+</ul>
+<p>See our launch blog:
+<a href="https://t.co/3VGrEYe9Ym">https://t.co/3VGrEYe9Ym</a></p>
+<p>And try our claude-api skill (bundled with Claude Code):
+<a href="https://t.co/37UMzHJjRU%5D(https://x.com/ClaudeDevs/status/2056740352950997351)">https://t.co/37UMzHJjRU](https://x.com/ClaudeDevs/status/2056740352950997351)</a></p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2056711020920385751">So good to see you, London!🇬🇧</a></li>
+<li>[We&#39;ve renamed &quot;extra usage&quot; to &quot;usage credits&quot; across Claude.</li>
+</ul>
+<p>Your spending limits, auto-reload settings, and any credits you&#39;ve already bought carry over exactly as they were.](<a href="https://x.com/ClaudeDevs/status/2056543965672083966">https://x.com/ClaudeDevs/status/2056543965672083966</a>)</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2056543966963839405">Why the change? &quot;Extra usage&quot; originally meant paying when you hit a plan limit. Usage credits do more than that now—they power features like fast mode directly.</a></li>
+<li>[Fast mode now defaults to Opus 4.7 in Claude Code.</li>
+</ul>
+<p>Try it out today with /fast <a href="https://t.co/i0roMdEgEg%5D(https://x.com/ClaudeDevs/status/2056454359685476491)">https://t.co/i0roMdEgEg](https://x.com/ClaudeDevs/status/2056454359685476491)</a></p>
+<ul>
+<li>[Fast mode is identical Opus quality at ~2.5× the response speed, billed at a higher per-token rate. Use it when latency matters more than cost: rapid iteration, live debugging, time-sensitive work.</li>
+</ul>
+<p>h](<a href="https://x.com/ClaudeDevs/status/2056454360780222615">https://x.com/ClaudeDevs/status/2056454360780222615</a>)</p>
+<ul>
+<li>[Prompt cache diagnostics are now in Claude Console.</li>
+</ul>
+<p>When a request misses the cache, you can now see exactly which part of your prompt changed and how many tokens it cost you. <a href="https://t.co/z0dV6zzLPm%5D(https://x.com/ClaudeDevs/status/2056434422229123106)">https://t.co/z0dV6zzLPm](https://x.com/ClaudeDevs/status/2056434422229123106)</a></p>
+<ul>
+<li>[Check it out in Claude Console:
+<a href="https://t.co/4Hufi5PiUI">https://t.co/4Hufi5PiUI</a></li>
+</ul>
+<p>See our docs to learn more:
+<a href="https://t.co/1jXAd7ppaj%5D(https://x.com/ClaudeDevs/status/2056434423982444801)">https://t.co/1jXAd7ppaj](https://x.com/ClaudeDevs/status/2056434423982444801)</a></p>
+<h2 id="h-10">Anthropic (Twitter)</h2>
+<ul>
+<li>[Anthropic is acquiring @stainlessapi, an SDK and MCP server platform that has powered every Anthropic SDK since the earliest days of our API.</li>
+</ul>
+<p>Read more: <a href="https://t.co/ZQbsZKnicv%5D(https://x.com/AnthropicAI/status/2056419620643541012)">https://t.co/ZQbsZKnicv](https://x.com/AnthropicAI/status/2056419620643541012)</a></p>
+<h2 id="h-11">OpenAI (Twitter)</h2>
+<ul>
+<li>[People are generating over 1.5 billion images a week in ChatGPT.</li>
+</ul>
+<p>Researcher @kenjihata joins Product lead @adele__li and host @AndrewMayne to explore the new use cases and trends emerging since the l](<a href="https://x.com/OpenAI/status/2056849157860831239">https://x.com/OpenAI/status/2056849157860831239</a>)</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2056849160704503961">Listen to the OpenAI Podcast on—
+Spotify
+https://t.co/hLcRdGrfUX
+Apple
+https://t.co/0AdZ1ZteOV
+YouTube
+https://t.co/hDMl0SFHRu</a></li>
+<li>[Introducing OpenAI Guaranteed Capacity: a new offering that enables customers to guarantee long-term access to OpenAI compute.</li>
+</ul>
+<p>We’ve made long-term investments in infrastructure, partnerships, and ca](<a href="https://x.com/OpenAI/status/2056823271774101907">https://x.com/OpenAI/status/2056823271774101907</a>)</p>
+<ul>
+<li>[We’re adding new ways for people to identify AI-generated images and understand where they came from.</li>
+</ul>
+<p>In addition to C2PA Content Credentials, images now also contain a SynthID watermark, and can be](<a href="https://x.com/OpenAI/status/2056793648571011232">https://x.com/OpenAI/status/2056793648571011232</a>)</p>
+<h2 id="h-12">OpenAI Devs (Twitter)</h2>
+<ul>
+<li>[Scientific data is often multimodal and complex.</li>
+</ul>
+<p>@altaratech is using OpenAI models to help scientists and engineers move through multi-step R&amp;D workflows with more transparency.](<a href="https://x.com/OpenAIDevs/status/2056489138799681900">https://x.com/OpenAIDevs/status/2056489138799681900</a>)</p>
+<ul>
+<li>[Your Mac can hold down the fort while you work from your phone.</li>
+</ul>
+<p>Enable remote connection in the Codex desktop app, then turn on “Keep this Mac awake.”</p>
+<p>When your Mac is powered on and plugged in, Cod](<a href="https://x.com/OpenAIDevs/status/2056442456800141424">https://x.com/OpenAIDevs/status/2056442456800141424</a>)</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2056442469114687858">https://t.co/xVm4LpQzrU</a></li>
+</ul>
+<h2 id="h-13">Google DeepMind (Twitter)</h2>
+<ul>
+<li>[We’re dropping Gemini Omni: our first step towards a model that can create anything from anything - starting with video.</li>
+</ul>
+<p>It combines Gemini’s intelligence with our generative media systems - represen](<a href="https://x.com/GoogleDeepMind/status/2056786446636212467">https://x.com/GoogleDeepMind/status/2056786446636212467</a>)</p>
+<ul>
+<li>[Gemini 3.5 Flash 🤝 @Antigravity</li>
+</ul>
+<p>Watch how the model deploys multiple subagents to design and build an entire city. <a href="https://t.co/jI1e5ND8md%5D(https://x.com/GoogleDeepMind/status/2056826903957504136)">https://t.co/jI1e5ND8md](https://x.com/GoogleDeepMind/status/2056826903957504136)</a></p>
+<ul>
+<li><a href="https://x.com/GoogleDeepMind/status/2056826905505247393">Find out more → https://t.co/fs5hnPSMfF</a></li>
+<li>[We want to help scientists discover their next breakthrough with AI.</li>
+</ul>
+<p>Gemini for Science is our new suite of experimental tools to help them explore more hypotheses, validate work at scale, unpack lit](<a href="https://x.com/GoogleDeepMind/status/2056808869242826957">https://x.com/GoogleDeepMind/status/2056808869242826957</a>)</p>
+<ul>
+<li>[2️⃣ Hypothesis Generation</li>
+</ul>
+<p>Built with Co-Scientist, this system can help brainstorm and evaluate novel research ideas for open challenges.</p>
+<p>Using a multi-agent “idea tournament”, the system generates,](<a href="https://x.com/GoogleDeepMind/status/2056808885709602855">https://x.com/GoogleDeepMind/status/2056808885709602855</a>)</p>
+<ul>
+<li>[3️⃣ Computational Discovery</li>
+</ul>
+<p>An agentic prototype built with AlphaEvolve and Empirical Research Assistance to develop and score thousands of code variations in parallel. </p>
+<p>This can enable testing of n](<a href="https://x.com/GoogleDeepMind/status/2056808892575932630">https://x.com/GoogleDeepMind/status/2056808892575932630</a>)</p>
+<ul>
+<li>[Google Flow 🤝 Gemini Omni</li>
+</ul>
+<p>Create more cinematic stories with our latest model, which brings batch editing, improved character consistency and more. Here’s what else is new for @FlowbyGoogle → https:](<a href="https://x.com/GoogleDeepMind/status/2056804306653794336">https://x.com/GoogleDeepMind/status/2056804306653794336</a>)</p>
+<ul>
+<li>[Introducing Gemini 3.5: our newest family of models combining frontier intelligence with real-world action.</li>
+</ul>
+<p>The first release is 3.5 Flash, our strongest model yet for agents and coding 🧵](<a href="https://x.com/GoogleDeepMind/status/2056787987774816525">https://x.com/GoogleDeepMind/status/2056787987774816525</a>)</p>
+<ul>
+<li>[We’re rolling out 3.5 Flash to everyone in the @GeminiApp and AI Mode in @Google Search.</li>
+</ul>
+<p>Developers can start building in @Antigravity and via the Gemini API in @GoogleAIStudio. #GoogleIO](<a href="https://x.com/GoogleDeepMind/status/2056787992363372606">https://x.com/GoogleDeepMind/status/2056787992363372606</a>)</p>
+<ul>
+<li>[@GeminiApp @Google @antigravity @GoogleAIStudio This is just the start – Gemini 3.5 Pro is coming next month.</li>
+</ul>
+<p>Find out more ↓ <a href="https://t.co/fs5hnPSMfF">https://t.co/fs5hnPSMfF</a> #GoogleIO](<a href="https://x.com/GoogleDeepMind/status/2056794514564751490">https://x.com/GoogleDeepMind/status/2056794514564751490</a>)</p>
+<ul>
+<li><a href="https://x.com/GoogleDeepMind/status/2056790405937856791">We’re expanding the @Antigravity ecosystem to help developers shift their energy away from tedious debugging and focus on what actually matters: architecture and design. 🧵 https://t.co/Dr4EkIDVcF</a></li>
+<li><a href="https://x.com/GoogleDeepMind/status/2056790408689287180">We’ve created new easy ways to interact with Antigravity:
+💻  2.0: A mission control where agents can work together simultaneously on a project
+⌨️ CLI: A terminal interface to work with agents
+⚙️ SDK:</a></li>
+<li>[We’re also launching the Build with Gemini XPRIZE Hackathon.</li>
+</ul>
+<p>With a $2M prize pool, developers are invited to use these tools to build real-world applications that tackle major global challenges, fro](<a href="https://x.com/GoogleDeepMind/status/2056794085680468294">https://x.com/GoogleDeepMind/status/2056794085680468294</a>)</p>
+<ul>
+<li>[You can even reimagine the action in a video you took by asking Gemini Omni.</li>
+</ul>
+<p>Transform your world instantly - change the environment, add new objects, or create something completely unexpected. https](<a href="https://x.com/GoogleDeepMind/status/2056786454517317733">https://x.com/GoogleDeepMind/status/2056786454517317733</a>)</p>
+<ul>
+<li>[You can try Gemini Omni Flash - the first model in the Omni family - in the @GeminiApp, @FlowbyGoogle and @YouTube Shorts.</li>
+</ul>
+<p>In the coming weeks, we&#39;ll also be rolling it out via APIs. #GoogleIO](<a href="https://x.com/GoogleDeepMind/status/2056786456404783319">https://x.com/GoogleDeepMind/status/2056786456404783319</a>)</p>
+<h2 id="h-14">xAI (Twitter)</h2>
+<ul>
+<li>[Starting today, use your Grok or X Premium subscription in @openclaw.</li>
+</ul>
+<p>Chat with your agent, generate images and videos, or search for X posts.</p>
+<p><a href="https://t.co/GSNl9KrH45">https://t.co/GSNl9KrH45</a> <a href="https://t.co/2utObz8z58%5D(https://x.com/xai/status/2056826183745253663)">https://t.co/2utObz8z58](https://x.com/xai/status/2056826183745253663)</a></p>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
+      <li class="toc-h2"><a href="#h-2">Google AI Blog</a></li>
+      <li class="toc-h2"><a href="#h-3">Anthropic Blog</a></li>
+      <li class="toc-h2"><a href="#h-4">Sam Altman (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-5">Demis Hassabis (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-6">Andrej Karpathy (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-7">Thariq (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-8">Claude (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-9">Claude Devs (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-10">Anthropic (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-11">OpenAI (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-12">OpenAI Devs (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-13">Google DeepMind (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-14">xAI (Twitter)</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-05-19.html">2026-05-19</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-20.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
