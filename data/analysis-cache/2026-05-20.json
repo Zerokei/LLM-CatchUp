@@ -1,0 +1,1230 @@
+{
+  "analyzed_at": "2026-05-20T08:46:26.844+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-20.json",
+  "trend_paragraph": "- **Google I/O 2026 全面 Agent 化**：Gemini Omni 统一多模态、3.5 Flash 强化代码与 Agent、Antigravity 2.0 拆出 CLI/SDK，全栈面向智能体重构。\n- **Agent 工程化深化**：Claude Managed Agents 上线自托管沙箱与 MCP 隧道，让企业在私网安全运行长任务智能体。\n- **跨厂商内容溯源**：OpenAI 接入 C2PA 并联手 Google SynthID 推出公开校验工具，AI 图像水印生态首次形成跨家协同。\n- **顶级人才回流**：Andrej Karpathy 重返 LLM 前沿研发并加盟 Anthropic，凸显模型团队的吸引力竞赛。\n- **算力商品化**：OpenAI 推出 1-3 年期 Guaranteed Capacity 折扣 Token，算力首次以长期承诺合同形式被打包售卖。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/advancing-content-provenance",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 内容溯源升级：C2PA 合规 + 联手 Google SynthID 水印 + 公开校验工具",
+      "summary": "OpenAI 宣布全面升级 AI 内容溯源能力：与 Google 合作引入 SynthID 不可见水印、对 Sora 与 Images 2.0 生成产物执行 C2PA 元数据合规，并推出公开可访问的水印校验工具，让任何人都能核验图像是否由 OpenAI 模型生成。两家在水印生态上的协同被视作跨厂商内容认证的关键一步。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "内容溯源",
+        "C2PA",
+        "SynthID",
+        "水印",
+        "AI 治理"
+      ],
+      "practice_suggestions": [
+        "若产品涉及 AI 图像分发，可优先采用兼容 C2PA + SynthID 的双层方案，避免元数据被压缩或截图剥离后失效。",
+        "测试 openai.com/verify 检测自有图像流程，评估在缺乏 metadata 时单凭 SynthID 的检出率与误报率。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/",
+      "source": "Google AI Blog",
+      "title": "Google I/O 2026 汇总：Gemini Omni + 3.5 Flash + Antigravity 全面进入 Agent 时代",
+      "summary": "Google I/O 2026 一次性发布 24 项更新，核心是两款新模型与 agent-first 战略。Gemini Omni 是「从任意输入生成任意模态」的世界模型家族，首发 Omni Flash 主打视频输出；Gemini 3.5 Flash 则是首个「frontier intelligence + action」融合模型。Antigravity 升级为独立桌面端，统一编排多 agent；Search 引入 Information Agents、Universal Cart 与 Gemini Spark 24/7 个人助理则把 agent 扩散到 Gemini app、Pics、YouTube、智能眼镜等多端。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Google I/O",
+        "Gemini Omni",
+        "Gemini 3.5",
+        "Antigravity",
+        "Agent"
+      ],
+      "practice_suggestions": [
+        "把 Gemini 3.5 Flash 加入模型路由比较：在 Terminal-Bench / GDPval-AA / MCP Atlas 等 agentic 基准上对比现有调用栈，验证 Google 宣称的 4× 输出速度与一半价格。",
+        "评估 Gemini Omni Flash 在视频生成场景下的角色一致性与编辑能力，作为 Veo / Sora / Runway 之外的备选。",
+        "尝试 Antigravity 2.0 桌面端编排多 agent 工作流，对照 Claude Code / Cursor 的协同模式。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "angle": "I/O 2026 公告汇总页"
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/",
+      "source": "Google AI Blog",
+      "title": "Google AI Mode 一周年：用户从关键词转向自然语言长查询",
+      "summary": "AI Mode 推出一年后，Google 公布美国用户行为变化数据：查询长度与表达自然度大幅提升，用户从「关键词检索」转向「会话式提问」，AI Mode 月活已突破 10 亿，查询量每季度翻倍。文章由 Search 数据科学副总裁撰写，作为 I/O 2026 期间一篇支撑 Search 战略变化的洞察文。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Google Search",
+        "AI Mode",
+        "用户行为",
+        "自然语言查询"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/workspace/workspace-updates/",
+      "source": "Google AI Blog",
+      "title": "Google Workspace 注入语音 + Google Pics + AI Inbox + Spark 个人 Agent",
+      "summary": "Workspace 在 I/O 2026 上获得四项关键升级：Gmail Live / Docs Live / Keep 加入对话式语音输入，可以语音指挥起草、检索、整理；新独立应用 Google Pics 基于 Nano Banana 模型提供对象分割、文本编辑、协作画布等精细图像编辑能力；AI Inbox 扩展到 AI Plus/Pro 订阅，加入个性化草稿回复和任务管理；Gemini Spark 24/7 个人 agent 接入 Workspace，可代用户跨应用执行任务。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Google Workspace",
+        "语音交互",
+        "Google Pics",
+        "AI Inbox",
+        "Gemini Spark"
+      ],
+      "practice_suggestions": [
+        "团队若已重度使用 Gmail/Docs，关注 Docs Live 与 AI Inbox 推出时间表，对比 Microsoft Copilot 的对应功能做 ROI 评估。",
+        "Google Pics 基于 Nano Banana 的对象分割与文本翻译，是设计/营销工作流中替代 Photoshop generative fill 的候选方案。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "source": "Google AI Blog",
+      "title": "Google I/O 2026：Gemini Omni + 3.5 Flash + Antigravity 全面进入 Agent 时代",
+      "summary": "Sundar Pichai 在 I/O 2026 主旨演讲中宣布 Google 已全面进入「Agent 时代」：月度 Token 处理量同比增长 7 倍至 3.2 千万亿，AI 在搜索、Workspace、Cloud 等全产品线落地。本届大会发布了统一多模态世界模型 Gemini Omni、首发 Gemini 3.5 Flash、Antigravity 2.0、Search 25 年最大改版与 Workspace 全栈 Agent 化升级。Demis Hassabis 与 Pichai 同台站台，标志研究与产品团队的协同深化。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "Google I/O 2026",
+        "Gemini Omni",
+        "Gemini 3.5",
+        "Antigravity",
+        "Agent 时代"
+      ],
+      "practice_suggestions": [
+        "关注 Gemini 3.5 Flash 在 Terminal-Bench 与代码任务上的表现，评估是否切换主力 Agent 模型",
+        "试用 Antigravity 2.0 的 Mission Control / CLI / SDK 三种交互形态，重塑长任务智能体工作流",
+        "在 Gemini App 或 Flow 中体验 Gemini Omni 的视频再创作与多模态生成"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "source": "Google AI Blog",
+      "title": "Gemini 3.5 Flash 首发：Terminal-Bench 76.2、4× 输出速度、价格不到旗舰一半",
+      "summary": "Google 在 I/O 2026 首发 Gemini 3.5 系列首款模型 Flash，主打 Agent 与代码：Terminal-Bench 76.2 创开源/旗舰平衡新标杆，输出速度较 3.0 Pro 提升 4 倍，价格不到旗舰一半。模型全量上线 Gemini App、AI Mode 与开发者平台（AI Studio / Vertex AI / Gemini API）。同时官方预告 Gemini 3.5 Pro 将于下月发布，与 Antigravity 2.0 联动支持多子代理协作。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Gemini 3.5 Flash",
+        "Terminal-Bench",
+        "Agent",
+        "Gemini 3.5 Pro",
+        "Gemini API"
+      ],
+      "practice_suggestions": [
+        "基于 Gemini 3.5 Flash 复跑现有 Agent / Coding 基准，对比 Claude / GPT 当前主力",
+        "在 AI Studio 与 Vertex AI 上试用 Flash，评估其作为长任务 Agent 底模的性价比",
+        "关注下月 Gemini 3.5 Pro 发布以判断是否切换旗舰模型"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/search-io-2026/",
+      "source": "Google AI Blog",
+      "title": "Google Search 25 年最大改版：智能搜索框 + 信息 Agent + 生成式 UI",
+      "summary": "Search 由 Gemini 3.5 Flash 接管 AI Mode 默认模型；搜索框迎来 25 年来最大改版，支持文本、图片、文件、视频、Chrome 标签等多模态输入，并动态扩展、给出超越自动补全的 AI 建议。功能上引入「信息 Agent」可 24/7 后台监控用户关心主题（房源、球鞋发售等）并主动推送，扩展 agentic 预订到本地服务（含代打电话），并把 Antigravity 编码能力嵌入 Search，可即时生成包含可视化、表格、模拟器的自定义 UI 与持久化迷你应用，Personal Intelligence 扩展至 200 国 98 语种。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Google Search",
+        "AI Mode",
+        "Information Agent",
+        "Generative UI",
+        "Antigravity"
+      ],
+      "practice_suggestions": [
+        "SEO/内容方需重新审视 GEO（generative engine optimization）：信息 Agent 与生成式 UI 会让传统蓝链流量进一步被吃，应优化结构化数据与可被 agent 引用的事实段落。",
+        "试用 Search 中的「mini app」生成能力，比较其与自建 Antigravity dashboard 在任务跟踪类轻量场景的可替代性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/",
+      "source": "Google AI Blog",
+      "title": "Google AI 订阅大改：新增 100 美元 Ultra 档，原 Ultra 由 250 降至 200",
+      "summary": "Google 在 I/O 2026 重排 AI 订阅梯度：新增 $100/月 AI Ultra 入门档，面向开发者与高级创作者，比 Pro 多 5× 用量，含 Antigravity 优先访问、3.5 Flash、20TB 存储与 YouTube Premium；原 $250 Ultra 顶配降到 $200 月费，权益不变，含 Gemini Spark、Project Genie。所有付费档可用 Gemini Omni 与 3.5 Flash；用量从「日 prompt 数」改为「compute 用量」模型，超额可付费购买 top-up 积分。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google AI 订阅",
+        "AI Ultra",
+        "定价",
+        "Antigravity",
+        "Project Genie"
+      ],
+      "practice_suggestions": [
+        "对比 ChatGPT Pro ($200) 与 Claude Max ($200)：新 $100 Ultra 档可能改变重度个人开发者的最优订阅组合。",
+        "compute-based 用量模型上线后，密切监控自身长上下文 + agent 任务的实际配额消耗，决定是否需要切到 top-up credit 模式。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/anthropic-kpmg",
+      "source": "Anthropic Blog",
+      "title": "Anthropic × KPMG 战略联盟：Claude 接入 27.6 万员工，嵌入 Digital Gateway",
+      "summary": "Anthropic 与全球四大之一 KPMG 达成全球战略联盟：Claude 将嵌入 KPMG 客户工作主平台 Digital Gateway（含 Cowork、Managed Agents），首批用于税务与法律业务；同时 KPMG 全球 27.6 万员工将获得 Claude 访问权限。Anthropic 还将 KPMG 列为私募股权领域的 preferred partner，双方将为 PE 投资组合公司共建 Claude 驱动产品，并通过 KPMG Blaze 让 Claude Code 帮助现代化老旧 IT 系统。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "KPMG",
+        "Claude 企业部署",
+        "专业服务",
+        "Digital Gateway"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2056827105401614656",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman：OpenAI 推出 1-3 年算力承诺折扣 token，世界仍将长期算力受限",
+      "summary": "Sam Altman 转发 OpenAI 官方公告「Guaranteed Capacity」并补充评论：客户越来越要求 OpenAI 在算力上给出长期承诺，他认为随着模型变强，世界将「在相当长一段时间内处于算力受限状态」。OpenAI 因此对承诺 1-3 年用量的客户提供 token 折扣，称此举对客户与公司规划是双赢。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Sam Altman",
+        "算力约束",
+        "Guaranteed Capacity",
+        "长期合约"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2056823271774101907"
+    },
+    {
+      "url": "https://x.com/sama/status/2056834734915977382",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：算力配额售完即止，未来再开放",
+      "summary": "Sam Altman 表示当前的算力项目将持续供应直至本期分配额度售罄，并承诺为 ChatGPT、Codex 等核心产品保留足够容量。他强调未来计划再次开放此项目，OpenAI 仍将以最快速度扩建算力。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "算力",
+        "Sam Altman",
+        "Codex"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2056823271774101907",
+      "angle": "Altman：售完即止"
+    },
+    {
+      "url": "https://x.com/sama/status/2056804900017947046",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 玩梗：点赞重置 Codex 限额",
+      "summary": "Sam Altman 发推玩笑称只要该推文获得 1 个赞，Tibo 就会重置 Codex 的速率限制。属于无实质信息的社交互动内容。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "Codex",
+        "梗图"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2056435834333934051",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman：ChatGPT 最新更新体验大幅提升",
+      "summary": "Sam Altman 称赞 ChatGPT 在最新一次更新后体验有大幅改善，并向参与的团队致敬。未透露具体更新细节。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "ChatGPT",
+        "OpenAI",
+        "产品更新"
+      ],
+      "practice_suggestions": [
+        "重新评估 ChatGPT 在日常任务中的输出质量，对比上一版本差异",
+        "关注 OpenAI 官方更新日志以获取具体改进项"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2056831486251380783",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Google 发布 Gemini Omni：统一多模态世界模型",
+      "summary": "Demis Hassabis 宣布 Gemini Omni 在世界理解与多模态编辑方面实现重大跃升，可接收图像、视频、音频输入并生成全新场景。模型未来将支持任意输入与任意输出，目前从视频生成起步，并支持用户上传自有视频进行迭代创作。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Gemini Omni",
+        "Google",
+        "多模态",
+        "视频生成",
+        "世界模型"
+      ],
+      "practice_suggestions": [
+        "在 Gemini App 与 Flow 中试用 Gemini Omni Flash，验证视频生成与编辑能力",
+        "对比 Veo、Sora 等竞品在多模态一致性与可控编辑上的表现差异",
+        "评估「任意输入任意输出」架构对内部多模态流水线的简化潜力"
+      ],
+      "thread_group_id": "thread-demishassabis-20260519-2016",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2056786446636212467",
+      "angle": "Hassabis 定位「通用世界模型」"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2056831487836889178",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Gemini Omni Flash 上线 Gemini App 与 Flow",
+      "summary": "Hassabis 在自回复中补充 Gemini Omni Flash 已在 @GeminiApp 与 @FlowByGoogle 中开放体验，并附上 Google 官方博客链接获取更多信息。属于上一条 Gemini Omni 发布的可用性预告。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Gemini Omni Flash",
+        "Gemini App",
+        "Flow",
+        "Google"
+      ],
+      "practice_suggestions": [
+        "在 Gemini App 与 Flow 平台中实测 Gemini Omni Flash 的可用功能",
+        "阅读 Google 官方 Gemini Omni 博客了解上线范围与定价细节"
+      ],
+      "thread_group_id": "thread-demishassabis-20260519-2016",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2056531492080435452",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Hassabis 与 Pichai 同赴 Google I/O 2026",
+      "summary": "Demis Hassabis 引用 Sundar Pichai 推文表示已为次日上午 10 点（太平洋时间）召开的 Google I/O 2026 做好准备。仅为活动预热，无实质技术内容。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Google I/O",
+        "Google",
+        "Hassabis",
+        "Pichai"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://blog.google/innovation-and-ai/sundar-pichai-io-2026/",
+      "angle": "Hassabis 同台预热"
+    },
+    {
+      "url": "https://x.com/karpathy/status/2056753169888334312",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Andrej Karpathy 加入 Anthropic 重返 LLM 研发",
+      "summary": "Andrej Karpathy 宣布加入 Anthropic，认为未来几年 LLM 前沿研究将尤为关键，期待重回 R&D 一线。他表示仍对教育充满热忱，未来会择机继续相关工作。这是顶尖研究人才向 Anthropic 流动的又一标志性信号。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Karpathy",
+        "Anthropic",
+        "人才流动",
+        "LLM 研发"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2056753265346564259",
+      "angle": "本人公告"
+    },
+    {
+      "url": "https://x.com/trq212/status/2056843158965858380",
+      "source": "Thariq (Twitter)",
+      "title": "Claude 官博：用 Claude Code 写 HTML 的「不合理有效性」",
+      "summary": "Thariq 宣告其关于 Claude Code 与 HTML 的方法论文章已发布至 Claude 官方博客。文章主张「HTML 是新一代 markdown」，主张用 HTML artifact 作为交互式规范以替代纯文本规格说明，提升人机协作效率。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "HTML",
+        "Anthropic",
+        "工程方法论"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2056777186062032964",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 回应 Karpathy 加盟 Anthropic",
+      "summary": "Thariq 引用 Karpathy 加入 Anthropic 的推文回应「未来光明，开干」，作为同事欢迎与表态。无实质新增信息，与上游 Karpathy 推文同源。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Karpathy",
+        "Anthropic",
+        "人才流动"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/karpathy/status/2056753169888334312"
+    },
+    {
+      "url": "https://x.com/trq212/status/2056432663125545082",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 谈 HTML 与长时运行 Agent 的协作模式",
+      "summary": "Thariq 在 Code w/ Claude 节目中与 Claire 讨论如何与长时运行的 Agent 保持同步，延续其「HTML 是新一代 markdown」主张：用 HTML artifact 作为交互式规格、构建一次性微 UI、维护活体设计系统，并以「whatever is needed」式 prompt 留给 Claude 思考空间。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "HTML",
+        "Agent",
+        "工程方法论",
+        "Prompt"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2056418157305454805",
+      "source": "Thariq (Twitter)",
+      "title": "实战提示词：让 Claude 边实现边写「实现笔记」HTML",
+      "summary": "Thariq 分享了一段经 Claude 协助打磨的提示词模板：在执行「Implement <SPEC>」任务时，要求模型同步维护一个 implementation-notes.html，记录设计决策、刻意偏离规范的原因、考虑过的替代方案与权衡，以及希望人类确认的开放性问题。该做法把 agent 的隐含推理外化为可审阅的工程文档，便于事后复盘与对齐。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "提示词工程",
+        "Claude",
+        "Agent 工作流",
+        "规格驱动开发",
+        "实现笔记"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2056805728774402428",
+      "source": "Claude (Twitter)",
+      "title": "Claude 推出「Problem Solvers」专栏：首期聚焦 Cognition 的 Scott Wu",
+      "summary": "Anthropic 官方上线名为「The Problem Solvers」的创始人访谈系列，首期主角是 Cognition CEO Scott Wu。Cognition 旗下的 AI 软件工程师 Devin 构建于 Claude 之上，Wu 的目标是让所有工程团队的软件开发速度提升 10 倍。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Cognition",
+        "Devin",
+        "AI 软件工程师",
+        "案例访谈"
+      ],
+      "thread_group_id": "thread-claudeai-20260519-1834",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2056805730359931007",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 发布 Problem Solvers 创始人系列入口页",
+      "summary": "Anthropic 公布了 Problem Solvers 系列的官方入口 claude.com/problem-solvers，将持续刊登借助 Claude 攻克难题的创始人故事。该专栏是 Claude 品牌内容化运营的延伸，用真实案例巩固开发者与 ToB 市场认知。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Problem Solvers",
+        "内容营销",
+        "创始人故事",
+        "Anthropic"
+      ],
+      "thread_group_id": "thread-claudeai-20260519-1834",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2056645485696315581",
+      "source": "Claude (Twitter)",
+      "title": "Claude Managed Agents 升级：自托管沙箱 + MCP 隧道直连私网",
+      "summary": "Anthropic 为 Claude Managed Agents 推出两项关键安全能力：自托管沙箱让企业在自有基础设施上隔离运行 Agent，MCP 隧道让 Agent 安全接入私网 MCP 服务器而无需暴露公网。同步上线热切换工具与 MCP、大输出自动落盘、新版 Sandbox 文档与 claude-api skill。自托管 Sandbox 现已开放试用，MCP 隧道开放申请。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Managed Agents",
+        "自托管沙箱",
+        "MCP 隧道",
+        "企业安全",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "申请 MCP 隧道试用，将 Claude Agent 接入内部 CRM / 数据库 MCP 服务器",
+        "阅读 Managed Agents 自托管 Sandbox 文档，规划私有部署",
+        "用 claude-api skill 加速 Agent 集成开发"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2056645491207655584",
+      "source": "Claude (Twitter)",
+      "title": "MCP 隧道：让 Claude agent 接入私网 MCP 而不暴露公网",
+      "summary": "Anthropic 进一步说明 MCP 隧道的定位：agent 可通过隧道访问部署在客户私有网络中的 MCP 服务器，无需把这些服务暴露到公网。该机制降低了企业接入 MCP 生态的网络与安全门槛。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "MCP 隧道",
+        "Claude Managed Agents",
+        "私网接入",
+        "企业安全",
+        "MCP"
+      ],
+      "practice_suggestions": [
+        "将原本计划公网暴露的 MCP 服务改走 MCP 隧道，收敛攻击面。",
+        "在内部知识库、数据库等敏感 MCP 服务上优先试点隧道接入。"
+      ],
+      "thread_group_id": "thread-claudeai-20260519-0757",
+      "duplicate_of": "https://x.com/claudeai/status/2056645485696315581",
+      "angle": "MCP 隧道工作原理"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2056645493493575681",
+      "source": "Claude (Twitter)",
+      "title": "自托管沙箱已开放试用，MCP 隧道开放申请",
+      "summary": "Anthropic 公布 Claude Managed Agents 更新的可用性：自托管沙箱现已在 Claude Platform 开放试用，MCP 隧道则以 research preview 形式开放申请，详情见官方博客 claude.com/blog/claude-managed-agents-updates。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Platform",
+        "自托管沙箱",
+        "MCP 隧道",
+        "Research Preview",
+        "申请入口"
+      ],
+      "practice_suggestions": [
+        "在 Claude Platform 控制台启用自托管沙箱，验证现有 agent 流程是否兼容。",
+        "提交 MCP 隧道 research preview 申请，提前排队获取早期访问。"
+      ],
+      "thread_group_id": "thread-claudeai-20260519-0757",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2056460045756309820",
+      "source": "Claude (Twitter)",
+      "title": "Claude Design 全档位 Token 上限翻倍",
+      "summary": "Anthropic 宣布在所有套餐中将 Claude Design 的 token 限额翻倍，让用户单次能产出更复杂、更完整的设计成果。该调整不涉及定价变化，是面向创作型用户的容量优化。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Design",
+        "Token 上限",
+        "套餐升级",
+        "Anthropic",
+        "创意工具"
+      ],
+      "practice_suggestions": [
+        "重新评估之前因 token 上限而拆分的 Claude Design 任务，尝试一次性生成完整方案。",
+        "在团队套餐中检查是否需要调整按用户配额，以利用新提高的额度。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056835339193561170",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic 发布 Computer Use 生产可靠性最佳实践",
+      "summary": "Anthropic 在官方博客发表新一篇 Computer/Browser Use 最佳实践，聚焦如何让 Claude 在真实 UI 操作中稳定运行：包括提升点击精度、选择合适的 thinking effort、控制长会话的上下文占用，以及录制可由 Claude 回放的演示步骤。该指南面向已经把 computer use 投入生产的开发者。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Computer Use",
+        "Browser Use",
+        "Claude",
+        "Agent 可靠性",
+        "最佳实践"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056753265346564259",
+      "source": "Claude Devs (Twitter)",
+      "title": "Andrej Karpathy 重返 LLM 研发：加盟 Anthropic",
+      "summary": "Anthropic 正式宣布 Andrej Karpathy 加入团队，回归前沿 LLM 研发。Karpathy 本人在自家账号上确认这一消息，并表示将重新投入到模型核心研究中。该任命被业内视作 Anthropic 在 OpenAI、Google DeepMind 之外争夺顶级研究人才的标志性事件。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Andrej Karpathy",
+        "Anthropic",
+        "人才流动",
+        "LLM 研究"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056740346529468717",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Managed Agents 双安全升级：自托管沙箱 + MCP 隧道",
+      "summary": "Claude Devs 同步发布 Claude Managed Agents 的两项安全增强：自托管沙箱把 agent 的执行环境保留在客户基础设施或托管沙箱供应商内；MCP 隧道则让 agent 能连接客户安全边界内的服务。两项能力共同强化企业在合规与数据驻留方面的可控性。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Managed Agents",
+        "自托管沙箱",
+        "MCP 隧道",
+        "企业合规",
+        "Agent 安全"
+      ],
+      "practice_suggestions": [
+        "在内部安全评审清单中加入「agent 执行环境是否在受控边界内」这一项。",
+        "对接入私网服务的 agent，优先通过 MCP 隧道而非反向代理或公网暴露来实现连接。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2056645485696315581",
+      "angle": "Claude Devs 视角的双安全升级"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056740350690316738",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Managed Agents 更新：热切换工具与 MCP，大输出自动落盘",
+      "summary": "Claude Managed Agents 现支持在不重启会话的情况下，热切换会话所用的工具、MCP 服务器与 vault ID。大于 100k tokens 的 MCP 工具输出会被自动落到 Sandbox 文件中，避免污染上下文。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Managed Agents",
+        "MCP",
+        "Sandbox",
+        "工具热切换"
+      ],
+      "practice_suggestions": [
+        "在长时运行的 Managed Agents 会话中，按需替换 MCP 服务器或工具集，免去重启与状态丢失",
+        "对返回大型结果的 MCP 工具（如代码库扫描、数据导出），依赖自动落盘机制避免上下文爆炸"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260519-1414",
+      "duplicate_of": "https://x.com/claudeai/status/2056645485696315581",
+      "angle": "热切换工具 / 大输出自动落盘"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056740352950997351",
+      "source": "Claude Devs (Twitter)",
+      "title": "Managed Agents 自托管 Sandbox 文档与 claude-api skill 发布",
+      "summary": "Anthropic 发布 Managed Agents 自托管 Sandbox 的官方文档与启动博客，并在 Claude Code 中内置 claude-api skill，方便开发者快速集成与试用。链接覆盖平台文档、发布博客与 GitHub 仓库。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Managed Agents",
+        "self-hosted sandbox",
+        "claude-api skill",
+        "文档"
+      ],
+      "practice_suggestions": [
+        "通过 Claude Code 自带的 claude-api skill 直接尝试 Managed Agents，无需手写脚手架",
+        "需要数据合规的团队优先查阅 self-hosted sandbox 文档评估自部署路径"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260519-1414",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056711020920385751",
+      "source": "Claude Devs (Twitter)",
+      "title": "Code with Claude 伦敦站现场打卡",
+      "summary": "Anthropic 在伦敦举办 Code with Claude 开发者活动，官方账号转发 Boris Cherny 的现场动态作为站点回顾。属于活动宣传性质的日常社交内容。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Code with Claude",
+        "伦敦",
+        "开发者活动",
+        "Anthropic"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056543965672083966",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 计费术语调整：「extra usage」更名「usage credits」",
+      "summary": "Claude 将全平台的「extra usage」统一更名为「usage credits」。已设置的消费上限、自动充值规则与已购买积分原样保留，用户无需重新配置。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "计费",
+        "usage credits",
+        "命名变更"
+      ],
+      "practice_suggestions": [
+        "在内部账单文档与采购流程中同步更新术语，避免与财务对账时出现混淆"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260519-0114",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056543966963839405",
+      "source": "Claude Devs (Twitter)",
+      "title": "更名缘由：usage credits 已不止用于超额付费",
+      "summary": "Anthropic 解释更名原因：原「extra usage」仅指触达套餐上限后的额外付费，而 usage credits 现已扩展用途，例如直接驱动 fast mode 等付费提速特性，更名以反映这一定位扩展。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "usage credits",
+        "fast mode",
+        "计费模型"
+      ],
+      "practice_suggestions": [
+        "把 usage credits 视作通用消费单位规划预算，预留 fast mode 等付费提速特性的额度"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260519-0114",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056454359685476491",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Fast Mode 默认切换至 Opus 4.7",
+      "summary": "Claude Code 中的 fast mode 默认模型升级为 Opus 4.7，开发者可通过 /fast 命令直接试用。延续 fast mode 「同质量、更快响应」的定位。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "fast mode",
+        "Opus 4.7",
+        "/fast"
+      ],
+      "practice_suggestions": [
+        "在 Claude Code 中执行 /fast 切到 fast 模式，验证 Opus 4.7 对当前任务的响应速度提升",
+        "对延迟敏感的实时调试与交互式重构场景，将 fast mode 设为默认入口"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260518-1918",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056454360780222615",
+      "source": "Claude Devs (Twitter)",
+      "title": "Fast Mode 细节：Opus 同质量、2.5× 速度、按 token 加价",
+      "summary": "Fast mode 提供与 Opus 完全一致的输出质量，但响应速度约为 2.5×，按更高的每 token 单价计费。官方建议用在「延迟比成本更关键」的场景，如快速迭代、实时调试和限时任务。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "fast mode",
+        "Opus",
+        "延迟优化",
+        "Claude Code"
+      ],
+      "practice_suggestions": [
+        "针对实时 pair-programming 与生产事故排查场景启用 fast mode，权衡 token 单价的上浮",
+        "为成本敏感的批量任务保留默认 Opus 通道，避免无差别开启 fast mode"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260518-1918",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056434422229123106",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Console 新增 Prompt 缓存命中诊断",
+      "summary": "Claude Console 上线 prompt cache 诊断面板：当请求未命中缓存时，开发者可清晰看到 prompt 中哪部分发生了变化、以及由此产生的 token 成本，便于定位缓存碎片化问题。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Console",
+        "prompt cache",
+        "诊断",
+        "成本优化"
+      ],
+      "practice_suggestions": [
+        "在 Console 中对高频调用 prompt 进行缓存命中复盘，识别每次都漂移的「不稳定段」并固化它",
+        "把缓存命中率纳入对话成本看板，与 token 用量并列监控"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260518-1759",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2056434423982444801",
+      "source": "Claude Devs (Twitter)",
+      "title": "Prompt 缓存诊断入口与文档发布",
+      "summary": "Anthropic 给出 prompt 缓存诊断的入口链接（Claude Console 用量面板）与官方文档地址，方便开发者直接跳转配置与排查。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude Console",
+        "prompt cache",
+        "文档",
+        "诊断"
+      ],
+      "practice_suggestions": [
+        "把 Console 缓存诊断页加入团队的成本巡检手册，作为周期性优化触发点"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260518-1759",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2056419620643541012",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 收购 Stainless，强化 SDK 与 MCP 工具链",
+      "summary": "Anthropic 宣布收购成立于 2022 年的 SDK 与 MCP 服务平台 Stainless，后者长期为 Anthropic 官方 SDK（TypeScript、Python、Go、Java 等）提供生成能力，同时被数百家公司用于生成 SDK、CLI 与 MCP 服务器。Anthropic 将其定位为推进 Claude 平台「agent 连接性」的关键基础设施投入。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "Stainless",
+        "收购",
+        "SDK",
+        "MCP"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2056849157860831239",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT 周生成图像突破 15 亿张：OpenAI 播客拆解 Images 2.0 用例",
+      "summary": "OpenAI 披露 ChatGPT 用户目前每周生成超 15 亿张图像。在最新一期播客中，研究员 Kenji Hata 与产品负责人 Adele Li、主持人 Andrew Mayne 一同复盘 Images 2.0 上线以来出现的新用法与使用趋势。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "ChatGPT",
+        "图像生成",
+        "Images 2.0",
+        "使用数据",
+        "OpenAI 播客"
+      ],
+      "thread_group_id": "thread-OpenAI-20260519-2127",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2056849160704503961",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 播客上线 Spotify／Apple／YouTube 三平台",
+      "summary": "OpenAI 公布其官方播客在 Spotify、Apple Podcasts 和 YouTube 三大平台的收听入口，作为前一条图像生成数据讨论节目的配套链接发布。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI 播客",
+        "Spotify",
+        "Apple Podcasts",
+        "YouTube"
+      ],
+      "thread_group_id": "thread-OpenAI-20260519-2127",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2056823271774101907",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 推出 Guaranteed Capacity：1-3 年算力承诺折扣 Token",
+      "summary": "OpenAI 发布 Guaranteed Capacity 计划：客户以 1-3 年承诺锁定长期算力，可获得折扣 Token 价格。Sam Altman 表示算力配额「售完即止、未来再开放」，同时强调世界仍将长期处于算力受限状态。这是模型厂商首次把算力以承诺合同形式打包售卖，被视为 AI 算力商品化的重要节点。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "Guaranteed Capacity",
+        "算力承诺",
+        "折扣 Token",
+        "OpenAI",
+        "商业模式"
+      ],
+      "practice_suggestions": [
+        "评估关键 AI 工作负载是否存在峰值算力短缺风险，权衡是否值得通过 Guaranteed Capacity 锁定长期配额。",
+        "对照现有 OpenAI API 用量与 SLA 需求，向账户经理咨询 Guaranteed Capacity 的最小承诺规模与定价模型。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2056793648571011232",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 引入 SynthID 水印与公开校验工具：强化 AI 图像溯源",
+      "summary": "OpenAI 在已有 C2PA Content Credentials 之外，与 Google DeepMind 合作为 ChatGPT、Codex、OpenAI API 生成的图像加入不可见的 SynthID 水印，并预览一个公开校验工具，让用户上传图像就能识别是否由 OpenAI 产品生成。多层方案旨在让水印在元数据被剥离、截图、转码等场景下仍可幸存，提升 AI 内容溯源的可靠性。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "内容溯源",
+        "SynthID",
+        "C2PA",
+        "AI 水印",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/advancing-content-provenance",
+      "angle": "OpenAI 官号宣布"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2056489138799681900",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Altara 用 OpenAI 模型加速多模态科学 R&D 工作流",
+      "summary": "OpenAI Devs 转推 Altara 创始人 Catherine Hyeo 在 Founder Day 上的分享：该公司基于 OpenAI 模型帮助科学家和工程师在复杂多模态数据上推理、并行执行长链路工作流，并通过更高透明度建立信任，定位于「AI for Science」方向。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "AI for Science",
+        "Altara",
+        "多模态",
+        "科研工作流",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2056442456800141424",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 桌面版新增远程连接：Mac 当后端，手机端继续跑任务",
+      "summary": "OpenAI 在 Codex 桌面应用中加入远程连接能力。用户在 Mac 上开启「Keep this Mac awake」并启用 remote connection 后，只要 Mac 通电待机，就能从 ChatGPT 移动端继续驱动该 Mac 上的 Codex 跑长任务。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "远程连接",
+        "ChatGPT 移动端",
+        "Mac",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "在常驻 Mac 上启用 Codex remote connection 与「Keep this Mac awake」，把本地代码库交给手机端远程调度跑长任务。",
+        "结合移动端 ChatGPT 工作流，把通勤或会议碎片时间也用于推进 Codex 编码任务，但留意供电与网络稳定性。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260518-1831",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2056442469114687858",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 远程连接官方文档上线 developers.openai.com",
+      "summary": "OpenAI Devs 在 Codex 远程连接公告下补发链接，指向 developers.openai.com/codex/remote-connections 的官方文档，便于开发者查看具体配置步骤。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "远程连接",
+        "文档",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "阅读 developers.openai.com/codex/remote-connections 文档，按步骤在 Mac 上配置 Codex 远程连接。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260518-1831",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056786446636212467",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini Omni 发布：从视频起步的「万物到万物」统一多模态世界模型",
+      "summary": "Google DeepMind 发布 Gemini Omni——以视频为起点的统一多模态世界模型，可在任意模态间生成与编辑。首发的 Omni Flash 已上线 Gemini App、Flow 与 YouTube Shorts，支持视频再创作（改环境、加物体、重构画面）以及批量编辑与角色一致性。Demis Hassabis 将其定位为「向通用世界模型迈出的关键一步」，与 3.5 Flash 共同构成 I/O 2026 的双旗舰发布。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Gemini Omni",
+        "多模态",
+        "世界模型",
+        "Gemini App",
+        "Flow"
+      ],
+      "practice_suggestions": [
+        "在 Gemini App 与 Flow 中体验 Omni Flash 的视频编辑与角色一致性能力",
+        "评估 Omni 是否能替代当前的文生视频 + 编辑工具链",
+        "关注 Omni 在 YouTube Shorts 的集成方式，思考短视频创作流变化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056826903957504136",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini 3.5 Flash 联手 Antigravity：多子代理协作搭建整座城市",
+      "summary": "Google DeepMind 展示 Gemini 3.5 Flash 在 Antigravity 平台中的多子代理协作能力：模型可拆分任务、调度多个 subagent 协同完成「设计并搭建一整座城市」级别的复杂工作流，凸显 Flash 作为高吞吐执行模型在 agent 编排中的角色。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Gemini 3.5 Flash",
+        "Antigravity",
+        "多智能体",
+        "Agent 编排",
+        "Google DeepMind"
+      ],
+      "practice_suggestions": [
+        "在已有 Antigravity 工作流中替换主控模型为 Gemini 3.5 Flash，验证其在多子代理调度场景下的延迟和成本表现。",
+        "拆解「搭建城市」演示的 agent 分工模式，迁移到自家长链路任务（如全栈项目脚手架、地图生成）中复用。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1958",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2056790405937856791",
+      "angle": "Flash × Antigravity 多子代理建城演示"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056826905505247393",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini 3.5 Flash × Antigravity 演示详情入口发布",
+      "summary": "Google DeepMind 在 Gemini 3.5 Flash 与 Antigravity 演示推文下追加官方链接 goo.gle/3PwoinZ，引导开发者前往查看完整的多子代理「搭建城市」演示与产品详情。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Gemini 3.5 Flash",
+        "Antigravity",
+        "演示链接"
+      ],
+      "practice_suggestions": [
+        "通过 goo.gle/3PwoinZ 查看 Antigravity 与 Gemini 3.5 Flash 协作的完整说明，再决定是否纳入自家 agent 技术栈。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1958",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056808869242826957",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini for Science：科研工作流套件 + Co-Scientist + AlphaEvolve",
+      "summary": "Google DeepMind 发布面向科研工作流的实验性套件 Gemini for Science，包含两大核心：Co-Scientist 通过多智能体「想法锦标赛」生成与评估科研假设，AlphaEvolve 用并行代码进化驱动计算发现。整套工具旨在把 Gemini 系列模型嵌入到从假设到实验、从代码到结果的完整科研闭环。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Gemini for Science",
+        "Co-Scientist",
+        "AlphaEvolve",
+        "科研 AI",
+        "多智能体"
+      ],
+      "practice_suggestions": [
+        "关注 Gemini for Science 的可用入口，评估其与现有研究工具的可组合性",
+        "试用 Co-Scientist 进行假设生成实验，对比传统文献调研流程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056808885709602855",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Co-Scientist：多智能体「想法锦标赛」生成与评估科研假设",
+      "summary": "Gemini for Science 子模块 Co-Scientist 通过多智能体「想法锦标赛」机制，对开放性科研问题自动生成、辩论并打分候选假设，输出可行项与失败原因。该流程把头脑风暴显式化为可比较、可追溯的评估管线。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Co-Scientist",
+        "多智能体",
+        "假设生成",
+        "Gemini"
+      ],
+      "practice_suggestions": [
+        "在自己的研究问题上以 Co-Scientist 跑一次「想法锦标赛」，对比导师/同行评议结果以校准其偏差",
+        "把多智能体辩论范式迁移到内部立项评审：让多个角色 agent 互评再人工裁决"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1847",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2056808869242826957",
+      "angle": "Co-Scientist 多智能体想法锦标赛"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056808892575932630",
+      "source": "Google DeepMind (Twitter)",
+      "title": "AlphaEvolve 驱动的并行代码进化用于计算发现",
+      "summary": "Gemini for Science 的「Computational Discovery」基于 AlphaEvolve 与 Empirical Research Assistance 构建 agent 原型，可并行生成并打分数千段代码变体。官方以流行病学等复杂建模为例，称可大幅压缩新建模方法的试错周期。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "AlphaEvolve",
+        "代码进化",
+        "科学计算",
+        "Agent"
+      ],
+      "practice_suggestions": [
+        "对自有数值建模任务，尝试用 AlphaEvolve 范式生成候选实现，再用既有指标做大规模筛选",
+        "把「并行变体打分」流程包装成 CI 任务，让算法搜索与人类调参并行进行"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1847",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056804306653794336",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google Flow 升级：接入 Gemini Omni 支持批量编辑与角色一致性",
+      "summary": "Google Flow 与 Gemini Omni 模型联动，新增批量编辑、跨镜头角色一致性等电影化创作能力。官方将其定位为创作者打造更具叙事感视频内容的工具。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google Flow",
+        "Gemini Omni",
+        "视频生成",
+        "角色一致性"
+      ],
+      "practice_suggestions": [
+        "在短视频项目里测试 Flow 的批量编辑工作流，对比单镜头逐次生成的迭代成本",
+        "评估角色一致性能否替代传统 LoRA 训练，作为快速 demo 阶段的方案"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056787987774816525",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini 3.5 系列发布：首发 3.5 Flash 主打 Agent 与代码",
+      "summary": "Google DeepMind 在 Google I/O 上正式发布 Gemini 3.5 模型家族，定位为「前沿智能 + 现实世界行动」的旗舰产品线。首批开放的是 3.5 Flash，被官方称为目前最强的 Agent 与代码模型。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Gemini 3.5",
+        "Flash",
+        "Agent",
+        "代码模型",
+        "Google I/O"
+      ],
+      "practice_suggestions": [
+        "在自己的 Agent / Coding 评测集上跑一遍 Gemini 3.5 Flash，对照 Claude 与 GPT-5.x 的 Terminal-Bench / SWE-Bench 成绩",
+        "若上层应用已绑定 Gemini 2.x，规划灰度切换 3.5 Flash 的回退路径",
+        "等待 3.5 Pro 公布日再决定长期合约定价，避免锁死在 Flash 档位"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "angle": "Flash 主打 Agent 与代码"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056787992363372606",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini 3.5 Flash 全量上线 Gemini App、AI Mode 与开发者平台",
+      "summary": "Google DeepMind 宣布 Gemini 3.5 Flash 已在 Gemini App 与 Google Search 的 AI Mode 中向所有用户开放，开发者可在 Antigravity 与 Google AI Studio 中通过 Gemini API 调用。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Gemini 3.5 Flash",
+        "Gemini API",
+        "AI Mode",
+        "Antigravity"
+      ],
+      "practice_suggestions": [
+        "在 Google AI Studio 中先用免费额度跑通调用，再决定是否切换 API key 到生产环境",
+        "用 AI Mode 在搜索场景做端到端体验对比，评估 3.5 Flash 与现有产品的延迟差异"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "angle": "全量上线 Gemini App / AI Mode"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056794514564751490",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini 3.5 Pro 将于下月发布",
+      "summary": "Google DeepMind 在 3.5 Flash 上线公告中预告 Gemini 3.5 Pro 将于下月推出，意味着 3.5 系列的旗舰大杯版本时间表已明确。官方提供了链接引导读者获取更多细节。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Gemini 3.5 Pro",
+        "路线图",
+        "Google I/O"
+      ],
+      "practice_suggestions": [
+        "把 3.5 Pro 的预计发布窗口纳入下季度模型选型规划，避免在 Flash 上做长期重投入",
+        "保留一个评测套件位以便 Pro 上线后第一时间进行 A/B 对比"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/",
+      "angle": "Pro 下月发布预告"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056790405937856791",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Antigravity 2.0：Mission Control + CLI + SDK，开发者聚焦架构而非调试",
+      "summary": "Google DeepMind 发布 Antigravity 2.0，新增 Mission Control、CLI 与 SDK 三种新交互形式，让开发者从调试琐事中解放、聚焦架构设计。同步演示了 Gemini 3.5 Flash 联手 Antigravity 多子代理协作的能力——团队仅用一次指令便可搭建整座城市原型。生态扩展明确把 Antigravity 推向「长任务智能体」开发首选平台。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Antigravity 2.0",
+        "多子代理",
+        "CLI",
+        "SDK",
+        "智能体开发"
+      ],
+      "practice_suggestions": [
+        "试用 Antigravity Mission Control 编排多子代理任务",
+        "使用 Antigravity CLI / SDK 把现有 Agent 工作流迁入",
+        "复现 Flash × Antigravity 的多子代理城市搭建演示以摸清能力边界"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1733",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056790408689287180",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Antigravity 2.0：Mission Control、CLI 与 SDK 三种新交互形式",
+      "summary": "Antigravity 同步推出三种新交互入口：「2.0 Mission Control」可视化界面让多个 agent 并行协作；CLI 提供终端式 agent 工作流；SDK 让外部软件直接接入并调用其 AI agents。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Antigravity 2.0",
+        "Mission Control",
+        "CLI",
+        "SDK",
+        "多智能体"
+      ],
+      "practice_suggestions": [
+        "用 CLI 入口把 Antigravity agent 嵌入既有终端工作流，与 Claude Code / Codex CLI 做并列对比",
+        "通过 SDK 在内部工具里嵌入 Antigravity，验证多 agent 协作对长任务收敛速度的影响",
+        "在 Mission Control 中编排 2-3 个 agent 同时跑同一个 issue，比较结果一致性"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1733",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056794085680468294",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Build with Gemini XPRIZE 黑客松启动：200 万美元奖金池",
+      "summary": "Google DeepMind 宣布与 XPRIZE 合作举办「Build with Gemini」黑客松，奖金池总额 200 万美元，邀请开发者用 Gemini 系列工具解决从减少食物浪费到科研辅助等全球性挑战。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "XPRIZE",
+        "黑客松",
+        "Gemini",
+        "开发者活动"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056786454517317733",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini Omni 支持视频再创作：改环境、加物体、重构画面",
+      "summary": "Google DeepMind 展示 Gemini Omni 的视频再创作能力，用户可用自然语言对自己拍摄的视频进行二次编辑，包括更换环境、添加新物体或重新构想画面动作。这是 Omni 家族多模态生成能力的延展示例。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Gemini Omni",
+        "视频生成",
+        "Google DeepMind",
+        "多模态",
+        "视频编辑"
+      ],
+      "practice_suggestions": [
+        "在 Gemini App 中尝试上传短视频并用自然语言指令修改环境或加入新元素，评估其作为视频后期工具的实用性。",
+        "对比 Gemini Omni 与 Runway、Sora 等视频编辑模型在保持原视频主体一致性方面的差异。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1717",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2056786446636212467",
+      "angle": "Omni 视频再创作 + 上线 Gemini App / Flow"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2056786456404783319",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini Omni Flash 上线：首发于 Gemini App、Flow 与 YouTube Shorts",
+      "summary": "Google DeepMind 宣布 Omni 家族首款模型 Gemini Omni Flash 已在 Gemini App、Flow by Google 和 YouTube Shorts 中开放试用。未来几周内还将通过 API 推出，方便开发者接入多模态生成能力。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Gemini Omni Flash",
+        "Google DeepMind",
+        "多模态模型",
+        "YouTube Shorts",
+        "Google I/O"
+      ],
+      "practice_suggestions": [
+        "立即在 Gemini App 与 YouTube Shorts 中试用 Omni Flash，了解其图像/视频生成质量与延迟表现。",
+        "关注后续 API 发布节奏，提前规划从现有 Gemini Flash 调用迁移到 Omni Flash 的多模态工作流。",
+        "在 Flow by Google 中测试 Omni Flash 在创意短视频生产链路中的实际效果。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260519-1717"
+    },
+    {
+      "url": "https://x.com/xai/status/2056826183745253663",
+      "source": "xAI (Twitter)",
+      "title": "Grok 进驻 openclaw：订阅用户可直接调用智能体与图像视频生成",
+      "summary": "xAI 宣布 Grok 与 X Premium 订阅用户可即日起在 openclaw 平台中使用 Grok，进行智能体对话、图像与视频生成，并支持检索 X 平台帖子。此举将 Grok 的多模态能力扩展到第三方代理工作流场景。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Grok",
+        "xAI",
+        "openclaw",
+        "智能体",
+        "图像视频生成"
+      ],
+      "practice_suggestions": [
+        "如果已订阅 Grok 或 X Premium，在 openclaw 中绑定账号体验跨平台智能体调用。",
+        "测试 Grok 在 openclaw 中检索 X 实时帖子的能力，评估是否可替代独立的社媒监听工具。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
