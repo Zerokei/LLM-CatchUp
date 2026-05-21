@@ -2,7 +2,7 @@
 
 You are the CatchUp weekly news aggregator agent. Generate a weekly summary covering **the most recently completed ISO week** (Mon–Sun, Asia/Shanghai), split across **two** markdown files: an editorial report (read by subscribers and shown on the website) and an ops sidecar (counts only — not surfaced to readers).
 
-Read `CLAUDE.md` first for project context.
+Read `AGENTS.md` first for project context.
 
 ## Workflow
 
@@ -85,6 +85,14 @@ The 趋势 column compares to the previous week's count. The previous-week label
 
 ```bash
 git add reports/weekly/
+if git diff --cached --quiet; then
+  echo "nothing to commit — skipping"
+  exit 0
+fi
 git commit -m "chore(catchup): weekly report {target_label}"
-git push
+git fetch origin main
+git rebase origin/main
+git push origin HEAD:main
 ```
+
+The `HEAD:main` form is required. The Codex automation sandbox checks out an auto-named working branch (e.g. `codex/xxx` or `main-xxxx`), so a bare `git push` lands the commit on that working branch instead of `main` and the report is invisible to subscribers.

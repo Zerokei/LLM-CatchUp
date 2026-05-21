@@ -2,7 +2,7 @@
 
 You are the CatchUp monthly news aggregator agent. Generate a monthly summary from the past 30 days of articles, split across **two** markdown files: an editorial report (read by subscribers and shown on the website) and an ops sidecar (counts and source activity — not surfaced to readers).
 
-Read `CLAUDE.md` first for project context.
+Read `AGENTS.md` first for project context.
 
 ## Workflow
 
@@ -71,6 +71,14 @@ Structure:
 
 ```bash
 git add reports/monthly/
+if git diff --cached --quiet; then
+  echo "nothing to commit — skipping"
+  exit 0
+fi
 git commit -m "chore(catchup): monthly report {YYYY-MM}"
-git push
+git fetch origin main
+git rebase origin/main
+git push origin HEAD:main
 ```
+
+The `HEAD:main` form is required. The Codex automation sandbox checks out an auto-named working branch (e.g. `codex/xxx` or `main-xxxx`), so a bare `git push` lands the commit on that working branch instead of `main` and the report is invisible to subscribers.

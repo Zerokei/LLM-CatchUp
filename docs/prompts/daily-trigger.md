@@ -4,7 +4,7 @@
 
 You produce structured analysis of today's AI news into `data/analysis-cache/{date}.json`. You do NOT render the report, update history, update health, or manage GitHub issues — a post-processor handles all that.
 
-Read `CLAUDE.md` first for project context.
+Read `AGENTS.md` first for project context.
 
 ## Workflow
 
@@ -181,8 +181,14 @@ Delete all `data/analysis-cache/{date}.chunk-*.json` scratch files.
 
 ```bash
 git add data/analysis-cache/{date}.json
+if git diff --cached --quiet; then
+  echo "nothing to commit — skipping"
+  exit 0
+fi
 git commit -m "chore(catchup): daily analysis {date}"
-git push
+git fetch origin main
+git rebase origin/main
+git push origin HEAD:main
 ```
 
-If `git diff --cached` is empty (no new articles this run), skip the commit.
+The `HEAD:main` form is required. The Codex automation sandbox checks out an auto-named working branch (e.g. `codex/xxx` or `main-xxxx`), so a bare `git push` lands the commit on that working branch — and downstream `build-report.yml` only triggers on pushes to `main`, so anything off-`main` is invisible to the pipeline. The `fetch` + `rebase` absorbs the case where the GH Actions fetcher pushed `data/fetch-cache/{date}.json` to `main` after the automation sandbox was prepared.
