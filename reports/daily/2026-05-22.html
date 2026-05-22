@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-05-22 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-22" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-05-22</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>AI 攻克数学难题</strong>：OpenAI 通用推理模型自主证明埃尔德什 1946 年平面单位距离猜想，首次由 AI 独立解决数学核心开放问题。</li>
+<li><strong>旗舰模型密集发布</strong>：Google 推出 Gemini 3.5 Flash、阿里发布 Qwen3.7-Max，双双以编码与智能体基准逼近前沿。</li>
+<li><strong>Agent 编码工具进化</strong>：OpenAI Codex 集中上线 Appshots、锁屏远程操作与移动端接入，编码助手向全场景渗透。</li>
+<li><strong>AI 深入科研与产业</strong>：Antigravity Science Skills 加速罕见病结构分析，AdventHealth 借 ChatGPT 压缩临床审核工时。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/Alibaba_Qwen/status/2057450220708147250">Qwen3.7-Max 发布：面向 Agent 时代的新旗舰模型</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>阿里巴巴</code> <code>智能体</code> <code>编码模型</code> <code>长程自主</code> <code>Artificial Analysis</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里巴巴发布新一代闭源旗舰模型 Qwen3.7-Max，定位「Agent 时代」的通用基座：可端到端完成前端原型、多文件重构与真实调试，通过 MCP 集成胜任办公与多智能体编排，并兼容 Claude Code、Qwen Code 等多种脚手架。模型在 Artificial Analysis 智能指数上拿下 56.6 分，较 Qwen3.6-Max-Preview 提升 4.8 分，为阿里历来最接近前沿的成绩，上下文窗口扩至 100 万 tokens。在自进化实测中，它历时约 35 小时、经 1158 次工具调用自主优化注意力内核，较 Triton 参考实现取得 10 倍几何平均加速。API 已在阿里云百炼（Model Studio）上线。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2057450236180935056">Qwen3.7-Max 自进化实测：35 小时自主优化内核获 10 倍加速</a> · Qwen (Twitter) · 自进化内核优化实测</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2057451488587423830">Qwen3.7-Max 智能指数达 56.6：较前代提升 4.8 分逼近前沿</a> · Qwen (Twitter) · AA 智能指数评测</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>通过阿里云百炼 Model Studio 接入 Qwen3.7-Max API，评估其在编码与智能体任务上的表现。</li>
+<li>在 Claude Code、Qwen Code 等脚手架中替换 Qwen3.7-Max，测试长程自主任务的稳定性。</li>
+<li>利用 100 万 tokens 上下文与 MCP 集成，构建多智能体办公自动化流程。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/OpenAIDevs/status/2057530207976989179">OpenAI Codex 多项更新：Appshots 上下文捕获、锁屏远程操作与团队插件共享</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Appshots</code> <code>远程操作</code> <code>插件共享</code> <code>移动端</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在「Codex Thursday」集中发布了多项 Codex 更新。新增的 Appshots 让用户在 Mac 上双击 Command 键，把应用窗口的截图与文字（含屏幕外内容）一并带入 Codex 对话；同时 Codex 现可在 Mac 锁屏、息屏状态下从手机端安全操作电脑应用。面向团队，Codex 支持跨工作区共享自定义插件（Business 用户已可用），并改进了企业版的多维度用量分析。此外 Codex 已接入 ChatGPT 手机 App，可在移动端随时续接同一会话。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2057530212339097994">Codex 支持跨团队共享插件，Business 用户已可用</a> · OpenAI Devs (Twitter) · 团队插件共享</li>
+<li><a href="https://x.com/sama/status/2057559714788258003">OpenAI 推出 Codex「Appshots」：Command-Command 把应用窗口上下文带入 Codex</a> · Sam Altman (Twitter) · Altman 转发官宣</li>
+<li><a href="https://x.com/OpenAIDevs/status/2057536706778378692">Codex 支持锁屏远程操作 Mac：手机端无需解锁电脑</a> · OpenAI Devs (Twitter) · 锁屏远程操作 Mac</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Mac 上用 Command-Command 触发 Appshots，把当前应用窗口上下文直接喂给 Codex。</li>
+<li>为团队配置共享 Codex 插件，统一内部工具与工作流。</li>
+<li>通过 ChatGPT 手机 App 随时接管 Codex 会话，实现跨设备协作。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/OpenAI/status/2057176201782075690">OpenAI 模型攻克埃尔德什 1946 年平面单位距离猜想</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>数学突破</code> <code>单位距离问题</code> <code>埃尔德什猜想</code> <code>推理模型</code> <code>代数数论</code> <code>自动证明</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布其内部一款通用推理模型自主证明了埃尔德什 1946 年提出的平面单位距离问题，推翻了近 80 年来「方格构造已是最优」的主流猜想，给出了多项式级改进的无穷构造族。这是 AI 首次独立解决一个处于数学子领域核心的著名开放问题；该证明并非来自专门的数学系统，而是通用推理模型，并已由外部数学家验证。证明意外地动用了代数数论中的类域塔与 Golod–Shafarevich 理论，菲尔兹奖得主 Tim Gowers 称其为「AI 数学的里程碑」，普林斯顿教授 Will Sawin 的后续工作进一步给出了显式指数 δ=0.014。 据 OpenAI 博客，攻克单位距离问题的证明来自一个全新的通用推理模型，而非专为数学或该问题训练的系统，证明已由外部数学家核验并撰写了配套论文。该构造意外地引入代数数论工具（如无限类域塔与 Golod–Shafarevich 理论），将 Erdős 1946 年以来基本未动的下界提升至 n^(1+δ)，普林斯顿教授 Will Sawin 后续给出 δ=0.014。菲尔兹奖得主 Tim Gowers 称其为「AI 数学的里程碑」。 OpenAI 表示该数学突破指向更宏观的趋势：AI 系统正变得能够维持长而困难的推理链条、跨越遥远领域连接思想、并发掘研究者未曾探索的路径。OpenAI 相信这些能力将很快加速生物学、物理学、工程学和医学的研究。同时强调未来仍依赖人类判断，专业知识的价值不降反升。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/sama/status/2057203171198636251">Sam Altman：通用模型攻克数学重大未解难题，是「相当大」的里程碑</a> · Sam Altman (Twitter) · Altman 里程碑点评</li>
+</ul>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/xai/status/2057522050923929948">Grok 接入 opencode：用 X Premium 订阅驱动编码智能</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>opencode</code> <code>xAI</code> <code>编码助手</code> <code>X Premium</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 宣布用户现可在 opencode 中直接使用自己的 Grok 或 X Premium 订阅。opencode 将由驱动 Grok Build 的模型支持，主打高速度与代码库智能理解能力。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 opencode 中绑定 Grok 或 X Premium 订阅，体验 Grok Build 同款模型的编码能力</li>
+<li>对比 Grok 在 opencode 中的代码库理解速度与现用编码助手的差异</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://openai.com/index/adventhealth">AdventHealth 把 ChatGPT 当「产品」铺开：靠采用率 KPI 压缩临床审核工时</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>医疗 AI</code> <code>ChatGPT 企业版</code> <code>工作流自动化</code> <code>采用率</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: 横跨九州的医院系统 AdventHealth 部署「ChatGPT for Healthcare」减轻行政负担，把利用率管理中每例约 10 分钟的病历审核大幅压缩，同时保留临床医生的最终判断。其首席 AI 官 Rob Purinton 强调将「采用本身」当作产品来做，把每位用户每工作日的消息数当作可监控的 KPI，并以电子病历时间戳而非自我报告来衡量实际节省的工时。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在企业内推广 AI 时，把「采用率」设为可量化 KPI（如人均日消息数），按部门组建同行小组分享提示词与最佳实践</li>
+<li>用系统级数据（如时间戳）而非自我报告来衡量 AI 对工时的真实影响，确保统计显著性</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/GoogleDeepMind/status/2057256257153884161">Google Antigravity 推出 Science Skills：整合 30+ 生命科学数据源</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Antigravity</code> <code>Science Skills</code> <code>生命科学</code> <code>AI 科研工具</code> <code>Google DeepMind</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 为 Antigravity 推出 Science Skills，向 AI 注入面向科研的专业工具箱以加速日常研究工作流。该能力整合了 UniProt、AlphaFold 数据库等 30 多个主要生命科学数据源的洞见。 Google DeepMind 团队用 Antigravity 的 Science Skills 实测了一道真实科研难题——分析由 AK2 突变引发的罕见遗传病。结果显示，原本高度复杂的结构分析速度大幅提升，并对该疾病的潜在机制得出了新见解。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Antigravity 中启用 Science Skills，接入 UniProt、AlphaFold 等数据源辅助生命科学研究</li>
+<li>评估 Science Skills 能否替代部分手工的结构与序列数据检索工作</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="h-9">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>Claude Design</code> <code>原型设计</code> <code>Anthropic</code> <code>社区</code> — Anthropic 旗下 Claude 官方账号集中推广设计工具 Claude Design，展示用它进行原型设计、快速试验的玩法，并转发了用户用其生成「魔法池塘」背景等作品。官方同时向社区征集更多创意用例。 · <a href="https://x.com/claudeai/status/2057487463518548073">Claude (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Codex</code> <code>远程连接</code> <code>开发文档</code> <code>OpenAI</code> — OpenAI Devs 在 Codex 移动端公告的后续推文中放出了远程连接文档链接（developers.openai.com/codex/remote-connections）。文档介绍如何配置 Codex 的跨设备远程接入，配合 ChatGPT 手机 App 实现随时随地的编码协作。 · <a href="https://x.com/OpenAIDevs/status/2057142817944969367">OpenAI Devs (Twitter)</a></li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Qwen3.7-Max 发布：面向 Agent 时代的新旗舰模型</a></li>
+      <li class="toc-h3"><a href="#h-4">2. OpenAI Codex 多项更新：Appshots 上下文捕获、锁屏远程操作与团队插件共享</a></li>
+      <li class="toc-h3"><a href="#h-5">3. OpenAI 模型攻克埃尔德什 1946 年平面单位距离猜想</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Grok 接入 opencode：用 X Premium 订阅驱动编码智能</a></li>
+      <li class="toc-h3"><a href="#h-7">5. AdventHealth 把 ChatGPT 当「产品」铺开：靠采用率 KPI 压缩临床审核工时</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Google Antigravity 推出 Science Skills：整合 30+ 生命科学数据源</a></li>
+      <li class="toc-h2"><a href="#h-9">速览</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-05-21.html">2026-05-21</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-22.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
