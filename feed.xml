@@ -5,8 +5,181 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 22 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 23 May 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-05-23</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-23.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-23.md</guid>
+      <pubDate>Sat, 23 May 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-23</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>Codex Thursday</strong>：OpenAI 一口气发布锁屏 Mac 远程操控、Appshots 窗口注入、团队插件分发与 Analytics 升级，Codex 周用户突破 400 万。</li>
+<li><strong>Glasswing 月报</strong>：Anthropic Mythos Preview 一个月在 50+ 关键基础设施合作伙伴中挖出逾万高危漏洞，补丁速度成新瓶颈。</li>
+<li><strong>国产 Agent 模型再下一城</strong>：Qwen3.7-Max 上线 OpenRouter，第三方测试在自训练 Tetris Bot 长 Agent 循环上压制 Opus 4.7 与 GPT-5.5 且成本显著更低。</li>
+<li><strong>Google I/O 余波</strong>：DeepMind 把 Project Genie 接入 Maps 街景生成可交互世界，并扩展 SynthID 水印检测至 Gemini App 与搜索。</li>
+<li><strong>Claude Code Auto 模式扩面</strong>：Claude Code Auto 模式登陆 Pro 套餐并新增 Sonnet 4.6 支持，进一步降低自动化门槛。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2057764624720875975">Qwen3.7-Max 登陆 OpenRouter：第三方 Agent 测试压制 Opus 4.7 与 GPT-5.5</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>OpenRouter</code> <code>Agent 基准</code> <code>编码模型</code> <code>Prompt 缓存</code></li>
+</ul>
+<p><strong>摘要</strong>: 阿里 Qwen 团队旗舰 Qwen3.7-Max 在 OpenRouter 上线，主打编码、办公生产力与长程自主执行；相较 Qwen3.6 在编码与 Agent 基准上显著提升，并支持显式 prompt 缓存。第三方 atomic_chat_hq 用「自训练 Tetris Bot」十轮 Agent 循环任务对比：Qwen3.7-Max 训练成本 $1.32、Bot 性能 +56%，分别比 Claude Opus 4.7（$12.15 / +28%）便宜 9 倍、比 GPT-5.5（$2.85 / +7%）便宜 2 倍，在长 Agent 循环这一维度宣告领先。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2057767604048240987">Qwen3.7-Max 上线 OpenRouter：聚焦编码与长程 Agent</a> · Qwen (Twitter) · OpenRouter 上线公告</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 OpenRouter 接入 Qwen3.7-Max，于长 Agent 循环或编码任务上对比 Opus / GPT 成本</li>
+<li>对重复上下文的工作流启用显式 prompt 缓存以压低单次调用成本</li>
+<li>可借鉴 Tetris Bot 思路搭建自有 self-improving Agent 基准评估候选模型</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://www.anthropic.com/research/glasswing-initial-update">Anthropic Glasswing 首月战报：Mythos Preview 挖出逾万高危漏洞</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Project Glasswing</code> <code>Claude Mythos Preview</code> <code>网络安全</code> <code>漏洞披露</code> <code>开源安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 披露 Project Glasswing 启动一个月战况：约 50 家关键基础设施合作伙伴使用 Claude Mythos Preview 共发现逾一万个高/严重级漏洞，Cloudflare 单家就上报 2,000 个 Bug，UK AISI、Mozilla、XBOW 等机构验证 Mythos Preview 表现领先。Anthropic 同步对 1,000+ 开源项目扫描，已确认 1,587 个真阳性漏洞，其中 530 个已披露、75 个已修复，并推出 Claude Security Public Beta 与威胁建模、扫描子代理等工具。文中坦言 Mythos 级模型尚未公开发布的原因——补丁部署速度已成新瓶颈，行业需缩短补丁周期、强化默认配置、推行 MFA。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2057909102542549503">Glasswing 项目一个月发现逾一万个关键软件漏洞</a> · Anthropic (Twitter) · 官方推特线程同步</li>
+</ul>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2057946803685974482">Claude Code Auto 模式登陆 Pro 套餐，新增 Sonnet 4.6 支持</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Auto 模式</code> <code>Sonnet 4.6</code> <code>Opus 4.7</code> <code>Pro 套餐</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 的 Auto 模式迎来两项更新：现已向 Pro 订阅用户开放，并在原有 Opus 4.7 之外新增 Sonnet 4.6 的支持。用户可通过 Shift+Tab 切换进入 Auto 模式，让 Claude 自动连续执行任务。 Anthropic 提示用户运行 <code>claude update</code> 或更新 Claude 桌面客户端至最新版本以使用 Auto 模式新功能，并给出权限模式文档链接说明如何通过 Auto 模式消除审批提示。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>Pro 订阅用户在 Claude Code 中按 Shift+Tab 启用 Auto 模式，将重复性自动化任务交给模型连贯执行</li>
+<li>对延迟敏感或预算受限的工作流切换至 Sonnet 4.6，保留 Opus 4.7 用于复杂推理场景</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/GoogleDeepMind/status/2057842131142590512">Project Genie 联手 Google Maps 街景生成可交互世界</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Project Genie</code> <code>Google Maps</code> <code>街景</code> <code>生成式世界</code> <code>交互</code></li>
+</ul>
+<p><strong>摘要</strong>: Project Genie 正式与 Google Maps 街景集成，用户可将美国真实地点转化为新的、可交互的生成世界。这是世界模型与地理影像数据深度结合的首个公开产品形态，预示着「从真实地点起步的开放世界」可能成为生成式 3D 的主流入口。 Google DeepMind 将 Project Genie 的街景图像生成能力面向全球 Google AI Ultra 订阅者（18+）开放。用户可在 Google Labs 中点击地图图钉，选取美国任意地点和风格，将真实地理位置即时转化为可交互的生成世界。这是 Genie 世界模型从 Demo 走向规模化消费产品的关键一步。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>关注 Genie+街景在生成时长、动作可控性上的实测表现，作为同类世界模型的对标基线</li>
+<li>针对地图/旅游/教育场景，构想以「真实坐标即提示」的产品玩法</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/OpenAI/status/2057617844800794878">OpenAI Codex Thursday：锁屏 Mac 远程操控 + Appshots + 团队插件 + Analytics 升级</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>OpenAI</code> <code>Computer Use</code> <code>Appshots</code> <code>Codex 插件</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 集中发布本周 Codex 更新：手机端可在 Mac 锁屏甚至屏幕关闭时安全远程操控 Mac 上的应用（Computer Use 扩展）；新增 Appshots——按 Cmd-Cmd 即可把 Mac 应用窗口连同截图与文本送入 Codex 会话；插件可在团队 / 企业内分发复用；Analytics 升级提供活跃用户、积分、Token、运行次数、代码行数、插件用量等细分指标；同步推出「高级标注模式」直接在网页上调整外观留反馈。Codex 周用户已达 400 万，并入选 Gartner 2026 企业 AI 编码 Agent 领导者象限。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2057617862479708650">Codex 新增「高级标注模式」直接改网页留反馈</a> · OpenAI (Twitter) · 高级标注模式</li>
+<li><a href="https://x.com/OpenAIDevs/status/2057530212339097994">Codex 支持团队级插件分发：Business 套餐开放</a> · OpenAI Devs (Twitter) · 团队插件分发</li>
+<li><a href="https://x.com/OpenAIDevs/status/2057536706778378692">Codex 新增锁屏远程控制：手机也能驱动锁着的 Mac</a> · OpenAI Devs (Twitter) · 锁屏 Mac 远程操控细节</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>升级 Codex 客户端体验锁屏 Mac 远程操控与 Cmd-Cmd Appshots 窗口注入</li>
+<li>团队管理员启用插件分发并接入新 Analytics 看板掌握全员用量</li>
+<li>让设计与产品在「高级标注模式」直接改网页留反馈，缩短沟通链路</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/GoogleDeepMind/status/2057898089621459434">SynthID 水印扩容，Gemini App 与 Google 搜索新增 AI 内容检测</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>SynthID</code> <code>AI 水印</code> <code>内容溯源</code> <code>Gemini App</code> <code>Google 搜索</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 宣布将 SynthID 隐形水印扩展至更多合作伙伴生成的 AI 内容，并在 Gemini App 与 Google 搜索中加入新的查询入口，用户可直接询问某段内容是否由 AI 生成。 Google DeepMind 在 SynthID 扩容公告主推文下附补充链接，指向 SynthID 合作伙伴扩展与 AI 内容检测能力的详细说明页面。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>面向公众发布的图文/音视频内容生成方接入 SynthID，提升可追溯性</li>
+<li>在 Gemini App 或 Google 搜索中使用「是否 AI 生成」查询，对可疑素材做二次核验</li>
+</ul>
+</blockquote>
+<hr>
+<h3>7. <a href="https://openai.com/index/gartner-2026-agentic-coding-leader">OpenAI 入选 2026 Gartner 企业 AI 编码 Agent 领导者象限</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Codex</code> <code>Gartner</code> <code>企业 Agent</code> <code>编码 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在 2026 Gartner Magic Quadrant 的「企业 AI 编码 Agent」类目被评为 Leader，Codex 周活已超过 400 万、客户涵盖 Cisco、Datadog、Dell、NVIDIA。Gartner 在执行力和愿景两个维度均认可 Codex 在 Agent 化软件开发、企业治理、沙箱与灵活部署上的优势，并点名其 IDE 插件 / CLI / SDK / 云端编排等全栈开发者界面，以及 RBAC、可审计工作区等企业控制能力。文章同时披露 Cisco 用 Codex 把 AI Defense 平台交付周期从「数个季度」压缩到「数周」，并提供企业用户 6 月 12 日前两个月免费试用。</p>
+<hr>
+<h3>8. <a href="https://openai.com/index/virgin-atlantic">Virgin Atlantic 用 Codex 按期发版：零 P1 缺陷、重构提速百倍</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>OpenAI</code> <code>企业落地</code> <code>代码重构</code> <code>客户案例</code></li>
+</ul>
+<p><strong>摘要</strong>: 维珍航空借助 Codex 在圣诞旅行高峰前如期上线全新移动 App，达到接近完整的单元测试覆盖率并实现上线零 P1 缺陷。同时 Codex 让多年遗留代码的重构从数周缩短到数十分钟，代码量减少 78–80%；分析师团队也开始直接基于数据仓库自行构建内部工具，发布速度反而开始超出交付流程的承载能力。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在固定 deadline 的发版项目中，把 Codex 优先用于补齐单元测试覆盖率以降低 P1 风险</li>
+<li>针对维护多年的遗留模块，先用 Codex 做精简和重构试点，量化代码量与维护时长收益</li>
+<li>为非工程团队（数据分析、运营）开通 Codex 直接访问数据仓库的工作流，减少对中央数据团队的依赖</li>
+</ul>
+</blockquote>
+<hr>
+<h3>9. <a href="https://x.com/sama/status/2057559714788258003">Sam Altman 转发：Codex Appshots 今日发布</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Appshots</code> <code>OpenAI</code> <code>Mac</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 转推 OpenAIDevs，确认新版 Codex 当天发布。被引推文宣布 Appshots 功能：Mac 上 Command-Command 把当前应用窗口附加到 Codex 线程，Codex 可同时获取截图与窗口完整文字内容，包含屏幕外不可见部分。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>Mac 上把 Codex 升级后用 Command-Command 把 IDE/设计稿窗口直接喂给会话，省去截图粘贴步骤</li>
+<li>对长滚动页面（如长 PR、长日志）测试 Appshots 是否能抓取可视区外内容，作为上下文输入手段</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>OpenAI</code> <code>开发者体验</code> <code>diff 视图</code> <code>外观设置</code> — OpenAI 在外观设置中新增 diff 标记开关：除原有的色块条形 diff 外，用户现在可选用经典的「+ / -」前缀样式审阅代码差异。默认行为保持不变，需用户主动开启。 · <a href="https://x.com/OpenAIDevs/status/2057918624841728349">OpenAI Devs (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Google I/O 2026</code> <code>AI Agent</code> <code>量子计算</code> <code>机器人</code> <code>AI 创意</code> — Google 整理 I/O 2026 Dialogues 主舞台精华：Sundar Pichai 与 Matt Berman 解读发布会愿景；Jeff Dean、Koray Kavukcuoglu 等讨论主动式 AI Agent；Hartmut Neven 与 James Manyika 探讨量子与 AI 交叉；Demis Hassabis 谈 AI 在科学中的作用；DeepMind 与波士顿动力对话具身机器人；导演 Doug Liman 讨论 AI 电影叙事。完整对谈已上传至 YouTube。 · <a href="https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap/">Google AI Blog</a></li>
+<li><strong>商业动态</strong> | <code>DeepSeek</code> <code>V4-Pro</code> <code>API 定价</code> <code>折扣</code> <code>开源模型</code> — DeepSeek 宣布将 V4-Pro 的 API 折扣从临时促销转为永久价格，原本的限时优惠（截至 5 月 31 日）将不再回退。此举降低了基于 V4-Pro 构建应用的长期成本预期，对正在评估开源系列大模型云服务的团队是积极信号。 · <a href="https://x.com/deepseek_ai/status/2057854261699195173">DeepSeek (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-05-22</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-22.html</link>
@@ -4214,47 +4387,6 @@
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
 <li><strong>商业动态</strong> | <code>OpenAI</code> <code>公司原则</code> <code>Sam Altman</code> <code>AI 治理</code> — Sam Altman 公开了 OpenAI 的五项核心原则：民主化（Democratization）、赋权（Empowerment）、普遍繁荣（Universal Prosperity）、韧性（Resilience）与适应性（Adaptability），并附上 openai.com/index/our-principles 完整说明页。属于公司价值观层面的对外表态。 · <a href="https://x.com/sama/status/2048552677433643427">Sam Altman (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-04-27</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-04-27.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-04-27.md</guid>
-      <pubDate>Mon, 27 Apr 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-04-27</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>DeepSeek 调价</strong>：DeepSeek 全系 API 输入缓存命中价直降至 1/10，并延续 V4-Pro 75% 折扣促销至 5 月 5 日。</li>
-<li><strong>Codex 口碑</strong>：Sam Altman 连发多条推文为 Codex 与 GPT-5.5 站台，转发用户「用过最好软件」的评价并以「多相睡眠」段子放大讨论度。</li>
-<li><strong>Agent 优先基础设施</strong>：Altman 呼吁重新设计操作系统、UI 与互联网协议，使其「对人类与 Agent 同等可用」，暗示 OpenAI 在围绕 Agent-first 栈布局。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/deepseek_ai/status/2048440764368347611">DeepSeek 全系 API 输入缓存命中价直降至 1/10</a></h3>
-<ul>
-<li><strong>来源</strong>: DeepSeek (Twitter)</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>DeepSeek</code> <code>API</code> <code>降价</code> <code>Prompt Cache</code> <code>DeepSeek-V4-Pro</code></li>
-</ul>
-<p><strong>摘要</strong>: DeepSeek 宣布即日起整条 DeepSeek API 系列的输入缓存命中（input cache hit）价格降为原价的 1/10，显著降低重复 prompt 场景的调用成本。此外，DeepSeek-V4-Pro 75% 折扣促销活动延续至 2026 年 5 月 5 日 15:59 UTC。</p>
-<hr>
-<h3>2. <a href="https://x.com/sama/status/2048428561481265539">Sam Altman 呼吁重构操作系统、UI 与互联网协议以兼容 Agent</a></h3>
-<ul>
-<li><strong>来源</strong>: Sam Altman (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Sam Altman</code> <code>Agent</code> <code>操作系统</code> <code>互联网协议</code> <code>OpenAI</code></li>
-</ul>
-<p><strong>摘要</strong>: Sam Altman 表示当前是认真重新思考操作系统与用户界面设计的好时机。他进一步建议互联网层面也应出现一种「人类与 Agent 同等可用」的新协议，暗示 OpenAI 在围绕 Agent-first 的基础设施方向布局。</p>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>GPT-5.5</code> <code>Codex</code> <code>AGI</code> <code>段子</code> — Sam Altman 转发或调侃了两条对立的观点：一种担心 post-AGI 后无人工作、经济崩溃；另一种则因 Codex 中的 GPT-5.5「太好用」而要改用多相睡眠以免错过工作。属于自嘲式段子，但侧面透露出 GPT-5.5 已在 Codex 内部/外部受到极高评价。 · <a href="https://x.com/sama/status/2048426122854228141">Sam Altman (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>Codex</code> <code>OpenAI</code> <code>用户反馈</code> — Sam Altman 引用 henrycunh 的评价「Codex App 正成为我用过最好的软件，进步速度离谱」，并自问「他们怎么能写代码这么快？！」表达对 Codex 团队近期迭代速度的肯定。 · <a href="https://x.com/sama/status/2048165186482389253">Sam Altman (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
