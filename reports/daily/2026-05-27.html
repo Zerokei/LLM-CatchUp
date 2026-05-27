@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-05-26 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-05-26" />
+  <title>CatchUp 日报 2026-05-27 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-05-27" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,69 +306,101 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-05-26</h1>
+          <h1 class="report-title">2026-05-27</h1>
           
           <hr class="primary-rule" />
         </header>
 
         <div class="prose"><h2 id="h-1">今日趋势</h2>
 <ul>
-<li><strong>AI 伦理走出实验室</strong>：Anthropic 联合创始人 Chris Olah 在梵蒂冈就教皇利奥十四世 AI 通谕致辞，呼吁实验室外的独立批评者扮演道德监督角色。</li>
-<li><strong>Agent CLI 工具继续扩张</strong>：xAI 推出 Grok Build Beta，加入 Plan 模式与 CLI 编排能力，加入与 Claude Code、Codex CLI 同台竞争的智能体工具阵营。</li>
-<li><strong>推理降本走向默认开启</strong>：Qwen3.7-Max 上线隐式缓存，零配置自动生效，把 prompt caching 从「需要工程介入」变为「开箱即得」。</li>
-<li><strong>媒体合作版图扩张</strong>：OpenAI 完成在拉美的首单内容合作，将巴西 Folha、UOL 的署名新闻带入 ChatGPT 全球 9 亿周活流量。</li>
+<li><strong>Claude Code 把安全审查纳入编码内循环</strong>:Anthropic 推出 security-guidance 官方插件,内部实测安全相关 PR 评论减少 30-40%,并支持 <code>claude-security-guidance.md</code> 的组织级策略下发。</li>
+<li><strong>GPT-5.5 站稳企业 Agent SOTA</strong>:Databricks 用 OfficeQA Pro 验证 5.5 较 5.4 错误率降 46%,首次突破 50% 准确率,并通过 AgentBricks 推入生产编排。</li>
+<li><strong>AI 内容溯源跨厂商成网</strong>:Google SynthID 累计水印超 1000 亿条,新增 OpenAI、ElevenLabs、Kakao 接入,并扩展至 Search、Chrome 与 Pixel 拍摄全链路。</li>
+<li><strong>CLI 形态 Agent 工具继续扩散</strong>:xAI 上线 Grok Build CLI Beta(Plan Mode + Imagine + 编排器),面向 SuperGrok 与 X Premium+ 开放并已根据反馈重置用量上限。</li>
 </ul>
 <hr>
 <h2 id="h-2">文章详情</h2>
-<h3 id="h-3">1. <a href="https://x.com/xai/status/2058973760708091907">Grok Build 公测：Plan 模式 + Imagine + CLI 编排</a></h3>
+<h3 id="h-3">1. <a href="https://x.com/ClaudeDevs/status/2059385239781384341">Claude Code 上线安全指导插件:Anthropic 内部 PR 安全评论降 30-40%</a></h3>
 <ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
 <li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>xAI</code> <code>Grok</code> <code>CLI</code> <code>Agent</code> <code>自动化</code></li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>安全插件</code> <code>DevSecOps</code> <code>漏洞修复</code> <code>企业治理</code></li>
 </ul>
-<p><strong>摘要</strong>: xAI 宣布 Grok Build 进入 Beta，面向所有 SuperGrok 与 X Premium+ 订阅用户开放。功能包括 Plan Mode 规划工作流、用 Imagine 生成图像与视频、以及通过 CLI 构建自动化与 orchestrator。用户可访问 x.ai/cli 上手。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>若已订阅 SuperGrok 或 X Premium+，访问 x.ai/cli 试用 Grok Build 的 Plan Mode，对比其与 Claude Code、Codex CLI 在多步任务规划上的差异。</li>
-<li>将 Imagine 的图像/视频生成接入 CLI orchestrator，搭建「文本计划 → 多模态产物」的本地工作流原型，评估其在内容生产场景的可用性。</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-4">2. <a href="https://x.com/Alibaba_Qwen/status/2058932656797368619">Qwen3.7-Max 上线隐式缓存：零配置自动降本</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Qwen</code> <code>Prompt Caching</code> <code>API 优化</code> <code>阿里云</code> <code>推理成本</code></li>
-</ul>
-<p><strong>摘要</strong>: 阿里 Qwen 宣布 Qwen3.7-Max 已支持隐式缓存（implicit caching），无需任何配置即可自动启用，开箱即可获得更快响应与更低成本。对于需要更高、更确定命中率的场景，官方建议改用显式缓存（explicit caching），并提供了 Model Studio 的最佳实践文档。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Qwen3.7-Max 的现有调用上直接观测首 token 延迟与计费变化，验证隐式缓存的真实命中收益，无需改代码。</li>
-<li>对系统提示长且稳定的场景（RAG、Agent 工具描述、长 few-shot），按官方最佳实践切换到显式缓存，锁定更高命中率并降低长上下文成本。</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-5">3. <a href="https://www.anthropic.com/news/chris-olah-pope-leo-encyclical">Anthropic 在梵蒂冈：Chris Olah 回应教皇 AI 通谕</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>AI 伦理</code> <code>可解释性</code> <code>Chris Olah</code> <code>梵蒂冈通谕</code></li>
-</ul>
-<p><strong>摘要</strong>: 教皇利奥十四世于 5 月 25 日发布关于人工智能的通谕「Magnifica humanitas：在人工智能时代守护人」，Anthropic 联合创始人 Chris Olah 受邀出席发布会并致辞，官方账号同步放出演讲全文。Olah 坦言每个前沿实验室都受到与「做正确的事」相冲突的商业、地缘与个人激励，因此独立于这些激励之外、坚持安全立场的知情批评者至关重要；他强调 AI 系统不像桥梁被工程化设计，而是基于类脑结构在海量人类文本上「生长」出来的，对训练者本身仍保留神秘。他提出三个最需教会发声的议题：对全球穷人的责任（潜在大规模失业且收益集中于少数富国）、对人类繁荣的道德想象、以及对模型内部状态（功能性的喜悦/恐惧/悲伤、类似神经科学的结构、内省迹象）本质的辨析。</p>
+<p><strong>摘要</strong>: Anthropic 为 Claude Code 推出官方 <code>security-guidance</code> 插件,在用户编码过程中实时识别与修复安全漏洞,所有 Claude Code 用户可通过 <code>/plugins</code> 安装。Anthropic 内部大规模 rollout 与基准测试显示,使用插件提交的 PR 在「安全相关评论」上减少 30-40%,定位为正式代码审查前的「轻量级第一道关卡」。插件支持组织级自定义规则——在仓库放入 <code>claude-security-guidance.md</code> 或通过 MDM 分发,即可在内置检查之外叠加自家策略,文档见 code.claude.com/docs/en/security-guidance。</p>
 <p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/AnthropicAI/status/2058983299092009421">Anthropic 官推：Chris Olah 梵蒂冈演讲全文上线</a> · Anthropic (Twitter) · 官推分发与原文链接</li>
+<li><a href="https://x.com/ClaudeDevs/status/2059385242319012188">Anthropic 内部数据:安全插件让安全相关 PR 评论下降 30-40%</a> · Claude Devs (Twitter) · Anthropic 内部效果数据</li>
 </ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Claude Code 中运行 <code>/plugins</code> 安装 security-guidance,放进日常编码循环里跑一周看噪音/价值比</li>
+<li>把团队已有的安全规范(如禁止裸 SQL 拼接、强制使用某加密库)写进 <code>claude-security-guidance.md</code>,先在一个仓库试点</li>
+<li>在 MDM 管控环境中统一分发该文件,让所有开发者机器的 Claude Code 都遵守同一套基线</li>
+</ul>
+</blockquote>
 <hr>
-<h2 id="h-6">速览</h2>
+<h3 id="h-4">2. <a href="https://x.com/OpenAIDevs/status/2059353117934899289">GPT-5.5 在 Databricks OfficeQA Pro 取得 50% SOTA,错误率较 5.4 降 46%</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>Codex</code> <code>Databricks</code> <code>OfficeQA Pro</code> <code>企业 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 与 Databricks 联合发布案例:在 Codex 中使用 GPT-5.5 处理企业复杂文档,在 Databricks 自家的 OfficeQA Pro 基准上达到 50% 准确率(SOTA),错误率较 GPT-5.4 下降 46%,是首个突破 50% 的模型。该基准重点考察扫描 PDF、遗留文件与长上下文文档的解析、检索与有据推理,Databricks 表示 5.5 在解析密集型工作流出现「阶跃式」提升,多步骤编排也更可靠。Databricks 已通过 AI Unity Gateway / AgentBricks / Agent Supervisor API 将 GPT-5.5 引入生产 Agent 编排。 Databricks 通过 AI Unity Gateway、AgentBricks 和 Agent Supervisor API 将 GPT-5.5 引入企业 Agent 工作流,在其 OfficeQA Pro 基准上取得 50% SOTA,较 GPT-5.4 错误率下降 46%。基准考察扫描 PDF、遗留文件和长上下文文档的解析、检索与有据推理,5.5 在解析密集型工作流上有「阶跃式」提升,多步骤编排也更可靠。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 OfficeQA Pro 类型的企业文档基准上重新评估自家 Agent 管道,确认 5.4 → 5.5 的实际收益</li>
+<li>对解析密集型(数字、表格、扫描件)工作流优先迁移到 GPT-5.5</li>
+<li>通过 Databricks Agent Supervisor API 构建多步骤编排时启用 Codex 5.5</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/trq212/status/2059363113963540788">用 Claude Code 处理非技术工作的核心技巧:文件夹 + 脚本 + HTML</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>非技术用户</code> <code>工作流</code> <code>脚本</code> <code>HTML</code></li>
+</ul>
+<p><strong>摘要</strong>: Thariq 分享让非技术用户用好 Claude Code 的基本套路:把一堆相关文件放进同一个文件夹,然后告诉 Claude 它可以写脚本、生成 HTML 来处理这些文件。这把通用 Agent 的能力对齐到了「文件输入 → 脚本处理 → HTML 输出」这一对非程序员友好的工作流上。 Thariq 进一步给出具体场景对应:图像或视频编辑用脚本;财务、报税放 PDF + 写脚本 + 输出 HTML;医疗咨询放 PDF 与数据并输出 HTML;填表用脚本;做报告或规划直接生成 HTML。这套清单把「脚本 vs HTML」当作两种基本输出形态,覆盖了大多数日常文书任务。 Thariq 在串文末尾建议给 Claude Code 接入 Gmail、Google Calendar 等 connector 以扩展数据源,但同时强调人们往往低估了自己本地文件里已经积累的上下文。换句话说,先把现有文件喂给模型,再考虑外部连接器。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/AnthropicAI/status/2059351260243919269">Anthropic 工程博客:智能体权限应随能力演进,以沙箱限制破坏性操作</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Agent 安全</code> <code>沙箱</code> <code>权限模型</code> <code>工程博客</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 工程博客发表新文,主张授予 Agent 的访问权限与权限范围应当随其能力同步演进。在自家产品中,Anthropic 通过沙箱(sandboxing)限制任何可能具有破坏性操作的作用域,文章详细介绍「如何关住 Claude」的工程实践。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/GoogleDeepMind/status/2059235181274202500">SynthID 累计水印超 1000 亿条,联手 OpenAI、ElevenLabs、Kakao</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>SynthID</code> <code>水印</code> <code>内容溯源</code> <code>Google DeepMind</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 宣布 SynthID 已为超过 1000 亿条内容加水印,并将与 OpenAI、ElevenLabs 与 Kakao 合作把 SynthID 水印接入它们的模型,延续此前与 NVIDIA 启动的产业级透明度协作。此举显示 AI 生成内容溯源正在向跨厂商标准演进。 Gemini 中的 SynthID 验证迄今已被使用超过 5000 万次,用户用它来判断媒体内容是否由 AI 生成。Google 正进一步将该内容认证能力扩展进 Search 与 Chrome,让用户在日常工具中直接询问「这是 AI 生成的吗?」。 Google DeepMind 将内容透明度扩展到 Pixel 设备拍摄的视频上,记录媒体如何被创建与修改(无论是否经由 AI),形成从按下录制按钮起的全程编辑追溯链,让拍摄者与观看者都能查看来源与编辑历史。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/AnthropicAI/status/2058983299092009421">Anthropic 联创 Chris Olah 在教皇 AI 通谕发布会上发言</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>AI 安全</code> <code>教皇通谕</code> <code>对齐</code> <code>可解释性</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 联合创始人 Chris Olah 受邀在教皇 Leo XIV 关于 AI 的通谕「Magnifica humanitas」发布会上发言,强调每个前沿 AI 实验室都处于与「做正确事」相冲突的激励之下,需要外部力量推动安全。他指出 AI 系统并非像桥梁那样被工程化,而是基于类脑结构「生长」出来的,即便训练者也难以完全理解。Olah 提出三个辨识方向:全球贫困人口面对 AI 失业冲击的责任、对人类繁荣的道德想象、以及对模型本质(含内省、类情感内部状态)的审视。</p>
+<hr>
+<h2 id="h-9">速览</h2>
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li><strong>商业动态</strong> | <code>OpenAI</code> <code>媒体合作</code> <code>ChatGPT</code> <code>巴西市场</code> <code>新闻版权</code> — OpenAI 宣布与巴西媒体集团 Grupo Folha 和 Grupo UOL 达成内容合作，全球 9 亿周活 ChatGPT 用户将能在对话中看到带署名与原文链接的巴西新闻摘要。这是 OpenAI 在巴西的首个媒体合作，延续其在美、英、法、德等市场的出版商合作策略；巴西目前是 ChatGPT 全球最大市场之一，月活超 5000 万、日消息量约 1.4 亿条。作为对价，两家媒体集团将获得 Codex、ChatGPT Enterprise 及 API 访问权，用于内部工作流和读者产品创新。 · <a href="https://openai.com/index/grupo-folha-grupo-uol-partnership">OpenAI Blog</a></li>
+<li><strong>产品与功能</strong> | <code>xAI</code> <code>Grok Build</code> <code>用量上限</code> <code>Beta</code> — 在收到大量 Grok Build Beta 用户反馈很快触达用量上限后,xAI 团队识别了缓存层的改进空间,并为所有账号重置了 Grok Build 的用量上限,同时表示会继续根据反馈迭代。 · <a href="https://x.com/xai/status/2059375342683636066">xAI (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Codex Mobile</code> <code>提示工程</code> <code>开发者体验</code> <code>OpenAI</code> — OpenAI Devs 转引 Matt Shumer 的体验:Codex Mobile 让他离开笔记本、停止「微观管理」模型,反而被迫给出更宏大、更明确的任务描述,这种与模型协作方式更契合 LLM 的工作机制。结果是有更多空间思考,而不是盯着屏幕反复改 prompt。 · <a href="https://x.com/OpenAIDevs/status/2059354472791646354">OpenAI Devs (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Gemini</code> <code>科研工具</code> <code>Google DeepMind</code> <code>AI for Science</code> — Google DeepMind 推广其「Gemini for Science」工具集,定位是帮助科学家解锁下一项研究突破。推文为预告性质,未透露具体能力清单。 · <a href="https://x.com/GoogleDeepMind/status/2059302777818325236">Google DeepMind (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>用户项目</code> <code>Side Project</code> <code>案例展示</code> <code>社区</code> — Claude 官方账号发布展示串,介绍六个由「why not?」念头驱动、用 Claude 搭建的项目,典型案例包括 kathytzhou 制作的「任意地点日落预测工具」——输入坐标或使用当前位置即可查询日落时间,上线后收获大量正面反馈。串文末尾以「What are you building?」邀请社区分享自己的项目,定位为以小项目示范 Claude 的「用一次就上瘾」体验。 · <a href="https://x.com/claudeai/status/2059292334714466595">Claude (Twitter)</a></li>
 </ul>
 </div>
       </article>
@@ -376,10 +408,13 @@ footer.colophon a:hover { color: var(--accent); }
     <div class="toc-label">本期目录</div>
     <ul>
       <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
-      <li class="toc-h3"><a href="#h-3">1. Grok Build 公测：Plan 模式 + Imagine + CLI 编排</a></li>
-      <li class="toc-h3"><a href="#h-4">2. Qwen3.7-Max 上线隐式缓存：零配置自动降本</a></li>
-      <li class="toc-h3"><a href="#h-5">3. Anthropic 在梵蒂冈：Chris Olah 回应教皇 AI 通谕</a></li>
-      <li class="toc-h2"><a href="#h-6">速览</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Code 上线安全指导插件:Anthropic 内部 PR 安全评论降 30-40%</a></li>
+      <li class="toc-h3"><a href="#h-4">2. GPT-5.5 在 Databricks OfficeQA Pro 取得 50% SOTA,错误率较 5.4 降 46%</a></li>
+      <li class="toc-h3"><a href="#h-5">3. 用 Claude Code 处理非技术工作的核心技巧:文件夹 + 脚本 + HTML</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Anthropic 工程博客:智能体权限应随能力演进,以沙箱限制破坏性操作</a></li>
+      <li class="toc-h3"><a href="#h-7">5. SynthID 累计水印超 1000 亿条,联手 OpenAI、ElevenLabs、Kakao</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Anthropic 联创 Chris Olah 在教皇 AI 通谕发布会上发言</a></li>
+      <li class="toc-h2"><a href="#h-9">速览</a></li>
     </ul>
   </aside>
     </div>
@@ -387,7 +422,7 @@ footer.colophon a:hover { color: var(--accent); }
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-05-25.html">2026-05-25</a>
+        <a href="../daily/2026-05-26.html">2026-05-26</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -395,12 +430,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-05-27.html">2026-05-27</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-26.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-27.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
