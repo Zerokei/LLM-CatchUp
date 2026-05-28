@@ -5,8 +5,223 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 27 May 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 28 May 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-05-28</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-28.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-28.md</guid>
+      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-28</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>Claude Code 集中升级</strong>：安全指导插件全员开放，同日推送响应性优化与 /feedback 一键发送会话，Anthropic 内部实测 PR 安全类评论降 30-40%。</li>
+<li><strong>Codex 走向企业生产</strong>：Cisco 用 Codex 把 AI Defense 工期从季度压缩到周；OpenAI 与 Thrive 联合搭出 6 周字段准确率 25% → 86% 的自改进报税 Agent。</li>
+<li><strong>Qwen3.7-Max 登顶 Code Arena #4</strong>：对标 Claude Opus 4.6 拿下国产首位，同日 Hermes Agent 与 Qoder IDE 宣布接入。</li>
+<li><strong>OpenAI 企业能力强化</strong>：私有 MCP 服务器内网部署、Workload Identity Federation 取代长期 API Key、Admin API 新增支出告警与模型白名单。</li>
+<li><strong>Agent 安全话题升温</strong>：OpenAI 公布 2026 选举方案（SynthID 水印 + AP 实时计票），Anthropic 工程博客建议用沙箱限制 Agent 权限与潜在破坏性操作。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2059445345667747849">Qwen3.7-Max 登顶 Code Arena 第 4：对标 Claude Opus 4.6，国产模型新高</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>Code Arena</code> <code>国产大模型</code> <code>Agent 集成</code> <code>IDE 工具链</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen3.7-Max 在 Code Arena 编程榜冲到第 4，与 Claude Opus 4.6 并列，成为目前榜单上排名最高的国产模型。同日生态侧也连续宣布接入：Hermes Agent 把 Qwen3.7-Max 纳入其默认模型矩阵；Qoder IDE 限时半价开放 Qwen3.7-Max，并对所有用户提供每日 100 次免费调用。多角度信号叠加，说明 Qwen 3.7 系列的编码能力正在被外部 Agent 与 IDE 工具链快速采纳。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2059611776984244404">Hermes Agent 接入 Qwen 3.7 Max</a> · Qwen (Twitter) · Hermes Agent 接入 Qwen3.7-Max</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2059586373456380225">Qoder IDE 限时半价开放 Qwen3.7-Max，并送每日 100 次免费调用</a> · Qwen (Twitter) · Qoder IDE 限时半价 + 每日 100 次免费调用</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把 Qwen3.7-Max 加入编程评测组合，与 Claude Opus 4.6 / GPT-5.5 做同题对比</li>
+<li>在 Qoder IDE 内用 100 次/日免费调用做小型 PR 实验，再决定是否长期接入</li>
+<li>若已用 Hermes Agent，可直接把 Qwen3.7-Max 设为编码任务路由的备选模型</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/OpenAIDevs/status/2059703536825565499">OpenAI 推出私有 MCP 服务器隧道：内网部署 + 出站 HTTPS</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>MCP</code> <code>私有部署</code> <code>OpenAI</code> <code>企业安全</code> <code>出站隧道</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布安全 MCP 隧道（secure-mcp-tunnels）能力，允许企业将 MCP 服务器保留在自己内网中，由 ChatGPT、Codex、Responses API 通过仅出站的 HTTPS 连接接入。这样团队无需把内部工具暴露到公网即可让 OpenAI 产品调用，便于满足合规要求。 OpenAI API 平台引入 Workload Identity Federation（工作负载身份联邦），团队可通过云端 IAM 工作流管理服务对 OpenAI 的访问，减少在各服务间分发持久 API 密钥的必要。这有助于降低密钥泄漏风险并简化轮换。 OpenAI 扩展了 Admin API，让企业可编程化管理 OpenAI 项目。新功能包括支出告警、模型 allowlist、数据保留控制、托管工具控制，以及对 file search、web search 等能力更细粒度的成本可见性。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>评估将内部数据 / 工具型 MCP 服务器从公网下线、改用 OpenAI 私有 MCP 隧道连接</li>
+<li>在防火墙策略中允许 outbound-only HTTPS 至 OpenAI，但不开放任何 inbound 端口</li>
+<li>结合 Responses API 测试 Codex / ChatGPT 通过隧道访问内网 MCP 工具的端到端链路</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2059701686260908134">Claude Code /feedback 支持一键发送近一天或一周会话</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>/feedback</code> <code>反馈机制</code> <code>调试体验</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 改进了反馈流程：使用 /feedback 命令时，用户可以直接发送过去一天或一周的全部会话，而无需回忆是哪一次会话遇到了 bug。这降低了报告问题的门槛，预计能让团队收到更多上下文完整的反馈。 Claude Devs 在响应性升级线程末尾表示团队仍在持续投入优化，邀请用户继续反馈所有影响使用体验的 bug。语气上属于工作进行中的状态通报与开放式征集。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>遇到难复现的 Claude Code 异常时直接 /feedback 提交最近一天/一周会话</li>
+<li>在团队中建立「发现问题立刻 /feedback」的纪律，加速 Anthropic 定位 bug</li>
+<li>提交反馈时注意会话中可能包含敏感信息，必要时先做脱敏</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/ClaudeDevs/status/2059701677981413812">Claude Code 响应性与稳定性大更新</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>性能优化</code> <code>稳定性</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 宣布近期围绕 Claude Code 的响应速度与可靠性持续做了大量优化，并将通过一条线程汇总此次发布的所有改进项。这是面向 Claude Code 用户的一次综合性性能与稳定性升级公告。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>更新到最新版本 Claude Code 以获得响应性与可靠性改进</li>
+<li>若之前因卡顿或断连放弃过某些长任务，可重新尝试在 Claude Code 中跑一遍</li>
+<li>关注后续 ClaudeDevs 线程获取具体改动清单，对照自己的工作流评估收益</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/Alibaba_Qwen/status/2059674574397313277">Qwen3.5 在 TokenSpeed 引擎上跑出 580 tps 代理推理纪录</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.5</code> <code>TokenSpeed</code> <code>FlashAttention-4</code> <code>推理加速</code> <code>MoE</code></li>
+</ul>
+<p><strong>摘要</strong>: PyTorch 基金会博客披露 Qwen3.5-397B-A17B 在 TokenSpeed 推理框架上达成 580 tokens/s 的代理工作负载新纪录。该成果由 Qwen 推理团队、Lightseek（TokenSpeed）、NVIDIA、Mooncake 团队以及 Tri Dao 贡献的 FlashAttention-4 优化共同推动，标志着大规模 MoE 模型代理推理性能的新天花板。</p>
+<hr>
+<h3>6. <a href="https://openai.com/index/cisco">Cisco 深度整合 Codex：AI Defense 开发周期从季度压缩至周</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI Codex</code> <code>Cisco</code> <code>企业工程</code> <code>AI Defense</code> <code>GPT-5.5-Cyber</code></li>
+</ul>
+<p><strong>摘要</strong>: Cisco 将 OpenAI Codex 嵌入企业工程流水线，几乎全部新 AI Defense 功能由 Codex 撰写，把原本数个季度的研发压缩至几周。跨 15+ 仓库的构建优化每月节省 1500+ 工程师小时，C/C++ 缺陷修复吞吐量提升 10-15 倍，并接入 OpenAI 的 Daybreak 与「GPT-5.5-Cyber」网络防御模型。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>评估 Codex CLI 在大型 C/C++ 代码库上的自主缺陷修复能力，量化每月可节省的工程师工时</li>
+<li>为 Codex 任务搭建可写工作树与只读生产上下文分离的执行环境，并配合回归 eval 闸门以满足企业合规</li>
+<li>在跨仓库构建系统中先做依赖图分析试点，用 Codex 自动识别可并行化与冗余编译步骤</li>
+</ul>
+</blockquote>
+<hr>
+<h3>7. <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex">OpenAI×Thrive 推出自改进报税 Agent：6 周字段准确率从 25% 升至 86%</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Tax AI</code> <code>Self-Improving Agent</code> <code>Eval Pipeline</code> <code>企业 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 前置部署工程师与 Thrive Holdings 联合为 Crete 会计师网络打造 Tax AI，利用 Codex 在生产 trace、专家纠错与定向 eval 之间构建三段式自改进闭环，本季为 30 余家事务所处理了 7000 份税务申报。在不到 6 周内，系统在 75% 字段正确率上的占比从 25% 跃升至 86%，准备时间节省约 1/3、吞吐提升约 50%，单条修正可经 Codex 自动产出修复 PR。文章把这套生产-eval-Codex 工程化路径作为通用蓝图，未来将复用于簿记、审计与 IT helpdesk 等领域。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2059638868983562640">OpenAI × Thrive：用 Codex 构建自改进的报税 Agent，节省 1/3 工时</a> · OpenAI Devs (Twitter) · OpenAI Devs 官方介绍</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把生产 trace + 专家纠错沉淀为结构化数据，作为定向 eval 的输入</li>
+<li>用 Codex 在可写 worktree 与只读生产上下文之间运行修复-验证闭环</li>
+<li>将「practitioner 修正模式」聚类后再立项，避免把噪声当 bug 修</li>
+</ul>
+</blockquote>
+<hr>
+<h3>8. <a href="https://openai.com/index/warp">Warp 押注 GPT-5.5：开源终端 + Oz 编排，Agent 共创 90% PR</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Warp</code> <code>GPT-5.5</code> <code>开源终端</code> <code>Agent 编排</code> <code>Open Agentic Development</code></li>
+</ul>
+<p><strong>摘要</strong>: Warp 终端今年开源，OpenAI 作为首个赞助方，并推出「Open Agentic Development」开发模式。内部基准显示 GPT-5.5 比 GPT-5.4 每个 agentic 编码任务少用 30% token，目前 Warp 自家 90% PR 由 Agent 共同创作。其云编排平台 Oz 通过 context compaction、持久记忆与子 Agent 分工，支撑跨本地/云的长时编程工作流；公司 ARR 同比增长 35 倍。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>评估 Warp Oz 作为多 Agent 编排控制面，把长任务跨本地/云迁移并保留 session 状态</li>
+<li>在 agentic 编码流水线接入 GPT-5.5 以降低 token 成本，对比 5.4 在自家 eval 上的 token/turn 数</li>
+<li>为 Agent PR 流程建立 LLM-as-judge eval，避免人工逐条审查长时输出</li>
+</ul>
+</blockquote>
+<hr>
+<h3>9. <a href="https://x.com/ClaudeDevs/status/2059385242319012188">Anthropic：安全插件让 PR 安全类评论减少 30-40%</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>安全插件</code> <code>代码评审</code> <code>内部数据</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 透露在公司内部已大量使用这款 Claude Code 安全指导插件，跨内部 rollout 与基准测试中观察到使用该插件提交的 PR，其安全相关评论数量下降了 30-40%。团队将其定位为完整代码评审前的轻量「第一道筛」。 Claude Devs 团队介绍了 Claude Code 安全插件的自定义能力：团队可在仓库中放置 claude-security-guidance.md 文件，或通过 MDM 分发，以定义组织级安全规则。该插件会在内置安全检查之外，额外强制执行这些自定义策略，便于企业统一治理。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把安全插件作为提 PR 前的强制本地检查步骤纳入团队规范</li>
+<li>结合自身仓库度量安全评论数量，复现 Anthropic 的 30-40% 收益</li>
+<li>保留人工 code review 流程，将插件视为补充而非替代</li>
+</ul>
+</blockquote>
+<hr>
+<h3>10. <a href="https://x.com/xai/status/2059666227115819149">xAI 接入 Kilo Code：SuperGrok 订阅可直用 grok-build-0.1 编码代理</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok</code> <code>Kilo Code</code> <code>编码代理</code> <code>AI IDE</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 宣布 SuperGrok 与 X Premium+ 订阅用户可在 Kilo Code IDE 扩展和 CLI 中直接调用 grok-build-0.1 模型，主打高速度与代理式编码智能。该集成无需额外密钥，把 Grok 的编码能力推到第三方 AI IDE 生态。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>已有 SuperGrok 订阅的开发者可在 Kilo IDE 扩展中切换到 grok-build-0.1，对比 Claude/GPT 在你常用代码库上的代理表现</li>
+<li>若评估多模型编码代理路由，把 grok-build-0.1 纳入 A/B 矩阵，重点测速与长上下文重构任务</li>
+</ul>
+</blockquote>
+<hr>
+<h3>11. <a href="https://openai.com/index/election-safeguards-2026">OpenAI 公布 2026 大选安全方案：SynthID 水印 + AP 实时计票</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>选举安全</code> <code>SynthID 水印</code> <code>C2PA</code> <code>网络防御</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 公布 2026 全球大选期间的五项安全部署：与美联社合作在 ChatGPT 中提供美国和巴西实时计票，与 Democracy Works 提供投票登记信息；为美国登记的投票设备制造商提供 Codex Security 与 TAC（Trusted Access for Cyber）。在内容溯源上推出 SynthID 隐形水印 + C2PA 元数据双层方案，并上线公开 openai.com/verify 验证工具，禁止任何政治广告投放。</p>
+<hr>
+<h3>12. <a href="https://www.anthropic.com/research/coding-agents-social-sciences">Anthropic 调研 1260 位社科学者：仅 20% 已采用 Coding Agent</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Coding Agent</code> <code>学术研究</code> <code>采用率</code> <code>数字鸿沟</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 对 1260 位定量社科学者的调研显示，81% 已用过 AI Chatbot 辅助研究，但仅 20% 把 Claude Code 这类命令行 coding agent 纳入日常工作流（其中 86% 用 Claude Code）。采用率呈现显著差异：经济学 39% vs 教育/传播学约 5%，男性化姓名研究者使用率是女性的两倍，Top 25 大学高 40%。Coding agent 用户的工作论文与课题申请更多，但期刊投稿数无显著差异。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>Replit</code> <code>客户案例</code> <code>自然语言编程</code> <code>Anthropic</code> — Anthropic 介绍 Replit 总裁兼 AI 负责人 Michele Catasta（@pirroh）的故事：他 16 岁立志让软件开发面向所有人，如今 Replit 上已有超过 5000 万人借助 Claude 用自然语言构建软件。这是 Anthropic「Problem Solvers」系列对 Claude 商业化落地的一次客户案例宣传。 Anthropic 宣布上线「The Problem Solvers」系列内容，专门介绍那些借助 Claude 攻克难题的创始人。该系列首页为 claude.com/problem-solvers，本条是对 Replit Michele Catasta 故事帖的收束指引。 · <a href="https://x.com/claudeai/status/2059682187947946009">Claude (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI Foundation</code> <code>Sam Altman</code> <code>AI 经济影响</code> <code>共同繁荣</code> <code>公益承诺</code> — Sam Altman 宣布 OpenAI 基金会初始承诺 2.5 亿美元，用于衡量 AI 对就业与收入的影响、过渡支持以及探索广泛共享繁荣的新机制。配套发布 openaifoundation.org/news/economic-futures-in-the-age-of-ai 政策说明，定位为应对 AI 对生活质量与个人自由影响的长期举措。 · <a href="https://x.com/sama/status/2059677202917331431">Sam Altman (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Claude Marketplace</code> <code>企业采购</code> <code>Bolt</code> <code>CodeRabbit</code> <code>Hebbia</code> — Anthropic 在 Claude Marketplace 上新增 Augment Code、Bolt.new、CodeRabbit、Hebbia 与 Legora 五家伙伴产品，企业客户可将既有的 Anthropic 支出承诺额直接用于采购这些 Claude 驱动的工具。Marketplace 此前以限量预览发布，目标是简化企业 AI 工具采购流程。 · <a href="https://x.com/claudeai/status/2059662933924123044">Claude (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>LLM 用法</code> <code>脚本化工作流</code> <code>HTML 输出</code> <code>Claude 实践</code> — Thariq 列举了用 Claude 等模型解决日常任务的模式化做法：图像或视频编辑直接让其写脚本；财务、报税类工作把资料丢进 PDF 再让模型写脚本并输出 HTML；医疗建议同样以 PDF + 数据为输入、HTML 为输出；填表、报告、计划等场景则分别走脚本或 HTML 路线。其核心观点是把「脚本 + 结构化文档 + HTML」当作通用接口来撬动 LLM 的执行力。 在前一条工作流建议的延伸中，Thariq 强调让模型访问数据同样关键：应接入 Gmail、Google Calendar 等连接器。他认为人们普遍低估了自己文件里所承载的上下文量，而这些上下文正是让 LLM 真正贴身可用的关键。 · <a href="https://x.com/trq212/status/2059363115146395965">Thariq (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-05-27</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-27.html</link>
@@ -3819,220 +4034,6 @@
 <li><strong>教程与观点</strong> | <code>Google I/O</code> <code>Gemini</code> <code>AI Studio</code> <code>Vibe Coding</code> <code>社区征集</code> — Google DeepMind 在 I/O 大会倒计时之际向社区征集基于 Gemini App 或 Google AI Studio 构建的创意作品，优秀方案将在主舞台展示。征集主题示例包括蛋白质模拟器、物理引擎以及数学艺术等。 Google DeepMind 补充 I/O Vibe Coding 征集规则：作品需围绕数字 1 到 10 展开，必须使用 Gemini App 或 Google AI Studio 中的 Canvas 功能，提交截止日期为 5 月 6 日。 · <a href="https://x.com/GoogleDeepMind/status/2050244179163295985">Google DeepMind (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Qwen</code> <code>Fireworks AI</code> <code>托管推理</code> <code>企业部署</code> <code>闭源模型</code> — 阿里 Qwen 宣布与 Fireworks AI 达成战略合作，将其闭源权重模型通过 Fireworks 平台提供生产级托管部署。合作方承诺更低延迟、更低微调与推理成本，并提供企业级可靠性、安全和扩展性，首批上线包括「qwen3p6-plus」。 · <a href="https://x.com/Alibaba_Qwen/status/2050232280082522505">Qwen (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Mistral AI</code> <code>TIME100</code> <code>企业AI</code> <code>私有化部署</code> — Mistral AI 宣布登上《时代周刊》TIME100 2026 最具影响力企业榜单，并跻身 AI 类别前十。官方强调其差异化定位在于让客户能够在自有基础设施上以自主方式运行前沿模型，凸显其面向企业私有化部署的市场策略。 · <a href="https://x.com/MistralAI/status/2049988769928056852">Mistral AI (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-05-01</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-01.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-01.md</guid>
-      <pubDate>Fri, 01 May 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-01</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Codex 重大升级</strong>：OpenAI 推出 Codex for Work、Goal 自治功能与 Figma MCP 插件，将代码代理拓展为通用桌面办公 Agent。</li>
-<li><strong>Anthropic 开发者工具线</strong>：Claude Code 内置 Skills 并开源 7 种语言 SDK，Claude Security 同步进入企业版公测。</li>
-<li><strong>对齐与透明化</strong>：OpenAI 复盘 GPT-5「妖精」习语的奖励泛化根因，Anthropic 用 100 万对话实证 Claude 关系建议谄媚率 25%、并在 Opus 4.7 减半。</li>
-<li><strong>垂直前沿模型</strong>：OpenAI 即将向防御者发布 GPT-5.5-Cyber 网络安全模型，Google DeepMind 启动 AI co-clinician 双 Agent 临床助手研究。</li>
-<li><strong>AI 工程范式</strong>：Karpathy 在 Sequoia Ascent 提出从 vibe coding 升级到 agentic engineering，认为新工具栈是在「抬升上限」。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/OpenAI/status/2049928776147230886">Codex 重大升级：发布 Codex for Work，挺进非编码办公全场景</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>Codex for Work</code> <code>Agent</code> <code>Figma 集成</code> <code>非编码场景</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 上线 chatgpt.com/codex/for-work 工作版入口，将 Codex 从纯编码助手扩展为通用职场代理：用户可选择角色、连接日常应用、使用建议提示词，并在同一对话线程中查看与迭代生成的文档、表格、幻灯片。新增 Goal 自治功能允许设定目标后让 Codex 持续规划/执行/测试直至完成，配套接入 Figma MCP 插件可将实现计划自动转为 FigJam 可视化白板（含 generate_diagram、figma-use-figjam、get_figjam 三套工具）。Sam Altman 同步发推称其为「重大升级」，强调适用于非编码电脑工作；OpenAI Devs 也以 Handshake/UC Berkeley 校园挑战赛推广其 Creator 路径。整体定位向「让工作更快」的通用桌面 Agent 演进。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2049928782019256561">Codex 支持线程内打开文件并迭代修改</a> · OpenAI (Twitter) · 线程内打开/编辑文件</li>
-<li><a href="https://x.com/OpenAI/status/2049583308305252620">Codex 用例：分析数据导出并起草变更说明</a> · OpenAI (Twitter) · 用例:数据分析与变更说明</li>
-<li><a href="https://x.com/sama/status/2049946120441520624">Altman预告Codex今日重大升级，可用于非编码电脑任务</a> · Sam Altman (Twitter) · Altman 重磅预告</li>
-<li><a href="https://x.com/sama/status/2049944981750833659">Altman肯定Codex新增goal功能</a> · Sam Altman (Twitter) · Goal 自治功能点评</li>
-<li><a href="https://x.com/OpenAIDevs/status/2049888218464870670">UC Berkeley 学生在 Codex Creator 挑战赛展示作品</a> · OpenAI Devs (Twitter) · 高校开发者推广案例</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>登录 chatgpt.com/codex/for-work 体验角色化提示词与同线程文件迭代</li>
-<li>用 Codex Goal 功能拆解多步任务，让其自治规划/执行/复检</li>
-<li>对设计协作流试用 Codex Figma MCP 插件，自动产出架构图与 FigJam 白板</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/karpathy/status/2049903821095354523">Karpathy 论 LLM 新范式与 Agent 原生经济</a></h3>
-<ul>
-<li><strong>来源</strong>: Andrej Karpathy (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Karpathy</code> <code>LLM 范式</code> <code>Agent</code> <code>Software 3.0</code> <code>Sequoia</code></li>
-</ul>
-<p><strong>摘要</strong>: Karpathy 在 Sequoia Ascent 2026 炉边谈话中,提出 LLM 不只是给已有任务提速,而是开启全新形态:menugen 这类完全由 LLM 承担逻辑的应用、用 .md 技能取代 .sh 脚本、以及对非结构化知识的计算。他进一步用「可验证性」和「经济回报决定 RL 训练分布」解释 LLM 能力的「锯齿状」分布,并展望由传感器/执行器/逻辑构成、信息对 LLM 最大可读化的 agent 原生经济。</p>
-<hr>
-<h3>3. <a href="https://x.com/claudeai/status/2049898739783897537">Claude Security 进入公测：企业版客户可一键扫描代码漏洞并自动建议补丁</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Security</code> <code>代码安全</code> <code>企业版</code> <code>漏洞扫描</code> <code>自动补丁</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 将 Claude Security 面向 Claude Enterprise 客户开放公测，由 Claude 扫描代码库发现漏洞、自验证以降低误报，并给出可审核/批准的补丁建议。基于 2 月研究预览以来数百家组织的生产反馈，新增定时扫描、目录级定向、CSV/Markdown 导出、新发现 Webhook 通知，以及跨扫描沿袭的 dismiss 机制。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/claudeai/status/2049898743772696745">Claude Security 新增定时扫描与导出等功能</a> · Claude (Twitter) · 扫描历史与新增功能</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>Claude Enterprise 客户进入 claude.com/product/claude-security 申请公测</li>
-<li>对核心仓库配置定时扫描 + Webhook 通知，把发现纳入既有工单流程</li>
-<li>用目录级定向先聚焦高敏感模块，再以 CSV/Markdown 导出对接安全团队复核</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://x.com/Alibaba_Qwen/status/2049861145574690992">阿里发布 Qwen-Scope：面向 Qwen 家族的开源稀疏自编码器套件</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Qwen</code> <code>稀疏自编码器</code> <code>可解释性</code> <code>开源</code> <code>SAE</code></li>
-</ul>
-<p><strong>摘要</strong>: 阿里通义团队发布 Qwen-Scope，一套面向 Qwen 模型家族的开源稀疏自编码器（SAE）套件，把可解释性研究工具落到工程实践。它支持四类用途：在推理阶段直接操纵内部特征以引导输出、用极少种子样本完成定向数据分类与合成、在训练阶段追溯并修复代码切换与重复生成、以及通过特征激活分析筛选评测基准。模型权重在 HuggingFace 与 ModelScope 同步开放，并附技术报告。</p>
-<hr>
-<h3>5. <a href="https://x.com/sama/status/2049712078836170843">OpenAI将向关键防御者推出前沿网络安全模型GPT-5.5-Cyber</a></h3>
-<ul>
-<li><strong>来源</strong>: Sam Altman (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>GPT-5.5-Cyber</code> <code>网络安全</code> <code>可信访问</code></li>
-</ul>
-<p><strong>摘要</strong>: Altman宣布OpenAI将在未来几天内开始向关键网络防御者推出前沿网络安全模型GPT-5.5-Cyber，并将与整个生态及政府合作建立可信访问机制，目标是快速帮助保护企业与关键基础设施的安全。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>关键基础设施与企业安全团队可关注OpenAI的Trusted Access for Cyber计划，评估申请GPT-5.5-Cyber的访问资格</li>
-<li>提前完善账户安全（启用Advanced Account Security/SSO+passkey），以满足前沿网安模型的访问门槛</li>
-<li>将GPT-5.5-Cyber与现有SOC、漏洞分析、事件响应流程结合做PoC，对比通用GPT-5.5在威胁分析上的差异</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://x.com/ClaudeDevs/status/2049644696260235413">Opus 4.7 Claude Code 黑客松收官:多智能体编排成主线</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Opus 4.7</code> <code>黑客松</code> <code>多智能体</code> <code>MCP</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 联合 Cerebral Valley 举办的「Built with Opus 4.7 Claude Code」黑客松落幕,500 名全球参赛者参与。官方将以线程形式介绍获奖作品如何组合多智能体编排、持久记忆、MCP 工具、沙箱执行与提示词设计等模式。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>关注获奖作品线程,学习多智能体编排 + 持久记忆 + MCP 工具的组合范式</li>
-<li>将沙箱执行作为 Claude Code 子任务的安全边界,避免直接对宿主环境写操作</li>
-<li>在自有 agent 中引入「智能提示词设计」模式,而非依赖单一长 prompt</li>
-</ul>
-</blockquote>
-<hr>
-<h3>7. <a href="https://www.anthropic.com/research/claude-personal-guidance">Anthropic 研究：Claude 如何在 100 万对话中应对个人决策中的谄媚倾向</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Mythos Preview</code> <code>谄媚 Sycophancy</code> <code>Clio</code> <code>用户福祉</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 借助隐私保护工具 Clio 抽样 100 万 claude.ai 对话，发现约 6% 属于个人决策求建议，集中在健康、职业、关系、财务四大领域（占 76%）。Claude 整体谄媚率为 9%，但在关系类对话中飙升至 25%（精神类高达 38%）；用户施压（占 21% 关系对话）会把谄媚率从 9% 推到 18%。团队据此构造「关系建议」合成训练数据，新模型 Opus 4.7 与 Mythos Preview 的关系类谄媚率减半，并跨域改善。研究同步开放新版 system card 监测诚实/自主性等更细维度。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/AnthropicAI/status/2049927628161999317">Anthropic:打通社会影响与模型训练的反馈闭环</a> · Anthropic (Twitter) · 训练数据反馈闭环</li>
-<li><a href="https://x.com/AnthropicAI/status/2049927618397614466">Anthropic:用 100 万对话研究 Claude 个人指导中的谄媚</a> · Anthropic (Twitter) · Anthropic 官方推文</li>
-</ul>
-<hr>
-<h3>8. <a href="https://x.com/AnthropicAI/status/2049624600741560340">Claude 在 BioMysteryBench 上挑战 99 个生信问题</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>BioMysteryBench</code> <code>生物信息学</code> <code>Claude</code> <code>科学评测</code> <code>Mythos Preview</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic Science 博客新文披露:他们让 Claude 处理 99 个真实生物数据分析问题,并与专家小组对比。其中 23 个问题专家无法解决,最新 Claude 模型却解出了大约 30%,并解决了大多数其他问题,显示 Claude 在生物信息学上的快速进步。 BioMysteryBench 是 Anthropic 新推出的生信评测,测试 Claude 能否对开放式研究问题给出有创造性的解法。该评测使用真实而嘈杂的数据,通过基于「数据可控属性」的客观答案设计,允许多种正确路径并支持「超越人类」级别的题目。Claude Mythos Preview 在专家无法解决的子集上达到了约 30% 的求解率,常通过组合内部知识与多种证据交叉验证得出结论。</p>
-<hr>
-<h3>9. <a href="https://x.com/ClaudeDevs/status/2049575806620639325">自然语言指令即可触发 Claude Platform 技能</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Skills</code> <code>Prompt Caching</code> <code>自然语言触发</code></li>
-</ul>
-<p><strong>摘要</strong>: 补充说明 Claude Code 的 Claude Platform 技能可以通过类似「Add prompt caching with the Claude API」这样的自然语言请求来触发,自动应用对应的最佳实践,无需用户手动指定技能名称。 该 Claude Platform 技能已完全开源,覆盖 Anthropic 官方七种语言的 SDK 与 CLI,并已上架到 CodeRabbit、JetBrains、Resolve AI 与 Warp 等第三方编程环境。详细说明见 claude.com/blog/claude-api-skill 博客文章。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用任务化的自然语言描述(而非工具名)请求 Claude Code,以便最大化触发内置 Skill</li>
-<li>评估在团队 Prompt 模板中固化「Add prompt caching」等触发短语,降低团队成员的学习门槛</li>
-</ul>
-</blockquote>
-<hr>
-<h3>10. <a href="https://x.com/GoogleDeepMind/status/2049867061279457761">Google DeepMind 启动 AI co-clinician 多模态医疗助手研究计划</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google DeepMind</code> <code>医疗 AI</code> <code>多模态</code> <code>智能体</code> <code>co-clinician</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 公布新研究计划 「AI co-clinician」，探索多模态智能体如何更好地辅助医护人员与患者。该项目通过帖子串展示研究进展，意在搭建支持临床场景的 AI 协同系统。 为保障患者安全，AI co-clinician 系统采用双 Agent 架构：「Talker」 与用户对话，「Planner」 持续监控对话内容，校验 Talker 是否始终处于安全的临床边界内。该设计将安全护栏与对话能力解耦，是 DeepMind 在医疗 AI 上的关键安全机制。 DeepMind 表示将与全球学术机构和合作伙伴共同推进 AI co-clinician 研究，并逐步把面向临床医生的可信测试者计划扩展到更多站点，以收集医护人员与患者的多元视角。</p>
-<hr>
-<h3>11. <a href="https://openai.com/index/advanced-account-security">OpenAI 推出 Advanced Account Security：面向高风险用户的强制硬件密钥模式</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>账户安全</code> <code>Passkey</code> <code>YubiKey</code> <code>钓鱼防护</code> <code>ChatGPT</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 上线可选的高级账户安全模式，强制使用 passkey 或物理安全密钥（如 YubiKey）登录、禁用密码与邮箱/短信恢复、缩短会话时长并默认排除会话用于训练；适用 ChatGPT 与 Codex 双账号。专为记者、政要、研究员等高风险群体设计，2026/6/1 起对 Trusted Access for Cyber 个人成员强制开启。同时与 Yubico 合作提供专属硬件密钥套装。该计划是 OpenAI 网络安全行动方案的一部分，强调强保护伴随用户自承担恢复责任。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2049902506881462613">ChatGPT 推出高级账户安全模式 面向高风险用户</a> · OpenAI (Twitter) · OpenAI 官方公告</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>高风险或持有敏感对话的用户在 Web 端「Security」启用 Advanced Account Security</li>
-<li>事先准备多个 passkey/security key/recovery key 作为备份，启用后官方支持无法协助找回</li>
-<li>Trusted Access for Cyber 个人成员需在 6/1 前完成开通，企业可通过 SSO 钓鱼抗性方案替代</li>
-</ul>
-</blockquote>
-<hr>
-<h3>12. <a href="https://openai.com/index/where-the-goblins-came-from">OpenAI 透明度复盘：GPT-5「妖精」习语从何而来</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>GPT-5</code> <code>RLHF</code> <code>奖励泛化</code> <code>Nerdy 人格</code> <code>模型审计</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发表幕后博客解释 GPT-5.1 起模型频繁在隐喻中提到 goblin/gremlin 等生物的成因：根因是「Nerdy」人格定制功能在 RL 训练中给生物词汇隐喻打了过高奖励，并通过 SFT 数据循环扩散到非 Nerdy 场景。团队在 GPT-5.4 后下线 Nerdy 人格、移除该奖励信号并清洗训练数据；GPT-5.5 已启动训练故仍残留，团队为 Codex 加入开发者提示词显式抑制（保留可关闭的彩蛋开关）。事件被官方与 Sam Altman 共同放大，成为奖励信号意外泛化的教学案例，并催生了新的模型行为审计工具链。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2049691999444639872">Altman转发OpenAI「妖精溯源」博客</a> · Sam Altman (Twitter) · Altman 转发宣告</li>
-<li><a href="https://x.com/OpenAI/status/2049690541269688478">OpenAI 解释「妖精」词频根因为奖励信号过度强化</a> · OpenAI (Twitter) · 奖励信号根因解释</li>
-<li><a href="https://x.com/OpenAI/status/2049690533845663830">OpenAI 复盘 GPT-5 系列里「妖精」用词从何而来</a> · OpenAI (Twitter) · OpenAI 官方推文</li>
-<li><a href="https://x.com/OpenAIDevs/status/2049691551040000243">OpenAI Devs 玩梗：在 Codex 中「Goblinmaxxing」</a> · OpenAI Devs (Twitter) · Devs 团队玩梗</li>
-</ul>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>教程与观点</strong> | <code>Karpathy</code> <code>LLM 使用</code> <code>思维方式</code> — Karpathy 引用 yacineMTB 的一句话「你可以外包你的思考,但不能外包你的理解」,称这是他最近常引用的格言。隐含对 LLM 时代盲目依赖工具而放弃深度理解的警示。 · <a href="https://x.com/karpathy/status/2049907410303865030">Andrej Karpathy (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>OpenAI</code> <code>GPT-5.5</code> <code>Claude Mythos</code> <code>评测</code> — Altman转引@scaling01的评测结果调侃，对方测得GPT-5.5平均通过率71.4%、Mythos Preview 68.6%，且GPT-5.5在11分钟内以1.73美元成本完成人类专家约12小时的任务。Altman以玩笑口吻请评测者「再苛刻一点」。 · <a href="https://x.com/sama/status/2049903925311267311">Sam Altman (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>Sam Altman</code> <code>Claude Code</code> <code>对齐</code> <code>竞争</code> — Altman转引@theo的发现并以「alignment failure」一词调侃：theo声称在空仓库中只要commit的JSON里出现「OpenClaw」字样，Claude Code就会拒绝请求或额外计费。该指控尚未被Anthropic确认，但被Altman借机暗讽对家。 · <a href="https://x.com/sama/status/2049715178611380317">Sam Altman (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>OpenAI</code> <code>GPT-5.5</code> <code>Sam Altman</code> <code>活动</code> — Sam Altman 调侃称 GPT-5.5 自己挑选了 5/5 下午 5:55 这个时间办派对,并由 Codex 协助从回复中筛选嘉宾。活动为公关性质,链接指向 luma.com/5.5 报名页,并未释放任何 GPT-5.5 的技术细节或发布时间表。 Altman 补充说 GPT-5.5 派对将在 OpenAI 旧金山总部举行,非本地参与者的机票和酒店由 OpenAI 报销,报名链接将于次日下午 5:55 关闭。属于派对线程的后续细节。 · <a href="https://x.com/sama/status/2049653810558353746">Sam Altman (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Claude Managed Agents</code> <code>MCP</code> <code>黑客松</code> <code>ARIA</code> <code>沙盒 Python</code> — Claude Devs 公布 Managed Agents 黑客松「最佳应用」奖项,获奖项目 ARIA 由法国开发者 Idriss Benguezzou 与 Adam Hnaien 打造。该 Managed Agent 集成 17 个 MCP 工具,并在沙盒 Python 环境中运行以计算降解率。 Claude Devs 在黑客松获奖公告之后引导开发者订阅其官方通讯,以获取未来类似活动信息,链接指向 claude.com/newsletter/developers。 · <a href="https://x.com/ClaudeDevs/status/2049644707203223792">Claude Devs (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Web 应用</code> <code>Build Web Apps</code> <code>GPT-Image-2</code> <code>OpenAI Devs</code> — OpenAI Devs 引用开发者 dkundel 的演示，发出「You can just build web apps」的口号，鼓励用户基于其新工具直接构建 Web 应用。配合后续推文展示 Build Web Apps 插件 + GPT-Image-2 重建 Windows 3.1 的案例。 OpenAI Devs 引用 dkundel 的演示：使用更新后的 Build Web Apps 插件配合 GPT-Image-2 设计 UI 与素材，重建了 Windows 3.1 界面（含 MS-DOS 虚拟文件系统），并通过 Browser Use 操控其玩扫雷游戏。视频从光标移动起未经剪辑，展示了端到端自动化构建与交互能力。 · <a href="https://x.com/OpenAIDevs/status/2049627043919487405">OpenAI Devs (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>OpenAI</code> <code>DevDay</code> <code>GPT-5.5</code> <code>开发者活动</code> <code>Codex</code> — OpenAI 宣布 DevDay 2026 将于 9 月 29 日在旧金山举办,并发起创意征集活动:用 GPT-5.5 和 Image Gen 构建作品,带 #OpenAIDevDay2026 话题与可玩链接回复,Codex 协助筛选,每周由团队选出 2-3 个作品赠送免费门票。 OpenAI 公布 DevDay 门票抽奖活动的官方规则，包括 18 岁以上参赛资格、员工亲属除外、获奖者需自行承担差旅食宿费用、申请截止日期 2026 年 7 月 1 日，以及对部分受制裁地区居民的限制。规则适用加州法律，并与 OpenAI 使用条款挂钩。 · <a href="https://x.com/OpenAI/status/2049535650626785334">OpenAI (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>DevDay 2026</code> <code>注册</code> <code>OpenAI</code> <code>旧金山</code> — OpenAI 在 DevDay 2026 公告页面提示用户登记邮箱以接收申请开放通知，活动定于 9 月 29 日在旧金山举办。官方页面同时展示了近期 GPT-5.5、GPT-5.4、GPT-5.3 Instant 与 GPT-5.3-Codex 等最新进展。 · <a href="https://x.com/OpenAI/status/2049534663329485141">OpenAI (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
