@@ -1,0 +1,685 @@
+{
+  "analyzed_at": "2026-05-28T08:43:13.459+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-05-28.json",
+  "trend_paragraph": "- **Claude Code 集中升级**：安全指导插件全员开放，同日推送响应性优化与 /feedback 一键发送会话，Anthropic 内部实测 PR 安全类评论降 30-40%。\n- **Codex 走向企业生产**：Cisco 用 Codex 把 AI Defense 工期从季度压缩到周；OpenAI 与 Thrive 联合搭出 6 周字段准确率 25% → 86% 的自改进报税 Agent。\n- **Qwen3.7-Max 登顶 Code Arena #4**：对标 Claude Opus 4.6 拿下国产首位，同日 Hermes Agent 与 Qoder IDE 宣布接入。\n- **OpenAI 企业能力强化**：私有 MCP 服务器内网部署、Workload Identity Federation 取代长期 API Key、Admin API 新增支出告警与模型白名单。\n- **Agent 安全话题升温**：OpenAI 公布 2026 选举方案（SynthID 水印 + AP 实时计票），Anthropic 工程博客建议用沙箱限制 Agent 权限与潜在破坏性操作。",
+  "articles": [
+    {
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-may-8cc",
+      "source": "Berkeley RDI",
+      "title": "Berkeley RDI 周报：ExploitGym 研究与 Agentic AI 峰会",
+      "summary": "Berkeley RDI 5 月 27 日周报聚焦 ExploitGym 研究亮点，探讨 AI 智能体能否将漏洞转化为真实攻击。同时公布 Agentic AI Summit 早鸟票与扩充的演讲者阵容，并宣布 Berkeley Xcelerator 春季孵化营成员。",
+      "category": "研究",
+      "importance": 2,
+      "tags": [
+        "Berkeley RDI",
+        "Agentic AI",
+        "ExploitGym",
+        "AI 安全",
+        "学术活动"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/cisco",
+      "source": "OpenAI Blog",
+      "title": "Cisco 深度整合 Codex：AI Defense 开发周期从季度压缩至周",
+      "summary": "Cisco 将 OpenAI Codex 嵌入企业工程流水线，几乎全部新 AI Defense 功能由 Codex 撰写，把原本数个季度的研发压缩至几周。跨 15+ 仓库的构建优化每月节省 1500+ 工程师小时，C/C++ 缺陷修复吞吐量提升 10-15 倍，并接入 OpenAI 的 Daybreak 与「GPT-5.5-Cyber」网络防御模型。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI Codex",
+        "Cisco",
+        "企业工程",
+        "AI Defense",
+        "GPT-5.5-Cyber"
+      ],
+      "practice_suggestions": [
+        "评估 Codex CLI 在大型 C/C++ 代码库上的自主缺陷修复能力，量化每月可节省的工程师工时",
+        "为 Codex 任务搭建可写工作树与只读生产上下文分离的执行环境，并配合回归 eval 闸门以满足企业合规",
+        "在跨仓库构建系统中先做依赖图分析试点，用 Codex 自动识别可并行化与冗余编译步骤"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+      "source": "OpenAI Blog",
+      "title": "OpenAI×Thrive 推出自改进报税 Agent：6 周字段准确率从 25% 升至 86%",
+      "summary": "OpenAI 前置部署工程师与 Thrive Holdings 联合为 Crete 会计师网络打造 Tax AI，利用 Codex 在生产 trace、专家纠错与定向 eval 之间构建三段式自改进闭环，本季为 30 余家事务所处理了 7000 份税务申报。在不到 6 周内，系统在 75% 字段正确率上的占比从 25% 跃升至 86%，准备时间节省约 1/3、吞吐提升约 50%，单条修正可经 Codex 自动产出修复 PR。文章把这套生产-eval-Codex 工程化路径作为通用蓝图，未来将复用于簿记、审计与 IT helpdesk 等领域。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "Tax AI",
+        "Self-Improving Agent",
+        "Eval Pipeline",
+        "企业 Agent"
+      ],
+      "practice_suggestions": [
+        "把生产 trace + 专家纠错沉淀为结构化数据，作为定向 eval 的输入",
+        "用 Codex 在可写 worktree 与只读生产上下文之间运行修复-验证闭环",
+        "将「practitioner 修正模式」聚类后再立项，避免把噪声当 bug 修"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/warp",
+      "source": "OpenAI Blog",
+      "title": "Warp 押注 GPT-5.5：开源终端 + Oz 编排，Agent 共创 90% PR",
+      "summary": "Warp 终端今年开源，OpenAI 作为首个赞助方，并推出「Open Agentic Development」开发模式。内部基准显示 GPT-5.5 比 GPT-5.4 每个 agentic 编码任务少用 30% token，目前 Warp 自家 90% PR 由 Agent 共同创作。其云编排平台 Oz 通过 context compaction、持久记忆与子 Agent 分工，支撑跨本地/云的长时编程工作流；公司 ARR 同比增长 35 倍。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Warp",
+        "GPT-5.5",
+        "开源终端",
+        "Agent 编排",
+        "Open Agentic Development"
+      ],
+      "practice_suggestions": [
+        "评估 Warp Oz 作为多 Agent 编排控制面，把长任务跨本地/云迁移并保留 session 状态",
+        "在 agentic 编码流水线接入 GPT-5.5 以降低 token 成本，对比 5.4 在自家 eval 上的 token/turn 数",
+        "为 Agent PR 流程建立 LLM-as-judge eval，避免人工逐条审查长时输出"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/election-safeguards-2026",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 公布 2026 大选安全方案：SynthID 水印 + AP 实时计票",
+      "summary": "OpenAI 公布 2026 全球大选期间的五项安全部署：与美联社合作在 ChatGPT 中提供美国和巴西实时计票，与 Democracy Works 提供投票登记信息；为美国登记的投票设备制造商提供 Codex Security 与 TAC（Trusted Access for Cyber）。在内容溯源上推出 SynthID 隐形水印 + C2PA 元数据双层方案，并上线公开 openai.com/verify 验证工具，禁止任何政治广告投放。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "选举安全",
+        "SynthID 水印",
+        "C2PA",
+        "网络防御"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/research/coding-agents-social-sciences",
+      "source": "Anthropic Research",
+      "title": "Anthropic 调研 1260 位社科学者：仅 20% 已采用 Coding Agent",
+      "summary": "Anthropic 对 1260 位定量社科学者的调研显示，81% 已用过 AI Chatbot 辅助研究，但仅 20% 把 Claude Code 这类命令行 coding agent 纳入日常工作流（其中 86% 用 Claude Code）。采用率呈现显著差异：经济学 39% vs 教育/传播学约 5%，男性化姓名研究者使用率是女性的两倍，Top 25 大学高 40%。Coding agent 用户的工作论文与课题申请更多，但期刊投稿数无显著差异。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "Coding Agent",
+        "学术研究",
+        "采用率",
+        "数字鸿沟"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2059677202917331431",
+      "source": "Sam Altman (Twitter)",
+      "title": "OpenAI 基金会承诺 2.5 亿美元投入「AI 时代经济未来」",
+      "summary": "Sam Altman 宣布 OpenAI 基金会初始承诺 2.5 亿美元，用于衡量 AI 对就业与收入的影响、过渡支持以及探索广泛共享繁荣的新机制。配套发布 openaifoundation.org/news/economic-futures-in-the-age-of-ai 政策说明，定位为应对 AI 对生活质量与个人自由影响的长期举措。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI Foundation",
+        "Sam Altman",
+        "AI 经济影响",
+        "共同繁荣",
+        "公益承诺"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2059492605634007125",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 转发 Hermeus 超音速无人机首飞",
+      "summary": "Sam Altman 仅以「🛫」表情转发 Hermeus 的 Quarterhorse Mk 2.1 首飞消息——这是全球首架私人研制的无人超音速喷气机，达到 Mach 1.21，距 Hermeus 公司创立仅 364 天创下航空业最快超音速纪录。与 AI 议题无直接关联。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "Hermeus",
+        "超音速",
+        "无人机",
+        "转发"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2059672872189141372",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq：开斋节祝福",
+      "summary": "Thariq 发布「Eid Mubarak」开斋节祝福推文，附带图片，无技术或 AI 行业内容。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Thariq",
+        "节日",
+        "社交推文"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2059363113963540788",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 分享 Claude Code 非技术使用技巧",
+      "summary": "Thariq 给出使用 Claude Code 处理非技术工作的基本套路：把一堆文件放进文件夹，告诉 Claude 它可以写脚本并生成 HTML，由此把日常文档/资料整理任务变成可脚本化的小型 Agent 工作流。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "非技术使用",
+        "工作流",
+        "HTML 输出"
+      ],
+      "thread_group_id": "thread-trq212-20260526-1956",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2059363115146395965",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 分享 AI 高效用法：脚本、PDF、HTML 三件套",
+      "summary": "Thariq 列举了用 Claude 等模型解决日常任务的模式化做法：图像或视频编辑直接让其写脚本；财务、报税类工作把资料丢进 PDF 再让模型写脚本并输出 HTML；医疗建议同样以 PDF + 数据为输入、HTML 为输出；填表、报告、计划等场景则分别走脚本或 HTML 路线。其核心观点是把「脚本 + 结构化文档 + HTML」当作通用接口来撬动 LLM 的执行力。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "LLM 用法",
+        "脚本化工作流",
+        "HTML 输出",
+        "Claude 实践"
+      ],
+      "thread_group_id": "thread-trq212-20260526-1956",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2059363116316598739",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq：别忘了给 LLM 接上 Gmail/日历等数据连接器",
+      "summary": "在前一条工作流建议的延伸中，Thariq 强调让模型访问数据同样关键：应接入 Gmail、Google Calendar 等连接器。他认为人们普遍低估了自己文件里所承载的上下文量，而这些上下文正是让 LLM 真正贴身可用的关键。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "连接器",
+        "上下文",
+        "Gmail",
+        "个人工作流"
+      ],
+      "thread_group_id": "thread-trq212-20260526-1956",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2059682187947946009",
+      "source": "Claude (Twitter)",
+      "title": "Claude 故事：Replit 总裁 Michele Catasta 借 Claude 让 5000 万人用自然语言造软件",
+      "summary": "Anthropic 介绍 Replit 总裁兼 AI 负责人 Michele Catasta（@pirroh）的故事：他 16 岁立志让软件开发面向所有人，如今 Replit 上已有超过 5000 万人借助 Claude 用自然语言构建软件。这是 Anthropic「Problem Solvers」系列对 Claude 商业化落地的一次客户案例宣传。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Replit",
+        "客户案例",
+        "自然语言编程",
+        "Anthropic"
+      ],
+      "thread_group_id": "thread-claudeai-20260527-1704",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2059682190279966841",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 推出 Problem Solvers 创始人系列",
+      "summary": "Anthropic 宣布上线「The Problem Solvers」系列内容，专门介绍那些借助 Claude 攻克难题的创始人。该系列首页为 claude.com/problem-solvers，本条是对 Replit Michele Catasta 故事帖的收束指引。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Problem Solvers",
+        "客户故事",
+        "Anthropic 营销"
+      ],
+      "thread_group_id": "thread-claudeai-20260527-1704",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2059662933924123044",
+      "source": "Claude (Twitter)",
+      "title": "Claude Marketplace 新增 Augment、Bolt、CodeRabbit、Hebbia、Legora",
+      "summary": "Anthropic 在 Claude Marketplace 上新增 Augment Code、Bolt.new、CodeRabbit、Hebbia 与 Legora 五家伙伴产品，企业客户可将既有的 Anthropic 支出承诺额直接用于采购这些 Claude 驱动的工具。Marketplace 此前以限量预览发布，目标是简化企业 AI 工具采购流程。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Claude Marketplace",
+        "企业采购",
+        "Bolt",
+        "CodeRabbit",
+        "Hebbia"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2059701677981413812",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 响应性与稳定性大更新",
+      "summary": "Claude Devs 宣布近期围绕 Claude Code 的响应速度与可靠性持续做了大量优化，并将通过一条线程汇总此次发布的所有改进项。这是面向 Claude Code 用户的一次综合性性能与稳定性升级公告。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "性能优化",
+        "稳定性",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "更新到最新版本 Claude Code 以获得响应性与可靠性改进",
+        "若之前因卡顿或断连放弃过某些长任务，可重新尝试在 Claude Code 中跑一遍",
+        "关注后续 ClaudeDevs 线程获取具体改动清单，对照自己的工作流评估收益"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2059385239781384341",
+      "angle": "响应性与稳定性大幅提升"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2059701686260908134",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code /feedback 支持一键发送近一天或一周会话",
+      "summary": "Claude Code 改进了反馈流程：使用 /feedback 命令时，用户可以直接发送过去一天或一周的全部会话，而无需回忆是哪一次会话遇到了 bug。这降低了报告问题的门槛，预计能让团队收到更多上下文完整的反馈。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "/feedback",
+        "反馈机制",
+        "调试体验"
+      ],
+      "practice_suggestions": [
+        "遇到难复现的 Claude Code 异常时直接 /feedback 提交最近一天/一周会话",
+        "在团队中建立「发现问题立刻 /feedback」的纪律，加速 Anthropic 定位 bug",
+        "提交反馈时注意会话中可能包含敏感信息，必要时先做脱敏"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260527-1822",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2059385239781384341",
+      "angle": "/feedback 升级：一键发送近一天或一周会话"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2059701687665950859",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 团队征集仍存在的 bug 反馈",
+      "summary": "Claude Devs 在响应性升级线程末尾表示团队仍在持续投入优化，邀请用户继续反馈所有影响使用体验的 bug。语气上属于工作进行中的状态通报与开放式征集。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "bug 反馈",
+        "持续改进"
+      ],
+      "practice_suggestions": [
+        "在使用 Claude Code 时遇到任何卡顿或错误，主动通过 /feedback 提交"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260527-1822",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2059385239781384341",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 同日三连更新：安全插件 + 响应性升级 + /feedback 一键发送",
+      "summary": "Anthropic 给所有用户上线 Claude Code 安全指导插件：自动识别与提示常见漏洞模式，支持在 claude-security-guidance.md 里自定义组织规则，内部 rollout 实测 PR 中安全类评论减少 30-40%。同日 Claude Code 推送响应性与稳定性大版本，并升级 /feedback 流程——可一键打包并发送过去一天或一周的会话上下文给团队，配合显式的 bug 反馈通道闭环。整体释放出 Claude Code 进入「企业安全 + 用户体验」并重阶段的信号。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "安全插件",
+        "响应性",
+        "反馈机制",
+        "AI Agent 治理"
+      ],
+      "practice_suggestions": [
+        "在仓库根目录添加 claude-security-guidance.md，写入团队特定的高危模式与禁用 API",
+        "内部统一升级 Claude Code 后用 /feedback 跑一周再决定大规模推广",
+        "把安全插件输出纳入 PR review 模板，把人工评论时间集中到设计层"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2059385242319012188",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic：安全插件让 PR 安全类评论减少 30-40%",
+      "summary": "Anthropic 透露在公司内部已大量使用这款 Claude Code 安全指导插件，跨内部 rollout 与基准测试中观察到使用该插件提交的 PR，其安全相关评论数量下降了 30-40%。团队将其定位为完整代码评审前的轻量「第一道筛」。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "安全插件",
+        "代码评审",
+        "内部数据"
+      ],
+      "practice_suggestions": [
+        "把安全插件作为提 PR 前的强制本地检查步骤纳入团队规范",
+        "结合自身仓库度量安全评论数量，复现 Anthropic 的 30-40% 收益",
+        "保留人工 code review 流程，将插件视为补充而非替代"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260526-2124",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2059385239781384341",
+      "angle": "Anthropic 内部实测：安全类 PR 评论 -30~40%"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2059385243476586715",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 安全插件支持自定义组织策略：claude-security-guidance.md",
+      "summary": "Claude Devs 团队介绍了 Claude Code 安全插件的自定义能力：团队可在仓库中放置 claude-security-guidance.md 文件，或通过 MDM 分发，以定义组织级安全规则。该插件会在内置安全检查之外，额外强制执行这些自定义策略，便于企业统一治理。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "安全插件",
+        "企业治理",
+        "MDM",
+        "策略管理"
+      ],
+      "practice_suggestions": [
+        "在团队仓库根目录添加 claude-security-guidance.md，列出禁止访问的路径、命令白名单等组织规则",
+        "通过 MDM 将该文件下发到所有开发者机器，确保策略覆盖全公司而非依赖仓库内置",
+        "参考 code.claude.com/docs/en/security-guidance 文档配合内置检查使用"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260526-2124",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2059351260243919269",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 工程博客：用沙箱限制 Agent 权限与潜在破坏性操作",
+      "summary": "Anthropic 在工程博客发文阐述其「How we contain Claude」的实践：Agent 的访问权限与许可应随其能力演进而动态调整。在 Anthropic 自家产品中，他们通过沙箱机制设置这些参数，限制任何潜在破坏性操作的影响范围。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Agent 安全",
+        "沙箱",
+        "权限管理",
+        "Anthropic 工程",
+        "破坏性操作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059703536825565499",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 推出私有 MCP 服务器隧道：内网部署 + 出站 HTTPS",
+      "summary": "OpenAI 发布安全 MCP 隧道（secure-mcp-tunnels）能力，允许企业将 MCP 服务器保留在自己内网中，由 ChatGPT、Codex、Responses API 通过仅出站的 HTTPS 连接接入。这样团队无需把内部工具暴露到公网即可让 OpenAI 产品调用，便于满足合规要求。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "MCP",
+        "私有部署",
+        "OpenAI",
+        "企业安全",
+        "出站隧道"
+      ],
+      "practice_suggestions": [
+        "评估将内部数据 / 工具型 MCP 服务器从公网下线、改用 OpenAI 私有 MCP 隧道连接",
+        "在防火墙策略中允许 outbound-only HTTPS 至 OpenAI，但不开放任何 inbound 端口",
+        "结合 Responses API 测试 Codex / ChatGPT 通过隧道访问内网 MCP 工具的端到端链路"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260527-1829",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059703600662925635",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI API 接入 Workload Identity Federation：替代长期 API Key",
+      "summary": "OpenAI API 平台引入 Workload Identity Federation（工作负载身份联邦），团队可通过云端 IAM 工作流管理服务对 OpenAI 的访问，减少在各服务间分发持久 API 密钥的必要。这有助于降低密钥泄漏风险并简化轮换。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "WIF",
+        "身份联邦",
+        "OpenAI API",
+        "API 密钥",
+        "IAM"
+      ],
+      "practice_suggestions": [
+        "将后端服务对 OpenAI 的调用从静态 API Key 迁移到 WIF 短期凭证，降低密钥泄漏面",
+        "在 AWS / GCP / Azure IAM 中为不同服务配置最小权限的工作负载身份策略",
+        "参考 developers.openai.com/api/docs/guides/workload-identity-federation 文档完成集成"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260527-1829",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059703665276145920",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Admin API 扩展：支出告警、模型白名单、数据保留控制",
+      "summary": "OpenAI 扩展了 Admin API，让企业可编程化管理 OpenAI 项目。新功能包括支出告警、模型 allowlist、数据保留控制、托管工具控制，以及对 file search、web search 等能力更细粒度的成本可见性。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Admin API",
+        "企业治理",
+        "成本管理",
+        "模型白名单",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "用 Admin API 编排子项目预算与支出告警，避免单一项目超额吞掉总额度",
+        "通过 model allowlist 限制各团队可调用的模型，防止误用昂贵模型",
+        "为不同业务线设置差异化的数据保留与托管工具策略，满足合规审计"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260527-1829",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059677931572736444",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 播客预告：@romainhuet 谈「新构建者心态」",
+      "summary": "OpenAI Devs 预告了一期播客：主持人 @0xmts 与 @romainhuet 讨论「我们服务的开发者已经演变」，聚焦从想法到可运行软件的速度被大幅压缩后的新构建者心态。完整节目将于 5/29 上线。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "播客预告",
+        "开发者",
+        "构建者心态"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059638868983562640",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI × Thrive：用 Codex 构建自改进的报税 Agent，节省 1/3 工时",
+      "summary": "OpenAI 与 Thrive Holdings 联合披露了为 Crete 会计师网络打造的 Tax AI 系统，过去一个季度处理 7000 份 1040/1041 报税，初稿准确率最高 97%，吞吐量提升约 50%。其核心是「实务专家反馈 + 生产 trace + Codex 驱动迭代」三段式闭环：练习者修正会被结构化为评测目标，Codex 据此审查 trace、扩展抽取 schema、跑回归 eval 再提交 PR，使 75% 字段正确率从上线时的 25% 在六周内升至 86%。文章把该模式作为构建可自我改进 Agent 的通用蓝本。",
+      "category": "教程与观点",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "自改进 Agent",
+        "Tax AI",
+        "Eval 驱动",
+        "生产 trace"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/building-self-improving-tax-agents-with-codex",
+      "angle": "OpenAI Devs 官方介绍"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059354472791646354",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Mobile 改变开发习惯：远离键盘、给出更宏大的 Prompt",
+      "summary": "OpenAI Devs 转推开发者 @mattshumer_ 的体验：Codex Mobile 让他可以离开笔记本、停止微观管理，给出更宏大的提示词（这也是模型最擅长的工作方式），从而获得思考空间而非整天对着屏幕焦虑刷 Prompt。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Codex Mobile",
+        "开发者体验",
+        "Prompt 实践",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059353117934899289",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Databricks 用 Codex 中的 GPT-5.5 提升复杂客户文档解析可靠性",
+      "summary": "OpenAI Devs 介绍 Databricks 的案例：在 Codex 中使用 GPT-5.5 帮助更可靠地解析复杂的客户文档。该案例突出了新一代 GPT-5.5 在企业级长文档结构化抽取上的稳定性提升。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Databricks",
+        "GPT-5.5",
+        "Codex",
+        "文档解析",
+        "客户案例"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260526-1916",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2059353129569907169",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 官方 Databricks 案例页链接（Codex + GPT-5.5）",
+      "summary": "本条为上一条推文的链接补充，指向 openai.com/index/databricks 的官方案例页面，详细介绍 Databricks 使用 Codex 中 GPT-5.5 解析复杂客户文档的实践（页面因 Cloudflare 防护未抓取到正文）。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Databricks",
+        "OpenAI",
+        "案例页",
+        "Codex"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260526-1916",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2059666227115819149",
+      "source": "xAI (Twitter)",
+      "title": "xAI 接入 Kilo Code：SuperGrok 订阅可直用 grok-build-0.1 编码代理",
+      "summary": "xAI 宣布 SuperGrok 与 X Premium+ 订阅用户可在 Kilo Code IDE 扩展和 CLI 中直接调用 grok-build-0.1 模型，主打高速度与代理式编码智能。该集成无需额外密钥，把 Grok 的编码能力推到第三方 AI IDE 生态。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "xAI",
+        "Grok",
+        "Kilo Code",
+        "编码代理",
+        "AI IDE"
+      ],
+      "practice_suggestions": [
+        "已有 SuperGrok 订阅的开发者可在 Kilo IDE 扩展中切换到 grok-build-0.1，对比 Claude/GPT 在你常用代码库上的代理表现",
+        "若评估多模型编码代理路由，把 grok-build-0.1 纳入 A/B 矩阵，重点测速与长上下文重构任务"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2059375342683636066",
+      "source": "xAI (Twitter)",
+      "title": "Grok Build Beta 重置用量上限，团队优化缓存机制",
+      "summary": "xAI 回应 Grok Build Beta 用户对额度过快耗尽的反馈，团队找到缓存层的优化空间后已为所有账户重置使用上限。官方鼓励用户继续提交反馈以便持续调优。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Grok Build",
+        "xAI",
+        "Beta",
+        "用量上限",
+        "缓存优化"
+      ],
+      "practice_suggestions": [
+        "此前因额度耗尽暂停使用 Grok Build 的用户可重新登录测试，验证缓存命中是否改善长会话的可用 token 数"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2059674574397313277",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.5 在 TokenSpeed 引擎上跑出 580 tps 代理推理纪录",
+      "summary": "PyTorch 基金会博客披露 Qwen3.5-397B-A17B 在 TokenSpeed 推理框架上达成 580 tokens/s 的代理工作负载新纪录。该成果由 Qwen 推理团队、Lightseek（TokenSpeed）、NVIDIA、Mooncake 团队以及 Tri Dao 贡献的 FlashAttention-4 优化共同推动，标志着大规模 MoE 模型代理推理性能的新天花板。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Qwen3.5",
+        "TokenSpeed",
+        "FlashAttention-4",
+        "推理加速",
+        "MoE"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2059611776984244404",
+      "source": "Qwen (Twitter)",
+      "title": "Hermes Agent 接入 Qwen 3.7 Max",
+      "summary": "Qwen 官方转发 NousResearch 消息：Hermes Agent 框架已支持 Qwen 3.7 Max。这扩展了 Qwen 旗舰模型在开源代理框架中的可用性。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Qwen3.7-Max",
+        "Hermes Agent",
+        "NousResearch",
+        "代理框架"
+      ],
+      "practice_suggestions": [
+        "使用 Hermes Agent 构建多步任务的团队可把 Qwen 3.7 Max 加入模型选择器，对比其代理工具调用稳定性"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2059445345667747849",
+      "angle": "Hermes Agent 接入 Qwen3.7-Max"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2059586373456380225",
+      "source": "Qwen (Twitter)",
+      "title": "Qoder IDE 限时半价开放 Qwen3.7-Max，并送每日 100 次免费调用",
+      "summary": "Qoder AI IDE 宣布旗舰模型 Qwen3.7-Max 限时半价，同时为新用户提供每日 100 次免费模型调用，自动生效无需手动开启。覆盖桌面端、JetBrains 插件、CLI、QoderWork、QoderWake 全套形态。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Qwen3.7-Max",
+        "Qoder",
+        "AI IDE",
+        "限时优惠",
+        "JetBrains"
+      ],
+      "practice_suggestions": [
+        "想低成本试用 Qwen3.7-Max 的开发者可在 Qoder 免费额度内跑一组真实编码任务，评估是否值得切换主用模型",
+        "JetBrains 用户可装 Qoder 插件直接在 IDE 内使用 Qwen3.7-Max，省去自建网关"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2059445345667747849",
+      "angle": "Qoder IDE 限时半价 + 每日 100 次免费调用"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2059445345667747849",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.7-Max 登顶 Code Arena 第 4：对标 Claude Opus 4.6，国产模型新高",
+      "summary": "Qwen3.7-Max 在 Code Arena 编程榜冲到第 4，与 Claude Opus 4.6 并列，成为目前榜单上排名最高的国产模型。同日生态侧也连续宣布接入：Hermes Agent 把 Qwen3.7-Max 纳入其默认模型矩阵；Qoder IDE 限时半价开放 Qwen3.7-Max，并对所有用户提供每日 100 次免费调用。多角度信号叠加，说明 Qwen 3.7 系列的编码能力正在被外部 Agent 与 IDE 工具链快速采纳。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Qwen3.7-Max",
+        "Code Arena",
+        "国产大模型",
+        "Agent 集成",
+        "IDE 工具链"
+      ],
+      "practice_suggestions": [
+        "把 Qwen3.7-Max 加入编程评测组合，与 Claude Opus 4.6 / GPT-5.5 做同题对比",
+        "在 Qoder IDE 内用 100 次/日免费调用做小型 PR 实验，再决定是否长期接入",
+        "若已用 Hermes Agent，可直接把 Qwen3.7-Max 设为编码任务路由的备选模型"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
