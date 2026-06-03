@@ -1,0 +1,891 @@
+{
+  "analyzed_at": "2026-06-03T19:27:05+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-06-03.json",
+  "trend_paragraph": "- **编码代理平台化**：Codex 推出角色插件和 Sites，Claude Code 同步增强后台代理与 CLI。\n- **科研智能体成形**：Gemini for Science 与 Co-Scientist 把多智能体流程推向科学发现。\n- **企业部署加速**：OpenAI 模型和 Codex 进入 AWS，降低云内采用与治理成本。\n- **多模态代理竞速**：Qwen3.7-Plus 和 Grok Composer 2.5 都强化构建与浏览器任务能力。\n- **安全公益扩张**：Anthropic Project Glasswing 与 OpenAI 青少年安全倡议继续扩展社会侧投入。",
+  "articles": [
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 同日升级：后台代理、CLI 与修复",
+      "summary": "Claude Code 当天连续推进开发者工作流：新增可用 /fork 启动的后台代理，便于把当前上下文分出去并行处理任务。Claude Platform 还把终端 CLI 与托管智能体会话、Claude API 技能串起来，让本地命令行能直接进入更完整的 Claude 开发生态。社区长文补充了自检闭环、复杂任务拆解和提示跟进方法，官方同时说明并修复 Opus 4.8 工具调用与子代理耗额问题。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "后台代理",
+        "终端 CLI",
+        "工作流",
+        "Opus 4.8",
+        "子代理"
+      ],
+      "practice_suggestions": [
+        "试用 /fork 将当前上下文拆给后台代理处理独立子任务。",
+        "把 Claude CLI、托管会话与 API 技能纳入本地开发脚本，评估是否减少工具切换。",
+        "检查近期子代理用量与 Opus 4.8 工具调用日志，确认修复后成本和失败率回落。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2061924580222968183",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 支持美国 AI 行政令",
+      "summary": "Anthropic 表示，白宫关于促进先进人工智能创新与安全的行政令是强化美国 AI 领导力的重要一步。公司称将与白宫协作，支持该行政令的实施。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "美国政策",
+        "AI 安全",
+        "行政令",
+        "Anthropic"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2061907897928528349",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 工作流文章上架博客",
+      "summary": "该条补充说明 Claude Code 工作流相关内容已经同步发布到 Claude Blog。除提供博客入口外，这条更新本身没有展开更多技术细节。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude Code",
+        "工作流",
+        "博客文章",
+        "开发实践"
+      ],
+      "thread_group_id": "thread-trq212-20260602-2027",
+      "duplicate_of": null,
+      "angle": "线程补充"
+    },
+    {
+      "url": "https://x.com/trq212/status/2061907538741006796",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 工作流被称为重大升级",
+      "summary": "Thariq 认为 Workflows 是 Claude Code 自 skills 和 subagents 以来最大的能力升级。他与 Sidbid 深入梳理了最佳实践、示例和更多用法，并特别看好其在非技术任务中的扩展空间。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Workflows",
+        "最佳实践",
+        "非技术任务"
+      ],
+      "practice_suggestions": [
+        "将重复性检查、文档整理和跨步骤流程编码为 Claude Code workflow。",
+        "用现有 skills 与 subagents 作为基础，评估哪些团队流程适合升级为 workflow。"
+      ],
+      "thread_group_id": "thread-trq212-20260602-2027",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "angle": "工作流实战拆解"
+    },
+    {
+      "url": "https://x.com/trq212/status/2061907337154367865",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 发布 Claude Code 长文入口",
+      "summary": "该条只包含指向 X Article 的链接，正文没有额外说明。结合相邻线程语境，它应是关于 Claude Code 工作流的长文入口，但可供分析的内容很少。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Claude Code",
+        "X Article",
+        "工作流",
+        "低信息量"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "angle": "工作流长文入口"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061900434722496604",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 自检闭环实践",
+      "summary": "Claude Devs 展示如何让 Claude Code 在交付结果前检查自己的工作。核心做法是把人工检查步骤编码进流程，让 Claude 能关闭自身反馈循环。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "自检",
+        "反馈循环",
+        "开发流程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "angle": "自检闭环实践"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061888379093184727",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex Sites 支持团队评审原型",
+      "summary": "OpenAI Devs 强调，当 Codex 输出原型时，Sites 可以让团队在同一 URL 中共同查看和评审。引用内容称 Sites 能把工作、想法和计划转成可交互网站或应用，先向 Business 和 Enterprise 计划推出，之后再扩大范围。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "Sites",
+        "原型评审",
+        "团队协作"
+      ],
+      "practice_suggestions": [
+        "把 Codex 生成的内部原型发布到 Sites，作为产品和业务团队共同评审的入口。",
+        "优先在 Business 或 Enterprise 工作区测试 Sites 的分享与反馈流程。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260602-1911",
+      "duplicate_of": null,
+      "angle": "线程补充"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061888366791246071",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 推出角色化插件",
+      "summary": "OpenAI Devs 介绍了面向具体岗位工作的 Codex 插件。Data Analytics、Creative Production 和 Product Design 插件会为 Codex 提供相应工具与上下文，用于生成报告、创意方向和原型，并且这些插件已被 OpenAI 内部团队使用。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "插件",
+        "数据分析",
+        "产品设计",
+        "创意生产"
+      ],
+      "practice_suggestions": [
+        "按团队职能选择 Codex 插件，把常用工具和上下文前置到任务环境中。",
+        "用数据分析、创意生产和产品设计场景分别验证插件输出质量。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260602-1911",
+      "duplicate_of": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "angle": "角色插件细节"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2061888058459570279",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 发布公共股票投资插件",
+      "summary": "OpenAI 发布面向公共股票投资的 Codex 插件，口号是从问题到模型。该插件显然面向投研建模流程，但原文没有披露具体数据源、权限或可用范围。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "投资插件",
+        "股票研究",
+        "建模"
+      ],
+      "practice_suggestions": [
+        "将重复性股票筛选和估值建模问题整理成 Codex 插件可执行的标准任务。",
+        "在使用前确认插件可访问的数据范围和合规边界。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260602-1909",
+      "duplicate_of": null,
+      "angle": "线程补充"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2061887949516730502",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 推出销售插件",
+      "summary": "OpenAI 发布面向销售工作的 Codex 插件，强调帮助用户更快准备、更聪明销售。原文只给出插件定位，没有展开具体功能或支持的 CRM、资料源等集成细节。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "销售插件",
+        "销售准备",
+        "业务工具"
+      ],
+      "practice_suggestions": [
+        "用销售插件试点客户研究、会议准备和销售材料生成流程。",
+        "评估插件输出是否能接入现有 CRM 与销售知识库。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260602-1909",
+      "duplicate_of": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "angle": "公开插件示例"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2061887650391625870",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 推出角色插件与工作流扩展",
+      "summary": "OpenAI 将 Codex 从开发工具扩展为面向多岗位的知识工作平台，新增数据分析、创意制作、销售、产品设计、公开股票投资和投行等角色插件。每个插件打包相关应用、技能、指令和工作流，总计覆盖 62 个常用应用和 110 个技能，并预告未来会开放更多角色与伙伴生态。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "角色插件",
+        "知识工作",
+        "企业应用",
+        "工作流"
+      ],
+      "practice_suggestions": [
+        "按团队岗位试点对应 Codex 插件，先选择数据分析、销售或产品设计等高频流程。",
+        "梳理内部工具权限和上下文边界，评估插件接入后可自动化的材料、报告和原型产出。",
+        "为自定义插件准备可复用指令和技能清单，便于后续接入企业专有流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "angle": "工作流扩展"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061877351253004619",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude CLI 可启动托管智能体会话",
+      "summary": "Claude Platform CLI 现在可以启动 Managed Agents 会话、发送事件，并让智能体执行推理、调用工具和推进任务。任务完成或卡住后，开发者可从同一 CLI 拉取完整 trace，包括事件、工具调用和决策过程，便于调试和审计。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "Managed Agents",
+        "CLI",
+        "可观测性",
+        "工具调用"
+      ],
+      "practice_suggestions": [
+        "把 Managed Agents 的启动、事件发送和 trace 拉取纳入本地调试脚本。",
+        "在长任务或失败任务中保留 CLI trace，用于复盘工具调用链和决策节点。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260602-1827",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "angle": "托管会话细节"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061877352725200963",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 内置 Claude API 技能",
+      "summary": "Claude Code 现在可通过内置的「/claude-api」技能理解并调用 ant CLI。开发者可以让它列出会话、上传 PDF 文件夹或调试运行结果，Claude Code 会直接 shell out 到 CLI 并读取返回结果，无需额外胶水代码。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Claude API",
+        "ant CLI",
+        "开发者工具",
+        "自动化"
+      ],
+      "practice_suggestions": [
+        "在 Claude Code 项目中试用「/claude-api」技能，让代理直接检查会话和运行结果。",
+        "将常见 Claude API 调试动作封装成可复用提示，减少手写脚本和手动查询。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260602-1827",
+      "duplicate_of": null,
+      "angle": "线程补充"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061877343078244459",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Platform 发布终端 CLI",
+      "summary": "Anthropic 为 Claude Platform 增加 CLI，使每个 API endpoint 都可从终端运行。它支持调用 Messages API、启动 Claude Managed Agents，并把结果直接管道化到 shell，同时可被 Claude Code 通过 claude-api 技能理解和使用。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "CLI",
+        "Messages API",
+        "Managed Agents",
+        "开发者体验"
+      ],
+      "practice_suggestions": [
+        "用 CLI 重写常用 API smoke test 和示例调用，提升本地验证速度。",
+        "在 CI 或内部工具中评估 ant CLI 的可脚本化能力，尤其是 Messages API 和 Managed Agents 流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "angle": "终端 CLI 发布"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2061857550438392094",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Co-Scientist 展示科学问题辅助成果",
+      "summary": "Google DeepMind 称其与全球科学专家合作一年，评估 Co-Scientist 在复杂科学问题上的表现。该系统辅助识别肝纤维化新靶点、提出应对 ALS 的新路径，并消化数十年文献以提出可能逆转衰老的遗传线索。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Co-Scientist",
+        "Gemini",
+        "科学发现",
+        "生物医学",
+        "多智能体"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260602-1708",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2061857539977842793",
+      "angle": "Co-Scientist 成果"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2061857553076920643",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini for Science 开放假设生成工具",
+      "summary": "Google DeepMind 将 Co-Scientist 通过 Hypothesis Generation 功能提供给个人研究者，作为 Gemini for Science 实验与工具集合的一部分。该方向把 AI 定位为科学发现伙伴，让研究者探索自动生成、辩论和演化科学假设的工作方式。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Gemini for Science",
+        "Co-Scientist",
+        "假设生成",
+        "科研工具",
+        "AI 科学"
+      ],
+      "practice_suggestions": [
+        "科研团队可选择文献密集型课题试用 Hypothesis Generation，比较其假设质量与人工综述结果。",
+        "为 AI 生成的科学假设设计人工审稿和实验验证流程，避免直接采纳未经验证的结论。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260602-1708",
+      "duplicate_of": null,
+      "angle": "假设工具补充"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2061857539977842793",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini for Science 发布多智能体科研助手",
+      "summary": "Google DeepMind 发布 Gemini for Science，将多智能体系统用于假设生成、文献推理和实验设计等科研流程。相关演示展示了 Co-Scientist 在具体科学问题上辅助提出候选方向，并把工具开放给研究者试用。这个事件的重点不是单次聊天增强，而是把 Gemini 包装成面向科学发现的专用研究工作台。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Gemini for Science",
+        "科研智能体",
+        "Co-Scientist",
+        "多智能体",
+        "假设生成"
+      ],
+      "thread_group_id": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2061845949170045346",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex Sites 可生成可分享应用",
+      "summary": "OpenAI 推出 Sites，让 Codex 能把工作内容、想法和计划转成可交互的网站或应用，并通过 URL 供团队探索、使用和分享。该功能先面向 Business 和 Enterprise 计划推出，后续会扩大可用范围。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "Sites",
+        "应用生成",
+        "团队协作",
+        "企业版"
+      ],
+      "practice_suggestions": [
+        "将需求文档、分析结果或产品想法交给 Sites 生成可点击原型，用于团队评审。",
+        "为分享 URL 制定权限和数据脱敏规则，避免把内部敏感内容发布到不合适的工作区。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260602-1622",
+      "duplicate_of": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "angle": "Sites 分享能力"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2061845950705140121",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex 新增 Sites 与批注能力",
+      "summary": "OpenAI 的 Codex 更新包括角色插件、Sites 和 annotations，目标是让团队更容易把 Codex 用于非开发岗位工作。Sites 支持生成可分享的交互式网站和应用，annotations 则帮助用户在结果上就地反馈和细化输出。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "Sites",
+        "annotations",
+        "角色插件",
+        "团队协作"
+      ],
+      "practice_suggestions": [
+        "在原型评审中结合 Sites 和 annotations，让业务方直接标注需要修改的页面或内容。",
+        "把 Codex 产物从一次性文本扩展为可交互交付件，优先试点内部工具和汇报页面。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260602-1622",
+      "duplicate_of": null,
+      "angle": "线程补充"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2061829558999912680",
+      "source": "Claude (Twitter)",
+      "title": "Claude 展示 Legora 法律工作流案例",
+      "summary": "Claude 账号通过创始人问题解决者系列介绍 Legora 如何用 Claude 推进法律工作流。案例聚焦专业服务场景中 AI 对文档、检索和协作流程的辅助价值。它更像客户案例与方法展示，信号低于平台级功能发布。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Legora",
+        "法律科技",
+        "客户案例",
+        "工作流"
+      ],
+      "thread_group_id": "thread-claudeai-20260602-1517",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2061829560505655316",
+      "source": "Claude (Twitter)",
+      "title": "Claude 推介创始人问题解决者系列",
+      "summary": "Claude 官方继续推广「The Problem Solvers」系列，内容聚焦使用 Claude 处理复杂问题的创始人案例。该条只是线程中的跟进链接，信息量主要是引导读者访问案例集合。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Claude",
+        "创始人案例",
+        "问题解决",
+        "官方内容"
+      ],
+      "thread_group_id": "thread-claudeai-20260602-1517",
+      "duplicate_of": null,
+      "angle": "系列背景"
+    },
+    {
+      "url": "https://x.com/sama/status/2061828631089844709",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 分享艰难日子的座右铭",
+      "summary": "Sam Altman 分享了一段来自《传道书》的引文，称其是在艰难日子里很受启发的一句话。内容强调尽力完成手头之事，但与 AI 产品、研究或产业进展没有直接关系。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "个人观点",
+        "励志引文"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2061796327986454883",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 扩大 Project Glasswing",
+      "summary": "Anthropic 将 Project Glasswing 从约 50 个初始伙伴扩展到约 150 个新增组织，覆盖 15 个以上国家和电力、水务、医疗、通信、硬件等关键基础设施领域。该计划让合格安全团队使用 Claude Mythos Preview 扫描代码漏洞，并将重点从发现漏洞推进到验证、披露、修复和部署补丁。Anthropic 同时警告未来 6 到 12 个月内类似能力可能更普遍，网络防御方需要提前建立工具、流程和安全准入机制。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "Project Glasswing",
+        "Claude Mythos",
+        "网络安全",
+        "漏洞修复"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://www.anthropic.com/news/expanding-project-glasswing",
+      "angle": "扩展规模说明"
+    },
+    {
+      "url": "https://openai.com/index/travelers",
+      "source": "OpenAI Blog",
+      "title": "Travelers 用 OpenAI 扩展理赔助手",
+      "summary": "Travelers 基于 OpenAI Realtime API 和前沿模型构建自主语音理赔助手，用自然对话引导客户完成车险财产损失的首报案、问题解答和资料收集。该助手先在 8 个州上线，两个月内扩展到全美，使用该 AI 助手的客户中有 85% 到 90% 完成了理赔提交流程。案例显示实时语音模型正在进入高峰需求明显、流程复杂且需要 24/7 支持的企业运营场景。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Realtime API",
+        "Travelers",
+        "保险理赔",
+        "企业部署"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "source": "OpenAI Blog",
+      "title": "Codex 扩展到角色插件、Sites 与知识工作",
+      "summary": "OpenAI 将 Codex 从编程助手扩展成面向多职能团队的工作流平台，发布角色化插件、可分享的 Codex Sites 和团队批注能力。官方示例覆盖销售、金融研究和原型评审，强调非工程岗位也能把任务拆给 Codex 生成可操作产物。另一篇知识工作文章把 Codex 定位为跨研究、运营和产品的协作层，而开发者推文补充了 Sites 分享、公开插件和团队评审细节。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "角色插件",
+        "Codex Sites",
+        "知识工作",
+        "团队协作",
+        "工作流"
+      ],
+      "practice_suggestions": [
+        "为团队中高频重复岗位任务各设计一个 Codex 插件原型。",
+        "用 Codex Sites 生成可分享原型，并让业务同事直接在页面上批注。",
+        "把销售、金融研究或产品运营任务拆成可复用工作流，评估 Codex 输出的可审阅性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 倡议建立国际青少年 AI 安全机制",
+      "summary": "OpenAI 呼吁围绕青少年 AI 安全建立更持续的国际协作机制，并提出可由新机构或现有国家 AI 机构承担全球研究、证据共享和实践指导职能。文章提出九项原则，涵盖隐私保护的年龄识别、年度风险评估、家长控制、透明政策、严重安全事件处理、未成年人隐私和独立审计。OpenAI 将在法国埃维昂 G7 领导人峰会相关讨论中推动这一议题，并把教育部署与青少年保护并列为治理目标。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "青少年安全",
+        "G7",
+        "AI 治理",
+        "家长控制"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/codex-for-knowledge-work",
+      "source": "OpenAI Blog",
+      "title": "Codex 正从编程工具扩展到知识工作",
+      "summary": "OpenAI 发布《The Next Era of Knowledge Work》报告，称 Codex 不再只是编程工具，而是在报告、表格、演示、合同、研究、数据分析和工作流自动化中被更多职业使用。Codex 周活用户超过 500 万，自桌面应用发布以来增长超过 6 倍，其中知识工作者约占 20%，且增速超过开发者三倍。报告认为，多任务并行和轻量工具构建会降低组织协作摩擦，并可能扩大个人岗位职责范围。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "知识工作",
+        "生产力",
+        "用户增长"
+      ],
+      "practice_suggestions": [
+        "非工程团队可从报告、表格和演示材料等低风险产物开始试点 Codex。",
+        "管理者可把多个并行 Codex 任务纳入项目流程，用于研究、数据检查和材料初稿生成。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "angle": "知识工作定位"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061610165783380052",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Proaction 用 Codex 覆盖小团队多职能工作",
+      "summary": "OpenAI Devs 展示了 5 人团队 Proaction 的 Codex 使用案例，该团队做车队管理软件，并把 Codex 用于销售演示、支持跟进、营销素材和工程工作。帖子强调 Codex 可以把一次客户通话快速转化为新的产品工作流，但本身更像客户案例和产品采用信号。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI Devs",
+        "Codex",
+        "Proaction",
+        "小团队",
+        "客户案例"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/codex-for-every-role-tool-workflow",
+      "angle": "小团队案例"
+    },
+    {
+      "url": "https://www.anthropic.com/news/expanding-project-glasswing",
+      "source": "Anthropic Blog",
+      "title": "Project Glasswing 扩至 150 个组织",
+      "summary": "Anthropic 扩大 Project Glasswing，将 AI 安全、教育与公共利益相关支持扩展到 150 个组织。官方博客说明该项目面向社会韧性和公益能力建设，推文则强调扩展规模与合作网络。相比单个产品发布，这更像是 Anthropic 在政策与社会影响层面的长期项目加码。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "Project Glasswing",
+        "AI 安全",
+        "公共利益",
+        "社会韧性",
+        "Anthropic"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2061585357934878745",
+      "source": "Thariq (Twitter)",
+      "title": "语音模式被用于更自然地回复",
+      "summary": "Thariq 提到 Suzanne 也会把相关功能与语音模式结合使用，使回复过程更轻松、更自然。该条是对前文讨论的补充片段，缺少完整上下文和产品细节，因此只能视为低信号使用观察。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "语音模式",
+        "使用观察",
+        "回复体验"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061564723150418307",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 发布 Codex 上 Bedrock 开发文档",
+      "summary": "这条开发者更新补充了 OpenAI models 和 Codex 在 Amazon Bedrock 中使用的入口文档。它指向面向开发者的集成说明，重点是让团队把 Codex 接入已有 AWS 工作流。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "Amazon Bedrock",
+        "AWS",
+        "企业集成"
+      ],
+      "practice_suggestions": [
+        "检查 Bedrock 权限、区域和治理策略是否满足 Codex 接入要求。",
+        "为现有软件工程流水线设计一个小规模 Codex on AWS 验证项目。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260601-2145",
+      "duplicate_of": null,
+      "angle": "Bedrock 文档入口"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061564710173224985",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 模型与 Codex 进入 AWS 工作流",
+      "summary": "OpenAI Devs 宣布 OpenAI 模型和 Codex 已可在 Amazon Bedrock 中用于构建 AI 应用和软件工程工作流。重点卖点是企业可以沿用 AWS 环境、安全、合规和治理控制，而不必另建一套接入体系。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Codex",
+        "AWS",
+        "Amazon Bedrock",
+        "企业 AI"
+      ],
+      "practice_suggestions": [
+        "评估现有 AWS 客户是否可把代码助手、工单处理或内部工具迁移到 Bedrock 托管路径。",
+        "用 Bedrock 的安全与审计能力设计 Codex 企业试点的权限边界。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260601-2145",
+      "duplicate_of": "https://x.com/OpenAI/status/2061564502160892138",
+      "angle": "AWS 工作流细节"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2061564502160892138",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 模型与 Codex 在 AWS 全面可用",
+      "summary": "OpenAI 宣布前沿模型与 Codex 进入 AWS 工作流并达到 GA，可通过 Bedrock 等 AWS 开发生态使用。开发者账号补充了 Codex on Bedrock 的文档入口和集成方式，显示 OpenAI 正把模型能力放进更多企业云采购与部署路径。对团队而言，这降低了在既有 AWS 权限、账单和合规体系内试用 OpenAI 编程代理的门槛。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "AWS",
+        "Bedrock",
+        "Codex",
+        "企业部署"
+      ],
+      "practice_suggestions": [
+        "检查现有 AWS 账户是否已能访问 OpenAI 模型与 Codex。",
+        "用 Bedrock 路径做一个小型 Codex 集成验证，重点观察权限、审计和账单流程。",
+        "比较 AWS 托管路径与直接 API 调用在延迟、成本和治理上的差异。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2061562575322492937",
+      "source": "Sam Altman (Twitter)",
+      "title": "OpenAI Foundation 投入 AI 韧性建设",
+      "summary": "Sam Altman 转发 OpenAI Foundation 的 AI Resilience 愿景，强调社会管理 AI 风险的能力需要同步提升。相关计划已启动超过 1.3 亿美元初始资助，覆盖生物韧性、网络韧性、模型安全和 AI 对年轻人的影响。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI 韧性",
+        "OpenAI Foundation",
+        "模型安全",
+        "网络安全",
+        "资助"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061558256821305700",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Voice Hack Night 公布决赛项目",
+      "summary": "OpenAI Devs 公布 Voice Hack Night 的决赛项目名单，获奖方向包括手机 Agentic OS、Wagner、Surgical Triage 和 Curo。该更新主要是开发者社区活动结果，展示了语音优先和 Agent 应用的原型方向。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI Devs",
+        "Voice Hack Night",
+        "Agent 应用",
+        "开发者社区"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260601-2119",
+      "duplicate_of": null,
+      "angle": "决赛项目名单"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2061558243911155722",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Voice Hack Night 展示语音 Agent 原型",
+      "summary": "OpenAI Devs 公布 Voice Hack Night 决赛项目，其中人气项目展示了语音优先的手机 Agent OS。该原型强调用自然语音完成移动端任务与交互，体现语音模式从演示能力走向应用壳层的趋势。事件影响仍偏社区和原型展示，但对语音代理产品方向有参考价值。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Voice Hack Night",
+        "语音 Agent",
+        "手机 OS",
+        "OpenAI Devs",
+        "原型"
+      ],
+      "practice_suggestions": [
+        "挑选一个手机端高频任务，尝试用语音优先流程重画交互。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260601-2119",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2061545633560010826",
+      "source": "Thariq (Twitter)",
+      "title": "Anthropic 员工分享 Claude 跟进提示法",
+      "summary": "Thariq 转述 Anthropic 员工关于跟进 Claude 输出的提示方法，并提供可直接使用的 Gist。内容强调在得到初稿后继续追问约束、改写和验证，而不是把一次回答当作终稿。它是实用技巧类信息，适合沉淀到团队提示词手册。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "提示词",
+        "跟进提问",
+        "工作流",
+        "Gist"
+      ],
+      "thread_group_id": "thread-trq212-20260601-2029",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2061545635141361687",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 提供 Claude 跟进提示词 Gist",
+      "summary": "这条回复给出了完整提示词的 Gist 链接，延续前一条关于如何理解 Claude 相关工作的分享。它的价值主要在于提供可复用的提示词材料，而不是发布新产品或研究结果。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Gist",
+        "提示词",
+        "工作流"
+      ],
+      "thread_group_id": "thread-trq212-20260601-2029",
+      "duplicate_of": null,
+      "angle": "Gist 链接"
+    },
+    {
+      "url": "https://x.com/xai/status/2061510464325206163",
+      "source": "xAI (Twitter)",
+      "title": "xAI 发布 Grok Build Composer 2.5",
+      "summary": "xAI 在 Grok Build 中上线 Composer 2.5，定位为面向构建与迭代的模型/工具能力升级。后续推文提供了试用入口，强调开发者可以直接体验新版本。该更新属于产品化模型能力推进，但公开信息仍偏入口与能力展示，缺少更完整的基准或技术细节。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "xAI",
+        "Grok Build",
+        "Composer 2.5",
+        "模型发布",
+        "开发工具"
+      ],
+      "practice_suggestions": [
+        "在 Grok Build 中试跑一个已有原型任务，对比 Composer 2.5 的完成质量。",
+        "记录新版本在多轮修改、代码生成和界面生成上的失败模式。"
+      ],
+      "thread_group_id": "thread-xai-20260601-1809",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2061510465617006652",
+      "source": "xAI (Twitter)",
+      "title": "xAI 提供 Composer 2.5 试用入口",
+      "summary": "xAI 补充说明用户可从 x.ai/cli 开始使用，并在模型菜单中选择 Composer。该条主要是 Composer 2.5 发布的操作入口，帮助开发者快速在 Grok Build 中试用新模型。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "xAI CLI",
+        "Grok Build",
+        "Composer",
+        "模型菜单"
+      ],
+      "practice_suggestions": [
+        "通过 xAI CLI 建立最小测试项目，验证 Composer 在日常构建任务中的可用性。",
+        "把模型菜单中的 Composer 与默认模型在同一任务上做并排比较。"
+      ],
+      "thread_group_id": "thread-xai-20260601-1809",
+      "duplicate_of": null,
+      "angle": "试用入口"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2061507009363734690",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.7-Plus 展示浏览器智能体",
+      "summary": "这条更新展示了 Qwen3.7-Plus 的「Browser Agent」演示，重点是让模型在浏览器环境中执行网页相关任务。原始内容只提供演示标题和链接，因此可确认的信息限于该能力展示本身。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Qwen3.7-Plus",
+        "浏览器智能体",
+        "多模态代理",
+        "产品演示"
+      ],
+      "practice_suggestions": [
+        "关注浏览器任务链路中的可控性、权限边界和失败回退表现。",
+        "用内部网页检索、表单填写等轻量场景评估其端到端稳定性。"
+      ],
+      "thread_group_id": "thread-Alibaba_Qwen-20260601-1755",
+      "duplicate_of": null,
+      "angle": "浏览器智能体演示"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2061506818917244937",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.7-Plus 展示多模态混合代理",
+      "summary": "这条更新发布了 Qwen3.7-Plus 的「Multimodal Interactive Hybrid Agent」演示，指向其在多模态交互代理场景中的能力展示。原始内容没有展开技术细节，因此它更像是主发布线程中的功能演示补充。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Qwen3.7-Plus",
+        "多模态交互",
+        "混合代理",
+        "功能演示"
+      ],
+      "practice_suggestions": [
+        "用图像、文本和界面操作混合输入测试代理是否能保持任务上下文。",
+        "把演示能力映射到现有客服、数据录入或办公自动化流程中做小样本验证。"
+      ],
+      "thread_group_id": "thread-Alibaba_Qwen-20260601-1755",
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2061506641120641494",
+      "angle": "多模态演示"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2061506641120641494",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.7-Plus 发布多模态代理模型",
+      "summary": "Qwen 发布 Qwen3.7-Plus，并展示其面向多模态代理和浏览器操作的能力。后续演示强调模型能在浏览器环境中执行任务，并处理文本、视觉与工具混合的复杂流程。作为 Qwen 3 系列的新版本且主打代理能力，这一发布对开源/国产模型生态的应用侧竞争有较高信号。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Qwen3.7-Plus",
+        "多模态代理",
+        "浏览器智能体",
+        "模型发布",
+        "工具调用"
+      ],
+      "practice_suggestions": [
+        "用浏览器自动化任务测试 Qwen3.7-Plus 的视觉理解和步骤规划能力。",
+        "将它与现有代理模型在表单填写、网页检索和多模态任务上做同题对比。",
+        "重点记录工具调用失败、页面状态恢复和长任务稳定性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061501790131265803",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 说明 Opus 4.8 工具调用异常",
+      "summary": "Claude Devs 解释称，相关问题影响了 Opus 4.8 请求处理，导致模型触发了超过预期的并行工具调用。团队强调该问题与「dynamic workflows」无关，是对 Claude Code 用量异常修复的技术补充。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Opus 4.8",
+        "工具调用",
+        "并行子代理",
+        "事故说明"
+      ],
+      "practice_suggestions": [
+        "复盘近期 Claude Code 会话中是否存在异常并行工具调用和配额消耗。",
+        "在关键自动化任务中加入并发上限、调用计数告警和异常中止策略。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260601-1735",
+      "duplicate_of": null,
+      "angle": "线程补充"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2061501787769893055",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 修复子代理耗额问题",
+      "summary": "Claude Devs 表示已为 Pro 和 Max 用户重置 5 小时与每周使用额度。此前 Claude Code 部分会话会生成过多并行子代理，导致用户额度消耗速度快于预期，目前该问题已修复。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "配额重置",
+        "并行子代理",
+        "Pro Max",
+        "故障修复"
+      ],
+      "practice_suggestions": [
+        "受影响用户应重新跑一次近期失败或提前耗尽额度的 Claude Code 任务。",
+        "团队使用 Claude Code 时应记录子代理数量与配额消耗，便于识别类似异常。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260601-1735",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2061947411141169494",
+      "angle": "子代理耗额修复"
+    }
+  ]
+}
