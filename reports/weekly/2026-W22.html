@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 周报 2026-W22 · CatchUp</title>
+  <meta name="description" content="CatchUp 周报 — 2026-W22" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Weekly</span>
+            <span>·</span>
+            <span>周报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-W22</h1>
+          <p class="report-subtitle">5月25日 – 31日</p>
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">本周趋势</h2>
+<ul>
+<li><strong>旗舰模型续更</strong>：Anthropic 发布 Claude Opus 4.8，Qwen3.7-Max 登顶 Code Arena 第 4，Google 继续以 I/O 亮点强化 Gemini 阵容。</li>
+<li><strong>编码安全内建</strong>：Claude Code 安全插件把 PR 安全评论降 30-40%，OpenAI 与 Cisco、Warp、Thrive 展示 Codex 进入工程流水线。</li>
+<li><strong>企业 Agent 闭环</strong>：Databricks、Thrive 和 Cisco 案例显示，GPT-5.5 与 Codex 正被用于文档解析、报税修复和安全产品开发。</li>
+<li><strong>基础设施降风险</strong>：OpenAI 推出私有 MCP 隧道和 Workload Identity Federation，Anthropic 强调沙箱权限，Agent 权限治理进入工程层。</li>
+<li><strong>资本和采购升温</strong>：Anthropic 650 亿美元 H 轮、Claude Marketplace 扩容与 Mistral 工业方案显示，企业 AI 采购正在平台化。</li>
+<li><strong>社会议题抬头</strong>：OpenAI 基金会投入 AI 时代经济未来，Anthropic 在梵蒂冈回应教皇 AI 通谕，前沿实验室开始主动回应就业与伦理压力。</li>
+</ul>
+<h2 id="h-2">Top 10 最重要文章</h2>
+<h3 id="h-3">1. <a href="https://x.com/Alibaba_Qwen/status/2059445345667747849">Qwen3.7-Max 登顶 Code Arena 第 4：对标 Claude Opus 4.6，国产模型新高</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/27</li>
+<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>Code Arena</code> <code>国产大模型</code> <code>Agent 集成</code> <code>IDE 工具链</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen3.7-Max 在 Code Arena 编程榜冲到第 4，与 Claude Opus 4.6 并列，成为目前榜单上排名最高的国产模型。Hermes Agent 将它纳入默认模型矩阵，Qoder IDE 也限时开放每日 100 次免费调用，说明生态侧已经开始快速采纳。它延续了 W21 的 Qwen3.7 主线，并把“前沿能力接近”转化为编码工具链里的实际入口。</p>
+<h3 id="h-4">2. <a href="https://www.anthropic.com/news/claude-opus-4-8">Claude Opus 4.8 发布：判断力升级、Claude Code 同步上线</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/28</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.8</code> <code>Anthropic</code> <code>编码 Agent</code> <code>长任务</code> <code>诚实度</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Opus 4.8，在 SWE-Bench、Terminal-Bench 等编码与 Agent 基准上较 Opus 4.7 提升，并改善长任务稳定性和过度自信表达。模型通过 API、Bedrock、Vertex AI、Claude Code、Claude Web/App 同步上线 Max、Team、Enterprise 订阅。早期反馈强调它更愿意承认不确定性和反问，是一次面向协作判断力的旗舰更新。</p>
+<h3 id="h-5">3. <a href="https://blog.google/innovation-and-ai/technology/ai/io-2026-keynote-moment-videos/">Google I/O 2026 十二大亮点：Gemini Omni 与 3.5 Flash 登场</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/28</li>
+<li><strong>标签</strong>: <code>Google I/O 2026</code> <code>Gemini Omni</code> <code>Gemini 3.5 Flash</code> <code>Search Agents</code> <code>Android XR</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 汇总 I/O 2026 十二大亮点，再次确认 Gemini Omni、Gemini 3.5 Flash、Search 信息 Agent、Antigravity 生成式 UI、Daily Brief、Spark Agent、Universal Cart、Android XR 和 SynthID 生态是本轮发布核心。Gemini 3.5 Flash 已通过 Antigravity、AI Studio 和 Android Studio 等渠道开放。它把 W21 的 Google 发布重新整理为面向用户和开发者的产品路线图。</p>
+<h3 id="h-6">4. <a href="https://x.com/OpenAIDevs/status/2059353117934899289">GPT-5.5 在 Databricks OfficeQA Pro 取得 50% SOTA,错误率较 5.4 降 46%</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/26</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>Codex</code> <code>Databricks</code> <code>OfficeQA Pro</code> <code>企业 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 与 Databricks 披露 GPT-5.5 在 OfficeQA Pro 企业文档基准上达到 50% 准确率，错误率较 GPT-5.4 降低 46%。该基准面向扫描 PDF、遗留文件、长上下文文档解析、检索和有据推理，Databricks 已通过 AI Unity Gateway、AgentBricks 和 Agent Supervisor API 引入生产 Agent 编排。它是 GPT-5.5 进入复杂企业文档流的清晰案例。</p>
+<h3 id="h-7">5. <a href="https://x.com/ClaudeDevs/status/2059385239781384341">Claude Code 上线安全指导插件:Anthropic 内部 PR 安全评论降 30-40%</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/26</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>安全插件</code> <code>DevSecOps</code> <code>漏洞修复</code> <code>企业治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 为 Claude Code 推出官方 <code>security-guidance</code> 插件，可在编码过程中实时识别和修复安全漏洞。内部大规模 rollout 和基准测试显示，使用该插件提交的 PR 在安全相关评论上减少 30-40%，定位为正式代码审查前的轻量第一道关卡。插件还支持通过 <code>claude-security-guidance.md</code> 或 MDM 分发组织级安全规则，适合企业统一治理。</p>
+<h3 id="h-8">6. <a href="https://openai.com/index/cisco">Cisco 深度整合 Codex：AI Defense 开发周期从季度压缩至周</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/27</li>
+<li><strong>标签</strong>: <code>OpenAI Codex</code> <code>Cisco</code> <code>企业工程</code> <code>AI Defense</code> <code>GPT-5.5-Cyber</code></li>
+</ul>
+<p><strong>摘要</strong>: Cisco 将 Codex 嵌入企业工程流水线，几乎全部新 AI Defense 功能由 Codex 撰写，把原本数个季度的开发周期压缩到数周。跨 15 个以上仓库的构建优化每月节省 1,500 多个工程师小时，C/C++ 缺陷修复吞吐量提升 10-15 倍。案例还接入 OpenAI Daybreak 和 GPT-5.5-Cyber，展示 Codex 在安全产品开发中的生产级用法。</p>
+<h3 id="h-9">7. <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex">OpenAI×Thrive 推出自改进报税 Agent：6 周字段准确率从 25% 升至 86%</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/27</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Tax AI</code> <code>Self-Improving Agent</code> <code>Eval Pipeline</code> <code>企业 Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 与 Thrive Holdings 为 Crete 会计师网络打造 Tax AI，用 Codex 在生产 trace、专家纠错和定向 eval 之间建立自改进闭环。系统本季为 30 多家事务所处理 7,000 份税务申报，6 周内字段准确率达到 75% 的占比从 25% 升至 86%，准备时间节省约三分之一。文章把“生产反馈 → eval → Codex 修复 PR”写成可复用的企业 Agent 工程蓝图。</p>
+<h3 id="h-10">8. <a href="https://openai.com/index/warp">Warp 押注 GPT-5.5：开源终端 + Oz 编排，Agent 共创 90% PR</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/27</li>
+<li><strong>标签</strong>: <code>Warp</code> <code>GPT-5.5</code> <code>开源终端</code> <code>Agent 编排</code> <code>Open Agentic Development</code></li>
+</ul>
+<p><strong>摘要</strong>: Warp 宣布终端开源，OpenAI 成为首个赞助方，并推出 Open Agentic Development 开发模式。内部基准显示 GPT-5.5 比 GPT-5.4 每个 agentic 编码任务少用 30% token，而 Warp 自家 90% PR 已由 Agent 共同创作。其 Oz 编排平台通过上下文压缩、持久记忆和子 Agent 分工支撑跨本地/云的长时编程工作流。</p>
+<h3 id="h-11">9. <a href="https://x.com/OpenAIDevs/status/2059704409326760405">OpenAI 推出私有 MCP 服务器隧道：内网部署 + 出站 HTTPS</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/27</li>
+<li><strong>标签</strong>: <code>MCP</code> <code>私有隧道</code> <code>内网工具</code> <code>Responses API</code> <code>企业安全</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 secure-mcp-tunnels，允许企业把 MCP 服务器保留在内网，由 ChatGPT、Codex 和 Responses API 通过仅出站 HTTPS 连接调用。这样团队无需把内部工具暴露到公网，也能满足合规和网络隔离需求。同一线程还提到 Workload Identity Federation，说明 OpenAI API 平台正在补齐企业身份与权限治理。</p>
+<h3 id="h-12">10. <a href="https://www.anthropic.com/news/series-h">Anthropic 完成 650 亿美元 H 轮融资，估值 9650 亿美元</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 05/28</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>融资</code> <code>估值</code> <code>算力基础设施</code> <code>全球扩张</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 宣布完成 650 亿美元 H 轮融资，投后估值达到 9650 亿美元，逼近万亿美元门槛。公司披露年化运行收入突破 470 亿美元，资金将用于扩大计算基础设施、推进安全研究和全球扩张。前沿模型公司的资本竞赛进入新量级，也给 Opus 4.8、Claude Code 和企业平台扩张提供了背景。</p>
+<h2 id="h-13">分类概览</h2>
+<h3 id="h-14">模型发布</h3>
+<p>W22 的模型发布数量明显少于 W21，但质量集中在三条主线。Qwen3.7-Max 继续上冲，在 Code Arena 排到第 4，并被 Hermes Agent、Qoder IDE 等外部工具链快速接入。Anthropic 发布 Opus 4.8，强调编码 Agent、长任务稳定性和更诚实的判断力。Google 则通过 I/O 十二大亮点继续巩固 Gemini Omni 与 3.5 Flash 的平台叙事。</p>
+<h3 id="h-15">研究</h3>
+<p>研究板块从模型发布转向基准和采用率观察。Qwen3.5 在 TokenSpeed 引擎上跑出 580 tokens/s 的大规模 MoE Agent 推理纪录，显示代理工作负载仍有明显系统优化空间。Qwen3.7-Max 在 ITBench-AA 排名第三，证明企业 IT 和 SRE 任务已经成为新一代 Agent 基准。Anthropic 对 1,260 位社科学者的调研则提醒：Chatbot 已广泛进入研究流程，但 coding agent 的采用率仍只有 20%，扩散速度并不均匀。</p>
+<h3 id="h-16">产品与功能</h3>
+<p>产品与功能本周非常密集，主线是企业级编码 Agent 进入真实流水线。OpenAI 的 Databricks、Cisco、Thrive、Warp 案例分别覆盖复杂文档、网络安全产品、税务 Agent 和终端开发，强调 GPT-5.5 与 Codex 的生产收益。Anthropic 则用 Claude Code 安全插件、响应性更新、<code>/feedback</code>、Dynamic Workflows 和 Opus 4.8 同步上线来巩固开发者平台。OpenAI 私有 MCP 隧道和 Workload Identity Federation 把内部工具访问与身份治理补齐，说明 Agent 的企业部署已经进入权限和网络层。</p>
+<h3 id="h-17">商业动态</h3>
+<p>商业动态的中心是 Anthropic H 轮融资和企业采购生态。650 亿美元融资、9650 亿美元估值和 470 亿美元年化运行收入，把前沿模型公司的资本规模推向新高度。Claude Marketplace 新增 Augment、Bolt、CodeRabbit、Hebbia 和 Legora，帮助企业把 Anthropic 支出承诺额转化为周边工具采购。OpenAI 与巴西 Folha/UOL 的新闻合作、Mistral 的工业方案和 Replit/Claude 案例则显示，各家公司都在争抢区域内容、工业部署和垂直应用渠道。</p>
+<h3 id="h-18">政策与安全</h3>
+<p>政策与安全围绕内容溯源、选举、沙箱和前沿治理展开。Google DeepMind 披露 SynthID 已为超过 1000 亿条内容加水印，并与 OpenAI、ElevenLabs、Kakao 合作接入，OpenAI 也公布 2026 大选安全方案与 AP 实时计票、公开验证工具。Anthropic 工程博客强调 Agent 权限必须随能力演进，并以沙箱限制破坏性操作。OpenAI 的 Frontier Governance Framework 则把 Preparedness Framework 对接到欧美监管要求，前沿治理开始映射到可审计流程。</p>
+<h3 id="h-19">教程与观点</h3>
+<p>教程与观点本周更偏社会和工作方式反思。Anthropic 联创 Chris Olah 在教皇 AI 通谕发布会上强调前沿实验室面临商业、地缘和个人激励冲突，需要外部批评者推动安全。Thariq 多次强调“文件夹 + 脚本 + HTML”是非技术用户用好 Claude Code 的基本接口，并把遗留代码库看作未来模型重写和蒸馏的素材。OpenAI Devs 转述 Codex Mobile 体验，认为离开笔记本后反而会写出更宏观、更明确的任务提示。</p>
+<h2 id="h-20">本周值得上手试试</h2>
+<ol>
+<li><strong>Qwen3.7-Max 编程评测</strong> — 把 Qwen3.7-Max 加入编码评测矩阵，与 Claude Opus 4.8、Opus 4.6 和 GPT-5.5 做同题 PR 实验。</li>
+<li><strong>Claude Opus 4.8 迁移</strong> — 在 Claude Code 中执行 <code>/claude-api migrate</code>，再按官方 Prompting Guide 调整长任务和 Agent 系统提示。</li>
+<li><strong>Gemini 3.5 Flash / Omni 回归测试</strong> — 在 AI Studio、Antigravity 和 Gemini App 中分别测试编码、Agent 和多模态视频生成能力。</li>
+<li><strong>GPT-5.5 文档 Agent</strong> — 用扫描 PDF、表格和遗留文档搭一个 OfficeQA Pro 风格 eval，验证 GPT-5.5 相比 5.4 的错误率改善。</li>
+<li><strong>Claude Code 安全插件</strong> — 通过 <code>/plugins</code> 安装 <code>security-guidance</code>，并把团队安全规则写入 <code>claude-security-guidance.md</code> 做一周试点。</li>
+<li><strong>Codex 企业工程闭环</strong> — 参考 Cisco 与 Thrive，把生产 trace、专家纠错、定向 eval 和 Codex 修复 PR 串成一条可验证流水线。</li>
+<li><strong>Warp Oz 编排</strong> — 在一个长时编码任务中试用 Warp Oz 的子 Agent 分工、上下文压缩和持久记忆，记录 token 与人工审查成本。</li>
+<li><strong>私有 MCP 隧道</strong> — 将一个内部工具型 MCP 服务器改为仅出站 HTTPS 连接，验证 ChatGPT/Codex/Responses API 的内网调用链路。</li>
+<li><strong>Workload Identity Federation</strong> — 用云端 IAM 工作负载身份替代长期 OpenAI API Key，为生产调用建立短期凭证和审计日志。</li>
+<li><strong>Dynamic Workflows</strong> — 在 Claude Code 中对复杂重构或数据分析任务试用 Dynamic Workflows，比较并行子智能体与单线程执行差异。</li>
+</ol>
+<h2 id="h-21">值得深读</h2>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-opus-4-8">Claude Opus 4.8 发布：判断力升级、Claude Code 同步上线</a> — 理解 Anthropic 如何把模型能力、Claude Code 和长任务协作体验一起升级。</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2059445345667747849">Qwen3.7-Max 登顶 Code Arena 第 4：对标 Claude Opus 4.6，国产模型新高</a> — Qwen3.7 系列从发布走向外部工具链采纳，这条是最清晰的编码榜单信号。</li>
+<li><a href="https://openai.com/index/building-self-improving-tax-agents-with-codex">OpenAI×Thrive 推出自改进报税 Agent：6 周字段准确率从 25% 升至 86%</a> — 它把生产反馈、专家纠错、eval 和 Codex 修复写成可复用的自改进 Agent 工程模板。</li>
+<li><a href="https://openai.com/index/cisco">Cisco 深度整合 Codex：AI Defense 开发周期从季度压缩至周</a> — Cisco 案例给出 Codex 在大型企业工程和安全产品中的工时节省与吞吐提升数据。</li>
+<li><a href="https://x.com/OpenAIDevs/status/2059704409326760405">OpenAI 推出私有 MCP 服务器隧道：内网部署 + 出站 HTTPS</a> — 企业 Agent 能否落地，很大程度取决于这类网络和权限基础设施是否成熟。</li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">本周趋势</a></li>
+      <li class="toc-h2"><a href="#h-2">Top 10 最重要文章</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Qwen3.7-Max 登顶 Code Arena 第 4：对标 Claude Opus 4.6，国产模型新高 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Claude Opus 4.8 发布：判断力升级、Claude Code 同步上线 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Google I/O 2026 十二大亮点：Gemini Omni 与 3.5 Flash 登场 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-6">4. GPT-5.5 在 Databricks OfficeQA Pro 取得 50% SOTA,错误率较 5.4 降 46% ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Claude Code 上线安全指导插件:Anthropic 内部 PR 安全评论降 30-40% ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Cisco 深度整合 Codex：AI Defense 开发周期从季度压缩至周 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-9">7. OpenAI×Thrive 推出自改进报税 Agent：6 周字段准确率从 25% 升至 86% ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Warp 押注 GPT-5.5：开源终端 + Oz 编排，Agent 共创 90% PR ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-11">9. OpenAI 推出私有 MCP 服务器隧道：内网部署 + 出站 HTTPS ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-12">10. Anthropic 完成 650 亿美元 H 轮融资，估值 9650 亿美元 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h2"><a href="#h-13">分类概览</a></li>
+      <li class="toc-h3"><a href="#h-14">模型发布</a></li>
+      <li class="toc-h3"><a href="#h-15">研究</a></li>
+      <li class="toc-h3"><a href="#h-16">产品与功能</a></li>
+      <li class="toc-h3"><a href="#h-17">商业动态</a></li>
+      <li class="toc-h3"><a href="#h-18">政策与安全</a></li>
+      <li class="toc-h3"><a href="#h-19">教程与观点</a></li>
+      <li class="toc-h2"><a href="#h-20">本周值得上手试试</a></li>
+      <li class="toc-h2"><a href="#h-21">值得深读</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older weekly</span>
+        <a href="../weekly/2026-W21.html">2026-W21</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer weekly →</span>
+        <a href="../weekly/2026-W23.html">2026-W23</a>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W22.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
