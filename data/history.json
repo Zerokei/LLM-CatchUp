@@ -15771,7 +15771,464 @@
           "回复体验"
         ]
       }
+    },
+    "e1cab4c068bd1f22d0b0810f95c4587fe9b78b924d5b13eb61fbe8eceffef658": {
+      "title": "Gemma 4 12B 发布：本地多模态模型升级",
+      "url": "https://x.com/demishassabis/status/2062241713398149524",
+      "source": "Demis Hassabis (Twitter)",
+      "published_at": "2026-06-03T18:35:13.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Demis Hassabis 转发庆祝 Gemma 下载量突破 1.5 亿，并介绍新的 Gemma 4 12B 模型。该模型采用统一、无编码器的多模态设计，面向本地笔记本运行场景，官方强调其在 16GB VRAM 设备上也足够轻量，并以 Apache 2.0 许可证发布。",
+      "category": "模型发布",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "Gemma 4",
+          "12B模型",
+          "多模态",
+          "本地部署",
+          "Apache 2.0"
+        ],
+        "practice_suggestions": [
+          "需要端侧多模态能力的团队可把 Gemma 4 12B 加入 16GB VRAM 设备的基准测试。",
+          "开源使用前确认 Apache 2.0 许可与内部模型分发规范是否匹配。",
+          "用真实图文推理和本地延迟任务评估它相对云端模型的成本收益。"
+        ]
+      }
+    },
+    "ba562226725de1d8218dfe8343e78a80afb3ae2ef1fc7a504ae09b9e8bd11e50": {
+      "title": "GPT-Rosalind 升级：GPT-5.5 进入生命科学",
+      "url": "https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-03T13:15:00.000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "OpenAI 为面向企业生命科学研究的 GPT-Rosalind 推出新能力，把 GPT-5.5 的智能体编码和工具调用能力与药物化学、基因组学、实验工作流等专业推理结合起来。更新后的模型在生物专家任务、复杂药物化学查询、定量生物学和湿实验排错中显示更强表现，并通过 trusted-access 结构向合格组织开放研究预览。官方社媒进一步强调这是把 GPT-5.5 用于药物发现、分析、设计和实验流程的垂直化落地。",
+      "category": "模型发布",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "GPT-Rosalind",
+          "GPT-5.5",
+          "生命科学",
+          "药物发现",
+          "企业AI"
+        ],
+        "practice_suggestions": [
+          "生命科学团队可优先整理药物化学、基因组学和实验排错任务集做封闭评测。",
+          "评估时把工具调用、代码生成和领域专家审阅放进同一工作流，而不是只看单轮问答。",
+          "对受监管研发数据使用 trusted-access 部署，先明确数据边界和审计要求。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2062281977122996256",
+            "title": "OpenAI 社媒介绍 GPT-Rosalind 新能力",
+            "source": "OpenAI (Twitter)",
+            "angle": "社媒要点"
+          }
+        ]
+      }
+    },
+    "3acdb1af1a6a49e0de766f79c42dc154ae03863adea291ae8e5d997266f07fed": {
+      "title": "Claude Code 更新：动态工作流、/fork 与自检",
+      "url": "https://x.com/ClaudeDevs/status/2062257177788858398",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-06-03T19:36:40.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Claude Code 相关更新集中在把编码代理从单次会话推进到可编排流程：动态工作流的触发词从 workflow 改为 ultracode，以减少普通语义中的误触发。/fork 现在可以用当前完整上下文、工具、历史、模型和提示缓存启动后台代理，并把结果返回原会话。配套内容还展示如何把人工检查编码成 Claude Code 的自检环节，让代理在交付前闭合反馈回路。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "动态工作流",
+          "ultracode",
+          "/fork",
+          "自检"
+        ],
+        "practice_suggestions": [
+          "将常用复杂任务迁移到 ultracode 触发的动态工作流，并记录误触发样例。",
+          "用 /fork 跑高风险改动的后台候选方案，主会话只审查结果和关键 diff。",
+          "把人工验收清单写进 Claude Code 流程，让代理提交前先自查测试、格式和边界条件。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/trq212/status/2061907538741006796",
+            "title": "Thariq 解读 Claude Code 工作流实践",
+            "source": "Thariq (Twitter)",
+            "angle": "实践解读"
+          },
+          {
+            "url": "https://x.com/trq212/status/2061907337154367865",
+            "title": "Claude Code 动态工作流长文入口",
+            "source": "Thariq (Twitter)",
+            "angle": "长文入口"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2061900434722496604",
+            "title": "Claude Code 可编码人工自检流程",
+            "source": "Claude Devs (Twitter)",
+            "angle": "自检流程"
+          }
+        ]
+      }
+    },
+    "b531a6249412cc4f4209ed3611bc98a6ff9fd4cb9cadc21dd30d5b5d71423e72": {
+      "title": "Anthropic 用 MITRE 映射 AI 网络威胁",
+      "url": "https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack",
+      "source": "Anthropic Blog",
+      "published_at": "2026-06-03T00:00:00.000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Anthropic 分析了 2025 年 3 月至 2026 年 3 月间因恶意网络活动被封禁的 832 个账号，并将其行为映射到 MITRE ATT&CK 框架。报告指出，恶意行为者正在使用 AI 提高攻击能力，既有安全技术框架仍可提供分析语言，但需要适配 AI 辅助攻击的新模式。官方社媒强调这项工作用于检验安全社区现有技战术体系面对 AI 攻击时的有效性。",
+      "category": "政策与安全",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "AI安全",
+          "网络威胁",
+          "MITRE ATT&CK",
+          "Anthropic",
+          "滥用检测"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2062243425580367905",
+            "title": "Anthropic 社媒解读 AI 网络威胁报告",
+            "source": "Anthropic (Twitter)",
+            "angle": "社媒摘要"
+          }
+        ]
+      }
+    },
+    "145b9c7e2be2f3ce2a5be0924689900ef0fcf52d75ead5d32b16e689f19042e0": {
+      "title": "Codex 角色插件上线：62 个应用与 110 个技能",
+      "url": "https://x.com/OpenAI/status/2061887650391625870",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-06-02T19:08:18.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "OpenAI 将 Codex 插件从单个工具扩展为面向具体角色的一键安装能力，让 Codex 可在销售、数据分析、创意制作、产品设计和公开股票投资等场景中变成专门助手。官方称这些插件可访问 62 个常用应用和 110 个技能，OpenAI Devs 进一步说明插件围绕团队真实工作流构建，并把 Sites 用作原型输出后的团队评审入口。示例包括销售准备、公开股权投资、数据分析、创意制作和产品设计。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Codex",
+          "插件",
+          "Skills",
+          "Sites",
+          "团队工作流"
+        ],
+        "practice_suggestions": [
+          "按岗位挑选一个高频流程试装 Codex 角色插件，记录它实际调用的 app 和 skill。",
+          "把销售准备、数据分析或产品原型任务做成端到端验收样例，衡量一键插件是否减少配置成本。",
+          "涉及 Sites 输出时提前定义评审人、URL 分享范围和原型验收标准。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2061887949516730502",
+            "title": "Codex 销售插件用于售前准备",
+            "source": "OpenAI (Twitter)",
+            "angle": "销售场景"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2061888366791246071",
+            "title": "OpenAI Devs 解释 Codex 角色插件",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "开发者视角"
+          }
+        ]
+      }
+    },
+    "383f75b1aedfbcdd5c9df5b016634281e440ef881ffe555c613c1a2cacf2c43e": {
+      "title": "Claude Platform CLI 打通 API 与 Managed Agents",
+      "url": "https://x.com/ClaudeDevs/status/2061877343078244459",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-06-02T18:27:21.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Claude Devs 发布 Claude Platform CLI，让每个 API endpoint 都可从终端运行，包括 Messages API、Claude Managed Agents 和结果管道化。线程补充说明 CLI 可启动 Managed Agents 会话、发送事件、查看完整 trace，并可被 Claude Code 通过内置 /claude-api skill 调用，从而把平台操作纳入编码代理工作流。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Platform",
+          "CLI",
+          "Managed Agents",
+          "Claude Code",
+          "API"
+        ],
+        "practice_suggestions": [
+          "用 CLI 封装常见 API 调试、文件上传和 agent trace 拉取流程。",
+          "在 Claude Code 中试用 /claude-api skill，让代理直接读取 CLI 返回结果。",
+          "为 Managed Agents 建立可复现的事件脚本，方便回归测试和审计。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/ClaudeDevs/status/2061877351253004619",
+            "title": "Claude CLI 可拉取 Managed Agents trace",
+            "source": "Claude Devs (Twitter)",
+            "angle": "Trace 调试"
+          }
+        ]
+      }
+    },
+    "be945ea49eaaee50a2d59a0b12f96cc429d3949fc227667eaf844786f804c01b": {
+      "title": "Grok 接入 Cloudflare AI Gateway",
+      "url": "https://x.com/xai/status/2062294202625696081",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-06-03T22:03:48.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "xAI 宣布 Grok 模型可通过 Cloudflare AI Gateway 使用。被引用的 Cloudflare 开发者信息称，Grok 的文本、音频、图像和视频模型可经 AI Gateway 调用，并由 Cloudflare 直接计费，无需额外认证、环境变量或 API key。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Grok",
+          "Cloudflare",
+          "AI Gateway",
+          "模型分发"
+        ],
+        "practice_suggestions": [
+          "已使用 Cloudflare AI Gateway 的团队可用同一网关测试 Grok 模型的接入和计费体验。",
+          "把 Grok 接入与现有模型路由策略比较，确认鉴权、日志和成本归集是否一致。"
+        ]
+      }
+    },
+    "c420bf0be78711cd248a5308b32272a03d33c5a12924caec19a76cf753676a67": {
+      "title": "Claude 发布商业分析智能体实践",
+      "url": "https://x.com/ClaudeDevs/status/2062274312363770064",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-06-03T20:44:45.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Claude Devs 分享关于用 Claude 自动化商业分析的新博客，覆盖 skills、数据基础和评测等最佳实践。重点是如何让代理执行数据分析任务时具备可重复的数据输入、任务边界和质量评估。",
+      "category": "教程与观点",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Claude",
+          "商业分析",
+          "Skills",
+          "评测",
+          "数据基础"
+        ]
+      }
+    },
+    "032a72a6e2127c3b4bf2ef9c754267fa79a52048bb23d86e92e01b45030ac5b7": {
+      "title": "Wasmer 用 Codex 两周做出边缘 Node.js",
+      "url": "https://openai.com/index/wasmer",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-03T12:00:00.000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "OpenAI 案例展示 Wasmer 如何借助 Codex 和 GPT-5.5 构建可在 WebAssembly 沙箱中运行 Node.js 负载的 Edge.js，把原本可能需要一年的工程压缩到约两周。项目让 JavaScript 应用、MCP 和代理可以在无 Docker 的边缘环境运行，体现编码代理对系统级基础设施开发的加速效果。",
+      "category": "教程与观点",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Codex",
+          "Wasmer",
+          "Node.js",
+          "WebAssembly",
+          "边缘计算"
+        ]
+      }
+    },
+    "b90e074e514a25d9b3e84c1bb9a2b070821620d3c0f291b7c86a7db91d5950e2": {
+      "title": "美国AI治理升温：OpenAI 议程与行政令同日发声",
+      "url": "https://openai.com/index/public-policy-agenda",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-03T10:00:00.000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "OpenAI 发布公共政策议程，围绕民主化、赋能、共同繁荣、韧性和适应性阐述其 AGI 治理原则。配套的前沿 AI 民主治理蓝图进一步主张美国建立联邦级安全、韧性和国家安全框架。Sam Altman 与 Anthropic 均对新的美国 AI 行政令表达支持，强调美国在领先模型、安全和可信防御工具上的主导地位。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "AI治理",
+          "美国政策",
+          "OpenAI",
+          "行政令",
+          "前沿模型安全"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://openai.com/index/frontier-safety-blueprint",
+            "title": "OpenAI 提出前沿 AI 联邦治理蓝图",
+            "source": "OpenAI Blog",
+            "angle": "治理蓝图"
+          },
+          {
+            "url": "https://x.com/sama/status/2061973280655904815",
+            "title": "Sam Altman 支持美国 AI 行政令",
+            "source": "Sam Altman (Twitter)",
+            "angle": "Altman 表态"
+          }
+        ]
+      }
+    },
+    "a67bd1248e35990c3ee798a8eb0949262e619cd4a1455fdaec203a773512190c": {
+      "title": "Gopuff 推出 Grok 驱动购物助手 Go",
+      "url": "https://x.com/xai/status/2062252902438342735",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-06-03T19:19:41.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "xAI 转发 Gopuff 的 Go 购物助手发布，称其由 Grok 文本、音频和图像模型驱动，可根据用户表达的需求推荐并快速配送商品。这是 Grok 在消费零售场景中的合作落地。",
+      "category": "产品与功能",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Grok",
+          "Gopuff",
+          "购物助手",
+          "消费AI"
+        ],
+        "practice_suggestions": [
+          "零售团队可关注语音、多模态和库存推荐如何组合成即时购物体验。"
+        ]
+      }
+    },
+    "26ceb96b2124545a930fa1b86864434025c09fef2d13f6023b3b28c0a57146fe": {
+      "title": "Grok STT 与 TTS 接入 Vapi",
+      "url": "https://x.com/xai/status/2062209374039499178",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-06-03T16:26:43.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "xAI 宣布 Grok 的语音识别和语音合成 API 已可在 Vapi 使用。Vapi 称这些能力面向企业语音 AI，可帮助构建更自然、能捕捉关键细节并适应受监管流程的语音代理。",
+      "category": "产品与功能",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Grok",
+          "Vapi",
+          "语音AI",
+          "STT",
+          "TTS"
+        ],
+        "practice_suggestions": [
+          "语音代理团队可用客服或合规场景样本测试 Grok STT/TTS 的延迟、准确率和自然度。"
+        ]
+      }
+    },
+    "08299e1208670826b9c83549fc9f473fd2544d1e2f2879befe08ed42f91f0e9d": {
+      "title": "Berkeley RDI 预告 Agentic AI Summit",
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-june",
+      "source": "Berkeley RDI",
+      "published_at": "2026-06-03T16:01:07.973Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Berkeley RDI 的本期 Agentic AI Weekly 重点提醒 Agentic AI Summit 2026 的早鸟票即将结束，并补充公布更多演讲嘉宾。该条属于周更资讯，主要用于周报聚合，不进入日趋势判断。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Agentic AI",
+          "会议",
+          "Berkeley RDI"
+        ]
+      }
+    },
+    "bb4886b95744d7c77d216d7b176af32dfbc362d9f9a54ae48b6b39d7b72821e1": {
+      "title": "Google Search 用 AI 辅助二手购物",
+      "url": "https://blog.google/products-and-platforms/products/search/thrifting-tips/",
+      "source": "Google AI Blog",
+      "published_at": "2026-06-03T13:00:00.000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Google 介绍了 Search 和 Shopping 中用于二手、复古购物的 AI 功能与技巧，帮助用户识别商品、比较款式并找到更合适的购买入口。该更新偏消费搜索体验优化，属于产品能力的增量应用。",
+      "category": "产品与功能",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Google Search",
+          "Shopping",
+          "消费AI",
+          "二手购物"
+        ],
+        "practice_suggestions": [
+          "电商和内容团队可观察 Google 搜索结果中商品结构化信息的呈现方式，优化可索引内容。"
+        ]
+      }
+    },
+    "c265f4d09da60a8497d8b1be54c4e74eaa36111b6eeed252f5cde990363cf838": {
+      "title": "Anthropic 扩展 Claude Partner Network",
+      "url": "https://www.anthropic.com/news/services-track-partner-hub",
+      "source": "Anthropic Blog",
+      "published_at": "2026-06-03T00:00:00.000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Anthropic 为 Claude Partner Network 推出 Services Track 和 Partner Hub，面向咨询、系统集成和企业落地伙伴提供更清晰的服务路径。文章称已有大量机构申请加入并完成认证，核心目标是把 Claude 从试点推进到可运营的生产系统。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Claude",
+          "合作伙伴",
+          "企业落地",
+          "咨询服务"
+        ]
+      }
+    },
+    "462412edf872cd83abbf94de33cdcc809e4239a4227bd87829b95bb6c71a5b39": {
+      "title": "OpenAI 发布简短预热视频",
+      "url": "https://x.com/OpenAI/status/2062249312839434452",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-06-03T19:05:25.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "OpenAI 发布一句 “It's time to fly” 搭配视频链接的预热内容，但抓取文本没有提供足够上下文判断具体产品或事件。该条新闻信号较低。",
+      "category": "产品与功能",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "预热",
+          "视频"
+        ],
+        "practice_suggestions": [
+          "等待后续正式公告后再判断是否需要纳入产品评估。"
+        ]
+      }
+    },
+    "0fedad2c7767e6dde053154adf6fa440e8c1148af055b16b069838e40a97bb29": {
+      "title": "Claude 展示 Clawd 创意硬件故事",
+      "url": "https://x.com/claudeai/status/2062220040934449596",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-06-03T17:09:06.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Claude 官方分享与 Ben James 的访谈，讨论构建、创造力以及看似玩笑的想法为何有价值。线程还展示了一个迷你 Clawd 硬件装置，用于在 Claude Code 需要输入时提醒用户，整体更偏社区创意展示。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "创意硬件",
+          "社区故事"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/claudeai/status/2062220049146876347",
+            "title": "迷你 Clawd 提醒 Claude Code 输入",
+            "source": "Claude (Twitter)",
+            "angle": "硬件细节"
+          },
+          {
+            "url": "https://x.com/claudeai/status/2062220051587952973",
+            "title": "Claude Clawd 故事链接补充",
+            "source": "Claude (Twitter)",
+            "angle": "链接补充"
+          }
+        ]
+      }
+    },
+    "95fffe14cddbc99d74025518fd05a1930d6deefa9118bbc3d43150bf86070551": {
+      "title": "Thariq 推荐 AI 主题短篇小说",
+      "url": "https://x.com/trq212/status/2062217018187923783",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-06-03T16:57:05.000000Z",
+      "fetched_at": "2026-06-08T17:25:00+08:00",
+      "summary": "Thariq 分享 Suzanne Wang 的短篇小说 Mall of America，并称其是自己喜欢的、涉及 AI 且关注人类处境的故事之一。该条更偏个人阅读推荐，新闻信号较低。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "AI文化",
+          "短篇小说",
+          "个人推荐"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-06-03T19:27:05+08:00"
+  "last_fetch": "2026-06-08T17:25:00+08:00"
 }

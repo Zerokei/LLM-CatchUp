@@ -72,6 +72,114 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 周报 2026-W23</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W23.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W23.md</guid>
+      <pubDate>Sun, 07 Jun 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W23 (06/01 - 06/07)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>代理模型竞争</strong>：Qwen3.7-Plus 与 Grok Build Composer 2.5 同周更新，模型发布开始直接围绕浏览器操作和构建工作流展开。</li>
+<li><strong>编码平台外扩</strong>：OpenAI Codex 走向角色插件、Sites 和 AWS，Claude Code 则用后台代理与 CLI 把开发工作流继续拆成可并行任务。</li>
+<li><strong>科研助手成形</strong>：Google DeepMind 发布 Gemini for Science，把多智能体系统包装成假设生成、文献推理和实验设计的科研工作台。</li>
+<li><strong>安全治理加码</strong>：Anthropic 扩大 Project Glasswing，OpenAI 推动青少年 AI 安全和 Foundation 韧性资助，治理议题继续机构化。</li>
+<li><strong>语音进入流程</strong>：Travelers 的 OpenAI 实时语音理赔助手与 Voice Hack Night 原型显示，语音 Agent 正从演示走向企业和移动端流程。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">Qwen3.7-Plus 发布多模态代理模型</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/01</li>
+<li><strong>标签</strong>: <code>Qwen3.7-Plus</code> <code>多模态代理</code> <code>浏览器智能体</code> <code>模型发布</code> <code>工具调用</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 发布 Qwen3.7-Plus，并把重点放在多模态代理和浏览器操作能力上。演示强调模型可以在网页环境中处理文本、视觉和工具调用混合任务，信号不只是参数升级，而是面向可执行流程的代理模型竞争。对国内和开源模型生态而言，这是把模型能力直接推向应用侧评测的一次重要发布。</p>
+<h3>2. <a href="https://x.com/ClaudeDevs/status/2061947411141169494">Claude Code 同日升级：后台代理、CLI 与修复</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>后台代理</code> <code>终端 CLI</code> <code>工作流</code> <code>Opus 4.8</code> <code>子代理</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 同日推进多项开发者工作流更新：<code>/fork</code> 可把当前上下文拆给后台代理并行处理，CLI 则连接到托管智能体会话和 Claude API 技能。官方还说明并修复 Opus 4.8 工具调用与子代理耗额问题，让长期任务的成本和可靠性更容易检查。整体方向是把 Claude Code 从单会话助手继续推向可编排的开发平台。</p>
+<h3>3. <a href="https://x.com/GoogleDeepMind/status/2061857539977842793">Gemini for Science 发布多智能体科研助手</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Gemini for Science</code> <code>科研智能体</code> <code>Co-Scientist</code> <code>多智能体</code> <code>假设生成</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 发布 Gemini for Science，把多智能体系统用于假设生成、文献推理和实验设计。演示中的 Co-Scientist 不只是回答科学问题，而是辅助提出候选方向并支持研究者试用。它代表 Gemini 能力被包装成面向科学发现的专用工作台。</p>
+<h3>4. <a href="https://openai.com/index/codex-for-every-role-tool-workflow">Codex 扩展到角色插件、Sites 与知识工作</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>角色插件</code> <code>Codex Sites</code> <code>知识工作</code> <code>团队协作</code> <code>工作流</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 将 Codex 从编程助手扩展为多职能工作流平台，推出角色化插件、可分享的 Codex Sites 和团队批注能力。官方示例覆盖销售、金融研究和原型评审，强调非工程岗位也能把任务交给 Codex 生成可审阅产物。这延续了 Codex 从编码工具走向企业协作层的产品化路线。</p>
+<h3>5. <a href="https://www.anthropic.com/news/expanding-project-glasswing">Project Glasswing 扩至 150 个组织</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Project Glasswing</code> <code>AI 安全</code> <code>公共利益</code> <code>社会韧性</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 扩大 Project Glasswing，把 AI 安全、教育和公共利益相关支持扩展到 150 个组织。该项目强调社会韧性与公益能力建设，体现 Anthropic 在产品和模型之外继续加码制度化影响力。与单点安全声明相比，这更像是一条长期合作网络的建设线。</p>
+<h3>6. <a href="https://x.com/OpenAI/status/2061564502160892138">OpenAI 模型与 Codex 在 AWS 全面可用</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/01</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>AWS</code> <code>Bedrock</code> <code>Codex</code> <code>企业部署</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布前沿模型与 Codex 进入 AWS 工作流并达到 GA，可通过 Bedrock 等 AWS 开发生态使用。这个动作降低了企业在既有 AWS 权限、账单和合规体系内试用 OpenAI 编程代理的门槛。对企业采购路径而言，Codex 正从独立开发工具进入标准云平台分发。</p>
+<h3>7. <a href="https://x.com/xai/status/2061510464325206163">xAI 发布 Grok Build Composer 2.5</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/01</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok Build</code> <code>Composer 2.5</code> <code>模型发布</code> <code>开发工具</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 在 Grok Build 中上线 Composer 2.5，定位为面向构建与迭代的模型和工具能力升级。公开信息主要围绕入口和能力展示，用户可从 <code>x.ai/cli</code> 开始并在模型菜单中选择 Composer。它说明 xAI 也在把模型发布直接嵌入开发和原型构建场景。</p>
+<h3>8. <a href="https://x.com/AnthropicAI/status/2061924580222968183">Anthropic 支持美国 AI 行政令</a> ⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>美国政策</code> <code>AI 安全</code> <code>行政令</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 表示，白宫关于促进先进人工智能创新与安全的行政令是强化美国 AI 领导力的重要一步。公司称将与白宫协作支持行政令实施。这条信息本身简短，但放在 Project Glasswing 和 OpenAI 青少年安全倡议旁边看，显示美国 AI 公司继续主动参与政策议程。</p>
+<h3>9. <a href="https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership">OpenAI 倡议建立国际青少年 AI 安全机制</a> ⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>青少年安全</code> <code>G7</code> <code>AI 治理</code> <code>家长控制</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 呼吁建立持续的国际青少年 AI 安全协作机制，并提出可由新机构或现有国家 AI 机构承担研究、证据共享和实践指导职责。文章列出九项原则，覆盖年龄识别、年度风险评估、家长控制、透明政策、严重事件处理、未成年人隐私和独立审计。OpenAI 将在 G7 相关讨论中推动该议题，把教育部署和青少年保护并列为治理目标。</p>
+<h3>10. <a href="https://x.com/sama/status/2061562575322492937">OpenAI Foundation 投入 AI 韧性建设</a> ⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter) | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/01</li>
+<li><strong>标签</strong>: <code>AI 韧性</code> <code>OpenAI Foundation</code> <code>模型安全</code> <code>网络安全</code> <code>资助</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 转发 OpenAI Foundation 的 AI Resilience 愿景，强调社会管理 AI 风险的能力需要同步提升。相关计划已启动超过 1.3 亿美元初始资助，覆盖生物韧性、网络韧性、模型安全和 AI 对年轻人的影响。它与 OpenAI 的青少年安全倡议共同构成一条更宽的社会韧性路线。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周模型发布数量不多，但主题非常集中：模型不再只强调聊天或基准，而是直接面向代理执行。Qwen3.7-Plus 主打多模态代理和浏览器操作能力，把视觉理解、网页状态和工具调用放到同一套流程中检验。xAI 的 Grok Build Composer 2.5 则嵌在构建工具内发布，强调开发者可以直接在 CLI 和模型菜单中试用。两条新闻共同说明，模型发布正在更紧地绑定具体工作台和操作环境。</p>
+<h3>研究</h3>
+<p>研究板块的核心是 Google DeepMind 的 Gemini for Science。它把 Gemini 包装成多智能体科研助手，覆盖假设生成、文献推理和实验设计，而不是停留在通用问答增强。Co-Scientist 的演示显示，AI 科研工具正在从“帮我解释论文”走向“帮我组织研究路径”。本周历史窗口里研究文章较少，因此这一条几乎独占了该分类的主线。</p>
+<h3>产品与功能</h3>
+<p>产品与功能继续由编码和工作流平台主导。OpenAI 把 Codex 扩展到角色插件、Codex Sites、团队批注和 AWS 分发，试图让非工程岗位也能使用 Codex 生成可审阅产物。Claude Code 则通过后台代理、CLI 和托管会话连接，把本地开发任务拆成更可并行的子流程。OpenAI Devs 的 Voice Hack Night 原型补上了语音 Agent 方向，说明移动端和语音壳层仍在寻找新的交互入口。</p>
+<h3>商业动态</h3>
+<p>商业动态本周主要体现为客户案例和行业落地。Travelers 使用 OpenAI Realtime API 和前沿模型构建车险理赔语音助手，两个月内从 8 个州扩展到全美，且使用该助手的客户中有 85% 到 90% 完成理赔提交。Claude 展示 Legora 法律工作流案例，强调专业服务中的文档、检索和协作流程。两者都不是平台级发布，但说明 AI 落地正在进入保险和法律这类流程重、合规重的行业。</p>
+<h3>政策与安全</h3>
+<p>政策与安全是本周最密集的分类之一。Anthropic 扩大 Project Glasswing 至 150 个组织，并公开支持美国 AI 行政令，显示其政策参与方式从表态走向合作网络建设。OpenAI 则同时推动国际青少年 AI 安全机制和 Foundation 韧性资助，覆盖年龄识别、家长控制、独立审计、生物韧性、网络韧性和模型安全。整体看，头部公司正在把安全治理拆成可资助、可审计、可外交协调的制度化项目。</p>
+<h3>教程与观点</h3>
+<p>教程与观点较轻量，主要是提示词和使用观察。Thariq 转述 Anthropic 员工关于 Claude 跟进提示的方法，强调一次回答之后继续追问约束、改写和验证，适合沉淀为团队提示词手册。另有语音模式用于更自然回复的观察，以及 Sam Altman 分享个人座右铭。该分类本周缺少高影响长文，但补充了日常使用层面的细碎经验。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Qwen3.7-Plus 浏览器代理</strong> — 用表单填写、网页检索和多步骤后台操作做一组同题测试，重点记录视觉理解、工具调用失败和页面状态恢复能力。</li>
+<li><strong>Claude Code /fork 后台代理</strong> — 在当前开发上下文中用 <code>/fork</code> 拆出一个独立子任务，观察后台代理是否能减少等待和上下文切换。</li>
+<li><strong>Codex 角色插件与 Sites</strong> — 为销售、研究或产品运营各设计一个小型 Codex 插件原型，再用 Codex Sites 生成可批注的共享页面。</li>
+<li><strong>Codex on AWS / Bedrock</strong> — 检查现有 AWS 账户能否访问 OpenAI 模型和 Codex，用一个小型集成验证权限、审计、账单和延迟差异。</li>
+<li><strong>Grok Build Composer 2.5</strong> — 从 <code>x.ai/cli</code> 进入 Grok Build，在同一个原型任务上对比 Composer 2.5 与现有代码/界面生成工具的多轮修改质量。</li>
+<li><strong>语音 Agent 原型</strong> — 选一个手机端高频任务，把点击流程改写成语音优先流程，参考 Voice Hack Night 项目验证指令理解和动作确认体验。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">Qwen3.7-Plus 发布多模态代理模型</a> — 它把多模态、浏览器操作和工具调用放在同一条代理模型主线上，是观察国产模型应用侧竞争的重要入口。</li>
+<li><a href="https://openai.com/index/codex-for-every-role-tool-workflow">Codex 扩展到角色插件、Sites 与知识工作</a> — 这篇文章说明 OpenAI 正把 Codex 从工程工具扩展成面向多岗位的协作和产物生成平台。</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2061857539977842793">Gemini for Science 发布多智能体科研助手</a> — DeepMind 把 Gemini 产品化为科研工作台，值得关注其对假设生成和实验设计流程的影响。</li>
+<li><a href="https://www.anthropic.com/news/expanding-project-glasswing">Project Glasswing 扩至 150 个组织</a> — Anthropic 的安全与公益网络建设，比单次政策表态更能体现头部 AI 公司的长期治理策略。</li>
+<li><a href="https://openai.com/index/travelers">Travelers 用 OpenAI 扩展理赔助手</a> — 保险理赔语音助手的完成率和扩展速度，是 Realtime API 进入复杂企业流程的一个清晰案例。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-06-06</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-06.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-06.md</guid>
@@ -342,138 +450,189 @@
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-04.md</guid>
       <pubDate>Thu, 04 Jun 2026 00:00:00 GMT</pubDate>
       <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-04（fallback，自动回退版）</h1>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-04</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>垂直模型加速</strong>：GPT-Rosalind 强化生命科学能力，Gemma 4 12B 推动本地多模态模型落地。</li>
+<li><strong>编码工具扩展</strong>：Codex 角色插件与 Claude Code 工作流把编码代理推向团队级流程。</li>
+<li><strong>AI治理升温</strong>：OpenAI 政策议程与美国 AI 行政令回应显示监管框架正在成形。</li>
+<li><strong>安全评估细化</strong>：Anthropic 将 832 个恶意账号映射到 MITRE ATT&amp;CK，推动 AI 威胁分析标准化。</li>
+<li><strong>模型分发拓宽</strong>：Grok 接入 Cloudflare、Vapi 和 Gopuff，显示模型能力正通过行业平台外溢。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/demishassabis/status/2062241713398149524">Gemma 4 12B 发布：本地多模态模型升级</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Gemma 4</code> <code>12B模型</code> <code>多模态</code> <code>本地部署</code> <code>Apache 2.0</code></li>
+</ul>
+<p><strong>摘要</strong>: Demis Hassabis 转发庆祝 Gemma 下载量突破 1.5 亿，并介绍新的 Gemma 4 12B 模型。该模型采用统一、无编码器的多模态设计，面向本地笔记本运行场景，官方强调其在 16GB VRAM 设备上也足够轻量，并以 Apache 2.0 许可证发布。</p>
 <blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>需要端侧多模态能力的团队可把 Gemma 4 12B 加入 16GB VRAM 设备的基准测试。</li>
+<li>开源使用前确认 Apache 2.0 许可与内部模型分发规范是否匹配。</li>
+<li>用真实图文推理和本地延迟任务评估它相对云端模型的成本收益。</li>
+</ul>
 </blockquote>
 <hr>
-<h2>Berkeley RDI</h2>
+<h3>2. <a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind">GPT-Rosalind 升级：GPT-5.5 进入生命科学</a></h3>
 <ul>
-<li><a href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-june">Agentic AI Weekly | Berkeley RDI | June 3, 2026</a></li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GPT-Rosalind</code> <code>GPT-5.5</code> <code>生命科学</code> <code>药物发现</code> <code>企业AI</code></li>
 </ul>
-<h2>OpenAI Blog</h2>
+<p><strong>摘要</strong>: OpenAI 为面向企业生命科学研究的 GPT-Rosalind 推出新能力，把 GPT-5.5 的智能体编码和工具调用能力与药物化学、基因组学、实验工作流等专业推理结合起来。更新后的模型在生物专家任务、复杂药物化学查询、定量生物学和湿实验排错中显示更强表现，并通过 trusted-access 结构向合格组织开放研究预览。官方社媒进一步强调这是把 GPT-5.5 用于药物发现、分析、设计和实验流程的垂直化落地。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind">Introducing new capabilities to GPT-Rosalind</a></li>
-<li><a href="https://openai.com/index/wasmer">How Wasmer used Codex to build a Node.js runtime for the edge</a></li>
-<li><a href="https://openai.com/index/public-policy-agenda">OpenAI public policy agenda</a></li>
-<li><a href="https://openai.com/index/frontier-safety-blueprint">A blueprint for democratic governance of frontier AI</a></li>
+<li><a href="https://x.com/OpenAI/status/2062281977122996256">OpenAI 社媒介绍 GPT-Rosalind 新能力</a> · OpenAI (Twitter) · 社媒要点</li>
 </ul>
-<h2>Google AI Blog</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://blog.google/products-and-platforms/products/search/thrifting-tips/">5 ways Google Search can level up your thrift and vintage shopping</a></li>
+<li>生命科学团队可优先整理药物化学、基因组学和实验排错任务集做封闭评测。</li>
+<li>评估时把工具调用、代码生成和领域专家审阅放进同一工作流，而不是只看单轮问答。</li>
+<li>对受监管研发数据使用 trusted-access 部署，先明确数据边界和审计要求。</li>
 </ul>
-<h2>Anthropic Blog</h2>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2062257177788858398">Claude Code 更新：动态工作流、/fork 与自检</a></h3>
 <ul>
-<li><a href="https://www.anthropic.com/news/services-track-partner-hub">Introducing the Services Track and Partner Hub of the Claude Partner Network</a></li>
-<li><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack">What we learned mapping a year’s worth of AI-enabled cyber threats</a></li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>动态工作流</code> <code>ultracode</code> <code>/fork</code> <code>自检</code></li>
 </ul>
-<h2>Sam Altman (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Code 相关更新集中在把编码代理从单次会话推进到可编排流程：动态工作流的触发词从 workflow 改为 ultracode，以减少普通语义中的误触发。/fork 现在可以用当前完整上下文、工具、历史、模型和提示缓存启动后台代理，并把结果返回原会话。配套内容还展示如何把人工检查编码成 Claude Code 的自检环节，让代理在交付前闭合反馈回路。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[theUSshould lead on AI by continuing to develop the very best models, making sure they&#39;re safe, and getting cyber tools into the hands of trusted defenders.</li>
+<li><a href="https://x.com/trq212/status/2061907538741006796">Thariq 解读 Claude Code 工作流实践</a> · Thariq (Twitter) · 实践解读</li>
+<li><a href="https://x.com/trq212/status/2061907337154367865">Claude Code 动态工作流长文入口</a> · Thariq (Twitter) · 长文入口</li>
+<li><a href="https://x.com/ClaudeDevs/status/2061900434722496604">Claude Code 可编码人工自检流程</a> · Claude Devs (Twitter) · 自检流程</li>
 </ul>
-<p>the new EO gets the balance right.](<a href="https://x.com/sama/status/2061973280655904815">https://x.com/sama/status/2061973280655904815</a>)</p>
-<h2>Demis Hassabis (Twitter)</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/demishassabis/status/2062241713398149524">Celebrating the milestone of a massive 150+ million downloads of Gemma 4 with the release of the new Gemma 4 12B model! It&#39;s incredibly powerful for such a small model and it’s tiny enough to run loca</a></li>
+<li>将常用复杂任务迁移到 ultracode 触发的动态工作流，并记录误触发样例。</li>
+<li>用 /fork 跑高风险改动的后台候选方案，主会话只审查结果和关键 diff。</li>
+<li>把人工验收清单写进 Claude Code 流程，让代理提交前先自查测试、格式和边界条件。</li>
 </ul>
-<h2>Thariq (Twitter)</h2>
+</blockquote>
+<hr>
+<h3>4. <a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack">Anthropic 用 MITRE 映射 AI 网络威胁</a></h3>
 <ul>
-<li>[If this prompt feels well written to you, it&#39;s because Suzanne is a writer in her little spare time!</li>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>AI安全</code> <code>网络威胁</code> <code>MITRE ATT&amp;CK</code> <code>Anthropic</code> <code>滥用检测</code></li>
 </ul>
-<p>You can read her short story, Mall of America here: <a href="https://t.co/uYY8VlPIUt">https://t.co/uYY8VlPIUt</a></p>
-<p>It&#39;s one of my favor](<a href="https://x.com/trq212/status/2062217018187923783">https://x.com/trq212/status/2062217018187923783</a>)</p>
+<p><strong>摘要</strong>: Anthropic 分析了 2025 年 3 月至 2026 年 3 月间因恶意网络活动被封禁的 832 个账号，并将其行为映射到 MITRE ATT&amp;CK 框架。报告指出，恶意行为者正在使用 AI 提高攻击能力，既有安全技术框架仍可提供分析语言，但需要适配 AI 辅助攻击的新模式。官方社媒强调这项工作用于检验安全社区现有技战术体系面对 AI 攻击时的有效性。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Workflows are the biggest upgrade to Claude Code’s capabilities since skills and subagents.</li>
+<li><a href="https://x.com/AnthropicAI/status/2062243425580367905">Anthropic 社媒解读 AI 网络威胁报告</a> · Anthropic (Twitter) · 社媒摘要</li>
 </ul>
-<p>I dove deep into it with @sidbid to figure out best practices, examples and more.  I’m particularly excited](<a href="https://x.com/trq212/status/2061907538741006796">https://x.com/trq212/status/2061907538741006796</a>)</p>
+<hr>
+<h3>5. <a href="https://x.com/OpenAI/status/2061887650391625870">Codex 角色插件上线：62 个应用与 110 个技能</a></h3>
 <ul>
-<li><a href="https://x.com/trq212/status/2061907897928528349">This is also available on the Claude Blog! https://t.co/ScXhdyz6YI</a></li>
-<li><a href="https://x.com/trq212/status/2061907337154367865">https://t.co/R6exTuF7P8</a></li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>插件</code> <code>Skills</code> <code>Sites</code> <code>团队工作流</code></li>
 </ul>
-<h2>Claude (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI 将 Codex 插件从单个工具扩展为面向具体角色的一键安装能力，让 Codex 可在销售、数据分析、创意制作、产品设计和公开股票投资等场景中变成专门助手。官方称这些插件可访问 62 个常用应用和 110 个技能，OpenAI Devs 进一步说明插件围绕团队真实工作流构建，并把 Sites 用作原型输出后的团队评审入口。示例包括销售准备、公开股权投资、数据分析、创意制作和产品设计。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2062220040934449596">We spoke with @BenJames_____ about building things, creativity, and why silly ideas matter. https://t.co/36i6YTbtny</a></li>
-<li><a href="https://x.com/claudeai/status/2062220049146876347">Ben kept getting distracted during long Claude Code sessions, so he built a miniature Clawd to get his attention. When  Claude Code needs input, a solenoid inside the aluminum body pushes it upward. I</a></li>
-<li><a href="https://x.com/claudeai/status/2062220051587952973">https://t.co/mEaNksHzrD</a></li>
+<li><a href="https://x.com/OpenAI/status/2061887949516730502">Codex 销售插件用于售前准备</a> · OpenAI (Twitter) · 销售场景</li>
+<li><a href="https://x.com/OpenAIDevs/status/2061888366791246071">OpenAI Devs 解释 Codex 角色插件</a> · OpenAI Devs (Twitter) · 开发者视角</li>
 </ul>
-<h2>Claude Devs (Twitter)</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[How do we automate business analytics with Claude?</li>
+<li>按岗位挑选一个高频流程试装 Codex 角色插件，记录它实际调用的 app 和 skill。</li>
+<li>把销售准备、数据分析或产品原型任务做成端到端验收样例，衡量一键插件是否减少配置成本。</li>
+<li>涉及 Sites 输出时提前定义评审人、URL 分享范围和原型验收标准。</li>
 </ul>
-<p>New blog post covering our best practices for skills, data foundations, and evaluations when building agents to perform data analysis: </p>
-<p><a href="https://t.c%5D(https://x.com/ClaudeDevs/status/2062274312363770064)">https://t.c](https://x.com/ClaudeDevs/status/2062274312363770064)</a></p>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/ClaudeDevs/status/2061877343078244459">Claude Platform CLI 打通 API 与 Managed Agents</a></h3>
 <ul>
-<li>[We&#39;ve changed the trigger word from &quot;workflow&quot; to &quot;ultracode&quot;.</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Platform</code> <code>CLI</code> <code>Managed Agents</code> <code>Claude Code</code> <code>API</code></li>
 </ul>
-<p>You can still say &quot;use a workflow for this&quot;, but when you&#39;re clearly referring to something else, Claude won&#39;t kick off a dynamic workfl](<a href="https://x.com/ClaudeDevs/status/2062257177788858398">https://x.com/ClaudeDevs/status/2062257177788858398</a>)</p>
+<p><strong>摘要</strong>: Claude Devs 发布 Claude Platform CLI，让每个 API endpoint 都可从终端运行，包括 Messages API、Claude Managed Agents 和结果管道化。线程补充说明 CLI 可启动 Managed Agents 会话、发送事件、查看完整 trace，并可被 Claude Code 通过内置 /claude-api skill 调用，从而把平台操作纳入编码代理工作流。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[We&#39;ve updated /fork in Claude Code</li>
+<li><a href="https://x.com/ClaudeDevs/status/2061877351253004619">Claude CLI 可拉取 Managed Agents trace</a> · Claude Devs (Twitter) · Trace 调试</li>
 </ul>
-<p>/fork now runs a background agent with your exact context (system prompt, tools, history, model) and prompt cache. The result gets returned to your session.</p>
-<p>/branc](<a href="https://x.com/ClaudeDevs/status/2061947411141169494">https://x.com/ClaudeDevs/status/2061947411141169494</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[How do you get Claude Code to check its own work before handing it back?</li>
+<li>用 CLI 封装常见 API 调试、文件上传和 agent trace 拉取流程。</li>
+<li>在 Claude Code 中试用 /claude-api skill，让代理直接读取 CLI 返回结果。</li>
+<li>为 Managed Agents 建立可复现的事件脚本，方便回归测试和审计。</li>
 </ul>
-<p>Watch how you can encode your manual checks so Claude closes its own feedback loop: <a href="https://t.co/gxastVL4QH%5D(https://x.com/ClaudeDevs/status/2061900434722496604)">https://t.co/gxastVL4QH](https://x.com/ClaudeDevs/status/2061900434722496604)</a></p>
+</blockquote>
+<hr>
+<h3>7. <a href="https://x.com/xai/status/2062294202625696081">Grok 接入 Cloudflare AI Gateway</a></h3>
 <ul>
-<li>[We’ve added a CLI for Claude Platform to make every API endpoint runnable from your terminal.</li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>Cloudflare</code> <code>AI Gateway</code> <code>模型分发</code></li>
 </ul>
-<p>Call the Messages API, stand up Claude Managed Agents, pipe results straight into your shell.</p>
-<p>The ant CL](<a href="https://x.com/ClaudeDevs/status/2061877343078244459">https://x.com/ClaudeDevs/status/2061877343078244459</a>)</p>
+<p><strong>摘要</strong>: xAI 宣布 Grok 模型可通过 Cloudflare AI Gateway 使用。被引用的 Cloudflare 开发者信息称，Grok 的文本、音频、图像和视频模型可经 AI Gateway 调用，并由 Cloudflare 直接计费，无需额外认证、环境变量或 API key。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[The CLI can kick off a Managed Agents session, send it an event, and the agent goes to work: reasoning, calling tools, working toward an answer.</li>
+<li>已使用 Cloudflare AI Gateway 的团队可用同一网关测试 Grok 模型的接入和计费体验。</li>
+<li>把 Grok 接入与现有模型路由策略比较，确认鉴权、日志和成本归集是否一致。</li>
 </ul>
-<p>When it&#39;s done (or stuck), pull the trace: every even](<a href="https://x.com/ClaudeDevs/status/2061877351253004619">https://x.com/ClaudeDevs/status/2061877351253004619</a>)</p>
+</blockquote>
+<hr>
+<h3>8. <a href="https://x.com/ClaudeDevs/status/2062274312363770064">Claude 发布商业分析智能体实践</a></h3>
 <ul>
-<li>[Claude Code knows how to use ant using the built-in &quot;/claude-api&quot; skill</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>商业分析</code> <code>Skills</code> <code>评测</code> <code>数据基础</code></li>
 </ul>
-<p>Ask it to list your sessions, upload a folder of PDFs, or debug a run.</p>
-<p>It shells out to the CLI and reads the results back wit](<a href="https://x.com/ClaudeDevs/status/2061877352725200963">https://x.com/ClaudeDevs/status/2061877352725200963</a>)</p>
-<h2>Anthropic (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Devs 分享关于用 Claude 自动化商业分析的新博客，覆盖 skills、数据基础和评测等最佳实践。重点是如何让代理执行数据分析任务时具备可重复的数据输入、任务边界和质量评估。</p>
+<hr>
+<h3>9. <a href="https://openai.com/index/wasmer">Wasmer 用 Codex 两周做出边缘 Node.js</a></h3>
 <ul>
-<li>[How well do the security community&#39;s techniques hold up against AI-enabled cyberattacks?</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Wasmer</code> <code>Node.js</code> <code>WebAssembly</code> <code>边缘计算</code></li>
 </ul>
-<p>We examined 832 malicious accounts and mapped their activity onto a longstanding database of tactics and tech](<a href="https://x.com/AnthropicAI/status/2062243425580367905">https://x.com/AnthropicAI/status/2062243425580367905</a>)</p>
+<p><strong>摘要</strong>: OpenAI 案例展示 Wasmer 如何借助 Codex 和 GPT-5.5 构建可在 WebAssembly 沙箱中运行 Node.js 负载的 Edge.js，把原本可能需要一年的工程压缩到约两周。项目让 JavaScript 应用、MCP 和代理可以在无 Docker 的边缘环境运行，体现编码代理对系统级基础设施开发的加速效果。</p>
+<hr>
+<h3>10. <a href="https://openai.com/index/public-policy-agenda">美国AI治理升温：OpenAI 议程与行政令同日发声</a></h3>
 <ul>
-<li>[This Executive Order is an important step in strengthening America’s leadership in AI.</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>AI治理</code> <code>美国政策</code> <code>OpenAI</code> <code>行政令</code> <code>前沿模型安全</code></li>
 </ul>
-<p>We look forward to collaborating with the White House to support its implementation.</p>
-<p><a href="https://t.co/ZwDimPrp3t%5D(https://x.com/AnthropicAI/status/2061924580222968183)">https://t.co/ZwDimPrp3t](https://x.com/AnthropicAI/status/2061924580222968183)</a></p>
-<h2>OpenAI (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI 发布公共政策议程，围绕民主化、赋能、共同繁荣、韧性和适应性阐述其 AGI 治理原则。配套的前沿 AI 民主治理蓝图进一步主张美国建立联邦级安全、韧性和国家安全框架。Sam Altman 与 Anthropic 均对新的美国 AI 行政令表达支持，强调美国在领先模型、安全和可信防御工具上的主导地位。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/OpenAI/status/2062249312839434452">It&#39;s time to fly. https://t.co/ObUaCZ07EM</a></li>
-<li>[We’re bringing new capabilities to GPT-Rosalind, a model series purpose-built for life sciences research at enterprise scale.</li>
+<li><a href="https://openai.com/index/frontier-safety-blueprint">OpenAI 提出前沿 AI 联邦治理蓝图</a> · OpenAI Blog · 治理蓝图</li>
+<li><a href="https://x.com/sama/status/2061973280655904815">Sam Altman 支持美国 AI 行政令</a> · Sam Altman (Twitter) · Altman 表态</li>
 </ul>
-<p>It brings GPT-5.5’s agentic coding and tool use together with stronger in](<a href="https://x.com/OpenAI/status/2062281977122996256">https://x.com/OpenAI/status/2062281977122996256</a>)</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[We’re making Codex more useful for your work by expanding plugins beyond individual tools.</li>
-</ul>
-<p>These plugins turn Codex into a specialist for a specific role with a single install, no coding required.</p>
-<p>C](<a href="https://x.com/OpenAI/status/2061887650391625870">https://x.com/OpenAI/status/2061887650391625870</a>)</p>
-<ul>
-<li>[Prep faster. Sell smarter.</li>
-</ul>
-<p>The sales plugin for Codex. <a href="https://t.co/GWjRyebinS%5D(https://x.com/OpenAI/status/2061887949516730502)">https://t.co/GWjRyebinS](https://x.com/OpenAI/status/2061887949516730502)</a></p>
-<ul>
-<li>[From question to model.</li>
-</ul>
-<p>The public equity investing plugin for Codex. <a href="https://t.co/RCigvKfNfc%5D(https://x.com/OpenAI/status/2061888058459570279)">https://t.co/RCigvKfNfc](https://x.com/OpenAI/status/2061888058459570279)</a></p>
-<h2>OpenAI Devs (Twitter)</h2>
-<ul>
-<li>[Role-specific plugins in Codex are built around the work teams actually do.</li>
-</ul>
-<p>Plugins for Data Analytics, Creative Production, and Product Design give Codex the tools and context to create reports, cre](<a href="https://x.com/OpenAIDevs/status/2061888366791246071">https://x.com/OpenAIDevs/status/2061888366791246071</a>)</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2061888379093184727">When the output is a prototype, Sites gives your team a place to review it together.</a></li>
-</ul>
-<h2>xAI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/xai/status/2062294202625696081">Try Grok models on @Cloudflare&#39;s AI Gateway!</a></li>
-<li>[Meet Go by Gopuff and SpaceXAI: your personal shopping assistant that knows what you want and delivers in minutes.</li>
-</ul>
-<p>Powered by Grok text, audio, and image models.](<a href="https://x.com/xai/status/2062252902438342735">https://x.com/xai/status/2062252902438342735</a>)</p>
-<ul>
-<li><a href="https://x.com/xai/status/2062209374039499178">Try the most natural TTS and cost-effective STT APIs in @Vapi_AI</a></li>
+<li><strong>产品与功能</strong> | <code>Grok</code> <code>Gopuff</code> <code>购物助手</code> <code>消费AI</code> — xAI 转发 Gopuff 的 Go 购物助手发布，称其由 Grok 文本、音频和图像模型驱动，可根据用户表达的需求推荐并快速配送商品。这是 Grok 在消费零售场景中的合作落地。 · <a href="https://x.com/xai/status/2062252902438342735">xAI (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Grok</code> <code>Vapi</code> <code>语音AI</code> <code>STT</code> <code>TTS</code> — xAI 宣布 Grok 的语音识别和语音合成 API 已可在 Vapi 使用。Vapi 称这些能力面向企业语音 AI，可帮助构建更自然、能捕捉关键细节并适应受监管流程的语音代理。 · <a href="https://x.com/xai/status/2062209374039499178">xAI (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Google Search</code> <code>Shopping</code> <code>消费AI</code> <code>二手购物</code> — Google 介绍了 Search 和 Shopping 中用于二手、复古购物的 AI 功能与技巧，帮助用户识别商品、比较款式并找到更合适的购买入口。该更新偏消费搜索体验优化，属于产品能力的增量应用。 · <a href="https://blog.google/products-and-platforms/products/search/thrifting-tips/">Google AI Blog</a></li>
+<li><strong>商业动态</strong> | <code>Claude</code> <code>合作伙伴</code> <code>企业落地</code> <code>咨询服务</code> — Anthropic 为 Claude Partner Network 推出 Services Track 和 Partner Hub，面向咨询、系统集成和企业落地伙伴提供更清晰的服务路径。文章称已有大量机构申请加入并完成认证，核心目标是把 Claude 从试点推进到可运营的生产系统。 · <a href="https://www.anthropic.com/news/services-track-partner-hub">Anthropic Blog</a></li>
 </ul>
 ]]></description>
     </item>
@@ -3661,93 +3820,6 @@
 <li><strong>教程与观点</strong> | <code>Anthropic</code> <code>Claude Constitution</code> <code>AI 对齐</code> <code>有声书</code> — Anthropic 将 Claude 宪法制作为有声书，由作者 Amanda Askell 与 Joe Carlsmith 亲自朗读，并附带关于写作过程、文档背后哲学以及随模型能力提升如何演化的 Q&amp;A。听众可在 anthropic.com/constitution 收听。 · <a href="https://x.com/AnthropicAI/status/2053881827396653207">Anthropic (Twitter)</a></li>
 <li><strong>教程与观点</strong> | <code>企业 AI</code> <code>工作流重设计</code> <code>治理</code> <code>AI 落地</code> <code>OpenAI Guide</code> — OpenAI 与 Philips、BBVA、Mirakl、Scout24、JetBrains、Scania 等欧洲企业高管访谈后总结出 AI 规模化的五大模式：先文化后工具、把治理当作加速器、从消费转向所有权、规模化前先抓质量、保护人类判断工作。报告指出领跑的组织把 AI 视为「运营层」与「领导力学科」，把工作流重设计、可验证质量与早期合规协作作为关键，而非单纯加快推进速度。 · <a href="https://openai.com/business/guides-and-resources/how-enterprises-are-scaling-ai">OpenAI Blog</a></li>
 <li><strong>商业动态</strong> | <code>OpenAI</code> <code>校园计划</code> <code>学生社群</code> <code>AI 教育</code> <code>开发者关系</code> — OpenAI 推出 Campus Network，面向全球高校学生俱乐部开放报名，承诺提供动手实操的 AI 学习内容、支持学生主导的活动与研究、并分享工具与项目早期访问，同时连接全球学生领袖。计划还配套学生大使项目，旨在打造「AI 原生校园」社区。 · <a href="https://openai.com/index/openai-campus-network-student-club-interest-form">OpenAI Blog</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-05-11</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-11.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-11.md</guid>
-      <pubDate>Mon, 11 May 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-11</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Agent 自主跑活</strong>：Codex 在 22 小时内独立完成开源安全审计、首笔赏金 16.88 美元到账，Bun 作者借 AI 6 天重写 96 万行 Rust 通过 99.8% 测试，开发者开始把「后台跑活」当成真实工作流测试。</li>
-<li><strong>机器人范式更替</strong>：英伟达 Jim Fan 在 Sequoia AI Ascent 宣告 VLA 路线过时，提出以视频世界模型 + 人类第一人称数据为底座的 WAM/DreamZero，并给出 2040 终局时间表。</li>
-<li><strong>企业 AI 经济学</strong>：宝玉译文从 Token 成本与「对齐税」角度解释裁员潮，认为 AI 并非一对一替代员工，而是同时撑高投入与组织摩擦才逼出瘦身。</li>
-<li><strong>行业回顾</strong>：AlphaGo 击败李世石十周年，Hassabis 重访韩国与申真谞复盘，回顾对局如何重塑围棋玩法。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://baoyu.io/blog/robotics-end-game-nvidias-jim-fan">Jim Fan 宣告 VLA 时代结束，提出世界动作模型 WAM</a></h3>
-<ul>
-<li><strong>来源</strong>: 宝玉的分享</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>机器人</code> <code>世界模型</code> <code>WAM</code> <code>DreamZero</code> <code>缩放定律</code></li>
-</ul>
-<p><strong>摘要</strong>: 英伟达 GEAR Lab 负责人 Jim Fan 在 Sequoia AI Ascent 2026 演讲中宣布 VLA 路线过时，新范式叫世界动作模型（WAM），代表作是 140 亿参数的 DreamZero——执行动作前先「梦境」预测未来几秒。配套的 EgoScale 用 21,000 小时人类第一人称视频预训练，发现灵巧操作的神经缩放定律达到 R²=0.998；Dream Dojo 则用 44,000 小时视频训练出完全绕过物理引擎的神经仿真器。Jim 给出 2040 年达到「物理自动研究」终局的预测，置信度 95%。</p>
-<hr>
-<h3>2. <a href="https://x.com/sama/status/2053566155571560868">Codex 自主接活实测：22 小时跑安全赏金赚回 16.88 美元</a></h3>
-<ul>
-<li><strong>来源</strong>: Sam Altman (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>Agent</code> <code>自主任务</code> <code>安全审计</code> <code>OpenAI</code></li>
-</ul>
-<p><strong>摘要</strong>: 开发者 @chatgpt21 让 Codex 自主寻找开源安全审计赏金，22 小时内独立完成 PR、与维护者沟通验证并保护支付信息，首笔到账 16.88 美元（折合 506 美元/月）；Altman 转发并点评「interesting」。同一周 Altman 还分享自己启动一批 Codex 任务后陪孩子玩耍，回来发现任务已全部跑完，称这种「后台跑活」让他对未来感到乐观。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2053191344999604409">Altman 晒 Codex 育儿日常：任务后台跑，自己陪娃玩</a> · Sam Altman (Twitter) · Altman 亲身体验</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在开源/赏金平台上试跑 Codex 自主接 issue 的完整闭环，重点关注 PR 质量与维护者交互的可控性</li>
-<li>把「启动→离开→回看结果」作为分派工程任务的新工作流，按 SEV 风险等级把关 merge 节点</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/trq212/status/2053559397654348159">Bun 作者用 AI 6 天完成 96 万行 Rust 重写，通过 99.8% 测试</a></h3>
-<ul>
-<li><strong>来源</strong>: Thariq (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Bun</code> <code>Rust</code> <code>AI 辅助编程</code> <code>代码迁移</code> <code>Claude</code></li>
-</ul>
-<p><strong>摘要</strong>: Bun 创始人 Jarred Sumner 用 AI 辅助将 Bun（原 Zig 实现）重写为 Rust，96 万行代码在 Linux 上已通过 99.8% 现有测试套件，端到端耗时仅 6 天。Jarred 承诺将发布博客详述对 Bun 性能、内存占用与可维护性的影响，以及具体的 AI 辅助重写流程（强调并非「claude, rewrite bun in rust」一句话搞定）。Thariq 引述此事感叹「我们的野心还不够大」。</p>
-<hr>
-<h3>4. <a href="https://baoyu.io/translations/2026-05-10/championswimmer-2051807284691612099">AI 裁员潮的本质：Token 成本与对齐税逼企业瘦身</a></h3>
-<ul>
-<li><strong>来源</strong>: 宝玉的分享</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>AI 裁员</code> <code>Token 成本</code> <code>组织对齐</code> <code>生产力悖论</code> <code>Claude Code</code></li>
-</ul>
-<p><strong>摘要</strong>: Arnav Gupta 认为本轮裁员并非 AI 直接替代岗位，而是企业每天为每位工程师烧掉百美元级别的 Claude Token，却没有同步收入增长，被迫用裁员来抵消「AI 支出」。同时大模型让代码变得近乎免费，团队对齐成本反而成为新瓶颈，裁掉冗员是削减「对齐税」最直接的短期解法。文章估算 OpenAI 与 Anthropic 合计 700 亿美元年企业营收正是从被裁员工的薪水里拆借出来的。</p>
-<hr>
-<h3>5. <a href="https://x.com/OpenAIDevs/status/2053161503470366881">OpenAI 演示 GPT-Realtime-2 接入 CRM 语音控制</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>GPT-Realtime-2</code> <code>Realtime API</code> <code>语音</code> <code>CRM</code> <code>OpenAI</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 开发者账号发布教学短片，演示如何将 GPT-Realtime-2 实时语音模型集成进 CRM 工作流，以语音驱动客户管理操作。属于 Realtime API 的应用案例宣传。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>若已有 CRM/工单系统，可参考此示例用 Realtime API 加一层语音入口，降低字段录入摩擦</li>
-<li>评测 GPT-Realtime-2 在中文语境下的识别与函数调用稳定性，再决定是否替换现有 STT+LLM 双阶段方案</li>
-</ul>
-</blockquote>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>教程与观点</strong> | <code>AlphaGo</code> <code>DeepMind</code> <code>Demis Hassabis</code> <code>围棋</code> <code>十周年</code> — AlphaGo 击败李世石十周年之际，Hassabis 在韩国与李世石重聚，并与新一代世界冠军申真谞下了一场特别的纪念对局，感慨这场对局十年来重塑了人类棋手的下法。行程中他还走访 Google 韩国办公室，并附上 AlphaGo 获奖纪录片链接，引导关注者回看这段历史。 · <a href="https://x.com/demishassabis/status/2053182256366191078">Demis Hassabis (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>GPT-5.5</code> <code>下一代模型</code> <code>OpenAI</code> <code>模型命名</code> <code>Sam Altman</code> — Altman 发起推文征集社区对下一代模型最希望改进的方向，并自嘲 GPT-5.5 是「带有奇怪命名审美的自闭天才」；他随后开玩笑提议下一代模型干脆命名为「goblin」，呼应社区长期吐槽 OpenAI 命名混乱。整组发言基调偏闲聊，未给出新模型功能、性能或时间表细节。 · <a href="https://x.com/sama/status/2053151542916894775">Sam Altman (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
