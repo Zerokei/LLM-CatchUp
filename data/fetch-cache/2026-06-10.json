@@ -1,0 +1,737 @@
+{
+  "fetched_at": "2026-06-10T07:03:02+08:00",
+  "window_start": "2026-06-09T01:03:02+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "degraded_stale",
+      "error": "newest item is 431.1h old, exceeds 336h threshold",
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 996,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How engineers at Nextdoor use Codex to build without limits",
+          "url": "https://openai.com/index/nextdoor",
+          "published_at": "2026-06-09T12:00:00.000Z",
+          "description": "How engineers at Nextdoor use Codex with GPT-5.5 to investigate hard-to-reproduce issues, build across platforms, and focus on product outcomes.",
+          "full_text": "Title: How engineers at Nextdoor use Codex to build without limits\n\nURL Source: https://openai.com/index/nextdoor\n\nMarkdown Content:\nA product like Nextdoor, which serves over 110 million users across 11 countries, puts many demands on a platform team. For Cory Dolphin, Head of Engineering at, Codex represents an essential shift: “away from iteratively prompting an agent, and towards outcome engineering, where engineers start to think about the result they want to see and work with an agent to engineer that result.”\n\nThis means that individual engineers move up the stack—no longer locked up as specialists in a certain system or framework, they’re able to own the product experience more or less end-to-end, even across multiple platforms. Productivity has accelerated so much that the bottleneck is no longer engineering, but rather the hard strategic questions about what to build next.\n\n> “Codex has fundamentally changed how we think about engineering, to the point that we can’t even imagine engineering without it.”\n\n—Cory Dolphin, Head of Engineering, Nextdoor\n\n## Product engineers can focus on the product\n\nWith Codex, “engineers get to spend a lot less time thinking about exactly _how_ they build, and more time thinking about the outcome,” Dolphin explains. That outcome might take the form of screenshots or video that the agent can build towards, a certain performance or test result, or a brand new feature idea.\n\nNextdoor recently released Opportunity Alerts, which let people find service providers near them; with Codex, engineers are driving the product experience and roadmap. As an example, one engineer working on the alerts realized it would be helpful to show service providers on a map. Historically, that kind of feature would have required collaboration between three teams—mobile, frontend, and backend engineering—and might have never made it out of the backlog.\n\nBut with Codex, “we were able to have one engineer build it end to end,” Dolphin explains, “which means not only are they able to drive the product faster, but they’re able to better understand the actual product experience and what the right thing to ship is.”\n\n> “As engineers start to shift up the stack, they get to be more responsible for the product that they’re building. You really see individual engineers start to drive products.”\n\n—Cory Dolphin, Head of Engineering, Nextdoor\n\n## Compressing software engineering time\n\nWorking with embedded Rust databases and systems with tight race conditions, Nextdoor turns to Codex for help debugging the most hard-to-reproduce issues. The team provides the agent with a clean environment and harness for investigation, then uses it for everything from figuring out why Kubernetes pods won’t start, to finding the right trend line in a data analysis.\n\n“With GPT‑5.4 and 5.5, it’s been a really impressive upgrade. We see Codex excel at being extremely persistent and trying to figure out the right solution, diving deep into some seemingly esoteric technical details to arrive at the root cause,” Dolphin explains.\n\nAbout Fast Mode with Codex and GPT‑5.5, Dolphin says, “I’ve got to be honest, a lot of the team are addicted to it. When you have a quick feedback loop with the problem that you’re working on, the feeling is exhilarating as an engineer.”\n\nEngineering work has gotten so much faster that Dolphin has seen a shift in the pressures on different parts of the organization. “We’re moving so much faster that the bottlenecks are no longer in engineering. It’s really now a question of, how can we identify the right things to build and the right strategy—and less about how we actually build it.”\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "What Codex unlocks for Notion",
+          "url": "https://openai.com/index/notion",
+          "published_at": "2026-06-09T10:00:00.000Z",
+          "description": "How Notion uses Codex to one-shot specs, build AI Voice Input for the web, and multiply engineering power across small teams.",
+          "full_text": "Title: Notion’s GPT‑5 rebuild unlocks autonomous AI workflows\n\nURL Source: https://openai.com/index/notion\n\nMarkdown Content:\nNotion’s GPT‑5 rebuild unlocks autonomous AI workflows | OpenAI\n\nNovember 7, 2025\n\nBy rebuilding their agent system with GPT‑5, Notion created an AI workspace that can reason, act, and adapt across workflows.\n\nCompany size: Mid-market\n\nRegion: North America\n\nIndustry: Technology\n\nProducts: API\n\nResults\n\n7.6%\n\nImprovement over state-of-the-art models on outputs aligned with real user feedback\n\nListen to article\n\nIn late 2022, within weeks of getting access to GPT‑4, Notion had already shipped a writing assistant, rolled out workspace-wide Q&A features, and integrated OpenAI models deeply across its search, content, and planning tools.\n\nBut as models advanced - and users began asking agents to complete entire workflows - Notion’s team saw limits in their system architecture. The old pattern of prompting models to do isolated tasks was limiting the ceiling of what was capable on their platform. Agents needed to make decisions, orchestrate tools, and reason through ambiguity, and that shift required more than prompt engineering.\n\n> “We didn’t want to retrofit the system. We needed an architecture that actually supports how reasoning models work.”\n\nSarah Sachs, Head of AI Modeling at Notion\n\n### Inside the rollout\n\nRebuilding for reasoning models, not retrofitting around them\n\nInstead of patching their existing stack, Notion rebuilt it. They replaced task-specific prompt chains with a central reasoning model that coordinates modular sub-agents. These agents can search across Notion, Slack, or the web; add to or edit databases; and synthesize responses using whatever tools the task requires.\n\nWith their launch of Notion 3.0, AI isn’t just embedded in workflows; it can now run them. Users assign a broad task - for example, compiling stakeholder feedback - and their agent plans, executes, and reports back. The shift toward agents that choose how to work meant designing for model autonomy from the start.\n\n### Results at a glance\n\nTesting GPT‑5 with real product workloads\n\nTo validate the architectural shift, Notion evaluated GPT‑5 against other state-of-the-art models using actual user tasks.\n\nEvaluations were grounded in feedback Notion had already marked as high priority, including questions that surfaced in Research Mode, long-form tasks that required multi-step reasoning, and ambiguous or outdated content where model judgment mattered.\n\nThe team used a combination of LLM-as-judge scoring, structured test fixtures, and human-labeled feedback.\n\nKey results:\n\n*   7.6% improvement over state-of-the-art models on outputs aligned with real user feedback\n*   15% better performance on difficult Research Mode questions\n*   100%+ improvement on multi-step, structured tasks like deadline updates and competitor research\n*   Only model to fully saturate benchmarks with conflicting or outdated inputs\n\nThese evaluations helped Notion identify where GPT‑5 added value - for example, in reasoning, ambiguity, research - and where environment-specific tuning would improve results.\n\n> “We didn’t cherry-pick tasks. These were high-signal workflows from our product....That’s where model differences actually show up.”\n\n—Sarah Sachs, Head of AI Modeling at Notion\n\n![Image 1: A group of nine people sit and smile around a conference table in a bright office meeting room, some holding laptops and making peace signs. A large screen on the right shows a video call with three remote participants. Everyone looks relaxed and happy, suggesting a collaborative hybrid team meeting.](https://images.ctfassets.net/kftzwdyauwt9/5pRMngLODa02aEtv5nKJzP/3ce1507fd00c411c845a5009b314cc2c/Notion___OpenAI_team_photo.jpeg?w=3840&q=90&fm=webp)\n\n### Leadership lessons\n\nLessons for teams building with GPT‑5\n\nNotion’s rebuild wasn’t just about launching Notion 3.0. It was about designing a system that could support new model capabilities and adapt as those models get smarter. Their approach offers a clear roadmap for other teams deploying agentic AI in production:\n\n*   Evaluate what matters. Use tasks your users actually do, not synthetic benchmarks.\n*   Test the hard stuff. GPT‑5 shines when information is ambiguous, outdated, or multi-step.\n*   Architect for autonomy. If agents are making decisions, your system has to give them room to reason and tools to act.\n*   Clarity drives performance. Even top models fall short without clean tool descriptions and good interface design.\n*   Rebuilding is better than patching. If your system was built for completion models, it might not scale to agents.\n\n> “We’re already seeing returns from the rebuild....If the next model unlocks something new, we’ll do what it takes to support it.”\n\n—Sarah Sachs, Head of AI Modeling at Notion\n\n## Keep reading\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude Fable 5 and Claude Mythos 5",
+          "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+          "published_at": "2026-06-09T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Claude Fable 5 and Claude Mythos 5\n\nURL Source: https://www.anthropic.com/news/claude-fable-5-mythos-5\n\nMarkdown Content:\nToday we’re launching **Claude Fable 5**: a Mythos-class 1 model that we’ve made safe for general use.\n\nFable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.\n\nReleasing a model this capable comes with risks. Without safeguards, Fable 5’s capabilities in areas like cybersecurity could be misused to cause serious damage. We’ve therefore launched the model with safeguards that mean queries on some topics will instead receive a response from our next-most-capable model, Claude Opus 4.8. To release the model both safely and quickly, we’ve tuned these safeguards conservatively—they’ll sometimes catch harmless requests, though they trigger, on average, in less than 5% of sessions. With more capable models arriving in the coming months, we’re working to improve our safeguards and reduce false positives as quickly as we can.\n\nFor a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.2 Mythos 5 will initially be deployed through [Project Glasswing](https://www.anthropic.com/glasswing), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.\n\nThe capabilities of models like Fable 5 and Mythos 5 have the potential to do profound good for the world. We’ve seen the beginnings of this in Project Glasswing, where the models have [helped cyber defenders](https://www.anthropic.com/research/glasswing-initial-update) secure critically important software. We’ve also seen it in life sciences research, where the models are positing novel hypotheses and speeding up the development of new therapeutics.\n\nFable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens—less than half the price of Claude Mythos Preview. Today’s joint launch is another step towards our goal of bringing advanced AI capabilities to as many users as possible, as quickly and as safely as we can.\n\nThe table below compares the capabilities of Fable 5 and Mythos 5 to other leading models.\n\n![Image 1: Benchmark table showing Claude Fable and Mythos compared to other leading models](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1e65982497d7d4891219ed0e83141625a291b860-2600x2870.png&w=3840&q=75)\n\nFable 5 and Mythos 5 can work autonomously for longer than any previous Claude models. Below we discuss how these skills apply to software engineering, and cover the model’s improved capabilities in knowledge work, vision, memory, and life sciences research.\n\n_Software engineering._ During early testing, [Stripe](https://stripe.com/) reported that Fable 5 compressed months of engineering into days. In a 50-million-line Ruby codebase, the model performed a codebase-wide migration in a day that would otherwise have taken a whole team over two months by hand. Fable 5 is also more token-efficient than past Claude models: on Cognition’s [FrontierCode](https://cognition.ai/blog/frontier-code) evaluation, which tests whether models can pass difficult coding tasks while meeting the standards of high-quality production codebases, Fable 5 scores highest among frontier models, even at medium effort.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd3c3efe0e8ab310856368cee2b2161439db6676a-1920x1080.png&w=3840&q=75)\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F036229d8f9be9a5a911dbbd863b3c6cc09a79a70-3840x2160.png&w=3840&q=75)\n\n_Knowledge work_. Fable 5 shows strong performance on complex analytical tasks. On [Hebbia](https://www.hebbia.com/)’s Finance Benchmark for senior-level reasoning, Fable 5 has the highest score of any model, with substantial gains in document-based reasoning, chart and table interpretation, and problem solving. [IMC](https://www.imc.com/) noted that Fable 5 aced their trading-analysis evaluations nearly across the board, including factual lookup, conceptual reasoning, root-cause analysis, and expected-value analysis.\n\n_Vision._ Fable 5 is the new state-of-the-art model for tasks involving vision. It can extract precise numbers from detailed scientific figures and can perform complex vision-based tasks like rebuilding a web app’s source code from screenshots alone. It also needs less scaffolding: for example, previous Claude models struggled to play Pokémon FireRed even with harnesses that gave them additional helpful tools, but Fable 5 beat FireRed with a minimal, vision-only harness.\n\n[Video 7](https://www.youtube.com/watch?v=Ty_50J84fMY)\n\nA timelapse of Claude playing Pokémon FireRed from start to finish using only raw game screenshots — with no maps, navigation aids, or extra game-state information. Earlier Claude models needed a complex helper harness to play Pokémon; Claude Fable 5 completed the game with vision alone.\n\n_Memory and long-context._ Fable 5 stays focused across millions of tokens in long-running tasks and improves its outputs using its own notes. When we had the model play the deck-building game [_Slay the Spire_](https://en.wikipedia.org/wiki/Slay_the_Spire), giving it access to persistent file-based memory improved its performance three times more than for Opus 4.8; Fable also reached the game’s final act three times more often.\n\n_Drug design:_ Using Mythos 5, our internal protein design experts accelerated aspects of the drug design process by around ten times. In one example, they found that Mythos 5, with protein design and bioinformatics tools but no human assistance, matches or beats skilled human operators. In doing so, the model executes all of the tasks that are normally completed by a scientist: choosing binding sites, selecting and running protein design tools, and recovering from failures along the way. Nine of the 14 protein targets from this study (shown below) yielded strong candidates for drug design that we’re currently investigating.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6a97019c4d8ea13fdd7200455f6dd9e8c267ba0b-1920x1080.png&w=3840&q=75)\n\n_Protein complexes designed by Mythos 5. Targets include immune checkpoints, growth-factor and receptor signaling, neurodegeneration, muscle disease, and harder structural targets._\n\n_Novel hypotheses in molecular biology._ Mythos 5 is our first model to consistently produce novel, compelling scientific hypotheses. In blinded head-to-head comparisons against Opus-class models, our scientists preferred Mythos’s molecular biology hypotheses ~80% of the time, and have advanced several to experimental evaluation. In the meantime, one Mythos hypothesis—a novel mechanism for an _E. coli_ protein—was corroborated in [a study](https://www.biorxiv.org/content/10.64898/2026.03.12.711259v1) from a lab independently working on the same problem.\n\n_Novel research in genomics._ Mythos 5 conducted novel genomics research in over a week of largely autonomous work. It assembled single-cell data for millions of cells spanning 138 animal species and designed and trained a custom machine learning model to identify cells performing the same role in even distantly related organisms. With only high-level human input, Mythos 5’s trained model outperformed a recent model published in the journal _Science_—despite being 100 times smaller. We intend to publish these results in the coming months.\n\n_Alignment_. In our automated alignment assessment we found that Mythos 5’s level of misaligned behavior (including misaligned actions taken by the model such as deception, and cooperation with misuse of the model by a user) was low, and similar to that of Opus 4.8. Given they are the same underlying model, Fable 5’s level of alignment will be similar. The assessment is described in full, along with a detailed suite of other safety and capabilities tests, in the model’s [system card](https://anthropic.com/claude-fable-5-mythos-5-system-card).\n\n![Image 5](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F2502a0daf85b741641cff36757d7243ef48f8be8-3840x2160.png&w=3840&q=75)\n\n_Overall level of misaligned behaviors from our automated alignment assessment. See section 6.2.3.1 of the [system card](https://anthropic.com/claude-fable-5-mythos-5-system-card) for more._\n\n## Early feedback for Claude Fable 5\n\nCustomers with early access ran their own tests on Fable 5. Below, in their words, is a selection of what they’re seeing:\n\n![Image 6:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/f084c88e65466636019709c40cc477aadce2f718-151x64.svg)\n\n> Claude Fable 5 is the state of the art model on CursorBench. It's opened up a class of long-horizon problems that were out of reach for earlier models.\n\n![Image 7:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/fc55f4db8afa5db479127fde5be3e492940f513d-94x64.svg)\n\n> Claude Fable 5 is a real step forward for the developers GitHub serves. In our early testing, it took on complex, long-horizon coding tasks with a level of autonomy and reliability that exceeded previous benchmarks. But what excites us most is the direction it points: a future where developers can hand increasingly ambitious work to agents and trust the results across the software lifecycle.\n\n![Image 8:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/1d9e0d7a5760165244bba057a622513bb75cb65d-80x64.svg)\n\n> These are the strongest results of any Claude model we've had the opportunity to test. Claude Fable 5 is a clear step forward on agentic coding and prototyping.\n\n![Image 9:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/046fc90b1e849e0ef96b6a9923d47ae13272b50f-173x64.svg)\n\n> Claude Fable 5's reasoning is a clear step beyond Opus 4.8. It works at senior research scientist grade — picking directions, allocating resources, killing its incorrect beliefs, and producing novel first-principles outputs.\n\n![Image 10:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/40a2a6a28afd8ac8fbf0e764b6bbf4ebf06a1977-133x64.svg)\n\n> Claude Fable 5 understands what builders mean, not just what they type. Apps that took a hundred prompts a year ago, it now one-shots. When a customer really hits a wall, it's the model we reach for to get them past it quickly, so they can finish what they set out to build.\n\n![Image 11:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/a0935a9396e8ec29b273be438cac14583c5999a6-130x64.svg)\n\n> Claude Fable 5 feels materially different. In blind review, our lawyers found its redlines matched or beat our current model every time.\n\n![Image 12:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/73b380711885c6beb5270575119dbf31d7f71236-107x64.svg)\n\n> At the highest effort, Claude Fable 5 reflects on and validates its own work. For us, that's what makes highly autonomous operations possible — the extra thinking pays for itself.\n\n![Image 13:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/74f9dcd65076def29413e42e822da248590b68d3-145x64.svg)\n\n> Claude Fable 5 delivers more capable engineering in fewer turns than prior models — handling the complex multi-agent workflows our employees run daily in Claude Code.\n\n![Image 14:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/ad249bca4e8e195e08764efc43ecbc586ca37482-143x64.svg)\n\n> Claude Fable 5 is the highest-scoring model on FrontierBench, Cognition's frontier coding eval. It excels at long-horizon reasoning and generalizes to unfamiliar tools out of the box.\n\n![Image 15:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/e360f8a29093a6b4fccdc006315035583e89f9ac-146x64.svg)\n\n> Claude Fable 5 is the strongest finance-first model we've tested, both on general finance and reasoning. It's a notable step up.\n\n![Image 16:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/7fbed01e869d6a4faf97317a1fc4b74f7997c66e-78x64.svg)\n\n> Claude Fable 5 is the first to break 90% on our core analytics benchmark of complex, long-running analytical tasks — a 10-point jump over Opus. On the hardest questions, it shows strong judgment and attention to nuance.\n\n![Image 17:  logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F41fa2545bafc63f50148ce0d710dbdadb8c06f87-888x256.png&w=256&q=75)\n\n> Claude Fable 5 is the strongest model we've tested on frontier physics research while using a third of the reasoning tokens. In 36 hours it got nearly to where GPT-5.5 landed after four days.\n\n![Image 18:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/0504471eb7da85317c6def349d315e2f8be00b0f-127x64.svg)\n\n> On ViBench, our end-to-end vibe-coding benchmark, Claude Fable 5 is the highest-performing model we've tested — nearly saturating our base use cases and building apps in less time with fewer tokens.\n\n![Image 19:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/b7787c9ab5714b0c1789da32a3a52daba81f6bef-63x64.svg)\n\n> Claude Fable 5 beats Opus 4.8 on our everyday spreadsheet suite at every effort level — and it does it with fewer turns, finishing runs 25–30% faster.\n\n01 /\n\n14\n\n## Claude Fable 5’s new safeguards\n\nMythos-class models have reached a threshold where they present significant risks. In April we began [Project Glasswing](https://www.anthropic.com/glasswing), releasing the first Mythos-class model (Claude Mythos Preview) to only a limited group of cyber defenders and critical software infrastructure providers. When we did so, we stated that we hoped to eventually release [Mythos-level capabilities to all our users](https://www.anthropic.com/glasswing#:~:text=We%20do%20not,Preview3.), so long as we had developed new safeguards that were strong enough to reliably prevent misuse.\n\nOver the past few months we have been improving these safeguards, and they are now robust enough for a general release. Because we have prioritized safety, we’ve deliberately tuned the safeguards to be cautious, and they are still stricter than would be ideal—for example, sometimes benign requests will trigger our classifiers. We recognize that this will be frustrating to some users, and our aim is to reduce false positives as we update and refine the safeguards after launch.\n\nBelow we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](https://anthropic.com/claude-fable-5-mythos-5-system-card) and our most recent [risk report](https://cdn.sanity.io/files/4zrzovbb/website/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf).\n\n### Safety classifiers\n\nThe frontier cybersecurity and research biology capabilities of Mythos-class models mean that they pose a substantial risk of _uplift_ to malicious actors. That is, these models could provide information or advice that assists those actors in causing serious harm that they couldn’t have received from other sources (for example, from internet search engines). Furthermore, a great deal of advanced usage of AI models is dual use: the same queries that are beneficial in the hands of cybersecurity professionals and biology researchers could be dangerous if available to malicious actors.\n\nWe therefore need strong safeguards to prevent misuse, and their coverage needs to be broad. The safeguards themselves have to stand up to sustained and sophisticated attempts to bypass them (also known as “jailbreaking” the system). The uplift from Mythos-level capabilities is valuable to many adversaries—for instance, those who could financially gain from cyberattacks—and we therefore expect them to be motivated to try to circumvent our safety measures.\n\nFable 5 comes with a new set of _classifiers_: separate AI systems that detect potential misuse, including jailbreak attempts, and prevent the main model (in this case Fable 5) from responding. We’ve been running classifiers on our models [for some time](https://www.anthropic.com/research/next-generation-constitutional-classifiers), and Fable 5’s classifiers are an extension of this previous work with extra coverage.\n\nWhen Fable’s classifiers detect a request related to cybersecurity, biology and chemistry, or distillation, the response is automatically handled by Claude Opus 4.8 instead. Users will be informed whenever this occurs. Opus 4.8 is a highly capable model in its own right: a response that falls back to Opus is a far better experience than an outright refusal from Fable. Our early data shows that more than 95% of Fable sessions involve no fallback at all—for those sessions, Fable 5’s performance is effectively the same as that of Mythos 5.\n\nThe following are the areas covered by the classifiers:\n\n_1. Cybersecurity_. Mythos-class models [excel](https://red.anthropic.com/2026/mythos-preview/) at discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.\n\n![Image 20](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ffaf941fe1ebfd09139d39b8e4ad9048121979284-3840x2160.png&w=3840&q=75)\n\n_Results of running cyber evaluations,3 with Fable 5 in a mode that blocks responses rather than falling back to Opus 4.8. Evaluations did not involve attempts to evade safeguards._\n\nWe extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.4 It is likely impossible to _completely_ prevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.\n\nThe graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models:\n\n![Image 21](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6bede3f6101d15bd899922917ea6246adda4515b-1920x1080.png&w=3840&q=75)\n\n_Results of an internal evaluation in which an automated red-teamer tries to use the model to complete a short task related to offensive cybersecurity across 400 turns, restarting and rewinding when blocked. The tasks are mostly simple and not representative of real cyber usage—they are sometimes as simple as encrypting files on a remote server. On more complex and realistic tasks we have not yet seen successful jailbreaks on our production system. Not",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Here is our current plan for OpenAI:\n\nhttps://t.co/r29FUUee3A",
+          "url": "https://x.com/sama/status/2064088940932641225",
+          "published_at": "2026-06-08T20:55:27.000000Z",
+          "description": "Here is our current plan for OpenAI:\n\nhttps://t.co/r29FUUee3A",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/r29FUUee3A",
+              "expanded_url": "https://openai.com/index/built-to-benefit-everyone-our-plan/",
+              "display_url": "openai.com/index/built-to…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 1516.8h old, exceeds 720h threshold",
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "This is a super exciting release - Claude Fable 5 is the same underlying model as Mythos but with added safeguards. The benchmarks are great and it's SOTA on everything by a margin but I'll add that *",
+          "url": "https://x.com/karpathy/status/2064409694761054332",
+          "published_at": "2026-06-09T18:10:00.000000Z",
+          "description": "This is a super exciting release - Claude Fable 5 is the same underlying model as Mythos but with added safeguards. The benchmarks are great and it's SOTA on everything by a margin but I'll add that *qualitatively* also, this is a major-version-bump-deserving step change forward (imo of the same order as Claude 4.5 was in November), peaking especially for long problem-solving sessions on very difficult problems. You can give it a lot more ambitious tasks than what you're used to, the model \"gets it\" and it will just go, and it's never felt this tempting to stop looking at the code at all (but don't do this in prod!). The model still has quirks that people will run into and the safeguards are configured to be a little too trigger happy for launch, which can hopefully be tuned over time.\n\nI feel a lot of things changing as working software increasingly comes out on a tap. The Jevon's paradox kicks in and I feel my own demand for software growing substantially. You can ask for anything - explainers, visualizers, dashboards, bespoke single-use apps (e.g. a full wandb that is hyper-specific just for your project), you can 10X your test suite, auto-optimize code, run giant research projects with custom HTML for the results, anything! \"Free your mind\" (Matrix ref). Really looking forward to all the things people build!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Fable 5 is state-of-the-art on nearly all tested benchmarks, with exceptional performance in software engineering, knowledge work, scientific research, and vision.\n\nThe longer and more complex the task, the larger Fable 5’s lead over our other models. https://t.co/DxgSu0KUxh",
+            "url": "https://x.com/claudeai/status/2064394151441863006"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Fable is a step-change in models, and I hope it changes how you work with Claude. \n\nMore to come in a series of posts on how it’s reshaped our work, but the TLDR: it’s time to be more ambitious.",
+          "url": "https://x.com/trq212/status/2064437561930682672",
+          "published_at": "2026-06-09T20:00:44.000000Z",
+          "description": "Fable is a step-change in models, and I hope it changes how you work with Claude. \n\nMore to come in a series of posts on how it’s reshaped our work, but the TLDR: it’s time to be more ambitious.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "ClaudeDevs",
+            "text": "Claude Fable 5 changed how we work on the Claude Code team day to day.\n\nWe used to verify that Claude did the work right. Now we verify that it's doing the right work.\n\nHere’s the 3 biggest changes: https://t.co/KhYNlNWcC4",
+            "url": "https://x.com/ClaudeDevs/status/2064399512664526853"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/ClaudeDevs/status/2064399512664526853"
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+          "url": "https://x.com/claudeai/status/2064394146916229443",
+          "published_at": "2026-06-09T17:08:13.000000Z",
+          "description": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Soon, we intend to expand access to Mythos 5 through a broader trusted access program, both for defensive cybersecurity work and biomedical research.",
+          "url": "https://x.com/claudeai/status/2064394159318782217",
+          "published_at": "2026-06-09T17:08:16.000000Z",
+          "description": "Soon, we intend to expand access to Mythos 5 through a broader trusted access program, both for defensive cybersecurity work and biomedical research.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2064394158056386684"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260609-1708",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners until we expand our trusted access program.\n\nhttps://t.co/iQymY0jiGq",
+          "url": "https://x.com/claudeai/status/2064394160522559632",
+          "published_at": "2026-06-09T17:08:17.000000Z",
+          "description": "Claude Fable 5 is available everywhere today. Claude Mythos 5 is restricted to Glasswing partners until we expand our trusted access program.\n\nhttps://t.co/iQymY0jiGq",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/iQymY0jiGq",
+              "expanded_url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+              "display_url": "anthropic.com/news/claude-fa…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2064394159318782217"
+          },
+          "linked_content": "Title: Claude Fable 5 and Claude Mythos 5\n\nURL Source: https://www.anthropic.com/news/claude-fable-5-mythos-5\n\nMarkdown Content:\nToday we’re launching **Claude Fable 5**: a Mythos-class 1 model that we’ve made safe for general use.\n\nFable 5’s capabilities exceed those of any model we’ve ever made generally available. It is state-of-the-art on nearly all tested benchmarks of AI capability, showing exceptional performance in software engineering, knowledge work, vision, scientific research, and many other areas. The longer and more complex the task, the larger Fable 5’s lead over our other models.\n\nReleasing a model this capable comes with risks. Without safeguards, Fable 5’s capabilities in areas like cybersecurity could be misused to cause serious damage. We’ve therefore launched the model with safeguards that mean queries on some topics will instead receive a response from our next-most-capable model, Claude Opus 4.8. To release the model both safely and quickly, we’ve tuned these safeguards conservatively—they’ll sometimes catch harmless requests, though they trigger, on average, in less than 5% of sessions. With more capable models arriving in the coming months, we’re working to improve our safeguards and reduce false positives as quickly as we can.\n\nFor a small group of cyberdefenders and infrastructure providers, we’re also launching **Claude Mythos 5**. It’s the same underlying model as Fable 5, but with the safeguards lifted in some areas.2 Mythos 5 will initially be deployed through [Project Glasswing](https://www.anthropic.com/glasswing), in collaboration with the US government, as an upgrade to Claude Mythos Preview. It has the strongest cybersecurity capabilities of any model in the world. Soon, we intend to expand access to Mythos 5 through a broader trusted access program.\n\nThe capabilities of models like Fable 5 and Mythos 5 have the potential to do profound good for the world. We’ve seen the beginnings of this in Project Glasswing, where the models have [helped cyber defenders](https://www.anthropic.com/research/glasswing-initial-update) secure critically important software. We’ve also seen it in life sciences research, where the models are positing novel hypotheses and speeding up the development of new therapeutics.\n\nFable 5 and Mythos 5 are being offered at $10 per million input tokens and $50 per million output tokens—less than half the price of Claude Mythos Preview. Today’s joint launch is another step towards our goal of bringing advanced AI capabilities to as many users as possible, as quickly and as safely as we can.\n\nThe table below compares the capabilities of Fable 5 and Mythos 5 to other leading models.\n\n![Image 1: Benchmark table showing Claude Fable and Mythos compared to other leading models](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1e65982497d7d4891219ed0e83141625a291b860-2600x2870.png&w=3840&q=75)\n\nFable 5 and Mythos 5 can work autonomously for longer than any previous Claude models. Below we discuss how these skills apply to software engineering, and cover the model’s improved capabilities in knowledge work, vision, memory, and life sciences research.\n\n_Software engineering._ During early testing, [Stripe](https://stripe.com/) reported that Fable 5 compressed months of engineering into days. In a 50-million-line Ruby codebase, the model performed a codebase-wide migration in a day that would otherwise have taken a whole team over two months by hand. Fable 5 is also more token-efficient than past Claude models: on Cognition’s [FrontierCode](https://cognition.ai/blog/frontier-code) evaluation, which tests whether models can pass difficult coding tasks while meeting the standards of high-quality production codebases, Fable 5 scores highest among frontier models, even at medium effort.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd3c3efe0e8ab310856368cee2b2161439db6676a-1920x1080.png&w=3840&q=75)\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F036229d8f9be9a5a911dbbd863b3c6cc09a79a70-3840x2160.png&w=3840&q=75)\n\n_Knowledge work_. Fable 5 shows strong performance on complex analytical tasks. On [Hebbia](https://www.hebbia.com/)’s Finance Benchmark for senior-level reasoning, Fable 5 has the highest score of any model, with substantial gains in document-based reasoning, chart and table interpretation, and problem solving. [IMC](https://www.imc.com/) noted that Fable 5 aced their trading-analysis evaluations nearly across the board, including factual lookup, conceptual reasoning, root-cause analysis, and expected-value analysis.\n\n_Vision._ Fable 5 is the new state-of-the-art model for tasks involving vision. It can extract precise numbers from detailed scientific figures and can perform complex vision-based tasks like rebuilding a web app’s source code from screenshots alone. It also needs less scaffolding: for example, previous Claude models struggled to play Pokémon FireRed even with harnesses that gave them additional helpful tools, but Fable 5 beat FireRed with a minimal, vision-only harness.\n\n[Video 7](https://www.youtube.com/watch?v=Ty_50J84fMY)\n\nA timelapse of Claude playing Pokémon FireRed from start to finish using only raw game screenshots — with no maps, navigation aids, or extra game-state information. Earlier Claude models needed a complex helper harness to play Pokémon; Claude Fable 5 completed the game with vision alone.\n\n_Memory and long-context._ Fable 5 stays focused across millions of tokens in long-running tasks and improves its outputs using its own notes. When we had the model play the deck-building game [_Slay the Spire_](https://en.wikipedia.org/wiki/Slay_the_Spire), giving it access to persistent file-based memory improved its performance three times more than for Opus 4.8; Fable also reached the game’s final act three times more often.\n\n_Drug design:_ Using Mythos 5, our internal protein design experts accelerated aspects of the drug design process by around ten times. In one example, they found that Mythos 5, with protein design and bioinformatics tools but no human assistance, matches or beats skilled human operators. In doing so, the model executes all of the tasks that are normally completed by a scientist: choosing binding sites, selecting and running protein design tools, and recovering from failures along the way. Nine of the 14 protein targets from this study (shown below) yielded strong candidates for drug design that we’re currently investigating.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6a97019c4d8ea13fdd7200455f6dd9e8c267ba0b-1920x1080.png&w=3840&q=75)\n\n_Protein complexes designed by Mythos 5. Targets include immune checkpoints, growth-factor and receptor signaling, neurodegeneration, muscle disease, and harder structural targets._\n\n_Novel hypotheses in molecular biology._ Mythos 5 is our first model to consistently produce novel, compelling scientific hypotheses. In blinded head-to-head comparisons against Opus-class models, our scientists preferred Mythos’s molecular biology hypotheses ~80% of the time, and have advanced several to experimental evaluation. In the meantime, one Mythos hypothesis—a novel mechanism for an _E. coli_ protein—was corroborated in [a study](https://www.biorxiv.org/content/10.64898/2026.03.12.711259v1) from a lab independently working on the same problem.\n\n_Novel research in genomics._ Mythos 5 conducted novel genomics research in over a week of largely autonomous work. It assembled single-cell data for millions of cells spanning 138 animal species and designed and trained a custom machine learning model to identify cells performing the same role in even distantly related organisms. With only high-level human input, Mythos 5’s trained model outperformed a recent model published in the journal _Science_—despite being 100 times smaller. We intend to publish these results in the coming months.\n\n_Alignment_. In our automated alignment assessment we found that Mythos 5’s level of misaligned behavior (including misaligned actions taken by the model such as deception, and cooperation with misuse of the model by a user) was low, and similar to that of Opus 4.8. Given they are the same underlying model, Fable 5’s level of alignment will be similar. The assessment is described in full, along with a detailed suite of other safety and capabilities tests, in the model’s [system card](https://anthropic.com/claude-fable-5-mythos-5-system-card).\n\n![Image 5](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F2502a0daf85b741641cff36757d7243ef48f8be8-3840x2160.png&w=3840&q=75)\n\n_Overall level of misaligned behaviors from our automated alignment assessment. See section 6.2.3.1 of the [system card](https://anthropic.com/claude-fable-5-mythos-5-system-card) for more._\n\n## Early feedback for Claude Fable 5\n\nCustomers with early access ran their own tests on Fable 5. Below, in their words, is a selection of what they’re seeing:\n\n![Image 6:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/f084c88e65466636019709c40cc477aadce2f718-151x64.svg)\n\n> Claude Fable 5 is the state of the art model on CursorBench. It's opened up a class of long-horizon problems that were out of reach for earlier models.\n\n![Image 7:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/fc55f4db8afa5db479127fde5be3e492940f513d-94x64.svg)\n\n> Claude Fable 5 is a real step forward for the developers GitHub serves. In our early testing, it took on complex, long-horizon coding tasks with a level of autonomy and reliability that exceeded previous benchmarks. But what excites us most is the direction it points: a future where developers can hand increasingly ambitious work to agents and trust the results across the software lifecycle.\n\n![Image 8:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/1d9e0d7a5760165244bba057a622513bb75cb65d-80x64.svg)\n\n> These are the strongest results of any Claude model we've had the opportunity to test. Claude Fable 5 is a clear step forward on agentic coding and prototyping.\n\n![Image 9:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/046fc90b1e849e0ef96b6a9923d47ae13272b50f-173x64.svg)\n\n> Claude Fable 5's reasoning is a clear step beyond Opus 4.8. It works at senior research scientist grade — picking directions, allocating resources, killing its incorrect beliefs, and producing novel first-principles outputs.\n\n![Image 10:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/40a2a6a28afd8ac8fbf0e764b6bbf4ebf06a1977-133x64.svg)\n\n> Claude Fable 5 understands what builders mean, not just what they type. Apps that took a hundred prompts a year ago, it now one-shots. When a customer really hits a wall, it's the model we reach for to get them past it quickly, so they can finish what they set out to build.\n\n![Image 11:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/a0935a9396e8ec29b273be438cac14583c5999a6-130x64.svg)\n\n> Claude Fable 5 feels materially different. In blind review, our lawyers found its redlines matched or beat our current model every time.\n\n![Image 12:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/73b380711885c6beb5270575119dbf31d7f71236-107x64.svg)\n\n> At the highest effort, Claude Fable 5 reflects on and validates its own work. For us, that's what makes highly autonomous operations possible — the extra thinking pays for itself.\n\n![Image 13:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/74f9dcd65076def29413e42e822da248590b68d3-145x64.svg)\n\n> Claude Fable 5 delivers more capable engineering in fewer turns than prior models — handling the complex multi-agent workflows our employees run daily in Claude Code.\n\n![Image 14:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/ad249bca4e8e195e08764efc43ecbc586ca37482-143x64.svg)\n\n> Claude Fable 5 is the highest-scoring model on FrontierBench, Cognition's frontier coding eval. It excels at long-horizon reasoning and generalizes to unfamiliar tools out of the box.\n\n![Image 15:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/e360f8a29093a6b4fccdc006315035583e89f9ac-146x64.svg)\n\n> Claude Fable 5 is the strongest finance-first model we've tested, both on general finance and reasoning. It's a notable step up.\n\n![Image 16:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/7fbed01e869d6a4faf97317a1fc4b74f7997c66e-78x64.svg)\n\n> Claude Fable 5 is the first to break 90% on our core analytics benchmark of complex, long-running analytical tasks — a 10-point jump over Opus. On the hardest questions, it shows strong judgment and attention to nuance.\n\n![Image 17:  logo](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F41fa2545bafc63f50148ce0d710dbdadb8c06f87-888x256.png&w=256&q=75)\n\n> Claude Fable 5 is the strongest model we've tested on frontier physics research while using a third of the reasoning tokens. In 36 hours it got nearly to where GPT-5.5 landed after four days.\n\n![Image 18:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/0504471eb7da85317c6def349d315e2f8be00b0f-127x64.svg)\n\n> On ViBench, our end-to-end vibe-coding benchmark, Claude Fable 5 is the highest-performing model we've tested — nearly saturating our base use cases and building apps in less time with fewer tokens.\n\n![Image 19:  logo](https://www-cdn.anthropic.com/images/4zrzovbb/website/b7787c9ab5714b0c1789da32a3a52daba81f6bef-63x64.svg)\n\n> Claude Fable 5 beats Opus 4.8 on our everyday spreadsheet suite at every effort level — and it does it with fewer turns, finishing runs 25–30% faster.\n\n01 /\n\n14\n\n## Claude Fable 5’s new safeguards\n\nMythos-class models have reached a threshold where they present significant risks. In April we began [Project Glasswing](https://www.anthropic.com/glasswing), releasing the first Mythos-class model (Claude Mythos Preview) to only a limited group of cyber defenders and critical software infrastructure providers. When we did so, we stated that we hoped to eventually release [Mythos-level capabilities to all our users](https://www.anthropic.com/glasswing#:~:text=We%20do%20not,Preview3.), so long as we had developed new safeguards that were strong enough to reliably prevent misuse.\n\nOver the past few months we have been improving these safeguards, and they are now robust enough for a general release. Because we have prioritized safety, we’ve deliberately tuned the safeguards to be cautious, and they are still stricter than would be ideal—for example, sometimes benign requests will trigger our classifiers. We recognize that this will be frustrating to some users, and our aim is to reduce false positives as we update and refine the safeguards after launch.\n\nBelow we discuss each of Fable 5’s new safeguards in turn. Our wider suite of safeguards is discussed and evaluated in the model’s [system card](https://anthropic.com/claude-fable-5-mythos-5-system-card) and our most recent [risk report](https://cdn.sanity.io/files/4zrzovbb/website/097c63b5fe7dd8b14866e1f15bb1910ec713658a.pdf).\n\n### Safety classifiers\n\nThe frontier cybersecurity and research biology capabilities of Mythos-class models mean that they pose a substantial risk of _uplift_ to malicious actors. That is, these models could provide information or advice that assists those actors in causing serious harm that they couldn’t have received from other sources (for example, from internet search engines). Furthermore, a great deal of advanced usage of AI models is dual use: the same queries that are beneficial in the hands of cybersecurity professionals and biology researchers could be dangerous if available to malicious actors.\n\nWe therefore need strong safeguards to prevent misuse, and their coverage needs to be broad. The safeguards themselves have to stand up to sustained and sophisticated attempts to bypass them (also known as “jailbreaking” the system). The uplift from Mythos-level capabilities is valuable to many adversaries—for instance, those who could financially gain from cyberattacks—and we therefore expect them to be motivated to try to circumvent our safety measures.\n\nFable 5 comes with a new set of _classifiers_: separate AI systems that detect potential misuse, including jailbreak attempts, and prevent the main model (in this case Fable 5) from responding. We’ve been running classifiers on our models [for some time](https://www.anthropic.com/research/next-generation-constitutional-classifiers), and Fable 5’s classifiers are an extension of this previous work with extra coverage.\n\nWhen Fable’s classifiers detect a request related to cybersecurity, biology and chemistry, or distillation, the response is automatically handled by Claude Opus 4.8 instead. Users will be informed whenever this occurs. Opus 4.8 is a highly capable model in its own right: a response that falls back to Opus is a far better experience than an outright refusal from Fable. Our early data shows that more than 95% of Fable sessions involve no fallback at all—for those sessions, Fable 5’s performance is effectively the same as that of Mythos 5.\n\nThe following are the areas covered by the classifiers:\n\n_1. Cybersecurity_. Mythos-class models [excel](https://red.anthropic.com/2026/mythos-preview/) at discovering and exploiting software vulnerabilities. They can thus make cyberattacks substantially easier and cheaper to commit. Mythos-class models also show strong skills in agentic hacking. This involves performing multiple different parts of a cyberattack in addition to finding exploits—reconnaissance, discovery, lateral movement, and more. To prevent these agentic hacking skills providing uplift in cyberattacks, we designed our cybersecurity classifiers to cover both exploitation and offensive cyber tasks in a broader sense. As shown in the graph below, our classifiers prevent Fable from making any progress on these tasks.\n\n![Image 20](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ffaf941fe1ebfd09139d39b8e4ad9048121979284-3840x2160.png&w=3840&q=75)\n\n_Results of running cyber evaluations,3 with Fable 5 in a mode that blocks responses rather than falling back to Opus 4.8. Evaluations did not involve attempts to evade safeguards._\n\nWe extensively red-teamed our classifiers to test their robustness against jailbreaks. As well as internal testing, we ran an external bug bounty that produced no universal jailbreaks in over 1,000 hours of testing. External red-teaming organizations we engaged also failed to find any universal jailbreaks on long-form agentic tasks so far—although the UK AISI has made progress towards one within a brief initial testing window.4 It is likely impossible to _completely_ prevent universal jailbreaks, but our goal is to make any remaining jailbreaks sufficiently slow and costly that we can detect and prevent them before they are used at scale.\n\nThe graph below, from one of our internal evaluations, illustrates how Fable 5’s safeguards give it greater resistance to jailbreaks than our previous generally accessible models:\n\n![Image 21](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6bede3f6101d15bd899922917ea6246adda4515b-1920x1080.png&w=3840&q=75)\n\n_Results of an internal evaluation in which an automated red-teamer tries to use the model to complete a short task related to offensive cybersecurity across 400 turns, restarting and rewinding when blocked. The tasks are mostly simple and not representative of real cyber usage—they are sometimes as simple as encrypting files on a remote server. On more complex and realistic tasks we have not yet seen successful jailbreaks on our production system. Not",
+          "thread_group_id": "thread-claudeai-20260609-1708",
+          "duplicate_of": null
+        },
+        {
+          "title": "Final stop: Tokyo.\n\nRegister to hear directly from the teams behind Claude: https://t.co/SkYZwjK3GS",
+          "url": "https://x.com/claudeai/status/2064139073590104402",
+          "published_at": "2026-06-09T00:14:39.000000Z",
+          "description": "Final stop: Tokyo.\n\nRegister to hear directly from the teams behind Claude: https://t.co/SkYZwjK3GS",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/SkYZwjK3GS",
+              "expanded_url": "http://claude.com/code-with-claude/tokyo",
+              "display_url": "claude.com/code-with-clau…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Code with Claude, our developer conference, returns next week.\n\nWhether you're just getting started with Claude Code or you've been building for a while, there's a session for you.\n\nRegister for the livestream: https://t.co/GJwOPMDLEC https://t.co/uwAZgWPu7F",
+            "url": "https://x.com/claudeai/status/2050252933866930339"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 14,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We've reset 5-hour and weekly rate limits for all users. Enjoy Fable 5!",
+          "url": "https://x.com/ClaudeDevs/status/2064464557951852643",
+          "published_at": "2026-06-09T21:48:01.000000Z",
+          "description": "We've reset 5-hour and weekly rate limits for all users. Enjoy Fable 5!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We're hosting Claude Fable 5 Build Day in San Francisco on June 13.\n\nPoint Fable 5 at a problem worth solving and build a solution with Claude Code.\n\nThe Anthropic team will be in the room, with a cha",
+          "url": "https://x.com/ClaudeDevs/status/2064453497005978031",
+          "published_at": "2026-06-09T21:04:04.000000Z",
+          "description": "We're hosting Claude Fable 5 Build Day in San Francisco on June 13.\n\nPoint Fable 5 at a problem worth solving and build a solution with Claude Code.\n\nThe Anthropic team will be in the room, with a chance to win from a prize pool of $150K in Claude credits across 3 finalists. https://t.co/V3Y8yGsjtx",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260609-2104",
+          "duplicate_of": null
+        },
+        {
+          "title": "Spots are limited. Apply by June 12: \n\nhttps://t.co/bCyJDKPdCX",
+          "url": "https://x.com/ClaudeDevs/status/2064453498213912738",
+          "published_at": "2026-06-09T21:04:04.000000Z",
+          "description": "Spots are limited. Apply by June 12: \n\nhttps://t.co/bCyJDKPdCX",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/bCyJDKPdCX",
+              "expanded_url": "https://cerebralvalley.ai/e/claude-startups-build-day?utm_source=anthropics&utm_medium=social&utm_campaign=2026-06-09-ClaudeDevsX",
+              "display_url": "cerebralvalley.ai/e/claude-start…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064453497005978031"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260609-2104",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Fable 5 is our first generally available Mythos-class model. \n\nIt ships with new safety classifiers that may flag certain prompts in dual-use domains like cyber and bio.\n\nWe've added fallbacks:",
+          "url": "https://x.com/ClaudeDevs/status/2064428347678220691",
+          "published_at": "2026-06-09T19:24:07.000000Z",
+          "description": "Claude Fable 5 is our first generally available Mythos-class model. \n\nIt ships with new safety classifiers that may flag certain prompts in dual-use domains like cyber and bio.\n\nWe've added fallbacks: a refused request retries on Claude Opus 4.8 instead of dead-ending. https://t.co/iL1Rd6H5pJ",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We've also added refusal-fallback middleware to the Python, TypeScript, Go, Java, and C# SDKs for client-side retries. Middleware is useful for Claude API providers without support for server-side fal",
+          "url": "https://x.com/ClaudeDevs/status/2064428351029449214",
+          "published_at": "2026-06-09T19:24:08.000000Z",
+          "description": "We've also added refusal-fallback middleware to the Python, TypeScript, Go, Java, and C# SDKs for client-side retries. Middleware is useful for Claude API providers without support for server-side fallbacks.\n\nIt detects the refusal, retries on Claude Opus 4.8, and keeps using it for later turns.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064428349238477159"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260609-1924",
+          "duplicate_of": null
+        },
+        {
+          "title": "To learn more about refusal handling, server-side fallback, and the SDK middleware see the docs:\n\nhttps://t.co/TpMezsV1Ig",
+          "url": "https://x.com/ClaudeDevs/status/2064428352707105165",
+          "published_at": "2026-06-09T19:24:09.000000Z",
+          "description": "To learn more about refusal handling, server-side fallback, and the SDK middleware see the docs:\n\nhttps://t.co/TpMezsV1Ig",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/TpMezsV1Ig",
+              "expanded_url": "https://platform.claude.com/docs/en/build-with-claude/refusals-and-fallback",
+              "display_url": "platform.claude.com/docs/en/build-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064428351029449214"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260609-1924",
+          "duplicate_of": null
+        },
+        {
+          "title": "If you’re having trouble accessing Claude Fable 5, try running /model claude-fable-5.\n\nIn the Claude Code CLI, make sure to upgrade to 2.1.170.\n\nIf you’re on the Claude Desktop app, update the latest ",
+          "url": "https://x.com/ClaudeDevs/status/2064414264807616883",
+          "published_at": "2026-06-09T18:28:10.000000Z",
+          "description": "If you’re having trouble accessing Claude Fable 5, try running /model claude-fable-5.\n\nIn the Claude Code CLI, make sure to upgrade to 2.1.170.\n\nIf you’re on the Claude Desktop app, update the latest version.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Fable 5 changed how we work on the Claude Code team day to day.\n\nWe used to verify that Claude did the work right. Now we verify that it's doing the right work.\n\nHere’s the 3 biggest changes: h",
+          "url": "https://x.com/ClaudeDevs/status/2064399512664526853",
+          "published_at": "2026-06-09T17:29:33.000000Z",
+          "description": "Claude Fable 5 changed how we work on the Claude Code team day to day.\n\nWe used to verify that Claude did the work right. Now we verify that it's doing the right work.\n\nHere’s the 3 biggest changes: https://t.co/KhYNlNWcC4",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Fable 5 is here. New model generation, new way of working.\n\nHere's how to get started in Claude Code and on the Claude Platform: 🧵",
+          "url": "https://x.com/ClaudeDevs/status/2064394919549210774",
+          "published_at": "2026-06-09T17:11:18.000000Z",
+          "description": "Claude Fable 5 is here. New model generation, new way of working.\n\nHere's how to get started in Claude Code and on the Claude Platform: 🧵",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Introducing Claude Fable 5: a Mythos-class model that we’ve made safe for general use.\n\nIts capabilities exceed those of any model we’ve ever made generally available. https://t.co/2AvmEjHIX8",
+            "url": "https://x.com/claudeai/status/2064394146916229443"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "With multi-agent orchestration in Claude Managed Agents, you can use Fable to delegate work to dedicated agents using smaller models. https://t.co/CbTe98o8rR",
+          "url": "https://x.com/ClaudeDevs/status/2064394928948703406",
+          "published_at": "2026-06-09T17:11:20.000000Z",
+          "description": "With multi-agent orchestration in Claude Managed Agents, you can use Fable to delegate work to dedicated agents using smaller models. https://t.co/CbTe98o8rR",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064394927535185920"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260609-1711",
+          "duplicate_of": null
+        },
+        {
+          "title": "Cybersecurity and biosecurity requests may auto-reroute to Opus 4.8 (shown in the UI, billed at Opus prices).\n\nDocs + prompting guide:\n\nhttps://t.co/p03FDlBxnT",
+          "url": "https://x.com/ClaudeDevs/status/2064394931033248226",
+          "published_at": "2026-06-09T17:11:20.000000Z",
+          "description": "Cybersecurity and biosecurity requests may auto-reroute to Opus 4.8 (shown in the UI, billed at Opus prices).\n\nDocs + prompting guide:\n\nhttps://t.co/p03FDlBxnT",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/p03FDlBxnT",
+              "expanded_url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices",
+              "display_url": "platform.claude.com/docs/en/build-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064394928948703406"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260609-1711",
+          "duplicate_of": null
+        },
+        {
+          "title": "We've added an observability dashboard for developers of connectors.\n\nConnectors let third-party developers bring their tools and data to Claude via MCP. https://t.co/PSiMHjwFGL",
+          "url": "https://x.com/ClaudeDevs/status/2064072801062121906",
+          "published_at": "2026-06-08T19:51:19.000000Z",
+          "description": "We've added an observability dashboard for developers of connectors.\n\nConnectors let third-party developers bring their tools and data to Claude via MCP. https://t.co/PSiMHjwFGL",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260608-1951",
+          "duplicate_of": null
+        },
+        {
+          "title": "Use this to:\n\n1. Track connector adoption: Monitor active users, tool calls, directory rank\n\n2. Diagnose errors and latency: See error rates and latency with per-tool error breakdowns\n\n3. Understand u",
+          "url": "https://x.com/ClaudeDevs/status/2064072803721339014",
+          "published_at": "2026-06-08T19:51:19.000000Z",
+          "description": "Use this to:\n\n1. Track connector adoption: Monitor active users, tool calls, directory rank\n\n2. Diagnose errors and latency: See error rates and latency with per-tool error breakdowns\n\n3. Understand usage by product: Compare tool calls across Claude, Claude Code, Cowork https://t.co/ZpLb1uGujc",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064072801062121906"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260608-1951",
+          "duplicate_of": null
+        },
+        {
+          "title": "We're also adding a new in-app submission portal for developers to submit connectors:\n\nhttps://t.co/CBYFWYJy8T\n\nSee our blog to learn more:\n\nhttps://t.co/kR0vQZfHgY",
+          "url": "https://x.com/ClaudeDevs/status/2064072805663256997",
+          "published_at": "2026-06-08T19:51:20.000000Z",
+          "description": "We're also adding a new in-app submission portal for developers to submit connectors:\n\nhttps://t.co/CBYFWYJy8T\n\nSee our blog to learn more:\n\nhttps://t.co/kR0vQZfHgY",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/CBYFWYJy8T",
+              "expanded_url": "https://claude.com/docs/connectors/building/submission",
+              "display_url": "claude.com/docs/connector…"
+            },
+            {
+              "t_co": "https://t.co/kR0vQZfHgY",
+              "expanded_url": "https://claude.com/blog/observability-for-developers-building-connectors",
+              "display_url": "claude.com/blog/observabi…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2064072803721339014"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260608-1951",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "New Science Blog: Why has AI advanced faster in coding than in biology? \n\nTo agents, bio databases are like cities built before cars—maddening to drive in because they're designed for different traffi",
+          "url": "https://x.com/AnthropicAI/status/2064054837294354677",
+          "published_at": "2026-06-08T18:39:56.000000Z",
+          "description": "New Science Blog: Why has AI advanced faster in coding than in biology? \n\nTo agents, bio databases are like cities built before cars—maddening to drive in because they're designed for different traffic. \n\nHow do we build infrastructure agents can use?\nhttps://t.co/PQaNQ4GRJZ",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/PQaNQ4GRJZ",
+              "expanded_url": "https://www.anthropic.com/research/agents-in-biology",
+              "display_url": "anthropic.com/research/agent…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Paving the way for agents in biology\n\nURL Source: https://www.anthropic.com/research/agents-in-biology\n\nMarkdown Content:\nWritten by Laura Luebbert. Based on [research](https://arxiv.org/pdf/2606.06749) by Ferdous Nasri, Sarah Gurev, Patrick Varilly, Krithik Ramesh, Nuala A. O’Leary, Jonah Cool, Bernhard Y. Renard, Pardis Sabeti, and Laura Luebbert.\n\n_In this post, Laura Luebbert argues that we need to make biological data infrastructure more agent-friendly. As a case study, she and her team tasked scientific research agents (Claude, Biomni Open Source (Biomni OSS)1, Edison Analysis,2 GPT) to retrieve the sequence data from NCBI Virus, a database virologists use for tasks such as surveillance and diagnostic assay development. Even the strongest models did not consistently achieve the level of accuracy required for reliable dataset construction. But accuracy rose to nearly 100% once she and her team added gget virus, a deterministic retrieval layer. The broader lesson for scientific agents is that deterministic retrieval tools are (currently) crucial to making agent workflows more reliable, and biological databases will need to be designed with agents in mind as scaled users._ Using AI agents to navigate biological data infrastructure is like driving through an old city that was designed before cars: the infrastructure may be beautiful and even thoughtful, but it’s full of narrow, winding streets that are difficult for modern vehicles to navigate (idiosyncratic file formats, scattered databases, and one-off retrieval scripts).3 You can retrofit the city with traffic signs, parking lots, and the occasional widened road, but the basic layout remains hard to navigate because it was designed for a different mode of conveyance. Software infrastructure, by contrast, was basically made for the needs of cars (agents): paved roads, clear lanes, standardized signals, and systems designed for fast travel from start to finish (version control, well-documented APIs, and package managers).\n\nAs a result, coding agents have advanced much more quickly than biological agents. Software commonly provides structured digital workflows and reliable interfaces, whereas the computational biology infrastructure needed for data retrieval and validation is often brittle, heterogeneous, and process-dependent. The tools with which we navigate them are necessarily bespoke and tuned to defined domains or hypotheses. Moreover, software provides testable outputs that can be quickly compiled and validated (e.g., resolving a GitHub issue by generating a patch that passes the project’s tests), whereas biology offers few simple and verifiable yet meaningful rewards.\n\nThus, the bottleneck for biological agents is not only reasoning but the absence of widespread deterministic execution layers for querying biological data. A scientist can express their intent (e.g., find all human kinases with this domain and pull their structures), but agents often lack a dependable way to access the databases containing the information they need.\n\nIn biological and scientific workflows, even small errors can have severe consequences. Retrieving coordinates from the wrong genome build, for example, can invalidate the downstream biological interpretation. So can mixing RefSeq and GenBank records without intending to, treating partial genomes as complete genomes, confusing segment names in segmented viruses, or missing relevant records because of inconsistent metadata fields. The beauty and challenge of research is that the details are often of critical importance.\n\nLike driving through an Italian hill town, it does not matter how powerful the car is if the streets are too narrow, the turns too sharp, and the route depends on local knowledge. If we want agents to help with scientific discovery, from outbreak response to drug design to biological modeling, we need to build biological data infrastructure that they can navigate as reliably as humans do.\n\n### **What Karpathy’s lecture about web development tells us about doing biology with AI agents**\n\nThis mismatch between agent needs and human-built tools is not unique to biology. The same friction emerges wherever agents are inserted into environments designed solely for human use.\n\nA few months ago, Andrej Karpathy gave a [talk](https://www.youtube.com/watch?v=LCEmiRjPEtQ) about software in the era of AI and ended up griping about something that sounded all too familiar. He had vibe-coded a small web app, but when he tried to make it real (authentication, payments, deployment), he lost a week clicking around in browser dashboards.\n\nAs he summarized, “The code was the easiest part! Most of the work was in the browser, clicking things.” Documentation kept telling him to “go to this URL, click on this dropdown.” His conclusion was that nobody should have to do this. Instead, we must build for agents**.**\n\nKarpathy had experienced something new within the world of software agents that biology researchers have been struggling with for a long time: the pain of trying to make intelligent systems operate in environments built around heterogeneous information, implicit conventions, and humans clicking through browsers.\n\n## **A case study: The click tax in virology**\n\nLong before AI agents, computational biologists and geneticists had already begun to produce tools for traditional computational biology, which chipped away at this problem. Packages like Biopython, BioPerl, BioJulia, Entrez Direct, BioMart, gget, and many other workflow libraries are all efforts to move biological data out of browser interfaces and into places where researchers can compute on it directly.\n\nThe problem is that biological data does not live in a single database with a single interface. It is a messy network of roads, each with its own identifiers, conventions, formats, filtering logic, and degree of programmatic access. Some data are straightforward to access programmatically. Others, not so much.\n\nVirology, in particular, is one of the harder cases. Research workflows from vaccine and diagnostic assay design to building training data for protein models often begin by retrieving sequences from NCBI Virus, a collection of viral sequence records from GenBank, RefSeq, and the international INSDC ecosystem, including Pathoplexus, behind a searchable web interface. As researchers building tools for viral outbreak surveillance, we know firsthand how much expert knowledge is hidden behind these retrievals. In virology labs, dataset curation instructions for NCBI Virus are often passed around as long lists of complex filters that users must manually reproduce in the web interface: exactly the kind of browser-clicking workflow Karpathy was complaining about.\n\nThe current outbreak of Ebola disease caused by Bundibugyo virus in the Democratic Republic of Congo is a stark example of why streamlined viral data access can have real-world, life-or-death consequences. On May 14, 2026, INRB Kinshasa in the DRC analyzed 13 blood samples and confirmed Bundibugyo virus disease in eight the next day,4 after which an Ebola outbreak was declared. By May 29, the WHO had reported more than 1,000 confirmed and suspected cases in the DRC, including more than 200 deaths. Researchers also generated the first near-complete outbreak genomes, helping establish that the outbreak was caused by a new spillover event.\n\nThese genomes present public health officials with three urgent questions. First, how different is this outbreak virus from Ebola viruses seen before? Second, can existing diagnostics still detect it? And, third, will existing therapeutics still protect against it? Answering these questions requires comparing the new genomes against historical Ebola genomes available through NCBI Virus and Pathoplexus (which synchronizes into NCBI Virus). But rather than this being easily automatable, the first steps in this analysis involve manually clicking through a web interface, reproducing complex filters by hand, and hoping the resulting dataset is complete and correct.\n\nThe reason this workflow is so hard to automate is that much of NCBI Virus’s filtering logic lives _only_ in this web interface. This is annoying for humans and terrible for agents. If a researcher wants every SARS-CoV-2 sequence released in 2025 that contains the surface glycoprotein, that may take a seasoned virologist a few clicks in the browser. But programmatically, it can require a multi-hundred-line script gluing together multiple APIs (REST, Datasets, E-utilities), retrieving results page by page, reconciling identifiers, and downloading hundreds of gigabytes of data, only to throw most of it away after local filtering.\n\nEven if a resource has an API, it can still be difficult for agents to use reliably for a variety of reasons, for example if the API does not expose the same filtering semantics as the web interface, if metadata fields are poorly documented or inconsistently standardized, if identifiers change across sources, or if “the right answer” depends on conventions that expert humans know but machines have to infer.\n\n### **What happens when agents try anyway**\n\nTo better understand the challenge of bridging agents to databases, we developed a test for how capable state-of-the-art scientific research agents (Claude, Biomni OSS, Edison Analysis, GPT) are when asked to retrieve viral sequences from NCBI Virus using the infrastructure available today. Our benchmark, VirBench, includes 120 realistic viral sequence queries spanning 40 pathogens with manually verified ground-truth counts. The queries reflect tasks that appear in viral surveillance, diagnostic assay design, and protein model training-data construction. For example, one query asked agents to “retrieve viral sequences from NCBI for TaxID 3052462 (Orthoebolavirus zairense (ZEBOV)) that adhere to the following criteria: host organism: human, geographic location of sample collection: Africa, collected on or after 01/01/2014, collected on or before 06/20/2014, minimum sequence length: 15,200 bases, maximum 1,900 ambiguous characters (N’s), exclude lab-passaged samples.”\n\nWhen agents were left to solve these queries on their own, performance varied widely across systems and improved substantially in newer frontier models. However, even the strongest models did not consistently achieve the level of accuracy and reproducibility required for reliable dataset construction. Claude Sonnet 4, Claude Opus 4.7, Biomni OSS, Edison Analysis, GPT-5.2-pro, and GPT-5.5 5 achieved mean accuracies ranging from 16.9% to 91.3%. For these data retrieval tasks, the bar is effectively 100%: in some cases, a missing or incorrect record could determine whether a diagnostic assay seems to cover circulating diversity, or whether an outbreak is inferred to have started weeks earlier or later than it did. In addition, the same model often produced substantially different answers when asked the same question three times, undermining both the accuracy and reproducibility required for reliable scientific workflows. For the example Ebolavirus query above, Sonnet 4 6 returned 106 sequences in one run (expected: 266), 15 in a second run, and 5 in a third, despite receiving an identical prompt each time.\n\nInconsistencies like this have consequences for downstream analyses. We used the query shown above to retrieve Ebolavirus sequences and build a phylogenetic tree, a standard analysis for reconstructing how viral samples are related during an outbreak. One important quantity we can get from phylogenetic trees is the estimated time to the most recent common ancestor (TMRCA). This is the inferred root date of an outbreak, which can alter conclusions about when and where a virus originated, as well as how long a virus was circulating. In this case, a tree built from a manually curated NCBI Virus sequence set recovered a January 2014 TMRCA, consistent with [previous reports](https://www.science.org/doi/epdf/10.1126/science.1259657) (95% highest posterior density spans 27 January to 14 March) for the 2014 Ebolavirus outbreak. By contrast, two of the three sequence sets retrieved by Sonnet 4 were visibly incomplete, including one tree that pushed the inferred TMRCA back to 1922. The remaining dataset (run 1) looked superficially plausible, but failed to retrieve sequences from Guinea and shifted the estimated TMRCA to April 2014, changing the inferred timing of the outbreak.\n\n![Image 1: chart showing the Phylogenetic trees of Zaire ebolavirus](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ffaa2dc4dccb2e47dbce35a8d6acc92b0aa5e5782-5820x5898.png&w=3840&q=75)\n\nPhylogenetic trees of Zaire ebolavirus from the 2014 West African epidemic inferred using [Delphy](https://www.biorxiv.org/content/10.1101/2025.03.25.645253). Tips are colored by country of sampling; grey indicates missing or incorrectly retrieved country metadata. Dashed red lines mark the estimated time to the most recent common ancestor (TMRCA) for each tree. The upper left tree was built from sequences manually retrieved via the NCBI web interface, while Runs 1–3 were generated from sequence sets assembled by a Sonnet 4 agent using web search and code execution tools. Analysis and visualization by Gage Moreno.\n\nThe variability between NCBI Virus retrieval attempts can also affect conclusions about therapeutics. We retrieved Ebolavirus glycoprotein sequences to examine the epitopes bound by maftivimab and MBP134, antibody therapeutics developed against Zaire ebolavirus and [WHO priority treatment candidates](https://www.who.int/news/item/28-05-2026-experts-convened-by-who-advise-on-candidate-treatments-and-vaccines-for-ebola-disease-caused-by-bundibugyo-virus) in the ongoing Ebolavirus outbreak. We asked whether mutations have previously arisen in the regions these antibodies target across related Zaire ebolavirus sequences. This kind of analysis can give researchers a sense of whether a treatment will continue to protect patients as the virus evolves. If the underlying sequences are incomplete or incorrectly fetched, it can throw off their conclusion. In our example, sequences retrieved by Sonnet 4 came close to the results obtained through a manual NCBI query on its first attempt. On a repeat run, it missed most of the mutated residues. And, on the third run, it highlighted a different set of residues, producing three different impressions of the variability in these target regions.7\n\n![Image 2: depiction of Existing Zaire ebolavirus mutations ](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5f8526abfb93dbe99a0c2078ddd344528de2be0f-2500x646.png&w=3840&q=75)\n\nExisting Zaire ebolavirus mutations across its glycoprotein are shown in red, with darker shades indicating higher mutation frequency. Spheres indicate the known footprints of antibody therapeutics maftivimab and MBP134. The leftmost visualization was built from a manually curated NCBI dataset, while Runs 1–3 were generated from sequence sets assembled by a Sonnet 4 agent using web search and code execution tools. The PDB structure shown is 7TN9. Analysis and visualization by Sarah Gurev.\n\nBoth of these examples illustrate a broader pattern in science: details that look like minor retrieval choices can change the biological conclusion. In this case, the inconsistent model performance in viral sequence retrieval and the nature of the failure modes highlighted that most variation was attributable to infrastructure shortcomings. Agents under-counted when they failed to retrieve large result sets, and over-counted when filters were applied incorrectly. For example, the largest deviations from the expected counts occurred for viruses with large numbers of available records, including Influenza A, HIV-1, and SARS-CoV-2, where stopping partway through retrieval and incorrect downstream filtering can substantially distort the final dataset. They also struggled with metadata fields whose meaning depends on context, convention, or where information happens to be stored. Performance degraded as queries became more complex, especially beyond three or four simultaneous filters.\n\nUltimately, the agents often understood the task well enough to attempt it, but they lacked a machine-actionable way to carry it out, verify it, and repeat it. The resulting answers could look plausible while still being wrong, which is especially dangerous because sequence retrieval is usually the first step in a much longer biological workflow.\n\n### **A deterministic layer for viral data retrieval**\n\n_For a more thorough explanation of VirBench and gget virus, read [the preprint](https://arxiv.org/pdf/2606.06749)._\n\nTo turn viral data retrieval into something that agents and humans could call directly, we developed _gget virus_ in collaboration with researchers at NCBI. At first, this seemed like it might be a simple matter of connecting to the right API calls. In practice, it was much harder: NCBI Virus is a portal over multiple underlying resources, including internationally synchronized sequence databases maintained across the United States, Europe, and Japan, so answering a seemingly simple query often requires piecing together information from several places.\n\nTo reproduce the behavior of the NCBI Virus web interface, _gget virus_ has to coordinate across the different systems underneath it, including the REST, Datasets, and E-utilities APIs. _gget virus_ decides which filters can be applied through these existing APIs and which have to be checked locally because the web interface exposes filtering behavior that is not available from a single programmatic endpoint. It handles batching so that large result sets, such as for SARS-CoV-2 and Influenza A datasets, are retrieved comprehensively rather than arbitrarily cut off. When filtering depends on additional information stored in a separate database, such as GenBank records that indicate whether a sequence contains a particular viral protein, _gget virus_ retrieves those records, uses them to apply the filters, and preserves the relevant GenBank information in the final output. It then returns standardized outputs that are readable by both people and machines, with detailed logs that show how the final result was produced.8\n\n![Image 3: chart showing AI agent performance on the VirBench benchmark with and without gget virus. ](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1206c88f2917169c303ecd2a8ad8ab7622042852-1920x1080.jpg&w=3840&q=75)\n\nAI agent performance on the VirBench benchmark with and without _gget virus_. VirBench evaluates the agent’s ability to correctly retrieve viral sequence datasets. The final bar shows _gget virus_ run directly, without an agent. Figure adapted from Nasri _et al.,_ 2026.\n\nWhen we gave the agents access to _gget virus_, accuracy rose above 90% for all agents, peaking at 99.7% for GPT-5.5. Run-to-run variability was largely eliminated, and the performance gap between models narrowed dramatically. In other words, **adding a deterministic retrieval layer made model choice much less important**. This is especially consequential given that reliable dataset construction should not depend on access to the newest or most expensive model, or on knowing which model works best for a given database. Instead, cheaper models paired with the right tool reduce variability and enable wider access.\n\n_gget virus_ makes existing agents more reliable for viral data retrieval by translating a complex, browser-based retrieval workflow into an accurate and reproducible interface. Returning to our walkable city analogy, it’s like we added a highway tunnel underneath the pedestrian infrastructure, complete with on- and off-ramps, smooth-moving interchanges, and exit numbers tied to known mile markers.\n\n### **As Karpathy said: “make [genomic data] accessible ",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Your app can now search the web for images.\n\nWeb search in the Responses API now supports image results in addition to text results, so you can build apps that surface  products, places, visual refere",
+          "url": "https://x.com/OpenAIDevs/status/2064395155688616153",
+          "published_at": "2026-06-09T17:12:14.000000Z",
+          "description": "Your app can now search the web for images.\n\nWeb search in the Responses API now supports image results in addition to text results, so you can build apps that surface  products, places, visual references, and source links for inspiration. https://t.co/Oyl4cS4Jdu",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260609-1712",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/CwSbd8f4gl",
+          "url": "https://x.com/OpenAIDevs/status/2064395168007278714",
+          "published_at": "2026-06-09T17:12:17.000000Z",
+          "description": "https://t.co/CwSbd8f4gl",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/CwSbd8f4gl",
+              "expanded_url": "https://developers.openai.com/api/docs/guides/tools-web-search#image-search-results",
+              "display_url": "developers.openai.com/api/docs/guide…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2064395155688616153"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260609-1712",
+          "duplicate_of": null
+        },
+        {
+          "title": "23,000+ ChinaRxiv papers are now freely available with more complete English translations after one developer replaced a complex OCR pipeline with GPT‑5.5.\n\nhttps://t.co/G8milQlIMa",
+          "url": "https://x.com/OpenAIDevs/status/2064346891673059484",
+          "published_at": "2026-06-09T14:00:27.000000Z",
+          "description": "23,000+ ChinaRxiv papers are now freely available with more complete English translations after one developer replaced a complex OCR pipeline with GPT‑5.5.\n\nhttps://t.co/G8milQlIMa",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/G8milQlIMa",
+              "expanded_url": "https://x.com/seconds_0/status/2059829527199592899",
+              "display_url": "x.com/seconds_0/stat…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "seconds_0",
+            "text": "https://t.co/WX3JkDa7kv",
+            "url": "https://x.com/seconds_0/status/2059829527199592899"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Here are the experiences developers are building with the Realtime API: https://t.co/13D6JEnaHf",
+          "url": "https://x.com/OpenAIDevs/status/2064121924888797188",
+          "published_at": "2026-06-08T23:06:31.000000Z",
+          "description": "Here are the experiences developers are building with the Realtime API: https://t.co/13D6JEnaHf",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/XlZc6miEid",
+          "url": "https://x.com/OpenAIDevs/status/2064037734591652065",
+          "published_at": "2026-06-08T17:31:58.000000Z",
+          "description": "https://t.co/XlZc6miEid",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/XlZc6miEid",
+              "expanded_url": "http://x.com/i/article/2064021561112150016",
+              "display_url": "x.com/i/article/2064…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Say hello, hola, 你好 to Gemini 3.5 Live Translate: our latest audio model built for fast, cross-language communication. 🌐",
+          "url": "https://x.com/GoogleDeepMind/status/2064366504745828689",
+          "published_at": "2026-06-09T15:18:23.000000Z",
+          "description": "Say hello, hola, 你好 to Gemini 3.5 Live Translate: our latest audio model built for fast, cross-language communication. 🌐",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260609-1518",
+          "duplicate_of": null
+        },
+        {
+          "title": "3.5 Live Translate can convert speech into over 70 languages and processes it as it’s streamed - while keeping tone, pace and pitch intact - allowing for more natural conversations.",
+          "url": "https://x.com/GoogleDeepMind/status/2064366509216928102",
+          "published_at": "2026-06-09T15:18:24.000000Z",
+          "description": "3.5 Live Translate can convert speech into over 70 languages and processes it as it’s streamed - while keeping tone, pace and pitch intact - allowing for more natural conversations.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2064366504745828689"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260609-1518",
+          "duplicate_of": null
+        },
+        {
+          "title": "Try it in the @Google Translate app or build in preview via the API in @GoogleAIStudio. Find out more ↓ https://t.co/N1JS70J7Wg",
+          "url": "https://x.com/GoogleDeepMind/status/2064366510932439413",
+          "published_at": "2026-06-09T15:18:24.000000Z",
+          "description": "Try it in the @Google Translate app or build in preview via the API in @GoogleAIStudio. Find out more ↓ https://t.co/N1JS70J7Wg",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/N1JS70J7Wg",
+              "expanded_url": "https://goo.gle/4aEtspk",
+              "display_url": "goo.gle/4aEtspk"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2064366509216928102"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260609-1518",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Learn more about our work with @gopuff to build a personalized shopping assistant with chat, voice, and image models\n\nhttps://t.co/abZWEmFK7z https://t.co/TCxxGlrkHg",
+          "url": "https://x.com/xai/status/2064426048146800780",
+          "published_at": "2026-06-09T19:14:59.000000Z",
+          "description": "Learn more about our work with @gopuff to build a personalized shopping assistant with chat, voice, and image models\n\nhttps://t.co/abZWEmFK7z https://t.co/TCxxGlrkHg",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/abZWEmFK7z",
+              "expanded_url": "https://x.ai/news/grok-gopuff",
+              "display_url": "x.ai/news/grok-gopu…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
