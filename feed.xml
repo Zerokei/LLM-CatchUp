@@ -54,11 +54,12 @@
       <description><![CDATA[<h1>CatchUp 周报 — 2026-W23 (06/01 - 06/07)</h1>
 <h2>本周趋势</h2>
 <ul>
-<li><strong>代理模型落地</strong>：Qwen3.7-Plus 与 Grok Build Composer 2.5 把模型更新直接绑定到浏览器操作、工具调用和原型构建场景。</li>
-<li><strong>编码平台扩边</strong>：OpenAI 让 Codex 进入角色插件、Sites 与 AWS，Anthropic 则用 Claude Code 后台代理和 CLI 强化并行开发。</li>
-<li><strong>科研工作台化</strong>：Google DeepMind 推出 Gemini for Science，多智能体科研助手开始覆盖假设生成、文献推理和实验设计。</li>
-<li><strong>安全治理制度化</strong>：Anthropic Project Glasswing 扩至 150 个组织，OpenAI 同周推动青少年安全机制和 AI 韧性资助。</li>
-<li><strong>语音流程实用化</strong>：Travelers 理赔助手与 OpenAI Voice Hack Night 原型显示，Realtime 语音能力正进入企业服务和移动 Agent。</li>
+<li><strong>垂直模型升温</strong>：OpenAI GPT-Rosalind 与 Anthropic Claude 化学研究把 GPT-5.5、Opus 4.7 推进生命科学和 NMR 专业任务。</li>
+<li><strong>本地多模态补强</strong>：Google Gemma 4 12B 与 Qwen3.7-Plus 分别强化端侧多模态和浏览器代理能力，模型竞争继续贴近执行场景。</li>
+<li><strong>编码工作台扩展</strong>：Codex 角色插件、iOS 插件、设置恢复与 Claude CLI、/fork、ultracode 让编码代理更像长期可编排平台。</li>
+<li><strong>安全治理转实操</strong>：Anthropic MITRE 映射、Project Glasswing 与 OpenAI 生物防御方案把 AI 风险分析推进到框架、韧性和防御能力。</li>
+<li><strong>记忆与个性化回归</strong>：ChatGPT Memory 新系统用 summary 和用户控制增强跨会话上下文，个人长期助手体验成为产品焦点。</li>
+<li><strong>企业分发加深</strong>：OpenAI 模型进入 AWS，Grok 接入 Cloudflare/Vapi/Gopuff，Claude Partner Network 扩容，模型能力继续通过平台外溢。</li>
 </ul>
 <h2>Top 10 最重要文章</h2>
 <h3>1. <a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">Qwen3.7-Plus 发布多模态代理模型</a> ⭐⭐⭐⭐⭐</h3>
@@ -66,92 +67,94 @@
 <li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/01</li>
 <li><strong>标签</strong>: <code>Qwen3.7-Plus</code> <code>多模态代理</code> <code>浏览器智能体</code> <code>模型发布</code> <code>工具调用</code></li>
 </ul>
-<p><strong>摘要</strong>: Qwen 发布 Qwen3.7-Plus，并把演示重点放在多模态代理、浏览器操作和工具调用上。这个版本的信号不只是新模型编号，而是把文本、视觉、网页状态和动作规划放进同一条可执行任务链。对国产和开源模型生态来说，浏览器智能体能力会成为更接近真实应用的对照指标。</p>
-<h3>2. <a href="https://x.com/ClaudeDevs/status/2061947411141169494">Claude Code 同日升级：后台代理、CLI 与修复</a> ⭐⭐⭐⭐</h3>
+<p><strong>摘要</strong>: Qwen 发布 Qwen3.7-Plus，并把重点放在多模态代理和浏览器操作能力上。演示强调模型可以在浏览器环境中执行任务，同时处理文本、视觉与工具混合流程。它延续了 Qwen3.7-Max 的 Agent 路线，把国产模型竞争从榜单推进到更贴近真实网页任务的能力验证。</p>
+<h3>2. <a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind">GPT-Rosalind 升级：GPT-5.5 进入生命科学</a> ⭐⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/02</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>后台代理</code> <code>终端 CLI</code> <code>工作流</code> <code>Opus 4.8</code> <code>子代理</code></li>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/03</li>
+<li><strong>标签</strong>: <code>GPT-Rosalind</code> <code>GPT-5.5</code> <code>生命科学</code> <code>药物发现</code> <code>企业AI</code></li>
 </ul>
-<p><strong>摘要</strong>: Claude Code 通过 <code>/fork</code> 增加后台代理能力，让开发者可以把当前上下文拆出去并行处理独立子任务。Claude Platform 还把终端 CLI、托管智能体会话和 Claude API 技能串联起来，减少本地开发与平台功能之间的切换成本。官方同步解释并修复 Opus 4.8 工具调用和子代理耗额问题，说明 Anthropic 正在补齐长任务编排里的可靠性细节。</p>
-<h3>3. <a href="https://x.com/GoogleDeepMind/status/2061857539977842793">Gemini for Science 发布多智能体科研助手</a> ⭐⭐⭐⭐</h3>
+<p><strong>摘要</strong>: OpenAI 为企业生命科学研究模型 GPT-Rosalind 推出新能力，把 GPT-5.5 的智能体编码、工具调用和专业推理用于药物化学、基因组学与实验工作流。更新后的模型在复杂药物化学查询、定量生物学和湿实验排错中表现更强，并以 trusted-access 结构向合格组织开放研究预览。这是 GPT-5.5 从通用编码/文档能力进入高价值垂直科学场景的重要一步。</p>
+<h3>3. <a href="https://x.com/demishassabis/status/2062241713398149524">Gemma 4 12B 发布：本地多模态模型升级</a> ⭐⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/02</li>
-<li><strong>标签</strong>: <code>Gemini for Science</code> <code>科研智能体</code> <code>Co-Scientist</code> <code>多智能体</code> <code>假设生成</code></li>
+<li><strong>来源</strong>: Demis Hassabis (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/03</li>
+<li><strong>标签</strong>: <code>Gemma 4</code> <code>12B模型</code> <code>多模态</code> <code>本地部署</code> <code>Apache 2.0</code></li>
 </ul>
-<p><strong>摘要</strong>: Google DeepMind 发布 Gemini for Science，把 Gemini 包装成面向科学发现的多智能体研究助手。Co-Scientist 演示覆盖假设生成、文献推理和实验设计，重点是帮助研究者组织候选方向，而不是单纯解释论文。它代表通用模型能力正在被装进更专用的科研工作台。</p>
-<h3>4. <a href="https://openai.com/index/codex-for-every-role-tool-workflow">Codex 扩展到角色插件、Sites 与知识工作</a> ⭐⭐⭐⭐</h3>
+<p><strong>摘要</strong>: Google 庆祝 Gemma 下载量突破 1.5 亿，并推出新的 Gemma 4 12B 模型。该模型采用统一、无编码器的多模态设计，面向本地笔记本运行场景，官方强调 16GB VRAM 设备也能承载，并以 Apache 2.0 许可证发布。它让端侧多模态从“能跑”进一步接近“可被企业和个人开发者认真评测”。</p>
+<h3>4. <a href="https://www.anthropic.com/research/making-claude-a-chemist">Claude Opus 4.7 挑战 NMR 化学解析</a> ⭐⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/02</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>角色插件</code> <code>Codex Sites</code> <code>知识工作</code> <code>团队协作</code> <code>工作流</code></li>
+<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/05</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>NMR</code> <code>化学</code> <code>科学AI</code> <code>Anthropic Research</code></li>
 </ul>
-<p><strong>摘要</strong>: OpenAI 将 Codex 从编程助手继续扩展为多职能工作流平台，发布角色插件、Codex Sites 和团队批注能力。官方示例覆盖销售、金融研究和原型评审，目标是让非工程岗位也能把任务交给 Codex 生成可审阅产物。Codex 的产品边界因此从“写代码”扩到“把知识工作变成可共享工作流”。</p>
-<h3>5. <a href="https://www.anthropic.com/news/expanding-project-glasswing">Project Glasswing 扩至 150 个组织</a> ⭐⭐⭐⭐</h3>
+<p><strong>摘要</strong>: Anthropic Research 发布 Making Claude a chemist，研究 Claude 在 NMR 光谱和化学结构理解任务中的能力。官方称 Opus 4.7 在部分任务上达到甚至超过专用 NMR 软件，显示旗舰模型正在进入高度专业的科学分析场景。与 GPT-Rosalind 同周出现，说明前沿模型的科学落地正在从泛科研助手走向具体学科工具。</p>
+<h3>5. <a href="https://x.com/xai/status/2061510464325206163">xAI 发布 Grok Build Composer 2.5</a> ⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
-<li><strong>标签</strong>: <code>Project Glasswing</code> <code>AI 安全</code> <code>公共利益</code> <code>社会韧性</code> <code>Anthropic</code></li>
+<li><strong>来源</strong>: xAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/01</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok Build</code> <code>Composer 2.5</code> <code>模型发布</code> <code>开发工具</code></li>
 </ul>
-<p><strong>摘要</strong>: Anthropic 扩大 Project Glasswing，将 AI 安全、教育与公共利益相关支持扩展到 150 个组织。相比单次政策表态，这更像是面向社会韧性和公益能力建设的长期合作网络。它也延续了 Anthropic 把安全治理放进组织、课程和伙伴关系中的路线。</p>
+<p><strong>摘要</strong>: xAI 在 Grok Build 中上线 Composer 2.5，定位为面向构建与迭代的模型和工具能力升级。公开信息主要围绕试用入口和能力展示，用户可从 <code>x.ai/cli</code> 开始并在模型菜单中选择 Composer。它说明 xAI 仍在把模型能力直接嵌入原型构建和开发工具链。</p>
 <h3>6. <a href="https://x.com/OpenAI/status/2061564502160892138">OpenAI 模型与 Codex 在 AWS 全面可用</a> ⭐⭐⭐⭐</h3>
 <ul>
 <li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/01</li>
 <li><strong>标签</strong>: <code>OpenAI</code> <code>AWS</code> <code>Bedrock</code> <code>Codex</code> <code>企业部署</code></li>
 </ul>
-<p><strong>摘要</strong>: OpenAI 宣布前沿模型与 Codex 在 AWS 工作流中 GA，可通过 Bedrock 等 AWS 开发生态使用。这个分发路径让企业可以在既有权限、审计、账单和合规体系中试用 OpenAI 编程代理。对 Codex 来说，进入 AWS 意味着它正在从单独工具变成企业云采购路径里的标准能力。</p>
-<h3>7. <a href="https://x.com/xai/status/2061510464325206163">xAI 发布 Grok Build Composer 2.5</a> ⭐⭐⭐⭐</h3>
+<p><strong>摘要</strong>: OpenAI 宣布前沿模型与 Codex 进入 AWS 工作流并达到 GA，可通过 Bedrock 等 AWS 开发生态使用。开发者信息补充了 Codex on Bedrock 的文档入口和集成方式，显示 OpenAI 正把模型与编码代理放进更多企业云采购路径。对团队而言，这降低了在既有 AWS 权限、账单和合规体系内试用 Codex 的门槛。</p>
+<h3>7. <a href="https://www.anthropic.com/news/expanding-project-glasswing">Project Glasswing 扩至 150 个组织</a> ⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: xAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/01</li>
-<li><strong>标签</strong>: <code>xAI</code> <code>Grok Build</code> <code>Composer 2.5</code> <code>模型发布</code> <code>开发工具</code></li>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Project Glasswing</code> <code>AI 安全</code> <code>公共利益</code> <code>社会韧性</code> <code>Anthropic</code></li>
 </ul>
-<p><strong>摘要</strong>: xAI 在 Grok Build 中上线 Composer 2.5，定位为面向构建和迭代的模型能力升级。公开信息主要提供试用入口和能力展示，用户可从 <code>x.ai/cli</code> 开始并在模型菜单中选择 Composer。虽然技术细节有限，但它表明 xAI 也在把模型更新直接嵌入开发工具链。</p>
-<h3>8. <a href="https://x.com/AnthropicAI/status/2061924580222968183">Anthropic 支持美国 AI 行政令</a> ⭐⭐⭐</h3>
+<p><strong>摘要</strong>: Anthropic 扩大 Project Glasswing，把 AI 安全、教育和公共利益相关支持扩展到 150 个组织。官方强调该项目面向社会韧性和公益能力建设，而不是单次产品功能。它与后续 MITRE 网络威胁报告共同说明 Anthropic 正把安全工作从模型评测推进到组织合作和行业框架。</p>
+<h3>8. <a href="https://openai.com/index/codex-for-every-role-tool-workflow">Codex 扩展到角色插件、Sites 与知识工作</a> ⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
-<li><strong>标签</strong>: <code>美国政策</code> <code>AI 安全</code> <code>行政令</code> <code>Anthropic</code></li>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>角色插件</code> <code>Codex Sites</code> <code>知识工作</code> <code>团队协作</code> <code>工作流</code></li>
 </ul>
-<p><strong>摘要</strong>: Anthropic 表态支持白宫关于促进先进人工智能创新与安全的行政令，并称会协作推进实施。单条信息较短，但与 Project Glasswing 扩张放在一起看，说明 Anthropic 正同时经营政策响应和社会安全网络。头部 AI 公司已经越来越主动地进入国家 AI 治理议程。</p>
-<h3>9. <a href="https://openai.com/index/advancing-youth-safety-and-opportunity-through-global-leadership">OpenAI 倡议建立国际青少年 AI 安全机制</a> ⭐⭐⭐</h3>
+<p><strong>摘要</strong>: OpenAI 将 Codex 从编程助手扩展为多职能工作流平台，发布角色插件、可分享的 Codex Sites 和团队批注能力。官方示例覆盖销售、金融研究和原型评审，强调非工程岗位也能把任务拆给 Codex 生成可操作产物。同周 OpenAI 还补充称角色插件覆盖 62 个应用与 110 个技能，Codex 的定位正在从编码工具扩展到团队工作台。</p>
+<h3>9. <a href="https://x.com/GoogleDeepMind/status/2061857539977842793">Gemini for Science 发布多智能体科研助手</a> ⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/02</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>青少年安全</code> <code>G7</code> <code>AI 治理</code> <code>家长控制</code></li>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Gemini for Science</code> <code>科研智能体</code> <code>Co-Scientist</code> <code>多智能体</code> <code>假设生成</code></li>
 </ul>
-<p><strong>摘要</strong>: OpenAI 呼吁围绕青少年 AI 安全建立持续国际协作机制，并建议由新机构或现有国家 AI 机构承担研究、证据共享和实践指导职能。文章提出九项原则，覆盖隐私保护的年龄识别、年度风险评估、家长控制、透明政策、严重事件处理、未成年人隐私和独立审计。OpenAI 计划在 G7 相关讨论中推动该议题，把教育机会和青少年保护作为同一治理框架的两面。</p>
-<h3>10. <a href="https://x.com/sama/status/2061562575322492937">OpenAI Foundation 投入 AI 韧性建设</a> ⭐⭐⭐</h3>
+<p><strong>摘要</strong>: Google DeepMind 发布 Gemini for Science，将多智能体系统用于假设生成、文献推理和实验设计等科研流程。演示中的 Co-Scientist 不只是回答科学问题，而是帮助研究者提出候选方向并组织验证路径。它与本周生命科学和化学模型进展呼应，显示科学 AI 正在从通用助手走向专门工作台。</p>
+<h3>10. <a href="https://x.com/ClaudeDevs/status/2061877343078244459">Claude Platform CLI 打通 API 与 Managed Agents</a> ⭐⭐⭐⭐</h3>
 <ul>
-<li><strong>来源</strong>: Sam Altman (Twitter) | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/01</li>
-<li><strong>标签</strong>: <code>AI 韧性</code> <code>OpenAI Foundation</code> <code>模型安全</code> <code>网络安全</code> <code>资助</code></li>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/02</li>
+<li><strong>标签</strong>: <code>Claude Platform</code> <code>CLI</code> <code>Managed Agents</code> <code>Claude Code</code> <code>API</code></li>
 </ul>
-<p><strong>摘要</strong>: Sam Altman 转发 OpenAI Foundation 的 AI Resilience 愿景，强调社会管理 AI 风险的能力需要与模型能力同步提升。该计划已启动超过 1.3 亿美元初始资助，覆盖生物韧性、网络韧性、模型安全和 AI 对年轻人的影响。它与青少年安全倡议共同说明 OpenAI 正把风险治理拆成可资助、可研究、可协作的项目组合。</p>
+<p><strong>摘要</strong>: Claude Devs 发布 Claude Platform CLI，让每个 API endpoint 都可从终端运行，包括 Messages API、Claude Managed Agents 和结果管道化。CLI 可启动 Managed Agents 会话、发送事件、查看完整 trace，并可被 Claude Code 通过内置 <code>/claude-api</code> skill 调用。它把平台操作纳入编码代理工作流，降低了调试、审计和自动化脚本的摩擦。</p>
 <h2>分类概览</h2>
 <h3>模型发布</h3>
-<p>模型发布本周只有两条，但都指向同一个方向：模型更新正在与具体代理环境绑定。Qwen3.7-Plus 强调多模态代理和浏览器操作，把网页理解、动作规划和工具调用放到实际任务里检验。xAI 的 Grok Build Composer 2.5 则嵌在 Grok Build 和 CLI 使用路径里，面向原型构建与多轮修改。模型竞争的比较对象因此不只是跑分，还包括能否稳定完成复杂界面和工具链任务。</p>
+<p>W23 的模型发布主线从通用旗舰转向“场景化模型”。Qwen3.7-Plus 主打多模态代理和浏览器操作，xAI 的 Composer 2.5 继续嵌在 Grok Build 构建工具里，说明模型发布越来越需要绑定可执行环境。OpenAI 的 GPT-Rosalind 把 GPT-5.5 带入生命科学，覆盖药物化学、基因组学和实验排错。Google 的 Gemma 4 12B 则补强本地多模态路线，以 16GB VRAM 和 Apache 2.0 许可降低端侧部署门槛。</p>
 <h3>研究</h3>
-<p>研究板块主要由 Google DeepMind 的 Gemini for Science 支撑。它把 Gemini 放进科研流程，面向假设生成、文献推理和实验设计组织多智能体协作。Co-Scientist 的价值在于把模型从问答助手推进到研究路径生成器，让研究者可以围绕候选方向继续验证。由于本周历史窗口里的研究条目较少，这条新闻构成了该分类的主要观察点。</p>
+<p>研究板块的重心是科学能力和自我改进风险。Anthropic 的 Claude 化学/NMR 研究显示 Opus 4.7 已能在部分专业任务上达到或超过专用软件，和 GPT-Rosalind 形成“生命科学 + 化学分析”的双线信号。Google DeepMind 的 Gemini for Science 把多智能体系统用于假设生成和实验设计。Anthropic 还披露 Claude 正在加速 AI 研发自我改进，提示递归自我改进虽未确定到来，但研究流程加速本身已经值得持续监测。</p>
 <h3>产品与功能</h3>
-<p>产品与功能仍然围绕“把 Agent 做成平台”展开。OpenAI 的 Codex 更新覆盖角色插件、Codex Sites、团队批注和 AWS 分发，把工程能力延伸到销售、金融研究、产品评审等知识工作场景。Anthropic 的 Claude Code 则通过后台代理、CLI 和托管会话连接，把开发任务进一步拆成可并行、可追踪的工作流。OpenAI Devs 的 Voice Hack Night 原型补充了语音优先移动 Agent 的方向，说明入口形态仍在快速试探。</p>
+<p>产品与功能依然由 Codex、Claude Code 和平台分发主导。OpenAI 把 Codex 推进角色插件、Sites、AWS、iOS 插件、设置搜索和状态保持，让它覆盖非工程知识工作、企业云和移动/iOS 开发循环。Anthropic 则通过 Claude Platform CLI、<code>/fork</code> 后台代理、<code>ultracode</code> 动态工作流和自检流程，把 Claude Code 推向可编排、可审计的长期任务平台。ChatGPT Memory 升级是另一条重要产品线，它把跨会话上下文、summary 和用户控制放回个人助手体验中心。</p>
 <h3>商业动态</h3>
-<p>商业动态更多体现为企业案例，而不是融资或并购。Travelers 基于 OpenAI Realtime API 和前沿模型构建车险理赔语音助手，两个月内从 8 个州扩展到全美，使用该助手的客户中有 85% 到 90% 完成理赔提交。Claude 官方展示 Legora 法律工作流案例，突出 AI 在专业服务里的文档、检索和协作价值。这两条新闻共同说明，语音和文档型 Agent 正进入流程复杂、合规要求高的行业。</p>
+<p>商业动态数量不高，但方向清晰：模型能力继续通过行业与伙伴网络扩散。Travelers 用 OpenAI Realtime API 构建车险理赔语音助手，两个月内从 8 个州扩展到全美，显示实时语音进入复杂企业流程。Anthropic 扩展 Claude Partner Network，新增 Services Track 和 Partner Hub，目标是把 Claude 从试点推到可运营生产系统。Berkeley RDI 的 Agentic AI Summit 与 Claude/Legora 法律工作流案例则补充了生态活动和专业服务落地。</p>
 <h3>政策与安全</h3>
-<p>政策与安全本周非常集中，核心是头部公司把治理议题项目化。Anthropic 将 Project Glasswing 扩大至 150 个组织，并公开支持美国 AI 行政令，形成“合作网络 + 政策响应”的组合。OpenAI 则提出国际青少年 AI 安全机制，并通过 Foundation 投入 AI 韧性建设，覆盖生物、网络、模型安全和未成年人影响。安全治理不再只是原则声明，而是变成资助、审计、机构协作和外交讨论的具体议程。</p>
+<p>政策与安全本周明显从原则声明转向可操作框架。Anthropic 将 832 个恶意账号的 AI 网络威胁行为映射到 MITRE ATT&amp;CK，说明安全社区既有技战术语言需要适配 AI 辅助攻击。OpenAI 提出生物防御智能时代行动方案，把生命科学 AI 的进步和滥用风险放在同一治理框架下。Project Glasswing 扩容、OpenAI 青少年安全倡议、OpenAI Foundation 韧性资助和美国 AI 行政令回应共同构成一条社会韧性与国家治理线。</p>
 <h3>教程与观点</h3>
-<p>教程与观点板块偏使用经验。Thariq 转述 Anthropic 员工关于 Claude 跟进提示的方法，强调拿到初稿后继续追问约束、改写和验证，而不是把一次回答当成终稿。另有语音模式用于更自然回复的观察，以及 Sam Altman 的个人引文分享。整体信息量不高，但适合把“后续追问模板”和“语音交互观察”沉淀进团队使用手册。</p>
+<p>教程与观点主要围绕“如何把 Agent 用进真实工作”。Wasmer 案例展示 Codex 和 GPT-5.5 如何把边缘 Node.js/WebAssembly 工程从一年级别压缩到两周，Endava 则把 ChatGPT Enterprise、Codex 和 AI-native 交付文化结合起来。Claude Devs 分享商业分析智能体实践，强调 skills、数据基础和评测。Thariq 的 Claude 跟进提示法、个人软件复兴观点，以及 Claude/Lovable 的信任护城河讨论，说明工具使用方法正在从 prompt 技巧扩展到产品和组织形态。</p>
 <h2>本周值得上手试试</h2>
 <ol>
-<li><strong>Qwen3.7-Plus 浏览器代理</strong> — 用网页检索、表单填写和多步骤后台操作做同题测试，记录视觉理解、工具调用、页面状态恢复和长任务稳定性。</li>
-<li><strong>Claude Code 后台代理</strong> — 在一个真实开发任务里用 <code>/fork</code> 拆出独立子任务，比较后台代理对等待时间、上下文切换和子任务完成率的影响。</li>
-<li><strong>Claude CLI 工作流</strong> — 把 Claude CLI、托管会话和 API 技能接入本地脚本，验证是否能减少从终端跳到网页或 IDE 的操作成本。</li>
-<li><strong>Codex 角色插件</strong> — 为销售、金融研究或产品运营各设计一个高频任务插件，用同一输入生成可审阅产物并收集团队批注。</li>
-<li><strong>Codex Sites</strong> — 用 Codex Sites 发布一个可分享原型，让业务同事直接在页面上批注，再评估修改回路是否比文档评审更快。</li>
-<li><strong>Codex on AWS</strong> — 在现有 AWS 账户里验证 OpenAI 模型与 Codex 的可用性，重点检查权限、审计、账单、延迟和直接 API 调用的差异。</li>
-<li><strong>Grok Build Composer 2.5</strong> — 从 <code>x.ai/cli</code> 启动一个已有原型任务，对比 Composer 2.5 在代码生成、界面修改和多轮迭代中的失败模式。</li>
-<li><strong>语音 Agent 原型</strong> — 选择一个手机端高频任务，把点击路径改写成语音优先流程，参考 Voice Hack Night 项目验证确认机制和误触恢复。</li>
+<li><strong>Qwen3.7-Plus 浏览器代理</strong> — 用表单填写、网页检索和多步骤后台操作做同题测试，重点记录视觉理解、工具调用、页面状态恢复和长任务稳定性。</li>
+<li><strong>GPT-Rosalind 生命科学评测</strong> — 整理药物化学、基因组学和实验排错任务集，把工具调用、代码生成和领域专家审阅放进同一评测流。</li>
+<li><strong>Gemma 4 12B 本地多模态</strong> — 在 16GB VRAM 设备上测试真实图文推理、端侧延迟和 Apache 2.0 许可下的内部部署可行性。</li>
+<li><strong>Codex on AWS</strong> — 用 Bedrock 路径做一个小型 Codex 集成验证，重点观察权限、审计、账单、延迟和直接 API 调用差异。</li>
+<li><strong>Codex 角色插件 + Sites</strong> — 选择销售、数据分析或产品原型流程，安装角色插件并用 Sites 生成可评审输出，提前定义分享范围和验收标准。</li>
+<li><strong>Claude Platform CLI</strong> — 用 CLI 封装 API 调试、文件上传、Managed Agents 事件脚本和 trace 拉取，纳入 Claude Code 工作流。</li>
+<li><strong>Claude Code /fork 与 ultracode</strong> — 用 <code>/fork</code> 跑高风险改动的后台候选方案，并把常见复杂任务迁移到 <code>ultracode</code> 动态工作流。</li>
+<li><strong>ChatGPT Memory</strong> — 在长期项目对话中测试 memory summary 是否准确保留偏好、约束和项目状态，并建立敏感记忆清理流程。</li>
+<li><strong>Codex iOS 插件</strong> — 用一个 SwiftUI 小项目验证预览、模拟器、截图预览、热更新和失败日志是否能稳定进入 Codex 自检循环。</li>
+<li><strong>OpenAI moderation signals</strong> — 在 Responses/Completions 请求中同时返回 moderation 分数，先用于日志和人工复核，再定义阻断阈值。</li>
 </ol>
 <h2>值得深读</h2>
 <ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">Qwen3.7-Plus 发布多模态代理模型</a> — 它把多模态、浏览器操作和工具调用放到同一条能力线上，是观察代理模型竞争的好入口。</li>
-<li><a href="https://openai.com/index/codex-for-every-role-tool-workflow">Codex 扩展到角色插件、Sites 与知识工作</a> — 这篇文章展示 OpenAI 如何把 Codex 从工程助手扩成多岗位工作流平台。</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2061857539977842793">Gemini for Science 发布多智能体科研助手</a> — DeepMind 把 Gemini 推进科研工作台，对假设生成和实验设计流程尤其值得跟踪。</li>
-<li><a href="https://www.anthropic.com/news/expanding-project-glasswing">Project Glasswing 扩至 150 个组织</a> — Anthropic 的项目扩张体现了 AI 安全治理从声明走向合作网络和公益能力建设。</li>
-<li><a href="https://openai.com/index/travelers">Travelers 用 OpenAI 扩展理赔助手</a> — 保险理赔案例给出了 Realtime 语音模型进入复杂企业流程的完成率和扩展速度信号。</li>
+<li><a href="https://openai.com/index/introducing-new-capabilities-to-gpt-rosalind">GPT-Rosalind 升级：GPT-5.5 进入生命科学</a> — 它是 GPT-5.5 垂直化落地的代表，值得看模型如何进入药物化学、基因组学和湿实验流程。</li>
+<li><a href="https://www.anthropic.com/research/making-claude-a-chemist">Claude Opus 4.7 挑战 NMR 化学解析</a> — Anthropic 把 Claude 放进 NMR 化学结构解析，是理解科学 AI 专业化边界的重要案例。</li>
+<li><a href="https://openai.com/index/codex-for-every-role-tool-workflow">Codex 扩展到角色插件、Sites 与知识工作</a> — 这篇文章展示 Codex 如何从编码助手扩成多岗位工作流平台。</li>
+<li><a href="https://www.anthropic.com/news/AI-enabled-cyber-threats-mitre-attack">Anthropic 用 MITRE 映射 AI 网络威胁</a> — 它把 AI 滥用行为映射到 MITRE ATT&amp;CK，适合安全团队评估现有框架是否足够。</li>
+<li><a href="https://openai.com/index/chatgpt-memory-dreaming">ChatGPT Memory 升级：上下文跨会话保鲜</a> — Memory 的 summary、控制和新鲜度机制决定长期个人助手体验是否真正可用。</li>
 </ul>
 ]]></description>
     </item>
@@ -1101,7 +1104,7 @@
 <h3>政策与安全</h3>
 <p>政策与安全围绕内容溯源、选举、沙箱和前沿治理展开。Google DeepMind 披露 SynthID 已为超过 1000 亿条内容加水印，并与 OpenAI、ElevenLabs、Kakao 合作接入，OpenAI 也公布 2026 大选安全方案与 AP 实时计票、公开验证工具。Anthropic 工程博客强调 Agent 权限必须随能力演进，并以沙箱限制破坏性操作。OpenAI 的 Frontier Governance Framework 则把 Preparedness Framework 对接到欧美监管要求，前沿治理开始映射到可审计流程。</p>
 <h3>教程与观点</h3>
-<p>教程与观点本周更偏社会和工作方式反思。Anthropic 联创 Chris Olah 在教皇 AI 通谕发布会上强调前沿实验室面临商业、地缘和个人激励冲突，需要外部批评者推动安全。Thariq 多次强调“文件夹 + 脚本 + HTML”是非技术用户用好 Claude Code 的基本接口，并把遗留代码库看作未来模型重写和蒸馏的素材。OpenAI Devs 转述 Codex Mobile 体验，认为离开笔记本后反而会写出更宏观、更明确的任务提示。</p>
+<p>教程与观点本周更偏社会和工作方式反思。Anthropic 联创 Chris Olah 在教皇 AI 通谕发布会上强调前沿实验室面临商业、地缘和个人激励冲突，需要外部批评者推动安全。Thariq 强调“文件夹 + 脚本 + HTML”是非技术用户用好 Claude Code 的基本接口，适合财务、医疗咨询、填表、报告和规划等资料密集型任务。OpenAI Devs 转述 Codex Mobile 体验，认为离开笔记本后反而会写出更宏观、更明确的任务提示。</p>
 <h2>本周值得上手试试</h2>
 <ol>
 <li><strong>Qwen3.7-Max 编程评测</strong> — 把 Qwen3.7-Max 加入编码评测矩阵，与 Claude Opus 4.8、Opus 4.6 和 GPT-5.5 做同题 PR 实验。</li>

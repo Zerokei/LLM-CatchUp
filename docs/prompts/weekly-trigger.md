@@ -36,7 +36,11 @@ If the computed range does NOT have the form `Mon/DD - Sun/DD` (7 consecutive da
 
 ### Step 3: Load history into the target window
 
-Read `data/history.json`. Filter to articles whose `fetched_at` falls in `[target_week_start, target_week_end)` (Asia/Shanghai). Use this filtered list for everything below — do NOT use a vague "past 7 days from now" filter, which will leak in or out the ISO week boundary.
+Read `data/history.json`. Filter to articles whose `published_at` falls in `[target_week_start, target_week_end)` (Asia/Shanghai). Use `fetched_at` only as a fallback for entries with missing or invalid `published_at`.
+
+This is intentional: weekly reports are editorial period summaries, so an article belongs to the week it was published, not the later day it was fetched or backfilled into history. A delayed daily backfill may write `fetched_at` after the Monday boundary; using `fetched_at` as the primary weekly key would incorrectly exclude the prior week's articles.
+
+Use this filtered list for everything below — do NOT use a vague "past 7 days from now" filter, which will leak in or out the ISO week boundary.
 
 ### Step 4: Write the editorial report
 
