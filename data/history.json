@@ -16914,7 +16914,354 @@
           "重复覆盖"
         ]
       }
+    },
+    "e11fcea9cd94bb207930afa4c02f669e72aafc98e134fd9a5562c910df7d5799": {
+      "title": "Claude Fable 5全面开放：Mythos级能力加安全回退",
+      "url": "https://www.anthropic.com/news/claude-fable-5-mythos-5",
+      "source": "Anthropic Blog",
+      "published_at": "2026-06-09T00:00:00.000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "Anthropic发布Claude Fable 5，将原本受限的Mythos级能力开放给普通用户，并保留Claude Mythos 5给可信网络安全和生物医学场景。Fable 5在软件工程、知识工作、视觉、科学研究和长任务上刷新Claude系基准，定价为每百万输入10美元、输出50美元。为了控制双重用途风险，部分网络安全、生物和化学请求会自动回退到Claude Opus 4.8，SDK也加入拒答回退中间件。围绕发布，Claude Code、Managed Agents、额度重置、开发者活动和外部实测都指向同一变化：团队开始把模型用于更长、更高目标的自主工作。",
+      "category": "模型发布",
+      "importance": 5,
+      "extras": {
+        "tags": [
+          "Claude Fable 5",
+          "Claude Mythos 5",
+          "安全回退",
+          "Claude Code",
+          "长程Agent",
+          "网络安全"
+        ],
+        "practice_suggestions": [
+          "在Claude Code中升级到2.1.170并显式选择claude-fable-5测试长任务。",
+          "为网络安全、生物等敏感工作流记录Opus 4.8回退率和误触发样例。",
+          "用现有代码迁移、复杂调研和多智能体编排任务对比Fable 5与当前生产模型。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064453497005978031",
+            "title": "Anthropic举办Fable 5开发日",
+            "source": "Claude Devs (Twitter)",
+            "angle": "开发日活动"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064428351029449214",
+            "title": "Claude SDK加入拒答回退中间件",
+            "source": "Claude Devs (Twitter)",
+            "angle": "SDK回退中间件"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064394928948703406",
+            "title": "Claude托管智能体支持多智能体编排",
+            "source": "Claude Devs (Twitter)",
+            "angle": "多智能体与回退"
+          },
+          {
+            "url": "https://x.com/claudeai/status/2064394159318782217",
+            "title": "Mythos 5将扩大可信访问",
+            "source": "Claude (Twitter)",
+            "angle": "可信访问说明"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064464557951852643",
+            "title": "Claude重置Fable 5用户额度",
+            "source": "Claude Devs (Twitter)",
+            "angle": "额度重置"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064428347678220691",
+            "title": "Claude Fable 5正式开放",
+            "source": "Claude Devs (Twitter)",
+            "angle": "安全回退机制"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064414264807616883",
+            "title": "Claude Code需升级以访问Fable 5",
+            "source": "Claude Devs (Twitter)",
+            "angle": "访问与版本提示"
+          },
+          {
+            "url": "https://x.com/karpathy/status/2064409694761054332",
+            "title": "Karpathy称Fable 5带来阶跃提升",
+            "source": "Andrej Karpathy (Twitter)",
+            "angle": "第三方实测"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064399512664526853",
+            "title": "Fable 5改变Claude Code协作重心",
+            "source": "Claude Devs (Twitter)",
+            "angle": "Claude Code工作流"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2064394919549210774",
+            "title": "Claude Fable 5面向开发者开放",
+            "source": "Claude Devs (Twitter)",
+            "angle": "开发者接入指南"
+          },
+          {
+            "url": "https://x.com/claudeai/status/2064394146916229443",
+            "title": "Claude Fable 5作为安全版Mythos发布",
+            "source": "Claude (Twitter)",
+            "angle": "官方社媒首发"
+          }
+        ]
+      }
+    },
+    "cc2d14a31bd59054d970731b1a7764ed90e7ffb0eea4cdfd4524c9f470c84ee6": {
+      "title": "Gemini 3.5 Live Translate支持70多种语言实时翻译",
+      "url": "https://x.com/GoogleDeepMind/status/2064366504745828689",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-06-09T15:18:23.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "Google DeepMind发布Gemini 3.5 Live Translate音频模型，面向跨语言实时沟通，可在流式语音中保留语气、语速和音高。该能力已进入Google Translate应用，并通过Google AI Studio的API预览向开发者开放。 Google DeepMind 称 3.5 Live Translate 可在语音流式输入过程中转换 70 多种语言。该功能还会尽量保留说话者的语调、节奏和音高，使跨语言对话更自然。 Google DeepMind 表示，Gemini 3.5 Live Translate 已可在 Google Translate 应用中试用，并可通过 Google AI Studio 的 API 预览版构建。该条主要补充了前一条模型发布的落地入口，显示实时跨语言音频能力开始面向用户和开发者开放。",
+      "category": "模型发布",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Gemini 3.5",
+          "实时翻译",
+          "语音模型",
+          "Google AI Studio"
+        ],
+        "practice_suggestions": [
+          "用真实会议或客服音频测试语气、语速和音高保留效果。",
+          "在API预览中评估端到端延迟与多语言切换体验。"
+        ],
+        "thread_urls": [
+          "https://x.com/GoogleDeepMind/status/2064366504745828689",
+          "https://x.com/GoogleDeepMind/status/2064366509216928102",
+          "https://x.com/GoogleDeepMind/status/2064366510932439413"
+        ]
+      }
+    },
+    "9466f96ae8ebcd6161dfa2e9c52c310801e822caebfc86c8456b4b57b624cfb2": {
+      "title": "Claude连接器新增观测仪表盘与提交通道",
+      "url": "https://x.com/ClaudeDevs/status/2064072801062121906",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-06-08T19:51:19.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "Claude为第三方连接器开发者新增观测仪表盘，可跟踪活跃用户、工具调用、目录排名、错误率和延迟，并按Claude、Claude Code和Cowork区分使用情况。官方还加入应用内提交通道，帮助开发者把基于MCP的工具和数据接入Claude生态。 Claude 连接器观测仪表盘可用于跟踪活跃用户、工具调用量和目录排名，也能按工具拆解错误率与延迟。开发者还可以比较 Claude、Claude Code 和 Cowork 等产品中的工具调用分布，从而判断集成在哪些场景最有价值。 Claude Devs 宣布新增应用内提交门户，方便开发者提交 Claude 连接器，并同时指向连接器提交文档和面向连接器开发者的可观测性博客。该功能降低了第三方连接器从开发到提交的流程摩擦，也说明 Claude 正在完善其连接器生态的开发者工具链。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude连接器",
+          "MCP",
+          "观测性",
+          "开发者平台"
+        ],
+        "practice_suggestions": [
+          "为现有连接器接入新仪表盘，按工具维度跟踪错误率和延迟。",
+          "准备提交材料时同步检查目录排名、活跃用户和跨产品调用数据。"
+        ],
+        "thread_urls": [
+          "https://x.com/ClaudeDevs/status/2064072801062121906",
+          "https://x.com/ClaudeDevs/status/2064072803721339014",
+          "https://x.com/ClaudeDevs/status/2064072805663256997"
+        ]
+      }
+    },
+    "4e35b532ed6c4dfbd7aabb52924748bb603cef6a703da73e0690bebc736b39b8": {
+      "title": "Anthropic称生物智能体瓶颈在数据基础设施",
+      "url": "https://x.com/AnthropicAI/status/2064054837294354677",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-06-08T18:39:56.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "Anthropic 的研究博客认为，生物领域智能体落后于编程智能体，关键不只是模型推理能力，而是生物数据库缺少稳定、可机器执行的检索层。作者以 NCBI Virus 序列检索为例展示，前沿模型在 VirBench 上仍会产生不一致和错误的数据集，进而影响系统发育树和治疗靶点分析。加入 gget virus 这类确定性检索层后，多个智能体准确率显著提高、运行波动大幅降低，说明科学智能体需要更适合代理使用的数据基础设施。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "科学智能体",
+          "生物数据库",
+          "确定性工具",
+          "VirBench"
+        ]
+      }
+    },
+    "14464557a634e80f56f28777dd6bd0f0d74f23aab2f92e2df2eab4429f83a2d1": {
+      "title": "xAI与Gopuff构建购物助手",
+      "url": "https://x.com/xai/status/2064426048146800780",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-06-09T19:14:59.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "xAI介绍其与Gopuff合作打造个性化购物助手，组合使用聊天、语音和图像模型。该案例显示Grok相关能力正在进入零售场景，重点是多模态交互和个性化推荐。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "xAI",
+          "Gopuff",
+          "购物助手",
+          "多模态",
+          "个性化"
+        ],
+        "practice_suggestions": [
+          "评估电商或本地零售场景中聊天、语音、图像联合导购的转化价值。",
+          "为购物助手设计商品检索、偏好记忆和安全推荐的端到端指标。"
+        ]
+      }
+    },
+    "d4a6346cddd068bf32d108e44572c2656c35c8bc0f2b7bdf9da4ec67d1a63fa9": {
+      "title": "Responses API网页搜索支持图片结果",
+      "url": "https://x.com/OpenAIDevs/status/2064395155688616153",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-06-09T17:12:14.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "OpenAI在Responses API的网页搜索工具中加入图片结果，应用现在可以同时返回文本来源、图片、产品、地点和视觉参考。开发者可用它构建视觉灵感、商品发现和地点检索类体验，并参考新文档处理图片搜索结果。 OpenAI 开发者账号补充指向 Responses API 网页搜索工具中图像搜索结果的文档链接。该回复属于同一功能发布线程，方便开发者查看如何在应用中返回图片结果及来源链接。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Responses API",
+          "网页搜索",
+          "图片搜索",
+          "开发者工具"
+        ],
+        "practice_suggestions": [
+          "在视觉检索场景中测试图片结果字段，并保留来源链接用于核验。",
+          "为商品、地点和设计灵感类应用补充图片结果展示与降级逻辑。"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAIDevs/status/2064395155688616153",
+          "https://x.com/OpenAIDevs/status/2064395168007278714"
+        ]
+      }
+    },
+    "5b802ccebc3cd95495dac3dcd4408eb83585f7cea2f3d766591a3279cb5731a9": {
+      "title": "Nextdoor用Codex推动端到端产品工程",
+      "url": "https://openai.com/index/nextdoor",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-09T12:00:00.000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "OpenAI 介绍 Nextdoor 如何用 Codex 和 GPT-5.5 改变工程组织方式：工程师从反复提示代理转向先定义目标，再让代理围绕结果完成实现。Nextdoor 称 Codex 帮助单个工程师跨移动端、前端和后端交付功能，也用于排查嵌入式 Rust 数据库、Kubernetes 启动和数据分析等难复现问题。文章的核心判断是，工程瓶颈正在从实现速度转向产品战略选择。",
+      "category": "教程与观点",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Codex",
+          "GPT-5.5",
+          "Nextdoor",
+          "工程效率",
+          "产品工程"
+        ]
+      }
+    },
+    "58b581b20ce32e7be40ebc18a719b42b939046c6c640fa43fd6b6415c69f68f2": {
+      "title": "Notion用GPT-5重构自主AI工作流",
+      "url": "https://openai.com/index/notion",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-09T10:00:00.000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "OpenAI 案例文章称，Notion 用 GPT-5 重建代理系统，从任务式提示链转向由中心推理模型协调多个模块化子代理。Notion 3.0 中，AI 可以搜索 Notion、Slack 或网页，编辑数据库并执行多步工作流；在真实用户任务评估中，GPT-5 在反馈对齐、困难研究问题和结构化多步任务上优于其他前沿模型。文章给团队的启示是，生产级代理系统需要围绕自主性、工具描述和真实任务评测重构，而不只是补丁式提示工程。",
+      "category": "教程与观点",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "GPT-5",
+          "Notion",
+          "自主代理",
+          "工作流",
+          "产品评测"
+        ]
+      }
+    },
+    "647d2554702273e39e8cff907aa91629909f2a0c1792c28fab066d8c9ce351d9": {
+      "title": "开发者用GPT-5.5重做ChinaRxiv翻译流程",
+      "url": "https://x.com/OpenAIDevs/status/2064346891673059484",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-06-09T14:00:27.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "OpenAI Devs 转发案例称，一名开发者用 GPT-5.5 替代复杂 OCR 流水线后，让 23,000 多篇 ChinaRxiv 论文获得更完整的英文翻译并免费开放。该信息更像开发者应用案例，重点是用多模态或文档理解模型简化学术文献处理链路。",
+      "category": "教程与观点",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "GPT-5.5",
+          "ChinaRxiv",
+          "OCR",
+          "论文翻译"
+        ]
+      }
+    },
+    "76b9fa15dda15340a5169ca33b4f79907c96ee88bdb34c2a1ff59f85313b492c": {
+      "title": "Claude开发者大会东京场开放注册",
+      "url": "https://x.com/claudeai/status/2064139073590104402",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-06-09T00:14:39.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "Claude 官方宣布 Code with Claude 开发者大会的东京站开放注册，并引用原帖说明直播面向 Claude Code 新手和已有构建经验的开发者。该条主要是活动通知，信息价值在于提醒开发者关注 Claude 团队的会议内容和可能发布的实践分享。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Claude",
+          "Claude Code",
+          "开发者大会",
+          "东京"
+        ]
+      }
+    },
+    "0837ddc424a35c967fae49f658d72cd3df8794dc96fd77518a37ef7442e12ccb": {
+      "title": "OpenAI展示Realtime API开发者案例",
+      "url": "https://x.com/OpenAIDevs/status/2064121924888797188",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-06-08T23:06:31.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "OpenAI Devs 分享了一组开发者使用 Realtime API 构建的体验案例，但该缓存条目没有提供案例细节或正文。可确认的信息是，OpenAI 正在继续推动 Realtime API 在低延迟交互式应用中的开发者采用。",
+      "category": "产品与功能",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Realtime API",
+          "OpenAI",
+          "开发者案例",
+          "实时交互"
+        ],
+        "practice_suggestions": [
+          "梳理现有产品中需要低延迟语音、视频或多模态交互的入口，评估是否适合 Realtime API。",
+          "用一个受控原型验证会话保持、打断处理和成本曲线。"
+        ]
+      }
+    },
+    "eee116603220a095f7214c47162f6acb361659d1e92d85761c768c546955319e": {
+      "title": "Sam Altman发布OpenAI当前计划",
+      "url": "https://x.com/sama/status/2064088940932641225",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-06-08T20:55:27.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "Sam Altman 分享了 OpenAI 当前计划的链接，但该缓存条目没有正文内容。仅凭推文可判断这是 OpenAI 战略或路线图相关信息的入口，具体主张需要依赖链接内容才能进一步分析。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "Sam Altman",
+          "公司计划",
+          "战略"
+        ]
+      }
+    },
+    "ec89b1a4465486a16ed7a565b196e7d31c911d684d20117c3ff3ca3519bd2323": {
+      "title": "OpenAI开发者长文内容未抓取",
+      "url": "https://x.com/OpenAIDevs/status/2064037734591652065",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-06-08T17:31:58.000000Z",
+      "fetched_at": "2026-06-10T15:52:44+08:00",
+      "summary": "该条目仅包含一条指向 X Article 的链接，输入中没有正文、引用推文或摘要内容可供分析。为避免臆测，当前只能标记为待补全的低信号开发者动态。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "开发者",
+          "X长文",
+          "待补全"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-06-08T17:55:00+08:00"
+  "last_fetch": "2026-06-10T15:52:44+08:00"
 }
