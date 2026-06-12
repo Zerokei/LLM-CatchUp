@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-06-12 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-06-12" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-06-12</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>代理工具扩展</strong>：Grok Build插件市场和Claude托管代理都在把编码助手推进到可部署、可运维的代理平台。</li>
+<li><strong>AI治理升温</strong>：OpenAI支持欧盟透明度准则，Anthropic则呼吁前沿模型第三方测试与更强公共能力。</li>
+<li><strong>产业落地加速</strong>：OpenAI与BBVA、Oracle合作，Anthropic与DXC合作，显示企业AI采购正进入云承诺和关键系统层。</li>
+<li><strong>研究走向真实场景</strong>：TacticAI、塞拉利昂教育实验和Codex黑洞仿真都强调从基准转向现场问题。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/xai/status/2065099299541893577">Grok Build插件市场开放测试</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>插件市场</code> <code>开发者工具</code> <code>MongoDB</code> <code>Vercel</code> <code>Sentry</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 将 Grok Build Plugin Marketplace 开放 beta，让开发者在同一代理构建环境中调用 MongoDB、Vercel、Sentry、Cloudflare 等插件。MongoDB 侧重数据探索、数据库优化与应用构建，Vercel 负责生产部署、沙箱与 Shadcn 应用生成，Sentry 则用于定位错误、分析堆栈并整理问题。这个更新把 Grok Build 从单一编码助手推进到可连接开发、部署和运维工具链的代理平台。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/xai/status/2065168019891073260">Grok Build接入Sentry插件</a> · xAI (Twitter) · Sentry排错插件</li>
+<li><a href="https://x.com/xai/status/2065143638838157559">Grok Build支持Vercel插件</a> · xAI (Twitter) · Vercel部署插件</li>
+<li><a href="https://x.com/xai/status/2065119714658152592">Grok Build上线MongoDB插件</a> · xAI (Twitter) · MongoDB数据插件</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>试用 Grok Build beta 时优先连接现有 MongoDB/Vercel/Sentry 项目，验证端到端开发闭环。</li>
+<li>把插件权限限定在测试项目或沙箱环境，观察代理读写数据库和部署生产环境的边界。</li>
+<li>记录插件调用的失败案例，补充团队内部的代理工具使用规范。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/ClaudeDevs/status/2065080005328249086">Claude托管代理新增定时部署与凭证</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>Claude Code</code> <code>定时部署</code> <code>环境变量凭证</code> <code>自动化代理</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Managed Agents 新增两项面向自动化运行的能力：定时部署可按 cron、间隔或一次性时间触发任务，环境变量凭证类型则让代理安全使用外部 CLI、SDK 与 API。配套说明还强调 Claude Code 可通过内置 /claude-api skill 帮用户搭建托管代理部署。整体上，这使 Claude Code 工作流更接近可持续运行的云端代理，而不只是一次性交互式编码助手。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2065080009203892302">Claude托管代理支持环境变量凭证</a> · Claude Devs (Twitter) · 安全凭证类型</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把重复性仓库维护任务改造成定时托管代理，先从低风险只读检查开始。</li>
+<li>为代理使用的第三方 CLI/API 建立最小权限环境变量凭证，避免复用个人长期密钥。</li>
+<li>用 /claude-api skill 生成部署脚手架后，补充日志、失败告警和回滚路径。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/ClaudeDevs/status/2064949876463645026">Claude公开Fable 5安全回退</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Fable 5</code> <code>安全防护</code> <code>模型回退</code> <code>误报申诉</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 表示将让 Fable 5 面向前沿 LLM 开发的安全防护变得可见，触发时会明确回退到 Opus 4.8，API 请求也将返回拒绝原因。团队承认此前采用不可见防护是错误权衡，并提示在分类器调优期间可能出现更多误报，可通过反馈和申诉渠道报告。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/demishassabis/status/2064873362799600042">Google发布DiffusionGemma开放模型</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>DiffusionGemma</code> <code>Gemma</code> <code>文本扩散</code> <code>开源模型</code> <code>Apache 2.0</code></li>
+</ul>
+<p><strong>摘要</strong>: DiffusionGemma 是 Google Gemma 团队推出的实验性开放模型，采用文本扩散思路，不再逐 token 顺序生成，而是并行生成整块文本。Demis Hassabis 称其速度很快，比其他 Gemma 4 模型快 4 倍，并以 Apache 2.0 许可发布。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>适合评估低延迟生成场景，如批量草稿、实时补全或边缘端文本生成；测试时应同时比较速度、连贯性和长文本稳定性，不要只看吞吐指标。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://openai.com/index/openai-to-acquire-ona">OpenAI收购Ona强化Codex云环境</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Ona</code> <code>Codex</code> <code>云执行环境</code> <code>企业代理</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布计划收购 Ona，把其安全云执行与编排技术纳入 Codex 生态。Ona 的持久、可复现云环境将支持 Codex 在客户控制的基础设施中长时间运行，满足企业对凭证范围、日志、治理和安全边界的要求。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/DarioAmodei/status/2064781775247950326">Dario发布AI指数级政策文章</a></h3>
+<ul>
+<li><strong>来源</strong>: Dario Amodei (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Dario Amodei</code> <code>AI指数增长</code> <code>政策滞后</code> <code>AI治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Dario Amodei发布新文章「Policy on the AI Exponential」，称AI进展远快于政策流程原本能处理的速度。文章旨在说明技术所处阶段，并提出缩小技术发展与政策响应差距所需的行动。 Dario Amodei指出，Anthropic长期支持前沿AI透明度要求，因为过去风险还不够清晰，难以做精确监管。但他现在认为，仅靠透明度已经不足以应对快速显现的前沿模型风险。 Dario Amodei表示，除透明度要求外，前沿模型现在应接受针对网络、生物和自主性风险的强制第三方测试。他还提出测试机制应具备阻止或撤销高灾难风险模型部署的权力。 Dario Amodei称其文章还讨论AI陡峭发展轨迹对就业、经济、科学进步、公民自由和地缘政治的影响。这表明Anthropic的政策论述已从模型安全扩展到更广泛的社会制度议题。 Dario Amodei表示，Anthropic随文章发布了政府应对前沿AI风险的提案，以及针对AI引发就业替代的政策框架。公司还计划为相关工作提供大量资金支持，显示其将政策建议与资金支持绑定。 Dario Amodei强调，这组AI政策主张具有跨政治光谱的常识吸引力。他认为越早采取行动，社会就越早能共享AI带来的收益。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/ClaudeDevs/status/2064756987112702303">Claude接入SwiftUI结构化输出</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>SwiftUI</code> <code>结构化输出</code> <code>流式响应</code> <code>Apple开发</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 进一步说明，Apple Foundation Models 框架的类型化输出可直接进入 Claude 请求，开发者发送的是结构化数据而非原始用户文本。Claude 响应还能流式返回到同一个 SwiftUI 视图，降低 Apple 应用内集成多步 AI 交互的工程复杂度。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>可优先在 SwiftUI 原型中验证类型化输入到 Claude 的数据契约，并用流式响应改善生成式界面的等待体验，同时为敏感字段建立显式过滤层。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/GoogleDeepMind/status/2065093482088169719">DeepMind与Palmeiras推进TacticAI</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>TacticAI</code> <code>Palmeiras</code> <code>体育AI</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 宣布与巴西足球俱乐部 Palmeiras 合作，后者成为首个实质性基于 TacticAI 开展建设的足球俱乐部。TacticAI 可模拟场上情景，并提前最多 8 秒预测开放比赛动态。 Google DeepMind 介绍 TacticAI 将球场上的 22 名球员视为图节点，并用球员间物理互动构成连接。该方法让俱乐部数据团队可实时拖放球员位置，测试不同防守布局。 Google DeepMind 强调足球比赛是部分可观测、多模态和连续空间决策问题的典型场景。TacticAI 在这类实时动态系统上的进展，可能迁移到机器人、计算机游戏等需要空间推理与策略预测的领域。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/GoogleDeepMind/status/2065031279213441309">DeepMind设立多智能体研究基金</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>多智能体</code> <code>集体行为</code> <code>研究基金</code> <code>AI安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 联合 Schmidt Sciences、Cooperative AI Foundation、ARIA 等机构推出 1000 万美元研究基金。该基金聚焦数百万 AI 智能体相互交互时可能涌现的集体行为，意在提前理解多智能体生态的风险与机制。</p>
+<hr>
+<h3 id="h-12">10. <a href="https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem">OpenAI支持欧盟AI透明度准则</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>欧盟AI法案</code> <code>内容来源</code> <code>C2PA</code> <code>SynthID</code> <code>透明度</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布支持欧盟关于 AI 生成内容透明度的实践准则，称其是落实欧盟 AI 法案和建设可信数字生态的重要步骤。文章强调 OpenAI 会继续推进 C2PA 元数据、SynthID 水印、公开验证工具和开放标准协作，但也承认来源信号在传播中可能丢失，仍需生态共同完善。</p>
+<hr>
+<h3 id="h-13">11. <a href="https://openai.com/index/bbva">BBVA与OpenAI深化银行AI转型</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>企业AI</code> <code>银行</code> <code>ChatGPT Enterprise</code> <code>OpenAI</code> <code>数字化转型</code></li>
+</ul>
+<p><strong>摘要</strong>: BBVA与OpenAI建立战略合作，把AI嵌入客户体验、风控、运营、软件开发和员工日常工作。其ChatGPT Enterprise部署已扩展到全球10万多名员工，并形成「The Eight」路线图、AI冠军网络和数万个定制GPT，用于信贷分析、营销、客户服务等场景。</p>
+<hr>
+<h3 id="h-14">12. <a href="https://www.anthropic.com/news/claude-corps">Anthropic推出Claude Corps公益项目</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Corps</code> <code>AI公益</code> <code>人才培养</code> <code>Anthropic</code> <code>社会影响</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 推出 Claude Corps，将早期职业人才与非营利组织、公共机构和社会影响项目配对，帮助他们用 Claude 解决教育、健康、经济机会等问题。官方说明强调该项目既是人才培养计划，也是让更多公共利益场景直接接触前沿 AI 的渠道。相关社交发布补充了项目的全国 fellowship 定位和申请入口。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2065057393927467084">Anthropic推出Claude公益奖学金</a> · Anthropic (Twitter) · 项目发布入口</li>
+</ul>
+<hr>
+<h3 id="h-15">13. <a href="https://www.anthropic.com/news/dxc-anthropic-alliance">DXC将Claude带入关键行业系统</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>DXC</code> <code>企业服务</code> <code>受监管行业</code> <code>系统现代化</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic与DXC Technology达成多年全球联盟，DXC将培训数万名Claude认证前线工程师，把Claude部署到银行、航空、保险、制造和政府等受监管行业的核心系统中。DXC称其AI原生托管服务平台OASIS由Claude生成超过95%的代码，并已服务50多家客户，联盟将首先覆盖保险、遗留系统现代化、网络安全和应用服务。</p>
+<hr>
+<h3 id="h-16">14. <a href="https://x.com/trq212/status/2064826541947940910">Fable视频制作流程公开演示文稿</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Fable</code> <code>视频自动化</code> <code>Remotion</code> <code>Figma MCP</code> <code>创作工具</code></li>
+</ul>
+<p><strong>摘要</strong>: 作者分享了前一条Fable视频制作说明的演示文稿，方便读者自行查看其自动化编辑流程细节。该线程围绕用AI编写代码、调用转录、ffmpeg、Figma MCP和Remotion来生成发布视频，展示了非传统视频编辑工作流。</p>
+<hr>
+<h3 id="h-17">15. <a href="https://x.com/GoogleDeepMind/status/2064785577593995272">DeepMind评估AI对学习行为影响</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>教育AI</code> <code>Gemini</code> <code>学习行为</code> <code>Google DeepMind</code> <code>评估方法</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind表示，其研究不只看考试分数，而是观察学生使用AI后的行为变化。八周结果显示，学生更常用Gemini理解概念而非直接找答案，其中关于解题方法的查询比例从68%升至90%。</p>
+<hr>
+<h3 id="h-18">16. <a href="https://x.com/AnthropicAI/status/2064783424251101553">Anthropic设1.5亿美元AI奖学金</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>AI教育</code> <code>奖学金</code> <code>社区应用</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic预告将推出1.5亿美元全国性奖学金项目，面向职业早期人群，帮助他们把AI收益带到美国各地社区。该项目与其更广泛的AI政策倡议相配套，强调人才培养和社会扩散。 Anthropic在线程结尾表示，当前项目不足以完全应对高级AI带来的挑战，但代表了公司的投入信号。公司称未来数月和数年会继续扩大相关工作，语境上与其围绕AI工作影响、公益培训和政策框架的行动相呼应。</p>
+<hr>
+<h2 id="h-19">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>Google</code> <code>数据中心</code> <code>能源</code> <code>弗吉尼亚</code> — Google 宣布在弗吉尼亚扩大社区投入，围绕数据中心与基础设施增长支持本地就业、技工培养和能源可负担性。计划包括资助电气学徒培训、到 2030 年新增 2,741 名学徒培训容量，并推出 1,500 万美元能源影响基金。 · <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/">Google AI Blog</a></li>
+<li><strong>教程与观点</strong> | <code>Codex</code> <code>科学计算</code> <code>黑洞仿真</code> <code>数值算法</code> <code>可验证研究</code> — OpenAI 介绍天体物理学家 Chi-kwan Chan 如何用 Codex 推导和测试新的数值算法，以改进黑洞周围等离子体仿真。Codex 生成的候选方案需要经过物理解释、已知解比对和反复测试，展示了 AI 在可验证科学探索中的辅助价值。 · <a href="https://openai.com/index/using-codex-to-simulate-black-holes">OpenAI Blog</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>案例集</code> <code>创业者</code> <code>开发者生态</code> — Claude 补充给出「The Problem Solvers」系列入口，指向其展示创业者如何用 Claude 解决复杂问题的专题页面。该条是上一条 Cursor 案例线程的延伸，主要承担导流与案例合集索引作用。 · <a href="https://x.com/claudeai/status/2064757539762295177">Claude (Twitter)</a></li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Grok Build插件市场开放测试</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Claude托管代理新增定时部署与凭证</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude公开Fable 5安全回退</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Google发布DiffusionGemma开放模型</a></li>
+      <li class="toc-h3"><a href="#h-7">5. OpenAI收购Ona强化Codex云环境</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Dario发布AI指数级政策文章</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Claude接入SwiftUI结构化输出</a></li>
+      <li class="toc-h3"><a href="#h-10">8. DeepMind与Palmeiras推进TacticAI</a></li>
+      <li class="toc-h3"><a href="#h-11">9. DeepMind设立多智能体研究基金</a></li>
+      <li class="toc-h3"><a href="#h-12">10. OpenAI支持欧盟AI透明度准则</a></li>
+      <li class="toc-h3"><a href="#h-13">11. BBVA与OpenAI深化银行AI转型</a></li>
+      <li class="toc-h3"><a href="#h-14">12. Anthropic推出Claude Corps公益项目</a></li>
+      <li class="toc-h3"><a href="#h-15">13. DXC将Claude带入关键行业系统</a></li>
+      <li class="toc-h3"><a href="#h-16">14. Fable视频制作流程公开演示文稿</a></li>
+      <li class="toc-h3"><a href="#h-17">15. DeepMind评估AI对学习行为影响</a></li>
+      <li class="toc-h3"><a href="#h-18">16. Anthropic设1.5亿美元AI奖学金</a></li>
+      <li class="toc-h2"><a href="#h-19">速览</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-06-11.html">2026-06-11</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-12.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>

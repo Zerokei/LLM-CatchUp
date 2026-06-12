@@ -5,8 +5,219 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 11 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 12 Jun 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-06-12</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-12.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-12.md</guid>
+      <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-12</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>代理工具扩展</strong>：Grok Build插件市场和Claude托管代理都在把编码助手推进到可部署、可运维的代理平台。</li>
+<li><strong>AI治理升温</strong>：OpenAI支持欧盟透明度准则，Anthropic则呼吁前沿模型第三方测试与更强公共能力。</li>
+<li><strong>产业落地加速</strong>：OpenAI与BBVA、Oracle合作，Anthropic与DXC合作，显示企业AI采购正进入云承诺和关键系统层。</li>
+<li><strong>研究走向真实场景</strong>：TacticAI、塞拉利昂教育实验和Codex黑洞仿真都强调从基准转向现场问题。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/xai/status/2065099299541893577">Grok Build插件市场开放测试</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>插件市场</code> <code>开发者工具</code> <code>MongoDB</code> <code>Vercel</code> <code>Sentry</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 将 Grok Build Plugin Marketplace 开放 beta，让开发者在同一代理构建环境中调用 MongoDB、Vercel、Sentry、Cloudflare 等插件。MongoDB 侧重数据探索、数据库优化与应用构建，Vercel 负责生产部署、沙箱与 Shadcn 应用生成，Sentry 则用于定位错误、分析堆栈并整理问题。这个更新把 Grok Build 从单一编码助手推进到可连接开发、部署和运维工具链的代理平台。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/xai/status/2065168019891073260">Grok Build接入Sentry插件</a> · xAI (Twitter) · Sentry排错插件</li>
+<li><a href="https://x.com/xai/status/2065143638838157559">Grok Build支持Vercel插件</a> · xAI (Twitter) · Vercel部署插件</li>
+<li><a href="https://x.com/xai/status/2065119714658152592">Grok Build上线MongoDB插件</a> · xAI (Twitter) · MongoDB数据插件</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>试用 Grok Build beta 时优先连接现有 MongoDB/Vercel/Sentry 项目，验证端到端开发闭环。</li>
+<li>把插件权限限定在测试项目或沙箱环境，观察代理读写数据库和部署生产环境的边界。</li>
+<li>记录插件调用的失败案例，补充团队内部的代理工具使用规范。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/ClaudeDevs/status/2065080005328249086">Claude托管代理新增定时部署与凭证</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>Claude Code</code> <code>定时部署</code> <code>环境变量凭证</code> <code>自动化代理</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Managed Agents 新增两项面向自动化运行的能力：定时部署可按 cron、间隔或一次性时间触发任务，环境变量凭证类型则让代理安全使用外部 CLI、SDK 与 API。配套说明还强调 Claude Code 可通过内置 /claude-api skill 帮用户搭建托管代理部署。整体上，这使 Claude Code 工作流更接近可持续运行的云端代理，而不只是一次性交互式编码助手。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2065080009203892302">Claude托管代理支持环境变量凭证</a> · Claude Devs (Twitter) · 安全凭证类型</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把重复性仓库维护任务改造成定时托管代理，先从低风险只读检查开始。</li>
+<li>为代理使用的第三方 CLI/API 建立最小权限环境变量凭证，避免复用个人长期密钥。</li>
+<li>用 /claude-api skill 生成部署脚手架后，补充日志、失败告警和回滚路径。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2064949876463645026">Claude公开Fable 5安全回退</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Fable 5</code> <code>安全防护</code> <code>模型回退</code> <code>误报申诉</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 表示将让 Fable 5 面向前沿 LLM 开发的安全防护变得可见，触发时会明确回退到 Opus 4.8，API 请求也将返回拒绝原因。团队承认此前采用不可见防护是错误权衡，并提示在分类器调优期间可能出现更多误报，可通过反馈和申诉渠道报告。</p>
+<hr>
+<h3>4. <a href="https://x.com/demishassabis/status/2064873362799600042">Google发布DiffusionGemma开放模型</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>DiffusionGemma</code> <code>Gemma</code> <code>文本扩散</code> <code>开源模型</code> <code>Apache 2.0</code></li>
+</ul>
+<p><strong>摘要</strong>: DiffusionGemma 是 Google Gemma 团队推出的实验性开放模型，采用文本扩散思路，不再逐 token 顺序生成，而是并行生成整块文本。Demis Hassabis 称其速度很快，比其他 Gemma 4 模型快 4 倍，并以 Apache 2.0 许可发布。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>适合评估低延迟生成场景，如批量草稿、实时补全或边缘端文本生成；测试时应同时比较速度、连贯性和长文本稳定性，不要只看吞吐指标。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://openai.com/index/openai-to-acquire-ona">OpenAI收购Ona强化Codex云环境</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Ona</code> <code>Codex</code> <code>云执行环境</code> <code>企业代理</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布计划收购 Ona，把其安全云执行与编排技术纳入 Codex 生态。Ona 的持久、可复现云环境将支持 Codex 在客户控制的基础设施中长时间运行，满足企业对凭证范围、日志、治理和安全边界的要求。</p>
+<hr>
+<h3>6. <a href="https://x.com/DarioAmodei/status/2064781775247950326">Dario发布AI指数级政策文章</a></h3>
+<ul>
+<li><strong>来源</strong>: Dario Amodei (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Dario Amodei</code> <code>AI指数增长</code> <code>政策滞后</code> <code>AI治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Dario Amodei发布新文章「Policy on the AI Exponential」，称AI进展远快于政策流程原本能处理的速度。文章旨在说明技术所处阶段，并提出缩小技术发展与政策响应差距所需的行动。 Dario Amodei指出，Anthropic长期支持前沿AI透明度要求，因为过去风险还不够清晰，难以做精确监管。但他现在认为，仅靠透明度已经不足以应对快速显现的前沿模型风险。 Dario Amodei表示，除透明度要求外，前沿模型现在应接受针对网络、生物和自主性风险的强制第三方测试。他还提出测试机制应具备阻止或撤销高灾难风险模型部署的权力。 Dario Amodei称其文章还讨论AI陡峭发展轨迹对就业、经济、科学进步、公民自由和地缘政治的影响。这表明Anthropic的政策论述已从模型安全扩展到更广泛的社会制度议题。 Dario Amodei表示，Anthropic随文章发布了政府应对前沿AI风险的提案，以及针对AI引发就业替代的政策框架。公司还计划为相关工作提供大量资金支持，显示其将政策建议与资金支持绑定。 Dario Amodei强调，这组AI政策主张具有跨政治光谱的常识吸引力。他认为越早采取行动，社会就越早能共享AI带来的收益。</p>
+<hr>
+<h3>7. <a href="https://x.com/ClaudeDevs/status/2064756987112702303">Claude接入SwiftUI结构化输出</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>SwiftUI</code> <code>结构化输出</code> <code>流式响应</code> <code>Apple开发</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 进一步说明，Apple Foundation Models 框架的类型化输出可直接进入 Claude 请求，开发者发送的是结构化数据而非原始用户文本。Claude 响应还能流式返回到同一个 SwiftUI 视图，降低 Apple 应用内集成多步 AI 交互的工程复杂度。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>可优先在 SwiftUI 原型中验证类型化输入到 Claude 的数据契约，并用流式响应改善生成式界面的等待体验，同时为敏感字段建立显式过滤层。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>8. <a href="https://x.com/GoogleDeepMind/status/2065093482088169719">DeepMind与Palmeiras推进TacticAI</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>TacticAI</code> <code>Palmeiras</code> <code>体育AI</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 宣布与巴西足球俱乐部 Palmeiras 合作，后者成为首个实质性基于 TacticAI 开展建设的足球俱乐部。TacticAI 可模拟场上情景，并提前最多 8 秒预测开放比赛动态。 Google DeepMind 介绍 TacticAI 将球场上的 22 名球员视为图节点，并用球员间物理互动构成连接。该方法让俱乐部数据团队可实时拖放球员位置，测试不同防守布局。 Google DeepMind 强调足球比赛是部分可观测、多模态和连续空间决策问题的典型场景。TacticAI 在这类实时动态系统上的进展，可能迁移到机器人、计算机游戏等需要空间推理与策略预测的领域。</p>
+<hr>
+<h3>9. <a href="https://x.com/GoogleDeepMind/status/2065031279213441309">DeepMind设立多智能体研究基金</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>多智能体</code> <code>集体行为</code> <code>研究基金</code> <code>AI安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 联合 Schmidt Sciences、Cooperative AI Foundation、ARIA 等机构推出 1000 万美元研究基金。该基金聚焦数百万 AI 智能体相互交互时可能涌现的集体行为，意在提前理解多智能体生态的风险与机制。</p>
+<hr>
+<h3>10. <a href="https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem">OpenAI支持欧盟AI透明度准则</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>欧盟AI法案</code> <code>内容来源</code> <code>C2PA</code> <code>SynthID</code> <code>透明度</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布支持欧盟关于 AI 生成内容透明度的实践准则，称其是落实欧盟 AI 法案和建设可信数字生态的重要步骤。文章强调 OpenAI 会继续推进 C2PA 元数据、SynthID 水印、公开验证工具和开放标准协作，但也承认来源信号在传播中可能丢失，仍需生态共同完善。</p>
+<hr>
+<h3>11. <a href="https://openai.com/index/bbva">BBVA与OpenAI深化银行AI转型</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>企业AI</code> <code>银行</code> <code>ChatGPT Enterprise</code> <code>OpenAI</code> <code>数字化转型</code></li>
+</ul>
+<p><strong>摘要</strong>: BBVA与OpenAI建立战略合作，把AI嵌入客户体验、风控、运营、软件开发和员工日常工作。其ChatGPT Enterprise部署已扩展到全球10万多名员工，并形成「The Eight」路线图、AI冠军网络和数万个定制GPT，用于信贷分析、营销、客户服务等场景。</p>
+<hr>
+<h3>12. <a href="https://www.anthropic.com/news/claude-corps">Anthropic推出Claude Corps公益项目</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Corps</code> <code>AI公益</code> <code>人才培养</code> <code>Anthropic</code> <code>社会影响</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 推出 Claude Corps，将早期职业人才与非营利组织、公共机构和社会影响项目配对，帮助他们用 Claude 解决教育、健康、经济机会等问题。官方说明强调该项目既是人才培养计划，也是让更多公共利益场景直接接触前沿 AI 的渠道。相关社交发布补充了项目的全国 fellowship 定位和申请入口。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2065057393927467084">Anthropic推出Claude公益奖学金</a> · Anthropic (Twitter) · 项目发布入口</li>
+</ul>
+<hr>
+<h3>13. <a href="https://www.anthropic.com/news/dxc-anthropic-alliance">DXC将Claude带入关键行业系统</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>DXC</code> <code>企业服务</code> <code>受监管行业</code> <code>系统现代化</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic与DXC Technology达成多年全球联盟，DXC将培训数万名Claude认证前线工程师，把Claude部署到银行、航空、保险、制造和政府等受监管行业的核心系统中。DXC称其AI原生托管服务平台OASIS由Claude生成超过95%的代码，并已服务50多家客户，联盟将首先覆盖保险、遗留系统现代化、网络安全和应用服务。</p>
+<hr>
+<h3>14. <a href="https://x.com/trq212/status/2064826541947940910">Fable视频制作流程公开演示文稿</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Fable</code> <code>视频自动化</code> <code>Remotion</code> <code>Figma MCP</code> <code>创作工具</code></li>
+</ul>
+<p><strong>摘要</strong>: 作者分享了前一条Fable视频制作说明的演示文稿，方便读者自行查看其自动化编辑流程细节。该线程围绕用AI编写代码、调用转录、ffmpeg、Figma MCP和Remotion来生成发布视频，展示了非传统视频编辑工作流。</p>
+<hr>
+<h3>15. <a href="https://x.com/GoogleDeepMind/status/2064785577593995272">DeepMind评估AI对学习行为影响</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>教育AI</code> <code>Gemini</code> <code>学习行为</code> <code>Google DeepMind</code> <code>评估方法</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind表示，其研究不只看考试分数，而是观察学生使用AI后的行为变化。八周结果显示，学生更常用Gemini理解概念而非直接找答案，其中关于解题方法的查询比例从68%升至90%。</p>
+<hr>
+<h3>16. <a href="https://x.com/AnthropicAI/status/2064783424251101553">Anthropic设1.5亿美元AI奖学金</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>AI教育</code> <code>奖学金</code> <code>社区应用</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic预告将推出1.5亿美元全国性奖学金项目，面向职业早期人群，帮助他们把AI收益带到美国各地社区。该项目与其更广泛的AI政策倡议相配套，强调人才培养和社会扩散。 Anthropic在线程结尾表示，当前项目不足以完全应对高级AI带来的挑战，但代表了公司的投入信号。公司称未来数月和数年会继续扩大相关工作，语境上与其围绕AI工作影响、公益培训和政策框架的行动相呼应。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>Google</code> <code>数据中心</code> <code>能源</code> <code>弗吉尼亚</code> — Google 宣布在弗吉尼亚扩大社区投入，围绕数据中心与基础设施增长支持本地就业、技工培养和能源可负担性。计划包括资助电气学徒培训、到 2030 年新增 2,741 名学徒培训容量，并推出 1,500 万美元能源影响基金。 · <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/">Google AI Blog</a></li>
+<li><strong>教程与观点</strong> | <code>Codex</code> <code>科学计算</code> <code>黑洞仿真</code> <code>数值算法</code> <code>可验证研究</code> — OpenAI 介绍天体物理学家 Chi-kwan Chan 如何用 Codex 推导和测试新的数值算法，以改进黑洞周围等离子体仿真。Codex 生成的候选方案需要经过物理解释、已知解比对和反复测试，展示了 AI 在可验证科学探索中的辅助价值。 · <a href="https://openai.com/index/using-codex-to-simulate-black-holes">OpenAI Blog</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>案例集</code> <code>创业者</code> <code>开发者生态</code> — Claude 补充给出「The Problem Solvers」系列入口，指向其展示创业者如何用 Claude 解决复杂问题的专题页面。该条是上一条 Cursor 案例线程的延伸，主要承担导流与案例合集索引作用。 · <a href="https://x.com/claudeai/status/2064757539762295177">Claude (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-06-11</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-11.html</link>
@@ -3597,126 +3808,6 @@
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
 <li><strong>商业动态</strong> | <code>OpenAI</code> <code>ChatGPT Plus</code> <code>马耳他</code> <code>国家合作</code> <code>AI 素养</code> — OpenAI 与马耳他政府宣布全球首例「全民 ChatGPT Plus」合作：所有公民在完成马耳他大学开发的 AI 素养课程后，可免费获得一年 ChatGPT Plus 订阅。项目 5 月启动，由马耳他数字创新局负责分发，是「OpenAI for Countries」继爱沙尼亚、希腊之后的又一国家级落地。George Osborne 表示「智能正成为一种国家公共设施」，希望马耳他模式能成为其它国家的参考样板。 · <a href="https://openai.com/index/malta-chatgpt-plus-partnership">OpenAI Blog</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 周报 2026-W20</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W20.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W20.md</guid>
-      <pubDate>Sun, 17 May 2026 00:00:00 GMT</pubDate>
-      <category>weekly</category>
-      <description><![CDATA[<h1>CatchUp 周报 — 2026-W20 (05/11 - 05/17)</h1>
-<h2>本周趋势</h2>
-<ul>
-<li><strong>Codex 全栈进军移动与企业</strong>：ChatGPT 手机 App 接入 Codex 远程操控笔电，Hooks/Remote SSH GA、Windows elevated sandbox 披露与 Mac Computer Use 同日齐发，大仓 Git 操作提速 10-50×，周活破 400 万，NVIDIA 与 Sea Limited（工程组织周活 87%）全量切换。</li>
-<li><strong>Claude 同周交付编排面板与 AWS GA</strong>：Opus 4.7 Fast Mode 同步登陆六家合作 IDE，Agent View 多会话面板配 Skills 批量派发，Claude Platform on AWS GA 把 Managed Agents、Prompt Caching、advisor 策略与代码执行完整下放 AWS。</li>
-<li><strong>AI 落地形态从工具升级为基建</strong>：OpenAI 以 40 亿美元成立 DeployCo 并收购 Tomoro 拿下 150 名 FDE，Anthropic 推出 Claude for Small Business 15 套开箱工作流并联手盖茨基金会 4 年 2 亿美元覆盖健康/教育/经济流动。</li>
-<li><strong>ChatGPT 同周进入个人金融与长会话安全</strong>：Pro 用户通过 Plaid 接入 1.2 万家金融机构形成理财仪表盘并预告 Intuit 信用卡/税务闭环；safety summaries 让长对话中自伤识别提升 50%、伤人识别提升 16%。</li>
-<li><strong>政策与防御进入产品化阶段</strong>：Anthropic《2028》白皮书主张对华锁定 12-24 月领先并阻断蒸馏攻击，OpenAI 推出 Daybreak 自动化检测/验证/响应，CoT 评分研究分析交由 Redwood/Apollo/METR 三方独立审计。</li>
-<li><strong>交互与编程范式齐变</strong>：DeepMind 用 Gemini 重做的 AI 鼠标让光标「理解意图」，Karpathy 与 Thariq 联手力推 HTML 取代 Markdown 作为 LLM 输出主载体；Bun 作者用 AI 6 天 96 万行 Rust 重写通过 99.8% 测试，Jim Fan 宣告 VLA 终结并以 140 亿参数 DreamZero 开启世界动作模型 WAM。</li>
-</ul>
-<h2>Top 10 最重要文章</h2>
-<h3>1. <a href="https://openai.com/index/work-with-codex-from-anywhere">Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/14</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>编码 Agent</code> <code>移动端</code> <code>Hooks</code> <code>Remote SSH</code> <code>Windows 沙箱</code> <code>企业迁移</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 在同一日把编码 Agent Codex 推上新阶段——ChatGPT 移动 App 接入 Codex 后可远程操控笔电、Mac mini 与 devbox 并实时同步截图/终端输出/diff，并支持手机审批命令与切换模型。同期 Hooks 与 Remote SSH 进入 GA：Hooks 可在任务关键节点运行验证器/扫描密钥/按仓库定制行为，Remote SSH 让 Codex 直接接入企业受管环境；Programmatic 访问令牌为 Business/Enterprise 提供作用域凭证，ChatGPT Enterprise 还获得 Codex 本地环境 HIPAA 合规支持。同步博文披露的 Windows「elevated sandbox」通过合成 SID、写受限令牌与 CodexSandboxOffline/Online 双用户配合防火墙规则强制隔离文件与网络。OpenAI 同时启动 30 天迁移窗口，从 Cursor / Claude Code 切换的合规企业新增用户可获 2 个月免费用量，Codex 周活已突破 400 万。</p>
-<h3>2. <a href="https://x.com/ClaudeDevs/status/2054266327771275435">Claude Opus 4.7 Fast Mode 研究预览上线：API、Claude Code 与 6 大合作平台同步</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/12</li>
-<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>Fast Mode</code> <code>低延迟</code> <code>Claude Code</code> <code>研究预览</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 推出 Opus 4.7 的 Fast Mode，专门为需要更低延迟的旗舰模型场景提供加速推理路径。该模式同时登陆 Anthropic API、Claude Code，以及 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 六家合作平台。开发者可通过 claude.com/fast-mode 加入 API 候补名单接入自有应用。当前仅限研究预览——这是把「同一旗舰、不同延迟档位」做成产品轴的第一步，对实时交互、Agent 调度和编码 IDE 内交互体感的影响最直接。</p>
-<h3>3. <a href="https://x.com/claudeai/status/2053868592286822443">Anthropic 推出 Claude Platform on AWS：完整 API 特性 + AWS 计费正式 GA</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/11</li>
-<li><strong>标签</strong>: <code>Claude Platform</code> <code>AWS</code> <code>Managed Agents</code> <code>Prompt Caching</code> <code>企业部署</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 宣布 Claude Platform 在 AWS 上正式 GA，AWS 客户可直接使用完整 Claude API 能力——包括 Claude Managed Agents、advisor strategy、code execution、Prompt Caching、Web 搜索等此前只在原生 API 提供的高阶特性，数据全程驻留在 AWS 账户内。鉴权通过 AWS 托管的 API Gateway 完成，价格与速率限制与原生 API 一致；Claude 模型仍继续在 Amazon Bedrock 上提供。这是 Anthropic 把多云分发的「特性差」补齐——Bedrock 长期缺位的特性首次在 AWS 上对齐，并由 Anthropic 自身运营、新特性同日上线，企业 IT 在合规、网络、计费三层都不再为 Anthropic 高级特性额外做让步。</p>
-<h3>4. <a href="https://x.com/claudeai/status/2053940934736228454">Claude Code 推出 Agent View：原生多会话面板 + Skills 批量派发</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/11</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Agent View</code> <code>Skills</code> <code>并行会话</code> <code>Anthropic</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 正式发布 Claude Code 的 Agent View——把所有正在运行、等待回复、已完成的会话集中到一个仪表面板，支持内联回复解锁阻塞或直接跳入对应会话，研究预览版即日起对全付费方案开放。同步上线的 Skills 能力允许把常用工作流封装为 skill 并一次性派发多个并行执行，Claude 持续推进直至 skill 自报完成。开发者运行 <code>claude agents</code> 即可体验，定位是把 Claude Code 从单线程对话升级为可并行调度的轻量 Agent 控制台。这与同周 OpenAI Symphony「每个 Issue 一个 Codex 代理」的开源编排器构成正面对位，编排层已成为 Agent 数量上升后的新主战场。</p>
-<h3>5. <a href="https://openai.com/index/openai-launches-the-deployment-company">OpenAI 成立 DeployCo：40 亿美元起步 + 收购 Tomoro 拿下 150 FDE</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 商业动态 | <strong>日期</strong>: 05/11</li>
-<li><strong>标签</strong>: <code>DeployCo</code> <code>OpenAI</code> <code>Tomoro 收购</code> <code>企业落地</code> <code>商业化</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 推出 OpenAI Deployment Company (DeployCo)——多数股权由 OpenAI 控股的独立子公司，专门帮助企业基于 OpenAI 模型构建并部署 AI 应用。启动阶段配置 40 亿美元资金，联合 19 家顶级 PE 与咨询机构作为首批合作伙伴；同日宣布收购英国 AI 部署公司 Tomoro，带 150 名 Forward Deployed Engineers 与 Deployment 团队加入。结构上 OpenAI 把「模型研究」与「企业落地」显式拆分，借此加速大客户的端到端落地节奏，与上周 Anthropic + 黑石 + 高盛合资公司形成同位竞争——AI 公司开始把「现场工程师」当成一类需要被产品化、被估值、被融资的核心资产。</p>
-<h3>6. <a href="https://www.anthropic.com/research/2028-ai-leadership">Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 05/14</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>中美 AI 竞争</code> <code>出口管制</code> <code>蒸馏攻击</code> <code>前沿安全</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发布政策论文《2028: Two scenarios for global AI leadership》，主张美国与盟友通过收紧算力出口管制、阻断「蒸馏攻击」、加速民主国家 AI 采用，锁定 12-24 个月的前沿能力领先；否则 CCP 将在「near-frontier」追平并主导 AI 规则与军用部署。文章把 Claude「Mythos Preview」（让 Firefox 单月修复的安全漏洞数超过 2025 全年）描述为加速期警钟，并援引 CAISI 数据指 DeepSeek R1-0528 对越狱式恶意请求的服从率达 94%（美参考模型为 8%）。Anthropic 将竞争拆为「智能、国内采用、全球分发、韧性」四条战线，同时呼吁与中国 AI 安全专家保持对话——后者「在美国保持较大能力优势」时最为可行。</p>
-<h3>7. <a href="https://www.anthropic.com/news/claude-for-small-business">Anthropic 推出 Claude for Small Business：15 套现成工作流接入 SMB 工具</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/13</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>中小企业</code> <code>Agent 工作流</code> <code>连接器</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发布面向中小企业的 Claude for Small Business，提供连接器与开箱即用的工作流，把 Claude 嵌入 QuickBooks、PayPal、HubSpot、Canva、Docusign、Google Workspace、Microsoft 365 等常用工具。首发 15 个跨财务、运营、销售、市场、HR、客服的 Agent 工作流与 15 项技能，例如核对 QuickBooks 与 PayPal 现金、自动生成月结 P&amp;L、营销活动效果分析等，所有操作均需用户审批，Team/Enterprise 默认不用于训练。配套推出 AI Fluency 免费课程并于 5 月 14 日启动 Claude SMB Tour 巡演——继 Microsoft 365 接入与 SpaceX 算力合作之后，Anthropic 把入口从「大型企业 + 开发者」扩展到长尾市场。</p>
-<h3>8. <a href="https://openai.com/index/personal-finance-chatgpt">ChatGPT 上线个人理财：Pro 用户可连 1.2 万家金融机构</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/15</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>个人理财</code> <code>Plaid</code> <code>GPT-5.5</code> <code>AI 助理</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 向美国 ChatGPT Pro 用户开放个人理财预览——通过 Plaid 安全连接 12,000+ 家金融机构账户，自动汇总余额、消费、订阅与投资形成仪表盘，并基于 GPT-5.5 Thinking 给出预算、储蓄、还贷等个性化建议（专家基准上拿到 79/100，GPT-5.5 Pro 为 82.5/100）。后续将与 Intuit 整合把信用卡推荐、税务估算等动作闭环到 ChatGPT 内，并支持随时断开账户、删除「财务记忆」。这是 ChatGPT 从「通用助手」首次切入高价值垂直领域，对独立 PFM 应用的存活空间和「消费者敏感数据 + 模型训练隔离」的边界设计都将形成长期影响。</p>
-<h3>9. <a href="https://x.com/ClaudeDevs/status/2054639777685934564">Claude Code 单日三连更：周限上调 50% + 程序化配额 + 长任务命令</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 05/13</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>用量上限</code> <code>程序化配额</code> <code>Agent SDK</code> <code>/goal</code> <code>stop hook</code> <code>auto 模式</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 同日为 Claude Code 推出三项关键更新。首先，所有 Pro、Max、Team 与按席位计费的 Enterprise 用户的 Claude Code 周用量上限即日上调 50%，覆盖 CLI、IDE 扩展、桌面端与 Web 四端，叠加上周 5 小时窗口 2 倍扩容，活动持续至 7 月 13 日。其次，6 月 15 日起付费 Claude 计划获得一份专用于程序化用途的月度配额，覆盖 Agent SDK、<code>claude -p</code>、Claude Code GitHub Actions 与 Conductor/OpenClaw 等基于 Agent SDK 的第三方应用，统一了第一方与第三方调用的计费模型，用户 6 月 8 日收到领取邮件。最后，官方介绍了让 Claude 持续推进长任务的工具链：<code>/goal</code> 命令声明终态、stop hook 用代码门控收工时机、auto 模式（shift+tab）让任务无需人工等待，三者组合可构成端到端自驱工作流。</p>
-<h3>10. <a href="https://baoyu.io/blog/robotics-end-game-nvidias-jim-fan">Jim Fan 宣告 VLA 时代结束，提出世界动作模型 WAM</a> ⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: 宝玉的分享 | <strong>分类</strong>: 研究 | <strong>日期</strong>: 05/10</li>
-<li><strong>标签</strong>: <code>机器人</code> <code>世界模型</code> <code>WAM</code> <code>DreamZero</code> <code>缩放定律</code></li>
-</ul>
-<p><strong>摘要</strong>: 英伟达 GEAR Lab 负责人 Jim Fan 在 Sequoia AI Ascent 2026 演讲中宣布 VLA 路线过时，新范式叫世界动作模型（WAM），代表作是 140 亿参数的 DreamZero——执行动作前先「梦境」预测未来几秒。配套的 EgoScale 用 21,000 小时人类第一人称视频预训练，发现灵巧操作的神经缩放定律达到 R²=0.998；Dream Dojo 则用 44,000 小时视频训练出完全绕过物理引擎的神经仿真器。Jim 给出 2040 年达到「物理自动研究」终局的预测，置信度 95%。机器人领域继 VLA 之后再一次范式迁移，影响从端到端控制到仿真训练堆栈的整条研究脉络。</p>
-<h2>分类概览</h2>
-<h3>模型发布</h3>
-<p>本周旗舰发布权重落在 Anthropic 一侧——Opus 4.7 Fast Mode 以研究预览身份上线 Anthropic API、Claude Code，并同步登陆 Cursor、Emergent Labs、Factory AI、v0、Warp、Windsurf 六家合作 IDE，开发者可通过 claude.com/fast-mode 加入 API 候补名单。OpenAI 没有放出新的旗舰底模，Sam Altman 仅以推文暗示 GPT-5.5 是「带有奇怪命名审美的自闭天才」，并戏言下代干脆叫 goblin。模型节奏相对克制，「在已有模型外扩展运行时（移动、远端、沙箱、并行编排）」成为本周真正的主战场——Anthropic 通过 Fast Mode 把「同一旗舰、不同延迟档位」做成产品轴，OpenAI 则把 GPT-5.5 + Codex 推成 NVIDIA 工程团队的默认工具，验证「现有底模 + 强化运行时」对企业生产力的杠杆。</p>
-<h3>研究</h3>
-<p>研究板块呈现「机制可解释性 → 工程可控性 → 范式迁移」三条线并进。Jim Fan 在 Sequoia AI Ascent 2026 宣告 VLA 路线终结，提出 140 亿参数的 DreamZero「梦境预测未来几秒后再行动」，配套 EgoScale 21,000 小时一人称视频和 Dream Dojo 44,000 小时神经仿真器，为灵巧操作的神经缩放定律确立 R²=0.998，并给出 2040 年「物理自动研究」终局预测。OpenAI 工程团队公开 Codex Windows 沙箱设计——AppContainer、Windows Sandbox、MIC 完整性标签等原生隔离原语都不够用，团队自研「elevated sandbox」通过 CodexSandboxOffline/Online 双用户配合防火墙规则强制隔离网络，是少有的 Agent 端到端进程隔离案例。Parameter Golf 挑战赛（1000+ 参赛者、16MB 模型 + 训练代码、8×H100 10 分钟训练预算）实证编码 Agent 加速 ML 研究的可行性，OpenAI 同周把 CoT 评分研究分析交由 Redwood Research、Apollo AI Evals、METR 三家第三方独立审计，把对齐结论的可信度从「实验室内说」扩展到「行业第三方互审」。Google DeepMind 用 Gemini 重做的 AI 鼠标原型让指针从「定位坐标」转向「理解意图」（手写便签照片→可交互待办、暂停视频帧→餐厅预订链接），并暗示这正引导其下一代界面思路。OpenAI Signals 2026Q1 报告显示 ChatGPT 用户进一步主流化（35 岁以上、女性化姓名用户占比上升，多米尼加、海地、日本、墨西哥等市场每千人发送量增速领先），健康类文档与信息检索是工作场景增长最快的任务。</p>
-<h3>产品与功能</h3>
-<p>产品与功能是 W20 的绝对主轴。OpenAI Codex 在一周内完成「移动 + 远端 + Windows + 跨应用 + 大仓提速 + 编排器」的全栈升级：ChatGPT 移动 App 接入 Codex 后可远程操控笔电/Mac mini/devbox 并实时同步截图/diff/终端，Hooks（关键节点插脚本）与 Remote SSH 进入 GA，Windows elevated sandbox 设计被首次披露，Mac Computer Use 让 Codex 在后台跨应用操作不抢主桌面，大仓 Git 操作提速 10-50×、UI 重渲染减少 75%，Symphony 开源「每个 Issue 一个 Codex Agent」编排器，OpenAI Developers 插件让 Codex 直接生成 API 调用骨架，Codex for Work 给财务团队 10 大用例提示词模板，Codex 周活破 400 万，NVIDIA 把 GPT-5.5+Codex 设为复杂工程任务默认工具、Sea Limited 工程组织 Codex 周活已达 87%。Anthropic 同周的关键词是「编排面板 + 平台扩张 + 长尾下放」：Claude Code 推出 Agent View（<code>claude agents</code>）把多会话集中到一个仪表盘、Skills 一次性派发多个并行任务、内联回复解阻塞，周限即日上调 50% 至 7/13、6/15 起付费订阅含编程式调用专属月度额度（覆盖 SDK / <code>claude -p</code> / GitHub Actions / 第三方）、配套 <code>/goal</code>/stop hook/auto 模式构成长任务自驱闭环；Claude Platform on AWS GA 把 Managed Agents、Prompt Caching、advisor strategy、code execution 完整带入 AWS 通道（同日上线、价格一致）；Claude for Small Business 提供 15 套跨财务/运营/销售/营销/HR/客服开箱工作流连 QuickBooks/PayPal/HubSpot/Canva/Docusign。OpenAI 在 Codex 之外还把 ChatGPT 推进个人金融（Pro 用户接入 1.2 万家金融机构构建理财仪表盘、预告 Intuit 信用卡/税务闭环）、推出 Daybreak 把检测/验证/响应交给 AI 流水线；Google 把 AI 版 Google Finance 推广到欧洲并加入 Deep Search、关键节点叠加与财报会议跟踪、DeepMind AI 鼠标进入 AI Studio；xAI 入场代理式 CLI 赛道发布 Grok Build 早期 Beta（SuperGrok Heavy 限定），并把 Grok 订阅与 Nous Research Hermes Agent 联通、开放 X 帖子检索。</p>
-<h3>商业动态</h3>
-<p>本周关键词是「专业落地公司」与「跨域生态合作」。OpenAI 启动 OpenAI Deployment Company (DeployCo)：40 亿美元启动资金、19 家 PE/咨询合作方、同日收购英国 Tomoro 把 150 名 Forward Deployed Engineers 并入，把「模型研究」与「企业落地」显式拆分；同步推出 30 天迁移 2 月免费用量针对已有 Cursor / Claude Code 用户的促销并由 Altman 亲自下场转推，NVIDIA 把 GPT-5.5+Codex 设为复杂工程任务默认工具（运行在自家 GB200/GB300）、AutoScout24（3000 万月活欧洲汽车市场）走「ChatGPT 横向广覆盖 + Codex 深度技术改造」双层 AI 策略。Anthropic 同周与盖茨基金会签 4 年 2 亿美元公益部署覆盖全球健康/教育/经济流动五大方向（脊髓灰质炎、HPV、子痫前期等高负担疾病的药物/疫苗筛选与建模），Isomorphic Labs 拿 21 亿美元新融资把 AlphaFold 余势推向药物发现，OpenAI 与马耳他政府签全球首例「全民 ChatGPT Plus」（公民完成 AI 素养课程获 1 年免费 Plus，George Osborne 表述「智能正成为国家公共设施」），构成「研究/部署/普惠」三档企业 AI 商业路径的 W20 范本。Codex 与 Hermes 的生态合作、Qwen3.6-Plus 在 Nous Portal 限时免费、OpenAI Campus Network 校园计划构成本周中段的渠道/分发动作，OpenAI 同期借 Philips/BBVA/Mirakl/Scout24/JetBrains/Scania 等欧洲企业访谈总结出「先文化后工具、把治理当加速器、从消费转向所有权、规模化前先抓质量、保护人类判断」五大企业 AI 规模化模式。</p>
-<h3>政策与安全</h3>
-<p>监管与安全本周以 Anthropic《2028: Two scenarios for global AI leadership》为主轴：政策论文主张美国及盟友通过收紧算力出口管制、阻断「蒸馏攻击」、加速民主国家 AI 采用，锁定 12-24 个月的前沿能力领先；否则 CCP 将在「near-frontier」追平并主导 AI 规则与军用部署。论文把 Claude「Mythos Preview」（让 Firefox 单月修复的安全漏洞数超过 2025 全年）作为加速期警钟，并援引 CAISI 数据指 DeepSeek R1-0528 对越狱式恶意请求的服从率达 94%（美参考模型为 8%），把竞争拆为「智能、国内采用、全球分发、韧性」四条战线，强调智能是其余三条的源头，同时主张与中国 AI 安全专家保持对话——后者「在美国保持较大能力优势」时最为可行。产品安全侧 OpenAI 与全球医生网络合作让 ChatGPT 在多轮甚至跨会话中识别自伤、伤人等渐进式风险信号——「safety summaries」由安全推理模型生成、短期保留、范围受限，内部评测显示长对话中自杀/自伤的安全响应提升 50%、伤人场景提升 16%，GPT-5.5 Instant 上分别提升 39%/52%，安全摘要在 4000+ 次评估中相关性 4.93、事实性 4.34，未来将扩展到生物与网络安全等高风险领域。</p>
-<h3>教程与观点</h3>
-<p>教程与观点维度本周展开「编程范式」与「组织范式」双线讨论。Andrej Karpathy 紧随 Thariq 后引用并背书「HTML 是新的 Markdown」——在 query 末尾追加「structure your response as HTML」即可获得带版面、链接、可视层级的输出（thariqs.github.io/html-effectiveness/ 给出示例集），LLM⇄人交互层正在被重新认知。Bun 创始人 Jarred Sumner 用 AI 6 天把 Bun 从 Zig 重写为 Rust 共 96 万行代码、Linux 上通过 99.8% 测试套件，Thariq 评论「我们的野心还不够大」。宝玉本周连续发出三篇深度解析：FDE 岗位崛起（OpenAI 40 亿美元 DeployCo + 收购 Tomoro 150 FDE / Anthropic + 黑石 + 高盛合资公司 / Google 面试压到两天，「每花 1 美元训练模型就要再花 1 美元做落地」）、Codex 下一步是「Agent 版 App Store」（左侧会话 + 中间对话 + 右侧工作区三栏已成 Agent 最优解，二次编辑生态是插件机制的真正窗口）、AI 裁员潮本质（每天百美元级 Token 烧钱叠加对齐税让企业被迫瘦身）。Anthropic Claude Code 与 Cowork 产品负责人 Fiona Fung 在 Code with Claude 2026 给出 AI 原生工程团队管理重构指南：瓶颈已从「写代码慢」转移到验证/评审/跨职能协作/安全性，过去基于「写代码很贵」假设的所有流程都要重构，第一步是明确允许大家砍掉陈旧流程。Sam Altman 全周高频发声——Codex 22 小时自主接安全赏金赚 16.88 美元/折合 506 美元每月、价格/速度权衡比价格/智能更值得显眼放置、新 ChatGPT 模型 + 个性 + 个性化「越过某个阈值」、并多次回应 GPT-5.5 在 Codex 中变差的用户投诉。Berkeley RDI 公布 2026 Agentic AI 峰会更多嘉宾名单与 AgentX–AgentBeats 第二阶段获胜者，Demis Hassabis 重访韩国与李世石、申真谞复盘 AlphaGo 十周年。</p>
-<h2>本周值得上手试试</h2>
-<ol>
-<li><strong>Codex 移动端 + 远端开发机联动</strong> — 更新 ChatGPT 移动 App 与 macOS Codex 桌面端，关联本地或远程开发机，把 devbox/远端主机加入 SSH 配置后从手机审阅与指挥任务，体验「手机审批 + 远端执行」的新协作节奏。</li>
-<li><strong>Codex Hooks + 企业 Token</strong> — 在仓库根目录配置 Codex Hooks，把现有 secrets 扫描、lint 校验、验证器与会话记录接入任务关键点，按目录定制 Agent 行为；Business/Enterprise 工作区生成 Programmatic 访问令牌替代长期凭证并按需设置过期或撤销。</li>
-<li><strong>Codex Windows elevated sandbox</strong> — 若团队在 Windows 上使用 Codex，规划首次 elevated sandbox 安装的 UAC 弹窗与 ACL 应用时间，并评估 CodexSandboxOffline/Online 与现有防火墙策略的冲突；安全负责人可对照博文复盘哪些操作仍需在虚拟机或单独账户中隔离。</li>
-<li><strong>Codex 30 天迁移窗口</strong> — 如团队目前使用 Cursor / Claude Code，可评估 30 天迁移窗口 2 个月免费用量是否值得做一次 PoC；在大型 monorepo 上重新评测 10-50× Git 加速与启动延迟的实际收益，再决定预算迁移节奏。</li>
-<li><strong>Codex Computer Use 与自主接活</strong> — 在专用账户或虚拟机中试用 Codex Computer Use 自动化跨应用任务（表格搬运、数据录入、UI 测试），隔离敏感数据与浏览状态；可在开源/赏金平台试跑 Codex 自主接 issue 的完整闭环，按 SEV 风险等级把关 merge 节点。</li>
-<li><strong>Codex for Work（财务团队）</strong> — 财务团队参考 OpenAI Academy 十大用例提示词模板，从月度业务回顾（MBR）切入试点，提前接入 Google Drive、SharePoint 数据源插件让 Codex 读取真实底稿，并明确要求 Codex 标注数字来源与缺失支撑。</li>
-<li><strong>OpenAI Symphony + Developers 插件</strong> — 在团队 GitHub Issue 上试用 Symphony 让 Codex 代理预先尝试解决简单 issue 并产出 PR 草稿，配明确 review 门禁避免低质量 PR 淹没人类评审；Codex 环境启用 OpenAI Developers 插件自动生成 Responses/Tools API 调用骨架。</li>
-<li><strong>GPT-Realtime-2 会议助手与 CRM 语音</strong> — Fork <code>openai/openai-realtime-meeting-assistant</code> 在内部 standup/复盘场景做语音转动作 PoC，评估与 Linear/Jira/Notion 的延迟与可靠性；在 CRM/工单系统加一层 Realtime API 语音入口，并评测中文识别与函数调用稳定性。</li>
-<li><strong>Claude Opus 4.7 Fast Mode</strong> — 在 Claude Code 中切换到 Fast Mode 评估对自身工作流的延迟收益；通过 claude.com/fast-mode 提交 API 候补名单申请，为线上应用预留接入窗口；在 Cursor、Windsurf 等合作 IDE 中直接体验。</li>
-<li><strong>Claude Code Agent View + Skills</strong> — 升级 Claude Code 后在包含所有仓库的高层目录（如 <code>~/Projects</code>）下运行 <code>claude agents</code> 启用 Agent View，把多个长任务并行委派；把团队常用流程（代码审查、报告生成、回归测试）封装为 skill 配合 dispatch many 同时跑多份；建立「会话状态命名」规范方便扫描。</li>
-<li><strong>Claude Code 限额三连更</strong> — 重度用户立即重新规划本周大型任务，把 50% 增量用在原本被限额卡住的批量改造或重构；6 月 8 日邮件到达后及时领取月度程序化配额并审视 CI、自动化脚本与第三方 Agent SDK 工具（Conductor、OpenClaw）的调用频率；用 <code>/goal</code> 声明终态、配 stop hook 跑测试套件门控、用 auto 模式（shift+tab）减少人工等待。</li>
-<li><strong>Claude Platform on AWS</strong> — 已在 Bedrock 上跑 Claude 的团队评估迁到 Claude Platform on AWS 解锁 Managed Agents、Prompt Caching 等额外特性；把鉴权流量挂到 AWS API Gateway 复用既有 IAM 与日志审计设施，不再单独管理 Anthropic key；优先把依赖最新特性的产品线试点迁入以缩短特性可用窗口。</li>
-<li><strong>Claude for Small Business</strong> — 中小企业优先试用「月结 P&amp;L」与「现金流核对」工作流评估财务可靠性；HubSpot + Canva 营销活动 Agent 验证文案与素材是否可替代现有外包；关注 Claude SMB Tour 巡演免费获取一个月 Claude Max 额度做内部试点。</li>
-<li><strong>Claude API prompt cache 预热</strong> — 对较长系统提示预先发送一次 system prompt 以零输出方式写入 cache，让真实用户请求命中热缓存显著降低 time-to-first-token；参考 platform.claude.com/docs/en/build-with-claude/prompt-caching#pre-warming-the-cache。</li>
-<li><strong>ChatGPT 个人理财 + 安全摘要</strong> — 美国 Pro 用户通过侧栏「Finances」或 @Finances 连接账户，先用一个非主力账户测试归类准确度再决定全量接入；在 Settings → Data controls 关闭模型训练开关并把敏感目标信息写入「财务记忆」便于随时删除；高风险用户可同步启用 Trusted Contact 与 ChatGPT 安全摘要识别长会话风险信号。</li>
-<li><strong>xAI Grok Build CLI + Hermes Agent</strong> — SuperGrok Heavy 订阅者前往 <code>x.ai/cli</code> 试用 Grok Build 早期 Beta，与 Codex/Claude Code 在同一仓库做小型对照实验；Grok 订户在 grok.com 绑定 X 账号后启用 Hermes Agent 中的 X 帖子检索做实时舆情。</li>
-<li><strong>Google AI 版 Finance（欧洲）+ AI 鼠标原型</strong> — 用 Deep Search 对持仓个股做季报与行业对比研究、把「关键节点」叠加到长期 K 线复盘价格异动、AI 注释的财报电话会议跟踪节省听会时间；同步前往 Google AI Studio 试用 AI 指针实验原型，思考产品里「定位 → 理解意图」的指针交互升级路径。</li>
-</ol>
-<h2>值得深读</h2>
-<ul>
-<li><a href="https://openai.com/index/work-with-codex-from-anywhere">Codex 全面升级：移动端 + Hooks GA + Remote SSH GA + Windows 沙箱</a> — 一篇博文把「移动 + 远端 + Windows + 企业 Token + 30 天迁移」全部拼齐，是理解 Codex 如何从「桌面 Agent」转向「全栈编码运行时」的入口文档。</li>
-<li><a href="https://www.anthropic.com/research/2028-ai-leadership">Anthropic《2028》白皮书：锁定对华 AI 12-24 月领先的两种情景</a> — 把「智能、国内采用、全球分发、韧性」拆成可操作的政策战线，附 Mythos Preview 与 DeepSeek R1-0528 越狱服从率等关键数据，是中美 AI 竞争形势判断绕不开的一份原文。</li>
-<li><a href="https://baoyu.io/blog/robotics-end-game-nvidias-jim-fan">Jim Fan 宣告 VLA 时代结束，提出世界动作模型 WAM</a> — DreamZero 140 亿参数 + EgoScale 21,000 小时 + Dream Dojo 44,000 小时神经仿真器，把机器人学的缩放定律压到 R²=0.998，并指向 2040「物理自动研究」终局，是理解机器人范式迁移的必读演讲。</li>
-<li><a href="https://openai.com/index/building-codex-windows-sandbox">OpenAI 公开 Codex Windows 沙箱设计：四层架构隔离编码 Agent</a> — 把 AppContainer/Windows Sandbox/MIC 都验证不够用后自研 elevated sandbox 的完整工程纪要，是少有的 Agent 端到端进程隔离案例，对在 Windows 上部署 Agent 的团队极其稀缺。</li>
-<li><a href="https://baoyu.io/blog/2026-05-15/forward-deployed-engineer">FDE 岗位崛起：OpenAI/Anthropic/Google 把工程师送进客户现场</a> — 把 DeployCo、Tomoro 收购、黑石/高盛合资、Google FDE 招聘四条新闻串成一条主线，揭示 AI 行业竞争已从「比模型大小」转向「把模型接进业务」，每花 1 美元训练就要再花 1 美元落地。</li>
 </ul>
 ]]></description>
     </item>
