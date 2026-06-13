@@ -18511,7 +18511,291 @@
           "合作信号"
         ]
       }
+    },
+    "caa3db9457fde323c7390ef9e86179d077851051d17e67d0e0113abdedd87190": {
+      "title": "Claude 托管代理开放自托管沙箱指南",
+      "url": "https://x.com/ClaudeDevs/status/2065494480837583297",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-06-12T18:00:33.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Claude Managed Agents 现在强调可运行在用户自控的沙箱和基础设施中，而不只依赖默认托管环境。新增指南覆盖 Blaxel、E2B、Google Cloud、Namespace Labs、Superserve 等提供方，帮助团队按安全、隔离和成本要求选择执行环境。 Claude Devs 指向 Claude Managed Agents 的自托管代码沙箱文档，强调可参考环境 worker 等指南。该条是上一条发布的补充，帮助开发者了解如何在自有基础设施或第三方提供商上运行受控沙箱。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude托管代理",
+          "自托管沙箱",
+          "代码执行",
+          "安全隔离",
+          "开发者指南"
+        ],
+        "practice_suggestions": [
+          "评估现有代理任务的权限边界，优先把高风险代码执行迁入自控沙箱。",
+          "按网络访问、密钥隔离、日志审计三项指标比较不同沙箱提供方。"
+        ],
+        "thread_urls": [
+          "https://x.com/ClaudeDevs/status/2065494480837583297",
+          "https://x.com/ClaudeDevs/status/2065494482460836183"
+        ]
+      }
+    },
+    "ed5e78188abd978fa5a4c9ec5016f2511d90e91e5e0c88a57677faabea4fd6da": {
+      "title": "Codex 同日更新：重置银行、浏览器调试与案例",
+      "url": "https://x.com/OpenAI/status/2065225362544726371",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-06-12T00:11:11.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Codex 开始向 Go、Plus、Pro 和 Business 用户推出可保存的速率限制重置，并先提供一次免费重置。Plus 与 Pro 用户在 6 月 24 日前最多可邀请三位好友，好友首次发送 Codex 消息后双方都能获得额外的 banked reset。开发者侧还新增 Chrome 与 Codex 内置浏览器的 developer mode，可通过 Chrome DevTools Protocol 检查控制台、网络、页面状态和性能问题。当天的案例展示还强调了 Codex 并行处理网站多处改动，把一周工作压缩到三天的用法。 OpenAI官方账号说明未来两周Plus和Pro用户可邀请最多三位朋友试用Codex；被邀请者发送第一条Codex消息后，双方都会获得一个额外的已储蓄重置额度。该信息补充了同线程的速率重置储蓄功能，偏向增长活动。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Codex",
+          "速率重置",
+          "浏览器调试",
+          "CDP",
+          "并行开发",
+          "邀请奖励"
+        ],
+        "practice_suggestions": [
+          "把 banked reset 留给大规模重构、长链路调试或发布前集中修复等高峰任务。",
+          "在前端问题排查流程中开启 Codex developer mode，让代理读取 console、network 和 DOM 状态后再改代码。",
+          "把可并行的页面、组件或文案改动拆成独立 Codex 任务，减少串行等待。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAIDevs/status/2065226355495895521",
+            "title": "Codex接入Chrome开发者协议",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "浏览器调试"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2065225647358886118",
+            "title": "Codex推出速率重置储蓄",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "重置银行细节"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2065517012311593114",
+            "title": "Codex并行改站点压缩工期",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "并行开发案例"
+          }
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAI/status/2065225362544726371",
+          "https://x.com/OpenAI/status/2065225374737543376"
+        ]
+      }
+    },
+    "4d3639f14645415a6dbeb2f6b6a820f2fb97e0a7bb8c1a7d21cd862152d26b31": {
+      "title": "OpenAI 文档代理生成定制开发指南",
+      "url": "https://x.com/OpenAIDevs/status/2065507724704858173",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-06-12T18:53:11.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "OpenAI 开发者文档新增 docs agent，能根据开发者问题定位相关产品文档并直达对应页面。它还可以把用户要构建的内容转成定制指南，生成可放进 Codex 或其他编码代理的提示与资源清单。 OpenAI Devs 介绍文档站的新代理能力：用户描述正在构建的内容后，代理会生成包含定制提示词和相关资源的指南。指南可以直接在 Codex 中打开，也可以复制为 Markdown 给其他编码代理使用。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI文档",
+          "文档代理",
+          "开发者体验",
+          "Codex",
+          "工作流"
+        ],
+        "practice_suggestions": [
+          "把常见集成问题交给 docs agent 生成首版实现指南，再由团队补充项目约束。",
+          "将生成的 Markdown 指南沉淀到仓库 docs 或 AGENTS.md，减少重复答疑。"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAIDevs/status/2065507724704858173",
+          "https://x.com/OpenAIDevs/status/2065507798268674366"
+        ]
+      }
+    },
+    "206f60b0ddc327102879aaa49afc5922c6bf8e0fdebe743358fc784e0f1be36e": {
+      "title": "Claude Fable 5 早期项目展示液态玻璃 UI",
+      "url": "https://x.com/claudeai/status/2065456678909227064",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-06-12T15:30:21.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Claude Fable 5 发布数日后，官方开始汇总用户已经构建出的早期项目。示例突出可视化与交互原型能力，其中包括一个玻璃质感、液态动效的界面案例，并以“你在构建什么”引导更多创作者提交作品。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Claude Fable 5",
+          "创作工具",
+          "交互原型",
+          "液态玻璃UI",
+          "用户案例"
+        ],
+        "practice_suggestions": [
+          "用 Fable 5 快速探索高保真交互方向，再把可行方案转交设计系统落地。",
+          "收集团队内部原型案例，按组件、动效和可复用提示词建立素材库。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/claudeai/status/2065456697670352901",
+            "title": "Claude展示玻璃液态UI案例",
+            "source": "Claude (Twitter)",
+            "angle": "玻璃UI示例"
+          }
+        ]
+      }
+    },
+    "dd73139d2e3dcd4c1e4b506e29f09bd5c1b6a55186dfb93e70e88f44c3b919f8": {
+      "title": "OpenAI Academy新增职场AI课程",
+      "url": "https://openai.com/index/academy-courses-applying-ai-at-work",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-12T10:00:00.000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "OpenAI Academy推出「AI Foundations」「Applied AI Foundations」和「Agents and Workflows」三门课程，覆盖从提示、上下文与负责使用到可复用工作流和代理协作。课程强调用真实工作任务练习，并与BCG、埃森哲、BBVA等伙伴合作，帮助组织把AI部署转化为可复制的生产力。",
+      "category": "教程与观点",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI Academy",
+          "企业培训",
+          "AI素养",
+          "工作流"
+        ]
+      }
+    },
+    "ddc7b24a91dcf271798bdbe6978e14dd8d01e9120890cb3b3370adf7289638e7": {
+      "title": "Preply用OpenAI个性化语言学习",
+      "url": "https://openai.com/index/preply",
+      "source": "OpenAI Blog",
+      "published_at": "2026-06-12T00:00:00.000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Preply把OpenAI API用于「Lesson Insights」，课后分析一对一课程转录，生成语法、词汇、发音反馈和下一步建议，强化而非替代真人导师。案例显示75%的英语学习者和70%以上导师使用该功能，内部ChatGPT Enterprise周活也达到95%。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "OpenAI API",
+          "教育科技",
+          "个性化学习",
+          "ChatGPT Enterprise"
+        ],
+        "practice_suggestions": [
+          "教育产品可优先选择课后总结、纠错和下一步练习这类高频场景落地AI。",
+          "上线前让教师参与数据集构建和提示评估，确保反馈质量符合教学标准。"
+        ]
+      }
+    },
+    "40b973fa5524d8411e737b46a460930d02bdcb954bf16963e8ecbe3f4c4c03fd": {
+      "title": "Anthropic发布美国AI民意基线",
+      "url": "https://www.anthropic.com/news/anthropic-public-record",
+      "source": "Anthropic Blog",
+      "published_at": "2026-06-12T00:00:00.000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Anthropic发布首轮「Public Record」调查，基于2025年11月至12月近5.2万名美国受访者，显示公众既期待AI用于治病和辅助残障人士，也普遍担忧失业、认知依赖和错误信息。超过70%受访者支持政府参与AI监管，且只有15%信任AI公司自行决定AI发展与使用方向。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "AI治理",
+          "公众调查",
+          "监管"
+        ]
+      }
+    },
+    "ffe478cc7caaab4fc710f31194352fdea6baa584ad1311482d6293135340859b": {
+      "title": "Grok Build 插件扩展部署、监控与数据能力",
+      "url": "https://x.com/xai/status/2065143638838157559",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-06-11T18:46:26.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Grok Build Plugin Marketplace 同日扩展了多项开发链路能力。Vercel 插件支持把应用部署到生产环境、启动沙箱并结合 Shadcn 构建应用。Sentry 插件让代理查错、分析堆栈和分流告警，MongoDB 插件则覆盖数据探索、数据库性能优化和向量搜索构建。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Grok Build",
+          "插件市场",
+          "Vercel",
+          "Sentry",
+          "MongoDB",
+          "代理开发"
+        ],
+        "practice_suggestions": [
+          "把部署、错误监控和数据访问插件串成端到端代理任务，验证从修复到上线的闭环。",
+          "为插件调用配置最小权限账号，避免代理在生产环境拥有过宽写权限。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/xai/status/2065168019891073260",
+            "title": "Grok Build接入Sentry插件",
+            "source": "xAI (Twitter)",
+            "angle": "错误监控"
+          },
+          {
+            "url": "https://x.com/xai/status/2065119714658152592",
+            "title": "Grok Build上线MongoDB插件",
+            "source": "xAI (Twitter)",
+            "angle": "数据与向量"
+          }
+        ]
+      }
+    },
+    "307c27a8d82ccf5ca351c028db8d8475c9a10286d03058d481f793a322205012": {
+      "title": "DeepMind启动欧洲机器人加速器",
+      "url": "https://x.com/GoogleDeepMind/status/2065388989146628563",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-06-12T11:01:22.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Google DeepMind 宣布 Robotics Accelerator 已启动，首批包括 15 家帮助塑造欧洲物理 AI 未来的初创公司。为期三个月的项目将提供 DeepMind AI 技术栈、Gemini Robotics 模型访问以及团队的实操支持。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Google DeepMind",
+          "机器人",
+          "物理AI",
+          "Gemini Robotics",
+          "创业加速器"
+        ]
+      }
+    },
+    "7f42ae0d5b44a6eff498ea81a98ccc7e1083952f200931431606d45ebfea3bb9": {
+      "title": "TCS与Anthropic拓展受监管行业",
+      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
+      "source": "Anthropic Blog",
+      "published_at": "2026-06-12T00:00:00.000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Anthropic与Tata Consultancy Services达成合作，TCS将向56个国家的5万名员工提供Claude，并为金融、医疗、公共部门等受监管行业构建Claude驱动产品。合作还包括加入Claude Partner Network、建设专门实践团队，以及围绕理赔、贷款顾问等场景扩展Claude Code技能和插件。",
+      "category": "商业动态",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "TCS",
+          "Claude",
+          "受监管行业"
+        ]
+      }
+    },
+    "cd917a380a793fd4bc1d8775718fd53227cc28dac8dbbfc8bbe94649f8bc2846": {
+      "title": "Karpathy称赞SpaceX发展故事",
+      "url": "https://x.com/karpathy/status/2065490793092337691",
+      "source": "Andrej Karpathy (Twitter)",
+      "published_at": "2026-06-12T17:45:54.000000Z",
+      "fetched_at": "2026-06-13T10:16:30+08:00",
+      "summary": "Andrej Karpathy 表达了对 SpaceX 过去、现在和未来发展故事的赞叹，并祝贺其团队。该内容没有直接涉及 AI 技术、产品或行业策略，更像个人观点与致意。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "Karpathy",
+          "SpaceX",
+          "个人观点"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-06-12T10:30:10.087925+08:00"
+  "last_fetch": "2026-06-13T10:16:30+08:00"
 }
