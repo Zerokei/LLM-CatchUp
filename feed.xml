@@ -27,46 +27,84 @@
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-14.md</guid>
       <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
       <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-14（fallback，自动回退版）</h1>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-14</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>模型访问收紧</strong>：Anthropic因美国指令暂停Claude Fable 5与Mythos 5访问，并切换相关回退路径。</li>
+<li><strong>代理沙箱下沉</strong>：Claude Managed Agents新增自托管沙箱指南，推动企业把代理执行环境纳入自控基础设施。</li>
+<li><strong>开发文档代理化</strong>：OpenAI开发者文档上线问答代理，可生成定制指南并衔接Codex工作流。</li>
+<li><strong>编码工具落地</strong>：Codex案例强调并行修改网站可压缩交付周期，显示代理式开发进入日常工程。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/AnthropicAI/status/2065597531644743999">美国指令暂停Claude Fable与Mythos访问</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>出口管制</code> <code>Claude Fable 5</code> <code>Mythos 5</code> <code>模型访问</code> <code>Claude Code</code> <code>Opus 4.8</code></li>
+</ul>
+<p><strong>摘要</strong>: 美国政府以国家安全授权发布出口管制指令，要求暂停外国国民访问Claude Fable 5和Mythos 5，Anthropic表示已开始执行访问变更。Claude Devs补充说明，Fable 5相关流量将回退到Claude Sonnet 4.8，Claude Code也会使用Sonnet 4.8作为兜底。受此影响，Claude Build Day活动仍会举行，但改为基于Opus 4.8构建。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2065647770468487600">Claude Build Day改用Opus 4.8</a> · Claude Devs (Twitter) · 活动模型调整</li>
+<li><a href="https://x.com/ClaudeDevs/status/2065597942602531163">Claude Fable 5因政府指令暂停</a> · Claude Devs (Twitter) · 产品回退细节</li>
+</ul>
+<hr>
+<h3>2. <a href="https://x.com/OpenAIDevs/status/2065507798268674366">OpenAI文档代理可生成定制指南</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>文档代理</code> <code>Codex</code> <code>定制指南</code> <code>开发者体验</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs表示新的开发者文档代理不只回答问题，还能根据用户描述的构建目标生成定制指南，包含提示词和相关资源。用户可在Codex中打开指南，或复制为Markdown用于队友、编辑器或其他工具。</p>
 <blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在启动新OpenAI集成前，先用文档代理生成项目专属指南，再转化为任务清单。</li>
+<li>把生成的Markdown指南纳入仓库文档或Issue，方便团队复用同一提示词和资源链接。</li>
+<li>对指南中的API参数和模型建议做人工复核，避免文档代理输出过时或不适用配置。</li>
+</ul>
 </blockquote>
 <hr>
-<h2>Andrej Karpathy (Twitter)</h2>
+<h3>3. <a href="https://x.com/OpenAIDevs/status/2065517012311593114">Codex并行改站点缩短交付周期</a></h3>
 <ul>
-<li><a href="https://x.com/karpathy/status/2065490793092337691">In awe of SpaceX and its story - past, present and the future. You can think about it in 10+ different ways and continue re-blowing your mind in circles. Huge congrats to the team! 🚀</a></li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>开发效率</code> <code>并行任务</code> <code>网站开发</code> <code>案例</code></li>
 </ul>
-<h2>Claude Devs (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI Devs分享案例称，Intelligence公司的开发者使用Codex并行更新网站多个部分，将原本一周的工作压缩到三天。该帖偏向产品案例，强调Codex在多任务代码修改中的效率收益。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2065647770468487600">Tomorrow’s Build Day event is still on, we&#39;re building on Opus 4.8 instead. Thank you, we can’t wait to build with you tomorrow!</a></li>
-<li><a href="https://x.com/ClaudeDevs/status/2065621176735646006">We&#39;ve reset 5-hour and weekly rate limits for all users.</a></li>
-<li>[As a result of a US government directive, we are suspending access to Claude Fable 5 for all users. You can continue to use all other Claude models.</li>
+<li>把网站改版任务拆成相互独立的小任务，让Codex并行处理并逐一审查差异。</li>
+<li>为高频页面修改建立清晰验收清单，便于代理产出后快速验证视觉和功能。</li>
 </ul>
-<p>Here’s what this means for you:</p>
-<p>Across Claude pro](<a href="https://x.com/ClaudeDevs/status/2065597942602531163">https://x.com/ClaudeDevs/status/2065597942602531163</a>)</p>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/ClaudeDevs/status/2065494482460836183">Claude沙箱文档指向自托管方案</a></h3>
 <ul>
-<li>[Claude Managed Agents can operate in a sandbox you control, on your own infrastructure or with any provider you choose.</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>文档</code> <code>自托管沙箱</code> <code>Managed Agents</code></li>
 </ul>
-<p>Today we added new guides for @blaxelAI, @e2b, @googlecloud, @namespacelabs, an](<a href="https://x.com/ClaudeDevs/status/2065494480837583297">https://x.com/ClaudeDevs/status/2065494480837583297</a>)</p>
+<p><strong>摘要</strong>: 该帖补充指向Claude Managed Agents文档，强调可通过多个服务商了解自托管代码沙箱。它是同一线程中对新增沙箱指南的延伸，价值主要在于给开发者提供入口链接。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Learn more about self-hosted code sandboxes with these and other providers in the Claude Managed Agents docs:</li>
+<li>阅读Managed Agents概览与具体提供商指南，确认所需权限、运行时和网络配置。</li>
+<li>在引入生产前，用非敏感仓库测试代理在沙箱中的代码执行、依赖安装和超时控制。</li>
 </ul>
-<p><a href="https://t.co/uBoxh3eoyk">https://t.co/uBoxh3eoyk</a> <a href="https://t.co/tpUfWt2TFo%5D(https://x.com/ClaudeDevs/status/2065494482460836183)">https://t.co/tpUfWt2TFo](https://x.com/ClaudeDevs/status/2065494482460836183)</a></p>
-<h2>Anthropic (Twitter)</h2>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li><a href="https://x.com/AnthropicAI/status/2065597531644743999">The US government, citing national security authorities, has issued an export control directive to suspend all access to Fable 5 and Mythos 5 by any foreign national, whether inside or outside the Uni</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>速率限制</code> <code>账户配额</code> <code>服务恢复</code> — Claude Devs表示已为所有用户重置5小时与每周速率限制。该更新属于服务运营层面的临时恢复措施，可能与同日模型访问变更或活动准备有关。 · <a href="https://x.com/ClaudeDevs/status/2065621176735646006">Claude Devs (Twitter)</a></li>
 </ul>
-<h2>OpenAI Devs (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2065517012311593114">Codex is how @ndrewpignanelli at @intelligenceco updates multiple parts of a website in parallel, turning a week of work into three days. https://t.co/PHNWK5eamT</a></li>
-<li>[And it doesn’t stop at answers.</li>
-</ul>
-<p>Describe what you’re building and the agent will create a custom guide with a tailored prompt and relevant resources.</p>
-<p>Open the guide in Codex or copy it as Markdown f](<a href="https://x.com/OpenAIDevs/status/2065507798268674366">https://x.com/OpenAIDevs/status/2065507798268674366</a>)</p>
-<ul>
-<li>[Ask our developer docs. They’ll show you the way</li>
-</ul>
-<p>The new docs agent on 🔗<a href="https://t.co/G1783HdxH4">https://t.co/G1783HdxH4</a> helps you find answers about OpenAI products and takes you directly to the relevant documentation. htt](<a href="https://x.com/OpenAIDevs/status/2065507724704858173">https://x.com/OpenAIDevs/status/2065507724704858173</a>)</p>
 ]]></description>
     </item>
     <item>
@@ -3728,23 +3766,23 @@
 <blockquote>
 <p><strong>实践建议</strong></p>
 <ul>
-<li>试用升级后的 AI 搜索框，体验多模态输入与建议式提问</li>
-<li>评估 Search 信息智能体的后台监控能力在信息追踪类需求中的应用</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>标签</strong>: <code>内容溯源</code> <code>C2PA</code> <code>SynthID</code> <code>AI 水印</code> <code>AI 透明度</code></li>
 </ul>
-</blockquote>
-<hr>
-<h3>13. <a href="https://blog.google/products-and-platforms/products/google-one/google-ai-subscriptions/">Google 订阅调整：新增 100 美元 AI Ultra 套餐，顶级套餐降至 200 美元</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google</code> <code>AI订阅</code> <code>AI Ultra</code> <code>定价</code> <code>Gemini</code></li>
-</ul>
-<p><strong>摘要</strong>: Google I/O 2026 公布 AI 订阅更新：推出面向开发者与技术人员的 100 美元/月 AI Ultra 套餐，含 Gemini 应用与 Antigravity 5 倍用量、20TB 存储与 YouTube Premium；同时将顶级 AI Ultra 套餐从 250 美元降至 200 美元。所有套餐获 Gemini Omni 与 Gemini 3.5 Flash 访问权，并引入「按算力计费」的用量模型，每 5 小时刷新一次额度。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>对比 100 美元与 200 美元 AI Ultra 套餐的用量额度与功能差异，按团队开发强度选择合适层级</li>
+<p><strong>摘要</strong>: OpenAI 推出多层级内容溯源方案以提升 AI 生成内容的可识别性。它已成为 C2PA 合规生成产品，使内容凭证可被其他平台读取并跨平台传递；同时与 Google 合作，为 ChatGPT、Codex 和 API 生成的图像加入 DeepMind 的不可见 SynthID 水印，弥补元数据易被剥离的缺陷——水印在截图等变换后仍能保留，与元数据互补。OpenAI 还预览了一款面向公众的验证工具，可检测上传图像是否由 OpenAI 工具生成，初期仅支持 OpenAI 内容，未来计划扩展至跨平台。</p>
+<li><a href="https://x.com/OpenAI/status/2056793648571011232">OpenAI 强化内容溯源：C2PA 认证 + SynthID 水印 + 公开验证工具</a> · OpenAI (Twitter) · 官方推特要点速览</li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>ChatGPT</code> <code>图像生成</code> <code>Images 2.0</code> <code>播客</code> — OpenAI 透露 ChatGPT 每周图像生成量已超过 15 亿张。在最新一期 OpenAI 播客中，研究员 kenjihata 与产品负责人 adele__li 探讨了自 Images 2.0 发布以来涌现的新用例与使用趋势。 OpenAI 提供了其官方播客在 Spotify、Apple Podcasts 和 YouTube 三个平台的收听链接。该推文为上一条 Images 2.0 播客介绍的补充自回复。 · <a href="https://x.com/OpenAI/status/2056849157860831239">OpenAI (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Cognition</code> <code>Devin</code> <code>Claude</code> <code>AI软件工程师</code> <code>Scott Wu</code> — Anthropic 在「The Problem Solvers」系列中介绍 Cognition 创始人 Scott Wu，其团队打造了基于 Claude 的 AI 软件工程师 Devin。Scott Wu 希望让每个工程团队的软件构建速度提升 10 倍。 Anthropic 宣布推出全新系列「The Problem Solvers」，专题报道那些借助 Claude 解决棘手问题的创始人。相关内容已发布于 claude.com/problem-solvers。 · <a href="https://x.com/claudeai/status/2056805728774402428">Claude (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Google</code> <code>Gemini</code> <code>黑客松</code> <code>XPRIZE</code> <code>开发者活动</code> — Google DeepMind 宣布举办「Build with Gemini」XPRIZE 黑客松，奖金池高达 200 万美元。开发者受邀使用 Gemini 工具构建解决全球重大挑战的实际应用，涵盖减少食物浪费、辅助科学研究等方向。 · <a href="https://x.com/GoogleDeepMind/status/2056794085680468294">Google DeepMind (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Antigravity</code> <code>Google DeepMind</code> <code>开发者工具</code> <code>AI 编程</code> — Google DeepMind 宣布扩展其 Antigravity 开发者生态系统，目标是帮助开发者把精力从繁琐的调试中解放出来，转而专注于架构与设计等真正重要的工作。该推文为相关公告线程的开端。 Google DeepMind 宣布为 Antigravity 推出三种全新交互方式：Antigravity 2.0 提供多智能体可同时协作于同一项目的「任务控制台」；CLI 提供终端界面用于与智能体协作；SDK 工具包让软件可自动接入并调用 Google 的 AI 智能体。 · <a href="https://x.com/GoogleDeepMind/status/2056790405937856791">Google DeepMind (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Andrej Karpathy</code> <code>Anthropic</code> <code>人事变动</code> <code>LLM 研发</code> — 知名 AI 研究者 Andrej Karpathy 发布个人动态，宣布已加入 Anthropic。他认为未来几年将是 LLM 前沿发展的关键塑形期，对加入团队、重回前沿研发工作感到非常兴奋，同时表示仍对教育充满热情并计划在适当时机继续相关工作。Anthropic 官方账号 Claude Devs 及公司员工随即发文表示欢迎。 · <a href="https://x.com/karpathy/status/2056753169888334312">Andrej Karpathy (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>usage credits</code> <code>用量积分</code> <code>命名调整</code> <code>Claude</code> <code>计费</code> — Claude 已在全平台将「extra usage」更名为「usage credits」。用户的支出限额、自动充值设置以及已购买的积分均原样保留，不受改名影响。 Claude 说明将「extra usage」更名为「usage credits」的原因：该机制最初仅指触及套餐上限后的付费，但如今用量积分的作用已扩展，可直接驱动如快速模式等功能。 · <a href="https://x.com/ClaudeDevs/status/2056543965672083966">Claude Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>KPMG</code> <code>Anthropic</code> <code>企业部署</code> <code>Claude</code> <code>私募股权</code> — 审计与咨询巨头 KPMG 宣布与 Anthropic 达成全球战略联盟，将 Claude 嵌入其客户工作平台 Digital Gateway，并向全球 27.6 万名员工全员开放。双方将共建面向私募股权组合公司的 Claude 产品，KPMG 成为 Anthropic 在 PE 领域的首选合作伙伴，并把 Claude Code、Cowork 与 Managed Agents 用于税务、法律与网络安全等场景。 · <a href="https://www.anthropic.com/news/anthropic-kpmg">Anthropic Blog</a></li>
+<li><strong>产品与功能</strong> | <code>OpenAI</code> <code>Codex</code> <code>远程连接</code> <code>文档</code> — OpenAI Devs 在推文串中给出 Codex 远程连接功能的官方文档链接（developers.openai.com/codex/remote-connections），配合此前介绍的在 Mac 上保持 Codex 运行、从手机端继续工作的能力。 · <a href="https://x.com/OpenAIDevs/status/2056442469114687858">OpenAI Devs (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Claude</code> <code>提示缓存</code> <code>Console</code> <code>诊断</code> — Anthropic 在推文串中给出 Claude 提示缓存诊断功能的入口与文档链接：可在 Claude Console（platform.claude.com/usage/cache）查看，并通过 cache-diagnostics 文档了解更多用法。 · <a href="https://x.com/ClaudeDevs/status/2056434423982444801">Claude Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>Anthropic</code> <code>收购</code> <code>Stainless</code> <code>SDK</code> <code>MCP</code> — Anthropic 宣布收购 Stainless——一家专注 SDK 与 MCP 服务器工具的公司，自 API 早期起便驱动每一代官方 Anthropic SDK 的生成。Stainless 能把 API 规范转换为 TypeScript、Python、Go、Java 等多语言的原生级 SDK、CLI 与 MCP 服务器，此次收购旨在增强 Claude 平台连接数据与工具的能力、推进 Agent 连接性。 · <a href="https://x.com/AnthropicAI/status/2056419620643541012">Anthropic (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>提示词</code> <code>Claude</code> <code>规格实现</code> <code>实现笔记</code> <code>工作流</code> — Thariq 在 Claude 协助下重写了一条走红的提示词模板，要求 Agent 在实现规格的过程中持续维护一个 implementation-notes.html 文件。该笔记需记录设计决策（规格模糊时的取舍）、有意偏离规格之处及原因、考虑过的替代方案与权衡，以及希望人类确认或修订的开放问题。 · <a href="https://x.com/trq212/status/2056418157305454805">Thariq (Twitter)</a></li>
 <li>了解新的「按算力计费」用量模型，规划复杂编码/视频提示的额度消耗</li>
 </ul>
 </blockquote>
