@@ -72,6 +72,12 @@ sources:
     url: "https://www.anthropic.com/research"
     role: primary
 
+  - name: "ByteDance Seed"
+    type: web_scraper
+    url: "https://seed.bytedance.com/en/blog"
+    role: primary
+    max_silence_hours: 2160
+
   # Twitter sources are fetched via socialdata.tools REST API. The `url`
   # field below points to the human-readable X.com profile; each route
   # module under scripts/routes/twitter-*.js hardcodes both the screen-name
@@ -181,3 +187,15 @@ sources:
     url: "https://x.com/Alibaba_Qwen"
     role: primary
     max_silence_hours: 336
+
+  - name: "Z.ai (Twitter)"
+    type: rss
+    url: "https://x.com/Zai_org"
+    role: primary
+    max_silence_hours: 168
+
+  - name: "Kimi (Twitter)"
+    type: rss
+    url: "https://x.com/Kimi_Moonshot"
+    role: primary
+    max_silence_hours: 168

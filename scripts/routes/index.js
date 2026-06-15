@@ -6,6 +6,7 @@ module.exports = [
   require('./berkeley-rdi'),
   require('./the-batch'),
   require('./baoyu'),
+  require('./bytedance-seed'),
   require('./twitter-sama'),
   require('./twitter-dario-amodei'),
   require('./twitter-demis-hassabis'),
@@ -22,4 +23,6 @@ module.exports = [
   require('./twitter-xai'),
   require('./twitter-deepseek'),
   require('./twitter-qwen'),
+  require('./twitter-zai'),
+  require('./twitter-kimi'),
 ];

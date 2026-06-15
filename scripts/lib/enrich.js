@@ -16,7 +16,7 @@ async function jinaFetch(url, { fetchImpl } = {}) {
 
 const BLOG_ENRICH_SOURCES = new Set([
   'OpenAI Blog', 'Google AI Blog', 'Anthropic Blog', 'Anthropic Research', 'The Batch',
-  '宝玉的分享',
+  '宝玉的分享', 'ByteDance Seed',
 ]);
 
 const PRIMARY_BLOG_URL_PATTERNS = [
@@ -25,6 +25,8 @@ const PRIMARY_BLOG_URL_PATTERNS = [
   /^https?:\/\/blog\.google\//,
   /^https?:\/\/(www\.)?deepmind\.google\//,
   /^https?:\/\/(www\.)?deeplearning\.ai\/the-batch\//,
+  /^https?:\/\/(www\.)?(kimi\.(ai|com)|moonshot\.ai)\//,
+  /^https?:\/\/seed\.bytedance\.com\//,
 ];
 
 function isPrimaryBlogUrl(url) {
