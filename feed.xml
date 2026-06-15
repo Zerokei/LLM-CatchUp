@@ -108,6 +108,117 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 周报 2026-W24</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W24.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W24.md</guid>
+      <pubDate>Sun, 14 Jun 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W24 (06/08 - 06/14)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>前沿模型放量</strong>：Anthropic以Claude Fable 5开放Mythos级能力，Google则用DiffusionGemma探索文本扩散生成。</li>
+<li><strong>安全回退显性化</strong>：Claude把高风险请求回退到Opus 4.8并公开拒答原因，随后又遇到美国出口管制访问暂停。</li>
+<li><strong>代理工程化提速</strong>：Claude Code、Managed Agents与OpenAI Codex都在补齐沙箱、凭证、定时任务和云执行环境。</li>
+<li><strong>开发生态平台化</strong>：Claude连接器仪表盘、Grok Build插件市场与OpenAI文档代理都把工具链接入作为产品重点。</li>
+<li><strong>治理议题升温</strong>：OpenAI披露影响力行动，Anthropic提出前沿模型第三方测试和就业冲击政策包。</li>
+<li><strong>企业采用深化</strong>：BBVA、LSEG、DXC和Nextdoor案例显示，AI部署正从个人提效进入组织流程与核心系统。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://www.anthropic.com/news/claude-fable-5-mythos-5">Claude Fable 5全面开放：Mythos级能力加安全回退</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/09</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>Claude Mythos 5</code> <code>安全回退</code> <code>Claude Code</code> <code>长程Agent</code> <code>网络安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic把原本受限的Mythos级能力包装为Claude Fable 5向普通用户开放，同时保留Mythos 5给可信网络安全与生物医学场景。发布重点不只是基准提升，还包括高风险请求回退、SDK中间件与Claude Code工作流变化，说明前沿能力开放正在和安全分层绑定。</p>
+<h3>2. <a href="https://x.com/claudeai/status/2064394146916229443">Claude Fable 5作为安全版Mythos发布</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/10</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>Mythos级模型</code> <code>模型发布</code> <code>安全开放</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude官方将Fable 5定位为经过通用安全化处理的Mythos级模型，能力超过此前所有普遍可用的Claude模型。它强化了本周主线：模型公司开始把最强能力拆成公开版、可信访问版和安全回退路径。</p>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2064428347678220691">Claude Fable 5正式开放</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/10</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>Mythos</code> <code>模型发布</code> <code>安全分类器</code> <code>Opus 4.8</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs强调Fable 5是首个普遍可用的Mythos级模型，并配备新的安全分类器。对开发者而言，关键影响是网络、生物等双用途请求可能不再直接失败，而是被引导到Opus 4.8等回退路径。</p>
+<h3>4. <a href="https://x.com/ClaudeDevs/status/2064394919549210774">Claude Fable 5面向开发者开放</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/10</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>模型发布</code> <code>Claude Code</code> <code>开发者平台</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs把Fable 5称为新一代模型和新的工作方式，尤其强调它与Claude Code、开发者平台的结合。该条和官方博客共同表明，模型发布已经不再是孤立API更新，而是围绕编码代理、工具调用和开发者体验整体推出。</p>
+<h3>5. <a href="https://x.com/AnthropicAI/status/2065597531644743999">美国指令暂停Claude Fable与Mythos访问</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/13</li>
+<li><strong>标签</strong>: <code>出口管制</code> <code>Claude Fable 5</code> <code>Mythos 5</code> <code>模型访问</code> <code>Claude Code</code> <code>Opus 4.8</code></li>
+</ul>
+<p><strong>摘要</strong>: 美国政府以国家安全授权要求暂停外国国民访问Claude Fable 5和Mythos 5，Anthropic表示已开始执行变更。它让本周Fable 5发布迅速转入治理语境：最强模型的地域、身份和用途限制可能成为常态化产品条件。</p>
+<h3>6. <a href="https://x.com/AnthropicAI/status/2064054837294354677">Anthropic称生物智能体瓶颈在数据基础设施</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/09</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>科学智能体</code> <code>生物数据库</code> <code>确定性工具</code> <code>VirBench</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic研究认为，生物智能体落后于编程智能体的关键不只是模型推理，而是缺少稳定、可机器执行的数据检索层。引入gget virus等确定性工具后，智能体在VirBench上的准确率和稳定性改善，提示科学AI需要先补数据基础设施。</p>
+<h3>7. <a href="https://x.com/ClaudeDevs/status/2064072803721339014">Claude连接器仪表盘暴露用量与故障指标</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/09</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Claude Code</code> <code>连接器</code> <code>开发者工具</code> <code>监控</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude连接器观测仪表盘让开发者查看活跃用户、工具调用、目录排名、错误率和延迟，还能按Claude、Claude Code和Cowork区分使用情况。这把连接器生态从“能接入”推进到“能运营”，对MCP工具开发者很实用。</p>
+<h3>8. <a href="https://x.com/ClaudeDevs/status/2064072801062121906">Claude连接器新增观测仪表盘与提交通道</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/09</li>
+<li><strong>标签</strong>: <code>Claude连接器</code> <code>MCP</code> <code>观测性</code> <code>开发者平台</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude新增应用内提交通道，帮助开发者把基于MCP的工具和数据源提交进Claude生态。结合观测仪表盘，这说明Claude正在把第三方连接器从实验接口升级为可分发、可监控、可迭代的开发者平台。</p>
+<h3>9. <a href="https://x.com/GoogleDeepMind/status/2064366504745828689">Gemini 3.5 Live Translate支持70多种语言实时翻译</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/09</li>
+<li><strong>标签</strong>: <code>Gemini 3.5</code> <code>实时翻译</code> <code>语音模型</code> <code>Google AI Studio</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind发布Gemini 3.5 Live Translate音频模型，支持70多种语言的流式语音翻译，并尽量保留语气、语速和音高。该能力已进入Google Translate并通过AI Studio API预览开放，显示实时多语音频能力开始面向应用层落地。</p>
+<h3>10. <a href="https://x.com/ClaudeDevs/status/2064414264807616883">Claude Code需升级以访问Fable 5</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/10</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Fable 5</code> <code>CLI</code> <code>桌面应用</code> <code>版本升级</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs提示开发者通过<code>/model claude-fable-5</code>切换模型，并升级Claude Code CLI或桌面端以获得Fable 5访问。它是一个小更新，但对实际采用很关键：前沿模型发布后的第一步往往是工具链版本、模型路由和团队默认配置同步。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周模型发布由Claude Fable 5主导，Anthropic把Mythos级能力推向更广用户，同时用可信访问和回退机制给高风险领域设边界。Google DeepMind则在两个方向补充：Gemini 3.5 Live Translate把多语实时音频翻译推向应用，DiffusionGemma用文本扩散尝试更快、更可修正的开放生成模式。整体看，模型能力提升正和产品入口、安全分类、成本路由一起发布。模型厂商不再只讲“更强”，而是讲“谁能用、何时回退、如何接入”。</p>
+<h3>研究</h3>
+<p>研究线索集中在AI系统进入真实复杂环境后的基础设施问题。Anthropic关于生物智能体的研究指出，科学代理要可靠工作，需要确定性工具和可机器执行的数据层，而不是只依赖更强推理。Google DeepMind在教育、足球战术和多智能体基金上的动作，则展示AI研究从单模型能力转向学习行为、空间决策和群体互动。值得注意的是，多智能体生态的风险研究已开始被提前资助，说明“许多代理同时运行”正在成为新研究对象。</p>
+<h3>产品与功能</h3>
+<p>产品更新几乎都围绕代理工程化和开发者平台展开。Claude连接器仪表盘、提交通道、Managed Agents定时部署、vault环境变量、dynamic workflows和Apple Foundation Models支持，构成一套从接入、观测到自动运行的工程闭环。OpenAI Codex则补上速率重置、浏览器调试和文档代理等开发体验细节，xAI的Grok Build插件市场也把数据库、部署和监控工具拉入代理环境。本周的共同方向是：代理要真正进入生产，就必须拥有凭证、沙箱、监控、调度和外部工具链。</p>
+<h3>商业动态</h3>
+<p>商业动态显示企业AI正在从试点扩展到组织级部署。OpenAI计划收购Ona，是为了强化Codex在客户控制基础设施中的持久云执行能力；BBVA、LSEG和Nextdoor案例则分别展示银行、金融数据和社区产品工程中的规模化使用。Anthropic与DXC的联盟把Claude带入银行、航空、保险、制造和政府等受监管行业，也说明企业服务商正在把前沿模型封装进托管服务与系统现代化项目。商业竞争焦点因此从模型API转向安全执行环境、采购路径、行业交付和认证人才。</p>
+<h3>政策与安全</h3>
+<p>政策与安全是本周最剧烈的副线。OpenAI披露疑似涉华影响力行动，显示生成式AI正在被用于围绕数据中心、电价、关税和科技竞争制造叙事攻击。Anthropic方面，Dario Amodei提出前沿AI强制第三方测试、灾难性风险模型部署阻止权和就业冲击政策框架；而美国随后要求暂停外国国民访问Fable与Mythos，更让前沿模型访问控制变成现实问题。透明度、测试、出口管制和模型回退正在合并成同一个治理议题。</p>
+<h3>教程与观点</h3>
+<p>教程与观点类文章主要回答“更强模型如何改变工作流”。OpenAI的Nextdoor与Notion案例强调，团队应从反复提示代理转向先定义目标、设计工具描述、评估真实任务，再让中心推理模型协调子代理。Karpathy和Thariq围绕Fable 5的观察，则把这种变化说得更直接：开发者的工作重心从检查模型有没有做完，转向判断它是否在做正确的事。OpenAI Academy的新课程和Codex科学计算案例也说明，AI素养、可验证研究和代理工作流正在成为组织培训内容。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Claude Fable 5 / Claude Code</strong> — 升级Claude Code CLI到最新版本，在一个非生产仓库运行<code>/model claude-fable-5</code>，用它完成一次多文件重构并重点检查任务分解是否正确。</li>
+<li><strong>Claude拒答回退机制</strong> — 阅读拒答处理文档，在测试项目中接入SDK中间件，模拟高风险或误报请求，确认应用能优雅回退到Opus 4.8而不是中断流程。</li>
+<li><strong>Claude连接器观测仪表盘</strong> — 如果已有MCP连接器，查看活跃用户、工具调用、错误率和延迟；如果没有，先选一个内部数据源做最小连接器并通过新提交通道验证流程。</li>
+<li><strong>Claude Managed Agents</strong> — 用定时部署创建一个每周运行的小代理，例如自动检查依赖更新或生成项目状态摘要，并用环境变量凭证连接外部CLI或API。</li>
+<li><strong>Gemini 3.5 Live Translate</strong> — 在Google Translate或AI Studio API预览中测试一段跨语言语音流，重点观察语气、节奏和专有名词保留效果。</li>
+<li><strong>Grok Build插件市场</strong> — 选择MongoDB、Vercel或Sentry插件做一次端到端实验：从数据探索、应用生成到部署或错误定位，评估插件链路是否减少上下文切换。</li>
+<li><strong>OpenAI Codex浏览器调试</strong> — 在一个前端Bug上尝试Codex的浏览器调试/CDP工作流，让代理复现页面问题并提交修复，再人工审查补丁。</li>
+<li><strong>OpenAI文档代理</strong> — 用开发目标生成一份定制指南，复制为Markdown给团队评审，检查它是否能替代手写接入说明的第一版。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-fable-5-mythos-5">Claude Fable 5全面开放：Mythos级能力加安全回退</a> — 这是理解本周模型能力、安全回退和Claude Code工作流变化的核心文章。</li>
+<li><a href="https://x.com/AnthropicAI/status/2064054837294354677">Anthropic称生物智能体瓶颈在数据基础设施</a> — 它把科学智能体失败原因从“模型不够聪明”转向“数据与工具不可执行”，很有启发性。</li>
+<li><a href="https://x.com/AnthropicAI/status/2064825862677512237">Anthropic提出前沿AI治理加速方案</a> — 这组政策主张把第三方测试、就业冲击和社会扩散放在同一个前沿AI治理框架里。</li>
+<li><a href="https://openai.com/index/openai-to-acquire-ona">OpenAI收购Ona强化Codex云环境</a> — 这篇能帮助判断Codex未来为何需要持久、可复现、可审计的云执行环境。</li>
+<li><a href="https://openai.com/index/notion-gpt-5">Notion用GPT-5重构自主AI工作流</a> — 它提供了生产级代理系统从提示链走向中心推理模型与子代理编排的具体案例。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-06-13</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-13.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-13.md</guid>
@@ -3524,296 +3635,6 @@
 <li><strong>商业动态</strong> | <code>OpenAI</code> <code>新加坡</code> <code>国家合作</code> <code>AI 部署</code> — OpenAI 推出「OpenAI for Singapore」，与新加坡展开一项多年期 AI 合作。计划将扩大 AI 部署、培养本地人才，并以 AI 支持当地企业与公共服务。 · <a href="https://openai.com/index/introducing-openai-for-singapore">OpenAI Blog</a></li>
 <li><strong>商业动态</strong> | <code>OpenAI</code> <code>算力</code> <code>Guaranteed Capacity</code> <code>token 折扣</code> — Sam Altman 介绍 OpenAI 新推出的 Guaranteed Capacity 服务，客户可通过 1-3 年承诺锁定长期算力访问并获得折扣 token。他指出随着模型变强，世界将在一段时间内处于算力受限状态，客户日益要求产能确定性，该方案也有助于 OpenAI 自身的产能规划，是双赢之举。 · <a href="https://x.com/sama/status/2056827105401614656">Sam Altman (Twitter)</a></li>
 <li><strong>教程与观点</strong> | <code>Claude</code> <code>The Problem Solvers</code> <code>创业者</code> <code>案例系列</code> — Claude 官方推出名为「The Problem Solvers」的新系列，专题呈现借助 Claude 攻克难题的创业者群体。该推文为系列发布线程的延续，附有专题页面链接。 · <a href="https://x.com/claudeai/status/2056805730359931007">Claude (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-05-20</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-20.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-20.md</guid>
-      <pubDate>Wed, 20 May 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-20</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Google I/O 全面押注智能体</strong>：I/O 2026 一口气发布世界模型 Gemini Omni 与主打「智能 + 行动」的 Gemini 3.5 Flash，并把智能体能力铺进 Search、Workspace 与 Antigravity 平台。</li>
-<li><strong>企业级 Agent 基础设施成军</strong>：Anthropic 为 Claude Managed Agents 加入自托管沙箱与 MCP 隧道，让 Agent 能在企业自有安全边界内运行并安全访问内网服务。</li>
-<li><strong>算力确定性被明码标价</strong>：OpenAI 推出 Guaranteed Capacity 让客户以 1-3 年承诺锁定算力，与 Google 千亿美元级资本支出共同凸显算力长期紧张。</li>
-<li><strong>AI 内容溯源走向跨平台</strong>：OpenAI 通过 C2PA 认证、联合 Google 嵌入 SynthID 水印并预览公开验证工具，推动生成内容的可识别与可验证。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5 Flash 发布：前沿智能 + 行动力，速度达同级 4 倍</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Gemini 3.5 Flash</code> <code>Gemini 3.5</code> <code>编码模型</code> <code>智能体</code> <code>Terminal-Bench</code> <code>Gemini API</code> <code>Antigravity</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 在 I/O 2026 发布 Gemini 3.5 系列首款模型 3.5 Flash，主打前沿智能与现实行动能力的结合，被称为其迄今最强的 agent 与编码模型。它在 Terminal-Bench 2.1（76.2%）、GDPval-AA（1656 Elo）、MCP Atlas（83.6%）、CharXiv Reasoning（84.2%）等编码与智能体基准上超越 Gemini 3.1 Pro，输出速度达其他前沿模型的 4 倍、成本常不足一半。模型已全量上线 Gemini App、Search AI Mode、Antigravity 及 Google AI Studio 的 Gemini API。官方还演示了 3.5 Flash 在 Antigravity 中部署多个子代理协作完成复杂构建，并预告更高规格的 Gemini 3.5 Pro 将于下月发布。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2056826903957504136">Gemini 3.5 Flash 接入 Antigravity，多子代理协作建造整座城市</a> · Google DeepMind (Twitter) · Antigravity 多子代理实测</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2056794514564751490">Google 预告 Gemini 3.5 Pro 将于下月发布</a> · Google DeepMind (Twitter) · 3.5 Pro 下月发布预告</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2056787992363372606">Gemini 3.5 Flash 全量上线 Gemini App 与 Search AI Mode</a> · Google DeepMind (Twitter) · 全量上线 App 与 Search</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2056787987774816525">Gemini 3.5 发布：首发 3.5 Flash，主打 agent 与编码</a> · Google DeepMind (Twitter) · 模型家族官方发布</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Google AI Studio 通过 Gemini API 接入 3.5 Flash，评估其长程编码与智能体工作流表现</li>
-<li>针对成本/延迟敏感场景，对比 3.5 Flash 与现有前沿模型的性价比并考虑混合调度</li>
-<li>在 Antigravity 中试用 3.5 Flash 的多子代理模式处理复杂构建任务</li>
-<li>为深度推理需求预留下月发布的 Gemini 3.5 Pro 的迁移评估</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/GoogleDeepMind/status/2056786446636212467">Google 发布 Gemini Omni：从任意输入生成任意内容的世界模型</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Gemini Omni</code> <code>Omni Flash</code> <code>世界模型</code> <code>视频生成</code> <code>多模态</code> <code>视频编辑</code> <code>Google Flow</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 在 I/O 2026 推出 Gemini Omni，称其为迈向「从任意输入生成任意内容」模型的第一步，首先聚焦视频。它将 Gemini 的智能与 Google 的生成式媒体系统结合，在世界理解、多模态及编辑能力上实现飞跃——可接收照片、视频、音频并构建全新场景，用户还能用自然语言重新构想自己拍摄视频中的动作与环境。家族首款模型 Omni Flash 已在 Gemini App、Flow 与 YouTube Shorts 开放体验，未来几周还将通过 API 开放；Google Flow 同步接入 Omni，带来批量编辑与更强的角色一致性。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/demishassabis/status/2056831486251380783">Google 发布 Gemini Omni：多模态世界理解与场景编辑大跃进</a> · Demis Hassabis (Twitter) · Hassabis 解读多模态飞跃</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2056786454517317733">Gemini Omni 可重新构想你拍摄视频中的动作与环境</a> · Google DeepMind (Twitter) · 视频动作重构演示</li>
-<li><a href="https://x.com/GoogleDeepMind/status/2056804306653794336">Google Flow 接入 Gemini Omni：支持批量编辑与更强角色一致性</a> · Google DeepMind (Twitter) · Flow 集成与批量编辑</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Gemini App 或 Flow 中试用 Omni Flash 的视频生成与编辑能力</li>
-<li>用 Omni 的视频改写功能探索内容创作与原型设计场景</li>
-<li>等待 Omni API 开放后规划多模态内容生成的集成方案</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/ClaudeDevs/status/2056835339193561170">Anthropic 发布 Claude 计算机/浏览器操作生产实践指南</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>Computer Use</code> <code>浏览器操作</code> <code>Agent</code> <code>Anthropic</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发布新博客，介绍如何让 Claude 的 Computer Use 在生产环境中可靠运行。内容涵盖提升点击准确率、选择合适的「thinking effort」级别、控制长会话不超出上下文窗口，以及录制可供 Claude 回放的演示操作。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在生产部署 Computer Use 时按任务难度分级设置 thinking effort，避免简单任务过度推理</li>
-<li>对长会话主动做上下文压缩或分段，防止超出上下文窗口导致失效</li>
-<li>录制关键操作演示供 Claude 回放，以提升重复性 UI 任务的点击准确率</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://x.com/GoogleDeepMind/status/2056808869242826957">Google DeepMind 发布 Gemini for Science：AI 加速科研工具套件</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Gemini for Science</code> <code>Co-Scientist</code> <code>AlphaEvolve</code> <code>科学研究</code> <code>多智能体</code> <code>假设生成</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 推出 Gemini for Science，一套面向科研的实验性工具，旨在帮助科学家更快取得突破——探索更多假设、大规模验证工作、轻松梳理文献。其中「假设生成」系统基于 Co-Scientist，以多智能体「点子锦标赛」机制对研究思路进行生成、辩论与评估；「计算式发现」原型则基于 AlphaEvolve，可并行开发并评分数千个代码变体，在远短于以往的时间内为流行病学等复杂领域测试新的建模方法。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2056808885709602855">Gemini for Science 之「假设生成」：Co-Scientist 多智能体「点子锦标赛」</a> · Google DeepMind (Twitter) · 假设生成与计算式发现子系统</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>科研人员可尝试用 Gemini for Science 加速假设探索与文献综述</li>
-<li>评估将大规模实验验证环节交由 AI 智能体处理以提升研究吞吐量</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://blog.google/innovation-and-ai/technology/developers-tools/google-io-2026-collection/">Google I/O 2026：智能体时代全面开启，两款新模型领衔</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Google I/O 2026</code> <code>Gemini Omni</code> <code>Gemini 3.5 Flash</code> <code>Antigravity</code> <code>AI 智能体</code> <code>TPU</code></li>
-</ul>
-<p><strong>摘要</strong>: Google I/O 2026 以「智能体 Gemini 时代」为主题集中发布数十项更新。核心是两款新模型——可从任意输入生成任意内容的世界模型 Gemini Omni，以及结合前沿智能与行动力、速度达同级 4 倍的 Gemini 3.5 Flash。Google 升级了智能体优先开发平台 Antigravity 2.0，并把智能体能力铺进 Search（信息智能体、生成式 UI）、Gemini App（Gemini Spark、Daily Brief）与购物（Universal Cart）。Pichai 在主题演讲中透露 Google 月处理 token 已达 3.2 千万亿、13 款产品月活过十亿，今年资本支出预计 1800–1900 亿美元，并发布第八代 TPU 8t/8i。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://blog.google/innovation-and-ai/sundar-pichai-io-2026/">Pichai I/O 2026 主题演讲：Gemini 智能体时代全面开启</a> · Google AI Blog · Pichai 主题演讲：TPU 与资本支出</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>浏览 I/O 2026 合集，梳理与自身业务相关的智能体能力并排定落地优先级</li>
-<li>评估将部分工作负载迁移到 Gemini 3.5 Flash 以降低 token 成本</li>
-<li>关注 Antigravity 2.0 的多智能体编排能力用于加速开发流程</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://x.com/claudeai/status/2056645485696315581">Claude Managed Agents 上线自托管沙箱与 MCP 隧道</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>自托管沙箱</code> <code>MCP 隧道</code> <code>企业部署</code> <code>MCP</code> <code>上下文管理</code></li>
-</ul>
-<p><strong>摘要</strong>: 在「Code with Claude London」活动现场，Anthropic 为 Claude Managed Agents 发布两项安全能力：自托管沙箱（公开测试版）让 Agent 的执行环境运行在用户自有基础设施或托管沙箱提供商处，用户可在自有安全边界内运行 Agent 并默认套用自有安全策略；MCP 隧道（研究预览）则允许 Agent 访问私有网络内部的 MCP 服务器，而无需将其暴露到公网。此外 Managed Agents 还新增多项通用改进：可在不重启会话的情况下热替换工具、MCP 服务器或 vault ID，超过 10 万 token 的大型 MCP 工具输出会自动卸载到 Sandbox 文件以避免占满上下文。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/ClaudeDevs/status/2056740350690316738">Claude Managed Agents 通用改进：会话内热插工具与 MCP 大输出自动卸载</a> · Claude Devs (Twitter) · 工具热插拔等通用改进</li>
-<li><a href="https://x.com/claudeai/status/2056645491207655584">MCP 隧道：Agent 无需暴露公网即可访问私有网络内的 MCP 服务器</a> · Claude (Twitter) · MCP 隧道能力详解</li>
-<li><a href="https://x.com/ClaudeDevs/status/2056740346529468717">Claude Managed Agents 新增两项安全能力：自托管沙箱与 MCP 隧道</a> · Claude Devs (Twitter) · London 现场安全能力发布</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>对数据驻留/合规要求高的团队，用自托管沙箱在自有安全边界内运行 Agent</li>
-<li>通过 MCP 隧道让 Agent 安全访问内网服务，无需将服务暴露公网</li>
-<li>长会话中需切换工具或 MCP 配置时直接热替换，无需中断重启会话</li>
-<li>对会产生超大输出的 MCP 工具，依赖自动卸载到 Sandbox 文件控制上下文占用</li>
-</ul>
-</blockquote>
-<hr>
-<h3>7. <a href="https://x.com/ClaudeDevs/status/2056454360780222615">Claude Code 快速模式：质量不变、速度约 2.5 倍、按更高费率计费</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Fast 模式</code> <code>响应速度</code> <code>计费</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 进一步说明 Claude Code 的 Fast 模式：它提供与 Opus 完全相同的质量，但响应速度约为常规模式的 2.5 倍，按更高的每 token 费率计费。建议在延迟比成本更重要的场景使用，如快速迭代、实时调试和时间敏感的工作。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>权衡延迟与成本：对时间敏感的任务用 Fast 模式，对成本敏感的批量任务用常规模式</li>
-<li>查阅 code.claude.com/docs/en/fast-mode 了解 Fast 模式的计费细节后再大规模启用</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://x.com/trq212/status/2056843158965858380">Claude 博客发布《用 Claude Code 体会 HTML 的惊人效力》</a></h3>
-<ul>
-<li><strong>来源</strong>: Thariq (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>HTML</code> <code>Anthropic</code> <code>开发实践</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 的 Thariq 提示其关于 Claude Code 的文章现已同步发布到 Claude 官方博客。文章标题为《Using Claude Code: the unreasonable effectiveness of HTML》，探讨了用 Claude Code 生成 HTML 的实践效果。</p>
-<hr>
-<h3>9. <a href="https://x.com/xai/status/2056826183745253663">xAI 推出 openclaw：Grok / X Premium 订阅可直接调用 AI 智能体</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>xAI</code> <code>Grok</code> <code>openclaw</code> <code>AI智能体</code> <code>X Premium</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI 宣布即日起 Grok 与 X Premium 订阅用户可在 openclaw 中使用其订阅权益。用户可与自己的 AI 智能体对话、生成图像和视频，并检索 X 平台上的帖子。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>持有 Grok 或 X Premium 订阅的用户可登录 openclaw 体验智能体对话与多模态生成</li>
-<li>对比 openclaw 的图像/视频生成质量与现有工具，评估是否纳入内容创作流程</li>
-</ul>
-</blockquote>
-<hr>
-<h3>10. <a href="https://x.com/OpenAI/status/2056823271774101907">OpenAI 推出 Guaranteed Capacity：客户可锁定长期算力供应</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>Guaranteed Capacity</code> <code>算力</code> <code>代币定价</code> <code>企业服务</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发布新产品 Guaranteed Capacity，让客户为关键工作负载锁定对 OpenAI 算力的长期访问权。Sam Altman 解读称，客户日益要求算力确定性，而 OpenAI 预计世界将长期处于算力受限状态——该项目让客户以 1-3 年承诺换取折扣代币，同时帮助 OpenAI 做产能规划，是双赢安排。当前额度售完即止，未来会再次开放，OpenAI 也承诺为 ChatGPT、Codex 等保留足够算力并继续尽快扩建基础设施。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2056834734915977382">Sam Altman：保障算力额度售完即止，未来将再次开放</a> · Sam Altman (Twitter) · Altman 补充：当前额度售完即止</li>
-<li><a href="https://x.com/sama/status/2056827105401614656">OpenAI 推出保障算力：1-3 年承诺可享折扣代币</a> · Sam Altman (Twitter) · Altman 解读：算力受限下的双赢</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>有大规模、关键性推理负载的企业可评估申请 Guaranteed Capacity 锁定算力</li>
-<li>结合业务峰值需求测算长期算力预留量，规避算力受限导致的服务中断</li>
-</ul>
-</blockquote>
-<hr>
-<h3>11. <a href="https://blog.google/products-and-platforms/products/workspace/workspace-updates/">Google Workspace 更新：Gmail/Docs/Keep 语音功能与图像工具 Google Pics</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google Workspace</code> <code>语音AI</code> <code>Google Pics</code> <code>AI Inbox</code> <code>Nano Banana</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 为 Workspace 带来多项 AI 更新：Gmail、Docs、Keep 新增对话式语音能力（Gmail Live 语音搜邮件、Docs Live 语音起草、Keep 语音转笔记）；推出基于 Nano Banana 模型的全新图像创作与编辑工具「Google Pics」，支持对象分割、文字编辑翻译等精确控制；AI Inbox 扩展至 AI Plus 与 Pro 订阅者并新增草稿回复等功能；并预告 24/7 个人 AI 智能体 Gemini Spark。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>AI Plus/Pro 订阅者可启用 Gmail AI Inbox 的草稿回复与任务管理功能，提升邮件处理效率</li>
-<li>关注 Google Pics 的对象分割与文字翻译能力，待夏季全量开放后在 Slides/Drive 图像编辑中试用</li>
-</ul>
-</blockquote>
-<hr>
-<h3>12. <a href="https://blog.google/products-and-platforms/products/search/search-io-2026/">Google Search 进入智能体时代：信息智能体 + 生成式 UI</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google Search</code> <code>AI Mode</code> <code>信息智能体</code> <code>生成式 UI</code> <code>Gemini 3.5 Flash</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 宣布 Search 迎来 25 年来最大升级，以 Gemini 3.5 Flash 作为 AI Mode 全球默认模型，并推出支持文本、图像、文件、视频及 Chrome 标签页的多模态智能搜索框。新增 24/7 后台运行的「信息智能体」持续监控用户关心的话题，并借助 Antigravity 的编码能力即时生成定制化 UI、可视化工具乃至持久化迷你应用。AI Mode 推出一周年的使用数据显示，美国用户正从传统关键词查询明显转向更自然、更口语化的长问题提问；个人智能已扩展至近 200 个国家、98 种语言。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://blog.google/products-and-platforms/products/search/ai-mode-us-insights/">Google 公布 AI Mode 一周年数据：用户从关键词转向自然语言提问</a> · Google AI Blog · AI Mode 一周年使用数据</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>标签</strong>: <code>内容溯源</code> <code>C2PA</code> <code>SynthID</code> <code>AI 水印</code> <code>AI 透明度</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 推出多层级内容溯源方案以提升 AI 生成内容的可识别性。它已成为 C2PA 合规生成产品，使内容凭证可被其他平台读取并跨平台传递；同时与 Google 合作，为 ChatGPT、Codex 和 API 生成的图像加入 DeepMind 的不可见 SynthID 水印，弥补元数据易被剥离的缺陷——水印在截图等变换后仍能保留，与元数据互补。OpenAI 还预览了一款面向公众的验证工具，可检测上传图像是否由 OpenAI 工具生成，初期仅支持 OpenAI 内容，未来计划扩展至跨平台。</p>
-<li><a href="https://x.com/OpenAI/status/2056793648571011232">OpenAI 强化内容溯源：C2PA 认证 + SynthID 水印 + 公开验证工具</a> · OpenAI (Twitter) · 官方推特要点速览</li>
-<li><strong>商业动态</strong> | <code>OpenAI</code> <code>ChatGPT</code> <code>图像生成</code> <code>Images 2.0</code> <code>播客</code> — OpenAI 透露 ChatGPT 每周图像生成量已超过 15 亿张。在最新一期 OpenAI 播客中，研究员 kenjihata 与产品负责人 adele__li 探讨了自 Images 2.0 发布以来涌现的新用例与使用趋势。 OpenAI 提供了其官方播客在 Spotify、Apple Podcasts 和 YouTube 三个平台的收听链接。该推文为上一条 Images 2.0 播客介绍的补充自回复。 · <a href="https://x.com/OpenAI/status/2056849157860831239">OpenAI (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>Cognition</code> <code>Devin</code> <code>Claude</code> <code>AI软件工程师</code> <code>Scott Wu</code> — Anthropic 在「The Problem Solvers」系列中介绍 Cognition 创始人 Scott Wu，其团队打造了基于 Claude 的 AI 软件工程师 Devin。Scott Wu 希望让每个工程团队的软件构建速度提升 10 倍。 Anthropic 宣布推出全新系列「The Problem Solvers」，专题报道那些借助 Claude 解决棘手问题的创始人。相关内容已发布于 claude.com/problem-solvers。 · <a href="https://x.com/claudeai/status/2056805728774402428">Claude (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Google</code> <code>Gemini</code> <code>黑客松</code> <code>XPRIZE</code> <code>开发者活动</code> — Google DeepMind 宣布举办「Build with Gemini」XPRIZE 黑客松，奖金池高达 200 万美元。开发者受邀使用 Gemini 工具构建解决全球重大挑战的实际应用，涵盖减少食物浪费、辅助科学研究等方向。 · <a href="https://x.com/GoogleDeepMind/status/2056794085680468294">Google DeepMind (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Antigravity</code> <code>Google DeepMind</code> <code>开发者工具</code> <code>AI 编程</code> — Google DeepMind 宣布扩展其 Antigravity 开发者生态系统，目标是帮助开发者把精力从繁琐的调试中解放出来，转而专注于架构与设计等真正重要的工作。该推文为相关公告线程的开端。 Google DeepMind 宣布为 Antigravity 推出三种全新交互方式：Antigravity 2.0 提供多智能体可同时协作于同一项目的「任务控制台」；CLI 提供终端界面用于与智能体协作；SDK 工具包让软件可自动接入并调用 Google 的 AI 智能体。 · <a href="https://x.com/GoogleDeepMind/status/2056790405937856791">Google DeepMind (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Andrej Karpathy</code> <code>Anthropic</code> <code>人事变动</code> <code>LLM 研发</code> — 知名 AI 研究者 Andrej Karpathy 发布个人动态，宣布已加入 Anthropic。他认为未来几年将是 LLM 前沿发展的关键塑形期，对加入团队、重回前沿研发工作感到非常兴奋，同时表示仍对教育充满热情并计划在适当时机继续相关工作。Anthropic 官方账号 Claude Devs 及公司员工随即发文表示欢迎。 · <a href="https://x.com/karpathy/status/2056753169888334312">Andrej Karpathy (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>usage credits</code> <code>用量积分</code> <code>命名调整</code> <code>Claude</code> <code>计费</code> — Claude 已在全平台将「extra usage」更名为「usage credits」。用户的支出限额、自动充值设置以及已购买的积分均原样保留，不受改名影响。 Claude 说明将「extra usage」更名为「usage credits」的原因：该机制最初仅指触及套餐上限后的付费，但如今用量积分的作用已扩展，可直接驱动如快速模式等功能。 · <a href="https://x.com/ClaudeDevs/status/2056543965672083966">Claude Devs (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>KPMG</code> <code>Anthropic</code> <code>企业部署</code> <code>Claude</code> <code>私募股权</code> — 审计与咨询巨头 KPMG 宣布与 Anthropic 达成全球战略联盟，将 Claude 嵌入其客户工作平台 Digital Gateway，并向全球 27.6 万名员工全员开放。双方将共建面向私募股权组合公司的 Claude 产品，KPMG 成为 Anthropic 在 PE 领域的首选合作伙伴，并把 Claude Code、Cowork 与 Managed Agents 用于税务、法律与网络安全等场景。 · <a href="https://www.anthropic.com/news/anthropic-kpmg">Anthropic Blog</a></li>
-<li><strong>产品与功能</strong> | <code>OpenAI</code> <code>Codex</code> <code>远程连接</code> <code>文档</code> — OpenAI Devs 在推文串中给出 Codex 远程连接功能的官方文档链接（developers.openai.com/codex/remote-connections），配合此前介绍的在 Mac 上保持 Codex 运行、从手机端继续工作的能力。 · <a href="https://x.com/OpenAIDevs/status/2056442469114687858">OpenAI Devs (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Claude</code> <code>提示缓存</code> <code>Console</code> <code>诊断</code> — Anthropic 在推文串中给出 Claude 提示缓存诊断功能的入口与文档链接：可在 Claude Console（platform.claude.com/usage/cache）查看，并通过 cache-diagnostics 文档了解更多用法。 · <a href="https://x.com/ClaudeDevs/status/2056434423982444801">Claude Devs (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Anthropic</code> <code>收购</code> <code>Stainless</code> <code>SDK</code> <code>MCP</code> — Anthropic 宣布收购 Stainless——一家专注 SDK 与 MCP 服务器工具的公司，自 API 早期起便驱动每一代官方 Anthropic SDK 的生成。Stainless 能把 API 规范转换为 TypeScript、Python、Go、Java 等多语言的原生级 SDK、CLI 与 MCP 服务器，此次收购旨在增强 Claude 平台连接数据与工具的能力、推进 Agent 连接性。 · <a href="https://x.com/AnthropicAI/status/2056419620643541012">Anthropic (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>提示词</code> <code>Claude</code> <code>规格实现</code> <code>实现笔记</code> <code>工作流</code> — Thariq 在 Claude 协助下重写了一条走红的提示词模板，要求 Agent 在实现规格的过程中持续维护一个 implementation-notes.html 文件。该笔记需记录设计决策（规格模糊时的取舍）、有意偏离规格之处及原因、考虑过的替代方案与权衡，以及希望人类确认或修订的开放问题。 · <a href="https://x.com/trq212/status/2056418157305454805">Thariq (Twitter)</a></li>
-<li>了解新的「按算力计费」用量模型，规划复杂编码/视频提示的额度消耗</li>
-</ul>
-</blockquote>
-<hr>
-<h3>14. <a href="https://openai.com/index/advancing-content-provenance">OpenAI 强化内容溯源：C2PA 认证 + SynthID 水印 + 公开验证工具</a></h3>
-<ul>
-<ul>
-<li>若企业代码与数据无法出本地，可关注 Dell AI Factory + Codex 的参考架构作为落地蓝本。</li>
-<li>评估 Codex 在代码评审、测试覆盖之外的「知识工作」用例（报告生成、反馈分流），扩展现有 Copilot 之外的代理场景。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://www.anthropic.com/news/anthropic-acquires-stainless">Anthropic 收购 Stainless：扩张 SDK 与 MCP 服务器生态</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>Stainless</code> <code>MCP</code> <code>SDK</code> <code>代理生态</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 宣布收购 SDK 与 MCP 服务器生成平台 Stainless，将其团队整体并入。Stainless 自 2022 年起为 Anthropic 生成 TypeScript、Python、Go、Java、Kotlin 等官方 SDK，被上百家公司用于把 API 规范一键转成 SDK、CLI 与 MCP 连接器。Anthropic 表示此次合并旨在让 Claude 平台进一步打通数据与工具，强化代理时代的连接能力。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/AnthropicAI/status/2056419620643541012">Anthropic 收购 SDK/MCP 平台 Stainless</a> · Anthropic (Twitter) · 官方推特通告</li>
-</ul>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Google I/O</code> <code>Google DeepMind</code> <code>发布会预告</code> <code>AI</code> — Google DeepMind 预告将于次日的 Google I/O 大会上展示一系列 AI 领域的突破、工具和创新成果。直播将于美西时间上午 10 点在 X 平台上线，具体发布内容尚未披露。 · <a href="https://x.com/GoogleDeepMind/status/2056475403926028455">Google DeepMind (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>Claude</code> <code>HTML artifacts</code> <code>代理工作流</code> <code>开发者体验</code> — Thariq 引用其在 Code with Claude 上的对谈，回应 Claire 关于「HTML 是新的 Markdown」的总结：相较 Markdown，HTML artifacts 更利于人类肉眼审阅，可作为交互式规格、一次性微 UI 和持续维护的设计系统使用，帮助开发者更顺畅地跟踪长时运行代理的进展。 · <a href="https://x.com/trq212/status/2056432663125545082">Thariq (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>提示工程</code> <code>代理编程</code> <code>Claude</code> <code>implementation-notes</code> <code>人机协作</code> — 资深 Claude 开发者 Thariq 分享一条高人气提示词：让模型在实现 SPEC 时同步维护 implementation-notes.html（或 markdown），把规格里没有的设计决策、被迫的偏离与取舍逐条记下。他强调再细的规格也会留下模糊点与未知数，这种「实现笔记」给模型一个合理的「出口」做决定，同时把人类留在回路里。Thariq 借 Claude 二次精炼后定义了四类必记内容：设计决定、偏离、取舍与待确认问题。 Thariq 补充其提示词背后的动机：无论 SPEC 写得多详尽，总会出现歧义和未知的未知，让模型把决策写入 implementation-notes 给了它一个合理的「逃生通道」，同时保证开发者能够回看并审阅这些选择。 · <a href="https://x.com/trq212/status/2056415973125796184">Thariq (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>

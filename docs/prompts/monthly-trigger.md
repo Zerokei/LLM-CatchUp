@@ -67,10 +67,24 @@ Structure:
 
 `平均重要性` is `mean(article.importance)` across the month for that source. `健康状态` reads from `data/health.json` — `✅ 正常` / `⚠️ 退化` / `❌ 告警` according to the source's `status`.
 
-### Step 6: Commit and push
+### Step 6: Build subscriber-facing artifacts
+
+The homepage reads `feed.xml`, and report links point to rendered sibling HTML files. Generate both before committing:
 
 ```bash
-git add reports/monthly/
+node scripts/build-pages.js
+node scripts/build-rss.js
+```
+
+Verify that `reports/monthly/{YYYY-MM}.html` exists and that `feed.xml` contains `reports/monthly/{YYYY-MM}.html`. Abort without committing if either check fails.
+
+### Step 7: Commit and push
+
+```bash
+git add reports/monthly/{YYYY-MM}.md \
+  reports/monthly/{YYYY-MM}.ops.md \
+  'reports/*/*.html' \
+  feed.xml
 if git diff --cached --quiet; then
   echo "nothing to commit — skipping"
   exit 0

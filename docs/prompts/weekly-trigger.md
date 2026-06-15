@@ -85,10 +85,24 @@ Structure:
 
 The 趋势 column compares to the previous week's count. The previous-week label is `{YYYY}-W{NN-1}` derived from `target_week_start - 7 days` (handle year rollover via the ISO calendar). If `reports/weekly/{prev_label}.ops.md` exists, parse its 本周概览 table for prior counts and compute deltas (`↑` if up, `↓` if down, `→` if equal). If not available (first weekly run, missing prior sidecar), mark every cell as `—` and add a one-line note under the table: `> 注：上周（{prev_label}）报告缺失，无法计算环比。`
 
-### Step 6: Commit and push
+### Step 6: Build subscriber-facing artifacts
+
+The homepage reads `feed.xml`, and report links point to rendered sibling HTML files. Generate both before committing:
 
 ```bash
-git add reports/weekly/
+node scripts/build-pages.js
+node scripts/build-rss.js
+```
+
+Verify that `reports/weekly/{target_label}.html` exists and that `feed.xml` contains `reports/weekly/{target_label}.html`. Abort without committing if either check fails.
+
+### Step 7: Commit and push
+
+```bash
+git add reports/weekly/{target_label}.md \
+  reports/weekly/{target_label}.ops.md \
+  'reports/*/*.html' \
+  feed.xml
 if git diff --cached --quiet; then
   echo "nothing to commit — skipping"
   exit 0
