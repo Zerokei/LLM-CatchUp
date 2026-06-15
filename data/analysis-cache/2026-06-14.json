@@ -1,0 +1,208 @@
+{
+  "analyzed_at": "2026-06-15T10:08:18.161939+08:00",
+  "fetch_cache_ref": "data/fetch-cache/2026-06-14.json",
+  "trend_paragraph": "- **模型访问收紧**：Anthropic因美国指令暂停Claude Fable 5与Mythos 5访问，并切换相关回退路径。\n- **代理沙箱下沉**：Claude Managed Agents新增自托管沙箱指南，推动企业把代理执行环境纳入自控基础设施。\n- **开发文档代理化**：OpenAI开发者文档上线问答代理，可生成定制指南并衔接Codex工作流。\n- **编码工具落地**：Codex案例强调并行修改网站可压缩交付周期，显示代理式开发进入日常工程。",
+  "articles": [
+    {
+      "url": "https://x.com/karpathy/status/2065490793092337691",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Karpathy盛赞SpaceX长期叙事",
+      "summary": "Karpathy称赞SpaceX从过去、现在到未来的整体故事令人震撼，并向团队表示祝贺。该帖主要是个人感想与致敬，没有提供新的AI技术、产品或研究信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "个人观点",
+        "SpaceX",
+        "产业叙事"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2065647770468487600",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Build Day改用Opus 4.8",
+      "summary": "Claude Devs确认次日Build Day活动仍将照常举行，但底层模型改为Opus 4.8。结合其他同批公告，这更像是对模型可用性调整后的活动安排更新。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Opus 4.8",
+        "开发者活动",
+        "模型切换"
+      ],
+      "practice_suggestions": [
+        "参加相关活动或复现实验时，确认示例和提示词默认运行在Opus 4.8上。",
+        "若已有基于其他Claude模型的演示，提前测试Opus 4.8的输出差异与成本表现。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/AnthropicAI/status/2065597531644743999",
+      "angle": "活动模型调整"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2065621176735646006",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude重置所有用户速率限制",
+      "summary": "Claude Devs表示已为所有用户重置5小时与每周速率限制。该更新属于服务运营层面的临时恢复措施，可能与同日模型访问变更或活动准备有关。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "速率限制",
+        "账户配额",
+        "服务恢复"
+      ],
+      "practice_suggestions": [
+        "如果此前被限流，可重新运行关键Claude工作流并记录新的可用额度。",
+        "对生产集成仍应保留限流重试和降级策略，避免依赖一次性配额重置。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2065597942602531163",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Fable 5因政府指令暂停",
+      "summary": "Claude Devs称，因美国政府指令，Claude Fable 5将面向所有用户暂停访问并在产品中弃用。API客户会自动路由到Claude Sonnet 4.8，Claude Code也将使用Sonnet 4.8作为回退，而Opus 4.8、Sonnet 4.8和Haiku 4.8不受影响。",
+      "category": "政策与安全",
+      "importance": 5,
+      "tags": [
+        "Claude",
+        "出口管制",
+        "Fable 5",
+        "模型下线",
+        "Sonnet 4.8"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/AnthropicAI/status/2065597531644743999",
+      "angle": "产品回退细节"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2065494480837583297",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude托管代理新增自托管沙箱指南",
+      "summary": "Claude Managed Agents强调可运行在用户控制的沙箱中，支持自有基础设施或第三方提供商。官方文档新增Blaxel、E2B、Google Cloud、Namespace Labs和Modal等沙箱指南，并指向托管代理总览，方便团队按安全与部署约束选择执行环境。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Managed Agents",
+        "自托管沙箱",
+        "Claude Code",
+        "代理部署",
+        "开发者文档"
+      ],
+      "practice_suggestions": [
+        "评估自有基础设施与第三方沙箱的安全边界。",
+        "按文档为Claude Managed Agents配置隔离执行环境。",
+        "为代理任务建立网络、文件和凭据访问策略。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260612-1800",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2065494482460836183",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude沙箱文档指向自托管方案",
+      "summary": "该帖补充指向Claude Managed Agents文档，强调可通过多个服务商了解自托管代码沙箱。它是同一线程中对新增沙箱指南的延伸，价值主要在于给开发者提供入口链接。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "文档",
+        "自托管沙箱",
+        "Managed Agents"
+      ],
+      "practice_suggestions": [
+        "阅读Managed Agents概览与具体提供商指南，确认所需权限、运行时和网络配置。",
+        "在引入生产前，用非敏感仓库测试代理在沙箱中的代码执行、依赖安装和超时控制。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260612-1800",
+      "duplicate_of": null,
+      "angle": "文档入口补充"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2065597531644743999",
+      "source": "Anthropic (Twitter)",
+      "title": "美国指令暂停Claude Fable与Mythos访问",
+      "summary": "美国政府以国家安全授权发布出口管制指令，要求暂停外国国民访问Claude Fable 5和Mythos 5，Anthropic表示已开始执行访问变更。Claude Devs补充说明，Fable 5相关流量将回退到Claude Sonnet 4.8，Claude Code也会使用Sonnet 4.8作为兜底。受此影响，Claude Build Day活动仍会举行，但改为基于Opus 4.8构建。",
+      "category": "政策与安全",
+      "importance": 5,
+      "tags": [
+        "出口管制",
+        "Claude Fable 5",
+        "Mythos 5",
+        "模型访问",
+        "Claude Code",
+        "Opus 4.8"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2065517012311593114",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex并行改站点缩短交付周期",
+      "summary": "OpenAI Devs分享案例称，Intelligence公司的开发者使用Codex并行更新网站多个部分，将原本一周的工作压缩到三天。该帖偏向产品案例，强调Codex在多任务代码修改中的效率收益。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "开发效率",
+        "并行任务",
+        "网站开发",
+        "案例"
+      ],
+      "practice_suggestions": [
+        "把网站改版任务拆成相互独立的小任务，让Codex并行处理并逐一审查差异。",
+        "为高频页面修改建立清晰验收清单，便于代理产出后快速验证视觉和功能。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2065507798268674366",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI文档代理可生成定制指南",
+      "summary": "OpenAI Devs表示新的开发者文档代理不只回答问题，还能根据用户描述的构建目标生成定制指南，包含提示词和相关资源。用户可在Codex中打开指南，或复制为Markdown用于队友、编辑器或其他工具。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "文档代理",
+        "Codex",
+        "定制指南",
+        "开发者体验"
+      ],
+      "practice_suggestions": [
+        "在启动新OpenAI集成前，先用文档代理生成项目专属指南，再转化为任务清单。",
+        "把生成的Markdown指南纳入仓库文档或Issue，方便团队复用同一提示词和资源链接。",
+        "对指南中的API参数和模型建议做人工复核，避免文档代理输出过时或不适用配置。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260612-1853",
+      "duplicate_of": null,
+      "angle": "定制指南生成"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2065507724704858173",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI开发者文档上线问答代理",
+      "summary": "OpenAI开发者站点上线文档问答代理，可帮助开发者查询OpenAI产品问题并直达相关文档。该代理不只给出答案，还能根据用户描述的构建目标生成定制指南、提示词和相关资源，并支持在Codex中打开或复制为Markdown交给团队与编辑器使用。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI文档",
+        "问答代理",
+        "Codex",
+        "开发者工具",
+        "提示词指南"
+      ],
+      "practice_suggestions": [
+        "用开发者文档代理为新项目生成初始实现指南。",
+        "将代理生成的Markdown交给Codex或团队成员复用。",
+        "验证代理给出的链接是否覆盖当前API版本。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260612-1853",
+      "duplicate_of": null
+    }
+  ]
+}
