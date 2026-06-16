@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-06-15 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-06-15" />
+  <title>CatchUp 日报 2026-06-16 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-06-16" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -297,7 +297,7 @@ footer.colophon a:hover { color: var(--accent); }
       <a href="../../feed.xml" class="feed-link">RSS</a>
     </header>
 
-    <div class="reading-layout">
+    <div class="reading-layout has-toc">
       <article>
         <header>
           <div class="meta">
@@ -306,25 +306,90 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-06-15</h1>
+          <h1 class="report-title">2026-06-16</h1>
           
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>开发工具嵌入</strong>：OpenAI Codex 插件与 Grok 接入 Warp 都在把模型能力前移到编码现场。</li>
+<li><strong>代码模型提速</strong>：Kimi K2.7 Code HighSpeed 强调吞吐提升，适合先用真实仓库做延迟与质量评测。</li>
+<li><strong>算力基建加码</strong>：Google 在阿拉巴马追加15亿美元数据中心投资，继续扩张AI基础设施底座。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/Kimi_Moonshot/status/2066467110960959833">Kimi K2.7代码模型推出高速模式</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Kimi</code> <code>代码模型</code> <code>高速模式</code> <code>多模态</code> <code>API</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot介绍Kimi K2.7 Code HighSpeed，这是其开源多模态代码模型的高速模式，面向编码任务宣称最高可达6倍提速。该能力正在向Kimi Code Beta、Kimi API开发者和Kimi Business用户逐步开放，但受算力容量限制仍为有限访问。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>申请或检查Kimi Code Beta/API访问权限，用团队真实代码补全与重构任务测试吞吐和质量。</li>
+<li>针对短上下文和中等长度输入分别做基准，验证高速模式是否适合CI辅助审查或批量代码迁移。</li>
+</ul>
 </blockquote>
 <hr>
-<p>今日抓取窗口内全部数据源均无新内容。</p>
+<h3 id="h-4">2. <a href="https://x.com/OpenAIDevs/status/2066634415955136728">Codex新增OpenAI开发者插件</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Codex</code> <code>开发者工具</code> <code>插件</code> <code>API</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs介绍了Codex中的OpenAI Developers插件，主打帮助开发者设置API密钥、查找合适文档并在构建过程中辅助调试。这属于围绕OpenAI工具链的开发者体验增强，目标是减少从配置到排错的摩擦。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在Codex项目中试用该插件，检查API密钥配置和文档检索是否能减少上下文切换。</li>
+<li>将常见OpenAI API调试步骤整理成团队模板，配合插件用于新人上手。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/xai/status/2066625790704521699">Grok订阅接入Warp开发环境</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok</code> <code>Warp</code> <code>开发环境</code> <code>Agent</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI宣布SuperGrok或X Premium订阅用户现在可以在Warp中使用相关能力。用户可在Warp Agent设置中切换到Grok Build模型，显示xAI正在把模型能力嵌入开发者终端与Agent工作流。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>若团队已使用Warp，可用小型代码修改任务评估Grok Build的响应质量、延迟和成本替代价值。</li>
+<li>对比现有编码助手在终端内的权限边界与审计能力，再决定是否引入到生产代码库。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="h-6">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>谷歌</code> <code>数据中心</code> <code>基础设施</code> <code>能源</code> <code>社区投资</code> — 谷歌宣布在2026至2027年投入15亿美元，扩建其位于阿拉巴马州杰克逊县的数据中心园区，并称将自行承担全部电力与基础设施成本。公司还设立200万美元能源影响基金，并捐赠55万美元STEM学习套件，以强化当地能源效率、教育和就业承诺。 · <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/alabama-investment-june-2026/">Google AI Blog</a></li>
+</ul>
 </div>
       </article>
-
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Kimi K2.7代码模型推出高速模式</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Codex新增OpenAI开发者插件</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Grok订阅接入Warp开发环境</a></li>
+      <li class="toc-h2"><a href="#h-6">速览</a></li>
+    </ul>
+  </aside>
     </div>
 
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-06-14.html">2026-06-14</a>
+        <a href="../daily/2026-06-15.html">2026-06-15</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -332,12 +397,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-06-16.html">2026-06-16</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-15.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-16.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
