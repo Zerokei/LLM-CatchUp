@@ -5,8 +5,127 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 16 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 17 Jun 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-06-17</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-17.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-17.md</guid>
+      <pubDate>Wed, 17 Jun 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-17</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>评测转向真实部署</strong>：OpenAI 的部署仿真与前沿评测讨论都在补足传统基准失真问题。</li>
+<li><strong>编程智能体进入生产</strong>：Claude Code 研究与 Claude Managed Agents 显示落地重点转向岗位差异、沙箱和观测。</li>
+<li><strong>开源与具身模型升温</strong>：GLM-5.2 开源权重和 Qwen-Robot Suite 分别推进通用模型与机器人基础模型。</li>
+<li><strong>开发者工具继续扩区</strong>：Codex 插件、欧洲开放与 Grok 接入 Warp 都在争夺日常开发入口。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/Zai_org/status/2066938937344495629">智谱开源 GLM-5.2 权重</a></h3>
+<ul>
+<li><strong>来源</strong>: Z.ai (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GLM-5.2</code> <code>开源权重</code> <code>智谱</code> <code>模型发布</code></li>
+</ul>
+<p><strong>摘要</strong>: 智谱宣布开源 GLM-5.2 权重，延续 GLM 系列面向通用推理与开发者落地的开放路线。作为新一代开源权重模型，它值得关注其许可证、上下文能力、工具调用与代码基准表现。开发者可优先验证本地部署成本与中文任务质量。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>下载权重并用内部中文任务集做基线评测。</li>
+<li>检查许可证、上下文长度和推理成本是否适合生产试点。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/Alibaba_Qwen/status/2066870197122899980">Qwen 发布三模型机器人套件</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Qwen-Robot</code> <code>具身智能</code> <code>机器人模型</code> <code>动作接口</code> <code>世界建模</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 推出 Qwen-Robot Suite，包含 Qwen-RobotNav、Qwen-RobotManip 与 Qwen-RobotWorld，试图把语言理解延伸到真实世界行动。RobotWorld 将自然语言作为通用动作接口，连接通用视频生成与具身模型。官方还提供演示与博客，展示从聊天机器人走向物理行动的路线。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2066870210716647591">Qwen-RobotWorld统一具身世界建模</a> · Qwen (Twitter) · 世界建模</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>查看官方 demo，挑选导航或操作任务做小规模复现。</li>
+<li>评估自然语言动作接口能否接入现有机器人仿真环境。</li>
+<li>跟踪 RobotWorld 对视频生成模型和具身控制的衔接方式。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://openai.com/index/deployment-simulation">OpenAI 用部署仿真预判模型风险</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>部署仿真</code> <code>模型评测</code> <code>安全评估</code> <code>智能体</code> <code>生产流量</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 提出用近期匿名真实请求模拟候选模型上线后的行为，以在发布前发现传统基准难以覆盖的风险。相关结果显示，部署仿真能降低模型对评测场景的感知，并可扩展到带状态工具的智能体部署。配套讨论还强调，外部公开数据可补充验证，但最有价值的是具代表性的生产流量。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2066969640727969845">部署模拟降低模型评测感知</a> · OpenAI (Twitter) · 评测感知下降</li>
+<li><a href="https://x.com/OpenAI/status/2066969635099144682">OpenAI 用真实请求预演模型部署风险</a> · OpenAI (Twitter) · 研究发布</li>
+</ul>
+<hr>
+<h3>4. <a href="https://www.anthropic.com/research/claude-code-expertise">Claude Code 数据揭示专业知识仍关键</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>经济指数</code> <code>专业知识</code> <code>任务价值</code> <code>工作变化</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布经济研究框架，用 Claude Code 使用数据追踪 AI 编程工具如何改变工作任务与价值结构。研究显示，Claude Code 任务的估算月价值七个月增长 27%，非软件职业的成功率也接近工程师。与此同时，具备领域熟练度的用户仍更容易完成目标，相关指标将纳入 Anthropic Economic Index。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AnthropicAI/status/2066969532380721386">Anthropic 发布 Claude Code 使用框架</a> · Anthropic (Twitter) · 框架介绍</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>将 Claude Code 使用数据按岗位和任务类型分层统计。</li>
+<li>为高价值任务沉淀领域词表与验收证据，提高完成率。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/AnthropicAI/status/2066969536423985295">Claude Code 任务价值七个月增 27%</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>任务价值</code> <code>AI编程</code> <code>劳动市场</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 将 Claude Code 会话中的工作类型与自由职业市场上的相似任务成本进行比较，发现 2025 年 10 月到 2026 年 4 月平均会话价值增长 27%。这显示用户正把更复杂、更高价值的工作交给编码智能体处理。 Anthropic 比较了不同职业的 Claude Code 成功率，在最严格的成功定义下，各领域与软件工程之间的差距都在 7 个百分点以内。结果暗示编码智能体的有效使用不只依赖传统编程职业背景。 Anthropic 发现，按提问方式和专业词汇判断出的领域专家更容易在 Claude Code 会话中成功。不过中级用户与专家的差距并不大，说明对具体领域足够熟练就可能有效地用 AI 完成编码任务。 Anthropic 表示，将把 Claude Code 使用研究中的若干指标纳入 Anthropic Economic Index，用于持续观察工作性质的变化。报告基于隐私保护分析，关注谁在使用 Claude Code、做什么任务以及成功率如何变化。</p>
+<hr>
+<h3>6. <a href="https://x.com/OpenAIDevs/status/2066916479438930166">Codex 更多功能向欧洲开放</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>欧洲开放</code> <code>开发者工具</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 宣布 Codex 的更多功能面向欧洲用户开放，降低区域可用性限制。该更新主要影响已经在欧洲使用 OpenAI 开发者工具的团队，可进一步测试代码生成与代理式开发流程。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>让欧洲团队复测 Codex 功能可用性与权限配置。</li>
+<li>更新内部开发者工具文档中的区域限制说明。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>Slack</code> <code>HTML预览</code> <code>附件渲染</code> <code>协作工具</code> — Thariq 观察到 Slack 已开始渲染 HTML 附件预览，这会改变团队在聊天中查看网页或文档附件的方式。该变化偏向小型产品体验更新，可能影响内部分享、调试链接和安全审查流程。 · <a href="https://x.com/trq212/status/2067021344341098670">Thariq (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-06-16</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-16.html</link>
@@ -3276,136 +3395,6 @@
 <li><strong>产品与功能</strong> | <code>OpenAI</code> <code>开发者体验</code> <code>diff 视图</code> <code>外观设置</code> — OpenAI 在外观设置中新增 diff 标记开关：除原有的色块条形 diff 外，用户现在可选用经典的「+ / -」前缀样式审阅代码差异。默认行为保持不变，需用户主动开启。 · <a href="https://x.com/OpenAIDevs/status/2057918624841728349">OpenAI Devs (Twitter)</a></li>
 <li><strong>教程与观点</strong> | <code>Google I/O 2026</code> <code>AI Agent</code> <code>量子计算</code> <code>机器人</code> <code>AI 创意</code> — Google 整理 I/O 2026 Dialogues 主舞台精华：Sundar Pichai 与 Matt Berman 解读发布会愿景；Jeff Dean、Koray Kavukcuoglu 等讨论主动式 AI Agent；Hartmut Neven 与 James Manyika 探讨量子与 AI 交叉；Demis Hassabis 谈 AI 在科学中的作用；DeepMind 与波士顿动力对话具身机器人；导演 Doug Liman 讨论 AI 电影叙事。完整对谈已上传至 YouTube。 · <a href="https://blog.google/innovation-and-ai/technology/ai/io-2026-dialogues-recap/">Google AI Blog</a></li>
 <li><strong>商业动态</strong> | <code>DeepSeek</code> <code>V4-Pro</code> <code>API 定价</code> <code>折扣</code> <code>开源模型</code> — DeepSeek 宣布将 V4-Pro 的 API 折扣从临时促销转为永久价格，原本的限时优惠（截至 5 月 31 日）将不再回退。此举降低了基于 V4-Pro 构建应用的长期成本预期，对正在评估开源系列大模型云服务的团队是积极信号。 · <a href="https://x.com/deepseek_ai/status/2057854261699195173">DeepSeek (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-05-22</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-22.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-22.md</guid>
-      <pubDate>Fri, 22 May 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-22</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>AI 攻克数学难题</strong>：OpenAI 通用推理模型自主证明埃尔德什 1946 年平面单位距离猜想，首次由 AI 独立解决数学核心开放问题。</li>
-<li><strong>旗舰模型密集发布</strong>：Google 推出 Gemini 3.5 Flash、阿里发布 Qwen3.7-Max，双双以编码与智能体基准逼近前沿。</li>
-<li><strong>Agent 编码工具进化</strong>：OpenAI Codex 集中上线 Appshots、锁屏远程操作与移动端接入，编码助手向全场景渗透。</li>
-<li><strong>AI 深入科研与产业</strong>：Antigravity Science Skills 加速罕见病结构分析，AdventHealth 借 ChatGPT 压缩临床审核工时。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2057450220708147250">Qwen3.7-Max 发布：面向 Agent 时代的新旗舰模型</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>阿里巴巴</code> <code>智能体</code> <code>编码模型</code> <code>长程自主</code> <code>Artificial Analysis</code></li>
-</ul>
-<p><strong>摘要</strong>: 阿里巴巴发布新一代闭源旗舰模型 Qwen3.7-Max，定位「Agent 时代」的通用基座：可端到端完成前端原型、多文件重构与真实调试，通过 MCP 集成胜任办公与多智能体编排，并兼容 Claude Code、Qwen Code 等多种脚手架。模型在 Artificial Analysis 智能指数上拿下 56.6 分，较 Qwen3.6-Max-Preview 提升 4.8 分，为阿里历来最接近前沿的成绩，上下文窗口扩至 100 万 tokens。在自进化实测中，它历时约 35 小时、经 1158 次工具调用自主优化注意力内核，较 Triton 参考实现取得 10 倍几何平均加速。API 已在阿里云百炼（Model Studio）上线。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2057450236180935056">Qwen3.7-Max 自进化实测：35 小时自主优化内核获 10 倍加速</a> · Qwen (Twitter) · 自进化内核优化实测</li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2057451488587423830">Qwen3.7-Max 智能指数达 56.6：较前代提升 4.8 分逼近前沿</a> · Qwen (Twitter) · AA 智能指数评测</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>通过阿里云百炼 Model Studio 接入 Qwen3.7-Max API，评估其在编码与智能体任务上的表现。</li>
-<li>在 Claude Code、Qwen Code 等脚手架中替换 Qwen3.7-Max，测试长程自主任务的稳定性。</li>
-<li>利用 100 万 tokens 上下文与 MCP 集成，构建多智能体办公自动化流程。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/OpenAIDevs/status/2057530207976989179">OpenAI Codex 多项更新：Appshots 上下文捕获、锁屏远程操作与团队插件共享</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>Appshots</code> <code>远程操作</code> <code>插件共享</code> <code>移动端</code> <code>OpenAI</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 在「Codex Thursday」集中发布了多项 Codex 更新。新增的 Appshots 让用户在 Mac 上双击 Command 键，把应用窗口的截图与文字（含屏幕外内容）一并带入 Codex 对话；同时 Codex 现可在 Mac 锁屏、息屏状态下从手机端安全操作电脑应用。面向团队，Codex 支持跨工作区共享自定义插件（Business 用户已可用），并改进了企业版的多维度用量分析。此外 Codex 已接入 ChatGPT 手机 App，可在移动端随时续接同一会话。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2057530212339097994">Codex 支持跨团队共享插件，Business 用户已可用</a> · OpenAI Devs (Twitter) · 团队插件共享</li>
-<li><a href="https://x.com/sama/status/2057559714788258003">OpenAI 推出 Codex「Appshots」：Command-Command 把应用窗口上下文带入 Codex</a> · Sam Altman (Twitter) · Altman 转发官宣</li>
-<li><a href="https://x.com/OpenAIDevs/status/2057536706778378692">Codex 支持锁屏远程操作 Mac：手机端无需解锁电脑</a> · OpenAI Devs (Twitter) · 锁屏远程操作 Mac</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Mac 上用 Command-Command 触发 Appshots，把当前应用窗口上下文直接喂给 Codex。</li>
-<li>为团队配置共享 Codex 插件，统一内部工具与工作流。</li>
-<li>通过 ChatGPT 手机 App 随时接管 Codex 会话，实现跨设备协作。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/OpenAI/status/2057176201782075690">OpenAI 模型攻克埃尔德什 1946 年平面单位距离猜想</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>数学突破</code> <code>单位距离问题</code> <code>埃尔德什猜想</code> <code>推理模型</code> <code>代数数论</code> <code>自动证明</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 宣布其内部一款通用推理模型自主证明了埃尔德什 1946 年提出的平面单位距离问题，推翻了近 80 年来「方格构造已是最优」的主流猜想，给出了多项式级改进的无穷构造族。这是 AI 首次独立解决一个处于数学子领域核心的著名开放问题；该证明并非来自专门的数学系统，而是通用推理模型，并已由外部数学家验证。证明意外地动用了代数数论中的类域塔与 Golod–Shafarevich 理论，菲尔兹奖得主 Tim Gowers 称其为「AI 数学的里程碑」，普林斯顿教授 Will Sawin 的后续工作进一步给出了显式指数 δ=0.014。 据 OpenAI 博客，攻克单位距离问题的证明来自一个全新的通用推理模型，而非专为数学或该问题训练的系统，证明已由外部数学家核验并撰写了配套论文。该构造意外地引入代数数论工具（如无限类域塔与 Golod–Shafarevich 理论），将 Erdős 1946 年以来基本未动的下界提升至 n^(1+δ)，普林斯顿教授 Will Sawin 后续给出 δ=0.014。菲尔兹奖得主 Tim Gowers 称其为「AI 数学的里程碑」。 OpenAI 表示该数学突破指向更宏观的趋势：AI 系统正变得能够维持长而困难的推理链条、跨越遥远领域连接思想、并发掘研究者未曾探索的路径。OpenAI 相信这些能力将很快加速生物学、物理学、工程学和医学的研究。同时强调未来仍依赖人类判断，专业知识的价值不降反升。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2057203171198636251">Sam Altman：通用模型攻克数学重大未解难题，是「相当大」的里程碑</a> · Sam Altman (Twitter) · Altman 里程碑点评</li>
-</ul>
-<hr>
-<h3>4. <a href="https://x.com/xai/status/2057522050923929948">Grok 接入 opencode：用 X Premium 订阅驱动编码智能</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Grok</code> <code>opencode</code> <code>xAI</code> <code>编码助手</code> <code>X Premium</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI 宣布用户现可在 opencode 中直接使用自己的 Grok 或 X Premium 订阅。opencode 将由驱动 Grok Build 的模型支持，主打高速度与代码库智能理解能力。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 opencode 中绑定 Grok 或 X Premium 订阅，体验 Grok Build 同款模型的编码能力</li>
-<li>对比 Grok 在 opencode 中的代码库理解速度与现用编码助手的差异</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://openai.com/index/adventhealth">AdventHealth 把 ChatGPT 当「产品」铺开：靠采用率 KPI 压缩临床审核工时</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>医疗 AI</code> <code>ChatGPT 企业版</code> <code>工作流自动化</code> <code>采用率</code> <code>OpenAI</code></li>
-</ul>
-<p><strong>摘要</strong>: 横跨九州的医院系统 AdventHealth 部署「ChatGPT for Healthcare」减轻行政负担，把利用率管理中每例约 10 分钟的病历审核大幅压缩，同时保留临床医生的最终判断。其首席 AI 官 Rob Purinton 强调将「采用本身」当作产品来做，把每位用户每工作日的消息数当作可监控的 KPI，并以电子病历时间戳而非自我报告来衡量实际节省的工时。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在企业内推广 AI 时，把「采用率」设为可量化 KPI（如人均日消息数），按部门组建同行小组分享提示词与最佳实践</li>
-<li>用系统级数据（如时间戳）而非自我报告来衡量 AI 对工时的真实影响，确保统计显著性</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://x.com/GoogleDeepMind/status/2057256257153884161">Google Antigravity 推出 Science Skills：整合 30+ 生命科学数据源</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Antigravity</code> <code>Science Skills</code> <code>生命科学</code> <code>AI 科研工具</code> <code>Google DeepMind</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 为 Antigravity 推出 Science Skills，向 AI 注入面向科研的专业工具箱以加速日常研究工作流。该能力整合了 UniProt、AlphaFold 数据库等 30 多个主要生命科学数据源的洞见。 Google DeepMind 团队用 Antigravity 的 Science Skills 实测了一道真实科研难题——分析由 AK2 突变引发的罕见遗传病。结果显示，原本高度复杂的结构分析速度大幅提升，并对该疾病的潜在机制得出了新见解。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在 Antigravity 中启用 Science Skills，接入 UniProt、AlphaFold 等数据源辅助生命科学研究</li>
-<li>评估 Science Skills 能否替代部分手工的结构与序列数据检索工作</li>
-</ul>
-</blockquote>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>产品与功能</strong> | <code>Claude Design</code> <code>原型设计</code> <code>Anthropic</code> <code>社区</code> — Anthropic 旗下 Claude 官方账号集中推广设计工具 Claude Design，展示用它进行原型设计、快速试验的玩法，并转发了用户用其生成「魔法池塘」背景等作品。官方同时向社区征集更多创意用例。 · <a href="https://x.com/claudeai/status/2057487463518548073">Claude (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Codex</code> <code>远程连接</code> <code>开发文档</code> <code>OpenAI</code> — OpenAI Devs 在 Codex 移动端公告的后续推文中放出了远程连接文档链接（developers.openai.com/codex/remote-connections）。文档介绍如何配置 Codex 的跨设备远程接入，配合 ChatGPT 手机 App 实现随时随地的编码协作。 · <a href="https://x.com/OpenAIDevs/status/2057142817944969367">OpenAI Devs (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
