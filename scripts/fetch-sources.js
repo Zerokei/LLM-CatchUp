@@ -6,39 +6,16 @@ const yaml = require('js-yaml');
 const routes = require('./routes');
 const { enrichSnapshot } = require('./lib/enrich');
 const { computeThreadGroups, computeDuplicates } = require('./lib/derive-refs');
+const { isoInZone, pacificDayBoundsUtc, previousPacificDate } = require('./lib/report-date');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml');
 const CACHE_DIR = path.join(PROJECT_ROOT, 'data', 'fetch-cache');
-// 30h > 24h on purpose: daily runs don't fire at exactly the same wall-clock
-// time (GH Actions queue drift, manual triggers). A ≥24h window with 6h of
-// overlap guarantees adjacent runs cover any gap. Dedup-by-URL-hash in
-// history.json absorbs the double-fetching of overlap articles.
-const WINDOW_HOURS = 30;
-
-function toShanghaiISO(date = new Date()) {
-  const fmt = new Intl.DateTimeFormat('sv-SE', {
-    timeZone: 'Asia/Shanghai',
-    year: 'numeric', month: '2-digit', day: '2-digit',
-    hour: '2-digit', minute: '2-digit', second: '2-digit',
-    hour12: false,
-  });
-  return fmt.format(date).replace(' ', 'T') + '+08:00';
-}
-
-function shanghaiDateStr(date = new Date()) {
-  const fmt = new Intl.DateTimeFormat('sv-SE', {
-    timeZone: 'Asia/Shanghai',
-    year: 'numeric', month: '2-digit', day: '2-digit',
-  });
-  return fmt.format(date);
-}
-
 function withinWindow(article, windowStart, windowEnd) {
   if (!article.published_at) return false;
   const pub = new Date(article.published_at);
   if (Number.isNaN(pub.getTime())) return false;
-  return pub >= windowStart && pub <= windowEnd;
+  return pub >= windowStart && pub < windowEnd;
 }
 
 function newestPublishedAt(articles) {
@@ -62,13 +39,15 @@ async function main() {
   const routeByName = Object.fromEntries(routes.map((r) => [r.name, r]));
 
   const fetchedAt = new Date();
-  const windowEnd = fetchedAt;
-  const windowStart = new Date(fetchedAt.getTime() - WINDOW_HOURS * 3600 * 1000);
+  const targetDate = process.env.REPORT_DATE || previousPacificDate(fetchedAt);
+  const { start: windowStart, end: windowEnd } = pacificDayBoundsUtc(targetDate);
 
   const output = {
-    fetched_at: toShanghaiISO(fetchedAt),
-    window_start: toShanghaiISO(windowStart),
-    window_hours: WINDOW_HOURS,
+    date: targetDate,
+    report_timezone: 'America/Los_Angeles',
+    fetched_at: isoInZone(fetchedAt),
+    window_start: isoInZone(windowStart),
+    window_end: isoInZone(windowEnd),
     sources: {},
   };
 
@@ -107,7 +86,7 @@ async function main() {
 
     const fetchedCount = result.articles.length;
     const filtered = result.articles.filter((a) => withinWindow(a, windowStart, windowEnd));
-    console.error(`[${name}] ok: ${filtered.length} of ${fetchedCount} within ${WINDOW_HOURS}h window`);
+    console.error(`[${name}] ok: ${filtered.length} of ${fetchedCount} within Pacific day ${targetDate}`);
 
     // Staleness check: if the source declares max_silence_hours in config,
     // flag the source as degraded_stale when either (a) fetch returned zero
@@ -175,7 +154,7 @@ async function main() {
   console.error(`derive-refs: ${threadGroups.size} thread members, ${duplicates.size} duplicates`);
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
-  const outPath = path.join(CACHE_DIR, `${shanghaiDateStr(fetchedAt)}.json`);
+  const outPath = path.join(CACHE_DIR, `${targetDate}.json`);
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2) + '\n');
   console.error(`wrote ${outPath}`);
 

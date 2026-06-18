@@ -131,6 +131,7 @@ const { renderEditorial, renderOps } = require('./lib/render-report');
 const { updateSourceHealth } = require('./lib/health');
 const { buildRSS } = require('./lib/build-rss');
 const { buildPages } = require('./lib/build-pages');
+const { previousPacificDate } = require('./lib/report-date');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 const FETCH_CACHE_DIR = path.join(PROJECT_ROOT, 'data/fetch-cache');
@@ -140,14 +141,8 @@ const HEALTH_PATH = path.join(PROJECT_ROOT, 'data/health.json');
 const CONFIG_PATH = path.join(PROJECT_ROOT, 'config.yaml');
 const REPORTS_DIR = path.join(PROJECT_ROOT, 'reports/daily');
 
-function shanghaiDate() {
-  return new Intl.DateTimeFormat('sv-SE', {
-    timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
-  }).format(new Date());
-}
-
 async function main() {
-  const date = process.env.REPORT_DATE || shanghaiDate();
+  const date = process.env.REPORT_DATE || previousPacificDate();
   const fetchCachePath = path.join(FETCH_CACHE_DIR, `${date}.json`);
   const analysisCachePath = path.join(ANALYSIS_CACHE_DIR, `${date}.json`);
 

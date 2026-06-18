@@ -15,7 +15,7 @@ const SITEMAP_URL = 'https://www.deeplearning.ai/sitemap-0.xml';
 // page's __NEXT_DATA__ (expect props.pageProps.post with title/published_at/
 // custom_excerpt).
 
-const LOOKBACK_DAYS = 3; // fetch-sources.js applies a 30h window after; 3d covers cron drift.
+const LOOKBACK_DAYS = 3; // fetch-sources.js applies a target-day window after; 3d covers source lag.
 const MAX_ARTICLES = 15;
 
 const URL_ENTRY_RE = /<url>\s*<loc>https:\/\/www\.deeplearning\.ai\/the-batch\/([^<]+)<\/loc>\s*<lastmod>([^<]+)<\/lastmod>/g;

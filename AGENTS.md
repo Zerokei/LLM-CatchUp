@@ -6,13 +6,13 @@ An automated AI news aggregation system powered by Codex Cloud Scheduled Trigger
 
 This repo has three runtime stages, in order:
 
-**Stage 1 — Fetcher** (`.github/workflows/daily-fetch.yml`, cron `37 21 * * *` UTC = 05:37 Asia/Shanghai; scheduled ~3h before the 08:30 CST analyzer trigger to absorb observed GH Actions scheduling drift of up to ~90min). `scripts/fetch-sources.js` reads `config.yaml`, fetches each source via route modules under `scripts/routes/`, filters to a 30h window, enriches blog sources via Jina Reader (`scripts/lib/enrich.js`) and extracts full_text/linked_content where possible, and writes the snapshot to `data/fetch-cache/{YYYY-MM-DD}.json`.
+**Stage 1 — Fetcher** (`.github/workflows/daily-fetch.yml`, cron `37 1 * * *` with `timezone: America/Los_Angeles`; scheduled before the 18:30 Asia/Shanghai analyzer trigger). `scripts/fetch-sources.js` reads `config.yaml`, fetches each source via route modules under `scripts/routes/`, filters to the most recently completed America/Los_Angeles day, enriches blog sources via Jina Reader (`scripts/lib/enrich.js`) and extracts full_text/linked_content where possible, and writes the snapshot to `data/fetch-cache/{YYYY-MM-DD}.json`.
 
 **Stage 2 — Analyzer** (Codex Cloud Scheduled Trigger, runs shortly after fetch). The trigger reads `data/fetch-cache/{date}.json` and writes per-article `{summary, category, importance, tags, practice_suggestions, thread_group_id, duplicate_of}` plus a whole-batch `trend_paragraph` to `data/analysis-cache/{date}.json`. Incrementally persisted per article — partial work survives interruptions. Commits and pushes that single file. Does NOT render the markdown report, touch history/health, or manage issues. Prompt: `docs/prompts/daily-trigger.md`; the Codex automation should point at that repo file rather than embed a stale copy.
 
 **Stage 3 — Reporter** (`.github/workflows/build-report.yml`, triggered on push to `data/analysis-cache/**`). `scripts/build-report.js` reads fetch-cache + analysis-cache + history + health + config, does URL-hash dedup against history, merges threads, applies `duplicate_of`, renders **two** markdown files via `scripts/lib/render-report.js` — `{date}.md` (editorial: trend + article details, what subscribers see) and `{date}.ops.md` (counts + source health, debug-only) — updates `data/history.json` + `data/health.json`, opens/closes GitHub issues for alerts, regenerates `feed.xml` (RSS 2.0, ops sidecars excluded by glob; see `scripts/lib/build-rss.js`), and commits+pushes the report pair + state files + feed.
 
-**Safety net — Fallback** (`.github/workflows/fallback-report.yml`, cron `0 4 * * *` UTC = 12:00 CST). `scripts/fallback-report.js` checks if `reports/daily/{today}.md` exists; if not (Stage 2 or 3 failed), it renders a title+link-only report from fetch-cache alone, regenerates `feed.xml`, and commits+pushes. This guarantees subscribers always see something on the feed.
+**Safety net — Fallback** (`.github/workflows/fallback-report.yml`, cron `0 6 * * *` with `timezone: America/Los_Angeles`). `scripts/fallback-report.js` checks if `reports/daily/{target_date}.md` exists for the most recently completed Pacific day; if not (Stage 2 or 3 failed), it renders a title+link-only report from fetch-cache alone, regenerates `feed.xml`, and commits+pushes. This guarantees subscribers always see something on the feed.
 
 **Distribution** — `feed.xml` at the repo root is the only outbound channel. Subscribers point any RSS reader (or an RSS-to-email service like Feedrabbit / Blogtrottr) at `https://raw.githubusercontent.com/Zerokei/LLM-CatchUp/main/feed.xml`. No transactional-email infrastructure to maintain.
 
@@ -39,16 +39,16 @@ This repo has three runtime stages, in order:
 
 ### Fetching
 
-Fetching itself is done by `scripts/fetch-sources.js` in GH Actions, not by the trigger. The trigger only reads `data/fetch-cache/{YYYY-MM-DD}.json` (Asia/Shanghai date). If the snapshot is missing, abort — do NOT attempt WebFetch or fabricate content; a missing cache means the upstream fetch script needs human attention.
+Fetching itself is done by `scripts/fetch-sources.js` in GH Actions, not by the trigger. The trigger only reads `data/fetch-cache/{YYYY-MM-DD}.json` for the most recently completed America/Los_Angeles date. If the snapshot is missing, abort — do NOT attempt WebFetch or fabricate content; a missing cache means the upstream fetch script needs human attention.
 
-The fetch window is **30h** (not 24h): daily runs don't fire at exactly the same wall-clock time due to GH Actions queue drift. 6h of overlap between consecutive runs guarantees no article falls through the gap; dedup-by-URL-hash in `data/history.json` absorbs the duplicates.
+The fetch window is the exact target America/Los_Angeles calendar day: `[00:00, 24:00)`. Runs happen after that day closes so reports do not split US-day discussions across adjacent China-calendar reports.
 
 Twitter sources additionally drop low-signal tweets at fetch time (see `scripts/lib/socialdata-twitter.js#isLowSignalTweet`): pure RTs (`RT @...`) and replies to other accounts. Self-replies are kept — they are how long-form is threaded on Twitter, and `thread_group_id` merges them at report time.
 
 For each source entry in the snapshot:
-- If `status === "ok"` or `status === "degraded_stale"`: iterate `articles[]` (already pre-filtered to the 30h window). Skip any whose SHA-256 URL hash is already in `data/history.json`. Collect the rest for analysis.
+- If `status === "ok"` or `status === "degraded_stale"`: iterate `articles[]` (already pre-filtered to the target America/Los_Angeles day). Skip any whose SHA-256 URL hash is already in `data/history.json`. Collect the rest for analysis.
 - If `status === "error"`: skip for content, note the error for Health Monitoring.
-- `articles`: list of `{ title, url, published_at, description, full_text?, linked_content?, expanded_urls?, quoted_tweet?, reply_to?, thread_group_id?, duplicate_of? }` — already pre-filtered to `window_hours` of recency (overlap with yesterday is handled by URL-hash dedup in history.json).
+- `articles`: list of `{ title, url, published_at, description, full_text?, linked_content?, expanded_urls?, quoted_tweet?, reply_to?, thread_group_id?, duplicate_of? }` — already pre-filtered to the target America/Los_Angeles day.
   - `full_text` (blog sources): full article body (markdown from Jina Reader or upstream HTML). Null when enrichment failed. Absent for Twitter sources.
   - `linked_content` (primary Twitter sources only): Jina-fetched body of the primary-blog URL the tweet links to, when one exists. Null when no matching URL or fetch failed.
   - `expanded_urls` (Twitter): `[{ t_co, expanded_url, display_url }]` from `entities.urls`.

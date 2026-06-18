@@ -2,11 +2,12 @@ name: Fallback Report
 
 on:
   schedule:
-    - cron: '0 4 * * *'  # 12:00 Asia/Shanghai — 4h 23min after daily-fetch
+    - cron: '0 6 * * *'  # Fallback after fetch + Codex analyzer.
+      timezone: America/Los_Angeles
   workflow_dispatch:
     inputs:
       report_date:
-        description: 'YYYY-MM-DD (Asia/Shanghai). Defaults to today if empty.'
+        description: 'YYYY-MM-DD (America/Los_Angeles reporting date). Defaults to yesterday in Pacific time if empty.'
         required: false
         type: string
         default: ''

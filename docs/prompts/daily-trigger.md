@@ -2,17 +2,17 @@
 
 **Execute Steps 1–10 below now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run with no human in the loop. Do NOT treat this prompt as project context to acknowledge; treat it as the task itself. If a step's precondition fails (e.g. fetch-cache missing), follow that step's stated abort behavior and exit; otherwise proceed straight through to Step 10.**
 
-You produce structured analysis of today's AI news into `data/analysis-cache/{date}.json`. You do NOT render the report, update history, update health, or manage GitHub issues — a post-processor handles all that.
+You produce structured analysis of the most recently completed America/Los_Angeles news day into `data/analysis-cache/{date}.json`. You do NOT render the report, update history, update health, or manage GitHub issues — a post-processor handles all that.
 
 Read `AGENTS.md` first for project context.
 
 ## Workflow
 
-### Step 1: Determine today's date
+### Step 1: Determine the target report date
 
-Use Asia/Shanghai timezone, YYYY-MM-DD format. Record as `{date}`.
+Use America/Los_Angeles timezone. The target report date is yesterday in America/Los_Angeles, formatted as YYYY-MM-DD. Record as `{date}`.
 
-### Step 2: Load today's fetch-cache
+### Step 2: Load the target date fetch-cache
 
 Read `data/fetch-cache/{date}.json`.
 
@@ -39,7 +39,7 @@ If the total number of chunks would exceed 12 (i.e., more than 120 remaining art
 The template below shows what each subagent's prompt should look like. Substitute `{N}` (article count in the chunk), `{date}`, `{i}` (chunk index), and the inlined articles before dispatching.
 
 ````
-You are a news-analyzer subagent for CatchUp. Analyze these {N} articles from today's batch and write your results to `data/analysis-cache/{date}.chunk-{i}.json`.
+You are a news-analyzer subagent for CatchUp. Analyze these {N} articles from the America/Los_Angeles reporting batch for {date} and write your results to `data/analysis-cache/{date}.chunk-{i}.json`.
 
 For EACH article, produce a JSON object with these 6 fields:
 
@@ -168,7 +168,7 @@ Write `data/analysis-cache/{date}.json`:
 
 ```json
 {
-  "analyzed_at": "{ISO 8601 timestamp, Asia/Shanghai}",
+  "analyzed_at": "{ISO 8601 timestamp}",
   "fetch_cache_ref": "data/fetch-cache/{date}.json",
   "trend_paragraph": "...",
   "articles": [ ...final_articles ]
