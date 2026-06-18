@@ -1,0 +1,683 @@
+{
+  "fetched_at": "2026-06-19T07:21:17+08:00",
+  "window_start": "2026-06-18T01:21:17+08:00",
+  "window_hours": 30,
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1012,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "New usage analytics and updated spend controls for enterprises",
+          "url": "https://openai.com/index/chatgpt-enterprise-spend-controls",
+          "published_at": "2026-06-18T17:00:00.000Z",
+          "description": "OpenAI introduces new spend controls and usage analytics for ChatGPT Enterprise, helping organizations manage costs and scale AI with confidence.",
+          "full_text": "Title: Just a moment...\n\nURL Source: https://openai.com/index/chatgpt-enterprise-spend-controls\n\nWarning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.\n\nMarkdown Content:\n# Just a moment...\n\nVerification successful. Waiting for openai.com to respond\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Improving health intelligence in ChatGPT",
+          "url": "https://openai.com/index/improving-health-intelligence-in-chatgpt",
+          "published_at": "2026-06-18T11:00:00.000Z",
+          "description": "Learn how GPT-5.5 Instant improves ChatGPT’s health and wellness responses with stronger reasoning, better context, clearer communication, and physician-informed evaluations.",
+          "full_text": "Title: Improving health intelligence in ChatGPT\n\nURL Source: https://openai.com/index/improving-health-intelligence-in-chatgpt\n\nMarkdown Content:\nHealth is one of the most meaningful ways people use ChatGPT. Every week, more than 230 million people turn to ChatGPT for help with health and wellness questions: making sense of health information, understanding lab results, preparing for appointments, navigating insurance, building healthier habits, and figuring out what to ask next.\n\nWith GPT‑5.5 Instant, we’re seeing a substantial step forward in health, with improvements in recognizing when urgent care may be needed, asking for relevant context, explaining uncertainty, and making complex information easier to understand. On our most challenging health evaluations, GPT‑5.5 Instant now performs at a level comparable to our frontier Thinking models. Because it is available to all free users in ChatGPT, more people can benefit from these improvements.\n\nThat progress reflects both advances in model capabilities and the physician-led work behind our health evaluations. Across our efforts, a global network of physicians helps define what “good” looks like in real-world health situations by reviewing example model responses, describing ideal behavior, and identifying failure modes. Working with physicians gives us a way to measure progress in health and improve how ChatGPT responds over time.\n\n## Measuring progress in health\n\nIn health, progress means delivering responses that are accurate, understandable, and grounded in good judgment: recognizing when more context is needed, explaining uncertainty without overstating confidence, and helping people understand when to seek care.\n\nTo measure that progress, we use health-specific evaluations, including [HealthBench⁠](https://openai.com/index/healthbench/) and [HealthBench Professional⁠(opens in a new window)](https://arxiv.org/pdf/2604.27470v1). These evaluations use realistic health conversations and physician-written rubrics to assess qualities like accuracy, safety, communication, context awareness, completeness, and appropriate escalation.\n\n_GPT‑5.5 Instant reaches health performance similar to our latest frontier models on an aggregate of health evaluations, including HealthBench Professional, substantially improving from GPT‑5.3 Instant. 5.5 Instant (released May 2026) and 5.3 Instant (released March 2026) are available for all free users in ChatGPT (subject to limits), and we use API pricing to calculate cost for 5.4 Thinking and 5.5 Thinking._\n\nAs another comparison, we asked physicians to write responses for representative health conversations, with unlimited time and access to the internet (but not AI). A separate panel of physicians then compared these physician responses with model responses over time, reviewing qualities that matter in real interactions, including accuracy, communication, completeness, instruction following, and health decision helpfulness, across 3,500 reviewed responses.\n\n_GPT‑5.5 Instant responses were rated higher than physician-written and older model responses across criteria in this evaluation._\n\nPhysicians rated GPT‑5.5 Instant responses as having fewer failure modes than those from older models and physicians. For example, GPT‑5.5 Instant had fewer instances of not tailoring to local healthcare context, missing red flags or referral to care, or failing to seek additional context from the user when needed than both older models and physicians.\n\nGiven the scale of usage of our models in health, another way to understand recent model improvements is to measure production traffic. We use privacy-preserving monitors on production traffic to track possible factuality issues in health responses. Based on a comparison of recent production traffic in health—billions of messages a week—the rate of responses with at least one flagged factuality issue has fallen by 71% in the last two months.\n\n## What better responses look like\n\nComparing responses from models on real-world health questions over time shows how ChatGPT has improved in ways that matter for health: recognizing when a situation may need urgent attention, handling uncertainty with better judgment, and giving people clearer, more useful guidance about what to do next.\n\n## The medical expertise behind the progress\n\nThis progress is shaped by physicians who help us define, measure, and improve health responses in ChatGPT.\n\nOpenAI works with a global network of more than 260 physicians across 60 countries, 49 languages, and 26 medical specialties. Their feedback informs how ChatGPT responds to health questions across a wide range of scenarios, from everyday wellness questions to more complex clinical situations.\n\nPhysicians review example model responses and assess whether they are accurate, clear, complete, appropriately cautious, and useful. They help identify where a response may miss important context, where it may sound too confident, where it should be clearer about next steps, or more directly encourage someone to seek medical care.\n\nTo date, physicians have reviewed more than 700,000 example model responses that reflect how patients and clinicians use ChatGPT in the real world. Every few minutes, a physician reviews a new response. Their feedback becomes rubrics and evaluation criteria that help researchers measure whether responses are accurate, safe, clear, complete, appropriately cautious, and useful in real-world health situations. This gives us a clearer way to see where models are getting better and where they still need work.\n\n## Bringing health improvements to more people\n\nThis work also supports OpenAI’s broader work in health, including tools built for healthcare, such as [ChatGPT for Clinicians⁠](https://openai.com/index/making-chatgpt-better-for-clinicians/) and [OpenAI for Healthcare⁠](https://openai.com/index/openai-for-healthcare/), which support medical professionals with tasks like documentation, research, and care delivery.\n\nImproving human health will be one of the most personal, tangible impacts of AGI. As our models continue to improve, our goal is to make ChatGPT more accurate, more useful, and more impactful in those moments — and to keep bringing that progress to more people.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Using AI to help physicians diagnose rare genetic diseases affecting children",
+          "url": "https://openai.com/index/diagnose-rare-childhood-diseases",
+          "published_at": "2026-06-18T08:00:00.000Z",
+          "description": "Researchers used an OpenAI reasoning model to help diagnose rare diseases, identifying 18 new diagnoses in previously unsolved cases.",
+          "full_text": "Title: Using AI to help physicians diagnose rare genetic diseases affecting children\n\nURL Source: https://openai.com/index/diagnose-rare-childhood-diseases\n\nMarkdown Content:\nEven with genomic sequencing, many people with rare diseases never receive a clear genetic diagnosis. Roughly half remain undiagnosed after extensive testing and specialist review. Their medical data may contain clues but finding them can require sifting through thousands to millions of possible genetic variants, fragmented clinical records, and rapidly changing scientific literature.\n\nAs new gene-disease relationships, case reports, and classification evidence accumulate, unsolved cases can become newly interpretable.\n\nResearchers from Boston Children’s Hospital’s Manton Center for Orphan Disease Research, Harvard University, and OpenAI used the OpenAI o3 Deep Research reasoning model to analyze de-identified clinical and genomic information from 376 previously analyzed cases that remained unsolved. The model surfaced evidence-linked candidate explanations for researchers and clinicians to review. Following expert review, additional testing, and clinical confirmation, physicians established diagnoses in 18 cases—an additional diagnostic yield of 4.8% after earlier analysis by specialists. This study was published on June 18, 2026, in NEJM AI and shows how an AI-assisted research workflow can help experts generate leads when revisiting some of the most difficult cases.\n\nMany of these cases had evaded years of expert analysis. In this study, OpenAI o3 Deep Research helped researchers identify leads that were later assessed through established clinical processes, suggesting that expert-led periodic reanalysis could become more scalable as knowledge evolves. The model did not diagnose any patient or make any clinical decision. It produced evidence-linked hypotheses for specialists to review and, where appropriate, investigate through additional testing and confirm in a clinical laboratory.\n\n## Why an old case can contain a new answer\n\nAn inconclusive genetic test is not always a permanent finding. A patient’s phenotype descriptions, test results, and family history can be split across databases that use different identifiers, formats, and vocabularies. Linking those records is difficult, so even specialists can miss a diagnosis. Experts may also sequence a child’s genome before a relevant gene or its variants have been linked to disease. As scientific knowledge advances, the same data can reveal answers that were previously impossible to uncover.\n\nRare-disease reanalysis is both a scientific and a maintenance problem. The patient’s genome may stay the same, but the evidence around it keeps changing: researchers link new genes and variants to disease, labs reclassify old variants, and case databases and papers accumulate new observations. Each update can make an old inconclusive case worth revisiting, so many institutions inherit a growing backlog of genomes to keep in sync with a moving knowledge base.\n\nIn this study, researchers designed the workflow so that the model acted as an explanation-first reasoning layer on top of existing genomic pipelines. Instead of returning only a ranked gene, it was asked to connect the clinical features, inheritance pattern, variant evidence, and scientific literature into a justification that a human reviewer could interrogate.\n\n## How the reanalysis worked\n\nFor each case, the team assembled a de-identified packet containing standardized Human Phenotype Ontology terms to describe the patient’s clinical presentation, occasional clinician notes and any descriptive clinical diagnosis, metadata such as age and gender, and a filtered variant table. The table captured each variant’s rarity, its predicted effect on the encoded protein, ClinVar classification, and signal quality across available family members. Most cases included data from the child and both biological parents.\n\nThe team asked the model to propose the most plausible molecular explanation and to show its work. Researchers then reviewed the outputs using the same ACMG/AMP framework that clinical labs use to classify genetic variants. At least two team members reviewed each candidate, disagreements were resolved by consensus, and a model output was never treated as a diagnosis. A finding counted as a diagnosis only after qualified experts reviewed the evidence, the variant was classified as pathogenic or likely pathogenic, a CLIA-certified laboratory confirmed it, and the clinical team returned the result to the family.\n\nBefore analyzing unsolved cases, the team refined the workflow on cases with established diagnoses. It recovered the correct gene and variant in duplicate runs for 48 of 51 cases that included a variety of rare conditions. In a set of 57 neuromuscular cases, the workflow returned the correct diagnosis in duplicate runs for 45 of the cases. In a 15-case long-read genome set, it named the correct gene in every case and both disease-causing alleles in 12 cases. These evaluations aided in prompt development and showed where expert review remained essential.\n\nThe model’s self-reported confidence scores tracked with correct diagnoses in these previously solved cases: the mean minimum score was 85.6 for consistently correct calls and 42.1 for incorrect or unknown calls. The scores were not calibrated probabilities, and the team did not use them as a substitute for evidence or clinical adjudication. But they were helpful in guiding the expert reviewers to focus on the most promising candidate diagnoses.\n\n## What the researchers found\n\nThe team then applied the workflow to four groups of previously unsolved cases: children with neurodevelopmental conditions, people with rare neuromuscular disease, children and adolescents with early psychosis, and cases of sudden unexpected death in pediatrics. These were not fresh cases awaiting a first review. Many had already been examined by multiple commercial or institutional pipelines and discussed by multidisciplinary teams.\n\n### Results by cohort\n\n**Cohort****Cases****Diagnoses surfaced****Yield**\nNeurodevelopmental 100 10 10.0%\nNeuromuscular disease 61 4 6.6%\nSudden unexpected death in pediatrics 200 2 1.0%\nEarly psychosis 15 2 13.3%\n**Total****376****18****4.8%**\n\nThe early psychosis cohort was small, so its percentage has a wide confidence interval. Yield also reflects how likely each cohort was to have a single-gene explanation.\n\nAfter the model surfaced candidates and experts completed review and clinical confirmation, physicians established diagnoses in 4.8% of the cases. That rate is modest but meaningful in this population because previous expert reviews had not resolved the cases. Similar reanalysis studies report single-digit gains in heavily reviewed cases; higher yields usually come from studies containing new cases or well-known disorders awaiting genetic confirmation.\n\nOf the 18 diagnoses, 7 were rediscoveries: diagnoses established outside the local research workflow but absent from the record the team reviewed. In several cases, the variants were already listed as pathogenic or likely pathogenic in public databases, highlighting the operational challenge of synthesizing information across data sources.\n\n## Demonstrating flexibility when identifying variants\n\nIn one early-psychosis case, the model inferred a structural event in the genome that was not listed in the input data. It connected a run of low-quality calls on chromosome 22 with the child’s cardiac, immune, neurodevelopmental, and psychiatric features, then hypothesized a 22q11.2 deletion associated with DiGeorge syndrome. This hypothesized variant was confirmed with follow-up genome sequencing.\n\nAlthough the prompt asked for one monogenic cause, the model sometimes surfaced two genes that better explained a complex presentation. Variants in _LAMA2_ and _FOXP1_ together helped account for muscle and neurodevelopmental features in one case; another had a previously unrecognized digenic explanation involving _TTN_ and _SRPK3_.\n\n## Producing a testable, biologically coherent hypothesis\n\nIn addition to diagnoses, the model also identified a possible novel mechanistic explanation for a condition called vitiligo. In one neurodevelopmental case, the model highlighted an 11-amino-acid deletion in _S1PR1_ in a person with vitiligo. _S1PR1_ encodes a cell-surface receptor involved in signaling, immune-cell movement, and tissue biology. The model integrated evidence suggesting that the deletion could alter receptor structure and signaling in ways that reduce pigment production while also helping immune cells persist in the skin.\n\nThe proposed _S1PR1_-vitiligo relationship requires additional experimental validation but it illustrates a powerful role for AI in translating scattered findings from structural biology, immunology, and clinical genetics into concrete, testable hypotheses.\n\nThe team also saw possible phenotype expansion in the neuromuscular cohort. Damaging variants in _HSPB8_ and _CDK13_ did not perfectly match the genes’ best-known disorders, suggesting a broader clinical spectrum that more cases and laboratory work will need to test.\n\n## Limitations\n\nThis study shows that a general-purpose reasoning model can contribute to retrospective genomic reanalysis by combining phenotype, inheritance, variant annotations, data-quality patterns, and scientific literature into reviewable hypotheses. It also shows why periodic reanalysis matters: some answers surface only after knowledge advances or fragmented records are brought together.\n\nThis research is not evidence that patients, clinicians, or customers should use OpenAI models to diagnose disease or make medical decisions. It does not describe or endorse an intended customer use of OpenAI o3 Deep Research, ChatGPT, or any other OpenAI product for diagnosis. The model did not diagnose any participant; physicians and other qualified clinical experts made every diagnosis through established review, testing, and clinical-confirmation processes.\n\nThe study was retrospective, the cohorts were heterogeneous, and reviewers were not blinded to model confidence. The researchers did not measure time saved, cost, clinician effort, false-positive workload, or changes in care. Nor did they systematically evaluate other forms of genetic variation such as structural variants, repeat expansions, deep-intronic changes, or mosaicism.\n\nLarge language models can misread context or produce plausible explanations that fail upon closer inspection. Therefore, every result passed through human adjudication and clinical confirmation. The model widened the search and focused the subsequent human-led analysis; it did not decide what information or diagnosis should be returned to a family.\n\nThis study used de-identified information, with no protected health information utilized or transmitted outside approved environments. Broader clinical deployment will require the same attention to privacy, security, auditability, and local regulation that applies to all medical care. Model access does not replace sequencing infrastructure, genetic counseling, confirmatory testing, or specialist judgment.\n\nDr. Catherine Brownstein, Boston Children’s Hospital’s Manton Center for Orphan Disease Research\n\nAlan Beggs, director of the Manton Center for Orphan Disease Research\n\n## What comes next\n\nProspective, multi-center studies should compare LLM-assisted reanalysis with standard practice on diagnostic yield, time to a candidate, clinician effort, false-positive burden, cost, and effects on care. Versioned prompts, reference checks, audit logs, and calibrated uncertainty will be important for reproducibility and safety. Such studies would still require qualified clinicians to evaluate evidence, order appropriate tests, and make any diagnosis or treatment decision.\n\nThis study used OpenAI o3 Deep Research. Newer general-purpose models can search and synthesize more scientific material, while purpose-built systems such as GPT‑Rosalind are designed for deeper life-sciences work, including variant effects on protein structure and function. Those capabilities were not tested here and will require their own evaluations and access controls.\n\nWhile OpenAI helped support this initial research study, the Manton Center will lead the next stage of the work through a grant from the OpenAI Foundation. The grant will support the Center's broader effort to develop a platform-agnostic, low-cost genetics AI copilot that helps clinical teams analyze rare disease cases more quickly and consistently.\n\nThe longer-term research opportunity is to explore whether expert-led AI-assisted reanalysis can help scientific understanding keep pace with discovery. The promise is not that AI replaces a doctor’s diagnosis, but that carefully evaluated research tools may help specialists identify evidence worth investigating. For thousands of families, today’s unanswered questions do not have to remain unanswered forever.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Project Fetch: Phase two",
+          "url": "https://www.anthropic.com/research/project-fetch-phase-two",
+          "published_at": "2026-06-18T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Project Fetch: Phase two\n\nURL Source: https://www.anthropic.com/research/project-fetch-phase-two\n\nMarkdown Content:\n_Michael Ilie, C. Daniel Freeman, and Kevin K. Troy_\n\nIn August 2025, we ran an [experiment](https://www.anthropic.com/research/project-fetch-robot-dog) to see how much Claude could help Anthropic employees—who were not robotics experts—perform sophisticated (and amusing) tasks with an off-the-shelf robotic quadruped (henceforth, a robodog). We called this Project Fetch. We found that access to our state-of-the-art model at the time (Claude Opus 4.1) helped one team substantially outperform the other, who had to rely only on the internet and their own ingenuity. The Claude-enabled team got more done, faster.\n\nBefore we dragged our colleagues to a warehouse for the experiment, we double checked whether Opus 4.1 could do the tasks entirely on its own. Unquestionably, it could not. Much like our team without Claude, it got hung up on the preliminary task of figuring out how to connect to the robot.\n\nBut AI models are moving fast—even faster than the runaway robodog that almost rammed into one of our human teams back in August.\n\nWe figured it was time to revisit Project Fetch to see if our newer models could outperform the previous generation. Not only did they do that, but **Claude Opus 4.7—operating without human assistance—was about 20 times faster than the fastest human team at all tasks completed by our participants less than a year ago**.\n\nThis doesn’t mean that LLMs have now solved robotics. Far from it. The latest Claude models still struggled with using the robot to precisely move the beach ball—the “fetching” part of Project Fetch. And none of the tasks in these experiments implicate the more challenging, low-level elements of robotic control, such as developing a specific actuation policy. However, once again, we are seeing a pattern whereby first, models are helpful to humans. Then, humans are helpful to models. Finally, models are largely able to do things themselves. We have seen this in [cybersecurity](https://red.anthropic.com/2026/mythos-preview/) and now the same dynamics are starting to take shape at the intersection of AI and the physical world.\n\n## What did we do?\n\nThe original Project Fetch had teams of Anthropic employees (randomly assigned to work with or without Claude) do the following steps: operate the robodog using the manufacturer-provided controller, connect to the robodog’s video and lidar sensors, write and operate a program to manually control the robodog, develop a way to monitor the robodog’s path through space, write a program to detect the beach ball, and finally put it all together to autonomously retrieve the ball.\n\nFor this autonomous update, we couldn’t ask Claude to use a physical controller, nor did we evaluate the time it took a researcher to use the Claude-programmed controller to retrieve the ball (though we did confirm that it worked as intended). On the remaining subset of tasks, we ran three trials of Opus 4.7 using adaptive thinking with effort set to maximum in Claude Code. We measured the elapsed time for each objective and qualitatively assessed the models’ success.\n\nThe role of our researcher was limited to plugging a laptop running Claude Code into the robodog, entering the initial prompt, approving commands, and approving the model to go to the next task.\n\n## Where did Claude excel?\n\nVery simply: on every task that was completed by at least one human team in August, Opus 4.7 completed the same task at least ten times faster.1 If you consider the four tasks that were completed by both human teams, Opus 4.7 was, on average, more than 37 times faster than Team Claude-less and more than 18 times faster than Team Claude.\n\n![Image 1: Bar chart labeled \"Total time comparison: 4 tasks completed by all teams.\" The chart shows that Team Claude-less completed tasks in 361 minutes; Team Claude completed tasks in 181 minutes, and Claude Opus 4.7 alone completed tasks in 9 minutes 35 seconds. Opus 4.7 was 37.7 times faster than Team Claude-less and 18.9 times faster than Team Claude.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F0424a5a4ed31f7891e4048d091aefa52f36862cf-1999x1092.png&w=3840&q=75)\n\nThe table compares the speed of the original teams (Team Claude and Team Claude-less) to Opus 4.7 on all of the tasks we tested as part of Phase Two.\n\n![Image 2: Table comparing Claude Opus 4.7 to Team Claude-less and Team Claude performance on tasks related to programmatic control and autonomous operation. Tasks include \"Connect to robodog's video camera,\" \"Connect to robodog's lidar sensor,\" and \"Detect beach ball.\" Opus 4.7 was faster than Team Claude-less and Team Claude on all tasks. Team Claude-less did not complete all 5 tasks in the table; Team Claude completed them in 264 minutes; and Opus 4.7, averaged over 3 trials, completed them in 12 minutes 7 seconds.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5d1655f4a40044244b6fae0c3826e668a8422bd3-4005x2308.png&w=3840&q=75)\n\nWhereas the humans struggled to choose between multiple different approaches to interface with the dog’s sensors, Opus 4.7 was able to quickly identify the best path. Much of the code it wrote was effective on the first try (which was not the case for Team Claude or Team Claude-less in the original experiment). Indeed, we can see evidence of Opus 4.7’s efficiency when we look at the volume of code it generated: it was as or more successful than both human teams while producing almost ten times less code than Team Claude.\n\n![Image 3: Bar chart showing total code volume for Team Claude, Team Claude-less, and Opus 4.7 alone. Team Claude wrote 10,309 lines of code; Team Claude-less wrote 1,136 lines of code; Opus 4.7 alone wrote 1,045 lines of code.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5c08d125a49025bd24e1f382a2c1e417519661eb-1999x1088.png&w=3840&q=75)\n\nOpus 4.7 was not perfect. For example, it defaulted to using an outdated object detection algorithm. But even then, it was able to work around this and arrive at an effective solution.\n\nWe observed little within-task variance (in absolute terms) on completion times for steps the model finished. (Though the aforementioned suboptimal algorithm selection is likely why one of the beach ball detection trials took substantially longer than the others.) Overall, for the tasks in this experiment within its capability envelope, Claude is now quite reliable. (See the next section for an analysis of what Claude is still unable to do.)\n\n![Image 4: Scatter plot showing Opus 4.7's reliability on task performance. Opus 4.7 performed each task three times; the scatter plot shows that the performance time was relatively consistent across runs. ](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1a362dfdaae7ff55cf8b04c7ac316e75455a9d21-1999x1122.png&w=3840&q=75)\n\nIt is worth underscoring (as we did in our previous post) that this progress is not the result of a concerted effort to improve the robotics capabilities of our models. These improvements, like so many others in the history of LLM development, have emerged from much more general scaling.\n\n## Where did Claude struggle?\n\nWhen using their hands, and with some practice, our humans were able to pilot the robodogs to gently nudge a beach ball back to the home base (a patch of fake grass) where the robots started. This required the ability to quickly perceive if the ball had gone off course, how that error related to the previous command, where the ball was now, and then how to adjust future inputs to more precisely move the ball. This is a kind of closed loop at which people excel (at least after making some mistakes and learning from them).\n\nIn our Phase Two experiments, Claude struggled to capture this subtlety. Like the humans who reached the phase of needing to write a program for autonomous beach ball retrieval, Claude was able to move the robot behind the ball and position it to knock the ball back to the starting point. But the efforts to do so were poorly controlled and (again, like our human participants) not successful.\n\nOne of our researchers with more robotics experience than our Phase One volunteers successfully accomplished the task of programming autonomous fetching. With more time and additional scaffolding, we think it is very likely that current generations of Claude could do the same. What we will be watching for next, though, is the ability of the models to accomplish this final task with the same speed and reliability they displayed on the other elements of Project Fetch.\n\n## What does this mean?\n\nWriting about Phase One, we emphasized how LLMs could provide uplift to non-expert humans needing to use robots. This is even more true now than before. Models now complete what was previously pair-programming work between humans and models much more quickly by themselves, which means that people can more quickly transition to controlling and using the robots. And for some tasks, a human in the loop controlling the robot may still outstrip the AI model with its (virtual) hand on the D-pad.\n\nWhat is interesting and different is that we now seem much closer to a world where models will be able to use off-the-shelf physical tools with relative ease—at least for limited purposes. This is similar to how AI models used existing software editing tools like string-replace when they made the transition to more agentic coding. We are plausibly entering the early era of _physical_ agentic AI.\n\nMore research is needed to understand models’ ability to make these physical tools more bespoke, whether by writing control policies tailored to particular tasks or by designing robotic systems. And there may be substantial barriers to this more generalized vision of physically capable and adaptable language models. But as we have seen, apparently large distances in model capability can be traversed quickly. Models building their own software tools might have seemed outlandish not long ago, but it is happening. It would be unwise to rule out the same trajectory in hardware.\n\n_Updated Jun 18:_ Corrected the date of the first phase of Project Fetch.\n\n## Related content\n\n### Agentic coding and persistent returns to expertise\n\n[Read more](https://www.anthropic.com/research/claude-code-expertise)\n\n### Paving the way for agents in biology\n\n[Read more](https://www.anthropic.com/research/agents-in-biology)\n\n### Measuring LLMs’ impact on N-day exploits\n\nIn cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.\n\n[Read more](https://www.anthropic.com/research/n-days)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 21,
+      "filtered_count": 9,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Artifacts are now live in Claude Code.\n\nAsk Claude to turn what it's working on into a page and send the link to your team. The page updates as the session keeps working. \n\nAvailable today on Team and",
+          "url": "https://x.com/ClaudeDevs/status/2067672094209675373",
+          "published_at": "2026-06-18T18:13:37.000000Z",
+          "description": "Artifacts are now live in Claude Code.\n\nAsk Claude to turn what it's working on into a page and send the link to your team. The page updates as the session keeps working. \n\nAvailable today on Team and Enterprise plans.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "New in Claude Code: Artifacts.\n\nInteractive pages built from your session, like a PR walkthrough or a living project dashboard, shared with your team at a private link.\n\nAvailable in beta on Team and Enterprise plans. https://t.co/0NX9gNCaAs",
+            "url": "https://x.com/claudeai/status/2067671912038240487"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "It centralizes authorization through your identity provider: no per-app OAuth or setup for users, and tighter, more efficient control for admins.",
+          "url": "https://x.com/ClaudeDevs/status/2067655889050571036",
+          "published_at": "2026-06-18T17:09:13.000000Z",
+          "description": "It centralizes authorization through your identity provider: no per-app OAuth or setup for users, and tighter, more efficient control for admins.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2067655887662272723"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260618-1709",
+          "duplicate_of": null
+        },
+        {
+          "title": "In beta now with Okta and connectors from Asana, Atlassian, Canva, Figma, Granola, Linear, Slack and Supabase, with Slack coming soon. Access stays consistent across Claude chat, Claude Code, and Cowo",
+          "url": "https://x.com/ClaudeDevs/status/2067655890166247690",
+          "published_at": "2026-06-18T17:09:14.000000Z",
+          "description": "In beta now with Okta and connectors from Asana, Atlassian, Canva, Figma, Granola, Linear, Slack and Supabase, with Slack coming soon. Access stays consistent across Claude chat, Claude Code, and Cowork. \n\nRead the announcement: https://t.co/vPhSthb6go",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/vPhSthb6go",
+              "expanded_url": "https://claude.com/blog/enterprise-managed-auth",
+              "display_url": "claude.com/blog/enterpris…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2067655889050571036"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260618-1709",
+          "duplicate_of": null
+        },
+        {
+          "title": "Built on an MCP extension that any client, server, or IdP can adopt. \n\nIf you're interested in learning more or adopting it, read here: \nhttps://t.co/qtK5FEMQIz",
+          "url": "https://x.com/ClaudeDevs/status/2067655891378491888",
+          "published_at": "2026-06-18T17:09:14.000000Z",
+          "description": "Built on an MCP extension that any client, server, or IdP can adopt. \n\nIf you're interested in learning more or adopting it, read here: \nhttps://t.co/qtK5FEMQIz",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/qtK5FEMQIz",
+              "expanded_url": "https://blog.modelcontextprotocol.io/posts/enterprise-managed-auth",
+              "display_url": "blog.modelcontextprotocol.io/posts/enterpri…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2067655890166247690"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260618-1709",
+          "duplicate_of": null
+        },
+        {
+          "title": "We've added support for the Enterprise-Managed Auth extension to MCP. \n\nAdmins can centrally authorize MCP connectors for their organization, so all the tools and data users need are connected on thei",
+          "url": "https://x.com/ClaudeDevs/status/2067655887662272723",
+          "published_at": "2026-06-18T17:09:13.000000Z",
+          "description": "We've added support for the Enterprise-Managed Auth extension to MCP. \n\nAdmins can centrally authorize MCP connectors for their organization, so all the tools and data users need are connected on their first login. https://t.co/NJl57QbxD0",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260618-1709",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Code and Claude Design now sync both ways.\n\nRun /design-sync to pull your design system into your repo and build against your real components, or push what you've built back into Claude Design ",
+          "url": "https://x.com/ClaudeDevs/status/2067391951725629941",
+          "published_at": "2026-06-17T23:40:26.000000Z",
+          "description": "Claude Code and Claude Design now sync both ways.\n\nRun /design-sync to pull your design system into your repo and build against your real components, or push what you've built back into Claude Design and keep editing on the canvas.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "New in Claude Design: it stays on brand with your design system across projects, lets you edit directly on the canvas, syncs with Claude Code, and connects to more of the tools you already use. https://t.co/MK8YvLP8zV",
+            "url": "https://x.com/claudeai/status/2067325887909884315"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Thanks for building with us at Claude Build Day!\n300 builders spent their Saturday with us in SF, and we're blown away by what you made in a single day. \n\nHere are all the winning demos: 🧵 https://t.",
+          "url": "https://x.com/ClaudeDevs/status/2067298098553254211",
+          "published_at": "2026-06-17T17:27:29.000000Z",
+          "description": "Thanks for building with us at Claude Build Day!\n300 builders spent their Saturday with us in SF, and we're blown away by what you made in a single day. \n\nHere are all the winning demos: 🧵 https://t.co/GynahLLweE",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "🥉 3rd Place: Custom Universe\n\nJake Stevens & Mauricio Pereira built a real-time engine that turns a single phone photo into a fully editable, photorealistic 3D scene.",
+          "url": "https://x.com/ClaudeDevs/status/2067298104320405848",
+          "published_at": "2026-06-17T17:27:31.000000Z",
+          "description": "🥉 3rd Place: Custom Universe\n\nJake Stevens & Mauricio Pereira built a real-time engine that turns a single phone photo into a fully editable, photorealistic 3D scene.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2067298102470672857"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260617-1727",
+          "duplicate_of": null
+        },
+        {
+          "title": "Thank you @cerebral_valley for co-hosting this event! We hope to see you at one of our future builder events.",
+          "url": "https://x.com/ClaudeDevs/status/2067298105821978868",
+          "published_at": "2026-06-17T17:27:31.000000Z",
+          "description": "Thank you @cerebral_valley for co-hosting this event! We hope to see you at one of our future builder events.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2067298104320405848"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260617-1727",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "New Frontier Red Team blog: Phase 2 of Project Fetch, where we test how well Claude can program a robodog.\n\nOpus 4.7, on its own, was ~20x faster than last year's best human team aided by Opus 4.1. (T",
+          "url": "https://x.com/AnthropicAI/status/2067651699486200091",
+          "published_at": "2026-06-18T16:52:34.000000Z",
+          "description": "New Frontier Red Team blog: Phase 2 of Project Fetch, where we test how well Claude can program a robodog.\n\nOpus 4.7, on its own, was ~20x faster than last year's best human team aided by Opus 4.1. (The robodog, alas, still failed to fetch a beach ball.)\nhttps://t.co/CgbBtRf85e",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/CgbBtRf85e",
+              "expanded_url": "https://www.anthropic.com/research/project-fetch-phase-two",
+              "display_url": "anthropic.com/research/proje…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Project Fetch: Phase two\n\nURL Source: https://www.anthropic.com/research/project-fetch-phase-two\n\nMarkdown Content:\n_Michael Ilie, C. Daniel Freeman, and Kevin K. Troy_\n\nIn August 2025, we ran an [experiment](https://www.anthropic.com/research/project-fetch-robot-dog) to see how much Claude could help Anthropic employees—who were not robotics experts—perform sophisticated (and amusing) tasks with an off-the-shelf robotic quadruped (henceforth, a robodog). We called this Project Fetch. We found that access to our state-of-the-art model at the time (Claude Opus 4.1) helped one team substantially outperform the other, who had to rely only on the internet and their own ingenuity. The Claude-enabled team got more done, faster.\n\nBefore we dragged our colleagues to a warehouse for the experiment, we double checked whether Opus 4.1 could do the tasks entirely on its own. Unquestionably, it could not. Much like our team without Claude, it got hung up on the preliminary task of figuring out how to connect to the robot.\n\nBut AI models are moving fast—even faster than the runaway robodog that almost rammed into one of our human teams back in August.\n\nWe figured it was time to revisit Project Fetch to see if our newer models could outperform the previous generation. Not only did they do that, but **Claude Opus 4.7—operating without human assistance—was about 20 times faster than the fastest human team at all tasks completed by our participants less than a year ago**.\n\nThis doesn’t mean that LLMs have now solved robotics. Far from it. The latest Claude models still struggled with using the robot to precisely move the beach ball—the “fetching” part of Project Fetch. And none of the tasks in these experiments implicate the more challenging, low-level elements of robotic control, such as developing a specific actuation policy. However, once again, we are seeing a pattern whereby first, models are helpful to humans. Then, humans are helpful to models. Finally, models are largely able to do things themselves. We have seen this in [cybersecurity](https://red.anthropic.com/2026/mythos-preview/) and now the same dynamics are starting to take shape at the intersection of AI and the physical world.\n\n## What did we do?\n\nThe original Project Fetch had teams of Anthropic employees (randomly assigned to work with or without Claude) do the following steps: operate the robodog using the manufacturer-provided controller, connect to the robodog’s video and lidar sensors, write and operate a program to manually control the robodog, develop a way to monitor the robodog’s path through space, write a program to detect the beach ball, and finally put it all together to autonomously retrieve the ball.\n\nFor this autonomous update, we couldn’t ask Claude to use a physical controller, nor did we evaluate the time it took a researcher to use the Claude-programmed controller to retrieve the ball (though we did confirm that it worked as intended). On the remaining subset of tasks, we ran three trials of Opus 4.7 using adaptive thinking with effort set to maximum in Claude Code. We measured the elapsed time for each objective and qualitatively assessed the models’ success.\n\nThe role of our researcher was limited to plugging a laptop running Claude Code into the robodog, entering the initial prompt, approving commands, and approving the model to go to the next task.\n\n## Where did Claude excel?\n\nVery simply: on every task that was completed by at least one human team in August, Opus 4.7 completed the same task at least ten times faster.1 If you consider the four tasks that were completed by both human teams, Opus 4.7 was, on average, more than 37 times faster than Team Claude-less and more than 18 times faster than Team Claude.\n\n![Image 1: Bar chart labeled \"Total time comparison: 4 tasks completed by all teams.\" The chart shows that Team Claude-less completed tasks in 361 minutes; Team Claude completed tasks in 181 minutes, and Claude Opus 4.7 alone completed tasks in 9 minutes 35 seconds. Opus 4.7 was 37.7 times faster than Team Claude-less and 18.9 times faster than Team Claude.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F0424a5a4ed31f7891e4048d091aefa52f36862cf-1999x1092.png&w=3840&q=75)\n\nThe table compares the speed of the original teams (Team Claude and Team Claude-less) to Opus 4.7 on all of the tasks we tested as part of Phase Two.\n\n![Image 2: Table comparing Claude Opus 4.7 to Team Claude-less and Team Claude performance on tasks related to programmatic control and autonomous operation. Tasks include \"Connect to robodog's video camera,\" \"Connect to robodog's lidar sensor,\" and \"Detect beach ball.\" Opus 4.7 was faster than Team Claude-less and Team Claude on all tasks. Team Claude-less did not complete all 5 tasks in the table; Team Claude completed them in 264 minutes; and Opus 4.7, averaged over 3 trials, completed them in 12 minutes 7 seconds.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5d1655f4a40044244b6fae0c3826e668a8422bd3-4005x2308.png&w=3840&q=75)\n\nWhereas the humans struggled to choose between multiple different approaches to interface with the dog’s sensors, Opus 4.7 was able to quickly identify the best path. Much of the code it wrote was effective on the first try (which was not the case for Team Claude or Team Claude-less in the original experiment). Indeed, we can see evidence of Opus 4.7’s efficiency when we look at the volume of code it generated: it was as or more successful than both human teams while producing almost ten times less code than Team Claude.\n\n![Image 3: Bar chart showing total code volume for Team Claude, Team Claude-less, and Opus 4.7 alone. Team Claude wrote 10,309 lines of code; Team Claude-less wrote 1,136 lines of code; Opus 4.7 alone wrote 1,045 lines of code.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5c08d125a49025bd24e1f382a2c1e417519661eb-1999x1088.png&w=3840&q=75)\n\nOpus 4.7 was not perfect. For example, it defaulted to using an outdated object detection algorithm. But even then, it was able to work around this and arrive at an effective solution.\n\nWe observed little within-task variance (in absolute terms) on completion times for steps the model finished. (Though the aforementioned suboptimal algorithm selection is likely why one of the beach ball detection trials took substantially longer than the others.) Overall, for the tasks in this experiment within its capability envelope, Claude is now quite reliable. (See the next section for an analysis of what Claude is still unable to do.)\n\n![Image 4: Scatter plot showing Opus 4.7's reliability on task performance. Opus 4.7 performed each task three times; the scatter plot shows that the performance time was relatively consistent across runs. ](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1a362dfdaae7ff55cf8b04c7ac316e75455a9d21-1999x1122.png&w=3840&q=75)\n\nIt is worth underscoring (as we did in our previous post) that this progress is not the result of a concerted effort to improve the robotics capabilities of our models. These improvements, like so many others in the history of LLM development, have emerged from much more general scaling.\n\n## Where did Claude struggle?\n\nWhen using their hands, and with some practice, our humans were able to pilot the robodogs to gently nudge a beach ball back to the home base (a patch of fake grass) where the robots started. This required the ability to quickly perceive if the ball had gone off course, how that error related to the previous command, where the ball was now, and then how to adjust future inputs to more precisely move the ball. This is a kind of closed loop at which people excel (at least after making some mistakes and learning from them).\n\nIn our Phase Two experiments, Claude struggled to capture this subtlety. Like the humans who reached the phase of needing to write a program for autonomous beach ball retrieval, Claude was able to move the robot behind the ball and position it to knock the ball back to the starting point. But the efforts to do so were poorly controlled and (again, like our human participants) not successful.\n\nOne of our researchers with more robotics experience than our Phase One volunteers successfully accomplished the task of programming autonomous fetching. With more time and additional scaffolding, we think it is very likely that current generations of Claude could do the same. What we will be watching for next, though, is the ability of the models to accomplish this final task with the same speed and reliability they displayed on the other elements of Project Fetch.\n\n## What does this mean?\n\nWriting about Phase One, we emphasized how LLMs could provide uplift to non-expert humans needing to use robots. This is even more true now than before. Models now complete what was previously pair-programming work between humans and models much more quickly by themselves, which means that people can more quickly transition to controlling and using the robots. And for some tasks, a human in the loop controlling the robot may still outstrip the AI model with its (virtual) hand on the D-pad.\n\nWhat is interesting and different is that we now seem much closer to a world where models will be able to use off-the-shelf physical tools with relative ease—at least for limited purposes. This is similar to how AI models used existing software editing tools like string-replace when they made the transition to more agentic coding. We are plausibly entering the early era of _physical_ agentic AI.\n\nMore research is needed to understand models’ ability to make these physical tools more bespoke, whether by writing control policies tailored to particular tasks or by designing robotic systems. And there may be substantial barriers to this more generalized vision of physically capable and adaptable language models. But as we have seen, apparently large distances in model capability can be traversed quickly. Models building their own software tools might have seemed outlandish not long ago, but it is happening. It would be unwise to rule out the same trajectory in hardware.\n\n_Updated Jun 18:_ Corrected the date of the first phase of Project Fetch.\n\n## Related content\n\n### Agentic coding and persistent returns to expertise\n\n[Read more](https://www.anthropic.com/research/claude-code-expertise)\n\n### Paving the way for agents in biology\n\n[Read more](https://www.anthropic.com/research/agents-in-biology)\n\n### Measuring LLMs’ impact on N-day exploits\n\nIn cybersecurity, a large fraction of real-world harm comes from N-days: vulnerabilities that have already been publicly disclosed, but only patched on some devices. In this post, we evaluate how much large language models can accelerate and automate the process of developing N-day exploits.\n\n[Read more](https://www.anthropic.com/research/n-days)\n",
+          "thread_group_id": "thread-AnthropicAI-20260618-1652",
+          "duplicate_of": null
+        },
+        {
+          "title": "Watch the robodogs in action in our first Project Fetch experiment: https://t.co/TASjh2PhEe",
+          "url": "https://x.com/AnthropicAI/status/2067651700757086553",
+          "published_at": "2026-06-18T16:52:35.000000Z",
+          "description": "Watch the robodogs in action in our first Project Fetch experiment: https://t.co/TASjh2PhEe",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/TASjh2PhEe",
+              "expanded_url": "https://x.com/AnthropicAI/status/1988706380480385470?s=20",
+              "display_url": "x.com/AnthropicAI/st…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "AnthropicAI",
+            "text": "New Anthropic research: Project Fetch.\n\nWe asked two teams of Anthropic researchers to program a robot dog. Neither team had any robotics expertise—but we let only one team use Claude.\n\nHow did they do? https://t.co/1pAZyLh3Fa",
+            "url": "https://x.com/AnthropicAI/status/1988706380480385470"
+          },
+          "reply_to": {
+            "screen_name": "AnthropicAI",
+            "status_id": "2067651699486200091"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-AnthropicAI-20260618-1652",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 12,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Together with researchers at Boston Children’s Hospital and Harvard, we published a study in NEJM AI showing how o3 Deep Research helped clinicians revisit previously unsolved rare pediatric disease c",
+          "url": "https://x.com/OpenAI/status/2067625110199247353",
+          "published_at": "2026-06-18T15:06:55.000000Z",
+          "description": "Together with researchers at Boston Children’s Hospital and Harvard, we published a study in NEJM AI showing how o3 Deep Research helped clinicians revisit previously unsolved rare pediatric disease cases, and find answers for families who had waited years. https://t.co/HVVDlEkuYR",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "As AI takes on longer, higher-stakes tasks, we want models to carry beneficial and safe behavior into new domains beyond their training—and maintain it under pressure.\n\nThat’s the idea behind our new ",
+          "url": "https://x.com/OpenAI/status/2067722688165232654",
+          "published_at": "2026-06-18T21:34:39.000000Z",
+          "description": "As AI takes on longer, higher-stakes tasks, we want models to carry beneficial and safe behavior into new domains beyond their training—and maintain it under pressure.\n\nThat’s the idea behind our new research on training models to be broadly and persistently beneficial. https://t.co/6Yw45s1RRq",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/6Yw45s1RRq",
+              "expanded_url": "https://alignment.openai.com/beneficial-rl/",
+              "display_url": "alignment.openai.com/beneficial-rl/"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We also tested whether alignment persisted under pressure. \n\nThe model was harder to steer toward harmful behavior with adversarial prompts, while remaining responsive to helpful instructions.\n\nWe saw",
+          "url": "https://x.com/OpenAI/status/2067722695270334549",
+          "published_at": "2026-06-18T21:34:41.000000Z",
+          "description": "We also tested whether alignment persisted under pressure. \n\nThe model was harder to steer toward harmful behavior with adversarial prompts, while remaining responsive to helpful instructions.\n\nWe saw preliminary evidence of greater resistance to harmful fine-tuning. https://t.co/dFXdWdMuDG",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067722693714338044"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260618-2134",
+          "duplicate_of": null
+        },
+        {
+          "title": "This is an early step toward more robustly beneficial and aligned models: training models to carry beneficial traits into new situations, so as AI becomes more capable, it also becomes more reliable, ",
+          "url": "https://x.com/OpenAI/status/2067722696759329125",
+          "published_at": "2026-06-18T21:34:41.000000Z",
+          "description": "This is an early step toward more robustly beneficial and aligned models: training models to carry beneficial traits into new situations, so as AI becomes more capable, it also becomes more reliable, transparent, and helpful for people.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067722695270334549"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260618-2134",
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-5.5 Instant is now on par with our frontier Thinking models for health-related questions.\n\nEvery week, more than 230 million people turn to ChatGPT with health and wellness questions, and GPT-5.5 ",
+          "url": "https://x.com/OpenAI/status/2067672740539306261",
+          "published_at": "2026-06-18T18:16:11.000000Z",
+          "description": "GPT-5.5 Instant is now on par with our frontier Thinking models for health-related questions.\n\nEvery week, more than 230 million people turn to ChatGPT with health and wellness questions, and GPT-5.5 Instant is better at recognizing when urgent care may be needed, asking for relevant context, explaining uncertainty, and making complex information easier to understand.\n\nBecause GPT-5.5 Instant is available to all free users in ChatGPT, these improvements can help more people. \n\nPhysician-led evaluation was critical to making these major intelligence gains.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260618-1816",
+          "duplicate_of": null
+        },
+        {
+          "title": "To improve our models, we collaborate with a global network of hundreds of physicians across 60 countries, 49 languages, and 26 specialties.\n\nTheir feedback helps us identify where responses miss impo",
+          "url": "https://x.com/OpenAI/status/2067672742426775728",
+          "published_at": "2026-06-18T18:16:11.000000Z",
+          "description": "To improve our models, we collaborate with a global network of hundreds of physicians across 60 countries, 49 languages, and 26 specialties.\n\nTheir feedback helps us identify where responses miss important context, sound overly confident, need clearer next steps, or should more strongly encourage someone to seek medical care. \n\nThose insights directly shape how we train and improve our models.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067672740539306261"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260618-1816",
+          "duplicate_of": null
+        },
+        {
+          "title": "Improving human health will be one of the most personal, tangible impacts of AGI.\n\nAs our models continue to improve, our goal is to make ChatGPT more accurate, more useful, and more impactful in thos",
+          "url": "https://x.com/OpenAI/status/2067672744108724635",
+          "published_at": "2026-06-18T18:16:12.000000Z",
+          "description": "Improving human health will be one of the most personal, tangible impacts of AGI.\n\nAs our models continue to improve, our goal is to make ChatGPT more accurate, more useful, and more impactful in those moments — and to keep bringing that progress to more people.  \n\nhttps://t.co/AINaqHEjtd",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/AINaqHEjtd",
+              "expanded_url": "https://openai.com/index/improving-health-intelligence-in-chatgpt/",
+              "display_url": "openai.com/index/improvin…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067672742426775728"
+          },
+          "linked_content": "Title: Improving health intelligence in ChatGPT\n\nURL Source: https://openai.com/index/improving-health-intelligence-in-chatgpt/\n\nMarkdown Content:\nHealth is one of the most meaningful ways people use ChatGPT. Every week, more than 230 million people turn to ChatGPT for help with health and wellness questions: making sense of health information, understanding lab results, preparing for appointments, navigating insurance, building healthier habits, and figuring out what to ask next.\n\nWith GPT‑5.5 Instant, we’re seeing a substantial step forward in health, with improvements in recognizing when urgent care may be needed, asking for relevant context, explaining uncertainty, and making complex information easier to understand. On our most challenging health evaluations, GPT‑5.5 Instant now performs at a level comparable to our frontier Thinking models. Because it is available to all free users in ChatGPT, more people can benefit from these improvements.\n\nThat progress reflects both advances in model capabilities and the physician-led work behind our health evaluations. Across our efforts, a global network of physicians helps define what “good” looks like in real-world health situations by reviewing example model responses, describing ideal behavior, and identifying failure modes. Working with physicians gives us a way to measure progress in health and improve how ChatGPT responds over time.\n\n## Measuring progress in health\n\nIn health, progress means delivering responses that are accurate, understandable, and grounded in good judgment: recognizing when more context is needed, explaining uncertainty without overstating confidence, and helping people understand when to seek care.\n\nTo measure that progress, we use health-specific evaluations, including [HealthBench⁠](https://openai.com/index/healthbench/) and [HealthBench Professional⁠(opens in a new window)](https://arxiv.org/pdf/2604.27470v1). These evaluations use realistic health conversations and physician-written rubrics to assess qualities like accuracy, safety, communication, context awareness, completeness, and appropriate escalation.\n\n_GPT‑5.5 Instant reaches health performance similar to our latest frontier models on an aggregate of health evaluations, including HealthBench Professional, substantially improving from GPT‑5.3 Instant. 5.5 Instant (released May 2026) and 5.3 Instant (released March 2026) are available for all free users in ChatGPT (subject to limits), and we use API pricing to calculate cost for 5.4 Thinking and 5.5 Thinking._\n\nAs another comparison, we asked physicians to write responses for representative health conversations, with unlimited time and access to the internet (but not AI). A separate panel of physicians then compared these physician responses with model responses over time, reviewing qualities that matter in real interactions, including accuracy, communication, completeness, instruction following, and health decision helpfulness, across 3,500 reviewed responses.\n\n_GPT‑5.5 Instant responses were rated higher than physician-written and older model responses across criteria in this evaluation._\n\nPhysicians rated GPT‑5.5 Instant responses as having fewer failure modes than those from older models and physicians. For example, GPT‑5.5 Instant had fewer instances of not tailoring to local healthcare context, missing red flags or referral to care, or failing to seek additional context from the user when needed than both older models and physicians.\n\nGiven the scale of usage of our models in health, another way to understand recent model improvements is to measure production traffic. We use privacy-preserving monitors on production traffic to track possible factuality issues in health responses. Based on a comparison of recent production traffic in health—billions of messages a week—the rate of responses with at least one flagged factuality issue has fallen by 71% in the last two months.\n\n## What better responses look like\n\nComparing responses from models on real-world health questions over time shows how ChatGPT has improved in ways that matter for health: recognizing when a situation may need urgent attention, handling uncertainty with better judgment, and giving people clearer, more useful guidance about what to do next.\n\n## The medical expertise behind the progress\n\nThis progress is shaped by physicians who help us define, measure, and improve health responses in ChatGPT.\n\nOpenAI works with a global network of more than 260 physicians across 60 countries, 49 languages, and 26 medical specialties. Their feedback informs how ChatGPT responds to health questions across a wide range of scenarios, from everyday wellness questions to more complex clinical situations.\n\nPhysicians review example model responses and assess whether they are accurate, clear, complete, appropriately cautious, and useful. They help identify where a response may miss important context, where it may sound too confident, where it should be clearer about next steps, or more directly encourage someone to seek medical care.\n\nTo date, physicians have reviewed more than 700,000 example model responses that reflect how patients and clinicians use ChatGPT in the real world. Every few minutes, a physician reviews a new response. Their feedback becomes rubrics and evaluation criteria that help researchers measure whether responses are accurate, safe, clear, complete, appropriately cautious, and useful in real-world health situations. This gives us a clearer way to see where models are getting better and where they still need work.\n\n## Bringing health improvements to more people\n\nThis work also supports OpenAI’s broader work in health, including tools built for healthcare, such as [ChatGPT for Clinicians⁠](https://openai.com/index/making-chatgpt-better-for-clinicians/) and [OpenAI for Healthcare⁠](https://openai.com/index/openai-for-healthcare/), which support medical professionals with tasks like documentation, research, and care delivery.\n\nImproving human health will be one of the most personal, tangible impacts of AGI. As our models continue to improve, our goal is to make ChatGPT more accurate, more useful, and more impactful in those moments — and to keep bringing that progress to more people.\n",
+          "thread_group_id": "thread-OpenAI-20260618-1816",
+          "duplicate_of": null
+        },
+        {
+          "title": "Rare disease diagnosis is challenging, as sequencing can surface millions of variants, and medical knowledge changes constantly. \n\no3 Deep Research helped connect clinical features, inheritance patter",
+          "url": "https://x.com/OpenAI/status/2067625113193951611",
+          "published_at": "2026-06-18T15:06:56.000000Z",
+          "description": "Rare disease diagnosis is challenging, as sequencing can surface millions of variants, and medical knowledge changes constantly. \n\no3 Deep Research helped connect clinical features, inheritance patterns, variant evidence, and scientific literature into hypotheses for specialists to review.\n\nEvery result went through human adjudication and clinical confirmation. AI’s role here was to help experts reason through complex, fragmented evidence faster and more thoroughly.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067625111717609504"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260618-1506",
+          "duplicate_of": null
+        },
+        {
+          "title": "Many of these cases had evaded years of expert analysis.\n\nThis study suggests AI could make expert-led periodic reanalysis more scalable, helping clinicians revisit old cases as medical knowledge adva",
+          "url": "https://x.com/OpenAI/status/2067625115182120972",
+          "published_at": "2026-06-18T15:06:56.000000Z",
+          "description": "Many of these cases had evaded years of expert analysis.\n\nThis study suggests AI could make expert-led periodic reanalysis more scalable, helping clinicians revisit old cases as medical knowledge advances, identify leads worth investigating, and potentially bring answers to more families.\n\nhttps://t.co/LkXTkGL5Q6",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/LkXTkGL5Q6",
+              "expanded_url": "https://openai.com/index/diagnose-rare-childhood-diseases/",
+              "display_url": "openai.com/index/diagnose…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067625113193951611"
+          },
+          "linked_content": "Title: Using AI to help physicians diagnose rare genetic diseases affecting children\n\nURL Source: https://openai.com/index/diagnose-rare-childhood-diseases/\n\nMarkdown Content:\nEven with genomic sequencing, many people with rare diseases never receive a clear genetic diagnosis. Roughly half remain undiagnosed after extensive testing and specialist review. Their medical data may contain clues but finding them can require sifting through thousands to millions of possible genetic variants, fragmented clinical records, and rapidly changing scientific literature.\n\nAs new gene-disease relationships, case reports, and classification evidence accumulate, unsolved cases can become newly interpretable.\n\nResearchers from Boston Children’s Hospital’s Manton Center for Orphan Disease Research, Harvard University, and OpenAI used the OpenAI o3 Deep Research reasoning model to analyze de-identified clinical and genomic information from 376 previously analyzed cases that remained unsolved. The model surfaced evidence-linked candidate explanations for researchers and clinicians to review. Following expert review, additional testing, and clinical confirmation, physicians established diagnoses in 18 cases—an additional diagnostic yield of 4.8% after earlier analysis by specialists. This study was published on June 18, 2026, in NEJM AI and shows how an AI-assisted research workflow can help experts generate leads when revisiting some of the most difficult cases.\n\nMany of these cases had evaded years of expert analysis. In this study, OpenAI o3 Deep Research helped researchers identify leads that were later assessed through established clinical processes, suggesting that expert-led periodic reanalysis could become more scalable as knowledge evolves. The model did not diagnose any patient or make any clinical decision. It produced evidence-linked hypotheses for specialists to review and, where appropriate, investigate through additional testing and confirm in a clinical laboratory.\n\n## Why an old case can contain a new answer\n\nAn inconclusive genetic test is not always a permanent finding. A patient’s phenotype descriptions, test results, and family history can be split across databases that use different identifiers, formats, and vocabularies. Linking those records is difficult, so even specialists can miss a diagnosis. Experts may also sequence a child’s genome before a relevant gene or its variants have been linked to disease. As scientific knowledge advances, the same data can reveal answers that were previously impossible to uncover.\n\nRare-disease reanalysis is both a scientific and a maintenance problem. The patient’s genome may stay the same, but the evidence around it keeps changing: researchers link new genes and variants to disease, labs reclassify old variants, and case databases and papers accumulate new observations. Each update can make an old inconclusive case worth revisiting, so many institutions inherit a growing backlog of genomes to keep in sync with a moving knowledge base.\n\nIn this study, researchers designed the workflow so that the model acted as an explanation-first reasoning layer on top of existing genomic pipelines. Instead of returning only a ranked gene, it was asked to connect the clinical features, inheritance pattern, variant evidence, and scientific literature into a justification that a human reviewer could interrogate.\n\n## How the reanalysis worked\n\nFor each case, the team assembled a de-identified packet containing standardized Human Phenotype Ontology terms to describe the patient’s clinical presentation, occasional clinician notes and any descriptive clinical diagnosis, metadata such as age and gender, and a filtered variant table. The table captured each variant’s rarity, its predicted effect on the encoded protein, ClinVar classification, and signal quality across available family members. Most cases included data from the child and both biological parents.\n\nThe team asked the model to propose the most plausible molecular explanation and to show its work. Researchers then reviewed the outputs using the same ACMG/AMP framework that clinical labs use to classify genetic variants. At least two team members reviewed each candidate, disagreements were resolved by consensus, and a model output was never treated as a diagnosis. A finding counted as a diagnosis only after qualified experts reviewed the evidence, the variant was classified as pathogenic or likely pathogenic, a CLIA-certified laboratory confirmed it, and the clinical team returned the result to the family.\n\nBefore analyzing unsolved cases, the team refined the workflow on cases with established diagnoses. It recovered the correct gene and variant in duplicate runs for 48 of 51 cases that included a variety of rare conditions. In a set of 57 neuromuscular cases, the workflow returned the correct diagnosis in duplicate runs for 45 of the cases. In a 15-case long-read genome set, it named the correct gene in every case and both disease-causing alleles in 12 cases. These evaluations aided in prompt development and showed where expert review remained essential.\n\nThe model’s self-reported confidence scores tracked with correct diagnoses in these previously solved cases: the mean minimum score was 85.6 for consistently correct calls and 42.1 for incorrect or unknown calls. The scores were not calibrated probabilities, and the team did not use them as a substitute for evidence or clinical adjudication. But they were helpful in guiding the expert reviewers to focus on the most promising candidate diagnoses.\n\n## What the researchers found\n\nThe team then applied the workflow to four groups of previously unsolved cases: children with neurodevelopmental conditions, people with rare neuromuscular disease, children and adolescents with early psychosis, and cases of sudden unexpected death in pediatrics. These were not fresh cases awaiting a first review. Many had already been examined by multiple commercial or institutional pipelines and discussed by multidisciplinary teams.\n\n### Results by cohort\n\n**Cohort****Cases****Diagnoses surfaced****Yield**\nNeurodevelopmental 100 10 10.0%\nNeuromuscular disease 61 4 6.6%\nSudden unexpected death in pediatrics 200 2 1.0%\nEarly psychosis 15 2 13.3%\n**Total****376****18****4.8%**\n\nThe early psychosis cohort was small, so its percentage has a wide confidence interval. Yield also reflects how likely each cohort was to have a single-gene explanation.\n\nAfter the model surfaced candidates and experts completed review and clinical confirmation, physicians established diagnoses in 4.8% of the cases. That rate is modest but meaningful in this population because previous expert reviews had not resolved the cases. Similar reanalysis studies report single-digit gains in heavily reviewed cases; higher yields usually come from studies containing new cases or well-known disorders awaiting genetic confirmation.\n\nOf the 18 diagnoses, 7 were rediscoveries: diagnoses established outside the local research workflow but absent from the record the team reviewed. In several cases, the variants were already listed as pathogenic or likely pathogenic in public databases, highlighting the operational challenge of synthesizing information across data sources.\n\n## Demonstrating flexibility when identifying variants\n\nIn one early-psychosis case, the model inferred a structural event in the genome that was not listed in the input data. It connected a run of low-quality calls on chromosome 22 with the child’s cardiac, immune, neurodevelopmental, and psychiatric features, then hypothesized a 22q11.2 deletion associated with DiGeorge syndrome. This hypothesized variant was confirmed with follow-up genome sequencing.\n\nAlthough the prompt asked for one monogenic cause, the model sometimes surfaced two genes that better explained a complex presentation. Variants in _LAMA2_ and _FOXP1_ together helped account for muscle and neurodevelopmental features in one case; another had a previously unrecognized digenic explanation involving _TTN_ and _SRPK3_.\n\n## Producing a testable, biologically coherent hypothesis\n\nIn addition to diagnoses, the model also identified a possible novel mechanistic explanation for a condition called vitiligo. In one neurodevelopmental case, the model highlighted an 11-amino-acid deletion in _S1PR1_ in a person with vitiligo. _S1PR1_ encodes a cell-surface receptor involved in signaling, immune-cell movement, and tissue biology. The model integrated evidence suggesting that the deletion could alter receptor structure and signaling in ways that reduce pigment production while also helping immune cells persist in the skin.\n\nThe proposed _S1PR1_-vitiligo relationship requires additional experimental validation but it illustrates a powerful role for AI in translating scattered findings from structural biology, immunology, and clinical genetics into concrete, testable hypotheses.\n\nThe team also saw possible phenotype expansion in the neuromuscular cohort. Damaging variants in _HSPB8_ and _CDK13_ did not perfectly match the genes’ best-known disorders, suggesting a broader clinical spectrum that more cases and laboratory work will need to test.\n\n## Limitations\n\nThis study shows that a general-purpose reasoning model can contribute to retrospective genomic reanalysis by combining phenotype, inheritance, variant annotations, data-quality patterns, and scientific literature into reviewable hypotheses. It also shows why periodic reanalysis matters: some answers surface only after knowledge advances or fragmented records are brought together.\n\nThis research is not evidence that patients, clinicians, or customers should use OpenAI models to diagnose disease or make medical decisions. It does not describe or endorse an intended customer use of OpenAI o3 Deep Research, ChatGPT, or any other OpenAI product for diagnosis. The model did not diagnose any participant; physicians and other qualified clinical experts made every diagnosis through established review, testing, and clinical-confirmation processes.\n\nThe study was retrospective, the cohorts were heterogeneous, and reviewers were not blinded to model confidence. The researchers did not measure time saved, cost, clinician effort, false-positive workload, or changes in care. Nor did they systematically evaluate other forms of genetic variation such as structural variants, repeat expansions, deep-intronic changes, or mosaicism.\n\nLarge language models can misread context or produce plausible explanations that fail upon closer inspection. Therefore, every result passed through human adjudication and clinical confirmation. The model widened the search and focused the subsequent human-led analysis; it did not decide what information or diagnosis should be returned to a family.\n\nThis study used de-identified information, with no protected health information utilized or transmitted outside approved environments. Broader clinical deployment will require the same attention to privacy, security, auditability, and local regulation that applies to all medical care. Model access does not replace sequencing infrastructure, genetic counseling, confirmatory testing, or specialist judgment.\n\nDr. Catherine Brownstein, Boston Children’s Hospital’s Manton Center for Orphan Disease Research\n\nAlan Beggs, director of the Manton Center for Orphan Disease Research\n\n## What comes next\n\nProspective, multi-center studies should compare LLM-assisted reanalysis with standard practice on diagnostic yield, time to a candidate, clinician effort, false-positive burden, cost, and effects on care. Versioned prompts, reference checks, audit logs, and calibrated uncertainty will be important for reproducibility and safety. Such studies would still require qualified clinicians to evaluate evidence, order appropriate tests, and make any diagnosis or treatment decision.\n\nThis study used OpenAI o3 Deep Research. Newer general-purpose models can search and synthesize more scientific material, while purpose-built systems such as GPT‑Rosalind are designed for deeper life-sciences work, including variant effects on protein structure and function. Those capabilities were not tested here and will require their own evaluations and access controls.\n\nWhile OpenAI helped support this initial research study, the Manton Center will lead the next stage of the work through a grant from the OpenAI Foundation. The grant will support the Center's broader effort to develop a platform-agnostic, low-cost genetics AI copilot that helps clinical teams analyze rare disease cases more quickly and consistently.\n\nThe longer-term research opportunity is to explore whether expert-led AI-assisted reanalysis can help scientific understanding keep pace with discovery. The promise is not that AI replaces a doctor’s diagnosis, but that carefully evaluated research tools may help specialists identify evidence worth investigating. For thousands of families, today’s unanswered questions do not have to remain unanswered forever.\n",
+          "thread_group_id": "thread-OpenAI-20260618-1506",
+          "duplicate_of": null
+        },
+        {
+          "title": "Introducing LifeSciBench, a benchmark for measuring and improving how well AI supports real-world life science research.\n\nDeveloped with 173 scientists from biotechnology and pharmaceutical research, ",
+          "url": "https://x.com/OpenAI/status/2067346916929937827",
+          "published_at": "2026-06-17T20:41:29.000000Z",
+          "description": "Introducing LifeSciBench, a benchmark for measuring and improving how well AI supports real-world life science research.\n\nDeveloped with 173 scientists from biotechnology and pharmaceutical research, LifeSciBench includes 750 expert-authored tasks across seven biological research workflows.\n\nhttps://t.co/JTk0wXHFrT",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/JTk0wXHFrT",
+              "expanded_url": "https://openai.com/index/introducing-life-sci-bench/",
+              "display_url": "openai.com/index/introduc…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Introducing LifeSciBench\n\nURL Source: https://openai.com/index/introducing-life-sci-bench/\n\nMarkdown Content:\nAgentic AI systems are becoming increasingly capable of performing scientific tasks. However, their usefulness to life science researchers depends on how well they handle the complexity of real research. That work rarely looks like a single fact-recall question or a clean prediction problem. Researchers interpret incomplete evidence, reconcile conflicting results, design difficult experiments, troubleshoot assays, evaluate translational risk, and decide what to do next under uncertainty.\n\nCurrent benchmarks do not fully capture these capabilities. Many life science evaluations focus on narrow domains or isolated skills, resulting in questions with structured question formats and clean reference answers. While valuable, they often fail to truly assess whether a model can contribute across the broader span of research-level work.\n\nWe designed LifeSciBench to help close this gap. Every task is grounded in the judgment of practicing life scientists with Ph.D.-level training and direct experience advancing drug discovery programs in biotech and pharmaceutical settings.\n\nLifeSciBench includes 750 expert-authored tasks spanning seven workflows and seven biological domains.\n\n1,062\n\nTask artifacts\n\n173\n\nScientist contributors\n\n19,020\n\nRubric criteria\n\n453\n\nExpert reviewers\n\n## What LifeSciBench measures\n\nLifeSciBench measures whether AI systems can support realistic life science research tasks, not just answer biology questions. To define the benchmark taxonomy, we surveyed practicing life scientists about the workflows they use most often in applied research settings. Then, we grouped their responses into seven recurring categories: evidence handling, analysis, design and optimization, scientific reasoning, validation and operations, translation, and scientific communication.\n\nEach task is structured like a request a scientist might give to a knowledgeable collaborator: scientific prompt, any relevant context or artifacts, and a free-response answer. Expert-written rubrics evaluate whether a model can produce the right answer for a specific problem, with the right level of detail, justification, caveats, and formatting a scientist would expect.\n\n## Dataset construction\n\nLifeSciBench evaluates scientific reasoning alongside the less well-defined, practical skills necessary for real-world scientific use. Its tasks ask models to work through realistic research problems: interpreting evidence, making domain-grounded judgments, and communicating conclusions that would be useful to expert reviewers. Many tasks also require models to handle uncertainty and reason over supporting data files rather than relying on prompt text alone.\n\nThe benchmark is designed to reflect the complexity of life science work. Overall, 79% of tasks require multiple reasoning or decision-making steps, with an average of four steps per task. LifeSciBench includes 1,062 attached artifacts spanning figures, PDFs, tables, sequence files, structure or chemical files, and web references. More than half of tasks (53%) require models to interpret or synthesize information from at least one artifact.\n\nTasks were created by 173 expert scientists across different life science disciplines. Each scientist had Ph.D.-level training and biotechnology or pharmaceutical industry experience. Tasks could undergo as many revision cycles as needed before acceptance, with no fixed cap on the number of rounds; accepted tasks averaged six self-directed automated review cycles and completed at least two rounds of expert reviews. Reviews were anchored in either a verifiable correct answer or strong expert consensus, with at least 90% agreement among reviewers in the relevant domain. This process helped ensure that accepted tasks were scientifically grounded, clear enough to grade, and representative of applied research.\n\n## Grading and rubric breakdown\n\nLifeSciBench tasks are graded with a detailed, task-specific rubric that breaks down the expected response into specific scientific claims, calculations, decisions, justifications, and so on. Across the benchmark, expert-developed rubrics include 19,020 criteria—an average of 25 per task—to assess both scientific correctness and usefulness for research decisions.\n\nThis design reflects how scientific work is evaluated in practice: many life science tasks cannot be graded by checking the final answer alone. A response may reach the correct high-level conclusion but still be judged incomplete if, for example, it overlooks a key assay limitation or fails to proactively bring up a highly consequential biological nuance. Conversely, a partial response may contain high-quality reasoning even if it does not fully solve the task.\n\nThe granular rubrics capture this nuance. LifeSciBench evaluates not only final-answer accuracy, but whether a model reaches its answer in a scientifically valid and operationally useful way.\n\nExtracting, reconciling, and auditing scientific evidence from papers, figures, tables, and experimental records.\n\n## Candidate Response\n\n**Bottom line:** As presented, this package is not strong enough to support accelerated approval on micro-dystrophin expression as a surrogate endpoint reasonably likely to predict clinical benefit. A skeptical FDA reviewer would likely view the biomarker, functional, durability, safety, and generalizability evidence as materially under-supported.\n\n| Package Item | Key Failure Mode | What Would Be Needed |\n| --- | --- | --- |\n| Western blot quantification | MANEX1A binds an N-terminal epitope shared by endogenous full-length dystrophin and the micro-dystrophin transgene, so the assay does not cleanly distinguish transgene from residual/revertant dystrophin. Quantifying a 138 kDa micro-dystrophin against a healthy full-length dystrophin standard is also invalid. | Use a recombinant micro-dystrophin standard and an orthogonal method that distinguishes transgene from endogenous dystrophin, such as targeted mass spectrometry or a transgene-specific/epitope-specific assay. |\n| Immunofluorescence | The C-terminal polyclonal antibody is poorly suited because the 138 kDa construct lacks the C-terminal domain. Many DMD patients have revertant fibers, and revertant dystrophin can retain C-terminal epitopes. Revertant fibers may expand clonally with age, biasing IF signal, especially in older boys. | Repeat IF with an antibody against an epitope present in the transgene but absent from revertant dystrophin. Quantify transgene-positive fibers separately from revertant fibers. |\n| Surrogate endpoint validity | The package conflates protein amount with clinical function. “38% of healthy-control protein mass” does not mean 38% of normal dystrophin function because micro-dystrophin is structurally truncated. | Empirically validate the relationship between micro-dystrophin mass-percent, sarcolemmal localization, downstream functional restoration, and clinical benefit before treating expression as a surrogate endpoint. |\n| Biopsy design | Pre- and post-treatment contralateral vastus lateralis biopsies introduce left-right and intramuscular spatial variability. Disease progression and fibro-fatty replacement can also change total-protein-normalized signal. | Standardize biopsy site using consistent anatomical landmarks, normalize to muscle-specific proteins, and measure fibro-fatty composition in parallel. |\n| NSAA comparator/statistics | An external natural-history cohort is not a randomized concurrent control. Trial eligibility, supportive care, participation effects, baseline NSAA, steroid regimen, age, and exon class can all bias the comparison. An unpaired t-test is not sufficient. Also, a +1.4 NSAA change is within test-retest variability for this age group. | Run a randomized concurrent placebo-controlled study, or at minimum use adjusted analyses accounting for baseline NSAA, age, steroid regimen, exon class, and other confounders. |\n| Age-window confounding | Boys age 4–7 are in a developmental window where untreated ambulatory DMD patients may gain motor function before decline dominates. A 48-week NSAA change mixes developmental gain, disease progression, and possible treatment effect. | Use a concurrent randomized control with age stratification to separate developmental trajectory from treatment effect. |\n| Prior clinical precedent | Open-label micro-dystrophin functional signals have not reliably predicted confirmatory benefit; published precedent includes micro-dystrophin gene therapy confirmatory trials failing to reproduce open-label NSAA improvements. | Do not rely on open-label NSAA change as decisive support. Require controlled functional evidence. |\n| Structural limits of the construct | The 138 kDa construct deletes spectrin repeats R16/17, which contain nNOS-binding sites. Loss of nNOS recruitment can impair functional sympatholysis and ischemia protection during exercise, creating a mechanistic ceiling on rescue independent of expression level. | Add mechanistic studies showing whether this specific construct restores relevant dystrophin-associated complex function, nNOS localization, exercise physiology, and muscle protection. |\n| AAV durability | Vector genomes at 12 weeks do not establish durable expression. AAV9 genomes are largely non-integrating episomes and may decline over time. Vector-genome persistence is not the same as persistent protein expression. | Measure longitudinal transgene protein expression and functional biomarker durability beyond 12 weeks. |\n| Immune/safety profile | Transaminitis in 8/12 patients is consistent with immune response to AAV-transduced cells, but the mechanism is not established. One myocarditis case is concerning given AAV9 cardiac tropism. | Provide deeper immune monitoring, liver/cardiac safety characterization, and intensified cardiac follow-up. |\n| Patient selection/generalizability | Excluding anti-AAV9 neutralizing-antibody-positive patients limits generalizability. Excluding exon-44 deletions limits applicability to that DMD subgroup. n=12 is too small to characterize safety and efficacy across the broader DMD population. | Broaden eligibility where possible or pre-specify stratified analyses by antibody status, genotype/exon class, age, and baseline function before using the result to support broad approval. |\n\n**Regulatory conclusion:** The package may show biological activity, but it does not yet establish that the measured micro-dystrophin expression is a reliable surrogate reasonably likely to predict clinical benefit. The main gaps are assay specificity, invalid quantification standards, possible revertant-fiber confounding, lack of a randomized control, age-related NSAA confounding, uncertain durability, and unresolved safety/generalizability issues.\n\nTo close the gap, the program would need a controlled, age-stratified clinical design with transgene-specific expression assays, orthogonal protein quantification, tissue-composition controls, longitudinal durability data, mechanistic functional assays for the truncated construct, and stronger safety monitoring, especially hepatic and cardiac.\n\n## Rubric Criteria & Grades\n\nCriterion\n\nPoints\n\nIdentifies assay/measurement problems in micro-dystrophin quantification, including MANEX1A epitope sharing, invalid full-length dystrophin standards, and need for recombinant or orthogonal transgene-specific measurement.\n\n+24\n\nExplains why micro-dystrophin expression level is not automatically a valid surrogate for functional clinical benefit.\n\n+22\n\nFlags biopsy-site, tissue-composition, and age-window confounding that weaken expression and NSAA interpretation.\n\n+19\n\nCritiques the NSAA comparator/statistics, especially reliance on external natural-history controls.\n\n+12\n\nAddresses AAV durability, immune response, transaminitis, myocarditis, and need for longer-term expression/safety follow-up.\n\n+15\n\nNotes patient-selection/generalizability gaps, including anti-AAV9 exclusion, exon-44 exclusion, and small sample size.\n\n+8\n\n## Validating LifeSciBench\n\nWe validated LifeSciBench through an independent expert review. Feedback came from 453 reviewers who were not involved in writing the tasks. Of those reviewers, 97% held a Ph.D. or equivalent doctorate, with an average of 12 years of field experience and 14 peer-reviewed publications; 88% reported receiving at least one award or fellowship.\n\nReviewers scored whether each task reflected the qualities needed for a strong benchmark question: alignment with real-world research work, appropriate testing of scientific reasoning and domain expertise, grounding in evidence or expert consensus, and overall usefulness for assessing model performance. Agreement exceeded 96% in every category.\n\nReviewer comments reinforced the quantitative ratings:\n\n1 of 3\n\n## Results\n\nWe report two complementary metrics. Pass rate is the percentage of tasks on which a model meets the task-level success threshold of 70%. Score is the average rubric reward, giving partial credit for individual criteria even when the full task is not solved. Both matter because a response to a scientific task can be partially correct or useful without meeting every requirement for a complete answer.\n\nModel performance varies substantially by task type, workflow, and response format.\n\n## Where AI systems show early strength\n\nLifeSciBench shows that frontier models are relatively strongest on tasks involving scientific synthesis, communication, and structured interpretation. Absolute pass rates are still modest, so these benchmark domains are far from saturated, but GPT‑Rosalind shows meaningful progress over GPT‑5.5, improving overall exact pass rate from 25.7% to 36.1%.\n\nThe strongest directions of progression in model capabilities appear in Scientific Communication and Translation. For example, the Scientific Communication pass rate increases from 56.3% for GPT‑5.5 to 71.1% for GPT‑Rosalind; this category is small (n=9), so it should be interpreted cautiously, but it suggests frontier models are improving rapidly in their ability to organize evidence and produce convincing expert-facing explanations. Translation (the \"bench-to-bedside\" process of drug development) shows a similar pattern, rising from 36.8% for GPT‑5.5 to 57.7% for GPT‑Rosalind, suggesting models are quickly improving on their ability to connect preclinical evidence to clinical implications.\n\nRubric-level results point in the same direction. On tasks requiring expert-useful or actionable outputs, GPT‑Rosalind scores 44.7%, compared with 29.1% for GPT‑5.5. On tasks requiring uncertainty and caveat handling, it scores 44.8%, compared with 29.3%. This pattern suggests models are most useful when the task has a clear evidence boundary and calls for structured scientific judgment.\n\nGPT‑Rosalind leads performance across scientifically-valuable tasks identified by industry and academic experts.\n\nGPT‑Rosalind improves performance over GPT‑5.5 across core life-science workflows, with the strongest gains in translation and scientific communication.\n\n## Where AI systems still fall short\n\nPerformance remains much weaker on artifact-heavy, design-heavy, and operationally constrained scientific work. Namely, Design, Optimization, & Prediction remains one of the hardest workflows, with GPT‑Rosalind passrate at 30.7%; Analysis is similarly difficult at 30.3%.\n\nArtifact use is a particularly clear gap. While GPT‑Rosalind performs better than GPT‑5.5 in artifact-heavy settings, its pass rate still drops from 45.1% on text-only tasks to 28.1% on tasks with artifacts or URLs. GPT‑5.5 shows the same pattern, dropping from 29.9% to 21.9%. A more detailed analysis confirms that frontier models struggle at extracting information from complex figures or large sequence files and integrating that information into the final answer.\n\nPass rates drop when tasks require source-grounded reasoning or working with artifacts\n\nThe answer format also matters. Tasks requiring exact sequence, structure, or construct-level outputs show lower pass rates: GPT‑Rosalind reaches only 14.8% on numeric tasks and 24.0% on sequence or structure outputs. Construct-generation tasks are also brittle, with GPT‑Rosalind at 27.3% and showing little improvement over GPT‑5.5. Some of this gap may reflect a stricter grading surface for exact-answer tasks, where small differences in calculation or formatting can cause a response to fall under pass threshold. Still, these failures are scientifically meaningful because many life science workflows require outputs that are exact enough to be used directly, such as in CRISPR/HDR donor design or siRNA design.\n\nModels also often get part of the way there without fully solving the task. In roughly 14% of tasks, models earned substantial rubric credit despite failing the exact-pass threshold. For GPT‑Rosalind, 109 tasks had pass rates below 20% while still earning at least 50% rubric reward. In practice, this means models may identify relevant evidence or produce a plausible partial answer, but still fail because they miss a key constraint, use the wrong evidence, make an incomplete calculation, or do not connect their reasoning to a scientifically useful final decision.\n\n## Limitations & what’s next\n\nLifeSciBench is a step toward measuring how useful AI systems can be for life science research, but it is not a substitute for studying models in live research environments. The benchmark focuses on self-contained tasks that reflect recurring industry workflows, while leaving many scientific specialties and task types outside its current scope. Real research is iterative: scientists gather new evidence, revise hypotheses, design follow-up experiments, and adapt their plans as results emerge.\n\nStrong performance on LifeSciBench should therefore be interpreted as evidence of realistic task-level capability, not as a direct measure of downstream research impact. The benchmark is grounded in industry workflows, but it does not capture the full diversity or dynamics of live research programs, where progress depends on factors that unfold over time.\n\nThe next step is to connect benchmark performance to deployment studies in live research workflows. While LifeSciBench was developed with practicing scientists, measuring whether AI systems accelerate discovery or improve R&D outcomes will require studying model use and performance in real research settings, over longer horizons, and across multiple rounds of reasoning, feedback, and experimental follow-up.\n",
+          "thread_group_id": "thread-OpenAI-20260617-2041",
+          "duplicate_of": null
+        },
+        {
+          "title": "Benchmarks often test biological knowledge or narrow skills. The tasks in LifeSciBench test whether models can reason from evidence, work with scientific artifacts, handle uncertainty, and make useful",
+          "url": "https://x.com/OpenAI/status/2067346918746030496",
+          "published_at": "2026-06-17T20:41:29.000000Z",
+          "description": "Benchmarks often test biological knowledge or narrow skills. The tasks in LifeSciBench test whether models can reason from evidence, work with scientific artifacts, handle uncertainty, and make useful decisions under real-world constraints.\n\nGPT‑Rosalind scores above GPT‑5.5 across all seven workflows. These initial results show meaningful progress—and room to improve, particularly on artifact-heavy, design-intensive, and operationally constrained work.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067346916929937827"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260617-2041",
+          "duplicate_of": null
+        },
+        {
+          "title": "LifeSciBench is a foundation for more realistic evaluation, targeted improvements, and continued partnership with the life sciences community—helping the field measure progress, identify gaps, and imp",
+          "url": "https://x.com/OpenAI/status/2067346920230838387",
+          "published_at": "2026-06-17T20:41:29.000000Z",
+          "description": "LifeSciBench is a foundation for more realistic evaluation, targeted improvements, and continued partnership with the life sciences community—helping the field measure progress, identify gaps, and improve AI together for the benefit of everyone.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2067346918746030496"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260617-2041",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Instead of assuming AI will always do what we intend, we ask: what if it doesn't?\n\nThat’s why we’ve developed our AI Control Roadmap: a framework for building and managing the advanced AI we deploy wi",
+          "url": "https://x.com/GoogleDeepMind/status/2067594863785173257",
+          "published_at": "2026-06-18T13:06:44.000000Z",
+          "description": "Instead of assuming AI will always do what we intend, we ask: what if it doesn't?\n\nThat’s why we’ve developed our AI Control Roadmap: a framework for building and managing the advanced AI we deploy within Google. 🧵 https://t.co/mCBxmTyCp4",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260618-1306",
+          "duplicate_of": null
+        },
+        {
+          "title": "Our data shows that the vast majority of issues don't stem from bad intent.\n\nThey usually happen because an agent misinterprets a command or gets overly enthusiastic to achieve a goal.\n\nUnderstanding ",
+          "url": "https://x.com/GoogleDeepMind/status/2067594866196877631",
+          "published_at": "2026-06-18T13:06:44.000000Z",
+          "description": "Our data shows that the vast majority of issues don't stem from bad intent.\n\nThey usually happen because an agent misinterprets a command or gets overly enthusiastic to achieve a goal.\n\nUnderstanding these nuances is critical for refining safety and security protocols. ⬇️",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2067594863785173257"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260618-1306",
+          "duplicate_of": null
+        },
+        {
+          "title": "There is a narrow window to embed structural security protocols before multi-agent systems scale globally.\n\nWe believe this multilayered approach to agent security should be a collaborative priority f",
+          "url": "https://x.com/GoogleDeepMind/status/2067594868180857165",
+          "published_at": "2026-06-18T13:06:45.000000Z",
+          "description": "There is a narrow window to embed structural security protocols before multi-agent systems scale globally.\n\nWe believe this multilayered approach to agent security should be a collaborative priority for AI labs, government, and academia.\n\nSee the framework → https://t.co/TiMXiCCFEi",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/TiMXiCCFEi",
+              "expanded_url": "https://goo.gle/4vis97Q",
+              "display_url": "goo.gle/4vis97Q"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2067594866196877631"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260618-1306",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Mistral AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "no items returned; cannot assess freshness",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
