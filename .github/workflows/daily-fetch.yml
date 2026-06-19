@@ -55,6 +55,10 @@ jobs:
           if git diff --cached --quiet; then
             echo "No snapshot changes to commit"
           else
-            git commit -m "chore(catchup): daily fetch snapshot $(TZ=America/Los_Angeles date -d yesterday +%Y-%m-%d)"
+            SNAPSHOT_DATE="${{ inputs.report_date }}"
+            if [ -z "$SNAPSHOT_DATE" ]; then
+              SNAPSHOT_DATE="$(TZ=America/Los_Angeles date -d yesterday +%Y-%m-%d)"
+            fi
+            git commit -m "chore(catchup): daily fetch snapshot ${SNAPSHOT_DATE}"
             git push
           fi
