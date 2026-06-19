@@ -13,165 +13,144 @@
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-18.md</guid>
       <pubDate>Thu, 18 Jun 2026 00:00:00 GMT</pubDate>
       <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-18（fallback，自动回退版）</h1>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-18</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>AI 科研深化</strong>：OpenAI GPT-5.4 化学实验、LifeSciBench 与 Google AMIE 都把模型评估推进到真实科研和医疗工作流。</li>
+<li><strong>设计到代码闭环</strong>：Claude Design 与 Claude Code 双向同步，开始把品牌设计系统和真实仓库连接起来。</li>
+<li><strong>企业渠道扩张</strong>：Grok 4.3 上线 Amazon Bedrock，Grok Build 进入 DigitalOcean，xAI 正在补齐开发者分发渠道。</li>
+<li><strong>公共部门试点</strong>：Google DeepMind 住房审批原型显示 AI 正进入政府流程中的重复任务处理。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/claudeai/status/2067325887909884315">Claude Design 升级：设计系统 + Code 双向同步</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Design</code> <code>Claude Code</code> <code>设计系统</code> <code>双向同步</code> <code>产品工作流</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Design 新增跨项目保持品牌设计系统、画布直接编辑、与 Claude Code 双向同步，以及导出 PDF/PowerPoint 和连接更多外部工具。Claude Code 可通过 <code>/design-sync</code> 把设计系统拉入代码仓库并基于真实组件构建，也能把已实现内容推回 Claude Design 继续编辑。该能力把设计画布和工程实现连接成双向循环，是 Claude 面向产品团队的重要工作流升级。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2067325893001826552">Claude Design 与 Claude Code 双向协作</a> · Claude (Twitter) · 双向协作</li>
+<li><a href="https://x.com/ClaudeDevs/status/2067391951725629941">Claude Devs 解释 /design-sync 工作流</a> · Claude Devs (Twitter) · CLI 操作入口</li>
+</ul>
 <blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>试用 <code>/design-sync</code> 将设计系统同步到真实仓库，验证组件命名和样式 token 是否可被稳定复用。</li>
+<li>把现有原型从 Claude Code 推回 Claude Design，测试设计审阅与实现迭代的闭环效率。</li>
+</ul>
 </blockquote>
 <hr>
-<h2>Berkeley RDI</h2>
+<h3>2. <a href="https://x.com/OpenAI/status/2067293749412339980">Maria AI 测试 10080 个反应条件</a></h3>
 <ul>
-<li><a href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-june-da4">Agentic AI Weekly | Berkeley RDI | June 17, 2026</a></li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Maria AI</code> <code>自动化实验</code> <code>产率提升</code></li>
 </ul>
-<h2>OpenAI Blog</h2>
+<p><strong>摘要</strong>: OpenAI 补充 Maria AI 测试了 10080 个反应，人工化学家随后验证代表性结果，优化条件提高了多数底物产率。该帖提供实验规模和验证结果。 OpenAI 表示整个流程约 2.5 个月完成，另加半个月由人类化学家撰写结果，展示前沿模型支持科研闭环的早期样例。该帖补充周期和工作流定位。</p>
+<hr>
+<h3>3. <a href="https://x.com/xai/status/2067263498359624012">Grok 4.3 上线 Amazon Bedrock</a></h3>
 <ul>
-<li><a href="https://openai.com/index/ai-chemist-improves-reaction">A near-autonomous AI chemist improves a challenging reaction in medicinal chemistry</a></li>
-<li><a href="https://openai.com/index/introducing-life-sci-bench">Introducing LifeSciBench</a></li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok 4.3</code> <code>Amazon Bedrock</code> <code>xAI</code> <code>工具调用</code> <code>企业部署</code></li>
 </ul>
-<h2>Google AI Blog</h2>
+<p><strong>摘要</strong>: xAI 宣布 Grok 已可在 Amazon Bedrock 使用，AWS 开发者可以通过 Bedrock 的安全推理环境调用 Grok 4.3。官方强调 Grok 4.3 在幻觉率和工具调用方面具备竞争力，并提供文档入口帮助上手。 xAI 在线程中补充了 Grok on Bedrock 的入门文档链接。该帖是同一发布的操作指引。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/">New research shows how AMIE, our medical AI, could help manage health conditions.</a></li>
+<li>在 Bedrock 中比较 Grok 4.3 与现有模型的工具调用可靠性和权限隔离体验。</li>
+<li>为企业场景测试 Grok 4.3 的幻觉率、延迟和成本表现。</li>
 </ul>
-<h2>Anthropic Blog</h2>
+</blockquote>
+<hr>
+<h3>4. <a href="https://blog.google/innovation-and-ai/models-and-research/google-research/amie-for-disease-management-in-nature/">Google AMIE 从诊断走向慢病管理研究</a></h3>
 <ul>
-<li><a href="https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem">Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem</a></li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>AMIE</code> <code>医疗 AI</code> <code>疾病管理</code> <code>Google Research</code> <code>Nature</code></li>
 </ul>
-<h2>Thariq (Twitter)</h2>
+<p><strong>摘要</strong>: Google Research 在 Nature 发表 AMIE 研究，展示其医疗对话 AI 在复杂疾病管理任务中可与初级保健医生相匹配。该工作把 AMIE 的评估从诊断扩展到治疗规划、随访和不确定性处理，更贴近真实医疗场景。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/trq212/status/2067021344341098670">Slack now renders HTML attachments instead of just showing it as text 😭🙏</a></li>
+<li>评估医疗 AI 时加入随访、治疗权衡和不确定性沟通，而不只看诊断正确率。</li>
+<li>将 AMIE 作为临床工作流辅助样例，重点观察责任边界和医生复核机制。</li>
 </ul>
-<h2>Claude (Twitter)</h2>
+</blockquote>
+<hr>
+<h3>5. <a href="https://openai.com/index/ai-chemist-improves-reaction">GPT-5.4 驱动近自主化学家优化药物反应</a></h3>
 <ul>
-<li><a href="https://x.com/claudeai/status/2067325887909884315">New in Claude Design: it stays on brand with your design system across projects, lets you edit directly on the canvas, syncs with Claude Code, and connects to more of the tools you already use. https:</a></li>
-<li>[Claude Design and Claude Code work together in both directions (rolling out today). Hand a design off to build, or start in Claude Code and sync design projects from your terminal.</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.4</code> <code>AI 化学家</code> <code>药物化学</code> <code>自动化实验</code> <code>科研工作流</code></li>
 </ul>
-<p>Export to PDF and ](<a href="https://x.com/claudeai/status/2067325893001826552">https://x.com/claudeai/status/2067325893001826552</a>)</p>
+<p><strong>摘要</strong>: OpenAI 与 Molecule.one 展示了一个接近自主的 AI 化学工作流：GPT-5.4 参与文献综述、提出假设和设计实验，Maria AI 与自动化实验平台测试了 10080 个反应条件。最终人工化学家验证后，硼酸底物和磺酰胺底物的大多数反应产率提升，说明前沿模型正在进入更完整的科学研究闭环。OpenAI 官方线程补充了实验规模、2.5 个月自动化探索加半个月人工写作的周期，以及模型从假设到实验验证的角色。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2067325894268428560">Claude Design is in beta on all paid plans, on web and desktop. Give it a try: https://t.co/C9iewmyMQs</a></li>
+<li><a href="https://x.com/OpenAI/status/2067293745075442171">OpenAI 线程详解 GPT-5.4 化学实验成果</a> · OpenAI (Twitter) · 官方线程细节</li>
 </ul>
-<h2>Claude Devs (Twitter)</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Thanks for building with us at Claude Build Day!
-300 builders spent their Saturday with us in SF, and we&#39;re blown away by what you made in a single day.</li>
+<li>把“文献综述-假设生成-实验设计-验证”拆成可审计流程，评估模型在每一步的可用性。</li>
+<li>关注模型建议与自动化实验平台结合后的成本、周期和失败模式。</li>
 </ul>
-<p>Here are all the winning demos: 🧵 <a href="https://t.%5D(https://x.com/ClaudeDevs/status/2067298098553254211)">https://t.](https://x.com/ClaudeDevs/status/2067298098553254211)</a></p>
+</blockquote>
+<hr>
+<h3>6. <a href="https://www.anthropic.com/research/project-fetch-phase-two">Anthropic Project Fetch 二期：Claude 参与机器人训练</a></h3>
 <ul>
-<li>[🥉 3rd Place: Custom Universe</li>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Project Fetch</code> <code>机器人</code> <code>Claude</code> <code>人机协作</code> <code>实验评估</code></li>
 </ul>
-<p>Jake Stevens &amp; Mauricio Pereira built a real-time engine that turns a single phone photo into a fully editable, photorealistic 3D scene.](<a href="https://x.com/ClaudeDevs/status/2067298104320405848">https://x.com/ClaudeDevs/status/2067298104320405848</a>)</p>
+<p><strong>摘要</strong>: Anthropic 发布 Project Fetch 二期，继续探索非机器人专家在 Claude 帮助下训练机器狗完成现实任务的能力边界。研究关注 Claude 在机器人调试、策略迭代和跨学科协作中的实际作用，显示通用模型可降低机器人实验门槛，但仍需要人类在物理世界反馈中闭环。</p>
+<hr>
+<h3>7. <a href="https://x.com/xai/status/2067351099271745992">Grok Build 登陆 DigitalOcean Marketplace</a></h3>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2067298105821978868">Thank you @cerebral_valley for co-hosting this event! We hope to see you at one of our future builder events.</a></li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>DigitalOcean</code> <code>编码代理</code> <code>开发环境</code></li>
 </ul>
-<h2>Anthropic (Twitter)</h2>
+<p><strong>摘要</strong>: xAI 表示可一键使用预装 Grok Build 的虚拟机，DigitalOcean Marketplace 已提供相关镜像。该更新降低开发者试用 xAI 编码代理的部署门槛。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[These and other measures will allow us to track consequential shifts in the nature of work as they happen—we&#39;ll incorporate some of them into the Anthropic Economic Index going forward.</li>
+<li>用 Marketplace 镜像快速搭建隔离环境，评估 Grok Build 在现有代码库上的表现。</li>
 </ul>
-<p>Read the ful](<a href="https://x.com/AnthropicAI/status/2066969542010806561">https://x.com/AnthropicAI/status/2066969542010806561</a>)</p>
+</blockquote>
+<hr>
+<h3>8. <a href="https://x.com/GoogleDeepMind/status/2067188693694136664">Google DeepMind 参与英国住房审批 AI 原型</a></h3>
 <ul>
-<li>[Domain experts—as judged by the questions they ask and vocabulary they use about a subject—are more likely to see success.</li>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>政府 AI</code> <code>住房审批</code> <code>流程自动化</code></li>
 </ul>
-<p>But the gap between intermediate and expert users is quite modest, suggestin](<a href="https://x.com/AnthropicAI/status/2066969540412780644">https://x.com/AnthropicAI/status/2066969540412780644</a>)</p>
+<p><strong>摘要</strong>: Google DeepMind 与英国 DSIT、MHCLG 和 i.AI 合作开发住房申请规划原型，希望减少规划人员重复劳动，把注意力转向复杂项目并缩短审批时间。该案例显示 AI 正在进入政府行政流程优化场景。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Our latest economic research introduces a framework for tracking Claude Code as it scales.</li>
+<li>分析该原型适合自动化的重复任务和必须保留人工判断的环节。</li>
 </ul>
-<p>Who is using Claude Code, and what are they using it for? How is the value of tasks changing? And how much ](<a href="https://x.com/AnthropicAI/status/2066969532380721386">https://x.com/AnthropicAI/status/2066969532380721386</a>)</p>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[The average task in Claude Code has grown more valuable.</li>
-</ul>
-<p>We compared the type of work done in each session to what that same task would cost on a freelance marketplace. From October to April, the mon](<a href="https://x.com/AnthropicAI/status/2066969536423985295">https://x.com/AnthropicAI/status/2066969536423985295</a>)</p>
-<ul>
-<li>[We compared Claude Code success rates between occupations.</li>
-</ul>
-<p>On our toughest measure of success—requiring verifiable evidence that a goal was completed, like committed code—every field was within 7 pe](<a href="https://x.com/AnthropicAI/status/2066969538193920307">https://x.com/AnthropicAI/status/2066969538193920307</a>)</p>
-<h2>OpenAI (Twitter)</h2>
-<ul>
-<li>[Introducing LifeSciBench, a benchmark for measuring and improving how well AI supports real-world life science research.</li>
-</ul>
-<p>Developed with 173 scientists from biotechnology and pharmaceutical research, ](<a href="https://x.com/OpenAI/status/2067346916929937827">https://x.com/OpenAI/status/2067346916929937827</a>)</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2067346918746030496">Benchmarks often test biological knowledge or narrow skills. The tasks in LifeSciBench test whether models can reason from evidence, work with scientific artifacts, handle uncertainty, and make useful</a></li>
-<li><a href="https://x.com/OpenAI/status/2067346920230838387">LifeSciBench is a foundation for more realistic evaluation, targeted improvements, and continued partnership with the life sciences community—helping the field measure progress, identify gaps, and imp</a></li>
-<li>[GPT-5.4 helped drive a medicinal chemistry project from literature review to a validated experimental result.</li>
-</ul>
-<p>Paired with <a href="https://t.co/gcDaph8b2B%E2%80%99s">https://t.co/gcDaph8b2B’s</a> Maria AI and specialized lab, the model proposed an](<a href="https://x.com/OpenAI/status/2067293745075442171">https://x.com/OpenAI/status/2067293745075442171</a>)</p>
-<ul>
-<li>[Maria tested the idea across 10,080 reactions, and human chemists later validated representative results by hand.</li>
-</ul>
-<p>Under the optimized conditions, yields improved for 88% of the boronic acids and 83%](<a href="https://x.com/OpenAI/status/2067293749412339980">https://x.com/OpenAI/status/2067293749412339980</a>)</p>
-<ul>
-<li>[The full process took about 2.5 months, plus another half month for human chemists to write up the results.</li>
-</ul>
-<p>This is an early example of frontier models supporting more of the scientific research loo](<a href="https://x.com/OpenAI/status/2067293751362679170">https://x.com/OpenAI/status/2067293751362679170</a>)</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2066969635099144682">We’re sharing new research on a method for anticipating how models may behave in real-world use before release: simulating deployment with recent, de-identified user requests and studying candidate mo</a></li>
-<li>[Simulated deployments also reduced evaluation awareness to levels close to real production traffic.</li>
-</ul>
-<p>We extended the method to agentic deployments with stateful tools, showing that tool simulators ca](<a href="https://x.com/OpenAI/status/2066969640727969845">https://x.com/OpenAI/status/2066969640727969845</a>)</p>
-<ul>
-<li>[Deployment Simulation works best with representative production data, which external evaluators often can’t access.</li>
-</ul>
-<p>In a companion post for our Alignment blog, we also explore the public WildChat da](<a href="https://x.com/OpenAI/status/2066969642774720961">https://x.com/OpenAI/status/2066969642774720961</a>)</p>
-<ul>
-<li>[Let’s talk about evals.</li>
-</ul>
-<p>We’re always looking for better ways to measure and forecast model progress, especially as benchmarks get saturated or gamed. </p>
-<p>@tejalpatwardhan, who leads our frontier evals ](<a href="https://x.com/OpenAI/status/2066934692641956231">https://x.com/OpenAI/status/2066934692641956231</a>)</p>
-<ul>
-<li>[Listen to the OpenAI Podcast on—</li>
-</ul>
-<p>Spotify
-<a href="https://t.co/5u8ANPIHBe">https://t.co/5u8ANPIHBe</a></p>
-<p>Apple
-<a href="https://t.co/ZhhRA1ZB27">https://t.co/ZhhRA1ZB27</a></p>
-<p>YouTube
-<a href="https://t.co/ABG78oTl6W%5D(https://x.com/OpenAI/status/2066934697004089626)">https://t.co/ABG78oTl6W](https://x.com/OpenAI/status/2066934697004089626)</a></p>
-<h2>OpenAI Devs (Twitter)</h2>
-<ul>
-<li>[Last week, we hosted Women who Code(x)</li>
-</ul>
-<p>The output: task agents, personal guides, and a lot of projects shipped with Codex <a href="https://t.co/1wh2Nl21BP%5D(https://x.com/OpenAIDevs/status/2067328594758848513)">https://t.co/1wh2Nl21BP](https://x.com/OpenAIDevs/status/2067328594758848513)</a></p>
-<ul>
-<li>[Open source projects depend on the maintainers who review, release, secure, and steward the infrastructure many teams build on.</li>
-</ul>
-<p>We’re proud to support the @rust_foundation&#39;s work.</p>
-<p><a href="https://t.co/x8l5z%5D(https://x.com/OpenAIDevs/status/2067280779689042235)">https://t.co/x8l5z](https://x.com/OpenAIDevs/status/2067280779689042235)</a></p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2067280791881810246">https://t.co/YOX1gl9DDW</a></li>
-</ul>
-<h2>Google DeepMind (Twitter)</h2>
-<ul>
-<li>[We’re working with @SciTechgovuk, @mhclg and @i_dot_ai on a new AI housing application planning prototype. 🏡</li>
-</ul>
-<p>By cutting down the time spent on repetitive tasks, it could help planning officers focus](<a href="https://x.com/GoogleDeepMind/status/2067188693694136664">https://x.com/GoogleDeepMind/status/2067188693694136664</a>)</p>
-<h2>xAI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/xai/status/2067351099271745992">Use VMs with Grok Build preinstalled with one click</a></li>
-<li>[Grok is now available on Amazon Bedrock.</li>
-</ul>
-<p>AWS developers can now build with Grok 4.3, the industry leader in hallucination rate and tool calling, powered by Bedrock’s secure inference engine. https://](<a href="https://x.com/xai/status/2067263498359624012">https://x.com/xai/status/2067263498359624012</a>)</p>
-<ul>
-<li><a href="https://x.com/xai/status/2067263500309930176">To get started, visit docs: https://t.co/Rz5SEhY5fn</a></li>
-<li>[Grok Imagine Video 1.5 is here</li>
-</ul>
-<p>Our new image-to-video model with sharper realism, better physics and faster generations 🧵</p>
-<p><a href="https://t.co/zGhs9czkC5">https://t.co/zGhs9czkC5</a> <a href="https://t.co/9X4YicpMH8%5D(https://x.com/xai/status/2067092897951109427)">https://t.co/9X4YicpMH8](https://x.com/xai/status/2067092897951109427)</a></p>
-<ul>
-<li>[Imagine Video 1.5 is generally available in our API: <a href="https://t.co/SmAD9BUc0N">https://t.co/SmAD9BUc0N</a></li>
-</ul>
-<p>We&#39;ve also rolled out Video 1.5 Fast to consumers with better quality and dramatically less wait.</p>
-<p>720p videos now render ](<a href="https://x.com/xai/status/2067092899335159819">https://x.com/xai/status/2067092899335159819</a>)</p>
-<ul>
-<li><a href="https://x.com/xai/status/2067092900694135081">See how @heavypulp made a trailer worthy of the big screen with this powerful new model: https://t.co/SJZLukphr2</a></li>
-</ul>
-<h2>Z.ai (Twitter)</h2>
-<ul>
-<li><p>[Introducing GLM-5.2: Frontier Intelligence, Open Weights</p>
-</li>
-<li><p>Significant improvements in coding and agentic tasks</p>
-</li>
-<li><p>Strong long-horizon capabilities with a 1M context window</p>
-</li>
-<li><p>Two levels of reasoning e](<a href="https://x.com/Zai_org/status/2066938937344495629">https://x.com/Zai_org/status/2066938937344495629</a>)</p>
-</li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>Noam Shazeer</code> <code>人才流动</code> <code>Sam Altman</code> — Sam Altman 转发并欢迎 Noam Shazeer 加入 OpenAI，称这是他从 OpenAI 初期就最想合作的人之一。该动态属于重要人才流动信号，可能强化 OpenAI 在大模型架构和产品化研究上的经验储备。 · <a href="https://x.com/sama/status/2067427421083652131">Sam Altman (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Codex</code> <code>开发者社区</code> <code>任务代理</code> <code>活动</code> — OpenAI Devs 回顾 Women who Code(x) 活动，称参与者用 Codex 构建了任务代理、个人指南等项目。该动态主要体现 Codex 在开发者活动中的采用和社区传播。 · <a href="https://x.com/OpenAIDevs/status/2067328594758848513">OpenAI Devs (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>Claude Build Day</code> <code>开发者社区</code> <code>原型开发</code> <code>3D 场景</code> — Claude Devs 总结 Claude Build Day 活动，称 300 名开发者在旧金山用一天时间完成多项演示。获奖项目包括把手机照片转成可编辑写实 3D 场景的 Custom Universe，体现 Claude 工具在快速原型和多模态创作中的社区使用。 · <a href="https://x.com/ClaudeDevs/status/2067298098553254211">Claude Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>Rust Foundation</code> <code>开源维护</code> <code>资金支持</code> — OpenAI Devs 表示开源项目依赖维护者完成评审、发布、安全和基础设施治理，并支持 Rust Foundation 的维护者工作。引用内容显示 OpenAI 做出 60 万美元承诺，包括白金会员和额外维护者支持。 OpenAI Devs 转发 Rust Foundation 支持公告链接，补充 OpenAI 对 Rust 生态的资金承诺。该帖作为同一开源支持事件的链接补充。 · <a href="https://x.com/OpenAIDevs/status/2067280779689042235">OpenAI Devs (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
