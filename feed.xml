@@ -5,8 +5,160 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 18 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 19 Jun 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-06-19</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-19.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-19.md</guid>
+      <pubDate>Fri, 19 Jun 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-19</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>医疗AI提速</strong>：OpenAI用GPT-5.5 Instant和o3 Deep Research同时推进健康问答与罕见病重析。</li>
+<li><strong>智能体安全前移</strong>：OpenAI对齐研究与DeepMind控制路线图都把高风险智能体的稳健性放到部署前。</li>
+<li><strong>Claude开发栈扩展</strong>：Claude Code新增Artifacts和设计同步，MCP企业托管认证强化组织级权限治理。</li>
+<li><strong>科研评测更真实</strong>：LifeSciBench和Project Fetch把模型评估推向生命科学任务与物理机器人场景。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/OpenAI/status/2067722688165232654">OpenAI探索持久有益模型训练</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>对齐研究</code> <code>有益性训练</code> <code>安全泛化</code> <code>鲁棒性</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI发布关于训练模型形成广泛、持久有益行为的对齐研究，目标是让模型在更长程、更高风险任务和新领域中仍保持安全与有帮助。相关测试覆盖对抗提示压力和有害微调压力，初步显示模型更难被诱导产生有害行为，同时仍能响应正当有帮助的指令。这项工作被定位为早期步骤，重点在于让有益特质可迁移、可保持，并随模型能力提升而同步增强可靠性与透明度。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2067722695270334549">OpenAI测试模型在压力下保持对齐</a> · OpenAI (Twitter) · 压力测试结果</li>
+</ul>
+<hr>
+<h3>2. <a href="https://x.com/ClaudeDevs/status/2067672094209675373">Claude Code更新：Artifacts与设计同步</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Artifacts</code> <code>Claude Design</code> <code>设计同步</code> <code>团队协作</code> <code>开发工具</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic为Claude Code推出Artifacts，可把会话中的工作转成可分享、会随进展更新的交互页面，适合PR讲解、项目仪表盘和团队同步。Claude Code还与Claude Design支持双向同步，开发者可以用/design-sync把设计系统拉入仓库，也能把实现结果推回画布继续编辑。两项更新都指向同一方向：让Claude Code更深地进入团队协作、设计系统和交付流程。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2067391951725629941">Claude Code与Design双向同步</a> · Claude Devs (Twitter) · 设计同步更新</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用Artifacts为复杂PR、迁移计划或调试过程生成实时共享页。</li>
+<li>在组件库仓库试运行/design-sync，检查设计token、组件属性和代码实现是否能稳定往返。</li>
+<li>企业试点时确认共享链接权限、数据暴露范围和会话内容保留策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2067655887662272723">Claude MCP加入企业托管认证</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>MCP</code> <code>企业认证</code> <code>集中授权</code> <code>Okta</code> <code>连接器治理</code> <code>Claude</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs宣布MCP支持「Enterprise-Managed Auth」扩展，企业管理员可以通过身份提供商集中授权组织内的MCP连接器。该能力减少用户逐个应用OAuth和手动配置的摩擦，并让Claude聊天、Claude Code和Cowork之间的连接器访问保持一致。该扩展面向客户端、服务器和身份提供商开放，意味着企业AI工具的权限控制正在向协议层收敛。 Claude Devs称新方案通过企业身份提供商集中管理授权，用户不再需要为每个应用单独 OAuth 或设置。对管理员而言，这意味着更紧凑的访问控制和更高效的权限治理。 Claude Devs称企业托管认证已进入 beta，支持 Okta 以及 Asana、Atlassian、Canva、Figma、Granola、Linear、Supabase 等连接器，Slack 也将接入。该能力让 Claude 聊天、Claude Code 和 Cowork 之间的访问控制保持一致。 Claude Devs表示，企业托管认证建立在一个 MCP 扩展之上，任何客户端、服务器或身份提供商都可采用。该方向把企业身份和授权能力下沉到协议层，利于跨工具统一权限模型。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>评估现有MCP连接器是否适合改为集中授权，减少个人逐一配置。</li>
+<li>把连接器权限按团队和项目分层，并确认审计日志与撤权流程。</li>
+<li>构建MCP客户端或服务器时优先评估该认证扩展，避免自定义一次性授权方案。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/AnthropicAI/status/2067651699486200091">Opus 4.7显著加速机器人编程</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Opus 4.7</code> <code>机器人</code> <code>Claude Code</code> <code>具身智能</code> <code>代理能力</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic的「Project Fetch」第二阶段显示，Claude Opus 4.7在无人协助下完成若干机器人编程任务，速度约为去年使用Opus 4.1辅助的最佳人类团队的20倍。研究也强调这并不等于解决机器人学，模型仍难以精细控制机器人取回球，但展现了通用模型向物理世界代理能力迁移的早期信号。 Anthropic转发首个「Project Fetch」实验：两组没有机器人经验的研究人员尝试编程四足机器人，其中一组可以使用Claude。该实验用于观察Claude能否帮助非专家完成复杂机器人任务，并为后续阶段的能力对比提供基线。</p>
+<hr>
+<h3>5. <a href="https://x.com/GoogleDeepMind/status/2067594863785173257">DeepMind发布AI控制路线图</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>AI控制</code> <code>智能体安全</code> <code>多智能体</code> <code>风险治理</code> <code>安全协议</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind提出「AI Control Roadmap」，核心是不假设高级AI总会按人类意图行动，而是预先规划误解、过度执行和失控情形。其数据称多数问题并非来自恶意，而是智能体误解指令或为完成目标而过度积极，因此需要结构性、多层安全协议。DeepMind认为多智能体系统全球规模化前仍有窗口期，AI实验室、政府和学界应协作把控制协议工程化。 Google DeepMind称，其数据表明多数问题并非来自恶意，而是智能体误解指令或为达成目标而过度执行。理解这类细微失败模式，是改进安全与安全协议的关键，尤其适用于更自主的代理系统。 Google DeepMind认为，多智能体系统在全球规模化前仍有一个短暂窗口，可提前嵌入结构性安全协议。其提出的多层安全思路强调AI实验室、政府和学界协作，以降低代理系统扩张后的治理成本。</p>
+<hr>
+<h3>6. <a href="https://openai.com/index/improving-health-intelligence-in-chatgpt">GPT-5.5提升ChatGPT健康智能</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>GPT-5.5 Instant</code> <code>健康智能</code> <code>医生评测</code> <code>医疗安全</code> <code>事实性监控</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称GPT-5.5 Instant在健康与保健问答上显著进步，已在健康评测上接近前沿Thinking模型水平，并向免费用户开放。改进重点包括识别紧急就医信号、追问必要上下文、表达不确定性和解释复杂医学信息；生产流量中的健康事实性问题标记率两个月下降71%。OpenAI还披露，来自60个国家、49种语言和26个专科的医生网络参与评审和rubric设计，用于减少遗漏红旗、过度自信和缺少下一步建议等问题。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2067672740539306261">GPT-5.5 Instant强化健康场景表现</a> · OpenAI (Twitter) · 官推能力要点</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在健康类产品中增加紧急症状升级、上下文追问和不确定性说明的专门评测项。</li>
+<li>把医生审阅rubric与生产监控结合，持续跟踪事实性问题和误导性建议。</li>
+<li>面向用户明确免责声明、就医触发条件和本地化医疗资源提示。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>7. <a href="https://openai.com/index/diagnose-rare-childhood-diseases">o3辅助重析儿童罕见病病例</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>o3 Deep Research</code> <code>罕见病</code> <code>NEJM AI</code> <code>临床AI</code> <code>基因组重析</code> <code>人类审查</code></li>
+</ul>
+<p><strong>摘要</strong>: Boston Children’s Hospital、哈佛与OpenAI在NEJM AI研究中，用o3 Deep Research分析376个既往未解的去标识化儿童罕见病病例。模型负责连接临床表型、遗传模式、变异证据和文献，生成带证据链的候选解释；经专家复核、追加检测和临床确认后，18例获得新增诊断，增量诊断率为4.8%。研究明确把模型定位为专家主导重析流程中的假设生成层，而不是临床诊断者，适合帮助医生周期性重访旧病例。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2067625113193951611">o3辅助罕见病证据整合</a> · OpenAI (Twitter) · 证据整合细节</li>
+<li><a href="https://x.com/OpenAI/status/2067625110199247353">o3帮助医生重访未解儿童病案</a> · OpenAI (Twitter) · 官推研究概述</li>
+</ul>
+<hr>
+<h3>8. <a href="https://x.com/OpenAI/status/2067346916929937827">OpenAI发布生命科学评测LifeSciBench</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>LifeSciBench</code> <code>生命科学</code> <code>GPT-Rosalind</code> <code>基准评测</code> <code>科研推理</code> <code>科研智能体</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI发布LifeSciBench，用750个由173位生物医药科学家编写的任务评估AI支持真实生命科学研究的能力，覆盖证据处理、分析、设计优化、转化和科学沟通等七类工作流。该基准强调模型能否基于证据推理、处理科研工件、表达不确定性并在现实约束下做出有用决策，而不只是回答生物知识题。结果显示GPT-Rosalind相较GPT-5.5在七个工作流上均有提升，但在复杂工件、设计密集任务和精确序列或结构输出上仍明显薄弱。 OpenAI补充称，LifeSciBench不只是测试生物知识或窄技能，而是衡量模型能否基于证据推理、处理科研工件、表达不确定性并在现实约束下做出有用决策。GPT-Rosalind在七个工作流上均超过GPT-5.5，但工件密集、设计密集和操作约束强的任务仍有较大改进空间。 OpenAI表示LifeSciBench将作为更真实评估、定向改进和生命科学社区协作的基础。其核心价值在于持续衡量进展、识别模型短板，并推动面向科研实际流程的AI能力改进。</p>
+<hr>
+<h3>9. <a href="https://openai.com/index/chatgpt-enterprise-spend-controls">ChatGPT企业版增强用量和花费控制</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Enterprise</code> <code>用量分析</code> <code>成本控制</code> <code>企业AI</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI介绍了面向ChatGPT Enterprise的新用量分析和花费控制能力，帮助组织更清楚地管理成本。可用内容显示重点在企业级扩容和预算可控性，适合需要按团队或部门追踪AI使用的管理场景。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>将新用量指标纳入团队级AI成本看板，按业务单元追踪采用率。</li>
+<li>在扩大席位前设置预算阈值和异常用量告警。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>Claude Build Day</code> <code>3D生成</code> <code>原型演示</code> <code>实时引擎</code> — Claude Build Day三等奖项目Custom Universe展示了一个实时引擎，可把单张手机照片转换成完全可编辑、照片级真实的3D场景。该项目体现了生成式3D与交互式编辑在开发者活动中的原型化速度。 Claude Devs感谢Cerebral Valley共同主办Claude Build Day，并邀请开发者参加未来活动。该条主要是活动收尾信息，本身没有新增产品或技术细节。 · <a href="https://x.com/ClaudeDevs/status/2067298104320405848">Claude Devs (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-06-18</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-18.html</link>
@@ -3207,119 +3359,6 @@
 <ul>
 <li><strong>商业动态</strong> | <code>Google DeepMind</code> <code>新加坡</code> <code>AI for science</code> <code>公共卫生</code> <code>国家合作</code> — Google DeepMind 宣布扩展与新加坡的国家级 AI 合作，与当地专家一道推出新项目，聚焦三大方向：加速科学发现、提升大流行病防范能力以及改善医疗服务。这是其规模化、安全部署 AI 议程在亚太地区的进一步落地。 · <a href="https://x.com/GoogleDeepMind/status/2057985225100235022">Google DeepMind (Twitter)</a></li>
 <li><strong>产品与功能</strong> | <code>Claude Code</code> <code>升级</code> <code>permission modes</code> <code>auto mode</code> — 为使用 auto mode 新功能（Pro 计划支持、Sonnet 4.6），用户需运行 <code>claude update</code> 或将 Claude 桌面应用升级至最新版本。官方同步给出权限模式文档链接，详述如何用 auto mode 消除反复出现的工具调用确认提示。 · <a href="https://x.com/ClaudeDevs/status/2057946804743012635">Claude Devs (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 周报 2026-W21</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W21.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W21.md</guid>
-      <pubDate>Sun, 24 May 2026 00:00:00 GMT</pubDate>
-      <category>weekly</category>
-      <description><![CDATA[<h1>CatchUp 周报 — 2026-W21 (05/18 - 05/24)</h1>
-<h2>本周趋势</h2>
-<ul>
-<li><strong>谷歌集中爆发</strong>：Google I/O 同周发布 Gemini 3.5 Flash、Gemini Omni 与 Antigravity 2.0，模型、视频和开发平台一次性更新。</li>
-<li><strong>通义冲击前沿</strong>：Qwen3.7 Preview 与 Qwen3.7-Max 连续登陆 Arena、百炼和 OpenRouter，阿里开始在 Agent 与编码榜单正面追赶。</li>
-<li><strong>编码工具提速</strong>：OpenAI Codex 优化大仓库 Git 操作，Claude Code 推出 Fast 模式与缓存诊断，开发者工具竞争转向速度和成本。</li>
-<li><strong>企业代理部署</strong>：Claude Managed Agents、OpenAI+Dell 与 Codex 远程控制共同显示，Agent 正被带入自托管、本地和移动协作环境。</li>
-<li><strong>安全研究前置</strong>：Anthropic Glasswing 披露 Mythos Preview 挖出逾万高危漏洞，OpenAI 与 Google 同步强化 C2PA 与 SynthID 溯源。</li>
-<li><strong>交互规格重塑</strong>：Thariq 与 Anthropic 围绕 HTML、implementation notes 和大型代码库实践发声，长时代理需要更可审阅的规格界面。</li>
-</ul>
-<h2>Top 10 最重要文章</h2>
-<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2056403591464984753">Qwen3.7 Max/Plus Preview 登 Arena：阿里跻身文本第 6、视觉第 5 实验室</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/18</li>
-<li><strong>标签</strong>: <code>Qwen3.7</code> <code>Arena</code> <code>阿里巴巴</code> <code>文本榜</code> <code>视觉榜</code></li>
-</ul>
-<p><strong>摘要</strong>: Qwen3.7-Max-Preview 与 Qwen3.7-Plus-Preview 登陆 LMSys Arena，文本榜和视觉榜都给出强信号：阿里升至文本第 6 实验室、视觉第 5 实验室。Max-Preview 在数学、专家、软件工程和代码分项都进入前列，说明 Qwen3.7 正式版发布前已经具备明显竞争力。对中文和国产模型生态来说，这是一条前沿能力逼近的关键观察点。</p>
-<h3>2. <a href="https://x.com/GoogleDeepMind/status/2056786446636212467">Google 发布 Gemini Omni：从任意输入生成任意内容的世界模型</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/19</li>
-<li><strong>标签</strong>: <code>Gemini Omni</code> <code>Omni Flash</code> <code>世界模型</code> <code>视频生成</code> <code>多模态</code> <code>Google Flow</code></li>
-</ul>
-<p><strong>摘要</strong>: Google 在 I/O 2026 推出 Gemini Omni，定位为迈向“任意输入生成任意内容”的第一步，并从视频生成和视频编辑起步。Omni Flash 已在 Gemini App、Flow 和 YouTube Shorts 开放体验，支持用照片、视频和音频构建新场景，也支持自然语言改写自有视频。它把 Gemini 的智能与生成式媒体系统合并，成为本周最重要的多模态发布。</p>
-<h3>3. <a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5 Flash 发布：前沿智能 + 行动力，速度达同级 4 倍</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/19</li>
-<li><strong>标签</strong>: <code>Gemini 3.5 Flash</code> <code>编码模型</code> <code>智能体</code> <code>Terminal-Bench</code> <code>Gemini API</code> <code>Antigravity</code></li>
-</ul>
-<p><strong>摘要</strong>: Gemini 3.5 Flash 是 Google I/O 的模型主轴，主打前沿智能与真实世界行动能力结合。官方称其在 Terminal-Bench 2.1、GDPval-AA、MCP Atlas 和 CharXiv Reasoning 等基准上超过 Gemini 3.1 Pro，输出速度达其他前沿模型 4 倍、成本常不到一半。模型已进入 Gemini App、Search AI Mode、Antigravity 与 Google AI Studio，是低延迟 Agent 和编码任务的重点候选。</p>
-<h3>4. <a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/">Google I/O 2026：Gemini 3.5 Flash、Gemini Omni 与 Antigravity 2.0 全发布</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/20</li>
-<li><strong>标签</strong>: <code>Google I/O</code> <code>Gemini 3.5 Flash</code> <code>Gemini Omni</code> <code>Antigravity</code> <code>智能体</code></li>
-</ul>
-<p><strong>摘要</strong>: Google I/O 2026 集中发布上百项更新，把 Gemini 3.5 Flash、Gemini Omni、Antigravity 2.0、Search 信息智能体、Gemini Spark 和 Universal Cart 放在同一套智能体叙事里。Antigravity 2.0 作为开发平台引入 CLI、SDK 和多智能体编排，直接承接 3.5 Flash 的编码能力。相比单个模型发布，这篇汇总展示了 Google 把模型、搜索、购物、开发和媒体生成串成平台生态的意图。</p>
-<h3>5. <a href="https://x.com/Alibaba_Qwen/status/2057450220708147250">Qwen3.7-Max 发布：面向 Agent 时代的新旗舰模型</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/21</li>
-<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>阿里巴巴</code> <code>智能体</code> <code>编码模型</code> <code>长程自主</code> <code>Artificial Analysis</code></li>
-</ul>
-<p><strong>摘要</strong>: Qwen3.7-Max 正式发布，定位为 Agent 时代的通用基座，支持前端原型、多文件重构、真实调试、MCP 集成和多智能体办公流程。模型上下文扩至 100 万 tokens，在 Artificial Analysis 智能指数拿到 56.6 分，并通过自进化实验优化注意力内核取得 10 倍几何平均加速。API 已在阿里云百炼上线，意味着 Qwen3.7 从榜单预热进入真实接入阶段。</p>
-<h3>6. <a href="https://www.anthropic.com/research/glasswing-initial-update">Anthropic Glasswing 首月战报：Mythos Preview 挖出逾万高危漏洞</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 研究 | <strong>日期</strong>: 05/22</li>
-<li><strong>标签</strong>: <code>Project Glasswing</code> <code>Claude Mythos Preview</code> <code>网络安全</code> <code>漏洞披露</code> <code>开源安全</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 披露 Project Glasswing 首月进展：约 50 家关键基础设施伙伴使用 Claude Mythos Preview 发现逾一万个高/严重级漏洞，Cloudflare 单家上报 2,000 个 Bug。Anthropic 同步扫描 1,000 多个开源项目，确认 1,587 个真阳性漏洞，其中 530 个已披露、75 个已修复。文章最重要的判断是补丁部署速度已成为瓶颈，强模型让漏洞发现和修复周期的治理压力同步上升。</p>
-<h3>7. <a href="https://x.com/Alibaba_Qwen/status/2057764624720875975">Qwen3.7-Max 登陆 OpenRouter：第三方 Agent 测试压制 Opus 4.7 与 GPT-5.5</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/22</li>
-<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>OpenRouter</code> <code>Agent 基准</code> <code>编码模型</code> <code>Prompt 缓存</code></li>
-</ul>
-<p><strong>摘要</strong>: Qwen3.7-Max 登陆 OpenRouter，主打编码、办公生产力和长程自主执行，并支持显式 prompt 缓存。第三方 atomic_chat_hq 的 Tetris Bot 循环任务显示，Qwen3.7-Max 训练成本 $1.32、Bot 性能提升 56%，在该任务上比 Claude Opus 4.7 和 GPT-5.5 都更具性价比。虽然这不是通用结论，但它给 Agent 循环成本评测提供了具体样例。</p>
-<h3>8. <a href="https://x.com/demishassabis/status/2056904067406860545">Gemini 3.5 Flash 发布：编码超 3.1 Pro，速度快 4 倍成本减半</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Demis Hassabis (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/20</li>
-<li><strong>标签</strong>: <code>Gemini 3.5 Flash</code> <code>Google</code> <code>编码</code> <code>推理速度</code> <code>Antigravity</code></li>
-</ul>
-<p><strong>摘要</strong>: Demis Hassabis 强调 Gemini 3.5 Flash 在编码与 agentic 任务上超过 Gemini 3.1 Pro，速度比其他前沿模型快 4 倍，在 Antigravity 中可达 800 tokens/s。成本通常不到一半，而 Gemini 3.5 Pro 将在下月推出。这条补充把 Google 发布的产品信息转换成更明确的成本、速度和模型梯度信号。</p>
-<h3>9. <a href="https://x.com/GoogleDeepMind/status/2056787987774816525">Google 发布 Gemini 3.5 系列，首推面向智能体与编码的 3.5 Flash</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/19</li>
-<li><strong>标签</strong>: <code>Gemini 3.5</code> <code>Gemini Flash</code> <code>智能体</code> <code>编码</code> <code>GoogleDeepMind</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 将 Gemini 3.5 系列定义为“前沿智能 + 真实世界行动”的模型家族，首发版本是面向 Agent 与编码的 3.5 Flash。它与 I/O 的 Antigravity 2.0、Search Agent 和 Gemini App 更新共同构成 Google 的智能体化路线。对开发者而言，这意味着 Flash 档位不再只是轻量响应模型，而是进入复杂工具调用和编码流程。</p>
-<h3>10. <a href="https://x.com/demishassabis/status/2056831486251380783">Google 发布 Gemini Omni：多模态世界理解与场景编辑大跃进</a> ⭐⭐⭐⭐⭐</h3>
-<ul>
-<li><strong>来源</strong>: Demis Hassabis (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 05/19</li>
-<li><strong>标签</strong>: <code>Gemini Omni</code> <code>Google</code> <code>多模态</code> <code>视频生成</code> <code>世界模型</code></li>
-</ul>
-<p><strong>摘要</strong>: Demis Hassabis 将 Gemini Omni 描述为世界理解和多模态编辑能力的一次跃升，支持接收照片、视频和音频并构建新场景。Omni Flash 已可在 Gemini App 与 Flow 中试用，用户也能上传自己的视频做创意迭代。它从产品入口角度确认了 Gemini Omni 不是研究演示，而是已经进入创作工具链。</p>
-<h2>分类概览</h2>
-<h3>模型发布</h3>
-<p>W21 的模型发布几乎被 Google 与 Qwen 两条线占满。Google 借 I/O 同时推出 Gemini 3.5 Flash 与 Gemini Omni：前者把低延迟、低成本和编码/Agent 基准结合，后者把视频生成、视频编辑和世界模型叙事推到产品端。Qwen 则用 3.7 Preview、3.7-Max 和 OpenRouter 接入连发，既有 Arena 排名，也有长 Agent 循环成本对比。整体看，模型发布不再是单点能力更新，而是模型、工具、API、开发平台和分发生态同步上线。</p>
-<h3>研究</h3>
-<p>研究板块最强信号来自 Anthropic Glasswing：Mythos Preview 一个月内协助关键基础设施伙伴发现逾一万个高危/严重漏洞，说明前沿模型已经开始改变漏洞发现的规模和节奏。Google 的 Gemini for Science 与 I/O Dialogues 则把科学发现、量子和机器人讨论纳入 Gemini 生态叙事。研究新闻数量不多，但都指向“AI 系统进入真实科研/安全流程”这个方向。相比模型榜单，真正的瓶颈开始转向验证、补丁部署和实验闭环。</p>
-<h3>产品与功能</h3>
-<p>产品与功能是本周最大分类，核心是开发者工具和 Agent 运行环境。OpenAI Codex 做了大仓库性能优化、远程控制、Appshots、团队插件共享，并通过 Dell 进入混合云与本地企业环境。Anthropic 推出 Claude Console 缓存诊断、Claude Code Fast 模式、Managed Agents 自托管沙箱和 MCP 隧道，强调企业可控性与成本优化。Google 则以 Antigravity 2.0、Gemini App、Search AI Mode、Workspace 和 Flow 把 I/O 发布落进多个产品入口。</p>
-<h3>商业动态</h3>
-<p>商业动态围绕“渠道扩张”和“企业落地”展开。OpenAI 与 YC、Dell、Khan Academy、纽约时报和新闻出版伙伴继续扩张分发与企业合作，Sam Altman 也强调 AGI 加速科研、企业和个人目标这三条路径。Google 借 I/O 宣布 AI Ultra 订阅、Search 和 Workspace 更新，把模型能力包装成消费与企业套餐。xAI、Runway、Nous 等也在订阅、内容和生态上持续补位，显示前沿能力竞争正在快速进入商业包装阶段。</p>
-<h3>政策与安全</h3>
-<p>政策与安全集中在内容溯源和模型/Agent 风险控制。OpenAI 强化 C2PA、SynthID 水印和公开验证工具，Google 也推进 SynthID 与 Content Credentials 生态，AI 生成内容识别开始从单厂商功能走向跨平台标准。Anthropic 与宗教、哲学和伦理学者讨论 AI 道德养成，并通过工具提醒实验降低内部对齐失准行为。Glasswing 的漏洞发现规模也让“安全模型太强后补丁跟不上”成为更现实的治理问题。</p>
-<h3>教程与观点</h3>
-<p>教程与观点本周重点是如何与长时代理协作。Anthropic 总结 Claude Code 在大型代码库中的实践，Thariq 则围绕 HTML artifacts、implementation notes 和“脚本 + PDF + HTML”工作流给出一组可操作方法。OpenAI 的 Ramp 案例展示 Codex + GPT-5.5 可以把代码评审反馈从数小时压到数分钟。整体来看，提示词技巧正在从“写得更清楚”变成“给 Agent 一个可持续维护、可审阅、可验证的工作界面”。</p>
-<h2>本周值得上手试试</h2>
-<ol>
-<li><strong>Gemini 3.5 Flash</strong> — 在 Google AI Studio 或 Antigravity 中接入 3.5 Flash，对比现有编码/Agent 模型在延迟、成本和长链路任务上的表现。</li>
-<li><strong>Gemini Omni / Flow</strong> — 用自有视频素材测试 Omni Flash 的场景重构、批量编辑和角色一致性，评估是否可进入内容原型流程。</li>
-<li><strong>Qwen3.7-Max</strong> — 通过阿里云百炼或 OpenRouter 接入 Qwen3.7-Max，在长 Agent 循环和代码任务上对比 Opus / GPT 的成本与质量。</li>
-<li><strong>Codex 大仓库性能</strong> — 在 monorepo 中重新跑过去因 Git 操作慢、线程切换卡顿而放弃的 Codex 工作流，量化 10-50 倍提速是否兑现。</li>
-<li><strong>Claude Prompt 缓存诊断</strong> — 打开 Claude Console 缓存诊断页，定位未命中缓存的 prompt 片段，并把易变内容下沉到末尾。</li>
-<li><strong>Claude Code Fast 模式</strong> — 用 <code>/fast</code> 在现场调试、快速迭代等延迟敏感任务中试跑 Opus 4.7，同时记录 token 成本差异。</li>
-<li><strong>Managed Agents 自托管沙箱</strong> — 对合规要求高的内部工具，评估 Claude Managed Agents 的自托管沙箱和 MCP 隧道是否能替代公网暴露。</li>
-<li><strong>Antigravity 2.0</strong> — 用任务中控、CLI 和 SDK 编排一个真实多智能体开发任务，观察子代理分工是否比单会话更稳定。</li>
-<li><strong>Codex Appshots / 远程控制</strong> — 在 Mac 上用 Appshots 捕获窗口上下文，并从 ChatGPT 手机端接管长任务，验证跨设备协作节奏。</li>
-<li><strong>HTML 规格与 implementation notes</strong> — 让 Agent 在实现规格时维护 <code>implementation-notes.html</code>，记录模糊决策、偏离原因和待人工确认的问题。</li>
-</ol>
-<h2>值得深读</h2>
-<ul>
-<li><a href="https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/">Gemini 3.5 Flash 发布：前沿智能 + 行动力，速度达同级 4 倍</a> — 这是理解 Google 新一代低延迟 Agent 与编码模型定位的主文档。</li>
-<li><a href="https://blog.google/innovation-and-ai/technology/ai/google-io-2026-all-our-announcements/">Google I/O 2026：Gemini 3.5 Flash、Gemini Omni 与 Antigravity 2.0 全发布</a> — 它把模型、搜索、开发平台、视频和 Workspace 更新放进完整生态图。</li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2057450220708147250">Qwen3.7-Max 发布：面向 Agent 时代的新旗舰模型</a> — 这条信息展示 Qwen 如何把长上下文、MCP、编码和多智能体办公包装成新旗舰能力。</li>
-<li><a href="https://www.anthropic.com/research/glasswing-initial-update">Anthropic Glasswing 首月战报：Mythos Preview 挖出逾万高危漏洞</a> — 这是本周最值得读的安全研究，重点不只是发现漏洞，而是补丁部署成为新瓶颈。</li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2057764624720875975">Qwen3.7-Max 登陆 OpenRouter：第三方 Agent 测试压制 Opus 4.7 与 GPT-5.5</a> — 第三方长循环 Agent 测试给出了模型成本与性能比较的具体样例。</li>
 </ul>
 ]]></description>
     </item>
