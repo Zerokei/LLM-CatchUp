@@ -2,7 +2,9 @@ name: Daily Fetch
 
 on:
   schedule:
-    - cron: '37 1 * * *'  # After the target US day closes. Odd minute avoids GH Actions congestion.
+    - cron: '37 0 * * *'  # Main fetch after the target US day closes. Odd minute avoids GH Actions congestion.
+      timezone: America/Los_Angeles
+    - cron: '17 3 * * *'  # Retry window if GitHub drops or delays the first scheduled event.
       timezone: America/Los_Angeles
   workflow_dispatch:
     inputs:
