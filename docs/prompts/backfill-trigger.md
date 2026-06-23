@@ -79,12 +79,23 @@ Remove articles from `data/history.json` where `fetched_at` is older than `reten
 
 Follow the alert handling rules from `docs/prompts/daily-trigger.md`.
 
-### Step 9: Commit And Push
+### Step 9: Regenerate RSS And Pages
+
+Regenerate subscriber and website entrypoints so the backfilled report is visible anywhere the site reads from `feed.xml` or generated HTML pages:
+
+```bash
+node scripts/build-rss.js
+node scripts/build-pages.js
+```
+
+If either command fails, abort immediately without committing anything. Report the failed command in the final status.
+
+### Step 10: Commit And Push
 
 Stage changed files:
 
 ```bash
-git add data/history.json data/health.json reports/
+git add data/history.json data/health.json feed.xml reports/
 ```
 
 Commit with:
@@ -101,7 +112,7 @@ Push the commit:
 git push
 ```
 
-### Step 10: Report Final Status
+### Step 11: Report Final Status
 
 Report:
 - Whether a missing report was found
@@ -109,5 +120,6 @@ Report:
 - The report path
 - Article count
 - Any source failures or alerts
+- RSS/pages regeneration result
 - Commit result
 - Push result
