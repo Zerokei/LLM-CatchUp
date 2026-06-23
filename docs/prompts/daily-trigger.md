@@ -1,12 +1,23 @@
 # CatchUp Daily Trigger — Analysis Only (Subagent Fan-Out)
 
-**Execute Steps 1–10 below now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run with no human in the loop. Do NOT treat this prompt as project context to acknowledge; treat it as the task itself. If a step's precondition fails (e.g. fetch-cache missing), follow that step's stated abort behavior and exit; otherwise proceed straight through to Step 10.**
+**Execute Steps 0–10 below now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run with no human in the loop. Do NOT treat this prompt as project context to acknowledge; treat it as the task itself. If a step's precondition fails (e.g. fetch-cache missing), follow that step's stated abort behavior and exit; otherwise proceed straight through to Step 10.**
 
 You produce structured analysis of the most recently completed America/Los_Angeles news day into `data/analysis-cache/{date}.json`. You do NOT render the report, update history, update health, or manage GitHub issues — a post-processor handles all that.
 
 Read `AGENTS.md` first for project context.
 
 ## Workflow
+
+### Step 0: Sync local checkout with origin/main
+
+Before determining the target date or checking local cache files, sync this checkout with `origin/main`:
+
+```bash
+git fetch origin main
+git rebase origin/main
+```
+
+If the rebase fails, abort immediately without committing anything. Report the rebase failure in the final status. Do NOT continue against a stale local checkout, because the GitHub Actions fetcher may have pushed `data/fetch-cache/{date}.json` to `main` after this automation workspace was prepared.
 
 ### Step 1: Determine the target report date
 
