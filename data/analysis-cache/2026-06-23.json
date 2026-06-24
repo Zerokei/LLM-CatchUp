@@ -1,0 +1,296 @@
+{
+  "analyzed_at": "2026-06-24T12:37:01.535Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-06-23.json",
+  "trend_paragraph": "- **安全智能体落地**：OpenAI Daybreak 以 GPT-5.5-Cyber、Codex Security 和 Patch the Planet 推进漏洞修复闭环。\n- **团队协作代理化**：Claude Tag 在 Slack 中支持多人委派异步任务，把 Claude Code 形态扩展到团队频道。\n- **模型能力竞赛**：Seed2.1 强化 Agent、代码交付与多模态，评测重点继续转向真实工作流。\n- **行业应用扩散**：Omio、Grok 与 DeepMind-A24 分别把模型能力落到旅行、投资组合和创作者工具。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/omio",
+      "source": "OpenAI Blog",
+      "title": "Omio 用 OpenAI 推进对话式旅行",
+      "summary": "Omio 将 OpenAI 模型接入实时交通库存和预订系统，让用户用自然语言发现可预订的火车、巴士、渡轮和航班方案。公司还在内部推广 ChatGPT 和 Codex，称许多产品原型可用过去约五分之一的时间完成，同时保留人工负责和治理机制。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Omio",
+        "对话式旅行",
+        "Codex",
+        "AI 原生"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://www.anthropic.com/news/introducing-claude-tag",
+      "source": "Anthropic Blog",
+      "title": "Claude Tag 让 Slack 团队直接委派 Claude",
+      "summary": "Anthropic 发布 Claude Tag，先在 Slack 中让团队通过 @Claude 委派任务，并把 Claude 接入选定频道、工具、数据和代码库。它强调多人协作、长期记忆、主动提醒和异步执行，面向 Claude Enterprise 与 Team 客户开放测试，并被定位为 Claude Code 向团队化代理演进的一步。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "Slack",
+        "Claude Code",
+        "团队协作",
+        "异步代理"
+      ],
+      "practice_suggestions": [
+        "在私有 Slack 频道先试点 Claude Tag，限定可访问工具和数据源。",
+        "为不同团队建立分离的 Claude 身份，避免销售、工程等上下文串用。",
+        "把长耗时但可审查的任务交给 Claude 异步执行，并设置支出和日志审计。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
+      "source": "ByteDance Seed",
+      "title": "字节 Seed2.1 发布：强化 Agent、代码与多模态",
+      "summary": "字节 Seed 团队发布 Seed2.1 模型家族，面向真实生产力场景强化通用 Agent、端到端代码交付、多模态理解和长上下文能力。Seed2.1 Pro 在 GDPVal、MobileWorld、CharXiv-RQ、MeasureBench、ERQA、TVBench 等评测中强调领先或强竞争表现，并已面向豆包和火山引擎用户开放。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Seed2.1",
+        "字节跳动",
+        "Agent",
+        "代码模型",
+        "多模态"
+      ],
+      "practice_suggestions": [
+        "优先用 Seed2.1 复测多步骤办公、GUI 操作和代码交付任务，验证端到端稳定性。",
+        "在长文档、图表和视频理解任务上与现有模型做同题对比，关注错误率而非单次答案质量。",
+        "将复杂研发任务拆成执行、评估和诊断子代理，检验 Seed2.1 的长周期协作能力。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069202892368773468",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 社区大使计划开放日本申请",
+      "summary": "Claude Devs 宣布 Japan Claude Community Ambassador program 启动，面向日本各地招募社区大使。官方称全球大使此前已在 37 个国家、107 个城市举办 290 多场聚会，覆盖 4 万多名参与者。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Claude",
+        "开发者社区",
+        "日本",
+        "大使计划"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/xai/status/2069200658633469970",
+      "source": "xAI (Twitter)",
+      "title": "Grok 接入 Interactive Brokers 投资组合",
+      "summary": "xAI 宣布 Grok 现在可连接 Interactive Brokers，为用户提供围绕投资组合的高质量、及时信息。被引用的 IBKR 文案强调该集成用于研究投资和分析投资组合，交易仍需用户批准。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Grok",
+        "Interactive Brokers",
+        "投资分析",
+        "金融 AI"
+      ],
+      "practice_suggestions": [
+        "评估 Grok 连接券商账户时的数据权限、审计记录和撤权流程。",
+        "将 AI 生成的投资分析限定为研究输入，保留人工确认交易的硬约束。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069153778553737605",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 被开发者用于探索 Apple 新框架",
+      "summary": "OpenAI Devs 转述 iOS 与 macOS 开发者 Paul Solt 的案例，称 Codex 像研究伙伴一样帮助他探索新框架。该帖重点是开发者工作流示例，而不是新的 Codex 功能发布。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "iOS",
+        "macOS",
+        "开发者工作流"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/sama/status/2069121360744550796",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 概述 OpenAI 安全新组合",
+      "summary": "Sam Altman 表示 OpenAI 希望与美国政府和安全生态合作，帮助企业提升防护能力。他点名 GPT-5.5-Cyber 完整版、Patch the Planet 和 Codex Security，强调目标是解决安全问题而不只是发现问题。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5-Cyber",
+        "Codex Security",
+        "Patch the Planet",
+        "网络安全",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "将 GPT-5.5-Cyber 视为受控防御能力，先明确授权边界和人工复核流程。",
+        "把漏洞发现、验证、补丁生成和合并追踪串成闭环，而不是只增加扫描告警。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/daybreak-securing-the-world",
+      "cadence": "daily",
+      "angle": "安全战略解读"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069104288417390688",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 用 Patch the Planet 推动开源修复",
+      "summary": "OpenAI 介绍 Patch the Planet，目标是帮助开源维护者从安全发现推进到合并修复。该计划与 Trail of Bits、HackerOne、Calif、研究人员和维护者合作，把 Codex Security 与高级模型带入漏洞修复流程，并强调人类审查居中。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Patch the Planet",
+        "Codex Security",
+        "开源安全",
+        "漏洞修复",
+        "人类审查"
+      ],
+      "practice_suggestions": [
+        "为关键开源依赖建立从漏洞报告到补丁 PR 的可追踪流程。",
+        "在使用 Codex Security 生成补丁后，要求维护者复核证据、测试和影响范围。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260622-1704",
+      "duplicate_of": "https://openai.com/index/daybreak-securing-the-world",
+      "cadence": "daily",
+      "angle": "开源与伙伴计划"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069104290065776881",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 推出 Daybreak 网络安全伙伴计划",
+      "summary": "OpenAI 宣布 Daybreak Cyber Partner Program，允许安全软件和服务商在其产品中使用带 Trusted Access for Cyber 的 GPT-5.5。官方称这能让客户获得防御能力，同时把直接模型访问保留在参与伙伴手中。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "Daybreak",
+        "GPT-5.5",
+        "安全伙伴",
+        "受信访问"
+      ],
+      "thread_group_id": "thread-OpenAI-20260622-1704",
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069104283824640023",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI Daybreak 扩展：GPT-5.5-Cyber 与 Codex Security",
+      "summary": "OpenAI 扩展 Daybreak，发布 Codex Security 插件更新、GPT-5.5-Cyber 完整版、Cyber Partner Program 和 Patch the Planet。GPT-5.5-Cyber 在 CyberGym 达到 85.6%，高于 GPT-5.5 的 81.8%，Codex Security 则强调把漏洞发现、验证、补丁生成和安全证据纳入开发工作流。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5-Cyber",
+        "Daybreak",
+        "Codex Security",
+        "CyberGym",
+        "漏洞修复"
+      ],
+      "practice_suggestions": [
+        "用 Codex Security 对自有代码先跑深度扫描，再要求生成可复核的严重性、证据和补丁建议。",
+        "将 GPT-5.5-Cyber 的使用限制在已授权防御任务，并配套监控、范围控制和人工审批。",
+        "把安全扫描结果接入现有漏洞管理或 SARIF 流程，避免生成孤立报告。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/daybreak-securing-the-world",
+      "cadence": "daily",
+      "angle": "能力组合总览"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2069077356266795207",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral 团队规模达千人",
+      "summary": "Mistral 宣布其全球团队正式达到 1000 人，并把这一节点定位为公司继续扩张和服务客户的新阶段。推文同时引导候选人查看开放职位，重点是招聘和组织增长而非产品或模型更新。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Mistral",
+        "团队扩张",
+        "招聘",
+        "欧洲 AI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2069066675895337405",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google DeepMind 与 A24 建立创作者研究合作",
+      "summary": "Google DeepMind 宣布与电影公司 A24 启动研究合作，目标是让未来 AI 工具在设计阶段纳入创作者视角。该消息更偏向创意产业合作与产品研究输入，尚未披露具体模型、功能或商业化细节。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Google DeepMind",
+        "A24",
+        "创作者工具",
+        "研究合作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/daybreak-securing-the-world",
+      "source": "OpenAI Blog",
+      "title": "OpenAI Daybreak 扩展：安全模型与开源修复闭环",
+      "summary": "OpenAI 扩展 Daybreak，将 GPT-5.5-Cyber、Codex Security 插件、CyberGym 红队环境和 Trusted Access for Cyber 打包成面向防御方的安全能力组合。Patch the Planet 与 Trail of Bits、HackerOne、Calif 合作，帮助开源维护者从漏洞发现走到验证、补丁、测试和合并，并已在多个关键项目中发现数百个问题、合并数十个补丁。Daybreak Cyber Partner Program 让安全厂商在受控访问下把 GPT-5.5 能力嵌入产品，同时 OpenAI 也在与政府和关键基础设施运营方建立防御合作。整体重点不是制造更多告警，而是用模型和专家审查把漏洞治理推进到可落地的修复闭环。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "OpenAI Daybreak",
+        "GPT-5.5-Cyber",
+        "Codex Security",
+        "Patch the Planet",
+        "开源安全",
+        "漏洞修复"
+      ],
+      "practice_suggestions": [
+        "用 Codex Security 对关键代码库先做授权扫描，并要求输出证据、严重性和补丁建议。",
+        "把漏洞发现、人工复核、测试、披露和合并状态串成闭环，避免只增加扫描告警。",
+        "在使用 GPT-5.5-Cyber 前明确可信访问、数据边界、审批和审计流程。",
+        "安全团队可复用模糊测试、历史 CVE 变体分析和差分测试工作流。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/patch-the-planet",
+      "source": "OpenAI Blog",
+      "title": "Patch the Planet 用 AI 支援开源安全修补",
+      "summary": "OpenAI 推出 Daybreak 旗下 Patch the Planet，与 Trail of Bits 合作，为关键开源项目提供 AI 辅助安全研究、专家复核、补丁开发和协调披露支持。首批项目覆盖 cURL、Go、Python、Sigstore、pyca/cryptography 等基础设施，初期已经发现数百个安全问题并合并数十个补丁。文章强调 AI 能加速漏洞发现，但必须通过人工安全工程师去重、验证、校正严重性并按维护者偏好提交修复。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Patch the Planet",
+        "开源安全",
+        "Trail of Bits",
+        "Codex Security",
+        "漏洞治理"
+      ],
+      "practice_suggestions": [
+        "开源维护者可梳理高风险组件、披露流程和测试缺口，评估是否申请加入该计划。",
+        "安全团队可复用文中提到的模糊测试、历史 CVE 变体分析和差分测试工作流。",
+        "在引入 AI 漏洞扫描时，应设置人工复核环节，避免把大量误报直接推给维护者。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/daybreak-securing-the-world",
+      "cadence": "daily",
+      "angle": "开源修复计划"
+    }
+  ]
+}
