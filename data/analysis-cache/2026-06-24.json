@@ -1,0 +1,508 @@
+{
+  "analyzed_at": "2026-06-25T12:37:32.880Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-06-24.json",
+  "trend_paragraph": "- **团队型 Agent**：Claude Tag 把 Claude 放进 Slack，推动异步协作从个人工具走向团队成员形态。\n- **AI 基建下沉**：OpenAI 与 Broadcom 推出 Jalapeño 芯片，继续把模型、产品和推理硬件打通。\n- **开发者生态升温**：OpenAI DevDay 2026 开放申请，API 半年更新和开源维护者支持同步扩张。\n- **文档智能升级**：Mistral OCR 4 强调结构化解析，为 RAG、脱敏和人工复核提供更细粒度信号。\n- **安全治理前移**：OpenAI 的 Patch the Planet 把 AI 漏洞发现与专家审查结合，降低开源维护负担。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+      "source": "OpenAI Blog",
+      "title": "OpenAI发布自研推理芯片Jalapeño",
+      "summary": "OpenAI与Broadcom发布面向LLM推理的首款「Intelligence Processor」Jalapeño，目标是在性能功耗比、低延迟和大规模部署上优于现有方案。该芯片围绕ChatGPT、Codex、API和未来智能体负载设计，计划从2026年底起以多代平台形式在吉瓦级数据中心部署。OpenAI称芯片从设计到流片仅用九个月，并由其模型辅助部分芯片设计与优化流程。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Broadcom",
+        "推理芯片",
+        "AI基础设施",
+        "成本效率"
+      ],
+      "practice_suggestions": [
+        "关注后续技术报告中的性能功耗比、延迟和可用容量指标，评估其对API成本的潜在影响。",
+        "对延迟敏感或高并发推理业务，预留基准测试计划以便在新硬件进入服务后重新评估供应商选择。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/karpathy/status/2069547676849557725",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Karpathy称Claude Tag重塑企业协作",
+      "summary": "Karpathy评价Claude Tag代表第三种LLM交互范式：模型不再只是网站或桌面应用，而是一个可持久、异步、接入组织上下文与工具的团队成员。被引用的Claude公告称，团队可在Slack里标记Claude并委派任务，同时控制其可访问的频道和工具。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "Slack",
+        "企业协作",
+        "异步智能体"
+      ],
+      "practice_suggestions": [
+        "先在低风险频道试点Claude Tag，明确可访问工具、频道范围和审批边界。",
+        "把适合异步委派的重复流程整理成频道模板，例如资料检索、会议准备或日程协调。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2069468693017268244",
+      "angle": "交互范式点评"
+    },
+    {
+      "url": "https://x.com/xai/status/2069536627349962987",
+      "source": "xAI (Twitter)",
+      "title": "Grok Build上线Firecrawl插件",
+      "summary": "xAI宣布Grok Build插件市场新增Firecrawl插件。Firecrawl称该插件可让Grok智能体在CLI中直接搜索网页、抓取内容并与页面交互，并提供每月1000个免费额度用于上手。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "xAI",
+        "Grok Build",
+        "Firecrawl",
+        "网页抓取",
+        "插件市场"
+      ],
+      "practice_suggestions": [
+        "在需要网页检索或抓取的Grok代理流程中测试Firecrawl插件，重点验证抓取稳定性和额度消耗。",
+        "为生产用途设置域名白名单、重试策略和内容清洗步骤，避免把不可信网页直接交给代理执行。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069499656305090671",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI回顾半年API模型与工具更新",
+      "summary": "OpenAI开发者账号回顾过去六个月API侧发布的三十多项模型、功能和工具升级，包括GPT-5.5、GPT-5.4 mini/nano、实时语音与翻译模型、GPT-Image-2等。工具层面还包括Responses API中的Skills、Agents SDK harness与sandbox、服务端压缩、WebSocket模式、Hosted shell、OpenAI CLI以及Amazon Bedrock接入。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "OpenAI API",
+        "GPT-5.5",
+        "Responses API",
+        "Agents SDK",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "盘点现有API调用是否仍使用旧模型或旧代理接口，优先评估GPT-5.5与GPT-5.4 mini/nano的成本和质量差异。",
+        "对长上下文或多步代理应用，测试服务端压缩、Hosted shell和Responses API Skills能否减少自建编排逻辑。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069484315633955040",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI DevDay Exchanges扩展多城",
+      "summary": "OpenAI Devs补充称，DevDay Exchanges还将来到班加罗尔、东京、首尔、巴黎、柏林、伦敦、圣保罗和墨西哥城。该消息是DevDay报名公告的后续回复，主要提供区域活动安排预告。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "DevDay",
+        "开发者活动",
+        "全球巡回"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260623-1814",
+      "duplicate_of": "https://x.com/OpenAI/status/2069483224158646739",
+      "angle": "全球交流场次"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069484303281779090",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI DevDay 2026开放申请",
+      "summary": "OpenAI Devs宣布DevDay 2026开放申请，活动将于9月29日在旧金山举行，面向开发者提供新能力试玩、技术交流和深度技术议程。申请截止日期为7月10日。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "DevDay 2026",
+        "开发者生态",
+        "旧金山"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260623-1814",
+      "duplicate_of": "https://x.com/OpenAI/status/2069483224158646739",
+      "angle": "开发者申请细节"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069483224158646739",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI DevDay 2026 开放申请",
+      "summary": "OpenAI DevDay 2026 已开放申请，主会场定于 9 月 29 日在旧金山举行，申请截止日为 7 月 10 日。官方同时确认开幕主题演讲将在线直播，并预告 DevDay Exchanges 将扩展到班加罗尔、东京、首尔、巴黎、柏林、伦敦、圣保罗和墨西哥城。这个事件更像开发者生态日程发布，而非产品本身发布。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI DevDay",
+        "开发者生态",
+        "技术会议",
+        "全球活动"
+      ],
+      "thread_group_id": "thread-OpenAI-20260623-1810",
+      "duplicate_of": null,
+      "practice_suggestions": [
+        "关注 7 月 10 日申请截止，提前准备团队参会主题。",
+        "将 9 月 29 日 keynote 纳入产品路线观察日历。"
+      ]
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069483225492357326",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI DevDay主题演讲将直播",
+      "summary": "OpenAI补充说明，无法到场的观众也可以在线观看DevDay 2026。开场主题演讲将在9月29日进行直播。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "OpenAI",
+        "DevDay",
+        "直播",
+        "主题演讲"
+      ],
+      "thread_group_id": "thread-OpenAI-20260623-1810",
+      "duplicate_of": "https://x.com/OpenAI/status/2069483224158646739",
+      "angle": "直播补充"
+    },
+    {
+      "url": "https://x.com/trq212/status/2069474343512617390",
+      "source": "Thariq (Twitter)",
+      "title": "用Claude频道代理安排日程",
+      "summary": "Thariq分享了一个Claude团队协作用法：创建专门的日程安排频道，让成员标记Claude来查找可用会议时间。该条是线程中的实践片段，强调把Claude放入具体协作频道以处理可委派任务。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Slack",
+        "日程安排",
+        "团队流程"
+      ],
+      "thread_group_id": "thread-trq212-20260623-1735",
+      "duplicate_of": "https://x.com/claudeai/status/2069468693017268244",
+      "angle": "日程协作实验"
+    },
+    {
+      "url": "https://x.com/trq212/status/2069474342220820657",
+      "source": "Thariq (Twitter)",
+      "title": "用表情反应标记Claude任务状态",
+      "summary": "Thariq建议在Claude团队协作线程中要求模型用表情反应回填任务状态，例如计时、完成、疑问或停止。这个做法用于让团队在Slack线程里快速判断代理当前进展。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Slack",
+        "任务状态",
+        "协作实践"
+      ],
+      "thread_group_id": "thread-trq212-20260623-1735",
+      "duplicate_of": "https://x.com/claudeai/status/2069468693017268244",
+      "angle": "状态反馈约定"
+    },
+    {
+      "url": "https://x.com/trq212/status/2069474335656694003",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Tag引发团队代理最佳实践讨论",
+      "summary": "这条推文转发并评论了 Anthropic 发布的 Claude Tag，认为它是一种面向团队代理的新形态，需要时间沉淀最佳实践。原始发布强调 Claude 可在 Slack 中作为团队成员接入指定频道和工具，用户通过 tag 委派任务。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Tag",
+        "Slack",
+        "团队协作",
+        "代理实践"
+      ],
+      "practice_suggestions": [
+        "整理适合在 Slack 中委派给 Claude 的重复性协作任务清单。",
+        "先在低风险频道试点权限、记忆范围和任务交接流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2069468693017268244",
+      "angle": "使用实践"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069468911700218284",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Tag可监控A/B测试与护栏指标",
+      "summary": "Claude Devs 举例说明 Claude Tag 可被指派监控产品发布和 A/B 测试。用户给出目标指标和护栏后，它会在护栏变动时提醒团队，并在结果显著时准备 rollout PR。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "A/B测试",
+        "产品发布",
+        "自动化监控"
+      ],
+      "practice_suggestions": [
+        "为实验监控任务预先定义主指标、护栏指标和触发阈值。",
+        "要求 Claude 输出可审查的 rollout PR，而不是自动合并变更。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260623-1713",
+      "duplicate_of": "https://x.com/claudeai/status/2069468693017268244",
+      "angle": "指标监控场景"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069468913264644419",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Tag把Claude Code扩展为多人异步协作",
+      "summary": "Claude Devs 将 Claude Tag 定位为 Claude Code 的多人、异步、主动式扩展。它已面向 Claude Enterprise 和 Team 计划开放 beta，强调团队可在 Slack 中共同委派和跟进任务。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Claude Tag",
+        "企业协作",
+        "异步代理"
+      ],
+      "practice_suggestions": [
+        "把现有 Claude Code 单人工作流拆成可在团队频道委派的异步任务。",
+        "为共享频道设定任务命名、交接和人工确认规范。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260623-1713",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069468900216234010",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic称Claude Tag已参与大量内部代码生产",
+      "summary": "Claude Devs 称 Claude Code 团队今年一直在内部使用 Claude Tag，并表示产品团队 65% 的代码由它生成，其中包括 Claude Tag 自身的大部分实现。该推文引出一组内部用例，展示其在工程团队中的实际落地方式。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "代码生成",
+        "内部实践",
+        "工程效率"
+      ],
+      "practice_suggestions": [
+        "用小范围项目衡量代理生成代码占比、返工率和评审耗时。",
+        "要求代理提交变更时同步生成测试和实现说明。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2069468699766005847",
+      "source": "Claude (Twitter)",
+      "title": "Claude Tag新增主动跟进与相关信息提醒",
+      "summary": "Claude 官方说明 Claude Tag 的 ambient behavior 可让 Claude 主动采取行动。开启后，它会跟进停滞的讨论，并从授权频道和工具中标记相关信息。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "主动代理",
+        "Slack",
+        "上下文提醒"
+      ],
+      "practice_suggestions": [
+        "只在明确授权的频道开启主动行为，并记录触发条件。",
+        "为主动提醒设置误报反馈机制，逐步校准哪些信息真正有用。"
+      ],
+      "thread_group_id": "thread-claudeai-20260623-1712",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2069468701548531895",
+      "source": "Claude (Twitter)",
+      "title": "Claude Tag在Slack面向企业与团队版开放Beta",
+      "summary": "Anthropic 发布 Claude Tag，允许 Slack 中的团队把 Claude 加入指定频道，并授予其访问特定工具、数据和代码库的权限。Claude 可在频道中记忆相关上下文、拆解任务、异步执行、主动跟进，并由管理员控制权限、预算和审计日志；该功能目前面向 Claude Enterprise 和 Team 客户 beta 开放。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "Slack",
+        "企业代理",
+        "权限治理",
+        "异步协作"
+      ],
+      "practice_suggestions": [
+        "从私有测试频道开始接入 Slack，验证权限、预算和日志审计设置。",
+        "按职能创建不同 Claude 身份，隔离销售、工程和支持等敏感上下文。",
+        "将适合长时间运行的任务设计为可分阶段检查的异步委派流程。"
+      ],
+      "thread_group_id": "thread-claudeai-20260623-1712",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2069468693017268244",
+      "source": "Claude (Twitter)",
+      "title": "Claude Tag 让团队在 Slack 中委派任务",
+      "summary": "Anthropic 推出 Claude Tag，让 Claude 作为 Slack 团队成员接入指定频道和工具，用户可以直接标记它并委派异步任务。Claude Devs 将其定位为多人、异步、主动版 Claude Code，并披露内部产品团队已有 65% 代码由这套工作流参与完成。补充报道强调了 A/B 测试监控、沉寂线程跟进、日程协调和状态反馈约定等实践，Karpathy 则认为这是继网页和桌面应用之后，LLM UI 的第三种重要形态。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Tag",
+        "Slack Agent",
+        "Claude Code",
+        "异步协作",
+        "团队自动化",
+        "LLM UI"
+      ],
+      "practice_suggestions": [
+        "在一个低风险 Slack 频道试点 Claude Tag，先限定可访问工具和频道范围。",
+        "为异步任务约定状态反馈符号或标签，降低团队成员轮询成本。",
+        "优先选择 A/B 测试监控、会议排期、线程跟进等可验证工作流试运行。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/gpt-5-immunology-mystery",
+      "source": "OpenAI Blog",
+      "title": "GPT-5 Pro帮助免疫学家解释T细胞谜题",
+      "summary": "OpenAI 介绍免疫学家 Derya Unutmaz 如何用 GPT-5 Pro 重新分析一项搁置三年的 T 细胞实验，并得到关于 deoxyglucose、IL-2 与 Th17 分化关系的机制性解释。文章还称 GPT-5 Pro 正确预测了未发表实验中 CD8+ T 细胞对淋巴瘤细胞杀伤能力增强的结果，展示前沿模型在生物科研假设生成和实验筛选中的潜力与风险。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "GPT-5 Pro",
+        "免疫学",
+        "T细胞",
+        "科研辅助",
+        "生物安全"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069457065249214487",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex开源计划已支持3500多名维护者",
+      "summary": "OpenAI Devs 表示，自 3 月推出以来，Codex for Open Source 已向 3500 多名维护者提供六个月 ChatGPT Pro。目标是让关键开源项目的维护者能在日常工作中使用 Codex。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex",
+        "开源维护",
+        "ChatGPT Pro",
+        "开发者支持"
+      ],
+      "practice_suggestions": [
+        "开源维护者可评估是否申请该计划，用 Codex 处理 issue 归类、测试补全和补丁草稿。",
+        "为 AI 生成补丁设置人工复核和 CI 必过规则。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260623-1626",
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2069457015227940891",
+      "angle": "Codex OSS 扩展"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069457053035438427",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI启动Patch the Planet加固关键开源软件",
+      "summary": "OpenAI 介绍 Daybreak 旗下 Patch the Planet 计划，将 AI 辅助安全研究与 Trail of Bits 等专家复核结合，帮助开源维护者验证漏洞、开发补丁和测试并协调披露。首批项目包括 cURL、NATS、pyca/cryptography、Sigstore、aiohttp、Go、Python 等，文章还披露了使用 Codex Security 和 GPT-5.5-Cyber 构建模糊测试、变体漏洞搜索和差分测试流程的早期成果。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Patch the Planet",
+        "Codex Security",
+        "开源安全",
+        "漏洞修复",
+        "Trail of Bits"
+      ],
+      "practice_suggestions": [
+        "关键开源项目可申请参与该计划，优先把 AI 用于漏洞验证、补丁生成和测试扩展。",
+        "安全团队应保留专家复现和严重性复核环节，避免把未经确认的模型发现直接推给维护者。",
+        "复用文章提到的模糊测试、历史 CVE 变体搜索和差分测试流程加固自身项目。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260623-1626",
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2069457015227940891",
+      "angle": "安全计划细节"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2069457015227940891",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 扩大开源维护者支持",
+      "summary": "OpenAI 汇总了近期面向开源生态的一组支持动作，包括直接资助维护者、投资 Rust 生态、启动 Patch the Planet 安全计划，并扩大 Codex for Open Source 覆盖面。Patch the Planet 与 Daybreak、Trail of Bits 合作，把 AI 辅助漏洞研究和人工安全审查结合起来，帮助关键开源项目验证漏洞、开发补丁和协调披露。Codex for Open Source 自 3 月上线以来已向 3500 多名维护者提供六个月 ChatGPT Pro，重点是把模型能力转化为维护者可用的安全和开发产能。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "开源安全",
+        "Patch the Planet",
+        "Codex",
+        "维护者支持",
+        "AI 安全研究"
+      ],
+      "practice_suggestions": [
+        "开源项目维护者可关注Codex for OSS扩容资格，评估是否能用于减少issue分诊和修复负担。",
+        "安全团队可跟进Patch the Planet形式，寻找适合用AI辅助漏洞修复的开源依赖。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2069420271438573780",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral OCR 4开放多渠道使用",
+      "summary": "Mistral表示OCR 4已可通过API、Mistral AI Studio的Document AI、Amazon SageMaker和Microsoft Foundry使用，并将接入Snowflake Parse Document。它也支持单容器自托管，面向需要文档不出本地环境的企业场景。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Mistral",
+        "OCR",
+        "Document AI",
+        "自托管",
+        "企业部署"
+      ],
+      "practice_suggestions": [
+        "有敏感文档处理需求的团队可优先验证单容器自托管路径和数据边界。",
+        "已在SageMaker或Microsoft Foundry上的团队可用现有平台做小批量文档解析评测。"
+      ],
+      "thread_group_id": "thread-MistralAI-20260623-1400",
+      "duplicate_of": "https://x.com/MistralAI/status/2069420263825895917",
+      "angle": "部署渠道"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2069420269748269179",
+      "source": "Mistral AI (Twitter)",
+      "title": "OCR 4强调版面结构与置信度",
+      "summary": "Mistral说明OCR 4会为每个内容块定位边界框，识别标题、表格、公式、签名等类型，并给出区域级置信度。这些结构化信号可用于带来源引用的RAG分块、文档脱敏和人工复核流程。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Mistral",
+        "OCR",
+        "结构化解析",
+        "RAG",
+        "文档审查"
+      ],
+      "practice_suggestions": [
+        "在文档RAG中把边界框、块类型和置信度一起写入索引，便于引用定位和低置信度过滤。",
+        "对合同、发票等场景建立人工复核阈值，优先检查低置信度区域。"
+      ],
+      "thread_group_id": "thread-MistralAI-20260623-1400",
+      "duplicate_of": "https://x.com/MistralAI/status/2069420263825895917",
+      "angle": "结构化解析细节"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2069420263825895917",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral OCR 4 发布：结构化文档解析",
+      "summary": "Mistral AI 发布 OCR 4，重点是把文档解析为带边界框、区块类型和置信度的结构化结果，覆盖 170 种语言。官方强调这些结构信息可支撑来源引用、脱敏、RAG 分块和人工复核，而不只是提取纯文本。该能力已通过 API、Mistral AI Studio Document AI、Amazon SageMaker 和 Microsoft Foundry 提供，并支持单容器自托管。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Mistral OCR 4",
+        "文档 AI",
+        "结构化解析",
+        "RAG",
+        "自托管"
+      ],
+      "practice_suggestions": [
+        "用含表格、公式和签名的真实文档测试 OCR 4 的区块分类质量。",
+        "在 RAG 管线中保留 bounding box 与 confidence 字段，便于引用和人工复核。",
+        "对敏感文档优先评估单容器自托管部署。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
+      "source": "OpenAI Blog",
+      "title": "OpenAI推动高级AI共同标准",
+      "summary": "OpenAI称其正在支持高级AI共享标准建设，包括评估框架、安全实践和全球协作，并提到通过Appia Foundation参与相关工作。由于抓取到的正文不可用，此条主要依据摘要判断，核心是把前沿AI治理从单家公司实践推向跨机构标准化。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "AI安全",
+        "评估标准",
+        "全球治理",
+        "Appia Foundation"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
