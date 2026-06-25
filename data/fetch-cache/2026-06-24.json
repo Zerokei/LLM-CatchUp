@@ -1,0 +1,607 @@
+{
+  "date": "2026-06-24",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-06-25T03:25:57−07:00",
+  "window_start": "2026-06-23T00:00:00−07:00",
+  "window_end": "2026-06-24T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1021,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "OpenAI and Broadcom unveil LLM-optimized inference chip",
+          "url": "https://openai.com/index/openai-broadcom-jalapeno-inference-chip",
+          "published_at": "2026-06-24T06:00:00.000Z",
+          "description": "OpenAI and Broadcom introduce Jalapeño, a custom AI chip built for LLM inference to improve performance, efficiency, and scale across AI systems.",
+          "full_text": "Title: OpenAI and Broadcom unveil LLM-optimized inference chip\n\nURL Source: https://openai.com/index/openai-broadcom-jalapeno-inference-chip\n\nMarkdown Content:\n*   Early testing shows that the first-generation accelerator will deliver performance per watt substantially better than current state-of-the-art\n*   Built from the ground up for current and future LLMs across the industry\n*   Developed from design to production in nine months, accelerated by OpenAI’s models\n*   Expands OpenAI’s full-stack platform, from products to models and now to chips\n*   To be deployed at gigawatt scale with data center partners, over multiple generations\n\nOpenAI and Broadcom (NASDAQ: AVGO) today unveiled Jalapeño, OpenAI’s first Intelligence Processor: an accelerator architected around OpenAI’s vision for the future of LLM inference, and the first AI accelerator in a multi-generation compute platform the companies are building together to make advanced AI faster, more reliable, and more accessible to more people.\n\n![Image 1: OpenAI and Broadcom leaders display the Jalapeño inference chip.](https://images.ctfassets.net/kftzwdyauwt9/4AoGW0ZsC0SxSCXYRBEwnj/fa523eda9466c6dd401e38c6c0396906/openai-broadcom-jalapeno-inference-chip-image.png?w=3840&q=90&fm=webp)\n\nJalapeño was delivered to OpenAI CEO Sam Altman and President Greg Brockman by Broadcom President and CEO Hock Tan and President Charlie Kawwas, marking an important step in OpenAI’s strategy to build the full stack behind its models and products.\n\nOpenAI designed the chip from scratch around its deep understanding of LLM fundamentals, informed by its roadmap of models, kernels, serving systems, and product needs, with partners Broadcom and Celestica, helping industrialize the platform through chip implementation, board, rack system integration, high-performance networking, and scalable production systems. Jalapeño is designed with flexibility to work with all LLMs guided by OpenAI’s insights into the inference needs of current and future AI models across the industry. Engineering samples of the Jalapeño chip are running ML workloads in the lab at production target frequency and power, including GPT‑5.3‑Codex‑Spark.\n\nWhile OpenAI is still measuring final performance, early testing shows that Jalapeño will deliver performance per watt substantially better than current state-of-the-art. A detailed technical report on performance will be presented in the coming months. The architecture reduces data movement and balances compute, memory, and networking resources to achieve realized utilization much closer to theoretical peak performance. Broadcom’s silicon implementation and networking technologies, including Tomahawk networking silicon, help bring the platform to large-scale production.\n\n“The world is moving to a compute-powered economy,” said Greg Brockman, President and Co-Founder of OpenAI. “Jalapeño is part of our long-term full-stack infrastructure strategy to make compute more abundant, resulting in AI which is faster, more reliable, more affordable for people and businesses, and can be used to solve more important problems. By designing more of the stack ourselves, we can serve more intelligence with greater efficiency and keep pushing advanced AI toward broader access.”\n\n“Jalapeño was designed from the ground up for LLM inference using detailed insights from our close collaboration with OpenAI researchers,” said Richard Ho, who leads OpenAI’s hardware program. “We optimized the architecture around the kernels, memory movement, networking, and serving patterns that matter most for frontier AI models. Based on early testing, Jalapeño will efficiently execute our most important workloads close to the hardware’s theoretical limits.”\n\n“Our collaboration with OpenAI represents a fundamental commitment to scaling the physical infrastructure required for the next decade of AI,” said Hock Tan, President and CEO, Broadcom. “This is just the beginning of a multi-generation roadmap. By co-developing our industry-leading silicon directly with OpenAI, we are enabling the deployment of gigawatt scale data centers with Microsoft and other partners beginning in 2026.”\n\n## Designed to be the best inference platform for LLMs\n\nJalapeño is a blank-slate design for modern LLM inference, not a general-purpose accelerator adapted from earlier AI workloads. It is informed by the systems OpenAI runs every day across ChatGPT, Codex, the API, and future agentic products, while also being designed for current and future LLMs across the industry. The goal is to combine the power and throughput of today’s leading AI accelerators with latency closer to the fastest specialized inference systems, making Jalapeño well suited for interactive LLM products at scale.\n\nThat is the full-stack advantage. OpenAI is not only developing frontier models or building products on top of them; it is designing the infrastructure underneath them: chip architecture, kernels, memory systems, networking, scheduling, deployment systems, and product experience. Because OpenAI operates across the stack, each layer can be optimized around the same goal: making its models faster, more reliable, and more affordable for users.\n\nJalapeño strengthens the flywheel behind OpenAI’s progress. Better infrastructure drives compute efficiency. Greater compute efficiency enables better training and serving, ultimately powering more capable AI models. Better models become better products for people, developers, and businesses. Better products drive more usage, more customers, and more revenue, which lets OpenAI reinvest in the next generation of infrastructure. Over time, that cycle helps make intelligence more capable, more reliable, and less expensive for everyone.\n\n## Nine-month tape-out, accelerated by OpenAI models\n\nJalapeño was co-developed from initial design to manufacturing tape-out in just nine months, and the custom AI accelerator program represents what we believe to be the fastest ASIC development cycle ever achieved in high-performance advanced semiconductors. That speed reflects deep software-hardware co-development with OpenAI’s engineering teams, Broadcom’s silicon implementation expertise, and the use of OpenAI models to accelerate parts of the design and optimization process.\n\nThe same models served to users are helping improve the infrastructure used to run future models. If AI can help engineers design better chips faster, it can lower the cost of compute across the industry and help democratize access to advanced AI.\n\n## Building a multi-generation platform with partners\n\nJalapeño is the first step in a multi-generation compute platform designed for initial deployment by the end of 2026 and expanding in the years ahead, combining OpenAI-designed accelerators with Broadcom silicon implementation, networking, and connectivity technologies; and Celestica’s board, rack, and system expertise.\n\n## Making advanced AI more broadly available\n\nThe point of this work is simple: inference is where AI reaches people. Every improvement in cost, speed, and reliability can show up as a faster ChatGPT answer, a Codex task that can take more steps with less waiting, an API product that is cheaper to build, or more dependable access when demand is high.\n\nDemocratizing AI means making advanced models available, dependable, and affordable enough for more people to use every day. Jalapeño helps OpenAI turn more of its infrastructure into useful intelligence for students, developers, small businesses, researchers, enterprises, and anyone trying to learn, create, or solve hard problems.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Helping build shared standards for advanced AI",
+          "url": "https://openai.com/index/helping-build-shared-standards-for-advanced-ai",
+          "published_at": "2026-06-23T13:00:00.000Z",
+          "description": "OpenAI helps build shared standards for advanced AI, supporting evaluation frameworks, safety practices, and global cooperation through the Appia Foundation.",
+          "full_text": "Title: Just a moment...\n\nURL Source: https://openai.com/index/helping-build-shared-standards-for-advanced-ai\n\nWarning: This page maybe requiring CAPTCHA, please make sure you are authorized to access this page.\n\nMarkdown Content:\n\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery",
+          "url": "https://openai.com/index/gpt-5-immunology-mystery",
+          "published_at": "2026-06-23T17:00:00.000Z",
+          "description": "GPT-5 Pro helped solve a 3-year-old immunology mystery, offering insights into T cell behavior. The breakthrough could support cancer and autoimmune research.",
+          "full_text": "Title: How GPT-5 helped immunologist Derya Unutmaz solve a 3-year-old mystery\n\nURL Source: https://openai.com/index/gpt-5-immunology-mystery\n\nMarkdown Content:\nDoctor and immunologist Derya Unutmaz has been interested in artificial intelligence for years. But his “aha” moment came in late 2025, when GPT‑5 Pro helped him and his lab revisit a three-year-old puzzle centered on a special type of immune cell that helps the human body fight cancer and other illnesses.\n\nThe mystery centered on a basic but consequential question in immunology: how does glucose affect the way T cells develop and specialize? T cells are immune cells that help the body fight viruses, kill cancerous cells, respond to some bacteria and parasites, and distinguish healthy cells from threats. As they develop, they take on different jobs, including roles that can shape cancer, autoimmune disease, and infection. Understanding what pushes T cells toward one specialization or another could help researchers better understand, and eventually, better treat those diseases.\n\nToday, Unutmaz—a professor at The Jackson Laboratory and the University of Connecticut—says AI has become so central to his work that he can’t imagine doing science without it. “That would be like taking both of your hands away, or half of your brain away,” Unutmaz said.\n\nThe puzzle began in 2022, when Unutmaz performed an experiment trying to understand how a type of sugar called glucose affected the development of T cells. The cells use glucose as a fuel source, but also to build proteins and carry out other functions.\n\nThe results of Unutmaz’s experiment could have implications for ailments like cancer, autoimmune disease, and infections. But at the time, Unutmaz and his lab couldn’t make sense of what they were seeing.\n\n## Solving a problem with GPT‑5 Pro\n\nPrevious studies provided strong evidence that glucose metabolism influenced how T cells specialize. To better understand this relationship, Unutmaz and his team exposed T cells early in their development to either a low-glucose environment or to one containing a glucose-like molecule called deoxyglucose. Deoxyglucose interferes with a cell’s ability to use glucose, disrupting energy production and protein construction. Proteins matter because they coordinate activity within a cell and act as messengers that send and receive information outside the cell.\n\nThe team expected the two conditions to produce similar results. In both cases, glucose, and therefore the energy the T cells needed to function, would be limited. But that’s not what happened.\n\nThe T cells exposed to deoxyglucose overwhelmingly produced cells involved in the body’s inflammatory response. Some of the T cells exposed to low concentrations of glucose specialized as inflammatory-response cells, but not at the numbers seen for deoxyglucose. The effects of early exposure to deoxyglucose persisted even when researchers removed the glucose-like molecule.\n\nThis difference couldn’t be attributed to a lack of energy alone. Something else was going on. But Unutmaz and his lab were unable to figure out what was happening, so they shelved the experiment and moved on to other urgent tasks that needed their attention.\n\nThen GPT‑5 Pro came out in late 2025 and Unutmaz decided to resurface the experiment. He uploaded the results into the model and asked it to analyze the data.\n\nGPT‑5 Pro suggested that deoxyglucose interfered with the construction of a protein called IL-2. This protein can prevent T cells from becoming an inflammatory-response cell known as Th17. Deoxyglucose essentially removed a barrier to a T cell’s ability to become a Th17 cell. That’s potentially why T cells in the low-glucose environment didn’t become Th17 cells at nearly the numbers seen in the deoxyglucose environment.\n\n“GPT‑5 came up with this really remarkable insight that retrospectively, makes perfect sense,” Unutmaz said. It was just enough outside of his own area of expertise that he didn’t see the connection himself, and neither did anyone in his lab.\n\nUnutmaz then decided to see if GPT‑5 could predict the outcome of an experiment. The immunologist started with one he had already conducted on a T cell that targets a type of lymphoma. His experiment showed that these particular T cells, called CD8+, had an enhanced ability to kill the lymphoma cells.\n\nWhen Unutmaz asked GPT‑5 Pro to simulate the same experiment, it correctly predicted the boost in the CD8+ cells’ ability to kill lymphoma cells. The model couldn’t have gleaned the results from the internet because Unutmaz hadn’t yet published the results.\n\n“That was the moment that I felt like, okay, these models have now come to a point where they really, truly understand,” he said.\n\n## What this means for scientific research\n\nUnutmaz said that models like GPT‑5 Pro function more like collaborators now. They can streamline literature reviews, processing hundreds of new academic papers published every week and helping scientists identify questions that remain unanswered. They can also help researchers hone their hypotheses, reducing the amount of time it takes to identify the most worthwhile experiments to conduct.\n\n“The number of things you can do to address your hypothesis is vast,” Unutmaz said. “You have countless approaches, and you don’t know which one will be the best strategy.” So he uses GPT‑5 Pro to simulate experiments and predict outcomes to help narrow down which experiments are worth repeating in the lab. This can cut out weeks to months, even years, of work for researchers, drastically accelerating the field of biology.\n\nDespite this, subject matter expertise is still key. AI may generate an insight, but people must still evaluate its significance and plausibility. For instance, someone without Unutmaz’s expertise wouldn’t have been able to tell if the mechanistic insight GPT‑5 Pro flagged in his immune cell experiments was important or not.\n\nThe ability to generate insights and accelerate work is why these capabilities need to be handled responsibly. AI could help researchers move faster in biology and medicine, but those capabilities could also lower barriers for misuse, including by bad actors seeking to design or use biological or chemical weapons. OpenAI’s [Preparedness Framework](https://openai.com/index/updating-our-preparedness-framework/) outlines our approach to tracking these risks and building safeguards against AI capabilities that could create severe harm.\n\nUnutmaz is optimistic about where AI is headed. It’s unlike anything that has come before, he says—not the internet or the industrial revolution. Most recently, Unutmaz has experimented with advanced AI tools, including Codex and GPT‑5.2 Deep Research, to help compile large-scale cancer mutation datasets and generate research materials—including an extensive T-cell-focused draft textbook—aimed at accelerating efforts in precision immunotherapy.\n\nUnutmaz feels fortunate to be part of this time of discovery. “To not only be able to witness it historically but participate a little bit, I feel truly lucky and privileged to do that.”\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "This is a new paradigm for interacting with Claude that is significantly more \"inline\" with all the other human activity org-wide. Once you do all of the under the hood engineering work to make this \"",
+          "url": "https://x.com/karpathy/status/2069547676849557725",
+          "published_at": "2026-06-23T22:26:31.000000Z",
+          "description": "This is a new paradigm for interacting with Claude that is significantly more \"inline\" with all the other human activity org-wide. Once you do all of the under the hood engineering work to make this \"just work\" (e.g. across tools, integrations, compute environments, memory, security, etc.), Claude basically joins the team in a seamless way - you can talk to it as you would talk to a person and it can help with a very large variety of workloads.\n\nImo this is the 3rd major redesign of LLM UIUX. The first paradigm was that the LLM is a website you go to, the second was that it is an app you download to your computer. This third one is that it is a self-contained, persistent, asynchronous entity with org-wide tools and context, working alongside teams of humans. It really takes a while to wrap your head around it, but it works and it is awesome.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Introducing Claude Tag, a new way for teams to work with Claude.\n\nIn Slack, Claude joins as a team member with access to the channels and tools you choose. Tag Claude in and delegate tasks to it while you focus on other work. https://t.co/R2C6A5Kcye",
+            "url": "https://x.com/claudeai/status/2069468693017268244"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/claudeai/status/2069468693017268244"
+        }
+      ]
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude Tag is an incredible new form factor for agents, so I think it's going to take some time to figure out the best practices, but these are some of my favorites 🧵",
+          "url": "https://x.com/trq212/status/2069474335656694003",
+          "published_at": "2026-06-23T17:35:05.000000Z",
+          "description": "Claude Tag is an incredible new form factor for agents, so I think it's going to take some time to figure out the best practices, but these are some of my favorites 🧵",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Introducing Claude Tag, a new way for teams to work with Claude.\n\nIn Slack, Claude joins as a team member with access to the channels and tools you choose. Tag Claude in and delegate tasks to it while you focus on other work. https://t.co/R2C6A5Kcye",
+            "url": "https://x.com/claudeai/status/2069468693017268244"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/claudeai/status/2069468693017268244"
+        },
+        {
+          "title": "When it's working, I ask it to react to the top level thread with the following emojis: ⏲️✅❓🛑\n\nThat way it's easy to see its status at a glance.",
+          "url": "https://x.com/trq212/status/2069474342220820657",
+          "published_at": "2026-06-23T17:35:06.000000Z",
+          "description": "When it's working, I ask it to react to the top level thread with the following emojis: ⏲️✅❓🛑\n\nThat way it's easy to see its status at a glance.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2069474339679052144"
+          },
+          "thread_group_id": "thread-trq212-20260623-1735",
+          "duplicate_of": null
+        },
+        {
+          "title": "Finally, get creative! I'm setting up a \"scheduling\" channel which lets people tag Claude to find time on our calendars.",
+          "url": "https://x.com/trq212/status/2069474343512617390",
+          "published_at": "2026-06-23T17:35:07.000000Z",
+          "description": "Finally, get creative! I'm setting up a \"scheduling\" channel which lets people tag Claude to find time on our calendars.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2069474342220820657"
+          },
+          "thread_group_id": "thread-trq212-20260623-1735",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing Claude Tag, a new way for teams to work with Claude.\n\nIn Slack, Claude joins as a team member with access to the channels and tools you choose. Tag Claude in and delegate tasks to it while",
+          "url": "https://x.com/claudeai/status/2069468693017268244",
+          "published_at": "2026-06-23T17:12:39.000000Z",
+          "description": "Introducing Claude Tag, a new way for teams to work with Claude.\n\nIn Slack, Claude joins as a team member with access to the channels and tools you choose. Tag Claude in and delegate tasks to it while you focus on other work. https://t.co/R2C6A5Kcye",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Turn ambient behavior on, and Claude takes initiative. It follows up on threads that have gone quiet and flags what's relevant from across its channels and tools. https://t.co/fTMkAHY4Gr",
+          "url": "https://x.com/claudeai/status/2069468699766005847",
+          "published_at": "2026-06-23T17:12:41.000000Z",
+          "description": "Turn ambient behavior on, and Claude takes initiative. It follows up on threads that have gone quiet and flags what's relevant from across its channels and tools. https://t.co/fTMkAHY4Gr",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2069468698071494976"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260623-1712",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Tag is available in beta today on Slack for Claude Enterprise and Team plans. We plan to expand it more widely in the future.\n\nRead more: https://t.co/MGV30Ml8mL",
+          "url": "https://x.com/claudeai/status/2069468701548531895",
+          "published_at": "2026-06-23T17:12:41.000000Z",
+          "description": "Claude Tag is available in beta today on Slack for Claude Enterprise and Team plans. We plan to expand it more widely in the future.\n\nRead more: https://t.co/MGV30Ml8mL",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/MGV30Ml8mL",
+              "expanded_url": "https://www.anthropic.com/news/introducing-claude-tag",
+              "display_url": "anthropic.com/news/introduci…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2069468699766005847"
+          },
+          "linked_content": "Title: Introducing Claude Tag\n\nURL Source: https://www.anthropic.com/news/introducing-claude-tag\n\nMarkdown Content:\nClaude Tag is a new way for teams to work with Claude.\n\nWe’re starting on Slack, which Claude can join as a team member. Grant Claude access to selected channels, and connect it to whichever tools, data—and even codebases—you choose. Then, anyone in the channel can tag **@Claude** in, and delegate tasks to it while they focus on other work. Claude builds context by remembering relevant information from the channels it’s in, and can plan out tasks to complete in the future.\n\nWe see Claude Tag as the beginning of an evolution of Claude Code: it makes the model even more proactive, and it works better with a full team. Tagging **@Claude** is now one of the main ways we get things done at Anthropic. Today, 65% of our product team’s code is created by our internal version of Claude Tag. The same pattern is now spreading well beyond engineering—we’re tagging Claude to chase down product metrics and data, work through support tickets, or even help find the root cause of tricky bugs.\n\nWe’re launching Claude Tag on Slack, since it’s a natural home for collaborative work between teams and AI, and where much of Anthropic’s day-to-day work already happens. It’s available today in beta for Claude Enterprise and Team customers. Our goal is to expand where it’s available more widely, so that teams can tag @Claude in the many other places they work.\n\n## Working with @Claude\n\nIf you’ve worked with Claude Code or Cowork before, Claude Tag will feel familiar. Tag @Claude with a request in simple terms and it’ll break its task down into stages and then work through them in turn, using the tools it has access to. Once it’s done, it’ll respond in a Slack thread with what it’s created.\n\nBut tagging Claude comes with a few new advantages:\n\n**@Claude is multiplayer.** Within a given Slack channel, there’s one Claude that interacts with everyone. This means that anyone can see what it’s working on, and can pick up the conversation from where the last person left off. This makes tagging Claude very different from working within a single chat or for a single task—it’s much more like interacting collaboratively with a teammate.\n\n**@Claude learns over time.**As Claude follows along with its channel, it builds more context about the work. This means that users don’t need to explain things to it from scratch over and over again. And Claude can even automatically learn from _other_ Slack channels and data sources, if it’s granted permission. (It doesn’t report from private channels.) This gives it the tacit knowledge necessary for it to provide the best possible work.\n\n**@Claude takes initiative.** If “ambient” behavior is enabled, Claude will proactively keep you updated about whatever it thinks you might need to know. It’ll flag relevant information from across the channels it’s in and the tools it’s connected to, and follow up on threads or tasks that have gone quiet without being resolved.\n\n**@Claude works asynchronously.** Set Claude a task, and you can focus on your other priorities while it works. It can also schedule tasks for itself, pursuing a project autonomously over hours or days. We’ve found this particularly helpful at Anthropic: we now spend much more of our time delegating tasks to many Claudes in parallel.\n\nYou can also send Claude direct messages: it’ll respond privately, using the personal tools and connectors you’ve set up.\n\n## Getting started\n\nWe’ve designed Claude Tag with teams and organizations in mind: @Claude’s access to sensitive data and task-specific tools can be very tightly controlled.\n\nTo get up and running, system administrators specify which tools and information the model should have access to, in which channels. Think of it as creating separate Claude identities for different uses: everything, including its memories, will stay scoped to the channels defined by the administrators. For example, a model set up for sales work won’t pass on memories to one set up for engineering; nor will it give engineers access to any sales data or tools. More information about provisioning access is [available here](https://claude.com/blog/agent-identity-access-model).\n\nOnce permissions are set, everyone can begin tagging right away. Administrators can set limits for token spend (both for the organization and for individual channels), and can view a log of everything that @Claude has done, along with who requested each task.\n\nIf you’re a Claude Enterprise or Team customer, you have access to Claude Tag in beta starting today. To get started, [visit here](http://claude.ai/redirect/website.v1.84055890-b4d9-4a24-ae70-9a41a0e2cffc/admin-settings/claude-in-slack) and follow these four steps:\n\n1.   Pair Claude Tag with your Slack workspace\n2.   Give Claude access to your tools\n3.   Set a limit on your organization’s monthly spend\n4.   Test Claude in a private channel to confirm it works.\n\nClaude Tag replaces the existing [Claude in Slack](https://support.claude.com/en/articles/11506255-get-started-with-claude-in-slack) app. To migrate, administrators can opt in within 30 days. We’re issuing an introductory [launch credit](https://support.claude.com/en/articles/15575654) to eligible Enterprise and Team organizations so that the whole company can try it out.\n\nClaude Tag works with Opus 4.8. You can [read our docs](https://www.claude.com/docs/claude-tag/overview) and [product page](https://www.claude.com/product/tag).\n\n## Related content\n\n### Anthropic opens Seoul office and announces new partnerships across the Korean AI ecosystem\n\n[Read more](https://www.anthropic.com/news/seoul-office-partnerships-korean-ai-ecosystem)\n\n### Statement on the US government directive to suspend access to Fable 5 and Mythos 5\n\nThe US government has issued an export control directive to suspend all access to Fable 5 and Mythos 5.\n\n[Read more](https://www.anthropic.com/news/fable-mythos-access)\n\n### Results from the first Anthropic Public Record\n\n[Read more](https://www.anthropic.com/news/anthropic-public-record)\n",
+          "thread_group_id": "thread-claudeai-20260623-1712",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "The Claude Code team has been shipping with Claude Tag internally all year. \n\nIt now writes 65% of our product team's code, including most of what built Claude Tag itself.\n\nHere are a few ways we use ",
+          "url": "https://x.com/ClaudeDevs/status/2069468900216234010",
+          "published_at": "2026-06-23T17:13:29.000000Z",
+          "description": "The Claude Code team has been shipping with Claude Tag internally all year. \n\nIt now writes 65% of our product team's code, including most of what built Claude Tag itself.\n\nHere are a few ways we use it every day: 🧵\n\nhttps://t.co/7PLrW06TvH",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/7PLrW06TvH",
+              "expanded_url": "https://x.com/claudeai/status/2069468693017268244",
+              "display_url": "x.com/claudeai/statu…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Introducing Claude Tag, a new way for teams to work with Claude.\n\nIn Slack, Claude joins as a team member with access to the channels and tools you choose. Tag Claude in and delegate tasks to it while you focus on other work. https://t.co/R2C6A5Kcye",
+            "url": "https://x.com/claudeai/status/2069468693017268244"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Watching launches and metrics for you\n\nPoint Claude at an A/B test with the metric and guardrails. It flags when a guardrail moves, your team corrects it mid-run, and it pings when the result is signi",
+          "url": "https://x.com/ClaudeDevs/status/2069468911700218284",
+          "published_at": "2026-06-23T17:13:32.000000Z",
+          "description": "Watching launches and metrics for you\n\nPoint Claude at an A/B test with the metric and guardrails. It flags when a guardrail moves, your team corrects it mid-run, and it pings when the result is significant with the rollout PR ready.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2069468909858873779"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260623-1713",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Code is still the fastest way to do solo, synchronous work. Claude Tag is Claude Code made multiplayer, async, and proactive across your whole team.\n\nIn beta today for Claude Enterprise and Tea",
+          "url": "https://x.com/ClaudeDevs/status/2069468913264644419",
+          "published_at": "2026-06-23T17:13:32.000000Z",
+          "description": "Claude Code is still the fastest way to do solo, synchronous work. Claude Tag is Claude Code made multiplayer, async, and proactive across your whole team.\n\nIn beta today for Claude Enterprise and Team plans. Tag it in, it tags you back.\n\nhttps://t.co/M7YGuVYS2D",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/M7YGuVYS2D",
+              "expanded_url": "https://claude.com/product/tag",
+              "display_url": "claude.com/product/tag"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2069468911700218284"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260623-1713",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "You can also tune in from home.\n\nThe opening keynote will be livestreamed on September 29.",
+          "url": "https://x.com/OpenAI/status/2069483225492357326",
+          "published_at": "2026-06-23T18:10:24.000000Z",
+          "description": "You can also tune in from home.\n\nThe opening keynote will be livestreamed on September 29.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2069483224158646739"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260623-1810",
+          "duplicate_of": null
+        },
+        {
+          "title": "OpenAI DevDay 2026 applications are now open!\n\nOur biggest developer event gets even bigger.\n\n📍 San Francisco\n📅 September 29\n\nApply by July 10: https://t.co/BJyK2EbKuu",
+          "url": "https://x.com/OpenAI/status/2069483224158646739",
+          "published_at": "2026-06-23T18:10:24.000000Z",
+          "description": "OpenAI DevDay 2026 applications are now open!\n\nOur biggest developer event gets even bigger.\n\n📍 San Francisco\n📅 September 29\n\nApply by July 10: https://t.co/BJyK2EbKuu",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/BJyK2EbKuu",
+              "expanded_url": "https://devday.openai.com/",
+              "display_url": "devday.openai.com"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260623-1810",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Applications to attend OpenAI DevDay 2026 are open.\n\nJoin us in San Francisco on September 29 to:\n\n• Tinker with what’s new\n• Swap build notes with other builders\n• Go deep in technical sessions\n• Bri",
+          "url": "https://x.com/OpenAIDevs/status/2069484303281779090",
+          "published_at": "2026-06-23T18:14:41.000000Z",
+          "description": "Applications to attend OpenAI DevDay 2026 are open.\n\nJoin us in San Francisco on September 29 to:\n\n• Tinker with what’s new\n• Swap build notes with other builders\n• Go deep in technical sessions\n• Bring your sharpest questions\n\nApply by July 10:\n\nhttps://t.co/mda0bFx2Hp",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/mda0bFx2Hp",
+              "expanded_url": "https://devday.openai.com/",
+              "display_url": "devday.openai.com"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260623-1814",
+          "duplicate_of": null
+        },
+        {
+          "title": "Over the past six months, we shipped 30+ models, features, and upgraded tools for the API.\n\nOur changelog has been busy. Here’s what you may have missed for the API:\n\nNew models\n• GPT-5.5\n• GPT-5.4 mi",
+          "url": "https://x.com/OpenAIDevs/status/2069499656305090671",
+          "published_at": "2026-06-23T19:15:42.000000Z",
+          "description": "Over the past six months, we shipped 30+ models, features, and upgraded tools for the API.\n\nOur changelog has been busy. Here’s what you may have missed for the API:\n\nNew models\n• GPT-5.5\n• GPT-5.4 mini\n• GPT-5.4 nano\n• GPT-Realtime-2\n• GPT-Realtime-Whisper\n• GPT-Realtime-Translate\n• GPT-Image-2\n\nAgent building blocks\n• Agents SDK harness & sandbox\n• Skills in the Responses API\n• Server-side compaction\n• WebSocket mode\n• Hosted shell\n\nMore ways to build\n• Admin API enhancements\n• OpenAI CLI\n• Models on Amazon Bedrock",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "DevDay Exchanges are also coming to Bengaluru, Tokyo, Seoul, Paris, Berlin, London, São Paulo, and Mexico City.\n\nStay tuned for when the application opens.",
+          "url": "https://x.com/OpenAIDevs/status/2069484315633955040",
+          "published_at": "2026-06-23T18:14:44.000000Z",
+          "description": "DevDay Exchanges are also coming to Bengaluru, Tokyo, Seoul, Paris, Berlin, London, São Paulo, and Mexico City.\n\nStay tuned for when the application opens.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2069484303281779090"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260623-1814",
+          "duplicate_of": null
+        },
+        {
+          "title": "🧵 Open source runs on more than code.\n\nOver the past week, we funded maintainers directly, invested in Rust and its ecosystem, launched Patch the Planet for AI-assisted security work, and expanded Co",
+          "url": "https://x.com/OpenAIDevs/status/2069457015227940891",
+          "published_at": "2026-06-23T16:26:15.000000Z",
+          "description": "🧵 Open source runs on more than code.\n\nOver the past week, we funded maintainers directly, invested in Rust and its ecosystem, launched Patch the Planet for AI-assisted security work, and expanded Codex for OSS to more maintainers.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Patch the Planet helps maintainers strengthen critical open-source software.\n\nWith Daybreak and Trail of Bits, we’re pairing AI-assisted security research with expert review to help open-source projec",
+          "url": "https://x.com/OpenAIDevs/status/2069457053035438427",
+          "published_at": "2026-06-23T16:26:24.000000Z",
+          "description": "Patch the Planet helps maintainers strengthen critical open-source software.\n\nWith Daybreak and Trail of Bits, we’re pairing AI-assisted security research with expert review to help open-source projects validate vulnerabilities, develop patches and tests, and coordinate disclosure.\n\nhttps://t.co/h0gcLr5rMn",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/h0gcLr5rMn",
+              "expanded_url": "https://openai.com/index/patch-the-planet/",
+              "display_url": "openai.com/index/patch-th…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2069457040414740880"
+          },
+          "linked_content": "Title: Patch the Planet: a Daybreak initiative to support open source maintainers\n\nURL Source: https://openai.com/index/patch-the-planet/\n\nMarkdown Content:\nWe are introducing Patch the Planet, a [Daybreak⁠](https://openai.com/daybreak/) initiative built with Trail of Bits to help maintainers strengthen the critical open-source software the world relies on. We’re pairing AI-assisted security research using our most cyber-capable models with expert human review to not only identify vulnerabilities, but help patch them.\n\nAI is accelerating vulnerability discovery, but discovery alone does not protect users. Many maintainers are already being asked to sort through more reports, more quickly, with the same limited time and resources. Patch the Planet is built to reduce that burden, not add to it: security engineers review findings before they reach maintainers, work with projects to develop patches and tests, and build reusable workflows that help teams continue improving security after the first fixes land.\n\nAdditionally, we will be partnering with HackerOne and Calif who are helping us take our efforts further with vulnerability triage, coordinated disclosure, and additional focused vulnerability discovery efforts.\n\n## How Patch the Planet works\n\nEach engagement under Patch the Planet begins in consultation with the maintainer. For each collaboration, security engineers work with maintainers to understand each project’s needs, preferences, and where additional security effort would be most useful: vulnerability validation, patch development, CI/CD improvements, or longer-term security engineering. Once aligned, researchers investigate potential vulnerabilities, validate meaningful issues, develop or refine patches, support testing, and coordinate disclosure through the project's established channels.\n\nInitial participants include cURL, NATS Server, pyca/cryptography, Sigstore, aiohttp, the Go project, freenginx, Python, and python.org. These projects support widely used networking, cryptography, software supply chain, and language infrastructure, where stronger security can benefit a broad range of downstream products and services. Additional projects will join in future rounds.\n\nSecurity researchers are equipped with our frontier models as well as [Codex Security⁠(opens in a new window)](https://developers.openai.com/codex/security) to support the analysis, patch development, testing, and documentation. Participating projects receive access to ChatGPT Pro; conditional access to Codex Security; and API credits for core open-source development, maintainer automation, and release workflows. Trail of Bits has developed AI-assisted workflows for deduplication, triage, and patching that projects can run with this support.\n\n## Early field notes and findings from developers\n\nTrail of Bits has dedicated security engineers to work full-time with Codex and GPT‑5.5‑Cyber across 19 open-source projects, and has already identified hundreds of security issues and merged dozens of patches, with many more still undergoing coordinated disclosure.\n\nThe initial sprint also produced reusable security infrastructure: fuzzing harnesses, historical-CVE analysis pipelines, differential-testing systems, threat models, expanded test suites, and workflows for deduplication, false-positive filtering, severity correction, and patch generation. Some project-specific details will be shared later as testing, remediation, and coordinated disclosure progress. A few early examples show what the team was able to build and find:\n\n**A fuzzing lab in less than a day.** Trail of Bits engineers used repeated Codex /goal runs with GPT‑5.5‑Cyber to build an entire fuzzing lab covering dozens of entry points, variant builds, platforms, and novel test seeds. Engineers set the objectives and refined the prompts; the system then used coverage feedback to keep expanding into new surfaces, target edge cases, and filter weak or invalid candidates.\n\nTrail of Bits engineers found that, with limited guidance, GPT‑5.5‑Cyber made useful choices about where to expand coverage, which builds and entry points to probe, and which candidates were too weak to pursue. The completed setup took less than a day. Trail of Bits estimates that building the same lab manually would ordinarily take at least several weeks.\n\n**A reusable pipeline for finding variants of known vulnerabilities.** The team built an end-to-end system that ingests historical CVEs, extracts relevant vulnerability patterns, searches target codebases for related flaws, and sends candidate findings through specialized judging agents. The pipeline deduplicates results, filters likely false positives, and routes the strongest evidence to security engineers for manual confirmation.\n\nThis turns years of public vulnerability history into a repeatable search strategy that can be applied across projects. Trail of Bits found the models especially effective at this kind of variant analysis, which uncovered many additional issues across the codebases under review.\n\n**Differential testing in days instead of weeks or months.** Different implementations of the same protocol should usually behave the same way under the same inputs. When they diverge, one may contain a bug. Applying this idea at scale is normally difficult because engineers must write custom shim and glue code connecting each implementation to a common test harness.\n\nCodex generated and iterated on that code, allowing multiple implementations to be fuzzed against one another and their behavioral differences investigated. The workflow filtered many weak or invalid results and produced a comparatively high-signal set of candidates for expert review. The team reached those results within days, compressing work that has historically taken weeks or months. Trail of Bits is continuing to expand and refine these tests before publishing project-specific details.\n\n**Testing software against the behavior its specifications promise.** The teams used Codex to develop threat models, attack taxonomies, invariant tests, and property-based tests grounded in project specifications and RFCs. These methods exposed notable differences between intended and actual behavior while leaving projects with broader test coverage, stronger documentation, and improvements to CI/CD and software-supply-chain tooling.\n\n**Security engineers reviewed every finding before it reached a maintainer.** Trail of Bits engineers manually reviewed every security issue before it was submitted to a maintainer, and the added value of this step cannot be understated. While frontier AI models are highly capable of finding vulnerabilities and patching them, they also produce a high volume of false positives that can contribute to the already overwhelming backlog maintainers are facing. Patch the Planet solves for this by having dedicated Trail of Bits researchers reproduce the evidence, check findings against project-specific documentation and threat models, remove duplicates, reassess severity, and prioritize confirmed vulnerabilities for remediation. They also develop and submit patches in accordance with maintainers preferences. Maintainers remain in control of what patches are deployed and how disclosure is handled.\n\n## What OpenAI Daybreak is already finding\n\nPatch the Planet builds on a broader body of Daybreak work showing how frontier models can help defenders find, validate, and remediate serious vulnerabilities in widely used software.\n\nWe are sharing a few early highlights here, while withholding exploit mechanics and project-specific details where disclosure is still underway. As fixes land and coordinated disclosures conclude, we plan to publish deeper technical reports that walk through individual findings, research methods, validation workflows, and lessons other defenders can apply.\n\nOur findings span every layer of the software stack, with many more still in the disclosure process.\n\n### Operating systems\n\n*   **Linux Kernel:**GPT‑5.5‑Cyber identified security-relevant components across more than 30 million lines of code, flagged potential security issues, and then validated them dynamically, generating 8 kernel pointer information leak proof-of-concepts (PoCs) and 24 local privilege escalation exploits. We note that hundreds of issues were identified, this is the subset for which PoCs were automatically generated.\n*   **OpenBSD:**Our models identified a 23-year-old [use-after-free⁠(opens in a new window)](https://github.com/openbsd/src/commit/1957873d2063db11dab780eca75b5e629d1e838d) in OpenBSD’s kernel implementation of System V semaphores. OpenAI researchers reproduced the issue and confirmed that it could allow an unprivileged local user to escalate privileges to root.\n*   **FreeBSD:**Security researchers at Calif used Codex to find and validate using proof-of-concept exploits for [several⁠(opens in a new window)](https://www.freebsd.org/security/advisories/FreeBSD-SA-26:18.setcred.asc)[LPEs⁠(opens in a new window)](https://www.freebsd.org/security/advisories/FreeBSD-SA-26:21.ptrace.asc) in [FreeBSD⁠(opens in a new window)](https://www.freebsd.org/security/advisories/FreeBSD-SA-26:19.file.asc). Across a broader FreeBSD campaign, OpenAI researchers confirmed 34 vulnerabilities and produced 7 local privilege escalation PoCs.\n\n### Network\n\n*   **dnsmasq**: Codex Security independently identified vulnerable patterns corresponding to four of the six dnsmasq CVEs later fixed in `2.92rel2`: [CVE-2026-4890⁠(opens in a new window)](https://www.cve.org/CVERecord?id=CVE-2026-4890), [CVE-2026-4891⁠(opens in a new window)](https://www.cve.org/CVERecord?id=CVE-2026-4891), [CVE-2026-4892⁠(opens in a new window)](https://www.cve.org/CVERecord?id=CVE-2026-4892), and [CVE-2026-5172⁠(opens in a new window)](https://www.cve.org/CVERecord?id=CVE-2026-5172).\n*   **HTTP/2 Bomb**: Calif used Codex to identify \"[HTTP/2 Bomb⁠(opens in a new window)](https://blog.calif.io/p/codex-discovered-a-hidden-http2-bomb),\" a denial-of-service technique affecting major HTTP/2 implementations including NGINX, Apache, IIS and Pingora. Calif’s analysis suggested that more than 880,000 Internet-facing websites were running affected server software with HTTP/2 enabled. \n\n### Browsers\n\n*   **Chrome**: OpenAI researchers found and reported five exploitable vulnerabilities in Chrome’s V8 JavaScript engine, including three that were identified and remediated within days of being introduced.\n*   **Safari**: In roughly a week of focused WebKit work, over 10 exploitable Safari vulnerabilities were found and reported.\n*   **Firefox**: OpenAI Preparedness identified a WebAssembly vulnerability ([CVE-2026-8390⁠(opens in a new window)](https://nvd.nist.gov/vuln/detail/CVE-2026-8390)) with GPT‑5.5 during [safety evaluations⁠(opens in a new window)](https://deploymentsafety.openai.com/gpt-5-5/vulnlmp) that Mozilla patched two days before Pwn2Own Berlin, prompting five of six registered Firefox entries to withdraw. No Firefox exploit was successfully demonstrated at the competition.\n\nOpen-source software is shared infrastructure. Securing it should be shared work. AI is changing the pace of vulnerability discovery, and the work now is to make sure the benefits reach the maintainers and users who need them most.\n\nPatch the Planet is designed to put that full defensive loop in service of maintainers: discovery, validation, severity review, disclosure, patch development, testing, and deployment. Frontier models can make parts of that loop faster, but the aim is to give the people responsible for shared infrastructure better tools and more capacity, while preserving their agency over how changes land.\n\nThis first sprint shows what sustained collaboration among maintainers, security engineers, and AI-assisted workflows can produce: immediate fixes, stronger project infrastructure, and reusable security work that can continue improving open-source software over time.\n\nThis is just the beginning. As more fixes land and coordinated disclosures complete, we plan to publish deeper technical reports on selected findings, the methods used to discover and validate them, and the workflows defenders can adapt to help protect the software everyone depends on. If you are a maintainer, you can apply to join Patch the Planet [here⁠(opens in a new window)](https://trailofbits.com/patch-the-planet).\n",
+          "thread_group_id": "thread-OpenAIDevs-20260623-1626",
+          "duplicate_of": null
+        },
+        {
+          "title": "Since launching in March, Codex for Open Source has provided 3,500+ maintainers with six-months of ChatGPT Pro, so more people behind critical projects can use Codex in their day-to-day work.",
+          "url": "https://x.com/OpenAIDevs/status/2069457065249214487",
+          "published_at": "2026-06-23T16:26:27.000000Z",
+          "description": "Since launching in March, Codex for Open Source has provided 3,500+ maintainers with six-months of ChatGPT Pro, so more people behind critical projects can use Codex in their day-to-day work.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2069457053035438427"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260623-1626",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 474.9h old, exceeds 168h threshold",
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing Mistral OCR 4. It creates structure with bounding boxes, block classification, and inline confidence scores in 170 languages. 🧵👇 https://t.co/jR78NkL4xK",
+          "url": "https://x.com/MistralAI/status/2069420263825895917",
+          "published_at": "2026-06-23T14:00:13.000000Z",
+          "description": "Introducing Mistral OCR 4. It creates structure with bounding boxes, block classification, and inline confidence scores in 170 languages. 🧵👇 https://t.co/jR78NkL4xK",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Why the structure matters: OCR 4 localizes each block with a bounding box, classifies it (title, table, equation, signature…), and scores confidence per region, the foundation for source-grounded cita",
+          "url": "https://x.com/MistralAI/status/2069420269748269179",
+          "published_at": "2026-06-23T14:00:14.000000Z",
+          "description": "Why the structure matters: OCR 4 localizes each block with a bounding box, classifies it (title, table, equation, signature…), and scores confidence per region, the foundation for source-grounded citations, redactions, RAG chunking, and human-in-the-loop review.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "MistralAI",
+            "status_id": "2069420268179575034"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-MistralAI-20260623-1400",
+          "duplicate_of": null
+        },
+        {
+          "title": "Available today: the API, Document AI in Mistral AI Studio, Amazon SageMaker, Microsoft Foundry, coming soon Snowflake Parse Document, or self-hosted on a single container, so your documents never lea",
+          "url": "https://x.com/MistralAI/status/2069420271438573780",
+          "published_at": "2026-06-23T14:00:15.000000Z",
+          "description": "Available today: the API, Document AI in Mistral AI Studio, Amazon SageMaker, Microsoft Foundry, coming soon Snowflake Parse Document, or self-hosted on a single container, so your documents never leave your environment. 👉 https://t.co/vhIHq4dNiN",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/vhIHq4dNiN",
+              "expanded_url": "https://mistral.ai/news/ocr-4",
+              "display_url": "mistral.ai/news/ocr-4"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "MistralAI",
+            "status_id": "2069420269748269179"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-MistralAI-20260623-1400",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Try the new Firecrawl plugin in the Grok Build Plugin Marketplace",
+          "url": "https://x.com/xai/status/2069536627349962987",
+          "published_at": "2026-06-23T21:42:36.000000Z",
+          "description": "Try the new Firecrawl plugin in the Grok Build Plugin Marketplace",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "firecrawl",
+            "text": "Firecrawl is now an official plugin in @grok build 🔥 \n\nYour Grok agents can now search the web, scrape, and interact with any page, directly in the CLI.\n\nFind us on the @xai marketplace today and get started free with 1,000 monthly credits. https://t.co/UtW8PAh1Oa",
+            "url": "https://x.com/firecrawl/status/2069481550492700993"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
