@@ -5,8 +5,190 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 23 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 24 Jun 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-06-24</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-24.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-24.md</guid>
+      <pubDate>Wed, 24 Jun 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-24</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>团队型 Agent</strong>：Claude Tag 把 Claude 放进 Slack，推动异步协作从个人工具走向团队成员形态。</li>
+<li><strong>AI 基建下沉</strong>：OpenAI 与 Broadcom 推出 Jalapeño 芯片，继续把模型、产品和推理硬件打通。</li>
+<li><strong>开发者生态升温</strong>：OpenAI DevDay 2026 开放申请，API 半年更新和开源维护者支持同步扩张。</li>
+<li><strong>文档智能升级</strong>：Mistral OCR 4 强调结构化解析，为 RAG、脱敏和人工复核提供更细粒度信号。</li>
+<li><strong>安全治理前移</strong>：OpenAI 的 Patch the Planet 把 AI 漏洞发现与专家审查结合，降低开源维护负担。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/OpenAIDevs/status/2069499656305090671">OpenAI回顾半年API模型与工具更新</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>OpenAI API</code> <code>GPT-5.5</code> <code>Responses API</code> <code>Agents SDK</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI开发者账号回顾过去六个月API侧发布的三十多项模型、功能和工具升级，包括GPT-5.5、GPT-5.4 mini/nano、实时语音与翻译模型、GPT-Image-2等。工具层面还包括Responses API中的Skills、Agents SDK harness与sandbox、服务端压缩、WebSocket模式、Hosted shell、OpenAI CLI以及Amazon Bedrock接入。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>盘点现有API调用是否仍使用旧模型或旧代理接口，优先评估GPT-5.5与GPT-5.4 mini/nano的成本和质量差异。</li>
+<li>对长上下文或多步代理应用，测试服务端压缩、Hosted shell和Responses API Skills能否减少自建编排逻辑。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://openai.com/index/openai-broadcom-jalapeno-inference-chip">OpenAI发布自研推理芯片Jalapeño</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Broadcom</code> <code>推理芯片</code> <code>AI基础设施</code> <code>成本效率</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI与Broadcom发布面向LLM推理的首款「Intelligence Processor」Jalapeño，目标是在性能功耗比、低延迟和大规模部署上优于现有方案。该芯片围绕ChatGPT、Codex、API和未来智能体负载设计，计划从2026年底起以多代平台形式在吉瓦级数据中心部署。OpenAI称芯片从设计到流片仅用九个月，并由其模型辅助部分芯片设计与优化流程。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>关注后续技术报告中的性能功耗比、延迟和可用容量指标，评估其对API成本的潜在影响。</li>
+<li>对延迟敏感或高并发推理业务，预留基准测试计划以便在新硬件进入服务后重新评估供应商选择。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2069468900216234010">Anthropic称Claude Tag已参与大量内部代码生产</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Tag</code> <code>代码生成</code> <code>内部实践</code> <code>工程效率</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 称 Claude Code 团队今年一直在内部使用 Claude Tag，并表示产品团队 65% 的代码由它生成，其中包括 Claude Tag 自身的大部分实现。该推文引出一组内部用例，展示其在工程团队中的实际落地方式。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用小范围项目衡量代理生成代码占比、返工率和评审耗时。</li>
+<li>要求代理提交变更时同步生成测试和实现说明。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/claudeai/status/2069468699766005847">Claude Tag新增主动跟进与相关信息提醒</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Tag</code> <code>主动代理</code> <code>Slack</code> <code>上下文提醒</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 官方说明 Claude Tag 的 ambient behavior 可让 Claude 主动采取行动。开启后，它会跟进停滞的讨论，并从授权频道和工具中标记相关信息。 Anthropic 发布 Claude Tag，允许 Slack 中的团队把 Claude 加入指定频道，并授予其访问特定工具、数据和代码库的权限。Claude 可在频道中记忆相关上下文、拆解任务、异步执行、主动跟进，并由管理员控制权限、预算和审计日志；该功能目前面向 Claude Enterprise 和 Team 客户 beta 开放。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>只在明确授权的频道开启主动行为，并记录触发条件。</li>
+<li>为主动提醒设置误报反馈机制，逐步校准哪些信息真正有用。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/claudeai/status/2069468693017268244">Claude Tag 让团队在 Slack 中委派任务</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Tag</code> <code>Slack Agent</code> <code>Claude Code</code> <code>异步协作</code> <code>团队自动化</code> <code>LLM UI</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 推出 Claude Tag，让 Claude 作为 Slack 团队成员接入指定频道和工具，用户可以直接标记它并委派异步任务。Claude Devs 将其定位为多人、异步、主动版 Claude Code，并披露内部产品团队已有 65% 代码由这套工作流参与完成。补充报道强调了 A/B 测试监控、沉寂线程跟进、日程协调和状态反馈约定等实践，Karpathy 则认为这是继网页和桌面应用之后，LLM UI 的第三种重要形态。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/trq212/status/2069474342220820657">用表情反应标记Claude任务状态</a> · Thariq (Twitter) · 状态反馈约定</li>
+<li><a href="https://x.com/ClaudeDevs/status/2069468911700218284">Claude Tag可监控A/B测试与护栏指标</a> · Claude Devs (Twitter) · 指标监控场景</li>
+<li><a href="https://x.com/karpathy/status/2069547676849557725">Karpathy称Claude Tag重塑企业协作</a> · Andrej Karpathy (Twitter) · 交互范式点评</li>
+<li><a href="https://x.com/trq212/status/2069474335656694003">Claude Tag引发团队代理最佳实践讨论</a> · Thariq (Twitter) · 使用实践</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在一个低风险 Slack 频道试点 Claude Tag，先限定可访问工具和频道范围。</li>
+<li>为异步任务约定状态反馈符号或标签，降低团队成员轮询成本。</li>
+<li>优先选择 A/B 测试监控、会议排期、线程跟进等可验证工作流试运行。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://openai.com/index/gpt-5-immunology-mystery">GPT-5 Pro帮助免疫学家解释T细胞谜题</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>GPT-5 Pro</code> <code>免疫学</code> <code>T细胞</code> <code>科研辅助</code> <code>生物安全</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 介绍免疫学家 Derya Unutmaz 如何用 GPT-5 Pro 重新分析一项搁置三年的 T 细胞实验，并得到关于 deoxyglucose、IL-2 与 Th17 分化关系的机制性解释。文章还称 GPT-5 Pro 正确预测了未发表实验中 CD8+ T 细胞对淋巴瘤细胞杀伤能力增强的结果，展示前沿模型在生物科研假设生成和实验筛选中的潜力与风险。</p>
+<hr>
+<h3>7. <a href="https://x.com/OpenAIDevs/status/2069457015227940891">OpenAI 扩大开源维护者支持</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>开源安全</code> <code>Patch the Planet</code> <code>Codex</code> <code>维护者支持</code> <code>AI 安全研究</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 汇总了近期面向开源生态的一组支持动作，包括直接资助维护者、投资 Rust 生态、启动 Patch the Planet 安全计划，并扩大 Codex for Open Source 覆盖面。Patch the Planet 与 Daybreak、Trail of Bits 合作，把 AI 辅助漏洞研究和人工安全审查结合起来，帮助关键开源项目验证漏洞、开发补丁和协调披露。Codex for Open Source 自 3 月上线以来已向 3500 多名维护者提供六个月 ChatGPT Pro，重点是把模型能力转化为维护者可用的安全和开发产能。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2069457053035438427">OpenAI启动Patch the Planet加固关键开源软件</a> · OpenAI Devs (Twitter) · 安全计划细节</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>开源项目维护者可关注Codex for OSS扩容资格，评估是否能用于减少issue分诊和修复负担。</li>
+<li>安全团队可跟进Patch the Planet形式，寻找适合用AI辅助漏洞修复的开源依赖。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>8. <a href="https://x.com/MistralAI/status/2069420263825895917">Mistral OCR 4 发布：结构化文档解析</a></h3>
+<ul>
+<li><strong>来源</strong>: Mistral AI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Mistral OCR 4</code> <code>文档 AI</code> <code>结构化解析</code> <code>RAG</code> <code>自托管</code></li>
+</ul>
+<p><strong>摘要</strong>: Mistral AI 发布 OCR 4，重点是把文档解析为带边界框、区块类型和置信度的结构化结果，覆盖 170 种语言。官方强调这些结构信息可支撑来源引用、脱敏、RAG 分块和人工复核，而不只是提取纯文本。该能力已通过 API、Mistral AI Studio Document AI、Amazon SageMaker 和 Microsoft Foundry 提供，并支持单容器自托管。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/MistralAI/status/2069420269748269179">OCR 4强调版面结构与置信度</a> · Mistral AI (Twitter) · 结构化解析细节</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用含表格、公式和签名的真实文档测试 OCR 4 的区块分类质量。</li>
+<li>在 RAG 管线中保留 bounding box 与 confidence 字段，便于引用和人工复核。</li>
+<li>对敏感文档优先评估单容器自托管部署。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>9. <a href="https://x.com/xai/status/2069536627349962987">Grok Build上线Firecrawl插件</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>xAI</code> <code>Grok Build</code> <code>Firecrawl</code> <code>网页抓取</code> <code>插件市场</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI宣布Grok Build插件市场新增Firecrawl插件。Firecrawl称该插件可让Grok智能体在CLI中直接搜索网页、抓取内容并与页面交互，并提供每月1000个免费额度用于上手。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在需要网页检索或抓取的Grok代理流程中测试Firecrawl插件，重点验证抓取稳定性和额度消耗。</li>
+<li>为生产用途设置域名白名单、重试策略和内容清洗步骤，避免把不可信网页直接交给代理执行。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>10. <a href="https://openai.com/index/helping-build-shared-standards-for-advanced-ai">OpenAI推动高级AI共同标准</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>AI安全</code> <code>评估标准</code> <code>全球治理</code> <code>Appia Foundation</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称其正在支持高级AI共享标准建设，包括评估框架、安全实践和全球协作，并提到通过Appia Foundation参与相关工作。由于抓取到的正文不可用，此条主要依据摘要判断，核心是把前沿AI治理从单家公司实践推向跨机构标准化。</p>
+<hr>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-06-23</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-23.html</link>
@@ -3082,221 +3264,6 @@
 <ul>
 <li><strong>教程与观点</strong> | <code>Anthropic</code> <code>红队</code> <code>模型安全</code> <code>对齐</code> — Anthropic 介绍在新模型发布前由专门团队负责「破坏」测试的流程：他们使用模型构建应用、推到极限并反馈失败案例，从而帮助改进最终模型。属于发布前安全与对齐宣传内容。 · <a href="https://x.com/claudeai/status/2060074627032838438">Claude (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Mistral AI</code> <code>工业 AI</code> <code>Airbus</code> <code>BMW</code> <code>EDF</code> — Mistral AI 在卢浮宫举办的 AI Now Summit 上宣布面向航空、汽车、能源和物理的 AI 解决方案，已在 Airbus、BMW、EDF 等企业的生产环境中部署，标志着其在欧洲重工业 AI 落地上的扩张。 Mistral AI 在自回复推文中附上 AI Now Summit 2026 公告链接，作为同一线程关于工业领域 AI 解决方案宣布的延伸引用。 · <a href="https://x.com/MistralAI/status/2059951137839616110">Mistral AI (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-05-28</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-05-28.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-05-28.md</guid>
-      <pubDate>Thu, 28 May 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-05-28</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Claude Code 集中升级</strong>：安全指导插件全员开放，同日推送响应性优化与 /feedback 一键发送会话，Anthropic 内部实测 PR 安全类评论降 30-40%。</li>
-<li><strong>Codex 走向企业生产</strong>：Cisco 用 Codex 把 AI Defense 工期从季度压缩到周；OpenAI 与 Thrive 联合搭出 6 周字段准确率 25% → 86% 的自改进报税 Agent。</li>
-<li><strong>Qwen3.7-Max 登顶 Code Arena #4</strong>：对标 Claude Opus 4.6 拿下国产首位，同日 Hermes Agent 与 Qoder IDE 宣布接入。</li>
-<li><strong>OpenAI 企业能力强化</strong>：私有 MCP 服务器内网部署、Workload Identity Federation 取代长期 API Key、Admin API 新增支出告警与模型白名单。</li>
-<li><strong>Agent 安全话题升温</strong>：OpenAI 公布 2026 选举方案（SynthID 水印 + AP 实时计票），Anthropic 工程博客建议用沙箱限制 Agent 权限与潜在破坏性操作。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2059445345667747849">Qwen3.7-Max 登顶 Code Arena 第 4：对标 Claude Opus 4.6，国产模型新高</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Qwen3.7-Max</code> <code>Code Arena</code> <code>国产大模型</code> <code>Agent 集成</code> <code>IDE 工具链</code></li>
-</ul>
-<p><strong>摘要</strong>: Qwen3.7-Max 在 Code Arena 编程榜冲到第 4，与 Claude Opus 4.6 并列，成为目前榜单上排名最高的国产模型。同日生态侧也连续宣布接入：Hermes Agent 把 Qwen3.7-Max 纳入其默认模型矩阵；Qoder IDE 限时半价开放 Qwen3.7-Max，并对所有用户提供每日 100 次免费调用。多角度信号叠加，说明 Qwen 3.7 系列的编码能力正在被外部 Agent 与 IDE 工具链快速采纳。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2059611776984244404">Hermes Agent 接入 Qwen 3.7 Max</a> · Qwen (Twitter) · Hermes Agent 接入 Qwen3.7-Max</li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2059586373456380225">Qoder IDE 限时半价开放 Qwen3.7-Max，并送每日 100 次免费调用</a> · Qwen (Twitter) · Qoder IDE 限时半价 + 每日 100 次免费调用</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>把 Qwen3.7-Max 加入编程评测组合，与 Claude Opus 4.6 / GPT-5.5 做同题对比</li>
-<li>在 Qoder IDE 内用 100 次/日免费调用做小型 PR 实验，再决定是否长期接入</li>
-<li>若已用 Hermes Agent，可直接把 Qwen3.7-Max 设为编码任务路由的备选模型</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/OpenAIDevs/status/2059703536825565499">OpenAI 推出私有 MCP 服务器隧道：内网部署 + 出站 HTTPS</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>MCP</code> <code>私有部署</code> <code>OpenAI</code> <code>企业安全</code> <code>出站隧道</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发布安全 MCP 隧道（secure-mcp-tunnels）能力，允许企业将 MCP 服务器保留在自己内网中，由 ChatGPT、Codex、Responses API 通过仅出站的 HTTPS 连接接入。这样团队无需把内部工具暴露到公网即可让 OpenAI 产品调用，便于满足合规要求。 OpenAI API 平台引入 Workload Identity Federation（工作负载身份联邦），团队可通过云端 IAM 工作流管理服务对 OpenAI 的访问，减少在各服务间分发持久 API 密钥的必要。这有助于降低密钥泄漏风险并简化轮换。 OpenAI 扩展了 Admin API，让企业可编程化管理 OpenAI 项目。新功能包括支出告警、模型 allowlist、数据保留控制、托管工具控制，以及对 file search、web search 等能力更细粒度的成本可见性。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>评估将内部数据 / 工具型 MCP 服务器从公网下线、改用 OpenAI 私有 MCP 隧道连接</li>
-<li>在防火墙策略中允许 outbound-only HTTPS 至 OpenAI，但不开放任何 inbound 端口</li>
-<li>结合 Responses API 测试 Codex / ChatGPT 通过隧道访问内网 MCP 工具的端到端链路</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/ClaudeDevs/status/2059701686260908134">Claude Code /feedback 支持一键发送近一天或一周会话</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>/feedback</code> <code>反馈机制</code> <code>调试体验</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Code 改进了反馈流程：使用 /feedback 命令时，用户可以直接发送过去一天或一周的全部会话，而无需回忆是哪一次会话遇到了 bug。这降低了报告问题的门槛，预计能让团队收到更多上下文完整的反馈。 Claude Devs 在响应性升级线程末尾表示团队仍在持续投入优化，邀请用户继续反馈所有影响使用体验的 bug。语气上属于工作进行中的状态通报与开放式征集。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>遇到难复现的 Claude Code 异常时直接 /feedback 提交最近一天/一周会话</li>
-<li>在团队中建立「发现问题立刻 /feedback」的纪律，加速 Anthropic 定位 bug</li>
-<li>提交反馈时注意会话中可能包含敏感信息，必要时先做脱敏</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://x.com/ClaudeDevs/status/2059701677981413812">Claude Code 响应性与稳定性大更新</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>性能优化</code> <code>稳定性</code> <code>Anthropic</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Devs 宣布近期围绕 Claude Code 的响应速度与可靠性持续做了大量优化，并将通过一条线程汇总此次发布的所有改进项。这是面向 Claude Code 用户的一次综合性性能与稳定性升级公告。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>更新到最新版本 Claude Code 以获得响应性与可靠性改进</li>
-<li>若之前因卡顿或断连放弃过某些长任务，可重新尝试在 Claude Code 中跑一遍</li>
-<li>关注后续 ClaudeDevs 线程获取具体改动清单，对照自己的工作流评估收益</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://x.com/Alibaba_Qwen/status/2059674574397313277">Qwen3.5 在 TokenSpeed 引擎上跑出 580 tps 代理推理纪录</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Qwen3.5</code> <code>TokenSpeed</code> <code>FlashAttention-4</code> <code>推理加速</code> <code>MoE</code></li>
-</ul>
-<p><strong>摘要</strong>: PyTorch 基金会博客披露 Qwen3.5-397B-A17B 在 TokenSpeed 推理框架上达成 580 tokens/s 的代理工作负载新纪录。该成果由 Qwen 推理团队、Lightseek（TokenSpeed）、NVIDIA、Mooncake 团队以及 Tri Dao 贡献的 FlashAttention-4 优化共同推动，标志着大规模 MoE 模型代理推理性能的新天花板。</p>
-<hr>
-<h3>6. <a href="https://openai.com/index/cisco">Cisco 深度整合 Codex：AI Defense 开发周期从季度压缩至周</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>OpenAI Codex</code> <code>Cisco</code> <code>企业工程</code> <code>AI Defense</code> <code>GPT-5.5-Cyber</code></li>
-</ul>
-<p><strong>摘要</strong>: Cisco 将 OpenAI Codex 嵌入企业工程流水线，几乎全部新 AI Defense 功能由 Codex 撰写，把原本数个季度的研发压缩至几周。跨 15+ 仓库的构建优化每月节省 1500+ 工程师小时，C/C++ 缺陷修复吞吐量提升 10-15 倍，并接入 OpenAI 的 Daybreak 与「GPT-5.5-Cyber」网络防御模型。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>评估 Codex CLI 在大型 C/C++ 代码库上的自主缺陷修复能力，量化每月可节省的工程师工时</li>
-<li>为 Codex 任务搭建可写工作树与只读生产上下文分离的执行环境，并配合回归 eval 闸门以满足企业合规</li>
-<li>在跨仓库构建系统中先做依赖图分析试点，用 Codex 自动识别可并行化与冗余编译步骤</li>
-</ul>
-</blockquote>
-<hr>
-<h3>7. <a href="https://openai.com/index/building-self-improving-tax-agents-with-codex">OpenAI×Thrive 推出自改进报税 Agent：6 周字段准确率从 25% 升至 86%</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>Tax AI</code> <code>Self-Improving Agent</code> <code>Eval Pipeline</code> <code>企业 Agent</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 前置部署工程师与 Thrive Holdings 联合为 Crete 会计师网络打造 Tax AI，利用 Codex 在生产 trace、专家纠错与定向 eval 之间构建三段式自改进闭环，本季为 30 余家事务所处理了 7000 份税务申报。在不到 6 周内，系统在 75% 字段正确率上的占比从 25% 跃升至 86%，准备时间节省约 1/3、吞吐提升约 50%，单条修正可经 Codex 自动产出修复 PR。文章把这套生产-eval-Codex 工程化路径作为通用蓝图，未来将复用于簿记、审计与 IT helpdesk 等领域。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2059638868983562640">OpenAI × Thrive：用 Codex 构建自改进的报税 Agent，节省 1/3 工时</a> · OpenAI Devs (Twitter) · OpenAI Devs 官方介绍</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>把生产 trace + 专家纠错沉淀为结构化数据，作为定向 eval 的输入</li>
-<li>用 Codex 在可写 worktree 与只读生产上下文之间运行修复-验证闭环</li>
-<li>将「practitioner 修正模式」聚类后再立项，避免把噪声当 bug 修</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://openai.com/index/warp">Warp 押注 GPT-5.5：开源终端 + Oz 编排，Agent 共创 90% PR</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Warp</code> <code>GPT-5.5</code> <code>开源终端</code> <code>Agent 编排</code> <code>Open Agentic Development</code></li>
-</ul>
-<p><strong>摘要</strong>: Warp 终端今年开源，OpenAI 作为首个赞助方，并推出「Open Agentic Development」开发模式。内部基准显示 GPT-5.5 比 GPT-5.4 每个 agentic 编码任务少用 30% token，目前 Warp 自家 90% PR 由 Agent 共同创作。其云编排平台 Oz 通过 context compaction、持久记忆与子 Agent 分工，支撑跨本地/云的长时编程工作流；公司 ARR 同比增长 35 倍。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>评估 Warp Oz 作为多 Agent 编排控制面，把长任务跨本地/云迁移并保留 session 状态</li>
-<li>在 agentic 编码流水线接入 GPT-5.5 以降低 token 成本，对比 5.4 在自家 eval 上的 token/turn 数</li>
-<li>为 Agent PR 流程建立 LLM-as-judge eval，避免人工逐条审查长时输出</li>
-</ul>
-</blockquote>
-<hr>
-<h3>9. <a href="https://x.com/ClaudeDevs/status/2059385242319012188">Anthropic：安全插件让 PR 安全类评论减少 30-40%</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>安全插件</code> <code>代码评审</code> <code>内部数据</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 透露在公司内部已大量使用这款 Claude Code 安全指导插件，跨内部 rollout 与基准测试中观察到使用该插件提交的 PR，其安全相关评论数量下降了 30-40%。团队将其定位为完整代码评审前的轻量「第一道筛」。 Claude Devs 团队介绍了 Claude Code 安全插件的自定义能力：团队可在仓库中放置 claude-security-guidance.md 文件，或通过 MDM 分发，以定义组织级安全规则。该插件会在内置安全检查之外，额外强制执行这些自定义策略，便于企业统一治理。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>把安全插件作为提 PR 前的强制本地检查步骤纳入团队规范</li>
-<li>结合自身仓库度量安全评论数量，复现 Anthropic 的 30-40% 收益</li>
-<li>保留人工 code review 流程，将插件视为补充而非替代</li>
-</ul>
-</blockquote>
-<hr>
-<h3>10. <a href="https://x.com/xai/status/2059666227115819149">xAI 接入 Kilo Code：SuperGrok 订阅可直用 grok-build-0.1 编码代理</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>xAI</code> <code>Grok</code> <code>Kilo Code</code> <code>编码代理</code> <code>AI IDE</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI 宣布 SuperGrok 与 X Premium+ 订阅用户可在 Kilo Code IDE 扩展和 CLI 中直接调用 grok-build-0.1 模型，主打高速度与代理式编码智能。该集成无需额外密钥，把 Grok 的编码能力推到第三方 AI IDE 生态。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>已有 SuperGrok 订阅的开发者可在 Kilo IDE 扩展中切换到 grok-build-0.1，对比 Claude/GPT 在你常用代码库上的代理表现</li>
-<li>若评估多模型编码代理路由，把 grok-build-0.1 纳入 A/B 矩阵，重点测速与长上下文重构任务</li>
-</ul>
-</blockquote>
-<hr>
-<h3>11. <a href="https://openai.com/index/election-safeguards-2026">OpenAI 公布 2026 大选安全方案：SynthID 水印 + AP 实时计票</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>选举安全</code> <code>SynthID 水印</code> <code>C2PA</code> <code>网络防御</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 公布 2026 全球大选期间的五项安全部署：与美联社合作在 ChatGPT 中提供美国和巴西实时计票，与 Democracy Works 提供投票登记信息；为美国登记的投票设备制造商提供 Codex Security 与 TAC（Trusted Access for Cyber）。在内容溯源上推出 SynthID 隐形水印 + C2PA 元数据双层方案，并上线公开 openai.com/verify 验证工具，禁止任何政治广告投放。</p>
-<hr>
-<h3>12. <a href="https://www.anthropic.com/research/coding-agents-social-sciences">Anthropic 调研 1260 位社科学者：仅 20% 已采用 Coding Agent</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>Coding Agent</code> <code>学术研究</code> <code>采用率</code> <code>数字鸿沟</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 对 1260 位定量社科学者的调研显示，81% 已用过 AI Chatbot 辅助研究，但仅 20% 把 Claude Code 这类命令行 coding agent 纳入日常工作流（其中 86% 用 Claude Code）。采用率呈现显著差异：经济学 39% vs 教育/传播学约 5%，男性化姓名研究者使用率是女性的两倍，Top 25 大学高 40%。Coding agent 用户的工作论文与课题申请更多，但期刊投稿数无显著差异。</p>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Replit</code> <code>客户案例</code> <code>自然语言编程</code> <code>Anthropic</code> — Anthropic 介绍 Replit 总裁兼 AI 负责人 Michele Catasta（@pirroh）的故事：他 16 岁立志让软件开发面向所有人，如今 Replit 上已有超过 5000 万人借助 Claude 用自然语言构建软件。这是 Anthropic「Problem Solvers」系列对 Claude 商业化落地的一次客户案例宣传。 Anthropic 宣布上线「The Problem Solvers」系列内容，专门介绍那些借助 Claude 攻克难题的创始人。该系列首页为 claude.com/problem-solvers，本条是对 Replit Michele Catasta 故事帖的收束指引。 · <a href="https://x.com/claudeai/status/2059682187947946009">Claude (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>OpenAI Foundation</code> <code>Sam Altman</code> <code>AI 经济影响</code> <code>共同繁荣</code> <code>公益承诺</code> — Sam Altman 宣布 OpenAI 基金会初始承诺 2.5 亿美元，用于衡量 AI 对就业与收入的影响、过渡支持以及探索广泛共享繁荣的新机制。配套发布 openaifoundation.org/news/economic-futures-in-the-age-of-ai 政策说明，定位为应对 AI 对生活质量与个人自由影响的长期举措。 · <a href="https://x.com/sama/status/2059677202917331431">Sam Altman (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Claude Marketplace</code> <code>企业采购</code> <code>Bolt</code> <code>CodeRabbit</code> <code>Hebbia</code> — Anthropic 在 Claude Marketplace 上新增 Augment Code、Bolt.new、CodeRabbit、Hebbia 与 Legora 五家伙伴产品，企业客户可将既有的 Anthropic 支出承诺额直接用于采购这些 Claude 驱动的工具。Marketplace 此前以限量预览发布，目标是简化企业 AI 工具采购流程。 · <a href="https://x.com/claudeai/status/2059662933924123044">Claude (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>LLM 用法</code> <code>脚本化工作流</code> <code>HTML 输出</code> <code>Claude 实践</code> — Thariq 列举了用 Claude 等模型解决日常任务的模式化做法：图像或视频编辑直接让其写脚本；财务、报税类工作把资料丢进 PDF 再让模型写脚本并输出 HTML；医疗建议同样以 PDF + 数据为输入、HTML 为输出；填表、报告、计划等场景则分别走脚本或 HTML 路线。其核心观点是把「脚本 + 结构化文档 + HTML」当作通用接口来撬动 LLM 的执行力。 在前一条工作流建议的延伸中，Thariq 强调让模型访问数据同样关键：应接入 Gmail、Google Calendar 等连接器。他认为人们普遍低估了自己文件里所承载的上下文量，而这些上下文正是让 LLM 真正贴身可用的关键。 · <a href="https://x.com/trq212/status/2059363115146395965">Thariq (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
