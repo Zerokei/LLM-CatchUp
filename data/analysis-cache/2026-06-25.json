@@ -1,0 +1,301 @@
+{
+  "analyzed_at": "2026-06-26T12:37:36.892Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-06-25.json",
+  "trend_paragraph": "- **代理工作深化**：OpenAI 研究显示 Codex 正从编程工具扩展为跨部门长周期代理工作入口。\n- **模型能力升级**：GPT-5.5 Instant 改善意图理解，Qwen-AgentWorld 则把世界建模推向智能体训练。\n- **基础设施下沉**：OpenAI Jalapeño 和 Grok Build 插件显示头部厂商继续补齐芯片与工具栈。\n- **企业治理成焦点**：Claude agent identity 将代理凭据、审计和撤权变成团队协作的基础能力。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/how-agents-are-transforming-work",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 研究：Codex 正把工作从聊天推向代理",
+      "summary": "OpenAI 的研究称，代理式 AI 正把知识工作的单位从一次性对话转向可委派的长周期任务，Codex 在公司内部已成为各部门的主要 AI 工作工具。到 2026 年 5 月，80.6% 的个人用户至少提交过一个估计超过 30 分钟人工工作量的 Codex 请求，非开发者采用速度也显著快于开发者。文章强调，代理工具正在让法律、财务、招聘等非技术岗位承担更多自动化、数据处理和技术执行任务。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "代理式AI",
+        "Codex",
+        "知识工作",
+        "非开发者采用",
+        "生产力"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069895389415874907",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 代理身份便于统一审计与撤权",
+      "summary": "Claude Devs 说明，Claude 在连接系统中的每个动作都会以 Claude 自己的账号身份进入各系统日志，便于企业做统一审计。管理员只需撤销一次访问，就能终止相关系统权限，同时共享频道不会暴露个人私有文件。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "代理身份",
+        "权限管理",
+        "审计",
+        "企业协作"
+      ],
+      "practice_suggestions": [
+        "在企业集成中为 AI 代理单独建账号，避免复用员工凭据。",
+        "检查 Slack、文档、代码仓库等连接系统是否能按代理身份输出审计日志。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260624-2128",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2069895377080443271",
+      "angle": "审计与撤权"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069895390716104988",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 共享协作权限加入管理员边界",
+      "summary": "Claude Devs 表示，Claude 可以获得足够的共享工作访问权限以完成任务，但管理员可以明确控制权限边界。该推文指向 Anthropic 关于「agent identity」访问模型的博客，核心是让代理既能参与团队协作，又可被集中治理。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "agent identity",
+        "管理员控制",
+        "协作权限",
+        "企业安全"
+      ],
+      "practice_suggestions": [
+        "把 Claude 的团队协作权限按频道、空间或项目分层授权。",
+        "为代理访问建立定期复核流程，确认权限仍匹配实际任务范围。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260624-2128",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2069895377080443271",
+      "angle": "管理员边界"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2069895377080443271",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude 代理身份模型：独立凭据 + 统一治理",
+      "summary": "Claude Devs 介绍「agent identity」访问模型：当 Claude 被加入团队频道或共享工作区时，它使用自己的独立凭据，而不是借用某个成员的个人权限。这样每个连接系统都能在日志中记录 Claude 自身的操作，管理员也可以一次撤销访问并统一控制权限边界。该模型的重点是在让 Claude 参与共享协作的同时，避免暴露个人私有文件并提升企业审计能力。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "agent identity",
+        "代理凭据",
+        "权限治理",
+        "企业审计",
+        "协作安全"
+      ],
+      "practice_suggestions": [
+        "为企业 AI 代理配置独立账号和最小权限，避免复用员工 OAuth 凭据。",
+        "在 Slack、文档、代码仓库等连接系统中确认代理操作能独立落日志。",
+        "建立代理访问的集中撤权和定期复核流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069843083701915755",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.5 Instant 升级对话意图与约束处理",
+      "summary": "OpenAI 宣布推出新版 GPT-5.5 Instant，称其对话体验更自然，能更好理解问题意图并相应调整回答。新版还提升了复杂约束遵循能力，并让购物、本地推荐等场景更有用、更连贯；付费用户当天开始推送，免费用户次日推送。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.5",
+        "Instant",
+        "对话体验",
+        "约束遵循",
+        "推荐"
+      ],
+      "practice_suggestions": [
+        "用现有提示词回归测试复杂约束、多轮澄清和推荐类任务。",
+        "对比新旧 Instant 在延迟、成本和回答一致性上的变化，再调整默认模型路由。",
+        "将购物或本地推荐场景加入人工评测集，检查是否出现过度自信推荐。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-june-e4a",
+      "source": "Berkeley RDI",
+      "title": "Berkeley RDI 关注 GPT-5.5-Cyber 与 CyberGym",
+      "summary": "Berkeley RDI 本期 Agentic AI Weekly 提到 OpenAI 新发布的 GPT-5.5-Cyber 模型，以及其在 CyberGym 上的进展。可用正文很短，主要是对该研究亮点的提示，没有展开具体实验数据或方法细节。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Berkeley RDI",
+        "GPT-5.5-Cyber",
+        "CyberGym",
+        "安全评测",
+        "代理研究"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2069809728088350789",
+      "source": "xAI (Twitter)",
+      "title": "Grok Build 接入 MongoDB 官方插件",
+      "summary": "xAI 宣布 Grok Build 可使用 MongoDB 官方插件，支持查询数据、优化索引和管理数据库。该更新把数据库操作纳入 Grok Build 的工具生态，适合需要在生成应用或数据工作流中直接访问 MongoDB 的团队试用。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Grok Build",
+        "MongoDB",
+        "插件",
+        "数据库管理",
+        "索引优化"
+      ],
+      "practice_suggestions": [
+        "在测试环境连接 MongoDB 插件，验证查询、索引建议和权限边界。",
+        "为生产数据库配置只读或最小权限凭据，避免让代理直接持有高危写权限。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2069785318887174217",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind 播客补充智能体经济收听链接",
+      "summary": "Google DeepMind 这条推文主要提供同一播客内容的视频、Spotify 和 Apple Podcasts 收听链接。它本身不包含新的技术观点，更多是对上一条智能体经济讨论的分发补充。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Google DeepMind",
+        "播客",
+        "智能体经济",
+        "分发链接"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260624-1410",
+      "duplicate_of": "https://x.com/GoogleDeepMind/status/2069785314663497966",
+      "angle": "收听链接"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2069785314663497966",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind 播客讨论智能体经济与决策多样性",
+      "summary": "Google DeepMind 播客围绕智能体经济展开，讨论当大量 AI 代理开始谈判、交易和相互委派时，系统会面对怎样的协作、安全和治理问题。节目涵盖科学探索中的代理式探索、代理间委派、陷阱与安全，以及如何避免由相似模型驱动的认知单一化。补充推文提供视频和播客平台链接，方便按不同渠道收听。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "智能体经济",
+        "代理安全",
+        "群体思维",
+        "分布式智能"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260624-1410",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069770175709335653",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 与 Broadcom 发布 Jalapeño 推理芯片",
+      "summary": "OpenAI 与 Broadcom 发布 OpenAI 首款 Intelligence Processor「Jalapeño」，面向当前和未来 LLM 推理从零设计，早期测试显示性能功耗比将显著优于当前先进水平。该芯片由 OpenAI、Broadcom 和 Celestica 协作完成，九个月从设计推进到生产 tape-out，并计划从 2026 年底起以吉瓦级规模部署。OpenAI 将其定位为全栈基础设施战略的一部分，用于提升 ChatGPT、Codex 和 API 的速度、可靠性与成本效率。",
+      "category": "商业动态",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Broadcom",
+        "Jalapeño",
+        "推理芯片",
+        "AI基础设施"
+      ],
+      "thread_group_id": "thread-OpenAI-20260624-1310",
+      "duplicate_of": "https://x.com/OpenAI/status/2069770172802773292",
+      "angle": "博客细节"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2069770172802773292",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI Jalapeño：首款自研推理芯片发布",
+      "summary": "OpenAI 与 Broadcom 发布首款自研 Intelligence Processor「Jalapeño」，这是面向 ChatGPT、Codex、API 和未来智能体产品的 LLM 推理芯片。它从 LLM 推理负载出发重新设计，并由 OpenAI、Broadcom、Celestica 协作在九个月内推进到生产 tape-out，早期测试称性能功耗比将显著优于当前先进水平。OpenAI 将其纳入全栈基础设施战略，计划从 2026 年底起随数据中心伙伴进行吉瓦级部署，以提升速度、可靠性和成本效率。",
+      "category": "商业动态",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Jalapeño",
+        "Broadcom",
+        "推理芯片",
+        "AI基础设施",
+        "全栈平台"
+      ],
+      "thread_group_id": "thread-OpenAI-20260624-1310",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2069720412481888400",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 开源 AgentWorld 模型与基准",
+      "summary": "Qwen 开源 Qwen-AgentWorld-35B-A3B 和 AgentWorldBench，模型为 35B 参数、3B 激活的 MoE 架构，并支持 256K 上下文。该项目聚焦语言世界建模，一条路线构建可控、可扩展的环境模拟器，另一条路线让模型在行动前先预测环境变化。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Qwen",
+        "AgentWorld",
+        "开源模型",
+        "世界模型",
+        "Agent基准"
+      ],
+      "practice_suggestions": [
+        "用 AgentWorldBench 跑现有智能体栈的对照评测，重点看终端、搜索和 SWE 场景。",
+        "在长上下文任务中测试 Qwen-AgentWorld-35B-A3B 的 256K 上下文稳定性和推理成本。"
+      ],
+      "thread_group_id": "thread-Alibaba_Qwen-20260624-0952",
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2069720365442719867",
+      "angle": "开源入口"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2069720397747220493",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen 用世界建模提升智能体泛化",
+      "summary": "Qwen 将单轮、非智能体式的环境预测能力直接迁移到多轮工具调用任务中，强调不依赖智能体 RL 或任务特定微调。结果显示模型在 7 个基准上提升，包括 Terminal-Bench 2.0、SWE-Bench、WideSearch，以及 Claw-Eval、QwenClawBench、BFCL v4 等域外任务。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "世界建模",
+        "智能体",
+        "泛化能力",
+        "SWE-Bench",
+        "工具调用"
+      ],
+      "thread_group_id": "thread-Alibaba_Qwen-20260624-0952",
+      "duplicate_of": "https://x.com/Alibaba_Qwen/status/2069720365442719867",
+      "angle": "基准收益"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2069720365442719867",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen-AgentWorld：35B 开源世界模型与智能体基准",
+      "summary": "Qwen 发布 Qwen-AgentWorld-35B-A3B、AgentWorldBench 和配套论文，把「语言世界建模」作为提升智能体能力的核心路线。该 MoE 模型总参数 35B、激活 3B，支持 256K 上下文，可在 MCP、搜索、终端、SWE、Web、OS、Android 七类环境中模拟智能体交互。Qwen 称它在 AgentWorldBench 上超过 Claude Opus 4.8 与 GPT-5.4，并且通过环境预测能力在 Terminal-Bench 2.0、SWE-Bench、WideSearch、BFCL v4 等任务上带来迁移收益。开源材料覆盖论文、博客、GitHub、HuggingFace 和 ModelScope，便于团队复现实验和接入评测。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Qwen-AgentWorld",
+        "世界模型",
+        "AgentWorldBench",
+        "智能体环境",
+        "开源模型",
+        "SWE-Bench",
+        "256K上下文"
+      ],
+      "practice_suggestions": [
+        "优先复现 MCP、Terminal、SWE 三类环境评测，判断是否适合替代真实环境做训练前筛选。",
+        "用 AgentWorldBench 跑现有智能体栈的对照评测，重点观察长上下文和工具调用稳定性。",
+        "把可控模拟环境接入智能体回归测试，记录哪些失败模式能提前暴露。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2069718757338202140",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi API 上架 AWS Marketplace",
+      "summary": "Moonshot 宣布 Kimi API 已上线 AWS Marketplace，企业可通过 AWS 统一账单购买和使用。符合条件的客户还能将 Kimi API 用量计入 AWS EDP 承诺，降低已有 AWS 客户的采购和预算摩擦。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Kimi",
+        "AWS Marketplace",
+        "API",
+        "企业采购"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
