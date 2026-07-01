@@ -5,8 +5,172 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 29 Jun 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 30 Jun 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-06-30</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-30.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-30.md</guid>
+      <pubDate>Tue, 30 Jun 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-30</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>旗舰模型上新</strong>：Claude Sonnet 5 强调代理规划与工具调用，继续推高模型发布门槛。</li>
+<li><strong>科研工作台升温</strong>：Claude Science 与 GeneBench-Pro 同日指向 AI 辅助科研的评测和工作流。</li>
+<li><strong>企业集成加速</strong>：Claude 登陆 Microsoft Foundry，Azure 治理与计费成为采用入口。</li>
+<li><strong>开发流程重塑</strong>：Spotify 案例显示 AI 已进入多数 PR，但验证体系成为关键投入。</li>
+<li><strong>前沿研究开放</strong>：Meta Brain2Qwerty v2 与开源数据推动脑信号解码复现。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://www.anthropic.com/news/claude-sonnet-5">Anthropic 发布 Claude Sonnet 5</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Sonnet 5</code> <code>模型发布</code> <code>智能体</code> <code>Claude Code</code> <code>编码能力</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Claude Sonnet 5，定位为更强的 Sonnet 级代理模型，能规划、使用浏览器和终端等工具，并在推理、工具调用、编码和知识工作上显著优于 Sonnet 4.6。它已面向所有计划开放，并进入 Claude Code 与 Claude Platform；在 BrowseComp、OSWorld-Verified 等代理评测中接近 Opus 4.8，同时价格更低。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在现有 Claude Code 工作流中用 <code>claude-sonnet-5</code> 复测多步骤修复、重构和浏览器工具任务。</li>
+<li>按不同 effort 档位跑一组内部基准，比较 Sonnet 5 与 Opus 4.8 的成本和成功率。</li>
+<li>更新模型路由策略，把中高复杂度代理任务优先分流到 Sonnet 5。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic 恢复 Fable 5 并提出越狱分级框架</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>出口管制</code> <code>AI安全</code> <code>越狱评估</code> <code>政府合作</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 称美国政府已在 6 月 30 日解除对 Fable 5 和 Mythos 5 的出口管制，Fable 5 将于 7 月 1 日面向全球 Claude Platform、Claude.ai、Claude Code 和 Claude Cowork 用户恢复。公司同时说明了针对 Amazon 报告的安全绕过所做的分类器修复，并联合 Amazon、Microsoft、Google 等伙伴推动 AI 越狱严重性评估框架与更深的政府预发布测试合作。</p>
+<hr>
+<h3>3. <a href="https://openai.com/index/introducing-genebench-pro">GeneBench-Pro：OpenAI 测科研判断能力</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>GeneBench-Pro</code> <code>科研推理</code> <code>基因组学</code> <code>评测基准</code> <code>案例集</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 GeneBench-Pro，用 129 个真实风格任务评估模型在基因组学、定量生物学和转化医学中的科研判断力。它不只考察答题正确率，还要求模型选择可支持的问题、调整分析路径，并判断证据是否足以支撑下游决策。配套案例页公开 10 个代表性任务，覆盖肿瘤结构变异、CRISPR 靶点验证、药物靶点优先级、单细胞 eQTL 和古 DNA 选择估计等场景，方便研究者复核基准设计。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://openai.com/index/genebench-pro/case-studies">GeneBench-Pro 公开 10 个代表性案例</a> · OpenAI Blog · 代表案例公开</li>
+</ul>
+<hr>
+<h3>4. <a href="https://www.anthropic.com/news/claude-science-ai-workbench">Anthropic 推出 Claude Science 科研工作台</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Science</code> <code>AI for Science</code> <code>科研工作台</code> <code>可复现性</code> <code>科研代理</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Claude Science beta，把文献分析、多步骤研究、图表与手稿生成、可审计历史和计算资源接入整合到一个科学工作环境。该应用支持 macOS、Linux、远程 SSH 和 HPC 登录节点，并内置 60 多个面向基因组学、单细胞、蛋白组学、结构生物学等领域的技能和连接器。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>选择一个已有分析项目，在 Claude Science 中复现实验流程并检查审计历史是否足够完整。</li>
+<li>为实验室常用数据格式和计算环境整理连接器清单，评估是否适合迁移到该工作台。</li>
+<li>关注最高 3 万美元项目 credits 申请窗口，优先提交生物或生物医学方向试点。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/claudeai/status/2071653958905467027">Claude 正式登陆 Microsoft Foundry</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Microsoft Foundry</code> <code>Azure</code> <code>Messages API</code> <code>企业治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude in Microsoft Foundry 已正式 GA，并由 Anthropic 在 Azure 基础设施上运营。Azure 客户可以通过 Messages API 使用 Claude Opus 4.8 和 Claude Haiku 4.5，并接入 Azure 身份认证、账单、网络治理和承诺消费抵扣。该集成已经支持 prompt caching 与 extended thinking，开发者侧的补充说明强调企业能在既有 Azure 管理边界内采用 Claude。 Claude 补充说明，Microsoft Foundry 中的 Claude 推理由 Anthropic 在 Azure 基础设施上运营。当前已支持 prompt caching 和 extended thinking，后续还会加入更多能力。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2071697437136486585">Claude Opus 4.8 与 Haiku 4.5 登陆 Microsoft Foundry</a> · Claude Devs (Twitter) · 开发者接入细节</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Azure 测试 Claude Messages API 的认证、计费和网络策略。</li>
+<li>评估 prompt caching 与 extended thinking 对现有企业工作流的成本和质量影响。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/AIatMeta/status/2071566924803395741">Brain2Qwerty v2：脑信号实时解码句子</a></h3>
+<ul>
+<li><strong>来源</strong>: Meta AI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Brain2Qwerty</code> <code>脑机接口</code> <code>神经解码</code> <code>开源数据</code> <code>Meta AI</code></li>
+</ul>
+<p><strong>摘要</strong>: Meta AI 发布 Brain2Qwerty v2，把非侵入式脑信号转文本从字符级推进到词语与语义级实时句子解码。团队同时开源 Brain2Qwerty v1/v2 的完整训练代码，并由合作方发布 v1 数据集，降低复现和后续研究门槛。后续澄清说明 v1 已发表在 Nature Neuroscience，使这组更新同时包含新阶段结果、代码数据和正式论文状态。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AIatMeta/status/2071581213677248663">Meta 澄清 Brain2Qwerty v1 已发表</a> · Meta AI (Twitter) · 论文发表状态</li>
+<li><a href="https://x.com/AIatMeta/status/2071566934571954326">Meta 开源 Brain2Qwerty 训练代码与数据</a> · Meta AI (Twitter) · 代码数据开源</li>
+</ul>
+<hr>
+<h3>7. <a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug">OpenAI 用核心转储流行病学定位 18 年旧 bug</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>基础设施</code> <code>可靠性</code> <code>核心转储</code> <code>C++</code> <code>libunwind</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 工程团队复盘了 Rockset 数据基础设施中的罕见崩溃排查：从个案核心转储分析转向全量崩溃模式统计后，发现问题实际来自两个独立原因。一个是 Azure 物理主机的静默硬件错误，另一个是 GNU libunwind 中存在 18 年的竞态条件，说明大规模可靠性问题需要把调试当作群体流行病学来做。</p>
+<hr>
+<h3>8. <a href="https://x.com/ClaudeDevs/status/2071671418245492926">Spotify：73% PR 已有 AI 辅助</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Spotify</code> <code>AI 辅助开发</code> <code>工程组织</code> <code>测试自动化</code> <code>代理验证</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 分享 Spotify 工程副总裁 Niklas Gustavsson 的访谈，称 Spotify 每天约有 4500 次生产部署，且 73% 的 PR 已经有 AI 参与辅助。讨论重点不是简单提速，而是企业如何围绕测试自动化和验证体系重建工程流程。后续访谈材料把完整视频放出，方便团队参考大规模组织监督和引导代理的实践。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2071671423480025201">Spotify 强调代理时代的验证投入</a> · Claude Devs (Twitter) · 验证体系重点</li>
+</ul>
+<hr>
+<h3>9. <a href="https://x.com/xai/status/2071661034683969977">Grok 实时语音接入 Vercel AI Gateway</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>语音API</code> <code>Vercel</code> <code>AI SDK</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 转发 Vercel 消息，宣布 Grok 的实时语音能力已进入 AI Gateway。开发者可通过 AI SDK 7 使用「xai/grok-voice-think-fast-1.0」做实时语音，并使用 Grok TTS 与 STT 完成语音生成和转写。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用 AI SDK 7 建一个最小实时语音 demo，验证延迟、打断和转写质量。</li>
+<li>将 Grok TTS/STT 与现有语音链路做 A/B 测试，记录成本和稳定性差异。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>10. <a href="https://blog.google/innovation-and-ai/technology/ai/full-stack-ai-explainer/">Google 解释全栈 AI 的平台逻辑</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google</code> <code>全栈AI</code> <code>Gemini</code> <code>AI平台</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 的 Richard Seroter 将「full-stack AI」定义为从硬件、模型、编排平台到用户界面的端到端整合。Google 认为这种方式能提升可靠性、降低成本，并通过 AI Studio、Gemini Enterprise Platform 和 Antigravity 为不同复杂度的构建任务提供入口。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>英国</code> <code>AI技能</code> <code>职场生产力</code> <code>Google</code> <code>人才培训</code> — Google UK 与 Public First 的研究称，英国职场 AI 采用率一年内从 34% 升至 73%，但真正进入高阶使用的「AI Trailblazers」仅占 15%。这部分用户更可能获得晋升、加薪和正向绩效反馈，并每周节省近 8 小时；Google 因此推出技能测评并继续推进 AI Works for Britain 培训计划。 · <a href="https://blog.google/company-news/inside-google/around-the-globe/google-europe/united-kingdom/unlocking-britains-next-era-of-productivity-building-a-nation-of-ai-trailblazers/">Google AI Blog</a></li>
+<li><strong>教程与观点</strong> | <code>写作流程</code> <code>Claude</code> <code>工程实践</code> <code>内容打磨</code> — Thariq 描述了当前的写作流程：先做工程实践，再与多人讨论，并用 Claude 做头脑风暴和研究。随后通过发帖、演讲和多轮重写不断压实表达，直到发布。 · <a href="https://x.com/trq212/status/2071787401475960892">Thariq (Twitter)</a></li>
+<li><strong>产品与功能</strong> | <code>OpenAI</code> <code>Codex</code> <code>快捷方式</code> <code>开发工具</code> — OpenAI Devs 预告用户常用的 Codex 快捷方式将在 7 月 15 日迎来升级。帖子未披露具体能力，当前只能判断这是一次面向开发者工作流的小型功能预热。 · <a href="https://x.com/OpenAIDevs/status/2071639953927438440">OpenAI Devs (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>AI 就业</code> <code>欧盟</code> <code>劳动力转型</code> <code>政策规划</code> — OpenAI 将其 AI Jobs Transition Framework 扩展到欧盟，结合 ESCO 职业分类与 Eurostat 就业数据，分析 AI 能力如何转化为近期职业变化。报告估计欧盟约 12% 就业可能随 AI 增长，14% 面临较高近期自动化潜力，27% 更可能发生工作流重组，并强调这些分类是准备地图而非就业预测。 · <a href="https://openai.com/index/mapping-ai-jobs-transition-eu">OpenAI Blog</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-06-29</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-29.html</link>
@@ -2982,100 +3146,6 @@
 <li><strong>商业动态</strong> | <code>OpenAI</code> <code>Realtime API</code> <code>Travelers</code> <code>保险理赔</code> <code>企业部署</code> — Travelers 基于 OpenAI Realtime API 和前沿模型构建自主语音理赔助手，用自然对话引导客户完成车险财产损失的首报案、问题解答和资料收集。该助手先在 8 个州上线，两个月内扩展到全美，使用该 AI 助手的客户中有 85% 到 90% 完成了理赔提交流程。案例显示实时语音模型正在进入高峰需求明显、流程复杂且需要 24/7 支持的企业运营场景。 · <a href="https://openai.com/index/travelers">OpenAI Blog</a></li>
 <li><strong>产品与功能</strong> | <code>Voice Hack Night</code> <code>语音 Agent</code> <code>手机 OS</code> <code>OpenAI Devs</code> <code>原型</code> — OpenAI Devs 公布 Voice Hack Night 决赛项目，其中人气项目展示了语音优先的手机 Agent OS。该原型强调用自然语音完成移动端任务与交互，体现语音模式从演示能力走向应用壳层的趋势。事件影响仍偏社区和原型展示，但对语音代理产品方向有参考价值。 OpenAI Devs 公布 Voice Hack Night 的决赛项目名单，获奖方向包括手机 Agentic OS、Wagner、Surgical Triage 和 Curo。该更新主要是开发者社区活动结果，展示了语音优先和 Agent 应用的原型方向。 · <a href="https://x.com/OpenAIDevs/status/2061558243911155722">OpenAI Devs (Twitter)</a></li>
 <li><strong>教程与观点</strong> | <code>Claude</code> <code>提示词</code> <code>跟进提问</code> <code>工作流</code> <code>Gist</code> — Thariq 转述 Anthropic 员工关于跟进 Claude 输出的提示方法，并提供可直接使用的 Gist。内容强调在得到初稿后继续追问约束、改写和验证，而不是把一次回答当作终稿。它是实用技巧类信息，适合沉淀到团队提示词手册。 这条回复给出了完整提示词的 Gist 链接，延续前一条关于如何理解 Claude 相关工作的分享。它的价值主要在于提供可复用的提示词材料，而不是发布新产品或研究结果。 · <a href="https://x.com/trq212/status/2061545633560010826">Thariq (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-02</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-02.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-02.md</guid>
-      <pubDate>Tue, 02 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-02（fallback，自动回退版）</h1>
-<blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
-</blockquote>
-<hr>
-<h2>OpenAI Blog</h2>
-<ul>
-<li><a href="https://openai.com/index/stargate-michigan-data-center">Building the infrastructure for the Intelligence Age in Michigan</a></li>
-<li><a href="https://openai.com/index/openai-frontier-models-and-codex-are-now-available-on-aws">OpenAI frontier models and Codex are now available on AWS</a></li>
-</ul>
-<h2>Google AI Blog</h2>
-<ul>
-<li><a href="https://blog.google/innovation-and-ai/technology/ai/io-2026-google-ai/">How we used Gemini to build Google I/O 2026</a></li>
-</ul>
-<h2>Anthropic Blog</h2>
-<ul>
-<li><a href="https://www.anthropic.com/news/confidential-draft-s1-sec">Anthropic confidentially submits draft S-1 to the SEC</a></li>
-</ul>
-<h2>Sam Altman (Twitter)</h2>
-<ul>
-<li>[The OpenAI Foundation is doing a lot of wonderful things.</li>
-</ul>
-<p>Helping society become resilient to AI is going to be incredibly important. Much more to come here!](<a href="https://x.com/sama/status/2061562575322492937">https://x.com/sama/status/2061562575322492937</a>)</p>
-<h2>Thariq (Twitter)</h2>
-<ul>
-<li>[been asking others at Anthropic how they stay in the loop with Claude and fully understand the work being done</li>
-</ul>
-<p>this is one of my favorites from Suzanne: <a href="https://t.co/nqIMcGXiKI%5D(https://x.com/trq212/status/2061545633560010826)">https://t.co/nqIMcGXiKI](https://x.com/trq212/status/2061545633560010826)</a></p>
-<ul>
-<li><a href="https://x.com/trq212/status/2061545635141361687">gist for the full prompt here: https://t.co/L0ffBeU1ua</a></li>
-<li><a href="https://x.com/trq212/status/2061585357934878745">Suzanne also mentioned she uses this with voice mode to make it easier to respond and more natural.</a></li>
-</ul>
-<h2>Claude Devs (Twitter)</h2>
-<ul>
-<li>[We&#39;ve reset 5-hour and weekly rate limits for all users on Pro and Max plans.</li>
-</ul>
-<p>We fixed an issue that caused some Claude Code sessions to spawn excessive parallel subagents, burning through usage fast](<a href="https://x.com/ClaudeDevs/status/2061501787769893055">https://x.com/ClaudeDevs/status/2061501787769893055</a>)</p>
-<ul>
-<li><a href="https://x.com/ClaudeDevs/status/2061501790131265803">The issue affected how Opus 4.8 requests were handled, causing the model to trigger more parallel tool calls than intended. It was unrelated to dynamic workflows.</a></li>
-</ul>
-<h2>Anthropic (Twitter)</h2>
-<ul>
-<li>[Anthropic has confidentially submitted a draft S-1 registration statement to the Securities and Exchange Commission.</li>
-</ul>
-<p>Pending completion of SEC review, this gives us the option to pursue an initial pu](<a href="https://x.com/AnthropicAI/status/2061478052257841495">https://x.com/AnthropicAI/status/2061478052257841495</a>)</p>
-<h2>OpenAI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2061564502160892138">OpenAI frontier models and Codex are now generally available on AWS, giving enterprises a new way to build on Amazon Bedrock with OpenAI through the security, compliance, and governance workflows they</a></li>
-</ul>
-<h2>OpenAI Devs (Twitter)</h2>
-<ul>
-<li>[OpenAI models and Codex, now in your AWS workflows.</li>
-</ul>
-<p>Build AI apps and software engineering workflows with OpenAI on Amazon Bedrock, using the AWS environments and controls your team already trusts.](<a href="https://x.com/OpenAIDevs/status/2061564710173224985">https://x.com/OpenAIDevs/status/2061564710173224985</a>)</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2061564723150418307">https://t.co/Ygly5lxRJK</a></li>
-<li>[The votes are in.</li>
-</ul>
-<p>@isausmanov’s Agentic OS for a Phone is the Voice Hack Night People’s Choice winner.</p>
-<p>A voice-first mobile OS. Users talk, agents answer and take action across the phone.</p>
-<p>Congrats ](<a href="https://x.com/OpenAIDevs/status/2061558243911155722">https://x.com/OpenAIDevs/status/2061558243911155722</a>)</p>
-<ul>
-<li>[Congratulations to all the finalists:</li>
-</ul>
-<p>🥇Agentic OS for a Phone – @isausmanov
-🥈Wagner – @iamstevesuarez
-🥉 Surgical Triage – @HandEManAI
-🏅 Curo – @anshchopra_</p>
-<p>Thanks to @cerebral_valley for co-host](<a href="https://x.com/OpenAIDevs/status/2061558256821305700">https://x.com/OpenAIDevs/status/2061558256821305700</a>)</p>
-<h2>xAI (Twitter)</h2>
-<ul>
-<li>[Composer 2.5 is now available inside Grok Build.</li>
-</ul>
-<p>Composer 2.5 is a fast, highly intelligent model that excels on long-running tasks and following complex instructions. <a href="https://t.co/x7k4zVuVdW%5D(https://x.com/xai/status/2061510464325206163)">https://t.co/x7k4zVuVdW](https://x.com/xai/status/2061510464325206163)</a></p>
-<ul>
-<li><a href="https://x.com/xai/status/2061510465617006652">Get started at https://t.co/bpTHpjivWD and try Composer from the /models menu</a></li>
-</ul>
-<h2>Qwen (Twitter)</h2>
-<ul>
-<li>[👏👏 Introducing Qwen3.7-Plus — a multimodal agent model that unifies vision and language into one versatile agent foundation.</li>
-</ul>
-<p>✅ Multimodal interactive hybrid agent: unified GUI &amp; CLI operation acros](<a href="https://x.com/Alibaba_Qwen/status/2061506641120641494">https://x.com/Alibaba_Qwen/status/2061506641120641494</a>)</p>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2061506818917244937">Demo2: Multimodal Interactive Hybrid Agent https://t.co/GYGgYjeoyJ</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2061507009363734690">Demo3：Browser Agent https://t.co/OsvOfyLS6D</a></li>
 </ul>
 ]]></description>
     </item>
