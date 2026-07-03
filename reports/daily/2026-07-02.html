@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-07-01 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-07-01" />
+  <title>CatchUp 日报 2026-07-02 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-07-02" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,128 +306,130 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-07-01</h1>
+          <h1 class="report-title">2026-07-02</h1>
           
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>旗舰安全回归</strong>：Fable 5重新上线，Anthropic把能力释放与网络安全门控绑定。</li>
+<li><strong>编程工具升温</strong>：Z.ai的ZCode和Claude Code反馈机制都在争夺开发者日常入口。</li>
+<li><strong>语音代理落地</strong>：xAI推出Grok Voice无代码平台，开始把语音智能体商品化。</li>
+<li><strong>产品矩阵扩张</strong>：Google汇总Gemini、Gemma和NotebookLM更新，多模态能力继续下沉。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework">Fable 5重新上线：安全防护与访问规则更新</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Fable 5</code> <code>Claude</code> <code>网络安全</code> <code>安全分类器</code> <code>越狱评估</code> <code>Claude Code</code> <code>用量限制</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic在Fable 5重新上线后补充披露网络安全防护：新分类器会把请求分为禁止、高风险双用、低风险双用和良性用途，并以更大的安全边界换取更强拦截能力。Claude官方同步说明，付费套餐可在7月7日前使用Fable 5，部分被标记请求会回退到Opus 4.8，Claude Code误拦截可通过「/feedback」提交。开发者侧还重置了5小时与周度速率限制，方便重新评测。文章提出「Cyber Jailbreak Severity」草案，用能力增益、通用性、武器化难度和可发现性来评估越狱严重度。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2072402636813607381">Fable 5重新上线</a> · Claude (Twitter) · 重新上线主公告</li>
+<li><a href="https://x.com/ClaudeDevs/status/2072429181565288665">Fable 5恢复后重置用量限制</a> · Claude Devs (Twitter) · 开发者额度重置</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>重新跑核心编码、长文档和安全边界测试，区分Fable 5新版本与旧记录。</li>
+<li>把误拦截样例通过Claude Code的「/feedback」提交，并保留可复现上下文。</li>
+<li>在7月7日前集中验证付费套餐额度、回退到Opus 4.8后的质量和吞吐。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">OpenAI Blog</h2>
+<h3 id="h-4">2. <a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/">Google汇总6月AI产品更新</a></h3>
 <ul>
-<li><a href="https://openai.com/index/how-chatgpt-adoption-has-expanded">How ChatGPT adoption has expanded</a></li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Google AI</code> <code>Gemini</code> <code>Gemma</code> <code>NotebookLM</code> <code>多模态</code></li>
 </ul>
-<h2 id="h-2">Thariq (Twitter)</h2>
+<p><strong>摘要</strong>: Google回顾6月AI进展，涵盖Gemma 4 12B本地模型、Gemini 3.5 Flash计算机使用、Nano Banana 2 Lite、Gemini Omni Flash、Gemini 3.5 Live Translate、NotebookLM升级和Gemini教育工具等。整体方向是把多模态、代理式自动化、端侧模型和教育科研能力嵌入Google产品线。对开发者而言，值得关注的是本地开放模型、API中的多模态视频工作流和更强的研究型工具。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/trq212/status/2072202267563082180">making some last minute changes to my deck- see you tomorrow at AIE! https://t.co/rhxcTGRnTh</a></li>
-<li>[Have seen some questions about the updated classifiers and wanted to clarify.</li>
+<li>挑选Gemma 4 12B、Gemini Live Translate和NotebookLM升级中与现有产品最相关的能力做小规模验证。</li>
+<li>对需要浏览器或桌面自动化的流程，评估Gemini 3.5 Flash计算机使用能力是否能替代脚本化方案。</li>
+<li>把Google的端侧、本地和云端模型更新拆成独立技术路线，避免只按品牌整体评估。</li>
 </ul>
-<p>As with the original classifiers, a small fraction of routine coding and debugging tasks will be flagged and fall back to](<a href="https://x.com/trq212/status/2072185565076988326">https://x.com/trq212/status/2072185565076988326</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/xai/status/2072342803787702422">xAI推出Grok无代码语音智能体平台</a></h3>
 <ul>
-<li><a href="https://x.com/trq212/status/2072185566695977161">And as we say in our blog, we&#39;re continuing to refine these safeguards to better distinguish genuine misuse from legitimate requests and reduce false positives.</a></li>
-<li><a href="https://x.com/trq212/status/2072130464979325106">excited to get Fable back in your hands!</a></li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Voice Agent Builder</code> <code>Grok Voice</code> <code>语音智能体</code> <code>无代码</code> <code>低延迟</code> <code>定价</code></li>
 </ul>
-<h2 id="h-3">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: xAI发布Voice Agent Builder，一个基于Grok Voice创建拟人语音智能体的无代码平台，已开放beta，定价为每分钟0.05美元。其卖点是把语音识别、语言模型和语音合成收进更紧耦合的一体化链路，以降低传统三段式语音栈的成本、延迟和故障点。每个账户提供免费电话号码用于快速试点，适合先在客服、预约或线索收集等低风险场景验证。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Introducing Claude Sonnet 5, our most agentic Sonnet yet.</li>
+<li><a href="https://x.com/xai/status/2072342807193550900">xAI强调Grok语音一体化架构</a> · xAI (Twitter) · 一体化语音架构</li>
 </ul>
-<p>It makes plans, uses tools like browsers and terminals, and runs autonomously at a level that just a few months ago required larger and more ](<a href="https://x.com/claudeai/status/2072017450611142835">https://x.com/claudeai/status/2072017450611142835</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2072017455833100494">Early access partners found Sonnet 5 finishes complex tasks where previous Sonnets stopped short, checks its own output without being asked, and does all its agentic work at an attractive price point.</a></li>
-<li>[Sonnet 5 is now the default on Free and Pro, and available to Max, Team, and Enterprise users.</li>
+<li>用同一客服脚本对比现有STT-LLM-TTS组合与Grok Voice的延迟、成本和失败率。</li>
+<li>先用免费号码搭建最小可用试点，覆盖噪声、口音、打断和敏感信息处理。</li>
+<li>评估一体化语音模型对可替换性和合规审计的影响，再接入真实客户流量。</li>
 </ul>
-<p>It&#39;s live across all Claude apps and the Claude Platform today, with introductory pricing through August](<a href="https://x.com/claudeai/status/2072017457057853480">https://x.com/claudeai/status/2072017457057853480</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/trq212/status/2072366310416425053">Notion新增可交互HTML块</a></h3>
 <ul>
-<li>[Introducing Claude Science, a new app designed with every stage of research in mind.</li>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Notion</code> <code>HTML</code> <code>交互原型</code> <code>AI协作</code></li>
 </ul>
-<p>Artifacts traced to their code, environments managed on demand, and 60+ optional scientific databases that you ca](<a href="https://x.com/claudeai/status/2072002740830842899">https://x.com/claudeai/status/2072002740830842899</a>)</p>
+<p><strong>摘要</strong>: 该推文转述Notion发布的新HTML块：用户可以在Notion页面中直接构建交互式HTML。Notion AI可把内容转换为交互式讲解、原型或图表，并支持团队共享和共同修改。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2072002742051287124">Learn more: https://t.co/F72VnQ2vhA</a></li>
-<li><a href="https://x.com/claudeai/status/2072011953309167788">More on Claude Science: https://t.co/65weJA2wRv</a></li>
+<li>用Notion HTML块把静态规格文档改造成可点击原型或交互式流程图。</li>
+<li>测试团队共享后的编辑权限和安全边界，再决定是否承载内部工具。</li>
 </ul>
-<h2 id="h-4">Claude Devs (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/Zai_org/status/2072349453361557898">Z.ai发布GLM-5.2官方开发环境ZCode</a></h3>
 <ul>
-<li>[We’ve added a few updates to Claude Managed Agents:</li>
+<li><strong>来源</strong>: Z.ai (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ZCode</code> <code>GLM-5.2</code> <code>编程工具</code> <code>BYOK</code> <code>多平台</code> <code>变更日志</code></li>
 </ul>
-<p>Streaming session event deltas, per-session agent overrides, new webhook event types, reverse pagination, and credential injection scoping. https:/](<a href="https://x.com/ClaudeDevs/status/2072058428424589412">https://x.com/ClaudeDevs/status/2072058428424589412</a>)</p>
+<p><strong>摘要</strong>: Z.ai推出ZCode，定位为GLM-5.2的官方开发环境，覆盖macOS、Windows和Linux。GLM Coding Plan订阅者在ZCode中可获得1.5倍用量配额，同时支持BYOK接入既有订阅和API。发布线程还引导用户关注独立更新账号并查看changelog，说明该工具会作为持续迭代的编程工作台推进。 Z.ai 在 ZCode 发布线程中补充了后续更新渠道，提示用户关注 @zcode_ai 并查看完整 changelog。该条本身主要是导流和版本记录入口，信息增量低于主发布推文。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2072058431712948563">To learn more about these features, you can ask Claude Code using our built-in &quot;claude-api&quot; skill and check out our cookbook:
-https://t.co/voEubobshh</a></li>
-<li>[Finally, we&#39;ve added a new Managed Agents Observability tab in Console.</li>
+<li>用一个小型代码库试用ZCode，比较GLM-5.2在补全、修改和长上下文任务中的表现。</li>
+<li>验证BYOK接入、用量统计和配额放大是否符合团队成本管理要求。</li>
+<li>把ZCode changelog加入开发工具监控，及时筛选影响工作流的更新。</li>
 </ul>
-<p>This provides session-level metrics such as input/output token use and tool usage. <a href="https://t.co/0X0DTJ2jxH%5D(https://x.com/ClaudeDevs/status/2072058433097122145)">https://t.co/0X0DTJ2jxH](https://x.com/ClaudeDevs/status/2072058433097122145)</a></p>
+</blockquote>
+<hr>
+<h2 id="h-8">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[Claude Sonnet 5 is here.</li>
-</ul>
-<p>Top-tier performance on coding and tool use at Sonnet pricing, with a 1M context window.</p>
-<p>It&#39;s the new default in Claude Code for Pro users, and available everywhere on the C](<a href="https://x.com/ClaudeDevs/status/2072018504392601762">https://x.com/ClaudeDevs/status/2072018504392601762</a>)</p>
-<ul>
-<li>[Sonnet 5 is a clear upgrade  from 4.6, and the claude-api skill makes the migration even easier. This skill tunes prompts for Sonnet 5, recommends effort levels, and configures advisor mode.</li>
-</ul>
-<p>https://](<a href="https://x.com/ClaudeDevs/status/2072018517898272844">https://x.com/ClaudeDevs/status/2072018517898272844</a>)</p>
-<ul>
-<li>[Read more in the docs and prompting guide:</li>
-</ul>
-<p><a href="https://t.co/PDTizQ3Q13%5D(https://x.com/ClaudeDevs/status/2072020171125100551)">https://t.co/PDTizQ3Q13](https://x.com/ClaudeDevs/status/2072020171125100551)</a></p>
-<ul>
-<li>[Computer Use isn’t included in this release, more coming soon.</li>
-</ul>
-<p>Read more in the docs:
-<a href="https://t.co/UNHC457gq3%5D(https://x.com/ClaudeDevs/status/2071988883802444125)">https://t.co/UNHC457gq3](https://x.com/ClaudeDevs/status/2071988883802444125)</a></p>
-<ul>
-<li>[Claude Desktop is now available on Linux (Ubuntu and Debian) in beta.</li>
-</ul>
-<p>Alongside the browser and terminal, you now get a first-class desktop experience with Claude Code, Claude Cowork, and chat on all](<a href="https://x.com/ClaudeDevs/status/2071988881717871065">https://x.com/ClaudeDevs/status/2071988881717871065</a>)</p>
-<h2 id="h-5">Anthropic (Twitter)</h2>
-<ul>
-<li>[Claude Fable 5 will be available again globally tomorrow.</li>
-</ul>
-<p>After a series of productive conversations with the US government, we&#39;re redeploying the model with a new set of classifiers to target and bl](<a href="https://x.com/AnthropicAI/status/2072163884430229756">https://x.com/AnthropicAI/status/2072163884430229756</a>)</p>
-<ul>
-<li>[We’ve received notice that the Department of Commerce has lifted export controls on Claude Fable 5 and Mythos 5.</li>
-</ul>
-<p>We&#39;ll begin restoring access tomorrow, and will share an update soon.</p>
-<p>We’re grateful ](<a href="https://x.com/AnthropicAI/status/2072106151890809341">https://x.com/AnthropicAI/status/2072106151890809341</a>)</p>
-<h2 id="h-6">OpenAI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2072004836674167294">We’re introducing GeneBench-Pro, a research-level benchmark for a harder kind of AI progress: how well agents can navigate messy biological data, choose the right analysis path, and make judgment call</a></li>
-</ul>
-<h2 id="h-7">OpenAI Devs (Twitter)</h2>
-<ul>
-<li>[As agents take on longer-running work, engineering shifts to setting direction, reviewing work, and designing better systems around the models.</li>
-</ul>
-<p>@steipete at @aiDotEngineer <a href="https://t.co/lP4mbQrAJP%5D(https://x.com/OpenAIDevs/status/2072036305442406772)">https://t.co/lP4mbQrAJP](https://x.com/OpenAIDevs/status/2072036305442406772)</a></p>
-<ul>
-<li>[⚙️ We debugged a year’s worth of crashes in our data infrastructure and found one issue in the hardware and another that has been unnoticed in open-source code for 18 years.</li>
-</ul>
-<p>Here’s how we tracked the](<a href="https://x.com/OpenAIDevs/status/2071995642436800916">https://x.com/OpenAIDevs/status/2071995642436800916</a>)</p>
-<h2 id="h-8">Google DeepMind (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2071988044878516466">We’re shipping 2 major releases: 
-🔘 Nano Banana 2 Lite: our fastest and cheapest Gemini Image model
-🔘 Gemini Omni Flash: now available via the Gemini API and in @GoogleAIStudio to help developers ge</a></li>
-<li>[Pair these models together using the Interactions API. 🤝</li>
-</ul>
-<p>Quickly generate an image with Nano Banana 2 Lite, then immediately animate it using Gemini Omni Flash. </p>
-<p>Plus, you can maintain session hist](<a href="https://x.com/GoogleDeepMind/status/2071988052478615902">https://x.com/GoogleDeepMind/status/2071988052478615902</a>)</p>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2071988054814773713">Find out more → https://t.co/feTpTwfnmC https://t.co/C527I57Xy3</a></li>
+<li><strong>政策与安全</strong> | <code>AI教育</code> <code>课堂应用</code> <code>隐私</code> <code>公平访问</code> — Google 与 New York Jobs CEO Council、Urban Assembly 举办 AI 教育峰会，邀请约 150 名教育和行业代表讨论课堂中的 AI 素养。活动通过「Vibe Coding」、Google「Meet LEA」、AI mode 和 NotebookLM 等实践环节，强调隐私、公平访问以及适应力、协作和判断力等人类技能。 · <a href="https://blog.google/products-and-platforms/products/education/nyc-ai-summit/">Google AI Blog</a></li>
 </ul>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-2">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-3">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-4">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Anthropic (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">Google DeepMind (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Fable 5重新上线：安全防护与访问规则更新</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Google汇总6月AI产品更新</a></li>
+      <li class="toc-h3"><a href="#h-5">3. xAI推出Grok无代码语音智能体平台</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Notion新增可交互HTML块</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Z.ai发布GLM-5.2官方开发环境ZCode</a></li>
+      <li class="toc-h2"><a href="#h-8">速览</a></li>
     </ul>
   </aside>
     </div>
@@ -435,7 +437,7 @@ https://t.co/voEubobshh</a></li>
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-06-30.html">2026-06-30</a>
+        <a href="../daily/2026-07-01.html">2026-07-01</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -443,12 +445,12 @@ https://t.co/voEubobshh</a></li>
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-07-02.html">2026-07-02</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-01.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-02.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
