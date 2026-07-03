@@ -1,0 +1,349 @@
+{
+  "analyzed_at": "2026-07-03T12:37:37.355Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-02.json",
+  "trend_paragraph": "- **旗舰安全回归**：Fable 5重新上线，Anthropic把能力释放与网络安全门控绑定。\n- **编程工具升温**：Z.ai的ZCode和Claude Code反馈机制都在争夺开发者日常入口。\n- **语音代理落地**：xAI推出Grok Voice无代码平台，开始把语音智能体商品化。\n- **产品矩阵扩张**：Google汇总Gemini、Gemma和NotebookLM更新，多模态能力继续下沉。",
+  "articles": [
+    {
+      "url": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "source": "Anthropic Blog",
+      "title": "Fable 5重新上线：安全防护与访问规则更新",
+      "summary": "Anthropic在Fable 5重新上线后补充披露网络安全防护：新分类器会把请求分为禁止、高风险双用、低风险双用和良性用途，并以更大的安全边界换取更强拦截能力。Claude官方同步说明，付费套餐可在7月7日前使用Fable 5，部分被标记请求会回退到Opus 4.8，Claude Code误拦截可通过「/feedback」提交。开发者侧还重置了5小时与周度速率限制，方便重新评测。文章提出「Cyber Jailbreak Severity」草案，用能力增益、通用性、武器化难度和可发现性来评估越狱严重度。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Fable 5",
+        "Claude",
+        "网络安全",
+        "安全分类器",
+        "越狱评估",
+        "Claude Code",
+        "用量限制"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "practice_suggestions": [
+        "重新跑核心编码、长文档和安全边界测试，区分Fable 5新版本与旧记录。",
+        "把误拦截样例通过Claude Code的「/feedback」提交，并保留可复现上下文。",
+        "在7月7日前集中验证付费套餐额度、回退到Opus 4.8后的质量和吞吐。"
+      ]
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2072429181565288665",
+      "source": "Claude Devs (Twitter)",
+      "title": "Fable 5恢复后重置用量限制",
+      "summary": "Claude Devs表示，随着Fable 5重新可用于构建，所有用户的5小时与每周速率限制已被重置。这是一次围绕重新上线的配额恢复通知，对正在测试Fable 5的开发者有直接影响。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Fable 5",
+        "Claude",
+        "速率限制",
+        "开发者"
+      ],
+      "practice_suggestions": [
+        "重新安排Fable 5评测任务，利用重置后的5小时与周度额度补跑长任务。",
+        "记录重置后的实际吞吐和失败率，评估是否适合接入团队工作流。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "angle": "开发者额度重置"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072402642836615273",
+      "source": "Claude (Twitter)",
+      "title": "Claude Fable 5与Mythos 5发布",
+      "summary": "Claude官方引导用户阅读Fable 5博客，链接内容介绍Claude Fable 5作为面向通用用户的Mythos级模型重新上线，并强调其在软件工程、知识工作、视觉和科研任务上的领先表现。由于模型具备更强的网络安全等双用能力，Anthropic通过安全分类器将部分敏感请求回退到Opus 4.8。该发布属于旗舰级模型事件，核心看点是能力提升与保守安全门控的组合。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Claude Fable 5",
+        "Claude Mythos 5",
+        "模型发布",
+        "安全门控"
+      ],
+      "practice_suggestions": [
+        "用现有编码、长文档和视觉任务基准对比Fable 5与当前主力模型。",
+        "把安全回退场景纳入测试集，确认关键工作流在回退到Opus 4.8时仍可接受。",
+        "优先在高价值长任务中试用Fable 5，观察其长上下文和自主执行收益。"
+      ],
+      "thread_group_id": "thread-claudeai-20260701-1931",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072402640907162072",
+      "source": "Claude (Twitter)",
+      "title": "Claude误拦截可提交反馈",
+      "summary": "Claude官方说明，如果Claude Code中的请求被误判拦截，用户可运行「/feedback」提交报告；在Claude.ai和Cowork中则可通过赞踩按钮反馈。该反馈会用于继续调优分类器、降低误报率，尤其关系到Fable 5新安全机制的实际体验。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "误报反馈",
+        "分类器",
+        "Fable 5"
+      ],
+      "practice_suggestions": [
+        "在Claude Code遇到误拦截时立即提交「/feedback」，附上可复现的任务上下文。",
+        "为团队收集误报案例，区分安全策略问题和提示词设计问题。"
+      ],
+      "thread_group_id": "thread-claudeai-20260701-1931",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072402639644766602",
+      "source": "Claude (Twitter)",
+      "title": "Fable 5限时开放给付费套餐",
+      "summary": "Claude官方称，含用量的所有付费套餐可在7月7日前访问Fable 5。用户最多可将Fable 5用到每周用量上限的50%，之后可切换其他模型，或继续通过用量点数使用Fable。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Fable 5",
+        "付费套餐",
+        "用量限制",
+        "Claude"
+      ],
+      "practice_suggestions": [
+        "在7月7日前集中完成Fable 5试用和基准测试。",
+        "为高成本任务设置模型切换策略，避免Fable 5额度耗尽后阻塞工作。"
+      ],
+      "thread_group_id": "thread-claudeai-20260701-1931",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072402636813607381",
+      "source": "Claude (Twitter)",
+      "title": "Fable 5重新上线",
+      "summary": "Claude官方以简短推文宣布Fable 5回归，承接此前暂停访问后的重新部署。虽然原推文本身信息量有限，但在同一线程中与Fable 5访问、安全防护和反馈机制共同构成重要发布信号。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Fable 5",
+        "Claude",
+        "重新上线",
+        "模型访问"
+      ],
+      "practice_suggestions": [
+        "恢复此前暂停的Fable 5评测计划，重点验证被暂停前的问题是否已改善。",
+        "将重新上线后的结果与旧版Fable 5记录分开，避免混淆模型行为变化。"
+      ],
+      "thread_group_id": "thread-claudeai-20260701-1931",
+      "duplicate_of": "https://www.anthropic.com/news/fable-safeguards-jailbreak-framework",
+      "angle": "重新上线主公告"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072402638247968855",
+      "source": "Claude (Twitter)",
+      "title": "Fable 5更新网络安全防护",
+      "summary": "Claude官方表示，在与美国政府沟通后更新了Fable 5的网络安全防护。多数编码工作不受影响，但短期内新防护会比旧版更容易误拦截无害请求，被标记时用户会收到Opus 4.8的替代回答；生物和化学分类器暂未改变，后续会继续改进。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "Fable 5",
+        "网络安全",
+        "美国政府",
+        "Opus 4.8"
+      ],
+      "thread_group_id": "thread-claudeai-20260701-1931",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/",
+      "source": "Google AI Blog",
+      "title": "Google汇总6月AI产品更新",
+      "summary": "Google回顾6月AI进展，涵盖Gemma 4 12B本地模型、Gemini 3.5 Flash计算机使用、Nano Banana 2 Lite、Gemini Omni Flash、Gemini 3.5 Live Translate、NotebookLM升级和Gemini教育工具等。整体方向是把多模态、代理式自动化、端侧模型和教育科研能力嵌入Google产品线。对开发者而言，值得关注的是本地开放模型、API中的多模态视频工作流和更强的研究型工具。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Google AI",
+        "Gemini",
+        "Gemma",
+        "NotebookLM",
+        "多模态"
+      ],
+      "practice_suggestions": [
+        "挑选Gemma 4 12B、Gemini Live Translate和NotebookLM升级中与现有产品最相关的能力做小规模验证。",
+        "对需要浏览器或桌面自动化的流程，评估Gemini 3.5 Flash计算机使用能力是否能替代脚本化方案。",
+        "把Google的端侧、本地和云端模型更新拆成独立技术路线，避免只按品牌整体评估。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2072366310416425053",
+      "source": "Thariq (Twitter)",
+      "title": "Notion新增可交互HTML块",
+      "summary": "该推文转述Notion发布的新HTML块：用户可以在Notion页面中直接构建交互式HTML。Notion AI可把内容转换为交互式讲解、原型或图表，并支持团队共享和共同修改。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Notion",
+        "HTML",
+        "交互原型",
+        "AI协作"
+      ],
+      "practice_suggestions": [
+        "用Notion HTML块把静态规格文档改造成可点击原型或交互式流程图。",
+        "测试团队共享后的编辑权限和安全边界，再决定是否承载内部工具。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2072360902964511171",
+      "source": "Thariq (Twitter)",
+      "title": "AI工程师活动简短问候",
+      "summary": "该推文仅写道「hello from AI engineer」并附链接，缺少可判断的技术、产品或研究信息。作为新闻信号较弱，更适合作为社交动态而非独立报道素材。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "AI工程师",
+        "社交动态",
+        "低信号"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-july",
+      "source": "Berkeley RDI",
+      "title": "Berkeley RDI关注GPT-5.5-Cyber",
+      "summary": "Berkeley RDI 本周简报重点提到 OpenAI 新近发布的 GPT-5.5-Cyber，以及其在 CyberGym 上的进展。该信息指向网络安全智能体和攻防评测能力的持续推进，但当前记录正文较短，尚不足以判断完整技术细节。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "网络安全",
+        "GPT-5.5-Cyber",
+        "CyberGym",
+        "智能体评测"
+      ],
+      "practice_suggestions": [
+        "跟进 GPT-5.5-Cyber 的正式技术说明，重点记录其在 CyberGym 上的任务类型和评分方式。",
+        "将网络安全代理评测纳入内部模型选型清单，避免只看通用编码或推理榜单。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/education/nyc-ai-summit/",
+      "source": "Google AI Blog",
+      "title": "Google纽约AI教育峰会",
+      "summary": "Google 与 New York Jobs CEO Council、Urban Assembly 举办 AI 教育峰会，邀请约 150 名教育和行业代表讨论课堂中的 AI 素养。活动通过「Vibe Coding」、Google「Meet LEA」、AI mode 和 NotebookLM 等实践环节，强调隐私、公平访问以及适应力、协作和判断力等人类技能。",
+      "category": "政策与安全",
+      "importance": 2,
+      "tags": [
+        "AI教育",
+        "课堂应用",
+        "隐私",
+        "公平访问"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Zai_org/status/2072349457866265054",
+      "source": "Z.ai (Twitter)",
+      "title": "ZCode更新渠道与变更日志",
+      "summary": "Z.ai 在 ZCode 发布线程中补充了后续更新渠道，提示用户关注 @zcode_ai 并查看完整 changelog。该条本身主要是导流和版本记录入口，信息增量低于主发布推文。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "ZCode",
+        "变更日志",
+        "开发工具",
+        "GLM-5.2"
+      ],
+      "practice_suggestions": [
+        "将 ZCode changelog 加入团队工具更新监控，筛选影响配额、BYOK 和平台支持的变更。"
+      ],
+      "thread_group_id": "thread-Zai_org-20260701-1559",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Zai_org/status/2072349453361557898",
+      "source": "Z.ai (Twitter)",
+      "title": "Z.ai发布GLM-5.2官方开发环境ZCode",
+      "summary": "Z.ai推出ZCode，定位为GLM-5.2的官方开发环境，覆盖macOS、Windows和Linux。GLM Coding Plan订阅者在ZCode中可获得1.5倍用量配额，同时支持BYOK接入既有订阅和API。发布线程还引导用户关注独立更新账号并查看changelog，说明该工具会作为持续迭代的编程工作台推进。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "ZCode",
+        "GLM-5.2",
+        "编程工具",
+        "BYOK",
+        "多平台",
+        "变更日志"
+      ],
+      "practice_suggestions": [
+        "用一个小型代码库试用ZCode，比较GLM-5.2在补全、修改和长上下文任务中的表现。",
+        "验证BYOK接入、用量统计和配额放大是否符合团队成本管理要求。",
+        "把ZCode changelog加入开发工具监控，及时筛选影响工作流的更新。"
+      ],
+      "thread_group_id": "thread-Zai_org-20260701-1559",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2072342807193550900",
+      "source": "xAI (Twitter)",
+      "title": "xAI强调Grok语音一体化架构",
+      "summary": "xAI 解释传统语音栈通常由语音识别、语言模型和语音合成三段 API 拼接而成，每一跳都会增加成本、延迟和故障点。Voice Agent Builder 则以单一界面围绕 Grok Voice 构建，试图通过更紧耦合的模型链路降低复杂度。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Grok Voice",
+        "语音智能体",
+        "低延迟",
+        "语音栈"
+      ],
+      "practice_suggestions": [
+        "用同一语音客服场景对比现有 STT-LLM-TTS 组合与 Grok Voice 的延迟、成本和失败率。",
+        "评估一体化语音模型是否会减少可替换性，尤其是 ASR、LLM、TTS 各环节的调优空间。"
+      ],
+      "thread_group_id": "thread-xai-20260701-1533",
+      "duplicate_of": "https://x.com/xai/status/2072342803787702422",
+      "angle": "一体化语音架构"
+    },
+    {
+      "url": "https://x.com/xai/status/2072342809034789088",
+      "source": "xAI (Twitter)",
+      "title": "xAI语音智能体进入Beta",
+      "summary": "xAI 表示 Voice Agent Builder 已以 beta 形式开放，每个账户都包含一个免费电话号码用于快速开始。该条提供了控制台入口和产品说明入口，补全了发布线程中的可用性信息。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Voice Agent Builder",
+        "Beta",
+        "电话号码",
+        "Grok Voice"
+      ],
+      "practice_suggestions": [
+        "使用免费号码搭建一个最小可用语音代理，测试转接、打断和长轮对话表现。",
+        "在试点前检查号码归属、通话记录和隐私合规要求，避免直接接入真实客户流量。"
+      ],
+      "thread_group_id": "thread-xai-20260701-1533",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2072342803787702422",
+      "source": "xAI (Twitter)",
+      "title": "xAI推出Grok无代码语音智能体平台",
+      "summary": "xAI发布Voice Agent Builder，一个基于Grok Voice创建拟人语音智能体的无代码平台，已开放beta，定价为每分钟0.05美元。其卖点是把语音识别、语言模型和语音合成收进更紧耦合的一体化链路，以降低传统三段式语音栈的成本、延迟和故障点。每个账户提供免费电话号码用于快速试点，适合先在客服、预约或线索收集等低风险场景验证。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Voice Agent Builder",
+        "Grok Voice",
+        "语音智能体",
+        "无代码",
+        "低延迟",
+        "定价"
+      ],
+      "practice_suggestions": [
+        "用同一客服脚本对比现有STT-LLM-TTS组合与Grok Voice的延迟、成本和失败率。",
+        "先用免费号码搭建最小可用试点，覆盖噪声、口音、打断和敏感信息处理。",
+        "评估一体化语音模型对可替换性和合规审计的影响，再接入真实客户流量。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
