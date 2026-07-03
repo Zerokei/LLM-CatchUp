@@ -12,14 +12,14 @@ Read `config.yaml` for `categories` and `output_path`.
 
 ### Step 2: Determine the target week (ISO-aligned)
 
-The trigger runs Monday morning Asia/Shanghai. The target is **the ISO week that just ended** — never the in-progress week.
+The trigger runs Tuesday shortly after midnight Asia/Shanghai, after the previous week's daily reports have had time to finish. The target is **the ISO week that just ended** — never the in-progress week.
 
 Compute as follows (all timestamps Asia/Shanghai):
 
 1. Let `now` = current time. Let `today` = `now`'s date.
-2. Let `last_monday` = the most recent **Monday** strictly before `today` (not `today` itself even if today is Monday). Equivalently: `today - ((today.weekday + 6) % 7 + 1)` days where Monday=0; or simply "today minus 7 days" when today is a Monday.
-3. `target_week_start` = `last_monday` at 00:00:00 Asia/Shanghai.
-4. `target_week_end` = `target_week_start + 7 days` (exclusive).
+2. Let `current_week_start` = the Monday 00:00:00 Asia/Shanghai at the start of the ISO week containing `today`. If today is Monday, this is today at 00:00:00; if today is Tuesday, this is yesterday at 00:00:00.
+3. `target_week_start` = `current_week_start - 7 days`.
+4. `target_week_end` = `current_week_start` (exclusive).
 5. `target_label` = `{YYYY}-W{NN}` from the ISO calendar of `target_week_start` (since it's a Monday, the ISO week is unambiguous).
 6. `target_range` = `{MM}/{DD} - {MM}/{DD}` from `target_week_start` to `target_week_start + 6 days` (inclusive Sunday).
 
@@ -34,7 +34,19 @@ Compute as follows (all timestamps Asia/Shanghai):
 
 If the computed range does NOT have the form `Mon/DD - Sun/DD` (7 consecutive days, Monday-Sunday), abort and re-derive — the report MUST NOT use a half-week or off-by-one range.
 
-### Step 3: Load history into the target window
+### Step 3: Verify daily reports are complete
+
+Before reading history or writing any weekly output, verify that all seven daily editorial reports exist for the target week:
+
+```text
+reports/daily/{YYYY-MM-DD}.md
+```
+
+Check every calendar date from `target_week_start` through `target_week_start + 6 days`, inclusive, using Asia/Shanghai dates. If any file is missing, abort cleanly with a message listing the missing date(s), and do NOT write `reports/weekly/{target_label}.md`, `reports/weekly/{target_label}.ops.md`, HTML files, or `feed.xml`.
+
+This gate ensures weekly aggregation only runs after the previous week's daily reporter/fallback path has populated the daily reports and `data/history.json`.
+
+### Step 4: Load history into the target window
 
 Read `data/history.json`. Filter to articles whose `published_at` falls in `[target_week_start, target_week_end)` (Asia/Shanghai). Use `fetched_at` only as a fallback for entries with missing or invalid `published_at`.
 
@@ -42,7 +54,7 @@ This is intentional: weekly reports are editorial period summaries, so an articl
 
 Use this filtered list for everything below — do NOT use a vague "past 7 days from now" filter, which will leak in or out the ISO week boundary.
 
-### Step 4: Write the editorial report
+### Step 5: Write the editorial report
 
 Path: `{output_path}/weekly/{target_label}.md`
 
@@ -67,7 +79,7 @@ Structure (in this order):
 
 All text in Chinese.
 
-### Step 5: Write the ops sidecar
+### Step 6: Write the ops sidecar
 
 Path: `{output_path}/weekly/{target_label}.ops.md`
 
@@ -85,7 +97,7 @@ Structure:
 
 The 趋势 column compares to the previous week's count. The previous-week label is `{YYYY}-W{NN-1}` derived from `target_week_start - 7 days` (handle year rollover via the ISO calendar). If `reports/weekly/{prev_label}.ops.md` exists, parse its 本周概览 table for prior counts and compute deltas (`↑` if up, `↓` if down, `→` if equal). If not available (first weekly run, missing prior sidecar), mark every cell as `—` and add a one-line note under the table: `> 注：上周（{prev_label}）报告缺失，无法计算环比。`
 
-### Step 6: Build subscriber-facing artifacts
+### Step 7: Build subscriber-facing artifacts
 
 The homepage reads `feed.xml`, and report links point to rendered sibling HTML files. Generate both before committing:
 
@@ -96,7 +108,7 @@ node scripts/build-rss.js
 
 Verify that `reports/weekly/{target_label}.html` exists and that `feed.xml` contains `reports/weekly/{target_label}.html`. Abort without committing if either check fails.
 
-### Step 7: Commit and push
+### Step 8: Commit and push
 
 ```bash
 git add reports/weekly/{target_label}.md \
