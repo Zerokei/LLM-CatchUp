@@ -5,8 +5,106 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 02 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 03 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-07-03</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-03.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-03.md</guid>
+      <pubDate>Fri, 03 Jul 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-03</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>Claude 平台提额</strong>：Claude API 对 Sonnet 与 Haiku 提供最高 5 倍速率，容量规划需要重做。</li>
+<li><strong>Claude Code 扩展</strong>：Artifacts 下放到 Pro 和 Max，开发者可把会话输出发布为私有交互页面。</li>
+<li><strong>Fable 可用性调整</strong>：Fable 5 进入 Claude Tag，但订阅套餐仍受容量约束需要准备替代路径。</li>
+<li><strong>开发沙箱集成</strong>：xAI 的 Grok Build 进入 Railway sandboxes，云端试用门槛继续降低。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/ClaudeDevs/status/2072770790114914317">Claude Code Artifacts 扩至 Pro/Max</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Artifacts</code> <code>Pro</code> <code>Max</code> <code>交互页面</code> <code>官方文档</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code 的 Artifacts 功能现在也面向 Pro 和 Max 计划开放。用户可以让 Claude 从会话中生成交互式页面并发布到 claude.ai，页面对账号私有、可自包含，并会随 Claude 持续工作实时更新。官方文档提供进一步使用说明，适合把 PR walkthrough、项目仪表盘和临时交互原型从静态文本升级为可运行页面。 Claude Devs 在 Artifacts 扩展到 Pro 和 Max 的线程中提供了官方文档链接。该条本身没有新增功能细节，但可作为开发者理解 Artifacts 使用方式和限制的入口。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用 Artifacts 试做 PR walkthrough、项目仪表盘或临时交互原型。</li>
+<li>评估私有链接的团队协作边界，避免放入不应外传的敏感数据。</li>
+<li>阅读文档并整理团队可复用的 Artifacts 创建模板。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/claudeai/status/2072725610061803522">Fable 5 可用性调整：Claude Tag 上线</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Fable 5</code> <code>Claude Tag</code> <code>Claude Code</code> <code>订阅套餐</code> <code>容量限制</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 官方称 Claude Fable 5 已在 Claude Tag 中可用，并通过对谈回顾 Claude Code 如何演进到 Claude Tag、再扩散到 Anthropic 内部更多岗位。同日，Thariq 补充说明 Fable 会在 7 月 7 日后暂时退出订阅套餐，但团队目标是在容量允许后尽快恢复为标准订阅能力。这个事件的重点不是新模型能力披露，而是 Fable 5 在不同产品入口和套餐中的可用性仍受容量调度影响。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/trq212/status/2072814903170408784">Fable 将暂离订阅套餐后再恢复</a> · Thariq (Twitter) · 订阅容量说明</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>依赖 Fable 5 的工作流应在 7 月 7 日前准备替代模型或降级路径。</li>
+<li>关注 Claude Tag 的访问条件与功能边界，评估是否适合非工程团队试点。</li>
+<li>跟踪官方恢复时间，避免把临时下线误判为永久产品策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2072818299361263778">Claude API 提额：Sonnet 与 Haiku 最高 5 倍</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude API</code> <code>速率限制</code> <code>Sonnet</code> <code>Haiku</code> <code>开发者平台</code> <code>容量规划</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Platform 面向所有用户提高 API 速率限制，并把层级规则简化为不再基于 API 消费额。最新 Sonnet 与 Haiku 模型在最高层级可获得 5 倍更高的速率限制，开发者也可以通过 Claude Console 手动申请更高额度。官方文档同步提供速率限制说明，适合重新评估高吞吐应用、批处理与代理工作流的容量规划。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2072818303689687282">Claude API 额度层级可自动晋升</a> · Claude Devs (Twitter) · 提额申请与文档</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>重新压测使用 Sonnet 和 Haiku 的批处理、代理和客服场景吞吐。</li>
+<li>更新容量规划与限流策略，避免继续按旧消费额层级假设做调度。</li>
+<li>对仍受限的生产工作负载，通过 Claude Console 提交额度提升申请。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/xai/status/2072738598663946648">Grok Build 进入 Railway 沙箱</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>Railway</code> <code>沙箱</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 宣布 Grok Build 已安装到 Railway sandboxes 中，Railway 用户可以通过终端连接沙箱试用。该更新降低了在 Railway 环境中尝试 Grok Build 的门槛，但信息量主要集中在集成可用性上。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Railway sandbox 中试跑 Grok Build，观察生成、部署和依赖安装流程。</li>
+<li>将测试结果与现有代码代理或云沙箱方案做对比。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>生命科学</code> <code>黑客松</code> <code>Claude Science</code> <code>Claude Code</code> <code>Gladstone</code> — Anthropic 宣布与 Gladstone Institutes 联合举办全球线上黑客松 Built with Claude: Life Sciences。活动鼓励参与者用 Claude Science 与 Claude Code 做生命科学研究和构建，并提供 10 万美元额度奖励。 该回复补充了 Built with Claude: Life Sciences 的报名与赛程信息。活动将在 7 月 7 日至 13 日举行，申请截止到周日。 · <a href="https://x.com/claudeai/status/2072681853971001849">Claude (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-07-02</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-02.html</link>
@@ -2856,143 +2954,6 @@ https://t.co/voEubobshh</a></li>
 <li><strong>产品与功能</strong> | <code>OpenAI</code> <code>账号误封</code> <code>服务状态</code> <code>订阅</code> — OpenAI 表示一次问题导致部分用户账号被错误暂停，正在恢复访问并处理相关订阅和 credit 问题。该条属于服务事件更新，对受影响用户重要但不改变产品能力。 · <a href="https://x.com/OpenAI/status/2062927046448431587">OpenAI (Twitter)</a></li>
 <li><strong>产品与功能</strong> | <code>Google AI</code> <code>月度汇总</code> <code>产品更新</code> — Google 汇总了 2026 年 5 月发布的 AI 更新，作为产品与研究动态的月度回顾。该类内容覆盖面广但单条新信息有限，适合作为背景索引。 · <a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-may-2026/">Google AI Blog</a></li>
 <li><strong>产品与功能</strong> | <code>Codex Profiles</code> <code>活动图</code> <code>分享卡片</code> <code>隐私</code> — OpenAI Devs 介绍 Codex profiles，用户可查看活动图、连续使用、累计 token、峰值日 token 和 plugins、/fast mode 等高频功能，并可选择分享卡片。该功能默认私密，强调把 Codex 使用活动集中呈现。 该条提供 Codex app profile 设置文档链接，是 Codex Profiles 功能的补充。 · <a href="https://x.com/OpenAIDevs/status/2062674774644687268">OpenAI Devs (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-05</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-05.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-05.md</guid>
-      <pubDate>Fri, 05 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-05</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>记忆能力升级</strong>：ChatGPT Memory 强化跨会话上下文，OpenAI 同步提供摘要与控制入口。</li>
-<li><strong>AI研发自举受关注</strong>：Anthropic 用 Claude 与 Mythos Preview 数据讨论递归自我改进风险。</li>
-<li><strong>编码工具纵深化</strong>：Codex iOS 插件、API moderation scores 和个人软件叙事扩展开发场景。</li>
-<li><strong>生物安全前移</strong>：OpenAI 将生物防御纳入智能时代行动计划，强调 AI 防御能力建设。</li>
-<li><strong>数学协作显现</strong>：OpenAI Podcast 用 Erdős 猜想反例展示模型与研究者协作发现。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/OpenAIDevs/status/2062599291479478275">Codex iOS 插件打通预览、测试与热更新</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>iOS插件</code> <code>SwiftUI</code> <code>热更新</code> <code>内置浏览器</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Devs 介绍 Build iOS Apps 插件，可让 Codex 在内置浏览器查看和测试 iOS app、打开 SwiftUI previews，并在不离开 Codex 的情况下热更新编辑。线程还致谢 serve-sim 和 SnapshotPreviews 等开源项目，说明这项能力把更多 iOS 开发循环搬进 Codex。 OpenAI Devs 补充说明 Build iOS Apps 插件背后使用了 serve-sim 和 SnapshotPreviews 等开源项目。该条是 iOS 插件发布的技术致谢。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用一个 SwiftUI 小项目验证 Codex 是否能稳定打开预览、修改并热更新。</li>
-<li>把模拟器、截图预览和失败日志纳入 Codex 的自检流程。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/AnthropicAI/status/2062568862479208923">Anthropic：Claude 正在加速 AI 研发自我改进</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>递归自我改进</code> <code>Claude</code> <code>AI研发</code> <code>Anthropic</code> <code>评测</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 称内部数据表明 Claude 正在加速 AI 开发，这可能是递归自我改进的早期路径，即 AI 自主帮助构建更强后继系统。线程给出模型加速小型 AI 训练代码和纠正研究方向的评测结果，并强调这并不等于递归自我改进已确定到来，但趋势值得更密切关注。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/AnthropicAI/status/2062568869240476050">Claude 在训练代码优化任务上提速</a> · Anthropic (Twitter) · 提速评测</li>
-<li><a href="https://x.com/AnthropicAI/status/2062634151556292775">Anthropic 更正 Opus 4 评测日期</a> · Anthropic (Twitter) · 日期勘误</li>
-</ul>
-<hr>
-<h3>3. <a href="https://openai.com/index/chatgpt-memory-dreaming">ChatGPT Memory 升级：上下文跨会话保鲜</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>Memory</code> <code>个性化</code> <code>上下文</code> <code>用户控制</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 推出新的 ChatGPT memory 系统，让 ChatGPT 能更好地跨对话保留偏好和重要上下文，并保持记忆的新鲜度与相关性。用户可以通过 memory summary 查看和引导系统记住什么，也可以回到旧版 saved memories 体验；该能力先向美国 Plus 和 Pro 用户推出。Sam Altman 与 OpenAI 社媒均将其描述为一次明显的记忆能力升级。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2062567559673856346">ChatGPT Memory 增加摘要与可控性</a> · OpenAI (Twitter) · 控制细节</li>
-<li><a href="https://x.com/sama/status/2062660086787613116">Altman 强调 ChatGPT Memory 大升级</a> · Sam Altman (Twitter) · Altman 背书</li>
-<li><a href="https://x.com/OpenAI/status/2062567556524003631">OpenAI 社媒发布 ChatGPT Memory 升级</a> · OpenAI (Twitter) · 社媒公告</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在长期项目对话中测试 memory summary 是否能准确保留偏好、约束和项目状态。</li>
-<li>为敏感任务建立定期检查与清理 memory 的流程，避免过期上下文影响结果。</li>
-<li>比较新版 memory 与旧版 saved memories 在连续工作流中的召回质量。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://openai.com/index/biodefense-in-the-intelligence-age">OpenAI 提出生物防御智能时代行动方案</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>生物安全</code> <code>AI治理</code> <code>OpenAI</code> <code>生物防御</code> <code>风险评估</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发布面向智能时代的生物防御行动计划，主张用 AI 提升生物韧性、监测、评估和可信防御能力。文章把生命科学 AI 的进步与潜在滥用风险放在同一治理框架下，强调防御能力需要随模型能力同步升级。</p>
-<hr>
-<h3>5. <a href="https://x.com/sama/status/2062661071761211561">Altman 称 ChatGPT 可构建并发布 Web App</a></h3>
-<ul>
-<li><strong>来源</strong>: Sam Altman (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>Sites</code> <code>Codex</code> <code>Web App</code></li>
-</ul>
-<p><strong>摘要</strong>: Sam Altman 转发 OpenAI 关于 Sites 与 Codex 的内容，称现在可以用 ChatGPT 构建并发布 Web app，并把它类比为自己小时候想拥有的 HyperCard。该条补充了 Codex/Sites 面向个人软件创作的叙事。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用一个内部小工具验证从想法到可分享 URL 的完整发布流程。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://x.com/OpenAI/status/2062630454537424930">OpenAI Podcast：模型发现 Erdős 猜想反例</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>OpenAI Podcast</code> <code>数学推理</code> <code>Erdős猜想</code> <code>人机协作</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Podcast 讲述一个模型找到 80 年 Erdős 猜想反例的故事，研究者讨论数学家与模型如何协同产生新发现。该案例展示推理模型在数学探索中的辅助价值。 该条提供 OpenAI Podcast 在 Spotify、Apple 和 YouTube 的收听入口，是 Erdős 猜想反例故事的链接补充。</p>
-<hr>
-<h3>7. <a href="https://x.com/OpenAIDevs/status/2062619558440267801">OpenAI API 返回 Moderation Scores</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Responses API</code> <code>Completions API</code> <code>Moderation</code> <code>安全路由</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Devs 宣布 Responses API 和 Completions API 可在同一请求流中返回 moderation signals。开发者可以把这些分数用于日志、路由、人工复核或阻断，从而把安全判断嵌入生成链路。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在生成请求中同时返回 moderation signals，并定义日志、复核、阻断的阈值策略。</li>
-<li>把 moderation 分数纳入灰度路由，先观察误报和漏报。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://openai.com/index/endava-frontiers">Endava 用 ChatGPT Enterprise 与 Codex 重塑交付</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>Endava</code> <code>Codex</code> <code>企业AI</code> <code>软件交付</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 案例介绍 Endava 如何围绕 AI agents、ChatGPT Enterprise 和 Codex 重新设计软件交付流程。重点不只是代码生成，而是把自动化工作流、工程组织和 AI-native 文化结合起来，让企业级软件交付更快、更可复用。</p>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>教程与观点</strong> | <code>个人软件</code> <code>AI应用</code> <code>创作工具</code> — Thariq 引用 Robin Sloan 2020 年关于 home-cooked app 的文章，认为到 2026 年个人软件已经可以像家常菜或手写信一样私人化。该观点把生成式开发工具与个人软件创作复兴联系起来。 · <a href="https://x.com/trq212/status/2062605395101884916">Thariq (Twitter)</a></li>
-<li><strong>教程与观点</strong> | <code>Claude</code> <code>Lovable</code> <code>信任</code> <code>AI产品</code> — Claude 官方 Problem Solvers 系列采访 Lovable 联合创始人 Anton Osika，讨论如何通过对话构建软件，以及 AI 产品最被低估的护城河可能是信任。该内容更偏创始人经验与产品观点。 该条提供 Claude Problem Solvers 系列入口，补充 Lovable 创始人采访上下文。 · <a href="https://x.com/claudeai/status/2062558332695556378">Claude (Twitter)</a></li>
-<li><strong>产品与功能</strong> | <code>Claude Code</code> <code>动态工作流</code> <code>任务编排</code> — Thariq 再次强调动态工作流让 Claude Code 可以处理全新类型的任务。该条延续前一日 Claude Code Workflows 讨论，核心是用运行时编排把复杂任务交给多代理流程。 · <a href="https://x.com/trq212/status/2062556889171517499">Thariq (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>

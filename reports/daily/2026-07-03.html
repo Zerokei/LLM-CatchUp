@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-07-02 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-07-02" />
+  <title>CatchUp 日报 2026-07-03 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-07-03" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,117 +306,99 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-07-02</h1>
+          <h1 class="report-title">2026-07-03</h1>
           
           <hr class="primary-rule" />
         </header>
 
         <div class="prose"><h2 id="h-1">今日趋势</h2>
 <ul>
-<li><strong>旗舰安全回归</strong>：Fable 5重新上线，Anthropic把能力释放与网络安全门控绑定。</li>
-<li><strong>编程工具升温</strong>：Z.ai的ZCode和Claude Code反馈机制都在争夺开发者日常入口。</li>
-<li><strong>语音代理落地</strong>：xAI推出Grok Voice无代码平台，开始把语音智能体商品化。</li>
-<li><strong>产品矩阵扩张</strong>：Google汇总Gemini、Gemma和NotebookLM更新，多模态能力继续下沉。</li>
+<li><strong>Claude 平台提额</strong>：Claude API 对 Sonnet 与 Haiku 提供最高 5 倍速率，容量规划需要重做。</li>
+<li><strong>Claude Code 扩展</strong>：Artifacts 下放到 Pro 和 Max，开发者可把会话输出发布为私有交互页面。</li>
+<li><strong>Fable 可用性调整</strong>：Fable 5 进入 Claude Tag，但订阅套餐仍受容量约束需要准备替代路径。</li>
+<li><strong>开发沙箱集成</strong>：xAI 的 Grok Build 进入 Railway sandboxes，云端试用门槛继续降低。</li>
 </ul>
 <hr>
 <h2 id="h-2">文章详情</h2>
-<h3 id="h-3">1. <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework">Fable 5重新上线：安全防护与访问规则更新</a></h3>
+<h3 id="h-3">1. <a href="https://x.com/ClaudeDevs/status/2072770790114914317">Claude Code Artifacts 扩至 Pro/Max</a></h3>
 <ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Fable 5</code> <code>Claude</code> <code>网络安全</code> <code>安全分类器</code> <code>越狱评估</code> <code>Claude Code</code> <code>用量限制</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic在Fable 5重新上线后补充披露网络安全防护：新分类器会把请求分为禁止、高风险双用、低风险双用和良性用途，并以更大的安全边界换取更强拦截能力。Claude官方同步说明，付费套餐可在7月7日前使用Fable 5，部分被标记请求会回退到Opus 4.8，Claude Code误拦截可通过「/feedback」提交。开发者侧还重置了5小时与周度速率限制，方便重新评测。文章提出「Cyber Jailbreak Severity」草案，用能力增益、通用性、武器化难度和可发现性来评估越狱严重度。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/claudeai/status/2072402636813607381">Fable 5重新上线</a> · Claude (Twitter) · 重新上线主公告</li>
-<li><a href="https://x.com/ClaudeDevs/status/2072429181565288665">Fable 5恢复后重置用量限制</a> · Claude Devs (Twitter) · 开发者额度重置</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>重新跑核心编码、长文档和安全边界测试，区分Fable 5新版本与旧记录。</li>
-<li>把误拦截样例通过Claude Code的「/feedback」提交，并保留可复现上下文。</li>
-<li>在7月7日前集中验证付费套餐额度、回退到Opus 4.8后的质量和吞吐。</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-4">2. <a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/">Google汇总6月AI产品更新</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
 <li><strong>分类</strong>: 产品与功能</li>
 <li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Google AI</code> <code>Gemini</code> <code>Gemma</code> <code>NotebookLM</code> <code>多模态</code></li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Artifacts</code> <code>Pro</code> <code>Max</code> <code>交互页面</code> <code>官方文档</code></li>
 </ul>
-<p><strong>摘要</strong>: Google回顾6月AI进展，涵盖Gemma 4 12B本地模型、Gemini 3.5 Flash计算机使用、Nano Banana 2 Lite、Gemini Omni Flash、Gemini 3.5 Live Translate、NotebookLM升级和Gemini教育工具等。整体方向是把多模态、代理式自动化、端侧模型和教育科研能力嵌入Google产品线。对开发者而言，值得关注的是本地开放模型、API中的多模态视频工作流和更强的研究型工具。</p>
+<p><strong>摘要</strong>: Claude Code 的 Artifacts 功能现在也面向 Pro 和 Max 计划开放。用户可以让 Claude 从会话中生成交互式页面并发布到 claude.ai，页面对账号私有、可自包含，并会随 Claude 持续工作实时更新。官方文档提供进一步使用说明，适合把 PR walkthrough、项目仪表盘和临时交互原型从静态文本升级为可运行页面。 Claude Devs 在 Artifacts 扩展到 Pro 和 Max 的线程中提供了官方文档链接。该条本身没有新增功能细节，但可作为开发者理解 Artifacts 使用方式和限制的入口。</p>
 <blockquote>
 <p><strong>实践建议</strong></p>
 <ul>
-<li>挑选Gemma 4 12B、Gemini Live Translate和NotebookLM升级中与现有产品最相关的能力做小规模验证。</li>
-<li>对需要浏览器或桌面自动化的流程，评估Gemini 3.5 Flash计算机使用能力是否能替代脚本化方案。</li>
-<li>把Google的端侧、本地和云端模型更新拆成独立技术路线，避免只按品牌整体评估。</li>
+<li>用 Artifacts 试做 PR walkthrough、项目仪表盘或临时交互原型。</li>
+<li>评估私有链接的团队协作边界，避免放入不应外传的敏感数据。</li>
+<li>阅读文档并整理团队可复用的 Artifacts 创建模板。</li>
 </ul>
 </blockquote>
 <hr>
-<h3 id="h-5">3. <a href="https://x.com/xai/status/2072342803787702422">xAI推出Grok无代码语音智能体平台</a></h3>
+<h3 id="h-4">2. <a href="https://x.com/claudeai/status/2072725610061803522">Fable 5 可用性调整：Claude Tag 上线</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Fable 5</code> <code>Claude Tag</code> <code>Claude Code</code> <code>订阅套餐</code> <code>容量限制</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 官方称 Claude Fable 5 已在 Claude Tag 中可用，并通过对谈回顾 Claude Code 如何演进到 Claude Tag、再扩散到 Anthropic 内部更多岗位。同日，Thariq 补充说明 Fable 会在 7 月 7 日后暂时退出订阅套餐，但团队目标是在容量允许后尽快恢复为标准订阅能力。这个事件的重点不是新模型能力披露，而是 Fable 5 在不同产品入口和套餐中的可用性仍受容量调度影响。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/trq212/status/2072814903170408784">Fable 将暂离订阅套餐后再恢复</a> · Thariq (Twitter) · 订阅容量说明</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>依赖 Fable 5 的工作流应在 7 月 7 日前准备替代模型或降级路径。</li>
+<li>关注 Claude Tag 的访问条件与功能边界，评估是否适合非工程团队试点。</li>
+<li>跟踪官方恢复时间，避免把临时下线误判为永久产品策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/ClaudeDevs/status/2072818299361263778">Claude API 提额：Sonnet 与 Haiku 最高 5 倍</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude API</code> <code>速率限制</code> <code>Sonnet</code> <code>Haiku</code> <code>开发者平台</code> <code>容量规划</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Platform 面向所有用户提高 API 速率限制，并把层级规则简化为不再基于 API 消费额。最新 Sonnet 与 Haiku 模型在最高层级可获得 5 倍更高的速率限制，开发者也可以通过 Claude Console 手动申请更高额度。官方文档同步提供速率限制说明，适合重新评估高吞吐应用、批处理与代理工作流的容量规划。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2072818303689687282">Claude API 额度层级可自动晋升</a> · Claude Devs (Twitter) · 提额申请与文档</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>重新压测使用 Sonnet 和 Haiku 的批处理、代理和客服场景吞吐。</li>
+<li>更新容量规划与限流策略，避免继续按旧消费额层级假设做调度。</li>
+<li>对仍受限的生产工作负载，通过 Claude Console 提交额度提升申请。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/xai/status/2072738598663946648">Grok Build 进入 Railway 沙箱</a></h3>
 <ul>
 <li><strong>来源</strong>: xAI (Twitter)</li>
 <li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Voice Agent Builder</code> <code>Grok Voice</code> <code>语音智能体</code> <code>无代码</code> <code>低延迟</code> <code>定价</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI发布Voice Agent Builder，一个基于Grok Voice创建拟人语音智能体的无代码平台，已开放beta，定价为每分钟0.05美元。其卖点是把语音识别、语言模型和语音合成收进更紧耦合的一体化链路，以降低传统三段式语音栈的成本、延迟和故障点。每个账户提供免费电话号码用于快速试点，适合先在客服、预约或线索收集等低风险场景验证。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/xai/status/2072342807193550900">xAI强调Grok语音一体化架构</a> · xAI (Twitter) · 一体化语音架构</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用同一客服脚本对比现有STT-LLM-TTS组合与Grok Voice的延迟、成本和失败率。</li>
-<li>先用免费号码搭建最小可用试点，覆盖噪声、口音、打断和敏感信息处理。</li>
-<li>评估一体化语音模型对可替换性和合规审计的影响，再接入真实客户流量。</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="h-6">4. <a href="https://x.com/trq212/status/2072366310416425053">Notion新增可交互HTML块</a></h3>
-<ul>
-<li><strong>来源</strong>: Thariq (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
 <li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Notion</code> <code>HTML</code> <code>交互原型</code> <code>AI协作</code></li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>Railway</code> <code>沙箱</code> <code>开发者工具</code></li>
 </ul>
-<p><strong>摘要</strong>: 该推文转述Notion发布的新HTML块：用户可以在Notion页面中直接构建交互式HTML。Notion AI可把内容转换为交互式讲解、原型或图表，并支持团队共享和共同修改。</p>
+<p><strong>摘要</strong>: xAI 宣布 Grok Build 已安装到 Railway sandboxes 中，Railway 用户可以通过终端连接沙箱试用。该更新降低了在 Railway 环境中尝试 Grok Build 的门槛，但信息量主要集中在集成可用性上。</p>
 <blockquote>
 <p><strong>实践建议</strong></p>
 <ul>
-<li>用Notion HTML块把静态规格文档改造成可点击原型或交互式流程图。</li>
-<li>测试团队共享后的编辑权限和安全边界，再决定是否承载内部工具。</li>
+<li>在 Railway sandbox 中试跑 Grok Build，观察生成、部署和依赖安装流程。</li>
+<li>将测试结果与现有代码代理或云沙箱方案做对比。</li>
 </ul>
 </blockquote>
 <hr>
-<h3 id="h-7">5. <a href="https://x.com/Zai_org/status/2072349453361557898">Z.ai发布GLM-5.2官方开发环境ZCode</a></h3>
-<ul>
-<li><strong>来源</strong>: Z.ai (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>ZCode</code> <code>GLM-5.2</code> <code>编程工具</code> <code>BYOK</code> <code>多平台</code> <code>变更日志</code></li>
-</ul>
-<p><strong>摘要</strong>: Z.ai推出ZCode，定位为GLM-5.2的官方开发环境，覆盖macOS、Windows和Linux。GLM Coding Plan订阅者在ZCode中可获得1.5倍用量配额，同时支持BYOK接入既有订阅和API。发布线程还引导用户关注独立更新账号并查看changelog，说明该工具会作为持续迭代的编程工作台推进。 Z.ai 在 ZCode 发布线程中补充了后续更新渠道，提示用户关注 @zcode_ai 并查看完整 changelog。该条本身主要是导流和版本记录入口，信息增量低于主发布推文。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用一个小型代码库试用ZCode，比较GLM-5.2在补全、修改和长上下文任务中的表现。</li>
-<li>验证BYOK接入、用量统计和配额放大是否符合团队成本管理要求。</li>
-<li>把ZCode changelog加入开发工具监控，及时筛选影响工作流的更新。</li>
-</ul>
-</blockquote>
-<hr>
-<h2 id="h-8">速览</h2>
+<h2 id="h-7">速览</h2>
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li><strong>政策与安全</strong> | <code>AI教育</code> <code>课堂应用</code> <code>隐私</code> <code>公平访问</code> — Google 与 New York Jobs CEO Council、Urban Assembly 举办 AI 教育峰会，邀请约 150 名教育和行业代表讨论课堂中的 AI 素养。活动通过「Vibe Coding」、Google「Meet LEA」、AI mode 和 NotebookLM 等实践环节，强调隐私、公平访问以及适应力、协作和判断力等人类技能。 · <a href="https://blog.google/products-and-platforms/products/education/nyc-ai-summit/">Google AI Blog</a></li>
+<li><strong>商业动态</strong> | <code>生命科学</code> <code>黑客松</code> <code>Claude Science</code> <code>Claude Code</code> <code>Gladstone</code> — Anthropic 宣布与 Gladstone Institutes 联合举办全球线上黑客松 Built with Claude: Life Sciences。活动鼓励参与者用 Claude Science 与 Claude Code 做生命科学研究和构建，并提供 10 万美元额度奖励。 该回复补充了 Built with Claude: Life Sciences 的报名与赛程信息。活动将在 7 月 7 日至 13 日举行，申请截止到周日。 · <a href="https://x.com/claudeai/status/2072681853971001849">Claude (Twitter)</a></li>
 </ul>
 </div>
       </article>
@@ -424,12 +406,11 @@ footer.colophon a:hover { color: var(--accent); }
     <div class="toc-label">本期目录</div>
     <ul>
       <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
-      <li class="toc-h3"><a href="#h-3">1. Fable 5重新上线：安全防护与访问规则更新</a></li>
-      <li class="toc-h3"><a href="#h-4">2. Google汇总6月AI产品更新</a></li>
-      <li class="toc-h3"><a href="#h-5">3. xAI推出Grok无代码语音智能体平台</a></li>
-      <li class="toc-h3"><a href="#h-6">4. Notion新增可交互HTML块</a></li>
-      <li class="toc-h3"><a href="#h-7">5. Z.ai发布GLM-5.2官方开发环境ZCode</a></li>
-      <li class="toc-h2"><a href="#h-8">速览</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Code Artifacts 扩至 Pro/Max</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Fable 5 可用性调整：Claude Tag 上线</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude API 提额：Sonnet 与 Haiku 最高 5 倍</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Grok Build 进入 Railway 沙箱</a></li>
+      <li class="toc-h2"><a href="#h-7">速览</a></li>
     </ul>
   </aside>
     </div>
@@ -437,7 +418,7 @@ footer.colophon a:hover { color: var(--accent); }
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-07-01.html">2026-07-01</a>
+        <a href="../daily/2026-07-02.html">2026-07-02</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -445,12 +426,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-07-03.html">2026-07-03</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-02.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-03.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
