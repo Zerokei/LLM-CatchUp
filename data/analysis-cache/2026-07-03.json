@@ -1,0 +1,262 @@
+{
+  "analyzed_at": "2026-07-04T12:38:50.584Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-03.json",
+  "trend_paragraph": "- **Claude 平台提额**：Claude API 对 Sonnet 与 Haiku 提供最高 5 倍速率，容量规划需要重做。\n- **Claude Code 扩展**：Artifacts 下放到 Pro 和 Max，开发者可把会话输出发布为私有交互页面。\n- **Fable 可用性调整**：Fable 5 进入 Claude Tag，但订阅套餐仍受容量约束需要准备替代路径。\n- **开发沙箱集成**：xAI 的 Grok Build 进入 Railway sandboxes，云端试用门槛继续降低。",
+  "articles": [
+    {
+      "url": "https://x.com/ClaudeDevs/status/2072818303689687282",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude API 额度层级可自动晋升",
+      "summary": "Claude Platform 说明速率限制层级会自动晋升，开发者也可以在 Claude Console 中手动申请更高额度。本条是同一串关于 API 速率限制调整的补充说明。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude API",
+        "速率限制",
+        "开发者平台",
+        "额度管理"
+      ],
+      "practice_suggestions": [
+        "在 Claude Console 检查当前组织的速率层级与用量瓶颈。",
+        "若生产任务仍受限，按控制台入口提交额度提升申请。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260702-2302",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2072818299361263778",
+      "angle": "提额申请与文档"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2072818306256634023",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude API 速率限制文档更新",
+      "summary": "Claude Devs 指向 Claude Platform 的 API rate limits 文档，作为速率限制调整线程的参考资料。该条本身不含新增规则细节，主要用于引导开发者查看官方文档。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude API",
+        "官方文档",
+        "速率限制",
+        "开发者体验"
+      ],
+      "practice_suggestions": [
+        "把文档中的请求速率、并发与层级说明同步到内部接入指南。",
+        "为高峰调用路径增加限流、重试和排队策略。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260702-2302",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2072818299361263778",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude API 提额：Sonnet 与 Haiku 最高 5 倍",
+      "summary": "Claude Platform 面向所有用户提高 API 速率限制，并把层级规则简化为不再基于 API 消费额。最新 Sonnet 与 Haiku 模型在最高层级可获得 5 倍更高的速率限制，开发者也可以通过 Claude Console 手动申请更高额度。官方文档同步提供速率限制说明，适合重新评估高吞吐应用、批处理与代理工作流的容量规划。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude API",
+        "速率限制",
+        "Sonnet",
+        "Haiku",
+        "开发者平台",
+        "容量规划"
+      ],
+      "practice_suggestions": [
+        "重新压测使用 Sonnet 和 Haiku 的批处理、代理和客服场景吞吐。",
+        "更新容量规划与限流策略，避免继续按旧消费额层级假设做调度。",
+        "对仍受限的生产工作负载，通过 Claude Console 提交额度提升申请。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2072814903170408784",
+      "source": "Thariq (Twitter)",
+      "title": "Fable 将暂离订阅套餐后再恢复",
+      "summary": "Thariq 回应 Fable 在订阅套餐中的可用性问题，称它将在 7 月 7 日后暂时退出订阅。团队目标是在容量允许后尽快把 Fable 恢复为订阅套餐的标准组成部分。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Fable",
+        "订阅套餐",
+        "容量限制",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "依赖 Fable 的工作流应在 7 月 7 日前准备替代模型或降级路径。",
+        "跟踪官方恢复时间，避免把临时下线误判为永久产品策略。"
+      ],
+      "thread_group_id": "thread-trq212-20260702-2249",
+      "duplicate_of": "https://x.com/claudeai/status/2072725610061803522",
+      "angle": "订阅容量说明"
+    },
+    {
+      "url": "https://x.com/trq212/status/2072814904210509905",
+      "source": "Thariq (Twitter)",
+      "title": "Fable 与 Mythos 官方说明链接",
+      "summary": "这条后续贴提供 Anthropic 官方文章链接，指向 Fable 与 Mythos 相关说明。由于抓取内容未包含原文正文，本条可作为订阅可用性讨论的出处链接，而不是独立的新信息。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Fable",
+        "Mythos",
+        "Anthropic",
+        "官方公告"
+      ],
+      "practice_suggestions": [
+        "阅读原文确认 Fable 与 Mythos 的套餐、容量和使用限制。",
+        "把官方链接加入内部模型变更记录，便于后续追踪。"
+      ],
+      "thread_group_id": "thread-trq212-20260702-2249",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2072779246905573588",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Devs 发布链接但缺正文",
+      "summary": "OpenAI Devs 发布了一条指向 X Article 的链接，但当前抓取结果没有提供文章标题、摘要或正文。仅凭该快照无法判断它是否是产品、模型或文档更新。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI Devs",
+        "链接帖",
+        "信息不足"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2072773542576586790",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 祝贺美国队世界杯取胜",
+      "summary": "Sam Altman 只是分享观看世界杯比赛并见证美国队获胜的个人感受。该内容与 AI 技术、产品或行业动态无关，属于低信号社交动态。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "世界杯",
+        "个人动态",
+        "低信号"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2072770790114914317",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Artifacts 扩至 Pro/Max",
+      "summary": "Claude Code 的 Artifacts 功能现在也面向 Pro 和 Max 计划开放。用户可以让 Claude 从会话中生成交互式页面并发布到 claude.ai，页面对账号私有、可自包含，并会随 Claude 持续工作实时更新。官方文档提供进一步使用说明，适合把 PR walkthrough、项目仪表盘和临时交互原型从静态文本升级为可运行页面。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Artifacts",
+        "Pro",
+        "Max",
+        "交互页面",
+        "官方文档"
+      ],
+      "practice_suggestions": [
+        "用 Artifacts 试做 PR walkthrough、项目仪表盘或临时交互原型。",
+        "评估私有链接的团队协作边界，避免放入不应外传的敏感数据。",
+        "阅读文档并整理团队可复用的 Artifacts 创建模板。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260702-1954",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2072770792002331109",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Artifacts 文档入口",
+      "summary": "Claude Devs 在 Artifacts 扩展到 Pro 和 Max 的线程中提供了官方文档链接。该条本身没有新增功能细节，但可作为开发者理解 Artifacts 使用方式和限制的入口。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Artifacts",
+        "官方文档",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "阅读文档并整理团队可复用的 Artifacts 创建模板。",
+        "验证现有 Claude Code 工作流中哪些输出适合发布为交互页面。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260702-1954",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/xai/status/2072738598663946648",
+      "source": "xAI (Twitter)",
+      "title": "Grok Build 进入 Railway 沙箱",
+      "summary": "xAI 宣布 Grok Build 已安装到 Railway sandboxes 中，Railway 用户可以通过终端连接沙箱试用。该更新降低了在 Railway 环境中尝试 Grok Build 的门槛，但信息量主要集中在集成可用性上。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Grok Build",
+        "Railway",
+        "沙箱",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "在 Railway sandbox 中试跑 Grok Build，观察生成、部署和依赖安装流程。",
+        "将测试结果与现有代码代理或云沙箱方案做对比。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072725610061803522",
+      "source": "Claude (Twitter)",
+      "title": "Fable 5 可用性调整：Claude Tag 上线",
+      "summary": "Claude 官方称 Claude Fable 5 已在 Claude Tag 中可用，并通过对谈回顾 Claude Code 如何演进到 Claude Tag、再扩散到 Anthropic 内部更多岗位。同日，Thariq 补充说明 Fable 会在 7 月 7 日后暂时退出订阅套餐，但团队目标是在容量允许后尽快恢复为标准订阅能力。这个事件的重点不是新模型能力披露，而是 Fable 5 在不同产品入口和套餐中的可用性仍受容量调度影响。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Fable 5",
+        "Claude Tag",
+        "Claude Code",
+        "订阅套餐",
+        "容量限制",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "依赖 Fable 5 的工作流应在 7 月 7 日前准备替代模型或降级路径。",
+        "关注 Claude Tag 的访问条件与功能边界，评估是否适合非工程团队试点。",
+        "跟踪官方恢复时间，避免把临时下线误判为永久产品策略。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072681853971001849",
+      "source": "Claude (Twitter)",
+      "title": "Claude 举办生命科学黑客松",
+      "summary": "Anthropic 宣布与 Gladstone Institutes 联合举办全球线上黑客松 Built with Claude: Life Sciences。活动鼓励参与者用 Claude Science 与 Claude Code 做生命科学研究和构建，并提供 10 万美元额度奖励。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "生命科学",
+        "黑客松",
+        "Claude Science",
+        "Claude Code",
+        "Gladstone"
+      ],
+      "thread_group_id": "thread-claudeai-20260702-1400",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2072681856730792282",
+      "source": "Claude (Twitter)",
+      "title": "Claude 生命科学黑客松公布日期",
+      "summary": "该回复补充了 Built with Claude: Life Sciences 的报名与赛程信息。活动将在 7 月 7 日至 13 日举行，申请截止到周日。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "活动日期",
+        "报名截止",
+        "生命科学",
+        "Claude"
+      ],
+      "thread_group_id": "thread-claudeai-20260702-1400",
+      "duplicate_of": null
+    }
+  ]
+}
