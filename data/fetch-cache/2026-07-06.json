@@ -1,0 +1,271 @@
+{
+  "date": "2026-07-06",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-07T03:38:32−07:00",
+  "window_start": "2026-07-05T00:00:00−07:00",
+  "window_end": "2026-07-06T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "从零开始玩转循环 (Getting started with loops)",
+          "url": "https://baoyu.io/blog/2026-07-06/claudedevs-2074208949205881033",
+          "published_at": "2026-07-06T00:00:00.000Z",
+          "description": "最近大家都在热议“设计循环 (designing loops)”，而不是简单地给你的写代码的 AI 智能体 (AI Agent) 下提示词。如果你在 X（原 Twitter）上逛一逛，想搞清楚“循环”到底是个啥，你会看到五花八门的答案。",
+          "full_text": "Title: 从零开始玩转循环 (Getting started with loops)\n\nURL Source: https://baoyu.io/blog/2026-07-06/claudedevs-2074208949205881033\n\nMarkdown Content:\n## 从零开始玩转循环 (Getting started with loops)\n\n最近大家都在热议“设计循环 (designing loops)”，而不是简单地给你的编程 AI 智能体 (AI Agent) 扔一条提示词 (prompt) 就完事。如果你在 X（原 Twitter）上花点时间，想搞清楚到底什么是“循环”，你会听到五花八门的答案。\n\n在 Claude Code 团队，我们将“循环”定义为：**AI 智能体不断重复执行工作周期，直到满足某个预设的停止条件。** 为了方便理解，我们根据以下四个维度，对循环进行了分类：\n\n*   它是如何被触发的\n*   它是如何停止的\n*   它使用了哪种 Claude Code 基础指令 (primitive) **(在这里指系统内置的基础命令或核心功能模块)**\n*   哪种类型的任务最适合它\n\n接下来，我们将带你了解这几种主要的循环类型、适用场景，以及如何在控制 token 消耗的同时，保证产出的代码质量。请记住，并不是所有任务都需要复杂的循环；建议从最简单的方案开始上手，然后根据实际情况灵活挑选这些模式。\n\n## 回合制循环 (Turn-based loops)\n\n![Image 1](https://s.baoyu.io/imgs/2026-07-06/claudedevs-2074208949205881033/img-002-HMkOVNybEAAncbL.jpg)\n\n*   **触发方式**：用户输入提示词。\n*   **停止条件**：Claude 自行判断任务已经完成，或者它发现需要向你索要更多上下文信息。\n*   **最佳适用场景**：不属于常规流程或定时计划的、比较简短的任务。\n*   **如何控制消耗**：编写非常具体的提示词，并通过“技能 (Skills)”功能强化验证环节，从而减少来回交互的回合数。\n\n你发送给 AI 的每一个提示词，其实都开启了一个由你手动主导的循环。在这个循环里，你指挥着每一个回合：Claude 收集上下文、采取行动、检查自己的工作，必要时重复这些动作，最后给你回复。我们称之为“智能体循环 (agentic loop)”。\n\n举个例子：你让 Claude 做一个“点赞”按钮。它会阅读你的代码、进行修改、运行测试，然后把它认为没问题的成果交还给你。接着，你手动检查一遍它的工作，发现没问题或需要修改后，再写出下一条提示词。\n\n其实，你可以把你自己手动检查的这些步骤，写进一个名为 `SKILL.md` 的文件里。这样一来，Claude 就能端到端地自行完成更多检查工作。在这个文件里，你应该提供各种工具或连接器，让 Claude 能够“看”到、衡量或与最终结果进行真实交互。**验证的标准越量化、越具体，Claude 就越容易进行自我判断。**\n\n例如，你可以在 `SKILL.md` 文件中这样规定：\n\n```\n--- \nname: verify-frontend-change \ndescription: 在宣布完成之前，端到端验证任何 UI 更改。 \n--- \n\n# 验证前端更改 (Verifying frontend changes) \n绝不能仅仅因为代码修改成功，就报告 UI 更改已完成。必须像人类代码审查员那样进行验证： \n\n1. 启动开发服务器 (dev server)，并在浏览器中打开修改后的页面。 \n\n2. 直接与更改后的内容交互。对于新增的控件（如按钮、输入框、开关）：点击它，确认状态如预期般改变，并在操作前后截图。 \n\n3. 检查浏览器控制台 (browser console)：确保没有新增任何错误 (errors) 或警告 (warnings)。 \n\n4. 使用 Chrome 开发者工具的 MCP **(Model Context Protocol，模型上下文协议，一种让 AI 连通外部工具和数据的标准标准)**，运行性能追踪，并审核网页核心性能指标 (Core Web Vitals)。\n\n如果任何一个步骤失败，请修复问题并从步骤 1 重新开始 —— 绝对不要把只验证了一半的工作交回给我。\n```\n\n## 目标导向循环 (Goal-based loop /goal)\n\n![Image 2](https://s.baoyu.io/imgs/2026-07-06/claudedevs-2074208949205881033/img-003-HMkOlk3bcAAHX46.jpg)\n\n*   **触发方式**：实时手动输入提示词。\n*   **停止条件**：目标达成，或者达到了设定的最大尝试回合数。\n*   **最佳适用场景**：具备可验证退出标准（能明确用客观数据判断对错）的任务。\n*   **如何控制消耗**：设定非常具体的完成标准和明确的回合数上限，例如“尝试 5 次后停止”。\n\n有时候，仅仅交互一个回合是不够的，特别是在处理复杂任务时。当 AI 智能体能够不断试错、迭代时，它们往往表现得更好。你可以通过 `/goal` 指令定义“到底什么样才算做完”，从而让 Claude 有更长的时间去持续迭代。\n\n当你明确定义了成功标准后，Claude 就不需要自己去瞎猜什么是“足够好”并过早地结束工作。每次 Claude 试图停下来交差时，背后的评估模型都会检查你的条件，如果不达标，它会被打回去继续干活，直到目标达成，或者达到了你设定的尝试次数上限。\n\n这就是为什么**确定性的标准**（比如通过了多少个测试用例，或者达到了某个具体的分数门槛）会如此有效的原因。\n\n例如：\n\n```\n# 将主页的 Lighthouse 网页性能跑分提高到 90 分或以上，尝试 5 次后停止。\n/goal get the homepage Lighthouse score to 90 or above, stop after 5 tries.\n```\n\n## 基于时间的循环 (Time-based loop /loop 和 /schedule)\n\n*   **触发方式**：设定的时间间隔。\n*   **停止条件**：你手动取消它，或者工作彻底完成了（比如代码被合并了，任务队列清空了）。\n*   **最佳适用场景**：周期性重复的工作，或者需要与外部环境、外部系统对接的任务。\n*   **如何控制消耗**：设置更长的时间间隔，或者改为基于事件触发（而不是单纯按时间盲目运行）。\n\n有些 AI 智能体工作是周期性的：任务本身一成不变，只是输入的数据变了。比如，每天早上汇总 Slack 聊天记录。另一些工作则依赖外部系统，与外部系统对接最简单的方式，就是每隔一段时间去检查一次，并根据变化做出反应。例如，监控一个可能会收到代码审查意见、或者未能通过 CI **(Continuous Integration，持续集成，用于自动测试和构建代码)** 的 PR **(Pull Request，代码拉取请求，即代码合并申请)**。\n\n对于这些场景，你可以使用 `/loop` 指令来触发 Claude，它会按照设定的时间间隔重复执行某条提示词。例如：\n\n```\n# 每 5 分钟检查一次我的 PR，处理最新的代码审查意见，并修复失败的持续集成测试。\n/loop 5m check my PR, address review comments, and fix failing CI\n```\n\n需要注意的是，`/loop` 是在你本地电脑上运行的，所以一旦你关机或者退出，它就停止了。如果你想把循环搬到云端全天候运行，可以使用 `/schedule` 指令来创建一个云端的例行程序 (routine)。\n\n## 主动式循环 (Proactive loops)\n\n![Image 3](https://s.baoyu.io/imgs/2026-07-06/claudedevs-2074208949205881033/img-004-HMkPQM8bEAA3RAk.jpg)\n\n*   **触发方式**：事件触发或定时计划，全程无需人类实时参与。\n*   **停止条件**：每个子任务在达成其具体目标时退出。但整个例行程序本身会一直运行，直到你主动将它关闭。\n*   **最佳适用场景**：定义清晰、源源不断的重复性工作流：比如用户漏洞报告 (bug reports)、工单分诊处理 (issue triage)、数据迁移、代码依赖项升级等。\n*   **如何控制消耗**：将常规的、简单的流程分配给更小、更快的模型，把能力最强的大模型留给需要做复杂判断的环节。\n\n上面提到的那些基础指令，结合 Claude Code 的其他进阶功能（比如自动模式 auto mode 和动态工作流 dynamic workflows，目前为研究预览版），可以被组合成一个处理长期复杂任务的“超级循环”。\n\n例如，为了处理不断涌入的用户反馈，你可以这样搭配组合：\n\n1.   使用 `/schedule`（研究预览版）运行一个例行程序，定时检查有没有新的反馈报告。\n2.   使用 `/goal` 定义任务完成的最终目标，并利用技能 (skills) 记录下应该如何验证结果。\n3.   利用动态工作流 (Dynamic workflows) 来统筹多个 AI 智能体，让它们分别负责给报告分类、修复问题，以及审查代码。\n4.   开启自动模式 (Auto mode)，这样整个流程就能全自动无缝运转，无需停下来等你点击确认。\n\n把这些组合在一起，你的提示词可能会长这样：\n\n```\n# 每小时执行一次：检查 project-feedback 频道中的 bug 报告。目标：直到本次运行发现的所有报告都已被分类、处理并回复，才停止运行。在修复 bug 时，使用工作流在平行的工作区中探索三种不同的解决方案，并让一个专门作为“裁判”的模型对它们进行对抗性的严格审查。\n/schedule every hour: check the project-feedback channel for bug reports. /goal: don't stop until every report found this run is triaged, actioned, and responded to. When fixing a bug, use a workflow to explore three solutions in parallel worktrees and have a judge adversarially review them.\n```\n\n## 保持代码质量 (Maintaining code quality)\n\n一个循环产出成果的质量，很大程度上取决于围绕它建立的外围系统。在设计这个系统时，请遵循以下原则：\n\n*   **保持代码库本身的整洁**：Claude 会不知不觉地模仿你代码库中已有的模式和规范。底子好，它写出来的代码就好。\n*   **给 Claude 提供自我验证的方法**：通过 [技能文档 (Skills)](https://code.claude.com/docs/en/skills) 功能，把你和团队眼中的“优秀代码标准”写成规则，让它自己去对照。\n*   **让文档触手可及**：各种编程框架和代码库的官方文档里，都藏着最新、最好的实践经验。确保你的 AI 能够轻松访问这些资料。\n*   **使用第二个智能体来进行代码审查**：找一个没有被历史对话污染、拥有全新上下文的智能体来做代码审查。它的偏见更少，也不会被主干智能体的思路“带偏”。你可以使用内置的 `/code-review` 技能，或者针对 Github 的专用审查工具 ([代码审查文档](https://code.claude.com/docs/en/code-review))。\n\n当某一次执行的结果没达到你的标准时，**千万别仅仅停留在“把这个 bug 修好”就完事了。** 试着把这次踩坑的教训提炼出来，固化到你的规则里，从而在未来的无数次迭代中改善整个系统。\n\n## 控制 Token 消耗 (Managing token usage)\n\n为了有效控制 Token 消耗 **(Token 是大语言模型处理文本的基本计费单位，类似按字数算钱)**，你的循环必须有清晰的边界：\n\n*   **选择合适的指令和模型**：杀鸡焉用牛刀。小任务根本不需要动用多个智能体或复杂的循环。很多任务用更便宜、更快的模型就能完美解决。\n*   **定义明确的成功与停止标准**：非常具体地描述出“完成”到底是个什么状态，这样 Claude 就能更快地找到答案（当然，也不能快到敷衍了事）。\n*   **在大规模运行前先“试水”**：动态工作流可能会一下子衍生出几百个智能体。在大规模部署前，请先切出一小块工作，测试一下实际的消耗量，心里有个底。\n*   **用脚本处理确定性的工作**：直接运行一段脚本，比让大模型一步步去逻辑推理要便宜得多。例如，处理 PDF 的技能可以直接内嵌一个填写表单的脚本，每次让 Claude 跑这个脚本就行，而不是每次都让它绞尽脑汁重新推导代码该怎么写。\n*   **别把例行程序跑得太频繁**：你监控的事物多久变一次，你的检查间隔就应该设为多长。不要让 AI 傻傻地每秒钟去刷新一个一天才更新一次的网页。\n*   **定期查看消耗**：输入 `/usage` 命令，它可以按技能、子智能体 (SubAgents) 和 MCP 详细拆解近期的消耗情况；直接输入不带参数的 `/goal`，可以查看目前跑了多少回合以及 Token 的消耗量；`/workflows` 会显示每个智能体的具体 Token 消耗，并且你可以在那里随时让某个智能体停下来。\n\n## 开始你的探索之旅 (Getting started)\n\n简单总结一下：\n\n| **循环类型 (Loop)** | **你需要移交什么 (You hand off)** | **适用场景 (Use it when)** | **所需工具 (Reach for)** |\n| --- | --- | --- | --- |\n| 回合制 (Turn-based) | 检查工作 (The check) | 你正处于探索或决策阶段 | 自定义验证技能 |\n| 目标导向 (Goal-based) | 停止条件 (The stop condition) | 你明确知道“完成”的标准是什么 | `/goal` |\n| 基于时间 (Time-based) | 触发器 (The trigger) | 工作在你的项目之外按时间表发生 | `/loop`, `/schedule` |\n| 主动式 (Proactive) | 提示词 (The prompt) | 循环往复且定义极其明确的工作 | 以上全部，外加动态工作流 |\n\n想要开始尝试循环，不妨先审视一下你日常手头的工作。挑一个你总是成为效率“瓶颈”的任务，然后问问自己：**我能把哪一部分交接给 AI？** 我能写出自动验证的检查项吗？任务目标足够清晰吗？这项工作是不是定时发生的？\n\n一旦你有了思路，就把循环跑起来！仔细观察结果，看看它在哪里卡壳了，或者在哪里用力过猛了，**不要害怕去不断迭代和优化它**。\n\n欲了解更多进阶信息，请阅读 Claude Code 的官方文档：[AI 智能体基础](https://code.claude.com/docs/en/agents) ，以及 [目标设定 (/goal)](https://code.claude.com/docs/en/goal)、[例行程序 (/routines)](https://code.claude.com/docs/en/routines) 和 [动态工作流 (workflows)](https://code.claude.com/docs/en/workflows#orchestrate-subagents-at-scale-with-dynamic-workflows) 的相关专题页面。\n\n* * *\n\n本文由 @delba_oliveira 撰写。\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1028,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities across government systems",
+          "url": "https://www.anthropic.com/news/alberta-government-claude-cybersecurity",
+          "published_at": "2026-07-06T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Government of Alberta uses Claude to find and fix cybersecurity vulnerabilities\n\nURL Source: https://www.anthropic.com/news/alberta-government-claude-cybersecurity\n\nMarkdown Content:\nSince 2025, the Government of Alberta has been using Claude Code with both Opus and Sonnet models to review its systems, find vulnerabilities, and fix them. A team inside Alberta’s Ministry of Technology and Innovation scanned 466 million lines of code in 20 hours, remediated security gaps across its systems, and built new tools to make those systems safer.\n\nWe’re sharing details of their experience as an example of how government agencies can use Claude and Claude Code to secure their systems at a large scale. This is a critical challenge, as governments rely on these systems to deliver benefits and keep services running—yet the code is often old, insecure, and incompletely documented. Alberta has also published a collection of technical white papers documenting its efforts for other governments to learn from; [you can read them here.](https://thevelocitywhitepapers.com/)\n\n“Albertans trust their government with some of the most sensitive information in their lives, and it is our responsibility to protect it,” said Nate Glubish, Alberta’s Minister of Technology and Innovation. “By using AI to find and fix vulnerabilities across our systems, we accomplished in hours what would have taken a traditional approach years to complete. This is what responsible government looks like in the AI era, and the best is still ahead of us.”\n\n## Alberta’s approach\n\nAlberta’s Ministry of Technology and Innovation maintains the systems of all 27 provincial ministries, from social services to public safety to wildfire response. That includes roughly 1,280 applications and 3,400 code repositories. Most of it has never undergone a systematic security review, and the accumulated technical debt—insecure code, unaddressed bugs, outdated software—runs into the billions of dollars.\n\nThe Ministry’s systems hold highly sensitive information, including tax records, government procurement data, and social services case files. So in 2025, the Ministry set up an internal team with a mandate to make these systems more secure and easier to maintain over time, working with Claude to do so.\n\nAlready, the Ministry has used Claude to:\n\n**Assess 466 million lines of government code in 20 hours.**The team put Claude to work on the codebases it maintains, using Claude Code with Claude Opus and Sonnet models. Around 50 agents worked autonomously and in parallel to scan the systems for security vulnerabilities, weaknesses in underlying infrastructure and deployment processes, and gaps in technical documentation. Claude Code ran a two-stage routine, first scanning each repository with a rules engine to flag known patterns, then reviewing those flags and citing the exact file and line for each finding so developers could verify them. The scan covered every repository Alberta owns and identified issues that traditional automated scanning tools had missed. It took about 20 hours for Alberta’s implementation; the team estimates that that kind of review could otherwise have taken around 6.5 years.\n\n**Fix the vulnerabilities the scan found.**Where the scan identified a vulnerability, Claude Code could often generate a fix, test it, and build it. In cases where a system lacked the automated tests needed to confirm that a patch was safe, Claude wrote the tests first. Where the code was too outdated or too complex to patch efficiently in its existing form, Claude rebuilt it in a more modern and maintainable language. In some scenarios, these systems could be rebuilt in as little as four to five days, including a subsidy program portal that was originally hand-coded in Java roughly 25 years ago and took five months to build the first time. All of this was done in partnership with the Ministry’s engineers: before any patch shipped, it was reviewed and approved by the team.\n\n**Run continuous security review.**Alberta’s cybersecurity team also built a set of specialized Claude review agents that run throughout the development process. A “red team” agent probes an application from the outside, the way an attacker might, and maps how a vulnerability might be exploited. A “blue team” agent then assesses the application’s defenses against an international security standard, and writes a remediation plan that points to the exact files to fix. Additional agents check code quality and the clarity of the writing the public sees. Every application is checked against roughly 95 security controls on each pass. These agents are built on top of the [Claude Agent SDK](https://code.claude.com/docs/en/agent-sdk/overview) and run a robust series of checks and analysis for every application.\n\nIn addition to scanning, securing, and modernizing its own systems, Alberta is training both government workers and the public in the use of AI through the Alberta AI Academy. Thousands of government employees and more than 10,000 members of the public have used the platform to learn the essentials of effective AI use, from prompting through enterprise application delivery. Through the Academy, the Ministry of Technology and Innovation aims to extend its approach beyond a single team or project to every ministry that needs it.\n\n## Looking ahead\n\nToday, Claude helps the Ministry write, review, and deploy code that aids in its modernization efforts. Next, it plans to expand that work with AI agents that can build entirely new software and tools alongside engineers.\n\nThe Government of Alberta also plans to continue its modernization work. One ministry, for example, has 185 legacy applications running in production, which are expensive to maintain and difficult to update. The Government plans to use Claude Code to analyze these systems, understand what they do, and consolidate them into 16 reusable applications built on modern coding languages and conventions. The goal is to reduce complexity, lower maintenance costs, and speed up modernization work that would otherwise take years to complete.\n\n## A case study for governments\n\nThe technical debt and security vulnerabilities the Government of Alberta is working to address are hardly unique. They exist in the systems of many provinces, states, and federal agencies across the world. The [technical white papers](https://thevelocitywhitepapers.com/) Alberta has released give other governments a blueprint for addressing these same issues.\n\nIn addition to the white papers, Alberta is hosting [an industry day](https://luma.com/yzd00tir) in Edmonton in July to share what it has learned. And this fall, it will begin a program to scale its approach across the provincial government. We’ll keep working with Alberta as it expands these efforts, and we hope the approach it has documented can help other governments secure their own systems.\n\n## Related content\n\n### More details on Fable 5’s cyber safeguards and our jailbreak framework\n\n[Read more](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework)\n\n### Introducing Claude Sonnet 5\n\nSonnet 5 delivers frontier performance across coding, agents, and professional work at scale.\n\n[Read more](https://www.anthropic.com/news/claude-sonnet-5)\n\n### Redeploying Fable 5\n\nFable 5 returns globally July 1. We're also proposing an industry-wide framework for scoring jailbreak severity, together with Amazon, Microsoft, Google, and other Glasswing partners.\n\n[Read more](https://www.anthropic.com/news/redeploying-fable-5)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "A global workspace in language models",
+          "url": "https://www.anthropic.com/research/global-workspace",
+          "published_at": "2026-07-06T00:00:00.000Z",
+          "description": "New interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.",
+          "full_text": "Title: A global workspace in language models\n\nURL Source: https://www.anthropic.com/research/global-workspace\n\nMarkdown Content:\n[Video 3](https://www.youtube.com/watch?v=rKV5JcALQoQ)\n\nAs you read this sentence, circuits in your brain are adjusting your posture, controlling your breathing, and transforming lines and curves on the screen into recognizable words. Most of this processing is invisible to you. But some of what takes place in your brain you _do_ have access to—an image that pops into your head, or a deliberate plan you make about where to go shopping. Neuroscientists and philosophers sometimes refer to the latter type of brain activity as “consciously accessible,” to distinguish it from all the other processing that goes on unconsciously. This activity has special properties: we can describe it, control it, and use it for deliberate reasoning, in contrast to all the automatic processing that goes on without our awareness.\n\nIn a new paper, we present evidence that a similar distinction has emerged in modern language models like Claude. We find that Claude has developed a small collection of internal neural patterns that, compared to all its other internal processing, play a special role.\n\nWe call the collection of these patterns the _J-space_—named after the technique we used to find them, involving a mathematical concept called the Jacobian. Each J-space pattern is linked to a particular word. But when one of these patterns lights up, it doesn’t mean the model is _saying_ that word—just that the word is on its mind. If you've heard of language models having a \"scratchpad\" or “chain of thought”—text they write to themselves while reasoning—the J-space is something different. It operates silently, in the model’s internal neural activations, allowing the model to think about a concept without writing it down. Notably, the J-space wasn’t designed or programmed by us, but instead _emerged on its own_ during Claude’s training process.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F0ab926f491beb999ece405a03cc7684730156905-3824x2640.png&w=3840&q=75)\n\nThe J-space reveals internal thoughts that don’t appear in the model’s output.\n\nWe find that the J-space has a number of unique properties, compared to the rest of Claude's processing:\n\n*   Claude can report on these representations. If you ask Claude what it's thinking about, it will tell you what’s in the J-space. Non-J-space representations are less reportable.\n*   It can also modulate them on request. If you ask Claude to think about something, or solve a problem silently in its head, it will light up the appropriate patterns in its J-space. By contrast, it has trouble modulating patterns not in the J-space.\n*   Claude uses its J-space for internal reasoning. If you ask Claude to solve a problem that requires multiple steps, the intermediate steps will light up in its J-space, even when it doesn’t say them out loud. These J-space patterns causally mediate its performance in such tasks, despite being smaller in magnitude than other representations.\n*   Representations in the J-space can be used flexibly for many tasks—for example, once “France” has lit up in Claude’s J-space, the model can recall its capital, or its national currency, or the continent it belongs to.\n*   However, despite its important role, the J-space is not involved in most of what a language model does—speaking fluently, recalling simple facts, using correct grammar, etc. In experiments where we prevented Claude from using its J-space, it still interacted normally, but lost its higher-order cognitive functions.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5c36c78099f955a53058878ebfcb41f13c45563c-1760x1358.png&w=3840&q=75)\n\nFive functional properties of a global workspace, and stylized illustrations of experiments we use to test for them in language models.\n\nOur experiments were inspired by a prominent theory in neuroscience that was developed to explain how conscious access works: the [global](https://ccrg.cs.memphis.edu/assets/papers/1988/Baars-A%20Cognitive%20Theory%20of%20Consciousness.pdf)[workspace](https://www.unicog.org/publications/DehaeneNaccache_WorkspaceModel_Cognition2001.pdf)[theory](https://www.cell.com/neuron/fulltext/S0896-6273(20)30052-0). This account pictures the brain as a collection of specialist systems that work in parallel, unconsciously, and largely in isolation from one another. A piece of information becomes consciously accessible when it gains entry to a small shared channel, the “workspace,” which is broadcast to other brain systems that can see it and make use of it. Based on our findings, we think the J-space plays a similar “workspace” role in Claude. For example, we find evidence that Claude’s J-space has especially strong connections to the rest of its neural network, allowing it to fulfill this kind of broadcasting role.\n\nNone of this tells us whether Claude is _conscious_ in the way people are, or whether it feels anything at all; we’ll come back to that question at the end of the post. But whatever its philosophical significance, the J-space is a practically useful tool for us, as it gives us a way to see what Claude is thinking but not saying. For instance, we’re able to use it to catch Claude privately noticing that it’s being tested, intentionally producing fabricated data, or pursuing a hidden goal that we planted during training. We’ve also developed a technique to influence what lights up in Claude’s J-space, and thereby influence its decision-making.\n\nMore broadly, these findings have changed our understanding of how Claude’s mind works, revealing a privileged mental workspace that can be used for deliberate reasoning, operating amidst a sea of more automatic, inflexible processing. Rather than being a chaotic jumble of numbers, Claude’s internals have organized themselves in a way that is reminiscent of our own minds.\n\nThis post is a short summary of a much more extensive [research paper](http://transformer-circuits.pub/2026/workspace/index.html), where you can find more detail on our experiments. We’ve also released a code repository with an [open-source implementation](https://github.com/anthropics/jacobian-lens) of the core methods, and have partnered with Neuronpedia to provide an [interactive demo](http://neuronpedia.org/jlens) of our methods on open-weights models. To provide additional perspectives on the broader implications of this work, we also invited commentary from several experts in neuroscience, philosophy, and LLM interpretability, which can be viewed [here](https://www-cdn.anthropic.com/files/4zrzovbb/website/cc4be2488d65e54a6ed06492f8968398ddc18ebe.pdf).\n\n## How we found the J-space\n\nThe starting point for this research was inspired by one of the key features of consciously accessible thoughts in humans: they can, unlike _un_ conscious processing, often be put into words. If a thought is consciously accessible to you, you can typically describe it if someone asks. We went looking for representations in Claude with the same property: representations that are positioned to influence what Claude might say—not necessarily what it’s saying right now, but what it _could_ talk about, if asked. Our technique is called the Jacobian lens, or J-lens for short. For every word in Claude's vocabulary, the J-lens finds the internal activity pattern that makes Claude more likely to say that word at some point in the future.\n\nWhen we apply the lens to Claude’s internal activity, we get a list of words—the contents of the _J-space_ at that moment—which we can simply read. Claude processes text through a series of multiple internal stages called layers, and by applying this technique over different layers, we can watch these silent words in the J-space evolve as the model works through what to say.\n\nWhat shows up in the J-space goes well beyond the text Claude is reading or writing. When Claude reads code with a bug that nobody has pointed out, its J-space contains “ERROR.” When it reads the raw letters of a protein sequence, the J-space contains the protein's biological function. When it reads search results that are secretly an attempt to manipulate it (an attack known as a “prompt injection”), the J-space contains “injection” and “fake.” When we ask Claude a multi-step math problem, the intermediate steps pop up in the J-space, in the right order. So even though the J-space was discovered by looking for representations that could be spoken, it nevertheless uncovers Claude’s internal thoughts. In a sense, this is similar to how some people “think in words,” without having to say them out loud.\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fa89e0d8ad62f249f8b1f1be482f59c665ee83915-1760x1746.png&w=3840&q=75)\n\nJ-lens readouts on six prompts, at various layers. In each case the lens surfaces an internal assessment or computation that appears nowhere in the text: the steps of a reasoning or math problem, the presence of a bug, recognition of an image, the function of a protein, and the suspicion that search results are fabricated.\n\n## Claude reports what’s in its J-space\n\nOur first set of experiments tested how the J-space is involved in Claude’s verbal reports. In one experiment, we ask Claude to silently think of an item from some category—a sport, say—and then name it. If we read the J-lens right _before_ Claude answers, we can see what it picked: “Soccer” is at the top of the list, and sure enough, Claude says “soccer.” By itself, though, this is just a correlation. The J-space might be where Claude’s answer comes from, or it might just mirror a decision made somewhere else, like a scoreboard that tracks a game without affecting it.\n\nTo check, we intervened directly. We reached into Claude’s neural network, removed the “Soccer” pattern, and added an equally strong “Rugby” pattern in its place, leaving everything else untouched. Claude then reports that the sport it was thinking of is rugby. If the J-space were a mere scoreboard—a passive record of a decision made elsewhere—editing it would have done nothing: Claude would still have said “soccer.” Instead, Claude’s answer followed the edit, which tells us the answer is genuinely read out of the J-space.\n\nIn another experiment, we told Claude that a thought might have been injected into its mind and asked it to report what, if anything, it noticed. For instance, in the example below, while Claude was still reading the question, we injected the “lightning” pattern into its J-space. Claude reported that the injected thought was about lightning. The same result held across many injected concepts.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe66133979e3bb3413eb10b2974a4cd309ef01fc1-1760x796.png&w=3840&q=75)\n\nLeft: we ask Claude to silently think of a sport, then name it. The J-lens shows its choice (“Soccer”) before it answers, and swapping the “Soccer” pattern for “Rugby” changes what it reports. Right: we tell Claude a thought may have been injected and ask it to identify it. Injecting “lightning” into its J-space causes Claude to report that the thought is about lightning.\n\n## Claude can control its J-space on request\n\nThe second property that we tested for was whether Claude can modulate its J-space when asked, like how humans can mentally focus on an image or word. We told Claude to concentrate on citrus fruits while copying out an unrelated sentence about a painting. While it copied the text, the J-space contained “orange” and “fruits,” along with words like “thinking” and “imagery” that describe the mental act itself. We could also ask Claude to do math in its head: when asked to work out 3² − 2 while copying the same sentence, the J-space contains “nine,” and then at later layers, “seven.” Importantly, nothing about fruit or arithmetic appears in Claude’s output, which is just the copied sentence about the painting. The mathematical activity is happening entirely internally, in the J-space.\n\n![Image 5](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F424caf5aae79f72513dbbfa0161822904064ea77-1760x1146.png&w=3840&q=75)\n\nWhile Claude copies a sentence about a painting, the J-lens shows the content it was instructed to hold in mind (“orange”; the intermediate value “nine” and the answer “seven”), alongside words describing the act of holding it (“thoughts,” “focused”).\n\nClaude’s control over its J-space isn't perfect. When we told it _not_ to think about something, the concept lit up in its J-space _less_ than when we said it should think about it, but much more than when we never mentioned it. Telling Claude to avoid a thought partly brings the thought to mind, much like what happens to people who are told [not to think about a white bear](https://dtg.sites.fas.harvard.edu/DANWEGNER/pub/Wegner,Schneider,Carter,&White%201987.pdf). Claude also seems to notice when its control fails: alongside the forbidden concept breaking through, the words “damn” and “failure” also frequently light up in the J-space, as though Claude is recognizing its own lapse.\n\n## Claude thinks in its J-space\n\nIn the J-lens readouts above, we saw the intermediate steps of a math problem appear in the J-space. But seeing a concept appearing in the J-space doesn’t necessarily mean the J-space is doing the cognitive work. In principle, the real computation might be happening elsewhere, with the J-space just passively reflecting it. To test whether Claude actually reasons with its J-space, we returned to our swap technique.\n\nConsider the prompt “The number of legs on the animal that spins webs is”. To answer, Claude has to first figure out that the animal is a spider, and then recall how many legs spiders have. The word “spider” never appears in the prompt or in Claude's answer (it just says “8”); it's a stepping stone Claude uses internally. The J-lens shows “spider” light up partway through Claude’s processing, and swapping it changes the outcome: if you replace the “spider” pattern with “ant,” Claude answers “6” instead of “8.”\n\nThe second step of Claude’s reasoning took its input from the J-space and went along with whatever we put in it. We saw the same thing in other kinds of thinking. When Claude writes a rhyming couplet, it picks the rhyme word ahead of time, and the planned word sits in the J-space at the start of the line; if you swap it for another word in the J-space, the whole line changes.\n\n![Image 6](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F98aba4182963219d29291912a0c3d2c299f7f1b5-1760x760.png&w=3840&q=75)\n\nTwo examples of redirecting Claude’s silent reasoning by swapping J-space contents.\n\nWe also tested whether J-space representations can be used flexibly—whether one representation can feed many different tasks. This is one of the key properties highlighted by global workspace theory. To test for this flexibility, we gave the model four prompts asking for different facts about France: the capital, the language, the continent, and the currency. Then we swapped “France” for “China” in the J-space, with the exact same intervention in each context. Claude answered with “Beijing,” “Chinese,” “Asia,” and “Yuan,” respectively. In other words, four different downstream computations picked up the same J-space edit and each used it correctly. If Claude stored a separate copy of the country for each kind of question, the edit would have affected at most one of them. The fact that all four answers changed together means they’re all reading from the same shared representation, which is what a workspace is for: information gets written in once, and many different systems can use it.\n\n![Image 7](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7a2d97bf20b9be6a4dc531169666b6f21be10788-1280x764.png&w=3840&q=75)\n\n_One J-space representation can have many uses. The same “France”→“China” swap redirects Claude’s answers about the capital (Paris→Beijing), the language (French→Chinese), and the continent (Europe→Asia)._\n\nHow can one representation of a concept serve so many different tasks? Earlier, we mentioned that the J-space appears to be wired up to the rest of Claude's neural network especially densely. For any activity pattern, we can measure how strongly the various components of the network are connected to it—how many of them are positioned to read information from that pattern, or to write information into it. J-space patterns stand out dramatically on this measure: far more components read from them and write to them than for ordinary patterns, in some parts of the network by a factor of about a hundred. This is the kind of wiring you’d expect of a broadcasting hub, where many systems post information and many others pick it up.\n\n## Claude’s automatic processing skips the J-space\n\nIn humans, most of the brain’s processing is not conscious—we don't deliberately think about parsing grammar while reading, or balancing our bodies while walking. Similarly, we found that most of Claude’s processing _doesn’t_ involve its J-space. It turns out that the J-space holds only a few dozen concepts at a time, and accounts for less than a tenth of the overall activity in Claude's internal processing. So what is all the rest of the neural network doing?\n\nTo find out, we tried deleting the J-space entirely, removing its most active contents at every point in the text while leaving everything else alone. Whatever Claude can still do without its J-space is what the rest of the network handles on its own.\n\nIt turns out the rest of the network can do quite a lot. Without its J-space, Claude speaks fluently, classifies sentiment, answers multiple-choice questions, and pulls facts out of passages roughly as well as before. What it loses, though, are the tasks that require some higher-order thinking: multi-step reasoning drops to near zero, and summarization and rhyming poetry-writing performance fall below the level of a much smaller, intact model.\n\nHere’s a concrete demonstration of what the J-space does and doesn’t do. We showed Claude a passage written in Spanish and gave it different tasks that all depend on the passage being Spanish: continuing it (which requires writing in Spanish), naming the language, and answering questions that require using the language’s identity—naming a famous author who wrote in it, for instance. Then we swapped “Spanish” for “French” in the J-space and checked which tasks were affected.\n\nAsked to name the language, Claude says French. Asked for a famous author, it switches from García Márquez to Victor Hugo. But asked to just continue the passage, it writes fluent Spanish, completely unaffected. Claude’s knowledge of the language is at work in every one of these tasks, but only some of them consult the J-space for it. Naming the language, or doing something new with it, goes through the J-space, while continuing the passage—a skill Claude has practiced on enormous amounts of text—runs automatically, the way you can speak grammatically all day without once thinking about grammar.\n\n![Image 8](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F5a2d2c96837c3d48d067fbcf91f62c68139d05da-1280x1111.png&w=3840&q=75)\n\nThe same swap (“Spanish”→“French”) changes Claude’s answers when it must name the language or use it to reason about a question, but has no effect on its ability to continue the passage in fluent Spanish.\n\n## Monitoring Claude’s thoughts for misbehavior\n\nNow we understand a bit about how the J-space works. But what can we do with this understanding? A central problem in e",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "our older kid put two words together for the first time and i am approximately as amazed by this cognitive feat as i am by GPT-5.6 discovering new math",
+          "url": "https://x.com/sama/status/2073791666553844074",
+          "published_at": "2026-07-05T15:30:37.000000Z",
+          "description": "our older kid put two words together for the first time and i am approximately as amazed by this cognitive feat as i am by GPT-5.6 discovering new math",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 426.5h old, exceeds 336h threshold",
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "\"God gave me a sign\"\n\n(remembering i live in San Francisco)\n\n\"I mean, I was acasually influenced by the ASI at the end of time to maximize EV for humanity\"",
+          "url": "https://x.com/trq212/status/2073956140610924936",
+          "published_at": "2026-07-06T02:24:10.000000Z",
+          "description": "\"God gave me a sign\"\n\n(remembering i live in San Francisco)\n\n\"I mean, I was acasually influenced by the ASI at the end of time to maximize EV for humanity\"",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 189.5h old, exceeds 168h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 312.9h old, exceeds 168h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
