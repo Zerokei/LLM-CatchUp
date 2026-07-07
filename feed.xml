@@ -78,6 +78,118 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 周报 2026-W27</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W27.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W27.md</guid>
+      <pubDate>Sun, 05 Jul 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W27 (06/29 - 07/05)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>Claude产品密集重排</strong>：Sonnet 5、Fable 5 重新上线与 Claude Science 共同推动 Anthropic 的模型、科研和安全栈更新。</li>
+<li><strong>安全治理产品化</strong>：Anthropic 用越狱严重性框架、分类器和政府预发布测试把安全边界写进发布流程。</li>
+<li><strong>科研工作台升温</strong>：Claude Science 与 OpenAI GeneBench-Pro 都把 AI for Science 从演示推进到可审计工作流和基准。</li>
+<li><strong>语音代理走低门槛</strong>：xAI Voice Agent Builder 与 Grok 语音接入 Vercel AI Gateway 让实时语音应用更容易试点。</li>
+<li><strong>企业云入口扩张</strong>：Claude 登陆 Microsoft Foundry，企业可在 Azure 身份、账单和网络治理边界内采用 Anthropic 模型。</li>
+<li><strong>开发工具继续碎片化</strong>：ZCode、Claude Code Artifacts、Notion HTML 块和 Grok Build 让原型、代码与交互文档边界继续融合。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://www.anthropic.com/news/claude-sonnet-5">Anthropic 发布 Claude Sonnet 5</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/30</li>
+<li><strong>标签</strong>: <code>Claude Sonnet 5</code> <code>模型发布</code> <code>智能体</code> <code>Claude Code</code> <code>编码能力</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Claude Sonnet 5，定位为更强的 Sonnet 级代理模型，能规划并使用浏览器、终端等工具。它在代理、编码和知识工作上显著优于 Sonnet 4.6，并以低于 Opus 4.8 的价格接近其部分代理评测表现。</p>
+<h3>2. <a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic 恢复 Fable 5 并提出越狱分级框架</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/30</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>出口管制</code> <code>AI安全</code> <code>越狱评估</code> <code>政府合作</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 称美国政府解除对 Fable 5 和 Mythos 5 的出口管制，并说明针对安全绕过报告所做的分类器修复。更重要的是，公司开始推动 AI 越狱严重性评估框架和更深的政府预发布测试合作。</p>
+<h3>3. <a href="https://www.anthropic.com/news/fable-safeguards-jailbreak-framework">Fable 5重新上线：安全防护与访问规则更新</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/02</li>
+<li><strong>标签</strong>: <code>Fable 5</code> <code>Claude</code> <code>网络安全</code> <code>安全分类器</code> <code>越狱评估</code> <code>Claude Code</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 在 Fable 5 重新上线后披露新的网络安全分类器，把请求拆成禁止、高风险双用、低风险双用和良性用途。Claude Code 用户还获得误拦截反馈路径和临时用量重置，说明模型恢复已经和安全治理、容量调度和开发者体验绑定。</p>
+<h3>4. <a href="https://x.com/AIatMeta/status/2071566924803395741">Brain2Qwerty v2：脑信号实时解码句子</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Meta AI (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/29</li>
+<li><strong>标签</strong>: <code>Brain2Qwerty</code> <code>脑机接口</code> <code>神经解码</code> <code>开源数据</code> <code>Meta AI</code></li>
+</ul>
+<p><strong>摘要</strong>: Meta AI 发布 Brain2Qwerty v2，把非侵入式脑信号转文本从字符级推进到词语与语义级实时句子解码。代码和数据的开放降低了复现门槛，也让脑机接口与语言模型的结合更接近可验证研究。</p>
+<h3>5. <a href="https://x.com/claudeai/status/2071653958905467027">Claude 正式登陆 Microsoft Foundry</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/30</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Microsoft Foundry</code> <code>Azure</code> <code>Messages API</code> <code>企业治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude in Microsoft Foundry 正式 GA，并由 Anthropic 在 Azure 基础设施上运营。Azure 客户可通过 Messages API 使用 Claude Opus 4.8 和 Haiku 4.5，同时接入身份认证、账单、网络治理和承诺消费抵扣。</p>
+<h3>6. <a href="https://openai.com/index/introducing-genebench-pro">GeneBench-Pro：OpenAI 测科研判断能力</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/30</li>
+<li><strong>标签</strong>: <code>GeneBench-Pro</code> <code>科研推理</code> <code>基因组学</code> <code>评测基准</code> <code>案例集</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 GeneBench-Pro，用 129 个真实风格任务评估模型在基因组学、定量生物学和转化医学中的科研判断力。它强调模型能否选择可支持的问题、调整分析路径并判断证据是否足够，而不只是答题正确率。</p>
+<h3>7. <a href="https://www.anthropic.com/news/claude-science-ai-workbench">Anthropic 推出 Claude Science 科研工作台</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/30</li>
+<li><strong>标签</strong>: <code>Claude Science</code> <code>AI for Science</code> <code>科研工作台</code> <code>可复现性</code> <code>科研代理</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Science beta 把文献分析、多步骤研究、图表与手稿生成、可审计历史和计算资源接入整合到一个科学工作环境。它支持本地、远程 SSH 和 HPC 登录节点，并内置多领域技能和连接器。</p>
+<h3>8. <a href="https://x.com/xai/status/2072342803787702422">xAI推出Grok无代码语音智能体平台</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/01</li>
+<li><strong>标签</strong>: <code>Voice Agent Builder</code> <code>Grok Voice</code> <code>语音智能体</code> <code>无代码</code> <code>低延迟</code> <code>定价</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 发布 Voice Agent Builder，让用户用 Grok Voice 创建拟人语音智能体，beta 价格为每分钟 0.05 美元。它把语音识别、语言模型和语音合成整合到更紧耦合链路中，适合客服、预约和线索收集等低风险场景试点。</p>
+<h3>9. <a href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-july">Berkeley RDI关注GPT-5.5-Cyber</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Berkeley RDI | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/02</li>
+<li><strong>标签</strong>: <code>网络安全</code> <code>GPT-5.5-Cyber</code> <code>CyberGym</code> <code>智能体评测</code></li>
+</ul>
+<p><strong>摘要</strong>: Berkeley RDI 本周简报重点提到 GPT-5.5-Cyber 及其在 CyberGym 上的进展。虽然当前记录较短，但它延续了网络安全智能体和攻防评测成为模型竞争重点的趋势。</p>
+<h3>10. <a href="https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/">Google汇总6月AI产品更新</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/02</li>
+<li><strong>标签</strong>: <code>Google AI</code> <code>Gemini</code> <code>Gemma</code> <code>NotebookLM</code> <code>多模态</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 汇总 6 月 AI 进展，覆盖 Gemma 4 12B、Gemini 3.5 Flash computer use、Nano Banana 2 Lite、Gemini Omni Flash、Live Translate 和 NotebookLM 升级。它显示 Google 正把端侧模型、多模态、代理自动化和教育科研工具一起推向产品线。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周模型发布由 Anthropic 主导。Claude Sonnet 5 强化中高复杂度代理任务，Fable 5 则在重新上线后围绕安全分类器、访问规则和用量限制重新定义可用性。Berkeley RDI 对 GPT-5.5-Cyber 的关注说明网络安全模型仍是前沿能力竞争的重要方向。整体看，模型发布已经明显和安全、容量、产品入口以及政府协作交织在一起。</p>
+<h3>研究</h3>
+<p>研究线索一边进入生命科学，一边进入神经接口。OpenAI 的 GeneBench-Pro 把评测重点放在科研判断、证据边界和分析路径选择上，而不是简单答案。Meta Brain2Qwerty v2 则把非侵入式脑信号实时解码推进到词语和语义级句子。两者共同说明，AI 研究正在转向更专业、更难验证、也更需要开放数据和可审计流程的任务。</p>
+<h3>产品与功能</h3>
+<p>产品更新最集中在科研工作台、企业云入口、语音代理和开发工具。Claude Science 把科研代理做成可连接 HPC 与远程环境的工作台，Claude in Microsoft Foundry 则把 Anthropic 模型带进 Azure 治理边界。xAI Voice Agent Builder、Grok 语音 API、Claude Code Artifacts、ZCode、Notion HTML 块和 Google 6 月更新共同显示：产品层正在把语音、交互页面、代码代理和文档原型快速商品化。</p>
+<h3>商业动态</h3>
+<p>商业动态数量不高，但都围绕分发和生态入口。Anthropic 借 Microsoft Foundry 扩展企业采用路径，xAI 借 Vercel、Railway 等开发者平台扩大 Grok 的部署场景，Z.ai 则用 ZCode 为 GLM-5.2 建官方开发环境。模型公司的商业竞争正在从“谁的模型更强”延伸到“谁能嵌入企业采购、开发者工具和云沙箱”。</p>
+<h3>政策与安全</h3>
+<p>政策与安全的核心是 Anthropic 的 Fable 5 重新上线。出口管制解除、安全分类器修复、越狱严重性框架和政府预发布测试合作组成了一套更正式的发布治理流程。对开发者而言，安全治理不再只是外部政策新闻，而会影响模型是否可用、请求是否回退、额度是否重置以及误拦截如何反馈。</p>
+<h3>教程与观点</h3>
+<p>教程与观点显著增加，说明行业开始讨论如何组织 AI 辅助开发和全栈 AI 平台，而不只是追逐单个发布。Google 的 full-stack AI 解释、Spotify 的 73% PR AI 辅助案例、OpenAI 的核心转储排障复盘，都把注意力拉回工程流程、可靠性和平台结构。它们提醒团队：AI 工具能提高产出，但真正的瓶颈常常在测试、调试、治理和组织反馈回路。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Claude Sonnet 5</strong> — 在现有 Claude Code 工作流中复测多步骤修复、重构和浏览器工具任务，并比较 Sonnet 5 与 Opus 4.8 的成本成功率。</li>
+<li><strong>Fable 5</strong> — 重新跑核心编码、长文档和安全边界测试，记录新分类器下的误拦截和回退情况。</li>
+<li><strong>Claude Science</strong> — 选择一个已有科研分析项目，在 Claude Science 中复现实验流程并检查审计历史是否完整。</li>
+<li><strong>Claude in Microsoft Foundry</strong> — 在 Azure 中测试 Claude Messages API 的认证、计费、网络策略、prompt caching 和 extended thinking。</li>
+<li><strong>xAI Voice Agent Builder</strong> — 用同一客服脚本对比现有 STT-LLM-TTS 组合与 Grok Voice 的延迟、成本和失败率。</li>
+<li><strong>Google 6月更新</strong> — 挑选 Gemma 4 12B、Gemini Live Translate 或 NotebookLM 升级中最贴近产品的能力做小规模验证。</li>
+<li><strong>Claude Code Artifacts</strong> — 用 Artifacts 做一个 PR walkthrough、项目仪表盘或临时交互原型，并评估私有链接的协作边界。</li>
+<li><strong>ZCode</strong> — 在小型代码库中试用 ZCode，验证 GLM-5.2 的补全、修改、长上下文和 BYOK 配额体验。</li>
+<li><strong>Notion HTML 块</strong> — 把一份静态规格文档改造成可点击原型或交互式流程图，测试团队共享后的权限边界。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://www.anthropic.com/news/claude-sonnet-5">Anthropic 发布 Claude Sonnet 5</a> — 这是理解 Anthropic 新一代中高复杂度代理模型路线的核心发布。</li>
+<li><a href="https://www.anthropic.com/news/redeploying-fable-5">Anthropic 恢复 Fable 5 并提出越狱分级框架</a> — 它解释了模型访问、安全修复和政府合作如何共同影响前沿模型上线。</li>
+<li><a href="https://openai.com/index/introducing-genebench-pro">GeneBench-Pro：OpenAI 测科研判断能力</a> — 这篇适合理解 AI for Science 评测为何要考察判断过程而不只是答案。</li>
+<li><a href="https://www.anthropic.com/news/claude-science-ai-workbench">Anthropic 推出 Claude Science 科研工作台</a> — 它展示科研代理从聊天助手进入可审计工作环境的产品形态。</li>
+<li><a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug">OpenAI 用核心转储流行病学定位 18 年旧 bug</a> — 这篇工程复盘对大规模系统调试和可靠性文化很有参考价值。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-07-04</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-04.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-04.md</guid>
@@ -679,6 +791,118 @@ https://t.co/voEubobshh</a></li>
 </ul>
 </blockquote>
 <hr>
+]]></description>
+    </item>
+    <item>
+      <title>CatchUp 周报 2026-W26</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W26.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W26.md</guid>
+      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W26 (06/22 - 06/28)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>安全模型前移</strong>：OpenAI Daybreak、GPT-5.5-Cyber 与 Patch the Planet 把安全能力从告警推进到修复闭环。</li>
+<li><strong>代理能力分层</strong>：Seed2.1、Qwen-AgentWorld 与 GPT-5.6 Sol 都在用代码、工具和环境模拟强化长程 Agent。</li>
+<li><strong>团队代理成形</strong>：Claude Tag 把 Claude Code 的单人编码体验扩展到 Slack、长期记忆和多人异步协作。</li>
+<li><strong>推理基础设施升温</strong>：OpenAI Jalapeño 芯片和自研推理平台显示模型公司继续向算力栈下沉。</li>
+<li><strong>开发工具移动化</strong>：Codex 移动端、DigitalOcean 插件和 Gemini computer use 都在降低代理持续工作的门槛。</li>
+<li><strong>科研应用深化</strong>：GPT-5 Pro 免疫学案例和 Anthropic 经济指数显示模型正进入科研判断与组织影响评估。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://openai.com/index/daybreak-securing-the-world">OpenAI Daybreak 扩展：安全模型与开源修复闭环</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/22</li>
+<li><strong>标签</strong>: <code>OpenAI Daybreak</code> <code>GPT-5.5-Cyber</code> <code>Codex Security</code> <code>Patch the Planet</code> <code>开源安全</code> <code>漏洞修复</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 扩展 Daybreak，将 GPT-5.5-Cyber、Codex Security、CyberGym 和 Patch the Planet 组合成面向防御方的安全能力。重点不是制造更多告警，而是把漏洞发现、验证、补丁、测试和合并串成可审计的修复闭环。</p>
+<h3>2. <a href="https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity">字节 Seed2.1 发布：强化 Agent、代码与多模态</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: ByteDance Seed | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/23</li>
+<li><strong>标签</strong>: <code>Seed2.1</code> <code>字节跳动</code> <code>Agent</code> <code>代码模型</code> <code>多模态</code></li>
+</ul>
+<p><strong>摘要</strong>: 字节 Seed 发布 Seed2.1 模型家族，强调通用 Agent、端到端代码交付、多模态理解和长上下文能力。它的定位很清晰：不只提升单题表现，而是面向真实生产力场景做多步骤执行。</p>
+<h3>3. <a href="https://x.com/OpenAIDevs/status/2069499656305090671">OpenAI回顾半年API模型与工具更新</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/24</li>
+<li><strong>标签</strong>: <code>OpenAI API</code> <code>GPT-5.5</code> <code>Responses API</code> <code>Agents SDK</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 开发者账号回顾半年 API 侧三十多项更新，包括 GPT-5.5、实时语音、GPT-Image-2、Responses API Skills、Agents SDK、Hosted shell 和 OpenAI CLI。它显示 OpenAI 的开发者平台正在从模型 API 扩展成完整代理运行环境。</p>
+<h3>4. <a href="https://x.com/Alibaba_Qwen/status/2069720365442719867">Qwen-AgentWorld：35B 开源世界模型与智能体基准</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/24</li>
+<li><strong>标签</strong>: <code>Qwen-AgentWorld</code> <code>世界模型</code> <code>AgentWorldBench</code> <code>智能体环境</code> <code>开源模型</code> <code>SWE-Bench</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 发布 Qwen-AgentWorld-35B-A3B、AgentWorldBench 和论文，把语言世界建模作为提升智能体能力的核心路线。用模拟环境训练和评测代理，可能成为真实终端、网页和移动任务之前的关键筛选层。</p>
+<h3>5. <a href="https://x.com/OpenAI/status/2069843083701915755">GPT-5.5 Instant 升级对话意图与约束处理</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/25</li>
+<li><strong>标签</strong>: <code>GPT-5.5</code> <code>Instant</code> <code>对话体验</code> <code>约束遵循</code> <code>推荐</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 推出新版 GPT-5.5 Instant，强调更自然的对话、更好的意图理解和复杂约束遵循。它对日常 ChatGPT、推荐和多轮任务很重要，因为低延迟模型正在承接越来越多真实用户入口。</p>
+<h3>6. <a href="https://openai.com/index/previewing-gpt-5-6-sol">GPT-5.6 Sol 预览：三模型分层 + 安全栈升级</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 06/26</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>OpenAI</code> <code>模型分层</code> <code>网络安全</code> <code>安全栈</code> <code>Terra</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 预览 GPT-5.6 Sol，并把家族拆成 Sol、Terra、Luna 三层，分别对应前沿能力、日常效率和高吞吐低成本任务。发布同时强调网络安全、实时防滥用和红队测试，说明模型分层正和安全分级同步推进。</p>
+<h3>7. <a href="https://www.anthropic.com/news/introducing-claude-tag">Claude Tag 让 Slack 团队直接委派 Claude</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/23</li>
+<li><strong>标签</strong>: <code>Claude Tag</code> <code>Slack</code> <code>Claude Code</code> <code>团队协作</code> <code>异步代理</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Claude Tag，让团队通过 Slack 中的 @Claude 委派任务，并把 Claude 接入选定频道、工具、数据和代码库。它把 Claude Code 的个人代理体验推进到多人协作、长期记忆和异步执行。</p>
+<h3>8. <a href="https://x.com/MistralAI/status/2069420263825895917">Mistral OCR 4 发布：结构化文档解析</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Mistral AI (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 06/23</li>
+<li><strong>标签</strong>: <code>Mistral OCR 4</code> <code>文档 AI</code> <code>结构化解析</code> <code>RAG</code> <code>自托管</code></li>
+</ul>
+<p><strong>摘要</strong>: Mistral OCR 4 把文档解析为带边界框、区块类型和置信度的结构化结果，覆盖 170 种语言。它对 RAG、引用、脱敏和人工复核都有直接价值，不只是把图片转成纯文本。</p>
+<h3>9. <a href="https://x.com/OpenAIDevs/status/2069457015227940891">OpenAI 扩大开源维护者支持</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 06/24</li>
+<li><strong>标签</strong>: <code>开源安全</code> <code>Patch the Planet</code> <code>Codex</code> <code>维护者支持</code> <code>AI 安全研究</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 汇总资助维护者、投资 Rust、启动 Patch the Planet 和扩大 Codex for Open Source 等动作。它说明安全策略正在从模型侧扩展到开源供应链，关键在于把 AI 辅助修复交到维护者手里。</p>
+<h3>10. <a href="https://openai.com/index/gpt-5-immunology-mystery">GPT-5 Pro帮助免疫学家解释T细胞谜题</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 研究 | <strong>日期</strong>: 06/24</li>
+<li><strong>标签</strong>: <code>GPT-5 Pro</code> <code>免疫学</code> <code>T细胞</code> <code>科研辅助</code> <code>生物安全</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 介绍免疫学家用 GPT-5 Pro 重新分析搁置三年的 T 细胞实验，并得到机制性解释。案例展示了前沿模型在科研假设生成和实验筛选中的潜力，也提醒生物科研辅助需要更强验证和安全边界。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周模型发布的主线是代理化和分层化。OpenAI 一方面推出安全导向的 Daybreak 与 GPT-5.5-Cyber，另一方面预览 GPT-5.6 Sol/Terra/Luna 的能力与成本分层。字节 Seed2.1、Qwen-AgentWorld 和 GPT-5.5 Instant 则分别从生产力、多环境智能体和日常对话入口强化模型。整体看，模型发布越来越少是单一权重更新，更多是模型、评测、工具、安全和产品入口的组合包。</p>
+<h3>研究</h3>
+<p>研究类内容集中在模型进入真实复杂任务后的验证问题。GPT-5 Pro 的免疫学案例展示模型能帮助科学家重构实验假设，但也让生物安全与实验复核更重要。OpenAI 关于 Codex 与知识工作的研究显示，代理式 AI 正把工作单位从一次性对话变成可委派任务。Anthropic 经济影响研究则开始量化 AI 使用节奏、岗位预期和自动化程度之间的关系。</p>
+<h3>产品与功能</h3>
+<p>产品更新围绕团队代理、文档处理和开发环境展开。Claude Tag 是最重要的产品信号，它把 Slack、长期记忆、权限和异步执行放进同一个团队工作流。Mistral OCR 4、Gemini computer use、Codex 移动端和 DigitalOcean 插件分别补齐文档结构化、界面操作、移动跟进和云端持久开发环境。共同方向是让代理更接近真实组织流程，而不是停留在聊天框。</p>
+<h3>商业动态</h3>
+<p>商业动态的焦点是基础设施和平台控制权。OpenAI 与 Broadcom 的 Jalapeño 推理芯片显示模型公司希望掌控成本、延迟和容量曲线。Sam Altman 关于 token 供给的表态也强化了这一点：当用户和代理吞吐继续上升，推理基础设施会直接影响产品形态和价格策略。企业采用方面，Claude Tag 和 Codex 扩展都在把 AI 从个人工具推向团队级采购与运营。</p>
+<h3>政策与安全</h3>
+<p>政策与安全围绕开源安全、可信访问和防御能力展开。OpenAI 的 Patch the Planet 与 Codex for Open Source 说明模型公司正在把安全投资投向关键依赖维护者。Daybreak Cyber Partner Program 又把 GPT-5.5-Cyber 放进受控访问和行业伙伴生态。相比单纯发布安全模型，本周更重要的是修复闭环、权限边界和人工审查流程开始被产品化。</p>
+<h3>教程与观点</h3>
+<p>教程与观点数量不多，但方向很明确：如何把代理工作流接入现有团队。Claude Tag 的内部实践、Codex 移动端和云环境案例都提示团队需要重新设计任务分派、审阅、通知和权限边界。对开发者来说，本周值得学习的不是某个提示词，而是如何让代理在 Slack、移动端、云 IDE 和代码审查之间持续工作。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>OpenAI Daybreak / Codex Security</strong> — 选一个授权代码库做安全扫描试点，要求输出漏洞证据、严重性、补丁建议和测试结果。</li>
+<li><strong>Seed2.1</strong> — 用多步骤办公、GUI 操作或端到端代码交付任务复测 Seed2.1，重点记录长程稳定性。</li>
+<li><strong>Qwen-AgentWorld</strong> — 复现 MCP、Terminal 或 SWE 环境评测，判断世界模型是否适合作为代理回归测试层。</li>
+<li><strong>GPT-5.5 Instant</strong> — 用现有多轮约束提示词做回归测试，比较新版在意图理解、推荐和复杂约束遵循上的变化。</li>
+<li><strong>GPT-5.6 Sol / Terra / Luna</strong> — 建立高难推理、日常工作和高吞吐任务三类评测矩阵，不要用一个默认模型覆盖所有场景。</li>
+<li><strong>Claude Tag</strong> — 在低风险 Slack 频道试点，先限定可访问工具、数据源、预算和审计日志。</li>
+<li><strong>Mistral OCR 4</strong> — 用含表格、签名和复杂版式的真实文档测试结构化区块、边界框和置信度输出。</li>
+<li><strong>Gemini computer use</strong> — 选一个浏览器或桌面重复流程，验证模型操作 UI 的成功率、权限隔离和人工确认节点。</li>
+<li><strong>Codex 移动端 + DigitalOcean 插件</strong> — 用长耗时编码任务测试移动通知、文件预览、行内审阅和云环境后台持续运行。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/daybreak-securing-the-world">OpenAI Daybreak 扩展：安全模型与开源修复闭环</a> — 这是理解本周安全模型、开源修复和可信访问的核心文章。</li>
+<li><a href="https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity">字节 Seed2.1 发布：强化 Agent、代码与多模态</a> — 它展示国内大模型团队如何围绕 Agent、代码和多模态生产力组织发布。</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2069720365442719867">Qwen-AgentWorld：35B 开源世界模型与智能体基准</a> — 这篇值得用来思考智能体评测和模拟环境训练的下一步。</li>
+<li><a href="https://www.anthropic.com/news/introducing-claude-tag">Claude Tag 让 Slack 团队直接委派 Claude</a> — 它是团队代理产品化的重要节点，尤其适合工程和运营团队参考。</li>
+<li><a href="https://openai.com/index/how-agents-are-transforming-work">OpenAI 研究：Codex 正把工作从聊天推向代理</a> — 这篇能帮助判断代理式 AI 对非开发岗位和知识工作组织方式的影响。</li>
+</ul>
 ]]></description>
     </item>
     <item>
@@ -2760,89 +2984,6 @@ https://t.co/voEubobshh</a></li>
 <li><strong>商业动态</strong> | <code>Anthropic</code> <code>Fable 5</code> <code>Claude Code</code> <code>开发者活动</code> <code>创业生态</code> — Claude Devs宣布6月13日在旧金山举办Claude Fable 5 Build Day，主题是用Claude Code解决值得投入的问题。Anthropic团队将现场参与，并为3个入围项目提供总额15万美元Claude credits奖池。 Claude Devs补充说明，Claude Fable 5 Build Day名额有限，申请截止日期为6月12日。该条主要是活动报名提醒，信息增量集中在报名窗口和申请链接。 · <a href="https://x.com/ClaudeDevs/status/2064453497005978031">Claude Devs (Twitter)</a></li>
 <li><strong>产品与功能</strong> | <code>OpenAI</code> <code>Responses API</code> <code>网页搜索</code> <code>图像结果</code> — OpenAI 开发者账号补充指向 Responses API 网页搜索工具中图像搜索结果的文档链接。该回复属于同一功能发布线程，方便开发者查看如何在应用中返回图片结果及来源链接。 · <a href="https://x.com/OpenAIDevs/status/2064395168007278714">OpenAI Devs (Twitter)</a></li>
 </ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-09</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-09.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-09.md</guid>
-      <pubDate>Tue, 09 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-09（fallback，自动回退版）</h1>
-<blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
-</blockquote>
-<hr>
-<h2>OpenAI Blog</h2>
-<ul>
-<li><a href="https://openai.com/index/openai-submits-confidential-s-1">Confidential submission of draft S-1 to the SEC</a></li>
-<li><a href="https://openai.com/index/built-to-benefit-everyone-our-plan">Built to benefit everyone: our plan</a></li>
-<li><a href="https://openai.com/index/economic-research-exchange">Introducing the OpenAI Economic Research Exchange</a></li>
-</ul>
-<h2>Anthropic Research</h2>
-<ul>
-<li><a href="https://www.anthropic.com/research/agents-in-biology">Paving the way for agents in biology</a></li>
-</ul>
-<h2>Sam Altman (Twitter)</h2>
-<ul>
-<li>[Here is our current plan for OpenAI:</li>
-</ul>
-<p><a href="https://t.co/r29FUUee3A%5D(https://x.com/sama/status/2064088940932641225)">https://t.co/r29FUUee3A](https://x.com/sama/status/2064088940932641225)</a></p>
-<ul>
-<li><a href="https://x.com/sama/status/2063779477419901071">interesting recursive loop here maybe</a></li>
-</ul>
-<h2>Claude Devs (Twitter)</h2>
-<ul>
-<li>[We&#39;ve added an observability dashboard for developers of connectors.</li>
-</ul>
-<p>Connectors let third-party developers bring their tools and data to Claude via MCP. <a href="https://t.co/PSiMHjwFGL%5D(https://x.com/ClaudeDevs/status/2064072801062121906)">https://t.co/PSiMHjwFGL](https://x.com/ClaudeDevs/status/2064072801062121906)</a></p>
-<ul>
-<li>[Use this to:</li>
-</ul>
-<ol>
-<li><p>Track connector adoption: Monitor active users, tool calls, directory rank</p>
-</li>
-<li><p>Diagnose errors and latency: See error rates and latency with per-tool error breakdowns</p>
-</li>
-<li><p>Understand u](<a href="https://x.com/ClaudeDevs/status/2064072803721339014">https://x.com/ClaudeDevs/status/2064072803721339014</a>)</p>
-</li>
-</ol>
-<ul>
-<li>[We&#39;re also adding a new in-app submission portal for developers to submit connectors:</li>
-</ul>
-<p><a href="https://t.co/CBYFWYJy8T">https://t.co/CBYFWYJy8T</a></p>
-<p>See our blog to learn more:</p>
-<p><a href="https://t.co/kR0vQZfHgY%5D(https://x.com/ClaudeDevs/status/2064072805663256997)">https://t.co/kR0vQZfHgY](https://x.com/ClaudeDevs/status/2064072805663256997)</a></p>
-<ul>
-<li>[Claude Code&#39;s first demo got two Slack reactions.</li>
-</ul>
-<p>One year after GA, @bcherny and @_catwu look back: verification best practices, why we built auto mode, routines and loops, and what&#39;s next. </p>
-<p>https:](<a href="https://x.com/ClaudeDevs/status/2064032814392352816">https://x.com/ClaudeDevs/status/2064032814392352816</a>)</p>
-<h2>Anthropic (Twitter)</h2>
-<ul>
-<li>[New Science Blog: Why has AI advanced faster in coding than in biology?</li>
-</ul>
-<p>To agents, bio databases are like cities built before cars—maddening to drive in because they&#39;re designed for different traffi](<a href="https://x.com/AnthropicAI/status/2064054837294354677">https://x.com/AnthropicAI/status/2064054837294354677</a>)</p>
-<h2>OpenAI Devs (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2064037734591652065">https://t.co/XlZc6miEid</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-08</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-08.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-08.md</guid>
-      <pubDate>Mon, 08 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-08</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>暂无新内容</strong>：今日抓取窗口内没有可分析的新文章。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<p>今日窗口内无新内容。</p>
 ]]></description>
     </item>
   </channel>
