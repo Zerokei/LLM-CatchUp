@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-07-06 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-07-06" />
+  <title>CatchUp 日报 2026-07-07 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-07-07" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,63 +306,125 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-07-06</h1>
+          <h1 class="report-title">2026-07-07</h1>
           
           <hr class="primary-rule" />
         </header>
 
         <div class="prose"><h2 id="h-1">今日趋势</h2>
 <ul>
-<li><strong>智能体流程化</strong>：Claude Code 的循环设计与 Alberta 案例显示，AI 编程正从单次提示转向可验证工作流。</li>
-<li><strong>解释性更深入</strong>：Anthropic 的 J-space 研究把模型内部思考映射到可读工作区，为安全监控提供新抓手。</li>
-<li><strong>低信号需过滤</strong>：Sam Altman 和 Thariq 的玩笑推文没有实质发布，今日重点仍集中在 Claude 生态。</li>
+<li><strong>实时语音升级</strong>：OpenAI 推出 GPT-Realtime-2.1-mini，并将语音模型 p95 延迟降低至少 25%。</li>
+<li><strong>可解释性升温</strong>：Anthropic 的全局工作区研究把 Claude 审计、J-space 与 Neuronpedia 演示连成一条线。</li>
+<li><strong>智能体评测深入</strong>：ByteDance Seed 的 EdgeBench 用长时环境学习提出智能体能力缩放律。</li>
+<li><strong>企业落地扩散</strong>：OpenAI 案例显示 AP+ 与 MUFG 正把 ChatGPT Enterprise 和 Codex 带入金融工作流。</li>
+<li><strong>机器人数据闭环</strong>：Google DeepMind 与 Apptronik 用 Apollo 2 真实世界数据推进 Gemini Robotics。</li>
 </ul>
 <hr>
 <h2 id="h-2">文章详情</h2>
-<h3 id="h-3">1. <a href="https://baoyu.io/blog/2026-07-06/claudedevs-2074208949205881033">Claude Code 循环：从提示到自动化例行程序</a></h3>
+<h3 id="h-3">1. <a href="https://seed.bytedance.com/en/blog/edgebench-measuring-real-world-environment-learning-and-discovering-a-new-scaling-law">EdgeBench 发现智能体环境学习缩放律</a></h3>
 <ul>
-<li><strong>来源</strong>: 宝玉的分享</li>
-<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>来源</strong>: ByteDance Seed</li>
+<li><strong>分类</strong>: 研究</li>
 <li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>智能体循环</code> <code>自动化</code> <code>技能</code> <code>成本控制</code></li>
+<li><strong>标签</strong>: <code>EdgeBench</code> <code>智能体评测</code> <code>环境学习</code> <code>缩放律</code> <code>ByteDance Seed</code></li>
 </ul>
-<p><strong>摘要</strong>: 文章把 Claude Code 中的循环定义为智能体重复执行工作周期，直到满足停止条件，并按触发方式、停止条件、基础指令和适用任务进行分类。它介绍了回合制循环、目标导向循环、基于时间的循环和主动式循环，强调用明确验证标准、技能文件和合适的触发频率控制成本与质量。</p>
+<p><strong>摘要</strong>: 字节 Seed 发布 EdgeBench，用 134 个真实长时任务评估智能体如何通过环境反馈持续学习，任务覆盖科学与机器学习、软件工程、专业知识工作、组合优化、形式数学和交互模拟等六类。研究基于约 38,000 小时交互发现，智能体的环境学习曲线高度符合 log-sigmoid 形态，平均 R² 达 0.998。跨代模型对比还显示前沿模型的环境学习速度大约每三个月翻倍，项目已开源 51 个任务和评测框架。</p>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/OpenAIDevs/status/2074255408013955466">GPT-Realtime-2.1-mini 上线：工具调用 + 延迟优化</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>GPT-Realtime-2.1-mini</code> <code>Realtime API</code> <code>语音模型</code> <code>工具调用</code> <code>延迟优化</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在 Realtime API 中上线 GPT-Realtime-2.1-mini，把推理和工具调用带到 mini 实时语音模型，且保持与 GPT-Realtime-mini 相同成本。同一更新还通过改进缓存让 Realtime 语音模型 p95 延迟至少降低 25%。这对语音客服、实时教练和低延迟代理场景更直接地改善了可用性与成本可控性。 OpenAI Devs 表示，通过改进缓存，Realtime 语音模型的 p95 延迟至少降低 25%。这是一条与同线程 GPT-Realtime-2.1-mini 发布配套的性能更新，主要影响实时语音应用的响应速度和交互流畅度。</p>
 <blockquote>
 <p><strong>实践建议</strong></p>
 <ul>
-<li>把常见开发任务拆成回合制、目标导向或定时循环三类，分别选择普通提示、/goal 或 /loop。</li>
-<li>为高频任务编写 SKILL.md，把验收标准、测试命令和浏览器检查步骤固化为可重复验证。</li>
-<li>对长跑自动化先设定最大尝试次数和 token 预算，再扩大到更多任务。</li>
+<li>用现有 Realtime-mini 场景做 A/B 测试，重点观察工具调用成功率、p95 延迟和中断恢复。</li>
+<li>优先在低风险语音客服、实时教练或语音代理原型中试用新模型。</li>
+<li>检查模型别名和计费配置，确认同成本迁移不会误用更高价模型。</li>
 </ul>
 </blockquote>
 <hr>
-<h3 id="h-4">2. <a href="https://www.anthropic.com/research/global-workspace">Anthropic 发现 Claude 内部「J-space」工作区</a></h3>
+<h3 id="h-5">3. <a href="https://x.com/AnthropicAI/status/2074185348142280912">Anthropic 发现 Claude 的全局工作区</a></h3>
 <ul>
-<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
 <li><strong>分类</strong>: 研究</li>
 <li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>可解释性</code> <code>Claude</code> <code>J-space</code> <code>全局工作区</code> <code>内部推理</code></li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>Claude</code> <code>全局工作区</code> <code>J-space</code> <code>可解释性</code> <code>模型审计</code></li>
 </ul>
-<p><strong>摘要</strong>: Anthropic 的可解释性研究提出 Claude 内部存在一个名为「J-space」的小型神经表征集合，能承载未输出的内部想法，并在报告、控制和多步推理中发挥类似全局工作区的作用。研究通过 Jacobian lens 读取这些表征，并用替换实验显示模型的答案和推理会随 J-space 内容变化；团队还发布了论文、开源实现和 Neuronpedia 交互演示。</p>
-<hr>
-<h3 id="h-5">3. <a href="https://www.anthropic.com/news/alberta-government-claude-cybersecurity">阿尔伯塔用 Claude 扫描 4.66 亿行政府代码</a></h3>
+<p><strong>摘要</strong>: Anthropic 发布关于语言模型全局工作区的新研究，称 Claude 内部存在类似意识可访问内容的分界：少量信息会进入可读、可审计、可塑形的 J-space。研究把可解释性、认知科学和模型安全联系起来，并配套论文、跨学科专家评论以及 Neuronpedia 上的交互演示，方便外部观察开放权重模型中的相关方法。这个事件的重点不是产品发布，而是为更强模型的可信审计提供新的实证工具。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>政府数字化</code> <code>网络安全</code> <code>遗留系统</code> <code>智能体</code></li>
+<li><a href="https://x.com/AnthropicAI/status/2074185384792109380">多领域专家评论 Anthropic 研究</a> · Anthropic (Twitter) · 专家评论与论文</li>
 </ul>
-<p><strong>摘要</strong>: 加拿大阿尔伯塔省政府自 2025 年起使用 Claude Code、Opus 和 Sonnet 审查政府系统，在约 20 小时内扫描 4.66 亿行代码，覆盖 1,280 个应用和 3,400 个代码库。团队用约 50 个并行智能体发现安全漏洞、基础设施弱点和文档缺口，并让 Claude 生成补丁、补测试或重构遗留系统，同时由工程师审查后再上线。</p>
 <hr>
+<h3 id="h-6">4. <a href="https://x.com/SpaceXAI/status/2074296533697307092">Grok API 新增 21 个旗舰语音</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>语音 API</code> <code>xAI</code> <code>实时交互</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 宣布在 Grok API 中加入 21 个新的旗舰语音，面向语音生成与实时交互场景。原帖只给出公告和新闻链接，未提供更细的模型能力、价格或可用地区信息。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在语音助手或客服原型中抽测新增语音的延迟、稳定性和中文表现。</li>
+<li>把 21 个语音按性别、语速、场景风格建立内部选型清单。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/claudeai/status/2074244664199115201">Anthropic 回顾 Claude Code 的诞生史</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Anthropic</code> <code>产品史</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 官方发布一篇 Claude Code 简史，由构建团队和早期用户讲述它如何形成今天的产品形态。原帖没有展开具体功能更新，但这类幕后材料有助于理解 Claude Code 的产品取舍、目标用户和早期使用模式。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/OpenAIDevs/status/2074222353127801199">OpenAI 访谈 Codex 如何辅助生物工具</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>AI 科学</code> <code>生物工具</code> <code>细胞分析</code> <code>实验模拟</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 发布 Builders Unscripted 访谈，讨论 Derya 如何用 Codex 构建生物工具，以及 AI 如何帮助科学家模拟实验。议题覆盖用 Codex 做细胞分析、模拟免疫细胞，以及 AI 驱动科学工作流的未来；后续补发的 YouTube 链接提供了完整节目入口。 OpenAI Devs 在同线程中补充了 Builders Unscripted 完整 YouTube 节目链接。该条本身只是观看入口，实质内容需要结合前一条关于 Codex、细胞分析和 AI 科学模拟的访谈介绍理解。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/GoogleDeepMind/status/2074157282477154597">Apollo 2数据将训练Gemini Robotics</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Gemini Robotics</code> <code>人形机器人</code> <code>真实世界数据</code> <code>Apptronik</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind表示，随着 Apptronik 扩建 Robot Park 设施，双方合作将使用最新 Apollo 2 人形机器人平台采集的真实世界数据来训练和推进 Gemini Robotics。该进展强调机器人模型训练正在更依赖大规模实体环境数据，而不仅是仿真或离线数据。</p>
+<hr>
+<h2 id="h-10">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>ChatGPT Enterprise</code> <code>Codex</code> <code>支付行业</code> <code>企业案例</code> <code>受监管场景</code> — Australian Payments Plus 在全公司引入 ChatGPT Enterprise，并开始把 Codex 用于产品、工程和技术调查流程。案例中 Codex 曾将一次支付对账中的时间戳不一致排查从数天缩短到数分钟，团队也用它把支付旅程、认证流程和结账体验模拟从数天到数周压缩到约 1 天。文章强调在支付等受监管场景中，AI 的价值来自更快形成初稿、调查线索和原型，但风险判断仍由专家负责。 · <a href="https://openai.com/index/australian-payments-plus">OpenAI Blog</a></li>
+<li><strong>商业动态</strong> | <code>MUFG</code> <code>ChatGPT Enterprise</code> <code>金融科技</code> <code>企业采用</code> <code>AI 银行</code> — 三菱 UFJ 银行从 2026 年开始分阶段向约 35,000 名员工推出 ChatGPT Enterprise，目标是把 MUFG 打造成 AI-native 金融机构。早期结果包括强制培训覆盖、四个月内创建 1,800 多个自定义 GPT，以及部分研究任务工作量降低 20%-30%。MUFG 还计划把 OpenAI 技术用于 Moneytree、WealthNavi 和数字银行的 AI 礼宾与个性化财务建议体验。 · <a href="https://openai.com/index/mufg">OpenAI Blog</a></li>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>DevDay</code> <code>开发者活动</code> <code>旧金山</code> <code>申请截止</code> — OpenAI Devs 提醒开发者在 7 月 10 日前提交 DevDay 2026 参会申请。活动将于 9 月 29 日在旧金山举行，面向希望了解新能力、参加技术环节并与其他构建者交流的开发者。 · <a href="https://x.com/OpenAIDevs/status/2074169681192304893">OpenAI Devs (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Fable</code> <code>Claude</code> <code>AI 工程</code> <code>技术演讲</code> <code>实践指南</code> — Thariq 发布 AI Engineer World Fair 上的「A Field Guide to Fable」主题演讲视频，并补充说明演讲基于一个正在写作的文章系列。随后他提到相关内容已出现在 Claude 官方博客，形成从演讲、文章系列到博客版本的实践型材料。该事件更像 Claude/Fable 方法论分享，而不是产品功能更新。 Thariq 表示其一次演讲基于正在写作的系列文章，并分享了计划中三篇文章的第一篇。抓取内容只包含引用链接，没有正文，因此当前更适合作为后续阅读线索而非独立结论。 · <a href="https://x.com/trq212/status/2074163788853760175">Thariq (Twitter)</a></li>
+</ul>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
       <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
-      <li class="toc-h3"><a href="#h-3">1. Claude Code 循环：从提示到自动化例行程序</a></li>
-      <li class="toc-h3"><a href="#h-4">2. Anthropic 发现 Claude 内部「J-space」工作区</a></li>
-      <li class="toc-h3"><a href="#h-5">3. 阿尔伯塔用 Claude 扫描 4.66 亿行政府代码</a></li>
+      <li class="toc-h3"><a href="#h-3">1. EdgeBench 发现智能体环境学习缩放律</a></li>
+      <li class="toc-h3"><a href="#h-4">2. GPT-Realtime-2.1-mini 上线：工具调用 + 延迟优化</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic 发现 Claude 的全局工作区</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Grok API 新增 21 个旗舰语音</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Anthropic 回顾 Claude Code 的诞生史</a></li>
+      <li class="toc-h3"><a href="#h-8">6. OpenAI 访谈 Codex 如何辅助生物工具</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Apollo 2数据将训练Gemini Robotics</a></li>
+      <li class="toc-h2"><a href="#h-10">速览</a></li>
     </ul>
   </aside>
     </div>
@@ -370,7 +432,7 @@ footer.colophon a:hover { color: var(--accent); }
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-07-05.html">2026-07-05</a>
+        <a href="../daily/2026-07-06.html">2026-07-06</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -378,12 +440,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-07-07.html">2026-07-07</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-06.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-07.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
