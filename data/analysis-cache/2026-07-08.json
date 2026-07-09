@@ -1,0 +1,648 @@
+{
+  "analyzed_at": "2026-07-09T12:38:15.755Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-08.json",
+  "trend_paragraph": "- **旗舰模型预热**：OpenAI预告GPT-5.6 Sol与Terra、Luna公开上线，开发者评测窗口即将打开。\n- **代理工作流产品化**：Claude Cowork与Gemini API Managed Agents都在把长任务和工具调用托管化。\n- **多模态生成升级**：GPT-Live、Seedream 5.0 Pro与Meta Muse分别推进语音、设计和媒体生成。\n- **模型安全前置**：Anthropic的GRAM研究与Meta Content Seal都把风险控制嵌入模型或内容链路。\n- **AI进入专业研究**：DeepMind的Predicting the Past Skill展示Gemini与专家模型服务历史学。",
+  "articles": [
+    {
+      "url": "https://x.com/sama/status/2074709023807664454",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman确认GPT-5.6 Sol周四发布",
+      "summary": "Sam Altman称「GPT-5.6 Sol」将在周四发布，并以简短方式鼓励开发者开始构建。该帖本身没有提供能力、价格或API细节，但属于OpenAI下一代旗舰模型发布前的官方高层确认。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "OpenAI",
+        "GPT-5.6",
+        "旗舰模型",
+        "开发者"
+      ],
+      "practice_suggestions": [
+        "预留一组现有核心提示词和评测集，发布后第一时间对比GPT-5.6 Sol与当前生产模型。",
+        "关注API可用性、价格和上下文窗口信息，再决定是否进入生产灰度。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2074704958419792299",
+      "angle": "Altman确认发布时间"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2074704958419792299",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 Sol将公开上线：Terra与Luna同步预览",
+      "summary": "OpenAI预告「GPT-5.6 Sol」将在周四公开发布，并把预览访问扩展到全球，同时还会推出Terra与Luna。Sam Altman随后确认发布时间并鼓励开发者开始构建，但目前尚未披露能力差异、API价格或上下文窗口等细节。作为GPT-5系列后续旗舰模型发布前公告，该事件对开发者路线图和模型选型都有较高优先级。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6 Sol",
+        "OpenAI",
+        "Terra",
+        "Luna",
+        "旗舰模型",
+        "开发者"
+      ],
+      "practice_suggestions": [
+        "提前整理现有GPT-5工作负载，准备在Sol公开后做质量、延迟和成本回归测试。",
+        "关注Terra与Luna的定位差异，分别验证适合生产、低成本或多模态场景的任务。",
+        "把依赖模型名称的路由、评测和权限配置改成可快速添加新模型的结构。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/introducing-gpt-live",
+      "source": "OpenAI Blog",
+      "title": "OpenAI发布全双工语音模型GPT-Live",
+      "summary": "OpenAI推出「GPT-Live」，用全双工架构让模型能边听边说，减少传统语音模式的停顿、误打断和回合感。GPT-Live会在需要搜索、推理或复杂任务时委托后台前沿模型处理，并已开始驱动新版ChatGPT Voice。OpenAI同时发布GPT-Live-1和GPT-Live-1 mini，并强调语音安全、青少年保护和情感依赖监测。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-Live",
+        "语音模型",
+        "ChatGPT Voice",
+        "全双工",
+        "安全评测"
+      ],
+      "practice_suggestions": [
+        "对客服、语言练习和会议助手场景测试打断、停顿和背景噪声下的表现。",
+        "如果依赖语音交互，准备从旧版Voice模式迁移到GPT-Live的验收标准。",
+        "在敏感场景中单独验证自伤、情绪依赖和青少年保护相关响应。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/research/off-switch-dual-use",
+      "source": "Anthropic Research",
+      "title": "Anthropic研究可移除双用途知识模块",
+      "summary": "Anthropic与AE Studio提出GRAM方法，把网络安全、病毒学等双用途知识路由到可移除的辅助模块中，而不是让知识扩散到整个模型权重。实验显示删除对应模块可接近数据过滤的效果，同时较少损害通用能力，并且比事后遗忘更难被少量微调恢复。作者强调这仍是早期研究，尚未用于Claude生产模型，也未在前沿规模验证。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "AI安全",
+        "双用途知识",
+        "模型权重",
+        "GRAM"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro",
+      "source": "ByteDance Seed",
+      "title": "字节发布Seedream 5.0 Pro图像模型",
+      "summary": "ByteDance Seed介绍「Seedream 5.0 Pro」，重点提升复杂信息图、密集文字排版、空间定位和局部交互编辑能力。模型支持点选、套索、框选、涂鸦、材质替换、图层分离和多图融合，并强化真实光照、材质、皮肤纹理与多语言文字生成。官方认为其价值从单次生成扩展到专业设计迭代和本地化创作流程。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "ByteDance Seed",
+        "Seedream 5.0 Pro",
+        "图像生成",
+        "精准编辑",
+        "设计工具"
+      ],
+      "practice_suggestions": [
+        "用真实设计素材测试局部编辑、文字修正和图层分离，而不是只看一次性生成样例。",
+        "将复杂信息图、广告海报和多语言本地化物料作为首批评测场景。",
+        "对比现有图像模型在中文文字、坐标编辑和多图融合上的稳定性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2074622734118924561",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq继续评估AI剪辑布局效果",
+      "summary": "Thariq展示了一段AI剪辑结果，认为它能呈现几种不错的画面布局。当前反馈仍偏早期体验：他对幻灯片布局和镜头切换方式还不确定，计划让Claude完成完整渲染后再报告结果。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "AI剪辑",
+        "Claude",
+        "视频布局",
+        "创作流程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/trq212/status/2074584768096907339",
+      "angle": "布局观感反馈"
+    },
+    {
+      "url": "https://x.com/trq212/status/2074619715826381168",
+      "source": "Thariq (Twitter)",
+      "title": "AI将静态幻灯片转成演示动画",
+      "summary": "Thariq称AI剪辑工具能把原本独立的静态幻灯片转成动画片段，这是他较满意的部分。该观察说明AI视频编辑在重构演讲素材、增强演示节奏方面已有可见效果，但没有提供完整流程或可复现设置。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "AI视频",
+        "幻灯片动画",
+        "演讲剪辑",
+        "工作流"
+      ],
+      "thread_group_id": "thread-trq212-20260707-2217",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2074619539145568562",
+      "source": "Thariq (Twitter)",
+      "title": "Claude尝试生成演讲YouTube短片",
+      "summary": "Thariq表示Claude决定把演讲素材制作成YouTube短视频。结果仍有明显粗糙处，尤其是转写很混乱，视频也为了快速渲染而刻意降低了质量。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "YouTube Shorts",
+        "视频剪辑",
+        "转写质量"
+      ],
+      "thread_group_id": "thread-trq212-20260707-2217",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2074618847693512704",
+      "source": "Thariq (Twitter)",
+      "title": "AI剪辑片段显示自动化包装潜力",
+      "summary": "Thariq分享了一个由AI创建的小片段，认为末尾图片等包装效果很讨巧。与此同时，他指出转写高亮过于混乱，说明这类自动剪辑在视觉包装之外仍需人工校正字幕和节奏。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "AI剪辑",
+        "字幕高亮",
+        "内容包装",
+        "人工校正"
+      ],
+      "thread_group_id": "thread-trq212-20260707-2217",
+      "duplicate_of": "https://x.com/trq212/status/2074584768096907339",
+      "angle": "自动包装效果"
+    },
+    {
+      "url": "https://x.com/trq212/status/2074617786408845774",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq用AI处理59GB演讲素材",
+      "summary": "Thariq开始直播记录一次AI视频编辑实验：他拿到约59GB演讲原始素材，并加入HTML幻灯片作为上下文。引用帖显示他原本想测试Fable处理这批素材的能力，这条则给出起始提示词和实验背景。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "AI视频编辑",
+        "Fable",
+        "演讲素材",
+        "提示词",
+        "工作流实验"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/trq212/status/2074584768096907339",
+      "angle": "起始提示词"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074606065170456777",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude托管代理支持分层子代理",
+      "summary": "Claude Managed Agents 支持两种子代理模式：向上调用 Fable 5 作为顾问，或向下委派给 Sonnet 5 工作者。每个子代理保留自己的缓存，因此重复调用同一上下文时不必按完整上下文再次付费。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "托管代理",
+        "子代理",
+        "缓存",
+        "成本优化"
+      ],
+      "practice_suggestions": [
+        "将高价值规划或审核交给更强模型，把批量执行交给低成本工作者模型。",
+        "为重复研究任务设计独立子代理，利用缓存降低长上下文复用成本。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074606063509528855",
+      "source": "Claude Devs (Twitter)",
+      "title": "Fable编排Sonnet可显著降本",
+      "summary": "Anthropic 在 BrowseComp 上测试 Fable 5 编排器加 Sonnet 5 工作者子代理的组合，达到 Fable 5 单独使用 96% 的性能，但价格约为 46%。这种模式把消耗大量 token 的研究步骤委派给 Sonnet 5，并提供了相应 cookbook 示例。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Fable 5",
+        "Sonnet 5",
+        "BrowseComp",
+        "代理编排"
+      ],
+      "practice_suggestions": [
+        "在复杂检索或研究流程中测试强模型规划、便宜模型执行的代理拓扑。",
+        "用 BrowseComp 类任务评估质量与成本曲线，而不是只比较单模型得分。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074606061567574181",
+      "source": "Claude Devs (Twitter)",
+      "title": "Fable可作为代理任务编排器",
+      "summary": "Claude Devs 提出第二种降本策略：让 Fable 5 负责计划并把任务委派给 Sonnet 5 工作者。由于大部分 token 由较低价格的工作者模型处理，整体成本会低于全程使用强模型。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Fable 5",
+        "Sonnet 5",
+        "任务委派",
+        "模型路由"
+      ],
+      "practice_suggestions": [
+        "把任务拆成规划、执行、复核阶段，并分别配置不同模型。",
+        "记录每阶段 token 消耗，找出最适合委派给低价模型的环节。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074606058128224365",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude托管代理展示Fable与Sonnet分层降本",
+      "summary": "Claude Devs展示了Claude Managed Agents里的两种分层子代理模式：让Sonnet 5执行器在关键节点咨询Fable 5，或让Fable 5担任编排器并把大量token工作委派给Sonnet 5。前者在SWE-bench Pro上以约63%的价格达到Fable 5约92%的得分，后者在BrowseComp上以约46%的价格达到Fable 5约96%的表现。每个子代理还保留自己的缓存，说明Anthropic正在把强模型路由、缓存和任务委派组合成可复用的代理成本优化模式。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Managed Agents",
+        "Fable 5",
+        "Sonnet 5",
+        "子代理",
+        "成本优化",
+        "SWE-bench"
+      ],
+      "practice_suggestions": [
+        "把昂贵模型限定为顾问或编排器，优先让低价模型执行长上下文循环。",
+        "用SWE-bench式内部任务比较全强模型、顾问模式和编排模式的质量/成本比。",
+        "为重复子任务启用独立缓存，避免多代理工作流反复支付相同上下文成本。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074606059864625355",
+      "source": "Claude Devs (Twitter)",
+      "title": "顾问模式在SWE-bench上更省钱",
+      "summary": "在 SWE-bench Pro 上，Sonnet 5 加 Fable 5 顾问工具达到约 92% 的 Fable 5 得分，价格约为 63%。Fable 5 每个任务通常只被调用一次用于指导，主体工作仍由 Sonnet 5 完成。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "SWE-bench",
+        "顾问工具",
+        "成本性能",
+        "代码代理"
+      ],
+      "practice_suggestions": [
+        "在 SWE-bench 或内部代码任务上对比全强模型、顾问模式和纯执行器模式。",
+        "把强模型调用设计成显式工具，便于审计质量提升是否值得额外成本。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2074600027733860758",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta预览Muse视频生成模型",
+      "summary": "Meta 在发布 Muse Image 的同时预览 Muse Video，称其在提示遵循、视觉保真和时间一致性上具备竞争力。团队仍在改进音画同步和快速运动的物理准确性等短板，说明视频能力还处于早期预览阶段。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Meta",
+        "Muse Video",
+        "视频生成",
+        "原生音频",
+        "多模态"
+      ],
+      "practice_suggestions": [
+        "把 Muse Video 纳入视频生成基准，重点测试长镜头一致性、音画同步和快速运动。",
+        "对需要社媒素材的视频工作流先做小范围试用，避免在物理准确性要求高的场景直接上线。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/AIatMeta/status/2074577662840832382",
+      "angle": "视频模型预览"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2074587884665901143",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta为AI图像加入隐藏水印",
+      "summary": "Meta 表示 Content Seal 已内置于 Meta AI 应用和网站，生成图像会携带隐藏来源信号，并能在裁剪、压缩和缩放后保持。Meta 还预览了公开识别工具，用于验证图像是否由 Meta AI 或 meta.ai 生成。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "Meta",
+        "Content Seal",
+        "水印",
+        "内容溯源",
+        "AI安全"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260707-2014",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2074587881205866817",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Image出现自我精修行为",
+      "summary": "Meta 称 Muse Image 在思维链中展现出自我精修能力，可自适应选择局部编辑、完整重生成或调用工具。该行为并非显式编程，而是在强化学习训练中为提升图像质量和奖励得分自然形成。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Muse Image",
+        "强化学习",
+        "自我精修",
+        "工具使用",
+        "图像生成"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260707-2014",
+      "duplicate_of": "https://x.com/AIatMeta/status/2074577662840832382",
+      "angle": "自我精修与水印"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2074587864923250873",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Image走向代理式图像生成",
+      "summary": "Meta 将 Muse Image 描述为代理式图像模型，而不是单纯的提示词到图像模型。它可以调用工具、自我精修，随着测试时计算扩展而提升，并与 Muse Spark 配合支持协作式媒体生成。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Meta",
+        "Muse Image",
+        "代理式生成",
+        "工具调用",
+        "Muse Spark"
+      ],
+      "practice_suggestions": [
+        "评估 Muse Image 时同时测试单次生成、局部编辑和多参考图组合能力。",
+        "为创意流程设计人工审核点，观察代理式自我精修是否稳定改善结果。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/AIatMeta/status/2074577662840832382",
+      "angle": "代理式图像生成"
+    },
+    {
+      "url": "https://x.com/trq212/status/2074584768096907339",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq测试Fable剪辑59GB演讲素材",
+      "summary": "Thariq用约59GB演讲原始视频和HTML幻灯片测试Fable/Claude的视频编辑能力，并持续展示从起始提示词到短视频、动画化幻灯片和画面布局的中间结果。实验显示AI可以把静态演示材料转成更动态的片段，也能自动生成YouTube Shorts式包装。短板同样明显：转写和高亮仍混乱，镜头切换与布局需要人工判断，因此目前更像可辅助的工作流实验而非可直接替代剪辑师的成品流程。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Fable",
+        "Claude",
+        "AI视频编辑",
+        "演讲剪辑",
+        "工作流实验"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2074577662840832382",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta发布Muse媒体模型：图像代理 + 视频预览",
+      "summary": "Meta Superintelligence Labs发布Muse Image并预览Muse Video，把媒体生成从单次提示词出图推进到可调用工具、自我精修、支持多参考图和社交语境理解的代理式流程。Muse Image已进入Meta AI应用、网页、Instagram Stories和WhatsApp的部分国家，Muse Video则展示了同一底座上的高保真视频与原生音频能力，但音画同步和快速运动物理仍在改进。相关说明还强调Content Seal隐藏水印会随生成图像保留，Meta希望把内容溯源嵌入消费端创作链路。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Meta",
+        "Muse Image",
+        "Muse Video",
+        "代理式生成",
+        "内容溯源",
+        "多模态"
+      ],
+      "practice_suggestions": [
+        "在品牌素材、社媒图和多参考图编辑任务上抽测Muse Image的指令遵循与文字质量。",
+        "把Content Seal识别纳入AI图片审核流程，验证裁剪和压缩后的可检测性。",
+        "对视频预览只做探索性验证，重点记录音画同步、快速运动和长镜头稳定性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074570404035993780",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude扩大开源维护者Max 20x福利",
+      "summary": "Claude for Open Source扩大覆盖范围，向更多开源维护者、核心贡献者和关键包维护者开放申请。符合条件者可获得6个月Claude Max 20x使用权益，申请入口由后续帖补充。该计划偏开发者生态扶持，短期影响集中在开源维护工作流。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "开源维护者",
+        "Max 20x",
+        "开发者计划",
+        "申请入口"
+      ],
+      "practice_suggestions": [
+        "符合条件的开源项目维护者尽快整理贡献证明并提交申请。",
+        "把获批额度优先用于issue归类、PR审查和发布说明等维护任务。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-1905",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2074570405264994808",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude开源计划开放申请入口",
+      "summary": "该帖补充了Claude for Open Source的申请链接，指向Claude官网的联系销售表单。它本身信息量较低，但与前一帖共同构成申请流程的一部分。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "开源计划",
+        "申请入口",
+        "开发者"
+      ],
+      "practice_suggestions": [
+        "需要申请的维护者应直接使用官方表单提交，而不是通过社交帖私信沟通。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260707-1905",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2074548243971604641",
+      "source": "Claude (Twitter)",
+      "title": "Claude Fable 5维持周用量上限规则",
+      "summary": "Claude说明Fable 5促销访问仍按既有规则执行，用户最多可将每周用量额度的50%用于该模型。超过后可继续用使用积分访问Fable 5，或切换到其他模型以留在剩余额度内。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Fable 5",
+        "用量限制",
+        "付费计划"
+      ],
+      "practice_suggestions": [
+        "重度用户应把Fable 5用于最需要的任务，并为普通任务配置备用模型。",
+        "在团队内部明确每周50%额度限制，避免关键任务临近截止时额度不足。"
+      ],
+      "thread_group_id": "thread-claudeai-20260707-1736",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2074548242386178258",
+      "source": "Claude (Twitter)",
+      "title": "Claude Fable 5付费访问延至7月12日",
+      "summary": "Claude将所有付费计划的Fable 5访问期延长至7月12日，并继续允许用户把每周用量额度最多50%用于Fable 5。超过这一比例后，用户可以继续用使用积分访问Fable 5，或切换到其他模型留在剩余额度内。该更新主要是促销访问和额度规则延续，帮助用户继续试用Fable 5。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Fable 5",
+        "付费计划",
+        "用量限制",
+        "促销访问"
+      ],
+      "practice_suggestions": [
+        "把Fable 5测试集中安排在7月12日前，优先验证高价值复杂任务。",
+        "监控团队每周额度中Fable 5占比，避免超过50%后产生额外积分消耗。"
+      ],
+      "thread_group_id": "thread-claudeai-20260707-1736",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2074525821755101458",
+      "source": "Claude (Twitter)",
+      "title": "Claude Cowork双倍额度延至8月5日",
+      "summary": "Claude宣布将Cowork的双倍使用额度延长至8月5日，鼓励用户把更大的任务委派给Claude。该调整延续了Cowork推广期，重点在提高代理式工作流的可用任务规模。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Cowork",
+        "使用额度",
+        "代理工作流"
+      ],
+      "practice_suggestions": [
+        "在8月5日前用Cowork试跑跨文档整理、代码修改和研究汇总等长任务。",
+        "记录双倍额度下任务完成率和人工接管点，为后续订阅决策提供依据。"
+      ],
+      "thread_group_id": "thread-claudeai-20260707-1607",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2074525819414647044",
+      "source": "Claude (Twitter)",
+      "title": "Claude整合Chat与Cowork入口",
+      "summary": "Claude表示Chat和Cowork将在网页与桌面端进入同一个主页，项目和Artifacts也会在两种模式间统一管理。用户把任务交给Claude的入口将更接近普通对话，降低从聊天切换到代理式委派的摩擦。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Cowork",
+        "Chat",
+        "Artifacts",
+        "产品整合"
+      ],
+      "practice_suggestions": [
+        "重新梳理团队的Claude项目结构，把对话、Artifacts和Cowork任务放入统一工作区管理。",
+        "测试从普通聊天升级为委派任务的路径，更新内部使用手册或模板。"
+      ],
+      "thread_group_id": "thread-claudeai-20260707-1607",
+      "duplicate_of": "https://x.com/claudeai/status/2074525815820169320",
+      "angle": "入口整合与额度"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2074525815820169320",
+      "source": "Claude (Twitter)",
+      "title": "Claude Cowork扩展到移动端并整合Chat入口",
+      "summary": "Claude宣布Cowork将登陆移动端和网页端，用户可以在桌面交付任务，再从手机查看完成结果，Beta会先面向Max计划开放。Claude还把Chat与Cowork合并到网页和桌面端的同一主页，让项目和Artifacts跨模式统一管理，降低从对话切换到代理式委派的摩擦。双倍Cowork使用额度也延长到8月5日，显示Anthropic正在推动更大规模的异步代理任务。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Cowork",
+        "移动端",
+        "网页端",
+        "Chat整合",
+        "Artifacts",
+        "代理工作流"
+      ],
+      "practice_suggestions": [
+        "把适合异步执行的研究、代码整理和文档任务迁移到Cowork，记录完成质量与人工接管点。",
+        "在移动端Beta可用后测试跨设备任务交接，确认通知、附件和Artifacts是否完整。",
+        "重新设计团队Claude项目结构，让Chat和Cowork共享同一上下文资产。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2074513847306572213",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind用AI辅助古代史研究",
+      "summary": "Google DeepMind介绍Predicting the Past Skill作为历史研究协作伙伴，并与研究者Thea Sommerschield通过三个案例展示其用途。该平台把专用AI与Gemini推理结合，帮助历史学家以新方式探索古代数据。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "DeepMind",
+        "Gemini",
+        "历史研究",
+        "人文AI",
+        "案例研究"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260707-1519",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2074513665299034447",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Antigravity降低历史AI分析门槛",
+      "summary": "Google DeepMind指出历史AI分析面临三类难点：为每段铭文定制分析和可视化、跨来源映射大规模模式，以及让无代码用户使用高级AI工具。其Antigravity Skill将这些复杂流程转为自然语言操作，面向历史学家的工作流自动化。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "DeepMind",
+        "Antigravity",
+        "历史分析",
+        "自然语言工作流"
+      ],
+      "practice_suggestions": [
+        "人文研究团队可用少量铭文样本试验自然语言分析流程，再评估是否扩展到完整语料。",
+        "将AI生成的映射和可视化作为研究假设入口，保留人工校勘与来源追踪。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260707-1519",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2074513661750546762",
+      "source": "Google DeepMind (Twitter)",
+      "title": "DeepMind发布Predicting the Past历史研究Skill",
+      "summary": "Google DeepMind发布「Predicting the Past Skill」，把Gemini与Aeneas、Ithaca等古代文本专家模型结合，让历史学者可以用自然语言研究希腊文和拉丁文材料。它把定制分析、可视化、跨来源模式映射和高级AI工具调用封装进Antigravity工作流，降低无代码研究者的使用门槛。团队还通过三个案例展示该Skill可作为历史研究协作伙伴，而不只是单次文本识别工具。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "DeepMind",
+        "Predicting the Past",
+        "Gemini",
+        "Aeneas",
+        "Ithaca",
+        "人文AI"
+      ],
+      "practice_suggestions": [
+        "历史、人文或档案团队可用小型语料试跑自然语言分析流程，评估专家校验成本。",
+        "把可视化和跨来源映射步骤拆成可复用模板，减少每个研究问题的重复配置。"
+      ],
+      "thread_group_id": "thread-GoogleDeepMind-20260707-1519",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+      "source": "Google AI Blog",
+      "title": "Gemini API托管代理增强后台任务",
+      "summary": "Google 扩展 Gemini API 中的 Managed Agents，新增后台任务、远程 MCP 等能力，目标是帮助开发者构建更可靠的生产级代理。此次更新把长任务执行和外部工具连接进一步托管化，减少团队自行维护代理运行基础设施的负担。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Gemini API",
+        "托管代理",
+        "后台任务",
+        "远程MCP",
+        "生产化"
+      ],
+      "practice_suggestions": [
+        "将现有需要长时间运行的代理任务列出来，评估是否能迁移到 Gemini API 的后台任务机制。",
+        "检查现有 MCP 工具是否适合改造成远程 MCP 服务，并补齐鉴权和审计策略。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
