@@ -5,8 +5,221 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 07 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 08 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-07-08</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-08.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-08.md</guid>
+      <pubDate>Wed, 08 Jul 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-08</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>旗舰模型预热</strong>：OpenAI预告GPT-5.6 Sol与Terra、Luna公开上线，开发者评测窗口即将打开。</li>
+<li><strong>代理工作流产品化</strong>：Claude Cowork与Gemini API Managed Agents都在把长任务和工具调用托管化。</li>
+<li><strong>多模态生成升级</strong>：GPT-Live、Seedream 5.0 Pro与Meta Muse分别推进语音、设计和媒体生成。</li>
+<li><strong>模型安全前置</strong>：Anthropic的GRAM研究与Meta Content Seal都把风险控制嵌入模型或内容链路。</li>
+<li><strong>AI进入专业研究</strong>：DeepMind的Predicting the Past Skill展示Gemini与专家模型服务历史学。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/OpenAI/status/2074704958419792299">GPT-5.6 Sol将公开上线：Terra与Luna同步预览</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>OpenAI</code> <code>Terra</code> <code>Luna</code> <code>旗舰模型</code> <code>开发者</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI预告「GPT-5.6 Sol」将在周四公开发布，并把预览访问扩展到全球，同时还会推出Terra与Luna。Sam Altman随后确认发布时间并鼓励开发者开始构建，但目前尚未披露能力差异、API价格或上下文窗口等细节。作为GPT-5系列后续旗舰模型发布前公告，该事件对开发者路线图和模型选型都有较高优先级。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/sama/status/2074709023807664454">Altman确认GPT-5.6 Sol周四发布</a> · Sam Altman (Twitter) · Altman确认发布时间</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>提前整理现有GPT-5工作负载，准备在Sol公开后做质量、延迟和成本回归测试。</li>
+<li>关注Terra与Luna的定位差异，分别验证适合生产、低成本或多模态场景的任务。</li>
+<li>把依赖模型名称的路由、评测和权限配置改成可快速添加新模型的结构。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://openai.com/index/introducing-gpt-live">OpenAI发布全双工语音模型GPT-Live</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>GPT-Live</code> <code>语音模型</code> <code>ChatGPT Voice</code> <code>全双工</code> <code>安全评测</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI推出「GPT-Live」，用全双工架构让模型能边听边说，减少传统语音模式的停顿、误打断和回合感。GPT-Live会在需要搜索、推理或复杂任务时委托后台前沿模型处理，并已开始驱动新版ChatGPT Voice。OpenAI同时发布GPT-Live-1和GPT-Live-1 mini，并强调语音安全、青少年保护和情感依赖监测。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>对客服、语言练习和会议助手场景测试打断、停顿和背景噪声下的表现。</li>
+<li>如果依赖语音交互，准备从旧版Voice模式迁移到GPT-Live的验收标准。</li>
+<li>在敏感场景中单独验证自伤、情绪依赖和青少年保护相关响应。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro">字节发布Seedream 5.0 Pro图像模型</a></h3>
+<ul>
+<li><strong>来源</strong>: ByteDance Seed</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ByteDance Seed</code> <code>Seedream 5.0 Pro</code> <code>图像生成</code> <code>精准编辑</code> <code>设计工具</code></li>
+</ul>
+<p><strong>摘要</strong>: ByteDance Seed介绍「Seedream 5.0 Pro」，重点提升复杂信息图、密集文字排版、空间定位和局部交互编辑能力。模型支持点选、套索、框选、涂鸦、材质替换、图层分离和多图融合，并强化真实光照、材质、皮肤纹理与多语言文字生成。官方认为其价值从单次生成扩展到专业设计迭代和本地化创作流程。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用真实设计素材测试局部编辑、文字修正和图层分离，而不是只看一次性生成样例。</li>
+<li>将复杂信息图、广告海报和多语言本地化物料作为首批评测场景。</li>
+<li>对比现有图像模型在中文文字、坐标编辑和多图融合上的稳定性。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/ClaudeDevs/status/2074606058128224365">Claude托管代理展示Fable与Sonnet分层降本</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>Fable 5</code> <code>Sonnet 5</code> <code>子代理</code> <code>成本优化</code> <code>SWE-bench</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs展示了Claude Managed Agents里的两种分层子代理模式：让Sonnet 5执行器在关键节点咨询Fable 5，或让Fable 5担任编排器并把大量token工作委派给Sonnet 5。前者在SWE-bench Pro上以约63%的价格达到Fable 5约92%的得分，后者在BrowseComp上以约46%的价格达到Fable 5约96%的表现。每个子代理还保留自己的缓存，说明Anthropic正在把强模型路由、缓存和任务委派组合成可复用的代理成本优化模式。 在 SWE-bench Pro 上，Sonnet 5 加 Fable 5 顾问工具达到约 92% 的 Fable 5 得分，价格约为 63%。Fable 5 每个任务通常只被调用一次用于指导，主体工作仍由 Sonnet 5 完成。 Claude Devs 提出第二种降本策略：让 Fable 5 负责计划并把任务委派给 Sonnet 5 工作者。由于大部分 token 由较低价格的工作者模型处理，整体成本会低于全程使用强模型。 Anthropic 在 BrowseComp 上测试 Fable 5 编排器加 Sonnet 5 工作者子代理的组合，达到 Fable 5 单独使用 96% 的性能，但价格约为 46%。这种模式把消耗大量 token 的研究步骤委派给 Sonnet 5，并提供了相应 cookbook 示例。 Claude Managed Agents 支持两种子代理模式：向上调用 Fable 5 作为顾问，或向下委派给 Sonnet 5 工作者。每个子代理保留自己的缓存，因此重复调用同一上下文时不必按完整上下文再次付费。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把昂贵模型限定为顾问或编排器，优先让低价模型执行长上下文循环。</li>
+<li>用SWE-bench式内部任务比较全强模型、顾问模式和编排模式的质量/成本比。</li>
+<li>为重复子任务启用独立缓存，避免多代理工作流反复支付相同上下文成本。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/AIatMeta/status/2074577662840832382">Meta发布Muse媒体模型：图像代理 + 视频预览</a></h3>
+<ul>
+<li><strong>来源</strong>: Meta AI (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Meta</code> <code>Muse Image</code> <code>Muse Video</code> <code>代理式生成</code> <code>内容溯源</code> <code>多模态</code></li>
+</ul>
+<p><strong>摘要</strong>: Meta Superintelligence Labs发布Muse Image并预览Muse Video，把媒体生成从单次提示词出图推进到可调用工具、自我精修、支持多参考图和社交语境理解的代理式流程。Muse Image已进入Meta AI应用、网页、Instagram Stories和WhatsApp的部分国家，Muse Video则展示了同一底座上的高保真视频与原生音频能力，但音画同步和快速运动物理仍在改进。相关说明还强调Content Seal隐藏水印会随生成图像保留，Meta希望把内容溯源嵌入消费端创作链路。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/AIatMeta/status/2074587881205866817">Muse Image出现自我精修行为</a> · Meta AI (Twitter) · 自我精修与水印</li>
+<li><a href="https://x.com/AIatMeta/status/2074600027733860758">Meta预览Muse视频生成模型</a> · Meta AI (Twitter) · 视频模型预览</li>
+<li><a href="https://x.com/AIatMeta/status/2074587864923250873">Muse Image走向代理式图像生成</a> · Meta AI (Twitter) · 代理式图像生成</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在品牌素材、社媒图和多参考图编辑任务上抽测Muse Image的指令遵循与文字质量。</li>
+<li>把Content Seal识别纳入AI图片审核流程，验证裁剪和压缩后的可检测性。</li>
+<li>对视频预览只做探索性验证，重点记录音画同步、快速运动和长镜头稳定性。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/claudeai/status/2074525815820169320">Claude Cowork扩展到移动端并整合Chat入口</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Cowork</code> <code>移动端</code> <code>网页端</code> <code>Chat整合</code> <code>Artifacts</code> <code>代理工作流</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude宣布Cowork将登陆移动端和网页端，用户可以在桌面交付任务，再从手机查看完成结果，Beta会先面向Max计划开放。Claude还把Chat与Cowork合并到网页和桌面端的同一主页，让项目和Artifacts跨模式统一管理，降低从对话切换到代理式委派的摩擦。双倍Cowork使用额度也延长到8月5日，显示Anthropic正在推动更大规模的异步代理任务。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2074525819414647044">Claude整合Chat与Cowork入口</a> · Claude (Twitter) · 入口整合与额度</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把适合异步执行的研究、代码整理和文档任务迁移到Cowork，记录完成质量与人工接管点。</li>
+<li>在移动端Beta可用后测试跨设备任务交接，确认通知、附件和Artifacts是否完整。</li>
+<li>重新设计团队Claude项目结构，让Chat和Cowork共享同一上下文资产。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>7. <a href="https://www.anthropic.com/research/off-switch-dual-use">Anthropic研究可移除双用途知识模块</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>AI安全</code> <code>双用途知识</code> <code>模型权重</code> <code>GRAM</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic与AE Studio提出GRAM方法，把网络安全、病毒学等双用途知识路由到可移除的辅助模块中，而不是让知识扩散到整个模型权重。实验显示删除对应模块可接近数据过滤的效果，同时较少损害通用能力，并且比事后遗忘更难被少量微调恢复。作者强调这仍是早期研究，尚未用于Claude生产模型，也未在前沿规模验证。</p>
+<hr>
+<h3>8. <a href="https://x.com/ClaudeDevs/status/2074570404035993780">Claude扩大开源维护者Max 20x福利</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>开源维护者</code> <code>Max 20x</code> <code>开发者计划</code> <code>申请入口</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude for Open Source扩大覆盖范围，向更多开源维护者、核心贡献者和关键包维护者开放申请。符合条件者可获得6个月Claude Max 20x使用权益，申请入口由后续帖补充。该计划偏开发者生态扶持，短期影响集中在开源维护工作流。 该帖补充了Claude for Open Source的申请链接，指向Claude官网的联系销售表单。它本身信息量较低，但与前一帖共同构成申请流程的一部分。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>符合条件的开源项目维护者尽快整理贡献证明并提交申请。</li>
+<li>把获批额度优先用于issue归类、PR审查和发布说明等维护任务。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>9. <a href="https://x.com/claudeai/status/2074548242386178258">Claude Fable 5付费访问延至7月12日</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Fable 5</code> <code>付费计划</code> <code>用量限制</code> <code>促销访问</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude将所有付费计划的Fable 5访问期延长至7月12日，并继续允许用户把每周用量额度最多50%用于Fable 5。超过这一比例后，用户可以继续用使用积分访问Fable 5，或切换到其他模型留在剩余额度内。该更新主要是促销访问和额度规则延续，帮助用户继续试用Fable 5。 Claude说明Fable 5促销访问仍按既有规则执行，用户最多可将每周用量额度的50%用于该模型。超过后可继续用使用积分访问Fable 5，或切换到其他模型以留在剩余额度内。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把Fable 5测试集中安排在7月12日前，优先验证高价值复杂任务。</li>
+<li>监控团队每周额度中Fable 5占比，避免超过50%后产生额外积分消耗。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>10. <a href="https://x.com/GoogleDeepMind/status/2074513661750546762">DeepMind发布Predicting the Past历史研究Skill</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>DeepMind</code> <code>Predicting the Past</code> <code>Gemini</code> <code>Aeneas</code> <code>Ithaca</code> <code>人文AI</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind发布「Predicting the Past Skill」，把Gemini与Aeneas、Ithaca等古代文本专家模型结合，让历史学者可以用自然语言研究希腊文和拉丁文材料。它把定制分析、可视化、跨来源模式映射和高级AI工具调用封装进Antigravity工作流，降低无代码研究者的使用门槛。团队还通过三个案例展示该Skill可作为历史研究协作伙伴，而不只是单次文本识别工具。 Google DeepMind指出历史AI分析面临三类难点：为每段铭文定制分析和可视化、跨来源映射大规模模式，以及让无代码用户使用高级AI工具。其Antigravity Skill将这些复杂流程转为自然语言操作，面向历史学家的工作流自动化。 Google DeepMind介绍Predicting the Past Skill作为历史研究协作伙伴，并与研究者Thea Sommerschield通过三个案例展示其用途。该平台把专用AI与Gemini推理结合，帮助历史学家以新方式探索古代数据。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>历史、人文或档案团队可用小型语料试跑自然语言分析流程，评估专家校验成本。</li>
+<li>把可视化和跨来源映射步骤拆成可复用模板，减少每个研究问题的重复配置。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>11. <a href="https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/">Gemini API托管代理增强后台任务</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Gemini API</code> <code>托管代理</code> <code>后台任务</code> <code>远程MCP</code> <code>生产化</code></li>
+</ul>
+<p><strong>摘要</strong>: Google 扩展 Gemini API 中的 Managed Agents，新增后台任务、远程 MCP 等能力，目标是帮助开发者构建更可靠的生产级代理。此次更新把长任务执行和外部工具连接进一步托管化，减少团队自行维护代理运行基础设施的负担。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>将现有需要长时间运行的代理任务列出来，评估是否能迁移到 Gemini API 的后台任务机制。</li>
+<li>检查现有 MCP 工具是否适合改造成远程 MCP 服务，并补齐鉴权和审计策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>教程与观点</strong> | <code>Fable</code> <code>Claude</code> <code>AI视频编辑</code> <code>演讲剪辑</code> <code>工作流实验</code> — Thariq用约59GB演讲原始视频和HTML幻灯片测试Fable/Claude的视频编辑能力，并持续展示从起始提示词到短视频、动画化幻灯片和画面布局的中间结果。实验显示AI可以把静态演示材料转成更动态的片段，也能自动生成YouTube Shorts式包装。短板同样明显：转写和高亮仍混乱，镜头切换与布局需要人工判断，因此目前更像可辅助的工作流实验而非可直接替代剪辑师的成品流程。 · <a href="https://x.com/trq212/status/2074584768096907339">Thariq (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-07-07</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-07.html</link>
@@ -2589,217 +2802,6 @@ https://t.co/voEubobshh</a></li>
 <ul>
 <li><strong>商业动态</strong> | <code>Google DeepMind</code> <code>机器人</code> <code>物理AI</code> <code>Gemini Robotics</code> <code>创业加速器</code> — Google DeepMind 宣布 Robotics Accelerator 已启动，首批包括 15 家帮助塑造欧洲物理 AI 未来的初创公司。为期三个月的项目将提供 DeepMind AI 技术栈、Gemini Robotics 模型访问以及团队的实操支持。 · <a href="https://x.com/GoogleDeepMind/status/2065388989146628563">Google DeepMind (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Anthropic</code> <code>TCS</code> <code>Claude</code> <code>受监管行业</code> — Anthropic与Tata Consultancy Services达成合作，TCS将向56个国家的5万名员工提供Claude，并为金融、医疗、公共部门等受监管行业构建Claude驱动产品。合作还包括加入Claude Partner Network、建设专门实践团队，以及围绕理赔、贷款顾问等场景扩展Claude Code技能和插件。 · <a href="https://www.anthropic.com/news/tcs-anthropic-partnership">Anthropic Blog</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-12</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-12.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-12.md</guid>
-      <pubDate>Fri, 12 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-12</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>代理工具扩展</strong>：Grok Build插件市场和Claude托管代理都在把编码助手推进到可部署、可运维的代理平台。</li>
-<li><strong>AI治理升温</strong>：OpenAI支持欧盟透明度准则，Anthropic则呼吁前沿模型第三方测试与更强公共能力。</li>
-<li><strong>产业落地加速</strong>：OpenAI与BBVA、Oracle合作，Anthropic与DXC合作，显示企业AI采购正进入云承诺和关键系统层。</li>
-<li><strong>研究走向真实场景</strong>：TacticAI、塞拉利昂教育实验和Codex黑洞仿真都强调从基准转向现场问题。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/xai/status/2065099299541893577">Grok Build插件市场开放测试</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Grok Build</code> <code>插件市场</code> <code>开发者工具</code> <code>MongoDB</code> <code>Vercel</code> <code>Sentry</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI 将 Grok Build Plugin Marketplace 开放 beta，让开发者在同一代理构建环境中调用 MongoDB、Vercel、Sentry、Cloudflare 等插件。MongoDB 侧重数据探索、数据库优化与应用构建，Vercel 负责生产部署、沙箱与 Shadcn 应用生成，Sentry 则用于定位错误、分析堆栈并整理问题。这个更新把 Grok Build 从单一编码助手推进到可连接开发、部署和运维工具链的代理平台。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/xai/status/2065168019891073260">Grok Build接入Sentry插件</a> · xAI (Twitter) · Sentry排错插件</li>
-<li><a href="https://x.com/xai/status/2065143638838157559">Grok Build支持Vercel插件</a> · xAI (Twitter) · Vercel部署插件</li>
-<li><a href="https://x.com/xai/status/2065119714658152592">Grok Build上线MongoDB插件</a> · xAI (Twitter) · MongoDB数据插件</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>试用 Grok Build beta 时优先连接现有 MongoDB/Vercel/Sentry 项目，验证端到端开发闭环。</li>
-<li>把插件权限限定在测试项目或沙箱环境，观察代理读写数据库和部署生产环境的边界。</li>
-<li>记录插件调用的失败案例，补充团队内部的代理工具使用规范。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/ClaudeDevs/status/2065080005328249086">Claude托管代理新增定时部署与凭证</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>Claude Code</code> <code>定时部署</code> <code>环境变量凭证</code> <code>自动化代理</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Managed Agents 新增两项面向自动化运行的能力：定时部署可按 cron、间隔或一次性时间触发任务，环境变量凭证类型则让代理安全使用外部 CLI、SDK 与 API。配套说明还强调 Claude Code 可通过内置 /claude-api skill 帮用户搭建托管代理部署。整体上，这使 Claude Code 工作流更接近可持续运行的云端代理，而不只是一次性交互式编码助手。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/ClaudeDevs/status/2065080009203892302">Claude托管代理支持环境变量凭证</a> · Claude Devs (Twitter) · 安全凭证类型</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>把重复性仓库维护任务改造成定时托管代理，先从低风险只读检查开始。</li>
-<li>为代理使用的第三方 CLI/API 建立最小权限环境变量凭证，避免复用个人长期密钥。</li>
-<li>用 /claude-api skill 生成部署脚手架后，补充日志、失败告警和回滚路径。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/ClaudeDevs/status/2064949876463645026">Claude公开Fable 5安全回退</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>Fable 5</code> <code>安全防护</code> <code>模型回退</code> <code>误报申诉</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Devs 表示将让 Fable 5 面向前沿 LLM 开发的安全防护变得可见，触发时会明确回退到 Opus 4.8，API 请求也将返回拒绝原因。团队承认此前采用不可见防护是错误权衡，并提示在分类器调优期间可能出现更多误报，可通过反馈和申诉渠道报告。</p>
-<hr>
-<h3>4. <a href="https://x.com/demishassabis/status/2064873362799600042">Google发布DiffusionGemma开放模型</a></h3>
-<ul>
-<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>DiffusionGemma</code> <code>Gemma</code> <code>文本扩散</code> <code>开源模型</code> <code>Apache 2.0</code></li>
-</ul>
-<p><strong>摘要</strong>: DiffusionGemma 是 Google Gemma 团队推出的实验性开放模型，采用文本扩散思路，不再逐 token 顺序生成，而是并行生成整块文本。Demis Hassabis 称其速度很快，比其他 Gemma 4 模型快 4 倍，并以 Apache 2.0 许可发布。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>适合评估低延迟生成场景，如批量草稿、实时补全或边缘端文本生成；测试时应同时比较速度、连贯性和长文本稳定性，不要只看吞吐指标。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://openai.com/index/openai-to-acquire-ona">OpenAI收购Ona强化Codex云环境</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>OpenAI</code> <code>Ona</code> <code>Codex</code> <code>云执行环境</code> <code>企业代理</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 宣布计划收购 Ona，把其安全云执行与编排技术纳入 Codex 生态。Ona 的持久、可复现云环境将支持 Codex 在客户控制的基础设施中长时间运行，满足企业对凭证范围、日志、治理和安全边界的要求。</p>
-<hr>
-<h3>6. <a href="https://x.com/DarioAmodei/status/2064781775247950326">Dario发布AI指数级政策文章</a></h3>
-<ul>
-<li><strong>来源</strong>: Dario Amodei (Twitter)</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Dario Amodei</code> <code>AI指数增长</code> <code>政策滞后</code> <code>AI治理</code></li>
-</ul>
-<p><strong>摘要</strong>: Dario Amodei发布新文章「Policy on the AI Exponential」，称AI进展远快于政策流程原本能处理的速度。文章旨在说明技术所处阶段，并提出缩小技术发展与政策响应差距所需的行动。 Dario Amodei指出，Anthropic长期支持前沿AI透明度要求，因为过去风险还不够清晰，难以做精确监管。但他现在认为，仅靠透明度已经不足以应对快速显现的前沿模型风险。 Dario Amodei表示，除透明度要求外，前沿模型现在应接受针对网络、生物和自主性风险的强制第三方测试。他还提出测试机制应具备阻止或撤销高灾难风险模型部署的权力。 Dario Amodei称其文章还讨论AI陡峭发展轨迹对就业、经济、科学进步、公民自由和地缘政治的影响。这表明Anthropic的政策论述已从模型安全扩展到更广泛的社会制度议题。 Dario Amodei表示，Anthropic随文章发布了政府应对前沿AI风险的提案，以及针对AI引发就业替代的政策框架。公司还计划为相关工作提供大量资金支持，显示其将政策建议与资金支持绑定。 Dario Amodei强调，这组AI政策主张具有跨政治光谱的常识吸引力。他认为越早采取行动，社会就越早能共享AI带来的收益。</p>
-<hr>
-<h3>7. <a href="https://x.com/ClaudeDevs/status/2064756987112702303">Claude接入SwiftUI结构化输出</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>SwiftUI</code> <code>结构化输出</code> <code>流式响应</code> <code>Apple开发</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Devs 进一步说明，Apple Foundation Models 框架的类型化输出可直接进入 Claude 请求，开发者发送的是结构化数据而非原始用户文本。Claude 响应还能流式返回到同一个 SwiftUI 视图，降低 Apple 应用内集成多步 AI 交互的工程复杂度。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>可优先在 SwiftUI 原型中验证类型化输入到 Claude 的数据契约，并用流式响应改善生成式界面的等待体验，同时为敏感字段建立显式过滤层。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://x.com/GoogleDeepMind/status/2065093482088169719">DeepMind与Palmeiras推进TacticAI</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google DeepMind</code> <code>TacticAI</code> <code>Palmeiras</code> <code>体育AI</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 宣布与巴西足球俱乐部 Palmeiras 合作，后者成为首个实质性基于 TacticAI 开展建设的足球俱乐部。TacticAI 可模拟场上情景，并提前最多 8 秒预测开放比赛动态。 Google DeepMind 介绍 TacticAI 将球场上的 22 名球员视为图节点，并用球员间物理互动构成连接。该方法让俱乐部数据团队可实时拖放球员位置，测试不同防守布局。 Google DeepMind 强调足球比赛是部分可观测、多模态和连续空间决策问题的典型场景。TacticAI 在这类实时动态系统上的进展，可能迁移到机器人、计算机游戏等需要空间推理与策略预测的领域。</p>
-<hr>
-<h3>9. <a href="https://x.com/GoogleDeepMind/status/2065031279213441309">DeepMind设立多智能体研究基金</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>多智能体</code> <code>集体行为</code> <code>研究基金</code> <code>AI安全</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 联合 Schmidt Sciences、Cooperative AI Foundation、ARIA 等机构推出 1000 万美元研究基金。该基金聚焦数百万 AI 智能体相互交互时可能涌现的集体行为，意在提前理解多智能体生态的风险与机制。</p>
-<hr>
-<h3>10. <a href="https://openai.com/index/supporting-eu-trustworthy-ai-ecosystem">OpenAI支持欧盟AI透明度准则</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>欧盟AI法案</code> <code>内容来源</code> <code>C2PA</code> <code>SynthID</code> <code>透明度</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 宣布支持欧盟关于 AI 生成内容透明度的实践准则，称其是落实欧盟 AI 法案和建设可信数字生态的重要步骤。文章强调 OpenAI 会继续推进 C2PA 元数据、SynthID 水印、公开验证工具和开放标准协作，但也承认来源信号在传播中可能丢失，仍需生态共同完善。</p>
-<hr>
-<h3>11. <a href="https://openai.com/index/bbva">BBVA与OpenAI深化银行AI转型</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>企业AI</code> <code>银行</code> <code>ChatGPT Enterprise</code> <code>OpenAI</code> <code>数字化转型</code></li>
-</ul>
-<p><strong>摘要</strong>: BBVA与OpenAI建立战略合作，把AI嵌入客户体验、风控、运营、软件开发和员工日常工作。其ChatGPT Enterprise部署已扩展到全球10万多名员工，并形成「The Eight」路线图、AI冠军网络和数万个定制GPT，用于信贷分析、营销、客户服务等场景。</p>
-<hr>
-<h3>12. <a href="https://www.anthropic.com/news/claude-corps">Anthropic推出Claude Corps公益项目</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude Corps</code> <code>AI公益</code> <code>人才培养</code> <code>Anthropic</code> <code>社会影响</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 推出 Claude Corps，将早期职业人才与非营利组织、公共机构和社会影响项目配对，帮助他们用 Claude 解决教育、健康、经济机会等问题。官方说明强调该项目既是人才培养计划，也是让更多公共利益场景直接接触前沿 AI 的渠道。相关社交发布补充了项目的全国 fellowship 定位和申请入口。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/AnthropicAI/status/2065057393927467084">Anthropic推出Claude公益奖学金</a> · Anthropic (Twitter) · 项目发布入口</li>
-</ul>
-<hr>
-<h3>13. <a href="https://www.anthropic.com/news/dxc-anthropic-alliance">DXC将Claude带入关键行业系统</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>DXC</code> <code>企业服务</code> <code>受监管行业</code> <code>系统现代化</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic与DXC Technology达成多年全球联盟，DXC将培训数万名Claude认证前线工程师，把Claude部署到银行、航空、保险、制造和政府等受监管行业的核心系统中。DXC称其AI原生托管服务平台OASIS由Claude生成超过95%的代码，并已服务50多家客户，联盟将首先覆盖保险、遗留系统现代化、网络安全和应用服务。</p>
-<hr>
-<h3>14. <a href="https://x.com/trq212/status/2064826541947940910">Fable视频制作流程公开演示文稿</a></h3>
-<ul>
-<li><strong>来源</strong>: Thariq (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Fable</code> <code>视频自动化</code> <code>Remotion</code> <code>Figma MCP</code> <code>创作工具</code></li>
-</ul>
-<p><strong>摘要</strong>: 作者分享了前一条Fable视频制作说明的演示文稿，方便读者自行查看其自动化编辑流程细节。该线程围绕用AI编写代码、调用转录、ffmpeg、Figma MCP和Remotion来生成发布视频，展示了非传统视频编辑工作流。</p>
-<hr>
-<h3>15. <a href="https://x.com/GoogleDeepMind/status/2064785577593995272">DeepMind评估AI对学习行为影响</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>教育AI</code> <code>Gemini</code> <code>学习行为</code> <code>Google DeepMind</code> <code>评估方法</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind表示，其研究不只看考试分数，而是观察学生使用AI后的行为变化。八周结果显示，学生更常用Gemini理解概念而非直接找答案，其中关于解题方法的查询比例从68%升至90%。</p>
-<hr>
-<h3>16. <a href="https://x.com/AnthropicAI/status/2064783424251101553">Anthropic设1.5亿美元AI奖学金</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>AI教育</code> <code>奖学金</code> <code>社区应用</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic预告将推出1.5亿美元全国性奖学金项目，面向职业早期人群，帮助他们把AI收益带到美国各地社区。该项目与其更广泛的AI政策倡议相配套，强调人才培养和社会扩散。 Anthropic在线程结尾表示，当前项目不足以完全应对高级AI带来的挑战，但代表了公司的投入信号。公司称未来数月和数年会继续扩大相关工作，语境上与其围绕AI工作影响、公益培训和政策框架的行动相呼应。</p>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Google</code> <code>数据中心</code> <code>能源</code> <code>弗吉尼亚</code> — Google 宣布在弗吉尼亚扩大社区投入，围绕数据中心与基础设施增长支持本地就业、技工培养和能源可负担性。计划包括资助电气学徒培训、到 2030 年新增 2,741 名学徒培训容量，并推出 1,500 万美元能源影响基金。 · <a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/virginia-community-investments/">Google AI Blog</a></li>
-<li><strong>教程与观点</strong> | <code>Codex</code> <code>科学计算</code> <code>黑洞仿真</code> <code>数值算法</code> <code>可验证研究</code> — OpenAI 介绍天体物理学家 Chi-kwan Chan 如何用 Codex 推导和测试新的数值算法，以改进黑洞周围等离子体仿真。Codex 生成的候选方案需要经过物理解释、已知解比对和反复测试，展示了 AI 在可验证科学探索中的辅助价值。 · <a href="https://openai.com/index/using-codex-to-simulate-black-holes">OpenAI Blog</a></li>
-<li><strong>产品与功能</strong> | <code>Claude</code> <code>案例集</code> <code>创业者</code> <code>开发者生态</code> — Claude 补充给出「The Problem Solvers」系列入口，指向其展示创业者如何用 Claude 解决复杂问题的专题页面。该条是上一条 Cursor 案例线程的延伸，主要承担导流与案例合集索引作用。 · <a href="https://x.com/claudeai/status/2064757539762295177">Claude (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
