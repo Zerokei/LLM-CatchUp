@@ -1,0 +1,725 @@
+{
+  "date": "2026-07-08",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-09T03:38:45−07:00",
+  "window_start": "2026-07-07T00:00:00−07:00",
+  "window_end": "2026-07-08T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1033,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing GPT-Live",
+          "url": "https://openai.com/index/introducing-gpt-live",
+          "published_at": "2026-07-08T00:00:00.000Z",
+          "description": "A new generation of voice models for natural human-AI interaction, now powering ChatGPT Voice.",
+          "full_text": "Title: Introducing GPT-Live\n\nURL Source: https://openai.com/index/introducing-gpt-live\n\nMarkdown Content:\nWe’re launching GPT‑Live, a new generation of voice models that make talking with AI feel much more like having a real conversation.\n\nGPT‑Live is built on a full-duplex architecture, meaning it can listen and speak at the same time. During conversations, GPT‑Live can show it’s paying attention with phrases like “mhmm” or “yeah”, engage in quick back-and-forth, or just stay quiet when you need a moment to think. The result is a voice experience that is refreshingly easy to talk to.\n\nGPT‑Live is also our smartest voice model yet. For questions that require web search, deeper reasoning, or more complex work, it delegates to our latest frontier model behind the scenes and brings the result back into the conversation when it’s ready. While it works, GPT‑Live can keep talking with you and maintain the flow of conversation. At launch, GPT‑Live will use GPT‑5.5 in the background. As we release new frontier models, we’ll continuously update the model used by GPT‑Live.\n\nThese advances power a new ChatGPT Voice experience that is more intelligent and natural to use. Over time, we believe this research will also unlock the ability to use voice for increasingly complex, longer-running, and more agentic work.\n\nWe’re beginning to roll out two versions of GPT‑Live – **GPT‑Live‑1** and **GPT‑Live‑1 mini** – to ChatGPT users globally today. We also plan to bring them to the API soon, and developers and enterprises can sign up to be notified using this [form⁠](https://openai.com/form/gpt-live-1-in-the-api/).\n\nOur vision is to enable truly natural human–AI interaction: a world where collaborating with AI feels as fluid and responsive as working with another person, while reasoning and complex task execution happen seamlessly in the background.\n\nOlder generations of voice AI systems brought us closer to that vision, but with important tradeoffs.\n\nCascaded voice systems rely on a series of models acting one after another to process each turn. The [original ChatGPT Voice](https://openai.com/index/chatgpt-can-now-see-hear-and-speak/) chained three models together: a speech-to-text model to transcribe your speech, a large language model to produce a response, and a text-to-speech model to convert it back into speech. This approach enabled us to talk to frontier AI models for the first time, but the complexity came at a cost: information could be lost across models, and responses were slow and stilted.\n\n### Cascaded voice system\n\nSlow and stilted responses, long pauses\n\n[Audio 10](https://cdn.openai.com/ctf-cdn/bidi/cascaded-hey-chat-mixed-uncut.wav)\n\nTranscript\n\nExample conversation with Standard Voice Mode, using GPT-5.5 Instant\n\nTurn-based voice models like [ChatGPT Advanced Voice Mode](https://openai.com/index/hello-gpt-4o/) processed and generated audio within a single model, reducing latency and making conversations smoother — but they still operated through discrete turns. The model had to wait for the user to stop speaking before responding, resulting in rigid back-and-forth. In addition, because turn detection is based on silence, even a brief pause or background noise could be mistaken for the end of turn — causing the model to interrupt at unnatural times.\n\n### Turn-based voice model\n\nSlightly faster and smoother responses, but back-and-forth with the model still feels rigid\n\n[Audio 11](https://cdn.openai.com/ctf-cdn/bidi/turn-based-hey-chat-mixed-uncut.wav)\n\nTranscript\n\nExample conversation with ChatGPT Advanced Voice Mode\n\n**GPT‑Live** addresses these limitations through two architectural changes.\n\nFirst, we built GPT‑Live for continuous interaction using a full-duplex architecture**.**Instead of processing a sequence of separate messages, GPT‑Live continuously processes input while generating output. The model can therefore make interaction decisions many times per second: whether to speak, continue listening, pause, interrupt, or invoke a tool.\n\nThis allows the model to engage in more natural back-and-forth, maintain a better sense of time, and even perform live translation.\n\n### Continuous interaction\n\nFast, natural, expressive responses and more active listening\n\n[Audio 12](https://cdn.openai.com/ctf-cdn/bidi/live-hey-chat-mixed.wav)\n\nTranscript\n\nExample conversation with GPT-Live-1, using GPT-5.5 Instant\n\nSecond, we decoupled GPT‑Live — which handles continuous interaction — from deeper work. When a question requires search, reasoning, or more agentic capabilities, GPT‑Live can delegate the task to another model like GPT‑5.5. This allows it to keep the conversation going, even as it handles multiple tasks in the background.\n\nThis architectural change also allows GPT‑Live to continuously use the latest models and agents, combining frontier intelligence with natural interaction.\n\n### Delegation for deeper work\n\nGPT-Live provides fast, natural responses, while GPT-5.5 handles search in the background\n\n[Audio 13](https://cdn.openai.com/ctf-cdn/bidi/live-search-mixed.wav)\n\nTranscript\n\nExample conversation with GPT-Live-1, using GPT-5.5 Instant\n\nWe built new human evaluations to measure pleasantness and the flow of conversation. In these head-to-head comparisons, GPT‑Live‑1 and GPT‑Live‑1 mini are strongly preferred over Advanced Voice Mode in matched 5–10 minute conversations that measure overall preference, turn-taking, interruptions, conversational flow, and how natural each interaction felt.\n\n*   GPQA: GPT‑Live‑1 substantially outperforms Advanced Voice Mode on GPQA, which tests expert-level scientific reasoning across biology, chemistry, and physics.\n*   BrowseComp: GPT‑Live‑1 shows strong gains over Advanced Voice Mode on BrowseComp, which tests agentic web search and the ability to find difficult-to-locate information.\n*   τ³-Voice Telecom (internal variant)**: GPT‑Live‑1 outperforms Advanced Voice Mode on τ³-Voice Telecom, which tests voice agents on realistic, multi-turn telecom support tasks.\n\n* GPT‑Live‑1 (instant) and GPT‑Live‑1 mini use the GPT‑5.5 Instant model in the background, while GPT‑Live‑1 Medium and GPT‑Live‑1 High use the GPT‑5.5 Thinking model with medium and high reasoning effort.\n\n** We used a customized user model, powered by our latest reasoning models, for this eval.\n\nEach week, more than 150 million people talk to ChatGPT using features like Voice and Dictation. They use it to get hands-free everyday help, to practice languages, tell bedtime stories, or just chat during their commute.\n\nStarting today, when you tap the Voice button to talk with ChatGPT, you’ll get an improved experience powered by GPT‑Live—with more natural conversations, smarter answers, better listening, and visual responses.\n\nTalking with ChatGPT should now feel much more like a real conversation. You can interrupt with a question, pause to gather your thoughts, or ask ChatGPT to slow down. It naturally acknowledges what you’re saying with phrases like “mhmm” or “got it,” so you know it’s following along. We’ve also remastered the nine distinct voices in ChatGPT for GPT‑Live.\n\nChatGPT Voice can now draw on our latest frontier models, giving you smarter answers when you need them. You can also choose the level of reasoning that fits your needs: Instant for fast responses, or Medium and High when you want ChatGPT to spend more time thinking.\n\nIf you take a moment to think, ChatGPT Voice now waits instead of jumping in and interrupting. If you ask it to stay quiet and listen, it will. And when there’s background noise, like passing traffic or nearby conversations, ChatGPT is better at focusing on your voice instead of getting distracted.\n\nSome answers are more useful when you can see them. While you’re talking, ChatGPT can now show rich visual cards for topics like weather, stocks, sports, and more. Voice also continues to support search, memory, images, and file uploads.\n\nThe result is a ChatGPT Voice experience that feels more natural, more capable, and more useful in everyday life.\n\nGPT‑Live was designed to be safe by default. It builds on the safety advances from our latest models while adding dedicated safety training across key risk areas and new safeguards designed specifically for voice.\n\nTo better reflect how people use voice in real-life settings, we began by expanding our safety testing to include new audio-native evaluations. We also created synthetic evaluations that use generated audio to focus more intensively on key safety areas, drawing on what we learned from Advanced Voice Mode. Those areas include self-harm, psychosis and mania, [emotional reliance on AI](https://openai.com/index/strengthening-chatgpt-responses-in-sensitive-conversations/), violence, and sexual content. Internal experts also red-teamed the model for risks unique to voice.\n\nIn our testing, GPT‑Live performed comparably to or better than Advanced Voice Mode across nearly all of the areas we evaluated. You can read more about our testing and safeguards in the GPT‑Live [system card⁠(opens in a new window)](https://deploymentsafety.openai.com/gpt-live).\n\nBecause voice conversations unfold in real time, we also built safeguards that can act while the model is speaking. When the system detects potentially unsafe output, it can steer the model toward a safer response, surface additional safety messaging or resources, or end the voice conversation in higher-risk cases. For conversations involving self-harm, we adapted ChatGPT’s support flows for voice, including offering expert-vetted crisis helpline support.\n\nWe designed additional protections to support teen users, and trained age-appropriate behavior directly into the model to reduce the risk of inappropriate responses. Parents can choose whether their teen can use ChatGPT Voice through Parental Controls, and linked parents may be notified in higher-risk situations involving signs of potential self-harm or suicidal intent.\n\nWe’re also rolling out longer-term measurement and post-launch monitoring focused on emotional reliance to continue improving our understanding and refining safeguards. Building on our previous research into [affective use and emotional well-being](https://openai.com/index/affective-use-study/), this will help us identify emerging patterns and improve how the system responds in emotionally sensitive interactions.\n\nFinally, GPT‑Live is designed for conversation, not voice impersonation. It uses a set of predefined voices in ChatGPT, with safeguards to prevent it from imitating a real person’s voice.\n\nWe’re committed to supporting safety and well-being and will keep strengthening these protections as we learn from real-world use.\n\nGPT‑Live is rolling out now to ChatGPT users globally across iOS, Android, and [ChatGPT.com⁠(opens in a new window)](https://chatgpt.com/?openaicom-did=5a5123ef-78fd-415a-8c1c-133b7be67a73&openaicom_referred=true). GPT‑Live‑1 will become the default model powering ChatGPT Voice for Go, Plus, and Pro users, and GPT‑Live‑1 mini will become the default for Free users. More availability details can be found in our [Help Center⁠(opens in a new window)](https://help.openai.com/articles/20001274).\n\nWe’ve optimized GPT‑Live for some of the most popular languages in ChatGPT. For certain languages, the model may have a non-native accent or gaps in fluency. We’re actively working to improve the experience across languages.\n\nAt launch, GPT‑Live will not support voice with video or screen sharing in ChatGPT, but we’re working to introduce these capabilities soon. You can still access legacy versions of ChatGPT Voice, including Standard and Advanced Voice Mode, where these features are available.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Expanding Managed Agents in Gemini API:  background tasks, remote MCP and more",
+          "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
+          "published_at": "2026-07-07T08:54:00.000Z",
+          "description": "We’re announcing new capabilities in Managed Agents in Gemini API so developers can build reliable, production-ready agents.",
+          "full_text": "Title: Expanding Managed Agents in Gemini API:  background tasks, remote MCP and more\n\nURL Source: https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/\n\nPublished Time: 2026-07-07T08:54:00+00:00\n\nMarkdown Content:\n[Skip to main content](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/#jump-content)\n\n[The Keyword](https://blog.google/)\n\nExpanding Managed Agents in Gemini API: background tasks, remote MCP and more\n\n[Share](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)\n\n[x.com](https://twitter.com/intent/tweet?text=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more%20%40google&url=https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more&u=https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/&title=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more)[Mail](mailto:?subject=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AExpanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more%0A%0AWe%E2%80%99re%20announcing%20new%20capabilities%20in%20Managed%20Agents%20in%20Gemini%20API%20so%20developers%20can%20build%20reliable,%20production-ready%20agents.%0A%0Ahttps://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)\n\nCopy link\n\n*   [Home](https://blog.google/)\n*    Innovation & AI \n\n Innovation & AI \n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n        *   [See all](https://blog.google/innovation-and-ai/products/)\n\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\n    *    Technology \n        *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/innovation-and-ai/technology/)\n\nLearn more:\n\n    *   [Google DeepMind blog](https://deepmind.google/blog/)\n    *   [Google Research blog](https://research.google/blog/)\n    *   [Google Developers blog](https://developers.googleblog.com/)\n    *   [Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n\n[See all](https://blog.google/innovation-and-ai/models-and-research/ \"See all Models & Research articles\")\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n\n[See all](https://blog.google/innovation-and-ai/products/ \"See all Products articles\")\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n\n[See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/ \"See all Infrastructure & cloud articles\")\n    *    Technology \n        *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n\n[See all](https://blog.google/innovation-and-ai/technology/ \"See all Technology articles\")\n\nLearn more:\n\n[Google DeepMind blog](https://deepmind.google/blog/)[Google Research blog](https://research.google/blog/)[Google Developers blog](https://developers.googleblog.com/)[Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n*    Products & platforms \n\n Products & platforms \n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/)\n\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [See all](https://blog.google/products-and-platforms/devices/)\n\nLearn more:\n\n    *   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n    *   [Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n\n[See all](https://blog.google/products-and-platforms/products/ \"See all Products articles\")\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n\n[See all](https://blog.google/products-and-platforms/platforms/ \"See all Platforms articles\")\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n\n[See all](https://blog.google/products-and-platforms/devices/ \"See all Devices articles\")\n\nLearn more:\n\n[Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)[Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n*    Company news \n\n Company news \n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/)\n\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/)\n\nLearn more:\n\n    *   [Google Security blog](https://blog.google/security/)\n\n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n\n[See all](https://blog.google/company-news/outreach-and-initiatives/ \"See all Outreach & initiatives articles\")\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n\n[See all](https://blog.google/authors/ \"See all Leadership articles\")\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n\n[See all](https://blog.google/company-news/inside-google/ \"See all Inside Google articles\")\n\nLearn more:\n\n[Google Security blog](https://blog.google/security/)\n\n*   [Feed](https://blog.google/feed)\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\n [\"What's new in Android 17?\", \"What is the Google Home Speaker?\", \"How can I learn new AI skills?\"] \n\nSearch freely using keywords, or by asking a question\n\nSuggested searches\n\n*   [What's new in Android 17?](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/#)\n*   [What is the Google Home Speaker?](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/#)\n*   [How can I learn new AI skills?](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/#)\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\n[The Keyword](https://blog.google/)\n\n*   [Home](https://blog.google/)\n*    Innovation & AI \n\n Innovation & AI \n    *    Models & Research \n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n    *    Products \n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [NotebookLM](https://blog.google/innovation-and-ai/products/notebooklm/)\n        *   [See all](https://blog.google/innovation-and-ai/products/)\n\n    *    Infrastructure & cloud \n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\n    *    Technology \n        *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/innovation-and-ai/technology/)\n\nLearn more:\n\n    *   [Google DeepMind blog](https://deepmind.google/blog/)\n    *   [Google Research blog](https://research.google/blog/)\n    *   [Google Developers blog](https://developers.googleblog.com/)\n    *   [Google Cloud blog](https://cloud.google.com/blog)\n\n[See all AI updates](https://blog.google/innovation-and-ai/)\n\n*    Products & platforms \n\n Products & platforms \n    *    Products \n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/)\n\n    *    Platforms \n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n    *    Devices \n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebooks](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [See all](https://blog.google/products-and-platforms/devices/)\n\nLearn more:\n\n    *   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n    *   [Waze blog](https://blog.google/waze/)\n\n[See all product updates](https://blog.google/products-and-platforms/)\n\n*    Company news \n\n Company news \n    *    Outreach & initiatives \n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n    *    Leadership \n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/)\n\n    *    Inside Google \n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/)\n\nLearn more:\n\n    *   [Google Security blog](https://blog.google/security/)\n\n*   [Feed](https://blog.google/feed)\n\n*   [Images](https://blog.google/image-library/ \"Images\")\n*   [RSS feed](https://blog.google/rss/ \"RSS feed\")\n\n[Subscribe](https://blog.google/newsletter-subscribe/)\n\nBreadcrumb\n1.   [](https://blog.google/ \"The Keyword\")\n2.   [Innovation & AI](https://blog.google/innovation-and-ai/)\n3.   [Technology](https://blog.google/innovation-and-ai/technology/)\n4.   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n\n# Expanding Managed Agents in Gemini API: background tasks, remote MCP and more\n\nJul 07, 2026\n\n·\n2 min read\n\n[Share](https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)\n\n[x.com](https://twitter.com/intent/tweet?text=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more%20%40google&url=https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more&u=https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/&title=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more)[Mail](mailto:?subject=Expanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AExpanding%20Managed%20Agents%20in%20Gemini%20API%3A%20%20background%20tasks%2C%20remote%20MCP%20and%20more%0A%0AWe%E2%80%99re%20announcing%20new%20capabilities%20in%20",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "An off switch for dual use knowledge in AI models",
+          "url": "https://www.anthropic.com/research/off-switch-dual-use",
+          "published_at": "2026-07-08T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: An off switch for dual use knowledge in AI models\n\nURL Source: https://www.anthropic.com/research/off-switch-dual-use\n\nMarkdown Content:\n_This post describes research conducted by [AE Studio](https://ae.studio/alignment) in collaboration with Anthropic._\n\nA frontier AI model is, among other things, a large store of knowledge. Some of that knowledge is _dual use_, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, do all this without affecting the model’s performance on any other task.\n\nCurrent safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try to [jailbreak](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) the model, working past its defenses to access the dual use knowledge.\n\nA more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, we [filtered information about chemical, biological, radiological, and nuclear weapons out of pretraining data](https://alignment.anthropic.com/2025/pretraining-data-filtering/), and later showed that [dual-use knowledge can be confined to a removable slice of a model’s weights](https://alignment.anthropic.com/2025/selective-gradient-masking/). But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version that _can_ discuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.\n\nIn [new research](https://alignment.anthropic.com/2026/modular-pretraining/) carried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately-filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.\n\n## How GRAM works\n\nThe idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.\n\nConcretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model can _use_ its general knowledge to make predictions, but only the virology module is allowed to _learn_ from that text. The general-purpose weights are temporarily frozen.1\n\nThe consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured sixteen different ways (“on” or “off” for each of the four categories).\n\n## Testing GRAM\n\nWe tested GRAM in three settings of increasing realism.\n\nFirst, on a synthetic dataset of children’s stories tagged by topic, a small GRAM model could be reconfigured to “forget” any chosen topic, and each configuration performed almost identically to a separate model trained from scratch with that topic filtered out. That is, for the cost of training a single model, we achieved results that would normally require multiple training runs on different datasets.\n\nSecond, we trained a larger model on a realistic mix of web text, code, and scientific papers, with four dual-use domains: virology, cybersecurity, nuclear physics, and a niche programming language (to serve as a proxy for specialized dual-use code). The capability associated with each dual-use domain is routed to its own module. Deleting a module removed the corresponding capability about as effectively as never having trained on that data at all. Remarkably, we find that this removal did not degrade general performance.\n\nWe also tested whether an attacker could recover the removed knowledge by training on a small amount of malicious data; GRAM resisted this about as well as data filtering did. By contrast, an “unlearning” technique applied after training only _suppressed_ the knowledge—it was easy to restore with a small amount of fine-tuning.\n\nThird, we ran the experiment at seven model sizes from 50 million to 5 billion parameters. GRAM matched the performance of data filtering at every size, and the gap between “module on” and “module off” grew wider as models got larger. In terms of compute costs, attempting to bypass our protections became relatively more difficult and expensive as we scaled.\n\n## Conclusions\n\nAs AI companies train more capable models, the need to limit access to dual-use capabilities will increase. Today, companies limit access through classifiers and refusal training. However, these safeguards are difficult to make robust without degrading performance on harmless requests. Methods like GRAM offer a potential path toward access control that is more robust.\n\nThis is early research, and there are clear limitations. We haven’t tested GRAM at frontier scale or in a production training pipeline. (As noted above, it hasn’t been applied to any of our Claude models.) Our evaluations quantify performance in terms of next-token prediction ability, rather than performance on real downstream tasks. And there’s a deeper open problem that applies to data filtering and methods like GRAM: some dual-use capabilities might be so entangled with general knowledge that no method can separate them cleanly.\n\n_For further details on our experiments, read the [post](https://alignment.anthropic.com/2026/modular-pretraining/) on our Alignment Science blog._\n\n#### Footnotes\n\n1. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.\n\n## Related content\n\n### A global workspace in language models\n\nNew interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.\n\n[Read more](https://www.anthropic.com/research/global-workspace)\n\n### Anthropic Economic Index report: Cadences\n\nIn our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?\n\n[Read more](https://www.anthropic.com/research/economic-index-june-2026-report)\n\n### Project Fetch: Phase two\n\nWe report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.\n\n[Read more](https://www.anthropic.com/research/project-fetch-phase-two)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Beyond Generation, It Understands Design | Introducing Seedream 5.0 Pro",
+          "url": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro",
+          "published_at": "2026-07-08T00:00:00.000Z",
+          "description": "Beyond Generation, It Understands Design | Introducing Seedream 5.0 Pro",
+          "full_text": "Title: Seed News - ByteDance Seed Team\n\nURL Source: https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro\n\nMarkdown Content:\nToday, AI image generation is gradually becoming part of everyday life.\n\nBut in real production environments, visual appeal is often just the starting point. What matters more is whether the model can efficiently meet complex, professional creative demands, closing the gap between the creator's intent and the final visual output, and delivering true usability.\n\n**Today, we are officially launching our multimodal image creation model, Seedream 5.0 Pro.**\n\nCompared to previous versions, Seedream 5.0 Pro delivers across-the-board improvements in foundational capabilities such as image-text alignment, structural coherence, text rendering, and visual aesthetics. It also introduces four core capability breakthroughs:\n\n*   **Complex information visualization:** Accurately transforms data, concepts, and dense text into professional layouts, ready for direct use in high-density content production.\n\n*   **Interactive precision editing:** Grounded in an understanding of spatial positions and regional semantics, it supports free combinations of point selection, lasso selection, sketch rendering, color and material replacement, layer separation, and multi-image fusion to achieve pixel-level editing.\n\n*   **Realistic imagery and portrait textures:** Reproduces real-world lighting, materials, and skin textures, balancing CG (computer graphics) expressiveness with photographic quality to make the visuals feel more alive.\n\n*   **Native multilingual input and generation:** Supports direct input and high-quality rendering for over ten commonly used languages worldwide, accurately conveying localized characteristics.\n\n[Video 9](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbz7s1w.mp4)\n> **Project homepage:**\n> \n> \n> [https://seed.bytedance.com/seedream5_0_pro](https://seed.bytedance.com/seedream5_0_pro)\n\n## **Dense information delivery, explaining complex ideas in a single image**\n\nIn professional settings, an image is not just visual decoration; it is the information itself. Infographic generation is currently one of the most complex areas in AI image generation. In a single pass, the model must simultaneously ensure data accuracy, render dense text without omissions, arrange a logical layout, and maintain professional aesthetics.\n\nSeedream 5.0 Pro has been specifically optimized for this challenge. It deeply parses user intent, independently handles logical reasoning and layout planning, and stably outputs high-density infographics across various scenarios.\n\nFor example, in the \"Antarctic Research Station\" image, the model integrates a timeline, a line chart, a bar chart, and a realistic view of the station within a single frame. The information hierarchy is clear, and the visual metaphors are accurate, demonstrating the model's ability to spatially organize panoramic data.\n\n![Image 1: remote-media-1783500229498.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzkhm.png)\n\n> _Prompt: A visual infographic chronicling scientific research at Antarctica's Qinling Station. Place the main Qinling Station building at the center. Surround it with a timeline of research station development, a bar chart comparing the sizes of five research stations, a pie chart of the station's energy sources, and a line chart of monthly sunshine. Supplement this with realistic photos of research equipment, a summer weather panel, a seven-step fieldwork flowchart, and on-site sampling photography to showcase China's Antarctic research in a comprehensive way._\n\nThe model also meets the high factual accuracy standards required in science communication contexts: It can clearly break down the classification, flavor profiles, and brewing tips for the six major tea categories, and accurately capture the morphological features of various bird species in a clean, grid-based layout.\n\n![Image 2: remote-media-1783500232420.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzmqt.png)\n\n> _Prompt: Infographic of six major teas, central delicate watercolor gradient flavor wheel. Surrounding top-down tea leaf shots show varying oxidation, connected to oxidation bars & brew temp thermometers. Textured handmade rice paper backdrop, minimalist zen refined balanced layout._\n\n![Image 3: remote-media-1783500233908.jpg](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtznw5.jpg)\n\n> _Prompt: Generate a natural-science infographic titled \"A Beginner's Guide to Birdwatching\". Use a fresh color palette, grid layout to showcase 8 common bird species, each with a scientific illustration, English and Chinese names, and key identifying features._\n\nThe \"Winter Christmas Sale Poster\" requires the model to handle multi-tiered, dense text, including the headline, discount terms, and event dates. The model lays out this information with well-judged spacing on a vintage scroll: The English text is rendered without spelling errors and alternates between bold and handwritten fonts based on information priority, balancing text density with commercial aesthetics.\n\n![Image 4: remote-media-1783500238167.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzr6f.png)\n\nIn the \"Pet E-commerce Homepage\" UI example, the model demonstrates a deep understanding of spatial topology. It generates a clear navigation bar and floating cards while executing cross-layer interaction: The Golden Retriever's front paw breaks through the boundary of the right-side image to realistically press down on the button on the left. This capability can help users quickly generate product prototypes.\n\n![Image 5: remote-media-1783500239140.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzrxg.png)\n\n> _Prompt: A 16:9 pet e-commerce homepage UI in warm sunset tones with layered shadows. It features a top navigation bar. The left side has a cream-beige background containing text copy, product cards, and a golden capsule-shaped button. On the right, there is an image of a Golden Retriever with a 3D effect: The dog's front paw breaks out of the right frame and rests directly on the left button._\n\n## **Interactive precision editing, more flexible and controllable creation**\n\nText-only prompts have an inherent limitation: Language excels at describing \"what to generate\" but struggles to pinpoint \"where to edit.\" Yet design usually requires repeated fine-tuning and polishing.\n\nSeedream 5.0 Pro natively integrates control signals into the generation process. Its core strength lies in a precise understanding of spatial positioning (grounding) and regional semantics, enabling pixel-level interactive editing.\n\nThe model can deeply analyze positional information within an image. In the \"2026 New _Gaokao_ Math Exam Solutions\" example, it accurately identifies each question, locks onto the blank space below it to perform calculations, and fills the answers into the corresponding spaces.\n\n![Image 6: remote-media-1783500239917.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzsj1.png)\n\n> _Prompt: Complete all the multiple-choice questions above and write out the corresponding calculation steps._\n\nIn everyday scenarios, the model can also accurately translate foreign menus into Chinese while perfectly matching the original layout.\n\n![Image 7: remote-media-1783500241467.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtztq3.png)\n\n> _Prompt: Translate the menu into Chinese._\n\nBuilding on this spatial awareness, the model translates coordinate information provided by users through point selection, lasso selection, box selection, and doodling into deterministic, local editing instructions. This enables a variety of practical applications:\n\n*   **Local interaction and attribute reconstruction: point selection, lasso selection, color editing, and material replacement**\n\nThe model provides a parallel set of fine-grained control tools. For spatial positioning, users can lock onto a target element via point or lasso selection to remove a local object or add a new one at a specific location. For object modification, the model supports color editing and material replacement. These tools work seamlessly together. Whether recoloring, swapping materials, or adding and removing objects, the edited region transitions naturally into the overall environment while maintaining the correct perspective.\n\nAs shown, the model can control colors by accepting Hex color codes or directly referencing an external color swatch, while simultaneously replacing the object's material.\n\n![Image 8: remote-media-1783500242661.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzun9.png)\n\n> _Prompt: Using the material from Image 1 and the color swatch from Image 2, modify the sofa in Image 3._\n\nThe model also demonstrates strong region isolation capabilities. Users can outline locations with differently colored frames, and the model generates the specified items within each designated area — for example, generating a blue furry monster watching bubbles in a red frame, and a grass-green blanket in a purple frame, with each element strictly respecting its coordinate boundaries and remaining independent.\n\n![Image 9: remote-media-1783500244241.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzvv6.png)\n\n*   **Sketch rendering: Turning abstract intent into high-fidelity visuals**\n\nUsers can use casually drawn color blocks, lines, or simple sketches as control signals to directly drive the detailed rendering of an image.\n\nIn the \"Sanli Elementary School Spring Outing Poster\" example, a single sketch with a rough layout is all the model needs to recognize the intent of each block. It successfully recreates felt and stitching textures while placing text, such as the departure time and packing list, precisely into the designated coordinate areas.\n\n![Image 10: remote-media-1783500245390.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbtzwr2.png)\n\n*   **Layer separation: Smartly separating images into independent layers**\n\nSeedream 5.0 Pro supports intelligent layer separation. Through text descriptions, it can separate an image into independent layers, outputting editable design assets.\n\nAs shown in the video, the model can separate a complete poster into more than 10 independent layers, including text, the main subject (a parrot), the background, and environmental decorations. The background areas previously obscured by the main subject are also seamlessly inpainted and restored. These layers retain their transparency and can be freely dragged or scaled. Creators can even replace the core subject with a new element (such as swapping the parrot for a peacock).\n\n[Video 10](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu00um.mp4)\n*   **Multi-image fusion: combining multi-source materials for complex scenes**\n\nBy simultaneously inputting multiple reference materials and a target base image, the model fuses the different elements into the scene as instructed. This is highly suitable for early-stage visual collages and creative brainstorming.\n\n[Video 11](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0200.mp4)\n*   **Unlocking creative freedom: combining editing capabilities at will**\n\nIn actual creative workflows, the capabilities mentioned above can be combined freely. As shown, the user requested to change the pumpkins to an alternating pattern of dark green (#3E4A2E) and turmeric yellow (#DB973E), while giving the background typography an embroidered texture. The model accurately executed the material swap and color edits, and the modified areas blend seamlessly into the ambient light of a summer afternoon.\n\n![Image 11: remote-media-1783500257454.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0627.png)\n\nThis \"locate precisely first, then edit\" mechanism means designers no longer have to redraw the entire image for every minor tweak. They can make high-frequency, localized fixes to works in progress, greatly accelerating iteration efficiency. At the same time, it enables everyday users to build high-quality images purely by intuition.\n\n## **Rich image and portrait textures, making every scene come alive**\n\nWhether for commercial advertising or everyday documentation, the realism of details and the natural feel of lighting directly determine the quality of an image. Seedream 5.0 Pro enhances its understanding of real-world lighting, object materials, and skin textures, resulting in a substantial leap in both CG expressiveness and photographic quality.\n\nRealism comes from the accurate reconstruction of light, objects, and people. In terms of lighting, the model can capture the microscopic dynamics of high-frequency details. It freezes moments like the \"God rays\" piercing through blinds in a dim room, grains of rice and fish roe flying mid-air in a sushi poster, or water splashes in black-and-white film. This gives the image both spatial depth and tonal richness.\n\n![Image 12: remote-media-1783500265008.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0bw0.png)\n\nRegarding object materials, the model processes reflection, refraction, and light transmission according to real-world physics, allowing the interplay of light and shadow on different materials to blend naturally with the surrounding environment.\n\nAs shown in the examples, the left image features a street-view storefront window. The vintage portrait poster on the glass retains its halftone printing texture. The street perspective is natural, and the environmental reflections on the glass are clearly layered, creating an intricate weave of the poster, the street scene, and the reflections. The right image shows a \"coastal cliff glass villa.\" Between the metal frames, floor-to-ceiling glass, stone, seawater, and raw wood, the model orchestrates a soft transition among the warm indoor lighting, the sunset, and the multiple reflections off the sea surface, showcasing the photorealistic texture of architectural photography.\n\n![Image 13: remote-media-1783500266962.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0dea.png)\n\nFor portraits, Seedream 5.0 Pro faithfully reproduces skin texture — facial lines and rough skin details appear three-dimensional, matte facial lighting transitions softly, and expressions carry inherent narrative tension. It also serves diverse realistic creation needs: Beyond live-action cinematic portraits, it fluently handles realistic character design for AAA games, ensuring clothing, body, and environmental lighting all work in harmony.\n\n![Image 14: remote-media-1783500268714.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0eqy.png)\n\nBeyond static realism, the model supports more advanced photographic techniques. In a panning shot, the cyclist and the bicycle stay tack-sharp while the background street stretches into horizontal motion blur and the wheel spokes blur as they spin. This accurately captures the dual motion of the camera moving laterally with the subject and the wheels spinning at high speed, producing a genuine sense of speed.\n\n![Image 15: remote-media-1783500270720.jpg](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0gao.jpg)\n\n> _Prompt: A panning shot of a cyclist. The rider and the bicycle are clear and sharp, the background street is stretched into horizontal motion blur, and the wheel spokes have rotational blur to convey a sense of speed._\n\nMulti-image compositing extends this control further. Given several separate photos of different people, the model extracts each person's facial features and combines them into a single scene in specified positions, producing a group photo with consistent lighting and cohesive texture, well suited for scenarios like social sharing.\n\n![Image 16: remote-media-1783500272645.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0hs5.png)\n\n> _Prompt: Combine the people from Images 2 to Image 6 into a group photo referencing the positioning in Image 1. The people should have happy expressions, with trees and a cafe storefront in the background._\n\n## **Native multilingual input and generation, adapting to localized characteristics**\n\nGlobalized creation is more than just translating languages; it requires accurately conveying the regional culture and visual traits of different markets. In addition to Chinese and English, Seedream 5.0 Pro natively supports direct input and high-quality generation in over ten commonly used languages worldwide, including French, German, Russian, Japanese, Korean, Spanish, and Arabic.\n\nWhen creators input prompts in different languages, the model not only accurately parses the semantic meaning but also aligns the architectural styles, facial features, and clothing details with the corresponding cultural context, naturally blending the image into the local atmosphere.\n\n[Video 12](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0irt.mp4)\nIn text rendering, the model automatically adapts to the typographic rules of different languages. Even when using the same visual template, it can precisely render standard Chinese and English characters, correctly process the right-to-left cursive script of Arabic, and accurately reproduce Spanish accent marks (such as PASIÓN). This ensures that text across different languages is accurate and conforms to local reading habits.\n\n![Image 17: remote-media-1783500275764.png](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrbu0k6s.png)\n\n## **Summary and outlook**\n\nThe Seedream 5.0 Pro upgrade is driven by underlying breakthroughs in spatial structure perception, high-density text rendering, and multilingual understanding. These advances not only enable precise generation of complex infographics, but also bring flexible localized editing and controllable editing capabilities, effectively boosting professional productivity.\n\nCurrently, Seedream 5.0 Pro has made breakthroughs in complex infographic generation and interactive precision editing, but there is still room to improve in finer-grained text rendering and pixel-level editing consistency. Going forward, we will continue to refine the model's generation capabilities for professional production and design. We hope that it becomes not just an efficiency-boosting tool, but a capability that integrates deeply into every industry — turning complex creative ideas into production value with lower barriers and higher quality.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "GPT-5.6 sol launches thursday!\n\nhappy building",
+          "url": "https://x.com/sama/status/2074709023807664454",
+          "published_at": "2026-07-08T04:15:52.000000Z",
+          "description": "GPT-5.6 sol launches thursday!\n\nhappy building",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 474.5h old, exceeds 336h threshold",
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 372.2h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Live tweeting video editing of my AIE talk.\n\nSwyx sent me 4 videos that are about 60GB, I also threw in my HTML deck.\n\nThis is my starting prompt. https://t.co/CtYBTUMuQr",
+          "url": "https://x.com/trq212/status/2074617786408845774",
+          "published_at": "2026-07-07T22:13:19.000000Z",
+          "description": "Live tweeting video editing of my AIE talk.\n\nSwyx sent me 4 videos that are about 60GB, I also threw in my HTML deck.\n\nThis is my starting prompt. https://t.co/CtYBTUMuQr",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "got the raw footage of this talk from @swyx - 59 gb\n\ngoing to see how Fable does editing it https://t.co/O7BbLa0jJr",
+            "url": "https://x.com/trq212/status/2074584768096907339"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "I really like how it takes some of the slides which are static (each one of these is its own slide in the original deck) and turns them into animations. https://t.co/1ITW2UWWna",
+          "url": "https://x.com/trq212/status/2074619715826381168",
+          "published_at": "2026-07-07T22:20:59.000000Z",
+          "description": "I really like how it takes some of the slides which are static (each one of these is its own slide in the original deck) and turns them into animations. https://t.co/1ITW2UWWna",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2074619539145568562"
+          },
+          "thread_group_id": "thread-trq212-20260707-2217",
+          "duplicate_of": null
+        },
+        {
+          "title": "This is a good clip that shows a few layouts.\n\nI'm pretty happy with this, maybe the slide layout could be a bit different and I'm curious how it will alternate between camera cuts.\n\nThat's all for no",
+          "url": "https://x.com/trq212/status/2074622734118924561",
+          "published_at": "2026-07-07T22:32:59.000000Z",
+          "description": "This is a good clip that shows a few layouts.\n\nI'm pretty happy with this, maybe the slide layout could be a bit different and I'm curious how it will alternate between camera cuts.\n\nThat's all for now, will get Claude to do a full render &amp; report back later. https://t.co/7TT2dDwcTO",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2074619715826381168"
+          },
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "I thought this little clip it created was really cute, with the little picture at the end. I can't tell if this is really extra, or people just don't do this because its too much work in normal editin",
+          "url": "https://x.com/trq212/status/2074618847693512704",
+          "published_at": "2026-07-07T22:17:32.000000Z",
+          "description": "I thought this little clip it created was really cute, with the little picture at the end. I can't tell if this is really extra, or people just don't do this because its too much work in normal editing.\n\nThe transcription highlighting is a bit too chaotic though. https://t.co/KRMAKxGO0Y",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2074618120862618094"
+          },
+          "thread_group_id": "thread-trq212-20260707-2217",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude decided to make Youtube short clips. Again the transcription is really chaotic (and the video quality is purposefully low for quick rendering). https://t.co/Rl5yvXLVcf",
+          "url": "https://x.com/trq212/status/2074619539145568562",
+          "published_at": "2026-07-07T22:20:17.000000Z",
+          "description": "Claude decided to make Youtube short clips. Again the transcription is really chaotic (and the video quality is purposefully low for quick rendering). https://t.co/Rl5yvXLVcf",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2074618847693512704"
+          },
+          "thread_group_id": "thread-trq212-20260707-2217",
+          "duplicate_of": null
+        },
+        {
+          "title": "got the raw footage of this talk from @swyx - 59 gb\n\ngoing to see how Fable does editing it https://t.co/O7BbLa0jJr",
+          "url": "https://x.com/trq212/status/2074584768096907339",
+          "published_at": "2026-07-07T20:02:07.000000Z",
+          "description": "got the raw footage of this talk from @swyx - 59 gb\n\ngoing to see how Fable does editing it https://t.co/O7BbLa0jJr",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2074164294204395595"
+          },
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We're extending access to Claude Fable 5 on all paid plans through July 12.",
+          "url": "https://x.com/claudeai/status/2074548242386178258",
+          "published_at": "2026-07-07T17:36:58.000000Z",
+          "description": "We're extending access to Claude Fable 5 on all paid plans through July 12.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260707-1736",
+          "duplicate_of": null
+        },
+        {
+          "title": "As before, you can use up to 50% of your weekly usage limit on Claude Fable 5. After that, you can keep using Fable 5 with usage credits, or switch to another model to keep working within your remaini",
+          "url": "https://x.com/claudeai/status/2074548243971604641",
+          "published_at": "2026-07-07T17:36:59.000000Z",
+          "description": "As before, you can use up to 50% of your weekly usage limit on Claude Fable 5. After that, you can keep using Fable 5 with usage credits, or switch to another model to keep working within your remaining limits.\n\nRead more: https://t.co/aNtorRFPnV",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/aNtorRFPnV",
+              "expanded_url": "https://support.claude.com/en/articles/15424964-claude-fable-5-promotional-access",
+              "display_url": "support.claude.com/en/articles/15…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2074548242386178258"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260707-1736",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Cowork is coming to mobile and web.\n\nHand Claude a task at your desk and pick up the finished work from your phone. Close the laptop and Claude keeps going.\n\nBeta is rolling out over the next s",
+          "url": "https://x.com/claudeai/status/2074525815820169320",
+          "published_at": "2026-07-07T16:07:51.000000Z",
+          "description": "Claude Cowork is coming to mobile and web.\n\nHand Claude a task at your desk and pick up the finished work from your phone. Close the laptop and Claude keeps going.\n\nBeta is rolling out over the next several weeks starting with the Max plan, with more plans to follow. https://t.co/W4WrgN9TrG",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Chat and Cowork are moving into one home on web and desktop, with one place for your projects and artifacts across both.\n\nHanding Claude a task starts the same way a conversation does. https://t.co/3w",
+          "url": "https://x.com/claudeai/status/2074525819414647044",
+          "published_at": "2026-07-07T16:07:52.000000Z",
+          "description": "Chat and Cowork are moving into one home on web and desktop, with one place for your projects and artifacts across both.\n\nHanding Claude a task starts the same way a conversation does. https://t.co/3wGxQELkku",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2074525817762164891"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260707-1607",
+          "duplicate_of": null
+        },
+        {
+          "title": "We're extending doubled Cowork usage limits through August 5, so you can delegate bigger work to Claude.\n\nRead more: https://t.co/ONu7xLO6js",
+          "url": "https://x.com/claudeai/status/2074525821755101458",
+          "published_at": "2026-07-07T16:07:53.000000Z",
+          "description": "We're extending doubled Cowork usage limits through August 5, so you can delegate bigger work to Claude.\n\nRead more: https://t.co/ONu7xLO6js",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/ONu7xLO6js",
+              "expanded_url": "https://claude.com/blog/cowork-web-mobile/",
+              "display_url": "claude.com/blog/cowork-we…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2074525819414647044"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260707-1607",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude Managed Agents supports both patterns with sub-agents.\n\nEscalate up to a Fable 5 advisor, or delegate down to Sonnet 5 workers.\n\nEach sub-agent keeps its own cache, so repeat calls don't pay in",
+          "url": "https://x.com/ClaudeDevs/status/2074606065170456777",
+          "published_at": "2026-07-07T21:26:44.000000Z",
+          "description": "Claude Managed Agents supports both patterns with sub-agents.\n\nEscalate up to a Fable 5 advisor, or delegate down to Sonnet 5 workers.\n\nEach sub-agent keeps its own cache, so repeat calls don't pay in full for the same context twice.\n\nhttps://t.co/mspPDDlWHI",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/mspPDDlWHI",
+              "expanded_url": "https://platform.claude.com/docs/en/managed-agents/multi-agent",
+              "display_url": "platform.claude.com/docs/en/manage…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2074606063509528855"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+          "duplicate_of": null
+        },
+        {
+          "title": "On BrowseComp, we tested Claude Managed Agents w/ Fable 5 orchestrator + Sonnet 5 worker sub-agents.\n\nThe Fable 5 orchestrator achieves 96% of Fable 5 performance at 46% of the price.\n\nToken-heavy res",
+          "url": "https://x.com/ClaudeDevs/status/2074606063509528855",
+          "published_at": "2026-07-07T21:26:44.000000Z",
+          "description": "On BrowseComp, we tested Claude Managed Agents w/ Fable 5 orchestrator + Sonnet 5 worker sub-agents.\n\nThe Fable 5 orchestrator achieves 96% of Fable 5 performance at 46% of the price.\n\nToken-heavy research is delegated to Sonnet 5.\n\nSee our cookbook:\nhttps://t.co/zDGXCK79N3 https://t.co/my1ETEQN6u",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/zDGXCK79N3",
+              "expanded_url": "https://github.com/anthropics/claude-cookbooks/blob/main/managed_agents/CMA_plan_big_execute_small.ipynb",
+              "display_url": "github.com/anthropics/cla…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2074606061567574181"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+          "duplicate_of": null
+        },
+        {
+          "title": "A few patterns we frequently use with Fable 5: \n    \nUse Fable 5 as an \"advisor.\"\n \nAn executor (Sonnet 5) calls Fable 5 for guidance.\n\nMost tokens are billed at the lower executor rate. https://t.co/",
+          "url": "https://x.com/ClaudeDevs/status/2074606058128224365",
+          "published_at": "2026-07-07T21:26:43.000000Z",
+          "description": "A few patterns we frequently use with Fable 5: \n    \nUse Fable 5 as an \"advisor.\"\n \nAn executor (Sonnet 5) calls Fable 5 for guidance.\n\nMost tokens are billed at the lower executor rate. https://t.co/JIiZ2gm99Y",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+          "duplicate_of": null
+        },
+        {
+          "title": "On SWE-bench Pro, Sonnet 5 + a Fable 5 advisor tool gets ~92% of Fable 5's score at ~63% of the price.\n\nFable 5 is called rarely (~once) per task to steer while Sonnet 5 executors the majority of the ",
+          "url": "https://x.com/ClaudeDevs/status/2074606059864625355",
+          "published_at": "2026-07-07T21:26:43.000000Z",
+          "description": "On SWE-bench Pro, Sonnet 5 + a Fable 5 advisor tool gets ~92% of Fable 5's score at ~63% of the price.\n\nFable 5 is called rarely (~once) per task to steer while Sonnet 5 executors the majority of the work.\n\nSee our docs to learn more:\nhttps://t.co/f8Rdxn2gwe https://t.co/pzzxCDAwDE",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/f8Rdxn2gwe",
+              "expanded_url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/advisor-tool",
+              "display_url": "platform.claude.com/docs/en/agents…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2074606058128224365"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+          "duplicate_of": null
+        },
+        {
+          "title": "A second strategy: use Fable 5 as an orchestrator.\n\nFable 5 plans and delegates to workers (Sonnet 5).\n\nMost tokens are billed at the lower worker rate. https://t.co/cwDZJSXekn",
+          "url": "https://x.com/ClaudeDevs/status/2074606061567574181",
+          "published_at": "2026-07-07T21:26:44.000000Z",
+          "description": "A second strategy: use Fable 5 as an orchestrator.\n\nFable 5 plans and delegates to workers (Sonnet 5).\n\nMost tokens are billed at the lower worker rate. https://t.co/cwDZJSXekn",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2074606059864625355"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-2126",
+          "duplicate_of": null
+        },
+        {
+          "title": "6 months of Claude Max 20x, on us.\n\nWe're expanding Claude for Open Source to more of the community.\n\nIf you're a maintainer, a core contributor, someone landing PRs across the ecosystem, or someone k",
+          "url": "https://x.com/ClaudeDevs/status/2074570404035993780",
+          "published_at": "2026-07-07T19:05:02.000000Z",
+          "description": "6 months of Claude Max 20x, on us.\n\nWe're expanding Claude for Open Source to more of the community.\n\nIf you're a maintainer, a core contributor, someone landing PRs across the ecosystem, or someone keeping a critical package alive, apply today! https://t.co/F4bB61z673",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-1905",
+          "duplicate_of": null
+        },
+        {
+          "title": "Apply here:\n\nhttps://t.co/Pe5DWayYB7",
+          "url": "https://x.com/ClaudeDevs/status/2074570405264994808",
+          "published_at": "2026-07-07T19:05:02.000000Z",
+          "description": "Apply here:\n\nhttps://t.co/Pe5DWayYB7",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Pe5DWayYB7",
+              "expanded_url": "https://claude.com/contact-sales/claude-for-oss",
+              "display_url": "claude.com/contact-sales/…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2074570404035993780"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260707-1905",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "GPT-5.6 Sol, along with Terra and Luna, will launch publicly this Thursday.\n\nWe’re expanding preview access globally now. https://t.co/Uk5HcfSc2e",
+          "url": "https://x.com/OpenAI/status/2074704958419792299",
+          "published_at": "2026-07-08T03:59:42.000000Z",
+          "description": "GPT-5.6 Sol, along with Terra and Luna, will launch publicly this Thursday.\n\nWe’re expanding preview access globally now. https://t.co/Uk5HcfSc2e",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Introducing Muse Image and Muse Video, the first media generation models developed by Meta Superintelligence Labs.\n\nMuse Image is our most advanced image generation model yet. It follows instructions ",
+          "url": "https://x.com/AIatMeta/status/2074577662840832382",
+          "published_at": "2026-07-07T19:33:53.000000Z",
+          "description": "Introducing Muse Image and Muse Video, the first media generation models developed by Meta Superintelligence Labs.\n\nMuse Image is our most advanced image generation model yet. It follows instructions faithfully, edits with precision, composes from multiple references, and draws on Instagram for social context. It also brings agentic tool use capabilities to image generation and integrates with Muse Spark.\n\nYou can try Muse Image in the Meta AI app and web, as well as in Instagram Stories and WhatsApp – starting in limited countries with more locations on the way.\n\nToday we’re also previewing Muse Video, which is built upon the same pretraining base as Muse Image to deliver exceptional visual fidelity with native audio support.\n\nLearn more about both models: https://t.co/QtKDPDZP5v",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/QtKDPDZP5v",
+              "expanded_url": "https://go.meta.me/7f4427",
+              "display_url": "go.meta.me/7f4427"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Alongside the release of Muse Image, we’re sharing an early preview of Muse Video. It offers competitive performance in prompt adherence, visual fidelity, and temporal consistency.\n\nWe’re investing in",
+          "url": "https://x.com/AIatMeta/status/2074600027733860758",
+          "published_at": "2026-07-07T21:02:45.000000Z",
+          "description": "Alongside the release of Muse Image, we’re sharing an early preview of Muse Video. It offers competitive performance in prompt adherence, visual fidelity, and temporal consistency.\n\nWe’re investing in areas with current performance gaps, such as audio-video synchronization and physically accurate fast motion.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "AIatMeta",
+            "text": "Introducing Muse Image and Muse Video, the first media generation models developed by Meta Superintelligence Labs.\n\nMuse Image is our most advanced image generation model yet. It follows instructions faithfully, edits with precision, composes from multiple references, and draws on Instagram for social context. It also brings agentic tool use capabilities to image generation and integrates with Muse Spark.\n\nYou can try Muse Image in the Meta AI app and web, as well as in Instagram Stories and WhatsApp – starting in limited countries with more locations on the way.\n\nToday we’re also previewing Muse Video, which is built upon the same pretraining base as Muse Image to deliver exceptional visual fidelity with native audio support.\n\nLearn more about both models: https://t.co/QtKDPDZP5v",
+            "url": "https://x.com/AIatMeta/status/2074577662840832382"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Muse Image works as an agent rather than a direct prompt-to-image model: it invokes tools, self-refines, improves with scaled test-time compute, and pairs with Muse Spark for collaborative media gener",
+          "url": "https://x.com/AIatMeta/status/2074587864923250873",
+          "published_at": "2026-07-07T20:14:25.000000Z",
+          "description": "Muse Image works as an agent rather than a direct prompt-to-image model: it invokes tools, self-refines, improves with scaled test-time compute, and pairs with Muse Spark for collaborative media generation.\n\n🧵👇 https://t.co/zh7jHcM6Jl",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "AIatMeta",
+            "text": "Introducing Muse Image and Muse Video, the first media generation models developed by Meta Superintelligence Labs.\n\nMuse Image is our most advanced image generation model yet. It follows instructions faithfully, edits with precision, composes from multiple references, and draws on Instagram for social context. It also brings agentic tool use capabilities to image generation and integrates with Muse Spark.\n\nYou can try Muse Image in the Meta AI app and web, as well as in Instagram Stories and WhatsApp – starting in limited countries with more locations on the way.\n\nToday we’re also previewing Muse Video, which is built upon the same pretraining base as Muse Image to deliver exceptional visual fidelity with native audio support.\n\nLearn more about both models: https://t.co/QtKDPDZP5v",
+            "url": "https://x.com/AIatMeta/status/2074577662840832382"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Muse Image demonstrates emergent self-refinement within its chain of thought, adaptively executing local edits, complete re-generation, or tool use. Rather than being explicitly programmed, this behav",
+          "url": "https://x.com/AIatMeta/status/2074587881205866817",
+          "published_at": "2026-07-07T20:14:29.000000Z",
+          "description": "Muse Image demonstrates emergent self-refinement within its chain of thought, adaptively executing local edits, complete re-generation, or tool use. Rather than being explicitly programmed, this behavior emerged during RL training as a strategy to optimize image quality and maximize reward.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "AIatMeta",
+            "status_id": "2074587878152175941"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-AIatMeta-20260707-2014",
+          "duplicate_of": null
+        },
+        {
+          "title": "Content Seal is built into the Meta AI app and https://t.co/wHkMPH7va9 — every generated image carries a hidden provenance signal that stays intact through cropping, compression, and resizing.\n\nWe are",
+          "url": "https://x.com/AIatMeta/status/2074587884665901143",
+          "published_at": "2026-07-07T20:14:30.000000Z",
+          "description": "Content Seal is built into the Meta AI app and https://t.co/wHkMPH7va9 — every generated image carries a hidden provenance signal that stays intact through cropping, compression, and resizing.\n\nWe are previewing a public identification tool to verify the presence of this watermark on images created by the Meta AI app or https://t.co/wHkMPH7va9: https://t.co/ocMSKGJJVn",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/SSo3nt3D0w",
+              "expanded_url": "http://meta.ai",
+              "display_url": "meta.ai"
+            },
+            {
+              "t_co": "https://t.co/wHkMPH7va9",
+              "expanded_url": "http://meta.ai",
+              "display_url": "meta.ai"
+            },
+            {
+              "t_co": "https://t.co/wHkMPH7va9",
+              "expanded_url": "http://meta.ai",
+              "display_url": "meta.ai"
+            },
+            {
+              "t_co": "https://t.co/ocMSKGJJVn",
+              "expanded_url": "https://meta.ai/identification",
+              "display_url": "meta.ai/identification"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "AIatMeta",
+            "status_id": "2074587881205866817"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-AIatMeta-20260707-2014",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "🏛️ We’re unveiling a new way to converse with the ancient world.\n\nBy grounding Gemini directly in our expert models Aeneas and Ithaca, our Predicting the Past Skill in Google @antigravity lets histor",
+          "url": "https://x.com/GoogleDeepMind/status/2074513661750546762",
+          "published_at": "2026-07-07T15:19:34.000000Z",
+          "description": "🏛️ We’re unveiling a new way to converse with the ancient world.\n\nBy grounding Gemini directly in our expert models Aeneas and Ithaca, our Predicting the Past Skill in Google @antigravity lets historians study Greek and Latin texts using plain English. 🧵 https://t.co/WQbUEyw8av",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260707-1519",
+          "duplicate_of": null
+        },
+        {
+          "title": "Using AI for history analysis has 3 core challenges:\n🔹 Creating custom analysis and visuals for every inscription.\n🔹 Cross-source mapping to find large-scale patterns.\n🔹 Utilizing advanced AI tools",
+          "url": "https://x.com/GoogleDeepMind/status/2074513665299034447",
+          "published_at": "2026-07-07T15:19:35.000000Z",
+          "description": "Using AI for history analysis has 3 core challenges:\n🔹 Creating custom analysis and visuals for every inscription.\n🔹 Cross-source mapping to find large-scale patterns.\n🔹 Utilizing advanced AI tools with no coding skills.\n\nOur Antigravity skill shifts all these complex workflows into plain English.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2074513661750546762"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260707-1519",
+          "duplicate_of": null
+        },
+        {
+          "title": "The Predicting the Past Skill is a collaborative research partner. 🏛️\n\nWe teamed up with @TSommerschield on 3️⃣ case studies to prove it. By blending specialized AI with Gemini’s reasoning, we showed",
+          "url": "https://x.com/GoogleDeepMind/status/2074513847306572213",
+          "published_at": "2026-07-07T15:20:18.000000Z",
+          "description": "The Predicting the Past Skill is a collaborative research partner. 🏛️\n\nWe teamed up with @TSommerschield on 3️⃣ case studies to prove it. By blending specialized AI with Gemini’s reasoning, we showed how historians can explore ancient data in entirely new ways.\n\nExplore the platform  → https://t.co/jP3WKZA0g8",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/jP3WKZA0g8",
+              "expanded_url": "https://goo.gle/4vR5ZtC",
+              "display_url": "goo.gle/4vR5ZtC"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2074513665299034447"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260707-1519",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 360.8h old, exceeds 336h threshold",
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 186.6h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 360.9h old, exceeds 168h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
