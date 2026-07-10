@@ -1,0 +1,570 @@
+{
+  "date": "2026-07-09",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-10T03:35:24−07:00",
+  "window_start": "2026-07-08T00:00:00−07:00",
+  "window_end": "2026-07-09T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "weekly",
+      "articles": [
+        {
+          "title": "Agentic AI Weekly | Berkeley RDI | July 8, 2026",
+          "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-july-f9d",
+          "published_at": "2026-07-08T16:01:37.210Z",
+          "description": "Researching Highlight: SageCTF | Agentic AI Summit Agenda Now Live and Tickets are Running Out!",
+          "full_text": "SageCTF: The Most Capable AI Agent for The Most Challenging CTF",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1040,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Our approach to government and national security partnerships",
+          "url": "https://openai.com/index/government-national-security-partnerships",
+          "published_at": "2026-07-08T13:30:00.000Z",
+          "description": "Learn how OpenAI approaches government and national security partnerships, with principles for responsible AI use, democratic accountability, and public safety.",
+          "full_text": "Title: Our approach to government and national security partnerships\n\nURL Source: https://openai.com/index/government-national-security-partnerships\n\nMarkdown Content:\nGovernments are beginning to use frontier AI systems for increasingly important work, including in national security. That creates new imperatives for AI labs, governments, and civil society to work together on how these tools should be used in sensitive settings.\n\nWe believe democratic societies should be able to use AI to protect people, defend critical infrastructure, deliver public services, and respond to emerging threats, including in areas like cyber defense and biological security where AI can meaningfully advantage defenders. But increasingly capable AI systems must be deployed in ways that reinforce democratic accountability, meaningful human judgment, and the rule of law, and that strengthen democratic institutions rather than concentrate power.\n\n**Today we are publishing OpenAI’s National Security Principles to offer transparency into how we approach government partnerships and national security uses of our technology.**\n\nThese principles reflect a cross-company effort to develop a more comprehensive approach to our work in the national security and law enforcement area as our technology continues to advance. We engaged a leading national security expert, David Kris, to help facilitate the process and provide his independent judgment, held listening sessions across the company, and engaged employees representing a range of teams from research and safety to policy and government partnerships.\n\nWe are publishing them now as we expand our work with the U.S. government and allied partners in critical defensive areas, particularly cyber and biosecurity. In the past month, as part of our [Daybreak⁠](https://openai.com/daybreak/) cyber defense program, we have already established Trusted Access for Cyber partnerships with Australia, Canada, Japan, Republic of Korea, France, Germany, Poland, the Netherlands and EU institutions like ENISA. We also have a growing and trusted partnership with the UK government around cyber, testing and evaluation. We are taking a similar approach in biosecurity. Last month, we also announced expanded trusted access to our GPT‑Rosalind model for select U.S. government and allied partners supporting public health and biodefense missions.\n\nThese principles apply to our current and future national security and law enforcement partnerships, including our existing work with the Department of War. When we announced our agreement earlier this year, we articulated several contractual restrictions: no use of OpenAI technology for mass domestic surveillance, no use of OpenAI technology to direct autonomous weapons systems, and no use of OpenAI technology for high-stakes automated decisions. Those restrictions are consistent with the principles we are sharing today.\n\nWe believe the right thing to do is to be clear about how our technology can and cannot be used, and to be transparent about them. But many of the most consequential questions about AI in government, especially in national security, should be answered through the democratic process. The role of companies like ours is to help inform those decisions, not make them alone. That is why we support legislative efforts to establish safeguards around some of the highest-risk military uses of AI, including in the contexts of domestic surveillance, autonomous weapons systems, and other high-risk uses that directly affect U.S. national security.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Separating signal from noise in coding evaluations",
+          "url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations",
+          "published_at": "2026-07-08T13:00:00.000Z",
+          "description": "A new analysis from OpenAI reveals issues in SWE-Bench Pro, a popular coding benchmark, raising concerns about reliability and accuracy in evaluating AI models.",
+          "full_text": "Title: Separating signal from noise in coding evaluations\n\nURL Source: https://openai.com/index/separating-signal-from-noise-coding-evaluations\n\nMarkdown Content:\nAccurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’s [Preparedness Framework⁠(opens in a new window)](https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.\n\nWe [recently investigated](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/) how one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.\n\n[SWE-Bench Pro⁠(opens in a new window)](https://scale.com/blog/swe-bench-pro) was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.\n\nWe’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.\n\nWe find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).\n\nThe issues primarily fell into four categories:\n\n*   _Overly strict tests_[1](https://openai.com/index/separating-signal-from-noise-coding-evaluations#citation-bottom-1) enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.\n*   _Underspecified prompts_[2](https://openai.com/index/separating-signal-from-noise-coding-evaluations#citation-bottom-2) omit requirements that hidden tests enforce and that are not reasonably inferable.\n*   _Low-coverage tests_ under check the requested feature, so incomplete fixes can pass.\n*   A _misleading prompt_ points models toward the wrong behavior or contradicts what tests require.\n\nOur findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.\n\n## Methodology\n\nOur aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.\n\nAn initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.\n\nAn initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.\n\n## Human-supervised agent review\n\nEach flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.\n\n## Human annotation campaign\n\nIn parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.\n\nReviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.\n\nHuman reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.\n\nCompared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.\n\n### Failure modes\n\nIn several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.\n\n## Discussion\n\nThe issues we have identified, coupled with similar cases in [SWE-bench Verified](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/), highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.\n\nAt the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.\n\nWe hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.\n\nUltimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Helping K–12 educators build practical AI skills",
+          "url": "https://openai.com/index/k-12-educators-practical-skills",
+          "published_at": "2026-07-08T10:00:00.000Z",
+          "description": "OpenAI Academy and the Walton Family Foundation are bringing hands-on AI Skills Jams to help K–12 educators build practical AI skills for the classroom.",
+          "full_text": "Title: Helping K–12 educators build practical AI skills\n\nURL Source: https://openai.com/index/k-12-educators-practical-skills\n\nMarkdown Content:\nEvery day, K–12 teachers, administrators, district leaders, and school communities help students learn, grow, and prepare for the future. They are also being asked to navigate rapid technological change while managing limited time, growing responsibilities, and uneven access to practical support.\n\nThat’s why OpenAI Academy, in partnership with the [Walton Family Foundation⁠(opens in a new window)](https://www.waltonfamilyfoundation.org/), will host a flagship AI Skills Jam for K–12 Educators this summer to offer a hands-on, high-trust environment where teachers and administrators can move from curiosity to practical use. Building on the success of the [Nonprofit AI Jam⁠(opens in a new window)](https://cdn.openai.com/pdf/oai_nonprofit-jam-report.pdf) and [Small Business AI Jam⁠(opens in a new window)](https://cdn.openai.com/pdf/small-business-jam-report-dec-2025.pdf), the Jam will bring together more than 1,600 K–12 teachers, administrators, and district leaders for in-person, hands-on workshops across U.S. cities. Through the AI Skills Jam for K–12 Educators, OpenAI Academy aims to help educators explore how AI can support teaching, planning, communication, and other day-to-day work more effectively, while helping advance AI literacy, opportunity, and responsible adoption in education.\n\nResearch from The Walton Family Foundation and Gallup, [Teaching for Tomorrow: Closing the Expectations Gap Report⁠(opens in a new window)](https://www.gallup.com/analytics/659819/k-12-teacher-research.aspx), shows that teachers who use AI tools at least weekly estimate saving 5.9 hours per week, on average. Multiplied across a typical school year, that amounts to approximately six weeks of time. Teachers say they reinvest this time into things like more nuanced student feedback, individualized lesson planning, parent communication, or even getting home at a more reasonable hour. At the AI Skills Jam, teachers and administrators will get the support they need to confidently start using and benefiting from incorporating AI into their work.\n\nDuring the Jam, participants will work alongside OpenAI mentors to learn how to incorporate AI into everyday work like lesson planning, parent and staff communications, administrative tasks, and more. The sessions will be hands-on and focused on real classroom and school system needs, providing time and space to try tools, ask questions, share concerns, and build confidence. Participants will also be connected to [OpenAI Academy⁠(opens in a new window)](https://academy.openai.com/public/clubs/k-12-education-aacga/overview?linkMenu=K-12), a free online platform which provides resources and best practice guidance about leveraging AI, so they can continue building on what they started at the Jam. OpenAI’s goal isn’t to just host a one-day workshop; it’s to expand our relationships with educators, school system leaders, and ecosystem partners over time.\n\n“Educators are at the center of helping communities understand and adapt to new technology,” said Leah Belsky, Vice President of Education at OpenAI. “Through the AI Skills Jam for K–12 Educators, we want to give teachers and school leaders practical support, trusted learning environments, and direct opportunities to shape how AI can be used responsibly in education. Access to AI is just the starting point, the real opportunity is building the agency to use these tools thoughtfully and solve meaningful problems.”\n\nConfirmed locations and partners for the AI Skills Jam for K–12 Educators, include:\n\n*   Jonesboro, GA, with Clayton County Public Schools — Wednesday, July 8\n*   Fairfax, VA, with Fairfax County Public Schools — Thursday, July 9\n*   Orlando, FL, at the PTA Conference with the Parent Teacher Association — Saturday, July 11\n*   Chicago, IL, with District 211 — Wednesday, July 15\n*   San Bernardino, CA, with San Bernardino City Unified School District — Wednesday, July 22\n*   Phoenix, AZ, with Vertex Education & Legacy Traditional Schools — Friday, July 31\n*   Salt Lake City, UT, with Davis School District — Friday, August 7\n*   Las Vegas, NV, with Vertex Education & Legacy Traditional Schools — Friday, September 4\n\nWe are grateful to the districts, school systems, educators, partners and the Walton Family Foundation for helping shape this effort. Their leadership and expertise are essential to making AI useful, responsible, and accessible in education.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "UST is bringing Claude to physical AI",
+          "url": "https://www.anthropic.com/news/ust-claude",
+          "published_at": "2026-07-09T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: UST is bringing Claude to physical AI\n\nURL Source: https://www.anthropic.com/news/ust-claude\n\nMarkdown Content:\nBefore a factory commits to manufacturing millions of chips, engineers stress-test the design in the fab. Before a product ships, a fault on the assembly line has to be caught before it becomes a recall. When AI does this kind of work, it’s called physical AI: intelligence built into the equipment and engineering processes that produce the things people use.\n\nWe’re partnering with [UST](https://www.ust.com/), a technology and engineering services company that builds and runs the engineering environments its clients depend on to get chips, cars, and connected devices to market. UST is putting Claude to work inside those environments, and training 20,000 of its engineers, architects, and consultants on Claude worldwide.\n\n### **How UST is putting Claude into the production processes behind physical products**\n\nUST works alongside semiconductor, automotive, manufacturing, telecom, embedded, and IoT companies. It builds the systems those companies use to verify their designs, validate their chips, run their factories, and service their products once they’re out in the world.\n\nThese are long, multi-step processes where an early mistake gets more expensive with every step that follows. A design flaw caught during verification costs an engineer an afternoon; the same flaw caught after a factory has committed to manufacturing costs a production run.\n\nUST is bringing Claude into this work. Claude Code reads the schematics and pinouts an engineer works from, then writes and runs the tests that check the design. It carries that task across many steps, holding the context of a design through hours-long tasks. UST is aiming to catch design flaws earlier, speed up chip validation, and bring hardware and software together in a single system.\n\nThe clearest example is a UST platform called iDEC, which its engineers use to validate hardware and silicon before it goes to production. Validation is the work of proving a chip actually behaves the way its designers intended, and it’s arduous: engineers write test scripts by hand, run them, read the results, and repeat the cycle many times over. UST reports that iDEC’s closed-loop pipeline,reads hardware designs, generates and runs regression tests, and compares live equipment data against its digital twin to flag issues early, already cuts validation cycle times by 50 to 70%, condensing standard four-day turnarounds into 48 hours.\n\nUST is now integrating Claude into that pipeline as its reasoning layer. Claude Code reads chip pinouts and hardware schematics directly, then writes and runs regression tests—the checks that confirm a change to a design didn’t cause an unintended downstream effect—which engineers used to script by hand. Claude also compares the live data from real equipment against its digital twin—the software model of how that hardware is supposed to behave—and flags firmware regressions and signal-integrity faults. UST’s goal is to make its pipeline even faster, with less hand scripting and earlier fault detection, and no new tools for engineers to learn.\n\n“Our alliance with Anthropic reflects UST’s unwavering commitment to helping clients navigate the AI landscape with confidence and achieve meaningful business outcomes. By combining the capabilities of Claude with UST’s engineering, industry knowledge, and delivery expertise, we are bringing to market industry-specific platforms and digital and engineering solutions that improve productivity, accelerate business outcomes, and help clients operationalize AI-led decisions in a safe and secure environment,” said Krishna Sudheendra, Chief Executive Officer, UST.\n\n“UST helps the world’s banks, telecoms, and manufacturers put new technology to work. They’re proving Claude inside their own engineering first, and training 20,000 of their own people on it, before bringing it into the systems they build and run for clients,” said Paul Smith, Chief Commercial Officer, Anthropic.\n\n### **How UST is putting Claude into healthcare, telecom, and banking systems**\n\nUST is bringing Claude into three other platforms it operates for clients:\n\n*   **In healthcare**, insurers and providers use UST CarePath to run member services, care management, and claims. Claude connects CarePath directly to its underlying claims and care systems, and turns scattered health data into clear next steps for care teams. Every recommended action routes to a person for approval before it reaches a member, and it stays inside the data controls healthcare requires.\n*   **In telecom**, UST IntelliOps runs network operations. To keep networks up and running, teams work through the alerts that spot problems and outages, but this is a time-consuming process. Claude now helps operators spot service issues, predict failures in the radio access network (the towers and antennas that connect phones to the network), and shorten outages through response workflows, which a person still approves. For the teams watching the alerts, that means less time separating real problems from noise.\n*   **In banking**, most mid-sized institutions still run on core systems old enough that the ledger updates once a night rather than in real time. Banks often license these systems rather than own them, so every new product or integration means months of waiting for a vendor to make the change. UST FinX helps banks modernize progressively by solving immediate business and operational challenges while reducing the dependency on disruptive, high-risk transformation programs. FinX will use Claude to embed AI agents directly into bank workflows and processes, supporting both operations teams and customers through intelligent case handling, servicing automation, knowledge retrieval, workflow assistance, and decision support.\n\n### **A partnership in AI adoption and training**\n\nUST is committing to train 20,000 of its associates on Claude worldwide, including engineers, architects, consultants, industry specialists, and forward-deployed engineers, who sit alongside client teams. It’s also building specialized teams to deploy Claude. We’re supporting UST in this effort with enablement, technical guidance, and certification through the Claude Partner Network. This partnership also makes UST a Global Premier Partner in the Claude Partner Network.\n\n### **Pairing reliability, safety, and governance**\n\nThe industries UST serves are extremely high-stakes. Human approval steps and audit controls are important forms of governance that make it possible for the systems to run in production. The reliability and safety we’ve prioritized in building Claude, paired with UST’s experience in governance and regulated delivery, enables this work to move out of a pilot and into the systems that run a business.\n\n## Related content\n\n### Inviting hard questions\n\nWe’re asking the public for their hardest questions about AI, and committing to show our work as we address them.\n\n[Read more](https://www.anthropic.com/news/hard-questions)\n\n### Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust\n\n[Read more](https://www.anthropic.com/news/ben-bernanke)\n\n### Introducing a way to reflect on how you use Claude\n\nIntroducing a new way to reflect on and refine how you use Claude. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals.\n\n[Read more](https://www.anthropic.com/news/reflect-with-claude)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Inviting hard questions",
+          "url": "https://www.anthropic.com/news/hard-questions",
+          "published_at": "2026-07-09T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Inviting hard questions\n\nURL Source: https://www.anthropic.com/news/hard-questions\n\nMarkdown Content:\n_Who decides the rules for AI?_\n\n_Can AI give my children a better future?_\n\n_Does AI make the world a more dangerous place?_\n\n_Can AI help scientists cure diseases?_\n\nPeople have a lot of hard questions about AI. It’s our job to address them.\n\nMany people are positively disposed to AI. They already use it every day, and they see its potential for making our work and our lives less laborious, for changing the way we learn, for helping speed up scientific and technological progress, for creating new sources of prosperity, and for solving some of the biggest medical and social problems we face.\n\nBut many also hold serious concerns. Some are worried about AI’s potential contribution to job loss. Some fear that it could devalue creative work. Others are concerned about human agency: that AI might affect our ability to think for ourselves, to make human connections, and to have meaning in our lives. Many are concerned about what it means if AI’s capabilities fall into the wrong hands—and wonder whether the benefits outweigh the costs.\n\nIn the film below, you can hear some of these hopes and concerns from people we’ve spoken with.\n\n[Video 3](https://www.youtube.com/watch?v=jVbGX7zJHi8)\n\nAnthropic is a [Public Benefit Corporation](https://www.anthropic.com/company)—it’s our mission to secure the benefits of advanced AI models and mitigate their risks. That public benefit mission has led us, for example, to invest in AI [safeguards](https://www.anthropic.com/news/building-safeguards-for-claude) to reduce the risk of misuse, to research the [behavior](https://www.anthropic.com/research/team/alignment) and [inner workings](https://www.anthropic.com/research/team/interpretability) of AI models to help us align them to beneficial goals, to give our AI models for free to [scientists](https://www.anthropic.com/news/ai-for-science-program), and to launch a fellowship program that [pairs early-career Claude users](https://www.anthropic.com/news/claude-corps) with nonprofits to help extend the benefits of AI.\n\nTo truly act in the public interest, we need to fully understand the hopes and concerns the public has about this new technology. As part of our [new initiative on hard questions](https://www.youtube.com/watch?v=jVbGX7zJHi8), we’re taking further steps to understand people’s views and questions on a variety of AI-related topics, and transparently chart our progress toward our public benefit goals.\n\nWe’ve already been laying the groundwork, asking thousands of people for their views on AI:\n\n*   We’ve begun the [Anthropic Public Record](https://www.anthropic.com/news/anthropic-public-record)—a public survey that, in its first round, asked 52,000 Americans to set out their biggest hopes and concerns about this technology;\n*   We [surveyed 81,000 Claude users](https://www.anthropic.com/features/81k-interviews) across 159 countries and 70 languages through our [Anthropic Interviewer](https://www.anthropic.com/news/anthropic-interviewer);\n*   We conducted dozens of in-person focus groups and [convened sessions](https://www.anthropic.com/news/widening-conversation-ai) with groups whose work and traditions bear on the questions raised by AI; and\n*   We’ve been [studying](https://www.anthropic.com/economic-index) the use of Claude through anonymized, real-world data.\n\nWe created the [Anthropic Institute](https://www.anthropic.com/institute)—a research effort within the company with the goal of confronting the most significant challenges that AI will pose to society—and since early in our company’s history our [Long-Term Benefit Trust](https://www.anthropic.com/news/the-long-term-benefit-trust) has provided impartial oversight on how effectively we’re advancing our public benefit mission.\n\nNow, we’re explicitly asking you to send us your hardest questions on AI: questions about AI’s effects on jobs, society, and families; questions about how we achieve the dramatic potential of AI for science and medicine; questions about where one of the most powerful technologies in human history can take us next.\n\nIn return, we’ll publicly track and report the specific actions we’re taking to address those questions—and we’ll be clear about the ways in which we might fall short of our stated goals.\n\nTo see some of the questions others are asking, and to share your own, visit our [**hard questions website**](https://claude.com/hard-questions).\n\n## Related content\n\n### UST is bringing Claude to physical AI\n\n[Read more](https://www.anthropic.com/news/ust-claude)\n\n### Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust\n\n[Read more](https://www.anthropic.com/news/ben-bernanke)\n\n### Introducing a way to reflect on how you use Claude\n\nIntroducing a new way to reflect on and refine how you use Claude. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals.\n\n[Read more](https://www.anthropic.com/news/reflect-with-claude)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust",
+          "url": "https://www.anthropic.com/news/ben-bernanke",
+          "published_at": "2026-07-09T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust\n\nURL Source: https://www.anthropic.com/news/ben-bernanke\n\nMarkdown Content:\nAnthropic's Long-Term Benefit Trust (LTBT) has appointed Dr. Ben Bernanke, a Distinguished Fellow at the Brookings Institution and former Chair of the Federal Reserve, as its newest member. He joins an independent body that works to hold Anthropic to its mission: the responsible development of advanced AI for the long-term benefit of humanity.\n\nBernanke led the Federal Reserve from 2006 to 2014, steering the central bank through the 2008 global financial crisis and the recovery that followed. Before entering government, he spent more than two decades as an academic economist, much of that time at Princeton, where he chaired the economics department and built a body of research on the Great Depression and the role banks play in financial crises. That work earned him the Nobel Prize in Economic Sciences in 2022.\n\n“The potential of artificial intelligence is enormous, and so is the range of outcomes. How that potential plays out will depend, in part, on the institutions we build around it,” said Dr. Bernanke. “Anthropic has created a unique governance structure to try to ensure that the long-run benefits of AI for humanity far outweigh the risks. I am honored to have this opportunity, and I will try to contribute in any way I can to this critical mission.”\n\n“AI may have the most significant economic effects of any technology in modern history, and Anthropic has a dual responsibility to understand those effects and to act on them,” said Daniela Amodei, Co-Founder and President of Anthropic. “Ben’s career has run from studying how economies react to disruptive moments to helping steer the world’s largest economy through one such time. His judgment will make us better at anticipating and responding to how advanced AI affects workforces and economies around the world.”\n\nAnthropic is a Public Benefit Corporation, meaning the company was created to balance commercial success with generating social and public good. The LTBT exists to help the company responsibly maintain that balance over the long term, providing a check on how Anthropic develops and deploys AI. The Trustees are chosen for their expertise across a wide range of areas, and are independent of the company’s management and investors: they hold no equity in Anthropic, don’t share in its profits, and are compensated only for their time and service. New Trustees are selected by the existing ones, in consultation with the company.\n\n“The institutions built around this technology will matter as much as the technology itself,” added Neil Buddy Shah, Chair of the LTBT. “Ben spent eight years leading the Federal Reserve and guided the country through the worst financial crisis in nearly a century with expertise, independence, and sound judgment. That's the standard we look for in Trustees as AI's impact grows, and we're fortunate Ben has chosen to join us in this work.”\n\nThe LTBT has the authority to appoint members to Anthropic’s board. The Trustees advise the board and Anthropic’s leadership on critical decisions, particularly those involving the potential risks and societal impacts of AI. Bernanke’s appointment brings expertise to one of the questions Anthropic studies most closely: how AI is changing the economy. He will lend his insight to our economic research, in addition to other areas of Anthropic's work.\n\nBernanke joins [Neil Buddy Shah](https://www.anthropic.com/news/the-long-term-benefit-trust), [Richard Fontaine](https://www.anthropic.com/news/national-security-expert-richard-fontaine-appointed-to-anthropic-s-long-term-benefit-trust), and [Mariano-Florentino Cuéllar](https://www.anthropic.com/news/mariano-florentino-long-term-benefit-trust) on the LTBT. Their collective experience spans global health, national security, law, policy, and economics.\n\n## Related content\n\n### UST is bringing Claude to physical AI\n\n[Read more](https://www.anthropic.com/news/ust-claude)\n\n### Inviting hard questions\n\nWe’re asking the public for their hardest questions about AI, and committing to show our work as we address them.\n\n[Read more](https://www.anthropic.com/news/hard-questions)\n\n### Introducing a way to reflect on how you use Claude\n\nIntroducing a new way to reflect on and refine how you use Claude. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals.\n\n[Read more](https://www.anthropic.com/news/reflect-with-claude)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Introducing a way to reflect on how you use Claude",
+          "url": "https://www.anthropic.com/news/reflect-with-claude",
+          "published_at": "2026-07-09T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: A new way to reflect on how you use Claude\n\nURL Source: https://www.anthropic.com/news/reflect-with-claude\n\nMarkdown Content:\nToday we're introducing, in beta, a new way to reflect on and refine how you use Claude. In our [interviews](https://www.anthropic.com/features/81k-interviews) with users, a common theme that’s emerged is a desire to better understand how, exactly, AI can be integrated into daily life. How often should someone use AI? How can it be used most effectively? When is AI suited to a task, and when is it better left to a human?\n\nWe built this feature to help answer these types of questions. It lets you easily track and visualize how you use Claude, and decide whether that time aligns with your goals. Your reflection dashboard can be found in Settings on Claude for web or the desktop app.\n\n## See your patterns and shape them\n\nYour reflection starts with a summary of how you've been using Claude, covering key topics, your usage patterns, and the types of tasks you often work through.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F3668f39d9a71aa03cb60df079921934a6f1ac144-3840x2160.png&w=3840&q=75)\n\nYou can look back on your Claude chat activity over the past 1, 3, 6, or 12 months.\n\nThe reflect feature provides a breakdown of when you use Claude most, and what you spent that time working on. Soon, we'll add a view of how much time you've spent using Claude.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F782da3016b1624cc67ca1e226b3f959056e43741-3840x2160.png&w=3840&q=75)\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F9cbe0d18a439a7e3fc3a5b576e5dd3712e02010b-3840x2160.png&w=3840&q=75)\n\nYour reflection also invites you to step back and examine the role Claude plays in your life. It will periodically surface questions like, \"_What's one thing you want to keep doing yourself, even if Claude could do it faster?\"_ and give you the chance to talk it through with Claude.\n\nWithin your dashboard, you can also set quiet hours or schedule a nudge to take a break from using Claude after a certain amount of time. Both are reminders of your own preferences and can be dismissed.\n\n## Build AI skills that support your original thinking\n\nYou can use your reflection to build new skills and sharpen how you work with Claude, using the [4D AI Fluency Framework](https://anthropic.skilljar.com/ai-fluency-framework-foundations).\n\n*   Delegation: Setting goals and deciding whether and how to engage with AI\n*   Description: Effectively describing goals to prompt useful AI behaviors and outputs\n*   Discernment: Accurately assessing the usefulness of AI outputs and behaviors\n*   Diligence: Taking responsibility for what we do with AI and how we do it\n\nYour report gives you a summary of your Claude activity across each dimension, with examples of how you tend to collaborate with Claude, like noting that you often rework email drafts in your own voice, or delegate tasks only after settling the strategy yourself. Your reflection will also offer practical suggestions, like starting a Project instead of needing to re-explain the context of ongoing work.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fef79e790d5fa03bdc5193c465a22323adb1b3c4a-3840x2160.png&w=3840&q=75)\n\n## Privacy and sensitive topics\n\nYour reflection doesn’t draw from incognito chats, nor does it pull in underlying files from your connected tools. For example, if you asked Claude to summarize your inbox, that summary may come up in your reflection, but the source emails would not. And any conversation connected to a health integration tool is left out of your insights entirely. The information and insights in your reflection stay there; they aren’t used for any other purpose. You can read more about our privacy practices [here](https://www.anthropic.com/legal/privacy).\n\nWe built this tool to be a reflection of how you use Claude. For some users, this may include sensitive or more personal conversations. In developing this tool and our approach to these topics, we worked with digital media and wellbeing experts from the MIT Media Lab's Advancing Humans with AI (AHA) program, the Digital Wellness Lab at Boston Children’s Hospital, and the Family Online Safety Institute. Sensitive conversations can still appear as part of your reflection, but only at a high level.\n\n## Getting started\n\nThis tool is currently available in beta for Free, Pro, and Max users who have memory turned on. Open [Settings in Claude](https://claude.ai/redirect/website.v1.74943c77-6bb4-4c2c-8123-9b24b2b2aa94/settings/reflect) on the web or the desktop app, and select the option to reflect on your usage to generate your report. If you can't generate a report, it may be because you don’t have [Memory](https://claude.ai/redirect/website.v1.74943c77-6bb4-4c2c-8123-9b24b2b2aa94/settings/capabilities?modal=memory) turned on. Reflecting on your Cowork conversations will be available soon.\n\n## Related content\n\n### UST is bringing Claude to physical AI\n\n[Read more](https://www.anthropic.com/news/ust-claude)\n\n### Inviting hard questions\n\nWe’re asking the public for their hardest questions about AI, and committing to show our work as we address them.\n\n[Read more](https://www.anthropic.com/news/hard-questions)\n\n### Ben Bernanke appointed to Anthropic’s Long-Term Benefit Trust\n\n[Read more](https://www.anthropic.com/news/ben-bernanke)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "what a good video",
+          "url": "https://x.com/sama/status/2075068286107316317",
+          "published_at": "2026-07-09T04:03:26.000000Z",
+          "description": "what a good video",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "Introducing GPT-Live, a new generation of voice models for natural human-AI interaction.\n\nRolling out in ChatGPT starting today.\n\nYou’ll want to turn the sound on for this one. https://t.co/WzoQFvA5ir",
+            "url": "https://x.com/OpenAI/status/2074907025537224840"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "tbh i dont think sol gets that many dates either",
+          "url": "https://x.com/sama/status/2075063511290662996",
+          "published_at": "2026-07-09T03:44:28.000000Z",
+          "description": "tbh i dont think sol gets that many dates either",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "mitchellh",
+            "text": "I had early access to 5.6/Sol for ~month. Sol is my default. It is faster, plans/judges just as good as Fable, and I think produces better overall work. I’ll reach for Fable still for highly targeted debug or performance work with clear reward functions. \n\nA cheeky way I describe Sol vs Fable to my friends is that Sol is a charismatic, efficient, talented coworker you’re jealous of. Fable is a genius recluse that is brilliant at its fixations but doesn’t go out, doesn’t date, and you don’t want to hang out with them much lol.\n\nFable is undefeated at highly targeted debug/security/performance goals. It’s a sight to behold and I was never able to get Sol to push as hard in this category. I’ll keep using it for this.\n\nSol is better or comparable at everything else, in my experience. Give it a shot, it’s hard to describe but it’s just more enjoyable to work with. \n\n(Disclaimer I have no financial ties to either lab, wasn’t paid for any of this.)",
+            "url": "https://x.com/mitchellh/status/2074862990214787301"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "it surely doesnt",
+          "url": "https://x.com/sama/status/2075048072837734448",
+          "published_at": "2026-07-09T02:43:07.000000Z",
+          "description": "it surely doesnt",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "ericlim",
+            "text": "5.6 solves depression",
+            "url": "https://x.com/ericlim/status/2074952287097967036"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "🫶",
+          "url": "https://x.com/sama/status/2075047983314571764",
+          "published_at": "2026-07-09T02:42:46.000000Z",
+          "description": "🫶",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thdxr",
+            "text": "i've never hyped a model release, we're generally conservative with how we use these things\n\nbut gpt-5.6 has had a massive impact on our team, we're using 5x the tokens as we used to\n\nit's not even smarter than fable or anything, but it's just so reliable and fun to use",
+            "url": "https://x.com/thdxr/status/2074856006576713973"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "i do love rottweilers",
+          "url": "https://x.com/sama/status/2075047747250684352",
+          "published_at": "2026-07-09T02:41:50.000000Z",
+          "description": "i do love rottweilers",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "petergostev",
+            "text": "My view of: Fable 5 vs GPT-5.6-Sol. They are not easy models to compare, these are my vibes - take them as you will. \n\nMy overall feel is that Fable is a 'wise owl' who is very thoughtful and very well spoken, GPT-5.6-Sol is like a rottweiler who will grab the problem by the throat and not let go until it is done.\n\nIn other words, Fable, is a fundamentally smarter model - even at low reasoning it can be very insightful and writes in a clear compelling way. GPT-5.6-Sol on the other hand is extremely diligent, I can give it a list of 8 things to do and you will be sure that they will be done.\n\nFable feels more arrogant to me, I was both to get it to build a new benchmark for me - 5.6 worked between 6 hours and 2 days (I tried several times) and it came up with very thoroughly tested, working benchmark. Fable came back within 40 minutes (twice) and the benchmark sounded smart, but was ultimately was 'vibe' based slop and since it was Fable's vibes that was doing the judging, it decided that it was good to go (it kept giving Fable 100% score btw).\n\nSome thoughts by category:\n\nUI & App building: Fable will still craft a better UI from scratch, the flow of the app would probably be a bit nicer. But I find that Fable often misses quite key things, which GPT-5.6-Sol doesn't. GPT's Frontend skills are big jump vs previous GPT models, but still not as great overall.\n\nWriting: Fable is better hands down, Sol feels quite difficult to align to what I want to say or explain things to me simply. Though I think the 'Pro' model writes clearer. \n\nRobustness & Reliability: This is where I think GPT-5.6-Sol wins for me hands down. Fable seems to do things of high quality, but I can never relax with it, it always misses something. With 5.6 this just almost never happens.\n\nOther things where I liked GPT-5.6-Sol, but can't compare to Fable directly.\n - Video editing is actually working now, it is not completely perfect, but with the right skill/guidance you can just give it 1h footage and it can give you a 5 min highlight clip no problem\n - Computer use - getting really rather good, very usable\n - Sub agents - it is very fluent at managing sub-agents and speaking to different threads, can help with some new workflows\n - Adhering to existing code patterns - I love this, even without asking it would implement something in a way that aligns with you app - major problem for slop generation\n - Research - I think it is getting quite a bit better, it still has some bad patterns (e.g being too tactical), but it feels like it is more steerable to be a good researcher \n - Multi-day runs - the /goal feature is pretty insane with 5.6-Sol, you can run it for days if you wanted to and it does work. Useful to have another thread or /side to check up on it, but I have some great results with it\n - Token efficiency - it is so much more token efficient and faster than 5.5, in reality it is now much faster than Fable too\n\nOn the downside, you can feel that Fable is naturally smarter, and I did have some baffling moments with 5.6 when I was getting it to make a fairly simple change in 8 turns - it seemed to get stuck in a dumb stream that was hard to get out of. So it is not AGI, don't get too carried away by the hype. \n \nI have some phenomenal examples that I'm honestly blown away by that I'll share, but as a side anecdote, I have a kind of 'swear meter' which counts how often I'm rude to Codex. In GPT-5.5 era, the % was at around 4-5%, it dropped to 1-2% when I was testing GPT-5.6-Sol and it shot up to 7% when I went back to 5.5 - it was so shocking to go back to 5.5 and experience how much worse it was. \n\nSo is GPT-5.6-Sol better than Fable? On pure intelligence - no. But man, I missed it when I just wanted to get sh*t done. It is insanely capable workhorse that you can give any task to and just expect it to be done. No lectures or 'you are absolutely rightisms', nothing is beneath it, if it takes 2 days to do some dirty work, it will do it.\n\nIt feels like the first time in a while when we have quite different types of frontier intelligences that benchmark sort of similarly, but feel very different. If you can, you would be probably better off using both and iteratively finding what you'd use Fable or GPT-5.6-Sol for. Perhaps, something like - an architectural discussion with Fable, implementation with 5.6 and docs & comms with Fable.",
+            "url": "https://x.com/petergostev/status/2074918176354115886"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-live (next-generation voice) launches today in ChatGPT.\n\nit feels magical and 'real'.\n\ni have always preferred typing to talking to an AI, now i think that's going to shift.",
+          "url": "https://x.com/sama/status/2074909079450050629",
+          "published_at": "2026-07-08T17:30:49.000000Z",
+          "description": "GPT-live (next-generation voice) launches today in ChatGPT.\n\nit feels magical and 'real'.\n\ni have always preferred typing to talking to an AI, now i think that's going to shift.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 498.5h old, exceeds 336h threshold",
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 396.1h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "this should be a huge update in your model of software engineering: rewrites can be good, cheap and fast\n\nof course most apps are not as testable and verifiable as Bun, but the models will continue to",
+          "url": "https://x.com/trq212/status/2074993112217461020",
+          "published_at": "2026-07-08T23:04:44.000000Z",
+          "description": "this should be a huge update in your model of software engineering: rewrites can be good, cheap and fast\n\nof course most apps are not as testable and verifiable as Bun, but the models will continue to get better at filling those gaps",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "jarredsumner",
+            "text": "Rewriting Bun in Rust\n\nhttps://t.co/Rl8bcaxBFc",
+            "url": "https://x.com/jarredsumner/status/2074973674332123157"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "https://t.co/dxoI9Nna86",
+          "url": "https://x.com/ClaudeDevs/status/2074900291062034618",
+          "published_at": "2026-07-08T16:55:53.000000Z",
+          "description": "https://t.co/dxoI9Nna86",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/dxoI9Nna86",
+              "expanded_url": "http://x.com/i/article/2074606120292020224",
+              "display_url": "x.com/i/article/2074…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We’re pleased to have collaborated with AE Studio on this research. \n\nRead more here: https://t.co/9exnFltK7A",
+          "url": "https://x.com/AnthropicAI/status/2075005777522172146",
+          "published_at": "2026-07-08T23:55:03.000000Z",
+          "description": "We’re pleased to have collaborated with AE Studio on this research. \n\nRead more here: https://t.co/9exnFltK7A",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/9exnFltK7A",
+              "expanded_url": "https://www.anthropic.com/research/off-switch-dual-use",
+              "display_url": "anthropic.com/research/off-s…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "AEStudioLA",
+            "text": "New research! Some AI capabilities are both helpful and dangerous. E.g., knowledge of virology can be used to create life-saving vaccines or deadly pathogens. We introduce GRAM, a training method that puts dual-use capabilities (like virology) into removable modules. https://t.co/QPxwEWIDiJ",
+            "url": "https://x.com/AEStudioLA/status/2074998242417443144"
+          },
+          "reply_to": null,
+          "linked_content": "Title: An off switch for dual use knowledge in AI models\n\nURL Source: https://www.anthropic.com/research/off-switch-dual-use\n\nMarkdown Content:\n_This post describes research conducted by [AE Studio](https://ae.studio/alignment) in collaboration with Anthropic._\n\nA frontier AI model is, among other things, a large store of knowledge. Some of that knowledge is _dual use_, meaning it can be used for good or for bad. For example, knowledge of cybersecurity can help patch critical security vulnerabilities, or it can be used to exploit them. Knowledge of virology can help a researcher create a vaccine, but it can also help a malicious actor design a deadly pathogen. Ideally, we would be able to balance three separate goals: first, limiting access to dual-use capabilities in as surgical a way as possible; second, allowing trusted users to access those same capabilities for beneficial purposes; and third, doing all this without affecting the model’s performance on any other task.\n\nCurrent safeguards are imperfect. We train models to refuse harmful requests and use classifiers to screen inputs and outputs for dangerous content. These layers of protection guard against dangerous outputs—but they don’t change the knowledge stored in the underlying model. Despite our safeguards, a sufficiently determined attacker may still try to [jailbreak](https://www.anthropic.com/news/fable-safeguards-jailbreak-framework) the model, working past its defenses to access the dual-use knowledge.\n\nA more robust protection against misuse would be to control what the model knows. We’ve explored this before: in earlier work, we [filtered information about chemical, biological, radiological, and nuclear weapons out of pretraining data](https://alignment.anthropic.com/2025/pretraining-data-filtering/), and later showed that [dual-use knowledge can be confined to a removable slice of a model’s weights](https://alignment.anthropic.com/2025/selective-gradient-masking/). But filtering is a blunt instrument. It produces one model with one fixed set of capabilities. Using filtering, if you want a model version that _can_ discuss advanced virology—for deployment in a vetted biosecurity lab, say—and another version that can’t, you have to train two separate models. Especially in the case of frontier models (which are large and very expensive to train), the cost to the developer would be prohibitive.\n\nIn [new research](https://alignment.anthropic.com/2026/modular-pretraining/) carried out with collaborators at AE Studio, we explore a new method that could enable the benefits of training many separately filtered models, but at the cost of training only one model. We call it GRAM, for Gradient-Routed Auxiliary Modules. Note that the results of the experiments presented here are preliminary—GRAM has not been applied to any of the production models at Anthropic, and we’re not sure it ever will be.\n\n## How GRAM works\n\nThe idea behind GRAM is to give a model dedicated, removable compartments for each category of dual-use knowledge, and to update only those compartments when learning from dual-use data.\n\nConcretely, GRAM adds extra neurons to every layer of a standard Transformer (the neural network architecture on which large language models are based). These neurons are divided into groups (or “modules”), one per dual-use category. During training, when the model encounters general-purpose text, it learns in the usual way. But when it encounters text from a dual-use category—virology, for instance—the rules change: the model can _use_ its general knowledge to make predictions, but only the virology module is allowed to _learn_ from that text. The general-purpose weights are temporarily frozen.1\n\nThe consequence is that virology knowledge accumulates in the virology module rather than diffusing across the whole network. After training, the module can simply be deleted, and the capability goes with it. Or it can be left in place for trusted deployments, when virology knowledge is needed. The knowledge can be tailored very specifically to the type of deployment needed: in our experiments, we defined four dual-use categories, so that one training run with GRAM yielded a model that can be configured 16 different ways (“on” or “off” for each of the four categories).\n\n## Testing GRAM\n\nWe tested GRAM in three settings of increasing realism.\n\nFirst, on a synthetic dataset of children’s stories tagged by topic, a small GRAM model could be reconfigured to “forget” any chosen topic, and each configuration performed almost identically to a separate model trained from scratch with that topic filtered out. That is, for the cost of training a single model, we achieved results that would normally require multiple training runs on different datasets.\n\nSecond, we trained a larger model on a realistic mix of web text, code, and scientific papers, with four dual-use domains: virology, cybersecurity, nuclear physics, and a niche programming language (to serve as a proxy for specialized dual-use code). The capability associated with each dual-use domain is routed to its own module. Deleting a module removed the corresponding capability about as effectively as never having trained on that data at all. Remarkably, we find that this removal did not degrade general performance.\n\nWe also tested whether an attacker could recover the removed knowledge by training on a small amount of malicious data; GRAM resisted this about as well as data filtering did. By contrast, an “unlearning” technique applied after training only _suppressed_ the knowledge—it was easy to restore with a small amount of fine-tuning.\n\nThird, we ran the experiment at seven model sizes from 50 million to 5 billion parameters. GRAM matched the performance of data filtering at every size, and the gap between “module on” and “module off” grew wider as models got larger. In terms of compute costs, attempting to bypass our protections became relatively more difficult and expensive as we scaled.\n\n## Conclusions\n\nAs AI companies train more capable models, the need to limit access to dual-use capabilities will increase. Today, companies limit access through classifiers and refusal training. However, these safeguards are difficult to make robust without degrading performance on harmless requests. Methods like GRAM offer a potential path toward access control that is more robust.\n\nThis is early research, and there are clear limitations. We haven’t tested GRAM at frontier scale or in a production training pipeline. (As noted above, it hasn’t been applied to any of our Claude models.) Our evaluations quantify performance in terms of next-token prediction ability, rather than performance on real downstream tasks. And there’s a deeper open problem that applies to data filtering and methods like GRAM: some dual-use capabilities might be so entangled with general knowledge that no method can separate them cleanly.\n\n_For further details on our experiments, read the [post](https://alignment.anthropic.com/2026/modular-pretraining/) on our Alignment Science blog._\n\n#### Footnotes\n\n1. One technical detail is that the virology module is also sometimes turned on when learning from general-purpose text. We find this helps the modules “work together” more effectively.\n\n## Related content\n\n### A global workspace in language models\n\nNew interpretability research reveals an emergent mental workspace in Claude that holds internal thoughts that don’t appear in the model’s output.\n\n[Read more](https://www.anthropic.com/research/global-workspace)\n\n### Anthropic Economic Index report: Cadences\n\nIn our latest Economic Index report, we sample hourly for the first time to ask: When do people come to Claude? What do they produce with it? And how do they perceive AI's impact on their work?\n\n[Read more](https://www.anthropic.com/research/economic-index-june-2026-report)\n\n### Project Fetch: Phase two\n\nWe report results from our latest test of whether Claude can help Anthropic employees perform sophisticated robotics tasks. We found that Claude Opus 4.7, operating without human assistance, was about 20 times faster than the fastest human team at all tasks completed by participants less than a year ago.\n\n[Read more](https://www.anthropic.com/research/project-fetch-phase-two)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "GPT-Live is now fully rolled out to all ChatGPT users on Go, Plus, and Pro plans. Free user rollout is in progress. \n\nUpdate to the latest version of the ChatGPT app on iOS or Android to try it out.",
+          "url": "https://x.com/OpenAI/status/2075019750569378007",
+          "published_at": "2026-07-09T00:50:35.000000Z",
+          "description": "GPT-Live is now fully rolled out to all ChatGPT users on Go, Plus, and Pro plans. Free user rollout is in progress. \n\nUpdate to the latest version of the ChatGPT app on iOS or Android to try it out.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "Introducing GPT-Live, a new generation of voice models for natural human-AI interaction.\n\nRolling out in ChatGPT starting today.\n\nYou’ll want to turn the sound on for this one. https://t.co/WzoQFvA5ir",
+            "url": "https://x.com/OpenAI/status/2074907025537224840"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We audited SWE-Bench Pro, one of the most widely used AI coding benchmarks, and found it no longer reliably measures frontier coding capability.\n\nWe find 30% of SWE-Bench Pro tasks to be broken, and a",
+          "url": "https://x.com/OpenAI/status/2074972179385720836",
+          "published_at": "2026-07-08T21:41:33.000000Z",
+          "description": "We audited SWE-Bench Pro, one of the most widely used AI coding benchmarks, and found it no longer reliably measures frontier coding capability.\n\nWe find 30% of SWE-Bench Pro tasks to be broken, and are retracting our previous recommendation that the research community use it as a leading coding eval.\nhttps://t.co/wDdSEjBe4F",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/wDdSEjBe4F",
+              "expanded_url": "https://openai.com/index/separating-signal-from-noise-coding-evaluations/",
+              "display_url": "openai.com/index/separati…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Separating signal from noise in coding evaluations\n\nURL Source: https://openai.com/index/separating-signal-from-noise-coding-evaluations/\n\nMarkdown Content:\nAccurately measuring our models’ capabilities is important for sound deployment and safety decisions, including decisions under OpenAI’s [Preparedness Framework⁠(opens in a new window)](https://cdn.openai.com/pdf/18a02b5d-6b67-4cec-ab64-68cdfbddebcd/preparedness-framework-v2.pdf). With each model release, we report results for a variety of external and internal benchmarks to track model progress. When evaluations have flaws that affect results, they can give a false understanding of capabilities, misrepresenting safety cases and affecting research priorities.\n\nWe [recently investigated](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/) how one of the most widely used coding benchmarks, SWE-bench Verified, had fundamental design and contamination issues, and found that the eval no longer provided meaningful signal on software development capabilities. At the time, we encouraged the wider community to switch to SWE-Bench Pro.\n\n[SWE-Bench Pro⁠(opens in a new window)](https://scale.com/blog/swe-bench-pro) was designed to improve on SWE-bench Verified by testing models on longer horizons and more realistic coding tasks to better track agentic coding capabilities. As in SWE-bench Verified, tasks are sourced programmatically from the history of feature changes in a set of public and private repositories. Models are required to implement a solution that passes new tests for a feature, without breaking existing functionality. On the 731-task public split, frontier models improved from a pass rate of 23.3% to 80.3% in eight months.\n\nWe’ve since performed a similar audit on SWE-Bench Pro, reviewing the dataset using a datapoint analysis pipeline. The pipeline reviewed model attempts at the task, task metadata, and failure traces to flag likely evaluation flaws. Each flagged task was then assessed through multiple investigator-agent passes and independently reviewed by five experienced software engineers, with disagreements escalated for further investigation.\n\nWe find evidence of breaking issues in a significant portion of the dataset. Our datapoint analysis pipeline flagged 200 (27.4%) broken tasks, while the human annotation campaign identified 249 (34.1%).\n\nThe issues primarily fell into four categories:\n\n*   _Overly strict tests_[1](https://openai.com/index/separating-signal-from-noise-coding-evaluations/#citation-bottom-1) enforce specific implementation details not specified in the prompt, invalidating many functionally correct submissions.\n*   _Underspecified prompts_[2](https://openai.com/index/separating-signal-from-noise-coding-evaluations/#citation-bottom-2) omit requirements that hidden tests enforce and that are not reasonably inferable.\n*   _Low-coverage tests_ under check the requested feature, so incomplete fixes can pass.\n*   A _misleading prompt_ points models toward the wrong behavior or contradicts what tests require.\n\nOur findings point to the difficulty of curating hard but fair benchmarks and the growing utility of agents for scalable data quality checks. In light of these results, we estimate that ~30% of SWE-bench Pro tasks are broken, and advise that model developers carefully examine results.\n\n## Methodology\n\nOur aim is to ensure that task failures reflect genuine model limitations, and task successes reflect complete and valid solutions to the prompt requirements. To check the quality of the data used in the evaluation, we created a quality assurance pipeline to assess whether each datapoint accurately reflects model capabilities.\n\nAn initial data quality pipeline flags problems for review. We validate with a deeper agent-assisted audit of flagged tasks and a human annotation campaign working with experienced engineers.\n\nAn initial automated filter reviews the instructions given to the model, attempts by the model to solve the task, and the tests used to grade these attempts to flag likely broken or problematic examples. This filter flagged 286 potentially broken tasks. We then conducted a deeper review of that subset in two ways: a human-supervised agent review, which conducts extensive checks with investigator agents and a final human judgment; and a human annotation campaign working with experienced software developers.\n\n## Human-supervised agent review\n\nEach flagged problem is audited with Codex-based investigator agents that were given access to the task repository and environment. This helps them distinguish reasonable task ambiguity, which can often be resolved by studying nearby code and repository conventions, from true underspecification. The agent can run tests, inspect files in the repo, and investigate model attempts and their common failure modes on the task. After several independent repeats of these deeper audits, a researcher reviewed the summaries, made a final judgment, and labeled the likely issues.\n\n## Human annotation campaign\n\nIn parallel, we ran a human annotation campaign over the flagged subset. We worked with experienced software engineers who were trained on the benchmark goals, issue taxonomy, and edge cases before reviewing tasks. Each task was reviewed by five engineers.\n\nReviewers formed an independent judgment from the visible problem statement, test cases, and the ground-truth reference solution (known as the gold patch) before using the pipeline analysis or transcript as supporting context. The reviewers then assigned a label and severity rating based on concrete evidence, and escalated disagreements or low-confidence cases for further review.\n\nHuman reviewers were more likely than the investigator agents to mark tasks as broken. There was also some disagreement on categories between the two review paths, but in no flagged task was “not broken” the most common human label. Of the categories the agent pipeline flagged, reviewers’ judgments overlapped in 74% of cases.\n\nCompared with the agent pipeline, the human reviewers were also more likely to select multiple labels for a task, indicating that they found tasks to be broken in multiple ways or did not fit cleanly into a single category. This suggests the agent-plus-reviewer pipeline resulted in conservative labeling: it captured the same broad failure modes humans identified, while undercounting cases where reviewers saw additional or overlapping issues. The largest difference was in low-coverage tests, which humans selected as the most common issue for 9.4% of the benchmark compared with 4.1% from the agent pipeline.\n\n### Failure modes\n\nIn several cases the task prompt prescribed a specific implementation, but the hidden test cases expected different behavior.\n\n## Discussion\n\nThe issues we have identified, coupled with similar cases in [SWE-bench Verified](https://openai.com/index/why-we-no-longer-evaluate-swe-bench-verified/), highlight the importance of rigorously checking benchmarks. Issues and pull requests from open-source repositories were originally created for human collaboration, often through long back-and-forths between maintainers and contributors. As a result, problem descriptions, merged code, and unit tests do not always line up to form clean, isolated tasks for evaluating models reliably. In particular, tests included in pull requests can be overly strict because they are written to validate a specific change, rather than to define an implementation-agnostic standard for solving the task.\n\nAt the same time, evaluation flaws are easier to detect now than they would have been even a short time ago. As model capabilities improve, we can use those models to inspect prompts, tests, patches, traces, and edge cases with much greater depth and consistency, helping surface benchmark issues that were previously costly or impractical to find at scale.\n\nWe hope the wider evaluation community will develop new benchmarks built by experienced software developers specifically to test model capabilities. That approach can preserve the high bar and realism we want to measure model capabilities, and allows for better human oversight throughout the process. Given the issues uncovered in this analysis, we retract our earlier recommendation to adopt SWE-Bench Pro.\n\nUltimately, an eval should provide meaningful signal through benchmarks that are hard to game, easy to trust, and genuinely reflective of model capability or alignment. Because these results inform OpenAI’s deployment and safety decisions, the evals we track need to be valid and informative.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "To audit SWE-Bench Pro, we used model-based investigator agents alongside independent reviews from five independent experienced software engineers.\n\nThat helped us examine tasks at scale while keeping",
+          "url": "https://x.com/OpenAI/status/2074972182640492731",
+          "published_at": "2026-07-08T21:41:34.000000Z",
+          "description": "To audit SWE-Bench Pro, we used model-based investigator agents alongside independent reviews from five independent experienced software engineers.\n\nThat helped us examine tasks at scale while keeping expert judgment at the center. https://t.co/3PNbk57uvF",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2074972180769907186"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260708-2141",
+          "duplicate_of": null
+        },
+        {
+          "title": "As coding models improve, evals need to become harder, fairer, and more trustworthy.\n\nBetter benchmarks help the field understand real progress and where the frontier is moving.",
+          "url": "https://x.com/OpenAI/status/2074972185895342084",
+          "published_at": "2026-07-08T21:41:34.000000Z",
+          "description": "As coding models improve, evals need to become harder, fairer, and more trustworthy.\n\nBetter benchmarks help the field understand real progress and where the frontier is moving.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2074972182640492731"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260708-2141",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Announcing Robostral Navigate, our first model for embodied navigation: an 8B robotics navigation model that guides robots to autonomously perform tasks specified with natural language. Single RGB cam",
+          "url": "https://x.com/MistralAI/status/2074856309438980145",
+          "published_at": "2026-07-08T14:01:07.000000Z",
+          "description": "Announcing Robostral Navigate, our first model for embodied navigation: an 8B robotics navigation model that guides robots to autonomously perform tasks specified with natural language. Single RGB camera. State-of-the-art on R2R-CE. https://t.co/UlmUsXNxhX",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Trained entirely in simulation: ~400,000 trajectories across 6,000 scenes. A prefix-caching recipe cuts training tokens by 22×, turning months-long runs into days. Online RL (CISPO) pushes success rat",
+          "url": "https://x.com/MistralAI/status/2074856314132410755",
+          "published_at": "2026-07-08T14:01:08.000000Z",
+          "description": "Trained entirely in simulation: ~400,000 trajectories across 6,000 scenes. A prefix-caching recipe cuts training tokens by 22×, turning months-long runs into days. Online RL (CISPO) pushes success rates higher still.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "MistralAI",
+            "status_id": "2074856312685334596"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-MistralAI-20260708-1401",
+          "duplicate_of": null
+        },
+        {
+          "title": "It runs on wheeled, legged, and flying robots and generalizes across sizes, unlocking delivery, logistics, manufacturing, and hospitality.\nRead more: https://t.co/ZuBRgU1Wm3",
+          "url": "https://x.com/MistralAI/status/2074856315655000552",
+          "published_at": "2026-07-08T14:01:09.000000Z",
+          "description": "It runs on wheeled, legged, and flying robots and generalizes across sizes, unlocking delivery, logistics, manufacturing, and hospitality.\nRead more: https://t.co/ZuBRgU1Wm3",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/ZuBRgU1Wm3",
+              "expanded_url": "https://mistral.ai/news/robostral-navigate",
+              "display_url": "mistral.ai/news/robostral…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "MistralAI",
+            "status_id": "2074856314132410755"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-MistralAI-20260708-1401",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Announcing Grok 4.5, our first model trained specifically for coding and agents. It was trained with Cursor and offers frontier intelligence at leading speeds and cost efficiency.\n\nhttps://t.co/i8HpU7",
+          "url": "https://x.com/SpaceXAI/status/2074915721684086811",
+          "published_at": "2026-07-08T17:57:12.000000Z",
+          "description": "Announcing Grok 4.5, our first model trained specifically for coding and agents. It was trained with Cursor and offers frontier intelligence at leading speeds and cost efficiency.\n\nhttps://t.co/i8HpU7w64k https://t.co/oBjGtTsoNc",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/i8HpU7w64k",
+              "expanded_url": "https://x.ai/news/grok-4-5",
+              "display_url": "x.ai/news/grok-4-5"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 384.7h old, exceeds 336h threshold",
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 210.6h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 384.8h old, exceeds 168h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
