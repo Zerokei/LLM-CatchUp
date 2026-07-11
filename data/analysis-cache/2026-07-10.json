@@ -1,0 +1,805 @@
+{
+  "analyzed_at": "2026-07-11T12:36:35.041Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-10.json",
+  "trend_paragraph": "- **旗舰模型迭代**：OpenAI 发布 GPT-5.6，并将 Sol、Terra、Luna 推向 ChatGPT、Codex、API 与 Microsoft 365 Copilot。\n- **工作代理落地**：ChatGPT Work 把 Codex 扩展到跨应用长任务，Sites 则把站点生成纳入可发布工作流。\n- **多模态模型竞争**：Meta 发布 Muse Spark 1.1 和 Model API，主打编码、多模态推理与代理式电脑使用。\n- **使用体验细化**：Claude Reflect 和 Claude Devs 额度重置显示头部产品继续补齐用户运营与开发者体验。",
+  "articles": [
+    {
+      "url": "https://x.com/OpenAIDevs/status/2075395561860321412",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-5.6 发布，Codex 进入 ChatGPT",
+      "summary": "OpenAI Devs 宣布 GPT-5.6 已发布，并且 Codex 现在可以在 ChatGPT 内使用。团队还将在 r/Codex 举办 AMA，集中回答开发者关于新版模型与 Codex 集成的问题。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "Codex",
+        "ChatGPT",
+        "开发者",
+        "AMA"
+      ],
+      "practice_suggestions": [
+        "在现有 Codex 工作流中对比 GPT-5.6 与旧模型的代码生成、调试和重构表现。",
+        "整理团队关心的集成问题，参考 AMA 答复更新内部使用规范。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "Codex AMA"
+    },
+    {
+      "url": "https://x.com/sama/status/2075354679031067058",
+      "source": "Sam Altman (Twitter)",
+      "title": "Fidji Simo 转任 OpenAI 兼职顾问",
+      "summary": "Sam Altman 转发 Fidji Simo 的离任说明，表示她将因慢性病恢复需要离开 OpenAI 全职岗位，转为兼职顾问。Fidji 在长文中强调 AI 对医疗、健康、金融和日常负担的潜在价值，并称会继续通过 OpenAI、ChronicleBioAI 与 CODA_research 推动疾病治疗相关工作。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Fidji Simo",
+        "管理层",
+        "医疗 AI",
+        "顾问"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2075337081304522853",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Sites 面向 Pro 与 Plus 开启 Beta",
+      "summary": "OpenAI Devs 表示 Sites 已向 Pro 和 Plus 用户开放 beta，欧盟和英国可用性将随后推出。Beta 期间，订阅计划包含一定额度的 Sites 使用量，且不额外收费但受计划限制约束。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI Sites",
+        "Beta",
+        "Plus",
+        "Pro",
+        "发布"
+      ],
+      "practice_suggestions": [
+        "用 Sites 试做一个可分享的内部工具原型，记录生成质量、发布流程和额度消耗。",
+        "检查团队账号所在地区和订阅等级，确认是否已具备 beta 使用权限。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260709-2151",
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2075337031954395447",
+      "angle": "Beta 规则"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2075337068985893059",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Sites 示例：多人旅行规划应用",
+      "summary": "OpenAI Devs 展示了用 Sites 构建的 Travel Roulette 示例，把五位朋友的旅行偏好汇总为一个目的地、周末时间、预算和行程。该案例强调 Sites 可快速把轻量协作需求变成可分享的在线应用。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI Sites",
+        "旅行规划",
+        "应用生成",
+        "协作",
+        "案例"
+      ],
+      "practice_suggestions": [
+        "把一个多人决策类小流程改写成 Sites 提示词，验证其输入收集和结果展示能力。",
+        "测试生成站点的分享链接是否适合外部协作场景。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260709-2151",
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2075337031954395447",
+      "angle": "旅行应用示例"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2075337031954395447",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Sites 开启 Beta：从想法生成可发布站点",
+      "summary": "OpenAI Devs 展示 Sites，可把一个想法直接变成可发布、可分享的实时站点，并用团队内部示例说明它适合个人工具和轻量应用原型。后续线程补充了多人旅行规划示例，以及 Pro、Plus 用户 Beta 开放、EU/UK 稍后上线和计划限制。它与 GPT-5.6 发布日的产品组合相呼应，强化了 ChatGPT 从回答问题转向交付成品的方向。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI Sites",
+        "站点生成",
+        "Beta",
+        "Pro",
+        "Plus",
+        "原型工具"
+      ],
+      "practice_suggestions": [
+        "用 Sites 快速复刻一个内部小工具，评估发布、分享和迭代流程。",
+        "在 Beta 阶段记录配额、地区和权限限制，避免直接承诺生产用途。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075310022121472399",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 支持家庭谷物生意运营",
+      "summary": "OpenAI 分享 Wishingrad 一家用 GPT-5.6 经营家庭谷物生意的案例。该内容更像新版模型的应用展示，强调小型商业运营可以借助 GPT-5.6 处理日常任务。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "GPT-5.6",
+        "小企业",
+        "案例",
+        "运营",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "梳理小企业运营中的重复任务，挑选库存、文案或客服场景测试 GPT-5.6。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-2004",
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "商业案例"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075310019185389913",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 农场管理案例亮相",
+      "summary": "OpenAI 介绍农户 Hiroki 使用 GPT-5.6 经营西兰花农场的案例。该推文属于新版模型应用场景展示，突出 GPT-5.6 在农业经营和现场决策中的潜在辅助价值。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "GPT-5.6",
+        "农业",
+        "农场管理",
+        "案例",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "将农场或现场运营数据整理成固定输入模板，测试 GPT-5.6 对计划和异常处理建议的质量。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-2004",
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "农业案例"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075310020653351324",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 被用于攻克数学难题",
+      "summary": "OpenAI 展示数学家 Bartosz 使用 GPT-5.6 解决此前难以解决的数学问题。推文没有提供技术细节或基准结果，但作为模型能力案例，指向 GPT-5.6 在高难推理任务上的宣传重点。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "GPT-5.6",
+        "数学",
+        "推理",
+        "案例",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "用团队已有的数学或形式化推理题集对 GPT-5.6 做小规模复测。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-2004",
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "数学案例"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2075307298432676259",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta 展示 Muse Spark 1.1 早期反馈",
+      "summary": "Meta AI 表示已向部分行业领导者提供 Muse Spark 1.1 早期访问，并分享他们的反馈。推文未披露具体能力、架构或发布范围，因此更像是产品预热而非完整技术发布。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Meta AI",
+        "Muse Spark 1.1",
+        "早期访问",
+        "产品预热",
+        "反馈"
+      ],
+      "practice_suggestions": [
+        "关注后续是否公布 Muse Spark 1.1 的具体能力、适用场景和访问方式。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/AIatMeta/status/2075221088821518394",
+      "angle": "早期反馈"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2075294038648148385",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI Build Week 将用 Codex 推动项目落地",
+      "summary": "OpenAI Devs 宣布 OpenAI Build Week 即将开始，挑战从 7 月 13 日启动，并包含面向全球开发者的直播课程和社区活动。活动鼓励参与者把积压的想法用 Codex 做成实际项目。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI Build Week",
+        "Codex",
+        "开发者活动",
+        "社区",
+        "项目实践"
+      ],
+      "practice_suggestions": [
+        "挑选一个范围可控的积压想法报名参与，用 Codex 在一周内完成可演示版本。",
+        "安排团队成员旁听直播课程，沉淀 Codex 项目实践清单。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2075293792048136572",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam 确认 Codex 将支撑 ChatGPT Work",
+      "summary": "Sam Altman 转发 OpenAI 的 ChatGPT Work 发布，并强调 Codex 是这款新工作产品的核心能力。该产品由 Codex 和 GPT-5.6 驱动，目标是跨应用和文件持续执行长任务，把用户目标转成可交付成果。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Work",
+        "Codex",
+        "GPT-5.6",
+        "工作代理"
+      ],
+      "practice_suggestions": [
+        "把现有 Codex 工作流映射到 ChatGPT Work，评估哪些任务适合从编码扩展到文档、表格和汇报产出。",
+        "关注 Codex 应用迁移到 ChatGPT 桌面端后的权限、仓库和本地文件访问设置。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "angle": "Codex 侧重"
+    },
+    {
+      "url": "https://x.com/trq212/status/2075283841758183674",
+      "source": "Thariq (Twitter)",
+      "title": "代理式编程的关键是缩小未知",
+      "summary": "Thariq 提出代理式编程的一项核心技能是持续减少未知，而不是直接把模糊任务丢给模型。该观点强调开发者需要通过上下文、约束和验证步骤降低任务不确定性，让编码代理更可靠地推进。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "代理式编程",
+        "软件工程",
+        "任务分解",
+        "上下文管理"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2075280416995705312",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Devs 重置用户速率限制",
+      "summary": "Thariq 转发 Claude Devs 的通知，称所有用户的 5 小时和每周速率限制已被重置。该更新看起来是面向开发者或 Fable 使用场景的临时容量恢复，能短期缓解额度耗尽问题。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "速率限制",
+        "开发者体验",
+        "额度重置"
+      ],
+      "practice_suggestions": [
+        "如果近期因 Claude 额度受限中断任务，可重新运行被暂停的开发或测试工作流。",
+        "记录重置前后的实际可用量，判断团队是否需要更高等级计划或备用模型。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2075279141352706215",
+      "angle": "用户反馈"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2075279141352706215",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Devs 重置全员速率限制",
+      "summary": "Claude Devs 表示已为用户重置使用限制，相关转发说明这是一次面向开发者体验的额度处理。该更新解决短期使用摩擦，但不改变 Claude Code 或 API 的核心能力。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude Devs",
+        "速率限制",
+        "开发者体验",
+        "额度"
+      ],
+      "practice_suggestions": [
+        "重新运行此前被限速阻断的 Claude 开发任务，确认额度恢复情况。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075274276849226204",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT Work 分阶段上线各类套餐",
+      "summary": "OpenAI 表示 ChatGPT Work 已在网页和移动端向 Pro、Enterprise、Edu 用户推出，并将在未来几天扩展到 Plus 和 Business。新版 ChatGPT 桌面应用把 Chat、Work 和 Codex 放到同一产品中，Codex 应用用户更新后会迁移到新的 ChatGPT 桌面端。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Work",
+        "桌面应用",
+        "Codex",
+        "套餐上线",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "检查团队账号所属套餐，安排 Pro、Enterprise 或 Edu 用户先试点 Work 流程。",
+        "升级 Codex 桌面应用并确认现有项目、仓库和偏好设置在新版 ChatGPT 桌面端中可用。",
+        "为 Plus 和 Business 用户准备灰度测试清单，等待后续几天开放。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-1741",
+      "duplicate_of": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "angle": "套餐 rollout"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075274275104399670",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 驱动 ChatGPT Work 多步任务",
+      "summary": "OpenAI 称 ChatGPT Work 由 GPT-5.6 驱动，使 ChatGPT 在复杂多步任务推理，以及按模板、参考文件和用户风格生成材料方面达到新的前沿水平。用户只需描述期望结果，系统会自行规划步骤并推进工作。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "ChatGPT Work",
+        "多步推理",
+        "材料生成",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "用已有模板、参考文件和风格规范测试 GPT-5.6 的交付一致性。",
+        "选择一个跨文档或跨表格的多步任务，对比 GPT-5.6 与旧模型的规划和执行质量。",
+        "将目标描述写成验收标准，让 ChatGPT Work 自行拆解步骤并复核结果。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-1741",
+      "duplicate_of": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "angle": "GPT-5.6 驱动"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075274273607037403",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT Work 将聊天升级为跨应用执行",
+      "summary": "OpenAI 发布 ChatGPT Work，定位为能跨网页、移动端和桌面完成实际工作的 ChatGPT 代理。它可连接插件、应用和文件，生成文档、幻灯片、表格、网站和报告，并通过 Scheduled Tasks 持续处理 Slack、Teams、邮件或网站更新等重复流程。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "ChatGPT Work",
+        "Codex",
+        "GPT-5.6",
+        "插件",
+        "Scheduled Tasks"
+      ],
+      "practice_suggestions": [
+        "挑选一个真实业务流程，如月结差异分析或销售会议准备，端到端测试 ChatGPT Work 的交付能力。",
+        "梳理需要连接的 Slack、Teams、Google Drive、SharePoint、邮箱和日历权限，先在低风险数据集试运行。",
+        "为 Scheduled Tasks 设计审批点和输出检查，避免自动化动作越权或误发敏感信息。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-1741",
+      "duplicate_of": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "angle": "跨应用工作流"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075274271845404744",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 发布 Codex 驱动的 ChatGPT Work",
+      "summary": "OpenAI 推出 ChatGPT Work，这是 ChatGPT 中由 Codex 和 GPT-5.6 驱动的新代理。它能跨用户应用和文件执行操作，在需要时持续工作数小时，并把一个目标转化为完成的工作成果。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "ChatGPT Work",
+        "Codex",
+        "GPT-5.6",
+        "工作代理",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "用一个已有项目验证 ChatGPT Work 是否能从目标描述推进到可交付文档或应用。",
+        "为跨应用操作设置最小权限和人工确认点，优先测试低风险工作流。",
+        "比较 Codex 原有编码任务与 Work 跨文件任务的上下文保持能力。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-1741",
+      "duplicate_of": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "angle": "官方发布"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2075271760572760241",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 发起 AI「困难问题」倡议",
+      "summary": "Anthropic 发布「Inviting hard questions」倡议，邀请公众提出关于 AI 规则、就业、社会、家庭、科学和风险的尖锐问题。公司称将基于公共调查、Claude 用户访谈、焦点小组和经济指数等材料，公开追踪其为回应这些问题采取的行动和不足。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "AI 治理",
+        "公众参与",
+        "安全",
+        "公共利益"
+      ],
+      "thread_group_id": "thread-claudeai-20260709-1731",
+      "duplicate_of": "https://x.com/claudeai/status/2075271759289303522",
+      "angle": "倡议说明"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2075271759289303522",
+      "source": "Claude (Twitter)",
+      "title": "Anthropic 发起「困难问题」公共倡议",
+      "summary": "Claude 官方账号发布「There’s hope in hard questions」倡议，并说明影片中的声音来自真实受访者。该活动更偏向公共沟通和社会议题讨论，强调 Anthropic 希望围绕 AI 带来的困难问题展开更广泛对话。",
+      "category": "政策与安全",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "Claude",
+        "公共讨论",
+        "AI 社会影响"
+      ],
+      "thread_group_id": "thread-claudeai-20260709-1731",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075271435573244008",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 开始全球推出",
+      "summary": "OpenAI 表示 GPT-5.6 已开始在 ChatGPT、Codex 和 OpenAI API 中全球逐步上线，预计 24 小时内扩大到完整可用范围。ChatGPT 的 Plus、Pro、Business 和 Enterprise 用户可在中高推理努力设置中使用 GPT-5.6 Sol，Pro 与 Enterprise 还可选择 GPT-5.6 Pro 处理复杂任务。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "OpenAI",
+        "ChatGPT",
+        "Codex",
+        "API"
+      ],
+      "practice_suggestions": [
+        "在 ChatGPT 和 API 中用现有复杂任务基准对比 GPT-5.6 Sol 与旧模型的质量和成本。",
+        "为企业高价值任务单独评估 GPT-5.6 Pro，避免默认替换全部工作流。",
+        "检查 Codex 中长任务、代码审查和多文件修改的表现变化。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-1730",
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "全球上线"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075271432041545782",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 强化办公产物生成",
+      "summary": "OpenAI 称 GPT-5.6 在演示文稿、文档和电子表格等可编辑产物上的质量更高，也能更好地配合用户模板。生成结果可导出到专业人士已经使用的工具中，并继续纳入企业工作流细化。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "办公自动化",
+        "文档",
+        "表格",
+        "企业工作流"
+      ],
+      "practice_suggestions": [
+        "用团队真实模板测试演示文稿、文档和表格生成，记录后编辑成本。",
+        "为常见交付物建立可复用提示词和模板库。",
+        "验证导出格式在现有办公套件中的兼容性。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260709-1730",
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "办公产物"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2075271421149020426",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 三模型家族上线",
+      "summary": "OpenAI 宣布 GPT-5.6 家族包括 Sol、Terra 和 Luna，已开始在 ChatGPT、Codex 与 API 中推出。该消息确认这不是单一模型更新，而是一组面向不同使用场景的旗舰模型组合。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "Sol",
+        "Terra",
+        "Luna",
+        "模型家族"
+      ],
+      "practice_suggestions": [
+        "按任务难度、延迟和预算分别测试 Sol、Terra、Luna，形成路由策略。",
+        "将关键生产提示词回归测试一遍，确认输出格式和质量稳定。",
+        "更新内部模型选型文档，标注各版本适用场景。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "三模型家族"
+    },
+    {
+      "url": "https://x.com/sama/status/2075267201058426944",
+      "source": "Sam Altman (Twitter)",
+      "title": "GPT-5.6 降低企业任务成本",
+      "summary": "Sam Altman 表示 OpenAI 听到了企业对 AI 成本的担忧，GPT-5.6 Sol 在每任务成本上有明显进步。Terra 和 Luna 也被定位为帮助企业改善任务经济性的模型选择。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "企业成本",
+        "Sol",
+        "Terra",
+        "Luna"
+      ],
+      "practice_suggestions": [
+        "把每任务成本作为模型升级评估指标，而不只比较单次调用价格。",
+        "优先选择高频企业任务做 A/B 测试，量化质量、速度和成本变化。",
+        "为不同预算层级配置 Sol、Terra、Luna 的自动降级策略。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "企业成本"
+    },
+    {
+      "url": "https://x.com/sama/status/2075266471316615436",
+      "source": "Sam Altman (Twitter)",
+      "title": "Altman 称 GPT-5.6 为最佳模型",
+      "summary": "Sam Altman 称 GPT-5.6 是 OpenAI 迄今生产过的最佳模型，并特别强调官方发布博文质量很高。虽然该条本身信息量有限，但它指向 OpenAI 对这次旗舰模型更新的高定位。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "Sam Altman",
+        "OpenAI",
+        "发布博文",
+        "旗舰模型"
+      ],
+      "practice_suggestions": [
+        "阅读官方博文后提取关键能力、限制和迁移建议。",
+        "将内部高难任务样例集中跑一遍，验证是否值得默认升级。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "CEO 评价"
+    },
+    {
+      "url": "https://x.com/sama/status/2075264378962907597",
+      "source": "Sam Altman (Twitter)",
+      "title": "GPT-5.6 发布会推出三项产品",
+      "summary": "Sam Altman 表示 GPT-5.6 直播发布除模型外还包含三项重要产品更新：ChatGPT Work、新版 ChatGPT 桌面应用和 hosted sites。这显示 OpenAI 正把模型升级和工作流、桌面入口、托管发布能力打包推进。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "ChatGPT Work",
+        "桌面应用",
+        "hosted sites",
+        "产品发布"
+      ],
+      "practice_suggestions": [
+        "评估 ChatGPT Work 是否能替代或补强团队现有协作工作区。",
+        "测试新版桌面应用在文件、本地上下文和日常快捷入口上的收益。",
+        "关注 hosted sites 的权限、部署和审计能力，再决定是否纳入生产流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "发布会概览"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2075257492716879967",
+      "source": "Anthropic (Twitter)",
+      "title": "伯南克加入 Anthropic 长期利益信托",
+      "summary": "Anthropic 的长期利益信托任命前美联储主席、本·伯南克为新成员，强化其在经济冲击、制度治理和 AI 社会影响方面的专业判断。该信托独立于公司管理层和投资者，拥有任命 Anthropic 董事会成员的权力，并为公司长期负责任发展提供约束与建议。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Anthropic",
+        "伯南克",
+        "治理",
+        "长期利益信托",
+        "AI 经济影响"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2075225960916369551",
+      "source": "Claude (Twitter)",
+      "title": "Claude 推出使用反思仪表盘",
+      "summary": "Anthropic 推出 Claude Reflect 测试版，帮助用户查看过去 1、3、6 或 12 个月的使用主题、时间模式和常见任务，并反思 AI 在个人工作中的角色。该功能位于网页端和桌面端设置中，仅在开启记忆时运行，不纳入隐身聊天、健康集成内容或连接工具底层文件。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Reflect",
+        "使用分析",
+        "记忆",
+        "隐私"
+      ],
+      "practice_suggestions": [
+        "开启 Reflect 后查看高频使用场景，找出适合沉淀为 Project 或固定流程的任务。",
+        "用安静时段和休息提醒管理长时间 AI 使用。",
+        "检查团队隐私要求，确认哪些内容会被纳入反思摘要。"
+      ],
+      "thread_group_id": "thread-claudeai-20260709-1429",
+      "duplicate_of": "https://x.com/claudeai/status/2075225957711929667",
+      "angle": "Beta 范围"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2075225957711929667",
+      "source": "Claude (Twitter)",
+      "title": "Claude Reflect 上线：月度使用回顾与健康提醒",
+      "summary": "Claude 推出 Reflect 月度回顾面板，让用户查看自己最常使用 Claude 的时段和工作内容，并支持安静时间与休息提醒。补充说明显示该功能面向 Free、Pro、Max 的 Web 和桌面端 Beta，需要开启 memory，且不包含 incognito 聊天和健康集成内容。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Reflect",
+        "使用回顾",
+        "Memory",
+        "健康提醒",
+        "Beta"
+      ],
+      "practice_suggestions": [
+        "开启 Reflect 后检查团队或个人使用峰值，调整深度工作和休息节奏。",
+        "确认隐身聊天和敏感健康内容不会进入回顾，再决定是否推广给团队。"
+      ],
+      "thread_group_id": "thread-claudeai-20260709-1429",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2075221102172016989",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.1 强化多模态代理",
+      "summary": "Meta 表示 Muse Spark 1.1 在感知与多模态推理上表现突出，能够检查视觉和音频输入，在长流程中保留细节，并在真实执行环境中采取行动。演示展示它从手机视频中提取有用照片，理解商品信息，并代用户操作浏览器创建 Facebook Marketplace 列表。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.1",
+        "Meta AI",
+        "多模态",
+        "计算机使用",
+        "视觉到代码"
+      ],
+      "practice_suggestions": [
+        "关注 Muse Spark 1.1 在视频理解、浏览器操作和商品发布等端到端代理任务中的可复现性。",
+        "设计包含视觉、音频和网页操作的长流程评测，检验细节保持能力。",
+        "对自动发布或交易类代理设置人工确认关卡。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260709-1410",
+      "duplicate_of": "https://x.com/AIatMeta/status/2075221088821518394",
+      "angle": "多模态代理"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2075221099961516500",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.1 已用于 Meta 编码研究",
+      "summary": "Meta 表示 Muse Spark 1.1 已在内部编码和研究流程中使用，并在 Meta 内部编码基准上与领先模型竞争。研究人员正在用它自动化模型开发与评估任务，显示该模型已经进入实际研发工作流。",
+      "category": "模型发布",
+      "importance": 3,
+      "tags": [
+        "Meta AI",
+        "Muse Spark",
+        "编码模型",
+        "研究自动化"
+      ],
+      "practice_suggestions": [
+        "跟踪 Meta Model API 的可用区域、价格和速率限制，评估是否适合编码代理任务。",
+        "用内部代码修复或评测任务复现 Muse Spark 1.1 的表现，与现有模型做成本对比。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260709-1410",
+      "duplicate_of": "https://x.com/AIatMeta/status/2075221088821518394",
+      "angle": "编码研究"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2075221088821518394",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta 发布 Muse Spark 1.1 与 Model API 预览",
+      "summary": "Meta AI 发布 Muse Spark 1.1，并同步推出 Meta Model API 公共预览，让开发者可以调用这款升级后的多模态模型。线程强调它已用于 Meta 内部编码和研究流程，在内部编码基准上具备竞争力，并强化感知、多模态推理、视觉到代码、视频理解和代理式电脑使用能力。后续早期反馈显示 Meta 正把 Muse Spark 作为模型能力、API 分发和 Meta AI 应用体验的共同升级。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.1",
+        "Meta AI",
+        "Model API",
+        "多模态",
+        "编码基准",
+        "代理式电脑使用"
+      ],
+      "practice_suggestions": [
+        "在视觉到代码、视频理解和浏览器操作任务上评估 Muse Spark 1.1。",
+        "关注 Meta Model API 的速率限制、工具调用和多模态输入格式，判断是否适合集成。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2075218647359111460",
+      "source": "Meta AI (Twitter)",
+      "title": "扎克伯格称 Muse Spark 1.1 已上线",
+      "summary": "Meta AI 转发扎克伯格消息，宣布 Muse Spark 1.1 上线。该模型被定位为低价的强代理与编码模型，可通过新的 Meta Model API 和 Meta AI 使用。",
+      "category": "模型发布",
+      "importance": 3,
+      "tags": [
+        "Meta AI",
+        "Muse Spark 1.1",
+        "低价模型",
+        "编码代理"
+      ],
+      "practice_suggestions": [
+        "把 Muse Spark 1.1 纳入候选模型清单，重点测试编码代理和简单自动化任务。",
+        "关注其定价细则，判断是否能替代部分高成本编码模型调用。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/AIatMeta/status/2075221088821518394",
+      "angle": "Zuckerberg 转发"
+    },
+    {
+      "url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot",
+      "source": "OpenAI Blog",
+      "title": "GPT-5.6 成为 Microsoft 365 Copilot 首选模型",
+      "summary": "OpenAI 宣布 GPT-5.6 将成为 Microsoft 365 Copilot 在 Word、Excel、PowerPoint、Chat 和 Cowork 中的首选模型。该更新把 OpenAI 最新旗舰模型引入日常办公工具，强调更高质量产出、更强每美元性能和复杂任务能力。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "Microsoft 365 Copilot",
+        "办公自动化",
+        "OpenAI API"
+      ],
+      "practice_suggestions": [
+        "在 Word、Excel 和 PowerPoint 中重新测试既有 Copilot 工作流，记录提示轮次和产出质量变化。",
+        "针对财务分析、文档润色和演示稿生成建立对比样例，评估 GPT-5.6 带来的实际效率提升。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/gpt-5-6",
+      "angle": "Copilot 集成"
+    },
+    {
+      "url": "https://openai.com/index/gpt-5-6",
+      "source": "OpenAI Blog",
+      "title": "GPT-5.6 发布：Sol、Terra、Luna 三档模型上线",
+      "summary": "OpenAI 发布 GPT-5.6 系列，将 Sol、Terra、Luna 分别定位为旗舰、日常均衡和高性价比模型，并强调更高的每美元任务完成效率。官方线程补充了 ChatGPT、Codex 与 API 的全球 rollout、办公产物质量提升，以及企业成本下降等重点。Microsoft 365 Copilot 也把 GPT-5.6 设为首选模型，说明这次发布不只是模型榜单更新，而是直接进入主流生产力套件。Sam Altman 的发布会转发和应用案例进一步把 GPT-5.6 与 ChatGPT Work、桌面端和 Sites 等产品线绑定在一起。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "OpenAI",
+        "Sol",
+        "Terra",
+        "Luna",
+        "Microsoft 365 Copilot",
+        "Codex"
+      ],
+      "practice_suggestions": [
+        "用代表性代码、文档、表格和长任务基准对比 GPT-5.6 Sol、Terra、Luna 的成本与质量。",
+        "优先在可审计的企业工作流中试用 GPT-5.6，记录每美元任务完成率。",
+        "检查 Microsoft 365 Copilot 与 OpenAI API 中的模型可用性差异，避免评测混用。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-for-your-most-ambitious-work",
+      "source": "OpenAI Blog",
+      "title": "ChatGPT Work 上线：Codex 驱动跨应用长任务",
+      "summary": "OpenAI 推出 ChatGPT Work，把 Codex 技术嵌入 ChatGPT，使其可以跨应用和文件持续数小时推进复杂项目，并产出文档、表格、演示、站点和报告等成品。官方线程说明了它由 GPT-5.6 驱动，支持 Web、移动端和新的 ChatGPT 桌面端，并按 Pro、Enterprise、Edu、Plus、Business 等套餐分阶段开放。Sam Altman 的转发强调 Codex 将从开发者工具扩展为更通用的工作代理。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Work",
+        "Codex",
+        "GPT-5.6",
+        "跨应用代理",
+        "桌面端",
+        "企业工作流"
+      ],
+      "practice_suggestions": [
+        "选择一个跨文档、表格和网页的真实项目测试 ChatGPT Work 的长任务稳定性。",
+        "为代理访问文件和应用设置权限边界、审计日志与人工验收点。",
+        "对比 Codex 独立应用与 ChatGPT Work 的任务拆解、上下文和交付物质量。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/bio-bug-bounty",
+      "source": "OpenAI Blog",
+      "title": "OpenAI Bio Bounty 转为持续私有计划",
+      "summary": "OpenAI 将 GPT-5.5 Bio Bug Bounty 演进为持续运行的私有 OpenAI Bio Bounty Program，重点寻找可绕过生物安全挑战的通用越狱。GPT-5.6 与 GPT-5.5 的通用越狱奖励提高到 5 万美元，GPT-5.5 原计划测试范围将持续到 2026 年 7 月 27 日。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "生物安全",
+        "漏洞赏金",
+        "越狱测试",
+        "GPT-5.6"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2075131809638088865",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral 全球招聘解决方案团队",
+      "summary": "Mistral AI 宣布其 Solutions 团队正在全球招聘，面向希望参与企业 AI 采用落地的人才。该消息主要是招聘信息，未包含新的产品、模型或研究进展。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Mistral AI",
+        "招聘",
+        "企业 AI",
+        "解决方案团队"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
