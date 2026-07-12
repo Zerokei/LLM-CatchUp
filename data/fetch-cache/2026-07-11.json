@@ -1,0 +1,458 @@
+{
+  "date": "2026-07-11",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-12T02:28:46−07:00",
+  "window_start": "2026-07-10T00:00:00−07:00",
+  "window_end": "2026-07-11T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "一文看懂ChatGPT、Codex、Work 的差别",
+          "url": "https://baoyu.io/blog/chatgpt-work-codex-guide",
+          "published_at": "2026-07-11T00:00:00.000Z",
+          "description": "Chat 回答问题，Work 帮你干活，Codex 帮你写代码：一篇讲清三者区别、共享额度、价格，以及与 Claude Cowork 的差异。",
+          "full_text": "Title: 一文看懂ChatGPT、Codex、Work 的差别\n\nURL Source: https://baoyu.io/blog/chatgpt-work-codex-guide\n\nMarkdown Content:\n很多人搞不清楚 ChatGPT、Work、Codex 到底有什么区别，也不知道它们的额度是独立的还是共享的。\n\n先用一句话说清楚：\n\n> **Chat 回答问题，Work 帮你干活，Codex 帮你写代码。**\n\n听起来只差几个字，背后却是三种完全不同的使用方式。\n\n## Chat、Work、Codex，一句话说清区别\n\n| 模式 | 主要用途 | 读取的内容 | 交付的结果 |\n| --- | --- | --- | --- |\n| Chat | 快速问答、讨论、生成内容 | 当前对话和你提供的材料 | 一段回答或内容 |\n| Work | 跨应用完成知识工作 | 邮件、文档、聊天记录、日历、业务系统 | 文档、表格、幻灯片、网页应用等成品 |\n| Codex | 在代码仓库里完成开发任务 | 项目文件、代码、测试和 Git 上下文 | 代码变更、diff、测试结果、PR |\n\n打个比方：\n\n*   Chat 是你问“番茄炒蛋怎么做”，它告诉你步骤。\n*   Work 是你说“帮我准备一桌晚餐”，它自己去冰箱找食材、炒菜、摆盘。\n*   Codex 是你说“这个菜谱 App 有 bug”，它打开代码自己修。\n\n![Image 1: OpenAI 官方展示的 ChatGPT Work 桌面端模式选择](https://s.baoyu.io/imgs/2026-07-11/chatgpt-work-codex-guide/official-chatgpt-work-desktop.webp)\n\n_图：OpenAI 官方发布页中的 ChatGPT Work 桌面端界面。_\n\n## Work 不只是“帮我写个报告”\n\n在 Chat 里说“帮我写个报告”，它通常给你一段文字，接下来还得由你复制到 Word、补资料、排版和检查。\n\nWork 的目标不一样。你先把日常工具接进去：Slack、Gmail、Google Drive、SharePoint、Teams、日历、CRM、项目管理工具都可以。OpenAI 把这些连接能力称为 plugins。\n\n接好以后，你只需要告诉它想要什么结果。它会去不同应用里拉取数据、整合信息，最后生成可以直接交付的成品。你也可以在提示词中用 `@` 加应用名，明确指定它从哪里找资料。\n\n![Image 2: OpenAI 官方展示的 ChatGPT plugins 目录](https://s.baoyu.io/imgs/2026-07-11/chatgpt-work-codex-guide/official-chatgpt-work-plugins.webp)\n\n_图：OpenAI 官方展示的统一 plugins 目录。_\n\n举两个实际例子：\n\n*   Zapier 的企业营销负责人用 Work 搭建了一套系统，每月审查数千条线索，追踪 CRM 和邮件中的客户触点，找出跟进断裂的位置，并生成管理层周报。\n*   Virgin Atlantic 的数字产品负责人用它做竞品对标，让 ChatGPT 调研各家航空公司的服务水平并生成团队可审查的数据集，把原本需要数周的分析缩短到几小时。\n\n另一个关键区别是，**Work 可以长时间跟进复杂项目**。它能自己拆步骤、持续推进几个小时；遇到拿不准的地方会来问你，你也可以随时调整方向、审批关键动作。\n\n## Work 能定时跑任务吗？\n\n能。这个功能叫 Scheduled Tasks（定时任务），支持一次性任务、定时重复、事件触发和持续监控。\n\n比如：\n\n*   每天早上检查 Slack 和邮件里的新消息，整理成简报。\n*   每当收到新的客户反馈，自动归类主题并整理成产品改进建议。\n*   定期检查网站和仪表盘，总结发生了什么变化。\n*   收到新反馈时，自动更新演示文稿。\n\n这些任务可以在后台运行。桌面端还能使用内置浏览器查资料，并通过 Computer Use 操作电脑上的其他应用。\n\n![Image 3: OpenAI 官方展示的 Scheduled Tasks](https://s.baoyu.io/imgs/2026-07-11/chatgpt-work-codex-guide/official-chatgpt-work-scheduled.webp)\n\n_图：OpenAI 官方展示的 ChatGPT Scheduled Tasks。_\n\n定时任务面向 Plus、Pro、Business 和 Enterprise 用户开放，不同计划的并发任务上限不同。任务不能每小时运行超过一次，长时间无人处理的任务也可能自动暂停。\n\n## Work 和 Codex，到底是什么关系？\n\n这两个模式可以理解为**同一套底层 Agent 能力，服务于两种主要场景**。\n\nWork 面向办公和业务工作，读取邮件、文档、聊天记录、日历等业务上下文，交付幻灯片、电子表格、文档和网站。\n\nCodex 面向软件开发，读取代码仓库，交付 diff、测试结果和 PR。\n\nOpenAI 提到，Codex 每周已有超过 500 万人在使用，其中超过 100 万人会拿它处理软件开发之外的工作。Work 的推出，某种程度上就是把这些非编程用途正式化：提供专门的界面和工作流，用 plugins 连接业务应用，把交付物从代码变更扩展到文档、表格和幻灯片。\n\nOpenAI 内部也在大量使用：销售团队曾用 Work 在 24 小时内把一次客户探索对话变成定制 POC，这个流程过去需要几周；财务团队则把月末结账和预测从几天压缩到几小时。\n\n我的理解是，OpenAI 想用 Work 吸引办公人群。很多非开发者看到 Codex 这个名字，会本能地以为它只适合写代码；但如果直接把 Codex 改名，又会影响原有开发者的认知。\n\n所以最后就变成了：\n\n> **一套底层能力，两个名字，两种主要场景，同时吸引两类用户。**\n\n## 我在哪里能用这三个模式？\n\nChat 最简单，网页、手机和桌面端都有，所有平台通用。\n\nWork 已经开始在网页和手机端上线，Pro、Enterprise 和 Edu 优先，Plus 与 Business 随后开放。桌面端的能力更强，可以使用本地文件，还有内置浏览器抓取信息。\n\nCodex 模式只能在桌面端选择。手机上不能直接进入 Codex 模式，但可以通过 ChatGPT App 的 Remote 标签，远程查看桌面上正在运行的 Codex 任务。\n\n![Image 4: OpenAI 官方展示的 ChatGPT Work 网页端与移动端](https://s.baoyu.io/imgs/2026-07-11/chatgpt-work-codex-guide/official-chatgpt-work-web-mobile.webp)\n\n_图：OpenAI 官方展示的 ChatGPT Work 网页端与移动端入口。_\n\n需要注意的是：**网页或手机端的 Work 对话与桌面端 Work 对话目前不互通**。云端是云端，本地是本地；Chat 对话则可以在网页和桌面端之间同步。\n\n原来独立的 Codex App 已经并入新版 ChatGPT 桌面端，一个 App 里可以切换 Chat、Work 和 Codex。开发者可以把 Codex 设为默认打开视图，也可以把 App 图标换成 Codex logo。原来的 ChatGPT 桌面端则会更名为 ChatGPT Classic。\n\n## Chat 和 Work、Codex 的额度共享吗？\n\n**Chat 与 Work/Codex 不共享，但 Work 与 Codex 彼此共享。**\n\nChat 对话有独立的消息限额，图片生成和语音也各有自己的限额与重置周期。\n\nWork 和 Codex 使用另一个池子，OpenAI 称为“智能体用量”（agentic usage）。Codex、ChatGPT Work、ChatGPT for Excel 和 Workspace Agents，都会从同一个智能体额度池中扣减。\n\n所以，在 Chat 里聊得再多，并不会影响 Work 和 Codex 的额度；但 Work 和 Codex 会互相挤占。白天用 Work 跑了一堆复杂任务，晚上再用 Codex 写代码，可能就会发现智能体额度已经不多了。\n\n## Work 要额外付费吗？\n\nWork 不是独立付费产品。它与 Codex 共用智能体额度，包含在现有的 ChatGPT 订阅中。所有计划都能使用，从免费版到企业版，区别主要是额度。\n\n| 计划 | 价格与定位 |\n| --- | --- |\n| Free | 可以试用 Work 和 Codex，额度非常有限；美国地区有广告 |\n| Go | 8 美元/月，额度约为免费版的 10 倍；桌面端可有限使用 GPT-5.6 Terra；没有 Deep Research 和 Agent Mode；有广告 |\n| Plus | 20 美元/月，第一个无广告且功能完整的档位；包含 Deep Research、Codex 和 Agent Mode |\n| Pro | 100 或 200 美元/月；100 美元档额度约为 Plus 的 5 倍，200 美元档约为 20 倍，面向重度用户 |\n| Business | 20 美元/月/人起，按年付；月付 25 美元；至少 2 人，包含 SSO 和合规控制，数据默认不用于训练 |\n| Enterprise | 定制报价，150 人起 |\n\n额度计费从 4 月开始改成按 Token 消耗。更强的模型和 Fast 模式会消耗更多。Plus 与 Pro 用户在额度用完后，可以购买额外 credits 继续使用。\n\n## GPT-5.6 的 Sol、Terra、Luna 怎么选？\n\nGPT-5.6 有三个子型号：\n\n| 型号 | 定位 | API 价格（每百万 Token，输入/输出） |\n| --- | --- | --- |\n| Sol | 能力最强，适合复杂推理和高难度编程 | 5 / 30 美元 |\n| Terra | 能力与成本居中，适合作为日常默认选择 | 2.5 / 15 美元 |\n| Luna | 最快、最便宜，适合简单任务或对速度敏感的场景 | 1 / 6 美元 |\n\nFree 和 Go 用户只能使用 Terra。Plus 及以上可以选择三个型号，也能调节 effort 级别。\n\n`ultra` effort 在 Work 中只对 Pro 和 Enterprise 用户开放；在 Codex 中，Plus 及以上就可以使用。\n\n## Work 上线后，原来的 ChatGPT 还在吗？\n\n在。Chat 模式就是原来的 ChatGPT，一切照旧。\n\n桌面端点击 Quick chat 就能新建普通对话，手机端可以从顶部下拉菜单选择 Chat。你完全可以无视 Work 和 Codex，继续像以前一样使用 ChatGPT。\n\n* * *\n\n## ChatGPT Work 和 Claude Cowork 有什么区别？\n\n第二条 Post 讨论的是另一个很容易混淆的问题：ChatGPT Work 桌面端与 Claude Cowork 桌面端怎么选？\n\n两者现在都是桌面端智能体，都能操作本地文件、使用 Computer Use 控制电脑，也都支持定时任务。但实际用起来，路径和体验差别不小。\n\n### 1. 执行架构不同\n\nCowork 会在电脑上运行一个隔离的 Linux 虚拟机作为沙箱。文件操作在本地沙箱中完成，生成的 `.docx`、`.xlsx`、`.pptx`、`.pdf` 等文件会直接保存到你指定的文件夹。\n\nChatGPT Work 桌面端继承了 Codex 的沙箱和权限控制体系，使用操作系统原生隔离机制：macOS 上是 Seatbelt，Windows 上是 Windows Sandbox。它还内置浏览器，不需要额外安装扩展，就能查资料并操作网页工具。\n\n### 2. 操作电脑的方式不同\n\nChatGPT Work 桌面端的 Computer Use 可以在后台操作其他应用，完成点击、打字和移动文件。你会在屏幕上看到一个“不是你在动”的第二个光标。\n\nCowork 也有 Computer Use，目前仍处于研究预览阶段。它通过 Claude in Chrome 扩展操作浏览器，通过桌面端直接操作应用。\n\n### 3. 应用连接方式不同\n\nChatGPT Work 使用统一的 plugins 目录，有 60 多个连接器对接 Slack、Teams、Google Drive、SharePoint、Salesforce 等服务。你可以在提示词里用 `@` 指定应用名并拉取数据。\n\nCowork 使用 MCP（Model Context Protocol，模型上下文协议）连接器，对接 Slack、Notion、HubSpot、Jira、Linear 等服务。它还有 11 个面向销售、法务、营销、财务等行业的官方插件，也支持自建插件。\n\n### 4. 产品结构相似，但并不相同\n\nChatGPT 桌面端现在是三合一：Chat、Work、Codex 在同一个 App 中，通过模式切换器选择。\n\nClaude 桌面端最近也做了改版，从原来的 Chat、Cowork、Code 三个标签，合并成 Home 和 Code 两个标签。\n\nHome 中，Chat 与 Cowork 共用一个首页，对话、Cowork 任务、项目和文件都放在同一个侧边栏中；你可以从消息框左下角切换 Chat 和 Cowork。Code 标签则是 Claude Code 的桌面界面，专门用于软件开发。\n\n结构上，两家现在很像：**都是把日常对话、知识工作和编程三种模式塞进同一个桌面 App。**\n\n### 5. 跨设备能力不同\n\nClaude Cowork 从 7 月 7 日开始向网页和手机端扩展，当前为 Beta，Max 用户优先，其他付费计划陆续开放。\n\nCowork 任务可以远程运行在 Anthropic 的服务器上。关掉电脑后，任务也能继续执行；你可以在手机上查看进度、回答 Claude 的问题，或者换一台设备接着做，定时任务也可以在后台运行。\n\n但有一个限制：如果任务需要读写本地文件、使用浏览器或 Computer Use，桌面端 App 必须保持打开。远程会话需要通过桌面端访问这些本地资源。\n\nChatGPT 这边，Chat 对话可以在网页和桌面端之间同步，但 Work 对话目前不互通。网页或手机端创建的 Work 对话留在云端，不会出现在桌面端 Work 中；桌面端的 Work 线程与本地文件也留在那台电脑上。Codex 桌面端任务不会出现在网页端，但可以通过手机 App 的 Remote 标签远程查看。\n\n**Claude Cowork 的跨设备同步目前走得更靠前：同一个会话可以在桌面、网页和手机之间流转。ChatGPT Work 的云端与桌面端仍然割裂，这是 OpenAI 明确说明的“at launch”限制，后续大概率会补上。**\n\n## 最后怎么选？\n\n*   只是问问题、讨论想法、快速生成内容：用 Chat。\n*   需要跨邮件、文档、聊天和业务系统收集信息，并交付完整成品：用 Work。\n*   需要读取代码仓库、改代码、跑测试和提交 PR：用 Codex。\n*   更看重同一个智能体任务在桌面、网页和手机之间流转：当前 Claude Cowork 更领先一步。\n\n真正要记住的不是产品名，而是任务边界：**Chat 给答案，Work 交成品，Codex 改代码。**\n\n## 参考资料\n\n*   [原始 Thread 第一条](https://x.com/dotey/status/2075652538058109385)\n*   [原始 Thread 第二条：ChatGPT Work 与 Claude Cowork 对比](https://x.com/dotey/status/2075654589022437728)\n*   [OpenAI：ChatGPT is now a partner for your most ambitious work](https://openai.com/index/chatgpt-for-your-most-ambitious-work/)\n*   [OpenAI 帮助中心：ChatGPT Work and Codex](https://help.openai.com/en/articles/20001275-chatgpt-work-and-codex)\n*   [OpenAI Codex Pricing](https://developers.openai.com/codex/pricing)\n*   [ChatGPT Pricing](https://chatgpt.com/pricing/)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1040,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How Deutsche Telekom is rewiring telecommunications with AI",
+          "url": "https://openai.com/index/deutsche-telekom",
+          "published_at": "2026-07-10T07:00:00.000Z",
+          "description": "How Deutsche Telekom is becoming an AI-native telco with OpenAI-transforming customer service, employee workflows, network operations, and the future of voice.",
+          "full_text": "Title: How Deutsche Telekom is rewiring telecommunications with AI\n\nURL Source: https://openai.com/index/deutsche-telekom\n\nMarkdown Content:\n[Deutsche Telekom⁠(opens in a new window)](https://www.telekom.com/en) is one of the world's largest telecommunications companies, serving more than 300 million customers across Europe and the United States and employing more than 200,000 people across the group. Operating at this scale means managing vast customer service operations, complex network infrastructure, and millions of daily interactions that keep people connected.\n\nAs generative AI capabilities accelerated, Deutsche Telekom saw an opportunity that went beyond productivity gains. The company set an ambitious goal: to be among the world's first AI-native telco. Rather than treating AI as another software rollout, the leadership team viewed it as a fundamental transformation of how decisions are made, how customer journeys are designed, and how telecommunications services are delivered.\n\nWe sat down with Jonathan Abrahamson, Chief Product & Digital Officer at Deutsche Telekom, to discuss how the company is redesigning the operating model of the entire organization-from customer care and employee workflows to network operations and the future of voice communications.\n\n> Becoming AI-native is not about adding AI to the way we work today. It is about redesigning the work itself.\n\nJonathan Abrahamson, Chief Product & Digital Officer, Deutsche Telekom\n\n## Inside the rollout\n\nDeutsche Telekom's transformation combines top-down leadership with broad employee adoption.\n\nThe first phase focused on empowering employees with ChatGPT Enterprise and encouraging experimentation. Adoption came quickly. Employees embraced AI in much the same way they had in their personal lives, creating strong demand for broader access and new capabilities.\n\nAt the same time, Deutsche Telekom began redesigning critical customer-facing workflows. Customer care became one of the earliest areas of investment.\n\nAbrahamson believes AI-powered customer service is still in its early stages, but sees significant medium and longer-term potential. As these systems gain more context, learn from every interaction, and eliminate common frustrations such as handoffs and wait times, he believes they are on a path where they can ultimately outperform traditional support models in certain customer service scenarios.\n\nThat same thinking is now extending beyond customer service and into the core communications experiences customers use every day. Working closely with OpenAI and other companies, Deutsche Telekom is bringing AI directly into customer interactions through capabilities such as live translation, in-call assistants, and post-call summaries, without requiring customers to adopt new applications.\n\nBeyond customer interactions, AI is increasingly embedded into network operations. Deutsche Telekom uses AI with various partners to optimize mobile network performance in real time, adjusting resources dynamically as demand shifts throughout the day-from commuters heading to work to fans attending major sporting events.\n\n## Results at a glance\n\n*   50,000+ monthly active users of ChatGPT and API tooling\n*   546% increase in AI tool usage since the beginning of 2026\n*   Established a company-wide transformation strategy focused on becoming AI-native\n\n## The next frontier is reinventing voice\n\nOne of Deutsche Telekom's most ambitious initiatives focuses on the future of voice communications.\n\nFor decades, telco providers focused on connecting people. But Abrahamson believes AI creates an opportunity to fundamentally reinvent the voice experience itself. \"We can use AI to bring intelligence into the voice network where customers already are,\" he explains.\n\nUsing several models, Deutsche Telekom is exploring capabilities including real-time translation, intelligent call assistance, and automated summarization. These innovations move AI out of standalone applications and into the communication channels customers use every day.\n\nThe company sees this as part of a broader mission to democratize access to AI to generate real added value for people and businesses. Rather than requiring specialized devices, applications, or technical expertise, AI becomes available through familiar interactions that are accessible to everyone.\n\n## Leadership lessons\n\n*   Treat AI transformation as an operating-model redesign, not a technology deployment.\n*   Make leaders accountable for driving process change, not just tool adoption.\n*   Focus on redesigning workflows rather than simply adding AI to existing work.\n*   Balance top-down direction with broad employee experimentation.\n*   Build toward AI-native operations one business process at a time.\n\n## Tips\n\n*   Start with high-volume customer interactions where AI can improve both experience and efficiency.\n*   Always keep data protection, sovereignty, and security in mind to maintain customer trust.\n*   Give employees access to AI tools early to accelerate learning and adoption.\n*   Identify core workflows that can be redesigned rather than simply automated.\n\n## What's next\n\nDeutsche Telekom's AI-native transformation is already delivering tangible impact across customer service, network operations, and employee workflows. What began as AI adoption has evolved into a broader effort to redesign how the company operates at scale.\n\nThe next phase is focused on bringing AI directly into the communications experiences customers use every day. Through capabilities such as real-time translation, intelligent call assistance, and automated summarization, Deutsche Telekom is reimagining the future of voice and unlocking new ways for customers to interact, communicate, and connect.\n\nWith more than 300 million customers, the company sees an opportunity to make AI accessible through the networks people already rely on. For Deutsche Telekom, becoming AI-native is not a future vision-it is a transformation already reshaping telecommunications today.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot\n\nhttps://t.co/r2B3EJuV1A",
+          "url": "https://x.com/sama/status/2075585386441789605",
+          "published_at": "2026-07-10T14:18:13.000000Z",
+          "description": "GPT-5.6 is now the preferred model in Microsoft 365 Copilot\n\nhttps://t.co/r2B3EJuV1A",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/r2B3EJuV1A",
+              "expanded_url": "https://openai.com/index/gpt-5-6-preferred-model-microsoft-365-copilot/",
+              "display_url": "openai.com/index/gpt-5-6-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "makes us happy to see people love 5.6 sol so much!",
+          "url": "https://x.com/sama/status/2075579646373216282",
+          "published_at": "2026-07-10T13:55:24.000000Z",
+          "description": "makes us happy to see people love 5.6 sol so much!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "the sun is out today",
+          "url": "https://x.com/sama/status/2075579012223787402",
+          "published_at": "2026-07-10T13:52:53.000000Z",
+          "description": "the sun is out today",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thsottiaux",
+            "text": "To celebrate the launch of GPT-5.6 Sol, we will reset the rate limits again (twice) across ChatGPT Work and Codex over the next 24 hours.\n\nWe want you to have the time to truly try ambitious tasks and get the hang of it. Happy exploring!",
+            "url": "https://x.com/thsottiaux/status/2075452680760443190"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 758.7h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 545.4h old, exceeds 336h threshold",
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 443.0h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Make sure to update to the latest version of the desktop app.\n\nRead more in the docs: https://t.co/eyNMZjW4hI",
+          "url": "https://x.com/ClaudeDevs/status/2075635284532932955",
+          "published_at": "2026-07-10T17:36:29.000000Z",
+          "description": "Make sure to update to the latest version of the desktop app.\n\nRead more in the docs: https://t.co/eyNMZjW4hI",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/eyNMZjW4hI",
+              "expanded_url": "https://code.claude.com/docs/en/desktop#browse-external-sites",
+              "display_url": "code.claude.com/docs/en/deskto…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2075635283211772279"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260710-1736",
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude Code on desktop now has an in-app browser.\n\nClaude can pull up docs, designs, or any other site. It can read, click through, and interact the same way it does with your local dev servers.\n\nIt's",
+          "url": "https://x.com/ClaudeDevs/status/2075635283211772279",
+          "published_at": "2026-07-10T17:36:29.000000Z",
+          "description": "Claude Code on desktop now has an in-app browser.\n\nClaude can pull up docs, designs, or any other site. It can read, click through, and interact the same way it does with your local dev servers.\n\nIt's sandboxed and configurable: you choose whether sessions persist. https://t.co/Jbc21OP0vJ",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260710-1736",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "GPT-5.6 is a major step forward for health intelligence.\n\nAcross the lineup, we’re delivering stronger performance at lower cost: GPT-5.6 Luna outperforms GPT-5.5 at its highest reasoning setting whil",
+          "url": "https://x.com/OpenAI/status/2075686461693898868",
+          "published_at": "2026-07-10T20:59:51.000000Z",
+          "description": "GPT-5.6 is a major step forward for health intelligence.\n\nAcross the lineup, we’re delivering stronger performance at lower cost: GPT-5.6 Luna outperforms GPT-5.5 at its highest reasoning setting while costing 25x less.\n\nTogether, these advances raise quality while making advanced models accessible to more people globally.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "As part of our ongoing efforts to strengthen our safeguards for advanced AI capabilities in biology, we’re evolving our Bio Bug Bounty into an ongoing private program, known as the OpenAI Bio Bug Boun",
+          "url": "https://x.com/OpenAI/status/2075647722766614733",
+          "published_at": "2026-07-10T18:25:55.000000Z",
+          "description": "As part of our ongoing efforts to strengthen our safeguards for advanced AI capabilities in biology, we’re evolving our Bio Bug Bounty into an ongoing private program, known as the OpenAI Bio Bug Bounty program and doubling rewards to $50K.\n\nWe’re inviting researchers with experience in AI red teaming, security, or biosecurity to try to find a universal jailbreak that can defeat our predefined biosafety challenge against OpenAI’s frontier models.\n\nhttps://t.co/79PH4TBOTE",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/79PH4TBOTE",
+              "expanded_url": "https://openai.com/index/bio-bug-bounty",
+              "display_url": "openai.com/index/bio-bug-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: OpenAI Bio Bug Bounty\n\nURL Source: https://openai.com/index/bio-bug-bounty\n\nMarkdown Content:\nOpenAI Bio Bug Bounty | OpenAI\n\nTesting for universal jailbreaks for biorisks\n\n## Invitation\n\nAs part of our ongoing efforts to strengthen our safeguards for advanced AI capabilities in biology, we’re evolving our GPT‑5.5 Bio Bug Bounty to become an ongoing private program—the OpenAI Bio Bounty Program. The program will remain focused on universal jailbreaks that can defeat our predefined biosafety challenge against OpenAI’s frontier models, starting with GPT‑5.6 and going forward.\n\nWe’re also excited to announce that we’re increasing reward amounts. The reward for a universal jailbreak for the OpenAI Bio Bounty Program has been raised from $25,000 to $50,000 for both GPT‑5.6 and GPT‑5.5. Smaller awards may be granted for partial wins at our discretion.\n\nWe will continue to honor the scope for the GPT‑5.5 Bio Bounty Program as originally announced, with testing ending on July 27, 2026. After this date, only GPT‑5.6 will be in scope; we will continue to communicate any future changes in scope to our researchers.\n\nInterested applicants should apply through our rolling [application process⁠(opens in a new window)](https://docs.google.com/forms/d/e/1FAIpQLScIW9QJTq4J6zsl89Un-OmTCSDNWdWldcib8mYZEqoHzunukQ/viewform?usp=preview). Once selected, accepted applicants will be onboarded to the bio bug bounty platform. All past applicants to the GPT‑5.5 Bio Bounty Program will not need to reapply.\n\n## How to participate\n\nSubmit a short application [here⁠⁠(opens in a new window)](https://docs.google.com/forms/d/e/1FAIpQLScIW9QJTq4J6zsl89Un-OmTCSDNWdWldcib8mYZEqoHzunukQ/viewform?usp=preview) (name, affiliation, experience). Accepted applicants must have existing ChatGPT accounts to apply, and will sign a NDA. Apply now and help us make frontier AI safer.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 7,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "OpenAI Build Week starts Monday — and we’re hosting two livestreams to help you build.\n\nFirst up: Join us on July 13 at 10am PT to get the hackathon overview, see Codex and GPT-5.6 in action, and choo",
+          "url": "https://x.com/OpenAIDevs/status/2075716750822551688",
+          "published_at": "2026-07-10T23:00:13.000000Z",
+          "description": "OpenAI Build Week starts Monday — and we’re hosting two livestreams to help you build.\n\nFirst up: Join us on July 13 at 10am PT to get the hackathon overview, see Codex and GPT-5.6 in action, and choose what you’ll build.\n\nhttps://t.co/jbMxFBH9Ux",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/jbMxFBH9Ux",
+              "expanded_url": "https://x.com/i/broadcasts/1qJDzzEDBqoKV",
+              "display_url": "x.com/i/broadcasts/1…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260710-2300",
+          "duplicate_of": null
+        },
+        {
+          "title": "Next up: Build Week: From idea to execution\n\n📆 July 14 at 11am PT\n\nWe’ll dig into practical Codex and GPT-5.6 workflows, offer live support, and look at what builders are making around the world.",
+          "url": "https://x.com/OpenAIDevs/status/2075716762994376753",
+          "published_at": "2026-07-10T23:00:15.000000Z",
+          "description": "Next up: Build Week: From idea to execution\n\n📆 July 14 at 11am PT\n\nWe’ll dig into practical Codex and GPT-5.6 workflows, offer live support, and look at what builders are making around the world.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2075716750822551688"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260710-2300",
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT‑5.6 took on a complex coding task spanning nearly 1,000 lines for Ankit Aich at @SnorkelAI, handling the work from start to finish without repeated prompting or hand-holding. https://t.co/Lbs5dDym",
+          "url": "https://x.com/OpenAIDevs/status/2075657031844028615",
+          "published_at": "2026-07-10T19:02:54.000000Z",
+          "description": "GPT‑5.6 took on a complex coding task spanning nearly 1,000 lines for Ankit Aich at @SnorkelAI, handling the work from start to finish without repeated prompting or hand-holding. https://t.co/Lbs5dDympF",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "The AMA starts soon. \n\nDrop your questions about GPT‑5.6, Codex in ChatGPT, Sites, computer use, and what we should build next👇\n\nhttps://t.co/rPox1hdHWc",
+          "url": "https://x.com/OpenAIDevs/status/2075611000611701236",
+          "published_at": "2026-07-10T16:00:00.000000Z",
+          "description": "The AMA starts soon. \n\nDrop your questions about GPT‑5.6, Codex in ChatGPT, Sites, computer use, and what we should build next👇\n\nhttps://t.co/rPox1hdHWc",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/rPox1hdHWc",
+              "expanded_url": "https://www.reddit.com/r/codex/comments/1us9ty9/comment/owmh0bf/",
+              "display_url": "reddit.com/r/codex/commen…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "GPT-5.6 is here.\nCodex is now available inside ChatGPT.\nAnd we know developers will have questions.\n\nSo we’re bringing the Codex team to r/Codex for an AMA.\n\nWe’ll answer questions on Friday, 7/10 from 9:30am to 10:30am PT:\nhttps://t.co/wmpJafDL7x",
+            "url": "https://x.com/OpenAIDevs/status/2075395561860321412"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "A model’s chain of thought acts like a scratch pad, offering a window into its reasoning. 📝\n\nOn the latest episode of our podcast, host @fryrsquared sits down with @NeelNanda5 to explore interpretabi",
+          "url": "https://x.com/GoogleDeepMind/status/2075620281515929716",
+          "published_at": "2026-07-10T16:36:52.000000Z",
+          "description": "A model’s chain of thought acts like a scratch pad, offering a window into its reasoning. 📝\n\nOn the latest episode of our podcast, host @fryrsquared sits down with @NeelNanda5 to explore interpretability – the science of reverse engineering how neural networks learn and think.\n\nTimecodes:\n00:00 Introduction\n02:41 Motivation for interpretability research\n04:01 Mechanistic interpretability\n08:14 Chain of thought monitoring\n18:14 Interpretability techniques\n35:00 Auditing models for safety\n48:53 What comes next for interpretability",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260710-1636",
+          "duplicate_of": null
+        },
+        {
+          "title": "Watch → https://t.co/b0mIyhmgZc\nSpotify → https://t.co/5xWzSKWmA9\nApple Podcasts → https://t.co/jyYwdMxqGC\nOr listen wherever you get your podcasts! 🎧",
+          "url": "https://x.com/GoogleDeepMind/status/2075620285923905602",
+          "published_at": "2026-07-10T16:36:53.000000Z",
+          "description": "Watch → https://t.co/b0mIyhmgZc\nSpotify → https://t.co/5xWzSKWmA9\nApple Podcasts → https://t.co/jyYwdMxqGC\nOr listen wherever you get your podcasts! 🎧",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/b0mIyhmgZc",
+              "expanded_url": "https://goo.gle/4pxlGEh",
+              "display_url": "goo.gle/4pxlGEh"
+            },
+            {
+              "t_co": "https://t.co/5xWzSKWmA9",
+              "expanded_url": "https://goo.gle/4f89R2a",
+              "display_url": "goo.gle/4f89R2a"
+            },
+            {
+              "t_co": "https://t.co/jyYwdMxqGC",
+              "expanded_url": "https://goo.gle/4fpWThL",
+              "display_url": "goo.gle/4fpWThL"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "GoogleDeepMind",
+            "status_id": "2075620281515929716"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-GoogleDeepMind-20260710-1636",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 431.6h old, exceeds 336h threshold",
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 257.5h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 431.7h old, exceeds 168h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
