@@ -1,0 +1,329 @@
+{
+  "date": "2026-07-12",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-13T03:39:58−07:00",
+  "window_start": "2026-07-11T00:00:00−07:00",
+  "window_end": "2026-07-12T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "“母病速归”式 AI：号称省 65% Token，实测只有 8.5%",
+          "url": "https://baoyu.io/blog/2026-07-12/caveman-token-saving-test",
+          "published_at": "2026-07-12T00:00:00.000Z",
+          "description": "让 AI 像原始人一样说话，确实能省一点 Token，但真正昂贵的是上下文、工具调用和返工。",
+          "full_text": "Title: “母病速归”式 AI：号称省 65% Token，实测只有 8.5%\n\nURL Source: https://baoyu.io/blog/2026-07-12/caveman-token-saving-test\n\nMarkdown Content:\n我把那种号称能省 Token、要求 AI 尽量少说话的 Skill，叫做**“电报体 Skill”**。\n\n我们小时候上语文课，学过怎么写电报文。\n\n老师先给出一件事：母亲生病了，要让在外地工作的哥哥赶紧回家。然后全班比赛拟电文，看谁能用最少的字把事情说清楚。\n\n最后可以精简成四个字：\n\n> **母病速归。**\n\n再少就不行了。\n\n只写“母病”，收到的人不知道该做什么；只写“速归”，又不知道家里出了什么事。\n\n那时候必须惜字如金，因为电报按字收费，**每一个字都是钱。**\n\n现在，这种说话方式在 AI 圈子里借着 Skill 复活了。\n\n## **一个让 AI 像原始人说话的 Skill**\n\nGitHub 上有个叫 [Caveman](https://github.com/JuliusBrussee/caveman) 的项目，做的事情极其简单：给 Claude Code、Codex 等 AI 编程工具加一段提示词，让 Agent 像原始人一样说话。\n\n删掉冠词，删掉客套，删掉连接词，只保留技术要素。\n\n正常回复可能是：\n\n> The issue is caused by a new object reference being created on every render...\n\n换成 Caveman 之后，就变成：\n\n> New object ref each render. Wrap in `useMemo`.\n\n项目由荷兰莱顿大学一名 19 岁学生 Julius Brussee 做出来。仓库 2026 年 4 月初上线，几天内冲上 GitHub Trending 第一。截至 7 月 12 日，已经攒下约 **8.85 万颗 Star**。\n\n它的 README 声称能大幅压缩输出 Token，项目介绍里最常出现的数字是 **65%**。\n\n听起来很厉害。\n\n但跟电报体一样，这很可能是一个特定价格和产品阶段里的过渡方案。而且它在真实 Agent 工作流里省下的钱，远没有宣传数字看起来那么多。\n\n## **号称省 65%，实测只有 8.5%**\n\nJetBrains 最近专门做了一次测试，文章标题就叫：[《Does Speaking to Agents Like Cavemen Really Save 65% of Tokens? We Test》](https://blog.jetbrains.com/ai/2026/07/speak-to-ai-agents-like-cavemen-tosave-tokens/)。\n\n他们用 Claude Code 跑 SkillsBench 里的 86 个真实编程任务，安装 Caveman 和不安装各跑一遍。两边使用相同任务、相同模型、相同配置和相同预算。\n\n整个实验分 3 轮，做了大约 240 次计费试验，总共花了约 106 美元。\n\n为了给 Caveman 最大的发挥空间，测试还强制它在每一次回复里生效。也就是说，这不是日常使用的平均情况，而是它能拿到的**最佳情况**。\n\n结果是：\n\n*   宣传节省：**65% 输出 Token**\n*   大样本实测：**8.5% 输出 Token**\n*   输出 Token：从约 **59.2 万**降到 **54.2 万**\n*   有效配对任务：**82 组**\n\n![Image 1: 宣传节省 65% 与实测节省 8.5% 的对比](https://s.baoyu.io/imgs/2026-07-12/caveman-token-saving-test/illustration-01-token-saving-gap-20260712.png)\n\n因为每次回复都被强制压缩，这个 8.5% 已经接近天花板。日常使用时，Skill 还要自己判断是否触发，实际节省通常只会更少。\n\n有一点也要替 Caveman 说清楚：**JetBrains 没有测出显著的任务质量下降。**\n\n82 组配对任务里，64 个结果相同，Caveman 版本有 8 个更好、10 个更差，差异在统计上不显著。它的问题不是“让 Agent 变笨”，而是**把省钱效果说得太大了。**\n\n## **Agent 的 Token，大头根本不在聊天**\n\n为什么 65% 会缩水成 8.5%？\n\n因为 65% 主要来自聊天场景。\n\n你问 AI 一个问题，它回你一大段话。把“当然可以”“很高兴帮你”“下面我来详细解释”这些客套和铺垫全部砍掉，确实可能省下一大半。\n\n但编程 Agent 不是聊天机器人。\n\n它的 Token 消耗大头通常包括：\n\n*   系统提示词和不断累积的上下文\n*   代码、文件内容和搜索结果\n*   工具调用及返回结果\n*   各种 Skills 和 MCP 工具描述\n*   diff、报错信息和测试日志\n*   模型在多轮任务里反复读取的内容\n\nCaveman 主要压缩的是工具调用之间那几句自然语言说明。代码不能乱改，命令不能缩写，错误信息要原样保留，工具参数更不能写成原始人语法。\n\n**它优化的那部分，在整张账单里本来就是零头。**\n\n![Image 2: Agent Token 账单的主要组成](https://s.baoyu.io/imgs/2026-07-12/caveman-token-saving-test/illustration-02-agent-token-bill-20260712.png)\n\n这就像一家公司要压缩差旅费，机票、酒店和打车一项没动，先把员工每天 2 块钱的矿泉水取消了。\n\n省是省了，但别指望靠这个拯救财报。\n\n## **语言越短，对默契的要求越高**\n\n电报体也不是完全没有代价。\n\n比如 Agent 最后只回复一句：\n\n> `Fixed auth. Tests pass.`\n\n看起来非常干练，也很省 Token。\n\n但它没有告诉你：\n\n*   修的是登录过期、权限校验，还是刷新令牌？\n*   跑的是一个单元测试，还是完整测试套件？\n*   有没有改数据库结构？\n*   有没有留下兼容性风险？\n\n这些信息不一定每次都要展开成小论文，但也不能因为“说话像穴居人”就固定删掉。\n\n开发者看不懂 Agent 做了什么，只好继续追问。Agent 再读一遍文件，再跑一遍测试，再解释一次。前面省下的几十个 Token，很快就会被新一轮工具调用吃回去。\n\n这不代表 Caveman 的基准测试已经证明会导致更多返工。JetBrains 的测试没有发现这种质量损失。问题在于，**“任务最终做对了”和“过程对人足够透明”不是同一个指标。**\n\n电报体能工作，靠的是双方共享大量背景。\n\n“母病速归”只有四个字，收报人却知道母亲是谁、家在哪里、为什么要回去。\n\n编程 Agent 面对的是不断变化的代码、陌生仓库和临时任务，共享背景没有那么可靠。表达越短，越依赖默契；而默契不足时，多说的那几句就是通信协议里的纠错码。\n\n> **啰嗦有时不是浪费，而是为了避免下一轮更昂贵的误解。**\n\n## **电报体没有被淘汰，只是失去了存在的理由**\n\n电报体后来怎么样了？\n\n没有人宣布废除它。\n\n只是长途通信的价格降到可以忽略不计之后，“母病速归”自然变回了：\n\n> 妈住院了，你买最早的票回来，到了给我打电话。\n\n省字数，是给按字计费时代做的优化。当价格降下去，信息完整和沟通体验重新变得更重要，这种优化也就自然退场了。\n\nToken 很可能也会走同一条路。\n\n模型单价长期在下降，缓存技术也在把重复上下文变便宜。以 Anthropic 当前的提示词缓存价格为例，缓存命中的输入 Token 读取价格只有普通输入 Token 的 **0.1 倍**，也就是便宜约九成。\n\n当“重复读”已经可以打九折中的一折，再费很大力气把一句正常的话压成电报文，收益就更有限了。\n\n## **真正该省的，是上下文和返工**\n\n如果真想降低 Agent 成本，更值得做的不是逼它少说几个字，而是：\n\n1.   **少加载无关上下文。** 不要一上来就把整个仓库、所有文档和历史对话塞给模型。\n2.   **少挂没必要的 MCP 和 Skills。** 工具描述本身也占上下文，装得越多不等于干得越好。\n3.   **提高缓存命中率。** 把稳定的系统提示词、工具定义和项目规则放在可复用的前缀里。\n4.   **减少无效工具调用。** 先定位问题再读文件，先确定范围再跑测试。\n5.   **选择合适的模型。** 简单任务用便宜模型，复杂任务用更可靠的模型，少一次返工往往比省几句说明更值钱。\n\n![Image 3: 真正有效的 Agent 成本优化优先级](https://s.baoyu.io/imgs/2026-07-12/caveman-token-saving-test/illustration-03-real-cost-optimization-20260712.png)\n\nCaveman 当然可以用。你喜欢简洁的回复，或者受够了 Agent 的客套话，它是个有趣而且基本无害的风格插件。\n\n但别把风格优化误当成成本革命。\n\n**真正昂贵的从来不是 Agent 多说了几句话，而是它读了太多没用的东西，又把同一件事做了两遍。**\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1040,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "so far at least, i'm pretty sure AI has been net job-creating.\n\nthis was not what i expected--although i was much less pessimistic than others, i thought by this level of capability we'd have seen som",
+          "url": "https://x.com/sama/status/2076036901824532530",
+          "published_at": "2026-07-11T20:12:22.000000Z",
+          "description": "so far at least, i'm pretty sure AI has been net job-creating.\n\nthis was not what i expected--although i was much less pessimistic than others, i thought by this level of capability we'd have seen some impact.\n\nit is possible this direction keeps going!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "whoa",
+          "url": "https://x.com/sama/status/2076034163418014199",
+          "published_at": "2026-07-11T20:01:30.000000Z",
+          "description": "whoa",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thsottiaux",
+            "text": "You know it's a good model when you grow more in 1 day than last two weeks combined.\n\nInstall the desktop app from https://t.co/K5PquKnV4q and give it a go! https://t.co/WyQwrT98Xo",
+            "url": "https://x.com/thsottiaux/status/2076021263945039876"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "\"physicians found fewer flaws in GPT-5.6 responses than physician-written responses.\"",
+          "url": "https://x.com/sama/status/2075985056846451123",
+          "published_at": "2026-07-11T16:46:22.000000Z",
+          "description": "\"physicians found fewer flaws in GPT-5.6 responses than physician-written responses.\"",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thekaransinghal",
+            "text": "♥️ GPT-5.6 is a major step forward for health, both at the frontier and at cost.\n\nThese models push the frontier of performance per dollar, bringing the best health intelligence to all. The smallest variant, GPT-5.6 Luna, evaluated at the lowest reasoning effort, outperforms GPT-5.5 at the highest reasoning effort–despite costing 25x less. The largest variant, GPT-5.6 Sol, sets a new high bar at cost.\n\nAnother especially cool result: physicians found fewer flaws in GPT-5.6 responses than physician-written responses.\n\nWe collected diverse tasks that remain difficult for recent OpenAI models, across patient-facing and clinician-facing use cases. We asked speciality-matched physicians to write responses to these tasks with unlimited time and web access. We then asked other physicians to compare responses side-by-side, blinded to their source. Physicians were asked to comment on areas of improvement across five axes: accuracy, communication, completeness, instruction following, and health decision helpfulness. We then reported the fraction of responses across sources rated perfectly across all axes, across 20,000 total axis ratings. GPT-5.6 Sol appeared strongest, although all GPT-5.6 models performed significantly better than physicians.",
+            "url": "https://x.com/thekaransinghal/status/2075689779937833302"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "there are a lot of benchmarks that suggest 5.6 sol is the best model in the world right now, but the most reliable way to tell is that elon is obsessed with me again",
+          "url": "https://x.com/sama/status/2075983427019612242",
+          "published_at": "2026-07-11T16:39:53.000000Z",
+          "description": "there are a lot of benchmarks that suggest 5.6 sol is the best model in the world right now, but the most reliable way to tell is that elon is obsessed with me again",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "30% of the cost was on fable at these levels of usage?",
+          "url": "https://x.com/sama/status/2075982820322025788",
+          "published_at": "2026-07-11T16:37:28.000000Z",
+          "description": "30% of the cost was on fable at these levels of usage?",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thdxr",
+            "text": "our team's first week of having both sol and fable\nthe crazy thing is 30% of our cost was on fable https://t.co/8yVddGEuBg",
+            "url": "https://x.com/thdxr/status/2075963734745342361"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "homeboy you're the one sellling public market investors on short-term space datacenters",
+          "url": "https://x.com/sama/status/2075982617976230043",
+          "published_at": "2026-07-11T16:36:40.000000Z",
+          "description": "homeboy you're the one sellling public market investors on short-term space datacenters",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "elonmusk",
+            "text": "He takes scamming to a whole new level",
+            "url": "https://x.com/elonmusk/status/2075892136604573903"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 783.9h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 570.5h old, exceeds 336h threshold",
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 468.2h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 7,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "https://t.co/6Y1KwxpJjj",
+          "url": "https://x.com/OpenAIDevs/status/2076022440187330990",
+          "published_at": "2026-07-11T19:14:55.000000Z",
+          "description": "https://t.co/6Y1KwxpJjj",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/6Y1KwxpJjj",
+              "expanded_url": "http://x.com/i/article/2076008978967085056",
+              "display_url": "x.com/i/article/2076…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 456.8h old, exceeds 336h threshold",
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 282.7h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 456.9h old, exceeds 168h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
