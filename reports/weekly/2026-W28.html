@@ -1,0 +1,468 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 周报 2026-W28 · CatchUp</title>
+  <meta name="description" content="CatchUp 周报 — 2026-W28" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Weekly</span>
+            <span>·</span>
+            <span>周报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-W28</h1>
+          <p class="report-subtitle">7月6日 – 12日</p>
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">本周趋势</h2>
+<ul>
+<li><strong>OpenAI模型换代</strong>：GPT-5.6 Sol、Terra、Luna 与 GPT-Live 同周上线，把文本、办公、编码和语音入口一起更新。</li>
+<li><strong>代理产品跨端化</strong>：ChatGPT Work、Claude Cowork 与 Claude Code 内置浏览器都在把长任务代理从单点工具推向跨设备工作流。</li>
+<li><strong>语音交互升温</strong>：GPT-Live、GPT-Realtime-2.1-mini 和 Grok 新语音显示实时语音代理正在追求更低延迟和更自然打断。</li>
+<li><strong>媒体模型转代理</strong>：Meta Muse、Muse Spark 1.1 与字节 Seedream 5.0 Pro 将图像视频生成推进到工具调用、精修和专业设计流程。</li>
+<li><strong>可解释性更实证</strong>：Anthropic J-space、Google DeepMind 可解释性讨论与双用途知识模块研究让模型审计继续贴近内部机制。</li>
+<li><strong>企业采用更具体</strong>：AP+、MUFG、德国电信与阿尔伯塔政府案例显示 AI 已进入支付、银行、电信和公共部门的实际流程。</li>
+</ul>
+<h2 id="h-2">Top 10 最重要文章</h2>
+<h3 id="h-3">1. <a href="https://openai.com/index/gpt-5-6">GPT-5.6 发布：Sol、Terra、Luna 三档模型上线</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/09</li>
+<li><strong>标签</strong>: <code>GPT-5.6</code> <code>OpenAI</code> <code>Sol</code> <code>Terra</code> <code>Luna</code> <code>Microsoft 365 Copilot</code> <code>Codex</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 GPT-5.6 系列，将 Sol、Terra、Luna 分别定位为旗舰、日常均衡和高性价比模型，并强调更高的每美元任务完成效率。更关键的是，GPT-5.6 同时进入 ChatGPT、Codex、API 和 Microsoft 365 Copilot，说明这次发布直接影响办公、编码和企业采购入口。</p>
+<h3 id="h-4">2. <a href="https://x.com/OpenAI/status/2074704958419792299">GPT-5.6 Sol将公开上线：Terra与Luna同步预览</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/08</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>OpenAI</code> <code>Terra</code> <code>Luna</code> <code>旗舰模型</code> <code>开发者</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在正式发布前预告 GPT-5.6 Sol，并同步透露 Terra 与 Luna 将随预览访问扩展到全球。这条预告提前改变开发者的评测和模型路由准备节奏，尤其适合团队在正式上线前整理旧模型回归测试集。</p>
+<h3 id="h-5">3. <a href="https://x.com/OpenAI/status/2075686461693898868">GPT-5.6 扩展落地：Copilot、医疗与编码</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/11</li>
+<li><strong>标签</strong>: <code>GPT-5.6</code> <code>Microsoft 365 Copilot</code> <code>医疗智能</code> <code>Codex</code> <code>ChatGPT Work</code> <code>Luna</code></li>
+</ul>
+<p><strong>摘要</strong>: GPT-5.6 发布后的第二波信息集中在落地面：Microsoft 365 Copilot、医疗智能、Codex AMA 和额度重置共同推动用户试用。OpenAI 对 Luna 的低成本高推理定位也值得注意，因为它把旗舰级能力的部分体验推向更大规模使用场景。</p>
+<h3 id="h-6">4. <a href="https://www.anthropic.com/research/global-workspace">Anthropic 发现 Claude 内部「J-space」工作区</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 研究 | <strong>日期</strong>: 07/06</li>
+<li><strong>标签</strong>: <code>可解释性</code> <code>Claude</code> <code>J-space</code> <code>全局工作区</code> <code>内部推理</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 提出 Claude 内部存在名为 J-space 的小型神经表征集合，可承载未输出的内部想法并影响多步推理。论文、开源实现和 Neuronpedia 演示让这项研究不只是理论类比，而是可被外部观察和复验的可解释性工具。</p>
+<h3 id="h-7">5. <a href="https://seed.bytedance.com/en/blog/edgebench-measuring-real-world-environment-learning-and-discovering-a-new-scaling-law">EdgeBench 发现智能体环境学习缩放律</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: ByteDance Seed | <strong>分类</strong>: 研究 | <strong>日期</strong>: 07/07</li>
+<li><strong>标签</strong>: <code>EdgeBench</code> <code>智能体评测</code> <code>环境学习</code> <code>缩放律</code> <code>ByteDance Seed</code></li>
+</ul>
+<p><strong>摘要</strong>: 字节 Seed 发布 EdgeBench，用 134 个真实长时任务衡量智能体如何通过环境反馈学习。研究发现环境学习曲线高度符合 log-sigmoid 形态，并显示前沿模型的环境学习速度约每三个月翻倍，为长期代理评测提供了更具体的测量框架。</p>
+<h3 id="h-8">6. <a href="https://x.com/OpenAIDevs/status/2074255408013955466">GPT-Realtime-2.1-mini 上线：工具调用 + 延迟优化</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/07</li>
+<li><strong>标签</strong>: <code>GPT-Realtime-2.1-mini</code> <code>Realtime API</code> <code>语音模型</code> <code>工具调用</code> <code>延迟优化</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 在 Realtime API 中上线 GPT-Realtime-2.1-mini，把推理和工具调用带到 mini 实时语音模型，同时保持与旧 mini 模型相同成本。配套缓存优化让语音模型 p95 延迟至少降低 25%，对客服、实时教练和语音代理原型有直接价值。</p>
+<h3 id="h-9">7. <a href="https://x.com/claudeai/status/2074525815820169320">Claude Cowork扩展到移动端并整合Chat入口</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/08</li>
+<li><strong>标签</strong>: <code>Claude Cowork</code> <code>移动端</code> <code>网页端</code> <code>Chat整合</code> <code>Artifacts</code> <code>代理工作流</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Cowork 将登陆移动端和网页端，并与 Chat 合并到同一主页，让项目和 Artifacts 跨模式统一管理。这个方向把代理式委派从桌面单点任务推进到跨设备跟踪与交付，更接近真实团队的异步工作方式。</p>
+<h3 id="h-10">8. <a href="https://x.com/ClaudeDevs/status/2074606058128224365">Claude托管代理展示Fable与Sonnet分层降本</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/08</li>
+<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>Fable 5</code> <code>Sonnet 5</code> <code>子代理</code> <code>成本优化</code> <code>SWE-bench</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Devs 展示了两种托管代理降本模式：让 Sonnet 5 在关键节点咨询 Fable 5，或让 Fable 5 担任编排器并把大量 token 工作委派给 Sonnet 5。SWE-bench Pro 和 BrowseComp 的示例说明，强模型路由、缓存和子代理分工正在成为代理系统的实际工程问题。</p>
+<h3 id="h-11">9. <a href="https://x.com/AIatMeta/status/2074577662840832382">Meta发布Muse媒体模型：图像代理 + 视频预览</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Meta AI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/08</li>
+<li><strong>标签</strong>: <code>Meta</code> <code>Muse Image</code> <code>Muse Video</code> <code>代理式生成</code> <code>内容溯源</code> <code>多模态</code></li>
+</ul>
+<p><strong>摘要</strong>: Meta Superintelligence Labs 发布 Muse Image 并预览 Muse Video，把媒体生成从单次提示词推进到工具调用、自我精修、多参考图和社交语境理解。Content Seal 隐藏水印也表明 Meta 希望把生成能力和消费端内容溯源绑定。</p>
+<h3 id="h-12">10. <a href="https://openai.com/index/introducing-gpt-live">OpenAI发布全双工语音模型GPT-Live</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/08</li>
+<li><strong>标签</strong>: <code>GPT-Live</code> <code>语音模型</code> <code>ChatGPT Voice</code> <code>全双工</code> <code>安全评测</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 推出 GPT-Live，用全双工架构让模型边听边说，减少传统语音模式的停顿、误打断和回合感。它会在复杂任务中委托后台前沿模型，并开始驱动新版 ChatGPT Voice，说明语音入口正在和更强的推理模型形成分层协作。</p>
+<h2 id="h-13">分类概览</h2>
+<h3 id="h-14">模型发布</h3>
+<p>本周模型发布由 OpenAI 的 GPT-5.6 系列牵引，并延伸到实时语音、全双工语音和低成本模型扩散。Sol、Terra、Luna 的三档定位让模型选型更像产品组合管理，而不是单一旗舰替换。Meta Muse、Muse Spark 1.1 与字节 Seedream 5.0 Pro 则把多模态模型竞争带向专业媒体生成、设计编辑和 API 分发。整体看，模型发布正在同时服务开发者、企业办公、语音代理和创意生产多个入口。</p>
+<h3 id="h-15">研究</h3>
+<p>研究线索集中在两个方向：理解模型内部，以及衡量代理在真实环境中的学习能力。Anthropic 的 J-space 研究把 Claude 的内部工作区变成可读、可干预和可演示的对象，为安全审计提供了更细的抓手。ByteDance Seed 的 EdgeBench 用长时真实任务和缩放律描述环境学习，为代理评测补上了时间维度。Google DeepMind 的机器人数据与可解释性讨论也提醒行业，下一阶段评测会越来越依赖真实环境、可复验数据和机制层证据。</p>
+<h3 id="h-16">产品与功能</h3>
+<p>产品与功能的主线是代理工作流从工具扩展到工作空间。ChatGPT Work 把 Codex 能力嵌入跨应用办公长任务，Claude Cowork 则向移动端、网页端和统一主页扩张，Claude Code 内置浏览器把外部资料、设计稿和网页验证纳入桌面开发流程。Google Gemini API Managed Agents、OpenAI Sites、Build Week 和 Claude Managed Agents 共同说明，平台方正在把长任务、工具连接、原型发布和成本路由做成托管能力。对团队而言，本周最值得关注的是如何设置权限、审计、验收和成本边界。</p>
+<h3 id="h-17">商业动态</h3>
+<p>商业动态数量明显上升，重点不是融资或估值，而是企业与公共部门的实际采用案例。AP+、MUFG 和德国电信都把 ChatGPT、Codex 或 OpenAI API 放进受监管行业的真实流程，强调初稿、调查、原型和运营优化的效率收益。阿尔伯塔政府用 Claude 扫描大规模遗留代码，显示公共部门也在把代理用于安全和现代化工程。Anthropic 长期利益信托引入伯南克，则把 AI 的宏观经济影响和公司治理继续绑定。</p>
+<h3 id="h-18">政策与安全</h3>
+<p>政策与安全本周围绕生物安全、双用途知识和政府网络安全实践展开。OpenAI 将 Bio Bounty 转为持续私有计划，并把通用越狱奖励提高到 5 万美元，说明前沿模型发布后的红队测试会持续常态化。Anthropic 的 GRAM 研究尝试把双用途知识路由到可移除模块中，为未来模型能力管控提供了不同于事后遗忘的路径。阿尔伯塔政府案例则从防护侧说明，大规模代码审计已经成为政府使用 AI 的现实场景。</p>
+<h3 id="h-19">教程与观点</h3>
+<p>教程与观点部分最有价值的是对代理式开发边界的梳理。宝玉的分享把 Claude Code 循环、ChatGPT Work 与 Codex 的任务分工讲清楚，Thariq 的内容则强调代理式编程需要不断缩小未知，而不是直接把模糊任务丢给模型。OpenAI Build Week 和 Codex 生物工具访谈把这些方法拉回真实项目实践。DeepMind 关于思维链与可解释性的播客，也为理解模型审计和安全监控提供了更基础的讨论入口。</p>
+<h2 id="h-20">本周值得上手试试</h2>
+<ol>
+<li><strong>GPT-5.6 Sol/Terra/Luna</strong> — 用现有代码、办公文档、长任务和成本基准分别测试三档模型，记录质量、延迟和每美元任务完成率。</li>
+<li><strong>GPT-Live 与 Realtime API</strong> — 选择客服、会议助手或语言练习场景，重点验证打断、背景噪声、工具调用和 p95 延迟。</li>
+<li><strong>ChatGPT Work</strong> — 挑一个跨文档、表格和网页的真实项目，设置文件权限、审计日志和人工验收点后试跑长任务交付。</li>
+<li><strong>Claude Cowork</strong> — 把异步研究、代码整理或文档任务迁入 Cowork，观察桌面到移动端的交接、通知和 Artifacts 完整性。</li>
+<li><strong>Claude Managed Agents</strong> — 把昂贵模型限定为顾问或编排器，让低价模型处理长上下文执行，并比较全强模型方案的成本质量比。</li>
+<li><strong>Meta Muse 与 Seedream 5.0 Pro</strong> — 用真实品牌素材、信息图、中文海报和局部编辑任务测试文字、坐标和多参考图稳定性。</li>
+<li><strong>Gemini API Managed Agents</strong> — 盘点现有长时间运行代理任务，评估后台任务和远程 MCP 是否能减少自建运行基础设施。</li>
+<li><strong>Claude Code 内置浏览器</strong> — 用外部文档、设计稿和本地开发服务器跑一次端到端开发验证，并定义可持久会话站点清单。</li>
+<li><strong>OpenAI Sites</strong> — 选一个内部小工具快速生成可分享站点，记录发布、权限、地区和配额限制。</li>
+<li><strong>Claude Code 循环</strong> — 为高频开发任务写入明确停止条件、测试命令和 SKILL.md，把一次性提示改成可重复例行程序。</li>
+</ol>
+<h2 id="h-21">值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/gpt-5-6">GPT-5.6 发布：Sol、Terra、Luna 三档模型上线</a> — 这是理解 OpenAI 新一轮模型、Codex、ChatGPT 和 Copilot 产品联动的核心发布。</li>
+<li><a href="https://www.anthropic.com/research/global-workspace">Anthropic 发现 Claude 内部「J-space」工作区</a> — 这篇适合跟进可解释性研究如何从观察输出进入内部表征层。</li>
+<li><a href="https://seed.bytedance.com/en/blog/edgebench-measuring-real-world-environment-learning-and-discovering-a-new-scaling-law">EdgeBench 发现智能体环境学习缩放律</a> — 它为长期代理评测提供了真实任务、交互时间和缩放律视角。</li>
+<li><a href="https://openai.com/index/introducing-gpt-live">OpenAI发布全双工语音模型GPT-Live</a> — 这篇展示语音模型如何从回合制对话走向自然打断与后台推理分层。</li>
+<li><a href="https://www.anthropic.com/research/off-switch-dual-use">Anthropic研究可移除双用途知识模块</a> — 它是理解模型能力管控、双用途知识和权重级安全设计的重要参考。</li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">本周趋势</a></li>
+      <li class="toc-h2"><a href="#h-2">Top 10 最重要文章</a></li>
+      <li class="toc-h3"><a href="#h-3">1. GPT-5.6 发布：Sol、Terra、Luna 三档模型上线 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-4">2. GPT-5.6 Sol将公开上线：Terra与Luna同步预览 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-5">3. GPT-5.6 扩展落地：Copilot、医疗与编码 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Anthropic 发现 Claude 内部「J-space」工作区 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-7">5. EdgeBench 发现智能体环境学习缩放律 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-8">6. GPT-Realtime-2.1-mini 上线：工具调用 + 延迟优化 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Claude Cowork扩展到移动端并整合Chat入口 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Claude托管代理展示Fable与Sonnet分层降本 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Meta发布Muse媒体模型：图像代理 + 视频预览 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-12">10. OpenAI发布全双工语音模型GPT-Live ⭐⭐⭐⭐</a></li>
+      <li class="toc-h2"><a href="#h-13">分类概览</a></li>
+      <li class="toc-h3"><a href="#h-14">模型发布</a></li>
+      <li class="toc-h3"><a href="#h-15">研究</a></li>
+      <li class="toc-h3"><a href="#h-16">产品与功能</a></li>
+      <li class="toc-h3"><a href="#h-17">商业动态</a></li>
+      <li class="toc-h3"><a href="#h-18">政策与安全</a></li>
+      <li class="toc-h3"><a href="#h-19">教程与观点</a></li>
+      <li class="toc-h2"><a href="#h-20">本周值得上手试试</a></li>
+      <li class="toc-h2"><a href="#h-21">值得深读</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older weekly</span>
+        <a href="../weekly/2026-W27.html">2026-W27</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer weekly →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W28.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
