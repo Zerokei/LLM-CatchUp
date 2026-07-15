@@ -1,153 +1,5 @@
 {
   "articles": {
-    "1ecdad90bfb46efdc460845b123478cf7a6d4931781dbbd3c5f45e618b865828": {
-      "title": "The next evolution of the Agents SDK",
-      "url": "https://openai.com/index/the-next-evolution-of-the-agents-sdk",
-      "source": "OpenAI Blog",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "OpenAI 宣布 Agents SDK 的下一代演进，引入原生沙箱执行能力与模型原生 harness，帮助开发者在跨文件与工具场景中构建安全、可长时运行的 AI 智能体。此次更新是 OpenAI 持续加固企业级智能体基础设施、降低开发者自行搭建安全运行时负担的关键一步。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "Agents SDK",
-          "沙箱",
-          "智能体",
-          "开发者工具"
-        ],
-        "practice_suggestions": [
-          "试用新版 Agents SDK 的 native sandbox 模式，替换自建的进程隔离方案，测试复杂工具调用链的稳定性",
-          "把长时运行的智能体任务从自建容器迁移到 SDK 的 model-native harness，对比运维成本与失败恢复表现"
-        ]
-      }
-    },
-    "757aaa019f35ad35a227754c9cb03dbbee50bd4ea2c8ac3eb475b8d0bb608eeb": {
-      "title": "Gemini 3.1 Flash TTS：最具可控性的 AI 语音模型",
-      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-1-flash-tts/",
-      "source": "Google AI Blog",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "Google 发布 Gemini 3.1 Flash TTS，主打\"可控性\"——通过全新的 Audio Tags，可用自然语言指令直接调节语气、语速与风格；支持 70+ 种语言（含印地语、日语、德语），所有输出均带 SynthID 水印。该模型已通过 Gemini API / Google AI Studio 面向开发者开放预览，企业通过 Vertex AI 滚动上线，消费者侧则率先接入 Google Vids。",
-      "category": "模型发布",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Gemini",
-          "TTS",
-          "Audio Tags",
-          "多语言",
-          "SynthID"
-        ],
-        "practice_suggestions": [
-          "在 Google AI Studio 用 Audio Tags 对同一段脚本调节情感/节奏，评估相比 ElevenLabs、OpenAI TTS 的可控性差异",
-          "将 SynthID 水印鉴别纳入内容合规链路，测试生成语音在下游二次剪辑后的水印可追溯能力"
-        ],
-        "also_covered_by": [
-          "Google DeepMind (Twitter)",
-          "Demis Hassabis (Twitter)"
-        ]
-      }
-    },
-    "2155adcb835c8494ef665c752f1aba44ddd34b3cce2d711f92ea8421b41203b4": {
-      "title": "Anthropic 等合著\"潜意识学习\"研究登上 Nature",
-      "url": "https://x.com/AnthropicAI/status/2044493337835802948",
-      "source": "Anthropic (Twitter)",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "Anthropic 联合发表的 \"Subliminal Learning\" 研究正式被 Nature 收录。论文证明大语言模型能够通过看似与目标特征无关的数据（例如没有明显含义的数字序列）将偏好、甚至对齐缺陷暗中传递给学生模型，对合成数据训练与模型蒸馏的安全假设提出严峻挑战。该工作由 Owain Evans 团队领衔，Anthropic 与多方合作完成。",
-      "category": "研究",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "潜意识学习",
-          "Nature",
-          "对齐",
-          "合成数据"
-        ]
-      }
-    },
-    "cb9bbaecdd5d1ed5a11fe38afcc996b37ab93a628bce2e4f5e7a6da24fd5ef1a": {
-      "title": "使用 Claude Code：会话管理与 100 万上下文",
-      "url": "https://baoyu.io/translations/claude-code-session-management",
-      "source": "宝玉的分享",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "宝玉翻译整理了 Claude Code 核心布道者 Thariq 的深度经验：何时开新会话、回溯（rewind）与纠正（correction）的取舍、上下文压缩（compact）与清空（clear）的时机、子智能体何时真正有用，以及如何规避糟糕的上下文压缩。面向已在日常使用 Claude Code 的开发者，是进入百万上下文时代的一份操作手册。",
-      "category": "教程与观点",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Claude Code",
-          "上下文管理",
-          "子智能体",
-          "Thariq",
-          "最佳实践"
-        ]
-      }
-    },
-    "d12c0e8fdaa5e938345bdffd9ea7ad72ce819512091c2543c4416d25c0471ce1": {
-      "title": "Qwen3.6-Plus 与 3.5-Plus 正式登陆 OpenCode",
-      "url": "https://x.com/Alibaba_Qwen/status/2044427258526581148",
-      "source": "Qwen (Twitter)",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "Qwen 宣布 Qwen3.6-Plus 与 Qwen3.5-Plus 已集成进开源编码助手 OpenCode，两者均支持图像输入与零数据保留，其中 Qwen3.5-Plus 定价约为 3.6-Plus 的 1/3，主打成本敏感场景。此次集成把 Qwen 模型更深地嵌入开发者的命令行/IDE 日常工作流。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Qwen",
-          "OpenCode",
-          "编码助手",
-          "多模态",
-          "零数据保留"
-        ],
-        "practice_suggestions": [
-          "在 OpenCode 里切换 Qwen3.5-Plus 与 Qwen3.6-Plus 跑同一套真实编码任务（重构、补测试、代码 review），评估 3x 价格差下的质量差异",
-          "为使用 Qwen 的团队接入 3.6-Plus 的图像能力，测试截图驱动的 UI 缺陷修复或多模态 PR 审查"
-        ]
-      }
-    },
-    "0fc0057fafcda3db7e15ed1baccf904503eb4918f2dab2ba04e63c0848f348cb": {
-      "title": "Vibe Coding 是中年男人的钓鱼",
-      "url": "https://baoyu.io/blog/2026-04-14/vibe-coding-and-fishing",
-      "source": "宝玉的分享",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "宝玉的一篇短随笔：把 Vibe Coding 类比成中年男人的钓鱼——都是合法又体面的独处方式。文章不提供技术操作建议，更像是对 AI 编程工具带来的使用心态与生活角色变化的一次私人反思。",
-      "category": "教程与观点",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Vibe Coding",
-          "AI 编程",
-          "生活方式",
-          "产品心态"
-        ]
-      }
-    },
-    "85f2f73c2ea7fbd4a185ecebc4e602551d147f77211559f0809c71309a2aae6b": {
-      "title": "Berkeley RDI Agentic AI Weekly（2026-04-15）",
-      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-april-6ba",
-      "source": "Berkeley RDI",
-      "published_at": "2026-04-15",
-      "fetched_at": "2026-04-16T00:10:14Z",
-      "summary": "Berkeley RDI 本周的 Agentic AI Weekly 聚合了四条动向：一份新研究亮点、Agentic AI Summit 2026 演讲提案（CFP）截止、AgentX–AgentBeats 项目进入第二阶段、以及新一轮 Sprint 3 正式启动。是 RDI 对 Agentic AI 研究与学术活动生态的常规跟踪节奏。",
-      "category": "教程与观点",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Berkeley RDI",
-          "Agentic AI",
-          "周报",
-          "AgentX",
-          "Sprint 3"
-        ]
-      }
-    },
     "b8af8104c423c106c246cf3888db9acd84a3e3debcc44faf937582581ca7fa67": {
       "title": "Introducing Claude Opus 4.7",
       "url": "https://www.anthropic.com/news/claude-opus-4-7",
@@ -22455,7 +22307,342 @@
           "Sam Altman"
         ]
       }
+    },
+    "ad504bbdb221cc4452d27ee2dfd03c57cd285216e23fd4a4f7774231843af948": {
+      "title": "Anthropic 推出面向美国 K-12 教师的 Claude",
+      "url": "https://www.anthropic.com/news/claude-for-teachers",
+      "source": "Anthropic Blog",
+      "published_at": "2026-07-14T00:00:00.000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Anthropic 发布 Claude for Teachers，为美国已验证的 K-12 教育工作者免费提供高级 Claude 能力、教学技能库，以及与 50 州学术标准映射的 Learning Commons 连接。该产品可生成标准对齐的课程计划、分层教学材料、自动评分练习，并通过 ASSISTments、Brisk Teaching、Canva Education、MagicSchool 等教育工具扩展课堂工作流，同时声明教师数据不用于模型训练并覆盖 FERPA 相关隐私要求。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude",
+          "教育科技",
+          "K-12",
+          "Learning Commons",
+          "隐私"
+        ],
+        "practice_suggestions": [
+          "教育团队可用本州课程标准测试课程计划生成、分层材料改写和学生数据分析三类核心工作流。",
+          "在试点前梳理学生数据共享边界，确认 FERPA、校区政策和工具连接权限。"
+        ]
+      }
+    },
+    "0e537c3c4d4b3d5bdc359c9deebd3db2e56e900bf762c045f64995d2f6932b14": {
+      "title": "Anthropic 聚焦加拿大：Claude 使用研究 + 研究投入",
+      "url": "https://www.anthropic.com/research/how-canada-uses-claude",
+      "source": "Anthropic Research",
+      "published_at": "2026-07-14T00:00:00.000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Anthropic 发布加拿大 Claude 使用研究，并同时承诺投入 1000 万加元支持当地 AI 研究生态。经济指数显示，加拿大用户在软件开发、教育、写作和业务分析中广泛使用 Claude，且使用模式可为地区劳动力影响和技能迁移提供量化线索。配套研究资助把这份区域观察上升为长期生态建设，重点落在安全、治理和本地研究能力。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude",
+          "加拿大",
+          "经济指数",
+          "AI 采用",
+          "研究资助"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://www.anthropic.com/news/canadian-ai-research",
+            "title": "Anthropic 承诺向加拿大 AI 研究投入 1000 万加元",
+            "source": "Anthropic Blog",
+            "angle": "研究资助承诺"
+          }
+        ]
+      }
+    },
+    "1b2b780035fcfc3a4b05def37e3476fce3cae146987ec23deac5e9a9805d5db3": {
+      "title": "Claude Artifacts 升级：公开分享 + 多人编辑 + Slack 生成",
+      "url": "https://x.com/ClaudeDevs/status/2076789349145092230",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-07-13T22:02:20.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Claude Artifacts 获得一组协作升级：公开分享、多用户共同编辑，以及从 Slack 线程生成内部 Artifact。更新把 Artifacts 从个人产物推进到团队协作界面，适合把讨论、仪表盘和轻量应用快速转成可共享工作件。第三方评价也强调，这些能力可以和现有 Claude 工作流组合出更灵活的内部工具。",
+      "category": "产品与功能",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude Artifacts",
+          "Claude Code",
+          "多人协作",
+          "Slack",
+          "内部工具"
+        ],
+        "practice_suggestions": [
+          "用一个真实 Slack 讨论生成内部仪表盘，验证数据结构和权限边界。",
+          "把需要多人校对的 Artifact 改成协作编辑流程，记录冲突和版本管理问题。",
+          "测试公开分享链接是否满足团队对访问控制和外部展示的要求。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/ClaudeDevs/status/2076789351745458624",
+            "title": "Claude Artifacts 面向团队推出多人编辑",
+            "source": "Claude Devs (Twitter)",
+            "angle": "多人编辑演示"
+          },
+          {
+            "url": "https://x.com/trq212/status/2076790799011131735",
+            "title": "Claude Artifacts 协作能力带来更灵活工作流",
+            "source": "Thariq (Twitter)",
+            "angle": "组合工作流点评"
+          }
+        ]
+      }
+    },
+    "6e7446e66ec4317167b5ed51bda538f25d446e4a859e1047c1d4ada32063875e": {
+      "title": "Anthropic 研究 Claude 价值表达的模型与语言差异",
+      "url": "https://x.com/AnthropicAI/status/2076719540785012872",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-07-13T17:24:56.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Anthropic 延续其价值观测研究，比较 Claude 在不同模型和语言环境下表达价值的方式。研究发现，价值表达会随模型版本和对话语言变化，在温暖与严谨、服从与谨慎等轴线上呈现可测差异。团队强调这类监测有助于判断模型行为是否符合预期，并为未来训练和部署提供更细粒度的反馈。",
+      "category": "研究",
+      "importance": 4,
+      "extras": {
+        "tags": [
+          "Claude",
+          "价值对齐",
+          "模型行为",
+          "多语言",
+          "安全评估"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2076719546954825769",
+            "title": "Claude 的价值表达随语言显著变化",
+            "source": "Anthropic (Twitter)",
+            "angle": "语言差异结果"
+          }
+        ]
+      }
+    },
+    "578b3bdf5cbf1347ed534ff365f939bb7a31c354b068847f1423cc4e4796657a": {
+      "title": "ChatGPT Work 指南扩展：数据科学与销售落地",
+      "url": "https://openai.com/academy/codex-for-work/how-data-science-teams-use-codex",
+      "source": "OpenAI Blog",
+      "published_at": "2026-07-14T00:00:00.000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "OpenAI 发布两篇 ChatGPT Work 实战指南，分别面向数据科学和销售团队，核心是把 Codex、表格、文档和业务应用串成可复用的工作流。数据科学场景强调从原始数据探索、建模到报告生成的端到端协作，销售场景则强调线索研究、客户沟通和 CRM 更新。两篇指南共同显示 ChatGPT Work 正在从通用助手转向按岗位组织的企业执行层。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "ChatGPT Work",
+          "Codex",
+          "数据科学",
+          "销售自动化",
+          "企业工作流"
+        ],
+        "practice_suggestions": [
+          "挑选一个高频数据分析或销售流程，用 ChatGPT Work 复刻指南中的端到端步骤。",
+          "把可复用提示、文件模板和审批节点沉淀成团队共享工作流。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://openai.com/academy/codex-for-work/how-sales-teams-use-codex",
+            "title": "ChatGPT Work 推出销售团队使用指南与插件",
+            "source": "OpenAI Blog",
+            "angle": "销售流程案例"
+          }
+        ]
+      }
+    },
+    "f9aa6c860bac154be6aec3c159abc303674d719f6982d78e7bf2f868da4e5a7f": {
+      "title": "GPT 5.6 Sol 将保留在 ChatGPT 订阅内",
+      "url": "https://x.com/sama/status/2076696938918084809",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-07-13T15:55:08.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "OpenAI 相关推文澄清，GPT 5.6 Sol 会继续包含在用户已付费的 ChatGPT Go、Plus 和 Pro 订阅中。该承诺至少持续到 OpenAI 推出更好的模型为止，主要是订阅权益说明而非新模型发布。",
+      "category": "产品与功能",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "GPT 5.6 Sol",
+          "ChatGPT",
+          "订阅权益",
+          "模型可用性"
+        ],
+        "practice_suggestions": [
+          "评估现有 Go、Plus 或 Pro 订阅中的 GPT 5.6 Sol 可用性，避免因权益误解重复采购。"
+        ]
+      }
+    },
+    "ed929183f4d17693650efe6101afd74114e554521fdf2f12ac1fed3927130abc": {
+      "title": "xAI 说明 Grok Build 隐私控制",
+      "url": "https://x.com/SpaceXAI/status/2076692402442846289",
+      "source": "xAI (Twitter)",
+      "published_at": "2026-07-13T15:37:06.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "xAI 表示，启用零数据保留的团队不会保留 trace 和代码数据，使用 API key 的 Grok Build 也遵守 ZDR 设置。若未启用 ZDR，CLI 中的「/privacy」命令可关闭数据保留并删除此前同步的数据，用户也可随时查看或修改相关设置。",
+      "category": "政策与安全",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "xAI",
+          "Grok Build",
+          "隐私",
+          "零数据保留",
+          "CLI"
+        ]
+      }
+    },
+    "e4a39f2a93793b912100fc0b4d24960d2976916c08116495436d0ad508dc422e": {
+      "title": "DeepMind 展示 Antigravity 历史预测技能",
+      "url": "https://x.com/GoogleDeepMind/status/2076686114631340046",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-07-13T15:12:07.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Google DeepMind 展示如何在 Google Antigravity 中使用「Predicting the Past」技能，帮助历史学者分析古代铅片并重建多多纳神谕访客网络。案例把无代码工作流、历史数据整理和研究假设探索结合起来，显示 AI 工具可以支持人文学科中的证据组织与关系推断。后续说明强调，这类技能可以让非技术研究者更快测试假设，但仍需要专业史料判断来校验结果。",
+      "category": "研究",
+      "importance": 3,
+      "extras": {
+        "tags": [
+          "Google DeepMind",
+          "Antigravity",
+          "历史研究",
+          "无代码",
+          "数据分析"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/GoogleDeepMind/status/2076686125289071074",
+            "title": "AI 重建多多纳神谕访客网络",
+            "source": "Google DeepMind (Twitter)",
+            "angle": "多多纳案例"
+          }
+        ]
+      }
+    },
+    "11ea227cab8d9ced3ca8d303b42423c54bf4d67d638271e5173a2badf781d492": {
+      "title": "Sam Altman 借 Claude 文案批评模型访问策略",
+      "url": "https://x.com/sama/status/2076824686307271125",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-07-14T00:22:45.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Sam Altman 转评 Claude 官方文案并表示起初以为是讽刺，随后将「hard questions」解读为对访问门槛、静默降级和用户分层的批评。这组评论延续了他当天围绕用户待遇和模型可得性的竞争叙事，信号更多在产品定位和舆论层面。 Sam Altman 继续上一条线程，讽刺「hard questions」只有在用户被认为足够值得、不会被静默降级或至少能获得访问权限时才有意义。推文没有给出新功能或实证数据，但反映了围绕高端模型可用性、配额和用户待遇的竞争叙事。",
+      "category": "教程与观点",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "Claude",
+          "模型访问",
+          "用户体验"
+        ],
+        "thread_urls": [
+          "https://x.com/sama/status/2076824686307271125",
+          "https://x.com/sama/status/2076824870072238299"
+        ]
+      }
+    },
+    "c78ebfd002edc08d73a158fe711ee5c6a8be2a1ece02697083d2477d1b8c6b05": {
+      "title": "Sam Altman 称模型设计能力显著提升",
+      "url": "https://x.com/sama/status/2076823209589313910",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-07-14T00:16:53.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Sam Altman 表示看到自家模型终于擅长设计仍让他感到惊讶。推文是单句观察，没有披露具体模型版本、评测或产品入口，因此更像对能力进展的轻量评论。",
+      "category": "教程与观点",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "设计能力",
+          "模型能力",
+          "OpenAI",
+          "Sam Altman"
+        ]
+      }
+    },
+    "74e7aed381becc221cae1815d519c92fafc36154315765494d7a7123a327cb02": {
+      "title": "Codex 与 ChatGPT Work 达 700 万活跃用户",
+      "url": "https://x.com/sama/status/2076736417498267652",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-07-13T18:32:00.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "OpenAI 团队称 Codex 和 ChatGPT Work 已有 700 万活跃用户。为庆祝里程碑，用户账户获得一次可储备的用量重置，可在桌面端或网页端补充每周使用额度。",
+      "category": "产品与功能",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "Codex",
+          "ChatGPT Work",
+          "用量额度",
+          "用户增长"
+        ],
+        "practice_suggestions": [
+          "在桌面端或网页版检查是否可领取 banked reset，并优先用于高消耗编码任务。"
+        ]
+      }
+    },
+    "b37621d0843366ddf41544214c4b156d12bb3f979f4c9c377e8084544f96c670": {
+      "title": "OpenAI Build Week 开放提交，7 月 21 日截止",
+      "url": "https://x.com/OpenAIDevs/status/2076715478878474575",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-07-13T17:08:48.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "OpenAI Devs 宣布 Build Week 项目提交已开放，并提醒参赛者需在 7 月 21 日前通过 Devpost 提交。活动面向开发者展示基于 OpenAI 工具构建的项目，重点是把原型、演示和提交材料整理到可评审状态。 OpenAI Devs 提醒开发者在 7 月 21 日前提交 Devpost 活动项目。原始信息只给出提交链接和截止日期，因此这更像是开发者活动的低信息量提醒，而非新产品或模型发布。",
+      "category": "产品与功能",
+      "importance": 2,
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "Build Week",
+          "Devpost",
+          "开发者活动"
+        ],
+        "practice_suggestions": [
+          "若已有原型，优先补齐演示视频、README 和可复现实验步骤。"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAIDevs/status/2076715478878474575",
+          "https://x.com/OpenAIDevs/status/2076715491083915307"
+        ]
+      }
+    },
+    "1f0ef844aa79ac8481b224b45e3dab43e7e35c466605bddf43fd888c447f543a": {
+      "title": "Sam Altman 借用户待遇暗讽竞争对手",
+      "url": "https://x.com/sama/status/2076780425280954658",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-07-13T21:26:52.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Sam Altman 称用户会因最好的模型而来，并因平台不轻视用户而留下。该表述没有提供具体事实或功能细节，主要是围绕模型质量与用户关系的竞争性口号。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "竞争言论",
+          "模型质量",
+          "用户体验",
+          "Sam Altman"
+        ]
+      }
+    },
+    "fb53249031a9557818b0ac70edaf2fb174b75ef3d71769c0bf301ac4bed949cc": {
+      "title": "Sam Altman 转评 C.S. Lewis 权力警句",
+      "url": "https://x.com/sama/status/2076759971967230419",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-07-13T20:05:36.000000Z",
+      "fetched_at": "2026-07-15T12:36:58.922Z",
+      "summary": "Sam Altman 转发一段 C.S. Lewis 关于「为受害者利益而行使的暴政」的引文，并评价其有力量。该内容更接近价值观表达或对平台治理语境的暗示，没有直接 AI 产品、研究或政策信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "extras": {
+        "tags": [
+          "C.S. Lewis",
+          "治理观点",
+          "价值观",
+          "Sam Altman"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-07-14T13:25:52.732Z"
+  "last_fetch": "2026-07-15T12:36:58.922Z"
 }
