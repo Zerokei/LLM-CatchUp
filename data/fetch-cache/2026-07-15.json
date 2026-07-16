@@ -1,0 +1,531 @@
+{
+  "date": "2026-07-15",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-16T02:35:59−07:00",
+  "window_start": "2026-07-14T00:00:00−07:00",
+  "window_end": "2026-07-15T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1036,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How to manage AI investments in the agentic era",
+          "url": "https://openai.com/index/managing-ai-investments-in-agentic-era",
+          "published_at": "2026-07-14T10:00:00.000Z",
+          "description": "Learn how enterprises can manage AI investments in the agentic era by measuring useful work per dollar, improving efficiency, and scaling high-value workflows.",
+          "full_text": "Title: How to manage AI investments in the agentic era\n\nURL Source: https://openai.com/index/managing-ai-investments-in-agentic-era\n\nMarkdown Content:\nOpenAI’s goal is to make AI more accessible, capable and affordable over time. From GPT‑4 to GPT‑5.4, the price per million tokens fell 97%. [GPT‑5.6⁠](https://openai.com/index/gpt-5-6/) continues that progress, delivering better performance in the Artificial Analysis Coding Agent Index with 54% fewer output tokens and 57% less time per task.\n\nBut token price alone does not show whether AI is creating value. Leaders should look at **useful work per dollar**: tasks completed, time saved, decisions improved, and workflows ready to scale.\n\nAs teams move from chat to longer-running workflows, admins need clearer visibility into demand, spend, and risk.\n\nHere are five ways to invest with confidence.\n\n## 1. Sharpen visibility into usage and spend\n\nEnterprise leaders need **a plain view of AI usage:** who is using it, which products or models they are using, how much capacity they are consuming, and what kind of work that usage supports. Without that visibility, a growing bill is hard to interpret. It could reflect waste, productive experimentation, or a workflow that is starting to become business-critical.\n\n[ChatGPT Work⁠](https://openai.com/chatgpt-work/) supports longer, multi-step tasks, so usage can vary widely by workflow. Admins need to see the work behind that usage, not just the credits consumed. This is possible thanks to a shared view of demand across ChatGPT. Updated [usage analytics and spend controls⁠](https://openai.com/index/chatgpt-enterprise-spend-controls/) in the [Admin Console⁠(opens in a new window)](https://chatgpt.com/admin) help admins see adoption, credit usage, and spend by user, product, and model; track trends over time; identify emerging patterns; and understand when usage reflects broad adoption, a power-user workflow, or a recurring business process that may deserve more investment.\n\n![Image 1: Analytics overview showing ChatGPT and Codex usage and credit consumption](https://images.ctfassets.net/kftzwdyauwt9/PUu1kZSiVcT1kkFdXOyNl/905ddac86e29c56509c35dc583288cc2/Analytics_overview_showing_ChatGPT_and_Codex_usage_and_credit_consumption.png?w=3840&q=90&fm=webp)\n\nInsights at different altitudes help guide investment and enablement decisions:\n\n*   Workspace: Are adoption and spend moving together?\n*   Team and user: Where is demand growing, and who may need more support?\n*   Product and model: Where is more expensive intelligence being used, and is that demand sustained?\n\nTogether, these views help admins decide where to invest, coach, or set limits.\n\n## 2. Evaluate model efficiency by outcome ROI\n\nThe lowest token price does not always produce the lowest total cost. A cheaper model may fail, retry, or create work that needs correction. A more capable model may cost more per token but reach an acceptable result faster, with fewer attempts and less review.\n\nEvaluate models on the work they need to perform. Use [evals that reflect real tasks⁠](https://openai.com/index/evals-drive-next-chapter-of-ai/), including edge cases, and define “good enough” before testing. Then measure the full cost of reaching that standard: model and tool usage, attempts, completion rate, latency, and human review.\n\nFor priority workflows, **track cost per accepted outcome**. In customer support, that might be a resolved case. In engineering, it might be a tested change that passes review. Pair that cost with business value such as time saved, cycle time reduced, revenue protected, risk avoided, or capacity created.\n\nModel choice is only part of the equation. Clear instructions, focused tools, reusable context, and explicit stopping conditions can reduce loops and wasted spend. The goal is to match the model and workflow to the task: use smaller or faster models when they meet the quality bar, and reserve frontier intelligence for complex, ambiguous, or high-stakes work.\n\n## 3. Govern advanced workflows before they scale\n\n**Enterprise leaders should treat governance as the operating layer that determines which AI work can scale.** The practical work is to define what context ChatGPT can use, which tools it can access, what actions it can take, who approves higher-risk steps, and how additional capacity is granted when teams find valuable workflows.\n\nThis becomes more important as teams adopt plugins, connectors, Computer Use, and other frontier capabilities that can operate across enterprise systems. [ChatGPT Work⁠](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) gives admins centralized controls for access, approved context, connected tools, permitted actions, usage, and spend. Spend controls such as workspace defaults, group limits, individual overrides, and review requests with project context help leaders support high-value work without raising limits broadly.\n\nFor priority deployments, OpenAI’s AI [Deployment Engineers⁠(opens in a new window)](https://deploy.co/) can work directly with customers on evals, architecture, latency, reliability, and workflow design to improve both performance and cost efficiency. Privacy and governance should be part of that work from the start: sensitive workflows need the right access controls, retention posture, compliance visibility, and approval paths before they scale. Where applicable, OpenAI’s enterprise privacy controls, including [Zero Data Retention⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/your-data) options, can help customers deploy AI in high-trust environments.\n\n## 4. Fund workflows that can compound\n\n**Enterprise leaders should manage AI investments as a portfolio:**broad access for everyday productivity, function-specific workflows that improve repeatable work, and a smaller number of strategic bets built around proprietary company context. The strongest candidates are workflows that repeat at meaningful scale, have clear ownership, and can be measured for quality, risk, and business value.\n\nFunding should follow maturity. Exploration should test whether the model can handle the task; validation should test representative cases against a clear quality bar; production funding should support the integrations, controls, reliability, and change management required to scale. Shared capabilities such as identity, trusted connectors, curated knowledge, evaluations, observability, model routing, and reusable agent patterns should be funded centrally so each new workflow becomes easier and safer to launch.\n\n## 5. Match capacity to proven demand\n\nOnce a workflow proves its value, leaders should **match the product, capacity, and support model to its demand.**[ChatGPT Work⁠](https://openai.com/index/chatgpt-for-your-most-ambitious-work/) provides ready-made capabilities for chat, coding, agentic workflows, connectors, plugins, Computer Use, and administration. Companies can extend that foundation with proprietary data, permissions, evaluations, and workflow logic where those elements create differentiated value.\n\nFor larger strategic deployments, [OpenAI Frontier⁠](https://openai.com/business/frontier/) and [Deployment Company⁠(opens in a new window)](https://deploy.co/en-US) can help enterprises build, deploy, and manage AI coworkers across enterprise systems. This approach lets leaders scale proven work with the right product, capacity, and support model instead of making each workflow rebuild its own infrastructure.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Celebrating 25 years of visual search innovation",
+          "url": "https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/",
+          "published_at": "2026-07-14T16:00:00.000Z",
+          "description": "Google Images is turning 25. Here’s a look back at some major milestones — and new ways to explore and create visual content.",
+          "full_text": "Title: Celebrating 25 years of visual search innovation\n\nURL Source: https://blog.google/products-and-platforms/products/search/google-images-25th-anniversary/\n\nPublished Time: 2026-07-14T16:00:00+00:00\n\nMarkdown Content:\nJul 14, 2026\n\n|\n\n11 min read\n\nWe're celebrating Google Images turning 25 with a look back at some major milestones — and introducing new ways to explore and create visual content.\n\n* * *\n\nBrad Kellett\n\nSenior Engineering Director, Search\n\n* * *\n\n![Image 1: Google Images logo surrounded by illustrations of people searching for different images](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Images_25th_hero.width-200.format-webp.webp)\n\n[Audio 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/media/tts_audio_85585_umbriel_2026_07_15_23_03_43.mp3)\n\nListen to article\n\n[[duration]] minutes\n\nThis content is generated by Google AI. Generative AI is experimental\n\nThis week marks 25 years since we launched [Google Images](http://images.google.com/), beginning the evolution of Search from a text-based experience to one that allows you to visually explore the world. To celebrate this milestone, we’re introducing two new ways to help you explore and create visual content — plus a look back at our major innovations in visual search.\n\n## Explore images in a whole new way.\n\nToday, we're introducing a brand new browseable [home for Google Images](http://images.google.com/), featuring a dynamic, immersive gallery of images from across the web — updated in real time and intelligently tailored to your unique interests. As you browse and save ideas to your [collections](https://www.google.com/interests/saved), they’ll appear as tabs above the main gallery, making it easy to jump back in and continue exploring based on what inspires you. This will roll out over the coming weeks on desktop in the U.S. in English. Sign in to your Google Account to try it out.\n\n## Create new images right in Search.\n\nSometimes, the perfect image is out there on the web, waiting to be found. But other times you might have a highly specific vision where an image doesn’t yet exist. To help bring those unique ideas to life, we’re bringing image generation directly into AI Overviews in Search. Using our [latest Nano Banana model](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-omni-flash-nano-banana-2-lite/), this update transforms a simple text prompt into a high-quality, custom visual made completely from scratch, seamlessly bridging the gap between imagination and reality. Image generation in AI Overviews will start to roll out over the coming weeks in English, for all [regions](https://support.google.com/websearch/answer/16649374?&co=GENIE.Platform%3DAndroid#zippy=:~:text=Supported%20countries%20and%20territories) that currently support image creation in [AI Mode](http://google.com/ai).\n\nBoth of these updates are built on 25 years of innovation to make the world’s visual information instantly accessible and useful. To see how we got here, let’s take a look back at some of the major launches that transformed how we search with — and for — images.\n\n## 2001: Google Images\n\nWhen Jennifer Lopez’s iconic [green Versace dress](https://www.google.com/search?sca_esv=d7a897ae2fa4bc83&sxsrf=APpeQns9xfaQw-WDAqThxVJyZbr565oSaQ:1783456353928&udm=2&fbs=ABfTbFVyMZGZf1hfvX9uKjN_-G8c4u0nXx4bEIpwm1lnNH832SMIiTl3t-JZ4hGJOxPbHYS0UkvKdZAJprgUu75aBO7-5vrlVc7yEsfLdhPSHeGAC4mVZZ2xR8mJ5TUsP5rDwqKS7WvLiCU7lYNUS2tj831w9fd6Dv9OKaKpMkfyyaM4mZbGMUwxuHRXcpyUVPgllS3RNSZGlmiLdHxo0AuwZQnjmCNJlg&q=jennifer+lopez+green+dress+2000&sa=X&sqi=2&ved=2ahUKEwigxsbTtMGVAxXnElkFHSGoO4oQtKgLegQIIBAB&biw=1512&bih=823&dpr=2) broke the internet in 2000, we realized that the standard search page at the time — a list of blue text links — simply wasn’t enough. People didn’t just want to _read_ about the dress — they wanted to _see_ it. So in July 2001, we launched Google Images, making it possible for the first time to search and instantly explore visual content from across the web.\n\n## 2009: Similar Images\n\nThe [Similar Images feature](https://googleblog.blogspot.com/2009/10/similar-images-graduates-from-google.html) made it possible to find pictures without relying on text alone. If you searched for “bow,” you might see images of hair bows and bows and arrows. By clicking the one you had in mind and tapping “find similar images,” you could see more of what you wanted without typing a whole new query.\n\n## 2011: Search by Image\n\nWe launched [Search by Image](https://search.googleblog.com/2011/06/search-by-text-voice-or-image.html) to change how you navigate the web — moving beyond text to let the image do the work for you. By simply uploading an image or pasting its URL directly into the search bar, visuals became search terms. This allowed you to quickly identify the original source, track down where the photo appeared across the web or discover visually similar content.\n\n## 2018: Google Lens in Search\n\n[Google Lens](https://blog.google/products-and-platforms/devices/google-lens/google-lens-one-year/) makes your everyday life searchable, letting you use your smartphone camera to ask about the world around you. With Lens, you can identify objects, translate text and pull up product links in real time without typing a query into the search box.\n\n## 2022: Multisearch in Lens\n\n[Multisearch](https://blog.google/products-and-platforms/products/search/multisearch/) marked a significant step into the era of multimodal search. Now, you can search with text and images at the same time, like snapping a photo of a unique landmark and adding “what inspired this design.” Or taking a picture of a sleek dining table you saw on social and typing “coffee table” to find a similar piece for your own home.\n\n## 2024: Circle to Search\n\nTo help you search anything on your Android phone screen, we built [Circle to Search](https://blog.google/products-and-platforms/products/search/google-circle-to-search-android/). With a simple gesture — like circling, highlighting, scribbling or tapping — you can select what you’re curious about on your phone screen and get more information right in the moment, without switching apps. Circle to Search is available on more than 580 million Android devices around the world.\n\n## 2025: Lens + AI Mode\n\nLast year, we brought together the [multimodal power of Lens](https://blog.google/products-and-platforms/products/search/ai-mode-multimodal-search/) with [AI Mode in Search](http://g.ai/) so you can ask even more nuanced questions that require deeper reasoning. When you upload or snap a photo, AI Mode can process the entire scene. Using a \"[visual image fan-out](https://blog.google/company-news/inside-google/googlers/how-google-ai-visual-search-works/)\" technique, it breaks a single image search into dozens of sub-queries to understand the full visual context and deliver relevant results.\n\n## 2025: Search Live\n\nBuilding on our advanced multimodal capabilities, Search Live lets you share your phone’s live camera feed while having an interactive voice conversation in AI Mode — using video input to capture motion and the full context of your surroundings. It’s like having a video call with Search — great for everything from help in the kitchen to troubleshooting tricky equipment.\n\n## 2025: Visual Results in AI Mode\n\nTo make visual exploration feel more natural, we introduced an entirely [new way to explore, imagine and shop](https://blog.google/products-and-platforms/products/search/search-ai-updates-september-2025/) using AI Mode in Search. You can describe exactly what you have in mind in a conversational way — like asking for \"barrel jeans that aren't too baggy\" — to instantly pull up a grid of visual inspiration and shoppable products.\n\n## 2026: Circle to Search Multi-Object Recognition\n\nCircle to Search now [lets you explore multiple objects](https://blog.google/products-and-platforms/products/search/circle-to-search-february-2026/) within a single image all at once, using the visual image fan-out technique. You can instantly deconstruct and shop for an entire outfit or search multiple items in one scene simultaneously to learn about what you see.\n\n## 2026: Intelligent Search Box\n\nWith the new [intelligent search box](https://blog.google/products-and-platforms/products/search/search-io-2026/#powerful-ai:~:text=Because%20your%20curiosity%20doesn%E2%80%99t%20always%20fit%20into%20keywords%2C%20we%E2%80%99re%20also%20introducing%20the%20biggest%20upgrade%20to%20our%20Search%20box%20in%20over%2025%20years%20%E2%80%94%20now%20completely%20reimagined%20with%20AI.), you can now ask detailed questions about images right in Search and get a helpful AI Mode response. Just tap the plus icon to upload images — even multiple at a time — and ask whatever’s on your mind.\n\nOver the last 25 years, Search has grown from helping you find a specific photo on the web to helping you search the world, exactly as you see — or imagine — it. We’ve come a long way and we’re excited to continue pushing the boundaries of what’s possible in visual search.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 8,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "hello!",
+          "url": "https://x.com/sama/status/2077118672150388816",
+          "published_at": "2026-07-14T19:50:57.000000Z",
+          "description": "hello!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thsottiaux",
+            "text": "Hello. We have reached 8M active users across Codex and ChatGPT Work.\n\nWe are once again resetting the usage limits for all. And we continue to not have the 5h rate limit as well, allowing everyone to explore the boundaries of GPT-5.6 Sol and discover how ambitious you can be.\n\nSee you tomorrow for more updates on our growth!",
+            "url": "https://x.com/thsottiaux/status/2077114635308986427"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "5.6 sol growth is insane.\n\nthe inference team has done heroic work to be able to support demand.\n\nwe are going to move mountains to continue to scale, but it is possible there are some hiccups soon.",
+          "url": "https://x.com/sama/status/2077106587307798989",
+          "published_at": "2026-07-14T19:02:55.000000Z",
+          "description": "5.6 sol growth is insane.\n\nthe inference team has done heroic work to be able to support demand.\n\nwe are going to move mountains to continue to scale, but it is possible there are some hiccups soon.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Concerning.",
+          "url": "https://x.com/sama/status/2077053140508266710",
+          "published_at": "2026-07-14T15:30:33.000000Z",
+          "description": "Concerning.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "hrkrshnn",
+            "text": "SpaceXAI was caught uploading your code to its cloud.\n\nI reversed xAI's official Grok Build binary. In a controlled session with zero tool-calls, it uploaded the complete codebase to xAI's storage\n\nIt ships a malware-like background code collector.",
+            "url": "https://x.com/hrkrshnn/status/2076716354754015368"
+          },
+          "reply_to": null,
+          "thread_group_id": "thread-sama-20260714-1530",
+          "duplicate_of": null
+        },
+        {
+          "title": "also, a reason to favor open-source harnesses.",
+          "url": "https://x.com/sama/status/2077053226080436235",
+          "published_at": "2026-07-14T15:30:53.000000Z",
+          "description": "also, a reason to favor open-source harnesses.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "sama",
+            "status_id": "2077053140508266710"
+          },
+          "thread_group_id": "thread-sama-20260714-1530",
+          "duplicate_of": null
+        },
+        {
+          "title": "this is a thoughtful proposal from demis:",
+          "url": "https://x.com/sama/status/2077042528906527225",
+          "published_at": "2026-07-14T14:48:23.000000Z",
+          "description": "this is a thoughtful proposal from demis:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "demishassabis",
+            "text": "https://t.co/PTeDiv1b6L",
+            "url": "https://x.com/demishassabis/status/2076957440109625718"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "this would have been a whole startup not too long ago",
+          "url": "https://x.com/sama/status/2077037818824843719",
+          "published_at": "2026-07-14T14:29:40.000000Z",
+          "description": "this would have been a whole startup not too long ago",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "cdngdev",
+            "text": "i gave 5.6 sol access to my camera roll and had it extract pictures of every piece of clothing i own from my photos\n\nthen, told it to find new outfits for me and render them on me with gpt-image!\n\nits kinda cool to see your entire wardrobe in a collection like this https://t.co/SV796uScrB",
+            "url": "https://x.com/cdngdev/status/2076812846793650485"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-5.6 sol is half the price and ~twice as token efficient as fable in many cases for accomplishing the same task.\n\nhappy to deliver at one-quarter of the price.",
+          "url": "https://x.com/sama/status/2077036999303999910",
+          "published_at": "2026-07-14T14:26:24.000000Z",
+          "description": "GPT-5.6 sol is half the price and ~twice as token efficient as fable in many cases for accomplishing the same task.\n\nhappy to deliver at one-quarter of the price.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "2.5x increase in usage of our agentic products (codex and chatgpt work) in the last week!\n\nwelcome.",
+          "url": "https://x.com/sama/status/2077033807736459713",
+          "published_at": "2026-07-14T14:13:43.000000Z",
+          "description": "2.5x increase in usage of our agentic products (codex and chatgpt work) in the last week!\n\nwelcome.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 854.8h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "https://t.co/PTeDiv1b6L",
+          "url": "https://x.com/demishassabis/status/2076957440109625718",
+          "published_at": "2026-07-14T09:10:16.000000Z",
+          "description": "https://t.co/PTeDiv1b6L",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/PTeDiv1b6L",
+              "expanded_url": "http://x.com/i/article/2076946210397552640",
+              "display_url": "x.com/i/article/2076…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 539.2h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "I've been playing a lot of Pokemon Champions recently and started using Claude Code to help me.\n\nIt writes code using Smogon's npm library, pulls live usage stats and then writes reports to understand",
+          "url": "https://x.com/trq212/status/2077051280267399550",
+          "published_at": "2026-07-14T15:23:09.000000Z",
+          "description": "I've been playing a lot of Pokemon Champions recently and started using Claude Code to help me.\n\nIt writes code using Smogon's npm library, pulls live usage stats and then writes reports to understand matchups, breakpoints or theorycraft teams. https://t.co/4a3GYj4OFY",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": "thread-trq212-20260714-1523",
+          "duplicate_of": null
+        },
+        {
+          "title": "I'll open source this if it's interesting! \n\nBut here's my first public artifact, a breakdown on my Mega Sceptile team: https://t.co/WYqzNIRybo",
+          "url": "https://x.com/trq212/status/2077051282146431092",
+          "published_at": "2026-07-14T15:23:10.000000Z",
+          "description": "I'll open source this if it's interesting! \n\nBut here's my first public artifact, a breakdown on my Mega Sceptile team: https://t.co/WYqzNIRybo",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/WYqzNIRybo",
+              "expanded_url": "https://claude.ai/code/artifact/727018e0-307e-4b6a-bd55-026273c9656d",
+              "display_url": "claude.ai/code/artifact/…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2077051280267399550"
+          },
+          "thread_group_id": "thread-trq212-20260714-1523",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We're introducing Claude for Teachers: free access to premium Claude capabilities for verified K-12 educators in the US, with a library of teaching skills and a direct connection to evidence-based cur",
+          "url": "https://x.com/claudeai/status/2077047278078931243",
+          "published_at": "2026-07-14T15:07:15.000000Z",
+          "description": "We're introducing Claude for Teachers: free access to premium Claude capabilities for verified K-12 educators in the US, with a library of teaching skills and a direct connection to evidence-based curricula, mapped to academic standards in all 50 states.\n\nhttps://t.co/5hZZijVPCV https://t.co/5ofG8YLEON",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/5hZZijVPCV",
+              "expanded_url": "https://claude.com/solutions/teachers",
+              "display_url": "claude.com/solutions/teac…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude for Teachers is built for K-12 privacy. We never train our models on your conversations, and student information is protected by a data processing agreement written to comply with FERPA.",
+          "url": "https://x.com/claudeai/status/2077047280767488218",
+          "published_at": "2026-07-14T15:07:16.000000Z",
+          "description": "Claude for Teachers is built for K-12 privacy. We never train our models on your conversations, and student information is protected by a data processing agreement written to comply with FERPA.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2077047279689535705"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260714-1507",
+          "duplicate_of": null
+        },
+        {
+          "title": "Read more about how Claude for Teachers works: https://t.co/mRTR2WJx54",
+          "url": "https://x.com/claudeai/status/2077047282109714488",
+          "published_at": "2026-07-14T15:07:16.000000Z",
+          "description": "Read more about how Claude for Teachers works: https://t.co/mRTR2WJx54",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/mRTR2WJx54",
+              "expanded_url": "https://www.anthropic.com/news/claude-for-teachers",
+              "display_url": "anthropic.com/news/claude-fo…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2077047280767488218"
+          },
+          "linked_content": "Title: Introducing Claude for Teachers\n\nURL Source: https://www.anthropic.com/news/claude-for-teachers\n\nMarkdown Content:\nWe're introducing [Claude for Teachers](https://claude.com/solutions/teachers), providing verified K-12 educators in the US free access to premium Claude capabilities, a library of teaching skills, and a direct connection to evidence-based curricula, mapped to academic standards in all 50 states.\n\n## Why we’re building for teachers\n\nDecades of research show that practices like differentiation, mastery-based learning, and small group instruction reliably improve student achievement, but teachers are often short on time and resources to implement them. Budgets are stretched, classes may be too large to meet every student's individual needs, and planning often spills into evenings. This strain is heaviest in under-resourced schools. Claude for Teachers is designed to close the gap between educational best practices and what a teacher's week allows.\n\n[Early evidence](https://scale.stanford.edu/research-in-action/understanding-evidence-base-ai-k12-education) suggests that while the impact of AI tools for students is mixed and depends on the implementation, AI tools for teachers can strengthen instructional practice and improve student outcomes. This is the aim of Claude for Teachers: support the craft behind great teaching and protect what teachers value most—time with their students.\n\n## Connected to evidence-based curricula and the K-12 ecosystem\n\nClaude for Teachers connects to [Learning Commons](https://learningcommons.org/), giving Claude access to academic standards across all 50 states—and beneath each standard, the smaller learning competencies it's built from and the order students typically learn them. So when Claude drafts a lesson plan, it’s scaffolded and aligned to teaching standards. Claude for Teachers also brings in trusted curricular resources like [OpenSciEd](https://openscied.org/) and IM v.360 from [Illustrative Mathematics](https://illustrativemathematics.org/).\n\nAs of today, educators can now connect Claude across an entire ecosystem of K-12 tools.\n\n*   [**ASSISTments**](https://www.assistments.org/): Generate auto-scored, standards-aligned math problems for practice and assessment.\n*   [**Brisk Teaching**](https://www.briskteaching.com/): Create interactive student activities and standards-aligned lessons, turning your ideas into classroom-ready materials in seconds.\n*   [**Canva Education**](https://www.canva.com/education/): Turn lesson materials into classroom-ready designs and interactive learning experiences.\n*   [**Coteach**](https://coteach.ai/): Create high-quality math diagrams grounded in K-12 curriculum.\n*   [**Diffit**](https://web.diffit.me/): Create and adapt instructional materials for every student.\n*   [**Eedi**](https://www.eedi.com/): Generate diagnostic questions that go beyond right and wrong to reveal student thinking and deepen insights, in both English and Spanish.\n*   [**MagicSchool**](https://www.magicschool.ai/): Make instructional content classroom-ready.\n*   [**Snorkl**](https://snorkl.app/): Get insights about your classes, assignments, and student progress to inform your instruction.\n*   [**TeachFX**](https://teachfx.com/): Get personalized instructional feedback grounded in real classroom talk.\n\n## How it works\n\nOnce verified, K-12 educators in the US get access to Claude for Teachers with the Learning Commons connector and a set of tailored teaching skills grounded in learning science. The skills, co-developed with Learning Commons, were designed around the tasks teachers told us mattered most. These were evaluated to ensure rigor, pedagogical alignment, and classroom usability, and refined through early feedback from classroom teachers, including those in schools like Prospect Schools in Brooklyn.\n\n*   **Plan a lesson from high-quality instructional materials.** Ask for a lesson and Claude draws on widely used curricula mapped to your state's standards, as well as fine-grained learning components and progressions beneath them, then drafts a plan and student-facing materials you can revise and take into class.\n*   **Differentiate for every learner in your room.** Ask Claude to adapt materials for students at different readiness levels and it builds a differentiation plan for you, plus personalized student-facing materials for each proficiency level. The scaffolds make materials accessible to students, while students who are ready can be further challenged.\n\nClaude for Teachers includes Claude Code and Cowork, which means Claude can carry work forward on its own. Some examples:\n\n*   **Analyze class data to plan instruction.** Hand Claude a folder of data—roster, diagnostics, attendance, your own notes—and it builds a clear picture of where every student is, allowing teachers to better tailor instruction. You control what data is shared; nothing you share is used in model training.\n*   **Schedule repeated tasks.** Hand off a task once—like reviewing each day's exit tickets to see what students mastered and adapting tomorrow's plan to match—and it runs every school day at 4pm. Claude works while you drive home.\n\n[Learn more from two teachers](https://claude.com/resources/tutorials/claude-for-teachers-in-action), Zac and Karina, explaining how they use Claude for Teachers in their own classrooms.\n\n## Built for educators, safe with student data\n\nClaude for Teachers is for educators only, consistent with Claude's 18-and-over policy. It comes with its own [teacher terms](https://support.claude.com/en/articles/15926041), built for K-12 privacy. Claude for Teachers data is not used for model training purposes, and student information is protected by our K-12 Data Processing Addendum, written to comply with FERPA.\n\nWe’re also working with the**[American Federation of Teachers](https://www.aft.org/)** to align our terms and privacy practices with gold standards they’re developing:\n\n“We've been working with Anthropic on a Gold Standard that sets out industry best practices for safety and privacy in K-12 education,” said Randi Weingarten, President of the American Federation of Teachers. “It’s important that Anthropic is committing to these principles in their new Claude for Teachers — a tool designed by and for educators to assist them instructionally and hopefully give them more time for the human relationships at the heart of learning.”\n\nYou can read more about our K-12 data privacy standards for Claude for Teachers [here](https://support.claude.com/en/articles/15926041).\n\n## AI fluency for teachers\n\nTeachers can also access our [newly released AI Fluency for PK-12 Teachers](https://anthropic.skilljar.com/path/ai-fluency-for-pk-12-educators), a course co-created with [Teach For America](https://www.teachforamerica.org/), and a train-the-trainer module co-created with the American Federation of Teachers. The guidance is model-agnostic, Creative Commons-licensed, and practical, covering which classroom tasks AI is suited for and how to use it responsibly with students.\n\n## Sharing what we build\n\nThis product stems from Anthropic's broader efforts in education, focused on supporting teachers and improving learning outcomes for students. As part of our Beneficial Deployments mission, we’re releasing a set of public goods to support the community focused on building for teachers.\n\nThis includes the launch of new connectors in Anthropic’s directory, an [open-source repository](https://github.com/anthropics/k12-teacher-skills) of the teaching skills, and a technical write-up of how we evaluated these skills and how other builders in education can use them. We’ll pilot an evaluation of Claude for Teachers in the [Detroit Public Schools Community District](https://www.detroitk12.org/), working closely with teachers to study the impact on educator wellbeing and practice. Together, these efforts support the goals of our [partnership](https://www.anthropic.com/news/gates-foundation-partnership) with the Gates Foundation to co-develop tools that improve educational outcomes for K-12 students. In addition, [Playlab](https://www.playlab.ai/) will support a national network of lab schools in implementing AI, helping educators become builders of the AI tools used in their classrooms.\n\n## Getting started\n\nOnce verified, educators can access [Claude for Teachers](https://claude.com/solutions/teachers) entirely free. Sign up by June 30, 2027, for a full year of access.\n\nClaude for Teachers is for individual educators. A dedicated offering for schools and districts is coming soon. In the meantime, districts interested in Claude can continue using [Claude for Nonprofits](https://claude.com/solutions/nonprofits).\n\n## Related content\n\n### Anthropic commits $10 million to Canadian AI research\n\n[Read more](https://www.anthropic.com/news/canadian-ai-research)\n\n### UST is bringing Claude to physical AI\n\n[Read more](https://www.anthropic.com/news/ust-claude)\n\n### Inviting hard questions\n\nWe’re asking the public for their hardest questions about AI, and committing to show our work as we address them.\n\n[Read more](https://www.anthropic.com/news/hard-questions)\n",
+          "thread_group_id": "thread-claudeai-20260714-1507",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We’re committing $10 million CAD and partnering with leading AI institutions in Canada to help fund new AI research. \n\nhttps://t.co/A8wpanWYQO",
+          "url": "https://x.com/AnthropicAI/status/2077026346375540870",
+          "published_at": "2026-07-14T13:44:04.000000Z",
+          "description": "We’re committing $10 million CAD and partnering with leading AI institutions in Canada to help fund new AI research. \n\nhttps://t.co/A8wpanWYQO",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/A8wpanWYQO",
+              "expanded_url": "https://www.anthropic.com/news/canadian-ai-research",
+              "display_url": "anthropic.com/news/canadian-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Anthropic commits $10 million to Canadian AI research\n\nURL Source: https://www.anthropic.com/news/canadian-ai-research\n\nMarkdown Content:\n_Le français suit._\n\nCanadian institutions and researchers have played a critical role in the modern AI era. During a period of broad skepticism about research into neural networks, the University of Toronto and the Université de Montréal were two of only a handful of institutions that incubated this crucial line of work, while researchers at the University of Alberta did pioneering work on reinforcement learning. And in the early 2010s, Canadian research institutions led the way in demonstrating that with the arrival of powerful new computing resources—in particular, general-purpose GPUs—deep neural networks could succeed at scale, kicking off the modern era.\n\nToday, Canadians both at home and abroad continue to play leading roles in AI research, safety, and policy—including at Anthropic. That’s why we’re committing $10 million CAD to Canadian research institutions to fund the next generation of this work. We’re also publishing our first Canadian country brief based on the Anthropic Economic Index, which provides a snapshot of how Canadians are putting Claude to work.\n\n### Investing in Canadian research\n\nThe $10 million we’re committing will fund research into beneficial and responsible applications of AI. As part of this, we’re announcing partnerships with Canada’s three leading regional AI institutes—[Alberta Machine Intelligence Institute](https://www.amii.ca/) (Amii) in Edmonton, [Mila](https://mila.quebec/en) in Montréal, and the [Vector Institute](https://vectorinstitute.ai/) in Toronto—along with [CHEO](https://www.cheo.on.ca/en/index.aspx), [The Centre for Addiction and Mental Health](https://www.camh.ca/) (CAMH), [Université Laval](https://www.ulaval.ca/en/research/research-units/institutes/institute-intelligence-and-data-iid), [University of Toronto](https://datasciences.utoronto.ca/), and the [University of Saskatchewan](https://research.usask.ca/), with more partnerships to follow in the months ahead:\n\n*   **Amii,**based in Edmonton, will provide Claude credits to its research and engineering teams to further their work in areas like reinforcement learning and AI trust and safety, as well as to increase AI adoption across Canada’s key econoxmic sectors.\n*   **Mila**, the Quebec AI institute home to the world’s largest concentration of academic deep learning researchers, will make Claude available to its community to support their research in areas including responsible AI, health, sustainability, multi-agent systems, and robotics. Mila will also use Claude to develop AI assistants that help researchers discover and assess scientific breakthroughs.\n*   **The Vector Institute** in Toronto will use Claude credits to advance AI research in trust and safety, health and science, and the broader challenges that AI is uniquely positioned to help solve for Canadians.\n*   **CHEO and the CHEO Research Institute** will use Claude credits to develop and evaluate AI-enabled approaches aimed at improving health outcomes and the care experience for children, youth, and families, and to study how AI can be most responsibly applied in children's health.\n*   **CAMH** will make use of Claude credits across its research, education initiatives, and clinical projects. For example, CAMH’s Krembil Centre for Neuroinformatics will use Claude to conduct computational mental health research, including developing and evaluating predictive models of treatment for people with mental health conditions, and running large-scale evaluations of fairness in psychiatric AI systems. Credits will also be used to help scale the impact of the CAMH Global Learning Academy, which is developing multilingual, AI-enabled mental health education.\n*   **Université Laval’s Institute for Intelligence and Data** will work with Claude to deepen researchers’ understanding of how LLMs behave in varied cultural contexts, as well as their understanding of low-resource languages and dialects, such as Quebec French and Indigenous languages.\n*   **The University of Saskatchewan** will use Claude to further its research in areas including biomedical advancements, food and water security, public health, quantum computing, and public service.\n*   **The University of Toronto Data Sciences Institute** will support a range of research projects through a scientific review-based process to access Claude API credits.\n\nIn addition to these donations, this summer Anthropic will add Amii, Mila, and Vector to the [Anthropic for Startups program](https://claude.com/form/startups-application), which gives founders building on Claude access to a community and resources to support their growth. Hundreds of Canadian startups affiliated with these institutions will receive at least $5,000 USD each in API credits to continue to develop their businesses.\n\n“Some of the foundations of modern AI came out of Toronto, Montréal, and Edmonton— and so, strikingly, did many of the researchers most committed to making it safe,” said Chris Olah one of Anthropic’s co-founders. “I was formed by that culture, and I’m proud Anthropic can support the next chapter.”\n\n### How Canada is using Claude\n\nWe’re also [sharing data](https://www.anthropic.com/research/how-canada-uses-claude) that looks at how people across Canada are using Claude. This is drawn from the [March 2026 Anthropic Economic Index](https://www.anthropic.com/research/economic-index-march-2026-report), our ongoing analysis of how AI is being incorporated into work tasks across the economy. Our economic research is based on data from real-world Claude usage, using a privacy-preserving analysis tool that identifies patterns in use while keeping all user information anonymous.\n\nWe find that Canada ranks eighth worldwide in Claude.ai use. Per person, Canadians use Claude at more than four times the rate the population predicts, and among the 10 countries where Claude is used most, only the US ranks higher.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F976607f5799ad2170a43fb842885ad697cc4cf99-1920x1080.png&w=3840&q=75)\n\n**Usage share and per-capita adoption among the top 10 countries by global Claude.ai use.**Bars show each country’s share of global AI usage (left panel) and the Anthropic AI Usage Index (right panel) based on 1M conversations sampled from Claude.ai in February 2026. Canada is highlighted in blue. The Anthropic AI Usage Index (AUI) measures whether Claude usage is over- or underrepresented in a country relative to its working-age population. Canada accounts for 2.6% of global Claude.ai consumer use, ranking eighth globally, and second by AUI. Sources: Anthropic Economic Index, February 2026; World Bank.\n\nWithin Canada, Claude adoption tracks the kind of work people do. Per-person usage is higher in provinces where professional, scientific, and technical work is concentrated. British Columbia leads in terms of per-person use, with Ontario—which has the largest share of overall conversations—close behind. In both provinces, usage is higher than what we would expect to see based on population alone.\n\nLooking closer, we can see that how people use Claude lines up with the local economy. Translation requests are most common in provinces where more people work in government, likely because Canada’s bilingualism regulations require federal services and communications to be in both English and French. New Brunswick, Nova Scotia, and Québec lead the country in both government employment and the share of conversations about translation.\n\n### A shared view on the future of AI\n\nThe countries that invest the most in advanced AI over the next few years will also shape the rules that govern it. We’ve long believed democracies should lead that work, and Canada has a place at the forefront. Canada published the world’s first national AI strategy in 2017, and this June published its next: AI for All, which commits to strengthening the country’s AI safety institute, expanding AI literacy, and reinforcing the three national institutes that have anchored Canadian research for nearly a decade.\n\nLast week we published a case study on the Government of Alberta, whose Ministry of Technology and Innovation used Claude Code to review 466 million lines of code across provincial systems in roughly 20 hours, then [shared their methods](https://thevelocitywhitepapers.com/) with other governments.\n\nThe eight partnerships we’re announcing today are just the beginning of our investment in Canadian research. We look forward to supporting this work—in research, in hospitals, and in universities—for years to come.\n\n## Anthropic s’engage à verser 10 millions de dollars à la recherche canadienne en IA\n\nLes institutions et les chercheurs canadiens jouent un rôle essentiel dans la révolution moderne de l’IA. À une époque où la recherche sur les réseaux neuronaux suscitait un scepticisme généralisé, l’Université de Toronto et l’Université de Montréal figuraient parmi les rares institutions à encourager la recherche dans ce domaine crucial, et des chercheurs de l’Université de l’Alberta menaient déjà des travaux fondateurs sur l’apprentissage par renforcement. Au début des années 2010, plusieurs instituts de recherche canadiens ont été parmi les premiers à démontrer qu’avec l’arrivée de nouvelles ressources informatiques puissantes (notamment le calcul générique sur processeurs graphiques), les réseaux neuronaux profonds pouvaient fonctionner à grande échelle, marquant ainsi le début d’une nouvelle ère.\n\nAujourd’hui, les Canadiens, tant au pays qu’à l’étranger, continuent de jouer un rôle de premier plan dans la recherche, la sécurité et les politiques entourant l’IA, notamment chez Anthropic qui, en juste retour des choses, a décidé de verser 10 millions de dollars canadiens à des instituts de recherche du pays afin de financer les prochaines avancées. Nous en profitons aussi pour publier notre première fiche d’information sur le Canada basée sur l’Anthropic Economic Index afin de donner un aperçu de la manière dont les Canadiens utilisent Claude.\n\n### Notre investissement dans la recherche canadienne\n\nLes 10 millions de dollars que nous nous engageons à verser financeront divers projets de recherche sur les applications utiles et responsables de l’IA. Nous avons conclu des partenariats avec les trois principaux instituts régionaux canadiens spécialisés dans l’IA – soit l’[Alberta Machine Intelligence Institute](https://fr.amii.ca/)(Amii) à Edmonton, [Mila](https://mila.quebec/fr) à Montréal et l’[Institut Vector](https://vectorinstitute.ai/fr-ca/) à Toronto –, ainsi qu’avec le [CHEO](https://www.cheo.on.ca/fr/index.aspx), le [Centre de toxicomanie et de santé mentale](https://www.camh.ca/fr/)(CAMH), l’[Université Laval](https://www.ulaval.ca/la-recherche/unites-de-recherche/instituts/institut-intelligence-et-donnees-iid), l’[Université de Toronto](https://datasciences.utoronto.ca/) et l’[Université de la Saskatchewan](https://research.usask.ca/). D’autres partenariats devraient suivre au cours des prochains mois.\n\n*   **L’Amii**, basé à Edmonton, mettra des crédits Claude à la disposition de ses équipes de recherche et d’ingénierie afin de leur permettre de poursuivre leurs travaux, notamment, sur l’apprentissage par renforcement ainsi que sur la confiance et la sécurité de l’IA en vue d’accroître l’adoption de l’IA dans les principaux secteurs économiques du Canada.\n*   **L’institut québécois d’intelligence artificielle Mila**, qui regroupe la plus grande concentration au monde de chercheurs universitaires spécialisés dans l’apprentissage profond, mettra Claude à la disposition de ses équipes de recherche qui travaillent notamment sur l’IA responsable, la santé, le développement durable, les systèmes multiagents et la robotique. Mila utilisera également Claude pour développer des assistants IA qui aideront les chercheurs à faire des découvertes et à valider leurs résultats.\n*   **L’Institut Vector** de Toronto utilisera des crédits Claude pour faire progresser la recherche en intelligence artificielle dans les domaines de la confiance et de la sécurité de même que de la santé et des sciences, mais aussi pour relever des défis locaux plus généraux que l’intelligence artificielle est particulièrement bien placée pour aider à résoudre.\n*   **Le CHEO et l’institut de recherche qui lui est affilié** utiliseront des crédits Claude pour développer et évaluer des approches recourant à l’IA afin d’améliorer les résultats cliniques et l’expérience de soin des enfants, des jeunes et des familles, ainsi que pour étudier les applications pratiques responsables de l’IA en pédiatrie.\n*   **Le CAMH** utilisera des crédits Claude dans diverses activités de recherche et d’éducation ainsi que dans des projets cliniques. Par exemple, le Centre Krembil de neuroinformatique du CAMH utilisera Claude pour mener des recherches informatiques en santé mentale, notamment en vue de développer et d’évaluer des modèles prédictifs pour le traitement des personnes souffrant de troubles mentaux, ainsi que pour réaliser des évaluations à grande échelle de l’équité des systèmes d’IA en psychiatrie. Ces crédits serviront également à renforcer l’impact du Centre éducatif mondial du CAMH, qui développe des programmes éducatifs multilingues sur la santé mentale assistés par l’intelligence artificielle.\n*   **L’Institut intelligence et données de l’Université Laval** utilisera Claude pour approfondir la connaissance des chercheurs quant au comportement des grands modèles de langage(GML) dans divers contextes culturels, ainsi que leur connaissance des langues et dialectes disposant de moins de ressources, tels que le français québécois et les langues autochtones.\n*   **L’Université de la Saskatchewan**utilisera Claude dans divers domaines de recherche, notamment la biomédecine, la sécurité alimentaire et l’approvisionnement en eau, la santé publique, l’informatique quantique et l’administration publique.\n*   **Le Data Sciences Institute de l’Université de Toronto** utilisera des crédits API de Claude pour procéder à une revue scientifique visant à soutenir divers projets de recherche.\n\nOutre ces dons, Anthropic intégrera cet été Amii, Mila et l’Institut Vector au [Programme de jeunes pousses Anthropic](https://claude.com/form/startups-application), afin que les fondateurs qui travaillent avec Claude puissent accéder à une communauté et à des ressources capables d’appuyer leur croissance. Des centaines de jeunes entreprises canadiennes affiliées à ces institutions recevront chacune au moins 5 000$US sous forme de crédits API afin de poursuivre le développement de leurs activités.\n\n«Certains fondements de l’IA moderne ont vu le jour à Toronto, Montréal et Edmonton, et c’est de là aussi, fait remarquable, que viennent bon nombre des chercheurs les plus engagés dans la sécurité de l’IA», a déclaré Chris Olah, cofondateur d’Anthropic. «J’ai grandi dans cette culture et je suis fier qu’Anthropic puisse contribuer à écrire un nouveau chapitre.»\n\n### Utilisation de Claude au Canada\n\nVoici quelques données sur l’utilisation de Claude au Canada. Celles-ci sont tirées de l’édition de mars 2026 du rapport [Anthropic Economic Index](https://www.anthropic.com/research/economic-index-march-2026-report), qui fait régulièrement le point sur la manière dont l’IA est intégrée aux tâches professionnelles partout dans notre économie. Nos recherches économiques s’appuient sur des données issues de l’utilisation réelle de Claude, produites à l’aide d’un outil d’analyse respectueux de la vie privée qui mesure les tendances d’utilisation sans révéler l’identité des utilisateurs.\n\nLe Canada occupe la huitième place mondiale en termes d’utilisation de Claude.ai. Par habitant, les Canadiens utilisent Claude plus de quatre fois plus que ce qui serait attendu considérant la taille de sa population. Parmi les dix pays où Claude est le plus utilisé, seuls les États-Unis le devancent sur ce point.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F6fca932b860afc93e85338f7a1f63df5a851fbf6-1920x940.png&w=3840&q=75)\n\n**Part d’utilisation et taux d’adoption par habitant dans les dix pays qui utilisent le plus Claude.ai.**Les barres indiquent la part de chaque pays (graphique de gauche) et l’indice d’utilisation de l’IA Anthropic (graphique de droite), calculés à partir d’un échantillon d’un million de conversations sur Claude.ai en février 2026. Le Canada est mis en évidence en bleu. L’indice d’utilisation de l’IA d’Anthropic(AUI) indique si l’utilisation de Claude est élevée ou faible dans un pays par rapport à sa population en âge de travailler. Le Canada représente 2,6% de l’utilisation mondiale de Claude.ai, ce qui le place au huitième rang mondial, mais occupe le deuxième rang pour l’AUI. Sources: Anthropic Economic Index, février 2026; Banque mondiale.\n\nAu Canada, l’adoption de Claude est reliée au type de travail de ses utilisateurs: la Colombie-Britannique arrive en tête en termes d’utilisation par habitant, suivie de près par l’Ontario, qui enregistre la plus grande part du nombre total de conversations. Dans ces deux provinces, le taux d’utilisation est supérieur à ce qui serait normalement attendu considérant la taille de la population. À l’échelle nationale, l’utilisation par habitant est plus élevée dans les provinces où se concentrent les emplois scientifiques, techniques et de services professionnels.\n\nEn y regardant de plus près, on constate que l’utilisation de Claude s’aligne sur les caractéristiques de l’économie locale. Les demandes de traduction sont plus fréquentes dans les provinces où les fonctionnaires sont plus nombreux, probablement parce que les lois sur le bilinguisme exigent que les services et les communications du gouvernement fédéral soient disponibles en anglais et en français. En fait, le Nouveau-Brunswick, la Nouvelle-Écosse et le Québec affichent à la fois les taux les plus élevés d’emploi dans la fonction publique et les plus grandes proportions de demandes d’aide à la traduction.\n\n### Perspective commune sur l’avenir de l’IA\n\nLes pays qui investiront le plus dans l’IA de pointe au cours des prochaines années seront également ceux qui en définiront les règles. Nous sommes depuis longtemps convaincus que les démocraties doivent mener ces efforts et que le Canada peut y jouer un rôle de premier plan. Le gouvernement du Canada a publié en 2017 la première stratégie nationale au monde en matière d’IA, puis, en juin dernier, sa nouvelle stratégie intitulée «L’IA pour tous», qui prévoit renforcer les capacités de l’Institut canadien de la sécurité de l’IA, augmenter la littératie en IA et soutenir davantage les trois instituts nationaux qui sont à l’avant-garde de la recherche canadienne dans ce domaine depuis près d’une décennie.\n\nLa semaine dernière, nous avons publié une étude de cas sur le ministère de la Technologie et de l’Innovation du gouvernement de l’Alberta, où une équipe a utilisé Claude Code pour passer en revue 466 millions de lignes de code dans l’ensemble des systèmes provinciaux en environ 20 heures, puis a [communiqué ses méthodes](https://thevelocitywhitepapers.com/) à d’autres gouvernements.\n\nLes huit partenariats annoncés aujourd’hui ne sont qu’un commencement pour nos investissements dans la recherche canadienne. Nous sommes ravis à l’idée d’apporter notre soutien à ces travaux dans les instituts de recherche, les hôpitaux et les universités pour de nombreuses années encore.\n\n## Related content\n\n### UST is bringing Claude to physical AI\n\n[Read more](https://www.anthropic.com/news/ust-claude)\n\n### Inviting hard questions\n\nWe’re asking the public for their hardest questions about AI, and committing to show our work as we address them.\n\n[Read more](https://www.anthropic.com/news/hard-questions)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "7M+ weekly Codex users. 150+ updates in two months.\n\n@romainhuet catches you up on what’s new in Codex:\nGPT‑5.6 and Ultra\nParallel work with /goal\nFaster computer use\nAppShots\nInline edits\nSites\nCodex",
+          "url": "https://x.com/OpenAIDevs/status/2077166520392970529",
+          "published_at": "2026-07-14T23:01:05.000000Z",
+          "description": "7M+ weekly Codex users. 150+ updates in two months.\n\n@romainhuet catches you up on what’s new in Codex:\nGPT‑5.6 and Ultra\nParallel work with /goal\nFaster computer use\nAppShots\nInline edits\nSites\nCodex mobile and SSH workflows\nPRs from review to merge https://t.co/1enm87MFkE",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Command-line tools for evaluating new models on @NotionHQ’s architecture were built from start to finish with GPT‑5.6. https://t.co/cs6XI1oKgg",
+          "url": "https://x.com/OpenAIDevs/status/2077102893665320983",
+          "published_at": "2026-07-14T18:48:15.000000Z",
+          "description": "Command-line tools for evaluating new models on @NotionHQ’s architecture were built from start to finish with GPT‑5.6. https://t.co/cs6XI1oKgg",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Join @steipete today at 11am PT for a Build Week live session on turning an idea into a working build with Codex.\n\nhttps://t.co/vEhnR9usxy",
+          "url": "https://x.com/OpenAIDevs/status/2077092039234363837",
+          "published_at": "2026-07-14T18:05:07.000000Z",
+          "description": "Join @steipete today at 11am PT for a Build Week live session on turning an idea into a working build with Codex.\n\nhttps://t.co/vEhnR9usxy",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/vEhnR9usxy",
+              "expanded_url": "https://x.com/i/broadcasts/1vJpPPXVRwZJE",
+              "display_url": "x.com/i/broadcasts/1…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "To demonstrate Meta AI's advanced reasoning and multimodal capabilities, we submitted a model to participate in the Asian Physics Olympiad’s theoretical exam. We’re happy to share that our model achie",
+          "url": "https://x.com/AIatMeta/status/2077138553210028042",
+          "published_at": "2026-07-14T21:09:57.000000Z",
+          "description": "To demonstrate Meta AI's advanced reasoning and multimodal capabilities, we submitted a model to participate in the Asian Physics Olympiad’s theoretical exam. We’re happy to share that our model achieved a perfect score of 30/30, tying with the top 3 student contestants.\n\nWe appreciate the APhO committee for letting our model participate in the competition:  https://t.co/dpyMyST2n4",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/dpyMyST2n4",
+              "expanded_url": "https://apho2026.kr/en/index.html",
+              "display_url": "apho2026.kr/en/index.html"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 527.7h old, exceeds 336h threshold",
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 353.6h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
