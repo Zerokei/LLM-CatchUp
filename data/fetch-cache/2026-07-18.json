@@ -1,0 +1,513 @@
+{
+  "date": "2026-07-18",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-19T02:28:58−07:00",
+  "window_start": "2026-07-17T00:00:00−07:00",
+  "window_end": "2026-07-18T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1039,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "A scorecard for the AI age",
+          "url": "https://openai.com/index/a-scorecard-for-the-ai-age",
+          "published_at": "2026-07-17T10:00:00.000Z",
+          "description": "Sarah Friar, CFO of OpenAI, introduces a practical AI scorecard to measure ROI through useful work, cost per successful task, dependability, and return on compute.",
+          "full_text": "Title: A scorecard for the AI age\n\nURL Source: https://openai.com/index/a-scorecard-for-the-ai-age\n\nMarkdown Content:\nThe question I hear from CFOs everywhere is simple: how do we get more value from our AI spend?\n\nFor years, the market measured the success of software through adoption: seats purchased, users active, licenses renewed. Understanding the value of AI demands a more powerful measure: work accomplished.\n\nThe basic economic question facing CFOs and other business leaders is whether the value of the work AI completes grows faster than the cost of producing it.\n\nAnswering that question requires looking more deeply than a metric such as cost per token. A lower-cost model may have cheaper tokens, but getting great results may require more attempts, more time, or more human review. A more capable model may have more expensive tokens, but complete the same task in one pass. What matters is the full cost of producing a successful outcome, measured against the value that outcome creates.\n\nThe ultimate scorecard for the age of AI could be looked at as “Useful Intelligence per Dollar.” This metric answers four key questions:\n\n1.   Is AI completing work that matters?\n2.   What does each successful task cost?\n3.   Can people depend on the result?\n4.   Does each AI dollar produce more value as usage grows?\n\n## 1. How much useful work gets done?\n\nStart with the work itself.\n\nHow many customer issues did AI help resolve? How many code changes did it help ship? How many contracts did it review? How much time did it give back to people? How many decisions improved because the right context was available at the right moment?\n\nTokens create value when they transform into work people can use. As models become more capable, they can take on longer and more complex tasks: maintaining context, reasoning through multiple steps, working across tools, and adapting as they go.\n\nThe best place to begin is with one workflow. Define what “done” means and measure that outcome in the system where the work happens.\n\nFor a support team, “done” might mean a customer issue resolved. For an engineering team, it might mean a code change that passes its tests. For a legal team, it might mean a contract reviewed accurately and on time.\n\nConsider a finance team preparing for a forecast review. Much of the work happens before a final decision is made: finding the latest forecast, moving data into Excel or Sheets, identifying changes, reconciling tabs, rebuilding slides, and checking that everything adds up perfectly.\nChatGPT Work can take on much of that process, giving the team more time to focus on the questions that matter: What changed? Why? What should we do next?\n\nThat is useful intelligence per dollar in practice. More work gets completed, faster, while people spend more of their time applying judgment, creativity, and expertise.\n\n## 2. What does a successful task actually cost?\n\nThe next question is what it costs to complete that work well.\n\nAI tasks vary widely. A quick answer may require little compute. A coding, research, or financial workflow may involve deeper reasoning, tool use, and many actions. Those more complex tasks can require more compute, but they can create much more value.\n\nAt the model level, cost per successful task depends on price, the amount of compute used, and the likelihood of reaching the right result. For a business, the full cost also includes employee time, human review, retries, and rework.\n\nThe calculation is straightforward:\n\n*   Add the full cost of completing the work.\n*   Count the tasks that met the required quality bar.\n*   Divide the full cost by the number of successful tasks.\n\nThis is why the lowest price per token does not always produce the lowest cost per outcome. A frontier model may deliver the best value even for a routine request if it produces the right answer in one pass, reducing retries, latency, review, and total compute.\n\nA tiered model family gives customers more ways to optimize this equation. GPT‑5.6, which we released last week, has three tiers: Sol is our flagship; Terra balances performance and cost; Luna is our fastest and most affordable model.\n\nThese tiers provide useful starting points. The economics of the full task should ultimately determine the right model. A customer might use Luna for a fast, high-volume workflow, Terra for work requiring greater depth, or Sol when stronger reasoning delivers the best result with fewer attempts.\n\nWe trained GPT‑5.6 to get more useful work from every token. On the Artificial Analysis Coding Agent Index, GPT‑5.6 Sol with max reasoning set a new state of the art while using 54% fewer output tokens than another leading model. The chart below illustrates the comparison.\n\n**_DeepSWE v1.1_**_: Long-horizon engineering tasks; GPT‑5.6 Sol reaches a new high of 72.7%, above Claude Fable 5’s 69.9%, at 36.2% lower estimated API cost._\n\nAcross the GPT‑5.6 family, the goal is the same: more successful work per dollar. Greater efficiency makes existing tasks more affordable. Greater capability makes entirely new kinds of work possible.\n\nEach new model generation should improve both sides of that equation. Customers should be able to accomplish more valuable work while, at the same time, the cost of completing each task continues to fall.\n\n## 3. How often does AI get the work right?\n\nThe third measure is dependability.\n\nAI adoption tends to deepen in stages. First, AI helps draft. Then it finds context and reasons across tools and data. Over time, it begins taking action, handling exceptions, and completing workflows, with people providing judgment and control where needed.\n\nEach step creates more value and asks more of the system.\n\nDependability has direct economic value. When results are accurate, well-sourced, consistent, and escalated appropriately, people spend less time reviewing, correcting, and repeating the work. Successful tasks cost less, and organizations gain the confidence to use AI in more important workflows.\n\nTeams can make this concrete by tracking three outcomes:\n\n*   Ready to use: The result met the quality bar as delivered.\n*   Needs correction: The result required another attempt or human edits.\n*   Needs escalation: A person needed to step in and finish the work.\n\nThese measures tell a richer story than model accuracy alone. They show whether AI is genuinely reducing the work involved in completing the project.\n\nDependability also requires clear boundaries. Before AI moves from drafting to taking action, organizations should define:\n\n*   What data the system can access.\n*   What systems it can use or change.\n*   When a person should review or approve an action.\n\nSafety, security, privacy, and control create the foundation for deeper use. People need to understand how the system behaves, how their data is handled, and how its actions are governed.\n\nChatGPT Work builds on the security, privacy, compliance, and workspace-management foundation of ChatGPT Enterprise. This allows organizations to give AI more context and access to more valuable workflows while maintaining appropriate oversight.\n\nCapability earns first use. Dependability makes AI part of how work gets done.\n\n## 4. Does each AI dollar buy more work as usage grows?\n\nThe final question is whether the economics improve at scale.\n\nCompanies can measure this by following the same workflow over time. Track how many tasks met the quality bar, the total cost of completing them, and the cost per successful task. If completed work grows faster than total cost while quality holds or improves, each AI dollar is producing more value.\n\nCompute sits at the center of this equation.\n\nCompute powers research and every task that AI completes. It shapes product quality, speed, dependability, availability, and cost. Training compute builds future capability. Inference compute delivers useful work today. Both should translate into better outcomes for customers.\n\nBetter models, more efficient inference, purpose-built hardware, higher utilization, smarter routing, and stronger product design all improve the return on compute. Each generation of infrastructure helps train more capable models. Better algorithms, hardware, and software then help serve those models more efficiently.\n\nCustomers experience those improvements in human terms: better answers, faster results, fewer corrections, more dependable products, and a lower cost for the work they need done.\n\nThe gains compound. Better infrastructure accelerates research. Research produces more capable and efficient models. Better models improve products. Better products drive adoption, learning, and revenue. That growth supports continued investment in the next generation of research, compute, deployment, and safety.\n\nOpenAI brings these pieces together through one shared intelligence platform. People use it through ChatGPT and ChatGPT Work. Developers build with it through Codex and the API. Enterprises deploy it into the systems where work happens.\n\nWhen one layer improves, every product and customer can benefit.\n\n## A scorecard for the AI age\n\nTaken together, these four measures tell us whether useful intelligence per dollar is improving.\n\nUseful work tells us what AI produces. Cost per successful task tells us what it takes to reach the outcome. Dependability tells us how much of the work people can confidently use. Value at scale tells us whether each dollar, and each unit of compute, accomplish more over time.\n\nThe goal is AI that helps people do more meaningful work, make better decisions, and spend more time on the parts of their jobs that require distinctly human judgment and creativity.\n\nOur job is to make that equation better with every generation: more capable models, faster and more dependable results, and lower costs for the work customers need done.\n\nThat is how AI becomes more useful to more people and organizations over time.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "this is cool:\n\nhttps://t.co/X4HEmFym68",
+          "url": "https://x.com/sama/status/2078244242993164716",
+          "published_at": "2026-07-17T22:23:34.000000Z",
+          "description": "this is cool:\n\nhttps://t.co/X4HEmFym68",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/X4HEmFym68",
+              "expanded_url": "https://welcome-to-codex.openai.chatgpt.site/",
+              "display_url": "welcome-to-codex.openai.chatgpt.site"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 926.7h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 611.0h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "building prototypes of mockups, schemas, data models, proof of concepts, etc. is the best way to avoid spending tons of tokens before realizing you don't want the output",
+          "url": "https://x.com/trq212/status/2078189833445654714",
+          "published_at": "2026-07-17T18:47:21.000000Z",
+          "description": "building prototypes of mockups, schemas, data models, proof of concepts, etc. is the best way to avoid spending tons of tokens before realizing you don't want the output",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "evantana",
+            "text": "The fastest way to build is to find the cheapest way to learn.\n\nClaude Code's @trq212 talked about this when he came by @southpkcommons. https://t.co/orhmrwpm1w",
+            "url": "https://x.com/evantana/status/2078154117441069227"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Beginning July 20, Claude Fable 5 will be included in all Max and Team Premium plans, at 50% of limits.\n\nPro and Team Standard users will continue to have access to Fable via usage credits, and will r",
+          "url": "https://x.com/claudeai/status/2078302415804379218",
+          "published_at": "2026-07-18T02:14:43.000000Z",
+          "description": "Beginning July 20, Claude Fable 5 will be included in all Max and Team Premium plans, at 50% of limits.\n\nPro and Team Standard users will continue to have access to Fable via usage credits, and will receive a one-time $100 credit.\n\nDemand for Fable has been challenging to predict, which is why we rolled it out to subscription plans in stages, extending access several times as we secured additional capacity.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260718-0214",
+          "duplicate_of": null
+        },
+        {
+          "title": "We know this has been frustrating, and we want to give you more certainty about what your plan includes. We are making access standard at 50% usage for the plans that use Fable most intensively.\n\nThan",
+          "url": "https://x.com/claudeai/status/2078302417100394737",
+          "published_at": "2026-07-18T02:14:43.000000Z",
+          "description": "We know this has been frustrating, and we want to give you more certainty about what your plan includes. We are making access standard at 50% usage for the plans that use Fable most intensively.\n\nThank you for your patience over the past several weeks. We're continuing to invest in new capacity and will keep everyone updated as we do.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2078302415804379218"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260718-0214",
+          "duplicate_of": null
+        },
+        {
+          "title": "The Built with Claude: Life Sciences hackathon comes to an end.\n\nThank you to everyone who spent a week building with Claude Science and Claude Code, and to @gladstoneinst and @cerebral_valley for co-",
+          "url": "https://x.com/claudeai/status/2078189433992495429",
+          "published_at": "2026-07-17T18:45:46.000000Z",
+          "description": "The Built with Claude: Life Sciences hackathon comes to an end.\n\nThank you to everyone who spent a week building with Claude Science and Claude Code, and to @gladstoneinst and @cerebral_valley for co-hosting.\n\nIntroducing the winners: https://t.co/VTDup1yz9Z",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "🧪 Gladstone Institutes prize: Trialign by Jules Park (Toronto, Canada) and Neil Wang (San Francisco, CA)\n\nA clinical trial matcher for cancer patients  that reads their medical records and finds the ",
+          "url": "https://x.com/claudeai/status/2078189442469089543",
+          "published_at": "2026-07-17T18:45:48.000000Z",
+          "description": "🧪 Gladstone Institutes prize: Trialign by Jules Park (Toronto, Canada) and Neil Wang (San Francisco, CA)\n\nA clinical trial matcher for cancer patients  that reads their medical records and finds the studies they qualify for today. https://t.co/gS8aZZIl6T",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2078189440837550462"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260717-1845",
+          "duplicate_of": null
+        },
+        {
+          "title": "Explore more projects from the hackathon here: https://t.co/NTQ5I4RGby",
+          "url": "https://x.com/claudeai/status/2078189443878469950",
+          "published_at": "2026-07-17T18:45:48.000000Z",
+          "description": "Explore more projects from the hackathon here: https://t.co/NTQ5I4RGby",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/NTQ5I4RGby",
+              "expanded_url": "https://cerebralvalley.ai/e/built-with-claude-life-sciences/hackathon/gallery",
+              "display_url": "cerebralvalley.ai/e/built-with-c…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "claudeai",
+            "status_id": "2078189442469089543"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-claudeai-20260717-1845",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Over the past 6 months, Claude Platform has added new APIs to help developers quickly build and deploy agents.\n\nPlatform leads Katelyn Lesse, Angela Jiang, and Jess Yan sat down to talk about what has",
+          "url": "https://x.com/ClaudeDevs/status/2078251675308240973",
+          "published_at": "2026-07-17T22:53:06.000000Z",
+          "description": "Over the past 6 months, Claude Platform has added new APIs to help developers quickly build and deploy agents.\n\nPlatform leads Katelyn Lesse, Angela Jiang, and Jess Yan sat down to talk about what has shipped and the patterns we're seeing in production. https://t.co/wCWzYqBZQ9",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Another pattern is agent-to-agent communication, allowing Claude to coordinate and delegate tasks.\n\nClaude Managed Agents supports this with multi-agent: agents can use different models, prompts, and ",
+          "url": "https://x.com/ClaudeDevs/status/2078251678441291779",
+          "published_at": "2026-07-17T22:53:06.000000Z",
+          "description": "Another pattern is agent-to-agent communication, allowing Claude to coordinate and delegate tasks.\n\nClaude Managed Agents supports this with multi-agent: agents can use different models, prompts, and tools while sharing sandboxes or vault credentials. https://t.co/MAp12MM2EU",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2078251676843364494"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260717-2253",
+          "duplicate_of": null
+        },
+        {
+          "title": "Watch the full conversation here: \nhttps://t.co/84qRvdi8mo",
+          "url": "https://x.com/ClaudeDevs/status/2078251679787708471",
+          "published_at": "2026-07-17T22:53:07.000000Z",
+          "description": "Watch the full conversation here: \nhttps://t.co/84qRvdi8mo",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/84qRvdi8mo",
+              "expanded_url": "https://www.youtube.com/watch?v=ksfm6jeTg3Q",
+              "display_url": "youtube.com/watch?v=ksfm6j…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2078251678441291779"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260717-2253",
+          "duplicate_of": null
+        },
+        {
+          "title": "We've resolved an issue where Fable was not selectable as a model within https://t.co/FiDD5WA3ik or Claude Code for a 30 minute period.\n\nYou may need to restart Claude Code. If Fable is not your defau",
+          "url": "https://x.com/ClaudeDevs/status/2078211065868091768",
+          "published_at": "2026-07-17T20:11:44.000000Z",
+          "description": "We've resolved an issue where Fable was not selectable as a model within https://t.co/FiDD5WA3ik or Claude Code for a 30 minute period.\n\nYou may need to restart Claude Code. If Fable is not your default model afterwards, you should reselect it with /model.",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/FiDD5WA3ik",
+              "expanded_url": "http://Claude.ai",
+              "display_url": "Claude.ai"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260717-2011",
+          "duplicate_of": null
+        },
+        {
+          "title": "If you had extra usage turned on, you may have been overcharged.\n\nIf you were affected we are refunding your credits, plus granting an additional credit equal to how much you were charged.",
+          "url": "https://x.com/ClaudeDevs/status/2078211067046736250",
+          "published_at": "2026-07-17T20:11:44.000000Z",
+          "description": "If you had extra usage turned on, you may have been overcharged.\n\nIf you were affected we are refunding your credits, plus granting an additional credit equal to how much you were charged.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2078211065868091768"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260717-2011",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "10,000 reasons people love GPT-5.6 Sol \nhttps://t.co/Mu6PBPkrop https://t.co/1jJ7ZNCY26",
+          "url": "https://x.com/OpenAI/status/2078223217773474134",
+          "published_at": "2026-07-17T21:00:01.000000Z",
+          "description": "10,000 reasons people love GPT-5.6 Sol \nhttps://t.co/Mu6PBPkrop https://t.co/1jJ7ZNCY26",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Mu6PBPkrop",
+              "expanded_url": "https://switch-to-codex.openai.chatgpt.site/",
+              "display_url": "switch-to-codex.openai.chatgpt.site"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "thsottiaux",
+            "text": "Or… what if we gave you $100 in Codex credits if you tell us what you love about GPT-5.6 Sol or why you switched?\n\nTweet it, claim your gift, enjoy more usage. First 10k get the free tokens!\n\nhttps://t.co/8mU93eA13i",
+            "url": "https://x.com/thsottiaux/status/2077248807533003257"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Here's how to add the Codex Security plugin in Codex and get started:\n\nAdd the plugin in Codex. After installation is complete, the button changes to “Try in chat.”\n\nClick “Try in chat” to start a new",
+          "url": "https://x.com/OpenAI/status/2078243670265041038",
+          "published_at": "2026-07-17T22:21:17.000000Z",
+          "description": "Here's how to add the Codex Security plugin in Codex and get started:\n\nAdd the plugin in Codex. After installation is complete, the button changes to “Try in chat.”\n\nClick “Try in chat” to start a new Codex chat with a Codex Security scan prompt ready to run.\n\nChoose a folder that contains the code you want Codex Security to review.\n\nSend the scan prompt. Codex opens with the Codex Security scan prompt ready. Press “Send” to start the scan.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2078243667081617826"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260717-2221",
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-5.6 Sol sets a new state of the art in cybersecurity on “The Last Ones” cyber range.\n\nWe’re already seeing that capability translate into defensive outcomes: helping teams find, validate, and fix ",
+          "url": "https://x.com/OpenAI/status/2078243667081617826",
+          "published_at": "2026-07-17T22:21:16.000000Z",
+          "description": "GPT-5.6 Sol sets a new state of the art in cybersecurity on “The Last Ones” cyber range.\n\nWe’re already seeing that capability translate into defensive outcomes: helping teams find, validate, and fix vulnerabilities in real-world code.\n\nPut it to work with Codex Security: https://t.co/Fvz9wpLjrt",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Fvz9wpLjrt",
+              "expanded_url": "https://openai.com/daybreak/codex-security-plugin/#desktop-codex",
+              "display_url": "openai.com/daybreak/codex…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260717-2221",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "See how builders in our community are using GPT-5.6 to ship:",
+          "url": "https://x.com/OpenAIDevs/status/2078223541204619668",
+          "published_at": "2026-07-17T21:01:18.000000Z",
+          "description": "See how builders in our community are using GPT-5.6 to ship:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "10,000 reasons people love GPT-5.6 Sol \nhttps://t.co/Mu6PBPkrop https://t.co/1jJ7ZNCY26",
+            "url": "https://x.com/OpenAI/status/2078223217773474134"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260717-2101",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/V5UlJ9YIzm",
+          "url": "https://x.com/OpenAIDevs/status/2078223542647390314",
+          "published_at": "2026-07-17T21:01:18.000000Z",
+          "description": "https://t.co/V5UlJ9YIzm",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/V5UlJ9YIzm",
+              "expanded_url": "https://switch-to-codex.openai.chatgpt.site/",
+              "display_url": "switch-to-codex.openai.chatgpt.site"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2078223541204619668"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260717-2101",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 425.5h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
