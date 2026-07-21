@@ -1,0 +1,290 @@
+{
+  "date": "2026-07-20",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-21T03:04:29−07:00",
+  "window_start": "2026-07-19T00:00:00−07:00",
+  "window_end": "2026-07-20T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1040,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Apply for Anthropic’s AI for Science rare disease research grants",
+          "url": "https://www.anthropic.com/news/rare-disease-research-grants",
+          "published_at": "2026-07-20T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Apply for Anthropic’s AI for Science rare disease research grants\n\nURL Source: https://www.anthropic.com/news/rare-disease-research-grants\n\nMarkdown Content:\nLast spring, we announced [Anthropic’s AI for Science program](https://www.anthropic.com/news/ai-for-science-program), an initiative designed to accelerate scientific research and discovery through access to our API. Since launching, we have supported researchers working on a variety of high-impact projects, ranging from drug repurposing to quantum simulation. Throughout this initiative, we have found that projects are more generative when multiple AI for Science grantees are working on related questions and exchanging tips. So we now plan to launch thematic calls for projects within the broader AI for Science program.\n\nToday, we are sharing a focused call for applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease. This program has two tracks: one for scientists doing basic research, and another for early-stage biotechs working on speeding up clinical development for rare diseases.\n\nRare disease research is an area where knowledge of fundamental science is limited. In aggregate, rare diseases are among the most prevalent conditions on the planet (an estimated 400 million people live with one of [more than 7,000 rare diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC11881545/)).1 But these conditions are scattered across small populations, making it challenging for clinicians to build patient registries, identify promising therapeutic targets, and design clinical trials. Moreover, rare diseases are typically characterized by their unique features (such as a specific genetic variation or combination of symptoms) that are often studied in isolation, making it nearly impossible to spot mechanisms shared across diseases. Finally, rare diseases face a challenge endemic to all drug development: the time it takes to move promising drug candidates into patient trials.\n\nWe think AI can help with these and related challenges. AI makes it possible to accurately model rare genetic diseases and detect patterns across them. It also helps researchers synthesize findings across a large corpus of literature, quickly extract information from limited datasets, and create shared terminology, all of which informs how researchers can better use the information they _do_ have, even as more work is done to generate more data and address challenges pertaining to access and geography. To explore where AI can be most helpful, we’ve made rare diseases the focus of our current call for AI for Science projects.\n\n### **Track one: Scaling our basic science partnerships**\n\nThe first track of our rare disease research grants program aims to foster collaboration between clinical researchers, patient organizations, and data scientists to increase the pace of progress in basic science and the discovery of the mechanisms underlying rare diseases.\n\nAn early partner in this effort is the Monarch Initiative, an international consortium working to improve diagnosis and mechanism discovery for patients with rare diseases. Monarch develops standards and resources such as the [Mondo Disease Ontology](http://mondo.monarchinitiative.org/), a computational framework and coding system that reconciles disease definitions scattered across OMIM, Orphanet, ICD, and dozens of other sources; as well as the [Monarch Knowledge Graph](https://monarchinitiative.org/kg/about), which integrates genotype-phenotype data across species to aid diagnostics and mechanism discovery.\n\nMost recently, Monarch contributors have been stitching data and knowledge together in a new agent-friendly mechanistic disease classification library called [DisMech](https://github.com/monarch-initiative/dismech), where Claude can read case reports, variant databases, registry schemas, raw public data, and more, and point out mechanistic similarities between diseases at an unmatched pace and scale. Monarch is inviting our AI for Science grantees to use and contribute to its resources, such as Mondo and DisMech, to reveal new mechanistic hypotheses that will support developing treatments.\n\nMonarch’s work on improving the interoperability of rare disease data and knowledge is a place where Claude can already have a major impact. However, there’s more work to be done to gather better and more data, improve diagnostic infrastructure, and promote patient-led approaches across the rare disease ecosystem, and make the information accessible to agentic science. We will continue to partner with Monarch and others to approach this problem from the angles where AI is less obviously applicable, and we’ll share what we learn as we do.\n\n### **Track two: Scaling our biotech partnerships**\n\nThe second track of our rare disease research grants program will support biotechnologists and early-stage biotechs working to accelerate drug development for rare diseases. Today, it takes [one to two years](https://www.nejm.org/doi/full/10.1056/NEJMoa1813279) to move from a confirmed genetic diagnosis to a treatment available to patients, with much of this time spent waiting in queues for certified manufacturing slots, running safety studies sequentially instead of in parallel, and hand-assembling the thousands of pages of chemistry and regulatory documentation required for in-patient testing.\n\nWe think it is possible to radically compress phases of this process with Claude—in particular, by making it easier to complete documentation (for example, drafting and reviewing the regulatory dossier), but also by speeding up therapeutic strategy selection (for example, by analyzing whether a target is druggable across a suite of modalities, such as small molecules, antibodies, genetic medicines, and so on) and looking for shared mechanisms across individual genetic therapies, which could allow them to be approved under a single “[basket trial](https://mrctcenter.org/glossaryterm/basket-trial/)” instead of requiring a separate IND for each patient.\n\nAlthough many aspects of drug development are difficult to expedite because of manufacturing constraints or safety testing, we believe much can be done to move more quickly. By granting API credits and [Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench) access to the many biotechnologists and startups working in this space, we hope to encourage the experiments necessary to explore and identify such solutions.\n\nWe also hope grantees will amplify and emulate the efforts of our other partners working in rare disease therapeutics. For example, [Every Cure](https://everycure.org/), one of our existing AI for Science grantees, is using Claude to identify drug repurposing opportunities across millions of candidates ; the [Centre for Population Genomics](https://populationgenomics.org.au/), a collaboration between the Garvan Institute and the Murdoch Children’s Research Institute, is building a Claude-based system that drafts variant classifications for expert review, one of the biggest bottlenecks in diagnosing rare genetic conditions; and the [Violet Research Institute,](https://www.violetresearch.org/)a small nonprofit researching ultra-rare genetic diseases (defined as extremely rare genetic disorders affecting fewer than 1 in 50,000 births), is using Claude to navigate FDA guidelines, run bioinformatics pipelines, analyze experimental data, draft regulatory filings, and more.\n\n### **Next steps**\n\nTo apply to either track of the AI for Science rare disease research program, [fill out this application](https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform). We will be accepting applications through August 2, 2026 at 11:59 PM PST. Accepted applicants can use their credits to access Claude Opus or other generally available models approved for use in biology. Projects that may run up against our bio classifiers may be eligible for exemptions. Examples of track one projects include:\n\n*   Propose and rank mechanistic links between distinct rare diseases that share a gene or pathway, suggesting candidate disease relationships with evidence an expert can validate in Monarch’s DisMech.\n*   Curate and summarize patient organization data to conduct or improve existing natural history studies.\n*   Build evaluations that measure how well models handle rare disease tasks—such as revealing candidate mechanisms for variants of unknown significance, phenotype-to-disease matching, and mechanism prediction—including an honest accounting of where they fail.\n\nOutputs from this track will be made publicly available at [Monarchinitiative.org](http://monarchinitiative.org/). The program will be augmented by additional community-building efforts, such as future rare disease hackathons. Stay up to date with the Monarch Initiative at [monarchinitiative.org/community/get-involved](https://monarchinitiative.org/community/get-involved).\n\nExamples of track two projects include:\n\n*   Justify starting doses from sparse data: synthesize PK/PD modeling, allometric scaling, and precedent from related modalities to build first-in-human dose rationales for bespoke therapies where traditional dose-ranging studies are impossible.\n*   Mine natural history data and case reports to identify measurable biomarkers and functional endpoints sensitive enough to show a response within the timeframe an N-of-1 or ultra-rare program can afford.\n*   Draft, cross-check, and precedent-mine regulatory documentation (IND sections, investigator brochures, CMC modules), compressing months of dossier assembly into days of expert review.\n\nThis rare disease grant program ties directly into our mission and work in beneficial deployments to extend the benefits of AI to areas that might not emerge naturally through market forces. However, rare disease is simply too big a problem for one organization or one approach. We also want to be honest about AI’s limitations in this space. Although Claude may help shorten therapeutic development timelines and curate biological data more efficiently than human teams alone, it cannot help in areas where the data is too paltry or too poorly organized for agents to reach. It may also struggle to address the aspects of the “diagnostic odyssey” that relate to challenges like insurance authorization or access to diagnostic facilities and infrastructure. We hope this program will be complemented by efforts by other organizations and research institutions to generate more high-quality, longitudinal data, as well as those that encourage robust public-private partnerships.\n\nWe're looking forward to seeing how this new group of grantees will work together and with our other AI for Science partners to advance basic science and discovery in rare diseases, and how these projects can contribute to broader scientific initiatives.\n\n**Footnote**\n\n1.   Other [sources place the number of rare diseases as high as 10,000](https://pmc.ncbi.nlm.nih.gov/articles/PMC7771654/). There is also no agreed-upon definition of what a rare disease even is, despite the oft-cited claim that as many as [1 in 10 people](https://www.fda.gov/patients/rare-diseases-fda) in the US have a rare disease. Various terminologies (Orphanet, OMIM, GARD, ICD, the NCI Thesaurus, and dozens more) each define “disease” differently; some exclude chromosomal disorders (such as conditions like Pallister-Killian syndrome); some ignore diseases with environmental causes (such as congenital Zika syndrome); and some require a single anatomical system to classify them, ignoring the many multi-system rare diseases (such as Fanconi anemia, with its mix of bone marrow failure, congenital malformations, and cancer risk).\n\n## Related content\n\n### Anthropic commits $10 million to Canadian AI research\n\n[Read more](https://www.anthropic.com/news/canadian-ai-research)\n\n### UST is bringing Claude to physical AI\n\n[Read more](https://www.anthropic.com/news/ust-claude)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "From Speech to Audio Creation | Introducing the Seed Audio 1.0 Audio Creation Model",
+          "url": "https://seed.bytedance.com/en/blog/from-speech-to-audio-creation-introducing-the-seed-audio-1-0-audio-creation-model",
+          "published_at": "2026-07-20T00:00:00.000Z",
+          "description": "From Speech to Audio Creation | Introducing the Seed Audio 1.0 Audio Creation Model",
+          "full_text": "Title: Seed News - ByteDance Seed Team\n\nURL Source: https://seed.bytedance.com/en/blog/from-speech-to-audio-creation-introducing-the-seed-audio-1-0-audio-creation-model\n\nMarkdown Content:\n## **Full-scene audio generation for creators**\n\nCreators rarely imagine sound as a set of isolated files.\n\nThey hear the room before a line is spoken. They hear the pressure in a pause, the footstep just outside the frame, the alarm buried under the dialogue, the background that makes a place feel real, and the cue that arrives at exactly the right moment.\n\nSeed Audio 1.0 is built around that unit of creation: the scene.\n\nIt is an audio creation model that generates speech, sound effects, ambience, and other scene-level audio elements within one unified framework. Given a prompt, Seed Audio 1.0 can produce coordinated audio with character performance, timing, background texture, and sound design shaped together.\n\nThat scene-level approach also changes what the model can do with speech itself. Even when generating voice alone, Seed Audio 1.0 can produce a broader expressive range — from restrained narration to heightened emotion, from natural conversation to dramatic performance — while keeping the voice identity consistent.\n\nThe goal is to make audio generation feel less like assembling clips, and more like directing a sound scene.\n\nSeed Audio 1.0 is now available through BytePlus.\n\n> **Project page:**[https://seed.bytedance.com/en/seedaudio1_0](https://seed.bytedance.com/en/seedaudio1_0)\n> \n> \n> **Try it now:**[https://console.byteplus.com/voice/new/setting/activate?projectName=default](https://console.byteplus.com/voice/new/setting/activate?projectName=default)\n\n## **Why scenes matter**\n\nAudio generation has made fast progress across individual capabilities: voice synthesis, sound effects, ambience, and multilingual speech. But creative work often depends on how these elements interact.\n\nA voice line needs the right performance. A sound effect needs the right moment. Ambience needs to hold the space without overpowering the scene. Background texture needs to support emotion without breaking the pacing.\n\nToday, much of that work still happens manually: creating each layer, placing it on a timeline, adjusting the timing and mix, and repeating until the scene feels right.\n\nSeed Audio 1.0 explores a more integrated path. It models multiple audio elements as parts of the same sound scene, helping creators move from isolated outputs to complete sound moments — scenes that carry dialogue, atmosphere, action, and emotion in one coherent experience.\n\n## **What Seed Audio 1.0 can do**\n\n## **Generate coordinated sound scenes and control dialogue timing**\n\nA prompt can describe the speaker, the emotional tone, the line delivery, the surrounding environment, key sound effects, and how the scene should unfold.\n\nSeed Audio 1.0 models them under a shared scene context, allowing dialogue, ambience, and sound cues to align more naturally in timing, tone, and acoustic space.\n\nSeed Audio 1.0 can create complex audio scenes from a single prompt.\n\n[Video 13](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrsklaag.mp4)\nThis makes Seed Audio 1.0 useful for narrative audio, scripted dialogue, short-form video, advertising, game content, podcast-style production, and other formats where sound needs to carry the scene.\n\nSeed Audio 1.0 supports prompt-level timing control for character dialogue, with current timing precision at 100 ms intervals. Creators can specify when lines should enter, making the model useful for video dubbing, re-voicing, advertising, and scripted audio where timing is part of the deliverable.\n\n[Video 14](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrsklhtf.mp4)\n## **Generate voices with range and consistency**\n\nSeed Audio 1.0 lets creators shape a voice from a text description, an authorized reference sample, or both — without training a separate model for each speaker.\n\n[Video 15](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrsklqw0.mp4)[Video 16](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrskmmlq.mp4)\nBut a voice is more than a timbre. In real creative work, the same character may need to move from calm narration to urgency, from restrained reporting to dramatic dialogue, while still sounding like the same person.\n\n[Video 17](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrsnfy5j.mp4)\nBecause Seed Audio 1.0 is trained not only as a speech generator, but as an audio creation model, it learns voices in the context of scenes: emotion, pacing, surrounding sound, and narrative intent. Even in speech-only generation, this gives the model more room to shape delivery across emotion, prosody, rhythm, and speaking style.\n\nFor longer content, Seed Audio 1.0 can generate up to two minutes of audio in a single pass and supports further continuation, helping a character stay recognizable across longer scenes and repeated extensions.\n\n## **Create multilingual audio with natural expression**\n\nFor global creators, multilingual audio is not a translation problem alone. A character voice has to carry the same identity across languages while adapting to the rhythm, pronunciation, pacing, and emotional habits of each local audience.\n\nSeed Audio 1.0 supports audio generation across 20+ languages, including Chinese, English, Japanese, Korean, Spanish, Indonesian, German, French, Thai, and Vietnamese. The model can adapt a character voice across languages while preserving its recognizable timbre and performance style.\n\nThis is especially useful for global content rollout, game localization, brand campaigns, multilingual podcasts, and short-form video. A team can start from one creative concept or character voice and extend it across markets more efficiently, without rebuilding the entire audio production pipeline for every language.\n\n[Video 18](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrskocoz.mp4)\n## **A unified model for sound scenes**\n\nFull-scene audio generation is difficult because it requires two kinds of understanding at once.\n\nAt the language level, the model has to understand the scene: who is speaking, what emotion they carry, when each line or sound cue should enter, and how the moment should unfold. At the acoustic level, it has to preserve the details that make audio convincing: speaker identity, prosody, texture, impact, ambience, and spatial continuity.\n\nSeed Audio 1.0 connects these two levels through a unified generation framework. A language model helps structure the creative intent into scene-level controls, while a diffusion-based acoustic generator produces the final audio in a high-fidelity latent space. This latent representation is designed to preserve acoustic detail while remaining controllable by semantic instructions such as character, emotion, timing, and scene context.\n\nThis is what allows Seed Audio 1.0 to model speech, sound effects, ambience, and other audio elements as parts of the same scene rather than as unrelated tasks. The model can learn how a voice sits in an environment, how a sound cue supports a line, and how timing changes the emotional shape of a scene.\n\n## **Evaluation**\n\nWe evaluated Seed Audio 1.0 across three areas: text-prompted voice generation, multi-scenario audio creation, and multilingual generation.\n\nIn A/B subjective evaluations, Seed Audio 1.0 showed clear preference gains in generating voices from text descriptions. It also improved both usability and high-quality output rates, suggesting stronger control over voice design and performance.\n\n![Image 1](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrsmhibx.jpeg)\n\n_Text-to-Timbre Subjective Benchmark: Seed Audio 1.0 vs. Competitors_\n\nFor multi-scenario audio creation, we tested Seed Audio 1.0 across a wide range of use cases, including film and television, TV programming, short drama, animation, podcast dialogue, live commerce, online content creation, stage performance, and text-to-speech. Across most scenarios, the usable audio rate exceeded 90%.\n\n![Image 2: Conditional Audio-to-Audio Evaluation of Seed Audio 1.0 by Scenario](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrskpf7o.png)\n\n_Conditional Audio-to-Audio Evaluation of Seed Audio 1.0 by Scenario_\n\nFor multilingual generation, we used human evaluation to measure instruction following and audio naturalness. On audio naturalness, most languages achieved MOS scores above 4.0. On instruction following for complex audio generation tasks, all evaluated languages except Vietnamese scored above 3.5.\n\n![Image 3: Seed Audio 1.0 Performance on T2A (Text-to-Audio) and A2A (Audio-to-Audio) Tasks](https://lf3-static.bytednsdoc.com/obj/eden-cn/lapzild-tss/ljhwZthlaukjlkulzlp/user-upload/4xfa4mrskpfgf.png)\n\n_Seed Audio 1.0 Performance on T2A (Text-to-Audio) Tasks_\n\nTogether, these results suggest that Seed Audio 1.0 can support a broad range of practical creative tasks, from expressive voice generation to complex multilingual audio scenes.\n\n## **What comes next**\n\nSeed Audio 1.0 is an early step toward a broader form of audio creation.\n\nToday, timing control is focused mainly on character dialogue. We will continue extending fine-grained control to more sound elements, including sound effects, ambience, and music. We will also keep improving voice consistency in longer and more complex scenes.\n\nLooking ahead, we plan to support more input modalities, including video references, and to explore more advanced capabilities for long-form and multitrack audio generation. We will also explore controllable multilingual translation, so creators can better manage expression, timing, and duration across languages.\n\nThe long-term direction is clear: audio generation should become more expressive, more controllable, and more aligned with how creators actually think.\n\nSeed Audio 1.0 is a step in that direction — helping creators turn imagined sound scenes into finished audio.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 975.3h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 659.6h old, exceeds 336h threshold",
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "working more on a post about what we learned doing this and how you can apply this to your skills and system prompts",
+          "url": "https://x.com/trq212/status/2078901672441790818",
+          "published_at": "2026-07-19T17:55:57.000000Z",
+          "description": "working more on a post about what we learned doing this and how you can apply this to your skills and system prompts",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "petergyang",
+            "text": "Anthropic recently cut Claude Code’s system prompt by 80%.\n\n@trq212 explains why:\n\n“As the models have gotten smarter, they need less direction, fewer constraints, and fewer examples.\n\nThe examples are constraining it because now it’s like, ‘Oh, you want things like this example.’ If you remove the examples, it can actually be more free-form.\n\nAll this is to say that you want to trim your context [when a new model is released]. The latest models often need more room to run.”\n\n📌 Watch the full episode here: https://t.co/mMrt4D5qU7",
+            "url": "https://x.com/petergyang/status/2078895219534438556"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one of the most powerful model available today, compatible to l",
+          "url": "https://x.com/Alibaba_Qwen/status/2078759124914098291",
+          "published_at": "2026-07-19T08:29:31.000000Z",
+          "description": "Qwen3.8 is launching and going open-weight soon!🌐\n\nWith a massive 2.4T parameters, this model is continuously evolving. We believe it’s one of the most powerful model available today, compatible to leading frontier AI models , second only to Fable 5.\n\nYou don't have to wait to test it. Just now, the Qwen3.8-Max-Preview made its debut on Alibaba’s Token Plan, Qoder, and QoderWork. Be among the very first to try it out.\n\nCan't wait to hear what you build. Stay tuned! 🚀 \n\nToken Plan \ninternational：https://t.co/YRvcGdB9Bv\nChina：https://t.co/PKMUNwUuRp",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/YRvcGdB9Bv",
+              "expanded_url": "https://www.qwencloud.com/pricing/token-plan",
+              "display_url": "qwencloud.com/pricing/token-…"
+            },
+            {
+              "t_co": "https://t.co/PKMUNwUuRp",
+              "expanded_url": "https://platform.qianwenai.com/pricing/token-plan",
+              "display_url": "platform.qianwenai.com/pricing/token-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 474.1h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 6,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Kimi K3 has received far more love than we expected, and our GPUs are feeling it.\n\nOver the past 48 hours, demand has pushed close to the limits of our current capacity. To protect the experience of e",
+          "url": "https://x.com/Kimi_Moonshot/status/2078855608565207130",
+          "published_at": "2026-07-19T14:52:55.000000Z",
+          "description": "Kimi K3 has received far more love than we expected, and our GPUs are feeling it.\n\nOver the past 48 hours, demand has pushed close to the limits of our current capacity. To protect the experience of existing subscribers, we're temporarily pausing new subscriptions and prioritizing compute for current members. Existing subscribed users are not affected.\n\nWe're adding capacity as fast as we can and will reopen new subscription spots in batches.\n\nGoing forward, we'll also split membership into two more focused plans: Kimi Membership for Kimi Web, App, and Work; and Kimi Code Membership for coding workflows. This will help us match compute more precisely and keep the experience stable.\n\nThank you for your patience and understanding!",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    }
+  }
+}
