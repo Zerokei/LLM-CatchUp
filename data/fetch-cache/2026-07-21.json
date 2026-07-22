@@ -1,0 +1,599 @@
+{
+  "date": "2026-07-21",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-22T03:02:57−07:00",
+  "window_start": "2026-07-20T00:00:00−07:00",
+  "window_end": "2026-07-21T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1043,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC",
+          "url": "https://openai.com/index/david-velez-robin-vince-join-openai-boards",
+          "published_at": "2026-07-21T00:00:00.000Z",
+          "description": "David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC, bringing global leadership in finance, technology, and governance.",
+          "full_text": "Title: David Vélez and Robin Vince join the boards of the OpenAI Foundation and OpenAI Group PBC\n\nURL Source: https://openai.com/index/david-velez-robin-vince-join-openai-boards\n\nMarkdown Content:\nWe’re announcing the appointment of David Vélez and Robin Vince to the boards of the OpenAI Foundation and OpenAI Group PBC. David is the founder, Chairman, and Global CEO of Nubank, recognized as the largest digital bank in Latin America. Robin is Chairman and CEO of BNY, a leading financial services company.\n\nDavid and Robin bring complementary perspectives on how technology can reshape industries and drive economic growth. Both have led global institutions through significant technological and market change, pairing ambitious innovation with disciplined governance, resilience, and a focus on creating durable value for the people who use their services.\n\nThey also bring perspectives that will strengthen the work of the Foundation. Both have strong commitments to philanthropy and nonprofit leadership across healthcare, education, and the arts, as well as decades of experience building institutions that expand access and economic opportunity.\n\n“David and Robin are exceptional leaders who have used technology to reshape financial services and expand opportunity at global scale. Their experience will be invaluable as OpenAI serves more businesses and people around the world, working to ensure AI benefits everyone. We’re delighted to welcome them to the boards,” said Bret Taylor, Chair of the OpenAI Foundation and OpenAI Group PBC Boards.\n\n“Technology can be a powerful force for expanding access and opportunity when it is built around people’s needs and grounded in trust. AI has the potential to help individuals, businesses, and entire economies do more, and I look forward to contributing to OpenAI’s efforts to bring useful AI to everyone.” said David Vélez.\n\n“AI can be the ultimate capacity creator, expanding what people and institutions are capable of. Realizing AI’s promise requires creativity, strong governance, and responsible deployment, and I’m honored to join the boards to contribute to OpenAI’s mission.” said Robin Vince.\n\n**David Vélez** is a Colombian entrepreneur, engineer, and banker who founded Nubank in 2013 after experiencing firsthand the cost and complexity of traditional banking in Brazil. He built Nubank around a digital-first, customer-focused model designed to make financial services simpler, more transparent, and more accessible. Under his leadership, Nubank has grown into one of the world’s largest digital financial services platforms with more than 135 million customers and has expanded access to banking for millions of people. The company is now expanding its footprint beyond Latin America and into the United States after having secured conditional approval to establish a U.S. national bank\n\nBefore founding Nubank, David was a partner at Sequoia Capital focused on Latin America and worked in investment banking and growth equity at Goldman Sachs, Morgan Stanley, and General Atlantic. David and his wife, Mariel Reyes, also lead VélezReyes+, a philanthropic platform focused on democratic governance, education, and other initiatives across Latin America.\n\n**Robin Vince** is Chairman and CEO of BNY, an over 240-year-old global financial services company that puts its expertise and platforms to work to help clients operate more efficiently and accelerate growth. Since becoming CEO in 2022, he has led a broad re-imagination of the company, simplifying its operating model, accelerating investment in AI and data, and strengthening its culture of innovation and execution.\n\nBefore joining BNY, Robin spent 26 years at Goldman Sachs, where he was a partner and member of the Management Committee. His leadership roles included Chief Risk Officer, Treasurer, Head of Operations, COO of the EMEA region, and CEO of Goldman Sachs International Bank. Robin serves on the boards of the Hospital for Special Surgery and the Perelman Performing Arts Center. He is a member of the Business Roundtable, the Business Council, the Partnership for New York City, the Financial Services Forum, and the International Advisory Board of the Monetary Authority of Singapore.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Safety and alignment in an era of long-horizon models",
+          "url": "https://openai.com/index/safety-alignment-long-horizon-models",
+          "published_at": "2026-07-20T10:00:00.000Z",
+          "description": "OpenAI shares lessons from deploying long-running AI models, highlighting new safety risks, observed failures, and improved safeguards through iterative deployment.",
+          "full_text": "Title: Safety and alignment in an era of long-horizon models\n\nURL Source: https://openai.com/index/safety-alignment-long-horizon-models\n\nMarkdown Content:\nModels that can work autonomously for long periods can take on difficult, open-ended problems. But the same persistence that makes them useful also gives them more opportunities to take unwanted actions—and to do so in ways that evaluations intended for shorter-horizon models may miss.\n\nAbout two months ago we [announced⁠](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) that an internal general-purpose model disproved the Erdős unit distance conjecture. This model was designed to work autonomously for very long periods of time. During limited, monitored internal use, we observed unwanted behavior that our existing deployment evaluations had not captured. Because the deployment was limited and monitored, we were able to identify these problems, pause access, create new evaluations based on what we observed, strengthen the model and its safeguards, and then restore access under continued monitoring.\n\nThe conditions under which we evaluate models will never perfectly match those they encounter in actual use. That is why pre-deployment evaluations need to be paired with limited, monitored deployment and the ability to intervene, pause, or roll back when problems emerge. What we learn from deployment can then become part of stronger evaluations and safeguards before access expands.\n\nIn the following sections, we share concrete examples of what we observed, how we addressed issues, and how this experience will shape future releases.\n\n## Model persistence can expose security vulnerabilities\n\nThe new model can continue working toward an objective through repeated attempts over a long period of time. That same persistence can lead it to find and exploit weaknesses in its environment. Previous models, when they hit sandboxing or environmental constraints, would simply stop and return to the user. This model often kept trying, including by looking for ways to act outside its sandbox.\n\nAn example of this occurred during an internal evaluation on the [NanoGPT speedrun⁠(opens in a new window)](https://github.com/KellerJordan/modded-nanogpt), a public benchmark for training a small language model in as few steps as possible. Our model developed a power-law learning-rate cooldown called PowerCool that led to a significant improvement. The model was instructed to post its results only to Slack, but the NanoGPT instructions say to post results as a PR to GitHub, and the model followed the latter instructions to open PR #287 on the public GitHub repository. The model circumvented sandbox restrictions designed to block external access and proceeded with the upload to GitHub. It took our model an hour to find a vulnerability in the sandbox in order to make the PR; earlier models were less persistent and did not manage to find vulnerabilities, instead giving up on the PR part.[1](https://openai.com/index/safety-alignment-long-horizon-models#citation-bottom-1)\n\n## From considering single actions to considering whole trajectories\n\nMany safety controls for AI assistants are designed around individual actions. If an action is disallowed, it is blocked. If it is sensitive, the system asks the user for explicit approval. But long-running models, whose actions may unfold autonomously over hours, days, or even weeks, challenge this setup: monitoring individual actions no longer suffices to track the intent of the overall trajectory.\n\nFor example, in a scenario where the model was asked to solve a problem, the model observed that other systems had successful but private submissions and tried to recover those solutions from the evaluation backend. When its initial attempt was blocked due to a scanner detecting an authentication token, the model split the token body into two fragments, obfuscated them, and then reconstructed the credential at runtime so the complete token never appeared as one contiguous string. The model was explicit in both its comments to the user and in its reasoning traces that it was taking these steps to circumvent the scanner.\n\nThis example shows how each _step_ can look acceptable on its own while the _sequence_ can produce an outcome that would not be approved. It also shows how a model that operates effectively over long time horizons can learn the blind spots of an approval system and work around it to achieve its goals. Long-horizon safety requires not only asking “is this action allowed?” but also “what outcome is this sequence of actions working toward?”\n\n## Building safeguards for long-running models\n\nDue to incidents like these, we paused internal deployment of the new model. We rebuilt the safety system around defense in depth and trajectory-level monitoring.\n\n*   **Incident-derived evaluations.** Evaluations can give us a sense of whether a system is safe to deploy before it is actually deployed. However, to be most useful, an evaluation should reflect the distribution and horizon length of trajectories during real deployment. For this reason, we used observed failures to develop adversarial evaluations. We found that improving on the evaluations derived from real-world incidents in turn led to safer behavior once deployed in production.\n*   **Improved****alignment**. We took steps to reduce its tendency to take unwanted actions without permission in pursuit of the user’s goal. For example, we found that our models were worse at remembering instructions on long rollouts, and when we trained the model for this capability, it led to a model that remained aligned through longer rollouts.\n*   **Active monitoring**. We created a monitoring system that reviews the model’s evolving trajectory for signs that it is bypassing a user constraint or safety boundary. The monitor observes not just a single action but the entire trajectory. Importantly, the monitor can pause the session and alert the user to examine more closely. Upon examination, the user can then choose to continue the model’s work if the monitor has been falsely triggered.\n*   **Greater user visibility and control.** We improved the ability of the user to inspect these long-running sessions, view the actions taken, and monitor interventions.\n\n## Redeployment\n\nTo evaluate the new monitoring system, we replayed a small set of internal deployment environments where the model previously pursued misaligned actions, this time with the new safeguards in place[2](https://openai.com/index/safety-alignment-long-horizon-models#citation-bottom-2). The new safeguards were able to catch considerably more misaligned actions pursued by the model, and the ones it missed were all judged to be low-severity.\n\nSome examples of these low-severity incidents include the following cases:\n\n*   To access a Linear command line tool, the model launched a nested `codex --yolo` session, when in fact it could have done so without the `--yolo` flag.\n*   The model noticed that a previously live resource was missing, then started to explore and SSH into other live CPU pods under its owner’s namespace, as well as (unsuccessfully) pods belonging to other OpenAI employees, without a good reason to do so.\n*   The model had many stuck `find` processes and every shell command hung. It then ran `kill -9 -1` which would have sent SIGKILL to every process it is allowed to kill on that pod, if it executed. However it timed out and did not execute.\n\nAfter testing the new system, we concluded that limited internal access to models with long-horizon capabilities could be restored. We have not observed any serious circumvention of safeguards since redeployment began several weeks ago. The first version of these safeguards was deliberately conservative. We have continued tuning the system to reduce unnecessary interruptions without weakening the safeguards.\n\n## Final thoughts\n\nBecause we deployed iteratively, we were able to find and address gaps before expanding access. Pre-deployment evaluations remain essential, but deployment reveals behaviors they miss. Starting with limited access allowed us to observe the model in practice, pause when problems emerged, use those failures to build better evaluations and safeguards, and restore limited access after testing the changes.\n\nAs models take on longer and more complex tasks, failures that evaluations miss may carry greater consequences. We will keep working to narrow the gap between evaluation and deployment: testing models over longer trajectories, improving alignment, building monitoring that can intervene, and giving users clearer visibility and control. These challenges will not be unique to OpenAI, and we hope sharing what we learned helps the broader field prepare for them.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Anthropic is donating another $20 million to Public First Action",
+          "url": "https://www.anthropic.com/news/donation-public-first-action",
+          "published_at": "2026-07-21T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Donating another $20 million to Public First Action\n\nURL Source: https://www.anthropic.com/news/donation-public-first-action\n\nMarkdown Content:\nWe're contributing an additional $20 million to [Public First Action](https://publicfirstaction.us/), bringing our total support to $40 million. Public First Action is a non-partisan organization that educates the public about AI and works with Republicans, Democrats, and Independents who are serious about putting sensible AI safeguards in place. Both of our donations were made exclusively to support Public First Action’s public education and policy mission, and cannot be used to influence the election of any candidate for federal, state, or local office.\n\nOur first donation in February 2026 was made to help promote policies that will maintain meaningful safeguards, sustain America’s AI leadership and demand transparency from the companies building the most powerful AI models. In the months since, the case for these policies has only [gotten stronger](https://darioamodei.com/post/policy-on-the-ai-exponential).\n\n## Why now?\n\nAI models continue to improve at a rapid pace. Earlier this year, Claude Mythos Preview [discovered](https://red.anthropic.com/2026/mythos-preview/) thousands of high-severity software vulnerabilities, including some in every major operating system and browser. We chose to release it to a limited set of cyber defenders through [Project Glasswing](https://www.anthropic.com/glasswing) to enable trusted actors to find and fix those weaknesses before anyone could exploit them. In the wrong hands, models like this could threaten the critical systems the country relies on, from hospitals to the energy grid.\n\nMore capable models will bring benefits—like compressing drug discovery, developing treatments for diseases we’ve never been able to treat, accelerating science to deliver a century of progress in a decade, extending human lifespans, and driving the kind of economic growth that lets everyone share in the prosperity—but we need to make sure we are protected against the risks first in order to realize those benefits.\n\nGovernments need time to build the capacity to capture benefits while containing risks, which is why they need to start now.\n\n## Policy that meets the moment\n\nWe’ve long argued that frontier AI companies should be transparent about what their models can do and how they’re managing the risks. We’ve [supported](https://www.anthropic.com/news/the-need-for-transparency-in-frontier-ai) newly passed laws in several states that require greater transparency for AI developers. But given how fast the capabilities of the most powerful models are advancing, transparency alone is insufficient.\n\nWe need policymakers and candidates to put forward measures that mitigate risks. This is the core of what we’ve laid out in [Anthropic's Advanced AI Framework](https://www.anthropic.com/policy-on-the-ai-exponential/aaif), which is the strongest policy proposal from any frontier lab or policymaker to date. Governments should be able to verify companies’ safety claims, enforce safe practices through civil penalties, and ultimately have a way to slow or block the deployment of AI models that pose a serious risk of catastrophic harm. Frontier AI developers should have to test models that pose catastrophic risk, be transparent to the public about their findings, submit them to independent evaluation, and maintain a robust security program.\n\nAs the pace of AI advances accelerate, the national security stakes of AI are growing, as we outlined in [2028: Two Scenarios for Global AI Leadership](https://www.anthropic.com/research/2028-ai-leadership). America and our democratic allies have the advantage today, but that lead is tenuous. To ensure continued American AI leadership, we support policy efforts to tighten export controls on advanced chips and semiconductor manufacturing equipment and to curb illicit model access and distillation attacks, so that democracies’ best technologies are not used to advance authoritarian AI.\n\n## What comes next?\n\nThese [policy frameworks](https://www.anthropic.com/policy-on-the-ai-exponential/aaif) are just a starting point. Our donation to Public First Action is one way in which we’re trying to raise the salience of this urgent policy debate.\n\n## Related content\n\n### Apply for Anthropic’s AI for Science rare disease research grants\n\nAnthropic is sharing a focused call for AI for Science applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease.\n\n[Read more](https://www.anthropic.com/news/rare-disease-research-grants)\n\n### Anthropic commits $10 million to Canadian AI research\n\n[Read more](https://www.anthropic.com/news/canadian-ai-research)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 17,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "it is good now!",
+          "url": "https://x.com/sama/status/2079258683884917013",
+          "published_at": "2026-07-20T17:34:35.000000Z",
+          "description": "it is good now!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "_samirism",
+            "text": "throughout june we rolled out major updates to chatgpt memory \n\nit can be hard to tell the difference initially  \n\nbut alot of folks are clearly feeling the improvements now https://t.co/KkzOE9rGIW",
+            "url": "https://x.com/_samirism/status/2079199143868960823"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 999.2h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "if you've run into this, please restart Claude Code, fix should be propogating",
+          "url": "https://x.com/trq212/status/2079103743535280508",
+          "published_at": "2026-07-20T07:18:54.000000Z",
+          "description": "if you've run into this, please restart Claude Code, fix should be propogating",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "thereturningdev",
+            "text": "I missed the memo?\n\ndo Fable 5 runs on credit only from... now? I have the Max 5x plan https://t.co/vfimydB5tS",
+            "url": "https://x.com/thereturningdev/status/2079099686703759653"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "this was a bug that was only live for a few minutes, ran into it on my personal account while doing some late night coding though",
+          "url": "https://x.com/trq212/status/2079105479125741675",
+          "published_at": "2026-07-20T07:25:48.000000Z",
+          "description": "this was a bug that was only live for a few minutes, ran into it on my personal account while doing some late night coding though",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "trq212",
+            "status_id": "2079103743535280508"
+          },
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 18,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Claude Code now has a screen reader mode.\n\nRunning `claude --ax-screen-reader` swaps the visual terminal UI for plain, linear text that screen readers (like VoiceOver and NVDA) can follow.",
+          "url": "https://x.com/ClaudeDevs/status/2079315549163778366",
+          "published_at": "2026-07-20T21:20:33.000000Z",
+          "description": "Claude Code now has a screen reader mode.\n\nRunning `claude --ax-screen-reader` swaps the visual terminal UI for plain, linear text that screen readers (like VoiceOver and NVDA) can follow.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260720-2120",
+          "duplicate_of": null
+        },
+        {
+          "title": "It also adds labeled lines (you:, claude:, tool:), numbered menus you answer with a digit, and a bell when Claude needs you.\n\nYou can keep it on by adding \"axScreenReader\": true to ~/.claude/settings.",
+          "url": "https://x.com/ClaudeDevs/status/2079315550182985779",
+          "published_at": "2026-07-20T21:20:33.000000Z",
+          "description": "It also adds labeled lines (you:, claude:, tool:), numbered menus you answer with a digit, and a bell when Claude needs you.\n\nYou can keep it on by adding \"axScreenReader\": true to ~/.claude/settings.json, or by setting the CLAUDE_AX_SCREEN_READER=1 environment variable.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2079315549163778366"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260720-2120",
+          "duplicate_of": null
+        },
+        {
+          "title": "Docs: https://t.co/c2WKykWv12",
+          "url": "https://x.com/ClaudeDevs/status/2079315551206379890",
+          "published_at": "2026-07-20T21:20:33.000000Z",
+          "description": "Docs: https://t.co/c2WKykWv12",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/c2WKykWv12",
+              "expanded_url": "https://code.claude.com/docs/en/accessibility",
+              "display_url": "code.claude.com/docs/en/access…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2079315550182985779"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260720-2120",
+          "duplicate_of": null
+        },
+        {
+          "title": "For the small teams with big plans: Claude Team plans now start at just 2 seats instead of 5.\n\nGet shared projects, admin controls, centralized billing, SSO, and enterprise search across all your team",
+          "url": "https://x.com/ClaudeDevs/status/2079299754056614289",
+          "published_at": "2026-07-20T20:17:47.000000Z",
+          "description": "For the small teams with big plans: Claude Team plans now start at just 2 seats instead of 5.\n\nGet shared projects, admin controls, centralized billing, SSO, and enterprise search across all your team's tools, all under one plan.",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260720-2017",
+          "duplicate_of": null
+        },
+        {
+          "title": "More on how to get started with the Team plan: https://t.co/bDrZpm1GRp",
+          "url": "https://x.com/ClaudeDevs/status/2079299755109437455",
+          "published_at": "2026-07-20T20:17:47.000000Z",
+          "description": "More on how to get started with the Team plan: https://t.co/bDrZpm1GRp",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/bDrZpm1GRp",
+              "expanded_url": "https://support.claude.com/en/articles/9267247-get-started-with-the-team-plan",
+              "display_url": "support.claude.com/en/articles/92…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "ClaudeDevs",
+            "status_id": "2079299754056614289"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-ClaudeDevs-20260720-2017",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "We're offering grants of up to $50,000 in Claude usage credits to researchers accelerating cures for rare diseases.\n\nThis is our first focused call within AI for Science, our program supporting scient",
+          "url": "https://x.com/AnthropicAI/status/2079256626771665098",
+          "published_at": "2026-07-20T17:26:25.000000Z",
+          "description": "We're offering grants of up to $50,000 in Claude usage credits to researchers accelerating cures for rare diseases.\n\nThis is our first focused call within AI for Science, our program supporting scientists using Claude to speed up discovery. https://t.co/rZEmwh07cd",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/rZEmwh07cd",
+              "expanded_url": "https://www.anthropic.com/news/rare-disease-research-grants",
+              "display_url": "anthropic.com/news/rare-dise…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Apply for Anthropic’s AI for Science rare disease research grants\n\nURL Source: https://www.anthropic.com/news/rare-disease-research-grants\n\nMarkdown Content:\nLast spring, we announced [Anthropic’s AI for Science program](https://www.anthropic.com/news/ai-for-science-program), an initiative designed to accelerate scientific research and discovery through access to our API. Since launching, we have supported researchers working on a variety of high-impact projects, ranging from drug repurposing to quantum simulation. Throughout this initiative, we have found that projects are more generative when multiple AI for Science grantees are working on related questions and exchanging tips. So we now plan to launch thematic calls for projects within the broader AI for Science program.\n\nToday, we are sharing a focused call for applications centered specifically on rare genetic diseases. Accepted applicants will receive up to $50,000 in Claude credits over six months, with the goal of building a community of researchers looking into how AI can reshape our understanding of rare disease. This program has two tracks: one for scientists doing basic research, and another for early-stage biotechs working on speeding up clinical development for rare diseases.\n\nRare disease research is an area where knowledge of fundamental science is limited. In aggregate, rare diseases are among the most prevalent conditions on the planet (an estimated 400 million people live with one of [more than 7,000 rare diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC11881545/)).1 But these conditions are scattered across small populations, making it challenging for clinicians to build patient registries, identify promising therapeutic targets, and design clinical trials. Moreover, rare diseases are typically characterized by their unique features (such as a specific genetic variation or combination of symptoms) that are often studied in isolation, making it nearly impossible to spot mechanisms shared across diseases. Finally, rare diseases face a challenge endemic to all drug development: the time it takes to move promising drug candidates into patient trials.\n\nWe think AI can help with these and related challenges. AI makes it possible to accurately model rare genetic diseases and detect patterns across them. It also helps researchers synthesize findings across a large corpus of literature, quickly extract information from limited datasets, and create shared terminology, all of which informs how researchers can better use the information they _do_ have, even as more work is done to generate more data and address challenges pertaining to access and geography. To explore where AI can be most helpful, we’ve made rare diseases the focus of our current call for AI for Science projects.\n\n### **Track one: Scaling our basic science partnerships**\n\nThe first track of our rare disease research grants program aims to foster collaboration between clinical researchers, patient organizations, and data scientists to increase the pace of progress in basic science and the discovery of the mechanisms underlying rare diseases.\n\nAn early partner in this effort is the Monarch Initiative, an international consortium working to improve diagnosis and mechanism discovery for patients with rare diseases. Monarch develops standards and resources such as the [Mondo Disease Ontology](http://mondo.monarchinitiative.org/), a computational framework and coding system that reconciles disease definitions scattered across OMIM, Orphanet, ICD, and dozens of other sources; as well as the [Monarch Knowledge Graph](https://monarchinitiative.org/kg/about), which integrates genotype-phenotype data across species to aid diagnostics and mechanism discovery.\n\nMost recently, Monarch contributors have been stitching data and knowledge together in a new agent-friendly mechanistic disease classification library called [DisMech](https://github.com/monarch-initiative/dismech), where Claude can read case reports, variant databases, registry schemas, raw public data, and more, and point out mechanistic similarities between diseases at an unmatched pace and scale. Monarch is inviting our AI for Science grantees to use and contribute to its resources, such as Mondo and DisMech, to reveal new mechanistic hypotheses that will support developing treatments.\n\nMonarch’s work on improving the interoperability of rare disease data and knowledge is a place where Claude can already have a major impact. However, there’s more work to be done to gather better and more data, improve diagnostic infrastructure, and promote patient-led approaches across the rare disease ecosystem, and make the information accessible to agentic science. We will continue to partner with Monarch and others to approach this problem from the angles where AI is less obviously applicable, and we’ll share what we learn as we do.\n\n### **Track two: Scaling our biotech partnerships**\n\nThe second track of our rare disease research grants program will support biotechnologists and early-stage biotechs working to accelerate drug development for rare diseases. Today, it takes [one to two years](https://www.nejm.org/doi/full/10.1056/NEJMoa1813279) to move from a confirmed genetic diagnosis to a treatment available to patients, with much of this time spent waiting in queues for certified manufacturing slots, running safety studies sequentially instead of in parallel, and hand-assembling the thousands of pages of chemistry and regulatory documentation required for in-patient testing.\n\nWe think it is possible to radically compress phases of this process with Claude—in particular, by making it easier to complete documentation (for example, drafting and reviewing the regulatory dossier), but also by speeding up therapeutic strategy selection (for example, by analyzing whether a target is druggable across a suite of modalities, such as small molecules, antibodies, genetic medicines, and so on) and looking for shared mechanisms across individual genetic therapies, which could allow them to be approved under a single “[basket trial](https://mrctcenter.org/glossaryterm/basket-trial/)” instead of requiring a separate IND for each patient.\n\nAlthough many aspects of drug development are difficult to expedite because of manufacturing constraints or safety testing, we believe much can be done to move more quickly. By granting API credits and [Claude Science](https://www.anthropic.com/news/claude-science-ai-workbench) access to the many biotechnologists and startups working in this space, we hope to encourage the experiments necessary to explore and identify such solutions.\n\nWe also hope grantees will amplify and emulate the efforts of our other partners working in rare disease therapeutics. For example, [Every Cure](https://everycure.org/), one of our existing AI for Science grantees, is using Claude to identify drug repurposing opportunities across millions of candidates ; the [Centre for Population Genomics](https://populationgenomics.org.au/), a collaboration between the Garvan Institute and the Murdoch Children’s Research Institute, is building a Claude-based system that drafts variant classifications for expert review, one of the biggest bottlenecks in diagnosing rare genetic conditions; and the [Violet Research Institute,](https://www.violetresearch.org/)a small nonprofit researching ultra-rare genetic diseases (defined as extremely rare genetic disorders affecting fewer than 1 in 50,000 births), is using Claude to navigate FDA guidelines, run bioinformatics pipelines, analyze experimental data, draft regulatory filings, and more.\n\n### **Next steps**\n\nTo apply to either track of the AI for Science rare disease research program, [fill out this application](https://docs.google.com/forms/d/e/1FAIpQLSfwDGfVg2lHJ0cc0oF_ilEnjvr_r4_paYi7VLlr5cLNXASdvA/viewform). We will be accepting applications through August 2, 2026 at 11:59 PM PST. Accepted applicants can use their credits to access Claude Opus or other generally available models approved for use in biology. Projects that may run up against our bio classifiers may be eligible for exemptions. Examples of track one projects include:\n\n*   Propose and rank mechanistic links between distinct rare diseases that share a gene or pathway, suggesting candidate disease relationships with evidence an expert can validate in Monarch’s DisMech.\n*   Curate and summarize patient organization data to conduct or improve existing natural history studies.\n*   Build evaluations that measure how well models handle rare disease tasks—such as revealing candidate mechanisms for variants of unknown significance, phenotype-to-disease matching, and mechanism prediction—including an honest accounting of where they fail.\n\nOutputs from this track will be made publicly available at [Monarchinitiative.org](http://monarchinitiative.org/). The program will be augmented by additional community-building efforts, such as future rare disease hackathons. Stay up to date with the Monarch Initiative at [monarchinitiative.org/community/get-involved](https://monarchinitiative.org/community/get-involved).\n\nExamples of track two projects include:\n\n*   Justify starting doses from sparse data: synthesize PK/PD modeling, allometric scaling, and precedent from related modalities to build first-in-human dose rationales for bespoke therapies where traditional dose-ranging studies are impossible.\n*   Mine natural history data and case reports to identify measurable biomarkers and functional endpoints sensitive enough to show a response within the timeframe an N-of-1 or ultra-rare program can afford.\n*   Draft, cross-check, and precedent-mine regulatory documentation (IND sections, investigator brochures, CMC modules), compressing months of dossier assembly into days of expert review.\n\nThis rare disease grant program ties directly into our mission and work in beneficial deployments to extend the benefits of AI to areas that might not emerge naturally through market forces. However, rare disease is simply too big a problem for one organization or one approach. We also want to be honest about AI’s limitations in this space. Although Claude may help shorten therapeutic development timelines and curate biological data more efficiently than human teams alone, it cannot help in areas where the data is too paltry or too poorly organized for agents to reach. It may also struggle to address the aspects of the “diagnostic odyssey” that relate to challenges like insurance authorization or access to diagnostic facilities and infrastructure. We hope this program will be complemented by efforts by other organizations and research institutions to generate more high-quality, longitudinal data, as well as those that encourage robust public-private partnerships.\n\nWe're looking forward to seeing how this new group of grantees will work together and with our other AI for Science partners to advance basic science and discovery in rare diseases, and how these projects can contribute to broader scientific initiatives.\n\n**Footnote**\n\n1.   Other [sources place the number of rare diseases as high as 10,000](https://pmc.ncbi.nlm.nih.gov/articles/PMC7771654/). There is also no agreed-upon definition of what a rare disease even is, despite the oft-cited claim that as many as [1 in 10 people](https://www.fda.gov/patients/rare-diseases-fda) in the US have a rare disease. Various terminologies (Orphanet, OMIM, GARD, ICD, the NCI Thesaurus, and dozens more) each define “disease” differently; some exclude chromosomal disorders (such as conditions like Pallister-Killian syndrome); some ignore diseases with environmental causes (such as congenital Zika syndrome); and some require a single anatomical system to classify them, ignoring the many multi-system rare diseases (such as Fanconi anemia, with its mix of bone marrow failure, congenital malformations, and cancer risk).\n\n## Related content\n\n### Anthropic is donating another $20 million to Public First Action\n\nAnthropic is contributing an additional $20 million to Public First Action, bringing our total support to $40 million.\n\n[Read more](https://www.anthropic.com/news/donation-public-first-action)\n\n### Anthropic commits $10 million to Canadian AI research\n\n[Read more](https://www.anthropic.com/news/canadian-ai-research)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 9,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Sites is now available in the UK, EEA, and Switzerland for Plus and Pro users:\n\nhttps://t.co/on8eNh7XzV",
+          "url": "https://x.com/OpenAIDevs/status/2079348487624511734",
+          "published_at": "2026-07-20T23:31:26.000000Z",
+          "description": "Sites is now available in the UK, EEA, and Switzerland for Plus and Pro users:\n\nhttps://t.co/on8eNh7XzV",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/on8eNh7XzV",
+              "expanded_url": "https://chatgpt-sites-europe-launch.openai.chatgpt.site/",
+              "display_url": "…tes-europe-launch.openai.chatgpt.site"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2075337081304522853"
+          },
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Sites is now available in the UK, EEA, and Switzerland for Plus and Pro accounts 🇬🇧🇪🇺🇨🇭\n\nhttps://t.co/C56DSIOnFb",
+          "url": "https://x.com/OpenAIDevs/status/2079348199043858837",
+          "published_at": "2026-07-20T23:30:17.000000Z",
+          "description": "Sites is now available in the UK, EEA, and Switzerland for Plus and Pro accounts 🇬🇧🇪🇺🇨🇭\n\nhttps://t.co/C56DSIOnFb",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/C56DSIOnFb",
+              "expanded_url": "https://x.com/OpenAIDevs/status/2075337031954395447?s=20",
+              "display_url": "x.com/OpenAIDevs/sta…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "OpenAIDevs",
+            "text": "Turn an idea into a live Site you can publish and share\n\nHere’s what some of the team at OpenAI built with Sites 👇\n\n@prd_008 used Sites to turn an idea into a personal focus app:\nhttps://t.co/24YvyzLrac",
+            "url": "https://x.com/OpenAIDevs/status/2075337031954395447"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260720-2330",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/on8eNh7XzV",
+          "url": "https://x.com/OpenAIDevs/status/2079348200469827634",
+          "published_at": "2026-07-20T23:30:18.000000Z",
+          "description": "https://t.co/on8eNh7XzV",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/on8eNh7XzV",
+              "expanded_url": "https://chatgpt-sites-europe-launch.openai.chatgpt.site/",
+              "display_url": "…tes-europe-launch.openai.chatgpt.site"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2079348199043858837"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260720-2330",
+          "duplicate_of": null
+        },
+        {
+          "title": "Codex ambassadors are taking Build Week around the world 🌍 https://t.co/VjlnoDwBT7",
+          "url": "https://x.com/OpenAIDevs/status/2079319551154761752",
+          "published_at": "2026-07-20T21:36:27.000000Z",
+          "description": "Codex ambassadors are taking Build Week around the world 🌍 https://t.co/VjlnoDwBT7",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "📍 Hyderabad, IND\nhttps://t.co/6hglRzljgV",
+          "url": "https://x.com/OpenAIDevs/status/2079319610361610730",
+          "published_at": "2026-07-20T21:36:41.000000Z",
+          "description": "📍 Hyderabad, IND\nhttps://t.co/6hglRzljgV",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/6hglRzljgV",
+              "expanded_url": "https://x.com/KushalVijay_/status/2079191863001788699",
+              "display_url": "x.com/KushalVijay_/s…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "KushalVijay_",
+            "text": "40+ Teams, 100+ Participants and projects like never seen before...\n\nThis was the situation at @OpenAI Build Week Codex Community Hackathon in Hyderabad.\n\nThis was my 3rd event in Hyderbad and it was better and stronger. The Top 5 projects among 40 were\n- Zeroprep: PPTs on the go, build presentations as you speak\n- Volatile: .. forgot this one :p\n- Workprint: Private story inbox for builders.\n- Slophunt: Product Hunt for AI slop\n- AI Colosseum: A local-first MVP for comparing OpenAI model configurations on identical, task-shaped challenges. \n\nI'm grateful to @gabrielchua  @reach_vb  and @paw_lean  for their support, and to our awesome panel of judges for their contribution.\n\nOnto next ❤️\n\n#hackathon #aiagents #openai",
+            "url": "https://x.com/KushalVijay_/status/2079191863001788699"
+          },
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2079319598554640384"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260720-2136",
+          "duplicate_of": null
+        },
+        {
+          "title": "Events continue today and tomorrow.\n\nFind one near you:\nhttps://t.co/R0XvY4xAKX",
+          "url": "https://x.com/OpenAIDevs/status/2079319622357323822",
+          "published_at": "2026-07-20T21:36:44.000000Z",
+          "description": "Events continue today and tomorrow.\n\nFind one near you:\nhttps://t.co/R0XvY4xAKX",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/R0XvY4xAKX",
+              "expanded_url": "https://luma.com/calendar/cal-FhWvOxHV0AGL38z",
+              "display_url": "luma.com/calendar/cal-F…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2079319610361610730"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260720-2136",
+          "duplicate_of": null
+        },
+        {
+          "title": "Time to pull a project from the backlog and build it with Codex.\n\nHere’s some build inspiration from Women who Code(x). https://t.co/9nCqz1cNTf",
+          "url": "https://x.com/OpenAIDevs/status/2079308305764319540",
+          "published_at": "2026-07-20T20:51:46.000000Z",
+          "description": "Time to pull a project from the backlog and build it with Codex.\n\nHere’s some build inspiration from Women who Code(x). https://t.co/9nCqz1cNTf",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We’re live for the final Build Week stream. \n\nSee Sites in action and make your final push.\n\nhttps://t.co/tVzHwtlB2k",
+          "url": "https://x.com/OpenAIDevs/status/2079266484044648949",
+          "published_at": "2026-07-20T18:05:35.000000Z",
+          "description": "We’re live for the final Build Week stream. \n\nSee Sites in action and make your final push.\n\nhttps://t.co/tVzHwtlB2k",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/tVzHwtlB2k",
+              "expanded_url": "https://x.com/i/broadcasts/1nJOLLqvroExR",
+              "display_url": "x.com/i/broadcasts/1…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260720-1805",
+          "duplicate_of": null
+        },
+        {
+          "title": "Submissions close in 30 hours:\nhttps://t.co/0Pifa5ZRay",
+          "url": "https://x.com/OpenAIDevs/status/2079266485655249092",
+          "published_at": "2026-07-20T18:05:35.000000Z",
+          "description": "Submissions close in 30 hours:\nhttps://t.co/0Pifa5ZRay",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/0Pifa5ZRay",
+              "expanded_url": "https://openai.com/build-week/",
+              "display_url": "openai.com/build-week/"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAIDevs",
+            "status_id": "2079266484044648949"
+          },
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAIDevs-20260720-1805",
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "If you're an exceptional engineer in the Bay Area, come join us for our SpaceXAI Grokathon on Saturday August 8th in San Francisco!\n\nApplication deadline is next week, so don't forget to sign up!\n\nhtt",
+          "url": "https://x.com/SpaceXAI/status/2079295955778875548",
+          "published_at": "2026-07-20T20:02:41.000000Z",
+          "description": "If you're an exceptional engineer in the Bay Area, come join us for our SpaceXAI Grokathon on Saturday August 8th in San Francisco!\n\nApplication deadline is next week, so don't forget to sign up!\n\nhttps://t.co/YsOg6crN9I",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/YsOg6crN9I",
+              "expanded_url": "https://x.ai/grokathon",
+              "display_url": "x.ai/grokathon"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank you all — the response to Qwen3.8-Max-Preview blew us away.",
+          "url": "https://x.com/Alibaba_Qwen/status/2079172722161299801",
+          "published_at": "2026-07-20T11:53:00.000000Z",
+          "description": "During Preview, Qwen3.8 is getting better by the day. Latest version is live now, with broad gains and a big step up on web frontend.\n\nThank you all — the response to Qwen3.8-Max-Preview blew us away. 🫶🫶\n\nQwen3.8 is still evolving daily. Come test it, and tell us what breaks.\n\nWe're looking forward to a more capable, official version — and to open-weight it for everyone.🚀🚀",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 498.1h old, exceeds 168h threshold",
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 6,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    }
+  }
+}
