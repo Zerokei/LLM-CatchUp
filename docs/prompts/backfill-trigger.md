@@ -16,13 +16,16 @@ Execute Step 0 of `docs/prompts/daily-trigger.md` exactly, including its elevate
 
 Compute the normal daily target date: yesterday in America/Los_Angeles. The unified scheduler has already run the normal analyzer for that date, so do not select it here.
 
-Inspect the 40 America/Los_Angeles calendar dates immediately preceding the normal target. The horizon covers an entire prior calendar month so monthly preflight gaps can self-heal. A date is repairable only when `data/fetch-cache/{date}.json` exists. It needs repair when any of these is true:
+Inspect the 40 America/Los_Angeles calendar dates immediately preceding the normal target. The horizon covers an entire prior calendar month so monthly preflight gaps can self-heal. A date is repairable only when `data/fetch-cache/{date}.json` exists.
 
-- `data/analysis-cache/{date}.json` is missing;
-- fetch-cache contains an eligible article URL absent from `analysis-cache.articles`;
-- `reports/daily/{date}.md` is missing;
-- the editorial report contains `fallback，自动回退版`;
-- `reports/daily/{date}.ops.md` is missing.
+First determine whether its report output is formal: both `reports/daily/{date}.md` and `.ops.md` exist, and the editorial file does not contain `fallback，自动回退版`.
+
+A date needs repair when:
+
+- its report output is not formal; or
+- analysis-cache is partial **and** `data/history.json` contains at least one entry with `report_date === date`, proving it was produced by the retry-safe reporter introduced on 2026-07-22.
+
+Do not repair an older formal report merely because its analysis-cache is missing or incomplete. Reports created by the legacy pipeline may legitimately have no complete analysis-cache, and their history entries lack `report_date`; rebuilding those dates would incorrectly filter their already-reported articles.
 
 Choose at most one date per run. First prioritize repairable dates inside the most recently completed America/Los_Angeles ISO week, oldest first, because weekly aggregation may be waiting for them. Next prioritize repairable dates inside the most recently completed America/Los_Angeles calendar month, oldest first. Otherwise choose the oldest repairable date in the window so gaps eventually drain.
 
