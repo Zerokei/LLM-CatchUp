@@ -1,125 +1,45 @@
-# CatchUp Backfill Trigger Prompt
+# CatchUp Daily Repair Trigger
 
-You are the CatchUp missing daily report backfill agent. Your job is to detect whether any daily reports before today are missing, backfill at most one missing report per run, update state files, and commit/push.
+**Execute this repair workflow now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run. Never fetch or fabricate source content; repair only from committed fetch-cache files.**
 
-Read `CLAUDE.md` first for project context and rules.
+You detect and repair one recent daily report that is missing, still a fallback, missing its ops sidecar, or backed by an incomplete/missing analysis-cache. The normal analyzer remains the primary path; this trigger is its delayed self-healing pass.
+
+Read `AGENTS.md` and `docs/prompts/daily-trigger.md` first. Treat the daily prompt as the source of truth for sync, analysis, validation, clustering, report re-triggering, and commit/push behavior.
 
 ## Workflow
 
-Execute these steps in order:
+### Step 1: Recover and sync
 
-### Step 1: Load Configuration And State
+Execute Step 0 of `docs/prompts/daily-trigger.md` exactly, including its elevated-permission retry and rebase-abort rules. Do not reset or overwrite unrelated user changes.
 
-Read:
-- `config.yaml`
-- `data/history.json`
-- `data/health.json`
-- `docs/prompts/daily-trigger.md`
-- `docs/report-examples/daily-example.md`
+### Step 2: Find one repair target
 
-Use `config.yaml` for `output_path`, `sources`, `categories`, `analysis.dimensions`, `retention_days`, and `alerting`.
+Compute the normal daily target date: yesterday in America/Los_Angeles.
 
-### Step 2: Find The Backfill Target
+Inspect that date plus the 39 preceding America/Los_Angeles calendar dates. The 40-day horizon covers an entire prior calendar month so monthly preflight gaps can self-heal. A date is repairable only when `data/fetch-cache/{date}.json` exists. It needs repair when any of these is true:
 
-Get the current target report date: yesterday in America/Los_Angeles, formatted as YYYY-MM-DD.
+- `data/analysis-cache/{date}.json` is missing;
+- fetch-cache contains an eligible article URL absent from `analysis-cache.articles`;
+- `reports/daily/{date}.md` is missing;
+- the editorial report contains `fallback，自动回退版`;
+- `reports/daily/{date}.ops.md` is missing.
 
-Scan `{output_path}/daily/` for missing daily reports before the current target report date. Consider only the last 7 calendar days before the target report date.
+Choose at most one date per run. Prioritize the normal daily target date first, because weekly aggregation may be waiting for it. If that date is healthy, choose the oldest remaining repairable date so older gaps eventually drain.
 
-If there are no missing reports before today:
-- Do not fetch sources.
-- Do not modify files.
-- Report that no backfill is needed.
-- Stop.
+If no repairable date exists, exit successfully without modifying files.
 
-If one or more reports are missing:
-- Choose the oldest missing date as the single target date for this run.
-- Backfill only that one date.
-- Do not generate the current target report; that report is handled by the normal daily automation.
+### Step 3: Run the normal analyzer for the chosen date
 
-### Step 3: Fetch Sources For The Target Date
+Set `TARGET_DATE={chosen_date}` explicitly and execute Steps 2–10 of `docs/prompts/daily-trigger.md` for that date. Do not re-run its Step 0 because Step 1 above already synchronized the checkout.
 
-Follow the fetching rules from `docs/prompts/daily-trigger.md`, including:
-- Fetch `role: primary` sources before `role: aggregator` sources
-- Use direct fetch first, with WebSearch fallback for blocked sources
-- Split newsletter-style multi-topic articles into separate entries
-- Deduplicate by SHA-256 of article URL
-- Log source failures in `data/health.json` and continue
+The normal workflow is intentionally idempotent:
 
-When searching or filtering, focus on articles published on the target date. If a source does not expose exact dates, use the best available published date metadata and snippets.
+- missing or partial analysis is resumed from fetch-cache;
+- complete analysis plus a missing/fallback report updates `report_retry_requested_at`, causing `build-report.yml` to run again;
+- a complete formal report exits without changes.
 
-### Step 4: Deduplicate And Analyze
+Do not directly edit `data/history.json`, `data/health.json`, `feed.xml`, or rendered report files. The reporter workflow owns those deterministic outputs.
 
-Follow the semantic deduplication and analysis rules from `docs/prompts/daily-trigger.md`.
+### Step 4: Report final status
 
-Analyze only articles relevant to the target date. Use Chinese for all analysis output.
-
-### Step 5: Generate The Backfilled Daily Report
-
-Create the report file at `{output_path}/daily/{TARGET_DATE}.md`.
-
-Follow `docs/report-examples/daily-example.md` exactly. The report date must be the target date, not today's date.
-
-Sort article details by importance, highest first.
-
-### Step 6: Update History And Health
-
-Add newly analyzed articles to `data/history.json` under `articles`, keyed by SHA-256 of URL.
-
-Use the real current timestamp for `fetched_at`, and preserve each article's published date when available.
-
-Update `last_fetch` to the current ISO timestamp.
-
-Update `data/health.json` for every source according to the health rules in `docs/prompts/daily-trigger.md`.
-
-### Step 7: Clean Up Old Data
-
-Remove articles from `data/history.json` where `fetched_at` is older than `retention_days` from config.
-
-### Step 8: Handle Alerts
-
-Follow the alert handling rules from `docs/prompts/daily-trigger.md`.
-
-### Step 9: Regenerate RSS And Pages
-
-Regenerate subscriber and website entrypoints so the backfilled report is visible anywhere the site reads from `feed.xml` or generated HTML pages:
-
-```bash
-node scripts/build-rss.js
-node scripts/build-pages.js
-```
-
-If either command fails, abort immediately without committing anything. Report the failed command in the final status.
-
-### Step 10: Commit And Push
-
-Stage changed files:
-
-```bash
-git add data/history.json data/health.json feed.xml reports/
-```
-
-Commit with:
-
-```bash
-git commit -m "chore(catchup): backfill daily report YYYY-MM-DD"
-```
-
-Replace YYYY-MM-DD with the target date.
-
-Push the commit:
-
-```bash
-git push
-```
-
-### Step 11: Report Final Status
-
-Report:
-- Whether a missing report was found
-- The target date backfilled, if any
-- The report path
-- Article count
-- Any source failures or alerts
-- RSS/pages regeneration result
-- Commit result
-- Push result
+Report the selected date, why it needed repair, analyzed article count, whether the reporter was re-triggered, any remaining failed chunks, commit hash, and push result. If no repair was needed, say so explicitly.

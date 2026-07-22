@@ -27,6 +27,24 @@ test('filterAlreadyReported: drops articles whose url-hash is in history', () =>
     ['https://example.com/new']);
 });
 
+test('filterAlreadyReported: keeps same-date entries when rebuilding a partial report', () => {
+  const history = {
+    articles: {
+      [urlHash('https://example.com/same-day')]: { report_date: '2026-07-22' },
+      [urlHash('https://example.com/older')]: { report_date: '2026-07-21' },
+    },
+  };
+  const input = [
+    { url: 'https://example.com/same-day' },
+    { url: 'https://example.com/older' },
+    { url: 'https://example.com/new' },
+  ];
+  assert.deepEqual(
+    filterAlreadyReported(input, history, '2026-07-22').map((a) => a.url),
+    ['https://example.com/same-day', 'https://example.com/new'],
+  );
+});
+
 test('mergeThreads: groups articles with same thread_group_id under the earliest', () => {
   const input = [
     { url: 'https://x.com/a/1', thread_group_id: 't1', published_at: '2026-04-22T10:02Z', summary: 'B', title: 'second' },
@@ -93,12 +111,13 @@ test('appendToHistory: adds entries keyed by url-hash, preserves existing', () =
     { url: 'https://example.com/b', title: 'B', source: 'X', published_at: '2026-04-22', summary: 'sB', category: '研究', importance: 2, tags: [] },
   ];
   const fetchedAtISO = '2026-04-22T00:09:08Z';
-  appendToHistory(history, articles, fetchedAtISO);
+  appendToHistory(history, articles, fetchedAtISO, '2026-04-22');
   const keys = Object.keys(history.articles);
   assert.equal(keys.length, 3);
   const hashA = urlHash('https://example.com/a');
   assert.equal(history.articles[hashA].title, 'A');
   assert.equal(history.articles[hashA].fetched_at, fetchedAtISO);
+  assert.equal(history.articles[hashA].report_date, '2026-04-22');
   assert.equal(history.articles[hashA].extras.tags.length, 1);
 });
 

@@ -1,35 +1,26 @@
-Triggers configured as Codex automations:
+# CatchUp Scheduled Triggers
 
-- **Backfill**: every day at 6:00 PM (Asia/Shanghai)
-  - Automation ID: `catchup-backfill-scan`
-  - Prompt: `docs/prompts/backfill-trigger.md`
-  - RRULE: `FREQ=WEEKLY;BYDAY=MO,TU,WE,TH,FR,SA,SU;BYHOUR=18;BYMINUTE=0`
-  - Purpose: scan the last 7 days before the current America/Los_Angeles target date and backfill at most the oldest missing daily report
+All Codex automations below are heartbeat automations attached to the pinned `CatchUp Daily Report` task. Their prompts are intentionally short pointers to version-controlled files in `docs/prompts/`; never paste a second copy of a workflow into an automation.
 
-- **Daily Analyzer**: every day at 8:30 PM (Asia/Shanghai) — `30 12 * * *` UTC
-  - Automation ID: `catchup-daily-updates`
-  - Prompt: `docs/prompts/daily-trigger.md`
-  - RRULE: `FREQ=WEEKLY;INTERVAL=1;BYDAY=MO,TU,WE,TH,FR,SA,SU;BYHOUR=20;BYMINUTE=30;BYSECOND=0`
-  - Target date: yesterday in America/Los_Angeles
+## Codex automations (Asia/Shanghai)
 
-- **Daily Fetch**: every day at 1:37 AM (America/Los_Angeles)
-  - Workflow: `.github/workflows/daily-fetch.yml`
-  - Cron: `37 1 * * *`
-  - Timezone: `America/Los_Angeles`
-  - Target date: yesterday in America/Los_Angeles
+| Automation | Schedule | Source-of-truth prompt | Purpose |
+|---|---|---|---|
+| CatchUp Daily Analyzer | Every day at 20:30 and 23:30 | `docs/prompts/daily-trigger.md` | Main analysis plus same-date retry; the second run resumes missing URLs or re-triggers the reporter when a fallback remains. |
+| CatchUp Daily Repair | Every day at 10:00 | `docs/prompts/backfill-trigger.md` | Inspect a 40-day window and repair at most one missing, partial, or fallback day. |
+| CatchUp Weekly Report | Tuesday and Wednesday at 11:30 | `docs/prompts/weekly-trigger.md` | Generate the most recently completed Pacific ISO week; Wednesday retries idempotently. |
+| CatchUp Monthly Report | 2nd and 3rd day of each month at 13:30 | `docs/prompts/monthly-trigger.md` | Generate the most recently completed Pacific calendar month; the 3rd retries idempotently. |
 
-- **Weekly**: every Tuesday at 12:30 AM (Asia/Shanghai) — `30 16 * * 1` UTC
-  - Automation ID: `catchup-weekly-report`
-  - Prompt: `docs/prompts/weekly-trigger.md`
-  - RRULE: `FREQ=WEEKLY;INTERVAL=1;BYDAY=TU;BYHOUR=0;BYMINUTE=30;BYSECOND=0`
+All four automations target the same pinned task and use failed-run-only notifications. Successful run details still accumulate in that task without producing routine success notifications.
 
-- **Monthly**: 1st of each month at 11:30 AM (Asia/Shanghai) — `30 3 1 * *` UTC
-  - Automation ID: `catchup-monthly-report`
-  - Prompt: `docs/prompts/monthly-trigger.md`
-  - RRULE: `FREQ=MONTHLY;INTERVAL=1;BYMONTHDAY=1;BYHOUR=11;BYMINUTE=30;BYSECOND=0`
+## GitHub Actions safety chain (America/Los_Angeles)
 
-Schedules are staggered to prevent git push collisions and to leave GitHub Actions enough time to commit the fetch cache: daily fetch 01:37 America/Los_Angeles → daily analyzer 20:30 Asia/Shanghai → fallback 08:00 America/Los_Angeles. Weekly runs Tuesday at 00:30 Asia/Shanghai so the previous week's Sunday daily report has time to finish before aggregation. Monthly remains at 11:30 Asia/Shanghai, well after any overnight weekly run when the 1st of the month falls on a Tuesday.
+| Workflow | Schedule | Purpose |
+|---|---|---|
+| `.github/workflows/daily-fetch.yml` | 00:37, retry 03:17 | Produce the committed fetch-cache for the most recently completed Pacific day. |
+| `.github/workflows/fallback-report.yml` | 06:30, retry 09:30 | Publish a title+link fallback when no report exists; both runs are idempotent. |
+| `.github/workflows/build-report.yml` | On pushes under `data/analysis-cache/**` | Render formal daily markdown/HTML, update history and health, rebuild RSS, and push the result. |
 
-Each automation prompt is intentionally short and points at the corresponding `docs/prompts/*.md` file in this repo. Keep the repo prompt files as source of truth; update the automation only when the schedule, workspace, model, or prompt path changes.
+The normal order is fetch → analyzer → fallback floor → same-date analyzer retry → delayed repair. Weekly and monthly run only after their target daily files are formal rather than fallback, so incomplete history cannot silently produce an incomplete aggregate.
 
-Manage in the Codex app Automations view. Local automation definitions are stored under `${CODEX_HOME:-$HOME/.codex}/automations/<automation-id>/automation.toml`.
+Local automation definitions live under the Codex automations directory. When repairing them, discover IDs from the live definitions rather than relying on old IDs in documentation.

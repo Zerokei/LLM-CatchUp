@@ -1,10 +1,16 @@
 # CatchUp Weekly Trigger Prompt
 
-You are the CatchUp weekly news aggregator agent. Generate a weekly summary covering **the most recently completed ISO week** (Mon–Sun, Asia/Shanghai), split across **two** markdown files: an editorial report (read by subscribers and shown on the website) and an ops sidecar (counts only — not surfaced to readers).
+**Execute Steps 0–8 below now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run. If a preflight check fails, follow its stated abort behavior and report the exact missing dates.**
+
+You are the CatchUp weekly news aggregator agent. Generate a weekly summary covering **the most recently completed ISO week** (Mon–Sun, America/Los_Angeles), split across **two** markdown files: an editorial report (read by subscribers and shown on the website) and an ops sidecar (counts only — not surfaced to readers).
 
 Read `AGENTS.md` first for project context.
 
 ## Workflow
+
+### Step 0: Recover and sync the checkout
+
+Execute Step 0 of `docs/prompts/daily-trigger.md` exactly before reading report or history state. This includes retrying sandbox-blocked Git commands with elevated permission and aborting any conflicted rebase before exiting. Never reset or overwrite unrelated user changes.
 
 ### Step 1: Load configuration
 
@@ -12,12 +18,12 @@ Read `config.yaml` for `categories` and `output_path`.
 
 ### Step 2: Determine the target week (ISO-aligned)
 
-The trigger runs Tuesday shortly after midnight Asia/Shanghai, after the previous week's daily reports have had time to finish. The target is **the ISO week that just ended** — never the in-progress week.
+The trigger runs Tuesday and again Wednesday late morning Asia/Shanghai. Wednesday is an idempotent retry. Both invocations target **the ISO week that just ended** — never the in-progress week.
 
-Compute as follows (all timestamps Asia/Shanghai):
+Compute as follows (all timestamps America/Los_Angeles):
 
-1. Let `now` = current time. Let `today` = `now`'s date.
-2. Let `current_week_start` = the Monday 00:00:00 Asia/Shanghai at the start of the ISO week containing `today`. If today is Monday, this is today at 00:00:00; if today is Tuesday, this is yesterday at 00:00:00.
+1. Let `now` = current time. Let `today` = `now`'s America/Los_Angeles date.
+2. Let `current_week_start` = the Monday 00:00:00 America/Los_Angeles at the start of the ISO week containing `today`.
 3. `target_week_start` = `current_week_start - 7 days`.
 4. `target_week_end` = `current_week_start` (exclusive).
 5. `target_label` = `{YYYY}-W{NN}` from the ISO calendar of `target_week_start` (since it's a Monday, the ISO week is unambiguous).
@@ -42,13 +48,13 @@ Before reading history or writing any weekly output, verify that all seven daily
 reports/daily/{YYYY-MM-DD}.md
 ```
 
-Check every calendar date from `target_week_start` through `target_week_start + 6 days`, inclusive, using Asia/Shanghai dates. If any file is missing, abort cleanly with a message listing the missing date(s), and do NOT write `reports/weekly/{target_label}.md`, `reports/weekly/{target_label}.ops.md`, HTML files, or `feed.xml`.
+Check every America/Los_Angeles calendar date from `target_week_start` through `target_week_start + 6 days`, inclusive. For each date, require both the editorial `.md` and `.ops.md` sidecar, and reject an editorial file containing `fallback，自动回退版`. If any date is missing, lacks its sidecar, or is still fallback, abort cleanly with a message listing the date and reason. Do NOT write weekly markdown, HTML, or `feed.xml`. The Wednesday retry will try the same week again after the daily repair automation has had another pass.
 
-This gate ensures weekly aggregation only runs after the previous week's daily reporter/fallback path has populated the daily reports and `data/history.json`.
+This gate ensures weekly aggregation only runs after the formal daily reporter has populated both the report files and `data/history.json`.
 
 ### Step 4: Load history into the target window
 
-Read `data/history.json`. Filter to articles whose `published_at` falls in `[target_week_start, target_week_end)` (Asia/Shanghai). Use `fetched_at` only as a fallback for entries with missing or invalid `published_at`.
+Read `data/history.json`. Filter to articles whose `published_at` falls in `[target_week_start, target_week_end)` in America/Los_Angeles. Use `fetched_at` only as a fallback for entries with missing or invalid `published_at`.
 
 This is intentional: weekly reports are editorial period summaries, so an article belongs to the week it was published, not the later day it was fetched or backfilled into history. A delayed daily backfill may write `fetched_at` after the Monday boundary; using `fetched_at` as the primary weekly key would incorrectly exclude the prior week's articles.
 
@@ -126,3 +132,5 @@ git push origin HEAD:main
 ```
 
 The `HEAD:main` form is required. The Codex automation sandbox checks out an auto-named working branch (e.g. `codex/xxx` or `main-xxxx`), so a bare `git push` lands the commit on that working branch instead of `main` and the report is invisible to subscribers.
+
+Apply the elevated-permission retry and conflicted-rebase cleanup rules from daily Step 0 to every Git command in this step. If the post-commit rebase conflicts, run `git rebase --abort`, preserve the local weekly commit, report its hash, and exit without leaving the checkout mid-rebase.

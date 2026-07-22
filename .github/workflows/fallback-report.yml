@@ -4,6 +4,8 @@ on:
   schedule:
     - cron: '30 6 * * *'  # Fallback after fetch + Codex analyzer, before the Beijing evening gets too late.
       timezone: America/Los_Angeles
+    - cron: '30 9 * * *'  # Idempotent retry if the first scheduled event was delayed/dropped or fetch arrived late.
+      timezone: America/Los_Angeles
   workflow_dispatch:
     inputs:
       report_date:

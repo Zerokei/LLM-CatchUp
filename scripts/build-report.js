@@ -5,9 +5,18 @@ function urlHash(url) {
   return crypto.createHash('sha256').update(url).digest('hex');
 }
 
-function filterAlreadyReported(articles, history) {
-  const known = new Set(Object.keys(history.articles || {}));
-  return articles.filter((a) => !known.has(urlHash(a.url)));
+function filterAlreadyReported(articles, history, reportDate) {
+  const known = history.articles || {};
+  return articles.filter((a) => {
+    const previous = known[urlHash(a.url)];
+    if (!previous) return true;
+
+    // A retry can legitimately rebuild the same report after a partial analyzer
+    // or reporter run. Keep entries first written by this report date so the
+    // rebuilt markdown contains the complete day, while still suppressing URLs
+    // that were reported on an earlier date.
+    return Boolean(reportDate && previous.report_date === reportDate);
+  });
 }
 
 function mergeThreads(articles) {
@@ -55,7 +64,7 @@ function filterByImportance(articles, minImportance) {
   return articles.filter((a) => (a.importance || 0) >= minImportance);
 }
 
-function appendToHistory(history, articles, fetchedAtISO) {
+function appendToHistory(history, articles, fetchedAtISO, reportDate) {
   for (const a of articles) {
     const extras = { tags: a.tags || [] };
     if (a.practice_suggestions?.length) extras.practice_suggestions = a.practice_suggestions;
@@ -70,6 +79,7 @@ function appendToHistory(history, articles, fetchedAtISO) {
       summary: a.summary,
       category: a.category,
       importance: a.importance,
+      ...(reportDate ? { report_date: reportDate } : {}),
       extras,
     };
   }
@@ -192,7 +202,7 @@ async function main() {
   }
 
   // Step 1 — filter out articles already reported (URL-hash dedup)
-  const fresh = filterAlreadyReported(analysisCache.articles, history);
+  const fresh = filterAlreadyReported(analysisCache.articles, history, date);
 
   // Step 2 — thread merge (by thread_group_id)
   const afterThreads = mergeThreads(fresh);
@@ -243,7 +253,7 @@ async function main() {
   fs.writeFileSync(path.join(REPORTS_DIR, `${date}.ops.md`), opsMd);
 
   // Step 7 — append to history
-  appendToHistory(history, canonical, analysisCache.analyzed_at || fetchCache.fetched_at);
+  appendToHistory(history, canonical, analysisCache.analyzed_at || fetchCache.fetched_at, date);
   const removed = applyRetention(history, new Date(), retentionDays);
   console.error(`retention cleanup: removed ${removed} entries`);
   fs.writeFileSync(HISTORY_PATH, JSON.stringify(history, null, 2) + '\n');

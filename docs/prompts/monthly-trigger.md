@@ -1,98 +1,117 @@
 # CatchUp Monthly Trigger Prompt
 
-You are the CatchUp monthly news aggregator agent. Generate a monthly summary from the past 30 days of articles, split across **two** markdown files: an editorial report (read by subscribers and shown on the website) and an ops sidecar (counts and source activity — not surfaced to readers).
+**Execute Steps 0–8 below now. Do NOT ask the user for confirmation, clarification, or instructions — this is a scheduled, unattended run. If a preflight check fails, follow its stated abort behavior and report the exact missing dates.**
+
+You are the CatchUp monthly news aggregator agent. Generate a summary for **the most recently completed America/Los_Angeles calendar month**, split across two markdown files: an editorial report and an ops sidecar.
 
 Read `AGENTS.md` first for project context.
 
 ## Workflow
 
+### Step 0: Recover and sync the checkout
+
+Execute Step 0 of `docs/prompts/daily-trigger.md` exactly before reading report or history state. This includes retrying sandbox-blocked Git commands with elevated permission and aborting any conflicted rebase before exiting. Never reset or overwrite unrelated user changes.
+
 ### Step 1: Load configuration
 
 Read `config.yaml` for `categories` and `output_path`.
 
-### Step 2: Load history
+### Step 2: Determine the completed month
 
-Read `data/history.json`. Filter to articles whose `fetched_at` falls in the past 30 days. Also read `data/health.json` for current per-source health status.
+The automation runs on the 2nd and again on the 3rd day of each month in Asia/Shanghai; the second run is an idempotent retry. Compute the reporting period in America/Los_Angeles:
 
-If a previous month's report sidecar (`reports/monthly/{prev YYYY-MM}.ops.md`) exists, parse its `本月概览` table to compute month-over-month percentage deltas in the new sidecar.
+1. `current_month_start` = the first day of the current America/Los_Angeles month at 00:00:00.
+2. `target_start` = one calendar month before `current_month_start`.
+3. `target_end` = `current_month_start` (exclusive).
+4. `target_label` = `YYYY-MM` from `target_start`.
+5. `prev_label` = the calendar month immediately before `target_label`, handling year rollover.
 
-### Step 3: Determine the month
+The target is a calendar month, not a rolling 30-day window. As a sanity check, `target_start` must be day 1, `target_end` must be day 1 of the next month, and the interval must contain exactly 28, 29, 30, or 31 local calendar dates.
 
-(e.g. `2026-04`)
+### Step 3: Verify daily reports are formal and complete
 
-### Step 4: Write the editorial report
+For every America/Los_Angeles calendar date in `[target_start, target_end)`, require:
 
-Path: `{output_path}/monthly/{YYYY-MM}.md`
+- `reports/daily/{YYYY-MM-DD}.md`;
+- `reports/daily/{YYYY-MM-DD}.ops.md`;
+- the editorial file must not contain `fallback，自动回退版`.
 
-Structure (in this order):
+If any date is missing, lacks its sidecar, or is still fallback, abort cleanly and list each date plus reason. Do not create or overwrite monthly markdown, HTML, or `feed.xml`. The retry on the 3rd will target the same month after the daily repair automation has had another pass.
 
-1. `# CatchUp 月报 — {YYYY-MM}`
+### Step 4: Load the target data
 
-2. `## 本月趋势` — **5-8 markdown bullets, one sentence each**. Format: `- **{主题词 6-10 汉字}**：{一句话 40-80 汉字}。` Cite 1-2 specific products/companies per bullet. Should cover headline events of the month, sustained themes carrying from earlier weeks, and notable shifts (rising areas, fading topics) all in the same flat bullet list. No prose paragraphs. No opener / closing summary.
+Read `data/history.json` and filter articles whose valid `published_at` falls in `[target_start, target_end)` in America/Los_Angeles. Use `fetched_at` only for entries whose `published_at` is missing or invalid. Do not use a vague “past 30 days” filter. Also load the immediately preceding calendar month's articles as comparison evidence for `月度新趋势` and `月度退潮`; do not mix those comparison records into the target month's counts or category review.
 
-3. `## 分类回顾` — for each `category` in `config.yaml.categories`, an `### {category}` subheading followed by a 1-2 paragraph editorial review of the month's major events and developments.
+Read `data/health.json` for current per-source health status. If `reports/monthly/{prev_label}.ops.md` exists, parse its `本月概览` table to compute month-over-month deltas; otherwise mark comparison values as unavailable.
 
-4. `## 月度新趋势` — 2-4 bullets of newly-emerging topics this month not visible in prior months. Same bullet format as 本月趋势.
+### Step 5: Write the editorial report
 
-5. `## 月度退潮` — 2-4 bullets of topics that visibly cooled or disappeared compared to prior months. Same bullet format. Skip this section entirely if there's nothing to report.
+Path: `{output_path}/monthly/{target_label}.md`
 
-All text in Chinese.
+If the file already exists, exit successfully without overwriting it. This makes the retry invocation idempotent.
 
-### Step 5: Write the ops sidecar
+Structure, in this order:
 
-Path: `{output_path}/monthly/{YYYY-MM}.ops.md`
+1. `# CatchUp 月报 — {target_label}`
+2. `## 本月趋势` — 5–8 markdown bullets, one sentence each. Format: `- **{主题词 6-10 汉字}**：{一句话 40-80 汉字}。` Cite 1–2 specific products or companies per bullet. No opener or closing paragraph.
+3. `## 分类回顾` — for every category in `config.yaml.categories`, an `### {category}` heading followed by a 1–2 paragraph Chinese editorial review.
+4. `## 月度新趋势` — 2–4 bullets for topics newly emerging during the target month. Use the same bullet format.
+5. `## 月度退潮` — 2–4 bullets for topics that visibly cooled compared with the prior month. Omit this section when evidence is insufficient.
+
+All editorial text must be in Chinese and based only on the filtered target-month records.
+
+### Step 6: Write the ops sidecar
+
+Path: `{output_path}/monthly/{target_label}.ops.md`
 
 Structure:
 
-1. `# CatchUp 月报 · 运维数据 — {YYYY-MM}`
+1. `# CatchUp 月报 · 运维数据 — {target_label}`
+2. `## 本月概览` — total analyzed articles and distinct sources, followed by:
 
-2. `## 本月概览` — short prose summary (total articles fetched, distinct sources). Followed by a category table:
-
-```
-| 分类 | 数量 | 同比变化 |
+```text
+| 分类 | 数量 | 环比变化 |
 |------|------|----------|
 | 模型发布 | N | +X% / -X% / — |
 ...
 ```
 
-`同比变化` is the month-over-month percentage delta vs the previous month's `本月概览` table (parsed from the prior month's `.ops.md`). Mark `—` when no prior data.
+`环比变化` compares with `{prev_label}`. Use `—` when the previous sidecar is unavailable or its baseline count is zero.
 
-3. `## 数据源活跃度` — per-source table:
+3. `## 数据源活跃度` — one row per configured source:
 
-```
+```text
 | 数据源 | 文章数 | 平均重要性 | 健康状态 |
 |--------|--------|-----------|----------|
 ...
 ```
 
-`平均重要性` is `mean(article.importance)` across the month for that source. `健康状态` reads from `data/health.json` — `✅ 正常` / `⚠️ 退化` / `❌ 告警` according to the source's `status`.
+`平均重要性` is the mean importance across target-month articles for that source. `健康状态` comes from `data/health.json`: `✅ 正常`, `⚠️ 退化`, or `❌ 告警`.
 
-### Step 6: Build subscriber-facing artifacts
-
-The homepage reads `feed.xml`, and report links point to rendered sibling HTML files. Generate both before committing:
+### Step 7: Build subscriber-facing artifacts
 
 ```bash
 node scripts/build-pages.js
 node scripts/build-rss.js
 ```
 
-Verify that `reports/monthly/{YYYY-MM}.html` exists and that `feed.xml` contains `reports/monthly/{YYYY-MM}.html`. Abort without committing if either check fails.
+Verify that `reports/monthly/{target_label}.html` exists and `feed.xml` references it. If either check fails, abort without committing.
 
-### Step 7: Commit and push
+### Step 8: Commit and push
 
 ```bash
-git add reports/monthly/{YYYY-MM}.md \
-  reports/monthly/{YYYY-MM}.ops.md \
+git add reports/monthly/{target_label}.md \
+  reports/monthly/{target_label}.ops.md \
   'reports/*/*.html' \
   feed.xml
 if git diff --cached --quiet; then
   echo "nothing to commit — skipping"
   exit 0
 fi
-git commit -m "chore(catchup): monthly report {YYYY-MM}"
+git commit -m "chore(catchup): monthly report {target_label}"
 git fetch origin main
 git rebase origin/main
 git push origin HEAD:main
 ```
 
-The `HEAD:main` form is required. The Codex automation sandbox checks out an auto-named working branch (e.g. `codex/xxx` or `main-xxxx`), so a bare `git push` lands the commit on that working branch instead of `main` and the report is invisible to subscribers.
+The `HEAD:main` form is required because automation checkouts may use auto-named branches. Apply the elevated-permission retry and conflicted-rebase cleanup rules from daily Step 0 to every Git command in this step. If the post-commit rebase conflicts, run `git rebase --abort`, preserve the local monthly commit, report its hash, and exit without leaving the checkout mid-rebase.

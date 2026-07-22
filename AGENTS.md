@@ -6,13 +6,13 @@ An automated AI news aggregation system powered by Codex Cloud Scheduled Trigger
 
 This repo has three runtime stages, in order:
 
-**Stage 1 — Fetcher** (`.github/workflows/daily-fetch.yml`, cron `37 1 * * *` with `timezone: America/Los_Angeles`; scheduled before the 20:30 Asia/Shanghai analyzer trigger). `scripts/fetch-sources.js` reads `config.yaml`, fetches each source via route modules under `scripts/routes/`, filters to the most recently completed America/Los_Angeles day, enriches blog sources via Jina Reader (`scripts/lib/enrich.js`) and extracts full_text/linked_content where possible, and writes the snapshot to `data/fetch-cache/{YYYY-MM-DD}.json`.
+**Stage 1 — Fetcher** (`.github/workflows/daily-fetch.yml`, primary cron `37 0 * * *` plus retry `17 3 * * *`, both with `timezone: America/Los_Angeles`; scheduled before the 20:30 Asia/Shanghai analyzer trigger). `scripts/fetch-sources.js` reads `config.yaml`, fetches each source via route modules under `scripts/routes/`, filters to the most recently completed America/Los_Angeles day, enriches blog sources via Jina Reader (`scripts/lib/enrich.js`) and extracts full_text/linked_content where possible, and writes the snapshot to `data/fetch-cache/{YYYY-MM-DD}.json`.
 
-**Stage 2 — Analyzer** (Codex Cloud Scheduled Trigger, runs shortly after fetch). The trigger reads `data/fetch-cache/{date}.json` and writes per-article `{summary, category, importance, tags, practice_suggestions, thread_group_id, duplicate_of}` plus a whole-batch `trend_paragraph` to `data/analysis-cache/{date}.json`. Incrementally persisted per article — partial work survives interruptions. Commits and pushes that single file. Does NOT render the markdown report, touch history/health, or manage issues. Prompt: `docs/prompts/daily-trigger.md`; the Codex automation should point at that repo file rather than embed a stale copy.
+**Stage 2 — Analyzer** (Codex heartbeat automation in the pinned `CatchUp Daily Report` task, runs at 20:30 and retries at 23:30 Asia/Shanghai; a 10:00 repair scan handles recent incomplete/fallback days). The trigger reads `data/fetch-cache/{date}.json` and writes per-article `{summary, category, importance, tags, practice_suggestions, thread_group_id, duplicate_of}` plus a whole-batch `trend_paragraph` to `data/analysis-cache/{date}.json`. Resume state is merged by URL, failed chunks are retried once in-run, and later scheduled invocations pick up anything still missing. It commits and pushes that single file. It does NOT render the markdown report, touch history/health, or manage issues. Prompt: `docs/prompts/daily-trigger.md`; the Codex automation should point at that repo file rather than embed a stale copy.
 
 **Stage 3 — Reporter** (`.github/workflows/build-report.yml`, triggered on push to `data/analysis-cache/**`). `scripts/build-report.js` reads fetch-cache + analysis-cache + history + health + config, does URL-hash dedup against history, merges threads, applies `duplicate_of`, renders **two** markdown files via `scripts/lib/render-report.js` — `{date}.md` (editorial: trend + article details, what subscribers see) and `{date}.ops.md` (counts + source health, debug-only) — updates `data/history.json` + `data/health.json`, opens/closes GitHub issues for alerts, regenerates `feed.xml` (RSS 2.0, ops sidecars excluded by glob; see `scripts/lib/build-rss.js`), and commits+pushes the report pair + state files + feed.
 
-**Safety net — Fallback** (`.github/workflows/fallback-report.yml`, cron `0 8 * * *` with `timezone: America/Los_Angeles`). `scripts/fallback-report.js` checks if `reports/daily/{target_date}.md` exists for the most recently completed Pacific day; if not (Stage 2 or 3 failed), it renders a title+link-only report from fetch-cache alone, regenerates `feed.xml`, and commits+pushes. This guarantees subscribers always see something on the feed.
+**Safety net — Fallback** (`.github/workflows/fallback-report.yml`, primary cron `30 6 * * *` plus retry `30 9 * * *`, both with `timezone: America/Los_Angeles`). `scripts/fallback-report.js` checks if `reports/daily/{target_date}.md` exists for the most recently completed Pacific day; if not (Stage 2 or 3 failed), it renders a title+link-only report from fetch-cache alone, regenerates `feed.xml`, and commits+pushes. The later Codex retry/repair path can replace this fallback with a formal report. This guarantees subscribers see at least a title+link edition on the feed whenever fetch-cache exists.
 
 **Distribution** — `feed.xml` at the repo root is the only outbound channel. Subscribers point any RSS reader (or an RSS-to-email service like Feedrabbit / Blogtrottr) at `https://raw.githubusercontent.com/Zerokei/LLM-CatchUp/main/feed.xml`. No transactional-email infrastructure to maintain.
 
@@ -68,14 +68,14 @@ The daily trigger is now "analysis-only" AND fan-out. Its full procedure lives i
 
 - Read `data/fetch-cache/{date}.json`; abort cleanly if missing (no WebFetch fallback)
 - Read `data/analysis-cache/{date}.json` for resume state; skip any URLs already analyzed
-- Chunk remaining articles into groups of ~10; dispatch one Agent subagent per chunk IN PARALLEL (all chunks in a single message)
+- Chunk remaining articles into groups of ~10; dispatch in waves of at most 3 Agent subagents in parallel (the main agent occupies the fourth runtime slot)
 - Each subagent produces per-article `{title, summary, category, importance, tags, practice_suggestions?}` (6 fields) and carries through `thread_group_id` / `duplicate_of` UNMODIFIED from fetch-cache — those are deterministic now (see `scripts/lib/derive-refs.js`, populated during fetch)
 - Each subagent writes its chunk to `data/analysis-cache/{date}.chunk-{i}.json`; main agent merges + validates after all return
 - Main writes trend_paragraph, writes final `data/analysis-cache/{date}.json`, cleans up chunk files, commits
 
 Deterministic concerns (report rendering, history/health updates, retention, GH issues, commits of reports) are outside the trigger's scope — see `scripts/build-report.js`.
 
-Weekly and monthly triggers are unchanged (they aggregate from `data/history.json` and are less frequent; they'll be revisited if they start breaking).
+Weekly and monthly triggers aggregate from `data/history.json`, use the same pinned task, and run twice per period for idempotent retry. Both require formal (non-fallback) daily reports for the whole target window before publishing.
 
 ## External dependencies
 
