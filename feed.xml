@@ -195,6 +195,176 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 周报 2026-W29</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W29.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W29.md</guid>
+      <pubDate>Sun, 19 Jul 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W29 (07/13 - 07/19)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>模型竞争继续上探</strong>：Qwen3.8、Kimi K3 与 Grok 4.5 分别从开放权重、长上下文和代码评测切入前沿模型竞争。</li>
+<li><strong>代理产品走向平台</strong>：Codex 的并行工作流、Sites 与 GPT-5.6 Sol，以及 Claude Managed Agents 把模型能力推进到可交付的开发基础设施。</li>
+<li><strong>安全进入开发闭环</strong>：GPT-Red 自动红队、Claude 的代理错位研究和 Codex Security 共同把攻击评测、监测与修复连接起来。</li>
+<li><strong>企业和教育场景扩张</strong>：Claude for Teachers、Claude Artifacts MCP 连接器和 Google Search AI Mode 将 AI 接入权限、课程和外部应用。</li>
+<li><strong>算力与成本成为产品变量</strong>：Fable 5 的配额扩容、Kimi K3 的订阅压力和 Codex 的单位成本变化，说明供给与经济性正在影响用户体验。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2078759124914098291">Qwen3.8：2.4T 开放模型预告与 Max Preview 上线</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/19</li>
+<li><strong>标签</strong>: <code>Qwen3.8</code> <code>开放权重</code> <code>Max Preview</code> <code>大模型</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 预告 Qwen3.8 将以开放权重形式发布，并先上线 Qwen3.8-Max-Preview 供开发者试用。官方称该版本持续进化并面向前沿模型竞争，当前重点包括通用能力和实际产品接入。</p>
+<h3>2. <a href="https://x.com/OpenAI/status/2078223217773474134">GPT-5.6 Sol：网络安全能力与 Codex Security 落地</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/17</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>网络安全</code> <code>Codex Security</code> <code>漏洞修复</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 围绕 GPT-5.6 Sol 展示了网络安全能力和 Codex Security 的实际入口。官方称该模型在 The Last Ones 网络安全评测中达到新的领先水平，并把漏洞发现、验证和修复连接到 Codex 工作流。开发者案例进一步展示了模型在真实项目交付中的使用方式。</p>
+<h3>3. <a href="https://x.com/Kimi_Moonshot/status/2077830229968683203">Kimi K3 发布：2.8T 开放模型 + 百万上下文</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/16</li>
+<li><strong>标签</strong>: <code>Kimi K3</code> <code>开放模型</code> <code>2.8T 参数</code> <code>百万上下文</code> <code>多模态</code> <code>Agent 编程</code> <code>前端评测</code></li>
+</ul>
+<p><strong>摘要</strong>: Kimi K3 是 Moonshot 发布的 2.8T 参数开放 3T 级模型，具备原生视觉、100 万 token 上下文和长程代理编码能力。官方技术博客披露其基于 Kimi Delta Attention、Attention Residuals 和高稀疏 MoE 架构，并展示 GPU kernel 优化、MiniTriton 编译器、芯片设计、研究可视化与视频编辑案例。Kimi K3 已在 Kimi.com、Kimi Work、Kimi Code 和 API 开放，完整权重计划于 2026 年 7 月 27 日发布。第三方榜单称它在 Frontend Code Arena 登顶，强化了其前端生成和视觉闭环编程的发布叙事。</p>
+<h3>4. <a href="https://x.com/SpaceXAI/status/2077541915227222100">Grok 4.5 登上 FrontierSWE 第二</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/15</li>
+<li><strong>标签</strong>: <code>Grok 4.5</code> <code>FrontierSWE</code> <code>代码基准</code> <code>研究能力</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI 转述 ProximalHQ 的 FrontierSWE 结果称，Grok 4.5 在实现与性能综合榜单排名第二，仅次于 Claude Fable 5。该帖还称 Grok 4.5 在研究能力上排名第一，并高于 Opus 4.8、GPT-5.5 和 GLM-5.2。</p>
+<h3>5. <a href="https://x.com/OpenAIDevs/status/2077166520392970529">Codex/GPT-5.6 加速：700 万周活 + 成本下降</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/14</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>GPT-5.6 Sol</code> <code>ChatGPT Work</code> <code>代理工作流</code> <code>开发者工具</code> <code>成本效率</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 围绕 Codex 和 GPT-5.6 展示了一组同日进展：Codex 周活超过 700 万，两个月内发布 150 多项更新，覆盖 GPT-5.6、Ultra、/goal 并行工作、AppShots、Inline edits、Sites、移动端和 SSH 工作流。Sam Altman 进一步称 Codex 与 ChatGPT Work 活跃用户合计达到 800 万，代理类产品一周使用量增长 2.5 倍。GPT-5.6 Sol 被描述为在许多任务中以约一半价格和约两倍 token 效率完成同类工作，但需求激增也可能带来短期服务波动。Notion 的模型评测命令行工具和 Build Week 直播补充展示了它在真实开发、评测和从想法到构建流程中的落地方式。</p>
+<h3>6. <a href="https://seed.bytedance.com/en/blog/from-speech-to-audio-creation-introducing-the-seed-audio-1-0-audio-creation-model">Seed Audio 1.0：面向场景的全流程音频生成</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: ByteDance Seed | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/20</li>
+<li><strong>标签</strong>: <code>Seed Audio 1.0</code> <code>音频生成</code> <code>语音合成</code> <code>声音设计</code> <code>ByteDance</code></li>
+</ul>
+<p><strong>摘要</strong>: ByteDance Seed 发布 Seed Audio 1.0，强调从语音、对白到环境声和音效的场景级协同生成。模型不仅生成孤立音频片段，还尝试统一处理角色表演、时间节奏、背景纹理和声音设计，面向影视、游戏和内容创作流程。</p>
+<h3>7. <a href="https://x.com/trq212/status/2078901672441790818">Claude Code团队建议精简系统提示词</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter) | <strong>分类</strong>: 教程与观点 | <strong>日期</strong>: 07/19</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>系统提示词</code> <code>上下文</code> <code>模型升级</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 的 Thariq 表示，随着模型能力提升，Claude Code 的系统提示词已缩短约 80%。他的观点是，过多指令、约束和示例会限制新模型的自由度，模型升级后应重新审视上下文长度。</p>
+<h3>8. <a href="https://x.com/ClaudeDevs/status/2078511173759324328">Claude Fable 5：订阅额度与 Claude Code 限额继续扩容</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/18</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Claude Fable 5</code> <code>使用限额</code> <code>订阅计划</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 延长 Claude Code 的周限额提升，Pro、Max、Team 和按席位计费的 Enterprise 用户在 8 月 19 日前仍可获得高于常规的使用额度。结合前一日 Fable 5 的供给调整，这显示官方继续通过配额管理缓解高需求带来的容量压力。</p>
+<h3>9. <a href="https://x.com/claudeai/status/2078302415804379218">Claude Fable 5：订阅计划扩容并稳定供给</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/18</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>订阅计划</code> <code>模型供给</code> <code>算力容量</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 宣布从 7 月 20 日起，Fable 5 纳入 Max 与 Team Premium 计划，并以 50% 使用额度提供给相应用户。Pro 与 Team Standard 用户继续通过用量积分访问，同时获得一次性 100 美元额度。调整反映出需求和算力供给仍在动态平衡。 Anthropic表示，将为高强度使用 Fable 5 的订阅计划提供标准化的50%使用额度，以减少用户对配额变化的不确定性。公司同时表示会继续增加容量，并持续更新访问政策。</p>
+<h3>10. <a href="https://x.com/ClaudeDevs/status/2078251675308240973">Claude Managed Agents：多模型多代理协作进入平台能力</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter) | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/17</li>
+<li><strong>标签</strong>: <code>Claude Platform</code> <code>Managed Agents</code> <code>多代理</code> <code>Agent API</code> <code>沙箱</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Platform 总结近期面向 Agent 构建与部署的 API 能力，并将多代理协作视为生产环境的重要模式。Managed Agents 支持不同代理使用不同模型、提示和工具，同时共享沙箱或凭据库，适合把复杂任务拆成可协调的执行单元。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周模型发布共有 5 篇，竞争焦点从单一参数规模转向代码、前端、长上下文和真实任务表现。Kimi K3 以开放模型、百万上下文和视觉闭环编程形成高辨识度发布叙事，Qwen3.8 则提前释放 Max Preview 并预告开放权重。Grok 4.5 的 FrontierSWE 表现和 GPT-5.6 Sol 的安全能力展示，进一步推动模型比较进入工程任务和专业领域。</p>
+<h3>研究</h3>
+<p>研究类共有 8 篇，安全与科学应用占据主要位置。GPT-Red 用自动红队生成提示注入攻击，Anthropic 的代理错位模拟则把自主系统风险放进可复核的场景转录。与此同时，医疗、物理竞赛和加拿大区域采用研究显示，模型评估正逐步覆盖专业工作与社会影响，而不只依赖通用基准。</p>
+<h3>产品与功能</h3>
+<p>产品与功能共有 28 篇，是本周最活跃的类别。Codex 继续扩展到并行目标、Sites、Inline edits、移动端和 SSH；Claude Code 则围绕代码审查、Managed Agents、无障碍和套餐能力补齐工作流。Google Search AI Mode、Claude Artifacts MCP 连接器和 Claude for Teachers 共同表明，产品竞争正在从聊天界面转向权限、数据和真实协作流程。</p>
+<h3>商业动态</h3>
+<p>商业动态共有 3 篇，整体以组织扩张、合作和市场信号为主，结构性交易较少。OpenAI 的企业采用与 Codex 活跃度、Anthropic 的研究投入以及 Kimi 的订阅容量变化，分别体现需求增长、生态建设和算力约束。对使用者而言，服务稳定性和单位任务成本比单纯的用户规模更值得持续跟踪。</p>
+<h3>政策与安全</h3>
+<p>政策与安全共有 4 篇，重点从抽象原则转向部署中的可观测风险。GPT-Red、代理错位模拟和 Codex Security 都强调在真实工具链、网页、邮件和代码环境中验证攻击面。教育产品的数据隐私、OpenAI 的青少年安全路线和生物韧性讨论，则把治理要求延伸到具体产品和社会基础设施。</p>
+<h3>教程与观点</h3>
+<p>教程与观点共有 17 篇，主要围绕如何把代理能力转化为可控的工作流。Thariq 关于精简系统提示词、Codex Build Week 和社区项目展示了从提示、原型到交付的实践路径。与此同时，关于模型就业影响、Token 成本和研发流程的讨论提醒团队：评估 AI 应优先看任务完成成本、返工率和长期协作质量。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Anthropic 推出面向美国 K-12 教师的 Claude</strong> — 教育团队可用本州课程标准测试课程计划生成、分层材料改写和学生数据分析三类核心工作流。</li>
+<li><strong>Anthropic 推出面向美国 K-12 教师的 Claude</strong> — 在试点前梳理学生数据共享边界，确认 FERPA、校区政策和工具连接权限。</li>
+<li><strong>Claude Artifacts 升级：公开分享 + 多人编辑 + Slack 生成</strong> — 用一个真实 Slack 讨论生成内部仪表盘，验证数据结构和权限边界。</li>
+<li><strong>Claude Artifacts 升级：公开分享 + 多人编辑 + Slack 生成</strong> — 把需要多人校对的 Artifact 改成协作编辑流程，记录冲突和版本管理问题。</li>
+<li><strong>Claude Artifacts 升级：公开分享 + 多人编辑 + Slack 生成</strong> — 测试公开分享链接是否满足团队对访问控制和外部展示的要求。</li>
+<li><strong>ChatGPT Work 指南扩展：数据科学与销售落地</strong> — 挑选一个高频数据分析或销售流程，用 ChatGPT Work 复刻指南中的端到端步骤。</li>
+<li><strong>ChatGPT Work 指南扩展：数据科学与销售落地</strong> — 把可复用提示、文件模板和审批节点沉淀成团队共享工作流。</li>
+<li><strong>GPT 5.6 Sol 将保留在 ChatGPT 订阅内</strong> — 评估现有 Go、Plus 或 Pro 订阅中的 GPT 5.6 Sol 可用性，避免因权益误解重复采购。</li>
+<li><strong>Codex 与 ChatGPT Work 达 700 万活跃用户</strong> — 在桌面端或网页版检查是否可领取 banked reset，并优先用于高消耗编码任务。</li>
+<li><strong>OpenAI Build Week 开放提交，7 月 21 日截止</strong> — 若已有原型，优先补齐演示视频、README 和可复现实验步骤。</li>
+<li><strong>Codex/GPT-5.6 加速：700 万周活 + 成本下降</strong> — 用现有代理任务回放对比 GPT-5.6 Sol 的成功率、输出 token 和端到端成本。</li>
+<li><strong>Codex/GPT-5.6 加速：700 万周活 + 成本下降</strong> — 检查 Codex 工作流中可并行拆分的任务，试用 /goal 承载多线开发。</li>
+<li><strong>Codex/GPT-5.6 加速：700 万周活 + 成本下降</strong> — 评估 AppShots、Sites、Inline edits 与移动/SSH 工作流是否能减少从原型到 PR 的手工步骤。</li>
+<li><strong>Codex/GPT-5.6 加速：700 万周活 + 成本下降</strong> — 为团队建立按任务完成成本而非单 token 价格的评测表。</li>
+<li><strong>Claude for Teachers 上线：免费高级能力 + 课程标准</strong> — 让教师先用标准对齐的课程计划和分层练习做小范围试点。</li>
+<li><strong>Claude for Teachers 上线：免费高级能力 + 课程标准</strong> — 将 Learning Commons 连接器与现有课程资源比对，检查生成材料是否符合州标准。</li>
+<li><strong>Claude for Teachers 上线：免费高级能力 + 课程标准</strong> — 为班级数据分析任务设置最小必要数据输入和人工复核流程。</li>
+<li><strong>Google Images 25 周年：搜索加入图像生成</strong> — 关注 AI Overviews 图像生成上线地区和入口，测试搜索意图到生成图像的转化质量。</li>
+<li><strong>Google Images 25 周年：搜索加入图像生成</strong> — 对依赖图片搜索流量的内容站点，评估动态首页和生成式搜索对发现路径的影响。</li>
+<li><strong>GPT-5.6 sol 展示个人衣橱搭配</strong> — 评估相册类个人数据场景时，先设计本地权限、数据保留和删除流程。</li>
+<li><strong>GPT-5.6 sol 展示个人衣橱搭配</strong> — 将衣橱、家装或库存整理类任务拆成识别、结构化和生成展示三步测试。</li>
+<li><strong>Grok 4.5 登上 FrontierSWE 第二</strong> — 在真实代码任务上复测 Grok 4.5 的实现质量和性能表现</li>
+<li><strong>Grok 4.5 登上 FrontierSWE 第二</strong> — 把 FrontierSWE 结果与团队现有 SWE-Bench 或内部评测做横向对比</li>
+<li><strong>xAI 开源 Grok Build 工具链</strong> — 审阅 Grok Build CLI 的接口设计，判断能否接入现有代理评测流水线</li>
+<li><strong>xAI 开源 Grok Build 工具链</strong> — 复用其 harness 思路为内部代码代理建立稳定回归测试</li>
+<li><strong>Claude Artifacts 接入 MCP 连接器</strong> — 把现有静态 artifact 改造成连接只读 MCP 数据源的仪表盘，先验证权限边界。</li>
+<li><strong>Claude Artifacts 接入 MCP 连接器</strong> — 避免把需要公开分享的 artifact 依赖 MCP 连接器，因为该能力不支持公开分享。</li>
+<li><strong>GPT-Live 强化实时多任务对话</strong> — 用旅行规划、客服排查等连续场景测试多任务上下文保持能力</li>
+<li><strong>GPT-Live 强化实时多任务对话</strong> — 评估实时工具调用时的延迟、打断处理和错误恢复</li>
+<li><strong>Codex in Chrome 演示上线计划流程</strong> — 选择一个真实上线请求，按表单到清单到回复的链路复刻演示流程。</li>
+<li><strong>Codex in Chrome 演示上线计划流程</strong> — 检查 Google Drive、Slack 和本地文件权限，确保 Codex 只读取必要上下文。</li>
+<li><strong>Claude Devs 重置全员用量限制</strong> — 重新运行此前因限额中断的 Claude 工作流</li>
+<li><strong>Claude Devs 重置全员用量限制</strong> — 检查团队成员的周限额是否已同步恢复</li>
+<li><strong>Codex Micro：OpenAI 推开发者微型键盘</strong> — 如果团队有固定 Codex 操作流，可先列出最常用的 3-5 个快捷动作，再判断是否值得映射到硬件。</li>
+<li><strong>Kimi K3 发布：2.8T 开放模型 + 百万上下文</strong> — 先通过 Kimi API 或 Kimi Code 验证长程编码、前端生成和研究自动化任务。</li>
+<li><strong>Kimi K3 发布：2.8T 开放模型 + 百万上下文</strong> — 权重发布后复现实测项目，对比它与现有 Claude/GPT 工作流的差异。</li>
+<li><strong>Kimi K3 发布：2.8T 开放模型 + 百万上下文</strong> — 评估官方推理建议和 vLLM 支持，再决定是否进行本地或私有化部署。</li>
+<li><strong>Claude Code 代码审查升级：effort 分级 + ultra 复核</strong> — 为普通 PR 默认使用低档，为核心路径或发布前改动使用 high/ultra。</li>
+<li><strong>Claude Code 代码审查升级：effort 分级 + ultra 复核</strong> — 用历史 PR 对比不同档位，建立团队自己的成本、召回率和误报基线。</li>
+<li><strong>Claude Code 代码审查升级：effort 分级 + ultra 复核</strong> — 把 /code-review 输出纳入合并前清单，并保留人工复核环节。</li>
+<li><strong>Google Search AI Mode 接入外部应用</strong> — 测试 AI Mode 连接应用时的授权、数据边界和撤销流程</li>
+<li><strong>Google Search AI Mode 接入外部应用</strong> — 把 Instacart、Canva、YouTube Music 场景拆成可复用的产品集成清单</li>
+<li><strong>Google Search AI Mode 接入外部应用</strong> — 关注后续伙伴扩展，评估自家服务是否需要适配搜索入口</li>
+<li><strong>Codex 增加 PR Chat 与行内改稿</strong> — 在下一次代码评审中用 PR Chat 询问风险点和测试缺口。</li>
+<li><strong>Codex 增加 PR Chat 与行内改稿</strong> — 把小型 review comment 交给行内编辑处理，并人工检查补丁差异。</li>
+<li><strong>Muse Spark 1.1 登陆 OpenRouter</strong> — 在 OpenRouter 中建立小型评测集，对比 Muse Spark 1.1 与现用模型的输出质量</li>
+<li><strong>Muse Spark 1.1 登陆 OpenRouter</strong> — 确认地区和账号权限后，再把它接入实验性应用链路</li>
+<li><strong>Google Vids 加入 Gemini Omni 与头像</strong> — 用一段内部培训视频测试文本改片、图像参考和头像出镜的实际质量</li>
+<li><strong>Google Vids 加入 Gemini Omni 与头像</strong> — 为 AI 生成视频建立水印、审核和发布前告知规范</li>
+<li><strong>Altman 称 ChatGPT 语音模型跨过门槛</strong> — 在移动端或桌面端重新测试语音工作流，评估是否适合替代短文本输入。</li>
+<li><strong>Altman 称 ChatGPT 语音模型跨过门槛</strong> — 为需要免手操作的场景设计语音优先原型。</li>
+<li><strong>GPT-5.6 Sol：网络安全能力与 Codex Security 落地</strong> — 在授权代码库上用 Codex Security 做小范围扫描，要求输出证据和可复现步骤。</li>
+<li><strong>GPT-5.6 Sol：网络安全能力与 Codex Security 落地</strong> — 把发现、人工复核、测试和修复合并为闭环，单独记录误报与漏报。</li>
+<li><strong>GPT-5.6 Sol：网络安全能力与 Codex Security 落地</strong> — 对照公开评测与自有安全任务，建立模型升级前后的基线。</li>
+<li><strong>Claude Fable 5：订阅计划扩容并稳定供给</strong> — 在不同订阅档位实测 Fable 5 的可用额度和高峰期稳定性。</li>
+<li><strong>Claude Fable 5：订阅计划扩容并稳定供给</strong> — 对长任务建立额度监控，避免把高峰期容量变化误判为模型质量波动。</li>
+<li><strong>Claude Managed Agents：多模型多代理协作进入平台能力</strong> — 用一个可回滚的内部流程试验多代理分工，明确每个代理的工具权限和交接格式。</li>
+<li><strong>Claude Managed Agents：多模型多代理协作进入平台能力</strong> — 评估共享沙箱与凭据库的隔离边界，并为长任务保留完整执行日志。</li>
+<li><strong>Sam Altman分享Codex相关链接</strong> — 打开原链接确认页面内容，再判断是否适合纳入现有 Codex 工作流。</li>
+<li><strong>Claude Fable 5：订阅额度与 Claude Code 限额继续扩容</strong> — 为高频 Claude Code 工作流记录限额变化，避免把临时配额当成长期 SLA。</li>
+<li><strong>Claude Fable 5：订阅额度与 Claude Code 限额继续扩容</strong> — 在团队内按任务优先级分配模型额度，并为关键发布保留余量。</li>
+<li><strong>Kimi K3：用户项目展示推动开发者生态扩散</strong> — 用 Kimi K3 复现一个端到端原型，记录生成、调试和迭代所需的人工介入。</li>
+<li><strong>Kimi K3：用户项目展示推动开发者生态扩散</strong> — 把社区案例拆成可复用的提示、工具调用和评测步骤。</li>
+<li><strong>Kimi推出面向企业的Business会员</strong> — 按席位数、并发任务和Kimi Code额度估算团队月度使用量，再比较企业套餐的年付成本。</li>
+<li><strong>Kimi推出面向企业的Business会员</strong> — 采购前确认数据隐私、发票和技术支持条款，并核实Kimi与Kimi Code权益分离后的实际额度。</li>
+<li><strong>Qwen3.8：2.4T 开放模型预告与 Max Preview 上线</strong> — 在代码、长上下文和工具调用任务上建立 Qwen3.8 的基线评测。</li>
+<li><strong>Qwen3.8：2.4T 开放模型预告与 Max Preview 上线</strong> — 关注权重、许可证和推理要求，提前评估本地部署成本。</li>
+<li><strong>Seed Audio 1.0：面向场景的全流程音频生成</strong> — 用同一段分镜测试对白、环境声和音效的协同生成质量。</li>
+<li><strong>Seed Audio 1.0：面向场景的全流程音频生成</strong> — 评估音频生成在时长控制、角色一致性和后期编辑上的人工成本。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/unlocking-self-improvement-gpt-red">GPT-Red：自动红队推动安全自改进</a> — 了解如何把提示注入攻击生成和对抗训练接成持续安全改进闭环。</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2077830229968683203">Kimi K3 发布：2.8T 开放模型 + 百万上下文</a> — 适合评估开放模型在长上下文、视觉和代理编码上的完整能力边界。</li>
+<li><a href="https://x.com/claudeai/status/2077047278078931243">Claude for Teachers 上线：免费高级能力 + 课程标准</a> — 查看教育场景如何同时处理课程标准、工具连接和学生数据隐私。</li>
+<li><a href="https://x.com/AnthropicAI/status/2077452646303006927">Anthropic 扩展代理错位模拟研究</a> — 通过公开场景转录理解自主代理风险如何被设计和复核。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-07-18</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-18.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-18.md</guid>
@@ -2814,113 +2984,6 @@ https://t.co/voEubobshh</a></li>
 <ul>
 <li><strong>产品与功能</strong> | <code>xAI</code> <code>SuperGrok</code> <code>T3code</code> <code>订阅权益</code> <code>编码工具</code> — xAI 宣布 SuperGrok 和 X 订阅现在可以在 T3code 中使用。这是订阅权益向第三方开发工具扩展的增量更新，有助于提升 Grok 在编码场景中的触达。 · <a href="https://x.com/xai/status/2070195830192320600">xAI (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Anthropic</code> <code>RAISE US</code> <code>劳动力</code> <code>AI 培训</code> <code>政策创新</code> — Anthropic 宣布以创始伙伴身份加入 RAISE US，这是一个关注美国劳动力适应 AI 转型的非营利联盟。该组织由 Gina Raimondo 和 Eric Holcomb 共同领导，计划通过雇主行动、AI 培训和政策创新帮助工人训练、转岗并适应更强 AI 带来的变化。 · <a href="https://x.com/AnthropicAI/status/2070183531612172697">Anthropic (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-25</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-25.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-25.md</guid>
-      <pubDate>Thu, 25 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-25</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>代理工作深化</strong>：OpenAI 研究显示 Codex 正从编程工具扩展为跨部门长周期代理工作入口。</li>
-<li><strong>模型能力升级</strong>：GPT-5.5 Instant 改善意图理解，Qwen-AgentWorld 则把世界建模推向智能体训练。</li>
-<li><strong>基础设施下沉</strong>：OpenAI Jalapeño 和 Grok Build 插件显示头部厂商继续补齐芯片与工具栈。</li>
-<li><strong>企业治理成焦点</strong>：Claude agent identity 将代理凭据、审计和撤权变成团队协作的基础能力。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/OpenAI/status/2069843083701915755">GPT-5.5 Instant 升级对话意图与约束处理</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>GPT-5.5</code> <code>Instant</code> <code>对话体验</code> <code>约束遵循</code> <code>推荐</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 宣布推出新版 GPT-5.5 Instant，称其对话体验更自然，能更好理解问题意图并相应调整回答。新版还提升了复杂约束遵循能力，并让购物、本地推荐等场景更有用、更连贯；付费用户当天开始推送，免费用户次日推送。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用现有提示词回归测试复杂约束、多轮澄清和推荐类任务。</li>
-<li>对比新旧 Instant 在延迟、成本和回答一致性上的变化，再调整默认模型路由。</li>
-<li>将购物或本地推荐场景加入人工评测集，检查是否出现过度自信推荐。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/Alibaba_Qwen/status/2069720365442719867">Qwen-AgentWorld：35B 开源世界模型与智能体基准</a></h3>
-<ul>
-<li><strong>来源</strong>: Qwen (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Qwen-AgentWorld</code> <code>世界模型</code> <code>AgentWorldBench</code> <code>智能体环境</code> <code>开源模型</code> <code>SWE-Bench</code> <code>256K上下文</code></li>
-</ul>
-<p><strong>摘要</strong>: Qwen 发布 Qwen-AgentWorld-35B-A3B、AgentWorldBench 和配套论文，把「语言世界建模」作为提升智能体能力的核心路线。该 MoE 模型总参数 35B、激活 3B，支持 256K 上下文，可在 MCP、搜索、终端、SWE、Web、OS、Android 七类环境中模拟智能体交互。Qwen 称它在 AgentWorldBench 上超过 Claude Opus 4.8 与 GPT-5.4，并且通过环境预测能力在 Terminal-Bench 2.0、SWE-Bench、WideSearch、BFCL v4 等任务上带来迁移收益。开源材料覆盖论文、博客、GitHub、HuggingFace 和 ModelScope，便于团队复现实验和接入评测。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2069720397747220493">Qwen 用世界建模提升智能体泛化</a> · Qwen (Twitter) · 基准收益</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>优先复现 MCP、Terminal、SWE 三类环境评测，判断是否适合替代真实环境做训练前筛选。</li>
-<li>用 AgentWorldBench 跑现有智能体栈的对照评测，重点观察长上下文和工具调用稳定性。</li>
-<li>把可控模拟环境接入智能体回归测试，记录哪些失败模式能提前暴露。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://openai.com/index/how-agents-are-transforming-work">OpenAI 研究：Codex 正把工作从聊天推向代理</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>代理式AI</code> <code>Codex</code> <code>知识工作</code> <code>非开发者采用</code> <code>生产力</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 的研究称，代理式 AI 正把知识工作的单位从一次性对话转向可委派的长周期任务，Codex 在公司内部已成为各部门的主要 AI 工作工具。到 2026 年 5 月，80.6% 的个人用户至少提交过一个估计超过 30 分钟人工工作量的 Codex 请求，非开发者采用速度也显著快于开发者。文章强调，代理工具正在让法律、财务、招聘等非技术岗位承担更多自动化、数据处理和技术执行任务。</p>
-<hr>
-<h3>4. <a href="https://x.com/ClaudeDevs/status/2069895377080443271">Claude 代理身份模型：独立凭据 + 统一治理</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>agent identity</code> <code>代理凭据</code> <code>权限治理</code> <code>企业审计</code> <code>协作安全</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Devs 介绍「agent identity」访问模型：当 Claude 被加入团队频道或共享工作区时，它使用自己的独立凭据，而不是借用某个成员的个人权限。这样每个连接系统都能在日志中记录 Claude 自身的操作，管理员也可以一次撤销访问并统一控制权限边界。该模型的重点是在让 Claude 参与共享协作的同时，避免暴露个人私有文件并提升企业审计能力。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/ClaudeDevs/status/2069895389415874907">Claude 代理身份便于统一审计与撤权</a> · Claude Devs (Twitter) · 审计与撤权</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>为企业 AI 代理配置独立账号和最小权限，避免复用员工 OAuth 凭据。</li>
-<li>在 Slack、文档、代码仓库等连接系统中确认代理操作能独立落日志。</li>
-<li>建立代理访问的集中撤权和定期复核流程。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://x.com/xai/status/2069809728088350789">Grok Build 接入 MongoDB 官方插件</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Grok Build</code> <code>MongoDB</code> <code>插件</code> <code>数据库管理</code> <code>索引优化</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI 宣布 Grok Build 可使用 MongoDB 官方插件，支持查询数据、优化索引和管理数据库。该更新把数据库操作纳入 Grok Build 的工具生态，适合需要在生成应用或数据工作流中直接访问 MongoDB 的团队试用。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在测试环境连接 MongoDB 插件，验证查询、索引建议和权限边界。</li>
-<li>为生产数据库配置只读或最小权限凭据，避免让代理直接持有高危写权限。</li>
-</ul>
-</blockquote>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Kimi</code> <code>AWS Marketplace</code> <code>API</code> <code>企业采购</code> — Moonshot 宣布 Kimi API 已上线 AWS Marketplace，企业可通过 AWS 统一账单购买和使用。符合条件的客户还能将 Kimi API 用量计入 AWS EDP 承诺，降低已有 AWS 客户的采购和预算摩擦。 · <a href="https://x.com/Kimi_Moonshot/status/2069718757338202140">Kimi (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
