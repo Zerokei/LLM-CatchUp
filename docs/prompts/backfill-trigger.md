@@ -14,9 +14,9 @@ Execute Step 0 of `docs/prompts/daily-trigger.md` exactly, including its elevate
 
 ### Step 2: Find one repair target
 
-Compute the normal daily target date: yesterday in America/Los_Angeles.
+Compute the normal daily target date: yesterday in America/Los_Angeles. The unified scheduler has already run the normal analyzer for that date, so do not select it here.
 
-Inspect that date plus the 39 preceding America/Los_Angeles calendar dates. The 40-day horizon covers an entire prior calendar month so monthly preflight gaps can self-heal. A date is repairable only when `data/fetch-cache/{date}.json` exists. It needs repair when any of these is true:
+Inspect the 40 America/Los_Angeles calendar dates immediately preceding the normal target. The horizon covers an entire prior calendar month so monthly preflight gaps can self-heal. A date is repairable only when `data/fetch-cache/{date}.json` exists. It needs repair when any of these is true:
 
 - `data/analysis-cache/{date}.json` is missing;
 - fetch-cache contains an eligible article URL absent from `analysis-cache.articles`;
@@ -24,7 +24,7 @@ Inspect that date plus the 39 preceding America/Los_Angeles calendar dates. The 
 - the editorial report contains `fallback，自动回退版`;
 - `reports/daily/{date}.ops.md` is missing.
 
-Choose at most one date per run. Prioritize the normal daily target date first, because weekly aggregation may be waiting for it. If that date is healthy, choose the oldest remaining repairable date so older gaps eventually drain.
+Choose at most one date per run. First prioritize repairable dates inside the most recently completed America/Los_Angeles ISO week, oldest first, because weekly aggregation may be waiting for them. Next prioritize repairable dates inside the most recently completed America/Los_Angeles calendar month, oldest first. Otherwise choose the oldest repairable date in the window so gaps eventually drain.
 
 If no repairable date exists, exit successfully without modifying files.
 

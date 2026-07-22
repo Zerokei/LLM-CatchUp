@@ -18,7 +18,7 @@ Read `config.yaml` for `categories` and `output_path`.
 
 ### Step 2: Determine the completed month
 
-The automation runs on the 2nd and again on the 3rd day of each month in Asia/Shanghai; the second run is an idempotent retry. Compute the reporting period in America/Los_Angeles:
+The unified scheduler runs this prompt in its late slot on the 2nd and again on the 3rd day of each month in Asia/Shanghai; the second run is an idempotent retry. Compute the reporting period in America/Los_Angeles:
 
 1. `current_month_start` = the first day of the current America/Los_Angeles month at 00:00:00.
 2. `target_start` = one calendar month before `current_month_start`.

@@ -1,44 +1,45 @@
 ---
 name: sync-daily-trigger
-description: Use when the live CatchUp daily Codex automation needs to be verified or repaired, especially after automation recreation, schedule changes, workspace changes, or docs/prompts/daily-trigger.md path changes.
+description: Use when the live CatchUp unified Codex report automation needs to be verified or repaired, especially after automation recreation, schedule changes, task changes, or docs/prompts/report-scheduler.md path changes.
 disable-model-invocation: true
 ---
 
 # sync-daily-trigger
 
-Verifies or repairs the live CatchUp daily Codex automation so it executes `docs/prompts/daily-trigger.md` from the repo.
+Verifies or repairs the live CatchUp report heartbeat so it executes `docs/prompts/report-scheduler.md` from the repo. The scheduler invokes daily, repair, weekly, and monthly prompts inside one pinned task.
 
 ## Why this skill exists
 
-The previous scheduled routine embedded the full prompt, so every prompt edit required a sync. The Codex automation should instead keep a short prompt that tells the job to execute `docs/prompts/daily-trigger.md` from the repo. That makes the repo file the real source of truth: after prompt edits are committed and pushed, no automation update is needed unless the automation wiring itself changed.
+The previous scheduled routine embedded the full prompt, so every prompt edit required a sync. The Codex automation should instead keep a short prompt that tells the job to execute `docs/prompts/report-scheduler.md` from the repo. That makes the repo files the real source of truth: after prompt edits are committed and pushed, no automation update is needed unless the automation wiring itself changed.
 
-**Prompt shape (as of 2026-04-22):** the daily prompt is now "analysis-only" — it produces `data/analysis-cache/{date}.json` and exits. A separate GH Actions workflow (`build-report.yml`) renders the final markdown report and updates history/health. If you're reading the prompt and it looks much shorter than the weekly/monthly ones, that's intentional — don't restore the removed steps.
+Codex allows only one active heartbeat per task. Because the user wants all report results in the pinned `CatchUp Daily Report` task, do not create separate weekly/monthly heartbeats for that task. The unified scheduler performs the routing.
+
+**Prompt shape (as of 2026-07-22):** the scheduler routes one heartbeat into the analysis-only daily prompt plus repair/weekly/monthly prompts. Daily produces `data/analysis-cache/{date}.json`; a separate GH Actions workflow (`build-report.yml`) renders the final markdown report and updates history/health. Do not move those deterministic steps back into the daily analyzer.
 
 ## Procedure
 
-### 1. Find the existing daily automation
+### 1. Find the existing report automation
 
-Inspect `${CODEX_HOME:-$HOME/.codex}/automations/*/automation.toml` and find the automation with a name matching `CatchUp Daily Analyzer`.
+Inspect `${CODEX_HOME:-$HOME/.codex}/automations/*/automation.toml` and find the automation with a name matching `CatchUp Report Scheduler`. For migration only, accept a legacy name matching `CatchUp Daily Analyzer` or `CatchUp Daily Report`, then rename it during update.
 
 Record:
 - `id`
 - `name`
 - `rrule`
-- `cwds`
-- `executionEnvironment`
-- `model`
-- `reasoningEffort`
 - `status`
+- `target_thread_id`
+- `notification_policy`
 
 Do NOT hardcode the automation ID in this skill — the user may re-create the automation and the ID will change.
 
-### 2. Verify the local prompt file
+### 2. Verify the local prompt files
 
 ```bash
+test -f docs/prompts/report-scheduler.md && head -5 docs/prompts/report-scheduler.md
 test -f docs/prompts/daily-trigger.md && head -5 docs/prompts/daily-trigger.md
 ```
 
-Confirm the file exists and starts with the CatchUp daily trigger heading.
+Confirm both files exist, the scheduler starts with the CatchUp unified scheduler heading, and it explicitly invokes `docs/prompts/daily-trigger.md`.
 
 ### 3. Call automation_update
 
@@ -47,32 +48,30 @@ Use the `automation_update` tool with `mode: "update"` and preserve every existi
 ```json
 {
   "mode": "update",
-  "kind": "cron",
+  "kind": "heartbeat",
   "id": "<id from step 1>",
-  "name": "CatchUp Daily Analyzer",
-  "prompt": "Execute `docs/prompts/daily-trigger.md` as the CatchUp daily analyzer task. Treat that file as the source-of-truth prompt, follow it straight through, and report the final status.",
+  "name": "CatchUp Report Scheduler",
+  "prompt": "Execute `docs/prompts/report-scheduler.md` as the CatchUp unified report scheduler. Treat that repo file as the source-of-truth prompt, follow it straight through, and report the combined final status.",
   "rrule": "<preserved>",
-  "cwds": "<preserved>",
-  "executionEnvironment": "<preserved>",
-  "model": "<preserved>",
-  "reasoningEffort": "<preserved>",
-  "status": "<preserved>"
+  "status": "<preserved>",
+  "targetThreadId": "<preserved pinned task id>",
+  "notificationPolicy": "<preserved>"
 }
 ```
 
 ### 4. Verify the response
 
-- The returned automation should still point at this repo and keep the original schedule.
-- The prompt should tell the automation to execute `docs/prompts/daily-trigger.md`, not paste a stale copy of the old trigger body.
+- The returned automation should still target the pinned `CatchUp Daily Report` task and keep the requested schedule.
+- The prompt should tell the automation to execute `docs/prompts/report-scheduler.md`, not paste stale copies of any trigger body.
 - If the update creates a duplicate automation instead of updating the existing one, pause and ask the user which one to keep.
 
 ### 5. Report
 
-Print a concise summary to the user: "Verified/repaired daily automation <id>. It points at docs/prompts/daily-trigger.md. Schedule preserved: <rrule>."
+Print a concise summary to the user: "Verified/repaired report scheduler <id>. It points at docs/prompts/report-scheduler.md and targets the pinned CatchUp Daily Report task."
 
 ## Common pitfalls
 
-- **Creating duplicates**: inspect existing automation TOMLs before calling create. Prefer updating `CatchUp Daily Analyzer`.
-- **Dropping schedule/workspace fields**: preserve `rrule`, `cwds`, `executionEnvironment`, `model`, `reasoningEffort`, and `status` unless the user asked to change them.
-- **Pasting stale prompt bodies**: keep the automation prompt as a pointer to `docs/prompts/daily-trigger.md`; the repo file remains the source of truth after commit/push.
-- **Weekly/monthly automations drift the same way**: this skill only syncs daily. If you edit `weekly-trigger.md` or `monthly-trigger.md`, update those automations with the same pattern and their own names.
+- **Creating duplicates**: inspect existing automation TOMLs before calling create. Prefer updating the existing report scheduler. A task can have only one active heartbeat.
+- **Dropping schedule/task fields**: preserve `rrule`, `targetThreadId`, `notificationPolicy`, and `status` unless the user asked to change them.
+- **Pasting stale prompt bodies**: keep the automation prompt as a pointer to `docs/prompts/report-scheduler.md`; the repo files remain the source of truth after commit/push.
+- **Creating separate report heartbeats**: do not work around the one-heartbeat-per-task limit. The scheduler owns daily, repair, weekly, and monthly routing.

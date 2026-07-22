@@ -18,7 +18,7 @@ Read `config.yaml` for `categories` and `output_path`.
 
 ### Step 2: Determine the target week (ISO-aligned)
 
-The trigger runs Tuesday and again Wednesday late morning Asia/Shanghai. Wednesday is an idempotent retry. Both invocations target **the ISO week that just ended** — never the in-progress week.
+The unified scheduler runs this prompt in its Tuesday and Wednesday late slots (Asia/Shanghai). Wednesday is an idempotent retry. Both invocations target **the ISO week that just ended** — never the in-progress week.
 
 Compute as follows (all timestamps America/Los_Angeles):
 
