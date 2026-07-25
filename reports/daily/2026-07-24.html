@@ -1,0 +1,545 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-07-24 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-07-24" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-07-24</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>旗舰模型与专用模型并进</strong>：Claude Opus 5、Gemini 3.5 Flash Cyber 和 Qwen-Audio-3.0-TTS 分别推进通用推理、安全检测与语音生成。</li>
+<li><strong>语音成为工作入口</strong>：Claude Voice、ChatGPT Voice 与 Codex Voice 文档同时扩展语音对工具、代理和远程开发环境的控制。</li>
+<li><strong>智能体走向项目协作</strong>：Codex 与 ChatGPT Work 增加多文件夹、项目规则和跨线程管理，开发环境的组织能力继续增强。</li>
+<li><strong>AI 产品进入高风险场景</strong>：ChatGPT Health 接入健康数据，Gemini 3.5 Flash Cyber 则以受限试点方式进入安全工作流。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://www.anthropic.com/news/claude-opus-5">Anthropic发布 Claude Opus 5</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Opus 5</code> <code>智能体</code> <code>编码</code> <code>模型评测</code> <code>安全护栏</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Opus 5 正式发布，在编码、知识工作、科学研究和视觉任务上相较 Opus 4.8 有明显提升，并以相同价格提供更高的任务效率。Anthropic称其在多项基准中达到当前最佳，同时通过更严格的网络安全护栏限制漏洞利用和攻击性能力。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用代表性编码、知识工作和科学任务建立内部基准，对比准确率、延迟与单位任务成本</li>
+<li>对涉及网络安全和生物学的工作流启用人工审批、权限隔离与输出审计</li>
+<li>按工作难度配置 effort 设置，平衡推理质量、速度和 token 成本</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-4">2. <a href="https://www.anthropic.com/research/project-pilot">Project Pilot评估 AI 模型自主驾驶无人机</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>无人机</code> <code>机器人</code> <code>Drone-Bench</code> <code>双重用途</code> <code>AI治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic与 Andon Labs 发布 Project Pilot 和 Drone-Bench，评估 AI 模型在室内环境中控制四旋翼无人机完成重建、定位、导航、目标检测和跟随任务的能力。实验显示模型在检测与跟随上进展较快，但环境重建仍是端到端可靠执行的主要瓶颈，也凸显了无人机监控能力的双重用途风险。</p>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/OpenAI/status/2080378182469857576">ChatGPT Voice 登陆桌面：语音协调多代理并远程控制 Codex</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Voice</code> <code>Codex</code> <code>多代理</code> <code>远程访问</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT Voice 开始进入桌面应用，用户可以通过语音控制电脑，并协调 ChatGPT Work 或 Codex 中运行的多个代理。iOS 版还支持通过配对的远程访问连接 Codex，把移动端语音指令延伸到开发环境。该更新将语音交互从问答扩展到跨代理、跨设备的工作流控制。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2080392280549253392">ChatGPT Voice 可从 iOS 远程连接 Codex</a> · OpenAI (Twitter) · Codex iOS 远程访问</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在低风险项目中测试语音发起任务、查看线程和协调代理的完整链路。</li>
+<li>为远程 Codex 访问配置最小权限，并验证移动端丢失或误识别指令时的恢复流程。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/OpenAI/status/2080339982288568709">ChatGPT Health 在美国推出：接入健康数据与医疗记录</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Health</code> <code>健康数据</code> <code>Apple Health</code> <code>医疗记录</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT Health 开始向美国用户推出，支持在授权后连接 Apple Health 和受支持的医疗记录。ChatGPT 可以在普通对话中调用相关健康上下文，帮助用户获得更连续的健康信息支持。产品由早期测试者和医生反馈驱动，并继续与全球医生合作改进，但健康建议仍应经过专业人员确认。 OpenAI 表示，用户授权后，ChatGPT 可以在普通对话中调用已连接的 Health 信息，用于比较检查结果、总结就诊变化，或结合睡眠和活动数据回答问题。Health 仍是连接账户、浏览记录和回看健康对话的管理入口。 OpenAI 表示，每周有超过 3 亿人向 ChatGPT 提出健康相关问题，并与全球数百名医生合作评估准确性、安全性、沟通、上下文理解、完整性和适当升级等指标。GPT-5.5 Instant 已将健康能力提供给免费用户，GPT-5.6 Sol 则面向更复杂的健康问题增强推理和判断。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>上线前明确用户授权、撤销和数据最小化策略，并用脱敏数据测试连接流程。</li>
+<li>将健康场景输出定位为信息辅助，设置医生复核和高风险问题升级路径。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/OpenAIDevs/status/2080378875394289839">Codex 与 ChatGPT Work 协同升级：项目规则、多文件夹与语音工作流</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>ChatGPT Work</code> <code>AGENTS.md</code> <code>多文件夹</code> <code>语音交互</code></li>
+</ul>
+<p><strong>摘要</strong>: Codex 与 ChatGPT Work 现在可以在同一对话中启动任务、查看线程并持续引导开发工作。Codex 项目新增主文件夹和多文件夹协作模式，集中承载 Git、代码评审、拉取请求、AGENTS.md 与技能发现等项目级能力。相关开发者文档还补充了 Codex Voice 的使用入口，开发者可以用更自然的交互管理长时间工作流。 OpenAI Devs 分享了 Codex Voice 功能的开发者文档页面，指向语音交互能力的使用说明。开发者可据此了解相关接入方式与使用边界，具体可用范围以文档为准。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2080390328880951299">Codex 项目支持跨多个文件夹协作</a> · OpenAI Devs (Twitter) · 多文件夹协作</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把仓库级检查和常用评审要求写入 AGENTS.md，再用 Codex Code Review 验证规则是否生效。</li>
+<li>将相关代码、文档和参考资料组织到同一 Codex 项目，先用低风险任务验证多文件夹权限边界。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/claudeai/status/2080376094939603366">Claude 语音模式升级：更强模型、工具调用与多语言支持</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>语音模式</code> <code>工具调用</code> <code>多语言</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 的语音模式现在可以使用更强的 Opus 和 Sonnet 模型，并在对话中调用已连接的工具。更新还扩展了语言支持，覆盖西班牙语、法语、印地语和日语，并向所有套餐推出。用户可以直接用语音描述任务，让 Claude 在不中断对话的情况下访问工具并执行工作。 Claude语音对话现在可以使用聊天中的更多模型，包括 Opus 和 Sonnet，并可在对话中途访问用户连接的邮箱、日历等工具。该更新把语音交互从单纯问答扩展到可执行的多步骤工作流。 Claude表示语音模式新增西班牙语、法语、印地语和日语等语言支持，并向所有套餐开放。功能将在移动端、桌面端和网页端以公开 beta 形式逐步推出，用户可通过声波按钮开始对话。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用语音模式测试已连接工具的调用链，确认权限和结果回传符合预期。</li>
+<li>为多语言团队验证目标语言下的识别准确率和工具调用稳定性。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/demishassabis/status/2080332282028507234">英国新任 AI 部长公布 AI 产业与安全工作重点</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>英国</code> <code>AI部长</code> <code>产业政策</code> <code>国家安全</code> <code>就业</code></li>
+</ul>
+<p><strong>摘要</strong>: Demis Hassabis祝贺 Kanishka Narayan 出任英国 AI 部长，转发内容概述了其推动 AI 制造、物理 AI 就业、网络安全和主权 AI 的工作重点。相关计划还强调让 AI 惠及各地区和劳动者，显示英国正把 AI 产业政策与国家安全、就业和公共治理结合起来。</p>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/GoogleDeepMind/status/2080321516814647630">Gemini 3.5 Flash Cyber：面向安全团队的漏洞检测模型</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini 3.5 Flash Cyber</code> <code>网络安全</code> <code>漏洞检测</code> <code>受限试点</code></li>
+</ul>
+<p><strong>摘要</strong>: Gemini 3.5 Flash Cyber 是一款面向安全团队的轻量模型，用于发现并修补软件漏洞。它通过速度和效率提升代码路径覆盖，在安全测试中帮助防御人员检查更多潜在问题。为控制风险，模型先以政府机构和受信任合作伙伴的限量试点方式部署。 Google DeepMind 表示，Gemini 3.5 Flash Cyber 可凭借速度和效率检查更多代码路径。其在 Google Chrome 和 Android 等代码库的测试中发现了标准模型遗漏的复杂且独特漏洞。 Gemini 3.5 Flash Cyber 将首先通过限量访问试点部署给政府机构和受信任合作伙伴。该安排体现了模型在网络安全场景中的受控发布策略，也限制了早期使用范围。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在隔离代码库中评估模型的漏洞发现率、误报率和修复建议可用性。</li>
+<li>为安全团队试点建立人工复核、权限隔离和审计记录。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/Alibaba_Qwen/status/2080270065547809133">Qwen-Audio-3.0-TTS：实时语音与细粒度控制</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Qwen</code> <code>文本转语音</code> <code>语音生成</code> <code>多语言</code> <code>实时交互</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 发布 Qwen-Audio-3.0-TTS，提供面向实时交互的 Flash 版和高质量生成的 Plus 版。模型支持 16 种语言、自然语言风格控制、细粒度语音标签、单次最长 3 分钟长音频，并可处理嘈杂参考音频；官方称其登上 Artificial Analysis TTS Leaderboard 第一。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>分别用 Flash 和 Plus 评估实时对话与高质量播报场景的延迟、音质和成本。</li>
+<li>用自然语言指令和细粒度标签测试情绪、语速及呼吸等表达控制。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/ClaudeDevs/status/2080434253175943400">Anthropic 更新 Claude zoom tool cookbook</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Cookbook</code> <code>zoom工具</code> <code>多模态</code> <code>图像裁剪</code> <code>视觉理解</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic更新 zoom tool cookbook，说明在大图被缩小后，模型可以请求原始高分辨率图像中的指定区域并取得裁剪结果。该模式帮助 Claude 保留密集图表和大型图像中的关键细节，可作为多模态应用的工具调用范式。 Anthropic 更新了 Claude 的 zoom tool cookbook，用于避免大图缩放时丢失关键细节。该工具在 Chartography 基准的 100 道真实密集图表题上显著提升 Fable 5 的准确率，从 29% 提高到 73%。开发者可以参考 cookbook，把按需放大能力接入图像分析流程。</p>
+<hr>
+<h3 id="h-13">11. <a href="https://x.com/SpaceXAI/status/2080413259140882721">Grok Build 接入 Tavily 实时搜索插件</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>Tavily</code> <code>实时搜索</code> <code>插件</code></li>
+</ul>
+<p><strong>摘要</strong>: Tavily 已作为 Grok Build 的官方插件上线，为构建流程提供实时、面向大语言模型优化的网页搜索。用户可在 Grok Build 中通过插件命令启用它，以获取更干净的内容和来源。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在需要外部资料的 Grok Build 工作流中试用 Tavily，并记录搜索结果的相关性。</li>
+<li>对插件返回的来源进行人工核验，再将搜索结果用于自动生成或执行操作。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-14">12. <a href="https://x.com/OpenAIDevs/status/2080383045472075856">Codex Sites Analytics 开始公测</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Sites</code> <code>分析工具</code> <code>性能监测</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Codex 发布 Sites Analytics 公测，为已上线的 Site 提供基础性能指标。开发者可以据此观察所发布站点的运行表现，并据数据迭代内容或实现。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>为已发布的 Codex Site 开启分析数据收集，建立上线后的性能基线。</li>
+<li>定期查看指标变化，优先优化访问性能明显下降的页面或功能。</li>
+</ul>
+</blockquote>
+<hr>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Anthropic发布 Claude Opus 5</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Project Pilot评估 AI 模型自主驾驶无人机</a></li>
+      <li class="toc-h3"><a href="#h-5">3. ChatGPT Voice 登陆桌面：语音协调多代理并远程控制 Codex</a></li>
+      <li class="toc-h3"><a href="#h-6">4. ChatGPT Health 在美国推出：接入健康数据与医疗记录</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Codex 与 ChatGPT Work 协同升级：项目规则、多文件夹与语音工作流</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Claude 语音模式升级：更强模型、工具调用与多语言支持</a></li>
+      <li class="toc-h3"><a href="#h-9">7. 英国新任 AI 部长公布 AI 产业与安全工作重点</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Gemini 3.5 Flash Cyber：面向安全团队的漏洞检测模型</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Qwen-Audio-3.0-TTS：实时语音与细粒度控制</a></li>
+      <li class="toc-h3"><a href="#h-12">10. Anthropic 更新 Claude zoom tool cookbook</a></li>
+      <li class="toc-h3"><a href="#h-13">11. Grok Build 接入 Tavily 实时搜索插件</a></li>
+      <li class="toc-h3"><a href="#h-14">12. Codex Sites Analytics 开始公测</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-07-23.html">2026-07-23</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-24.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
