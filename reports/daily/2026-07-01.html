@@ -311,123 +311,170 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>旗舰模型密集发布</strong>：Claude Sonnet 5、Claude Fable 5 与 Gemini 图像模型同时推进代理、科研和多模态能力。</li>
+<li><strong>代理产品进入工程化</strong>：Managed Agents、Claude Science 和长周期任务实践都在补齐可观测性、来源追踪与持续运行能力。</li>
+<li><strong>安全与可用性并行调整</strong>：Anthropic 继续更新分类器和护栏，Fable 5 则在出口管制解除后恢复全球部署。</li>
+<li><strong>模型组合成为基础设施</strong>：Interactions API 把图像和视频模型串联起来，推动多模态应用从单模型调用走向组合工作流。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/AnthropicAI/status/2072163884430229756">Claude Fable 5 恢复全球部署：出口管制解除与安全护栏更新</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>出口管制</code> <code>安全护栏</code> <code>全球部署</code></li>
+</ul>
+<p><strong>摘要</strong>: 美国商务部解除对 Claude Fable 5 与 Mythos 5 的出口管制后，Anthropic 宣布 Fable 5 将恢复全球部署。围绕此前的限制，Anthropic 继续更新分类器和安全护栏，努力降低对正常请求的误判。早期使用者和团队也在同步说明服务恢复、模型可用性与安全策略的变化。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/trq212/status/2072185565076988326">Anthropic 说明更新后的分类器与 Claude Fable 5 恢复计划</a> · Thariq (Twitter)</li>
+<li><a href="https://x.com/AnthropicAI/status/2072106151890809341">美国商务部解除 Claude Fable 5 与 Mythos 5 的出口管制</a> · Anthropic (Twitter) · 出口管制解除</li>
+</ul>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/claudeai/status/2072017450611142835">Claude Sonnet 5 发布：更强代理能力与 1M 上下文</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Sonnet 5</code> <code>代理能力</code> <code>Claude Code</code> <code>1M 上下文</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Claude Sonnet 5，主打更强的自主代理能力，可制定计划并使用浏览器和终端等工具完成复杂任务。模型在早期合作伙伴测试中能够完成以往 Sonnet 会中途停止的长任务，并在 Claude Code 中提供更高的代码与工具使用性能。Sonnet 5 同时成为多档套餐的默认或可用模型，开发者还获得了 claude-api 技能、提示词指南和迁移资料。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/claudeai/status/2072017455833100494">早期用户称 Claude Sonnet 5 能完成更复杂的连续任务</a> · Claude (Twitter) · 早期任务表现</li>
+<li><a href="https://x.com/ClaudeDevs/status/2071988881717871065">Claude Desktop 开始在 Ubuntu 和 Debian 上提供测试版</a> · Claude Devs (Twitter) · Linux 客户端</li>
+<li><a href="https://x.com/ClaudeDevs/status/2072018504392601762">Claude Sonnet 5 发布并成为 Claude Code Pro 默认模型</a> · Claude Devs (Twitter) · Claude Code 上线细节</li>
+<li><a href="https://x.com/ClaudeDevs/status/2072018517898272844">claude-api 技能简化 Sonnet 5 迁移与提示词调优</a> · Claude Devs (Twitter) · 迁移与提示词</li>
+<li><a href="https://x.com/ClaudeDevs/status/2072020171125100551">Sonnet 5 的文档与提示词指南已开放</a> · Claude Devs (Twitter) · 文档与指南</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在受控代码库中用代表性长任务比较 Sonnet 5 与旧版本的完成率、工具调用次数和回滚成本。</li>
+<li>迁移前用 claude-api 技能检查提示词和工具 schema，逐步验证 1M 上下文带来的成本与收益。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">OpenAI Blog</h2>
+<h3 id="h-5">3. <a href="https://x.com/OpenAI/status/2072004836674167294">OpenAI 发布面向科研判断能力的 GeneBench-Pro 基准</a></h3>
 <ul>
-<li><a href="https://openai.com/index/how-chatgpt-adoption-has-expanded">How ChatGPT adoption has expanded</a></li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GeneBench-Pro</code> <code>科研智能体</code> <code>计算生物学</code> <code>基准评测</code> <code>推理能力</code></li>
 </ul>
-<h2 id="h-2">Thariq (Twitter)</h2>
+<p><strong>摘要</strong>: GeneBench-Pro 用 129 道合成计算生物学问题评估智能体处理混乱数据、选择分析路径、修正假设并判断结果是否可用于决策的能力。OpenAI 披露 GPT-5.6 Sol 在最高推理级别的通过率为 28.7%，Pro 模式为 31.5%，并开放了 10 道代表性题目的公开包。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/OpenAIDevs/status/2071995642436800916">OpenAI 用全量故障数据定位硬件异常与 18 年历史 libunwind 竞态</a></h3>
 <ul>
-<li><a href="https://x.com/trq212/status/2072202267563082180">making some last minute changes to my deck- see you tomorrow at AIE! https://t.co/rhxcTGRnTh</a></li>
-<li>[Have seen some questions about the updated classifiers and wanted to clarify.</li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>故障排查</code> <code>core dump</code> <code>C++</code> <code>libunwind</code> <code>基础设施可靠性</code></li>
 </ul>
-<p>As with the original classifiers, a small fraction of routine coding and debugging tasks will be flagged and fall back to](<a href="https://x.com/trq212/status/2072185565076988326">https://x.com/trq212/status/2072185565076988326</a>)</p>
+<p><strong>摘要</strong>: OpenAI 介绍了 Rockset 数据基础设施崩溃排查过程：通过自动分析一整年 core dump 并按群体寻找相关性，团队将看似同一类故障拆分为 Azure 主机硬件损坏和 GNU libunwind 长期存在的信号竞态两个问题。文章还解释了高频 SIGUSR2、C++ 异常展开与栈状态恢复如何共同放大一个只有单条指令宽度的竞态窗口，并给出隔离坏主机、增强故障信号和改进运行手册等应对措施。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/GoogleDeepMind/status/2071988044878516466">Gemini 图像与视频模型更新：Nano Banana 2 Lite + Gemini Omni Flash</a></h3>
 <ul>
-<li><a href="https://x.com/trq212/status/2072185566695977161">And as we say in our blog, we&#39;re continuing to refine these safeguards to better distinguish genuine misuse from legitimate requests and reduce false positives.</a></li>
-<li><a href="https://x.com/trq212/status/2072130464979325106">excited to get Fable back in your hands!</a></li>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Nano Banana 2 Lite</code> <code>Gemini Omni Flash</code> <code>多模态</code> <code>Interactions API</code></li>
 </ul>
-<h2 id="h-3">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: Google DeepMind 同时发布 Nano Banana 2 Lite 和 Gemini Omni Flash，覆盖更快、更低成本的图像生成以及相关视频工作流。Interactions API 可以把这些模型串联起来，让应用先生成图像再继续处理或制作视频。更新重点是降低多模态开发门槛，并用统一接口组合不同模型的能力。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Introducing Claude Sonnet 5, our most agentic Sonnet yet.</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2071988052478615902">Google DeepMind 展示通过 Interactions API 串联图像与视频模型</a> · Google DeepMind (Twitter) · Interactions API 串联</li>
 </ul>
-<p>It makes plans, uses tools like browsers and terminals, and runs autonomously at a level that just a few months ago required larger and more ](<a href="https://x.com/claudeai/status/2072017450611142835">https://x.com/claudeai/status/2072017450611142835</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2072017455833100494">Early access partners found Sonnet 5 finishes complex tasks where previous Sonnets stopped short, checks its own output without being asked, and does all its agentic work at an attractive price point.</a></li>
-<li>[Sonnet 5 is now the default on Free and Pro, and available to Max, Team, and Enterprise users.</li>
+<li>用统一测试集比较图像质量、延迟和成本，再决定是否把 Nano Banana 2 Lite 接入生产。</li>
+<li>在模型串联流程中记录每一步输入输出和失败回退，避免多模态链路难以调试。</li>
 </ul>
-<p>It&#39;s live across all Claude apps and the Claude Platform today, with introductory pricing through August](<a href="https://x.com/claudeai/status/2072017457057853480">https://x.com/claudeai/status/2072017457057853480</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/ClaudeDevs/status/2072058428424589412">Claude Managed Agents：会话事件、凭据管理与可观测性升级</a></h3>
 <ul>
-<li>[Introducing Claude Science, a new app designed with every stage of research in mind.</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Managed Agents</code> <code>代理运维</code> <code>会话事件</code> <code>可观测性</code> <code>凭据管理</code></li>
 </ul>
-<p>Artifacts traced to their code, environments managed on demand, and 60+ optional scientific databases that you ca](<a href="https://x.com/claudeai/status/2072002740830842899">https://x.com/claudeai/status/2072002740830842899</a>)</p>
+<p><strong>摘要</strong>: Claude Managed Agents 新增流式会话事件增量、按会话覆盖代理配置以及凭据管理能力，帮助团队更细致地控制长时间运行的代理。Console 还增加会话级可观测性标签页，用于查看指标和定位运行问题。开发者可以通过内置 claude-api 技能与 Cookbook 学习这些能力，并把运维信号纳入代理上线流程。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2072002742051287124">Learn more: https://t.co/F72VnQ2vhA</a></li>
-<li><a href="https://x.com/claudeai/status/2072011953309167788">More on Claude Science: https://t.co/65weJA2wRv</a></li>
+<li><a href="https://x.com/ClaudeDevs/status/2072058431712948563">Claude API 新功能可通过 claude-api 技能与 Cookbook 学习</a> · Claude Devs (Twitter) · API 技能与 Cookbook</li>
 </ul>
-<h2 id="h-4">Claude Devs (Twitter)</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[We’ve added a few updates to Claude Managed Agents:</li>
+<li>先在测试环境接入会话事件和可观测性指标，定义失败、超时与人工接管告警。</li>
+<li>将代理凭据按会话和任务隔离，定期审计覆盖配置与访问范围。</li>
 </ul>
-<p>Streaming session event deltas, per-session agent overrides, new webhook event types, reverse pagination, and credential injection scoping. https:/](<a href="https://x.com/ClaudeDevs/status/2072058428424589412">https://x.com/ClaudeDevs/status/2072058428424589412</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/claudeai/status/2072002740830842899">Claude Science：面向科研全流程的 AI 工作台</a></h3>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2072058431712948563">To learn more about these features, you can ask Claude Code using our built-in &quot;claude-api&quot; skill and check out our cookbook:
-https://t.co/voEubobshh</a></li>
-<li>[Finally, we&#39;ve added a new Managed Agents Observability tab in Console.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Science</code> <code>科研工作流</code> <code>Artifacts</code> <code>来源追踪</code></li>
 </ul>
-<p>This provides session-level metrics such as input/output token use and tool usage. <a href="https://t.co/0X0DTJ2jxH%5D(https://x.com/ClaudeDevs/status/2072058433097122145)">https://t.co/0X0DTJ2jxH](https://x.com/ClaudeDevs/status/2072058433097122145)</a></p>
+<p><strong>摘要</strong>: Claude Science 面向科研人员提供覆盖研究全流程的 AI 工作台，强调从资料分析、假设形成到结果整理的连续体验。产品将 Artifacts 与来源追踪等能力结合，让研究产物更容易回溯和复核。相关功能以测试形式开放，目标是把通用模型能力嵌入科学家的日常工作。 Anthropic 通过后续推文提供 Claude Science 的产品详情链接，指向 claude.com/science。该链接与前一条产品预告属于同一线程，帮助用户进一步了解科研工作台的功能和 beta 使用方式。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Claude Sonnet 5 is here.</li>
+<li><a href="https://x.com/claudeai/status/2072011953309167788">Claude Science：面向科学家的 AI 工作台</a> · Claude (Twitter) · 科研工作台定位</li>
 </ul>
-<p>Top-tier performance on coding and tool use at Sonnet pricing, with a 1M context window.</p>
-<p>It&#39;s the new default in Claude Code for Pro users, and available everywhere on the C](<a href="https://x.com/ClaudeDevs/status/2072018504392601762">https://x.com/ClaudeDevs/status/2072018504392601762</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Sonnet 5 is a clear upgrade  from 4.6, and the claude-api skill makes the migration even easier. This skill tunes prompts for Sonnet 5, recommends effort levels, and configures advisor mode.</li>
+<li>用可公开复核的研究资料测试来源追踪和结果复现，不要直接把未审阅输出用于关键结论。</li>
+<li>为团队建立研究产物的版本、引用和人工复核记录。</li>
 </ul>
-<p>https://](<a href="https://x.com/ClaudeDevs/status/2072018517898272844">https://x.com/ClaudeDevs/status/2072018517898272844</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-10">8. <a href="https://openai.com/index/how-chatgpt-adoption-has-expanded">ChatGPT 的全球采用持续扩大并加深</a></h3>
 <ul>
-<li>[Read more in the docs and prompting guide:</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>用户增长</code> <code>AI采用</code> <code>全球化</code> <code>OpenAI Signals</code></li>
 </ul>
-<p><a href="https://t.co/PDTizQ3Q13%5D(https://x.com/ClaudeDevs/status/2072020171125100551)">https://t.co/PDTizQ3Q13](https://x.com/ClaudeDevs/status/2072020171125100551)</a></p>
+<p><strong>摘要</strong>: OpenAI Signals 数据显示，用户使用 ChatGPT 的频率和任务广度会随使用时间增长，注册六个月后日均消息量约增加 50%，尝试过的不同能力数量约翻倍。用户增长在非洲和亚洲相对更快，非英语用户已占活跃用户一半以上，显示生成式 AI 正在向更多地区、语言和日常场景扩散。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/OpenAIDevs/status/2072036305442406772">长周期智能体任务正在改变工程师的工作重点</a></h3>
 <ul>
-<li>[Computer Use isn’t included in this release, more coming soon.</li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>智能体</code> <code>软件工程</code> <code>系统设计</code> <code>代码审查</code></li>
 </ul>
-<p>Read more in the docs:
-<a href="https://t.co/UNHC457gq3%5D(https://x.com/ClaudeDevs/status/2071988883802444125)">https://t.co/UNHC457gq3](https://x.com/ClaudeDevs/status/2071988883802444125)</a></p>
+<p><strong>摘要</strong>: 随着智能体承担更长时间运行的工作，工程实践的重点从逐步执行转向设定方向、审查结果，以及围绕模型设计更好的系统。OpenAI Devs 转发了 @aiDotEngineer 对这一工程角色变化的讨论。</p>
+<hr>
+<h2 id="h-12">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[Claude Desktop is now available on Linux (Ubuntu and Debian) in beta.</li>
-</ul>
-<p>Alongside the browser and terminal, you now get a first-class desktop experience with Claude Code, Claude Cowork, and chat on all](<a href="https://x.com/ClaudeDevs/status/2071988881717871065">https://x.com/ClaudeDevs/status/2071988881717871065</a>)</p>
-<h2 id="h-5">Anthropic (Twitter)</h2>
-<ul>
-<li>[Claude Fable 5 will be available again globally tomorrow.</li>
-</ul>
-<p>After a series of productive conversations with the US government, we&#39;re redeploying the model with a new set of classifiers to target and bl](<a href="https://x.com/AnthropicAI/status/2072163884430229756">https://x.com/AnthropicAI/status/2072163884430229756</a>)</p>
-<ul>
-<li>[We’ve received notice that the Department of Commerce has lifted export controls on Claude Fable 5 and Mythos 5.</li>
-</ul>
-<p>We&#39;ll begin restoring access tomorrow, and will share an update soon.</p>
-<p>We’re grateful ](<a href="https://x.com/AnthropicAI/status/2072106151890809341">https://x.com/AnthropicAI/status/2072106151890809341</a>)</p>
-<h2 id="h-6">OpenAI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2072004836674167294">We’re introducing GeneBench-Pro, a research-level benchmark for a harder kind of AI progress: how well agents can navigate messy biological data, choose the right analysis path, and make judgment call</a></li>
-</ul>
-<h2 id="h-7">OpenAI Devs (Twitter)</h2>
-<ul>
-<li>[As agents take on longer-running work, engineering shifts to setting direction, reviewing work, and designing better systems around the models.</li>
-</ul>
-<p>@steipete at @aiDotEngineer <a href="https://t.co/lP4mbQrAJP%5D(https://x.com/OpenAIDevs/status/2072036305442406772)">https://t.co/lP4mbQrAJP](https://x.com/OpenAIDevs/status/2072036305442406772)</a></p>
-<ul>
-<li>[⚙️ We debugged a year’s worth of crashes in our data infrastructure and found one issue in the hardware and another that has been unnoticed in open-source code for 18 years.</li>
-</ul>
-<p>Here’s how we tracked the](<a href="https://x.com/OpenAIDevs/status/2071995642436800916">https://x.com/OpenAIDevs/status/2071995642436800916</a>)</p>
-<h2 id="h-8">Google DeepMind (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2071988044878516466">We’re shipping 2 major releases: 
-🔘 Nano Banana 2 Lite: our fastest and cheapest Gemini Image model
-🔘 Gemini Omni Flash: now available via the Gemini API and in @GoogleAIStudio to help developers ge</a></li>
-<li>[Pair these models together using the Interactions API. 🤝</li>
-</ul>
-<p>Quickly generate an image with Nano Banana 2 Lite, then immediately animate it using Gemini Omni Flash. </p>
-<p>Plus, you can maintain session hist](<a href="https://x.com/GoogleDeepMind/status/2071988052478615902">https://x.com/GoogleDeepMind/status/2071988052478615902</a>)</p>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2071988054814773713">Find out more → https://t.co/feTpTwfnmC https://t.co/C527I57Xy3</a></li>
+<li><strong>教程与观点</strong> | <code>AI工程</code> <code>主题演讲</code> <code>开发者活动</code> <code>Thariq</code> — Thariq 表示正在为 AI Engineer World&#39;s Fair 的第二天开场主题演讲做最后准备，并分享了演讲预览。该活动将于 7 月 1 日上午举行，内容可能聚焦 AI 工程实践与开发者工作流。 · <a href="https://x.com/trq212/status/2072202267563082180">Thariq (Twitter)</a></li>
 </ul>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-2">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-3">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-4">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Anthropic (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">Google DeepMind (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Fable 5 恢复全球部署：出口管制解除与安全护栏更新</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Claude Sonnet 5 发布：更强代理能力与 1M 上下文</a></li>
+      <li class="toc-h3"><a href="#h-5">3. OpenAI 发布面向科研判断能力的 GeneBench-Pro 基准</a></li>
+      <li class="toc-h3"><a href="#h-6">4. OpenAI 用全量故障数据定位硬件异常与 18 年历史 libunwind 竞态</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Gemini 图像与视频模型更新：Nano Banana 2 Lite + Gemini Omni Flash</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Claude Managed Agents：会话事件、凭据管理与可观测性升级</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Claude Science：面向科研全流程的 AI 工作台</a></li>
+      <li class="toc-h3"><a href="#h-10">8. ChatGPT 的全球采用持续扩大并加深</a></li>
+      <li class="toc-h3"><a href="#h-11">9. 长周期智能体任务正在改变工程师的工作重点</a></li>
+      <li class="toc-h2"><a href="#h-12">速览</a></li>
     </ul>
   </aside>
     </div>
