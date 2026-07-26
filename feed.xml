@@ -5,8 +5,140 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 24 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 25 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-07-25</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-25.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-25.md</guid>
+      <pubDate>Sat, 25 Jul 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-25</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>旗舰模型持续升级</strong>：Claude Opus 5 以更强代理能力进入 Claude Code 和 API，并把安全、工具与系统提示词经验纳入同一发布周期。</li>
+<li><strong>代理工程走向长任务</strong>：Opus 5 的高努力模式、工具切换和 Claude Work agent 登录网站能力，都在扩大代理可持续执行的边界。</li>
+<li><strong>个性化产品增加分享能力</strong>：ChatGPT 自定义宠物支持链接分享与桌面导出，AI 产品正在补齐轻量创作和社区传播环节。</li>
+<li><strong>开源与生态竞争并行</strong>：Sam Altman 继续强调开源与闭源模型并进，Grok 则通过 OpenRouter 和 Exa 扩展语音与网页搜索入口。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/claudeai/status/2080699495453528290">Claude Opus 5 发布：代理能力、网络安全与 Claude Code 全面升级</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Opus 5</code> <code>代理能力</code> <code>Claude Code</code> <code>网络安全</code> <code>系统提示词</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布 Claude Opus 5，主打接近前沿水平的主动规划、工具使用和长任务执行能力。模型在网络安全任务上比 Opus 4.8 更强，现已在付费套餐、Claude API 和 Claude Code 中提供，并保持与上一代相同的价格。相关更新还带来高努力模式、对话中切换工具、工作负载迁移技能，以及围绕新模型系统提示词精简的工程经验。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/trq212/status/2080710971228918066">Claude Code 新模型系统提示词缩减约 80% 的经验</a> · Thariq (Twitter) · 系统提示词经验</li>
+<li><a href="https://x.com/claudeai/status/2080699512205537648">Claude Opus 5 网络安全能力提升但仍落后于 Mythos 5</a> · Claude (Twitter) · 安全能力与基准</li>
+<li><a href="https://x.com/ClaudeDevs/status/2080703248894501203">Opus 5 支持高努力、低成本与快速模式</a> · Claude Devs (Twitter) · 高努力与工具切换</li>
+<li><a href="https://x.com/trq212/status/2080703339306913985">开发者称 Claude Opus 5 接近 Fable 5 智能且价格减半</a> · Thariq (Twitter) · 日常使用体验</li>
+<li><a href="https://x.com/ClaudeDevs/status/2080703243722854516">Claude Opus 5 上线 Claude Code 与平台</a> · Claude Devs (Twitter) · Claude Code 上线</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在隔离环境中用长周期代码和工具任务比较 Opus 5 的完成率、成本与人工接管率。</li>
+<li>迁移 Claude Code 工作负载前，先运行 claude-api migrate 并审核提示词、工具权限和高努力模式的成本。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/OpenAIDevs/status/2080707685448847418">ChatGPT Work agent 支持登录后持续使用网站</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Work</code> <code>浏览器代理</code> <code>登录状态</code> <code>云端浏览器</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT Work agent 现在可以操作需要登录的网站。用户接管云端浏览器完成登录后，代理会继续执行任务，并在不同会话间保留登录状态，因此无需重复认证。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先在低风险测试账户中验证代理登录、会话持久化和退出机制。</li>
+<li>为涉及敏感网站的任务设置人工接管、域名白名单和凭据隔离。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/OpenAI/status/2080815626113954288">OpenAI 将发布 Hugging Face 事件技术报告</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>Hugging Face</code> <code>AI 安全</code> <code>事件复盘</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 表示，围绕 Hugging Face 事件的讨论中存在大量问题与推测，并将其视为人工智能安全领域的重要时刻。公司正在外部顾问和安全委员会监督下进行全面审查，计划在未来数周发布技术报告总结经验。</p>
+<hr>
+<h3>4. <a href="https://x.com/SpaceXAI/status/2080749255183245691">Grok STT 语音转文字服务上线 OpenRouter</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok STT</code> <code>OpenRouter</code> <code>语音转文字</code> <code>说话人分离</code></li>
+</ul>
+<p><strong>摘要</strong>: Grok STT 已在 OpenRouter 上线，支持 25 种语言的语音转文字。服务提供逐词时间戳和说话人分离，价格为每小时音频 0.10 美元。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用多语言和多人对话样本测试识别准确率、时间戳质量与说话人分离效果。</li>
+<li>将 Grok STT 与现有转写服务做成本和延迟对比，再决定是否接入生产流程。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/OpenAIDevs/status/2080747505474736162">ChatGPT 自定义宠物支持分享与桌面导出</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>自定义宠物</code> <code>分享链接</code> <code>桌面应用</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT 自定义宠物现在可以在网页端生成分享链接，方便用户把自己的宠物展示给其他构建者。更新还补充了导出到桌面应用的流程，让同一自定义角色可以跨 ChatGPT 使用场景继续互动。该功能延续了个性化体验与轻量社区分享的方向。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2080750142437880021">ChatGPT 自定义宠物可导出到桌面应用</a> · OpenAI Devs (Twitter) · 桌面导出流程</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先用非敏感内容测试分享链接的可见范围、撤销方式和桌面端同步行为。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/SpaceXAI/status/2080731124729512283">Grok Build 集成 Exa 代理式网页搜索</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>Exa</code> <code>网页搜索</code> <code>代理工具</code></li>
+</ul>
+<p><strong>摘要</strong>: Grok Build 现在可以安装 Exa 插件，用于在构建代理中调用网页搜索。Exa 将其定位为面向代理的快速、高准确度搜索服务。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Grok Build 中安装 Exa 插件，比较其检索结果与现有搜索工具的准确率。</li>
+<li>为代理搜索增加来源引用、域名限制和失败回退策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>7. <a href="https://x.com/sama/status/2080683363174945065">Sam Altman 表态支持美国同时发展开源与闭源 AI</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>开源模型</code> <code>AI 竞争</code> <code>技术主权</code> <code>美国 AI 战略</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 表示，希望美国在开源和专有模型两条路线上都赢得 AI 竞争，并转发黄仁勋关于开放模型重要性的公开信。信中认为开放模型有助于安全与网络安全、创新扩散和技术主权，前沿闭源与开源模型应当并存。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>GPT-5.6</code> <code>模型对比</code> <code>Codex</code> <code>聊天机器人</code> — Sam Altman 用“pro-ultra-superhard”邀请用户反馈，转发内容称 GPT-5.6 Pro 在聊天机器人中更强，而 GPT-5.6 Ultra 主要面向 Codex 且在极难任务上未必占优。该帖还列出不同模型在高难度问题上的非正式排序，显示同一产品线中模型定位和能力取舍并不直观。 · <a href="https://x.com/sama/status/2080683119959757243">Sam Altman (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-07-24</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-24.html</link>
@@ -3205,45 +3337,6 @@ Read more: https://t.co/ZuBRgU1Wm3</a></li>
 <ul>
 <li><strong>商业动态</strong> | <code>OpenAI Frontier</code> <code>HP</code> <code>企业 AI</code> <code>Codex</code> <code>AI 治理</code> — HP 宣布扩大与 OpenAI Frontier 的战略合作，把早期试点推进到更广泛的企业级部署，覆盖客户体验、合作伙伴门户、设备遥测、员工生产力、安全和软件开发等场景。试点中，工程师在数周内处理 122 个 PR、覆盖 43 个项目，安全团队也用模型将原本可能耗时一个月的漏洞修复压缩到一天内。Frontier 被定位为连接权限、上下文、部署和评估的治理层，帮助 HP 将零散 AI 试点转化为可控的生产工作流。 · <a href="https://openai.com/index/hp-frontier-partnership">OpenAI Blog</a></li>
 </ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-06-28</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-06-28.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-06-28.md</guid>
-      <pubDate>Sun, 28 Jun 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-06-28</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Codex 体验补齐</strong>：OpenAI Devs 将本周更新集中在长线程、线程切换和协作粘贴。</li>
-<li><strong>长线程更稳</strong>：Codex 滚动保持位置并按需加载更深本地历史，减轻长会话回溯负担。</li>
-<li><strong>协作粘贴修复</strong>：Codex 复制到 Slack 可保留 Markdown，大文本粘贴也不再拖慢界面。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/OpenAIDevs/status/2070922791529091376">Codex 体验更新：长线程 + 复制粘贴优化</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Codex</code> <code>长线程</code> <code>复制粘贴</code> <code>Markdown</code> <code>性能优化</code> <code>协作体验</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Devs 发布本周 Codex app 生活质量更新，重点改善长线程浏览、线程切换和团队协作中的复制粘贴体验。长对话滚动更顺滑，浏览时能稳定保持当前位置，线程切换也减少后台工作并支持更深的本地历史按需展示。复制到 Slack 时可保留 Markdown 格式，大段文本粘贴不再卡住界面，草稿、图片预览和未读徽标等细节也得到修复。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2070923022870131068">Codex 改进线程切换与归档聊天体验</a> · OpenAI Devs (Twitter) · 线程切换与归档</li>
-<li><a href="https://x.com/OpenAIDevs/status/2070992443387031709">Codex 优化复制粘贴与大文本稳定性</a> · OpenAI Devs (Twitter) · Markdown 粘贴修复</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用现有长线程回放滚动、切换和本地历史加载体验。</li>
-<li>测试从 Codex 复制 Markdown 到 Slack 的格式保留效果。</li>
-<li>用大段日志或代码块验证粘贴稳定性和草稿保留。</li>
-</ul>
-</blockquote>
-<hr>
 ]]></description>
     </item>
   </channel>
