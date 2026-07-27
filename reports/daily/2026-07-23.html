@@ -311,101 +311,211 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>代理工具进入日常开发</strong>：Claude Security、Managed Agents 和 Codex Live Build 分别从漏洞扫描、代理配置与实时协作补齐开发闭环。</li>
+<li><strong>数据与成本治理加强</strong>：Anthropic Economic Index 连接器和 OpenAI API 硬性消费上限，让研究数据查询与费用控制更直接地进入产品工作流。</li>
+<li><strong>多模态生成继续升级</strong>：Qwen-Image-3.0 聚焦文字、复杂界面和结构化内容生成，推动图像模型走向更具体的生产场景。</li>
+<li><strong>AI 进入公共基础设施</strong>：OpenAI Health、国家科学与数据中心项目，以及 Google 的 Galaxy 设备更新，显示模型能力正在向医疗、科研和终端系统扩展。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://openai.com/index/health-in-chatgpt">OpenAI 推出 ChatGPT Health：连接医疗记录与 Apple Health</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>健康AI</code> <code>医疗数据</code> <code>隐私安全</code> <code>Apple Health</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT Health 开始向美国 18 岁以上登录用户推出，用户可在许可后连接 Apple Health、支持的医疗记录、One Medical 和 Function Health，让模型结合用药、化验、就诊、睡眠和活动等信息回答健康问题。功能提供逐次授权、断开后删除同步数据、额外加密和不用于训练或广告等保护，但 OpenAI 强调它不能替代专业医疗判断。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在测试健康类 AI 功能时只连接必要数据，并逐项检查授权范围。</li>
+<li>把模型输出当作就医准备和信息整理辅助，重要医疗决定需与专业人员核实。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">Berkeley RDI</h2>
+<h3 id="h-4">2. <a href="https://x.com/Alibaba_Qwen/status/2079906336381509659">Qwen-Image-3.0：面向复杂文字与界面的图像生成模型</a></h3>
 <ul>
-<li><a href="https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-july-393">Agentic AI Weekly | Berkeley RDI | July 22, 2026</a></li>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen-Image-3.0</code> <code>图像生成</code> <code>文字渲染</code> <code>复杂 UI</code></li>
 </ul>
-<h2 id="h-2">OpenAI Blog</h2>
+<p><strong>摘要</strong>: Qwen 发布 Qwen-Image-3.0，定位为新一代基础图像生成模型，重点提升复杂文字、知识表达和多层嵌套界面的生成能力。示例覆盖报纸、分镜和复杂 UI 等生产场景，显示模型正在从通用画面生成走向结构化内容制作。相关线程进一步展示了语义排版和细节控制能力。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://openai.com/index/health-in-chatgpt">Launching Health in ChatGPT</a></li>
-<li><a href="https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community">Building AI infrastructure with the Effingham County community</a></li>
-<li><a href="https://openai.com/index/how-news-organizations-are-using-ai">How news organizations are using AI to advance their vital missions</a></li>
-<li><a href="https://openai.com/index/advancing-the-next-era-of-national-science">Advancing the next era of national science</a></li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2079906350243717513">Qwen-Image-3.0展示多层嵌套界面的深度排版能力</a> · Qwen (Twitter) · 多层排版能力</li>
 </ul>
-<h2 id="h-3">Google AI Blog</h2>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/">3 Google updates from Galaxy Unpacked 2026</a></li>
+<li>用包含长文字、多层界面和品牌规范的测试集评估渲染准确率，再决定生产接入方式。</li>
+<li>对生成内容增加文字校对和版权审核，避免把视觉输出直接当作最终发布素材。</li>
 </ul>
-<h2 id="h-4">Thariq (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/ClaudeDevs/status/2080009523952263295">Claude Managed Agents：努力级别、技能规模与会话控制升级</a></h3>
 <ul>
-<li><a href="https://x.com/trq212/status/2080090919832084753">I&#39;m sad it took me this long to actually type /design but working on frontend with Claude Design and Claude Code is actually so good</a></li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Managed Agents</code> <code>代理技能</code> <code>努力级别</code> <code>会话控制</code></li>
 </ul>
-<h2 id="h-5">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Managed Agents 新增努力级别、会话控制和更多代理配置能力，并支持单个会话最多添加 500 个技能。开发者可以用技能为代理提供任务专属指令，再通过 cookbook 和发布说明接入这些能力。更新同时扩大了长时间运行代理的可配置范围和复用能力。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[The Claude Security plugin for Claude Code is now available in beta.</li>
+<li><a href="https://x.com/ClaudeDevs/status/2080009529333575962">Claude Managed Agents 单会话最多支持 500 个技能</a> · Claude Devs (Twitter) · 技能规模与配置</li>
 </ul>
-<p>Scan your changes for vulnerabilities before you commit, or run a full scan across your codebase, all from your terminal on the C](<a href="https://x.com/claudeai/status/2079990597973057691">https://x.com/claudeai/status/2079990597973057691</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2079990599415922802">Read more: https://t.co/WL3PdxxD69</a></li>
-<li>[You can now ask Claude about the Anthropic Economic Index, our public dataset measuring how AI is used across the economy.</li>
+<li>先为高频任务建立小型技能集合，逐步评估 500 技能上限下的检索、冲突和维护成本。</li>
+<li>为代理努力级别和会话控制设置明确的超时、预算和人工接管策略。</li>
 </ul>
-<p>Ask which occupations use AI the most, or what kinds of tasks people are aut](<a href="https://x.com/claudeai/status/2079979809606664564">https://x.com/claudeai/status/2079979809606664564</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/claudeai/status/2079990597973057691">Claude Code Security 插件 Beta：在终端扫描代码漏洞</a></h3>
 <ul>
-<li>[To turn it on, open the connectors menu and find the Anthropic Economic Index in the directory. It works in any conversation, and the full datasets remain free to download on our website.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Security 插件</code> <code>漏洞扫描</code> <code>代码安全</code></li>
 </ul>
-<p>Read more: ](<a href="https://x.com/claudeai/status/2079979810881728759">https://x.com/claudeai/status/2079979810881728759</a>)</p>
-<h2 id="h-6">Claude Devs (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Code Security 插件进入 Beta，可在终端中扫描代码变更并帮助开发者发现潜在漏洞。它把安全检查嵌入 Claude Code 的日常开发流程，减少在代码完成后再单独运行审计工具的成本。当前仍处于测试阶段，结果需要结合人工复核和现有安全流水线判断。 这条推文是 Claude Security Beta 公告线程的补充，提供指向 Claude Security 产品说明页的完整阅读链接。它本身没有新增功能细节，主要帮助开发者继续查看代码库安全扫描能力的产品文档。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/claudeai/status/2079979809606664564">Claude 接入 Anthropic Economic Index：对话查询 AI 经济活动数据</a></h3>
 <ul>
-<li>[We&#39;ve just added several new features to Claude Managed Agents.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic Economic Index</code> <code>数据连接器</code> <code>AI 经济</code> <code>研究数据</code></li>
 </ul>
-<p>You can now configure effort levels per agent, seed sessions with events, add up to 500 skills per session, use webhooks for environmen](<a href="https://x.com/ClaudeDevs/status/2080009523952263295">https://x.com/ClaudeDevs/status/2080009523952263295</a>)</p>
+<p><strong>摘要</strong>: Claude 现在可以直接查询 Anthropic Economic Index，这是用于衡量 AI 使用与经济活动变化的公开数据集。用户可以在对话中探索数据和相关指标，连接器则通过 Anthropic 的目录进行启用。该功能把公开研究数据从静态报告转化为可交互分析入口。 Anthropic 为 Claude 推出 Economic Index 连接器，用户可以直接查询 AI 在不同行业、职业和任务中的实际使用数据。连接器让研究人员、记者和政策制定者无需离开对话即可探索指数，同时完整数据集仍可免费下载。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/OpenAI/status/2079916436232036614">OpenAI Presence：企业语音与聊天智能体上线</a></h3>
 <ul>
-<li>[Skills give your Managed Agent task-specific instructions.</li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>OpenAI Presence</code> <code>企业智能体</code> <code>语音代理</code> <code>护栏与评测</code> <code>Codex</code></li>
 </ul>
-<p>You can now add up to 500 skills across all Managed Agents in a session. <a href="https://t.co/0Uttoy64ce%5D(https://x.com/ClaudeDevs/status/2080009529333575962)">https://t.co/0Uttoy64ce](https://x.com/ClaudeDevs/status/2080009529333575962)</a></p>
+<p><strong>摘要</strong>: OpenAI 推出 Presence，帮助企业部署能够回答问题、调用内部系统、执行获批操作并在必要时转交人工的语音和聊天智能体。产品把策略、护栏、标准流程、模拟评测和受控发布结合起来，并通过 Codex 分析生产会话和升级记录提出改进。Presence 已向符合条件的企业限量开放，部署由 OpenAI 前置工程师和系统集成商参与，尚非自助式产品。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Try out these new features using our cookbook:
-<a href="https://t.co/F4lTpWUGd8">https://t.co/F4lTpWUGd8</a></li>
+<li>先选定一个高价值流程，明确代理可执行动作、审批点和人工升级条件。</li>
+<li>上线前用边界案例和模拟评测验证策略，发布后持续分析升级记录并对变更做受控回归。</li>
 </ul>
-<p>Ask Claude Code about these features using the built-in &quot;claude-api&quot; skill or check out the release notes: <a href="https://t.co/UTifE7rt%5D(https://x.com/ClaudeDevs/status/2080009531065852378)">https://t.co/UTifE7rt](https://x.com/ClaudeDevs/status/2080009531065852378)</a></p>
-<h2 id="h-7">OpenAI (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://openai.com/index/building-ai-infrastructure-with-the-effingham-county-community">OpenAI 宣布在乔治亚州推进 Project Camellia AI 数据中心项目</a></h3>
 <ul>
-<li>[New for enterprises: OpenAI Presence helps companies deploy trusted voice and chat agents across customer and internal workflows.</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>AI基础设施</code> <code>数据中心</code> <code>能源</code> <code>社区投资</code> <code>Codex</code></li>
 </ul>
-<p>AI agents can answer questions, use company systems, take approved ac](<a href="https://x.com/OpenAI/status/2079916436232036614">https://x.com/OpenAI/status/2079916436232036614</a>)</p>
-<h2 id="h-8">OpenAI Devs (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI 计划在 Effingham County 建设长期数据中心项目，将分阶段使用 3.2 吉瓦电力，并承诺承担基础设施和供电成本、采用闭环用水系统。项目还包含 8000 万美元社区福利、最高 7100 万美元面向乔治亚州学生的 Codex 积分、就业与税收贡献，以及独立机构年度公开审计。</p>
+<hr>
+<h3 id="h-10">8. <a href="https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/">Google 在 Galaxy Unpacked 2026 展示 Gemini Intelligence 的三项设备能力</a></h3>
 <ul>
-<li><a href="https://x.com/OpenAIDevs/status/2080003710093234666">We’re expanding access to hard spend limits in the API Platform to all accounts this week, so you can cap API spend at a limit of your choice. https://t.co/TFufBd0WSc</a></li>
-<li><a href="https://x.com/OpenAIDevs/status/2080003721937953258">Check your current usage and spend at https://t.co/w8i0QGAxTO</a></li>
-<li>[Watch now: Codex Live Build with @covacut and @davis7</li>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini</code> <code>Android</code> <code>任务自动化</code> <code>折叠屏</code> <code>智能眼镜</code></li>
 </ul>
-<p><a href="https://t.co/YGqdYTBzEX%5D(https://x.com/OpenAIDevs/status/2079982319465861162)">https://t.co/YGqdYTBzEX](https://x.com/OpenAIDevs/status/2079982319465861162)</a></p>
+<p><strong>摘要</strong>: Google 宣布 Gemini Intelligence 将随三星 Galaxy Z Fold8 Ultra、Fold8 和 Flip8 推出，任务自动化覆盖 40 多款应用，并可理解屏幕内容、后台执行任务后请求确认。Gemini Notebook 将预装在新折叠屏设备上，支持基于多模态资料生成幻灯片、视频、卡片、测验和播客；Gemini 也将扩展到 Galaxy Watch 9 和即将推出的智能眼镜。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/OpenAIDevs/status/2079981413063909534">https://t.co/d4MpSoeTns</a></li>
+<li>对涉及购买、预订或外部操作的代理任务保留最终确认环节。</li>
+<li>可用 Gemini Notebook 将项目资料集中后生成多种学习和汇报格式，再人工核对来源。</li>
 </ul>
-<h2 id="h-9">Google DeepMind (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-11">9. <a href="https://openai.com/index/advancing-the-next-era-of-national-science">OpenAI 加码美国国家科学：为 DOE Genesis Mission 提供模型与 Codex 支持</a></h3>
 <ul>
-<li>[We’re expanding our work with the US Dept. of @ENERGY on the Genesis Mission – an initiative to double the pace of scientific discovery within a decade. 🧪</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>科学研究</code> <code>Genesis Mission</code> <code>国家实验室</code> <code>超级计算</code> <code>Codex</code></li>
 </ul>
-<p>By committing $40M in AI tokens and @Google](<a href="https://x.com/GoogleDeepMind/status/2079925576077324552">https://x.com/GoogleDeepMind/status/2079925576077324552</a>)</p>
-<h2 id="h-10">Qwen (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI 宣布将与美国能源部、国家实验室、大学和研究人员合作，把前沿模型接入超级计算机、模拟系统和实验设施。承诺包括向约 2000 名 Genesis 研究人员提供 400 万美元 Codex 使用额度、为两项大型科学活动投入 300 万美元 API 支持，并围绕高温超导和机器可访问科学前沿开展集中研究。</p>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/OpenAIDevs/status/2080003710093234666">OpenAI API 向全账户开放硬性消费上限</a></h3>
 <ul>
-<li>[🎨 Meet Qwen-Image-3.0 — the third generation of our foundational image generation model.</li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI API</code> <code>消费上限</code> <code>成本控制</code> <code>用量监控</code></li>
 </ul>
-<p>If 1.0 was about &quot;Precision,&quot; and 2.0 added &quot;Variety, Completeness, Beauty &amp; Authenticity,&quot; then 3.0 comes do](<a href="https://x.com/Alibaba_Qwen/status/2079906336381509659">https://x.com/Alibaba_Qwen/status/2079906336381509659</a>)</p>
+<p><strong>摘要</strong>: OpenAI API 开始向所有账户扩大硬性消费上限的访问范围，团队可以在平台中设置预算边界并降低意外超支风险。控制台同时提供用量和消费查看入口，方便开发者持续监控 API 成本。该更新把费用治理从企业专属能力扩展到更广泛的 API 用户。 OpenAI Devs 提醒用户前往 API 平台控制台查看当前用量和消费情况。该信息与硬性消费上限配套，帮助开发者在预算耗尽前发现异常调用或成本增长。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2079906350243717513">Beyond horizontal expansion, depth is another key trait of Rich Content — testing the model&#39;s semantic deconstruction and logical nesting: rendering multiple nested interfaces layer by layer within a </a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2079906355440472284">Authentic Details and Deep Knowledge are also major upgrades in this release. Together, they enable Qwen-Image-3.0 to make real breakthroughs in high-value productivity scenarios — newspaper PDFs, sho</a></li>
+<li>为开发、测试和生产项目分别设置硬性消费上限，并配合用量告警做分级处置。</li>
+<li>定期核对控制台用量与业务指标，及时发现异常调用或失控重试。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-13">11. <a href="https://x.com/OpenAIDevs/status/2079982319465861162">Codex Live Build：公开演示实时协作式开发</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Live Build</code> <code>实时协作</code> <code>开发工作流</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs 通过 Codex Live Build 直播展示实时协作式开发流程，并提供回看入口。演示重点是让构建者在公开环境中观察 Codex 如何参与项目推进和代码修改。相关链接为开发者提供了可复用的工作流参考，而不是单纯的产品公告。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2079981413063909534">OpenAI Devs 分享 Codex Live Build 直播链接</a> · OpenAI Devs (Twitter) · 直播回看链接</li>
+</ul>
+<hr>
+<h3 id="h-14">12. <a href="https://x.com/GoogleDeepMind/status/2079925576077324552">Google DeepMind 为 Genesis Mission 提供 4000 万美元 AI 资源</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Genesis Mission</code> <code>美国能源部</code> <code>AI 科研</code> <code>Google DeepMind</code> <code>科学发现</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind 宣布扩大与美国能源部在 Genesis Mission 上的合作，目标是在十年内将科学发现速度提高一倍。Google 将提供 4000 万美元的 AI tokens 和 Google Cloud credits，让更多实验室研究人员使用 Gemini 等模型开展科研。</p>
+<hr>
+<h3 id="h-15">13. <a href="https://openai.com/index/how-news-organizations-are-using-ai">OpenAI 总结新闻机构用 AI 提升报道、读者体验与经营效率</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>新闻媒体</code> <code>内容生产</code> <code>知识代理</code> <code>MCP</code> <code>商业效率</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 介绍新闻机构如何将其技术用于研究和事实核查、档案转录与检索、多语言和音频内容、个性化简报及互动新闻产品。案例还覆盖用 MCP 连接企业数据的知识代理和广告销售线索工具，显示 AI 已进入新闻编辑、产品和商业团队的日常流程，但报道仍由记者和编辑负责判断。</p>
+<hr>
+<h2 id="h-16">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>教程与观点</strong> | <code>Claude Design</code> <code>Claude Code</code> <code>前端开发</code> <code>设计协同</code> — Thariq 表示，实际使用 <code>/design</code> 后，Claude Design 与 Claude Code 配合完成前端工作的体验非常出色。该短评反映出设计意图到代码实现的协同工作流正在成为 AI 编程工具的重要使用方式，但没有提供具体项目或量化结果。 · <a href="https://x.com/trq212/status/2080090919832084753">Thariq (Twitter)</a></li>
 </ul>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">Berkeley RDI</a></li>
-      <li class="toc-h2"><a href="#h-2">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-3">Google AI Blog</a></li>
-      <li class="toc-h2"><a href="#h-4">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-9">Google DeepMind (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-10">Qwen (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. OpenAI 推出 ChatGPT Health：连接医疗记录与 Apple Health</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Qwen-Image-3.0：面向复杂文字与界面的图像生成模型</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude Managed Agents：努力级别、技能规模与会话控制升级</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Claude Code Security 插件 Beta：在终端扫描代码漏洞</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Claude 接入 Anthropic Economic Index：对话查询 AI 经济活动数据</a></li>
+      <li class="toc-h3"><a href="#h-8">6. OpenAI Presence：企业语音与聊天智能体上线</a></li>
+      <li class="toc-h3"><a href="#h-9">7. OpenAI 宣布在乔治亚州推进 Project Camellia AI 数据中心项目</a></li>
+      <li class="toc-h3"><a href="#h-10">8. Google 在 Galaxy Unpacked 2026 展示 Gemini Intelligence 的三项设备能力</a></li>
+      <li class="toc-h3"><a href="#h-11">9. OpenAI 加码美国国家科学：为 DOE Genesis Mission 提供模型与 Codex 支持</a></li>
+      <li class="toc-h3"><a href="#h-12">10. OpenAI API 向全账户开放硬性消费上限</a></li>
+      <li class="toc-h3"><a href="#h-13">11. Codex Live Build：公开演示实时协作式开发</a></li>
+      <li class="toc-h3"><a href="#h-14">12. Google DeepMind 为 Genesis Mission 提供 4000 万美元 AI 资源</a></li>
+      <li class="toc-h3"><a href="#h-15">13. OpenAI 总结新闻机构用 AI 提升报道、读者体验与经营效率</a></li>
+      <li class="toc-h2"><a href="#h-16">速览</a></li>
     </ul>
   </aside>
     </div>
