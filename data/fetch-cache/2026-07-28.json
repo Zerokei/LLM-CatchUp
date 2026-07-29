@@ -1,0 +1,541 @@
+{
+  "date": "2026-07-28",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-07-29T03:11:58−07:00",
+  "window_start": "2026-07-27T00:00:00−07:00",
+  "window_end": "2026-07-28T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "关于 Agent 的几个判断",
+          "url": "https://baoyu.io/blog/2026-07-28/agent-judgments",
+          "published_at": "2026-07-28T00:00:00.000Z",
+          "description": "通用 Agent 会走向少数赢家通吃，但插件、模型和个人使用方式仍然决定着机会与效率。",
+          "full_text": "Title: 关于 Agent 的几个判断\n\nURL Source: https://baoyu.io/blog/2026-07-28/agent-judgments\n\nMarkdown Content:\n@cellier_ 昨天发了一条帖子，谈了他对 Agent 的三个判断：\n\n> 一是，通用 Agent 会吃掉垂直 Agent。Codex、Claude Cowork、WorkBuddy 这些通用型选手，配合 Skill 和 MCP，就能搞定大部分专业任务。很多 AI-native 应用创业，本身就是个伪命题。\n> \n> \n> 二是，更开放的会吃掉更封闭的。模型能力趋同之后，会变成可路由的基础设施。Agent 应该让用户自由选择模型，甚至支持本地部署和自由迁移。\n> \n> \n> 三是，更下沉的会吃掉更傲慢的。Codex、Claude、DeepSeek 背后的团队都以 AGI 为目标，不太愿意做脏活累活，这就给了草根团队做精细化运营的机会窗口。\n\n![Image 1: Cellier 关于 Agent 的三个判断](https://s.baoyu.io/imgs/2026-07-28/agent-judgments/cellier-agent-judgments.webp)\n\n我觉得这是个很好的话题，也说说我的几个判断。\n\n## 1. 少数通用 Agent 通吃\n\n不只是通用 Agent 会吃掉垂直 Agent，通用 Agent 这个赛道本身，也会是少数赢家通吃。\n\n小的通用 Agent 同样没有生存空间。\n\n## 2. 基于 Agent 的插件系统至关重要\n\n开放和封闭的差别，不在于是不是开源，也不在于能不能自由切换模型，而在于它的插件生态。\n\n最受欢迎的 Claude Code 和 Codex，默认使用的都是自家模型，但这并没有造成多大影响，何况它们也都支持通过 API 使用其他模型。\n\n现在 Agent 之所以能火起来，一个重要原因就是丰富的插件生态。Skill 加 MCP，可以帮助 Agent 完成各种不同的任务。\n\n## 3. 前期的 Agent 更多是在教育用户\n\n“下沉”和“傲慢”都是很主观的说法。\n\nWorkBuddy 那样不见得就叫下沉，Codex 也不见得傲慢。当然，说 Anthropic 傲慢，可能没什么争议。但只要模型足够强，大家捏着鼻子也就认了。\n\nAgent 这种产品，用户没有那么多忠诚度。前期的产品，本质上都是在教育用户。\n\n就像“小龙虾”，虽然现在已经没人提了，但它确实起到了普及 Agent 的作用。将来写 AGI 发展史，也算留下过一笔。\n\nWorkBuddy 现在火爆，也是在教育用户，让很多不知道或者用不了 Codex 和 Claude Code 的人，也能用上 Agent。\n\n想当年 Claude Code 多火爆，后来 Codex 推出 GUI 版，也很快抢走了不少用户。\n\n## 4. 模型是护城河\n\nAgent 的产品体验其实也没有多深的护城河，最后都会趋同。模型能力和成本，终究还是会让产品拉开差距。\n\nSkills 和 MCP 绝大部分都不具备独占性。在一个 Agent 平台能用，换个平台通常也能继续用。\n\n用户使用 Agent 时，最大的体验差异来自模型本身的智能程度。\n\n当你用过聪明的模型，就不会想再回到不那么聪明的模型。很多人愿意接受当下的产品，只是因为没有机会用到更好的。一旦有机会用上更聪明、更便宜的模型，他们会毫不犹豫地切换，丝毫不会有忠诚度。\n\nCursor 的 Agent 体验也很好，什么模型都能用。但热度最高的依然是 Codex 和 Claude Code，因为它们有订阅服务，性价比更高。\n\n## 5. 个人开发者和小团队没必要拼 Agent\n\n小团队做通用 Agent、垂直 Agent，已经没什么机会了。但是，基于 Agent 做插件，仍然有很多机会。\n\n很多传统软件并不是为 Agent 设计的，这里面还有一个时间窗口。\n\nSkills 已经泛滥了，单纯做一个 Skill 没什么门槛。让 Skill 作为入口，后面再接入服务，还是有机会的，这也是提供差异化的地方。\n\n## 6. 普通用户越早用、越多用 Agent，越受益\n\nAI Agent 不会替代你，但它可以替你完成很多电脑上的重复工作。越早用起来，就越早享受它带来的效率提升。\n\n多花一点钱，用更聪明的模型，可以节约你的时间，也能提升使用体验。把钱花在聪明的模型上是值得的，当然也没必要超出自己的承受能力。\n\n你要相信 Agent 能帮你提升效率，它就一定能帮到你。信则灵。\n\n除非是为了测试，否则没必要安装很多 Skills，尤其不要安装全局 Skills。但要学会让 Agent 帮你写 Skills，并持续迭代自己的 Skills。\n\n管理能力，尤其是工程管理能力，会越来越重要。因为普通人也需要管理 Agent，而管理 Agent 和管理项目，本来就有很多相似之处。\n\n有条件的话，换一台 Mac 电脑。它是 Agent 的最佳搭档。\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1052,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Discovering cryptographic weaknesses with Claude",
+          "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+          "published_at": "2026-07-28T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Discovering cryptographic weaknesses with Claude\n\nURL Source: https://www.anthropic.com/research/discovering-cryptographic-weaknesses\n\nMarkdown Content:\n## Summary\n\n_Using Claude Mythos Preview, researchers at Anthropic have discovered improved ways to attack cryptographic algorithms (the mathematical methods used to keep online data private). The first attack significantly weakens HAWK, a digital signature scheme that was built for a post-quantum world. The second identifies a new way to attack round-reduced AES, the most widely used symmetric cipher. These are substantial research advances, but they do not currently affect any production systems. This post describes both findings in more detail and discusses the implications for cryptography in an age of powerful AI models._\n\n## Introduction\n\nWhen we launched Claude Mythos Preview, we showed it was able to autonomously find and exploit vulnerabilities in almost every piece of software we pointed it at. This included several major cryptographic libraries—shared collections of code that are used to encrypt data.\n\nThe vulnerabilities that Claude found in these cryptographic libraries 1 were due to incorrect _implementation_ of the algorithms—that is, errors in how programmers used the algorithms in their code that created opportunities for attackers to break the encryption.\n\nNow, we have found that Claude is able to find mathematical flaws _in the algorithms themselves_.\n\nCryptographic algorithms are a fundamental building block of digital security. For example, when you visit a webpage like [https://www.anthropic.com](https://anthropic.com/), your browser checks that it is communicating with an authentic website using an algorithm called a _digital signature scheme_. Later, the traffic between you and the website is encrypted using _symmetric ciphers_—codes that allow secure data transmission between parties who share an identical key. Without secure cryptographic systems like these, your email, online banking, and other internet use would be open to cybercriminals, who could intercept or modify your communications. Flaws in these widely used cryptographic systems could put billions of users’ data at risk.\n\nThe first result we describe in this post, which was discovered with Claude Mythos Preview, is an improved attack against a digital signature scheme called [HAWK](https://csrc.nist.gov/csrc/media/Projects/pqc-dig-sig/documents/round-1/spec-files/hawk-spec-web.pdf). In 2022, the US Government’s [National Institute of Standards and Technology](https://www.nist.gov/) (NIST) put out a [call](https://csrc.nist.gov/projects/pqc-dig-sig/round-3-additional-signatures) for additional cryptographic systems that would remain secure even against quantum computers (which could, if developed, break most of the existing signature schemes in use today). HAWK is one of the third-round candidates under consideration from this call. Despite HAWK having survived two rounds of expert human review over a period of two years, Mythos was able to improve the best-known attack on it in just 60 hours of work—effectively cutting its key strength in half.\n\nThe second result concerns the [Advanced Encryption Standard](https://www.nist.gov/publications/advanced-encryption-standard-aes) (AES), a symmetric cipher that was adopted by NIST in 2001 and has received more scrutiny than almost any other encryption algorithm. In order to better understand the robustness of AES, weaker variations of the algorithm are regularly studied in cryptography research; Mythos found a way to break one such weaker version, and eliminated one of the guesses an attacker needs to make, improving the speed of the previous best attacks by 200-800×.\n\nTo be clear, neither of these results has a practical impact on today’s computer systems; no production software will have to change as a result. HAWK is only a _candidate_ signature scheme and so is not deployed;2 our second attack is on a reduced version of AES and does not break the full cipher.3\n\nNevertheless, both results show the potential for frontier AI models to help discover flaws in important cryptographic algorithms, both before and after real-world deployment. This is cryptography research working as intended: stress-testing algorithms to build trust and ultimately make systems more secure.\n\nMythos Preview achieved these results mostly autonomously and mostly without human intervention. Over the course of a week, one Anthropic researcher worked together with Claude to develop the HAWK attack, and another researcher built a scaffold 4 that allowed Claude to fully autonomously discover the AES attack.5 Each of the results cost roughly $100,000 in API cost to develop. After seeing these results, we broadened our search and began to discover other attacks. We discuss some of these follow-ups below.\n\nIn order to make it easier for others to continue studying the cryptanalytic ability of LLMs, we partnered with academics at ETH Zurich, Tel Aviv University, and University of Haifa to build [CryptanalysisBench](https://arxiv.org/abs/2607.18538), a benchmark that packages together many cryptographic ciphers and makes it easy for others to evaluate the capabilities of LLMs on this important topic.\n\nThroughout the research process, we followed responsible disclosure procedures, and consulted with academics to confirm the validity of our findings. We also shared advance copies with US government and industry partners, and held discussions on the implications of this research. In the case of our HAWK finding, we shared our attack with the authors of HAWK in June and coordinated disclosure to the public NIST mailing list at the same time our results were released.\n\nIn the rest of this post, we summarize the two findings in further technical detail and briefly describe some of our other recent cryptography results. Full descriptions of the two main findings are provided in two new papers, and we hope to release details for our other findings in the near future.\n\n## An improved key recovery attack on HAWK\n\nWorking with Mythos Preview, an Anthropic researcher developed an attack against the [HAWK](https://hawk-sign.info/) post-quantum digital signature scheme. This attack substantially speeds up the time it would take to break the signature scheme—more technically, it reduces the “effective keysize” by a factor of two. In [our paper](https://anthropic.com/document/hawk_key_recovery.pdf), we provide the full technical details of our result including [demonstration code](https://github.com/anthropics/cryptography-research-demo) that shows our attack running.\n\nHAWK is one of the remaining third round candidates of the NIST call for [Additional Digital Signatures](https://csrc.nist.gov/projects/pqc-dig-sig/round-3-additional-signatures). This contest is part of a near decade-long effort to standardize new [Post-Quantum Cryptographic](https://csrc.nist.gov/Projects/post-quantum-cryptography/post-quantum-cryptography-standardization) (PQC) schemes. This standardization effort is becoming critical as the horizon to building a cryptographically-relevant quantum computer [shrinks](https://blog.google/innovation-and-ai/technology/safety-security/cryptography-migration-timeline/) and threatens classical cryptography such as RSA or ECDSA.\n\nHAWK’s security is based on the hardness of a mathematical problem called the Lattice Isomorphism Problem. Mythos’s attack works by finding a specific, previously unexploited symmetry called a nontrivial automorphism in the lattice used by HAWK. [Prior work](https://eprint.iacr.org/2025/928) proved that efficiently finding such an automorphism would permit an attack, but did not answer if such an automorphism was accessible in the lattice used by HAWK. The automorphism discovered by Mythos allows a faster enumeration attack that, while still exponential, means that one needs to double the size of HAWK keys to achieve the same level of security. Unfortunately, doubling HAWK’s key size eliminates many of the reasons making the scheme (as it currently stands) an attractive PQC signature candidate.\n\n#### Discovery process\n\nTo find the attack, Claude Mythos Preview worked semi-autonomously in an agentic harness, with occasional human guidance and nontechnical direction. Mythos found the attack after an extensive literature review to understand the state of the art, and substantial mathematical reasoning and computational experiments. After finding the attack, Mythos implemented an end-to-end verification pipeline to convince itself—and the human operator—of the attack’s correctness.\n\nFor this experiment, we used a Claude Code-like harness that supports multiple worker agents collaborating together in a sandboxed environment, with access to computational tools like Python and Sage as well as access to published cryptographic works. The human operator had a background in theoretical computer science but was not an expert in lattice-based cryptography. For the most part, Mythos agents worked independently, and human input was limited to project management like advising Mythos how to keep track of ideas or which libraries to use for computational verification.\n\nThe multi-agent workflow led to interesting dynamics. For example, the key idea in producing this attack was discovered by a pair of workers working together. Both started investigating the idea; the first worker prematurely rejected the idea as infeasible, but the second found a way to fully exploit it. The pair kept exchanging messages, and eventually both agreed they had found an effective attack.\n\nFinding, developing and verifying the attack took about 60 hours in total. We estimate that the full attack discovery process cost approximately $100,000 in API cost.\n\n#### Impact\n\nThe immediate impact of the Mythos finding is that the key sizes proposed in the HAWK submission are significantly weaker than originally suggested. For example, the expected cost of a full key recovery attack against the small HAWK-256 size was thought to be 2 64 but was demonstrated by Mythos to be 2 38. For larger keys, HAWK therefore remains impractical to attack. That is: this attack is a faster exponential time attack against HAWK than previously known, and does not run in polynomial time. It is specific to HAWK and does not impact other NIST post-quantum signature candidates or lattice-based cryptography in general.\n\nNIST proposals are shared in public with the intent of allowing a broad audience to review them to find flaws before they are deployed for use. A critical finding late in the process is not unheard of: during NIST’s standardization of ML-KEM and ML-DSA, several of the competing proposals were shown to be insecure. One candidate, SIKE, was found to be [completely broken in an hour on a laptop](https://www.quantamagazine.org/post-quantum-cryptography-scheme-is-cracked-on-a-laptop-20220824/).\n\nWe believe that reviewing specifications like HAWK with AI will be a powerful tool in the development of novel cryptographic standards. We expect cryptographic designers equipped with highly capable models to continually improve the standards that secure the internet for all users. Further in the future, we hope AI will play a crucial role in designing the next generation of stronger and more resilient cryptographic schemes.\n\n## An improved attack on reduced-round AES\n\nIn our second result, Mythos Preview improved an attack on a simpler “reduced-round” variant of the [Advanced Encryption Standard](https://www.nist.gov/publications/advanced-encryption-standard-aes) (AES) created in 2001 as part of a [prior NIST competition](https://csrc.nist.gov/news/1997/requesting-candidate-algorithm-nominations-for-aes).\n\nAES encrypts an input by repeatedly applying the same _round function_ many times. AES-128, the specific cipher we attack, has 10 rounds. Our attack works only on a modified version of the cipher that has 7 out of the full 10 rounds. Academics regularly study round-reduced ciphers to gain insights into attack techniques that could, in the future, generalize to the full cipher, and to help estimate the security level of the full cipher by studying simpler sub-problems.\n\nThe attack operates under a _chosen plaintext threat model_, which is the most common assumption used for studying ciphers like AES. Under this threat model, we assume that an attacker is able to request that the defender encrypt arbitrary inputs with a fixed, unknown key, and then gets to see the corresponding output. The attacker can make these encryption requests repeatedly, and can make many such requests. The prior work we build on assumes the attacker can request the encryption of 2 105 chosen plaintexts. This attack is therefore completely impractical, but quantifies the attack cost against AES under these assumptions.\n\nMythos was able to develop an improved attack that extends a long line of research papers that all aim to find the best attack on 7-round AES using a similar technique known as a _meet-in-the-middle_ attack. At a very high level, these attacks work by trading off _time_ for _space_. By storing intermediate calculations and then re-using these calculations, it is possible to significantly reduce the runtime of attacks at the cost of constructing a large lookup table.\n\nMythos improved on the previously strongest meet-in-the-middle attack by developing a more sophisticated fingerprinting algorithm that it called a _Möbius Bridge_. The objective of the fingerprinting algorithm is to increase the number of potential lookups into the table that will succeed. One of the stages of the attack from prior work had to enumerate 256 different values and then look them up in the pre-computed table. Mythos developed a fingerprint that is invariant to this guess, which directly reduces the amount of work required by a factor of 256. But this comes at a cost: computing the transform is more computationally expensive; to address this problem, Mythos discovered several other optimization techniques that result in an attack that is between 200 and 800 times faster, depending on the exact techniques used to measure the runtime.\n\nOur [technical paper](https://anthropic.com/document/aes_mobius_bridge.pdf) contains the full details of the attack method and an analysis of its correctness and runtime. Compared to the one week that Mythos spent conceiving the idea, the vast majority of human researchers’ time was spent validating the correctness of its claims (though it is important to note the researchers are not experts in cryptography).\n\n#### Discovery\n\nMythos Preview discovered this result almost entirely autonomously. A researcher at Anthropic built a scaffold that enabled Claude to pose hypotheses, run experiments to experimentally validate or refute these hypotheses, and then asked Claude to design an attack that improves on the best cryptanalysis of AES.\n\nInitially, Claude would not engage with the problem, because it claimed that it was impossible to improve cryptanalysis of AES. The result of our first runs ended with Claude writing messages like:\n\n> _If you want a different outcome, the target has to change … AES-128 r5/r6 is just genuinely hard_\n\nOr:\n\n> _on AES-128 r5/r6/r7 it found nothing because there's nothing easy to find; this is the most-studied block cipher in existence._\n\nTo fix this, we wrote Claude a message (in what follows, we publish the real prompts our researcher used, including typos and grammatical errors): _“the models tend to think it is impossible to solve so they don't try they [sic] need a good amount of prompting.”_ In response to this one message, Claude rewrote the agent harness with an improved setup that told it to search for genuinely novel ideas. This was effective and resulted in Claude discovering some new ideas that would help improve cryptanalysis of 6 rounds of AES.\n\nWe then asked Claude _“why not do aes-128 r7? the whole point is to find something better than existing approaches.”_ Over the course of the next three days, Claude autonomously produced several hundred million tokens while working on the problem; we gave it just three substantive prompts:\n\n1.   A few hours after the first message, we found that Claude was still searching for simple attacks and sent a message: _“no again the goal is that we have highly inteligent [sic] model as good top researcher, we want to find new attacks”;_\n2.   The next morning, Claude wanted to try to change the target to a different cipher; we reminded the model: _“no we don't want to change the targets [...] agian [sic] we need to find something that worth [sic] publishing”;_\n3.   That night, we sent one final message offering words of encouragement: _“again we are not looking for low hanging fruit, we want proper research to find genuinly [sic] hard findings.”_\n\nThree days later, Mythos discovered the Möbius Bridge idea that results in an improved attack. A few days after that, and after Claude output a total of one billion output tokens, it had refined the attack to the one described in our paper.\n\nResearchers at Anthropic then spent several hundred hours learning enough cryptography research to validate the model’s claim, and to prepare [the research paper](https://anthropic.com/document/aes_mobius_bridge.pdf) itself, which we are releasing along with this blog post.\n\nAlong with the research paper, we are also releasing [a document containing Claude’s chain of thought](https://anthropic.com/document/aes_mobius_bridge_cot.pdf) during the discovery of the key algorithmic insight.6 In this session, Claude begins by reviewing what previous agents had discovered, reading the various critiques, and then turns to proposing various new transforms; after proposing and rejecting several ideas, it comes up with the key idea of the Möbius transform. Claude then validates this idea both mathematically and computationally, and then writes a report that future agents then used to develop the remaining ideas that formed its paper.\n\n## Further work\n\nThere is more cryptography research ready to be performed with language models. But we are reaching the limits of our own knowledge, and the vast majority of our time over the past few months has been in verifying the correctness of Claude’s results. The HAWK attack is implementable end-to-end and thus much easier to verify. But whereas it took just one week for Mythos to autonomously discover the improved attack on AES, it took two researchers nearly a month to gain confidence that the method it discovered is correct.\n\nNevertheless, we have continued to conduct a number of other preliminary experiments in cryptography research with Claude. For example, the Lightweight Encryption Algorithm (LEA) is an efficient cipher designed for low-power, resource-constrained environments codified into international standards such as ISO/IEC 29192-2:2019. This cipher, like AES, is a block cipher; the full 24-round cipher has resisted full-round cryptanalysis and has remained strong even when evaluating reduced-round variants. At present, the best cryptanalysis of 13 rounds of LEA [requires](https://jeit.ac.cn/article/doi/10.11999/JEIT221282) 2 98 plaintext pairs and 2 86 work.\n\nMythos Preview developed a practical attack that can recover a 13-round LEA key in under 2 30 encrypted plaintexts, and that runs in under an hour on a modern desktop computer. Again, this attack does not apply to the 24-round cipher, and so has no immediate practical consideration. Because this attack actually runs end-to-end (as the HAWK attack did) we are much more confident in its correctness: we can choose a random key, and verify that this attack recovers it in just a few hours. Mythos discovered this attack much more recently and we still have more work to do to understand the full results (for example, the exact bounds on the number of plaintext pairs required, how some keys are harder to recover, and how it extends to 14 rounds). After more investigation, we plan to m",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "wrong",
+          "url": "https://x.com/sama/status/2081832600591892712",
+          "published_at": "2026-07-27T20:02:25.000000Z",
+          "description": "wrong",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "icanvardar",
+            "text": "i just realized gpt-5.6 sol is literally all i need. openai could stop shipping new models tomorrow and i'd be completely fine",
+            "url": "https://x.com/icanvardar/status/2081707498919112925"
+          },
+          "reply_to": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 1167.4h old, exceeds 720h threshold",
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 16,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "There’s been a lot of speculation about where we stand on open-weights models. We’ve outlined our views in full here: https://t.co/NtXQuWm2g5",
+          "url": "https://x.com/AnthropicAI/status/2081864750296658008",
+          "published_at": "2026-07-27T22:10:10.000000Z",
+          "description": "There’s been a lot of speculation about where we stand on open-weights models. We’ve outlined our views in full here: https://t.co/NtXQuWm2g5",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/NtXQuWm2g5",
+              "expanded_url": "https://www.anthropic.com/news/position-open-weights-models",
+              "display_url": "anthropic.com/news/position-…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Our position on open-weights models\n\nURL Source: https://www.anthropic.com/news/position-open-weights-models\n\nMarkdown Content:\n_A post by Dario Amodei, Anthropic CEO_\n\nOver the last few days there has been a lot of discussion about open-weights models, especially those from China. Reports suggest that some US officials are [considering banning](https://www.axios.com/2026/07/20/ai-us-china-open-source-kimi) the use of Chinese open-weights models by US companies. In response, many tech companies have signed [a letter](https://x.com/JensenHuang/status/2080643682408321103) supporting open-weights models, and some people have even accused Anthropic of wanting to ban open-weights models as a means of protecting our business. Anyone who has read my past writing should know that I don’t regard such bans as a useful measure, but let me state it clearly so that there is no doubt: **Anthropic has never advocated for a ban on open-weights models.**\n\nOpen-weights models that don’t have dangerous capabilities are a public good: they don’t cost anything besides the compute needed to run them, and they provide value to businesses, developers, and researchers.\n\nProtectionist bans would not address my most serious national security concerns. Specifically, I am worried about two nightmare scenarios. I laid these out in my essay [_The Adolescence of Technology_](https://darioamodei.com/essay/the-adolescence-of-technology) six months ago 1, and have held these positions consistently for many years:\n\n1.   My primary concern is the risk that authoritarian governments—not solely the Chinese Communist Party (CCP), although the CCP is clearly the most capable threat—build AI models that are more powerful than those built by the US, and use them to achieve permanent military superiority or perpetrate incredibly deep repression of their own people. This concern is widely shared within the US government: Vice President Vance [warned](https://www.presidency.ucsb.edu/documents/remarks-the-vice-president-the-artificial-intelligence-action-summit-paris-france) in Paris last year that “authoritarian regimes have stolen and used AI to strengthen their military, intelligence, and surveillance capabilities,” and the Intelligence Community’s [2026 Annual Threat Assessment](https://www.dni.gov/files/ODNI/documents/assessments/ATA-2026-Unclassified-Report.pdf) found that “other global powers’ robust progress in AI is challenging US economic competitiveness and national security advantages.” It is irrelevant whether these models are released with open weights, and certainly irrelevant whether they are used by US businesses. In fact, the most dangerous model may be one that is trained in secret and handed only to the People’s Liberation Army for use in drones and the Ministry of State Security for surveillance and repression.\n2.   My secondary concern is the risk that powerful AI models may be misused to carry out cyberattacks or biological attacks, and may have [serious alignment problems](https://time.com/article/2026/07/24/openai-hugging-face-attack/). Open-weights models—it does not matter whether they come from China or anywhere else—do potentially present a higher risk than closed models, because it is very difficult to apply guardrails to them or monitor their usage, and once weights are released they cannot be withdrawn 2. But banning the use of these models by US businesses does nothing to address this risk, because bad actors are unlikely to be legitimate US businesses. It _would_ protect US AI companies from competition, but that has never been my goal.\n\nTo address these concerns, I _do_ support the following three measures, which I and Anthropic have consistently advocated for:\n\n*   **We should not sell powerful chips or chipmaking equipment to China**, and we should crack down on the rampant [smuggling](https://www.justice.gov/opa/pr/three-charged-conspiring-unlawfully-divert-cutting-edge-us-artificial-intelligence)3 and workarounds used to obtain access to such chips. China has limited domestic production capacity, and therefore, due to the [scaling laws](https://arxiv.org/abs/2001.08361), cannot build more powerful models than the US without US chips. This is the most efficient and direct way to block threat #1, and by hampering the training of models that are out of reach of US law, it also indirectly helps with threat #2.\n*   **We should crack down on industrial-scale [distillation operations](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks).** Distillation is a much more compute-efficient process than training models from scratch. It allows China to build much better models than its number of chips would ordinarily enable, and thus partially evade chip bans. Distillation does not allow the CCP to obtain equivalent or superior AI capabilities to the US, but it can bring the Chinese frontier to within a [few months](https://www.anthropic.com/research/2028-ai-leadership)of the US frontier. It is true that many of the companies carrying out these operations release open-weights models—but the open weights are far less relevant than the fact that the operations are backed by an authoritarian state seeking to overtake the US at the frontier. We should have policy interventions to deter this behavior. A blanket ban on open-weights models is neither the correct remedy nor something we have called for 4.\n*   **All sufficiently capable models, open and closed, should go through mandatory safety testing.** The best way to address threat #2 is to just directly test models for cyber, biological, and alignment risks before release. I think this idea is actually close to a consensus: I have been heartened both that the Trump administration has moved in this direction in recent months, and by [recent industry proposals](https://demishassabis.substack.com/p/a-framework-for-frontier-ai-and-the-dawning-of-a-new-age) that would apply such testing to the most capable models regardless of their country of origin or whether they are open or closed (while exempting less capable models, such as those from startups and academia, entirely). Whether open models do or don’t pose an increased risk, and whether that risk can be mitigated, is something that should emerge from testing, rather than be decided in advance—and there may be promising methods for improving the safety of open-weights models, including recent research from AE Studio and Anthropic on [modular training strategies](https://alignment.anthropic.com/2026/modular-pretraining/). Note that to be effective, testing would need to be global, which means even the CCP would need to be on board. I think this may actually be possible: as I wrote in _The Adolescence of Technology_, limited cooperation around preventing AI biological weapons may be possible because it is in China’s interest too.\n\nThis brings me to the [open letter](https://images.nvidia.com/pdf/Open-Weights-and-American-AI-Leadership.pdf). I agree with much of it: open weights expand access to the AI economy, they strengthen competition at least for some use cases, and they give customers greater control. Concerns about distillation should be addressed through targeted legal and commercial frameworks—the same measure I described above. But I don’t agree with the letter’s assertions that open-weights models necessarily make it easier to develop safeguards or that broad access to capabilities necessarily helps defenders more than attackers. It seems at least as likely to me that the opposite will be true. For example, I worry that biology will have a strong attacker-defender asymmetry, where sufficiently capable models may be able to quickly weaponize pandemic-level viruses with widely available materials, whereas defense against these agents is a multi-year operational task in the best case (as we saw with Operation Warp Speed)5. Questions like this should be empirically answered by rigorous pre-release testing, not assumed in advance.\n\nTo summarize my and Anthropic’s position, we have not and are not advocating for a ban on open-weights models as a category. We should instead focus on keeping powerful chips out of authoritarian hands, stopping industrial-scale distillation, and requiring safety testing of all sufficiently capable models, open and closed.\n\n_*Edit 28 July: Updated to note that the cited research on modular training strategies was a collaboration between Anthropic and [AE Studio](https://ae.studio/)._\n\n## Related content\n\n### Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients\n\n[Read more](https://www.anthropic.com/news/cognizant-anthropic)\n\n### Introducing Claude Opus 5\n\nOpus 5 is a step change improvement for the Opus tier powering long-running agents while delivering improvements in coding and professional work.\n\n[Read more](https://www.anthropic.com/news/claude-opus-5)\n\n### A research agenda for the Economic Futures Research Fund\n\nWe’re sharing the research agenda for the Anthropic Economic Futures Research Fund.\n\n[Read more](https://www.anthropic.com/news/economic-futures-research-fund-agenda)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 19,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "At a small business, the person closest to a problem is often the one who has to solve it—even when it falls outside their job description.\n\nWe studied how AI is becoming powerful generalist tool for ",
+          "url": "https://x.com/OpenAI/status/2081833350323720219",
+          "published_at": "2026-07-27T20:05:23.000000Z",
+          "description": "At a small business, the person closest to a problem is often the one who has to solve it—even when it falls outside their job description.\n\nWe studied how AI is becoming powerful generalist tool for small teams, helping them work across functions. https://t.co/oE8HcC3aGf",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": "thread-OpenAI-20260727-2005",
+          "duplicate_of": null
+        },
+        {
+          "title": "https://t.co/5q0d6l8JPN",
+          "url": "https://x.com/OpenAI/status/2081833351678406878",
+          "published_at": "2026-07-27T20:05:24.000000Z",
+          "description": "https://t.co/5q0d6l8JPN",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/5q0d6l8JPN",
+              "expanded_url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/",
+              "display_url": "openai.com/index/how-ai-i…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": {
+            "screen_name": "OpenAI",
+            "status_id": "2081833350323720219"
+          },
+          "linked_content": "Title: How AI is expanding what people do at work\n\nURL Source: https://openai.com/index/how-ai-is-expanding-what-people-do-at-work/\n\nMarkdown Content:\nAI changes the work that people do. In an analysis of more than 800,000 messages from U.S. ChatGPT users, our new research suggests that 16.8% of work-related messages and 43.5% of occupation-specific messages are about tasks associated with another occupation.\n\nA small-business owner can independently draft copy, review a contract, or perform basic financial analysis. A salesperson can use AI to explore a customer dataset that might once have gone to an analyst. A marketer can troubleshoot a website without waiting for a developer. In each case, AI changes not just how work gets done, but who does what.\n\nOur new report, _Work at the Frontier: How AI is Expanding What People Do at Work_, studies this shift. We call the resulting pattern **task crossover**: work historically associated with one occupation appearing in the AI use of people in another. In our [_AI Jobs Transition Framework_⁠(opens in a new window)](https://cdn.openai.com/pdf/the-ai-jobs-transition-framework_report.pdf), we argue that many jobs are likely to reorganize: these are jobs whose day-to-day tasks could change substantially. This report is the first in our new _Work at the Frontier_ series, which explores how AI is changing work in real time.\n\nUsing our unique window into how the world of work is changing, we will offer regular data-driven insights based on evidence to guide policy and practice.\n\n## Nearly half of occupation-specific AI use crosses job boundaries\n\nMany studies of AI and work begin with a fixed list of tasks associated with a given occupation and ask whether models can perform them. Our evidence suggests that AI is also changing who takes on which tasks.\n\nTo measure task crossover, we first separate work that is associated with an occupation from work that appears across many jobs. Some activities, such as writing, summarizing, and scheduling, are shared too broadly across occupations to be evidence of crossover. We classify these as generic. For the remaining messages, we ask whether the task falls inside or outside the user’s own occupation. Among non-generic messages, 43.5% fall outside of the user’s occupation, offering an early window into how AI may be reshaping the task content of jobs before those changes appear in job descriptions or titles.\n\nThis suggests that a substantial part of work-related ChatGPT use is from users expanding their role. The pattern is especially pronounced in several groups. Once generic work is excluded, outside-occupation tasks account for:\n\n*   77% of occupation-specific messages from customer experience workers\n*   75% from designers\n*   69% from human resources workers\n*   56% from legal workers\n*   53% from marketers\n\nThese occupations are “borrowing” these tasks from other roles. The evidence points to a changing division of work: some activities that once required a handoff can now be done by the person who first encounters the need.\n\n## Some tasks travel farther than others\n\nThe heatmap below shows task crossover by asking which occupation’s job each non-generic message most closely resembles. Marketing and engineering tasks travel farthest, frequently showing up in messages from workers outside those fields.\n\n## Marketing and engineering tasks travel across many occupations\n\nMarketing and engineering tasks travel across many occupations\n| Traditional task source |\n| --- |\n| Worker occupation |  |  |  |  |  |  |  |  |\n| Customer experience |  |  |  |  |  |  |  |  |\n| Design |  |  |  |  |  |  |  |  |\n| Engineering |  |  |  |  |  |  |  |  |\n| Finance |  |  |  |  |  |  |  |  |\n| Human resources |  |  |  |  |  |  |  |  |\n| Legal |  |  |  |  |  |  |  |  |\n| Marketing |  |  |  |  |  |  |  |  |\n| Sales |  |  |  |  |  |  |  |  |\n\nShare of tasks within occupation\n\nTask crossover is not evenly distributed when we zoom in from occupations to specific tasks. Financial calculation and technology troubleshooting each appear among the three most common outside tasks in all seven other occupation groups in the analysis. Marketing work also travels broadly: creating marketing materials appears across five other groups and is especially prominent among design users.\n\nLooking at broader task bundles reveals two distinct directions of crossover. Some jobs bring in many tasks from other occupations. Others supply tasks that appear across many different jobs.\n\nDesign illustrates the first pattern. About 35.2% of messages from designers involve work usually associated with another occupation, while design tasks account for only 1.7% of messages from workers in other fields. Designers draw heavily on outside tasks, but design work itself rarely appears elsewhere.\n\nEngineering is closer to the reverse. Only 18.5% of engineering messages involve tasks from other fields, but engineering tasks account for 7.4% of messages among workers in other occupations. Engineering is an important source of work that people elsewhere take on, from troubleshooting software to working with technical systems.\n\nMarketing stands out in both directions. Marketers devote 24.3% of their messages to tasks associated with other occupations, while marketing tasks account for 8.9% of messages among workers in other fields—the highest outward share in the sample. Marketing workers combine tasks from multiple domains, and marketing work also spreads widely across the organization.\n\n## More task crossover in small businesses\n\nThe size and structure of a business shapes how AI changes work. In a large company, employees may have access to specialized teams, established workflows, and internal services. In a smaller organization, the worker closest to the problem is more likely to take on the problem rather than delegate.\n\nAmong average users, the outside-occupation task share falls from 18.9% for users in workspaces with 2–5 seats to 16.3% for users in workspaces with over 100 seats. Among the heaviest users, we do not see the same monotonic pattern.\n\nOne possible explanation is that moderate users in smaller organizations turn to AI when they encounter work that would otherwise require another function. Heavy users may instead have developed stable AI-supported workflows that look more similar across organizations, or may use AI more intensively within their core occupation.\n\nAI may be especially useful as a generalist tool where specialist resources are scarce.\n\n## The task list itself is changing\n\nAI usage data like this is an indicator of where work is shifting. It allows us to see how AI lets workers experiment with new combinations of activities before firms rewrite job descriptions or create new job titles. In that sense, usage patterns may provide an early signal of occupational change that conventional labor-market statistics will capture only later.\n",
+          "thread_group_id": "thread-OpenAI-20260727-2005",
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-Live in ChatGPT Voice is now available to Edu, Business, and Enterprise plans globally.",
+          "url": "https://x.com/OpenAI/status/2081794871795589485",
+          "published_at": "2026-07-27T17:32:29.000000Z",
+          "description": "GPT-Live in ChatGPT Voice is now available to Edu, Business, and Enterprise plans globally.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "Introducing GPT-Live, a new generation of voice models for natural human-AI interaction.\n\nRolling out in ChatGPT starting today.\n\nYou’ll want to turn the sound on for this one. https://t.co/WzoQFvA5ir",
+            "url": "https://x.com/OpenAI/status/2074907025537224840"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 185.1h old, exceeds 168h threshold",
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "xAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 9,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 14,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 15,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest item is 666.2h old, exceeds 168h threshold",
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 13,
+      "filtered_count": 12,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual understanding and a 1M-token context window.\n\nNew model architectur",
+          "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+          "published_at": "2026-07-27T15:14:40.000000Z",
+          "description": "Releasing the model weights and technical report of Kimi K3.\n\nKimi K3 is our most capable model: a 2.8T MoE model with native visual understanding and a 1M-token context window.\n\nNew model architecture: 2.5x the intelligence per unit of compute, not just more params.\n\nAlongside Kimi K3, we're opening up more of the stack behind it — high-performance attention kernels, MoE communication library, and infrastructure for running agent environments at scale.\n\nModel weights: https://t.co/7m7eEg6Y0B\nTech report:  https://t.co/yeu6cjpMCT\nTech blog: https://t.co/YTfiMSNM1f",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/7m7eEg6Y0B",
+              "expanded_url": "http://huggingface.co/moonshotai/Kimi-K3",
+              "display_url": "huggingface.co/moonshotai/Kim…"
+            },
+            {
+              "t_co": "https://t.co/yeu6cjpMCT",
+              "expanded_url": "http://github.com/MoonshotAI/Kimi-K3/blob/master/k3_tech_report.pdf",
+              "display_url": "github.com/MoonshotAI/Kim…"
+            },
+            {
+              "t_co": "https://t.co/YTfiMSNM1f",
+              "expanded_url": "http://kimi.com/blog/kimi-k3",
+              "display_url": "kimi.com/blog/kimi-k3"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: Kimi K3 Tech Blog: Open Frontier Intelligence\n\nURL Source: http://kimi.com/blog/kimi-k3\n\nMarkdown Content:\nToday, we are introducing Kimi K3 — our most capable model. Kimi K3 is a 2.8T-parameter model built on our Kimi Delta Attention and Attention Residuals, with native vision capabilities and a 1-million-token context window. It is the world's first open 3T-class model, designed for frontier intelligence across long-horizon coding, knowledge work, and reasoning.\n\nWhile its overall performance still trails the most powerful proprietary models, Claude Fable 5 and GPT 5.6 Sol, Kimi K3 demonstrated frontier-level performance across our evaluation suite, consistently outperforming other tested models.\n\nKimi K3 is available today on [Kimi.com](https://www.kimi.com/), [Kimi Work](https://www.kimi.com/products/kimi-work), [Kimi Code](https://www.kimi.com/code), and the [Kimi API](https://platform.kimi.ai/). At launch, Kimi K3 will use max thinking effort by default, with low- and high-effort modes to be introduced in subsequent updates. We are currently working closely with inference partners and open-source maintainers to align technical details and ensure a reliable rollout across the ecosystem. The full model weights will be released by July 27, 2026. Further details on the architecture, training, and evaluations will be released alongside the Kimi K3 technical report.\n\n## An Open 3T-Class Model\n\nKimi K3 is the first open model to reach 2.8 trillion parameters. It marks the latest step in Kimi's sustained push at the scaling frontier: for nine of the past twelve months, Kimi models have set the upper bound of open-model sizes.\n\nKimi K3 is built on Kimi Delta Attention (KDA) and Attention Residuals (AttnRes), two architectural updates designed to improve how information flows across sequence length and model depth. We have also scaled up Mixture of Experts (MoE) sparsity, effectively activating 16 out of 896 experts when paired with a Stable LatentMoE framework. Together with refined training and data recipes, these structural changes yield an approximate 2.5× improvement in overall scaling efficiency compared to Kimi K2, allowing the model to convert compute into intelligence more effectively.\n\nKimi K3 architecture: the Stable LatentMoE and KDA modules (left), the AttnRes operation α (top right), and the Block Attention Residuals backbone (right).\n\n## Coding\n\nKimi K3 has strong long-horizon coding performance. Operating with minimal human oversight, it can sustain long engineering sessions, navigate massive repositories, and orchestrate terminal tools.\n\nKimi K3 also excels in tasks blending software engineering with visual reasoning — it leverages screenshots and visuals to optimize game dev, frontend, and CAD.\n\nThe case studies below show how Kimi K3's coding capability translates into open-ended software creation and scientific research.\n\n### Kernel Optimization\n\nWe tested the models' capability to optimize GPU kernels. Each model works independently in an identical sandbox, with up to 24 hours to profile, rewrite, and benchmark four tasks spanning AttnRes, KDA, and a 512-head-dimension MLA kernel across NVIDIA Hopper GPUs and GPGPU from an alternative vendor. Kimi K3 performed competitively with Fable 5 (with fallback) and substantially outperformed Opus 4.8, GPT 5.6 Sol, and GPT 5.5.\n\nClaude Fable 5 was evaluated by a third party, and its results may include fallback behavior. Across most models, some trajectories include small, acceptable precision shortcuts that remain within our numerical tolerance. GPGPU denotes general-purpose GPUs used for computation beyond graphics rendering.\n\nIn the late stages of Kimi K3 development, an early version of Kimi K3 handled the majority of the team's kernel optimization works.\n\n### GPU Compiler Development\n\nWe further tested whether Kimi K3 could build a GPU programming system from scratch. Kimi K3 developed MiniTriton, a compact Triton-like compiler with its own tile-level IR layer over MLIR, optimization passes, and a PTX code-generation pipeline. Across supported roofline benchmarks, MiniTriton delivers performance on par with or better than Triton and torch.compile — beating Triton on certain workloads. Beyond microbenchmarks, MiniTriton sustains end-to-end nanoGPT training with stable convergence, the loss curve closely tracking the reference with only minor divergence — validating the full pipeline on a realistic workload. These results demonstrate that Kimi K3 can build a coherent end-to-end compiler — from DSL frontend and IR passes to PTX codegen and runtime — rather than isolated kernels; its from-scratch Tensor Core path already rivals Triton’s extensively optimized stack.\n\n![Image 1: MiniTriton CUDA-core roofline on NVIDIA L20](https://www.kimi.com/landing-ui/assets/blog-assets/kimi-k3/roofline_cuda_core_dark.svg)\n\n### Game Dev and Digital Creation\n\nKimi K3 combines strong 3D reasoning, coding, and vision capabilities to turn concepts, images, and videos into fully playable interactive experiences. Kimi K3 achieves true \"vision in the loop\" by seamlessly iterating between code and live screenshots—instantly seeing and refining outputs.\n\n### Chip Design\n\nAs an early proof of concept, Kimi K3 designed a chip to serve a nano model built on its own architecture. In a single 48-hour autonomous run, K3 built, optimized, and verified the chip using open-source EDA tools on the Nangate 45nm library. Within 4 mm², the chip closes timing at 100 MHz and sustains over 8,700 tokens/s decode throughput in simulation, packing 1.46M standard cells, 0.277 MB of SRAM, and an INT4 MAC array with fused dequantization. A chip built by a model, for a model, reflects K3's long-horizon agentic capabilities.\n\n### Coding for Research\n\nKimi K3 bridges scientific literature and executable code, autonomously implementing, validating, and analyzing complex computational research workflows.\n\nIn one case, Kimi K3 completed in about two hours what would typically require one to two weeks of work by an experienced researcher. To reproduce the I–Love–Q universal relations in computational astrophysics, it reviewed and cross-validated 20+ papers, implemented the full numerical pipeline, evaluated 300+ equations of state, identified inconsistencies in published formulas, generated 3,000+ lines of Python code, and produced an interactive HTML dashboard for exploring the results.\n\n## Knowledge Work\n\nKimi K3 advances end-to-end knowledge work. Beyond public benchmarks, Kimi K3 (max) demonstrates consistent gains across our internal evaluations, which are derived from recurring patterns and challenges observed in real-world user-agent workflows. These consistent advantages across distinct production-oriented workflows reflect a broad improvement in Kimi K3's agentic knowledge work capabilities.\n\n![Image 2: Internal Knowledge Work Bench](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-17/d9cs71f6rtp4tqfofntg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\n### Research with Interactive Visualization\n\nBelow are a few examples of what Kimi K3 in Kimi Work can produce across financial consulting and scientific research:\n\n### Case 1: Interactive 42 years of AI ASIC industry research website\n\nAn interactive research report you can drill into: 42 years of the ASIC industry, created through 120+ rounds of recursive self-improvement. Kimi K3 transforms evidence into bespoke charts, animated diagrams, and interactive visual narratives. It pulled data via 2.8k+ web searches/fetches and 1.1k+ terminal data pulls, across 11k+ pages spanning 87 quarterly reports and 99 original PDFs.\n\n### Case 2: Fusion Industry Research\n\nA consulting-style industry report with interactive visualizations—including timelines, Funnel Chart, Range Bar Chart, Gantt Charts, and publication-quality slides.\n\n### Case 3: GWTC-5 Gravitational-wave Analysis\n\nAn analysis of 391 gravitational-wave events using 20+ concurrent subagents, producing 7 scientific visualizations, 2 tables, and a literature synthesis from 10+ papers.\n\nKimi K3 is also particularly effective at producing infographic-style presentations, such as the fully editable heatmap and annual report shown below:\n\n### Widgets and Dashboard\n\nIn Kimi Work, we introduce two new features - Widgets and Dashboard - which make interactions with Kimi K3 more visual and persistent. Widgets let you generate interactive components directly within a chat, with connections to local data or external plugins for continuous updates. Dashboard brings the widgets you care about most into one persistent, personalized view organized around a topic, project, or goal.\n\n### Video Editing\n\nKimi K3 excels at motion design, animation, and video editing because its native multimodal architecture understands text, images, and video within the same model.\n\nIn one example, K3 created a 3Blue1Brown-style motion-graphics explainer of its own architecture, translating technical ideas into animated diagrams and transitions.\n\nIn another, Kimi K3 edited its own teaser video from 56 source clips, handling clip selection, motion-matched cuts, frame-accurate beat synchronization, audio processing, and multiple rounds of revision. A high-density short video like this would typically take an experienced editor one to two working days, or a beginner three to five.\n\n### Architecture and Infrastructure\n\nKimi K3 is built on Kimi Delta Attention (KDA) and Attention Residuals (AttnRes). KDA provides an efficient foundation for scaling attention, while AttnRes selectively retrieves representations across depth rather than accumulating them uniformly. Together, they form the architectural backbone of a model designed to scale well beyond the trillion-parameter regime.\n\nKimi K3 uses Stable LatentMoE, effectively activating 16 of 896 experts. At this level of sparsity, routing and optimization become first-order challenges. Quantile Balancing derives expert allocation directly from router-score quantiles, eliminating heuristic updates and a sensitive balancing hyperparameter, while Per-Head Muon extends Muon by optimizing attention heads independently for more adaptive learning at scale. Sigmoid Tanh Unit (SiTU) and Gated MLA improve activation control and attention selectivity respectively. Together, these advances enable stable and efficient training at the 2.8-trillion-parameter scale.\n\nKimi K3 applies quantization-aware training from the SFT stage onward, using MXFP4 weights with MXFP8 activations for broad hardware compatibility. To prevent expert imbalance from degrading throughput at large expert-parallel scales, we introduce a fully balanced expert-parallel training method with static shapes and no host synchronization on the critical path. Since inference efficiency likewise benefits from larger high-bandwidth communication domains, we recommend deploying Kimi K3 on supernode configurations with 64 or more accelerators. Finally, as KDA poses new challenges for conventional prefix caching, we have contributed a corresponding implementation to the vLLM community, to be released alongside the model. KDA with prefill cache allows us to serve Kimi K3 at a highly competitive token price despite its scale and long context.\n\nMore technical details will be available in our coming report.\n\n## Availability\n\n*   Kimi K3 Agents: Download or update to the latest Kimi app from your mobile app store, available on iOS, Android, and HarmonyOS, or visit [kimi.com](https://www.kimi.com/).\n*   Work with Kimi K3: Download the latest [Kimi Work desktop app](https://www.kimi.com/products/kimi-work), version 3.1.0 or later, available for Windows and Apple silicon Macs.\n*   Code with Kimi K3: Run [Kimi Code](https://www.kimi.com/code) in your terminal and select Kimi K3 using the `/model` command.\n*   Build with the Kimi API: Visit the [Kimi API Platform](https://platform.kimi.ai/) and select `kimi-k3`. Pricing is $0.30/MTok for cache-hit input, $3.00/MTok for cache-miss input, and $15.00/MTok for output. Powered by Mooncake's disaggregated inference architecture, the official Kimi API achieves a cache hit rate above 90% in coding workloads.\n*   Bring Kimi to your organization: [Kimi Enterprise](https://www.kimi.com/membership/pricing) provides enterprise-grade data privacy and member management, with complete separation between personal and organization accounts. Visit the pricing page and select “Get Kimi Enterprise” to subscribe for your team.\n\n### Full Benchmark Table\n\n## Footnotes\n\nAll Kimi K3 results reported below are obtained with the reasoning effort set to 'max', setting temperature = 1.0 and top-p = 1.0. Depending on the benchmark, each model is evaluated under one of three agentic harnesses — Kimi Code, Claude Code, or Codex — as specified in the notes below.\n\n### Coding benchmarks\n\n1.   **DeepSWE.** Kimi K3 is evaluated with the Kimi Code harness. The GLM-5.2 score is taken from the GLM-5.2 release blog ([https://z.ai/blog/glm-5.2](https://z.ai/blog/glm-5.2)); all remaining scores are from the official DeepSWE leaderboard ([https://deepswe.datacurve.ai/](https://deepswe.datacurve.ai/)), under which Kimi K3 attains 67.3 with the mini-SWE-agent harness. We report the DeepSWE v1.1 tasks.\n2.   **Terminal-Bench 2.1.** Kimi K3 is evaluated with the Kimi Code harness. For all other models, we report the best score across harnesses: GLM-5.2 with Claude Code ([https://z.ai/blog/glm-5.2](https://z.ai/blog/glm-5.2)); Claude Opus 4.8 and Claude Fable 5 with Terminus 2 ([https://artificialanalysis.ai/evaluations/terminalbench-v2-1](https://artificialanalysis.ai/evaluations/terminalbench-v2-1)); GPT 5.5 and GPT 5.6 Sol with Codex ([https://openai.com/index/previewing-gpt-5-6-sol/](https://openai.com/index/previewing-gpt-5-6-sol/)).\n3.   **Program Bench.** Kimi K3 is evaluated with the Kimi Code harness. The GLM-5.2 score is from [https://z.ai/blog/glm-5.2](https://z.ai/blog/glm-5.2); all other scores are from [https://www.vals.ai/benchmarks/programbench](https://www.vals.ai/benchmarks/programbench).\n4.   **SWE Marathon.** Kimi K3, Claude Opus 4.8, and Claude Fable 5 are evaluated with the Claude Code harness; GPT-5.6 Sol is evaluated with the Codex harness. The GLM-5.2 score is from [https://z.ai/blog/glm-5.2](https://z.ai/blog/glm-5.2). Our evaluation is based on an H20-calibrated branch of the official v1.1 tasks ([https://www.swe-marathon.org/](https://www.swe-marathon.org/)): the Docker images, performance gates, and reference oracles for the GPU tasks have been recalibrated for H20, while the correctness and anti-cheat validators remain unchanged. Additionally, Claude Fable 5 hit fallbacks on 35% of the tasks in our evaluation, which may have negatively impacted its measured performance.\n5.   **FrontierSWE.** Kimi K3 is evaluated with the Kimi Code harness and GPT-5.6 Sol with the Codex harness; all other results are from [https://www.frontierswe.com/](https://www.frontierswe.com/). Dominance scores are recomputed from the raw scores using the official evaluation script and are current as of July 16, 2026.\n6.   **PostTrain Bench.** Scores for GLM-5.2, GPT-5.5, and Claude Opus 4.8 are adopted from the official PostTrainBench ([https://posttrainbench.com/](https://posttrainbench.com/)) results. Kimi K3, Claude Fable 5, and GPT-5.6 Sol are evaluated with the official Harbor implementation at maximum reasoning effort, averaged over three runs on H20 GPU (instead of H100 in the official setting) — Kimi K3 and Claude Fable 5 with the Claude Code harness, and GPT-5.6 Sol with the Codex harness.\n7.   **MLS Bench Lite.** Kimi K3 is evaluated with the Kimi Code harness; GLM-5.2 and the Claude models with the Claude Code harness; GPT-5.5 and GPT-5.6 Sol with the Codex harness.\n8.   **KCB 2.0.** Kimi K3 is evaluated with both the Kimi Code and Claude Code harnesses; GLM-5.2, Claude Opus 4.8, and Claude Fable 5 with the Claude Code harness; GPT-5.5 and GPT-5.6 Sol with the Codex harness. All models are evaluated at maximum reasoning effort, except GPT-5.5, which uses the \"xhigh\" setting. We also note that on this in-house benchmark, 10% of the tasks entered GPT-5.6 Sol's cyber guard.\n\n### Productivity and agentic benchmarks\n\n1.   For OfficeQA Pro, each test case provides the agent with the entire PDF corpus, with all PDFs rendered as images and no machine-readable text available.\n2.   **OfficeQA Pro and SpreadsheetBench 2.** Kimi K3, GLM-5.2, Claude Opus 4.8, and Claude Fable 5 are evaluated with the Claude Code harness; GPT 5.5 and GPT 5.6 Sol are evaluated with the Codex harness.\n3.   **MCP Atlas.** All models are evaluated on the 500-task public subset with a 100-turn limit, using Gemini 3.1 Pro as the judge.\n4.   **AutomationBench.** All models are evaluated on the 600-task public subset, following the official GitHub setup in all other respects.\n5.   **BrowseComp.** We adopt the context-compaction strategy used in the Claude model cards, triggered at 300K tokens. When evaluated with a 1M-token context window and no context management, Kimi K3 achieves a score of 90.4. The results of Claude Fable 5, Claude Opus 4.8, GPT 5.6 Sol, and GPT 5.5 are cited from [https://www.anthropic.com/news/claude-fable-5-mythos-5](https://www.anthropic.com/news/claude-fable-5-mythos-5) and [https://openai.com/index/gpt-5-6/](https://openai.com/index/gpt-5-6/).\n6.   **GDPval-AA, AA-Briefcase, and APEX-Agents** scores are cited from [https://artificialanalysis.ai/](https://artificialanalysis.ai/).\n\n### Multimodal benchmarks\n\n1.   Except for ZeroBench, which follows the official setting and is run five times, all multimodal scores are averaged over three runs. MMMU-Pro is evaluated following the official protocol, preserving the original input order and prepending images to the text input.\n2.   **PerceptionBench.** PerceptionBench ([https://www.kimi.com/blog/perception-bench](https://www.kimi.com/blog/perception-bench)) is a benchmark that focuses on atomic visual perception capabilities.\n\n## Limitations\n\n1.   **Sensitivity to thinking history.** K3 was trained in the preserved thinking history mode. If the agent harness fails to pass back all the historical thinking content as required, or if an ongoing session with another model is switched over to K3, generation quality may become highly unstable. We recommend using a harness with verified compatibility, such as Kimi Code, and avoiding switching to K3 in the middle of a session.\n2.   **Excessive proactiveness.** K3's training places particular emphasis on long-horizon, challenging tasks. As a result, when it encounters minor issues or ambiguous user intent during task execution, it may make unexpected decisions on the user's behalf. If your application requires the agent to operate within well-defined boundaries and refrain from excessive improvisation, please impose more explicit behavioral constraints on K3 in the system prompt or in `AGENTS.md`.\n3.   Despite being a highly competitive model overall, K3 nonetheless exhibits a noticeable gap in user experience compared with Claude Fable 5 and GPT 5.6 Sol.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We are releasing PerceptionBench, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities - discovered from how today's models fail, rather than defined in advance",
+          "url": "https://x.com/Kimi_Moonshot/status/2081813202514681878",
+          "published_at": "2026-07-27T18:45:20.000000Z",
+          "description": "We are releasing PerceptionBench, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities - discovered from how today's models fail, rather than defined in advance. \n\nFrom frontier-model failures across 42 benchmarks, we derive 10 atomic perceptual capabilities and construct 3,000 verified questions, each isolating a single capability and answerable by looking, with no reasoning or external knowledge required.  \n\nBlog: https://t.co/I1QU83CiYv \nGitHub: https://t.co/F5E0VjYgh0\nHugingface: https://t.co/zMdyQD8HO4",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/I1QU83CiYv",
+              "expanded_url": "http://kimi.com/blog/perception-bench",
+              "display_url": "kimi.com/blog/perceptio…"
+            },
+            {
+              "t_co": "https://t.co/F5E0VjYgh0",
+              "expanded_url": "http://github.com/MoonshotAI/PerceptionBench",
+              "display_url": "github.com/MoonshotAI/Per…"
+            },
+            {
+              "t_co": "https://t.co/zMdyQD8HO4",
+              "expanded_url": "http://huggingface.co/datasets/moonshotai/PerceptionBench",
+              "display_url": "huggingface.co/datasets/moons…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": "Title: PerceptionBench: Evaluating Atomic Visual Perception in MLLMs\n\nURL Source: http://kimi.com/blog/perception-bench\n\nMarkdown Content:\n[](https://www.kimi.com/)\n*   [Products Products](https://www.kimi.com/products/)[Kimi All-in-one agentic AI workspace](https://www.kimi.com/)[Kimi Work AI desktop agent for knowledge workers](https://www.kimi.com/products/kimi-work)[Kimi Code AI code agent for terminal & IDE](https://www.kimi.com/code)[Kimi WebBridge A browser extension for AI agents](https://www.kimi.com/features/webbridge)[Kimi Platform Access the latest Kimi models](https://platform.kimi.ai/)   \n*   [Features Features](https://www.kimi.com/features/)[Slides AI presentation maker](https://www.kimi.com/features/slides)[Websites AI website builder](https://www.kimi.com/features/websites)[Deep Research Get thorough & multi-format reports](https://www.kimi.com/features/deep-research)[Sheets Build Excel formulas, pivots & charts](https://www.kimi.com/features/sheets)[Docs Create, convert & review documents](https://www.kimi.com/features/docs)[Kimi Claw Deploy 24/7 AI agents in one click](https://www.kimi.com/resources/kimi-claw-introduction)   \n*   [Research Research](https://www.kimi.com/blog/)[Kimi K3 Open Frontier Intelligence](https://www.kimi.com/blog/kimi-k3)[PerceptionBench Atomic Visual Perception in MLLMs](https://www.kimi.com/blog/perception-bench)[Kimi K2.6 Advancing Open-Source Coding](https://www.kimi.com/blog/kimi-k2-6)[Agent Swarm Scale Out, Not Just Up](https://www.kimi.com/blog/agent-swarm)[WorldVQA Atomic World Knowledge in MLLMs](https://www.kimi.com/blog/worldvqa)[Kimi K2.5 Visual Agentic Intelligence](https://www.kimi.com/blog/kimi-k2-5)[Kimi Vendor Verifier Rebuilding the Chain of Trust](https://www.kimi.com/blog/kimi-vendor-verifier)[Kimi K2 Thinking Open-source thinking model](https://www.kimi.com/blog/kimi-k2-thinking)[Kimi K2 Open Agentic Intelligence](https://www.kimi.com/blog/kimi-k2)   \n*   [Resources Resources](https://www.kimi.com/resources/)[Kimi Code Introduction](https://www.kimi.com/resources/kimi-code-introduction)[Parallel Agent](https://www.kimi.com/resources/parallel-agent)[Multi Agent](https://www.kimi.com/resources/multi-agent)[Hermes Agent Overview](https://www.kimi.com/resources/hermes-agent)[Hermes API Integration](https://www.kimi.com/resources/hermes-agent-api-integration)[OpenClaw SaaS](https://www.kimi.com/resources/openclaw-saas)[How to Install OpenClaw on Mac](https://www.kimi.com/resources/how-to-install-openclaw-on-mac)[AI Tools for Excel](https://www.kimi.com/resources/best-free-ai-tools-for-excel)[Vibe Coding Guide](https://www.kimi.com/resources/what-is-vibe-coding)[How to Vibe Code](https://www.kimi.com/resources/how-to-vibe-code)[How to Build a Website from Scratch](https://www.kimi.com/resources/how-to-build-a-website-from-scratch)[Refactor moonshot.ai with Kimi Code CLI](https://www.kimi.com/resources/shipping-a-refactor-of-moonshot-ai-with-kimi-code-cli)[Kimi AI Examples and Showcases](https://www.kimi.com/showcases/)   \n*   [Pricing Pricing](https://www.kimi.com/membership/pricing)\n*   [Help Help](https://www.kimi.com/help)\n*   [Kimi K3 Kimi K3](https://www.kimi.com/blog/kimi-k3)\n*   [For Business](https://www.kimi.com/business)\n\n[For Business](https://www.kimi.com/business)[Try Kimi](https://www.kimi.com/)\n\nIntroducing PerceptionBench Overview The Dataset Using PerceptionBench to Compare Models Conclusion\n\n1.   <\n2.   [Research](http://kimi.com/blog/)\n\n# Introducing PerceptionBench\n\n**Evaluating Atomic Visual Perception in Multimodal Large Language Models**\n\n**Authors** Kimi Team\n\n* * *\n\n## Overview\n\nWe are releasing **PerceptionBench**, a benchmark that isolates visual perception and evaluates it as a set of atomic capabilities—**discovered from how today's models fail, not defined in advance.** From frontier-model failures across 42 benchmarks, we derive 10 atomic perceptual capabilities and construct 3,000 verified questions, each isolating a single capability and answerable by looking, with no reasoning or external knowledge required.\n\nAcross sixteen frontier MLLMs, no model reaches 60% accuracy, and perception-related hallucination is the weakest capability on average. Models with nearly identical overall scores can diverge sharply in what they actually perceive. PerceptionBench is built to expose exactly where perception breaks, and to drive progress toward multimodal AI that sees faithfully and consistently.\n\n![Image 4: PerceptionBench versus existing evaluation: an existing benchmark item couples perception with knowledge and reasoning in a single question, while PerceptionBench evaluates ten atomic perceptual categories with one isolating question each](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-24/1d9hj9od3v89kken0j8dg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\n## The Dataset\n\nGuided by the induced taxonomy, we select the most informative failures from the source benchmarks, decompose them into atomic sub-questions, and author additional questions on supplemented images. The retained and constructed samples together form an in-house pool of **17,000+** verified questions. The released benchmark subsamples **3,000** verified questions from the constructed portion—**60% decomposed** from attributed model failures and **40% newly authored**—with category-level balancing and difficulty stratification to isolate atomic perceptual capabilities from confounding factors. The released benchmark distinguishes itself through three core design principles:\n\n*   **Failure-Driven Taxonomy:** Every category is discovered from real model failures, attributed to the earliest erroneous step across 42 existing benchmarks.\n*   **Ten Atomic Perceptual Categories:** Visual Relation, Counting, Attribute, Depth & 3D, Localization, Comparison, Fine-grained Recognition, Context Integration, OCR, and Hallucination.\n*   **Perception, Not Reasoning or Knowledge:** Samples are curated, decomposed, and difficulty-balanced so that difficulty stems from perception rather than reasoning or external knowledge.\n\n![Image 5: Qualitative examples: four source-benchmark items whose original questions require multi-step solutions are decomposed into atomic perception-only sub-questions, shown with ground truth and the answers of Kimi K3, GPT-5.6-Sol, Claude-Fable-5, and Gemini-3.1-Pro](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-23/1d9h01rl3v89kkemvehg0?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\n* * *\n\n![Image 6: Visual Localization example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g792aav1fc64631kjg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Localization\n\nAt what o'clock position on the dial is the Gemini symbol in the image? Answer with just the number.\n\nAnswer:6\n\n![Image 7: Visual Localization example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7a17f2ena620dok1g?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Localization\n\nThe red lines in the image divide the picture into nine sections, which are numbered as regions 1–9 in order from left to right and then from top to bottom. Which of the following regions contains no trees at all? A. Region 1 B. Region 2 C. Region 5 D. Region 8\n\nAnswer:B\n\n![Image 8: Visual Attribute example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7a2ff2ena620dok5g?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Attribute\n\nFrom the perspective shown in the image, compare the two pen holders with pink on the table. Which of the following conclusions is correct? A. The left pen holder is pure pink with a cartoon character pattern on its surface; the right pen holder is gray-pink patchwork B. The left pen holder is gray-pink patchwork; the right pen holder is pure pink with a cartoon character pattern on its surface C. The left pen holder is pure pink; the right pen holder is gray-pink patchwork with a cartoon character pattern on its surface D. The left pen holder is gray-pink patchwork with a cartoon character pattern on its surface; the right pen holder is pure pink\n\nAnswer:B\n\n![Image 9: Visual Attribute example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7a3ff2ena620dokag?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Attribute\n\nObserve the two cartoon characters in the lower right corner of the picture. Viewing from the perspective presented in the image, which statement correctly describes the composition of these two characters? A. Both characters are composed entirely of curves B. Both characters are composed of a combination of straight lines and curves C. Both characters are composed entirely of straight lines D. The character on the left is composed entirely of straight lines, while the character on the right is composed entirely of curves\n\nAnswer:B\n\n![Image 10: Visual Counting example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7b5t3v89kkemtmo3g?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Counting\n\nObserve the red box in the picture. How many flowers have their main body inside the red box?\n\nAnswer:2\n\n![Image 11: Visual Counting example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7a67f2ena620doklg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Counting\n\nHow many potted green plants can be seen in the image in total? (excluding the green plants reflected in the glass)\n\nAnswer:5 pots\n\n![Image 12: Visual Relation example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7b753v89kkemtmo80?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Relation\n\nLocate the solid dot inside the red box. As the dot travels along the existing route of the maze, which cat area does it reach first? A. The puzzled cat at the lower left B. The happy cat at the lower right C. The cat holding an umbrella in the center D. The cat admiring flowers at the upper right\n\nAnswer:C\n\n![Image 13: Visual Relation example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-23/1d9h01g9l51jas5c6c05g?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Relation\n\nIn the figure, for the longest black diagonal line segment, in which direction does the line segment extending outward from its right endpoint point? A. Upper right B. Directly to the right C. Lower right D. Directly downward\n\nAnswer:A\n\n![Image 14: Depth & 3D example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-23/1d9h01hhl51jas5c6c0ag?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nDepth & 3D\n\nBased on the current observer's perspective, with the direction closer to the camera defined as the front, between the person in red and the black electric fan in the center of the image, which one is further back? A. The person in red B. The black electric fan C. Both are the same D. Cannot be determined\n\nAnswer:A\n\n![Image 15: Depth & 3D example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-23/1d9h01il3v89kkemvegrg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nDepth & 3D\n\nIf the small cubes stacked in the figure must be placed on the ground or on another small cube, how many small cubes are there in total in the figure (including the ones that cannot be seen)?\n\nAnswer:26 cubes\n\n![Image 16: OCR example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7acf6rtp4tq80eq40?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nOCR\n\nObserve the image. The white text appears in two different font sizes. For the white text in the largest font, read the text content from left to right, paying attention to uppercase and lowercase letters, and preserving all punctuation marks and spaces. Write down the answer.\n\nAnswer:Marshall B. Clinard\n\n![Image 17: OCR example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7adnf2ena620dol90?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nOCR\n\n(Note: bounding boxes are given in [x1, y1, x2, y2] format.) Observe the image, establish normalized coordinates, read the text content in the coordinate region [0.697, 0.429, 0.875, 0.521] from left to right, distinguish case, and preserve spaces and punctuation, then write the answer.\n\nAnswer:Tap Water\n\n![Image 18: Visual Comparison example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7aenf2ena620dolc0?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Comparison\n\nAmong the circles corresponding to P, Q, M, and N, which is the largest circle? (Answer with the letter corresponding to the circle)\n\nAnswer:N\n\n![Image 19: Visual Comparison example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7afvf2ena620doleg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nVisual Comparison\n\nLet the line segment connecting data points A and D be denoted as segment AD, and let the line segment connecting data points E and M be denoted as segment EM. Which of the following is correct regarding the thickness of segments AD and EM? A. Segment AD is thicker B. Segment EM is thicker C. Segments AD and EM are equally thick D. Cannot be determined\n\nAnswer:B\n\n![Image 20: Fine-grained Recognition example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-22/1d9g7agvf2ena620doli0?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nFine-grained Recognition\n\nObserve the outline shape of the notch in the main pattern above. From the eight options A, B, C, D, E, F, G, H, which is the only option whose edge contour can perfectly match the notch in the main body and seamlessly fill the missing area?\n\nAnswer:D\n\n![Image 21: Fine-grained Recognition example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-24/1d9hi4lt3v89kken0g0pg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nFine-grained Recognition\n\nObserve the image and compare the styling and outfits of the person in the center position (C position) with the person immediately to their right. Which of the following statements is correct: A. The two have different hair colors, and their clothing color schemes and decorations are exactly the same B. The two have different hair colors, and their clothing color schemes and decorations are clearly distinct C. The two have the same hair color, and their clothing color schemes and decorations are exactly the same D. The two have the same hair color, and their clothing color schemes and decorations are clearly distinct\n\nAnswer:A\n\n![Image 22: Context Integration example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-23/1d9h01jt3v89kkemvegv0?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nContext Integration\n\nPlease look at the map in the first image. I took another photo at the location marked with the red cross, which is the second image. Please determine which of the following buildings is on both sides of the road ROAD NO.2 SUNRISE HOMES. A. Riva shop smart B. Dasthagir & Sons C. Bait-ul-Ata D. Sunrise Valley Villas\n\nAnswer:B\n\n![Image 23: Context Integration example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-23/1d9h01l2av1fc6464ou0g?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nContext Integration\n\nCompared with figure 1, what has been added to the scene in figure 2? A. black office desk B. semi-transparent storage basket C. light yellow filing cabinet D. cardboard box marked with an arrow\n\nAnswer:D\n\n![Image 24: Hallucination example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-24/1d9hi4n2av1fc6465qskg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nHallucination\n\nHow many white tables are there in the office in the picture? A. 0 B. 1 C. 2 D. 3\n\nAnswer:A\n\n![Image 25: Hallucination example](https://kimi-file.moonshot.cn/prod-chat-kimi/kfs/4/2/2026-07-24/1d9hi4o2av1fc6465qsmg?x-tos-process=image%2Fauto-orient%2C1%2Fstrip%2Fignore-error%2C1)\n\nHallucination\n\nAmong the 15 patterns in the image, how many patterns have a dog logo?\n\nAnswer:0\n\nEach source benchmark captures a narrow slice of perception errors, and these slices overlap only weakly (mean pairwise weighted Jaccard 0.20). No single benchmark—or small group of them—covers perception as a whole, which motivates a capability-centric benchmark that aggregates and rebalances these fragmented views.\n\n![Image 26: Distribution of attributed failures across error types for each of the 42 aggregated open-source benchmarks; each benchmark's failures concentrate on one or a few error types, while the ten perception-branch types recur across nearly all benchmarks](http://kimi.com/landing-ui/assets/blog-assets/perception-bench/openbench_jaccard.svg)\n\n### Distribution of Tasks per Category\n\n| Statistics | Number |\n| --- | --- |\n| Data |\n| Total | 3,000 |\n| Atomic perceptual categories | 10 |\n| Task Categories |\n| Depth 3D Perception Error | 330 (11.00%) |\n| Visual Counting Error | 330 (11.00%) |\n| Fine-Grained Recognition Error | 290 (9.67%) |\n| Visual Relation Error | 330 (11.00%) |\n| Visual Attribute Error | 330 (11.00%) |\n| Visual Localization Error | 330 (11.00%) |\n| Visual Comparison Error | 279 (9.30%) |\n| Context Integration Error | 255 (8.50%) |\n| Hallucination | 271 (9.03%) |\n| OCR Error | 255 (8.50%) |\n\n## Using PerceptionBench to Compare Models\n\nOverall Model Accuracy\n\n###### Accuracy (%)\n\n## Conclusion\n\nPerceptionBench is a simple but challenging benchmark for evaluating the atomic visual perception of frontier models. It provides a capability-level standard for measuring and diagnosing the visual perception boundaries of multimodal models. We are open-sourcing the PerceptionBench dataset and evaluation code to help the community address the visual perception gap.\n\n*   **Download the Data:**[https://github.com/MoonshotAI/PerceptionBench](https://github.com/MoonshotAI/PerceptionBench)\n\n[](https://www.kimi.com/)\n\n[](https://x.com/Kimi_Moonshot)[](https://www.instagram.com/kimiai.official/)[](https://discord.gg/FBDhVhVH7M)[](https://www.reddit.com/r/kimi/)[](https://github.com/MoonshotAI)\n\n#### Products\n\n[Kimi](https://www.kimi.com/)[Open Platform](https://platform.kimi.ai/)[Kimi Code](https://www.kimi.com/code)[Pricing](https://www.kimi.com/membership/pricing)\n#### Features\n\n[AI Agent](https://www.kimi.com/agent)[Agent Swarm](https://www.kimi.com/agent-swarm)[AI Website Builder](https://www.kimi.com/websites)[AI Document Agent](https://www.kimi.com/docs)[AI Slides Generator](https://www.kimi.com/slides)[AI Sheets Agent](https://www.kimi.com/sheets)[Deep Research](https://www.kimi.com/deep-research)\n#### Capabilities\n\n[AI Python Generator](https://www.kimi.com/capabilities/ai-python-code-generator)[AI C++ Generator](https://www.kimi.com/capabilities/ai-cplusplus-code-generator)[AI HTML Generator](https://www.kimi.com/capabilities/ai-html-code-generator)[AI Java Generator](https://www.kimi.com/capabilities/ai-java-code-generator)[AI JS Generator](https://www.kimi.com/capabilities/ai-javascript-code-generator)[AI Rust Generator](https://www.kimi.com/capabilities/ai-rust-code-generator)\n#### Company\n\n[Moonshot AI](https://www.moonshot.ai/)[Terms of Service](https://www.kimi.com/user/agreement/modelUse?version=v2)[Privacy Policy](https://www.kimi.com/user/agreement/userPrivacy?version=v2)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Kimi K3 is now live on @togethercompute!  \n\nHappy to have Together AI as our day0 launch partner, giving developers immediate access to K3 through high-throughput inference optimized for coding agents",
+          "url": "https://x.com/Kimi_Moonshot/status/2081804933188501886",
+          "published_at": "2026-07-27T18:12:28.000000Z",
+          "description": "Kimi K3 is now live on @togethercompute!  \n\nHappy to have Together AI as our day0 launch partner, giving developers immediate access to K3 through high-throughput inference optimized for coding agents and production workloads.  \n\nA huge thank-you to the Together AI team for moving fast and making this launch possible!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "togethercompute",
+            "text": "Kimi K3 is now live on Together AI.  We’re proud to be a Day 0 launch partner for\n\n@Kimi_Moonshot’s open frontier model, built for long-running agentic workflows across code, tools, vision, and research. https://t.co/OcsTUTtS3l",
+            "url": "https://x.com/togethercompute/status/2081803869491716390"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Kimi K3 is now available on @digitalocean 's Serverless Inference!  \nDevelopers can start building with our most capable model in minutes. https://t.co/mDDv2zBpJg",
+          "url": "https://x.com/Kimi_Moonshot/status/2081778998494007793",
+          "published_at": "2026-07-27T16:29:25.000000Z",
+          "description": "Kimi K3 is now available on @digitalocean 's Serverless Inference!  \nDevelopers can start building with our most capable model in minutes. https://t.co/mDDv2zBpJg",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "digitalocean",
+            "text": ".@Kimi_Moonshot K3 from Moonshot AI is now live on DigitalOcean Inference Engine.\n\n1M-token context, native vision, built to run agentic tasks for hours. Supported on Inference Router and model synthesis to maximize intelligence per dollar. No setup, no model ops. https://t.co/k6IUa4yhJg",
+            "url": "https://x.com/digitalocean/status/2081773627477786747"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Kimi K3 is now available on @nebiustf!\n\nExcited to have Nebius as our Day 0 launch partner and bring fast, reliable access to Kimi K3 to more users. https://t.co/0GgBHGYaSL",
+          "url": "https://x.com/Kimi_Moonshot/status/2081771462676123810",
+          "published_at": "2026-07-27T15:59:28.000000Z",
+          "description": "Kimi K3 is now available on @nebiustf!\n\nExcited to have Nebius as our Day 0 launch partner and bring fast, reliable access to Kimi K3 to more users. https://t.co/0GgBHGYaSL",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "nebiustf",
+            "text": "Kimi K3 is now available on Token Factory.\n\nWe’re excited to announce that Nebius Token Factory is an official Day 0 partner for @Kimi_Moonshot's Kimi K3.\n\nKimi K3 is the first open-weight model to reach frontier-level performance, a major step forward for open models.\n\nIt is built for long-horizon coding, knowledge work and reasoning, with native vision and up to 1M tokens of context. Artificial Analysis scores it at 57 on its Intelligence Index, just two points behind GPT-5.6 Sol (max). That puts Kimi K3 at the top of the open-weight field and firmly among today’s frontier models.\n\nDevelopers can access K3 through Token Factory’s OpenAI-compatible API and console today.\n\nGive K3 the hard problem.\n\nBuild with Kimi K3: https://t.co/olJZmAvmDh",
+            "url": "https://x.com/nebiustf/status/2081760731444183126"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Happy to have @FireworksAI_HQ as our day0 launch partner and bring Kimi K3 to more developers.\n\nWith Fireworks, you can now deploy and fine-tune the 2.8T Kimi K3 model with just a few clicks! https://",
+          "url": "https://x.com/Kimi_Moonshot/status/2081767950588223507",
+          "published_at": "2026-07-27T15:45:31.000000Z",
+          "description": "Happy to have @FireworksAI_HQ as our day0 launch partner and bring Kimi K3 to more developers.\n\nWith Fireworks, you can now deploy and fine-tune the 2.8T Kimi K3 model with just a few clicks! https://t.co/mwQKjvXGdl",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "FireworksAI_HQ",
+            "text": "Kimi K3 is live on Fireworks. Day 0, inference and training. US-hosted, and zero data retention.\n\nThis is the first frontier open model in the 3 trillion parameter class. It sports 1M context, native vision, and reasoning that rivals the top closed models.\n\nBoom. https://t.co/ItU3KAKt61",
+            "url": "https://x.com/FireworksAI_HQ/status/2081764187827847654"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Excited to have @baseten as our Day 0 launch partner and bring K3 to more users!\n\nBaseten's Model APIs provide fast, reliable access to Kimi K3. https://t.co/2il914s8hb",
+          "url": "https://x.com/Kimi_Moonshot/status/2081767800419520647",
+          "published_at": "2026-07-27T15:44:55.000000Z",
+          "description": "Excited to have @baseten as our Day 0 launch partner and bring K3 to more users!\n\nBaseten's Model APIs provide fast, reliable access to Kimi K3. https://t.co/2il914s8hb",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "baseten",
+            "text": "Kimi K3 is now live on our Model APIs, day 0. https://t.co/Itz5SDiEYz",
+            "url": "https://x.com/baseten/status/2081760458747318359"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Excited to have @modal as Day 0 launch partner for Kimi K3!\n\nThey trained a custom DFlash speculator for K3's architecture, delivering faster inference with no quality loss. https://t.co/AnimaEaadx",
+          "url": "https://x.com/Kimi_Moonshot/status/2081767591887122564",
+          "published_at": "2026-07-27T15:44:05.000000Z",
+          "description": "Excited to have @modal as Day 0 launch partner for Kimi K3!\n\nThey trained a custom DFlash speculator for K3's architecture, delivering faster inference with no quality loss. https://t.co/AnimaEaadx",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "modal",
+            "text": "Kimi K3 is live on Modal. \n\nMoonshot has shipped the world's first open 3T-class model, and we're a day zero launch partner. \n\nWe trained a custom DFlash speculator for K3's novel architecture so you can run it faster, losslessly. The most capable open model we've worked with by far.",
+            "url": "https://x.com/modal/status/2081763806774989112"
+          },
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We've open-sourced MoonEP, our high-performance communication library for distributed MoE workloads.\n \nBuilt to make expert-parallel communication more efficient at scale, MoonEP helps reduce communic",
+          "url": "https://x.com/Kimi_Moonshot/status/2081763086281973847",
+          "published_at": "2026-07-27T15:26:11.000000Z",
+          "description": "We've open-sourced MoonEP, our high-performance communication library for distributed MoE workloads.\n \nBuilt to make expert-parallel communication more efficient at scale, MoonEP helps reduce communication overhead in large MoE training and inference systems.\n\nExplore on GitHub: \nhttps://t.co/h2Rcwg88dQ",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/h2Rcwg88dQ",
+              "expanded_url": "http://github.com/MoonshotAI/MoonEP",
+              "display_url": "github.com/MoonshotAI/Moo…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We've open-sourced AgentENV in collaboration with kvcache-ai.\n\nAgentENV is a distributed system for running agent environments at scale. Its components power agentic RL training for Kimi K3, with fast",
+          "url": "https://x.com/Kimi_Moonshot/status/2081762978391843020",
+          "published_at": "2026-07-27T15:25:45.000000Z",
+          "description": "We've open-sourced AgentENV in collaboration with kvcache-ai.\n\nAgentENV is a distributed system for running agent environments at scale. Its components power agentic RL training for Kimi K3, with fast snapshot, resume, and fork support for large-scale parallel agent workflows.\n\nExplore on GitHub: \nhttps://t.co/Dsxyw5rLqm",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Dsxyw5rLqm",
+              "expanded_url": "http://github.com/kvcache-ai/AgentEnv",
+              "display_url": "github.com/kvcache-ai/Age…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We've open-sourced FlashKDA, our high-performance CUTLASS-based implementation of Kimi Delta Attention kernels.\n\nIt delivers 1.72×–2.22× prefill speedup over the flash-linear-attention baseline on H20",
+          "url": "https://x.com/Kimi_Moonshot/status/2081762799202746420",
+          "published_at": "2026-07-27T15:25:03.000000Z",
+          "description": "We've open-sourced FlashKDA, our high-performance CUTLASS-based implementation of Kimi Delta Attention kernels.\n\nIt delivers 1.72×–2.22× prefill speedup over the flash-linear-attention baseline on H20, and works as a drop-in backend for flash-linear-attention.\n\nExplore on GitHub: \nhttps://t.co/QScjWsJqSy",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/QScjWsJqSy",
+              "expanded_url": "http://github.com/MoonshotAI/FlashKDA",
+              "display_url": "github.com/MoonshotAI/Fla…"
+            }
+          ],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Kimi K3 (open weights, coming soon) https://t.co/paxyDz2pEv",
+          "url": "https://x.com/Kimi_Moonshot/status/2081757327146045450",
+          "published_at": "2026-07-27T15:03:18.000000Z",
+          "description": "Kimi K3 (open weights, coming soon) https://t.co/paxyDz2pEv",
+          "expanded_urls": [],
+          "quoted_tweet": null,
+          "reply_to": null,
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    }
+  }
+}
