@@ -5,8 +5,132 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 27 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 28 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-07-28</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-28.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-28.md</guid>
+      <pubDate>Tue, 28 Jul 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-28</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>开放模型逼近前沿</strong>：Kimi K3 以 2.8T MoE、原生视觉和百万 token 上下文发布，并同步进入多家托管推理平台。</li>
+<li><strong>模型开始参与科研发现</strong>：Claude Mythos Preview 改进了 HAWK 与七轮 AES 的攻击，显示智能体化模型可进入密码分析等高门槛研究流程。</li>
+<li><strong>视觉能力需要细粒度评测</strong>：Kimi 的 PerceptionBench 从 42 个基准的失败案例提炼十类原子感知能力，暴露多模态模型的感知与幻觉短板。</li>
+<li><strong>AI 重写岗位边界</strong>：OpenAI 的工作研究与 GPT-Live 企业开放说明，AI 正同时改变小团队的任务分工和组织内的语音协作入口。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses">Claude Mythos 发现后量子签名与 AES 弱点</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Mythos</code> <code>密码学</code> <code>后量子密码</code> <code>HAWK</code> <code>AES</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 研究人员借助 Claude Mythos Preview 改进了对后量子签名方案 HAWK 的攻击，并发现了针对七轮 AES 的新攻击方法，前者使有效密钥强度约减半，后者将既有攻击速度提升约 200 至 800 倍。两项结果目前都不会影响生产系统，但展示了前沿模型自主发现密码算法数学缺陷的能力，并推动了 CryptanalysisBench 基准的发布。</p>
+<hr>
+<h3>2. <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764">Kimi K3 发布：2.8T MoE 开放模型接近前沿</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Kimi K3</code> <code>开放权重</code> <code>MoE</code> <code>长上下文</code> <code>原生视觉</code> <code>Agent 编程</code> <code>推理部署</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 发布 Kimi K3 权重与技术报告：这是一个约 2.8 万亿参数的稀疏 MoE 模型，具备原生视觉能力和最高 100 万 token 上下文，面向长程编程、知识工作与推理。模型采用 Kimi Delta Attention 等新架构，并配套 GPU 内核、编译器和芯片设计等工作流能力，开放模型的规模与使用范围都进一步逼近前沿闭源模型。发布当天，Together AI、DigitalOcean、Nebius、Fireworks、Baseten 和 Modal 已提供托管入口，其中 Modal 还为 K3 训练了无损 DFlash 推测器以提升推理速度。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081804933188501886">Kimi K3 接入 Together AI 推理服务</a> · Kimi (Twitter) · Together AI 推理入口</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081778998494007793">Kimi K3 登陆 DigitalOcean Serverless Inference</a> · Kimi (Twitter) · DigitalOcean 无服务器入口</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081771462676123810">Kimi K3 上线 Nebius Token Factory</a> · Kimi (Twitter) · Nebius API 与性能数据</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081767950588223507">Kimi K3 登陆 Fireworks，支持部署与微调</a> · Kimi (Twitter) · Fireworks 部署与微调</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081767800419520647">Kimi K3 上线 Baseten Model APIs</a> · Kimi (Twitter) · Baseten 托管 API</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081767591887122564">Kimi K3 登陆 Modal，DFlash 加速推理</a> · Kimi (Twitter) · Modal 推测解码加速</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081757327146045450">Kimi K3 开放权重版本即将发布</a> · Kimi (Twitter) · 开放权重发布预告</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>下载 Kimi K3 权重或通过托管 API 试跑长上下文代码库任务，记录上下文稳定性、工具调用成功率与成本。</li>
+<li>使用统一提示词和相同 Agent harness，对比 K3 与当前模型在长程编程和多模态任务上的质量、延迟与价格。</li>
+<li>部署时关注 KDA 的缓存兼容性、推理并行配置，以及模型在高自主性任务中的越权风险。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/AnthropicAI/status/2081864750296658008">Anthropic：不主张全面禁止开放权重模型</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>开放权重</code> <code>AI 政策</code> <code>芯片管制</code> <code>模型蒸馏</code> <code>安全测试</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 表示并未主张按类别禁止开放权重模型，认为无危险能力的开放权重模型对企业、开发者和研究者具有公共价值。其主张将政策重点放在限制高端芯片流向威权政府、打击工业规模模型蒸馏，并要求所有足够强大的开放或闭源模型接受安全测试。</p>
+<hr>
+<h3>4. <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878">Kimi 发布 PerceptionBench 视觉感知基准</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>PerceptionBench</code> <code>多模态模型</code> <code>视觉感知</code> <code>模型评测</code> <code>幻觉</code></li>
+</ul>
+<p><strong>摘要</strong>: Kimi 发布 PerceptionBench，从 42 个基准中的模型失败案例归纳出 10 类原子视觉能力，并构建了 3,000 个无需推理或外部知识即可作答的验证题。对 16 个前沿多模态模型的评测显示，没有模型达到 60% 总准确率，感知相关幻觉是平均表现最弱的能力之一。</p>
+<hr>
+<h3>5. <a href="https://x.com/Kimi_Moonshot/status/2081762978391843020">AgentENV 开源：扩展智能体训练环境</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>AgentENV</code> <code>智能体</code> <code>强化学习</code> <code>分布式系统</code> <code>开源</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 与 kvcache-ai 联合开源 AgentENV，用于大规模运行分布式智能体环境。其组件服务于 Kimi K3 的智能体强化学习训练，支持快速快照、恢复和分叉，以并行处理大量智能体工作流。</p>
+<hr>
+<h3>6. <a href="https://baoyu.io/blog/2026-07-28/agent-judgments">通用 Agent 竞争：插件生态与模型能力决定胜负</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Agent</code> <code>Skill</code> <code>MCP</code> <code>插件生态</code> <code>开发者机会</code></li>
+</ul>
+<p><strong>摘要</strong>: 文章认为通用 Agent 可能由少数赢家主导，插件生态、Skill 与 MCP 将成为连接专业任务的关键。随着模型能力和成本拉开差距，个人开发者更适合围绕 Agent 插件和传统软件接入寻找机会，而用户应通过持续使用和管理 Agent 获得效率提升。</p>
+<hr>
+<h3>7. <a href="https://x.com/OpenAI/status/2081794871795589485">GPT-Live 语音模型开放至教育与企业方案</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-Live</code> <code>ChatGPT Voice</code> <code>语音模型</code> <code>企业版</code> <code>教育版</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布 GPT-Live 已在全球范围向 ChatGPT 的 Edu、Business 和 Enterprise 方案开放。GPT-Live 是面向自然人机交互的新一代语音模型，此次更新扩大了其在组织客户中的可用范围。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在教育或企业工作区启用 GPT-Live，测试会议问答、培训辅导和客户支持等语音场景。</li>
+<li>为语音交互设置权限、录音和敏感信息处理规则，再逐步扩大使用范围。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>8. <a href="https://x.com/Kimi_Moonshot/status/2081763086281973847">MoonEP 开源：优化大规模 MoE 通信</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>MoonEP</code> <code>MoE</code> <code>专家并行</code> <code>分布式训练</code> <code>开源</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 开源了 MoonEP，这是面向分布式 MoE 工作负载的高性能通信库。项目重点降低大规模 MoE 训练和推理中的专家并行通信开销，并发布在 GitHub 上。</p>
+<hr>
+<h3>9. <a href="https://x.com/Kimi_Moonshot/status/2081762799202746420">FlashKDA 开源：Kimi Delta Attention 提速</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>FlashKDA</code> <code>Kimi Delta Attention</code> <code>CUTLASS</code> <code>H20</code> <code>推理优化</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 开源了基于 CUTLASS 的 FlashKDA，用于实现 Kimi Delta Attention 内核。该实现宣称在 H20 上相较 flash-linear-attention 基线获得 1.72 至 2.22 倍的预填充加速，并可作为其即插即用后端。</p>
+<hr>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-07-27</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-27.html</link>
@@ -3280,163 +3404,6 @@
 <p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
 <li><strong>政策与安全</strong> | <code>AI教育</code> <code>课堂应用</code> <code>隐私</code> <code>公平访问</code> — Google 与 New York Jobs CEO Council、Urban Assembly 举办 AI 教育峰会，邀请约 150 名教育和行业代表讨论课堂中的 AI 素养。活动通过「Vibe Coding」、Google「Meet LEA」、AI mode 和 NotebookLM 等实践环节，强调隐私、公平访问以及适应力、协作和判断力等人类技能。 · <a href="https://blog.google/products-and-platforms/products/education/nyc-ai-summit/">Google AI Blog</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-07-01</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-01.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-01.md</guid>
-      <pubDate>Wed, 01 Jul 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-01</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>旗舰模型密集发布</strong>：Claude Sonnet 5、Claude Fable 5 与 Gemini 图像模型同时推进代理、科研和多模态能力。</li>
-<li><strong>代理产品进入工程化</strong>：Managed Agents、Claude Science 和长周期任务实践都在补齐可观测性、来源追踪与持续运行能力。</li>
-<li><strong>安全与可用性并行调整</strong>：Anthropic 继续更新分类器和护栏，Fable 5 则在出口管制解除后恢复全球部署。</li>
-<li><strong>模型组合成为基础设施</strong>：Interactions API 把图像和视频模型串联起来，推动多模态应用从单模型调用走向组合工作流。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/AnthropicAI/status/2072163884430229756">Claude Fable 5 恢复全球部署：出口管制解除与安全护栏更新</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>出口管制</code> <code>安全护栏</code> <code>全球部署</code></li>
-</ul>
-<p><strong>摘要</strong>: 美国商务部解除对 Claude Fable 5 与 Mythos 5 的出口管制后，Anthropic 宣布 Fable 5 将恢复全球部署。围绕此前的限制，Anthropic 继续更新分类器和安全护栏，努力降低对正常请求的误判。早期使用者和团队也在同步说明服务恢复、模型可用性与安全策略的变化。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/trq212/status/2072185565076988326">Anthropic 说明更新后的分类器与 Claude Fable 5 恢复计划</a> · Thariq (Twitter)</li>
-<li><a href="https://x.com/AnthropicAI/status/2072106151890809341">美国商务部解除 Claude Fable 5 与 Mythos 5 的出口管制</a> · Anthropic (Twitter) · 出口管制解除</li>
-</ul>
-<hr>
-<h3>2. <a href="https://x.com/claudeai/status/2072017450611142835">Claude Sonnet 5 发布：更强代理能力与 1M 上下文</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Claude Sonnet 5</code> <code>代理能力</code> <code>Claude Code</code> <code>1M 上下文</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发布 Claude Sonnet 5，主打更强的自主代理能力，可制定计划并使用浏览器和终端等工具完成复杂任务。模型在早期合作伙伴测试中能够完成以往 Sonnet 会中途停止的长任务，并在 Claude Code 中提供更高的代码与工具使用性能。Sonnet 5 同时成为多档套餐的默认或可用模型，开发者还获得了 claude-api 技能、提示词指南和迁移资料。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/claudeai/status/2072017455833100494">早期用户称 Claude Sonnet 5 能完成更复杂的连续任务</a> · Claude (Twitter) · 早期任务表现</li>
-<li><a href="https://x.com/ClaudeDevs/status/2071988881717871065">Claude Desktop 开始在 Ubuntu 和 Debian 上提供测试版</a> · Claude Devs (Twitter) · Linux 客户端</li>
-<li><a href="https://x.com/ClaudeDevs/status/2072018504392601762">Claude Sonnet 5 发布并成为 Claude Code Pro 默认模型</a> · Claude Devs (Twitter) · Claude Code 上线细节</li>
-<li><a href="https://x.com/ClaudeDevs/status/2072018517898272844">claude-api 技能简化 Sonnet 5 迁移与提示词调优</a> · Claude Devs (Twitter) · 迁移与提示词</li>
-<li><a href="https://x.com/ClaudeDevs/status/2072020171125100551">Sonnet 5 的文档与提示词指南已开放</a> · Claude Devs (Twitter) · 文档与指南</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在受控代码库中用代表性长任务比较 Sonnet 5 与旧版本的完成率、工具调用次数和回滚成本。</li>
-<li>迁移前用 claude-api 技能检查提示词和工具 schema，逐步验证 1M 上下文带来的成本与收益。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://x.com/OpenAI/status/2072004836674167294">OpenAI 发布面向科研判断能力的 GeneBench-Pro 基准</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>GeneBench-Pro</code> <code>科研智能体</code> <code>计算生物学</code> <code>基准评测</code> <code>推理能力</code></li>
-</ul>
-<p><strong>摘要</strong>: GeneBench-Pro 用 129 道合成计算生物学问题评估智能体处理混乱数据、选择分析路径、修正假设并判断结果是否可用于决策的能力。OpenAI 披露 GPT-5.6 Sol 在最高推理级别的通过率为 28.7%，Pro 模式为 31.5%，并开放了 10 道代表性题目的公开包。</p>
-<hr>
-<h3>4. <a href="https://x.com/OpenAIDevs/status/2071995642436800916">OpenAI 用全量故障数据定位硬件异常与 18 年历史 libunwind 竞态</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>故障排查</code> <code>core dump</code> <code>C++</code> <code>libunwind</code> <code>基础设施可靠性</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 介绍了 Rockset 数据基础设施崩溃排查过程：通过自动分析一整年 core dump 并按群体寻找相关性，团队将看似同一类故障拆分为 Azure 主机硬件损坏和 GNU libunwind 长期存在的信号竞态两个问题。文章还解释了高频 SIGUSR2、C++ 异常展开与栈状态恢复如何共同放大一个只有单条指令宽度的竞态窗口，并给出隔离坏主机、增强故障信号和改进运行手册等应对措施。</p>
-<hr>
-<h3>5. <a href="https://x.com/GoogleDeepMind/status/2071988044878516466">Gemini 图像与视频模型更新：Nano Banana 2 Lite + Gemini Omni Flash</a></h3>
-<ul>
-<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Nano Banana 2 Lite</code> <code>Gemini Omni Flash</code> <code>多模态</code> <code>Interactions API</code></li>
-</ul>
-<p><strong>摘要</strong>: Google DeepMind 同时发布 Nano Banana 2 Lite 和 Gemini Omni Flash，覆盖更快、更低成本的图像生成以及相关视频工作流。Interactions API 可以把这些模型串联起来，让应用先生成图像再继续处理或制作视频。更新重点是降低多模态开发门槛，并用统一接口组合不同模型的能力。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2071988052478615902">Google DeepMind 展示通过 Interactions API 串联图像与视频模型</a> · Google DeepMind (Twitter) · Interactions API 串联</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用统一测试集比较图像质量、延迟和成本，再决定是否把 Nano Banana 2 Lite 接入生产。</li>
-<li>在模型串联流程中记录每一步输入输出和失败回退，避免多模态链路难以调试。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://x.com/ClaudeDevs/status/2072058428424589412">Claude Managed Agents：会话事件、凭据管理与可观测性升级</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Managed Agents</code> <code>代理运维</code> <code>会话事件</code> <code>可观测性</code> <code>凭据管理</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Managed Agents 新增流式会话事件增量、按会话覆盖代理配置以及凭据管理能力，帮助团队更细致地控制长时间运行的代理。Console 还增加会话级可观测性标签页，用于查看指标和定位运行问题。开发者可以通过内置 claude-api 技能与 Cookbook 学习这些能力，并把运维信号纳入代理上线流程。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/ClaudeDevs/status/2072058431712948563">Claude API 新功能可通过 claude-api 技能与 Cookbook 学习</a> · Claude Devs (Twitter) · API 技能与 Cookbook</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>先在测试环境接入会话事件和可观测性指标，定义失败、超时与人工接管告警。</li>
-<li>将代理凭据按会话和任务隔离，定期审计覆盖配置与访问范围。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>7. <a href="https://x.com/claudeai/status/2072002740830842899">Claude Science：面向科研全流程的 AI 工作台</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Science</code> <code>科研工作流</code> <code>Artifacts</code> <code>来源追踪</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Science 面向科研人员提供覆盖研究全流程的 AI 工作台，强调从资料分析、假设形成到结果整理的连续体验。产品将 Artifacts 与来源追踪等能力结合，让研究产物更容易回溯和复核。相关功能以测试形式开放，目标是把通用模型能力嵌入科学家的日常工作。 Anthropic 通过后续推文提供 Claude Science 的产品详情链接，指向 claude.com/science。该链接与前一条产品预告属于同一线程，帮助用户进一步了解科研工作台的功能和 beta 使用方式。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/claudeai/status/2072011953309167788">Claude Science：面向科学家的 AI 工作台</a> · Claude (Twitter) · 科研工作台定位</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用可公开复核的研究资料测试来源追踪和结果复现，不要直接把未审阅输出用于关键结论。</li>
-<li>为团队建立研究产物的版本、引用和人工复核记录。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://openai.com/index/how-chatgpt-adoption-has-expanded">ChatGPT 的全球采用持续扩大并加深</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>用户增长</code> <code>AI采用</code> <code>全球化</code> <code>OpenAI Signals</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Signals 数据显示，用户使用 ChatGPT 的频率和任务广度会随使用时间增长，注册六个月后日均消息量约增加 50%，尝试过的不同能力数量约翻倍。用户增长在非洲和亚洲相对更快，非英语用户已占活跃用户一半以上，显示生成式 AI 正在向更多地区、语言和日常场景扩散。</p>
-<hr>
-<h3>9. <a href="https://x.com/OpenAIDevs/status/2072036305442406772">长周期智能体任务正在改变工程师的工作重点</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>智能体</code> <code>软件工程</code> <code>系统设计</code> <code>代码审查</code></li>
-</ul>
-<p><strong>摘要</strong>: 随着智能体承担更长时间运行的工作，工程实践的重点从逐步执行转向设定方向、审查结果，以及围绕模型设计更好的系统。OpenAI Devs 转发了 @aiDotEngineer 对这一工程角色变化的讨论。</p>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>教程与观点</strong> | <code>AI工程</code> <code>主题演讲</code> <code>开发者活动</code> <code>Thariq</code> — Thariq 表示正在为 AI Engineer World&#39;s Fair 的第二天开场主题演讲做最后准备，并分享了演讲预览。该活动将于 7 月 1 日上午举行，内容可能聚焦 AI 工程实践与开发者工作流。 · <a href="https://x.com/trq212/status/2072202267563082180">Thariq (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>

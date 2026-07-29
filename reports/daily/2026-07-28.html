@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <title>CatchUp 日报 2026-07-27 · CatchUp</title>
-  <meta name="description" content="CatchUp 日报 — 2026-07-27" />
+  <title>CatchUp 日报 2026-07-28 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-07-28" />
   <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
   <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
   <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
@@ -306,39 +306,141 @@ footer.colophon a:hover { color: var(--accent); }
             <span>日报</span>
             <span class="issue-no">Nº </span>
           </div>
-          <h1 class="report-title">2026-07-27</h1>
+          <h1 class="report-title">2026-07-28</h1>
           
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>开放模型逼近前沿</strong>：Kimi K3 以 2.8T MoE、原生视觉和百万 token 上下文发布，并同步进入多家托管推理平台。</li>
+<li><strong>模型开始参与科研发现</strong>：Claude Mythos Preview 改进了 HAWK 与七轮 AES 的攻击，显示智能体化模型可进入密码分析等高门槛研究流程。</li>
+<li><strong>视觉能力需要细粒度评测</strong>：Kimi 的 PerceptionBench 从 42 个基准的失败案例提炼十类原子感知能力，暴露多模态模型的感知与幻觉短板。</li>
+<li><strong>AI 重写岗位边界</strong>：OpenAI 的工作研究与 GPT-Live 企业开放说明，AI 正同时改变小团队的任务分工和组织内的语音协作入口。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses">Claude Mythos 发现后量子签名与 AES 弱点</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Mythos</code> <code>密码学</code> <code>后量子密码</code> <code>HAWK</code> <code>AES</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 研究人员借助 Claude Mythos Preview 改进了对后量子签名方案 HAWK 的攻击，并发现了针对七轮 AES 的新攻击方法，前者使有效密钥强度约减半，后者将既有攻击速度提升约 200 至 800 倍。两项结果目前都不会影响生产系统，但展示了前沿模型自主发现密码算法数学缺陷的能力，并推动了 CryptanalysisBench 基准的发布。</p>
+<hr>
+<h3 id="h-4">2. <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764">Kimi K3 发布：2.8T MoE 开放模型接近前沿</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Kimi K3</code> <code>开放权重</code> <code>MoE</code> <code>长上下文</code> <code>原生视觉</code> <code>Agent 编程</code> <code>推理部署</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 发布 Kimi K3 权重与技术报告：这是一个约 2.8 万亿参数的稀疏 MoE 模型，具备原生视觉能力和最高 100 万 token 上下文，面向长程编程、知识工作与推理。模型采用 Kimi Delta Attention 等新架构，并配套 GPU 内核、编译器和芯片设计等工作流能力，开放模型的规模与使用范围都进一步逼近前沿闭源模型。发布当天，Together AI、DigitalOcean、Nebius、Fireworks、Baseten 和 Modal 已提供托管入口，其中 Modal 还为 K3 训练了无损 DFlash 推测器以提升推理速度。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081804933188501886">Kimi K3 接入 Together AI 推理服务</a> · Kimi (Twitter) · Together AI 推理入口</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081778998494007793">Kimi K3 登陆 DigitalOcean Serverless Inference</a> · Kimi (Twitter) · DigitalOcean 无服务器入口</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081771462676123810">Kimi K3 上线 Nebius Token Factory</a> · Kimi (Twitter) · Nebius API 与性能数据</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081767950588223507">Kimi K3 登陆 Fireworks，支持部署与微调</a> · Kimi (Twitter) · Fireworks 部署与微调</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081767800419520647">Kimi K3 上线 Baseten Model APIs</a> · Kimi (Twitter) · Baseten 托管 API</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081767591887122564">Kimi K3 登陆 Modal，DFlash 加速推理</a> · Kimi (Twitter) · Modal 推测解码加速</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081757327146045450">Kimi K3 开放权重版本即将发布</a> · Kimi (Twitter) · 开放权重发布预告</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>下载 Kimi K3 权重或通过托管 API 试跑长上下文代码库任务，记录上下文稳定性、工具调用成功率与成本。</li>
+<li>使用统一提示词和相同 Agent harness，对比 K3 与当前模型在长程编程和多模态任务上的质量、延迟与价格。</li>
+<li>部署时关注 KDA 的缓存兼容性、推理并行配置，以及模型在高自主性任务中的越权风险。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">OpenAI Blog</h2>
+<h3 id="h-5">3. <a href="https://x.com/AnthropicAI/status/2081864750296658008">Anthropic：不主张全面禁止开放权重模型</a></h3>
 <ul>
-<li><a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work">How AI is expanding what people do at work</a></li>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>开放权重</code> <code>AI 政策</code> <code>芯片管制</code> <code>模型蒸馏</code> <code>安全测试</code></li>
 </ul>
-<h2 id="h-2">Anthropic Blog</h2>
+<p><strong>摘要</strong>: Anthropic 表示并未主张按类别禁止开放权重模型，认为无危险能力的开放权重模型对企业、开发者和研究者具有公共价值。其主张将政策重点放在限制高端芯片流向威权政府、打击工业规模模型蒸馏，并要求所有足够强大的开放或闭源模型接受安全测试。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/Kimi_Moonshot/status/2081813202514681878">Kimi 发布 PerceptionBench 视觉感知基准</a></h3>
 <ul>
-<li><a href="https://www.anthropic.com/news/position-open-weights-models">Our position on open-weights models</a></li>
-<li><a href="https://www.anthropic.com/news/cognizant-anthropic">Cognizant and Anthropic expand their partnership to bring Claude to enterprise clients</a></li>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>PerceptionBench</code> <code>多模态模型</code> <code>视觉感知</code> <code>模型评测</code> <code>幻觉</code></li>
 </ul>
-<h2 id="h-3">Sam Altman (Twitter)</h2>
+<p><strong>摘要</strong>: Kimi 发布 PerceptionBench，从 42 个基准中的模型失败案例归纳出 10 类原子视觉能力，并构建了 3,000 个无需推理或外部知识即可作答的验证题。对 16 个前沿多模态模型的评测显示，没有模型达到 60% 总准确率，感知相关幻觉是平均表现最弱的能力之一。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/Kimi_Moonshot/status/2081762978391843020">AgentENV 开源：扩展智能体训练环境</a></h3>
 <ul>
-<li><a href="https://x.com/sama/status/2081513071135346814">agreed feels big, i want a new kind of computer</a></li>
-<li>[chatgpt work is remarkable, and &quot;work&quot; undersells it.</li>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>AgentENV</code> <code>智能体</code> <code>强化学习</code> <code>分布式系统</code> <code>开源</code></li>
 </ul>
-<p>from my phone i sent:</p>
-<p>&quot;use all my chat history to figure out ideas for a long weekend trip with 8 friends, plan the best three options, make a f](<a href="https://x.com/sama/status/2081396796174282900">https://x.com/sama/status/2081396796174282900</a>)</p>
+<p><strong>摘要</strong>: Moonshot 与 kvcache-ai 联合开源 AgentENV，用于大规模运行分布式智能体环境。其组件服务于 Kimi K3 的智能体强化学习训练，支持快速快照、恢复和分叉，以并行处理大量智能体工作流。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://baoyu.io/blog/2026-07-28/agent-judgments">通用 Agent 竞争：插件生态与模型能力决定胜负</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Agent</code> <code>Skill</code> <code>MCP</code> <code>插件生态</code> <code>开发者机会</code></li>
+</ul>
+<p><strong>摘要</strong>: 文章认为通用 Agent 可能由少数赢家主导，插件生态、Skill 与 MCP 将成为连接专业任务的关键。随着模型能力和成本拉开差距，个人开发者更适合围绕 Agent 插件和传统软件接入寻找机会，而用户应通过持续使用和管理 Agent 获得效率提升。</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/OpenAI/status/2081794871795589485">GPT-Live 语音模型开放至教育与企业方案</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-Live</code> <code>ChatGPT Voice</code> <code>语音模型</code> <code>企业版</code> <code>教育版</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布 GPT-Live 已在全球范围向 ChatGPT 的 Edu、Business 和 Enterprise 方案开放。GPT-Live 是面向自然人机交互的新一代语音模型，此次更新扩大了其在组织客户中的可用范围。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在教育或企业工作区启用 GPT-Live，测试会议问答、培训辅导和客户支持等语音场景。</li>
+<li>为语音交互设置权限、录音和敏感信息处理规则，再逐步扩大使用范围。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/Kimi_Moonshot/status/2081763086281973847">MoonEP 开源：优化大规模 MoE 通信</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>MoonEP</code> <code>MoE</code> <code>专家并行</code> <code>分布式训练</code> <code>开源</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 开源了 MoonEP，这是面向分布式 MoE 工作负载的高性能通信库。项目重点降低大规模 MoE 训练和推理中的专家并行通信开销，并发布在 GitHub 上。</p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/Kimi_Moonshot/status/2081762799202746420">FlashKDA 开源：Kimi Delta Attention 提速</a></h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>FlashKDA</code> <code>Kimi Delta Attention</code> <code>CUTLASS</code> <code>H20</code> <code>推理优化</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 开源了基于 CUTLASS 的 FlashKDA，用于实现 Kimi Delta Attention 内核。该实现宣称在 H20 上相较 flash-linear-attention 基线获得 1.72 至 2.22 倍的预填充加速，并可作为其即插即用后端。</p>
+<hr>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-2">Anthropic Blog</a></li>
-      <li class="toc-h2"><a href="#h-3">Sam Altman (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Claude Mythos 发现后量子签名与 AES 弱点</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Kimi K3 发布：2.8T MoE 开放模型接近前沿</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic：不主张全面禁止开放权重模型</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Kimi 发布 PerceptionBench 视觉感知基准</a></li>
+      <li class="toc-h3"><a href="#h-7">5. AgentENV 开源：扩展智能体训练环境</a></li>
+      <li class="toc-h3"><a href="#h-8">6. 通用 Agent 竞争：插件生态与模型能力决定胜负</a></li>
+      <li class="toc-h3"><a href="#h-9">7. GPT-Live 语音模型开放至教育与企业方案</a></li>
+      <li class="toc-h3"><a href="#h-10">8. MoonEP 开源：优化大规模 MoE 通信</a></li>
+      <li class="toc-h3"><a href="#h-11">9. FlashKDA 开源：Kimi Delta Attention 提速</a></li>
     </ul>
   </aside>
     </div>
@@ -346,7 +448,7 @@ footer.colophon a:hover { color: var(--accent); }
     <nav class="endnav" aria-label="Issue navigation">
       <span class="left">
         <span class="label">← Older daily</span>
-        <a href="../daily/2026-07-26.html">2026-07-26</a>
+        <a href="../daily/2026-07-27.html">2026-07-27</a>
       </span>
       <span class="center">
         <span class="label">Index</span>
@@ -354,12 +456,12 @@ footer.colophon a:hover { color: var(--accent); }
       </span>
       <span class="right">
         <span class="label">Newer daily →</span>
-        <a href="../daily/2026-07-28.html">2026-07-28</a>
+        <span class="dim">None</span>
       </span>
     </nav>
 
     <footer class="colophon">
-      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-27.md" target="_blank" rel="noopener">View source on GitHub</a>
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-28.md" target="_blank" rel="noopener">View source on GitHub</a>
     </footer>
   </div>
 </body>
