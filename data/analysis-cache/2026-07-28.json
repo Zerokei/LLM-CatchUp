@@ -1,0 +1,367 @@
+{
+  "analyzed_at": "2026-07-29T13:43:48.497Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-28.json",
+  "trend_paragraph": "- **开放模型逼近前沿**：Kimi K3 以 2.8T MoE、原生视觉和百万 token 上下文发布，并同步进入多家托管推理平台。\n- **模型开始参与科研发现**：Claude Mythos Preview 改进了 HAWK 与七轮 AES 的攻击，显示智能体化模型可进入密码分析等高门槛研究流程。\n- **视觉能力需要细粒度评测**：Kimi 的 PerceptionBench 从 42 个基准的失败案例提炼十类原子感知能力，暴露多模态模型的感知与幻觉短板。\n- **AI 重写岗位边界**：OpenAI 的工作研究与 GPT-Live 企业开放说明，AI 正同时改变小团队的任务分工和组织内的语音协作入口。",
+  "articles": [
+    {
+      "url": "https://baoyu.io/blog/2026-07-28/agent-judgments",
+      "source": "宝玉的分享",
+      "title": "通用 Agent 竞争：插件生态与模型能力决定胜负",
+      "summary": "文章认为通用 Agent 可能由少数赢家主导，插件生态、Skill 与 MCP 将成为连接专业任务的关键。随着模型能力和成本拉开差距，个人开发者更适合围绕 Agent 插件和传统软件接入寻找机会，而用户应通过持续使用和管理 Agent 获得效率提升。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Agent",
+        "Skill",
+        "MCP",
+        "插件生态",
+        "开发者机会"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
+      "source": "Anthropic Research",
+      "title": "Claude Mythos 发现后量子签名与 AES 弱点",
+      "summary": "Anthropic 研究人员借助 Claude Mythos Preview 改进了对后量子签名方案 HAWK 的攻击，并发现了针对七轮 AES 的新攻击方法，前者使有效密钥强度约减半，后者将既有攻击速度提升约 200 至 800 倍。两项结果目前都不会影响生产系统，但展示了前沿模型自主发现密码算法数学缺陷的能力，并推动了 CryptanalysisBench 基准的发布。",
+      "category": "研究",
+      "importance": 5,
+      "tags": [
+        "Claude Mythos",
+        "密码学",
+        "后量子密码",
+        "HAWK",
+        "AES"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2081832600591892712",
+      "source": "Sam Altman (Twitter)",
+      "title": "Sam Altman 转发用户对 GPT-5.6 Sol 的认可",
+      "summary": "这条推文仅回复「wrong」，引用用户称 GPT-5.6 Sol 已经满足其全部需求，甚至希望 OpenAI 暂停发布新模型。内容属于对模型偏好的简短互动，没有提供新的产品或技术信息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Sam Altman",
+        "GPT-5.6 Sol",
+        "用户反馈"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2081864750296658008",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic：不主张全面禁止开放权重模型",
+      "summary": "Anthropic 表示并未主张按类别禁止开放权重模型，认为无危险能力的开放权重模型对企业、开发者和研究者具有公共价值。其主张将政策重点放在限制高端芯片流向威权政府、打击工业规模模型蒸馏，并要求所有足够强大的开放或闭源模型接受安全测试。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "开放权重",
+        "AI 政策",
+        "芯片管制",
+        "模型蒸馏",
+        "安全测试"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2081833350323720219",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI：AI 让员工跨职能解决问题",
+      "summary": "OpenAI 对超过 80 万条美国 ChatGPT 用户消息的分析显示，AI 正让员工承担本职之外的任务，尤其影响客户体验、设计、人力资源、法律和营销等岗位。排除通用任务后，43.5% 的职业特定使用跨越了用户本职边界，金融计算、技术排障和营销内容是常见的跨界任务。2 至 5 人工作区的跨界比例高于 100 人以上工作区，说明小团队可能更早借助 AI 让最接近问题的人直接完成工作。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "ChatGPT",
+        "工作变革",
+        "任务跨界",
+        "小型企业",
+        "职业重组"
+      ],
+      "thread_group_id": "thread-OpenAI-20260727-2005",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2081833351678406878",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 发布 AI 任务跨界研究报告",
+      "summary": "OpenAI 的「Work at the Frontier」报告以任务跨界为框架，研究 AI 如何让不同职业承担彼此的工作；客户体验、设计、人力资源、法律和营销等岗位尤其明显。金融计算、技术排障和营销内容是跨职业出现频率较高的任务，报告还发现 2 至 5 人工作区的跨界比例高于 100 人以上工作区。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Work at the Frontier",
+        "任务跨界",
+        "ChatGPT 数据",
+        "职业重组",
+        "小团队"
+      ],
+      "thread_group_id": "thread-OpenAI-20260727-2005",
+      "duplicate_of": "https://x.com/OpenAI/status/2081833350323720219",
+      "angle": "研究报告细节"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2081794871795589485",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-Live 语音模型开放至教育与企业方案",
+      "summary": "OpenAI 宣布 GPT-Live 已在全球范围向 ChatGPT 的 Edu、Business 和 Enterprise 方案开放。GPT-Live 是面向自然人机交互的新一代语音模型，此次更新扩大了其在组织客户中的可用范围。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "GPT-Live",
+        "ChatGPT Voice",
+        "语音模型",
+        "企业版",
+        "教育版"
+      ],
+      "practice_suggestions": [
+        "在教育或企业工作区启用 GPT-Live，测试会议问答、培训辅导和客户支持等语音场景。",
+        "为语音交互设置权限、录音和敏感信息处理规则，再逐步扩大使用范围。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 发布：2.8T MoE 开放模型接近前沿",
+      "summary": "Moonshot 发布 Kimi K3 权重与技术报告：这是一个约 2.8 万亿参数的稀疏 MoE 模型，具备原生视觉能力和最高 100 万 token 上下文，面向长程编程、知识工作与推理。模型采用 Kimi Delta Attention 等新架构，并配套 GPU 内核、编译器和芯片设计等工作流能力，开放模型的规模与使用范围都进一步逼近前沿闭源模型。发布当天，Together AI、DigitalOcean、Nebius、Fireworks、Baseten 和 Modal 已提供托管入口，其中 Modal 还为 K3 训练了无损 DFlash 推测器以提升推理速度。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Kimi K3",
+        "开放权重",
+        "MoE",
+        "长上下文",
+        "原生视觉",
+        "Agent 编程",
+        "推理部署"
+      ],
+      "practice_suggestions": [
+        "下载 Kimi K3 权重或通过托管 API 试跑长上下文代码库任务，记录上下文稳定性、工具调用成功率与成本。",
+        "使用统一提示词和相同 Agent harness，对比 K3 与当前模型在长程编程和多模态任务上的质量、延迟与价格。",
+        "部署时关注 KDA 的缓存兼容性、推理并行配置，以及模型在高自主性任务中的越权风险。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081813202514681878",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi 发布 PerceptionBench 视觉感知基准",
+      "summary": "Kimi 发布 PerceptionBench，从 42 个基准中的模型失败案例归纳出 10 类原子视觉能力，并构建了 3,000 个无需推理或外部知识即可作答的验证题。对 16 个前沿多模态模型的评测显示，没有模型达到 60% 总准确率，感知相关幻觉是平均表现最弱的能力之一。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "PerceptionBench",
+        "多模态模型",
+        "视觉感知",
+        "模型评测",
+        "幻觉"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081804933188501886",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 接入 Together AI 推理服务",
+      "summary": "Kimi K3 已上线 Together AI，Together AI 成为其 Day 0 发布合作伙伴，为开发者提供面向编程 Agent 和生产工作负载的高吞吐推理入口。该合作降低了开发者试用 K3 的部署门槛，但推文没有披露更多定价或性能细节。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Kimi K3",
+        "Together AI",
+        "推理服务",
+        "编程 Agent"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "Together AI 推理入口"
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081778998494007793",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 登陆 DigitalOcean Serverless Inference",
+      "summary": "Moonshot 宣布 Kimi K3 已上线 DigitalOcean 的 Serverless Inference，开发者无需复杂运维即可开始调用。该部署支持最高 100 万上下文、原生视觉和长时间运行的智能体任务。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Kimi K3",
+        "DigitalOcean",
+        "Serverless Inference",
+        "长上下文"
+      ],
+      "practice_suggestions": [
+        "在 DigitalOcean 上用 OpenAI 兼容接口部署 Kimi K3 原型，评估现有应用的迁移成本。",
+        "用长上下文和多步骤智能体任务测试其稳定性与延迟。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "DigitalOcean 无服务器入口"
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081771462676123810",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 上线 Nebius Token Factory",
+      "summary": "Kimi K3 已通过 Nebius Token Factory 提供服务，成为其 Day 0 发布合作伙伴。Nebius 称该模型具备原生视觉和最高 100 万上下文，并在 Artificial Analysis Intelligence Index 获得 57 分，接近 GPT-5.6 Sol。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Kimi K3",
+        "Nebius",
+        "Token Factory",
+        "开放权重",
+        "模型 API"
+      ],
+      "practice_suggestions": [
+        "通过 Nebius 的 OpenAI 兼容 API 对 Kimi K3 进行代码和知识工作基准测试。",
+        "比较其 100 万上下文任务的质量、价格和吞吐与现有模型。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "Nebius API 与性能数据"
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081767950588223507",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 登陆 Fireworks，支持部署与微调",
+      "summary": "Fireworks 已上线 Kimi K3，提供推理和训练能力，并支持美国境内托管与零数据留存。该平台可用较少配置部署和微调这款约 2.8T 参数的模型。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Kimi K3",
+        "Fireworks",
+        "模型部署",
+        "模型微调",
+        "零数据留存"
+      ],
+      "practice_suggestions": [
+        "在 Fireworks 上用代表性任务测试 Kimi K3 的推理吞吐和微调流程。",
+        "若数据驻留是约束条件，核对零数据留存配置并进行合规评估。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "Fireworks 部署与微调"
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081767800419520647",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 上线 Baseten Model APIs",
+      "summary": "Baseten 宣布 Kimi K3 已在其 Model APIs 上线，成为 Day 0 发布合作伙伴。开发者可以通过 Baseten 的托管 API 获取该模型的快速、稳定访问。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Kimi K3",
+        "Baseten",
+        "Model APIs",
+        "模型托管"
+      ],
+      "practice_suggestions": [
+        "用 Baseten Model APIs 建立 Kimi K3 与现有模型的同任务对照测试。",
+        "测量 API 的首 token 延迟、吞吐和长上下文成本，再决定是否迁移。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "Baseten 托管 API"
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081767591887122564",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 登陆 Modal，DFlash 加速推理",
+      "summary": "Modal 成为 Kimi K3 的 Day 0 发布伙伴，并已提供该模型的在线运行能力。Modal 为 K3 的新架构训练了定制 DFlash 推测器，可在不损失质量的情况下提升推理速度。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Kimi K3",
+        "Modal",
+        "DFlash",
+        "推测解码",
+        "推理加速"
+      ],
+      "practice_suggestions": [
+        "在 Modal 上比较启用和停用 DFlash 时的首 token 延迟与整体吞吐。",
+        "用长输出智能体任务验证加速是否保持结果质量。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "Modal 推测解码加速"
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081763086281973847",
+      "source": "Kimi (Twitter)",
+      "title": "MoonEP 开源：优化大规模 MoE 通信",
+      "summary": "Moonshot 开源了 MoonEP，这是面向分布式 MoE 工作负载的高性能通信库。项目重点降低大规模 MoE 训练和推理中的专家并行通信开销，并发布在 GitHub 上。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "MoonEP",
+        "MoE",
+        "专家并行",
+        "分布式训练",
+        "开源"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081762978391843020",
+      "source": "Kimi (Twitter)",
+      "title": "AgentENV 开源：扩展智能体训练环境",
+      "summary": "Moonshot 与 kvcache-ai 联合开源 AgentENV，用于大规模运行分布式智能体环境。其组件服务于 Kimi K3 的智能体强化学习训练，支持快速快照、恢复和分叉，以并行处理大量智能体工作流。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "AgentENV",
+        "智能体",
+        "强化学习",
+        "分布式系统",
+        "开源"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081762799202746420",
+      "source": "Kimi (Twitter)",
+      "title": "FlashKDA 开源：Kimi Delta Attention 提速",
+      "summary": "Moonshot 开源了基于 CUTLASS 的 FlashKDA，用于实现 Kimi Delta Attention 内核。该实现宣称在 H20 上相较 flash-linear-attention 基线获得 1.72 至 2.22 倍的预填充加速，并可作为其即插即用后端。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "FlashKDA",
+        "Kimi Delta Attention",
+        "CUTLASS",
+        "H20",
+        "推理优化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2081757327146045450",
+      "source": "Kimi (Twitter)",
+      "title": "Kimi K3 开放权重版本即将发布",
+      "summary": "Moonshot 预告 Kimi K3 的开放权重版本即将推出。该消息表明开发者未来可以在可控环境中自行部署和研究这款新模型，但具体权重、许可证和发布时间尚未公布。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Kimi K3",
+        "开放权重",
+        "Moonshot AI",
+        "模型发布"
+      ],
+      "practice_suggestions": [
+        "提前准备兼容 100 万上下文和原生视觉的推理环境，等待权重与许可证发布。",
+        "发布后用代码、长上下文和智能体任务建立本地基准，比较托管 API 与自部署成本。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
+      "angle": "开放权重发布预告"
+    }
+  ]
+}
