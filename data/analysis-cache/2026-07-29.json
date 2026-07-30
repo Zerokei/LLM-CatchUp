@@ -1,0 +1,544 @@
+{
+  "analyzed_at": "2026-07-30T13:42:01.563Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-29.json",
+  "trend_paragraph": "- **前沿模型追求效率**：GPT-5.6 将智能、推理效率和智能体工作流放在同一发布重点，模型竞争从单纯能力转向单位成本产出。\n- **智能体基础设施成形**：Gemini Managed Agents、MCP 无状态协议和 ChatGPT 远程控制分别覆盖运行控制、协议部署与持续执行。\n- **安全工具走向开源**：Codex Security CLI 与 Claude Mythos 的密码分析研究，一端强化代码供应链防护，另一端拓展模型参与安全研究的边界。\n- **科研工作流加速**：科学计算案例显示编码智能体能承担软件维护与重构，但科学问题、结果验证和长期责任仍由研究者掌握。\n- **语音转写进入生产 API**：GPT-Live-Transcribe 与 GPT-Transcribe 通过上下文增强和多语种评测提升真实音频可用性。",
+  "articles": [
+    {
+      "url": "https://baoyu.io/blog/coding-agent-em-shift",
+      "source": "宝玉的分享",
+      "title": "Coding Agent 越过可信门槛后，工程师转向定方向",
+      "summary": "当 Coding Agent 生成的代码质量达到可信门槛，技术负责人不必再持续盯住实现细节。人的工作重点应转向明确方向、设定约束并验收最终结果。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Coding Agent",
+        "工程管理",
+        "软件开发",
+        "人机协作"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
+      "source": "OpenAI Blog",
+      "title": "GPT-5.6：提升前沿智能与推理效率",
+      "summary": "OpenAI介绍GPT-5.6，重点提升模型能力与单位成本的推理效率。改进覆盖模型、推理系统和智能体工作流，目标是在相同预算下交付更有用的智能。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6",
+        "推理效率",
+        "智能体",
+        "模型发布"
+      ],
+      "practice_suggestions": [
+        "用现有高频任务对比GPT-5.6与当前模型的质量、延迟和成本。",
+        "为智能体工作流设置预算上限，验证单位成本带来的实际收益。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/scientific-computing-agentic-ai",
+      "source": "OpenAI Blog",
+      "title": "编码智能体重塑科学计算：加速开发但保留责任",
+      "summary": "一份涵盖产业界和学术界八个案例的报告显示，编码智能体已能从日常维护、定向优化推进到科学软件的整体重设计。它们正在帮助基因组学等领域的研究者更快迭代代码、探索新系统并把时间重新投入科学问题。与此同时，研究者仍须定义问题、验证结果并承担长期维护与软件所有权，不能把可运行代码等同于已验证的科学结论。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "科学计算",
+        "AI编码智能体",
+        "科研自动化",
+        "结果验证",
+        "基因组学"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api-3-6-flash-hooks/",
+      "source": "Google AI Blog",
+      "title": "Gemini API Managed Agents 新增3.6 Flash与Hooks",
+      "summary": "Google为Gemini API的Managed Agents增加Gemini 3.6 Flash、hooks等能力。更新旨在帮助开发者构建更可靠、适合生产环境部署的智能体，并提供更完整的运行控制。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Gemini API",
+        "Managed Agents",
+        "Gemini 3.6 Flash",
+        "Hooks"
+      ],
+      "practice_suggestions": [
+        "用Managed Agents搭建一个带hooks的多步骤任务流程，验证状态控制和失败恢复。",
+        "比较Gemini 3.6 Flash在实际智能体任务中的延迟与成本。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+      "source": "Google AI Blog",
+      "title": "Google Search AI Mode：从搜索到线下生活规划",
+      "summary": "Google Search 的 AI Mode 正从回答问题延伸到线下活动规划，例如购票、路线安排和日程组织。配套案例还展示了如何根据人数、预算和饮食限制生成晚宴菜单、桌面布置与采购清单。对多条件任务而言，AI 可以先拆解计划，但用户仍需核实实时信息、可执行性和最终预订结果。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Google Search",
+        "AI Mode",
+        "生活规划",
+        "任务拆解",
+        "搜索代理"
+      ],
+      "practice_suggestions": [
+        "用 AI Mode 规划一次包含购票、路线和日程的线下活动，检查信息是否完整。",
+        "输入人数、预算和饮食限制生成菜单与采购清单，再人工核对价格、库存和过敏风险。",
+        "对比 AI Mode 与传统搜索在多条件任务中的结果质量和信息时效。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/dinner-party-hosting-tips/",
+      "source": "Google AI Blog",
+      "title": "Google Search AI功能辅助筹办晚宴",
+      "summary": "Google介绍如何用Search中的AI功能筹办晚宴，包括设计菜单和布置餐桌。用户可以把聚会要求交给AI拆解，再据此完成具体准备工作。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Google Search",
+        "AI功能",
+        "菜单规划",
+        "聚会筹备"
+      ],
+      "practice_suggestions": [
+        "输入人数、预算和饮食限制，让Search AI生成菜单并检查其可执行性。",
+        "用同一组约束测试AI生成餐桌布置与采购清单的完整度。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://blog.google/products-and-platforms/products/search/ai-mode-real-world-tips/",
+      "angle": "晚宴筹备示例"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2082164248697069935",
+      "source": "Claude Devs (Twitter)",
+      "title": "MCP 2026-07-28：无状态协议 + Apps/Tasks 扩展",
+      "summary": "MCP 2026-07-28 将协议转为无状态，降低远程服务器的部署和扩展复杂度，并把 MCP Apps、Tasks 与企业托管认证纳入正式扩展路径。Apps 可在沙箱 iframe 中渲染服务端界面，Tasks 面向长时异步操作，企业认证则允许通过身份提供商集中控制 MCP 服务器访问。本次更新还强化认证安全并引入正式弃用政策，使用者需要同步规划兼容窗口与升级测试。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "MCP",
+        "无状态协议",
+        "MCP Apps",
+        "Tasks",
+        "企业认证",
+        "认证安全",
+        "协议治理"
+      ],
+      "practice_suggestions": [
+        "将一个 MCP 远程服务器迁移到无状态架构，验证并发部署、故障恢复和客户端兼容性。",
+        "为一个 MCP 服务设计异步 Tasks 流程，明确状态、超时和重试策略。",
+        "审计 MCP 服务的认证流程，补齐凭证轮换、最小权限和正式弃用通知。",
+        "在企业身份系统中配置托管认证，验证服务器访问控制和升级回滚。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2082164251834323312",
+      "source": "Claude Devs (Twitter)",
+      "title": "MCP新增Apps、Tasks与企业托管认证扩展",
+      "summary": "MCP将扩展机制提升为一等能力，示例包括在沙箱iframe中渲染界面的MCP Apps、支持长时异步操作的Tasks，以及由身份提供商集中控制访问的企业托管认证。新扩展为协议接入界面、异步任务和企业权限管理提供了正式路径。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "MCP Apps",
+        "Tasks",
+        "企业认证",
+        "协议扩展"
+      ],
+      "practice_suggestions": [
+        "为一个MCP服务设计异步Tasks流程，明确任务状态、超时和重试策略。",
+        "在企业身份系统中配置托管认证，验证MCP服务器访问控制。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260728-1800",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2082164248697069935",
+      "angle": "Apps、Tasks 与企业认证"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2082164253109395882",
+      "source": "Claude Devs (Twitter)",
+      "title": "MCP更新强化认证并引入正式弃用政策",
+      "summary": "MCP本次版本更新还加强了认证安全，并引入正式的弃用政策。配套技术细节发布在MCP官方博客，帮助使用者规划协议升级与兼容性维护。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "MCP",
+        "认证安全",
+        "弃用政策",
+        "协议治理"
+      ],
+      "practice_suggestions": [
+        "审计MCP服务的认证流程，补齐凭证轮换和权限最小化。",
+        "为现有MCP集成建立弃用通知、兼容窗口和升级测试。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260728-1800",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2082228994653696371",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic支持为前沿AI发展设定节奏",
+      "summary": "Anthropic支持一项呼吁为前沿AI发展设定节奏的请愿，CEO、数位联合创始人和高级员工参与签署。公司引用近期关于递归自我改进的研究，认为需要让社会有时间准备应对快速发展的AI能力。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI治理",
+        "前沿模型",
+        "递归自我改进",
+        "安全政策"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2082153297670992134",
+      "source": "Anthropic (Twitter)",
+      "title": "Claude Mythos 破解密码学弱点：HAWK/AES 攻击与基准",
+      "summary": "Claude Mythos Preview 帮助研究人员发现密码算法中的数学弱点，改进了对后量子签名方案 HAWK 的攻击，并加速了对七轮 AES 变体的既有攻击。完整论文、AES 相关模型推理材料和复现实验细节已经发布，研究结果目前不会影响生产系统，但说明前沿模型可以参与高门槛密码分析。Anthropic 还与学术机构建立 CryptanalysisBench，为评估大语言模型的密码分析能力提供统一基准。",
+      "category": "研究",
+      "importance": 5,
+      "tags": [
+        "Claude Mythos",
+        "密码分析",
+        "HAWK",
+        "AES",
+        "CryptanalysisBench",
+        "AI安全"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2082153309553463600",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 发布 HAWK 与 AES 攻击技术细节",
+      "summary": "Anthropic 发布了两项密码分析攻击的完整技术细节，分别对应 HAWK 和 AES 研究。相关材料还包含 AES 研究中的模型思维链，为复现实验和评估模型推理过程提供了依据。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "HAWK",
+        "AES",
+        "密码分析",
+        "模型推理"
+      ],
+      "thread_group_id": "thread-AnthropicAI-20260728-1716",
+      "duplicate_of": "https://x.com/AnthropicAI/status/2082153297670992134",
+      "angle": "技术细节与论文"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2082153311189225927",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 搭建 CryptanalysisBench 评测密码分析能力",
+      "summary": "Anthropic 与苏黎世联邦理工、特拉维夫大学和海法大学的学者合作，建立了 CryptanalysisBench。该基准用于研究和衡量大语言模型的密码分析能力，为后续模型安全评估提供统一测试框架。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "CryptanalysisBench",
+        "密码分析",
+        "基准测试",
+        "模型评测"
+      ],
+      "thread_group_id": "thread-AnthropicAI-20260728-1716",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082263717916586117",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex Security CLI 开源：代码扫描接入 CI/CD",
+      "summary": "OpenAI 开源 Codex Security CLI，可扫描代码库、跨运行追踪安全发现、验证修复，并把安全检查接入 CI/CD。工具提供 npm、npx、源码和文档入口，降低了从试用到工程集成的门槛。它仍处于早期版本，团队应先在非生产仓库建立发现基线，再结合人工复核、权限控制和固定版本逐步纳入流水线。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex Security",
+        "代码安全",
+        "开源工具",
+        "CI/CD",
+        "npm",
+        "安全扫描"
+      ],
+      "practice_suggestions": [
+        "先用 npx 在测试仓库运行帮助命令和基础扫描，建立发现基线。",
+        "阅读文档后为项目选择扫描范围和忽略规则，再把安全检查接入 CI/CD。",
+        "团队确认版本后固定 npm 依赖，并为高风险发现设置人工复核。",
+        "接入生产流水线前审查源码、权限需求和发现处理流程。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-0035",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082263719460094127",
+      "source": "OpenAI (Twitter)",
+      "title": "Codex Security CLI 提供 npm 与 npx 安装方式",
+      "summary": "Codex Security CLI 可通过 npm 全局安装，也可以使用 npx 直接运行并查看帮助信息。该安装入口降低了开发者试用开源代码安全工具的门槛。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex Security",
+        "npm",
+        "npx",
+        "开发者工具"
+      ],
+      "practice_suggestions": [
+        "先用 npx 在测试仓库运行帮助命令和基础扫描。",
+        "团队确认版本后再固定 npm 依赖并纳入开发环境初始化脚本。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-0035",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082263720777101505",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 公布 Codex Security CLI 源码与文档入口",
+      "summary": "OpenAI 补充公布了 Codex Security CLI 的源码和文档地址。开发者可以据此检查工具实现、了解使用方式，并将安全扫描流程纳入现有工程规范。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex Security",
+        "源码",
+        "技术文档",
+        "代码安全"
+      ],
+      "practice_suggestions": [
+        "阅读文档后为项目选择扫描范围和忽略规则。",
+        "在接入生产流水线前审查源码、权限需求和发现处理流程。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-0035",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082208694142730340",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 探讨前沿模型研发的加速治理机制",
+      "summary": "OpenAI 认为，未来前沿模型研发的加速程度可能高到需要社会控制 AI 进步速度。该公司希望参与美国政府与开源社区主导的工作，探索相应的工具和机制。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI治理",
+        "前沿模型",
+        "研发加速",
+        "政策机制"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082152074071228702",
+      "source": "OpenAI (Twitter)",
+      "title": "编码智能体正在重塑科学计算工作流",
+      "summary": "OpenAI 分享了编码智能体在科学研究中的应用，从日常维护和定向优化延伸到系统重设计。研究人员仍需提出科学问题、验证结果，并承担长期维护和所有权责任。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "编码智能体",
+        "科学计算",
+        "科研自动化",
+        "结果验证"
+      ],
+      "thread_group_id": "thread-OpenAI-20260728-1711",
+      "duplicate_of": "https://openai.com/index/scientific-computing-agentic-ai",
+      "angle": "科研案例与责任边界"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082152075778293831",
+      "source": "OpenAI (Twitter)",
+      "title": "八个案例展示编码智能体辅助科研的边界",
+      "summary": "OpenAI 汇总了覆盖产业界和学术界的八个案例，讨论编码智能体对科学计算转型的影响。案例强调人工验证、责任托管和长期维护是将智能体用于科研时不可省略的环节。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "编码智能体",
+        "科学计算",
+        "案例研究",
+        "科研治理"
+      ],
+      "thread_group_id": "thread-OpenAI-20260728-1711",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082146058017321257",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI Student Collective：招募校园 AI 负责人",
+      "summary": "OpenAI 面向本科生开放 Student Collective 项目申请，招募负责校园 AI 创新的 Campus Leads。参与者将获得实践培训、资金、额度、周边和全球学生社区资源，并直接与 OpenAI 协作开展校园项目。配套申请入口已发布，具体参与机制和资格要求以官方页面为准。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "Student Collective",
+        "校园项目",
+        "AI教育",
+        "学生社区"
+      ],
+      "thread_group_id": "thread-OpenAI-20260728-1647",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082146059271417879",
+      "source": "OpenAI (Twitter)",
+      "cadence": "daily",
+      "title": "OpenAI 招募学生 Collective 成员",
+      "summary": "OpenAI 发布 Student Collective 项目招募信息，邀请学生申请参与。该条信息指向项目申请页面，具体参与机制和权益需以官方页面为准。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "学生项目",
+        "社区招募"
+      ],
+      "thread_group_id": "thread-OpenAI-20260728-1647",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082201225756549448",
+      "source": "OpenAI Devs (Twitter)",
+      "cadence": "daily",
+      "title": "OpenAI 发布新一代音频转写 API 指南",
+      "summary": "OpenAI Devs 分享了新转写能力的 API 使用指南，帮助开发者接入实时和异步音频转写。指南页面是该线程的实现入口，具体参数与调用方式应以文档为准。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "OpenAI API",
+        "语音转写",
+        "开发者文档"
+      ],
+      "practice_suggestions": [
+        "先按官方指南分别接入实时与异步转写路径。",
+        "用包含口音、数字和专业术语的真实音频建立回归评测集。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260728-2026",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082201169443905798",
+      "source": "OpenAI Devs (Twitter)",
+      "cadence": "daily",
+      "title": "GPT-Live-Transcribe 与 GPT-Transcribe：实时/异步转写升级",
+      "summary": "OpenAI API 推出 GPT-Live-Transcribe 与 GPT-Transcribe，分别面向低延迟实时转写和已完成音频、批处理场景。两款模型支持自由文本上下文、关键词、预期语言和此前转写内容，以改善口音、数字、专业术语和噪声环境下的识别。官方多语种评测显示，两者在语义准确率和错误率上均优于相应 Whisper 基线，接入时仍应使用业务音频做端到端验证。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-Live-Transcribe",
+        "GPT-Transcribe",
+        "语音模型",
+        "上下文增强",
+        "多语种",
+        "OpenAI API",
+        "语音评测"
+      ],
+      "practice_suggestions": [
+        "根据延迟和吞吐需求，在实时交互与批处理场景分别选型。",
+        "为产品维护领域词表、专名和语言提示，并随请求传入。",
+        "用业务音频对准确率、延迟和成本做端到端基准测试，分别监测语义准确率与词错误率。",
+        "将自由文本上下文作为可配置项接入多语言转写流水线。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260728-2026",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082201191359107117",
+      "source": "OpenAI Devs (Twitter)",
+      "cadence": "daily",
+      "title": "GPT-Live-Transcribe 支持上下文增强与多语种评测",
+      "summary": "GPT-Live-Transcribe 可接收自由文本上下文、关键词、预期语言和此前转写内容，以提升专名和领域术语的识别效果。官方评测显示，加入自由文本上下文后语义准确率从 38.5% 提升至 44.6%，并在多语种错误率测试中优于 GPT-Realtime-Whisper-1。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-Live-Transcribe",
+        "上下文增强",
+        "多语种",
+        "语音评测"
+      ],
+      "practice_suggestions": [
+        "为产品维护领域词表、专名和语言提示，并随请求传入。",
+        "在多语言和真实噪声音频上分别监测语义准确率与词错误率。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260728-2026",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082201212951433628",
+      "source": "OpenAI Devs (Twitter)",
+      "cadence": "daily",
+      "title": "GPT-Transcribe 多语种错误率显著低于 Whisper",
+      "summary": "GPT-Transcribe 在上下文感知语音识别评测中，加入自由文本上下文后语义准确率从 41.6% 提升至 45.2%。在 22 种语言的 Common Voice 测试和九种语言的真实录音测试中，其错误率均明显低于 Whisper-1。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-Transcribe",
+        "Whisper",
+        "多语种",
+        "语音评测"
+      ],
+      "practice_suggestions": [
+        "对比新旧转写模型在业务语料上的错误率和上下文收益。",
+        "将自由文本上下文作为可配置项接入批量转写流水线。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260728-2026",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082182909348499788",
+      "source": "OpenAI Devs (Twitter)",
+      "cadence": "daily",
+      "title": "ChatGPT 支持远程控制电脑持续执行任务",
+      "summary": "一则用户案例展示了 ChatGPT 可在用户离开电脑后继续操作其笔记本，用户将其描述为可以同时处理任务的远程协作体验。该内容属于功能体验分享，未提供具体产品版本、权限边界或实现细节。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "ChatGPT",
+        "远程控制",
+        "电脑操作"
+      ],
+      "practice_suggestions": [
+        "先在低风险测试环境验证远程操作的权限、确认和回滚机制。",
+        "为长任务配置可观测日志，并限制敏感文件和账户的访问范围。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2082093488720708065",
+      "source": "Qwen (Twitter)",
+      "cadence": "daily",
+      "title": "Qwen3.8 启动 GrowthPlan 征集真实任务反馈",
+      "summary": "Qwen 为 Qwen3.8-Max-Preview 启动 GrowthPlan，邀请开发者提交真实任务中的成功或失败案例。项目聚焦 Qwen3.8 的智能体能力，并设置奖励以鼓励用户分享反馈和使用经验。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Qwen3.8",
+        "智能体",
+        "开发者反馈",
+        "社区活动"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2082118893741490284",
+      "source": "Kimi (Twitter)",
+      "cadence": "daily",
+      "title": "Kimi 启动全球大使计划",
+      "summary": "Kimi 启动全球 Ambassador Program，招募科技、创业、内容创作和校园社区中的活跃用户。申请者应有将 Kimi K3 用于产品、智能体、工作流或团队的经验，并愿意向更广泛的社区分享实践。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Kimi",
+        "Kimi K3",
+        "大使计划",
+        "开发者社区"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
