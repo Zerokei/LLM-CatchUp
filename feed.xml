@@ -5,8 +5,142 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 29 Jul 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Jul 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-07-30</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-30.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-30.md</guid>
+      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-30</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>评测方法影响结论</strong>：GPT-5.6 Sol 的 ARC-AGI-3 得分在保留推理和压缩上下文后大幅提升，长程代理需要更接近真实运行的评测 harness。</li>
+<li><strong>模型效率成为主战场</strong>：GPT-5.6 Sol 的 GPU kernel、推测解码和 Codex 基础设施优化，把单位任务成本与有效产出放到模型升级的核心位置。</li>
+<li><strong>科研工具加速普及</strong>：ChatGPT for Academic Researchers 将前沿模型免费提供给更多科学家，前沿模型正在从实验室能力转向研究协作基础设施。</li>
+<li><strong>安全评测贴近真实事件</strong>：Anthropic 对真实网络安全事件的调查，与 OpenAI 对长程代理设置的讨论共同推动从静态分数转向可复现、可审计的部署评测。</li>
+<li><strong>语音代理扩展应用边界</strong>：GPT-Realtime 零售客服、Grok Voice 和 TinyFish 网页代理分别把实时语音、语音模型和浏览器自动化带入更多实际工作流。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/OpenAI/status/2082577277246972300">GPT-5.6 Sol 推理优化：成本降20%，效率提升</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>推理优化</code> <code>GPU kernel</code> <code>推测解码</code> <code>Codex</code> <code>成本效率</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 表示，GPT-5.6 Sol 被用于优化自身的推理基础设施，生产 GPU kernel 改进使服务成本降低约 20%，改进的推测解码让 token 生成效率提升超过 15%。同一套系统优化也用于 Codex，让相同硬件支持更多有效的智能体工作。评估这类升级时，应同时记录模型质量、端到端延迟、工具调用开销和单位任务成本，而不能只看生成速度。 OpenAI表示，GPT-5.6 Sol 的系统级优化提升了模型在性能与成本之间的效率曲线。相关改进覆盖推理栈，让同一套硬件能够产出更多有效工作。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2082580211552457102">GPT-5.6 Sol 优化 Codex 基础设施</a> · OpenAI Devs (Twitter) · Codex 基础设施实践</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在实际工作负载中同时记录模型质量、延迟和单位成本，评估推理优化的真实收益。</li>
+<li>对长任务分别测量推理、工具调用和上下文管理的开销，并保留可复现的模型版本与配置。</li>
+<li>在模型上线后持续分析 kernel、缓存和解码层面的复合优化机会。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores">GPT-5.6 Sol：ARC-AGI-3 得分三倍与长程评测方法</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>ARC-AGI-3</code> <code>上下文压缩</code> <code>长程代理</code> <code>模型评测</code> <code>Responses API</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发现，GPT-5.6 Sol 在 ARC-AGI-3 上的表现高度依赖评测 harness：保留推理状态并启用上下文压缩后，得分提升至原来的三倍，输出 token 还减少约六倍。相关讨论强调，长程代理需要跨上下文窗口保留已学信息，不能只用一次性调用衡量模型能力。评测结果同时受到模型、API 设置、提示词和 harness 设计影响，使用 Responses API、推理保留与上下文压缩可以让测量更接近真实工作流。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2082616641834422740">OpenAI：长程代理评测需保留推理并压缩上下文</a> · OpenAI (Twitter) · 长程代理评测方法</li>
+<li><a href="https://x.com/sama/status/2082627724040884667">GPT-5.6 Sol 的 ARC-AGI-3 得分受设置影响</a> · Sam Altman (Twitter) · Altman 对评测设置的补充</li>
+<li><a href="https://x.com/OpenAI/status/2082616636989952217">OpenAI 解释 GPT-5.6 Sol 的 ARC-AGI-3 得分提升</a> · OpenAI (Twitter) · 官方结果与 API 设置</li>
+</ul>
+<hr>
+<h3>3. <a href="https://x.com/SpaceXAI/status/2082529280341553209">Grok Voice Think Fast 2.0 发布</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>语音模型</code> <code>语音转写</code> <code>对话能力</code></li>
+</ul>
+<p><strong>摘要</strong>: xAI宣布推出下一代语音模型 Grok Voice Think Fast 2.0，重点改进智能水平、转写准确率和对话能力。该版本面向语音交互场景，目标是提升实时交流的整体体验。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用真实通话或会议片段测试转写准确率，并按口音、噪声和专业术语分层评估。</li>
+<li>将语音模型接入业务前，明确录音留存、敏感信息处理和人工接管规则。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://openai.com/index/chatgpt-for-academic-researchers">ChatGPT for Academic Researchers：前沿模型免费助研</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>学术研究</code> <code>GPT-5.6</code> <code>科研协作</code> <code>数据隐私</code> <code>研究生产力</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 推出 ChatGPT for Academic Researchers，先向一万名科学家、数学家和工程师免费开放前沿模型，并计划在 2027 年扩大至十万人。项目面向文献整理、假设检验、代码分析和跨学科发现，参与者可获得包含 GPT-5.6 系列在内的模型访问权限。每个工作区提供企业级隐私与安全保护，研究者仍需保留对数据权限、模型建议和实验结论的人工复核。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAI/status/2082516370949062989">OpenAI 向研究人员免费开放前沿模型</a> · OpenAI (Twitter) · 科研支持计划发布</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>为研究团队申请试用时，先定义文献整理、假设检验或代码分析等具体任务。</li>
+<li>涉及未发表数据时，先核对工作区的隐私设置、训练政策和协作者权限。</li>
+<li>建立研究者对模型建议的引用、复核和错误记录流程。</li>
+<li>用非敏感数据先测试共享提示词、实验记录和模型输出审计规范。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://openai.com/index/avatarin">avatarin 用 GPT-Realtime 打造全天候零售客服</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-Realtime</code> <code>零售客服</code> <code>多语言</code> <code>语音代理</code></li>
+</ul>
+<p><strong>摘要</strong>: 日本山田电机使用 GPT-Realtime 为消费者提供全天候多语言支持。上线两周已有 3 万人使用，问卷中的正面反馈达到 92%。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在零售场景中先用高频问题和多语言需求验证实时语音代理。</li>
+<li>上线初期同时跟踪使用量、问题解决率和用户满意度。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals">Anthropic 调查三起真实网络安全事件评测</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>网络安全</code> <code>安全评测</code> <code>真实事件</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 发布对三起真实世界事件的网络安全评测调查。文章重点将现实事件复盘与安全能力评估联系起来，为理解模型在真实攻防场景中的表现提供案例依据。</p>
+<hr>
+<h3>7. <a href="https://x.com/SpaceXAI/status/2082517754712842386">TinyFish 插件为 Grok Build 接入网页代理</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok Build</code> <code>TinyFish</code> <code>网页代理</code> <code>浏览器自动化</code></li>
+</ul>
+<p><strong>摘要</strong>: Grok Build 现在可以使用 TinyFish 插件，获得网页搜索、抓取、智能体和浏览器能力。该集成让编程智能体能够从终端连接实时网页并跨站执行任务。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先在隔离环境中限制插件可访问的域名和凭据，再运行网页检索任务。</li>
+<li>为搜索、抓取和浏览器操作分别记录来源、权限和执行结果，便于审计。</li>
+</ul>
+</blockquote>
+<hr>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-07-29</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-29.html</link>
@@ -3530,58 +3664,6 @@
 <li><a href="https://openai.com/index/introducing-genebench-pro">GeneBench-Pro：OpenAI 测科研判断能力</a> — 这篇适合理解 AI for Science 评测为何要考察判断过程而不只是答案。</li>
 <li><a href="https://www.anthropic.com/news/claude-science-ai-workbench">Anthropic 推出 Claude Science 科研工作台</a> — 它展示科研代理从聊天助手进入可审计工作环境的产品形态。</li>
 <li><a href="https://openai.com/index/core-dump-epidemiology-data-infrastructure-bug">OpenAI 用核心转储流行病学定位 18 年旧 bug</a> — 这篇工程复盘对大规模系统调试和可靠性文化很有参考价值。</li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-07-04</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-04.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-04.md</guid>
-      <pubDate>Sat, 04 Jul 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-04</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>提示先找未知</strong>：Thariq 的 Fable 方法强调先暴露需求盲区，再迭代提示与评估。</li>
-<li><strong>Claude 继续触达创意场景</strong>：Claude 展示 Squidsoup 案例，同时开发者账号释放「/radio」功能信号。</li>
-<li><strong>企业智能主权升温</strong>：Mistral 强调让数据、流程和模型价值留在客户侧。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/ClaudeDevs/status/2073082875717812371">Claude Devs 暗示 /radio 命令更新</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Code</code> <code>斜杠命令</code> <code>开发者工具</code> <code>功能预告</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude Devs 发布「/radio」及配图链接，但快照未包含更多说明。由于其形式像 Claude 开发者工具的斜杠命令提示，应视为一次 Claude Code 相关功能信号，具体用途仍需等官方上下文确认。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>关注后续官方说明，确认「/radio」是否可在 Claude Code 中使用。</li>
-<li>若团队使用 Claude Code，可在沙盒项目中测试新增命令对日常开发流程的影响。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://x.com/trq212/status/2073100352921215386">Fable 协作方法：先发现未知项再写提示</a></h3>
-<ul>
-<li><strong>来源</strong>: Thariq (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Fable</code> <code>提示工程</code> <code>AI 协作</code> <code>未知项发现</code> <code>HTML artifacts</code> <code>工作流</code></li>
-</ul>
-<p><strong>摘要</strong>: Thariq 的 Fable 协作长文和后续线程强调，AI 辅助创作的关键不是一次性写出完美提示，而是先找出自己尚未意识到的约束、判断标准和知识缺口。他用 HTML artifacts 示例展示如何把这些未知项显性化，再通过测验与讨论迭代提示。这个方法适合把模糊需求转成可检查的工作流，让模型输出更贴近真实目标。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/trq212/status/2073101078145724589">和 Fable 协作的关键是发现未知项</a> · Thariq (Twitter) · 方法论展开</li>
-</ul>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Mistral AI</code> <code>企业 AI</code> <code>数据主权</code> <code>模型供应商</code> — Mistral AI 表示，其目标是帮助企业、公共机构和产业基于自身数据、流程、反馈与模型构建智能能力。核心立场是让这些能力产生的价值留在客户侧，而不是主要流向模型提供商。 · <a href="https://x.com/MistralAI/status/2073163455910330528">Mistral AI (Twitter)</a></li>
-<li><strong>商业动态</strong> | <code>Claude</code> <code>客户案例</code> <code>沉浸式艺术</code> <code>创意产业</code> — Claude 官方介绍艺术与设计团体 Squidsoup，其作品结合声音、灯光与空间，面向大型沉浸式体验。推文预告了他们在伦敦 Southbank Centre 与管弦乐团合作的一场大型现场演出采访。 · <a href="https://x.com/claudeai/status/2073028947478995406">Claude (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
