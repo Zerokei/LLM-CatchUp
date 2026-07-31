@@ -1,0 +1,377 @@
+{
+  "analyzed_at": "2026-07-31T12:36:05.019Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-07-30.json",
+  "trend_paragraph": "- **评测方法影响结论**：GPT-5.6 Sol 的 ARC-AGI-3 得分在保留推理和压缩上下文后大幅提升，长程代理需要更接近真实运行的评测 harness。\n- **模型效率成为主战场**：GPT-5.6 Sol 的 GPU kernel、推测解码和 Codex 基础设施优化，把单位任务成本与有效产出放到模型升级的核心位置。\n- **科研工具加速普及**：ChatGPT for Academic Researchers 将前沿模型免费提供给更多科学家，前沿模型正在从实验室能力转向研究协作基础设施。\n- **安全评测贴近真实事件**：Anthropic 对真实网络安全事件的调查，与 OpenAI 对长程代理设置的讨论共同推动从静态分数转向可复现、可审计的部署评测。\n- **语音代理扩展应用边界**：GPT-Realtime 零售客服、Grok Voice 和 TinyFish 网页代理分别把实时语音、语音模型和浏览器自动化带入更多实际工作流。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/avatarin",
+      "source": "OpenAI Blog",
+      "cadence": "daily",
+      "title": "avatarin 用 GPT-Realtime 打造全天候零售客服",
+      "summary": "日本山田电机使用 GPT-Realtime 为消费者提供全天候多语言支持。上线两周已有 3 万人使用，问卷中的正面反馈达到 92%。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "GPT-Realtime",
+        "零售客服",
+        "多语言",
+        "语音代理"
+      ],
+      "practice_suggestions": [
+        "在零售场景中先用高频问题和多语言需求验证实时语音代理。",
+        "上线初期同时跟踪使用量、问题解决率和用户满意度。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "source": "OpenAI Blog",
+      "cadence": "daily",
+      "title": "GPT-5.6 Sol：ARC-AGI-3 得分三倍与长程评测方法",
+      "summary": "OpenAI 发现，GPT-5.6 Sol 在 ARC-AGI-3 上的表现高度依赖评测 harness：保留推理状态并启用上下文压缩后，得分提升至原来的三倍，输出 token 还减少约六倍。相关讨论强调，长程代理需要跨上下文窗口保留已学信息，不能只用一次性调用衡量模型能力。评测结果同时受到模型、API 设置、提示词和 harness 设计影响，使用 Responses API、推理保留与上下文压缩可以让测量更接近真实工作流。",
+      "category": "研究",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6 Sol",
+        "ARC-AGI-3",
+        "上下文压缩",
+        "长程代理",
+        "模型评测",
+        "Responses API"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-for-academic-researchers",
+      "source": "OpenAI Blog",
+      "cadence": "daily",
+      "title": "ChatGPT for Academic Researchers：前沿模型免费助研",
+      "summary": "OpenAI 推出 ChatGPT for Academic Researchers，先向一万名科学家、数学家和工程师免费开放前沿模型，并计划在 2027 年扩大至十万人。项目面向文献整理、假设检验、代码分析和跨学科发现，参与者可获得包含 GPT-5.6 系列在内的模型访问权限。每个工作区提供企业级隐私与安全保护，研究者仍需保留对数据权限、模型建议和实验结论的人工复核。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT",
+        "学术研究",
+        "GPT-5.6",
+        "科研协作",
+        "数据隐私",
+        "研究生产力"
+      ],
+      "practice_suggestions": [
+        "为研究团队申请试用时，先定义文献整理、假设检验或代码分析等具体任务。",
+        "涉及未发表数据时，先核对工作区的隐私设置、训练政策和协作者权限。",
+        "建立研究者对模型建议的引用、复核和错误记录流程。",
+        "用非敏感数据先测试共享提示词、实验记录和模型输出审计规范。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
+      "source": "Anthropic Blog",
+      "cadence": "daily",
+      "title": "Anthropic 调查三起真实网络安全事件评测",
+      "summary": "Anthropic 发布对三起真实世界事件的网络安全评测调查。文章重点将现实事件复盘与安全能力评估联系起来，为理解模型在真实攻防场景中的表现提供案例依据。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "Anthropic",
+        "网络安全",
+        "安全评测",
+        "真实事件"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/sama/status/2082628413769003269",
+      "source": "Sam Altman (Twitter)",
+      "cadence": "daily",
+      "title": "Altman：前沿模型将加速科学发现",
+      "summary": "Sam Altman 表示，前沿模型已经接近能够显著加速科学发现的阶段。其观点是应赋能科学家使用这些工具，而不是替他们包办所有研究工作。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "科学发现",
+        "前沿模型",
+        "科研工具",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "把模型接入科研流程时，优先设计让研究者保持判断权和验证权的协作环节。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2082516370949062989",
+      "angle": "科学发现愿景"
+    },
+    {
+      "url": "https://x.com/sama/status/2082627724040884667",
+      "source": "Sam Altman (Twitter)",
+      "cadence": "daily",
+      "title": "GPT-5.6 Sol 的 ARC-AGI-3 得分受设置影响",
+      "summary": "Sam Altman 转发观点称，GPT-5.6 Sol 在 ARC-AGI-3 上达到领先水平，关键在于允许模型进行推理并跨多个上下文窗口工作。该观察强调了上下文保留和压缩实现对长程任务结果的影响。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "GPT-5.6 Sol",
+        "ARC-AGI-3",
+        "推理",
+        "上下文窗口"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "angle": "Altman 对评测设置的补充"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082616636989952217",
+      "source": "OpenAI (Twitter)",
+      "cadence": "daily",
+      "title": "OpenAI 解释 GPT-5.6 Sol 的 ARC-AGI-3 得分提升",
+      "summary": "OpenAI 解释称，GPT-5.6 Sol 在 ARC-AGI-3 中表现不佳，部分原因是评测 harness 没有让模型保留已学到的信息。启用两项 API 设置后，得分提升至原来的三倍，同时输出 token 减少六倍。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "GPT-5.6 Sol",
+        "ARC-AGI-3",
+        "API 设置",
+        "评测 harness"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "angle": "官方结果与 API 设置"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082616641834422740",
+      "source": "OpenAI (Twitter)",
+      "cadence": "daily",
+      "title": "OpenAI：长程代理评测需保留推理并压缩上下文",
+      "summary": "OpenAI 指出，基准分数不仅反映模型能力，也反映 harness 和运行设置。对于长时间运行的代理，保留推理过程并压缩上下文能让模型延续此前成果。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "长程代理",
+        "推理保留",
+        "上下文压缩",
+        "模型评测"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-2357",
+      "duplicate_of": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
+      "angle": "长程代理评测方法"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082616643394703682",
+      "source": "OpenAI (Twitter)",
+      "cadence": "daily",
+      "title": "OpenAI 建议用 Responses API 优化代理评测",
+      "summary": "OpenAI 强调，评测通常同时测量模型、API 设置、harness 设计和提示词等多个因素。面向长程代理的建议包括使用 Responses API、保留推理并启用上下文压缩。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Responses API",
+        "长程代理",
+        "上下文压缩",
+        "评测方法"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-2357",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082577277246972300",
+      "source": "OpenAI (Twitter)",
+      "cadence": "daily",
+      "title": "GPT-5.6 Sol 推理优化：成本降20%，效率提升",
+      "summary": "OpenAI 表示，GPT-5.6 Sol 被用于优化自身的推理基础设施，生产 GPU kernel 改进使服务成本降低约 20%，改进的推测解码让 token 生成效率提升超过 15%。同一套系统优化也用于 Codex，让相同硬件支持更多有效的智能体工作。评估这类升级时，应同时记录模型质量、端到端延迟、工具调用开销和单位任务成本，而不能只看生成速度。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-5.6 Sol",
+        "推理优化",
+        "GPU kernel",
+        "推测解码",
+        "Codex",
+        "成本效率"
+      ],
+      "practice_suggestions": [
+        "在实际工作负载中同时记录模型质量、延迟和单位成本，评估推理优化的真实收益。",
+        "对长任务分别测量推理、工具调用和上下文管理的开销，并保留可复现的模型版本与配置。",
+        "在模型上线后持续分析 kernel、缓存和解码层面的复合优化机会。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-2121",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082577278450676080",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 Sol 推理栈优化提升效率",
+      "summary": "OpenAI表示，GPT-5.6 Sol 的系统级优化提升了模型在性能与成本之间的效率曲线。相关改进覆盖推理栈，让同一套硬件能够产出更多有效工作。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-5.6 Sol",
+        "推理优化",
+        "成本效率",
+        "模型性能"
+      ],
+      "practice_suggestions": [
+        "在实际工作负载中同时记录模型质量、延迟和单位成本，评估推理优化的真实收益。",
+        "为长任务保留可复现的模型版本与推理配置，避免只比较最终结果。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-2121",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082516370949062989",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 向研究人员免费开放前沿模型",
+      "summary": "OpenAI宣布推出 ChatGPT for Academic Researchers，先向一万名科学家、数学家和工程师免费开放前沿模型。项目计划到2027年扩大至十万人，以支持跨学科研究与发现。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT",
+        "学术研究",
+        "GPT-5.6",
+        "科研支持"
+      ],
+      "practice_suggestions": [
+        "将重复性文献整理、假设生成和代码验证任务纳入科研试点，并保留人工复核环节。",
+        "先用非敏感数据测试工作区的隐私与协作权限，再迁移真实研究材料。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-1719",
+      "duplicate_of": "https://openai.com/index/chatgpt-for-academic-researchers",
+      "angle": "科研支持计划发布"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082516372656111654",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 以科研者为中心扩大前沿模型普惠",
+      "summary": "OpenAI表示，前沿人工智能的收益不应集中在少数公司和资源充足的实验室。该项目希望把模型工具交给研究人员，用于处理高难度问题、测试假设和提升科研生产力。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "科研普惠",
+        "前沿模型",
+        "研究生产力",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "选择一个具体科研流程做小规模试点，用可验证的产出指标衡量模型是否节省时间。",
+        "建立研究者对模型建议的引用、复核和错误记录流程。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-1719",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2082516374010974228",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT 学术研究计划提供隐私协作空间",
+      "summary": "ChatGPT for Academic Researchers 参与者将获得包括 GPT-5.6 系列在内的前沿模型访问权限。每个工作区提供企业级隐私与安全保护，研究者数据默认不用于训练，并支持邀请协作者。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "ChatGPT",
+        "科研工作区",
+        "数据隐私",
+        "协作"
+      ],
+      "practice_suggestions": [
+        "启用项目前先核对数据训练、访问控制和协作者权限设置。",
+        "为团队建立共享提示词、实验记录和模型输出审计规范。"
+      ],
+      "thread_group_id": "thread-OpenAI-20260729-1719",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082580211552457102",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-5.6 Sol 优化 Codex 基础设施",
+      "summary": "OpenAI Devs表示，他们在 Codex 中使用 GPT-5.6 Sol 优化自身的基础设施与性能。改进同时作用于推理和智能体循环，让相同硬件支持更多有效工作。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "GPT-5.6 Sol",
+        "智能体",
+        "基础设施"
+      ],
+      "practice_suggestions": [
+        "在 Codex 或其他编程智能体中记录端到端任务完成率，而不只比较单次生成速度。",
+        "对长任务分别测量推理、工具调用和上下文管理的开销。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2082577277246972300",
+      "angle": "Codex 基础设施实践"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2082554644623180208",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 用户作品登上户外广告牌",
+      "summary": "OpenAI Devs展示了 Codex 社区用户的工作场景与作品，并将其中一些作品投放到广告牌上。内容主要是社区展示和品牌传播，没有提供新的产品功能或技术信息。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Codex",
+        "开发者社区",
+        "品牌传播"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2082541871612449180",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google DeepMind 发布待核实链接",
+      "summary": "该推文在抓取缓存中仅包含一个短链接，没有提供可供分析的标题或正文。由于缺少链接展开内容，暂时无法判断其对应的产品、研究或公告主题。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Google DeepMind",
+        "短链接",
+        "待核实"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/SpaceXAI/status/2082529280341553209",
+      "source": "xAI (Twitter)",
+      "title": "Grok Voice Think Fast 2.0 发布",
+      "summary": "xAI宣布推出下一代语音模型 Grok Voice Think Fast 2.0，重点改进智能水平、转写准确率和对话能力。该版本面向语音交互场景，目标是提升实时交流的整体体验。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Grok",
+        "语音模型",
+        "语音转写",
+        "对话能力"
+      ],
+      "practice_suggestions": [
+        "用真实通话或会议片段测试转写准确率，并按口音、噪声和专业术语分层评估。",
+        "将语音模型接入业务前，明确录音留存、敏感信息处理和人工接管规则。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/SpaceXAI/status/2082517754712842386",
+      "source": "xAI (Twitter)",
+      "title": "TinyFish 插件为 Grok Build 接入网页代理",
+      "summary": "Grok Build 现在可以使用 TinyFish 插件，获得网页搜索、抓取、智能体和浏览器能力。该集成让编程智能体能够从终端连接实时网页并跨站执行任务。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Grok Build",
+        "TinyFish",
+        "网页代理",
+        "浏览器自动化"
+      ],
+      "practice_suggestions": [
+        "先在隔离环境中限制插件可访问的域名和凭据，再运行网页检索任务。",
+        "为搜索、抓取和浏览器操作分别记录来源、权限和执行结果，便于审计。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    }
+  ]
+}
