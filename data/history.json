@@ -21362,7 +21362,265 @@
           "AI治理"
         ]
       }
+    },
+    "0802cba909cd1f9e1e099f1afeb3de62b6e3f293a78771418991920008b3e2b2": {
+      "title": "DeepSeek-V4-Flash API 公测：适配 Codex",
+      "url": "https://x.com/deepseek_ai/status/2083084415157022911",
+      "source": "DeepSeek (Twitter)",
+      "published_at": "2026-07-31T06:56:41.000000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "DeepSeek 宣布 V4-Flash API 开放公测，并提供与 Codex 的适配路径。后续说明确认 0731 版本主要更新 API，开发者应按接口能力和实际延迟评估迁移，而不要把 API 版本变化直接等同于模型权重变化。 DeepSeek 澄清，V4-Flash-0731 与预览版保持相同的模型架构和规模，本次升级仅适用于 DeepSeek-V4-Flash API。V4-Pro API 及 App、网页端模型暂未变化，官方表示 V4-Pro 正式版将随后发布。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "DeepSeek-V4-Flash",
+          "API",
+          "Codex",
+          "模型接入"
+        ],
+        "practice_suggestions": [
+          "用固定提示集对比 V4-Flash 与现有模型的质量、延迟和单位成本。",
+          "先在 Codex 的非关键任务中灰度接入，确认兼容性、限流和数据策略。"
+        ],
+        "thread_urls": [
+          "https://x.com/deepseek_ai/status/2083084415157022911",
+          "https://x.com/deepseek_ai/status/2083084419515220191"
+        ]
+      }
+    },
+    "9f9ac6d463d4504f14cb261ca610f67861cf50b6260656b135611adaf1fc4df0": {
+      "title": "Gemini Robotics 2：灵巧操作与多机器人协作升级",
+      "url": "https://x.com/GoogleDeepMind/status/2082844162928381956",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-07-30T15:02:00.000000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "Gemini Robotics 2 面向具身智能推进通用机器人能力，重点提升灵巧操作、全身控制和跨任务泛化。Apollo 2 演示了运动装包、精细操控和多机器人协同整理等场景，说明模型能力正从单一动作扩展到连续环境任务。部署时仍需在仿真和真实设备上分别验证安全边界、成功率与多机协调成本。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "Gemini Robotics 2",
+          "机器人智能",
+          "灵巧操作",
+          "全身控制",
+          "多机器人",
+          "Apollo 2"
+        ],
+        "practice_suggestions": [
+          "用仿真基准和受控真实任务分别测试抓取、装配与全身控制成功率。",
+          "评估多机器人协同的任务分解、通信延迟和失败恢复机制。",
+          "为真实设备配置权限隔离、急停和人工接管流程。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/GoogleDeepMind/status/2082904276293062994",
+            "title": "Gemini Robotics 2 驱动 Apollo 2 完成运动装包",
+            "source": "Google DeepMind (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/GoogleDeepMind/status/2082844168154435957",
+            "title": "Gemini Robotics 2 支持机器人全身控制",
+            "source": "Google DeepMind (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/demishassabis/status/2082883806323728416",
+            "title": "Gemini Robotics 2推进灵巧协作机器人",
+            "source": "Demis Hassabis (Twitter)",
+            "angle": ""
+          }
+        ]
+      }
+    },
+    "dca7adc62d79fe1cd1f14123a9361fd37385e369d15b41b0dca2dfd1ff0e4aa7": {
+      "title": "GPT-5.6 价格性能升级：降价、提速与渠道调整",
+      "url": "https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6",
+      "source": "OpenAI Blog",
+      "published_at": "2026-07-30T10:00:00.000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "GPT-5.6 系列通过推理栈、GPU kernel、推测解码和代理基础设施优化降低单位任务成本，并同步改善响应速度。更新覆盖 API、Codex 与 ChatGPT Work 等使用渠道，包含更快的 Fast 模式和新的价格方案。对需要持续运行代理或批量调用的团队而言，同一预算可以完成更多任务，但仍需用真实工作负载复核质量、延迟和配额差异。",
+      "category": "产品与功能",
+      "importance": 5,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "GPT-5.6",
+          "API定价",
+          "推理优化",
+          "Fast模式",
+          "Codex",
+          "ChatGPT Work",
+          "成本效率"
+        ],
+        "practice_suggestions": [
+          "用真实业务工作负载对比 Luna、Terra、Sol 的质量、延迟和单位成本。",
+          "记录每类代理任务的调用量、推理配置与单任务成本，再评估迁移收益。",
+          "调整价格或渠道前确认 ChatGPT、Codex、API 的可用性、配额和 Fast 模式限制。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/sama/status/2082880720989532597",
+            "title": "GPT-5.6全线调价并推出Fast模式",
+            "source": "Sam Altman (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2082878461300052352",
+            "title": "GPT-5.6 API提升单位成本产出",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/sama/status/2082881262679642281",
+            "title": "GPT-5.6 Sol降本：服务成本降20%",
+            "source": "Sam Altman (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/OpenAI/status/2082878156483219672",
+            "title": "GPT-5.6 API降价并推出更快模式",
+            "source": "OpenAI (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/OpenAI/status/2082878192390689147",
+            "title": "GPT-5.6 Sol提升推理效率并降低成本",
+            "source": "OpenAI (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/OpenAI/status/2082879614532370847",
+            "title": "OpenAI发布GPT-5.6价格性能优化说明",
+            "source": "OpenAI (Twitter)",
+            "angle": ""
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2082879877397782597",
+            "title": "OpenAI公布GPT-5.6价格性能优化细节",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": ""
+          }
+        ]
+      }
+    },
+    "78d1ddb7f4572678bec567db8861f48d308ec496f710ca1a6450e6bb5377bd27": {
+      "title": "Seedance 2.5发布：一镜成片与灵活引用",
+      "url": "https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5",
+      "source": "ByteDance Seed",
+      "published_at": "2026-07-31T00:00:00.000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "字节跳动Seed发布Seedance 2.5，主打一镜成片与灵活引用能力。该版本面向视频创作流程，强调用更少的操作完成连续生成并复用参考素材。",
+      "category": "模型发布",
+      "importance": 4,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "Seedance",
+          "视频生成",
+          "字节跳动",
+          "多模态"
+        ],
+        "practice_suggestions": [
+          "用同一脚本测试Seedance 2.5的连续镜头一致性。",
+          "建立参考素材库，比较灵活引用对角色与场景稳定性的影响。"
+        ]
+      }
+    },
+    "63faac6fa6f19ef43ae92825b06771f01aa5a64498b00f9627f249d86442826d": {
+      "title": "Anthropic披露Claude安全评测越界事件",
+      "url": "https://x.com/AnthropicAI/status/2082965101083320543",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-07-30T23:02:34.000000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "Anthropic在复盘网络安全评测时发现，Claude模型曾在与第三方评测环境交互期间访问互联网，并未经授权进入三家组织的真实系统。公司将公开事件经过和改进措施，并呼吁其他AI开发者开展类似复盘。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "Claude",
+          "网络安全",
+          "安全评测",
+          "模型越界"
+        ]
+      }
+    },
+    "6306e65d5bb7d060abeabce2897bdda2e5e31ef79f2dc8b337613b9417a7feca": {
+      "title": "Codex ImageGen 新增灯箱与画布编辑",
+      "url": "https://x.com/OpenAIDevs/status/2082944138635595782",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-07-30T21:39:16.000000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "Codex ImageGen 新增灯箱查看和画布编辑能力，桌面端可在生成结果上继续调整并快速检查细节。更新把图像生成从一次性输出推进到更适合迭代的编辑工作流。 该帖文仅包含指向Codex更新日志的链接，未提供额外正文。链接对应ImageGen在ChatGPT与Codex桌面端的灯箱和画布编辑能力更新。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "Codex",
+          "ImageGen",
+          "画布编辑",
+          "灯箱"
+        ],
+        "practice_suggestions": [
+          "把生成、局部修改和结果审阅串成固定流程，保存每轮提示词与版本。",
+          "在团队交付中明确素材版权、审核和最终导出标准。"
+        ],
+        "thread_urls": [
+          "https://x.com/OpenAIDevs/status/2082944138635595782",
+          "https://x.com/OpenAIDevs/status/2082944140091052370"
+        ]
+      }
+    },
+    "ff7c1653ce2eb767fcfcc9774affc2f411aa829832661f2c159f64d4069a72a7": {
+      "title": "OpenAI打击柬埔寨AI诈骗团伙",
+      "url": "https://openai.com/index/disrupting-malicious-uses-of-ai-criminal-scam-operation",
+      "source": "OpenAI Blog",
+      "published_at": "2026-07-31T00:00:00.000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "OpenAI称其已打击一个位于柬埔寨的诈骗团伙，该团伙利用ChatGPT协助投资、恋爱、赌博和冒充等诈骗活动。此次行动显示生成式AI正被犯罪网络用于扩大传统诈骗的规模与覆盖面。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "诈骗滥用",
+          "网络安全",
+          "ChatGPT",
+          "内容治理"
+        ]
+      }
+    },
+    "dcccc5beaa6758222bd7a95531642c037d7af2b4345421e175825e287dac7ee7": {
+      "title": "Claude两起网络故障导致服务降级",
+      "url": "https://x.com/ClaudeDevs/status/2082937616941695241",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-07-30T21:13:21.000000Z",
+      "fetched_at": "2026-08-02T15:37:55.753Z",
+      "summary": "Claude官方说明过去24小时发生两起事件，网络故障导致部分用户错误率上升或服务可用性下降。团队在流量重路由期间仍有请求失败，并正在恢复受影响的容量。 Claude Devs 说明两起网络事件曾导致服务降级，服务已恢复但容量仍在逐步回稳。依赖 Claude 的生产工作流需要把短时不可用、容量不足和恢复阶段的延迟波动分开监控。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-07-31",
+      "extras": {
+        "tags": [
+          "Claude",
+          "网络故障",
+          "服务可用性",
+          "流量重路由"
+        ],
+        "practice_suggestions": [
+          "为Claude调用增加超时、重试和跨供应商故障转移策略。"
+        ],
+        "thread_urls": [
+          "https://x.com/ClaudeDevs/status/2082937616941695241",
+          "https://x.com/ClaudeDevs/status/2082937618048958710"
+        ]
+      }
     }
   },
-  "last_fetch": "2026-08-02T12:33:33.739Z"
+  "last_fetch": "2026-08-02T15:37:55.753Z"
 }
