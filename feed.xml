@@ -100,6 +100,128 @@
 ]]></description>
     </item>
     <item>
+      <title>CatchUp 周报 2026-W31</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/weekly/2026-W31.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W31.md</guid>
+      <pubDate>Sun, 02 Aug 2026 00:00:00 GMT</pubDate>
+      <category>weekly</category>
+      <description><![CDATA[<h1>CatchUp 周报 — 2026-W31 (07/27 - 08/02)</h1>
+<h2>本周趋势</h2>
+<ul>
+<li><strong>旗舰模型密集发布</strong>：Kimi K3、GPT-5.6、DeepSeek-V4-Flash 与 Qwen3.8-Max 接连推进，开放权重、API 接入和长上下文成为同等重要的竞争维度。</li>
+<li><strong>推理效率成为指标</strong>：GPT-5.6 Sol 的评测 harness、GPU kernel 和价格调整显示，模型质量必须与延迟、上下文管理和单位任务成本一起衡量。</li>
+<li><strong>长程代理走向真实环境</strong>：Gemini Robotics 2 的多机器人协作与 Codex Security 的工程接入，把代理评估从演示结果推进到连续任务和可审计工作流。</li>
+<li><strong>模型参与高门槛研究</strong>：Claude Mythos 的密码分析和 OpenAI 的科学计算案例表明，AI 正在进入需要专业判断、复现实验和责任边界的研究环节。</li>
+<li><strong>多模态产品持续落地</strong>：Seedance 2.5、GPT-Live-Transcribe 与 Qwen-Audio-3.0-ASR-Flash 分别推进视频、语音和专业术语处理，应用价值开始由业务指标验证。</li>
+</ul>
+<h2>Top 10 最重要文章</h2>
+<h3>1. <a href="https://x.com/Kimi_Moonshot/status/2081760186235289764">Kimi K3 发布：2.8T MoE 开放模型接近前沿</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Kimi (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/27</li>
+<li><strong>标签</strong>: <code>Kimi K3</code> <code>开放权重</code> <code>MoE</code> <code>长上下文</code> <code>原生视觉</code> <code>Agent 编程</code></li>
+</ul>
+<p><strong>摘要</strong>: Moonshot 发布约 2.8 万亿参数的稀疏 MoE 模型，支持原生视觉和最高 100 万 token 上下文，面向长程编程、知识工作与推理。配套的 GPU 内核、编译器和托管入口让开放模型进一步靠近前沿闭源模型的使用体验。</p>
+<h3>2. <a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses">Claude Mythos 发现后量子签名与 AES 弱点</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research | <strong>分类</strong>: 研究 | <strong>日期</strong>: 07/28</li>
+<li><strong>标签</strong>: <code>Claude Mythos</code> <code>密码学</code> <code>后量子密码</code> <code>HAWK</code> <code>AES</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 研究人员借助 Claude Mythos 改进了对后量子签名方案 HAWK 的攻击，并发现针对七轮 AES 的新攻击方法。结果目前不会影响生产系统，但展示了前沿模型参与高门槛密码分析的能力，并推动 CryptanalysisBench 基准建设。</p>
+<h3>3. <a href="https://x.com/AnthropicAI/status/2082153297670992134">Claude Mythos 破解密码学弱点：HAWK/AES 攻击与基准</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter) | <strong>分类</strong>: 研究 | <strong>日期</strong>: 07/28</li>
+<li><strong>标签</strong>: <code>Claude Mythos</code> <code>密码分析</code> <code>HAWK</code> <code>AES</code> <code>CryptanalysisBench</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Mythos Preview 帮助研究人员发现 HAWK 与七轮 AES 变体中的数学弱点，并加速既有攻击。相关论文、推理材料和复现实验细节已公开，CryptanalysisBench 也为模型密码分析能力提供了统一评测入口。</p>
+<h3>4. <a href="https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency">GPT-5.6：提升前沿智能与推理效率</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/29</li>
+<li><strong>标签</strong>: <code>GPT-5.6</code> <code>推理效率</code> <code>智能体</code> <code>模型发布</code></li>
+</ul>
+<p><strong>摘要</strong>: GPT-5.6 同时改进模型能力、推理系统和智能体工作流，目标是在相同预算下交付更多有用工作。此次发布将前沿能力与单位成本效率放在同一条升级路径上。</p>
+<h3>5. <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores">GPT-5.6 Sol：ARC-AGI-3 得分三倍与长程评测方法</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 研究 | <strong>日期</strong>: 07/29</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>ARC-AGI-3</code> <code>上下文压缩</code> <code>长程代理</code> <code>模型评测</code></li>
+</ul>
+<p><strong>摘要</strong>: GPT-5.6 Sol 在 ARC-AGI-3 上的表现高度依赖评测 harness：保留推理状态并启用上下文压缩后，得分提升至原来的三倍，输出 token 还减少约六倍。结果说明长程代理的能力测量取决于模型、API 设置、提示词和上下文管理的组合。</p>
+<h3>6. <a href="https://x.com/OpenAI/status/2082577277246972300">GPT-5.6 Sol 推理优化：成本降20%，效率提升</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/29</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>推理优化</code> <code>GPU kernel</code> <code>推测解码</code> <code>Codex</code></li>
+</ul>
+<p><strong>摘要</strong>: GPT-5.6 Sol 用于优化自身推理基础设施，生产 GPU kernel 改进使服务成本降低约 20%，推测解码让 token 生成效率提升超过 15%。同一套系统优化也用于 Codex，评估时应同时记录质量、端到端延迟和单位任务成本。</p>
+<h3>7. <a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6">GPT-5.6 价格性能升级：降价、提速与渠道调整</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 07/30</li>
+<li><strong>标签</strong>: <code>GPT-5.6</code> <code>API定价</code> <code>推理优化</code> <code>Fast模式</code> <code>Codex</code> <code>成本效率</code></li>
+</ul>
+<p><strong>摘要</strong>: GPT-5.6 通过推理栈、GPU kernel、推测解码和代理基础设施优化降低单位任务成本，并覆盖 API、Codex 与 ChatGPT Work 等渠道。Fast 模式和新的价格方案扩大了同一预算的可用产出，但仍需用真实工作负载复核质量、延迟和配额。</p>
+<h3>8. <a href="https://x.com/GoogleDeepMind/status/2082844162928381956">Gemini Robotics 2：灵巧操作与多机器人协作升级</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/30</li>
+<li><strong>标签</strong>: <code>Gemini Robotics 2</code> <code>机器人智能</code> <code>灵巧操作</code> <code>全身控制</code> <code>多机器人</code></li>
+</ul>
+<p><strong>摘要</strong>: Gemini Robotics 2 推进灵巧操作、全身控制和跨任务泛化，Apollo 2 展示了装包、精细操控和多机器人协同整理。机器人模型的验证重点因此从单一动作成功率扩展到连续环境任务、安全边界和多机协调。</p>
+<h3>9. <a href="https://x.com/deepseek_ai/status/2083084415157022911">DeepSeek-V4-Flash API 公测：适配 Codex</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: DeepSeek (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 07/31</li>
+<li><strong>标签</strong>: <code>DeepSeek-V4-Flash</code> <code>API</code> <code>Codex</code> <code>模型接入</code></li>
+</ul>
+<p><strong>摘要</strong>: DeepSeek 开放 V4-Flash API 公测并提供 Codex 适配路径，后续说明确认 0731 版本主要更新 API，而非模型架构。开发者应按接口兼容、实际延迟、限流和数据策略评估迁移。</p>
+<h3>10. <a href="https://x.com/Alibaba_Qwen/status/2084100707423289643">Qwen3.8-Max发布：2.4T模型与开放权重预告</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter) | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 08/02</li>
+<li><strong>标签</strong>: <code>Qwen3.8-Max</code> <code>开放权重</code> <code>长程代理</code> <code>多模态</code> <code>编码</code> <code>模型评测</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen3.8-Max 面向编码、协作和长时程任务发布，官方称其具备 2.4T 参数规模，并计划开放模型权重与 Qwen3.8-27B。发布线程强调芯片设计、电商策略和视觉反馈闭环等长程能力，相关竞技场成绩仍应结合固定任务复核。</p>
+<h2>分类概览</h2>
+<h3>模型发布</h3>
+<p>本周共记录 10 条模型发布。Kimi K3 以 2.8T 稀疏 MoE、百万上下文和原生视觉能力冲击开放模型上限，GPT-5.6 则从模型能力、推理系统和智能体工作流同时升级。DeepSeek-V4-Flash 通过 API 与 Codex 适配降低接入门槛，Qwen3.8-Max 在周末以 2.4T 规模和开放权重计划加入竞争。模型发布不再只是参数和榜单比较，部署方式、价格和长期任务能力正在成为同一事件的一部分。</p>
+<h3>研究</h3>
+<p>研究类共 10 条，重点聚焦密码分析、评测方法和智能体辅助科学计算。Claude Mythos 对 HAWK 与 AES 的研究把模型带入高门槛密码学实验，同时以 CryptanalysisBench 为后续评测建立基础。GPT-5.6 Sol 的 ARC-AGI-3 结果则说明 harness、推理状态和上下文压缩会显著改变长程代理的测量结论。科学计算案例和 Kimi 的 PerceptionBench 进一步表明，研究价值需要与可复现基准和人工责任配套。</p>
+<h3>产品与功能</h3>
+<p>产品与功能共 16 条，覆盖 Gemini Managed Agents、MCP 无状态协议、Codex Security CLI、ChatGPT 学术研究入口和远程电脑控制。OpenAI 同时推进 GPT-Live 转写、语音工作流和 ChatGPT Work 的模型渠道调整，Google 则把 hooks 与托管智能体能力放入 API。产品形态正在从单一聊天界面转为可接入、可编排、可审计的工作流。上线时应把权限、日志、回滚和成本预算与功能测试一起设计。</p>
+<h3>商业动态</h3>
+<p>商业动态共 6 条，主要围绕企业采用、基础设施和服务模式。OpenAI 的电信个性化、金融与新闻机构案例，以及 UST 引入 Claude 处理物理 AI 工程流程，说明商业价值开始用 ARPU、流失率、交付效率和工程周期衡量。Kimi K3 的托管入口和 Qwen、DeepSeek 的 API 路径也显示，模型供给正在通过多家平台分发。采购决策需要同时比较容量、价格、数据治理和迁移能力。</p>
+<h3>政策与安全</h3>
+<p>政策与安全共 7 条，议题从开放权重立场延伸到密码学、长时程代理和代码安全。Anthropic 不主张全面禁止开放权重模型，但 Claude Mythos 与安全评测越界事件提醒部署者，高风险能力需要更细的限制和审计。Codex Security CLI、长程代理轨迹监测和 MCP 认证设计把安全措施推进到开发与运行阶段。对于医疗、网络安全和机器人等场景，权限隔离和人工接管仍是上线前提。</p>
+<h3>教程与观点</h3>
+<p>教程与观点共 9 条，集中在 Claude Code、Codex、AI 工程和模型评测的实践方法。Thariq 关于数学研究效率的讨论、OpenAI 对科学计算责任的强调，以及开发者对长程任务的经验，都指向同一个结论：模型产出增加并不等于验证成本消失。团队应先定义任务边界、失败类型和验收 harness，再根据实际数据选择模型和工具。</p>
+<h2>本周值得上手试试</h2>
+<ol>
+<li><strong>Kimi K3</strong> — 下载权重或使用托管 API 跑长上下文代码库任务，并记录上下文稳定性、工具调用成功率、延迟和成本。</li>
+<li><strong>GPT-5.6</strong> — 用现有高频任务同时对比质量、延迟、推理配置和单位成本，为智能体设置预算上限。</li>
+<li><strong>GPT-5.4/5.6 渠道</strong> — 在 8 月 31 日前检查 ChatGPT 工作流依赖，重新测算 Luna、Terra、Sol 的成本和配额。</li>
+<li><strong>Codex Security CLI</strong> — 先在测试仓库运行基础扫描，固定依赖和忽略规则，再接入 CI/CD 并安排人工复核。</li>
+<li><strong>GPT-Live-Transcribe</strong> — 按实时交互和批处理场景选型，用业务音频测试术语、词错误率、延迟和吞吐。</li>
+<li><strong>MCP</strong> — 迁移一个远程服务器到无状态架构，并为异步 Tasks 明确状态、超时、重试、认证和凭证轮换。</li>
+<li><strong>Gemini Managed Agents</strong> — 搭建带 hooks 的多步骤任务，比较 3.6 Flash 的延迟、成本和失败恢复。</li>
+<li><strong>远程电脑控制</strong> — 仅在低风险测试环境启用，限制敏感文件与账户访问并保留可观测日志和回滚机制。</li>
+<li><strong>Google Search AI Mode</strong> — 用购票、路线和日程等多条件任务测试结果，人工核对价格、库存、时效和过敏风险。</li>
+<li><strong>Grok Voice 与 Superwhisper</strong> — 用真实会议片段测试口音、噪声和专业术语，并先明确录音留存、通知与人工接管规则。</li>
+<li><strong>ChatGPT for Academic Researchers</strong> — 从文献整理、假设检验或代码分析开始，先核对隐私、训练政策、引用复核和协作者权限。</li>
+<li><strong>实时零售客服</strong> — 以高频问题和多语言需求做小规模试点，同时跟踪使用量、问题解决率、收入和满意度。</li>
+<li><strong>TinyFish 网页代理</strong> — 在隔离环境限制域名和凭据，分别记录搜索、抓取与浏览器操作的来源、权限和结果。</li>
+<li><strong>DeepSeek-V4-Flash</strong> — 用固定提示集在 Codex 非关键任务中灰度接入，比较质量、延迟、单位成本、兼容性和限流。</li>
+<li><strong>Gemini Robotics 2</strong> — 用仿真和受控真实任务测试抓取、装配、全身控制、多机协调和失败恢复，并配置急停。</li>
+<li><strong>Seedance 2.5</strong> — 用同一脚本测试连续镜头一致性，再建立参考素材库比较角色和场景稳定性。</li>
+<li><strong>Codex ImageGen</strong> — 把生成、局部修改和结果审阅串成版本化流程，同时明确素材版权、审核和导出标准。</li>
+<li><strong>Claude 服务稳定性</strong> — 为关键调用增加超时、重试和跨供应商故障转移，并区分容量不足与请求错误。</li>
+<li><strong>Qwen-Audio ASR</strong> — 用医疗或工业术语音频测术语召回率，根据实时与批处理场景选接口并维护自定义热词。</li>
+<li><strong>ChatGPT Activity 与语音简报</strong> — 先在非敏感项目中集中对话、生成简报提纲，确认日历、任务和家庭成员的数据边界后再启用自动播报。</li>
+</ol>
+<h2>值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores">GPT-5.6 Sol：ARC-AGI-3 得分三倍与长程评测方法</a> — 说明评测 harness、推理状态和上下文压缩如何改变长程代理结论。</li>
+<li><a href="https://www.anthropic.com/research/discovering-cryptographic-weaknesses">Claude Mythos 发现后量子签名与 AES 弱点</a> — 适合了解模型参与密码分析的真实边界、复现材料和安全含义。</li>
+<li><a href="https://x.com/Kimi_Moonshot/status/2081760186235289764">Kimi K3 发布：2.8T MoE 开放模型接近前沿</a> — 从架构、百万上下文到托管生态，完整展示开放模型逼近前沿的路径。</li>
+<li><a href="https://x.com/GoogleDeepMind/status/2082844162928381956">Gemini Robotics 2：灵巧操作与多机器人协作升级</a> — 具身智能从单动作演示走向多机器人连续任务的代表案例。</li>
+<li><a href="https://openai.com/index/advancing-the-price-performance-frontier-with-gpt-5-6">GPT-5.6 价格性能升级：降价、提速与渠道调整</a> — 适合据此重做模型选型中的成本、速度、配额和渠道评估。</li>
+</ul>
+]]></description>
+    </item>
+    <item>
       <title>CatchUp 日报 2026-08-01</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-01.html</link>
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-08-01.md</guid>
@@ -3378,207 +3500,6 @@
 <li><strong>产品与功能</strong> | <code>Claude Devs</code> <code>速率限制</code> <code>开发者体验</code> <code>额度</code> — Claude Devs 表示已为用户重置使用限制，相关转发说明这是一次面向开发者体验的额度处理。该更新解决短期使用摩擦，但不改变 Claude Code 或 API 的核心能力。 · <a href="https://x.com/ClaudeDevs/status/2075279141352706215">Claude Devs (Twitter)</a></li>
 <li><strong>商业动态</strong> | <code>Anthropic</code> <code>伯南克</code> <code>治理</code> <code>长期利益信托</code> <code>AI 经济影响</code> — Anthropic 的长期利益信托任命前美联储主席、本·伯南克为新成员，强化其在经济冲击、制度治理和 AI 社会影响方面的专业判断。该信托独立于公司管理层和投资者，拥有任命 Anthropic 董事会成员的权力，并为公司长期负责任发展提供约束与建议。 · <a href="https://x.com/AnthropicAI/status/2075257492716879967">Anthropic (Twitter)</a></li>
 </ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-07-09</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-09.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-09.md</guid>
-      <pubDate>Thu, 09 Jul 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-09</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>评测可信度成为主线</strong>：OpenAI 审计 SWE-Bench Pro 并撤回推荐，显示编码模型进步必须建立在任务质量和专家复核之上。</li>
-<li><strong>模型产品继续分化</strong>：GPT-5.6 Sol/Fable、GPT-Live 和 Claude 相关体验分别从版本取舍、实时语音与日常协作切入用户工作流。</li>
-<li><strong>安全治理从原则走向机制</strong>：OpenAI 政府合作原则、Anthropic 的双重用途知识研究与 AI 反思工具共同推进模型使用边界的细化。</li>
-<li><strong>具身与教育场景扩展</strong>：Robostral Navigate 推进机器人导航，K-12 AI 技能营则把模型能力带入更广泛的学习场景。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/AnthropicAI/status/2075005777522172146">Anthropic 合作研究 GRAM：将双重用途知识拆分为可移除模块</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic (Twitter)</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>GRAM</code> <code>双重用途</code> <code>模块化预训练</code> <code>模型安全</code> <code>能力移除</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 与 AE Studio 的研究提出 GRAM，通过把病毒学、网络安全等双重用途知识路由到专用模块，使模型可以按部署需求移除相应能力。实验显示，模块移除在多个规模上接近过滤训练数据的效果且不明显损害通用性能，但目前尚未在前沿规模或生产模型中验证。</p>
-<hr>
-<h3>2. <a href="https://x.com/SpaceXAI/status/2074915721684086811">xAI 发布面向编码与智能体的 Grok 4.5</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Grok 4.5</code> <code>代码生成</code> <code>AI 智能体</code> <code>Cursor</code> <code>推理效率</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI 宣布推出 Grok 4.5，这是首个专门针对编码和智能体场景训练的模型。该模型与 Cursor 合作训练，主打前沿智能、较高推理速度和成本效率。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>评估编码模型时，应同时比较代码正确率、智能体任务完成率、响应速度和单位任务成本。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>3. <a href="https://openai.com/index/government-national-security-partnerships">OpenAI 发布政府与国家安全合作原则</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>国家安全</code> <code>政府合作</code> <code>网络防御</code> <code>生物安全</code> <code>AI治理</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发布国家安全原则，说明其与政府及盟友开展网络防御、生物安全等合作时的责任边界。原则强调民主问责、人类判断和法治，并重申不得用于大规模国内监控、自主武器指挥或高风险自动化决策。</p>
-<hr>
-<h3>4. <a href="https://openai.com/index/separating-signal-from-noise-coding-evaluations">SWE-Bench Pro 审计：约三成任务存在缺陷，OpenAI 撤回推荐</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>SWE-Bench Pro</code> <code>代码评测</code> <code>基准审计</code> <code>模型可靠性</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 对 SWE-Bench Pro 进行了系统审计，发现约三成任务存在规格、测试或环境方面的缺陷，可能夸大或扭曲编码模型的进步。团队结合调查代理与专家评审重新检查任务质量，并撤回对该基准的推荐。该事件强调代码评测需要更难、更公平且可复核的任务，不能只看单一分数排名。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2074972182640492731">OpenAI 结合调查代理与专家评审审计代码基准</a> · OpenAI (Twitter) · 调查与专家评审</li>
-<li><a href="https://x.com/OpenAI/status/2074972179385720836">OpenAI 审计 SWE-Bench Pro 并撤回推荐</a> · OpenAI (Twitter) · 审计结果摘要</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在采用外部编码基准前抽样复核任务规格、测试有效性和环境一致性。</li>
-<li>把人工复核、失败样本和任务缺陷率纳入内部模型评测报告。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://x.com/sama/status/2075047747250684352">GPT-5.6 Sol/Fable：不同任务的能力取舍与使用反馈</a></h3>
-<ul>
-<li><strong>来源</strong>: Sam Altman (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>GPT-5.6</code> <code>Sol</code> <code>Fable</code> <code>模型评测</code> <code>用户反馈</code></li>
-</ul>
-<p><strong>摘要</strong>: 围绕 GPT-5.6 的 Sol 与 Fable 版本，用户反馈集中在情绪支持、团队协作、可靠性和日常任务体验的差异。不同版本在能力、速度和使用成本之间存在取舍，适合根据具体工作流选择。相关讨论也反映出模型发布后的真实使用反馈，正在成为评估产品价值的重要补充。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2075063511290662996">Sam Altman 转述 Sol 与 Fable 的使用取舍</a> · Sam Altman (Twitter) · 使用取舍</li>
-<li><a href="https://x.com/sama/status/2075048072837734448">Sam Altman 简短回应 GPT-5.6 的情绪支持能力</a> · Sam Altman (Twitter) · 情绪支持讨论</li>
-<li><a href="https://x.com/sama/status/2075047983314571764">开发者称 GPT-5.6 显著提升团队使用量与可靠性</a> · Sam Altman (Twitter) · 团队使用反馈</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用固定任务集分别测试 Sol 与 Fable 的可靠性、响应速度和协作体验，再按场景分配默认模型。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://x.com/OpenAI/status/2075019750569378007">GPT-Live 上线 ChatGPT：新一代实时语音能力全面开放</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>GPT-Live</code> <code>ChatGPT</code> <code>实时语音</code> <code>语音交互</code></li>
-</ul>
-<p><strong>摘要</strong>: GPT-Live 将新一代实时语音能力带入 ChatGPT，并向付费用户全面开放。更新强调更自然的对话体验，也让用户可以在实际任务中持续使用语音交互。相关演示和早期体验显示，实时语音正在从展示功能变成 ChatGPT 的日常入口。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2075068286107316317">Sam Altman 转发 GPT-Live 视频并称体验自然</a> · Sam Altman (Twitter) · 视频展示</li>
-<li><a href="https://x.com/sama/status/2074909079450050629">GPT-Live 新一代语音能力在 ChatGPT 上线</a> · Sam Altman (Twitter) · 先行体验</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在真实工作流中比较 GPT-Live 的延迟、打断恢复和长对话稳定性，再决定是否替代文字输入。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>7. <a href="https://www.anthropic.com/news/ust-claude">UST 将 Claude 引入芯片、汽车等物理 AI 工程流程</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>UST</code> <code>物理AI</code> <code>工业自动化</code> <code>企业合作</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 与技术工程服务公司 UST 合作，把 Claude 部署到芯片、汽车和联网设备的工程环境中，并为全球 20,000 名工程师、架构师和顾问提供培训。双方强调在高风险生产场景中保留人工审批、审计控制和治理机制，推动 Claude 从试点进入实际业务系统。</p>
-<hr>
-<h3>8. <a href="https://www.anthropic.com/news/hard-questions">Anthropic 公开征集 AI 最难问题并承诺追踪回应</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>AI治理</code> <code>公众参与</code> <code>就业影响</code> <code>AI安全</code> <code>Anthropic Institute</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发起公开倡议，邀请公众提出关于就业、家庭、社会、科学和医学影响的尖锐 AI 问题。公司承诺公开追踪为回应这些问题采取的行动，并披露与其公共利益使命之间的进展和不足。</p>
-<hr>
-<h3>9. <a href="https://www.anthropic.com/news/ben-bernanke">Ben Bernanke 加入 Anthropic 长期利益信托</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>Ben Bernanke</code> <code>AI治理</code> <code>长期利益信托</code> <code>AI经济影响</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 的长期利益信托任命前美联储主席、诺贝尔经济学奖得主 Ben Bernanke 为新成员。Bernanke 将利用宏观经济和金融危机治理经验，参与评估 AI 对劳动力、经济及社会的长期影响，并为公司治理提供独立监督。</p>
-<hr>
-<h3>10. <a href="https://www.anthropic.com/news/reflect-with-claude">Claude 测试版推出 AI 使用反思仪表盘</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>使用分析</code> <code>AI素养</code> <code>隐私</code> <code>数字健康</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 在 Claude 网页版和桌面应用中推出测试版反思功能，按近 1、3、6 或 12 个月的对话活动展示使用主题、时间模式和任务类型。功能还结合 4D AI Fluency Framework 提供自我评估、安静时段和休息提醒，并明确排除隐身对话、底层连接文件和健康集成对话。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>查看使用反思报告，找出适合委派给 AI 与应保留人工判断的任务边界。</li>
-<li>为高频使用场景设置安静时段，并定期检查敏感信息是否被纳入工作流。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>11. <a href="https://x.com/MistralAI/status/2074856309438980145">Robostral Navigate：面向多种机器人形态的具身导航模型</a></h3>
-<ul>
-<li><strong>来源</strong>: Mistral AI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Robostral Navigate</code> <code>具身智能</code> <code>机器人导航</code> <code>仿真训练</code></li>
-</ul>
-<p><strong>摘要</strong>: Mistral 发布 Robostral Navigate，用于让机器人在复杂环境中执行具身导航任务。模型结合仿真轨迹与高效训练方法提升导航能力，并尝试在不同尺寸和形态的机器人之间泛化。该发布展示了开源模型厂商向真实世界机器人和智能体控制扩展的方向。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/MistralAI/status/2074856314132410755">Robostral Navigate 通过仿真轨迹与高效训练提升导航能力</a> · Mistral AI (Twitter) · 训练与仿真</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>先在仿真环境中评估不同机器人形态下的导航成功率，再逐步迁移到真实设备。</li>
-<li>为真实部署增加速度、碰撞和人工接管约束，并记录失败轨迹用于再训练。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>12. <a href="https://x.com/trq212/status/2074993112217461020">模型能力提升让软件重写变得更快更便宜</a></h3>
-<ul>
-<li><strong>来源</strong>: Thariq (Twitter)</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>软件重写</code> <code>代码代理</code> <code>Bun</code> <code>可测试性</code> <code>工程效率</code></li>
-</ul>
-<p><strong>摘要</strong>: Thariq 认为，软件工程领域应更新对重写项目的判断：随着模型能力提升，重写可能变得足够便宜、快速。以 Bun 重写为例，他同时提醒，多数应用仍不具备同等程度的可测试性和可验证性。</p>
-<hr>
-<h3>13. <a href="https://openai.com/index/k-12-educators-practical-skills">OpenAI 与沃尔顿基金会举办 K-12 AI 技能营</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>AI教育</code> <code>K-12</code> <code>教师培训</code> <code>OpenAI Academy</code> <code>AI技能</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Academy 将与沃尔顿家庭基金会合作，在美国多个城市为教师、管理者和学区负责人举办实践型 AI 技能营。活动覆盖备课、家校沟通和行政工作，并计划让超过 1,600 名教育工作者在导师支持下建立负责任使用 AI 的能力。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>从备课、家长沟通等低风险重复工作中选择一个场景试用 AI，并保留人工复核。</li>
-<li>建立学校级提示词和隐私规范，再逐步扩展到更多教学流程。</li>
-</ul>
-</blockquote>
-<hr>
 ]]></description>
     </item>
   </channel>
