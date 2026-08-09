@@ -5,8 +5,165 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 07 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 08 Aug 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-08-08</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-08.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-08-08.md</guid>
+      <pubDate>Sat, 08 Aug 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-08-08</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>网络安全模型治理</strong>：Astra被列为网络安全关键模型，能力开放节奏开始由Preparedness Framework和额外安全控制共同决定。</li>
+<li><strong>代理权限安全化</strong>：Claude Code自动模式把Shell命令分类器、管理员管控和长时任务审查结合起来，默认权限正在成为产品设计的一部分。</li>
+<li><strong>多会话编排成熟</strong>：Claude Code的跨会话消息与Managed Agents的预算、技能和顾问机制，都在强化可分工、可复核的Agent工作流。</li>
+<li><strong>具身产品继续试探</strong>：Apollo 2通过Gemini Robotics 2展示机器人交互体验，但公开信息仍主要是演示，缺少可比性能指标。</li>
+<li><strong>能力宣传回到复现</strong>：Qwen3.8-Max的视觉案例和用户基准反馈提供了测试线索，也凸显统一数据、提示词和评测设置的重要性。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/responding-next-frontier-critical-cyber-capabilities">Astra网络安全能力评估：关键模型与防护措施</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Astra</code> <code>网络安全</code> <code>Preparedness Framework</code> <code>安全护栏</code> <code>模型治理</code></li>
+</ul>
+<p><strong>摘要</strong>: Astra被评估为首个网络安全关键模型，具备足以改变防御方与攻击方能力平衡的潜力。评估结果推动增加开发控制和安全护栏，目标是在安全条件满足后扩大开放，让防御方也能使用其先进网络安全能力。当前团队仍在补充安全准备，模型尚未立即普遍可用；后续应重点关注开放范围、访问条件和风险评估，而不是只看能力演示。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/sama/status/2085862292311396515">Astra拟扩大开放但仍需完成网络安全准备</a> · Sam Altman (Twitter) · 开放节奏与安全准备</li>
+<li><a href="https://x.com/OpenAI/status/2085801349866729975">OpenAI将Astra列为关键网络安全模型</a> · OpenAI (Twitter) · 关键模型评估</li>
+<li><a href="https://x.com/OpenAI/status/2085865635586912359">OpenAI称Astra将逐步开放</a> · OpenAI (Twitter) · 逐步开放计划</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>把高风险网络任务纳入独立审查、权限隔离和沙箱测试流程。</li>
+<li>在Astra正式可用后先用低风险防御任务验证能力与防护边界，再逐步扩大权限。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/ClaudeDevs/status/2085853169930957158">Claude Managed Agents更新：预算、仓库技能与顾问模型</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Managed Agents</code> <code>预算控制</code> <code>仓库技能</code> <code>顾问模型</code> <code>Agent编排</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Managed Agents新增会话预算控制，达到上限后暂停并发出budget_reached事件，用户提高预算后可继续。它还可以在会话开始时从附加代码仓库的.claude/skills/目录自动加载技能，并为工作Agent配置更强的顾问模型提供第二意见。更新覆盖成本控制、技能复用和复杂任务复核三个层面，但自动加载的技能与顾问调用都应纳入版本、权限和成本治理。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2085853173101797565">Managed Agents可自动加载仓库中的技能</a> · Claude Devs (Twitter) · 仓库技能自动加载</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>为长期Agent会话设置预算上限并监听budget_reached事件，设计人工复核或调高预算流程。</li>
+<li>将审核过的通用技能放入.claude/skills/并纳入版本管理和代码审查。</li>
+<li>为高风险任务限定顾问模型调用条件，记录建议、执行结果和额外成本。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/ClaudeDevs/status/2085794862608318627">Claude Code更新：自动模式默认启用与跨会话协作</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>自动模式</code> <code>权限安全</code> <code>会话消息</code> <code>长时任务</code> <code>管理员管控</code> <code>Opus 5</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code将从8月14日起对Pro、Max和Team用户默认启用自动模式，用独立分类器审查Shell命令和其他操作；测试中危险命令识别率为89%，对比手动审批的14%，分类器开销也不计入这些计划的用量限制。管理员可以通过托管设置固定默认模式或禁用自动模式，用户仍可切换模式，适合先在低风险、可回滚仓库中观察误拦截和漏检。与此同时，Claude Code新增跨会话消息，多个会话可以通过摘要交接、双向提问和状态同步并行处理任务，但接收会话不会自动获得原始历史或文件。该组合把长时任务的权限控制和多会话协作放进同一工作流，仍应以PR审查、CI和最小权限作为最终门禁。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2085817074816070014">Claude Code支持会话间互传任务</a> · Claude Devs (Twitter) · 会话摘要交接</li>
+<li><a href="https://x.com/ClaudeDevs/status/2085794866852983111">自动模式适合Claude Code长时任务</a> · Claude Devs (Twitter) · 长时任务与Opus 5</li>
+<li><a href="https://x.com/trq212/status/2085863307106468143">Claude Code将默认启用更安全的自动模式</a> · Thariq (Twitter) · 权限策略与安全动机</li>
+<li><a href="https://x.com/trq212/status/2085804481984475437">Claude Code自动模式将面向多类用户默认上线</a> · Thariq (Twitter) · 默认上线时间与测试数据</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在默认切换前审查团队权限和生产仓库策略，先在隔离、可回滚的低风险项目启用自动模式。</li>
+<li>为自动模式保留管理员托管、命令审计和人工审批回退，并记录误拦截与漏检。</li>
+<li>用会话摘要拆分长任务，让一个会话实现、另一个会话审查或验证，并要求每个任务产出可审查PR和测试结果。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/demishassabis/status/2085914742414061886">Hassabis回顾AlphaGo第37手与可验证科学突破</a></h3>
+<ul>
+<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>AlphaGo</code> <code>第37手</code> <code>科学发现</code> <code>可验证领域</code></li>
+</ul>
+<p><strong>摘要</strong>: Demis Hassabis谈到AlphaGo著名的第37手，以及它十年后对数学和科学突破的意义。讨论重点是人工智能如何在可验证领域产生超出人类常规判断的新路径。</p>
+<hr>
+<h3>5. <a href="https://x.com/SpaceXAI/status/2085814657223209290">Warp Agent CLI 接入 Grok 订阅</a></h3>
+<ul>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>Warp Agent CLI</code> <code>X Premium</code> <code>SuperGrok</code></li>
+</ul>
+<p><strong>摘要</strong>: Warp Agent CLI 新增了通过 /connect-grok 连接 X Premium 或 SuperGrok 订阅的方式。用户可以在 Warp 中使用已有的相关订阅来调用 Grok，但该帖未说明具体模型、额度或权限限制。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Warp Agent CLI 中运行 /connect-grok，确认订阅授权流程和可用模型。</li>
+<li>比较接入后的调用额度、延迟与成本，再决定是否纳入日常终端工作流。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/GoogleDeepMind/status/2085737848318124083">Apollo 2展示：Gemini Robotics 2的具身交互体验</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Apollo 2</code> <code>Gemini Robotics 2</code> <code>具身智能</code> <code>机器人交互</code></li>
+</ul>
+<p><strong>摘要</strong>: Apollo 2的演示展示了运行在Gemini Robotics 2上的机器人对话与交互体验，并以机器人视角呈现产品能力。后续详情帖主要提供进一步了解Apollo 2的入口，没有补充性能指标或技术细节。当前更适合作为具身代理方向的产品信号，实际感知、规划和执行能力仍需结合可复现实验判断。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/GoogleDeepMind/status/2085740089011753248">Google DeepMind 引导查看 Apollo 2 详情</a> · Google DeepMind (Twitter) · 详情入口与产品引导</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>查看官方详情并整理Apollo 2支持的任务、传感器和部署条件。</li>
+<li>对演示中的感知、规划和执行能力建立可验证记录，避免只依据视频体验下结论。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>7. <a href="https://x.com/Alibaba_Qwen/status/2085636256365740460">Qwen3.8-Max视觉能力案例：单点反馈仍待复验</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.8-Max</code> <code>视觉理解</code> <code>多模态</code> <code>基准复现</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen3.8-Max的用户反馈涉及两类视觉能力：从云朵照片识别并绘制动物轮廓，以及一项据称领先Gemini 3.5 Flash约8.5个百分点的评测。前者还给出与Claude Opus 5、Kimi K3和GPT-5.6 Sol的单案例比较，后者没有公开基准、样本或测试设置。两条信息都更适合作为待复现的能力线索，不能替代统一提示词和完整数据集上的独立评测。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2085661188843794548">Qwen3.8-Max 展示云朵图像理解能力</a> · Qwen (Twitter) · 视觉案例与竞品比较</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用同一组图片、提示词和参数盲测Qwen3.8-Max与现用模型，分别记录准确性、创意性和速度。</li>
+<li>查找8.5个百分点差异对应的公开基准，复现完整测试条件后再决定模型切换。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>Oklo</code> <code>先进核能</code> <code>反应堆</code> <code>能源基础设施</code> — Sam Altman祝贺Oklo实现反应堆首次临界，距项目破土动工不到一年。该动态属于先进核能项目进展，对人工智能基础设施的能源讨论具有间接关联。 · <a href="https://x.com/sama/status/2085765236876046500">Sam Altman (Twitter)</a></li>
+<li><strong>商业动态</strong> | <code>ChatGPT Enterprise</code> <code>税务咨询</code> <code>企业应用</code> <code>生产力</code> — HSP GRUPPE使用ChatGPT Enterprise提升税务咨询工作的生产力与质量。该实践旨在释放更多产能，用于客户服务和专业咨询。 · <a href="https://openai.com/index/hsp-gruppe">OpenAI Blog</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-08-07</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-07.html</link>
@@ -3501,48 +3658,6 @@
 <li><strong>产品与功能</strong> | <code>Codex</code> <code>ChatGPT Work</code> <code>用量额度</code> <code>用户增长</code> — OpenAI 团队称 Codex 和 ChatGPT Work 已有 700 万活跃用户。为庆祝里程碑，用户账户获得一次可储备的用量重置，可在桌面端或网页端补充每周使用额度。 · <a href="https://x.com/sama/status/2076736417498267652">Sam Altman (Twitter)</a></li>
 <li><strong>产品与功能</strong> | <code>OpenAI</code> <code>Build Week</code> <code>Devpost</code> <code>开发者活动</code> — OpenAI Devs 宣布 Build Week 项目提交已开放，并提醒参赛者需在 7 月 21 日前通过 Devpost 提交。活动面向开发者展示基于 OpenAI 工具构建的项目，重点是把原型、演示和提交材料整理到可评审状态。 OpenAI Devs 提醒开发者在 7 月 21 日前提交 Devpost 活动项目。原始信息只给出提交链接和截止日期，因此这更像是开发者活动的低信息量提醒，而非新产品或模型发布。 · <a href="https://x.com/OpenAIDevs/status/2076715478878474575">OpenAI Devs (Twitter)</a></li>
 </ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-07-13</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-13.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-13.md</guid>
-      <pubDate>Mon, 13 Jul 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-13</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Claude 价值测量</strong>：Anthropic 用 30 万条对话量化模型与语言间的价值表达差异。</li>
-<li><strong>Claude 额度延长</strong>：Claude 将 Fable 5 付费访问和 Claude Code 高额度窗口延至 7 月 19 日。</li>
-<li><strong>OpenAI 社区征集</strong>：Sam Altman 征集 5.6 sol 应用案例，显示模型使用正转向作品展示。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://www.anthropic.com/research/claude-values-models-languages">Claude 不同模型与语言中的价值差异</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude</code> <code>价值对齐</code> <code>多语言</code> <code>模型行为</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 基于 309,815 条匿名 Claude.ai 对话，将主观问题中的价值表达压缩为四条可解释轴：服从与谨慎、温暖与严谨、深度与简洁、坦率与执行。研究发现 Sonnet 4.6 更偏服从、温暖和简洁，Opus 4.7 更偏谨慎、严谨、深入和坦率，不同语言间也存在明显差异。论文提出一种隐私保护监测方法，用于判断这些跨模型、跨语言差异是否符合预期或需要在训练中修正。</p>
-<hr>
-<h3>2. <a href="https://x.com/claudeai/status/2076351399999557669">Claude 延长 Fable 5 付费访问与 Code 额度</a></h3>
-<ul>
-<li><strong>来源</strong>: Claude (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Claude Fable 5</code> <code>Claude Code</code> <code>付费计划</code> <code>使用额度</code></li>
-</ul>
-<p><strong>摘要</strong>: Claude 宣布将所有付费计划中的 Claude Fable 5 访问期延长至 7 月 19 日，并继续把 Claude Code 每周速率限制维持在提高 50% 的水平。这属于面向付费用户和 Claude Code 工作流的临时额度与访问政策更新。 Claude 补充说明，用户最多可将每周使用额度的一半用于 Fable 5；超过后可继续用使用积分访问 Fable 5，或切换到其他模型以消耗剩余额度。该说明明确了促销访问期内 Fable 5 的额度边界和续用方式。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>检查团队付费账户是否可在 7 月 19 日前优先跑完 Fable 5 评测任务。</li>
-<li>把 Claude Code 高额度窗口用于迁移、重构或长链路调试等高消耗任务。</li>
-</ul>
-</blockquote>
-<hr>
 ]]></description>
     </item>
   </channel>
