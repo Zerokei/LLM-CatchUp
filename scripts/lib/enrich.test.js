@@ -88,7 +88,7 @@ test('enrichSnapshot: source with status error is skipped (no fetch, no full_tex
 
 test('BLOG_ENRICH_SOURCES: blog-type sources including 宝玉的分享', () => {
   assert.deepEqual([...BLOG_ENRICH_SOURCES].sort(), [
-    'Anthropic Blog', 'Anthropic Research', 'Google AI Blog', 'OpenAI Blog', 'The Batch', '宝玉的分享',
+    'Anthropic Blog', 'Anthropic Research', 'ByteDance Seed', 'Google AI Blog', 'OpenAI Blog', 'The Batch', '宝玉的分享',
   ]);
 });
 

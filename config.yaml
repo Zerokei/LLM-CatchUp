@@ -81,9 +81,9 @@ sources:
   # Twitter sources are fetched via socialdata.tools REST API. The `url`
   # field below points to the human-readable X.com profile; each route
   # module under scripts/routes/twitter-*.js hardcodes both the screen-name
-  # handle and the stable numeric userId (socialdata's tweets endpoint is
-  # keyed by ID). The API key is passed at runtime via the SOCIALDATA_API_KEY
-  # env var (GH Actions secret).
+  # handle (exact-window Search query) and the stable numeric userId (complete
+  # timeline verification/fallback). The API key is passed at runtime via the
+  # SOCIALDATA_API_KEY env var (GH Actions secret).
   #
   # max_silence_hours: if the newest item from this source is older than
   # this threshold, the fetcher marks the source as `degraded_stale` (see

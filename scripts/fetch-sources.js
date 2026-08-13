@@ -6,6 +6,9 @@ const yaml = require('js-yaml');
 const routes = require('./routes');
 const { enrichSnapshot } = require('./lib/enrich');
 const { computeThreadGroups, computeDuplicates } = require('./lib/derive-refs');
+const {
+  envFlag, sourceNamesNeedingFetch, configuredExistingSources, mergeApiUsage,
+} = require('./lib/fetch-resume');
 const { isoInZone, pacificDayBoundsUtc, previousPacificDate } = require('./lib/report-date');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
@@ -41,6 +44,29 @@ async function main() {
   const fetchedAt = new Date();
   const targetDate = process.env.REPORT_DATE || previousPacificDate(fetchedAt);
   const { start: windowStart, end: windowEnd } = pacificDayBoundsUtc(targetDate);
+  const outPath = path.join(CACHE_DIR, `${targetDate}.json`);
+  const resumeExisting = envFlag(process.env.RESUME_EXISTING);
+
+  let existingSnapshot = null;
+  if (resumeExisting && fs.existsSync(outPath)) {
+    try {
+      existingSnapshot = JSON.parse(fs.readFileSync(outPath, 'utf8'));
+      if (existingSnapshot.date !== targetDate) {
+        console.error(`resume cache date mismatch (${existingSnapshot.date} != ${targetDate}); running full fetch`);
+        existingSnapshot = null;
+      }
+    } catch (err) {
+      console.error(`resume cache unreadable (${err.message}); running full fetch`);
+      existingSnapshot = null;
+    }
+  }
+
+  const namesToFetch = sourceNamesNeedingFetch(sourceNames, existingSnapshot, resumeExisting);
+  const namesToFetchSet = new Set(namesToFetch);
+  if (resumeExisting && existingSnapshot && namesToFetch.length === 0) {
+    console.error(`resume: ${outPath} is complete; no sources need refetching`);
+    return;
+  }
 
   const output = {
     date: targetDate,
@@ -48,12 +74,13 @@ async function main() {
     fetched_at: isoInZone(fetchedAt),
     window_start: isoInZone(windowStart),
     window_end: isoInZone(windowEnd),
-    sources: {},
+    sources: configuredExistingSources(sourceNames, existingSnapshot),
   };
 
-  let anySuccess = false;
+  let anySuccess = Object.values(output.sources).some((entry) => entry.status !== 'error');
 
   for (const name of sourceNames) {
+    if (!namesToFetchSet.has(name)) continue;
     const route = routeByName[name];
     const cadence = configByName[name]?.cadence || 'daily';
     if (!route) {
@@ -70,7 +97,9 @@ async function main() {
     }
 
     console.error(`[${name}] fetching...`);
-    const result = await route.fetch();
+    const previousApiUsage = output.sources[name]?.api_usage;
+    const result = await route.fetch({ windowStart, windowEnd, targetDate });
+    const apiUsage = mergeApiUsage(previousApiUsage, result.usage);
     if (result.error) {
       console.error(`[${name}] ERROR: ${result.error}`);
       output.sources[name] = {
@@ -80,6 +109,8 @@ async function main() {
         filtered_count: 0,
         cadence,
         articles: [],
+        ...(result.warning ? { fetch_warning: result.warning } : {}),
+        ...(apiUsage ? { api_usage: apiUsage } : {}),
       };
       continue;
     }
@@ -124,12 +155,21 @@ async function main() {
       filtered_count: filtered.length,
       cadence,
       articles: filtered,
+      ...(result.warning ? { fetch_warning: result.warning } : {}),
+      ...(apiUsage ? { api_usage: apiUsage } : {}),
     };
     anySuccess = true;
   }
 
   console.error('enriching articles via Jina Reader...');
-  await enrichSnapshot(output, sourceConfigs);
+  const enrichTarget = {
+    sources: Object.fromEntries(
+      namesToFetch
+        .filter((name) => output.sources[name])
+        .map((name) => [name, output.sources[name]]),
+    ),
+  };
+  await enrichSnapshot(enrichTarget, sourceConfigs);
   console.error('enrichment done');
 
   // Deterministic preprocessing of cross-article references so the LLM
@@ -154,7 +194,6 @@ async function main() {
   console.error(`derive-refs: ${threadGroups.size} thread members, ${duplicates.size} duplicates`);
 
   fs.mkdirSync(CACHE_DIR, { recursive: true });
-  const outPath = path.join(CACHE_DIR, `${targetDate}.json`);
   fs.writeFileSync(outPath, JSON.stringify(output, null, 2) + '\n');
   console.error(`wrote ${outPath}`);
 

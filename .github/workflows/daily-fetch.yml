@@ -48,6 +48,9 @@ jobs:
         env:
           SOCIALDATA_API_KEY: ${{ secrets.SOCIALDATA_API_KEY }}
           REPORT_DATE: ${{ inputs.report_date }}
+          # The later schedule is a true resume: it does nothing when the
+          # first snapshot is complete, and refetches only missing/error sources.
+          RESUME_EXISTING: ${{ github.event_name == 'schedule' && github.event.schedule == '17 3 * * *' }}
 
       - name: Commit snapshot
         run: |
