@@ -113,87 +113,98 @@
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-08-15.md</guid>
       <pubDate>Sat, 15 Aug 2026 00:00:00 GMT</pubDate>
       <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-08-15（fallback，自动回退版）</h1>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-08-15</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>开源模型集中落地</strong>：Qwen3.8 系列从 27B 本地模型到 2.4T 云端版本同步进入开发者工具与推理平台。</li>
+<li><strong>代理权限默认化</strong>：Claude Code Auto mode 开始作为默认权限模式推出，并提供环境配置与可信域审查入口。</li>
+<li><strong>安全透明度提升</strong>：Anthropic 同时发布 Claude 水印 FAQ 与第二份风险报告，补充合规和能力风险说明。</li>
+<li><strong>模型生态扩张</strong>：Qwen、Cursor 与多家部署伙伴的协同，把模型能力快速延伸到终端、云服务和工作流。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2088280182356611304">Qwen3.8 系列发布：27B 开源 + 2.4T 云端部署</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.8-27B</code> <code>开源模型</code> <code>本地推理</code> <code>LM Studio</code> <code>MediaTek</code> <code>端侧 AI</code> <code>智能汽车</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen3.8 系列在本日进入集中发布与部署窗口。27B 开源模型强调多模态、长上下文和本地运行，已接入 LM Studio、Ollama、vLLM、AMD 与 RTX Spark 等生态。更大的 Qwen3.8-Max 与 2.4T-A95B 版本同步进入多个云服务和推理平台，并覆盖智能体与百万上下文工作负载。大量 Day-0 适配显示，模型发布重点正从权重开放扩展到端侧、云端和开发工具链。 该帖发布 Qwen3.8-27B 的性能信息链接，并作为同一发布线程的后续消息。抓取快照未展开短链内容，具体基准、测试设置和结论仍需打开原文核验。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088471287203246227">Qwen3.8-27B 登陆 LM Studio，约 17GB 可本地运行</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088467890467168751">Qwen3.8-27B 获 MediaTek 终端首日支持</a> · Qwen (Twitter) · 发布与合作进展</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088466210895823024">Qwen3.8-27B 登陆 RTX Spark，可本地部署</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088320747639071143">Qwen3.8-27B 接入 Ollama，支持多种 Agent</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088311161955754356">小模型主导真实使用，Qwen 领跑本地推理</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088309262451904671">Qwen3.8 接入 TokenSpeed，跨节点推理提速</a> · Qwen (Twitter) · 性能与推理能力</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088307374767693844">Qwen3.8-2.4T-A95B 上线 SiliconFlow</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088301611731009582">Qwen3.8-2.4T-A95B 上线 DeepInfra</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088299158465819110">Qwen3.8-27B 首日支持 AMD 本地运行</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088296583368781939">Qwen3.8-27B 可用 17GB 内存本地运行</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088293486995087461">Qwen3.8-27B 在单张 RTX 5090 达 206 tok/s</a> · Qwen (Twitter) · 本地部署生态</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088292188505755728">Qwen3.8-27B 接入 vLLM，单卡支持百万上下文</a> · Qwen (Twitter) · 性能与推理能力</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088288356337897550">Qwen3.8-2.4T-A95B 上线 DigitalOcean</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088287553292312968">Qwen3.8-2.4T-A95B 接入 Modal</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088286592431689909">Qwen3.8-2.4T-A95B 将接入 Nebius</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088286022597832788">Qwen3.8-Max 登陆 Fireworks：面向智能体与长上下文</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088285662223138851">Qwen3.8-Max 登陆 Together AI：开放 1M 上下文</a> · Qwen (Twitter) · 云端平台上线</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2088251315256520943">Qwen3.8-27B 发布预告</a> · Qwen (Twitter) · 发布与合作进展</li>
+</ul>
 <blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在约 17GB 可用内存的开发机上部署 Qwen3.8-27B，先用固定代码任务测试延迟和准确率。</li>
+<li>将本地模型接入现有 Agent 工具链，与云端模型比较成本、隐私和任务完成率。</li>
+<li>针对手机或车载场景梳理可离线运行的 Agent 任务，并评估端侧模型的延迟和功耗。</li>
+<li>在目标 MediaTek 平台上建立语音、工具调用和隐私保护的端到端测试集。</li>
+</ul>
 </blockquote>
 <hr>
-<h2>Claude Devs (Twitter)</h2>
+<h3>2. <a href="https://x.com/ClaudeDevs/status/2088332927189049738">Claude Code Auto mode 成为默认权限模式</a></h3>
 <ul>
-<li>[To configure auto mode for your environment, run /auto-mode-setup. Claude looks through your repo and suggests trusted repos and domains for you to review.</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Auto mode</code> <code>权限模式</code> <code>Shell 安全</code></li>
 </ul>
-<p>The more the classifier knows about your se](<a href="https://x.com/ClaudeDevs/status/2088332928514420830">https://x.com/ClaudeDevs/status/2088332928514420830</a>)</p>
+<p><strong>摘要</strong>: Claude Code 的 Auto mode 面向 Pro、Max 和 Team 用户逐步成为默认权限模式，并允许通过 Shift+Tab 随时切换或用 defaultMode 固定模式。该模式使用独立分类器审查 shell 命令和操作，测试中识别出 89% 的危险命令，而手动审批识别率为 14%。 Claude Code 提供 auto-mode-setup 命令，会检查代码仓库并建议可供审核的可信仓库和域名。配置中提供的信息越完整，系统越容易明确哪些操作可以安全执行。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Auto mode is rolling out today as the default permission mode in Claude Code for Pro, Max, and Team.</li>
+<li>在非生产仓库开启 Auto mode，记录分类器对常用命令的放行和拦截结果。</li>
+<li>为团队保留 Shift+Tab 手动切换路径，并为高风险操作制定人工复核规则。</li>
 </ul>
-<p>If you&#39;ve already set a default mode, Claude will ask before changing anything. You can still swit](<a href="https://x.com/ClaudeDevs/status/2088332927189049738">https://x.com/ClaudeDevs/status/2088332927189049738</a>)</p>
-<h2>Anthropic (Twitter)</h2>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/AnthropicAI/status/2088343978873966687">Anthropic 发布 Claude 文本水印 FAQ</a></h3>
 <ul>
-<li>[We’ve written an FAQ to answer some of the questions we&#39;ve received about watermarking.</li>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>文本水印</code> <code>欧盟 AI 法案</code> <code>内容溯源</code></li>
 </ul>
-<p>In summary:</p>
-<p>• We’re implementing watermarking to comply with the EU AI Act. Other major model developers have](<a href="https://x.com/AnthropicAI/status/2088343978873966687">https://x.com/AnthropicAI/status/2088343978873966687</a>)</p>
+<p><strong>摘要</strong>: Anthropic 发布 FAQ，解释为遵守欧盟 AI 法案而实施的文本水印。水印不会改变 Claude 输出的质量或内容，不增加 token 成本，也不会向读者显示隐藏字符或追溯到具体个人、组织或对话。</p>
+<hr>
+<h3>4. <a href="https://x.com/AnthropicAI/status/2088324824863236248">Anthropic 发布第二份 AI 风险报告</a></h3>
 <ul>
-<li>[As part of our Responsible Scaling Policy, we publish regular Risk Reports. These share detailed information on the risks of our systems and how prepared we are to address them.</li>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>风险报告</code> <code>Responsible Scaling</code> <code>AI 安全</code></li>
 </ul>
-<p>Our second Risk Repor](<a href="https://x.com/AnthropicAI/status/2088324824863236248">https://x.com/AnthropicAI/status/2088324824863236248</a>)</p>
-<h2>xAI (Twitter)</h2>
+<p><strong>摘要</strong>: Anthropic 发布第二份 Risk Report，延续其 Responsible Scaling Policy 下的定期风险披露机制。报告聚焦系统风险及现有应对准备度，为外部观察 Anthropic 的安全治理提供了最新材料。</p>
+<hr>
+<h3>5. <a href="https://x.com/SpaceXAI/status/2088250109188608289">Cursor 完成收购并加入 SpaceXAI</a></h3>
 <ul>
-<li>[Welcome to the SpaceXAI team!</li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Cursor</code> <code>SpaceX</code> <code>Grok</code> <code>收购</code></li>
 </ul>
-<p>Cursor will help us move faster on the path to the world&#39;s most useful AI, starting with software engineering and expanding into knowledge work.](<a href="https://x.com/SpaceXAI/status/2088250109188608289">https://x.com/SpaceXAI/status/2088250109188608289</a>)</p>
-<h2>Qwen (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088471287203246227">Laptop-size model, frontier-size leap. 🏃‍♀️Qwen3.8-27B is live on LM Studio. Try it! @lmstudio</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088467890467168751">Qwen3.8-27B is now part of your everyday life —  from smartphones to vehicles. ⚡️🚀Appreciate your work! @MediaTek</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088466210895823024">Ready right now! 😎Incredible to see Qwen3.8-27B fly on RTX Spark. Download, deploy and create somthing new. @NVIDIARTXSpark</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088320747639071143">Qwen3.8-27B  is available on @ollama ！Any harness you run, the model always delivers. Let&#39;s code together, and show us what you build.😎</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088311161955754356">Small models, big real-world impact. 
-Proud to see Qwen leading local inference in the State of Open Models. Enjoy the sunshine from Qwen.☀️ 😎 
-Appreciate your work! @huggingface</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088309262451904671">Excited to see Qwen3.8 running at scale with TokenSpeed! 🚀
-Light on latency, big on speed. Kudos to LightSeek for the fantastic Day-0 support! @lightseekorg</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088307374767693844">From idea to implementation in one go.🏃‍♀️ Max-level intelligence, served fresh on Day 0. 
-Qwen3.8-2.4T-A95B is live on SiliconFlow. Thanks! @SiliconFlowAI</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088301611731009582">Max-level intelligence, one API call away. Qwen3.8-2.4T-A95B is now live on DeepInfra, ready for your creative builds. 🥳
-Take a deep dive on DeepInfra! @DeepInfra</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088299158465819110">🎁A gift for developers: Qwen3.8-27B, running locally on AMD from day zero. 
-Appreciate the work from the AMD team! @AMD</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088296583368781939">27B on 17GB RAM. Are you ready to create something incredible? 😎
-Thanks for highlighting it! @UnslothAI</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088293486995087461">Yes, we are back👑, with 206 tok/s on a single RTX 5090!
-Amazing Day-0 work from the SGLang team. Give it a try~@sgl_project</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088292188505755728">One GPU, 1M context, Day-0 ready. Big props to the vLLM team for the seamless integration!👍
-Try Qwen3.8-27B on vLLM: @vllm_project
-https://t.co/KDEzdWwimc</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088288356337897550">Qwen3.8-Max is live on DigitalOcean Serverless Inference. Launching side by side with DigitalOcean as our Day 0 launch partner.
-Big model. Smooth sailing. Now on DigitalOcean.🌊🏄‍♀️ @digitalocean htt</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088287553292312968">Qwen 3.8-Max is live on Modal, with the full 1M context window and a custom DFlash speculator under the hood.
-Love seeing our launch partner Modal go all in from Day 0!⚡️
-2.4T parameters. 1M context. </a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088286592431689909">Qwen3.8-Max is coming to Nebius Token Factory on Day 0.
-Great to kick things off together with Nebius as our Day 0 launch partner, bringing dedicated inference to more users.
-Big model, right from the</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088286022597832788">Qwen3.8-Max is live on Fireworks, ready for agents, heavy coding, and long-context work. 
-Fireworks is right there with us as a Day 0 launch partner. 
-What a way to kick things off!It&#39;s Day 0, cue the</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088285662223138851">Qwen3.8-Max is live on Together AI.
-Together AI is with us as a Day 0 launch partner, and we couldn’t ask for a better name to share Day 0 with.
-2.4T parameters, 95B active, 1M context — all together </a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088280188362867185">Performance of Qwen3.8-27B: https://t.co/oTVMJoxWbQ</a></li>
-<li>[We promised open weights for Qwen3.8. Now, time to meet them! 🎉</li>
-</ul>
-<p>⚡ Qwen3.8-27B:</p>
-<ul>
-<li>A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-wor](<a href="https://x.com/Alibaba_Qwen/status/2088280182356611304">https://x.com/Alibaba_Qwen/status/2088280182356611304</a>)</li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2088251315256520943">Less than 2 hours to say hi👋. It&#39;s almost time!
-See you soon: 👀
-https://t.co/rXzUQ4d6WQ https://t.co/r6mnbuNiKZ</a></li>
-</ul>
-<h2>Z.ai (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/Zai_org/status/2088280509474320693">https://t.co/fbjLdFGKez</a></li>
-</ul>
+<p><strong>摘要</strong>: Cursor 已正式完成收购并加入 SpaceXAI 团队，将从软件工程切入，帮助推进 Grok 成为更通用的 AI。团队表示后续将共同改进 Grok Build、Grok Bot、Grok API、Cursor 等产品。</p>
+<hr>
 ]]></description>
     </item>
     <item>
