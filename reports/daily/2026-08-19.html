@@ -311,114 +311,270 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>前沿训练重视安全</strong>：OpenAI 暂停部分强化学习训练并强化网络安全监控，把防御能力纳入模型推进节奏。</li>
+<li><strong>科学研究走向实用</strong>：Anthropic 公开 Claude 药物设计实验结果和材料，展示端到端蛋白结合体探索路径。</li>
+<li><strong>助手连接工作流</strong>：Claude 接入 Gmail、Google Drive 和 Cowork 移动端，把多应用协作扩展到日常工作。</li>
+<li><strong>模型能力接受实测</strong>：Qwen3.8-27B 登顶法律智能体与 Cline 本地模型基准，开源模型竞争转向具体任务表现。</li>
+<li><strong>开发者生态持续开放</strong>：OpenAI DevDay Exchange 全球活动、GLM-5.3 API 和 SaaS 代理化实践同步降低接入门槛。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/Alibaba_Qwen/status/2089922175507865795">Qwen3.8-27B登顶Harvey法律智能体基准</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.8-27B</code> <code>法律智能体</code> <code>开源权重</code> <code>基准评测</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen表示，Qwen3.8-27B 在 Harvey 的 Legal Agent 基准中成为开源权重模型第一名，并强调其规模适合在本地设备运行。引用的 ValsAI 数据显示，该模型以 11.3 分与 Fable 5 并列，并领先 Kimi K3、Qwen 3.8 Max 和 DeepSeek V4。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在本地环境部署 Qwen3.8-27B，使用法律文书抽取和检索任务做小规模评测。</li>
+<li>将 Legal Agent 类基准加入模型选型测试，比较本地模型与云端模型的准确率和成本。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">OpenAI Blog</h2>
+<h3 id="h-4">2. <a href="https://x.com/Alibaba_Qwen/status/2089919106522976337">Qwen3.8-27B登顶Cline本地模型榜</a></h3>
 <ul>
-<li><a href="https://openai.com/index/chatgpt-ads-expands-across-europe">ChatGPT Ads expands across Europe</a></li>
-<li><a href="https://openai.com/index/strengthening-democratic-oversight-in-national-security">Strengthening democratic oversight in national security</a></li>
-<li><a href="https://openai.com/index/partnering-with-codeai">Partnering with CodeAI to prepare the first AI generation</a></li>
-<li><a href="https://openai.com/index/pacing-model-development-cyber-capabilities">Pacing model development in an era of cyber-critical capabilities</a></li>
-<li><a href="https://openai.com/index/chatgpt-for-teens">Introducing ChatGPT for Teens: Built for learning, backed by protections</a></li>
-<li><a href="https://openai.com/index/asana">Asana cleared 5 years of engineering work in 2 weeks with Codex</a></li>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.8-27B</code> <code>Cline</code> <code>本地模型</code> <code>代码生成</code></li>
 </ul>
-<h2 id="h-2">Sam Altman (Twitter)</h2>
+<p><strong>摘要</strong>: Qwen宣布 Qwen3.8-27B 在 Cline 中成为排名第一的本地模型，上榜仅用四天。Cline 表示，这一结果终结了 Qwen2.5-Coder-7B 自四月以来持续四个月的领先记录。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/sama/status/2089805495783813196">(We still expect to ship great new models soon; this impacts further-out releases.)</a></li>
-<li><a href="https://x.com/sama/status/2089787807611195475">We have paused some frontier RL training to ensure that we can meet the appropriate alignment, security and monitoring standards for the new level of capabilities in front of us. Model progress is now</a></li>
-<li><a href="https://x.com/sama/status/2089758522678657212">excited to work together on this. thank you jensen!</a></li>
+<li>在 Cline 中接入 Qwen3.8-27B，针对代码补全、重构和测试生成进行对比试用。</li>
+<li>记录本地推理延迟、显存占用与代码任务成功率，评估其替代小型云端模型的可行性。</li>
 </ul>
-<h2 id="h-3">Thariq (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/Zai_org/status/2089816129011098048">GLM-5.3 API正式上线</a></h3>
 <ul>
-<li>[weird that there&#39;s a &quot;make a lot of money&quot; button and nobody&#39;s pressing it</li>
+<li><strong>来源</strong>: Z.ai (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GLM-5.3</code> <code>API</code> <code>代码生成</code> <code>智能体</code> <code>网络安全</code></li>
 </ul>
-<p>(take your SaaS, make it headless, let agents use it, charge per interaction esp for enterprises)](<a href="https://x.com/trq212/status/2089844723691479333">https://x.com/trq212/status/2089844723691479333</a>)</p>
-<h2 id="h-4">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: Z.ai 宣布 GLM-5.3 API 已正式上线，定位于代码开发、防御性网络安全和长时程智能体任务。官方称其价格与 GLM-5.2 相同，可通过官方 API 及合作模型网关调用。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Claude can now send emails in Gmail and manage files in Google Drive.</li>
+<li>用 GLM-5.3 API 在代码修复和长流程智能体任务上建立基线，记录成功率与端到端延迟。</li>
+<li>对比 GLM-5.2 的价格、上下文处理和工具调用表现，再决定是否迁移现有调用。</li>
 </ul>
-<p>Ask Claude to reply to a thread, and it drafts and sends the response. You control when it needs your approval.</p>
-<p>Connect Gmail or](<a href="https://x.com/claudeai/status/2089806039088517356">https://x.com/claudeai/status/2089806039088517356</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/AnthropicAI/status/2089842387845804246">Claude从零设计蛋白结合体命中14个靶点</a></h3>
 <ul>
-<li><a href="https://x.com/claudeai/status/2089756371570900999">Claude Cowork is now available on mobile and web for all paid plans.</a></li>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>蛋白设计</code> <code>从头设计</code> <code>Adaptyv Bio</code> <code>Twist Bioscience</code></li>
 </ul>
-<h2 id="h-5">Claude Devs (Twitter)</h2>
+<p><strong>摘要</strong>: Anthropic测试Claude从零设计新型蛋白结合体，模型在15个目标中为14个目标设计出结合体候选。Adaptyv Bio和Twist Bioscience独立构建并测试了这些设计，用于验证模型输出能否进入真实实验环节。 在蛋白结合体设计实验中，Claude生成的设计成功结合的比例为22%至35%，而当前领域典型成功率约为10%至15%。其中部分设计的结合强度达到已发表从头设计结合体最佳水平的数倍。 Anthropic强调，高亲和力蛋白结合体不是药物，设计结合体只是开发类药分子的第一步。公司正在训练Claude覆盖从抗体到小分子等主要药物类型的完整开发流程，以扩大模型在生物医药中的作用范围。 Anthropic称，为科学家使用其最强模型建立访问计划仍是最高优先级之一，预计很快公布更多信息。官方同时表示，Opus 5目前仍是其面向生命科学研究可用的最强模型。 Anthropic表示，Claude如何执行蛋白设计实验及其完整结果已发布在官方博客中。该材料补充了实验流程和结果细节，使读者能够进一步核对模型输出与实际生物实验之间的关系。 Anthropic宣布发布一份关于Claude参与药物设计实验的技术报告，并同步开放相关提示词和数据。此举为外部研究者复现实验、检查方法边界和评估模型科学能力提供了基础材料。</p>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/claudeai/status/2089806039088517356">Claude接入Gmail与Google Drive连接器</a></h3>
 <ul>
-<li>[Claude Desktop now starts ~2x faster than it did a month ago.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>Gmail</code> <code>Google Drive</code> <code>连接器</code></li>
 </ul>
-<p>When the app started in the background, its timers got throttled and the JS engine dropped into power-saving mode. We now boot at full sp](<a href="https://x.com/ClaudeDevs/status/2089860955266228548">https://x.com/ClaudeDevs/status/2089860955266228548</a>)</p>
+<p><strong>摘要</strong>: Claude现在可以通过连接器管理Gmail和Google Drive中的内容，包括起草并发送邮件回复。发送操作仍需用户在需要时批准，功能面向所有付费计划开放。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[We’re extending the 50% increase to weekly Claude Code limits through August 31.</li>
+<li>为团队配置Gmail和Google Drive连接器，先用低风险邮件和文档任务验证权限边界。</li>
+<li>将发送邮件保留为人工批准步骤，并记录自动生成内容的审阅结果。</li>
 </ul>
-<p>We hope to make this a permanent change to our plans, but strong demand for our models means that capacity may be tig](<a href="https://x.com/ClaudeDevs/status/2089798442306711646">https://x.com/ClaudeDevs/status/2089798442306711646</a>)</p>
-<h2 id="h-6">Anthropic (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/claudeai/status/2089756371570900999">Claude Cowork登陆移动端与网页端</a></h3>
 <ul>
-<li>[We&#39;re also publishing a technical report: <a href="https://t.co/Ltcqemzn5Z">https://t.co/Ltcqemzn5Z</a></li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Cowork</code> <code>移动端</code> <code>网页端</code> <code>跨设备</code></li>
 </ul>
-<p>And open-sourcing our prompts and data here: <a href="https://t.co/OZXVQWSie2%5D(https://x.com/AnthropicAI/status/2089842395722678689)">https://t.co/OZXVQWSie2](https://x.com/AnthropicAI/status/2089842395722678689)</a></p>
+<p><strong>摘要</strong>: Claude Cowork现已面向所有付费计划提供移动端和网页端访问，让用户可以在桌面发起任务后用手机继续查看结果。该能力此前从Max计划开始分阶段测试，后续逐步扩展到更多计划。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/AnthropicAI/status/2089842394527301881">For more on how Claude ran this experiment and the full results, see our blog: https://t.co/48COrpUcJn</a></li>
-<li><a href="https://x.com/AnthropicAI/status/2089842393218777151">One of our highest priorities remains launching an access program for scientists to use our most capable models. We expect to share more on this soon. Opus 5 remains our most capable model available f</a></li>
-<li><a href="https://x.com/AnthropicAI/status/2089842391918563599">Importantly, protein binders are not drugs. Designing a high-affinity binder is just the first step in the process of developing a drug-like molecule. Even designing a drug itself is just one phase ou</a></li>
-<li>[Designing a binder is an easier process than designing a drug, but it’s a useful proxy. The typical success rate in the field today is between 10% and 15%.</li>
+<li>把适合异步执行的研究和整理任务交给Cowork，在桌面发起后用移动端检查进度。</li>
+<li>为跨设备任务建立结果验收清单，避免在手机端直接批准高风险操作。</li>
 </ul>
-<p>Between 22% and 35% of Claude&#39;s designs bou](<a href="https://x.com/AnthropicAI/status/2089842389682954621">https://x.com/AnthropicAI/status/2089842389682954621</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://openai.com/index/pacing-model-development-cyber-capabilities">OpenAI 放缓前沿训练：强化学习暂停与安全监控升级</a></h3>
 <ul>
-<li><a href="https://x.com/AnthropicAI/status/2089842387845804246">Many drugs work by binding to a specific target in the body and blocking or changing what it does. An important first step in the drug development process is designing a molecule that can bind tightly</a></li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>前沿模型</code> <code>强化学习</code> <code>网络安全</code> <code>安全监控</code></li>
 </ul>
-<h2 id="h-7">OpenAI (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI 暂停部分前沿模型的强化学习训练，以重新评估训练节奏和安全准备度。公司将把网络安全能力作为前沿模型推进的重要约束，并强化对训练过程与潜在风险的监控。相关调整并不意味着停止新模型开发，而是把能力扩展与防御能力建设放在同一决策框架中。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[We’re sharing the concrete changes we’re making to strengthen monitoring, security, and alignment as capabilities advance.</li>
+<li><a href="https://x.com/OpenAI/status/2089777845187031262">OpenAI暂停前沿模型强化学习训练</a> · OpenAI (Twitter) · 训练暂停与安全监控</li>
+<li><a href="https://x.com/sama/status/2089787807611195475">OpenAI 暂停部分前沿强化学习训练</a> · Sam Altman (Twitter) · 管理层说明</li>
 </ul>
-<p>We’ve introduced stronger workload and network isolation, continuous securit](<a href="https://x.com/OpenAI/status/2089777846583763370">https://x.com/OpenAI/status/2089777846583763370</a>)</p>
+<hr>
+<h3 id="h-10">8. <a href="https://openai.com/index/chatgpt-for-teens">ChatGPT for Teens 面向青少年上线</a></h3>
 <ul>
-<li>[As models become more capable, the risks associated with developing and testing them internally also grow.</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>青少年</code> <code>AI 教育</code> <code>家长控制</code> <code>安全保护</code></li>
 </ul>
-<p>We temporarily paused reinforcement learning (RL) training on our latest models intended for](<a href="https://x.com/OpenAI/status/2089777845187031262">https://x.com/OpenAI/status/2089777845187031262</a>)</p>
-<h2 id="h-8">OpenAI Devs (Twitter)</h2>
+<p><strong>摘要</strong>: ChatGPT for Teens 面向青少年提供学习和批判性思考支持，并加入更强的内置保护、健康使用功能和家长控制。产品试图在青少年使用人工智能的便利性与年龄适配、安全约束之间取得平衡。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/OpenAIDevs/status/2089766392405135582">https://t.co/7jtYaIO9V7</a></li>
-<li>[OpenAI DevDay is going global.</li>
+<li>为未成年人场景设计分级权限、家长控制和敏感内容防护，并用真实任务进行压力测试。</li>
+<li>将健康使用提醒和人工复核入口纳入产品指标，持续观察误用与过度依赖信号。</li>
 </ul>
-<p>Starting this October, DevDay Exchange is bringing builders together to swap build notes, share real projects, and meet the teams building OpenAI tools in:</p>
-<p>Bengaluru
-T](<a href="https://x.com/OpenAIDevs/status/2089766380480725199">https://x.com/OpenAIDevs/status/2089766380480725199</a>)</p>
-<h2 id="h-9">Qwen (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/ClaudeDevs/status/2089860955266228548">Claude Desktop启动速度提升约两倍</a></h3>
 <ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2089922175507865795">#1 open-weight model on Harvey&#39;s Legal Agent benchmark! 🙌
-Strong enough to handle professional tasks. Small enough to run on your local machine. 
-Qwen3.8-27B is becoming part of your everyday workflo</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2089919106522976337">4 days to the top.🏆Thank you to every builder who pushed Qwen3.8-27B to #1 on Cline! @cline</a></li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Desktop</code> <code>启动速度</code> <code>性能优化</code> <code>JavaScript</code></li>
 </ul>
-<h2 id="h-10">Z.ai (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Desktop通过调整后台启动时的定时器和JavaScript引擎节能行为，启动速度相比一个月前提升约两倍。更新还包含若干较小的性能修复，窗口隐藏时也能保持全速启动。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><p>[GLM-5.3 API is now live.</p>
-</li>
-<li><p>Built for coding, defensive cybersecurity, and long-horizon agentic tasks</p>
-</li>
-<li><p>Priced the same as GLM-5.2</p>
-</li>
-<li><p>Available via the official API and partner model gateways</p>
-</li>
+<li>将桌面客户端升级到最新版本，并在冷启动和后台唤醒场景分别记录耗时。</li>
+<li>对高频使用Claude Desktop的团队比较升级前后的启动等待时间，评估是否减少常驻替代方案。</li>
 </ul>
-<p>Get star](<a href="https://x.com/Zai_org/status/2089816129011098048">https://x.com/Zai_org/status/2089816129011098048</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-12">10. <a href="https://x.com/trq212/status/2089844723691479333">让 SaaS 产品成为代理可调用的服务</a></h3>
+<ul>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>SaaS</code> <code>AI 代理</code> <code>无界面产品</code> <code>企业软件</code> <code>按交互计费</code></li>
+</ul>
+<p><strong>摘要</strong>: Thariq 认为，SaaS 产品可以通过无界面化来服务人工智能代理，并按交互次数向企业收费。这个观点把代理当作新的软件使用者，强调产品应提供可编排的能力接口和适合企业计费的交互模型。</p>
+<hr>
+<h3 id="h-13">11. <a href="https://openai.com/index/chatgpt-ads-expands-across-europe">ChatGPT 广告扩展至欧洲 31 个市场</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>广告业务</code> <code>欧洲市场</code> <code>商业化</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT Ads 将扩展到欧洲 31 个市场，广告主可以触达正在探索、比较选项和做决策的用户。此次扩大了 ChatGPT 商业化服务的覆盖范围，也意味着广告展示将进一步进入用户的决策场景。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>跟踪广告展示位置、标识方式和用户控制选项，评估其对产品信任的影响。</li>
+<li>若产品面向欧洲用户，提前梳理广告合规、定向和数据使用边界。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-14">12. <a href="https://x.com/sama/status/2089805495783813196">Altman：新模型仍将推出，远期版本节奏受影响</a></h3>
+<ul>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>新模型</code> <code>发布节奏</code> <code>模型路线图</code></li>
+</ul>
+<p><strong>摘要</strong>: Sam Altman 表示 OpenAI 仍预计很快推出新的模型，但这会影响更远期版本的发布安排。该帖没有披露模型名称、发布时间或能力细节，因此目前只能确认发布节奏仍在调整中。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在依赖特定模型能力的项目中保留模型切换层，并为版本延期或提前发布准备兼容性测试。</li>
+<li>持续验证候选模型的接口、上下文长度和关键任务表现，不要仅依据预告调整生产计划。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-15">13. <a href="https://x.com/ClaudeDevs/status/2089798442306711646">Claude Code周额度提升50%延长至8月31日</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>使用额度</code> <code>Pro计划</code> <code>容量</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic将Claude Code的每周使用额度提升50%的安排延长至8月31日，覆盖Pro、Max、Team和按席位计费的Enterprise用户。官方表示希望长期保留这一调整，但模型需求强劲，未来几周容量可能仍然紧张。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>利用额度窗口运行代表性代码任务，记录成功率、耗时和消耗量，为计划选择积累数据。</li>
+<li>为团队设置用量监控和降级策略，避免额度恢复后关键任务被突然中断。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-16">14. <a href="https://openai.com/index/strengthening-democratic-oversight-in-national-security">OpenAI 推出国家安全领域民主监督计划</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>国家安全</code> <code>民主监督</code> <code>AI 治理</code> <code>政府应用</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 宣布一项加强人工智能国家安全应用民主监督的计划，将向政府机构提供工具、培训和专业支持。该倡议聚焦于让相关机构更有能力理解、监督和负责任地使用人工智能系统。</p>
+<hr>
+<h3 id="h-17">15. <a href="https://x.com/OpenAIDevs/status/2089766380480725199">OpenAI DevDay Exchange十月走向全球</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>DevDay Exchange</code> <code>开发者社区</code> <code>全球活动</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI宣布 DevDay Exchange 将于今年十月开始举办，面向开发者交流构建经验、展示真实项目并与 OpenAI 工具团队见面。活动计划覆盖班加罗尔、东京、首尔、柏林、巴黎、伦敦、圣保罗和墨西哥城等多个城市。 OpenAI Devs 分享了 DevDay Exchange 全球开发者活动的官方页面链接，活动将于今年十月启动。该条目本身未提供议程或报名细节，具体安排需以活动页面信息为准。</p>
+<hr>
+<h3 id="h-18">16. <a href="https://openai.com/index/asana">Asana 用 Codex 两周完成五年工程工作</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>Asana</code> <code>编码代理</code> <code>遗留系统</code> <code>软件测试</code></li>
+</ul>
+<p><strong>摘要</strong>: Asana 使用 OpenAI Codex 替换过时的测试系统，在两周内完成了原本预计需要五年的工程工作，成本约为 1.2 万美元。案例显示，编码代理在明确边界和可验证任务中可以显著压缩大型遗留系统改造的周期。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先挑选有明确验收标准的测试或迁移任务，建立代理产出与人工审查的对照基线。</li>
+<li>记录代理调用成本、返工次数和回归缺陷，用实际数据评估是否适合扩大到遗留系统改造。</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="h-19">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>OpenAI</code> <code>CodeAI</code> <code>AI 教育</code> <code>学生素养</code> — OpenAI 与 CodeAI 建立合作，帮助学生培养人工智能素养、批判性思维，以及负责任地使用和塑造人工智能的能力。合作重点面向教育场景，目标是让学生同时掌握实际使用能力和对技术影响的判断能力。 · <a href="https://openai.com/index/partnering-with-codeai">OpenAI Blog</a></li>
+</ul>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-2">Sam Altman (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-3">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-4">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">Anthropic (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-9">Qwen (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-10">Z.ai (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Qwen3.8-27B登顶Harvey法律智能体基准</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Qwen3.8-27B登顶Cline本地模型榜</a></li>
+      <li class="toc-h3"><a href="#h-5">3. GLM-5.3 API正式上线</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Claude从零设计蛋白结合体命中14个靶点</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Claude接入Gmail与Google Drive连接器</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Claude Cowork登陆移动端与网页端</a></li>
+      <li class="toc-h3"><a href="#h-9">7. OpenAI 放缓前沿训练：强化学习暂停与安全监控升级</a></li>
+      <li class="toc-h3"><a href="#h-10">8. ChatGPT for Teens 面向青少年上线</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Claude Desktop启动速度提升约两倍</a></li>
+      <li class="toc-h3"><a href="#h-12">10. 让 SaaS 产品成为代理可调用的服务</a></li>
+      <li class="toc-h3"><a href="#h-13">11. ChatGPT 广告扩展至欧洲 31 个市场</a></li>
+      <li class="toc-h3"><a href="#h-14">12. Altman：新模型仍将推出，远期版本节奏受影响</a></li>
+      <li class="toc-h3"><a href="#h-15">13. Claude Code周额度提升50%延长至8月31日</a></li>
+      <li class="toc-h3"><a href="#h-16">14. OpenAI 推出国家安全领域民主监督计划</a></li>
+      <li class="toc-h3"><a href="#h-17">15. OpenAI DevDay Exchange十月走向全球</a></li>
+      <li class="toc-h3"><a href="#h-18">16. Asana 用 Codex 两周完成五年工程工作</a></li>
+      <li class="toc-h2"><a href="#h-19">速览</a></li>
     </ul>
   </aside>
     </div>
