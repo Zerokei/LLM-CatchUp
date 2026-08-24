@@ -1,0 +1,554 @@
+{
+  "analyzed_at": "2026-08-24T01:41:07.527Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-08-22.json",
+  "trend_paragraph": "- **安全能力产品化**：Claude Security 接入 Mythos 5 公测并提供跨文件漏洞分析与建议补丁，直接把前沿模型能力带入防御流程。\n- **远程开发协同**：Claude Code Remote Control 改善手机与电脑会话同步、断线恢复和移动端启动体验。\n- **模型成本下降**：GPT-5.6 Sol API 与 Codex credits 价格下调超过 20%，同时新增用量和支出上限管理。\n- **多模态代理扩展**：DeepSeek V4 Flash Vision Experimental 将视觉理解、文件复用和工具调用组合到 API 工作流。\n- **知识工具轻量化**：ELI5 技能把复杂代码与事故解释转成可交互的图文 Artifact，降低团队理解门槛。",
+  "articles": [
+    {
+      "url": "https://x.com/trq212/status/2090890394880155888",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 的 ELI5 技能：用图文解释复杂问题",
+      "summary": "Thariq 分享了 Anthropic 内部常用的 ELI5 技能，用于解释模块原理、设计取舍和事故原因。该技能会把复杂主题转化为面向新手的 HTML 图文说明，适合在 Claude Code 中辅助理解和复盘。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "ELI5",
+        "技能",
+        "HTML Artifact"
+      ],
+      "practice_suggestions": [
+        "在代码库中安装或复刻 ELI5 技能，用它解释关键模块和架构取舍。",
+        "将 ELI5 输出用于事故复盘，要求生成面向非技术成员的图文说明。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:54:51.000000Z"
+    },
+    {
+      "url": "https://x.com/trq212/status/2090884855798407576",
+      "source": "Thariq (Twitter)",
+      "title": "ELI5 技能开放试用，支持 Claude 插件安装",
+      "summary": "Anthropic 团队正在考虑把 ELI5 技能做成官方插件，目前用户可以通过 Claude 插件社区市场手动安装。安装后可使用 `/eli5` 命令，把指定主题转成适合初学者阅读的解释和 HTML Artifact。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude 插件",
+        "ELI5",
+        "Claude Code",
+        "插件市场"
+      ],
+      "practice_suggestions": [
+        "先从 Claude 插件社区安装 ELI5，验证它对代码解释和团队知识传递的效果。",
+        "为内部常见任务设计类似斜杠命令，并评估是否需要沉淀为团队插件。"
+      ],
+      "thread_group_id": "thread-trq212-20260821-1932",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:32:51.000000Z"
+    },
+    {
+      "url": "https://x.com/trq212/status/2090884854590382515",
+      "source": "Thariq (Twitter)",
+      "title": "Anthropic 内部用 ELI5 技能生成图文解释",
+      "summary": "Anthropic 内部近期频繁使用 ELI5 技能来解释复杂主题。用户输入 `/eli5` 和问题后，Claude 会以几乎不了解背景的读者为对象，生成大图、少文字的 HTML Artifact。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "ELI5",
+        "技能",
+        "HTML Artifact"
+      ],
+      "practice_suggestions": [
+        "让 Claude 以新成员为读者生成项目架构的 ELI5 页面，作为入职材料。",
+        "比较图文 Artifact 与普通文字说明在代码评审和故障排查中的可理解性。"
+      ],
+      "thread_group_id": "thread-trq212-20260821-1932",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:32:50.000000Z"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090852320128938319",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 扩展 Mythos 5 防御能力",
+      "summary": "Claude Security 正在把 Mythos 5 集成到合作伙伴的安全产品和服务中，让更多防御方获得前沿模型能力。Anthropic 同时设立 3500 万美元的 Defender Advantage Fund，为开源安全项目提供额度，并将扩大 Cyber Verification Program。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Security",
+        "Mythos 5",
+        "网络安全",
+        "开源安全",
+        "Anthropic"
+      ],
+      "practice_suggestions": [
+        "评估 Claude Security 对现有代码库的漏洞扫描覆盖率，并记录误报和漏报。",
+        "关注 Defender Advantage Fund 的申请条件，为关键开源依赖准备安全改进计划。"
+      ],
+      "thread_group_id": "thread-claudeai-20260821-1723",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T17:23:33.000000Z"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090852318527033804",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 支持网页端生成建议补丁",
+      "summary": "Claude Security 的扫描结果现在可以在 Claude Code 网页端打开建议补丁，并继续使用团队已有的模型。模型在扫描后台运行，只返回发现结果和修复建议，不要求用户直接访问 Mythos 5；扫描按现有套餐的标准 Token 用量计费。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Security",
+        "Claude Code",
+        "建议补丁",
+        "网页端"
+      ],
+      "practice_suggestions": [
+        "用低风险仓库试运行网页端建议补丁，先人工审查再合并。",
+        "把扫描、补丁审查和合并纳入现有代码安全流程，并记录 Token 成本。"
+      ],
+      "thread_group_id": "thread-claudeai-20260821-1723",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T17:23:33.000000Z"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090852316328902930",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 跨文件追踪漏洞并提供修复建议",
+      "summary": "用户可以把 GitHub 仓库交给 Claude Security 扫描，Mythos 会跨文件追踪数据流并推理组件之间的交互。每个发现都会附带 CWE 分类、置信度和严重性评级，以及一条建议修复方案。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Security",
+        "漏洞扫描",
+        "CWE",
+        "数据流",
+        "代码安全"
+      ],
+      "practice_suggestions": [
+        "先对包含跨服务数据流的仓库进行扫描，重点核对 CWE 和严重性评级。",
+        "将建议修复方案与人工安全评审结合，避免直接自动应用高风险修改。"
+      ],
+      "thread_group_id": "thread-claudeai-20260821-1723",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T17:23:33.000000Z"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090852314319880425",
+      "source": "Claude (Twitter)",
+      "title": "Claude Security 公测接入 Mythos 5",
+      "summary": "Claude Security 扫描现已运行在 Claude Mythos 5 上，并向所有 Claude Enterprise 客户开放公测。企业无需单独申请或管理模型访问权限，就能让最强安全模型扫描自己的代码库。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Security",
+        "Mythos 5",
+        "Enterprise",
+        "公测"
+      ],
+      "practice_suggestions": [
+        "在 Enterprise 账户中启用公测，对一组代表性仓库建立基线扫描。",
+        "比较 Mythos 5 扫描结果与现有 SAST 工具，确定互补的安全门禁。"
+      ],
+      "thread_group_id": "thread-claudeai-20260821-1723",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T17:23:32.000000Z"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2090933162247680483",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Remote Control 持续更新",
+      "summary": "Claude Devs 表示 Remote Control 还会继续改进，并建议用户把 CLI、桌面端和移动端更新到最新版本并开启自动更新。相关功能和使用方式已在 Claude Code 文档中同步说明。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Remote Control",
+        "CLI",
+        "移动端"
+      ],
+      "practice_suggestions": [
+        "统一更新团队的 Claude Code CLI、桌面端和移动端，并开启自动更新。",
+        "用 Remote Control 测试跨设备接管开发会话的稳定性和权限边界。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260821-2244",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T22:44:48.000000Z"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2090933161115205700",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 移动端同步模型并优化斜杠命令",
+      "summary": "Claude Code 的手机端和 CLI 会话现在可以同步模型与 effort level，iOS 打开大型会话的速度也更快。移动端的 `/clear`、`/compact` 和 `/diff` 斜杠命令得到改进，分别用于重置视图、显示压缩标记和打开原生差异面板。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "移动端",
+        "iOS",
+        "斜杠命令",
+        "会话同步"
+      ],
+      "practice_suggestions": [
+        "在手机端验证模型和 effort level 与 CLI 的同步，建立适合移动开发的会话规范。",
+        "用 `/clear`、`/compact` 和 `/diff` 完成一次移动端代码审查流程。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260821-2244",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T22:44:47.000000Z"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2090933160033059303",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 断线后可自动恢复连接",
+      "summary": "Claude Code 现在能在连接短暂中断后自动恢复会话。用户关闭笔记本或切换 Wi-Fi 后，无需手动重连即可继续使用原有开发会话。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Remote Control",
+        "自动重连",
+        "开发会话"
+      ],
+      "practice_suggestions": [
+        "在切换网络和短暂休眠场景下测试自动重连，确认任务状态不会丢失。",
+        "为远程开发会话设置中断恢复检查，避免在连接异常时重复执行命令。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260821-2244",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T22:44:47.000000Z"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2090933158795767846",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 手机端与电脑会话实时同步",
+      "summary": "Claude Code Remote Control 现在会让手机端持续跟随电脑上正在运行的会话。用户在笔记本上恢复会话后，手机不会再把它归档；电脑端退出后，手机也会在数秒内显示离线，减少过期状态。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Remote Control",
+        "移动端",
+        "会话同步"
+      ],
+      "practice_suggestions": [
+        "在电脑和手机之间恢复同一个 Claude Code 会话，确认上下文与运行状态是否同步。",
+        "将 Remote Control 纳入移动端值守流程，重点观察退出后的离线状态是否及时更新。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260821-2244",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T22:44:47.000000Z"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2090933157243863142",
+      "source": "Claude Devs (Twitter)",
+      "title": "手机端可直接启动 Claude Code 会话",
+      "summary": "Claude Code 现在支持直接从手机启动远程会话。开启 `claude remote-control` 的电脑会以设备卡片显示在 Code 标签页顶部，用户选择目录后即可让会话在该电脑上启动。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Remote Control",
+        "移动开发",
+        "远程会话"
+      ],
+      "practice_suggestions": [
+        "在常用开发机上开启 Remote Control，并从手机选择一个测试目录启动会话。",
+        "为远程启动设置专用项目目录与权限，避免手机端误操作生产代码。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260821-2244",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T22:44:47.000000Z"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2090933155847143498",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code Remote Control 聚焦可靠性改进",
+      "summary": "Claude Devs 表示，团队根据用户反馈持续修复 Remote Control 的可靠性问题。此次更新围绕远程控制体验展开，但该条信息本身未列出具体改进项目。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "Remote Control",
+        "可靠性",
+        "远程开发"
+      ],
+      "practice_suggestions": [
+        "在真实网络环境下连续测试远程会话的启动、恢复和退出流程，记录状态不同步的场景。",
+        "将 Remote Control 的连接稳定性纳入团队开发工具评估与回归测试。"
+      ],
+      "thread_group_id": "thread-ClaudeDevs-20260821-2244",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T22:44:46.000000Z"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2090885188897460249",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 Sol API 与 Codex credits 降价超 20%",
+      "summary": "OpenAI 表示，GPT-5.6 Sol 的 API 和 credits 价格将在未来三个月下调超过 20%。新价格已在 API 上线，并向符合条件的 ChatGPT Work 与 Codex credits 用户逐步开放；Pro、Plus 和 Business 订阅的用量不变。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "GPT-5.6 Sol",
+        "API 定价",
+        "Codex",
+        "成本优化"
+      ],
+      "thread_group_id": "thread-OpenAI-20260821-1934",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:34:10.000000Z"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2090885187634905500",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-5.6 Sol 降价超 20%：API、Codex 与 Work 同步受益",
+      "summary": "GPT-5.6 Sol 的 API 价格在未来三个月下调超过 20%，同时延伸到 Codex credits 与 ChatGPT Work 的使用。降价旨在反映模型效率提升，让开发者和团队以更低成本运行现有工作负载。相关更新也覆盖 API 与管理端的使用范围，订阅用户的基础额度保持不变。",
+      "category": "商业动态",
+      "importance": 3,
+      "tags": [
+        "GPT-5.6 Sol",
+        "API 定价",
+        "Codex",
+        "成本优化"
+      ],
+      "thread_group_id": "thread-OpenAI-20260821-1934",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:34:10.000000Z"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090903233879585263",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 增加 API 用量与支出管理接口",
+      "summary": "OpenAI Devs 表示，用量与支出管理能力现已在 API Platform 和 Admin API 中提供，便于程序化工作流接入。结合 GPT-5.6 Sol 未来三个月的降价，开发者可以更细致地观察并控制规模化使用成本。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI API",
+        "Admin API",
+        "用量监控",
+        "支出管理"
+      ],
+      "practice_suggestions": [
+        "调用 Admin API 将组织或项目用量接入现有成本看板，按应用和工作负载拆分统计。",
+        "结合降价后的模型价格重新计算批处理与代理工作流的预算阈值。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260821-2045",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T20:45:52.000000Z"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090903221636338057",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "API 可按密钥追踪用量并设置硬支出上限",
+      "summary": "OpenAI 的 Usage 和 Spend dashboards 现在支持按 API key 查看哪些应用和工作负载产生支出。组织或项目还可以设置月度支出上限，包括达到阈值后停止流量的硬限制，以降低失控消耗风险。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "API key",
+        "用量分析",
+        "支出上限",
+        "成本控制"
+      ],
+      "practice_suggestions": [
+        "为不同应用使用独立 API key，并在 Usage dashboard 中建立按应用的成本基线。",
+        "先设置项目级软预算，再为高风险自动化工作负载配置硬支出上限。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260821-2045",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T20:45:49.000000Z"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090888128198537646",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-5.6 Sol 新价格向 API、Codex 与 Work 用户推出",
+      "summary": "GPT-5.6 Sol 的新价格已对 API 用户生效，并在当天陆续推送到 Codex 与 ChatGPT Work。Pro、Plus 和 Business 订阅中包含的用量保持不变。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "GPT-5.6 Sol",
+        "API 定价",
+        "Codex",
+        "ChatGPT Work"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260821-1945",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:45:51.000000Z"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090888116014137718",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-5.6 Sol 降价让 Codex credits 更耐用",
+      "summary": "OpenAI Devs 表示，GPT-5.6 Sol API 价格将在未来三个月下调超过 20%，以反映运行效率提升。使用 Codex 按 token 计费方案的 credits 将因此覆盖更多调用，而订阅中包含的用量保持不变。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "GPT-5.6 Sol",
+        "Codex credits",
+        "token 计费",
+        "API 成本"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260821-1945",
+      "duplicate_of": "https://x.com/OpenAI/status/2090885187634905500",
+      "published_at": "2026-08-21T19:45:48.000000Z",
+      "angle": "Codex 与 Work 价格同步"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2090772922818286080",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Google DeepMind 与 Fenris 探索游戏中的长期智能",
+      "summary": "Google DeepMind 与 Fenris Creations 建立研究合作，把持续存在的游戏世界作为研究 AI 的测试场。方向包括持续学习、超长记忆、跨周乃至跨年的长期规划，以及涵盖合作、谈判和经济行为的多智能体互动，并希望将成果用于现实问题与科学发现。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "Google DeepMind",
+        "持续学习",
+        "长期记忆",
+        "长期规划",
+        "多智能体"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "published_at": "2026-08-21T12:08:04.000000Z"
+    },
+    {
+      "url": "https://x.com/SpaceXAI/status/2090885694407250418",
+      "source": "xAI (Twitter)",
+      "title": "Grok 4.6 登陆 Google Vertex AI",
+      "summary": "Grok 4.6 现已在 Google Vertex AI 上线，开发者可以直接通过该云平台调用这一模型。此次接入扩大了 Grok 4.6 在企业云环境中的可用性，并降低了与现有 Google Cloud 工作流集成的门槛。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Grok 4.6",
+        "Google Vertex AI",
+        "云平台",
+        "模型接入"
+      ],
+      "practice_suggestions": [
+        "在 Vertex AI 中对比 Grok 4.6 与现有模型的调用延迟、成本和效果。",
+        "检查现有 Google Cloud 工作流是否可以直接复用 Vertex AI 的权限与监控配置。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "published_at": "2026-08-21T19:36:10.000000Z"
+    },
+    {
+      "url": "https://x.com/deepseek_ai/status/2090730042586489333",
+      "source": "DeepSeek (Twitter)",
+      "title": "DeepSeek Files API 支持复用上传文件",
+      "summary": "DeepSeek Files API 已上线并免费提供，用户可以上传图片后通过 file_id 在后续请求中重复引用。该机制避免同一图片反复上传，有助于减少请求带宽并简化多轮视觉应用的文件管理。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "DeepSeek",
+        "Files API",
+        "图片复用",
+        "多模态"
+      ],
+      "practice_suggestions": [
+        "用 file_id 改造多轮视觉请求，比较重复上传与文件复用的带宽和延迟差异。",
+        "为上传文件建立过期清理与权限校验流程，避免长期累积无用资源。"
+      ],
+      "thread_group_id": "thread-deepseek_ai-20260821-0917",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T09:17:40.000000Z"
+    },
+    {
+      "url": "https://x.com/deepseek_ai/status/2090730039973392531",
+      "source": "DeepSeek (Twitter)",
+      "title": "DeepSeek V4 Flash Vision 开放多模态 API",
+      "summary": "DeepSeek V4 Flash Vision Experimental 支持在 API 中处理图像输入，并可通过 Chat Completions、Messages 和 Responses 接口调用。图片可以使用 Base64、外部 URL 或 Files API 提供，且每张图片最多按 384 个 token 计费。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "DeepSeek V4",
+        "视觉模型",
+        "多模态 API",
+        "图像输入",
+        "Token 计费"
+      ],
+      "practice_suggestions": [
+        "用同一组图文任务分别测试 Base64、外部 URL 和 file_id 输入方式。",
+        "在视觉代理原型中记录图片 token 消耗，评估 384 token 上限对成本的影响。"
+      ],
+      "thread_group_id": "thread-deepseek_ai-20260821-0917",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T09:17:40.000000Z"
+    },
+    {
+      "url": "https://x.com/deepseek_ai/status/2090730036852858964",
+      "source": "DeepSeek (Twitter)",
+      "title": "V4 Flash Vision 面向代理工作流优化",
+      "summary": "DeepSeek 表示，V4-Flash-Vision-Exp 可以在多种代理框架中结合视觉理解与工具调用。其目标是把图像理解能力融入更广泛的代理工作流，支持处理现实任务中的视觉信息与工具操作。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "DeepSeek V4",
+        "视觉理解",
+        "AI 代理",
+        "工具调用"
+      ],
+      "practice_suggestions": [
+        "选择一个带浏览器或代码工具的代理框架，加入视觉输入后测试端到端任务完成率。",
+        "为视觉理解和工具调用分别记录失败样例，定位代理链路中的瓶颈。"
+      ],
+      "thread_group_id": "thread-deepseek_ai-20260821-0917",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T09:17:39.000000Z"
+    },
+    {
+      "url": "https://x.com/deepseek_ai/status/2090730032574631962",
+      "source": "DeepSeek (Twitter)",
+      "title": "DeepSeek V4 Flash Vision Experimental 上线",
+      "summary": "DeepSeek V4 Flash Vision Experimental 已在 DeepSeek API 平台上线，文本能力对齐 V4 Flash，并覆盖代理、推理和世界知识任务。官方还称其在多模态代理基准上较 V4 Flash 有明显提升，表现接近 Opus 4.8，并同步发布 DeepSeek Harness 0.1.1 的原生支持。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "DeepSeek V4",
+        "V4 Flash Vision",
+        "多模态代理",
+        "模型发布",
+        "DeepSeek Harness"
+      ],
+      "practice_suggestions": [
+        "在 DeepSeek API 中用 model='deepseek-v4-flash-vision-exp' 跑一组图像代理任务。",
+        "用 DeepSeek Harness 0.1.1 复现多模态代理基准，并与 V4 Flash 做成本和效果对比。"
+      ],
+      "thread_group_id": "thread-deepseek_ai-20260821-0917",
+      "duplicate_of": null,
+      "published_at": "2026-08-21T09:17:38.000000Z"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2090709994761339190",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen3.8-27B 新增 NVFP4 与 DFlash2 配方",
+      "summary": "SGLang cookbook 新增 Qwen3.8-27B 的 NVFP4 与 DFlash2 配方，帮助社区快速尝试这两种推理优化方案。相关实践据称已经取得较好效果，后续还会继续补充 Qwen3.8-27B 的更新内容。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Qwen3.8-27B",
+        "SGLang",
+        "NVFP4",
+        "DFlash2",
+        "推理优化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "published_at": "2026-08-21T07:58:00.000000Z"
+    },
+    {
+      "url": "https://x.com/Zai_org/status/2090831300915556515",
+      "source": "Z.ai (Twitter)",
+      "title": "ZCode 延长 Build Week 并发放 GLM-5.3 额度",
+      "summary": "ZCode 将 Build Week 扩展为持续系列活动，并为 50,000 名新用户提供每人 1 亿枚 GLM-5.3 免费 token。活动面向指定时间内首次登录 ZCode 的用户，额度在活动结束时失效。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "ZCode",
+        "GLM-5.3",
+        "免费额度",
+        "开发者活动"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "published_at": "2026-08-21T16:00:02.000000Z"
+    }
+  ]
+}
