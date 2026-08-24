@@ -311,143 +311,172 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>安全能力产品化</strong>：Claude Security 接入 Mythos 5 公测并提供跨文件漏洞分析与建议补丁，直接把前沿模型能力带入防御流程。</li>
+<li><strong>远程开发协同</strong>：Claude Code Remote Control 改善手机与电脑会话同步、断线恢复和移动端启动体验。</li>
+<li><strong>模型成本下降</strong>：GPT-5.6 Sol API 与 Codex credits 价格下调超过 20%，同时新增用量和支出上限管理。</li>
+<li><strong>多模态代理扩展</strong>：DeepSeek V4 Flash Vision Experimental 将视觉理解、文件复用和工具调用组合到 API 工作流。</li>
+<li><strong>知识工具轻量化</strong>：ELI5 技能把复杂代码与事故解释转成可交互的图文 Artifact，降低团队理解门槛。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/deepseek_ai/status/2090730032574631962">DeepSeek V4 Flash Vision Experimental 上线</a></h3>
+<ul>
+<li><strong>来源</strong>: DeepSeek (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>DeepSeek V4</code> <code>V4 Flash Vision</code> <code>多模态代理</code> <code>模型发布</code> <code>DeepSeek Harness</code></li>
+</ul>
+<p><strong>摘要</strong>: DeepSeek V4 Flash Vision Experimental 已在 DeepSeek API 平台上线，文本能力对齐 V4 Flash，并覆盖代理、推理和世界知识任务。官方还称其在多模态代理基准上较 V4 Flash 有明显提升，表现接近 Opus 4.8，并同步发布 DeepSeek Harness 0.1.1 的原生支持。 DeepSeek 表示，V4-Flash-Vision-Exp 可以在多种代理框架中结合视觉理解与工具调用。其目标是把图像理解能力融入更广泛的代理工作流，支持处理现实任务中的视觉信息与工具操作。 DeepSeek V4 Flash Vision Experimental 支持在 API 中处理图像输入，并可通过 Chat Completions、Messages 和 Responses 接口调用。图片可以使用 Base64、外部 URL 或 Files API 提供，且每张图片最多按 384 个 token 计费。 DeepSeek Files API 已上线并免费提供，用户可以上传图片后通过 file_id 在后续请求中重复引用。该机制避免同一图片反复上传，有助于减少请求带宽并简化多轮视觉应用的文件管理。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 DeepSeek API 中用 model=&#39;deepseek-v4-flash-vision-exp&#39; 跑一组图像代理任务。</li>
+<li>用 DeepSeek Harness 0.1.1 复现多模态代理基准，并与 V4 Flash 做成本和效果对比。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">Thariq (Twitter)</h2>
+<h3 id="h-4">2. <a href="https://x.com/ClaudeDevs/status/2090933155847143498">Claude Code Remote Control 聚焦可靠性改进</a></h3>
 <ul>
-<li>[I like to use this for explainers and diving into a problem, e.g.</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Remote Control</code> <code>可靠性</code> <code>远程开发</code></li>
 </ul>
-<p>/eli5 how does this module work</p>
-<p>/eli5 why did we make this tradeoff</p>
-<p>/eli5 what caused this incident](<a href="https://x.com/trq212/status/2090890394880155888">https://x.com/trq212/status/2090890394880155888</a>)</p>
+<p><strong>摘要</strong>: Claude Devs 表示，团队根据用户反馈持续修复 Remote Control 的可靠性问题。此次更新围绕远程控制体验展开，但该条信息本身未列出具体改进项目。 Claude Code 现在支持直接从手机启动远程会话。开启 <code>claude remote-control</code> 的电脑会以设备卡片显示在 Code 标签页顶部，用户选择目录后即可让会话在该电脑上启动。 Claude Code Remote Control 现在会让手机端持续跟随电脑上正在运行的会话。用户在笔记本上恢复会话后，手机不会再把它归档；电脑端退出后，手机也会在数秒内显示离线，减少过期状态。 Claude Code 现在能在连接短暂中断后自动恢复会话。用户关闭笔记本或切换 Wi-Fi 后，无需手动重连即可继续使用原有开发会话。 Claude Code 的手机端和 CLI 会话现在可以同步模型与 effort level，iOS 打开大型会话的速度也更快。移动端的 <code>/clear</code>、<code>/compact</code> 和 <code>/diff</code> 斜杠命令得到改进，分别用于重置视图、显示压缩标记和打开原生差异面板。 Claude Devs 表示 Remote Control 还会继续改进，并建议用户把 CLI、桌面端和移动端更新到最新版本并开启自动更新。相关功能和使用方式已在 Claude Code 文档中同步说明。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[debating whether we should make it an official plugin, but you can try installing it here to try with these commands:</li>
+<li>在真实网络环境下连续测试远程会话的启动、恢复和退出流程，记录状态不同步的场景。</li>
+<li>将 Remote Control 的连接稳定性纳入团队开发工具评估与回归测试。</li>
 </ul>
-<p>claude plugin marketplace add anthropics/claude-plugins-community</p>
-<p>claude plugin ](<a href="https://x.com/trq212/status/2090884855798407576">https://x.com/trq212/status/2090884855798407576</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://x.com/trq212/status/2090890394880155888">Claude Code 的 ELI5 技能：用图文解释复杂问题</a></h3>
 <ul>
-<li>[a skill people at Anthropic have been using a lot recently: ELI5</li>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>ELI5</code> <code>技能</code> <code>HTML Artifact</code></li>
 </ul>
-<p>/eli5 &lt;what you want explained&gt;</p>
-<p>&quot;explain like I&#39;m someone who knows nothing about this topic, using a HTML artifact with big pi](<a href="https://x.com/trq212/status/2090884854590382515">https://x.com/trq212/status/2090884854590382515</a>)</p>
-<h2 id="h-2">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: Thariq 分享了 Anthropic 内部常用的 ELI5 技能，用于解释模块原理、设计取舍和事故原因。该技能会把复杂主题转化为面向新手的 HTML 图文说明，适合在 Claude Code 中辅助理解和复盘。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2090852320128938319">It&#39;s one of several steps to bring frontier capability to more defenders: we’re working with partners to integrate Mythos 5 into their security products and services, our new Defender Advantage Fund p</a></li>
-<li><a href="https://x.com/claudeai/status/2090852318527033804">Suggested patches open in Claude Code on the web, using the models your team already uses. These updates are part of our work to give defenders greater access to Mythos results without requiring direc</a></li>
-<li><a href="https://x.com/claudeai/status/2090852316328902930">Point Claude Security at a GitHub repo and Mythos scans for vulnerabilities tracing data across files and reasoning about how components interact. Each finding comes back with a CWE category, confiden</a></li>
-<li>[Claude Security scans now run on Claude Mythos 5, available today in public beta for all Claude Enterprise customers.</li>
+<li>在代码库中安装或复刻 ELI5 技能，用它解释关键模块和架构取舍。</li>
+<li>将 ELI5 输出用于事故复盘，要求生成面向非技术成员的图文说明。</li>
 </ul>
-<p>Put our most capable security model to work on your codebase, no separate model a](<a href="https://x.com/claudeai/status/2090852314319880425">https://x.com/claudeai/status/2090852314319880425</a>)</p>
-<h2 id="h-3">Claude Devs (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/SpaceXAI/status/2090885694407250418">Grok 4.6 登陆 Google Vertex AI</a></h3>
 <ul>
-<li>[More improvements on the way! Make sure you&#39;re on the latest CLI, Desktop and mobile apps with auto-update on.</li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok 4.6</code> <code>Google Vertex AI</code> <code>云平台</code> <code>模型接入</code></li>
 </ul>
-<p>Docs: <a href="https://t.co/MqPyhAWclz%5D(https://x.com/ClaudeDevs/status/2090933162247680483)">https://t.co/MqPyhAWclz](https://x.com/ClaudeDevs/status/2090933162247680483)</a></p>
+<p><strong>摘要</strong>: Grok 4.6 现已在 Google Vertex AI 上线，开发者可以直接通过该云平台调用这一模型。此次接入扩大了 Grok 4.6 在企业云环境中的可用性，并降低了与现有 Google Cloud 工作流集成的门槛。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Your phone and CLI sessions also stay in sync on model and effort level, and heavy sessions open much faster on iOS.</li>
+<li>在 Vertex AI 中对比 Grok 4.6 与现有模型的调用延迟、成本和效果。</li>
+<li>检查现有 Google Cloud 工作流是否可以直接复用 Vertex AI 的权限与监控配置。</li>
 </ul>
-<p>Slash commands work better from your phone too:
-• /clear resets the phone view
-• /](<a href="https://x.com/ClaudeDevs/status/2090933161115205700">https://x.com/ClaudeDevs/status/2090933161115205700</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/trq212/status/2090884854590382515">Anthropic 内部用 ELI5 技能生成图文解释</a></h3>
 <ul>
-<li><a href="https://x.com/ClaudeDevs/status/2090933160033059303">Dropped connections now recover on their own, so if you briefly close your laptop or switch wifi, it&#39;ll automatically reconnect.</a></li>
-<li>[Your phone now stays in sync with what&#39;s running on your machine.</li>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>ELI5</code> <code>技能</code> <code>HTML Artifact</code></li>
 </ul>
-<p>Resuming a session on your laptop keeps the phone on the live session instead of archiving it. When Claude Code exits, your phone sh](<a href="https://x.com/ClaudeDevs/status/2090933158795767846">https://x.com/ClaudeDevs/status/2090933158795767846</a>)</p>
+<p><strong>摘要</strong>: Anthropic 内部近期频繁使用 ELI5 技能来解释复杂主题。用户输入 <code>/eli5</code> 和问题后，Claude 会以几乎不了解背景的读者为对象，生成大图、少文字的 HTML Artifact。 Anthropic 团队正在考虑把 ELI5 技能做成官方插件，目前用户可以通过 Claude 插件社区市场手动安装。安装后可使用 <code>/eli5</code> 命令，把指定主题转成适合初学者阅读的解释和 HTML Artifact。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[You can now start a Claude Code session directly from your phone.</li>
+<li>让 Claude 以新成员为读者生成项目架构的 ELI5 页面，作为入职材料。</li>
+<li>比较图文 Artifact 与普通文字说明在代码评审和故障排查中的可理解性。</li>
 </ul>
-<p>Any machine running claude remote-control shows up as a device card at the top of the Code tab. Tap it, pick a directory, and it star](<a href="https://x.com/ClaudeDevs/status/2090933157243863142">https://x.com/ClaudeDevs/status/2090933157243863142</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/claudeai/status/2090852314319880425">Claude Security 公测接入 Mythos 5</a></h3>
 <ul>
-<li>[Last month you told us Remote Control was the thing you&#39;d most like us to fix, so we&#39;ve been working hard on reliability.</li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Security</code> <code>Mythos 5</code> <code>Enterprise</code> <code>公测</code></li>
 </ul>
-<p>Here&#39;s what&#39;s better today: 🧵](<a href="https://x.com/ClaudeDevs/status/2090933155847143498">https://x.com/ClaudeDevs/status/2090933155847143498</a>)</p>
-<h2 id="h-4">OpenAI (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Security 扫描现已运行在 Claude Mythos 5 上，并向所有 Claude Enterprise 客户开放公测。企业无需单独申请或管理模型访问权限，就能让最强安全模型扫描自己的代码库。 用户可以把 GitHub 仓库交给 Claude Security 扫描，Mythos 会跨文件追踪数据流并推理组件之间的交互。每个发现都会附带 CWE 分类、置信度和严重性评级，以及一条建议修复方案。 Claude Security 的扫描结果现在可以在 Claude Code 网页端打开建议补丁，并继续使用团队已有的模型。模型在扫描后台运行，只返回发现结果和修复建议，不要求用户直接访问 Mythos 5；扫描按现有套餐的标准 Token 用量计费。 Claude Security 正在把 Mythos 5 集成到合作伙伴的安全产品和服务中，让更多防御方获得前沿模型能力。Anthropic 同时设立 3500 万美元的 Defender Advantage Fund，为开源安全项目提供额度，并将扩大 Cyber Verification Program。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Now available on the API and rolling out across eligible plans for ChatGPT Work and Codex credits.</li>
+<li>在 Enterprise 账户中启用公测，对一组代表性仓库建立基线扫描。</li>
+<li>比较 Mythos 5 扫描结果与现有 SAST 工具，确定互补的安全门禁。</li>
 </ul>
-<p>Pro, Plus, and Business subscription usage remains unchanged.
-<a href="https://t.co/DzyrOMdXpW%5D(https://x.com/OpenAI/status/2090885188897460249)">https://t.co/DzyrOMdXpW](https://x.com/OpenAI/status/2090885188897460249)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/OpenAIDevs/status/2090903221636338057">API 可按密钥追踪用量并设置硬支出上限</a></h3>
 <ul>
-<li><a href="https://x.com/OpenAI/status/2090885187634905500">As we continue to push the frontier of capabilities while improving efficiency, we&#39;re dropping API and credit pricing of GPT-5.6 Sol by over 20% for the next 3 months. https://t.co/UoTb3hcB2t</a></li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>API key</code> <code>用量分析</code> <code>支出上限</code> <code>成本控制</code></li>
 </ul>
-<h2 id="h-5">OpenAI Devs (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI 的 Usage 和 Spend dashboards 现在支持按 API key 查看哪些应用和工作负载产生支出。组织或项目还可以设置月度支出上限，包括达到阈值后停止流量的硬限制，以降低失控消耗风险。 OpenAI Devs 表示，用量与支出管理能力现已在 API Platform 和 Admin API 中提供，便于程序化工作流接入。结合 GPT-5.6 Sol 未来三个月的降价，开发者可以更细致地观察并控制规模化使用成本。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Available in the API Platform and via Admin API for programmatic workflows.</li>
+<li>为不同应用使用独立 API key，并在 Usage dashboard 中建立按应用的成本基线。</li>
+<li>先设置项目级软预算，再为高风险自动化工作负载配置硬支出上限。</li>
 </ul>
-<p>With lower GPT-5.6 Sol API pricing for the next three months, these updates give you more visibility and control as your us](<a href="https://x.com/OpenAIDevs/status/2090903233879585263">https://x.com/OpenAIDevs/status/2090903233879585263</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/OpenAI/status/2090885187634905500">GPT-5.6 Sol 降价超 20%：API、Codex 与 Work 同步受益</a></h3>
 <ul>
-<li>[You can now track usage and spend by API key in the Usage and Spend dashboards to see which apps and workloads drive your spend.</li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>API 定价</code> <code>Codex</code> <code>成本优化</code></li>
 </ul>
-<p>Set monthly organization or project spend limits, including hard limit](<a href="https://x.com/OpenAIDevs/status/2090903221636338057">https://x.com/OpenAIDevs/status/2090903221636338057</a>)</p>
+<p><strong>摘要</strong>: GPT-5.6 Sol 的 API 价格在未来三个月下调超过 20%，同时延伸到 Codex credits 与 ChatGPT Work 的使用。降价旨在反映模型效率提升，让开发者和团队以更低成本运行现有工作负载。相关更新也覆盖 API 与管理端的使用范围，订阅用户的基础额度保持不变。 OpenAI 表示，GPT-5.6 Sol 的 API 和 credits 价格将在未来三个月下调超过 20%。新价格已在 API 上线，并向符合条件的 ChatGPT Work 与 Codex credits 用户逐步开放；Pro、Plus 和 Business 订阅的用量不变。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Now live for API users and rolling out to Codex and ChatGPT Work throughout the day.</li>
+<li><a href="https://x.com/OpenAIDevs/status/2090888116014137718">GPT-5.6 Sol 降价让 Codex credits 更耐用</a> · OpenAI Devs (Twitter) · Codex 与 Work 价格同步</li>
 </ul>
-<p>Pro, Plus, and Business subscription usage remains unchanged.</p>
-<p><a href="https://t.co/OOCCifRGj6%5D(https://x.com/OpenAIDevs/status/2090888128198537646)">https://t.co/OOCCifRGj6](https://x.com/OpenAIDevs/status/2090888128198537646)</a></p>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/GoogleDeepMind/status/2090772922818286080">Google DeepMind 与 Fenris 探索游戏中的长期智能</a></h3>
 <ul>
-<li><a href="https://x.com/OpenAIDevs/status/2090888116014137718">If you’re building with GPT-5.6 Sol, we’re reducing API prices by over 20% for the next 3 months as we make it more efficient to run, while the credits you buy will go further in Codex on token-based </a></li>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Google DeepMind</code> <code>持续学习</code> <code>长期记忆</code> <code>长期规划</code> <code>多智能体</code></li>
 </ul>
-<h2 id="h-6">Google DeepMind (Twitter)</h2>
+<p><strong>摘要</strong>: Google DeepMind 与 Fenris Creations 建立研究合作，把持续存在的游戏世界作为研究 AI 的测试场。方向包括持续学习、超长记忆、跨周乃至跨年的长期规划，以及涵盖合作、谈判和经济行为的多智能体互动，并希望将成果用于现实问题与科学发现。</p>
+<hr>
+<h2 id="h-12">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li>[Games have been an important testbed for our AI research for over 15 years. 🎮</li>
+<li><strong>商业动态</strong> | <code>ZCode</code> <code>GLM-5.3</code> <code>免费额度</code> <code>开发者活动</code> — ZCode 将 Build Week 扩展为持续系列活动，并为 50,000 名新用户提供每人 1 亿枚 GLM-5.3 免费 token。活动面向指定时间内首次登录 ZCode 的用户，额度在活动结束时失效。 · <a href="https://x.com/Zai_org/status/2090831300915556515">Z.ai (Twitter)</a></li>
+<li><strong>教程与观点</strong> | <code>Qwen3.8-27B</code> <code>SGLang</code> <code>NVFP4</code> <code>DFlash2</code> <code>推理优化</code> — SGLang cookbook 新增 Qwen3.8-27B 的 NVFP4 与 DFlash2 配方，帮助社区快速尝试这两种推理优化方案。相关实践据称已经取得较好效果，后续还会继续补充 Qwen3.8-27B 的更新内容。 · <a href="https://x.com/Alibaba_Qwen/status/2090709994761339190">Qwen (Twitter)</a></li>
 </ul>
-<p>From mastering Atari to reaching Grandmaster in StarCraft II, they have driven some of our biggest AI breakthroughs.</p>
-<p>Ou](<a href="https://x.com/GoogleDeepMind/status/2090772922818286080">https://x.com/GoogleDeepMind/status/2090772922818286080</a>)</p>
-<h2 id="h-7">xAI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/SpaceXAI/status/2090885694407250418">Grok 4.6 is now available on Google Vertex AI 
-https://t.co/K8433IlivQ https://t.co/04hnhPq2lu</a></li>
-</ul>
-<h2 id="h-8">DeepSeek (Twitter)</h2>
-<ul>
-<li>[Files API is now live. 📁</li>
-</ul>
-<p>🔹 Free to use
-🔹 Upload an image once, then reference it by file_id to save request bandwidth
-🔹 Reuse the same image across requests—no need to upload it again</p>
-<p>Learn more](<a href="https://x.com/deepseek_ai/status/2090730042586489333">https://x.com/deepseek_ai/status/2090730042586489333</a>)</p>
-<ul>
-<li>[Multimodal API support 🔌</li>
-</ul>
-<p>🔹 Set model=&#39;deepseek-v4-flash-vision-exp&#39;
-🔹 Images are tokenized for billing: up to 384 tokens each, at V4-Flash pricing
-🔹 Supports Chat Completions, Messages &amp; Response](<a href="https://x.com/deepseek_ai/status/2090730039973392531">https://x.com/deepseek_ai/status/2090730039973392531</a>)</p>
-<ul>
-<li>[Multimodality unlocks more agent use cases. 👀</li>
-</ul>
-<p>V4-Flash-Vision-Exp works smoothly across agent frameworks, combining visual understanding with a wide range of tools to unlock more practical workflows](<a href="https://x.com/deepseek_ai/status/2090730036852858964">https://x.com/deepseek_ai/status/2090730036852858964</a>)</p>
-<ul>
-<li>[DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! 🚀</li>
-</ul>
-<p>🔹 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities—including agents, reasoning, and world k](<a href="https://x.com/deepseek_ai/status/2090730032574631962">https://x.com/deepseek_ai/status/2090730032574631962</a>)</p>
-<h2 id="h-9">Qwen (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2090709994761339190">Fresh recipes just dropped! ⚡ NVFP4 + DFlash2 for Qwen3.8-27B now in the SGLang cookbook. Thanks for the support! @sgl_project</a></li>
-</ul>
-<h2 id="h-10">Z.ai (Twitter)</h2>
-<ul>
-<li>[The community has already built so many interesting projects with ZCode + GLM-5.3.</li>
-</ul>
-<p>To thank everyone for all the support, we’re turning Build Week into an ongoing series.</p>
-<p>From now to Aug 23 at 6 PM ](<a href="https://x.com/Zai_org/status/2090831300915556515">https://x.com/Zai_org/status/2090831300915556515</a>)</p>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-2">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-3">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-4">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">Google DeepMind (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">xAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">DeepSeek (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-9">Qwen (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-10">Z.ai (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. DeepSeek V4 Flash Vision Experimental 上线</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Claude Code Remote Control 聚焦可靠性改进</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Claude Code 的 ELI5 技能：用图文解释复杂问题</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Grok 4.6 登陆 Google Vertex AI</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Anthropic 内部用 ELI5 技能生成图文解释</a></li>
+      <li class="toc-h3"><a href="#h-8">6. Claude Security 公测接入 Mythos 5</a></li>
+      <li class="toc-h3"><a href="#h-9">7. API 可按密钥追踪用量并设置硬支出上限</a></li>
+      <li class="toc-h3"><a href="#h-10">8. GPT-5.6 Sol 降价超 20%：API、Codex 与 Work 同步受益</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Google DeepMind 与 Fenris 探索游戏中的长期智能</a></li>
+      <li class="toc-h2"><a href="#h-12">速览</a></li>
     </ul>
   </aside>
     </div>
