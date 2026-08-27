@@ -1,0 +1,781 @@
+{
+  "analyzed_at": "2026-08-27T15:56:46.243Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-08-21.json",
+  "trend_paragraph": "- **代理工具链成熟**：Claude 平台把 Computer Use、浏览器工具、Skills API 与 Files API 组合成可版本化、可复用的托管代理基础设施。\n- **多模态走向行动**：Muse Spark 1.2 将视觉推理、代码生成和机器人工具调用串成闭环，并用 WildArtifactBench 评估真实交付物。\n- **工作流更可共享**：Codex 与 ChatGPT Work 通过共享线程、Computer History 和 Record & Replay，降低协作、交接与重复操作的成本。\n- **AI 进入日常学习创作**：Claude Academy 与 Claude Code 用户项目展示了从免费课程到中文书法、三维场景和医学影像工具的落地路径。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/introducing-ai-futures",
+      "source": "OpenAI Blog",
+      "title": "OpenAI推出AI Futures：讨论变革性AI的未来影响",
+      "summary": "OpenAI推出「AI Futures」博客，聚焦变革性人工智能可能如何重塑权力结构、治理方式与经济体系。该栏目也将讨论个人自由等议题，为理解AI长期社会影响提供持续的观点框架。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "AI治理",
+        "未来趋势",
+        "经济影响",
+        "个人自由"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/karpathy/status/2090479399842054610",
+      "source": "Andrej Karpathy (Twitter)",
+      "title": "Karpathy：模型规格可编译为更高效的执行实现",
+      "summary": "Karpathy认为，如果把模型规格抽象成类似「microgpt」的标量Python程序，其他实现细节就可以视为编译问题。PyTorch在这一视角下更像一种不够理想的中间表示，提示模型表达与执行后端可以进一步解耦。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "模型编译",
+        "microgpt",
+        "PyTorch",
+        "中间表示"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/trq212/status/2090569474139439335",
+      "source": "Thariq (Twitter)",
+      "title": "Anthropic发布Fable企业级安全防护",
+      "summary": "Anthropic推出面向企业的新一代Fable安全防护方案，支持部署在客户自有基础设施上。企业可以更好地控制数据存储位置和访问权限，该方案已与约100家公司共同开发，计划在秋季扩大推广。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Fable",
+        "企业安全",
+        "本地部署",
+        "数据治理"
+      ],
+      "practice_suggestions": [
+        "梳理企业数据驻留和访问控制要求，再评估自有基础设施部署方案。",
+        "先用内部非敏感工作负载验证权限边界、审计日志和运维流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557653294383151",
+      "source": "Claude (Twitter)",
+      "title": "Claude展示用户项目并发起创作分享",
+      "summary": "Claude发起用户项目展示，邀请开发者分享他们正在构建的作品。该帖是一个项目精选线程的开场，重点体现Claude在实际创作和开发场景中的使用方式。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "用户案例",
+        "创作分享",
+        "开发实践"
+      ],
+      "practice_suggestions": [
+        "选择一个真实工作流做小型原型，并记录Claude在需求拆解、实现和迭代中的贡献。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557651595722851",
+      "source": "Claude (Twitter)",
+      "title": "Claude用户用AI制作中文书法学习工具",
+      "summary": "Claude展示了一个中文书法艺术与学习工具案例，项目作者将视觉创作和学习体验结合起来。这个案例说明Claude可用于快速构建具有文化内容和交互形式的教育型应用。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "中文书法",
+        "学习工具",
+        "交互应用"
+      ],
+      "practice_suggestions": [
+        "把专业知识拆成可交互的小练习，并让模型先生成内容结构，再由专家校验准确性。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557650056450058",
+      "source": "Claude (Twitter)",
+      "title": "Claude用户用代码制作低速短信应用",
+      "summary": "Claude分享了一个将短信传输刻意设计得极慢的实验性应用，消息从洛杉矶发送到纽约可能需要约22小时。这个项目通过夸张的延迟和失败机制，把通信基础设施转化为具有叙事性的创作体验。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "短信应用",
+        "创意编程",
+        "用户项目"
+      ],
+      "practice_suggestions": [
+        "在原型中主动设置清晰的约束或反常参数，观察模型能否把限制转化为独特的产品体验。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557648567505222",
+      "source": "Claude (Twitter)",
+      "title": "Claude用户生成可在浏览器行走的城市街景",
+      "summary": "Claude展示了一个由代码生成、可直接在浏览器中行走的城市街景。项目无需下载额外资源，体现了模型将程序化生成、三维交互和浏览器体验组合起来的能力。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "程序化生成",
+        "三维场景",
+        "浏览器应用"
+      ],
+      "practice_suggestions": [
+        "先让模型生成可运行的最小交互场景，再逐步增加资产、导航和性能优化要求。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557647032361031",
+      "source": "Claude (Twitter)",
+      "title": "Claude用户把代码库转换为可探索的动态图表",
+      "summary": "Claude展示了一个把代码库转换为视觉图表的工作流，图中的移动节点代表可进一步检查的数据片段。通过先建立整体结构再深入局部，开发者可以更直观地与Claude讨论复杂代码库。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "代码可视化",
+        "代码理解",
+        "开发工具"
+      ],
+      "practice_suggestions": [
+        "先让模型为大型代码库生成模块、依赖和数据流视图，再针对高风险节点逐层检查实现细节。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557645417578721",
+      "source": "Claude (Twitter)",
+      "title": "Claude Code两轮提示词生成DICOM查看器",
+      "summary": "Claude展示了一个用户用Claude Code处理牙科三维X光数据的案例：面对800个DICOM文件，用户让模型快速生成了查看器。案例表明，模型可以把原本依赖专业软件才能打开的数据转化为更易用的定制工具。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "DICOM",
+        "医学影像",
+        "快速原型"
+      ],
+      "practice_suggestions": [
+        "先用脱敏样本验证医学数据查看器，再补充格式兼容、访问控制和专业人员复核。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/claudeai/status/2090557643974693055",
+      "source": "Claude (Twitter)",
+      "title": "Claude精选用户项目：用JavaScript绘制人脸",
+      "summary": "Claude精选了一个用JavaScript绘制人脸的创意编程项目，作者将代码直接作为视觉创作媒介。该案例体现了自然语言辅助编程如何降低进入生成式艺术和交互实验的门槛。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "JavaScript",
+        "生成艺术",
+        "创意编程"
+      ],
+      "practice_suggestions": [
+        "从一个可视化小练习开始，让模型同时生成代码、参数说明和可调整的实验入口。"
+      ],
+      "thread_group_id": "thread-claudeai-20260820-2152",
+      "duplicate_of": null
+    },
+    {
+      "title": "Anthropic介绍AI教学理念与Claude Academy定位",
+      "summary": "Claude官方介绍Anthropic对AI教学与学习的整体思路，并说明Claude Academy在其中的定位。该内容将平台课程放入更完整的学习框架中，帮助学习者理解课程设计的目标。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "AI教育",
+        "Claude Academy",
+        "学习方法",
+        "Anthropic"
+      ],
+      "url": "https://x.com/claudeai/status/2090518651665351046",
+      "source": "Claude (Twitter)",
+      "thread_group_id": "thread-claudeai-20260820-1917",
+      "duplicate_of": null
+    },
+    {
+      "title": "Claude Academy上线免费分层AI课程",
+      "summary": "Claude Academy正式上线，为刚接触AI的学习者和日常使用Claude的用户提供分层课程与教程。课程免费并向所有人开放，用户可以按照自身经验选择学习路径。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Academy",
+        "AI教程",
+        "入门课程",
+        "免费学习"
+      ],
+      "practice_suggestions": [
+        "按团队成员的基础水平选择课程，并为每人安排一个真实任务进行练习。",
+        "将课程中的方法整理成内部培训路径，定期用任务完成质量检验效果。"
+      ],
+      "url": "https://x.com/claudeai/status/2090518650251804742",
+      "source": "Claude (Twitter)",
+      "thread_group_id": "thread-claudeai-20260820-1917",
+      "duplicate_of": null
+    },
+    {
+      "title": "Claude Files API新增过期控制并提升配额",
+      "summary": "Files API支持上传一次后通过file_id在多次请求中复用文件。此次更新增加expires_in_seconds过期控制，将速率上限提高到每分钟500次，并把单组织存储容量提升到1TB。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Files API",
+        "文件复用",
+        "过期控制",
+        "速率限制",
+        "存储配额"
+      ],
+      "practice_suggestions": [
+        "为重复使用的参考资料保存file_id，减少多次请求的上传开销。",
+        "按文件敏感度设置expires_in_seconds，并实现过期后的自动重新上传。",
+        "根据每分钟500次的新上限重新评估批处理任务的并发配置。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090540275357606263",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-2043",
+      "duplicate_of": null
+    },
+    {
+      "title": "Skills API与Files API支撑托管代理",
+      "summary": "Skills API和Files API被定位为Claude Managed Agents的基础构件。团队可以上传并版本化操作流程，再通过version_id或latest将指定版本绑定到请求中，从而让代理行为更可控、更易回滚。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Skills API",
+        "Files API",
+        "托管代理",
+        "版本管理",
+        "业务流程"
+      ],
+      "practice_suggestions": [
+        "把稳定的团队SOP封装为可版本化Skill，并在生产请求中固定version_id。",
+        "在测试环境使用latest验证新版本，确认稳定后再升级生产代理。",
+        "为每个Skill保留变更记录和回滚版本，降低流程更新风险。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090540273939996958",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-2043",
+      "duplicate_of": null
+    },
+    {
+      "title": "Claude浏览器工具引入页面结构引用",
+      "summary": "browser_toolset_20260801为Claude提供页面结构信息，使浏览器自动化可以使用元素引用和坐标，而不再依赖易受布局变化影响的纯像素定位。这样能提高页面轻微改版后的自动化稳定性。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "浏览器自动化",
+        "页面结构",
+        "元素引用",
+        "Computer Use",
+        "稳定性"
+      ],
+      "practice_suggestions": [
+        "将现有脚本从纯坐标定位迁移到元素引用，并保留坐标作为降级路径。",
+        "为页面改版建立回归测试，验证引用失效时的提示与恢复流程。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090540272690057481",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-2043",
+      "duplicate_of": null
+    },
+    {
+      "title": "Claude Computer Use单轮执行多步动作",
+      "summary": "Claude的计算机操作工具现在可以在一次交互轮次中连续执行点击、输入、按键和截图等多个动作，不必每一步都等待往返。早期客户的任务往返次数减少了20%至40%，有望缩短执行时间并降低成本。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Computer Use",
+        "多步操作",
+        "浏览器自动化",
+        "延迟",
+        "成本"
+      ],
+      "practice_suggestions": [
+        "在多步骤桌面流程中合并连续动作，并记录往返次数、时延和失败率。",
+        "为高风险操作保留人工确认节点，避免减少往返时牺牲安全控制。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090540271557546261",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-2043",
+      "duplicate_of": null
+    },
+    {
+      "title": "Claude 平台开放代理工具链：浏览器、Skills 与 Files API",
+      "summary": "Claude 平台现已开放 Computer Use、浏览器工具、Skills API 和 Files API，开发者可以自动化没有 API 的应用并构建托管代理。计算机操作支持单轮连续执行多步动作，早期客户的任务往返次数减少了 20% 至 40%；浏览器工具还提供页面结构引用，降低布局变化对自动化的影响。Skills 可以版本化团队流程，Files 支持复用文件、设置过期时间，并提供更高的速率和组织级存储配额。托管代理也可通过 AG-UI 适配器接入聊天界面，流式传递文本、工具调用和思考状态。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Platform",
+        "Computer Use",
+        "浏览器自动化",
+        "Skills API",
+        "Files API",
+        "托管代理",
+        "AG-UI"
+      ],
+      "practice_suggestions": [
+        "选择一个没有 API 的内部流程进行小规模 Computer Use 试点，先限制权限和操作范围。",
+        "把稳定的团队 SOP 封装为可版本化 Skill，并在生产请求中固定 version_id。",
+        "为重复使用的参考资料保存 file_id，按敏感度设置过期时间。",
+        "在聊天界面展示工具调用和人工接管点，记录代理失败原因与恢复路径。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090540270219567575",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-2043",
+      "duplicate_of": null
+    },
+    {
+      "title": "AG-UI适配器把托管代理接入聊天界面",
+      "summary": "Claude Managed Agents的AG-UI适配器会把每个聊天线程映射为托管会话，并向界面流式传递文本、工具调用和思考过程。官方还提供了可直接尝试的集成示例，方便开发者构建代理交互界面。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "AG-UI",
+        "托管代理",
+        "流式输出",
+        "工具调用",
+        "聊天界面"
+      ],
+      "practice_suggestions": [
+        "用适配器搭建最小聊天界面，分别展示文本、工具调用和思考状态。",
+        "为每个聊天线程维护独立的托管会话标识，避免并发用户串用上下文。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090511583814492661",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-1849",
+      "duplicate_of": null
+    },
+    {
+      "title": "Managed Agents新增AG-UI集成食谱",
+      "summary": "Claude Managed Agents可以服务于多种用户界面，官方新食谱将其与CopilotKit的开放式AG-UI协议结合。该示例为代理接入聊天产品提供了可复用的实现参考。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Managed Agents",
+        "AG-UI",
+        "CopilotKit",
+        "代理界面"
+      ],
+      "practice_suggestions": [
+        "参考示例将代理能力连接到现有前端的消息流和工具状态展示。",
+        "先在非生产界面验证协议事件映射，再补充权限、会话隔离和错误处理。"
+      ],
+      "url": "https://x.com/ClaudeDevs/status/2090511582531072265",
+      "source": "Claude Devs (Twitter)",
+      "thread_group_id": "thread-ClaudeDevs-20260820-1849",
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2090540270219567575",
+      "angle": "托管代理界面集成"
+    },
+    {
+      "title": "OpenAI在欧洲开放Mac端Computer History",
+      "summary": "OpenAI将Mac桌面应用的Computer History功能开放给欧洲经济区、英国和瑞士的Pro、Business与Enterprise用户。符合条件的用户现在可以在桌面端使用这项计算机操作历史能力。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI",
+        "Mac应用",
+        "Computer History",
+        "欧洲地区",
+        "企业版"
+      ],
+      "practice_suggestions": [
+        "在受支持地区用低风险任务验证Computer History的记录范围和检索方式。",
+        "企业管理员先确认数据保留、访问权限和合规要求，再向团队开放功能。"
+      ],
+      "url": "https://x.com/OpenAI/status/2090488285198250017",
+      "source": "OpenAI (Twitter)",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2090487766442512398",
+      "angle": "欧洲地区开放 Computer History"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090555253200769288",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "共享线程让代码审查告别截图考古",
+      "summary": "Codex 和 ChatGPT Work 的共享线程支持生成只读链接，让他人直接查看构建过程、上下文和推理过程。该功能适合分享 Pull Request、深度分析或项目交接，减少依赖截图还原工作背景的成本。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "ChatGPT Work",
+        "共享线程",
+        "代码审查"
+      ],
+      "practice_suggestions": [
+        "用共享线程替代 PR 中的过程截图，保留决策上下文和推理链。",
+        "为项目交接建立只读链接，并在描述中标注需要复核的关键结论。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-2143",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090555241343418814",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 与 ChatGPT Work 支持只读共享线程",
+      "summary": "Codex 和 ChatGPT Work 现在可以把共享线程发布为只读链接，让协作者看到构建过程背后的上下文与推理。它覆盖 Pull Request、技术深潜和项目交接等场景，有助于让工作过程更容易复盘和传递。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "ChatGPT Work",
+        "只读链接",
+        "项目交接"
+      ],
+      "practice_suggestions": [
+        "在交付代码时附上只读线程链接，让评审者直接了解实现过程。",
+        "将深度分析线程作为项目文档入口，减少重复解释背景。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-2143",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090536945554456724",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex 预告更透明的工作过程",
+      "summary": "OpenAI Devs 预告将推出更多与透明度相关的内容，但这条更新没有披露具体功能或发布时间。当前信息更像是对后续产品说明的预热，仍需等待正式公告确认细节。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Codex",
+        "透明度",
+        "产品预告",
+        "OpenAI"
+      ],
+      "practice_suggestions": [
+        "关注后续正式公告，确认透明度功能是否涉及线程、权限或审计记录。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-2030",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090536933571330440",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Image-2 API 预览支持透明背景",
+      "summary": "GPT-Image-2 API 预览新增透明背景生成能力，生成的素材可以直接放置到不同背景上。该能力面向产品图片、平面设计、网站模型图和营销活动等可复用素材场景。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "GPT-Image-2",
+        "图像生成",
+        "透明背景",
+        "API"
+      ],
+      "practice_suggestions": [
+        "用透明背景生成商品主体，再在应用内批量套用不同品牌背景。",
+        "为营销素材建立透明 PNG 资产管线，减少抠图和重复生成工作。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-2030",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090515108959305893",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "ChatGPT Sites 支持自定义项目网址",
+      "summary": "ChatGPT Sites 现在允许用户自定义站点网址，使地址能够反映项目内容并更易识别和分享。该更新改善了站点发布后的品牌识别与协作传播体验。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "ChatGPT Sites",
+        "自定义网址",
+        "站点发布",
+        "协作"
+      ],
+      "practice_suggestions": [
+        "为公开站点设置与项目名称一致的短网址，便于团队和访客记忆。",
+        "发布前统一检查网址、页面标题和品牌命名，避免后续迁移成本。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-1903",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090515079058108745",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "ChatGPT Sites 支持多人协作编辑",
+      "summary": "ChatGPT Sites 支持将队友加入为编辑者，协作者可以共同修改和发布同一个项目。Codex 会在后台处理 Git 管理与持续集成，让站点协作更接近团队开发流程。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Sites",
+        "多人协作",
+        "Codex",
+        "持续集成"
+      ],
+      "practice_suggestions": [
+        "为站点项目按角色授予编辑权限，并用版本记录追踪协作变更。",
+        "把发布前检查接入团队 CI 流程，降低多人同时修改带来的回归风险。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-1903",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090487779587477626",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Record & Replay 将工作流录制为可编辑技能",
+      "summary": "Record & Replay 已在欧洲经济区、英国和瑞士的 macOS ChatGPT 应用中提供，并可将重复工作流录制成可复用技能。用户通过演示操作而非文字描述来教会 ChatGPT Work 和 Codex，生成的技能仍可检查和编辑。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Record & Replay",
+        "Codex",
+        "技能",
+        "工作流自动化"
+      ],
+      "practice_suggestions": [
+        "录制报销、请假等重复流程，并在投入使用前逐步检查生成技能的动作。",
+        "优先把低风险、规则稳定的桌面任务沉淀为技能，再扩展到涉及敏感数据的流程。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-1714",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090487766442512398",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI 扩大 Mac 端工作记忆与录制自动化",
+      "summary": "Mac 端 ChatGPT 在欧洲经济区、英国和瑞士向 Pro、Business 与 Enterprise 用户开放 Computer History 和 Record & Replay。启用 Computer History 后，ChatGPT 可以利用近期应用与网站活动，为后续对话提供更完整的工作上下文。Record & Replay 则允许用户通过演示操作把重复流程沉淀为可复用技能，并继续由 ChatGPT Work 和 Codex 执行。两项能力把跨应用记忆与低代码工作流自动化结合起来，但企业仍需先明确数据保留、权限和敏感操作边界。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Computer History",
+        "Record & Replay",
+        "ChatGPT",
+        "Codex",
+        "工作流自动化",
+        "Mac应用"
+      ],
+      "practice_suggestions": [
+        "先在非敏感工作场景试用 Computer History，评估上下文质量和隐私边界。",
+        "录制规则稳定的桌面流程，并在投入使用前逐步检查生成技能的动作。",
+        "为企业账号制定应用访问、历史记录保留和人工确认规则。"
+      ],
+      "thread_group_id": "thread-OpenAIDevs-20260820-1714",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2090480484107141493",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Exa 插件为 Codex 接入千亿级网络资料",
+      "summary": "新的 Exa 插件让 Codex 和 ChatGPT Work 可以访问网站、文档、论文、人物及公司等大规模外部资料。用户可在 Codex 的插件菜单中安装 Exa，用于扩展研究和检索范围。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Exa",
+        "Codex",
+        "插件",
+        "网络检索"
+      ],
+      "practice_suggestions": [
+        "在研究任务中先限定来源类型和时间范围，再使用 Exa 扩展检索覆盖面。",
+        "对插件返回的关键资料保留原始链接，便于团队复核和引用。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090505423212401010",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta 展示 Muse Spark 1.1 与 1.2 生成作品",
+      "summary": "Meta AI 展示了 Muse Spark 1.1 和 1.2 在 Plywood Whale 上生成的作品样例。更新重点是呈现两个版本的实际输出效果，但这条信息没有披露模型能力指标、发布时间或可用范围。",
+      "category": "模型发布",
+      "importance": 3,
+      "tags": [
+        "Muse Spark",
+        "Meta AI",
+        "生成作品",
+        "版本更新"
+      ],
+      "practice_suggestions": [
+        "用同一组提示词对比 Muse Spark 1.1 与 1.2 的输出，记录画面一致性和细节差异。",
+        "在采用新版本前确认其开放范围、授权条款和生产环境稳定性。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1825",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090505420817494500",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.1/1.2 展示数字产物生成能力",
+      "summary": "Meta AI 展示了 Muse Spark 1.1 和 1.2 在 Cat Mesh 上生成的数字产物。该演示聚焦模型从多模态输入产出可观察、可交付结果的能力。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark",
+        "多模态生成",
+        "数字产物",
+        "Cat Mesh"
+      ],
+      "practice_suggestions": [
+        "用图像、视频和文本混合输入测试模型的产物生成能力。",
+        "为生成结果建立可复现的质量评估样例集。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1825",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090505417512345857",
+      "source": "Meta AI (Twitter)",
+      "title": "WildArtifactBench 公布智能体评测设计原则",
+      "summary": "Meta AI 分享了 WildArtifactBench 的部分设计原则，用于评估智能体完成复杂真实任务时生成的多种交付物。该评测强调任务结果的实用性，而不只检查固定答案。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "WildArtifactBench",
+        "智能体评测",
+        "真实任务",
+        "多模态工作流"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1825",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090505413817246050",
+      "source": "Meta AI (Twitter)",
+      "title": "WildArtifactBench 开放十项智能体任务",
+      "summary": "Meta AI 预览了 WildArtifactBench，这是一套面向复杂真实任务和多种交付格式的内部智能体评测框架。框架使用人类与智能体偏好评审产生的胜率和 Elo 分数，并开放了十项任务。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "WildArtifactBench",
+        "智能体评测",
+        "Elo",
+        "偏好评审",
+        "真实任务"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1825",
+      "duplicate_of": "https://x.com/AIatMeta/status/2090485743034716420",
+      "angle": "WildArtifactBench 评测与样例"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090485753671455139",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 支撑媒体生成与多模态信号提取",
+      "summary": "Meta AI 表示，Muse Spark 已在媒体生成等多个内部场景部署，并可为 Muse Image 和 Muse Video 生成详细描述作为训练数据。模型还能够把文本、图像和视频转换为下游应用可用的信号与洞察。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark",
+        "媒体生成",
+        "训练数据",
+        "多模态理解"
+      ],
+      "practice_suggestions": [
+        "评估模型生成字幕对下游图像或视频训练数据质量的提升。",
+        "把文本、图像和视频信号提取接入一个小型多模态分析流程。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1706",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090485751926706501",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.2 让机器人具备空间智能",
+      "summary": "Muse Spark 1.2 的机器人变体可以充当任务编排器，接收用户指令、解析工具调用、观察结果并循环执行。演示中，模型为双臂机器人规划整理桌面的子任务，并区分相似物品后完成收纳。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.2",
+        "空间智能",
+        "机器人",
+        "工具调用"
+      ],
+      "practice_suggestions": [
+        "在模拟环境中测试模型的感知、规划和工具调用闭环。",
+        "为机器人任务记录每次子任务决策及失败恢复路径。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1706",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090485750076989595",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.2 可从图像视频生成网页与游戏",
+      "summary": "Muse Spark 1.2 可以直接从图像或视频生成网页、游戏等数字产物，把视觉布局、层级和风格转换为可运行代码。模型还会依据实际渲染和行为检查正确性，并通过持续自我改进循环优化输出。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.2",
+        "代码生成",
+        "网页生成",
+        "游戏生成",
+        "视觉理解"
+      ],
+      "practice_suggestions": [
+        "用固定网页截图测试模型生成代码的视觉还原度与交互完整性。",
+        "把渲染检查纳入生成代码的自动评测循环。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1706",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090485747497546004",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.2 强化视觉工具使用推理",
+      "summary": "Meta AI 表示，Muse Spark 1.2 在工具使用场景中的推理能力有所增强。模型会更细致地检查视觉输入，并把观察结果纳入后续推理过程。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.2",
+        "视觉推理",
+        "工具使用",
+        "多模态模型"
+      ],
+      "practice_suggestions": [
+        "设计包含截图观察和工具调用的多步任务，比较模型是否使用了关键视觉信息。",
+        "记录每一步视觉观察与工具参数，检查推理链路是否闭环。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1706",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090485744620200366",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.2 展示多项视觉推理评测",
+      "summary": "Meta AI 将通过一组新评测展示 Muse Spark 1.2 在视觉推理、图表理解和知识密集型任务上的表现。该条内容预告了模型能力评估的范围，但没有给出具体分数。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.2",
+        "视觉推理",
+        "图表理解",
+        "模型评测"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1706",
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2090485743034716420",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Spark 1.2：从视觉推理到机器人行动",
+      "summary": "Muse Spark 1.2 覆盖从图像或视频生成网页、游戏等数字产物，到音视频理解、视觉推理和工具使用的多模态任务。模型会检查视觉输入并把观察结果纳入后续推理，还能为机器人编排子任务、解析工具调用并根据结果循环执行。相关能力已延伸到媒体生成和训练数据描述，展示了从感知到可运行产物与物理行动的连续链路。配套的 WildArtifactBench 用真实复杂任务、多种交付格式以及人类与智能体偏好产生的胜率和 Elo 评估这类代理能力。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Muse Spark 1.2",
+        "多模态模型",
+        "视觉推理",
+        "代码生成",
+        "机器人",
+        "工具调用",
+        "WildArtifactBench"
+      ],
+      "practice_suggestions": [
+        "用固定网页截图测试模型生成代码的视觉还原度与交互完整性。",
+        "在模拟环境中测试从视觉观察、任务规划到机器人执行的闭环。",
+        "建立包含图表理解、知识密集任务和多种交付物的评测样例集。",
+        "分别记录代码生成、音视频理解和物理行动三个环节的失败率。"
+      ],
+      "thread_group_id": "thread-AIatMeta-20260820-1706",
+      "duplicate_of": null
+    }
+  ]
+}
