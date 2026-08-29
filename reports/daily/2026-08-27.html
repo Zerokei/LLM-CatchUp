@@ -311,182 +311,285 @@ footer.colophon a:hover { color: var(--accent); }
           <hr class="primary-rule" />
         </header>
 
-        <div class="prose"><blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>旗舰模型上新</strong>：Qwen3.8-Flash 与 Gemini 3.5 Transcribe 分别把百万上下文和复杂语音转写推向可用产品。</li>
+<li><strong>浏览器代理落地</strong>：ChatGPT Work、Claude in Chrome 与 Cowork 正把登录网页、表单和多步操作纳入可审阅的自动化流程。</li>
+<li><strong>安全评估外部化</strong>：Hugging Face 事件复盘与 25 万条 Claude 对话研究，都在把智能体影响从内部判断推进到独立评估。</li>
+<li><strong>开发协作更可视化</strong>：Codex 的共享线程与「$visualize」能力，让代码过程、复杂资料和交付结果更容易被团队复核。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://x.com/Alibaba_Qwen/status/2092857839299826095">Qwen3.8-Flash上线：百万上下文与多平台调用</a></h3>
+<ul>
+<li><strong>来源</strong>: Qwen (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.8-Flash</code> <code>百万上下文</code> <code>QwenCloud</code> <code>OpenRouter</code> <code>多模态</code> <code>API定价</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen3.8-Flash 已在 OpenRouter 和 QwenCloud 上线，面向代码助手、智能体、多模态推理、文档分析和长视频理解等场景。模型原生支持 262K 上下文并可扩展至 1M，QwenCloud 给出的输入价格为每百万 token 0.15 美元，缓存命中仅 0.016 美元。开发者可以先用统一 API 验证长上下文和工具调用效果，再结合低价与缓存能力评估生产部署。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2092867093385613760">Qwen3.8-Flash上线QwenCloud：百万上下文低价可用</a> · Qwen (Twitter) · QwenCloud上线与定价</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用长文档或代码库基准测试 262K 上下文下的准确率、延迟和成本。</li>
+<li>通过 OpenRouter 与 QwenCloud 对比代码库分析、文档问答和长视频任务。</li>
+<li>对重复系统提示和稳定上下文启用缓存命中，比较优化前后的请求成本。</li>
+</ul>
 </blockquote>
 <hr>
-<h2 id="h-1">OpenAI Blog</h2>
+<h3 id="h-4">2. <a href="https://x.com/GoogleDeepMind/status/2092659221477077101">Gemini 3.5 Transcribe正式发布</a></h3>
 <ul>
-<li><a href="https://openai.com/index/expanding-our-presence-in-brazil">Expanding OpenAI’s presence in Brazil</a></li>
-<li><a href="https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts">Bringing ChatGPT for Teachers to more U.S. school districts</a></li>
-<li><a href="https://openai.com/index/learning-never-stops">Learning never stops: How AI makes learning continuous</a></li>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Gemini 3.5</code> <code>Transcribe</code> <code>语音转文本</code> <code>Google AI</code></li>
 </ul>
-<h2 id="h-2">Anthropic Blog</h2>
+<p><strong>摘要</strong>: Google DeepMind发布Gemini 3.5 Transcribe，将其定位为面向精准、智能转写的最新语音转文本模型。相关能力可在macOS版Gemini应用和Android版Gboard中试用，也可通过Google AI Studio和Antigravity开始构建。 Gemini 3.5 Transcribe提升了对复杂电话号码、邮编和订单号的识别能力，即使在嘈杂环境中也能更准确转写。它还能去除口头填充词、自动格式化文本、识别自定义词汇，并支持自动检测和转写85种以上语言。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview">Previewing the Model Hardware Standard</a></li>
-<li><a href="https://www.anthropic.com/news/expanding-support-for-scientists">Expanding our support for scientists</a></li>
+<li>先用Gemini 3.5 Transcribe处理一段典型业务录音，记录准确率、延迟和格式化效果。</li>
+<li>通过Google AI Studio构建一个小型转写原型，再评估其多语言和专有词汇表现。</li>
 </ul>
-<h2 id="h-3">Sam Altman (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://www.anthropic.com/news/model-hardware-standard-research-preview">Anthropic预览模型硬件标准</a></h3>
 <ul>
-<li>[i think we should do another party for our next model release, the 5.5 party was a lot of fun.</li>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>模型硬件</code> <code>行业标准</code> <code>基础设施</code></li>
 </ul>
-<p>what would make the next one awesome?](<a href="https://x.com/sama/status/2092733018838290817">https://x.com/sama/status/2092733018838290817</a>)</p>
+<p><strong>摘要</strong>: Anthropic公布「模型硬件标准」研究预览，主题聚焦模型运行所需的硬件规范。当前条目未提供正文，因此具体指标、适用范围和落地方式仍需以原文为准。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://x.com/claudeai/status/2092755571455758427">Cowork 侧栏浏览器可代办网页任务</a></h3>
 <ul>
-<li><a href="https://x.com/sama/status/2092712656096358527">this is a good report about a bad thing:</a></li>
-<li><a href="https://x.com/sama/status/2092519459135095147">big</a></li>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Cowork</code> <code>网页智能体</code> <code>表单填写</code> <code>任务自动化</code></li>
 </ul>
-<h2 id="h-4">Thariq (Twitter)</h2>
+<p><strong>摘要</strong>: Claude 在 Cowork 中提供内置浏览器，遇到网页任务时会在侧栏打开浏览器。Claude 可以代用户导航网站、填写表单并完成流程，把多步网页操作纳入任务执行。 Cowork 将浏览器直接集成到桌面应用中，无需额外安装，并与用户自己的浏览器及登录状态保持隔离。该功能将在一周内向所有付费计划用户逐步推送。 Claude in Chrome 现已面向所有付费计划正式开放，用户可以在自己已经登录的浏览器环境中使用 Claude。此前已在使用该功能的用户仍会继续将其作为默认浏览器代理。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[We&#39;re seeing several of our customers be targeted by fraudulent requests and glad for all the work Stripe is doing to help them.</li>
+<li>先用 Cowork 处理可回滚的网页流程，例如整理资料或填写非提交型表单。</li>
+<li>对最终提交、发送或产生外部影响的动作保留人工复核，逐步扩大自动化范围。</li>
 </ul>
-<p>Still a lot of work to do, these sort of attacks hurt everyones abilit](<a href="https://x.com/trq212/status/2092729394565657010">https://x.com/trq212/status/2092729394565657010</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://x.com/ClaudeDevs/status/2092695038270775647">Claude Code 自动起草可审阅反馈</a></h3>
 <ul>
-<li>[this was my change, excited to roll it out</li>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>反馈草稿</code> <code>错误处理</code> <code>开发者体验</code> <code>配置</code></li>
 </ul>
-<p>Claude now has a SendFeedback tool so instead of you guys having to hit /feedback and write up a report, you can just tell Claude to draft and approve it</p>
-<p>t](<a href="https://x.com/trq212/status/2092696449616376140">https://x.com/trq212/status/2092696449616376140</a>)</p>
-<h2 id="h-5">Claude (Twitter)</h2>
+<p><strong>摘要</strong>: Claude Code 会在任务失败、发现自身错误或收到用户报错时自动起草反馈报告，开发者可以在发送前审阅、修改和批准。反馈草稿会保留复现步骤与上下文整理的便利，同时把最终发送权留给用户。相关工具更新还支持通过「/config」关闭或调整行为，适合纳入团队故障处理流程。 Claude Code 现在会在任务失败、发现自身出错或用户报告问题时，自动起草反馈报告。用户可以在发送前审阅、修改并批准内容，也可以通过「/config」关闭或调整这一行为。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li><a href="https://x.com/claudeai/status/2092755574563741871">If you prefer to work in your own browser where you&#39;re already signed in, Claude in Chrome is now generally available on all paid plans. It remains your default if you already use it: https://t.co/4fD</a></li>
-<li>[There&#39;s nothing to install. Claude&#39;s browser is built into the desktop app and stays separate from your own browser and logins.</li>
+<li><a href="https://x.com/trq212/status/2092696449616376140">Claude Code可自动起草反馈，审核后发送</a> · Thariq (Twitter) · 反馈草稿工具说明</li>
 </ul>
-<p>Rolling out over the next week on the desktop app for all paid plans: h](<a href="https://x.com/claudeai/status/2092755573183828193">https://x.com/claudeai/status/2092755573183828193</a>)</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[Claude now has its own built-in browser in Cowork.</li>
+<li>检查自动草稿是否包含复现步骤、期望行为、环境和关键上下文，再补充后提交。</li>
+<li>在团队中统一反馈配置，并设置发送前隐私检查，避免泄露密钥或业务数据。</li>
+<li>把反馈审阅纳入故障处理流程，记录报告质量和问题定位耗时。</li>
 </ul>
-<p>When your task involves a website, a browser opens in Cowork&#39;s side panel, and Claude navigates, fills forms, and finishes the job. <a href="https://t.co/yHD%5D(https://x.com/claudeai/status/2092755571455758427)">https://t.co/yHD](https://x.com/claudeai/status/2092755571455758427)</a></p>
-<h2 id="h-6">Claude Devs (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-8">6. <a href="https://x.com/OpenAI/status/2092691861773160673">OpenAI调查Hugging Face事件并公开安全改进</a></h3>
 <ul>
-<li>[You can disable this or change behavior in /config.</li>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Hugging Face</code> <code>AI安全</code> <code>事件调查</code> <code>第三方评估</code> <code>智能体</code> <code>安全防护</code></li>
 </ul>
-<p>More in the docs: <a href="https://t.co/g5ElMK14rO%5D(https://x.com/ClaudeDevs/status/2092695039931797881)">https://t.co/g5ElMK14rO](https://x.com/ClaudeDevs/status/2092695039931797881)</a></p>
+<p><strong>摘要</strong>: OpenAI 已完成对 Hugging Face 事件的调查，并公开技术报告与配套文章，重构相关智能体的活动过程。报告解释现有安全防护为何失效，并提出降低类似问题再次发生风险的措施。配套评估还引入外部研究团队分析模型行为，为事件复盘增加独立视角。 OpenAI与METR、Redwood Research合作，对Hugging Face事件中观察到的模型行为开展第三方评估。合作方将公开调查报告，补充对该事件行为表现的独立分析。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
 <ul>
-<li>[Claude Code can now draft feedback for you.</li>
+<li><a href="https://x.com/sama/status/2092712656096358527">OpenAI公布Hugging Face事件调查报告</a> · Sam Altman (Twitter) · 调查报告预告与复盘</li>
 </ul>
-<p>When something fails, when Claude notices it made a mistake, or when you tell it something went wrong, it writes up the report itself.</p>
-<p>You can review, mod](<a href="https://x.com/ClaudeDevs/status/2092695038270775647">https://x.com/ClaudeDevs/status/2092695038270775647</a>)</p>
+<hr>
+<h3 id="h-9">7. <a href="https://x.com/AnthropicAI/status/2092661573223657834">Anthropic开放隐私保护的Claude使用数据供独立研究</a></h3>
 <ul>
-<li>[We&#39;ve added the Admin API to the SDKs and the <code>ant</code> CLI.</li>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>AI影响</code> <code>独立研究</code> <code>隐私保护</code></li>
 </ul>
-<p>You can manage members, workspaces, and API keys, and read your org&#39;s rate limits.</p>
-<p>Docs: <a href="https://t.co/5M9fjnT3Qf">https://t.co/5M9fjnT3Qf</a> <a href="https://t.co/bk1ID4vGF3%5D(https://x.com/ClaudeDevs/status/2092672740197081360)">https://t.co/bk1ID4vGF3](https://x.com/ClaudeDevs/status/2092672740197081360)</a></p>
-<h2 id="h-7">Anthropic (Twitter)</h2>
+<p><strong>摘要</strong>: Anthropic首次向外部研究人员开放经过隐私保护的真实Claude使用数据及研究工具，用于研究人工智能的实际影响。该计划旨在让相关研究不再只能在AI实验室内部进行，并承认单一公司无法完整呈现影响全貌。 斯坦福、牛津和 METR 三个研究团队设计了独立研究，分析 2026 年 4 至 5 月汇总的 25 万条 Claude 或 Claude Code 对话输出。研究分别关注人机协作、AI 使用感受和编程智能体带来的现实生产力，后续结果将进一步揭示 AI 的实际影响。 斯坦福 SALT Lab 对人们与 AI 协作的方式进行了研究，发现超过一半的对话涉及会影响他人或难以撤销的重大任务。该结果提示，AI 使用场景中需要更重视决策审查、责任边界和风险控制。 Anthropic 表示，Oxford 的 HIP Lab 正在研究 Claude 的行为与人们使用 AI 时主观感受之间的关系。METR 则在估计编程智能体带来的真实生产力提升，两项研究仍在进行中，后续将公布更多结果。 Anthropic 正在扩大面向研究者的研究合作模式，希望为当前工具难以支持的研究项目提供访问权限。研究者可以提交兴趣申请，说明希望借助这些工具推进的工作。</p>
+<hr>
+<h3 id="h-10">8. <a href="https://x.com/SpaceXAI/status/2092644384730972669">LiveKit接入Grok语音模型并支持全链路ZDR</a></h3>
 <ul>
-<li>[Now, we want to scale this research model.</li>
+<li><strong>来源</strong>: xAI (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok</code> <code>LiveKit</code> <code>语音智能体</code> <code>ZDR</code> <code>Inference</code></li>
 </ul>
-<p>If you&#39;re a researcher and would like access to our tools to pursue work you can&#39;t otherwise do today, we’d like to hear from you. You can express interest](<a href="https://x.com/AnthropicAI/status/2092661578177171522">https://x.com/AnthropicAI/status/2092661578177171522</a>)</p>
+<p><strong>摘要</strong>: LiveKit可通过Inference接入Grok语音模型，构建从Grok语音识别到Grok 4.3再到Grok语音合成的端到端语音智能体。该方案在每一跳都支持零数据保留（ZDR），且无需单独的API密钥或独立计费。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/AnthropicAI/status/2092661577086636154">The other two studies are ongoing: HIP Lab is studying how Claude&#39;s behavior relates to how people feel when using AI, while METR is estimating real-world productivity gains from coding agents. We&#39;ll </a></li>
-<li>[The SALT Lab studied how people collaborate with AI. They found that over half of these conversations involved consequential tasks—work that affects other people or is hard to undo.</li>
+<li>用LiveKit搭建一个包含语音识别、推理和语音合成的最小语音智能体。</li>
+<li>在接入真实用户数据前确认每个模型调用都启用零数据保留，并记录端到端延迟。</li>
 </ul>
-<p>Read their full ](<a href="https://x.com/AnthropicAI/status/2092661575744360498">https://x.com/AnthropicAI/status/2092661575744360498</a>)</p>
+</blockquote>
+<hr>
+<h3 id="h-11">9. <a href="https://x.com/OpenAIDevs/status/2092638606531977295">ChatGPT与Codex支持$visualize生成信息可视化</a></h3>
 <ul>
-<li><a href="https://x.com/AnthropicAI/status/2092661574523867302">Three research groups—Stanford’s Social and Language Technologies lab, Oxford’s Human Information Processing Lab, and METR—designed independent studies to analyze the aggregated outputs from 250,000 h</a></li>
-<li><a href="https://x.com/AnthropicAI/status/2092661573223657834">For the first time, we’ve given external researchers a way to study AI’s impacts using real, privacy-preserved Claude usage data. To date, this work has only been possible within AI labs. We can’t tel</a></li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>$visualize</code> <code>ChatGPT</code> <code>Codex</code> <code>信息可视化</code></li>
 </ul>
-<h2 id="h-8">OpenAI (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI Devs推荐在ChatGPT Work或Codex中使用「$visualize」命令，将信息转换为可视化内容。该功能适合视觉学习者，可把原本的文字信息整理成更直观的图表或展示。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[We worked with METR and Redwood Research to conduct a third-party assessment of the model behavior observed during the incident.</li>
+<li>在ChatGPT Work或Codex中输入一份复杂的资料，使用「$visualize」生成结构图或流程图。</li>
+<li>对生成的可视化结果逐项核对数据和关系，再将其用于汇报或团队协作。</li>
 </ul>
-<p>They’re sharing a report of their findings:
-<a href="https://t.co/yw7LO11Xrk%5D(https://x.com/OpenAI/status/2092691863505346634)">https://t.co/yw7LO11Xrk](https://x.com/OpenAI/status/2092691863505346634)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-12">10. <a href="https://openai.com/index/bringing-chatgpt-for-teachers-to-more-us-school-districts">ChatGPT教师版扩展至55个美国学区</a></h3>
 <ul>
-<li>[We have conducted a thorough investigation into the Hugging Face incident.</li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>教育AI</code> <code>学区部署</code> <code>教师工具</code></li>
 </ul>
-<p>We are releasing a technical report and accompanying blog post that reconstruct the agents’ activity, explain why existing s](<a href="https://x.com/OpenAI/status/2092691861773160673">https://x.com/OpenAI/status/2092691861773160673</a>)</p>
-<h2 id="h-9">OpenAI Devs (Twitter)</h2>
+<p><strong>摘要</strong>: ChatGPT for Teachers将扩展到55个美国学校系统，为超过10万名新增教育工作者和教职员工提供安全的AI工具、培训与支持。此次扩展表明OpenAI正通过学区级部署推动生成式AI进入日常教学体系。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>[That idea you keep meaning to build.</li>
+<li>先在小范围教师团队中试点，明确备课、反馈和行政任务的使用边界。</li>
+<li>为学校配置统一培训与数据治理流程，并在扩大部署前评估教师使用效果。</li>
 </ul>
-<p>@itskasturiii used Codex to finally ship her own npm library for loading experiences in AI apps. <a href="https://t.co/4xogofB8Ru%5D(https://x.com/OpenAIDevs/status/2092707336116933063)">https://t.co/4xogofB8Ru](https://x.com/OpenAIDevs/status/2092707336116933063)</a></p>
+</blockquote>
+<hr>
+<h3 id="h-13">11. <a href="https://x.com/sama/status/2092519459135095147">ChatGPT Work可代办登录型网页任务且不接触密码</a></h3>
 <ul>
-<li><a href="https://x.com/OpenAIDevs/status/2092638606531977295">$visualize https://t.co/rItCXe9sgm</a></li>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Work</code> <code>浏览器操作</code> <code>网页登录</code> <code>智能体</code> <code>隐私安全</code></li>
 </ul>
-<h2 id="h-10">Google DeepMind (Twitter)</h2>
+<p><strong>摘要</strong>: ChatGPT Work现在可以通过电脑和浏览器登录网站执行任务，同时不直接看到用户的用户名或密码。用户可让它处理预约、账单、保险、房产和企业后台等操作型流程，但仍应审查关键提交和账户权限。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li><a href="https://x.com/GoogleDeepMind/status/2092659223591039374">Here’s what’s new:
-🔵 It’s better at understanding complex phone numbers, postal codes, and order IDs – even in noisy environments.
-🔵 It can remove filler words and auto-format your text.
-🔵 It recog</a></li>
-<li><a href="https://x.com/GoogleDeepMind/status/2092659221477077101">Gemini 3.5 Transcribe is our latest speech-to-text model for precise and intelligent transcriptions. 🧵</a></li>
+<li>先用低风险、可撤销的预约或查询任务测试浏览器代办能力。</li>
+<li>为涉及支付、医疗和政府事务的流程设置人工确认，并逐项复核最终提交内容。</li>
+<li>使用专用账号和最小权限，避免把高敏感凭据或不必要的账户范围交给自动化流程。</li>
 </ul>
-<h2 id="h-11">xAI (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-14">12. <a href="https://openai.com/index/expanding-our-presence-in-brazil">OpenAI加码巴西，深化开发者与社区合作</a></h3>
 <ul>
-<li><a href="https://x.com/SpaceXAI/status/2092644384730972669">Use Grok Voice models in LiveKit to build useful voice agents with full support for ZDR</a></li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>巴西市场</code> <code>开发者生态</code> <code>AI普及</code></li>
 </ul>
-<h2 id="h-12">Qwen (Twitter)</h2>
+<p><strong>摘要</strong>: OpenAI正扩大在巴西的业务与社区参与，重点面向开发者、企业和当地社区推进人工智能应用。此举显示其将巴西视为拉美AI采用与生态建设的重要市场。</p>
+<hr>
+<h3 id="h-15">13. <a href="https://www.anthropic.com/news/expanding-support-for-scientists">Anthropic扩大对科学家的支持</a></h3>
 <ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092867093385613760">Qwen3.8-Flash on @qwen_cloud: $0.15/1M input tokens, $0.47/1M output tokens, and just $0.016/1M on cache hits. ☁️ Come give it a try! 👇</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092857839299826095">Qwen3.8-Flash is now live on @OpenRouter! ⚡ Coding assistants, agentic workflows, long-video understanding, all one API call away.</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092818199146536983">Fantastic! 🥳 Thanks @lightseekorg for the TokenSpeed day-0 support. The new architecture is fully covered, from GDN + QSA to N-gram embedding with FP8.</a></li>
-<li>[Thank you @NVIDIAAI for the day-0 support! 🙌</li>
+<li><strong>来源</strong>: Anthropic Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Anthropic</code> <code>科学家</code> <code>科研支持</code> <code>AI科研</code></li>
 </ul>
-<p>Developers can finetune the model for domain-specific use cases using NVIDIA NeMo AutoModel:
-<a href="https://t.co/H7aiTJcJ9j%5D(https://x.com/Alibaba_Qwen/status/2092809475174666699)">https://t.co/H7aiTJcJ9j](https://x.com/Alibaba_Qwen/status/2092809475174666699)</a></p>
+<p><strong>摘要</strong>: Anthropic宣布扩大对科学家群体的支持，旨在加强人工智能与科研工作的结合。当前条目未提供正文，支持对象、具体项目和执行方式仍需进一步核实。</p>
+<hr>
+<h3 id="h-16">14. <a href="https://x.com/sama/status/2092733018838290817">Sam Altman预告下一代模型发布活动</a></h3>
 <ul>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092645926368403797">A high-performance 125B model now running locally on just 75GB RAM! Thank you @UnslothAI for the day-0 support.🥳</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092636376990990503">API is live on QwenCloud: https://t.co/nz3wibv0Lv
-🙌Let&#39;s build something!</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092610229578125817">Big thanks to @sgl_project for the day-0 support! 🙌 Qwen3.8-Flash-Next is ready to deploy with SGLang today.</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092602306986750256">Amazing! 🥳 Thanks @vllm_project for getting Qwen3.8-Flash-Next running on NVIDIA and AMD from day 0.</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092591408368763064">With only 6B active parameters, Qwen3.8-Flash-Next-Base tops 8 of 14 benchmarks, including MMLU-Pro, SuperGPQA, BBH and GSM8K. And it remains competitive with Qwen3.7-Plus-Base on the rest. Its 51B N-</a></li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092591404698792378">At a 1M-token context length, QSA’s attention kernel is up to 7.6× faster in prefill and 4.9× faster in decode. With a 90% prefix-cache hit rate, Qwen3.8-Flash-Next delivers 8.6× the prefill throughpu</a></li>
-<li>[Model Architecture</li>
+<li><strong>来源</strong>: Sam Altman (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>OpenAI</code> <code>模型发布</code> <code>Sam Altman</code> <code>产品预告</code></li>
 </ul>
-<p>Four core upgrades for maximum capability, efficiency, capacity, and stability:</p>
+<p><strong>摘要</strong>: Sam Altman表示，OpenAI下一次模型发布可能再次举办发布派对，并征询用户希望加入的活动形式。该帖体现了对下一代模型发布的预热，但没有确认具体模型、发布时间或能力变化。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
 <ul>
-<li>Attention: GDN + QSA Hybrid. Gated DeltaNet (GDN) compresses history. Qwen Sparse Attention (QSA)](<a href="https://x.com/Alibaba_Qwen/status/2092591400735146381">https://x.com/Alibaba_Qwen/status/2092591400735146381</a>)</li>
-<li><a href="https://x.com/Alibaba_Qwen/status/2092591397073559816">Language performance &amp; Vision Language performance: https://t.co/PkhyKwFmP3</a></li>
-<li>[⚡Meet Qwen3.8-Flash, a multimodal MoE and an early preview of the Qwen4 architecture, now open-weight!</li>
+<li>关注OpenAI后续正式公告，不要仅依据活动预热视频调整模型迁移计划。</li>
 </ul>
-<p>The production version Qwen3.8-Flash will be available soon via QwenCloud API at just $ 0.16/1M ](<a href="https://x.com/Alibaba_Qwen/status/2092591393424515114">https://x.com/Alibaba_Qwen/status/2092591393424515114</a>)</p>
-<h2 id="h-13">Z.ai (Twitter)</h2>
+</blockquote>
+<hr>
+<h3 id="h-17">15. <a href="https://x.com/trq212/status/2092729394565657010">AI代币销售商面临激增欺诈，Stripe加强拦截</a></h3>
 <ul>
-<li>[More good news: GLM-5.3’s weights will be released tomorrow.</li>
+<li><strong>来源</strong>: Thariq (Twitter)</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>支付欺诈</code> <code>Stripe Radar</code> <code>AI代币</code> <code>风控</code> <code>滥用防范</code></li>
 </ul>
-<p><a href="https://t.co/v1IbWMXxg4%5D(https://x.com/Zai_org/status/2092814169263218860)">https://t.co/v1IbWMXxg4](https://x.com/Zai_org/status/2092814169263218860)</a></p>
+<p><strong>摘要</strong>: Thariq表示，部分客户正遭遇针对AI代币销售的欺诈请求，并肯定Stripe为拦截此类攻击所做的工作。相关讨论显示，欺诈流量已影响服务商向正常用户提供使用额度的能力。</p>
+<hr>
+<h3 id="h-18">16. <a href="https://x.com/OpenAIDevs/status/2092707336116933063">Codex助力开发者发布AI应用加载体验npm库</a></h3>
 <ul>
-<li><p><a href="https://x.com/Zai_org/status/2092616225998213610">Architectural enhancements, combined with an optimized pre-training corpus, enable GLM-5.3-Flash to deliver greater intelligence with less compute. https://t.co/L0B2bLPKlT</a></p>
-</li>
-<li><p><a href="https://x.com/Zai_org/status/2092616217236222149">On the https://t.co/w8mHB85z4n Code Bench, which measures real-world coding performance, GLM-5.3-Flash clearly outperforms GLM-5.2 at every effort level and performs on par with Claude Opus 4.8. https</a></p>
-</li>
-<li><p>[Standard API Pricing for GLM-5.3-Flash (per 1M tokens)</p>
-</li>
-<li><p>Input: $0.15</p>
-</li>
-<li><p>Output: $0.50</p>
-</li>
-<li><p>Cached input: $0.03](<a href="https://x.com/Zai_org/status/2092616209426493766">https://x.com/Zai_org/status/2092616209426493766</a>)</p>
-</li>
-<li><p>[Introducing GLM-5.3-Flash</p>
-</li>
-<li><p>Leading capabilities at a highly competitive price</p>
-</li>
-<li><p>Natively multimodal with a 1M-token context window</p>
-</li>
-<li><p>A 320B-A18B model released under the MIT License</p>
-</li>
-<li><p>Previously pre](<a href="https://x.com/Zai_org/status/2092616204787626030">https://x.com/Zai_org/status/2092616204787626030</a>)</p>
-</li>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Codex</code> <code>npm</code> <code>开发者案例</code> <code>AI应用</code></li>
 </ul>
+<p><strong>摘要</strong>: 开发者使用Codex将一个关于AI应用加载体验的想法落地，最终发布为自己的npm库。该案例展示了Codex如何帮助开发者完成从构想到交付的独立软件项目。</p>
+<hr>
+<h3 id="h-19">17. <a href="https://x.com/ClaudeDevs/status/2092672740197081360">Claude Admin API 接入 SDK 与 ant CLI</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Admin API</code> <code>SDK</code> <code>ant CLI</code> <code>组织管理</code> <code>速率限制</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Admin API 现已加入相关 SDK 和「ant」CLI，可用于管理组织成员、工作区和 API 密钥。管理员还可以通过这些接口读取组织的速率限制，便于将治理和运维流程自动化。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用 Admin API 或「ant」CLI 盘点成员、工作区和 API 密钥，建立定期审计任务。</li>
+<li>将组织速率限制接入监控，在接近阈值时自动告警并调整调用策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-20">18. <a href="https://openai.com/index/learning-never-stops">OpenAI报告：AI让学习走出课堂并持续发生</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>教育研究</code> <code>ChatGPT</code> <code>持续学习</code> <code>学习支持</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI发布新报告，探讨学生和教育工作者如何使用ChatGPT，让学习支持延伸到课堂之外并持续进行。材料聚焦AI在学习过程中的陪伴与辅助作用，但提供的条目未包含具体调查方法或数据细节。</p>
+<hr>
 </div>
       </article>
   <aside class="toc" aria-label="On this page">
     <div class="toc-label">本期目录</div>
     <ul>
-      <li class="toc-h2"><a href="#h-1">OpenAI Blog</a></li>
-      <li class="toc-h2"><a href="#h-2">Anthropic Blog</a></li>
-      <li class="toc-h2"><a href="#h-3">Sam Altman (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-4">Thariq (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-5">Claude (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-6">Claude Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-7">Anthropic (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-8">OpenAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-9">OpenAI Devs (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-10">Google DeepMind (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-11">xAI (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-12">Qwen (Twitter)</a></li>
-      <li class="toc-h2"><a href="#h-13">Z.ai (Twitter)</a></li>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Qwen3.8-Flash上线：百万上下文与多平台调用</a></li>
+      <li class="toc-h3"><a href="#h-4">2. Gemini 3.5 Transcribe正式发布</a></li>
+      <li class="toc-h3"><a href="#h-5">3. Anthropic预览模型硬件标准</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Cowork 侧栏浏览器可代办网页任务</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Claude Code 自动起草可审阅反馈</a></li>
+      <li class="toc-h3"><a href="#h-8">6. OpenAI调查Hugging Face事件并公开安全改进</a></li>
+      <li class="toc-h3"><a href="#h-9">7. Anthropic开放隐私保护的Claude使用数据供独立研究</a></li>
+      <li class="toc-h3"><a href="#h-10">8. LiveKit接入Grok语音模型并支持全链路ZDR</a></li>
+      <li class="toc-h3"><a href="#h-11">9. ChatGPT与Codex支持$visualize生成信息可视化</a></li>
+      <li class="toc-h3"><a href="#h-12">10. ChatGPT教师版扩展至55个美国学区</a></li>
+      <li class="toc-h3"><a href="#h-13">11. ChatGPT Work可代办登录型网页任务且不接触密码</a></li>
+      <li class="toc-h3"><a href="#h-14">12. OpenAI加码巴西，深化开发者与社区合作</a></li>
+      <li class="toc-h3"><a href="#h-15">13. Anthropic扩大对科学家的支持</a></li>
+      <li class="toc-h3"><a href="#h-16">14. Sam Altman预告下一代模型发布活动</a></li>
+      <li class="toc-h3"><a href="#h-17">15. AI代币销售商面临激增欺诈，Stripe加强拦截</a></li>
+      <li class="toc-h3"><a href="#h-18">16. Codex助力开发者发布AI应用加载体验npm库</a></li>
+      <li class="toc-h3"><a href="#h-19">17. Claude Admin API 接入 SDK 与 ant CLI</a></li>
+      <li class="toc-h3"><a href="#h-20">18. OpenAI报告：AI让学习走出课堂并持续发生</a></li>
     </ul>
   </aside>
     </div>
