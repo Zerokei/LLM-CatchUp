@@ -5,8 +5,143 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 27 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 29 Aug 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-08-29</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-29.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-08-29.md</guid>
+      <pubDate>Sat, 29 Aug 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-08-29</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>开发代理持续增强</strong>：Claude Code把CLI启动、权限规则、成本观测、Remote Control和桌面续接整合进同一工作流。</li>
+<li><strong>应用上下文直接调用</strong>：OpenAI通过Appshots让ChatGPT Work与Codex读取当前应用并执行填表、改代码等任务。</li>
+<li><strong>安全对齐走向自动化</strong>：Anthropic用Claude研究对齐失败、改进更强模型并开放研究设置，强调可测量性和泛化。</li>
+<li><strong>模型能力延伸生产</strong>：Gemini Omni 1.1 Flash强化可控视频生成，GLM-5.3以开放权重进入智能编程和网络防御。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/Zai_org/status/2093354097122455713">GLM-5.3开放权重，主攻智能编程与网络防御</a></h3>
+<ul>
+<li><strong>来源</strong>: Z.ai (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GLM-5.3</code> <code>开放权重</code> <code>智能体编程</code> <code>网络防御</code></li>
+</ul>
+<p><strong>摘要</strong>: Z.ai宣布GLM-5.3开放权重，用户可以下载、运行并进行定制。该模型定位于智能体编程和网络防御场景。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>下载GLM-5.3权重，在隔离环境中部署并测试基础推理能力。</li>
+<li>围绕代码生成和网络防御任务构建小型评测集，比较定制前后的效果。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/ClaudeDevs/status/2093480630801858750">Claude Code本周更新：CLI、权限、成本与Remote Control</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Code</code> <code>Remote Control</code> <code>权限管理</code> <code>成本监控</code> <code>CLI</code> <code>桌面应用</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Code本周集中改进开发效率与操作可控性：CLI启动更快、更轻量，并能在桌面端续接终端会话。Remote Control支持断线自动重连，手机端可继续接收权限提示、新消息并查看前台子代理调用。Auto mode权限页、/cost、/usage和/tasks则分别补齐规则编辑与模型、Token和缓存成本的可见性。 Claude Code CLI 不再等待 sandbox 和 MCP 服务器完成启动后才允许输入，运行 <code>claude</code> 时也会跳过不必要的设置。Linux x64 下载包缩小至约 75 MB，原生构建每个会话减少 40 至 70 MB 内存占用。 Claude Code 的 <code>/cost</code> 现在显示提示缓存成本，<code>/usage</code> 会按运行次数和 Token 用量拆解 <code>/loop</code> 任务。<code>/tasks</code> 还会展示每个子代理使用的模型和 effort level，帮助用户追踪资源消耗。 Claude Code 在 <code>/permissions</code> 中新增 Auto mode 标签页，展示默认允许规则。用户也可以直接在该页面添加自定义规则，无需手动编辑 <code>~/.claude/settings.json</code>。 Claude Code 的 Remote Control 现在能在服务端导致会话断开后自动重连，而不是直接退出。重连后手机端会可靠显示权限提示和新消息，并支持实时查看前台子代理的工具调用。 Claude Code 团队总结本周更新，涵盖更快的 CLI 启动、Token 用量可见性、Auto mode 规则管理和 Remote Control 修复。团队建议用户运行 <code>claude update</code> 获取更新，并继续通过 <code>/feedback</code> 提交意见。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2093368017304371503">Claude Code 桌面端可续接终端会话</a> · Claude Devs (Twitter) · 桌面端续接终端会话</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>运行 <code>claude update</code>，在目标环境记录 CLI 启动耗时、下载体积和会话内存变化。</li>
+<li>打开 <code>/permissions</code> 的 Auto mode 页面，审查默认规则并加入一条受控自定义规则。</li>
+<li>用 <code>/cost</code>、<code>/usage</code> 和 <code>/tasks</code> 检查提示缓存、循环任务与子代理的资源消耗。</li>
+<li>从 CLI 创建测试会话，在桌面端用 <code>/resume</code> 并测试 Remote Control 断线重连。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://x.com/OpenAIDevs/status/2093405504433447257">Rosalind Workbench串联科研问题与专用工具</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Rosalind Workbench</code> <code>科研工作流</code> <code>专用模型</code> <code>蛋白质分析</code> <code>测序</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs介绍Rosalind Workbench，将科学问题、专用模型、工具和可复核输出连接到同一工作流中。示例覆盖蛋白质结构与序列分析，以及测序流程，强调让科研结果能够被审阅。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>选取一个蛋白质结构或序列分析问题，检查专用模型、工具和输出审阅是否能串成完整流程。</li>
+<li>为测序流程记录每一步的输入、工具和可复核结果，评估其是否适合团队协作。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://x.com/AnthropicAI/status/2093386528668172373">Claude自主开展对齐研究并泛化安全改进</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic (Twitter)</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>自动化对齐</code> <code>Claude</code> <code>Sonnet 5</code> <code>Opus 4.8</code> <code>安全评估</code> <code>研究框架</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic让Claude在48小时和1块GPU的约束下，自主提出、训练并测试改进小模型对齐的方法。围绕10种对齐失败的实验显示，Claude能提升安全评分而不牺牲通用能力，效果还推广到留出基准、Petri行为审计和更大模型。进一步的试验让Sonnet 5尝试对齐更强的Opus 4.8早期检查点，其安全评分接近完整训练的生产版本。Anthropic同时开放自动化对齐研究设置，并提醒细微或罕见失调仍可能缺少可靠基准。 研究让Claude针对欺骗、谄媚等常见失配行为进行安全基准优化，同时要求保留通用能力。随后在留出基准上测试，重点考察这些方法能否推广到未参与优化的评测。 Anthropic介绍一项研究：Claude针对10种对齐失败进行优化，在提升安全评分的同时没有降低通用能力。效果还能泛化到未优化的基准、Petri行为审计，以及规模大至4.7倍的模型。 Anthropic 让 Sonnet 5 对早期 Opus 4.8 检查点进行后训练，测试模型能否对齐能力更强的后继模型。该检查点的安全评分已接近经过完整对齐训练的生产版 Opus 4.8。 Anthropic 发布自动化对齐研究设置，供其他研究者据此构建。该研究指出，可测量的失调问题能被 Claude 可靠修复，但细微或罕见失败可能没有基准，关键在于测量正确的目标。</p>
+<hr>
+<h3>5. <a href="https://x.com/GoogleDeepMind/status/2093338200580256172">Gemini Omni 1.1 Flash提升可控视频生成</a></h3>
+<ul>
+<li><strong>来源</strong>: Google DeepMind (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini Omni</code> <code>视频生成</code> <code>可控生成</code> <code>Google Flow</code> <code>生产应用</code></li>
+</ul>
+<p><strong>摘要</strong>: Google DeepMind宣布逐步推出Gemini Omni 1.1 Flash，目标是让生成视频更可控、迭代更快，并提升面向生产使用的完成度。用户可在Google Flow等产品中试用。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在Flow中用同一提示词测试生成视频的可控性和迭代速度，记录每次修改后的结果。</li>
+<li>将生成视频放入实际制作流程，比较新版在速度和成片完成度上的表现。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/OpenAI/status/2093515564786540695">Cursor被SpaceX收购后，OpenAI拟终止直连合作</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI (Twitter)</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Cursor</code> <code>OpenAI</code> <code>Anthropic</code> <code>SpaceX</code> <code>模型访问</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI表示，SpaceX收购Cursor后，计划结束Cursor直接访问OpenAI模型的合作安排，提案生效时间为11月12日。OpenAI称开发者会是受影响最直接的群体，并准备在过渡期提供额外支持。与此同时，Anthropic相关团队表示仍将与Cursor合作并增加算力，说明Cursor的收购正在把不同模型供应商的合作关系重新分开。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/trq212/status/2093541555068182781">Anthropic 与 Cursor 延续合作并增加算力</a> · Thariq (Twitter) · Anthropic合作延续与算力支持</li>
+</ul>
+<hr>
+<h3>7. <a href="https://x.com/OpenAIDevs/status/2093486538370032050">WebMCP挑战赛推进并开放开发者答疑</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>WebMCP</code> <code>开发者挑战赛</code> <code>浏览器智能体</code> <code>开发者活动</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs表示WebMCP Challenge正在进行，开发者可围绕浏览器模型上下文协议构建项目并在9月3日前提交。官方还预告8月31日的构建答疑活动，Chromium、Cloudflare、Shopify、Vercel、Render和Netlify等生态团队将参与。这个组合把协议实践、作品征集和跨平台工程支持连接到同一开发者推进周期。 OpenAI Devs宣布将于8月31日太平洋时间上午11点举办WebMCP构建答疑。Chromium、Cloudflare、Shopify、Vercel、Render和Netlify等团队的支持者将参与，开发者可围绕WebMCP项目提问。</p>
+<hr>
+<h3>8. <a href="https://x.com/OpenAIDevs/status/2093437797982204052">Appshots让ChatGPT Work与Codex理解并操作当前应用</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Appshots</code> <code>ChatGPT Work</code> <code>Codex</code> <code>应用上下文</code> <code>工作自动化</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Devs介绍Appshots，可把当前打开应用的上下文提供给ChatGPT Work和Codex，让助手理解用户正在查看的内容并据此行动。示例覆盖总结Slack线程、填写表单、依据API文档加功能、提炼X回复主题，以及起草跟进和制作演示文稿。它把跨应用助手从纯文本交接推进到带有界面上下文的可审阅任务执行。 OpenAI Devs介绍Appshots，可把当前打开应用的上下文提供给ChatGPT Work和Codex，使它们理解用户正在查看的内容并据此行动。该功能面向让助手理解当前界面并执行相关任务。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先用总结线程、提取主题和起草回复三类低风险任务测试 Appshots。</li>
+<li>再用填表或改代码任务验证界面上下文，并为输出设置人工复核点。</li>
+</ul>
+</blockquote>
+<hr>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-08-27</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-27.html</link>
@@ -3575,75 +3710,6 @@
 </ul>
 <p><strong>摘要</strong>: Moonshot 开源了基于 CUTLASS 的 FlashKDA，用于实现 Kimi Delta Attention 内核。该实现宣称在 H20 上相较 flash-linear-attention 基线获得 1.72 至 2.22 倍的预填充加速，并可作为其即插即用后端。</p>
 <hr>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-07-27</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-27.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-27.md</guid>
-      <pubDate>Mon, 27 Jul 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-27</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>工作边界持续重组</strong>：OpenAI 的任务交叉研究与 ChatGPT 端到端案例显示，AI 正把原本需要跨岗位交接的工作交给最接近问题的人。</li>
-<li><strong>开放权重转向分层治理</strong>：Anthropic 主张限制先进芯片与工业蒸馏，并对足够强大的开放和闭源模型统一实施安全测试。</li>
-<li><strong>语音成为工作入口</strong>：ChatGPT Voice 的移动端体验表明，语音助手正在从信息问答延伸到跨设备的持续工作控制。</li>
-<li><strong>企业部署走向生产化</strong>：Anthropic 与 Cognizant 扩大合作并培训超过三万名员工，显示服务商正把 Claude 嵌入行业工程与 IT 运维流程。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://openai.com/index/how-ai-is-expanding-what-people-do-at-work">OpenAI：AI 重组工作边界，ChatGPT 走向端到端执行</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>任务交叉</code> <code>智能体</code> <code>职业转型</code> <code>端到端执行</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 对超过 80 万条美国 ChatGPT 用户消息的分析发现，16.8% 的工作相关消息和 43.5% 的职业特定消息涉及其他职业的任务，客户体验、设计、人力资源和法律等岗位尤其明显。小型企业中的用户更常借助 AI 承担岗位外工作，说明 AI 可能先改变任务分工，再改变职位描述。与此同时，ChatGPT 已能从手机读取上下文、规划多人旅行、搭建协作网站并衔接后续行动，产品形态正从问答工具走向端到端任务执行。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/sama/status/2081396796174282900">ChatGPT 可从手机自主规划旅行并搭建协作网站</a> · Sam Altman (Twitter) · 端到端任务执行</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>把复杂需求拆成规划、方案比较、协作页面和执行确认四个阶段，逐阶段验收结果。</li>
-<li>为涉及多人和外部服务的任务设置共享信息范围与最终操作确认点，避免模型直接提交错误预订或邮件。</li>
-<li>在小团队中选择一个跨职能、低风险流程试点，记录 AI 减少交接次数后的质量与责任边界变化。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://www.anthropic.com/news/position-open-weights-models">Anthropic 明确反对一刀切禁止开放权重模型</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>开放权重</code> <code>AI 安全</code> <code>芯片管制</code> <code>模型蒸馏</code> <code>安全测试</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 表示从未主张全面禁止开放权重模型，并认为无危险能力的开放权重模型能为企业、开发者和研究者提供公共价值。公司更支持限制向威权国家供应先进芯片、打击工业规模的模型蒸馏，以及要求所有足够强大的开放或闭源模型接受强制安全测试。Anthropic 强调，开放权重带来的网络、生物和对齐风险应通过发布前实证测试来判断，而不是预先以模型是否开放作结论。</p>
-<hr>
-<h3>3. <a href="https://x.com/sama/status/2081513071135346814">ChatGPT Voice 让用户通过语音远程操控电脑</a></h3>
-<ul>
-<li><strong>来源</strong>: Sam Altman (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT Voice</code> <code>语音助手</code> <code>跨设备控制</code> <code>移动办公</code></li>
-</ul>
-<p><strong>摘要</strong>: Sam Altman 转发的用户体验显示，ChatGPT Voice 可以通过耳机在徒步、驾车或咖啡馆等场景中持续协助工作，并控制一台作为总部设备的电脑。这个设想把语音从对话入口推进为跨设备的工作控制层，用户可以随时获取项目简报、安排下一步并启动新任务。若相关连接能力稳定可用，工作场景将不再强依赖固定的桌面和显示器。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>为固定电脑配置明确的项目目录和权限边界，再从手机语音发起低风险任务。</li>
-<li>先用语音完成项目简报和草稿生成，涉及发送邮件、改动代码或预约操作时保留人工确认。</li>
-</ul>
-</blockquote>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Claude</code> <code>Cognizant</code> <code>企业部署</code> <code>合作伙伴</code> <code>AI 工程</code> — Anthropic 与 Cognizant 扩大合作，将 Claude 更深地嵌入 Cognizant 的工程、IT 运维和行业解决方案，并共同扩大 Claude 认证人才规模。Cognizant 已有超过 3 万名员工完成 Claude 培训，其部署案例包括合同智能、承保风险导航和客户体验系统。此次合作显示企业服务商正把 Claude 从试验工具整合为面向制造、生命科学和保险客户的生产平台。 · <a href="https://www.anthropic.com/news/cognizant-anthropic">Anthropic Blog</a></li>
-</ul>
 ]]></description>
     </item>
   </channel>
