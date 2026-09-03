@@ -5,8 +5,330 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 31 Aug 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 02 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-09-02</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-02.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-09-02.md</guid>
+      <pubDate>Wed, 02 Sep 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-09-02</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>前沿模型竞速</strong>：Astra、Claude Fable 5.1 与 Qwen3.8-Max-0902 同日把能力上限、代理编码和复杂长任务推向更高水平。</li>
+<li><strong>安全随能力演进</strong>：Astra 的关键网络安全门槛与 Claude 的企业防护、误报率改进，显示模型发布正把安全评估纳入产品能力。</li>
+<li><strong>长上下文降成本</strong>：Claude 的提示缓存降价、Gemini 的代理式视频理解和 Qwen 的百万 token 上下文，都在降低长任务的推理成本。</li>
+<li><strong>实时多模态落地</strong>：Meta 的 Muse Voice Transcribe 与 Google 的视频理解能力，分别把自适应延迟和动态取样用于实时语音与长视频。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://x.com/Alibaba_Qwen/status/2094968708288680276">Qwen3.8-Max-0902 发布：长上下文与 Agent 编码升级</a></h3>
+<ul>
+<li><strong>来源</strong>: Alibaba_Qwen</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Qwen3.8-Max-0902</code> <code>长上下文</code> <code>Agentic Coding</code> <code>Code Arena</code> <code>企业 AI</code> <code>API 定价</code></li>
+</ul>
+<p><strong>摘要</strong>: Qwen 发布 Qwen3.8-Max-0902，拥有 2.4 万亿参数和 100 万上下文 token，针对 Coding 与 Cowork 进行了后训练，面向复杂企业任务、科学研究和长时工作流。其 API 价格为每百万 token 输入 2 美元、输出 6 美元。模型在 Code Arena WebDev 排名第一，得分 1691，并在多步推理、工具使用、完整应用生成和数据分析等场景展现优势。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/Alibaba_Qwen/status/2094982928371794077">Qwen3.8-Max-0902登顶Code Arena</a> · Alibaba_Qwen · 成本性能 Pareto 表现</li>
+<li><a href="https://x.com/Alibaba_Qwen/status/2094976556494209206">Qwen3.8-Max-0902刷新WebDev纪录</a> · Alibaba_Qwen · WebDev 排行与应用生成</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用包含多步工具调用和完整应用生成的内部任务评估 Qwen3.8-Max-0902，不要只依据公开排行榜选型。</li>
+<li>对百万 token 上下文任务测量上下文召回、端到端延迟和输入输出成本，并设置超长上下文降级策略。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://x.com/claudeai/status/2094848572143407483">Claude Fable 5.1 与 Mythos 5.1 发布：编码和长任务升级</a></h3>
+<ul>
+<li><strong>来源</strong>: Claude (Twitter)</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Claude Fable 5.1</code> <code>Claude Mythos 5.1</code> <code>代理编码</code> <code>长时任务</code> <code>Terminal-Bench</code> <code>提示缓存</code> <code>模型安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude Fable 5.1 与 Claude Mythos 5.1 面向编码和知识工作发布，强调更强的代理编码、复杂长时任务与科学研究能力。Fable 5.1 在 Terminal-Bench 4.0 得分 55.8%，高于 Fable 5 的 42.0%，并在低推理强度下以更低成本保持竞争力。API 缓存读取价格降至每百万 token 0.25 美元，典型工作负载成本预计下降约 25%，高度代理化工作负载最多下降 45%；模型已接入 Claude Code 和 Claude Platform。安全方面，网络安全良性请求误报减少约 60%，企业前沿安全防护将分阶段推出，Messages API 也收紧了思维块前上下文编辑限制。 Anthropic表示，Fable 5.1擅长处理复杂且持续时间较长的任务。其研究能力也被描述为展示了AI模型参与科学进展的早期可能性。 Fable 5.1在Terminal-Bench-Science 0.1上的成绩为52.6%，超过Fable 5两倍以上。在Terminal-Bench 4.0上，它得分55.8%，高于Fable 5的42.0%。 Anthropic表示，Fable 5.1的性能显著高于Fable 5。将推理强度调低后，它仍能以更低成本达到相近或更好的结果。 Fable 5.1的缓存读取成本比Fable 5低75%。按该说法，典型工作负载的实际模型成本可下降约25%，高度代理化的工作负载最多可下降45%。 Anthropic推出企业前沿安全防护（EFS），在保持零数据保留级别隐私的同时，继续防范对抗性使用。该功能将从今年秋季开始分阶段推出。 Claude 表示已改进安全防护：网络安全防护对良性请求的误报减少约 60%，基础生物学和医学问题的 fallback rate 近期降低约 85%。 Claude Fable 5.1 已面向所有用户上线，面向网络防御者和生命科学家的 Claude Mythos 5.1 则通过可信访问计划提供。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2094851229734277228">Fable 5.1 已上线 Claude Code 与 Claude Platform</a> · ClaudeDevs · 平台上线与定价</li>
+<li>[it’s a very good model, I spent a lot of time diving into it- longer write up coming</li>
+</ul>
+<p>but try it on lower effort for tasks that need less verification or have fewer edge cases, switching effort no lo](<a href="https://x.com/trq212/status/2094945951865520458">https://x.com/trq212/status/2094945951865520458</a>) · Thariq (Twitter) · 模型表现与 effort 建议</p>
+<ul>
+<li><a href="https://x.com/ClaudeDevs/status/2094856679250919746">Fable 5.1发布后重置用户使用限额</a> · Claude Devs (Twitter) · 使用限额重置</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在 Claude Code 中用 Fable 5.1 对真实仓库跑一轮 Terminal-Bench 类任务，记录成功率、耗时和人工接管点。</li>
+<li>对长会话启用提示缓存，并分别测试低推理强度与高推理强度下的质量、延迟和成本。</li>
+<li>将模型用于代码安全审查时限定在自有代码和隔离环境，验证安全防护误报与漏报。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://openai.com/index/path-to-astra">Astra 达到关键网络安全能力门槛，安全防护同步升级</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>Astra</code> <code>网络安全</code> <code>Preparedness Framework</code> <code>前沿安全</code> <code>模型对齐</code></li>
+</ul>
+<p><strong>摘要</strong>: Astra 已完成训练，并被定位为首个在 Preparedness Framework 下达到关键网络安全能力门槛的模型。后续发布将配套更强的安全防护，模型能力与安全、对齐工作需要同步推进。预览信息还展示了随着能力提升持续改进的评估方式和防护措施。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/sama/status/2094934592062959832">Over the summer, we have been sprinting on safety priorities; it&#39;s more important than ever for capabilities and safeguards to advance together. We have more to do but have made a lot of progress. We </a> · Sam Altman (Twitter) · 安全与对齐进展</li>
+<li><a href="https://x.com/OpenAI/status/2094885578173260259">OpenAI 预告达到关键网络安全能力门槛的 Astra</a> · OpenAI · 评估与防护预览</li>
+</ul>
+<hr>
+<h3>4. <a href="https://x.com/GoogleDeepMind/status/2094840179676660097">Gemini 引入代理式视频理解，长视频最多省 88% token</a></h3>
+<ul>
+<li><strong>来源</strong>: GoogleDeepMind</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini</code> <code>代理式视频理解</code> <code>长视频</code> <code>token 优化</code> <code>Google AI Studio</code></li>
+</ul>
+<p><strong>摘要</strong>: Gemini 新增代理式视频理解能力，综合转录、音频和画面进行推理，并动态调整帧率来提取真正需要的片段，而非扫描整个文件。官方称该方法在提高分析准确率的同时最多减少 88% 的 token 使用量，对十分钟教程到数小时录制内容的长视频尤其有价值。能力正通过 API 在 Google AI Studio 中向 Gemini 3.7 Flash、3.6 Flash 和 3.5 Flash-Lite 推出，并将进入 Gemini App。 Gemini 现在会综合视频转录、音频和画面进行推理，并动态调整帧率以提取所需片段，而不是扫描整个文件。该能力对从 10 分钟教程到数小时录制内容的长视频效率提升最明显，正通过 API 在 Google AI Studio 中向 Gemini 3.7 Flash、3.6 Flash 和 3.5 Flash-Lite 推出，并将很快进入 Gemini App。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>选取长教程或会议录像做基线测试，比较全量扫描与代理式抽帧的 token、延迟和关键信息召回率。</li>
+<li>把视频分析任务拆成检索、定位和总结三步，检查动态取样是否遗漏低频但关键的画面。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://x.com/AIatMeta/status/2094839236016976028">Meta 发布 Muse Voice Transcribe 实时语音模型</a></h3>
+<ul>
+<li><strong>来源</strong>: AIatMeta</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Muse Voice Transcribe</code> <code>实时语音识别</code> <code>声纹分离</code> <code>多语言</code> <code>自适应延迟</code></li>
+</ul>
+<p><strong>摘要</strong>: Muse Voice Transcribe 支持实时流式自动语音识别、超过 20 位说话人的声纹分离和端点检测，并支持多语言无缝切换。模型以自适应延迟逐块决定继续监听还是输出文本，在难词上等待更久、易词上更快提交，以平衡准确率和延迟。官方称其在流式语音转文字和公开声纹分离基准上排名第一，现已通过 Meta Model API、Mac 版 Meta AI 和 Muse Code 提供。 Muse Voice Transcribe 是 Muse Spark 系列的自回归多模态大语言模型，以每 80 毫秒一个 token 的方式处理音频，并逐块决定继续监听还是输出文本。模型通过结合词错误率和延迟奖励的强化学习实现自适应延迟，在难词上等待更久、易词上更快提交，从而逐词权衡准确率与延迟。 Meta 表示，Muse Voice Transcribe 通过自适应延迟，在以最终转写耗时衡量的速度与准确率权衡中达到了帕累托前沿。该结果强调了模型在实时转写中对延迟和准确率的平衡能力。 Muse Voice Transcribe 现已通过 Meta Model API、Mac 版 Meta AI 和 Muse Code 提供。该消息同时附上了进一步了解产品的链接。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用包含多人对话、口音和中英切换的真实音频测试流式转写，分别记录延迟、词错误率和说话人分离准确率。</li>
+<li>在实时应用中比较固定延迟与自适应延迟策略，按用户可接受的首字和最终结果延迟设定阈值。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://x.com/SpaceXAI/status/2094820933689295076">Grok 4.6接受生物安全能力评估</a></h3>
+<ul>
+<li><strong>来源</strong>: SpaceXAI</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Grok 4.6</code> <code>生物安全</code> <code>安全评估</code></li>
+</ul>
+<p><strong>摘要</strong>: LatchBio评估了Grok 4.6在生物安全监测和对抗性生物任务上的表现。结果显示，Grok 4.6能够识别并拒绝包括恶意混淆任务在内的危险查询，同时允许回答有益的科学问题。</p>
+<hr>
+<h3>7. <a href="https://blog.google/products-and-platforms/products/workspace/google-pics/">Try Google Pics: Easy image creation and editing in Google Workspace</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Google Pics</code> <code>Google Workspace</code> <code>Nano Banana</code> <code>图像生成</code> <code>图像编辑</code></li>
+</ul>
+<p><strong>摘要</strong>: Google Pics 基于最新 Nano Banana 模型，现已在 Google Workspace 中提供图像创建和编辑功能。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在</li>
+<li></li>
+<li>G</li>
+<li>o</li>
+<li>o</li>
+<li>g</li>
+<li>l</li>
+<li>e</li>
+<li></li>
+<li>W</li>
+<li>o</li>
+<li>r</li>
+<li>k</li>
+<li>s</li>
+<li>p</li>
+<li>a</li>
+<li>c</li>
+<li>e</li>
+<li></li>
+<li>中</li>
+<li>试</li>
+<li>用</li>
+<li></li>
+<li>G</li>
+<li>o</li>
+<li>o</li>
+<li>g</li>
+<li>l</li>
+<li>e</li>
+<li></li>
+<li>P</li>
+<li>i</li>
+<li>c</li>
+<li>s</li>
+<li></li>
+<li>进</li>
+<li>行</li>
+<li>图</li>
+<li>像</li>
+<li>创</li>
+<li>建</li>
+<li>和</li>
+<li>编</li>
+<li>辑</li>
+<li>，</li>
+<li>并</li>
+<li>评</li>
+<li>估</li>
+<li>其</li>
+<li>对</li>
+<li>日</li>
+<li>常</li>
+<li>工</li>
+<li>作</li>
+<li>流</li>
+<li>的</li>
+<li>帮</li>
+<li>助</li>
+<li>。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>8. <a href="https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources">Healthcare organizations can now connect EHR and additional industry data to ChatGPT</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT</code> <code>电子健康记录</code> <code>医疗数据</code> <code>临床工作流</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT 现在可连接可信的医疗数据，帮助临床医生安全访问患者上下文、医学研究和其他医疗信息。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>在</li>
+<li>接</li>
+<li>入</li>
+<li>医</li>
+<li>疗</li>
+<li>数</li>
+<li>据</li>
+<li>前</li>
+<li>，</li>
+<li>评</li>
+<li>估</li>
+<li>可</li>
+<li>信</li>
+<li>数</li>
+<li>据</li>
+<li>源</li>
+<li>、</li>
+<li>患</li>
+<li>者</li>
+<li>上</li>
+<li>下</li>
+<li>文</li>
+<li>与</li>
+<li>安</li>
+<li>全</li>
+<li>访</li>
+<li>问</li>
+<li>要</li>
+<li>求</li>
+<li>。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>9. <a href="https://baoyu.io/translations/2026-09-02/the-anatomy-of-effective-commerce-agents">高效电商 AI 智能体解剖指南 | 选自 Anthropic 的 Claude 博客</a></h3>
+<ul>
+<li><strong>来源</strong>: 宝玉的分享</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>电商智能体</code> <code>延迟与成本</code> <code>记忆管理</code> <code>安全</code> <code>评估</code></li>
+</ul>
+<p><strong>摘要</strong>: 文章探讨如何构建让在线买卖更轻松的电商 AI 智能体，重点包括降低延迟与成本、管理记忆与安全，以及设计评估体系。</p>
+<hr>
+<h3>10. <a href="https://openai.com/index/ai-native-company-workflows">How AI-native companies turn workflows into operating capability</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业与行业</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>AI 原生公司</code> <code>AI 智能体</code> <code>企业工作流</code> <code>客户管理</code></li>
+</ul>
+<p><strong>摘要</strong>: Basis、Clay 和 Exa Labs 使用 AI 智能体改进客户入职、账户管理和开发者集成，并总结企业领导者可借鉴的做法。</p>
+<hr>
+<h3>11. <a href="https://x.com/Zai_org/status/2094769612730532172">GLM Coding Plan周年赠送重置卡</a></h3>
+<ul>
+<li><strong>来源</strong>: Zai_org</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GLM</code> <code>Coding Plan</code> <code>订阅配额</code></li>
+</ul>
+<p><strong>摘要</strong>: Z.ai表示GLM Coding Plan已满一周年，并向所有现有订阅者赠送Reset Card。该卡可同时补充每周配额和5小时配额，个人版与团队版用户均可使用。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>现</li>
+<li>有</li>
+<li>订</li>
+<li>阅</li>
+<li>者</li>
+<li>可</li>
+<li>使</li>
+<li>用</li>
+<li>重</li>
+<li>置</li>
+<li>卡</li>
+<li>补</li>
+<li>充</li>
+<li>配</li>
+<li>额</li>
+<li>，</li>
+<li>并</li>
+<li>比</li>
+<li>较</li>
+<li>个</li>
+<li>人</li>
+<li>版</li>
+<li>或</li>
+<li>团</li>
+<li>队</li>
+<li>版</li>
+<li>C</li>
+<li>o</li>
+<li>d</li>
+<li>i</li>
+<li>n</li>
+<li>g</li>
+<li></li>
+<li>P</li>
+<li>l</li>
+<li>a</li>
+<li>n</li>
+<li>对</li>
+<li>自</li>
+<li>身</li>
+<li>使</li>
+<li>用</li>
+<li>量</li>
+<li>的</li>
+<li>适</li>
+<li>配</li>
+<li>性</li>
+<li>。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>Google AI</code> <code>2026 年 8 月</code> <code>产品更新</code> — Google 回顾其在 2026 年 8 月宣布的最新 AI 更新。 · <a href="https://blog.google/innovation-and-ai/technology/google-ai-updates-august-2026/">Google AI Blog</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-08-31</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-31.html</link>
@@ -3320,140 +3642,6 @@
 <li><strong>单纯扩张叙事降温</strong>：商业动态从 6 月的 36 条降至 7 月的 32 条，市场讨论更多转向容量、成本、数据治理和具体工作流，而不是泛化的规模承诺。</li>
 <li><strong>静态榜单主导减弱</strong>：研究类从 6 月的 37 条降至 7 月的 32 条，但高影响内容集中到 SWE-Bench Pro 审计、ARC-AGI-3 长程评测和 Claude Mythos，单一分数的解释力明显下降。</li>
 </ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-07-30</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-07-30.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-07-30.md</guid>
-      <pubDate>Thu, 30 Jul 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-07-30</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>评测方法影响结论</strong>：GPT-5.6 Sol 的 ARC-AGI-3 得分在保留推理和压缩上下文后大幅提升，长程代理需要更接近真实运行的评测 harness。</li>
-<li><strong>模型效率成为主战场</strong>：GPT-5.6 Sol 的 GPU kernel、推测解码和 Codex 基础设施优化，把单位任务成本与有效产出放到模型升级的核心位置。</li>
-<li><strong>科研工具加速普及</strong>：ChatGPT for Academic Researchers 将前沿模型免费提供给更多科学家，前沿模型正在从实验室能力转向研究协作基础设施。</li>
-<li><strong>安全评测贴近真实事件</strong>：Anthropic 对真实网络安全事件的调查，与 OpenAI 对长程代理设置的讨论共同推动从静态分数转向可复现、可审计的部署评测。</li>
-<li><strong>语音代理扩展应用边界</strong>：GPT-Realtime 零售客服、Grok Voice 和 TinyFish 网页代理分别把实时语音、语音模型和浏览器自动化带入更多实际工作流。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/OpenAI/status/2082577277246972300">GPT-5.6 Sol 推理优化：成本降20%，效率提升</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>推理优化</code> <code>GPU kernel</code> <code>推测解码</code> <code>Codex</code> <code>成本效率</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 表示，GPT-5.6 Sol 被用于优化自身的推理基础设施，生产 GPU kernel 改进使服务成本降低约 20%，改进的推测解码让 token 生成效率提升超过 15%。同一套系统优化也用于 Codex，让相同硬件支持更多有效的智能体工作。评估这类升级时，应同时记录模型质量、端到端延迟、工具调用开销和单位任务成本，而不能只看生成速度。 OpenAI表示，GPT-5.6 Sol 的系统级优化提升了模型在性能与成本之间的效率曲线。相关改进覆盖推理栈，让同一套硬件能够产出更多有效工作。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2082580211552457102">GPT-5.6 Sol 优化 Codex 基础设施</a> · OpenAI Devs (Twitter) · Codex 基础设施实践</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在实际工作负载中同时记录模型质量、延迟和单位成本，评估推理优化的真实收益。</li>
-<li>对长任务分别测量推理、工具调用和上下文管理的开销，并保留可复现的模型版本与配置。</li>
-<li>在模型上线后持续分析 kernel、缓存和解码层面的复合优化机会。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores">GPT-5.6 Sol：ARC-AGI-3 得分三倍与长程评测方法</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>GPT-5.6 Sol</code> <code>ARC-AGI-3</code> <code>上下文压缩</code> <code>长程代理</code> <code>模型评测</code> <code>Responses API</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发现，GPT-5.6 Sol 在 ARC-AGI-3 上的表现高度依赖评测 harness：保留推理状态并启用上下文压缩后，得分提升至原来的三倍，输出 token 还减少约六倍。相关讨论强调，长程代理需要跨上下文窗口保留已学信息，不能只用一次性调用衡量模型能力。评测结果同时受到模型、API 设置、提示词和 harness 设计影响，使用 Responses API、推理保留与上下文压缩可以让测量更接近真实工作流。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2082616641834422740">OpenAI：长程代理评测需保留推理并压缩上下文</a> · OpenAI (Twitter) · 长程代理评测方法</li>
-<li><a href="https://x.com/sama/status/2082627724040884667">GPT-5.6 Sol 的 ARC-AGI-3 得分受设置影响</a> · Sam Altman (Twitter) · Altman 对评测设置的补充</li>
-<li><a href="https://x.com/OpenAI/status/2082616636989952217">OpenAI 解释 GPT-5.6 Sol 的 ARC-AGI-3 得分提升</a> · OpenAI (Twitter) · 官方结果与 API 设置</li>
-</ul>
-<hr>
-<h3>3. <a href="https://x.com/SpaceXAI/status/2082529280341553209">Grok Voice Think Fast 2.0 发布</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Grok</code> <code>语音模型</code> <code>语音转写</code> <code>对话能力</code></li>
-</ul>
-<p><strong>摘要</strong>: xAI宣布推出下一代语音模型 Grok Voice Think Fast 2.0，重点改进智能水平、转写准确率和对话能力。该版本面向语音交互场景，目标是提升实时交流的整体体验。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用真实通话或会议片段测试转写准确率，并按口音、噪声和专业术语分层评估。</li>
-<li>将语音模型接入业务前，明确录音留存、敏感信息处理和人工接管规则。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://openai.com/index/chatgpt-for-academic-researchers">ChatGPT for Academic Researchers：前沿模型免费助研</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>学术研究</code> <code>GPT-5.6</code> <code>科研协作</code> <code>数据隐私</code> <code>研究生产力</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 推出 ChatGPT for Academic Researchers，先向一万名科学家、数学家和工程师免费开放前沿模型，并计划在 2027 年扩大至十万人。项目面向文献整理、假设检验、代码分析和跨学科发现，参与者可获得包含 GPT-5.6 系列在内的模型访问权限。每个工作区提供企业级隐私与安全保护，研究者仍需保留对数据权限、模型建议和实验结论的人工复核。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAI/status/2082516370949062989">OpenAI 向研究人员免费开放前沿模型</a> · OpenAI (Twitter) · 科研支持计划发布</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>为研究团队申请试用时，先定义文献整理、假设检验或代码分析等具体任务。</li>
-<li>涉及未发表数据时，先核对工作区的隐私设置、训练政策和协作者权限。</li>
-<li>建立研究者对模型建议的引用、复核和错误记录流程。</li>
-<li>用非敏感数据先测试共享提示词、实验记录和模型输出审计规范。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>5. <a href="https://openai.com/index/avatarin">avatarin 用 GPT-Realtime 打造全天候零售客服</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>GPT-Realtime</code> <code>零售客服</code> <code>多语言</code> <code>语音代理</code></li>
-</ul>
-<p><strong>摘要</strong>: 日本山田电机使用 GPT-Realtime 为消费者提供全天候多语言支持。上线两周已有 3 万人使用，问卷中的正面反馈达到 92%。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在零售场景中先用高频问题和多语言需求验证实时语音代理。</li>
-<li>上线初期同时跟踪使用量、问题解决率和用户满意度。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>6. <a href="https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals">Anthropic 调查三起真实网络安全事件评测</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Anthropic</code> <code>网络安全</code> <code>安全评测</code> <code>真实事件</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 发布对三起真实世界事件的网络安全评测调查。文章重点将现实事件复盘与安全能力评估联系起来，为理解模型在真实攻防场景中的表现提供案例依据。</p>
-<hr>
-<h3>7. <a href="https://x.com/SpaceXAI/status/2082517754712842386">TinyFish 插件为 Grok Build 接入网页代理</a></h3>
-<ul>
-<li><strong>来源</strong>: xAI (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Grok Build</code> <code>TinyFish</code> <code>网页代理</code> <code>浏览器自动化</code></li>
-</ul>
-<p><strong>摘要</strong>: Grok Build 现在可以使用 TinyFish 插件，获得网页搜索、抓取、智能体和浏览器能力。该集成让编程智能体能够从终端连接实时网页并跨站执行任务。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>先在隔离环境中限制插件可访问的域名和凭据，再运行网页检索任务。</li>
-<li>为搜索、抓取和浏览器操作分别记录来源、权限和执行结果，便于审计。</li>
-</ul>
-</blockquote>
-<hr>
 ]]></description>
     </item>
   </channel>
