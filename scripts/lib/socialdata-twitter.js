@@ -16,11 +16,16 @@ function tweetDate(tweet) {
   return Number.isNaN(date.getTime()) ? null : date;
 }
 
+function tweetId(tweet) {
+  const value = tweet?.id_str ?? tweet?.id;
+  return value == null ? null : String(value);
+}
+
 function dedupeTweets(tweets) {
   const seen = new Set();
   const deduped = [];
   for (const tweet of tweets) {
-    const id = tweet?.id_str || (tweet?.id != null ? String(tweet.id) : null);
+    const id = tweetId(tweet);
     if (id && seen.has(id)) continue;
     if (id) seen.add(id);
     deduped.push(tweet);
@@ -46,7 +51,7 @@ function authHeaders(apiKey) {
 function makeSearchUrl(handle, windowStart, windowEnd, cursor) {
   const startSeconds = Math.floor(windowStart.getTime() / 1000);
   const endSeconds = Math.floor(windowEnd.getTime() / 1000);
-  const query = `from:${handle} since_time:${startSeconds} until_time:${endSeconds}`;
+  const query = `from:${handle} -filter:replies since_time:${startSeconds} until_time:${endSeconds}`;
   const url = new URL(`${BASE}/twitter/search`);
   url.searchParams.set('query', query);
   url.searchParams.set('type', 'Latest');
@@ -148,6 +153,7 @@ async function fetchTimelineThroughWindow({ userId, apiKey, windowStart, fetchIm
 function mapTweetsToArticles(tweets, handleFallback) {
   return (tweets || []).map((t) => {
     const screen = t.user?.screen_name || handleFallback;
+    const tweetId = String(t.id_str || t.id);
     const text = (t.full_text || t.text || '').trim();
     const expandedUrls = (t.entities?.urls || []).map((u) => ({
       t_co: u.url,
@@ -166,8 +172,9 @@ function mapTweetsToArticles(tweets, handleFallback) {
       status_id: t.in_reply_to_status_id_str,
     } : null;
     return {
+      tweet_id: tweetId,
       title: text.slice(0, 200),
-      url: `https://x.com/${screen}/status/${t.id_str}`,
+      url: `https://x.com/${screen}/status/${tweetId}`,
       published_at: t.tweet_created_at || null,
       description: text,
       expanded_urls: expandedUrls,
@@ -179,15 +186,11 @@ function mapTweetsToArticles(tweets, handleFallback) {
 
 // Low-signal tweets we drop at fetch time:
 //   - Pure RTs (`RT @handle ...`): re-posts without commentary, rarely add signal beyond what the primary source already surfaces.
-//   - Replies to OTHER accounts: conversational fragments, usually context-free in isolation.
-// Self-replies are kept — they are how long-form content is threaded on Twitter, and `thread_group_id` merges them at report time.
+//   - Replies, including self-replies: conversational fragments and thread
+//     continuations are intentionally excluded to keep the feed concise.
 function isLowSignalTweet(article, handle) {
   if ((article.description || '').startsWith('RT @')) return true;
-  if (article.reply_to?.screen_name) {
-    const target = article.reply_to.screen_name.toLowerCase();
-    const self = (handle || '').toLowerCase();
-    if (target !== self) return true;
-  }
+  if (article.reply_to?.status_id || article.reply_to?.screen_name) return true;
   return false;
 }
 
@@ -196,9 +199,17 @@ function makeTwitterRoute({ name, handle, userId, fetchImpl = fetchText }) {
   if (!userId) throw new Error(`socialdata-twitter: missing userId for ${name}`);
   return {
     name,
+    handle,
+    userId: String(userId),
     sourceType: 'socialdata',
     sourceUrl: `https://x.com/${handle}`,
-    async fetch({ windowStart, windowEnd } = {}) {
+    async fetch({ windowStart, windowEnd, mode = 'search', accountTimeoutMs = 60_000 } = {}) {
+      return fetchRange({ windowStart, windowEnd, mode, accountTimeoutMs });
+    },
+  };
+
+  async function fetchRange({ windowStart, windowEnd, mode, accountTimeoutMs }) {
+      const startedAt = Date.now();
       const apiKey = process.env.SOCIALDATA_API_KEY;
       if (!apiKey) return { articles: [], error: 'SOCIALDATA_API_KEY not set' };
 
@@ -212,124 +223,71 @@ function makeTwitterRoute({ name, handle, userId, fetchImpl = fetchText }) {
         return { articles: [], error: err.message };
       }
 
+      const controller = new AbortController();
+      const deadline = setTimeout(() => controller.abort(), Math.max(1, accountTimeoutMs));
+      const boundedFetch = (url, options = {}) => fetchImpl(url, {
+        ...options,
+        timeoutMs: 15_000,
+        maxAttempts: 1,
+        signal: controller.signal,
+      });
       let result;
-      let method = 'search_window';
-      let warning = null;
-      let totalRequests = 0;
-      let totalReturnedTweets = 0;
-
-      let search;
+      let method = mode === 'timeline' ? 'timeline_incremental' : 'search_incremental';
       try {
-        search = await fetchSearchWindow({
-          handle, apiKey, windowStart: start, windowEnd: end, fetchImpl,
-        });
-        totalRequests += search.requests;
-        totalReturnedTweets += search.returnedTweets;
-      } catch (searchErr) {
-        totalRequests += searchErr.attemptedRequests || 1;
-        totalReturnedTweets += searchErr.returnedTweets || 0;
-
-        // A failure after one or more successful search pages must not be
-        // hidden by a first-page timeline fallback: doing so could silently
-        // truncate a busy account. Mark it failed so the retry run fetches the
-        // complete source again.
-        if ((searchErr.completedPages || 0) > 0) {
-          return {
-            articles: [],
-            error: `incomplete paginated search: ${searchErr.message}`,
-            usage: {
-              provider: 'socialdata', method: 'search_window_incomplete',
-              requests: totalRequests, returned_tweets: totalReturnedTweets,
-            },
-          };
-        }
-
-        try {
-          const timeline = await fetchTimelineThroughWindow({
-            userId, apiKey, windowStart: start, fetchImpl,
+        if (mode === 'timeline') {
+          result = await fetchTimelineThroughWindow({
+            userId,
+            apiKey,
+            windowStart: start,
+            fetchImpl: boundedFetch,
           });
-          totalRequests += timeline.requests;
-          totalReturnedTweets += timeline.returnedTweets;
-          result = timeline;
-          method = 'timeline_search_fallback';
-          warning = `search unavailable; used user timeline: ${searchErr.message}`;
-        } catch (timelineErr) {
-          totalRequests += timelineErr.attemptedRequests || 1;
-          totalReturnedTweets += timelineErr.returnedTweets || 0;
-          return {
-            articles: [],
-            error: `search failed (${searchErr.message}); timeline failed (${timelineErr.message})`,
-            usage: {
-              provider: 'socialdata', method: 'search_and_timeline_failed',
-              requests: totalRequests, returned_tweets: totalReturnedTweets,
-            },
-          };
-        }
-      }
-
-      if (search && !result) {
-        const hasTweetInWindow = search.tweets.some((tweet) => {
-          const date = tweetDate(tweet);
-          return date && date >= start && date < end;
-        });
-
-        if (hasTweetInWindow) {
-          result = search;
         } else {
-          // Search can legitimately be empty, but SocialData documents that
-          // shadow-banned profiles may also return no search results. Verify an
-          // empty/out-of-window response through the stable user-ID timeline so
-          // optimisation never turns provider ambiguity into silent omission.
-          try {
-            const timeline = await fetchTimelineThroughWindow({
-              userId, apiKey, windowStart: start, fetchImpl,
-            });
-            totalRequests += timeline.requests;
-            totalReturnedTweets += timeline.returnedTweets;
-            result = timeline;
-            method = 'timeline_empty_search_verification';
-            warning = 'search returned no in-window tweets; verified via user timeline';
-          } catch (timelineErr) {
-            totalRequests += timelineErr.attemptedRequests || 1;
-            totalReturnedTweets += timelineErr.returnedTweets || 0;
-            return {
-              articles: [],
-              error: `empty search could not be verified via timeline: ${timelineErr.message}`,
-              usage: {
-                provider: 'socialdata', method: 'empty_search_verification_failed',
-                requests: totalRequests, returned_tweets: totalReturnedTweets,
-              },
-            };
-          }
+          result = await fetchSearchWindow({
+            handle, apiKey, windowStart: start, windowEnd: end, fetchImpl: boundedFetch,
+          });
         }
-      }
-
-      try {
         const raw = mapTweetsToArticles(result.tweets, handle);
-        const articles = raw.filter((a) => !isLowSignalTweet(a, handle));
+        const newestReturnedAt = result.tweets
+          .map(tweetDate)
+          .filter((date) => date && date < end)
+          .sort((a, b) => b - a)[0] || null;
+        const articles = raw.filter((article) => {
+          const published = new Date(article.published_at);
+          return !isLowSignalTweet(article, handle)
+            && !Number.isNaN(published.getTime())
+            && published >= start
+            && published < end;
+        });
         const dropped = raw.length - articles.length;
-        if (dropped > 0) console.error(`[${name}] filtered ${dropped} low-signal tweets (RT / reply-to-others)`);
-        if (warning) console.error(`[${name}] ${warning}`);
+        if (dropped > 0) console.error(`[${name}] filtered ${dropped} out-of-range/low-signal tweets`);
         return {
           articles,
           error: null,
-          warning,
           usage: {
             provider: 'socialdata', method,
-            requests: totalRequests, returned_tweets: totalReturnedTweets,
+            requests: result.requests, returned_tweets: result.returnedTweets,
           },
+          newest_returned_at: newestReturnedAt?.toISOString() || null,
+          elapsed_ms: Date.now() - startedAt,
         };
       } catch (err) {
+        const completedPages = err.completedPages || 0;
+        const failureMethod = mode === 'timeline' ? 'timeline_incremental_failed'
+          : completedPages > 0 ? 'search_incremental_incomplete' : 'search_incremental_failed';
         return {
-          articles: [], error: err.message,
+          articles: [],
+          error: `${method} failed: ${err.message}`,
           usage: {
-            provider: 'socialdata', method,
-            requests: totalRequests, returned_tweets: totalReturnedTweets,
+            provider: 'socialdata', method: failureMethod,
+            requests: err.attemptedRequests || 1,
+            returned_tweets: err.returnedTweets || 0,
           },
+          elapsed_ms: Date.now() - startedAt,
         };
+      } finally {
+        clearTimeout(deadline);
       }
-    },
-  };
+    }
 }
 
 module.exports = {

@@ -18,13 +18,19 @@ test('urlHash: sha256 hex of URL — 64-char, deterministic, differs per URL', (
 });
 
 test('filterAlreadyReported: drops articles whose url-hash is in history', () => {
-  const history = { articles: { [urlHash('https://example.com/old')]: { title: 'old' } } };
+  const history = { articles: { [urlHash('https://example.com/old')]: { title: 'old', report_date: '2026-07-21' } } };
   const input = [
     { url: 'https://example.com/old' },
     { url: 'https://example.com/new' },
   ];
   assert.deepEqual(filterAlreadyReported(input, history).map((a) => a.url),
     ['https://example.com/new']);
+});
+
+test('filterAlreadyReported: history without report_date is not formal consumption', () => {
+  const article = { url: 'https://example.com/fallback-only' };
+  const history = { articles: { [urlHash(article.url)]: { title: 'fallback-only' } } };
+  assert.deepEqual(filterAlreadyReported([article], history), [article]);
 });
 
 test('filterAlreadyReported: keeps same-date entries when rebuilding a partial report', () => {
@@ -79,6 +85,15 @@ test('mergeThreads: propagates duplicate_of from non-leader sibling onto merged 
     'merged entry inherits duplicate_of from sibling so cluster collapse survives');
 });
 
+test('mergeThreads: a current member makes a mixed thread current', () => {
+  const out = mergeThreads([
+    { url: 'old', thread_group_id: 't1', published_at: '2026-09-01T00:00Z', summary: 'old', delivery_class: 'backfill', origin_report_date: '2026-09-01' },
+    { url: 'new', thread_group_id: 't1', published_at: '2026-09-05T00:00Z', summary: 'new', delivery_class: 'current', origin_report_date: '2026-09-05' },
+  ]);
+  assert.equal(out[0].delivery_class, 'current');
+  assert.equal(out[0].origin_report_date, '2026-09-05');
+});
+
 test('applyDuplicateOf: canonical gets cluster_members; non-canonicals dropped from top-level', () => {
   const input = [
     { url: 'https://anthropic.com/news/x', title: 'Canonical post', source: 'Anthropic Blog', duplicate_of: null },
@@ -93,6 +108,15 @@ test('applyDuplicateOf: canonical gets cluster_members; non-canonicals dropped f
   assert.equal(out[0].cluster_members[0].angle, '官方推文');
   assert.equal(out[0].cluster_members[1].source, 'The Batch');
   assert.equal(out[0].cluster_members[1].angle, '');
+});
+
+test('applyDuplicateOf: a current duplicate makes a backfill canonical current', () => {
+  const out = applyDuplicateOf([
+    { url: 'canonical', delivery_class: 'backfill', origin_report_date: '2026-09-01' },
+    { url: 'member', duplicate_of: 'canonical', delivery_class: 'current', origin_report_date: '2026-09-05' },
+  ]);
+  assert.equal(out[0].delivery_class, 'current');
+  assert.equal(out[0].origin_report_date, '2026-09-05');
 });
 
 test('filterByImportance: removes articles below threshold', () => {
@@ -129,6 +153,18 @@ test('appendToHistory: stores extras.practice_suggestions when present', () => {
   appendToHistory(history, articles, '2026-04-22T00:00:00Z');
   const entry = Object.values(history.articles)[0];
   assert.deepEqual(entry.extras.practice_suggestions, ['step 1']);
+});
+
+test('appendToHistory: stores delivery metadata used to trace backfills', () => {
+  const history = { articles: {} };
+  appendToHistory(history, [{
+    url: '1', title: 't', source: 's', published_at: 'p', summary: 's',
+    category: '研究', importance: 3, delivery_class: 'backfill', origin_report_date: '2026-09-01',
+  }], '2026-09-05T00:00:00Z', '2026-09-05');
+  const entry = Object.values(history.articles)[0];
+  assert.equal(entry.report_date, '2026-09-05');
+  assert.equal(entry.extras.delivery_class, 'backfill');
+  assert.equal(entry.extras.origin_report_date, '2026-09-01');
 });
 
 test('applyRetention: removes entries older than cutoff', () => {

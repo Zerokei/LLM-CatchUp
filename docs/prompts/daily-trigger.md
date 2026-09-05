@@ -45,7 +45,7 @@ If the file does not exist, `analyzed_urls` is empty.
 
 ### Step 4: Collect remaining articles
 
-Iterate `fetch-cache.sources`. For each source with `status === "ok"` or `status === "degraded_stale"`, collect each `article` whose `url` is NOT in `analyzed_urls`. Attach **two** fields onto each article so the subagent and Step 8 can reference them: `source` (the source name) and `cadence` (the source's `cadence` field, defaulting to `"daily"` if absent — sources without a cadence field are daily). Call this list `remaining`.
+Iterate `fetch-cache.sources`. For each source with `status === "ok"` or `status === "degraded_stale"`, collect each `article` whose `url` is NOT in `analyzed_urls`. Attach `source` (the source name) and `cadence` (the source's `cadence` field, defaulting to `"daily"` if absent). Preserve the fetcher's deterministic `origin_report_date` and `delivery_class` fields; articles without them are backward-compatible current-day entries (`origin_report_date = {date}`, `delivery_class = "current"`). Call this list `remaining`.
 
 If `remaining` is empty:
 
@@ -60,7 +60,7 @@ Split `remaining` into chunks of **10 articles** each (the last chunk may be sma
 
 The runtime has four total agent slots, including the main agent. Dispatch chunks in waves of at most **3 subagents in parallel**. Put the calls for one wave in a single message, wait for that wave to finish, then dispatch the next wave. Do not submit more than three concurrent subagent calls; exceeding the slot limit causes otherwise-valid chunks to be rejected before they start.
 
-If the total number of chunks would exceed 12 (i.e., more than 120 remaining articles), reduce to the top 120 by `published_at` desc. The later same-date retry or repair invocation will pick up URLs not yet present in the analysis-cache.
+If the total number of chunks would exceed 12 (i.e., more than 120 remaining articles), keep current-day articles before backfills, then rank current-day articles by `published_at` desc. Use any remaining capacity for backfills in their existing oldest-first queue order. The later same-date retry or repair invocation will pick up URLs not yet present in the analysis-cache.
 
 The template below shows what each subagent's prompt should look like. Substitute `{N}` (article count in the chunk), `{date}`, `{i}` (chunk index), and the inlined articles before dispatching.
 
@@ -83,7 +83,7 @@ For EACH article, produce a JSON object with these 6 fields:
 5. tags — 3-5 Chinese keywords (array).
 6. practice_suggestions — 1-3 concrete actionable Chinese suggestions, ONLY if `category ∈ {模型发布, 产品与功能}`. Omit otherwise.
 
-Also carry through two fields UNMODIFIED from the fetch-cache article (do NOT recompute): `thread_group_id`, `duplicate_of`. They are already authoritative.
+Also carry through four fields UNMODIFIED from the fetch-cache article (do NOT recompute): `thread_group_id`, `duplicate_of`, `origin_report_date`, `delivery_class`. They are already authoritative.
 
 Write a single JSON file to `data/analysis-cache/{date}.chunk-{i}.json` with shape:
 
@@ -98,7 +98,9 @@ Emit STRICT JSON. If a Chinese summary needs to quote an English term, use corne
       "category": "...", "importance": N, "tags": ["..."],
       "practice_suggestions": ["..."] (optional, omit if not applicable),
       "thread_group_id": null_or_string,
-      "duplicate_of": null_or_string
+      "duplicate_of": null_or_string,
+      "origin_report_date": "YYYY-MM-DD",
+      "delivery_class": "current|backfill"
     },
     ...
   ]
@@ -107,7 +109,7 @@ Emit STRICT JSON. If a Chinese summary needs to quote an English term, use corne
 
 Articles to analyze:
 
-{INLINE THE N ARTICLES HERE — full fields: url, source, title, published_at, description, full_text, linked_content, quoted_tweet, expanded_urls, reply_to, thread_group_id, duplicate_of}
+{INLINE THE N ARTICLES HERE — full fields: url, source, title, published_at, description, full_text, linked_content, quoted_tweet, expanded_urls, reply_to, thread_group_id, duplicate_of, origin_report_date, delivery_class}
 
 Return just "done" when the file is written.
 ````
@@ -118,7 +120,7 @@ When all first-pass subagent calls return, validate every chunk:
 
 - Read `data/analysis-cache/{date}.chunk-{i}.json`.
 - A chunk needs retry if the file is missing, `JSON.parse` throws, any requested URL is absent, or any returned article fails the required-field checks below. Do NOT attempt a rescue parse.
-- Required fields are: `url`, `source`, `title` (non-empty string), `summary` (non-empty string), `category` (string), `importance` (integer 1-5), and `tags` (array).
+- Required fields are: `url`, `source`, `title` (non-empty string), `summary` (non-empty string), `category` (string), `importance` (integer 1-5), `tags` (array), `origin_report_date` (`YYYY-MM-DD`), and `delivery_class` (`current` or `backfill`).
 
 Retry every failed chunk **once in the same run**, again in waves of at most 3 subagents, using the original input articles and the same strict-JSON prompt. Re-read and revalidate the replacement files. After that retry:
 
@@ -132,7 +134,7 @@ Merge:
 - Pre-existing `articles` from `data/analysis-cache/{date}.json` (if it existed at Step 3)
 - Plus the new articles from Step 6
 
-Call the combined list `final_articles`.
+Before merging, look up every pre-existing article by URL in fetch-cache and fill any missing `origin_report_date` / `delivery_class` with the same backward-compatible defaults from Step 4. Call the normalized combined list `final_articles`.
 
 ### Step 7.5: Cluster identification
 
@@ -177,7 +179,7 @@ The renderer reads `duplicate_of` to gather members under each canonical and use
 
 ### Step 8: Compute trend_paragraph
 
-The value MUST be a bulleted markdown list, NOT prose. Synthesize **only from articles whose `source.cadence === "daily"`** (i.e. ignore weekly-cadence sources like Berkeley RDI and The Batch — their themes are summarized in the weekly report instead). Use `final_articles[*].title + summary` for the daily-cadence subset.
+Build a source-name → cadence lookup from `fetch-cache.sources` (missing cadence means `daily`). The value MUST be a bulleted markdown list, NOT prose. Synthesize **only from `final_articles` whose source cadence is `daily` AND `delivery_class !== "backfill"`**. Ignore weekly-cadence sources and 往期补遗; their themes must not distort the current day's trend. Use each remaining article's `title + summary`. If that subset is empty, use exactly `- **暂无新增内容**：该太平洋时区抓取窗口内没有可用于趋势计算的当日新内容。`.
 
 Shape — 3-5 bullets, one sentence each:
 

@@ -47,11 +47,11 @@ test('configuredExistingSources: drops removed sources and preserves configured 
 test('mergeApiUsage: retry snapshots retain cumulative billable volume', () => {
   assert.deepEqual(
     mergeApiUsage(
-      { provider: 'socialdata', method: 'search_window_incomplete', requests: 2, returned_tweets: 20 },
-      { provider: 'socialdata', method: 'search_window', requests: 2, returned_tweets: 25 },
+      { provider: 'socialdata', method: 'search_incremental_incomplete', requests: 2, returned_tweets: 20 },
+      { provider: 'socialdata', method: 'search_incremental', requests: 2, returned_tweets: 25 },
     ),
     {
-      provider: 'socialdata', method: 'search_window', attempts: 2,
+      provider: 'socialdata', method: 'search_incremental', attempts: 2,
       requests: 4, returned_tweets: 45,
     },
   );

@@ -23,18 +23,21 @@ function isRetryable(err, response) {
   return ['ECONNRESET', 'ECONNREFUSED', 'ETIMEDOUT', 'ENOTFOUND', 'EAI_AGAIN', 'UND_ERR_CONNECT_TIMEOUT'].includes(code);
 }
 
-async function fetchText(url, { headers = {} } = {}) {
+async function fetchText(url, {
+  headers = {}, timeoutMs = TIMEOUT_MS, maxAttempts = MAX_ATTEMPTS, signal,
+} = {}) {
   let lastErr;
-  for (let attempt = 1; attempt <= MAX_ATTEMPTS; attempt++) {
+  for (let attempt = 1; attempt <= maxAttempts; attempt++) {
     try {
+      const timeoutSignal = AbortSignal.timeout(timeoutMs);
       const res = await fetch(url, {
         headers: { ...DEFAULT_HEADERS, ...headers },
-        signal: AbortSignal.timeout(TIMEOUT_MS),
+        signal: signal ? AbortSignal.any([signal, timeoutSignal]) : timeoutSignal,
       });
       if (!res.ok) {
         const err = new Error(`HTTP ${res.status}`);
         err.status = res.status;
-        if (isRetryable(null, res) && attempt < MAX_ATTEMPTS) {
+        if (isRetryable(null, res) && attempt < maxAttempts) {
           lastErr = err;
           await sleep(RETRY_DELAY_MS);
           continue;
@@ -54,8 +57,8 @@ async function fetchText(url, { headers = {} } = {}) {
       const label = attempt === 1 ? '1 attempt' : `${attempt} attempts`;
 
       if (err.name === 'TimeoutError') {
-        lastErr = new Error(`timeout after ${TIMEOUT_MS / 1000}s (${label})`);
-        if (attempt < MAX_ATTEMPTS) {
+        lastErr = new Error(`timeout after ${timeoutMs / 1000}s (${label})`);
+        if (attempt < maxAttempts) {
           await sleep(RETRY_DELAY_MS);
           continue;
         }
@@ -69,7 +72,7 @@ async function fetchText(url, { headers = {} } = {}) {
         throw new Error(`HTTP ${err.status} after ${label}`);
       }
 
-      if (attempt < MAX_ATTEMPTS && isRetryable(err)) {
+      if (attempt < maxAttempts && isRetryable(err)) {
         await sleep(RETRY_DELAY_MS);
         continue;
       }

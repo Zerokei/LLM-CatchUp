@@ -9,7 +9,7 @@ function filterAlreadyReported(articles, history, reportDate) {
   const known = history.articles || {};
   return articles.filter((a) => {
     const previous = known[urlHash(a.url)];
-    if (!previous) return true;
+    if (!previous || !previous.report_date) return true;
 
     // A retry can legitimately rebuild the same report after a partial analyzer
     // or reporter run. Keep entries first written by this report date so the
@@ -36,9 +36,15 @@ function mergeThreads(articles) {
       || String(x.url).localeCompare(String(y.url)));
     const [canonical, ...rest] = group;
     const summary = [canonical.summary, ...rest.map((r) => r.summary).filter(Boolean)].filter(Boolean).join(' ');
+    const currentMember = group.find((article) => article.delivery_class !== 'backfill');
+    const delivery_class = currentMember ? 'current' : 'backfill';
+    const origin_report_date = currentMember?.origin_report_date || canonical.origin_report_date;
     // Propagate duplicate_of from any sibling — Step 7.5 may have marked a non-leader.
     const duplicate_of = canonical.duplicate_of || rest.find((r) => r.duplicate_of)?.duplicate_of || null;
-    merged.push({ ...canonical, duplicate_of, summary, extras: { ...(canonical.extras || {}), thread_urls: group.map((g) => g.url) } });
+    merged.push({
+      ...canonical, duplicate_of, summary, delivery_class, origin_report_date,
+      extras: { ...(canonical.extras || {}), thread_urls: group.map((g) => g.url) },
+    });
   }
   return [...merged, ...standalone];
 }
@@ -56,6 +62,10 @@ function applyDuplicateOf(articles) {
       source: a.source,
       angle: a.angle || '',
     });
+    if (a.delivery_class !== 'backfill') {
+      canonical.delivery_class = 'current';
+      canonical.origin_report_date = a.origin_report_date || canonical.origin_report_date;
+    }
   }
   return articles.filter((a) => !a.duplicate_of || !byUrl.get(a.duplicate_of));
 }
@@ -70,6 +80,8 @@ function appendToHistory(history, articles, fetchedAtISO, reportDate) {
     if (a.practice_suggestions?.length) extras.practice_suggestions = a.practice_suggestions;
     if (a.cluster_members?.length) extras.cluster_members = a.cluster_members;
     if (a.extras?.thread_urls) extras.thread_urls = a.extras.thread_urls;
+    if (a.origin_report_date) extras.origin_report_date = a.origin_report_date;
+    if (a.delivery_class) extras.delivery_class = a.delivery_class;
     history.articles[urlHash(a.url)] = {
       title: a.title,
       url: a.url,
@@ -198,6 +210,8 @@ async function main() {
     if (fc) {
       if (!a.title) a.title = fc.title;  // last-resort fallback
       if (!a.published_at) a.published_at = fc.published_at;
+      if (!a.origin_report_date) a.origin_report_date = fc.origin_report_date || date;
+      if (!a.delivery_class) a.delivery_class = fc.delivery_class || 'current';
     }
   }
 
@@ -219,8 +233,10 @@ async function main() {
   // Split into "full block" (importance ≥3) and "brief one-liner" (importance ==2).
   const reportable = filterByImportance(canonical, minImportance)
     .filter((a) => !isWeeklyCadence(a));
-  const articlesInReport = reportable.filter((a) => (a.importance || 0) >= 3);
-  const briefArticles = reportable.filter((a) => (a.importance || 0) === 2);
+  const currentReportable = reportable.filter((a) => a.delivery_class !== 'backfill');
+  const backfillArticles = reportable.filter((a) => a.delivery_class === 'backfill');
+  const articlesInReport = currentReportable.filter((a) => (a.importance || 0) >= 3);
+  const briefArticles = currentReportable.filter((a) => (a.importance || 0) === 2);
 
   // Step 6 — render markdown
   const rawFetched = Object.values(fetchCache.sources).reduce((n, s) => n + (s.articles?.length || 0), 0);
@@ -228,7 +244,7 @@ async function main() {
   const sourceStatuses = Object.entries(fetchCache.sources).map(([name, s]) => ({
     name,
     status_note: s.status === 'ok'
-      ? `✅ 正常（窗口内 ${s.articles.length} 文）`
+      ? `✅ 正常（当日 ${s.current_count ?? s.articles.length} 文，补遗 ${s.backfill_count || 0} 文）`
       : s.status === 'degraded_stale'
         ? `⚠️ 过期（${s.error}）`
         : `❌ 错误（${s.error}）`,
@@ -237,15 +253,17 @@ async function main() {
     date,
     articlesInReport,
     briefArticles,
+    backfillArticles,
     trendParagraph: analysisCache.trend_paragraph || '（无趋势段）',
   });
   const opsMd = renderOps({
     date,
-    articlesInReport: [...articlesInReport, ...briefArticles],
+    articlesInReport: [...articlesInReport, ...briefArticles, ...backfillArticles],
     rawFetched,
     mergedCount: canonical.length,
     sourcesWithContent,
     filteredLowImportance: canonical.length - reportable.length,
+    backfillCount: backfillArticles.length,
     sourceStatuses,
   });
   fs.mkdirSync(REPORTS_DIR, { recursive: true });

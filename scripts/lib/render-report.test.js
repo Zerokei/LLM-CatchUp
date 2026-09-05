@@ -144,6 +144,23 @@ test('renderEditorial: 速览 section omitted when no briefArticles', () => {
   assert.doesNotMatch(md, /## 速览/);
 });
 
+test('renderEditorial: backfills render separately with origin date', () => {
+  const md = renderEditorial({
+    date: '2026-09-05',
+    articlesInReport: [],
+    briefArticles: [],
+    backfillArticles: [{
+      title: '补遗', url: 'https://example.com/backfill', source: 'X', category: '研究',
+      importance: 3, summary: '此前遗漏的内容。', origin_report_date: '2026-09-01',
+    }],
+    trendParagraph: '- **暂无新增内容**：无。',
+  });
+  assert.match(md, /今日窗口内无新内容/);
+  assert.match(md, /## 往期补遗/);
+  assert.match(md, /2026-09-01 · 研究/);
+  assert.match(md, /此前遗漏的内容/);
+});
+
 // ---- renderOps ----
 
 test('renderOps: ops doc has counts, category table, source health table — no article bodies', () => {

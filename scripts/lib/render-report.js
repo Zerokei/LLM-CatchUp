@@ -37,10 +37,18 @@ function renderBriefBlock(a) {
   return `- **${a.category}** | ${tags} — ${oneLine} · [${a.source}](${a.url})\n`;
 }
 
+function renderBackfillBlock(a) {
+  const oneLine = (a.summary || '').replace(/\s*\n+\s*/g, ' ').trim();
+  const origin = a.origin_report_date || String(a.published_at || '').slice(0, 10) || '日期未知';
+  return `- **${origin} · ${a.category}** — ${oneLine} · [${a.source}](${a.url})\n`;
+}
+
 // Editorial: what subscribers / website / RSS see.
 // Articles split by importance: ≥3 render as full blocks; ==2 collapse into a
 // trailing "## 速览" list. Singletons of either tier still go through history.
-function renderEditorial({ date, articlesInReport, briefArticles = [], trendParagraph }) {
+function renderEditorial({
+  date, articlesInReport, briefArticles = [], backfillArticles = [], trendParagraph,
+}) {
   let md = '';
   md += `# CatchUp 日报 — ${date}\n\n`;
   md += '## 今日趋势\n\n';
@@ -48,13 +56,19 @@ function renderEditorial({ date, articlesInReport, briefArticles = [], trendPara
   md += '---\n\n## 文章详情\n\n';
   if (articlesInReport.length === 0 && briefArticles.length === 0) {
     md += '今日窗口内无新内容。\n';
-    return md;
+  } else {
+    articlesInReport.forEach((a, i) => { md += renderArticleBlock(a, i + 1); });
+    if (briefArticles.length) {
+      md += '## 速览\n\n';
+      md += '以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。\n\n';
+      for (const a of briefArticles) md += renderBriefBlock(a);
+      md += '\n';
+    }
   }
-  articlesInReport.forEach((a, i) => { md += renderArticleBlock(a, i + 1); });
-  if (briefArticles.length) {
-    md += '## 速览\n\n';
-    md += '以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。\n\n';
-    for (const a of briefArticles) md += renderBriefBlock(a);
+  if (backfillArticles.length) {
+    md += '\n## 往期补遗\n\n';
+    md += '以下内容此前尚未进入正式日报，不参与今日趋势统计。\n\n';
+    for (const a of backfillArticles) md += renderBackfillBlock(a);
     md += '\n';
   }
   return md;
@@ -68,6 +82,7 @@ function renderOps({
   mergedCount,
   sourcesWithContent,
   filteredLowImportance,
+  backfillCount = 0,
   sourceStatuses,
 }) {
   const catCounts = Object.fromEntries(CATEGORIES.map((c) => [c, 0]));
@@ -85,10 +100,13 @@ function renderOps({
   }
   md += '| 分类 | 数量 |\n|------|------|\n';
   for (const c of CATEGORIES) md += `| ${c} | ${catCounts[c]} |\n`;
+  md += `\n其中往期补遗 **${backfillCount}** 篇。\n`;
   md += '\n---\n\n## 数据源状态\n\n| 数据源 | 状态 |\n|--------|------|\n';
   for (const s of sourceStatuses) md += `| ${s.name} | ${s.status_note} |\n`;
   md += `\n注：共过滤 ${filteredLowImportance} 篇低重要度条目（importance < 2）——这些条目仍记入 history.json。\n`;
   return md;
 }
 
-module.exports = { renderArticleBlock, renderBriefBlock, renderEditorial, renderOps, CATEGORIES };
+module.exports = {
+  renderArticleBlock, renderBriefBlock, renderBackfillBlock, renderEditorial, renderOps, CATEGORIES,
+};

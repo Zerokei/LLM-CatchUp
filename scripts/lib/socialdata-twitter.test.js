@@ -111,14 +111,14 @@ test('isLowSignalTweet: drops replies to OTHER accounts', () => {
   assert.equal(isLowSignalTweet(a, 'sama'), true);
 });
 
-test('isLowSignalTweet: keeps self-replies (thread continuations)', () => {
+test('isLowSignalTweet: drops self-replies too', () => {
   const a = { description: 'and another thing', reply_to: { screen_name: 'sama', status_id: '1' } };
-  assert.equal(isLowSignalTweet(a, 'sama'), false);
+  assert.equal(isLowSignalTweet(a, 'sama'), true);
 });
 
-test('isLowSignalTweet: self-reply match is case-insensitive', () => {
+test('isLowSignalTweet: drops self-replies regardless of handle casing', () => {
   const a = { description: 'continued', reply_to: { screen_name: 'OpenAIDevs', status_id: '1' } };
-  assert.equal(isLowSignalTweet(a, 'openaidevs'), false);
+  assert.equal(isLowSignalTweet(a, 'openaidevs'), true);
 });
 
 function tweet(id, createdAt, overrides = {}) {
@@ -150,11 +150,11 @@ function withApiKey(fn) {
 const WINDOW_START = new Date('2026-08-12T07:00:00.000Z');
 const WINDOW_END = new Date('2026-08-13T07:00:00.000Z');
 
-test('makeSearchUrl: constrains the query to the exact target window', () => {
+test('makeSearchUrl: constrains the query to the requested incremental range', () => {
   const url = new URL(makeSearchUrl('OpenAI', WINDOW_START, WINDOW_END, 'cursor value'));
   assert.equal(url.pathname, '/twitter/search');
   assert.equal(url.searchParams.get('query'),
-    'from:OpenAI since_time:1786518000 until_time:1786604400');
+    'from:OpenAI -filter:replies since_time:1786518000 until_time:1786604400');
   assert.equal(url.searchParams.get('type'), 'Latest');
   assert.equal(url.searchParams.get('cursor'), 'cursor value');
 });
@@ -165,8 +165,11 @@ test('makeTwitterRoute: paginates the complete search window and deduplicates tw
   const selfReply = tweet('2', '2026-08-12T08:02:00.000Z', {
     in_reply_to_status_id_str: '1', in_reply_to_screen_name: 'example',
   });
-  const fetchImpl = async (url) => {
+  const fetchImpl = async (url, options) => {
     calls.push(url);
+    assert.equal(options.timeoutMs, 15_000);
+    assert.equal(options.maxAttempts, 1);
+    assert.ok(options.signal instanceof AbortSignal);
     const cursor = new URL(url).searchParams.get('cursor');
     if (!cursor) return JSON.stringify({ tweets: [first, selfReply], next_cursor: 'next page' });
     assert.equal(cursor, 'next page');
@@ -181,40 +184,21 @@ test('makeTwitterRoute: paginates the complete search window and deduplicates tw
   const result = await route.fetch({ windowStart: WINDOW_START, windowEnd: WINDOW_END });
 
   assert.equal(result.error, null);
-  assert.equal(result.usage.method, 'search_window');
+  assert.equal(result.usage.method, 'search_incremental');
   assert.equal(result.usage.requests, 2);
   assert.equal(result.usage.returned_tweets, 4, 'billing count includes duplicates returned by API');
   assert.deepEqual(result.articles.map((article) => article.url), [
     'https://x.com/example/status/1',
-    'https://x.com/example/status/2',
     'https://x.com/example/status/3',
   ]);
   assert.equal(calls.length, 2);
 }));
 
-test('makeTwitterRoute: verifies an empty search by paging timeline past the window', () => withApiKey(async () => {
+test('makeTwitterRoute: accepts an empty Search result without calling timeline', () => withApiKey(async () => {
   const calls = [];
   const fetchImpl = async (url) => {
     calls.push(url);
-    const parsed = new URL(url);
-    if (parsed.pathname === '/twitter/search') {
-      return JSON.stringify({ tweets: [], next_cursor: null });
-    }
-    const cursor = parsed.searchParams.get('cursor');
-    if (!cursor) {
-      return JSON.stringify({
-        tweets: [
-          tweet('pinned-old', '2026-07-01T08:00:00.000Z'),
-          tweet('newer', '2026-08-13T08:00:00.000Z'),
-          tweet('target', '2026-08-12T10:00:00.000Z'),
-        ],
-        next_cursor: 'older-page',
-      });
-    }
-    return JSON.stringify({
-      tweets: [tweet('old', '2026-08-11T06:00:00.000Z')],
-      next_cursor: 'unused-cursor',
-    });
+    return JSON.stringify({ tweets: [], next_cursor: null });
   };
   const route = makeTwitterRoute({
     name: 'Example (Twitter)', handle: 'example', userId: '123', fetchImpl,
@@ -222,11 +206,12 @@ test('makeTwitterRoute: verifies an empty search by paging timeline past the win
   const result = await route.fetch({ windowStart: WINDOW_START, windowEnd: WINDOW_END });
 
   assert.equal(result.error, null);
-  assert.equal(result.usage.method, 'timeline_empty_search_verification');
-  assert.equal(result.usage.requests, 3);
-  assert.equal(result.usage.returned_tweets, 4);
-  assert.match(result.warning, /verified via user timeline/);
-  assert.equal(calls.length, 3, 'stops after the first entirely pre-window page');
+  assert.equal(result.usage.method, 'search_incremental');
+  assert.equal(result.usage.requests, 1);
+  assert.equal(result.usage.returned_tweets, 0);
+  assert.deepEqual(result.articles, []);
+  assert.equal(calls.length, 1);
+  assert.equal(new URL(calls[0]).pathname, '/twitter/search');
 }));
 
 test('makeTwitterRoute: does not silently fall back after partial search pagination', () => withApiKey(async () => {
@@ -247,17 +232,49 @@ test('makeTwitterRoute: does not silently fall back after partial search paginat
   });
   const result = await route.fetch({ windowStart: WINDOW_START, windowEnd: WINDOW_END });
 
-  assert.match(result.error, /incomplete paginated search/);
-  assert.equal(result.usage.method, 'search_window_incomplete');
+  assert.match(result.error, /search_incremental failed/);
+  assert.equal(result.usage.method, 'search_incremental_incomplete');
   assert.equal(result.usage.requests, 2);
   assert.equal(result.usage.returned_tweets, 1);
   assert.equal(calls.some((url) => new URL(url).pathname.includes('/twitter/user/')), false);
 }));
 
-test('makeTwitterRoute: uses the paginated user-ID timeline when search is unavailable', () => withApiKey(async () => {
+test('makeTwitterRoute: repeated Search cursor is an incomplete fetch', () => withApiKey(async () => {
+  const fetchImpl = async () => JSON.stringify({
+    tweets: [tweet('1', '2026-08-12T08:00:00.000Z')],
+    next_cursor: 'same-cursor',
+  });
+  const route = makeTwitterRoute({
+    name: 'Example (Twitter)', handle: 'example', userId: '123', fetchImpl,
+  });
+  const result = await route.fetch({ windowStart: WINDOW_START, windowEnd: WINDOW_END });
+  assert.match(result.error, /repeated cursor/);
+  assert.equal(result.usage.method, 'search_incremental_incomplete');
+}));
+
+test('makeTwitterRoute: request timeout fails without an inline retry', () => withApiKey(async () => {
+  let calls = 0;
+  const fetchImpl = async () => {
+    calls += 1;
+    const error = new Error('timeout after 15s');
+    error.name = 'TimeoutError';
+    throw error;
+  };
+  const route = makeTwitterRoute({
+    name: 'Example (Twitter)', handle: 'example', userId: '123', fetchImpl,
+  });
+  const result = await route.fetch({ windowStart: WINDOW_START, windowEnd: WINDOW_END });
+  assert.match(result.error, /timeout after 15s/);
+  assert.equal(result.usage.method, 'search_incremental_failed');
+  assert.equal(calls, 1);
+}));
+
+test('makeTwitterRoute: uses timeline only when explicitly requested', () => withApiKey(async () => {
+  const calls = [];
   const fetchImpl = async (url) => {
+    calls.push(url);
     const parsed = new URL(url);
-    if (parsed.pathname === '/twitter/search') throw new Error('HTTP 403');
+    assert.match(parsed.pathname, /\/twitter\/user\/123\/tweets/);
     return JSON.stringify({
       tweets: [tweet('1', '2026-08-12T08:00:00.000Z')],
       next_cursor: null,
@@ -266,10 +283,33 @@ test('makeTwitterRoute: uses the paginated user-ID timeline when search is unava
   const route = makeTwitterRoute({
     name: 'Example (Twitter)', handle: 'example', userId: '123', fetchImpl,
   });
-  const result = await route.fetch({ windowStart: WINDOW_START, windowEnd: WINDOW_END });
+  const result = await route.fetch({
+    windowStart: WINDOW_START, windowEnd: WINDOW_END, mode: 'timeline',
+  });
 
   assert.equal(result.error, null);
-  assert.equal(result.usage.method, 'timeline_search_fallback');
-  assert.equal(result.usage.requests, 2);
-  assert.match(result.warning, /search unavailable/);
+  assert.equal(result.usage.method, 'timeline_incremental');
+  assert.equal(result.usage.requests, 1);
+  assert.equal(calls.length, 1);
+}));
+
+test('makeTwitterRoute: explicit timeline mode filters returned tweets to the requested range', () => withApiKey(async () => {
+  const fetchImpl = async () => JSON.stringify({
+    tweets: [
+      tweet('old', '2026-08-11T06:00:00.000Z'),
+      tweet('target', '2026-08-12T08:00:00.000Z'),
+      tweet('future', '2026-08-13T08:00:00.000Z'),
+    ],
+    next_cursor: null,
+  });
+  const route = makeTwitterRoute({
+    name: 'Example (Twitter)', handle: 'example', userId: '123', fetchImpl,
+  });
+  const result = await route.fetch({
+    windowStart: WINDOW_START, windowEnd: WINDOW_END, mode: 'timeline',
+  });
+  assert.equal(result.error, null);
+  assert.equal(result.usage.method, 'timeline_incremental');
+  assert.deepEqual(result.articles.map((article) => article.tweet_id), ['target']);
+  assert.equal(result.newest_returned_at, '2026-08-12T08:00:00.000Z');
 }));

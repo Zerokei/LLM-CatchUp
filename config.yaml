@@ -81,8 +81,9 @@ sources:
   # Twitter sources are fetched via socialdata.tools REST API. The `url`
   # field below points to the human-readable X.com profile; each route
   # module under scripts/routes/twitter-*.js hardcodes both the screen-name
-  # handle (exact-window Search query) and the stable numeric userId (complete
-  # timeline verification/fallback). The API key is passed at runtime via the
+  # handle (incremental Search query) and the stable numeric userId (manual
+  # timeline fallback). Set `twitter_fetch_mode: timeline` only for an account
+  # whose Search has been confirmed unreliable. The API key is passed via the
   # SOCIALDATA_API_KEY env var (GH Actions secret).
   #
   # max_silence_hours: if the newest item from this source is older than
