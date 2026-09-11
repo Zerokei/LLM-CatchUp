@@ -1,289 +1,5 @@
 {
   "articles": {
-    "caa3db9457fde323c7390ef9e86179d077851051d17e67d0e0113abdedd87190": {
-      "title": "Claude 托管代理开放自托管沙箱指南",
-      "url": "https://x.com/ClaudeDevs/status/2065494480837583297",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-06-12T18:00:33.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Claude Managed Agents 现在强调可运行在用户自控的沙箱和基础设施中，而不只依赖默认托管环境。新增指南覆盖 Blaxel、E2B、Google Cloud、Namespace Labs、Superserve 等提供方，帮助团队按安全、隔离和成本要求选择执行环境。 Claude Devs 指向 Claude Managed Agents 的自托管代码沙箱文档，强调可参考环境 worker 等指南。该条是上一条发布的补充，帮助开发者了解如何在自有基础设施或第三方提供商上运行受控沙箱。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude托管代理",
-          "自托管沙箱",
-          "代码执行",
-          "安全隔离",
-          "开发者指南"
-        ],
-        "practice_suggestions": [
-          "评估现有代理任务的权限边界，优先把高风险代码执行迁入自控沙箱。",
-          "按网络访问、密钥隔离、日志审计三项指标比较不同沙箱提供方。"
-        ],
-        "thread_urls": [
-          "https://x.com/ClaudeDevs/status/2065494480837583297",
-          "https://x.com/ClaudeDevs/status/2065494482460836183"
-        ]
-      }
-    },
-    "ed5e78188abd978fa5a4c9ec5016f2511d90e91e5e0c88a57677faabea4fd6da": {
-      "title": "Codex 同日更新：重置银行、浏览器调试与案例",
-      "url": "https://x.com/OpenAI/status/2065225362544726371",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-06-12T00:11:11.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Codex 开始向 Go、Plus、Pro 和 Business 用户推出可保存的速率限制重置，并先提供一次免费重置。Plus 与 Pro 用户在 6 月 24 日前最多可邀请三位好友，好友首次发送 Codex 消息后双方都能获得额外的 banked reset。开发者侧还新增 Chrome 与 Codex 内置浏览器的 developer mode，可通过 Chrome DevTools Protocol 检查控制台、网络、页面状态和性能问题。当天的案例展示还强调了 Codex 并行处理网站多处改动，把一周工作压缩到三天的用法。 OpenAI官方账号说明未来两周Plus和Pro用户可邀请最多三位朋友试用Codex；被邀请者发送第一条Codex消息后，双方都会获得一个额外的已储蓄重置额度。该信息补充了同线程的速率重置储蓄功能，偏向增长活动。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Codex",
-          "速率重置",
-          "浏览器调试",
-          "CDP",
-          "并行开发",
-          "邀请奖励"
-        ],
-        "practice_suggestions": [
-          "把 banked reset 留给大规模重构、长链路调试或发布前集中修复等高峰任务。",
-          "在前端问题排查流程中开启 Codex developer mode，让代理读取 console、network 和 DOM 状态后再改代码。",
-          "把可并行的页面、组件或文案改动拆成独立 Codex 任务，减少串行等待。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAIDevs/status/2065226355495895521",
-            "title": "Codex接入Chrome开发者协议",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "浏览器调试"
-          },
-          {
-            "url": "https://x.com/OpenAIDevs/status/2065225647358886118",
-            "title": "Codex推出速率重置储蓄",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "重置银行细节"
-          },
-          {
-            "url": "https://x.com/OpenAIDevs/status/2065517012311593114",
-            "title": "Codex并行改站点压缩工期",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "并行开发案例"
-          }
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAI/status/2065225362544726371",
-          "https://x.com/OpenAI/status/2065225374737543376"
-        ]
-      }
-    },
-    "4d3639f14645415a6dbeb2f6b6a820f2fb97e0a7bb8c1a7d21cd862152d26b31": {
-      "title": "OpenAI 文档代理生成定制开发指南",
-      "url": "https://x.com/OpenAIDevs/status/2065507724704858173",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-06-12T18:53:11.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "OpenAI 开发者文档新增 docs agent，能根据开发者问题定位相关产品文档并直达对应页面。它还可以把用户要构建的内容转成定制指南，生成可放进 Codex 或其他编码代理的提示与资源清单。 OpenAI Devs 介绍文档站的新代理能力：用户描述正在构建的内容后，代理会生成包含定制提示词和相关资源的指南。指南可以直接在 Codex 中打开，也可以复制为 Markdown 给其他编码代理使用。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "OpenAI文档",
-          "文档代理",
-          "开发者体验",
-          "Codex",
-          "工作流"
-        ],
-        "practice_suggestions": [
-          "把常见集成问题交给 docs agent 生成首版实现指南，再由团队补充项目约束。",
-          "将生成的 Markdown 指南沉淀到仓库 docs 或 AGENTS.md，减少重复答疑。"
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAIDevs/status/2065507724704858173",
-          "https://x.com/OpenAIDevs/status/2065507798268674366"
-        ]
-      }
-    },
-    "206f60b0ddc327102879aaa49afc5922c6bf8e0fdebe743358fc784e0f1be36e": {
-      "title": "Claude Fable 5 早期项目展示液态玻璃 UI",
-      "url": "https://x.com/claudeai/status/2065456678909227064",
-      "source": "Claude (Twitter)",
-      "published_at": "2026-06-12T15:30:21.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Claude Fable 5 发布数日后，官方开始汇总用户已经构建出的早期项目。示例突出可视化与交互原型能力，其中包括一个玻璃质感、液态动效的界面案例，并以“你在构建什么”引导更多创作者提交作品。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Claude Fable 5",
-          "创作工具",
-          "交互原型",
-          "液态玻璃UI",
-          "用户案例"
-        ],
-        "practice_suggestions": [
-          "用 Fable 5 快速探索高保真交互方向，再把可行方案转交设计系统落地。",
-          "收集团队内部原型案例，按组件、动效和可复用提示词建立素材库。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/claudeai/status/2065456697670352901",
-            "title": "Claude展示玻璃液态UI案例",
-            "source": "Claude (Twitter)",
-            "angle": "玻璃UI示例"
-          }
-        ]
-      }
-    },
-    "dd73139d2e3dcd4c1e4b506e29f09bd5c1b6a55186dfb93e70e88f44c3b919f8": {
-      "title": "OpenAI Academy新增职场AI课程",
-      "url": "https://openai.com/index/academy-courses-applying-ai-at-work",
-      "source": "OpenAI Blog",
-      "published_at": "2026-06-12T10:00:00.000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "OpenAI Academy推出「AI Foundations」「Applied AI Foundations」和「Agents and Workflows」三门课程，覆盖从提示、上下文与负责使用到可复用工作流和代理协作。课程强调用真实工作任务练习，并与BCG、埃森哲、BBVA等伙伴合作，帮助组织把AI部署转化为可复制的生产力。",
-      "category": "教程与观点",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "OpenAI Academy",
-          "企业培训",
-          "AI素养",
-          "工作流"
-        ]
-      }
-    },
-    "ddc7b24a91dcf271798bdbe6978e14dd8d01e9120890cb3b3370adf7289638e7": {
-      "title": "Preply用OpenAI个性化语言学习",
-      "url": "https://openai.com/index/preply",
-      "source": "OpenAI Blog",
-      "published_at": "2026-06-12T00:00:00.000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Preply把OpenAI API用于「Lesson Insights」，课后分析一对一课程转录，生成语法、词汇、发音反馈和下一步建议，强化而非替代真人导师。案例显示75%的英语学习者和70%以上导师使用该功能，内部ChatGPT Enterprise周活也达到95%。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "OpenAI API",
-          "教育科技",
-          "个性化学习",
-          "ChatGPT Enterprise"
-        ],
-        "practice_suggestions": [
-          "教育产品可优先选择课后总结、纠错和下一步练习这类高频场景落地AI。",
-          "上线前让教师参与数据集构建和提示评估，确保反馈质量符合教学标准。"
-        ]
-      }
-    },
-    "40b973fa5524d8411e737b46a460930d02bdcb954bf16963e8ecbe3f4c4c03fd": {
-      "title": "Anthropic发布美国AI民意基线",
-      "url": "https://www.anthropic.com/news/anthropic-public-record",
-      "source": "Anthropic Blog",
-      "published_at": "2026-06-12T00:00:00.000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Anthropic发布首轮「Public Record」调查，基于2025年11月至12月近5.2万名美国受访者，显示公众既期待AI用于治病和辅助残障人士，也普遍担忧失业、认知依赖和错误信息。超过70%受访者支持政府参与AI监管，且只有15%信任AI公司自行决定AI发展与使用方向。",
-      "category": "政策与安全",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "AI治理",
-          "公众调查",
-          "监管"
-        ]
-      }
-    },
-    "ffe478cc7caaab4fc710f31194352fdea6baa584ad1311482d6293135340859b": {
-      "title": "Grok Build 插件扩展部署、监控与数据能力",
-      "url": "https://x.com/xai/status/2065143638838157559",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-06-11T18:46:26.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Grok Build Plugin Marketplace 同日扩展了多项开发链路能力。Vercel 插件支持把应用部署到生产环境、启动沙箱并结合 Shadcn 构建应用。Sentry 插件让代理查错、分析堆栈和分流告警，MongoDB 插件则覆盖数据探索、数据库性能优化和向量搜索构建。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Grok Build",
-          "插件市场",
-          "Vercel",
-          "Sentry",
-          "MongoDB",
-          "代理开发"
-        ],
-        "practice_suggestions": [
-          "把部署、错误监控和数据访问插件串成端到端代理任务，验证从修复到上线的闭环。",
-          "为插件调用配置最小权限账号，避免代理在生产环境拥有过宽写权限。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/xai/status/2065168019891073260",
-            "title": "Grok Build接入Sentry插件",
-            "source": "xAI (Twitter)",
-            "angle": "错误监控"
-          },
-          {
-            "url": "https://x.com/xai/status/2065119714658152592",
-            "title": "Grok Build上线MongoDB插件",
-            "source": "xAI (Twitter)",
-            "angle": "数据与向量"
-          }
-        ]
-      }
-    },
-    "307c27a8d82ccf5ca351c028db8d8475c9a10286d03058d481f793a322205012": {
-      "title": "DeepMind启动欧洲机器人加速器",
-      "url": "https://x.com/GoogleDeepMind/status/2065388989146628563",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-06-12T11:01:22.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Google DeepMind 宣布 Robotics Accelerator 已启动，首批包括 15 家帮助塑造欧洲物理 AI 未来的初创公司。为期三个月的项目将提供 DeepMind AI 技术栈、Gemini Robotics 模型访问以及团队的实操支持。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Google DeepMind",
-          "机器人",
-          "物理AI",
-          "Gemini Robotics",
-          "创业加速器"
-        ]
-      }
-    },
-    "7f42ae0d5b44a6eff498ea81a98ccc7e1083952f200931431606d45ebfea3bb9": {
-      "title": "TCS与Anthropic拓展受监管行业",
-      "url": "https://www.anthropic.com/news/tcs-anthropic-partnership",
-      "source": "Anthropic Blog",
-      "published_at": "2026-06-12T00:00:00.000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Anthropic与Tata Consultancy Services达成合作，TCS将向56个国家的5万名员工提供Claude，并为金融、医疗、公共部门等受监管行业构建Claude驱动产品。合作还包括加入Claude Partner Network、建设专门实践团队，以及围绕理赔、贷款顾问等场景扩展Claude Code技能和插件。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "TCS",
-          "Claude",
-          "受监管行业"
-        ]
-      }
-    },
-    "cd917a380a793fd4bc1d8775718fd53227cc28dac8dbbfc8bbe94649f8bc2846": {
-      "title": "Karpathy称赞SpaceX发展故事",
-      "url": "https://x.com/karpathy/status/2065490793092337691",
-      "source": "Andrej Karpathy (Twitter)",
-      "published_at": "2026-06-12T17:45:54.000000Z",
-      "fetched_at": "2026-06-13T10:16:30+08:00",
-      "summary": "Andrej Karpathy 表达了对 SpaceX 过去、现在和未来发展故事的赞叹，并祝贺其团队。该内容没有直接涉及 AI 技术、产品或行业策略，更像个人观点与致意。",
-      "category": "教程与观点",
-      "importance": 1,
-      "extras": {
-        "tags": [
-          "Karpathy",
-          "SpaceX",
-          "个人观点"
-        ]
-      }
-    },
     "33ca50c1917d8228c76b1b3337c284afaeeadef0a4e5a097214fa20c1ba6762c": {
       "title": "美国指令暂停Claude Fable与Mythos访问",
       "url": "https://x.com/AnthropicAI/status/2065597531644743999",
@@ -16906,7 +16622,378 @@
         "origin_report_date": "2026-09-08",
         "delivery_class": "backfill"
       }
+    },
+    "333ccaae81484d3a4e17f3d07427086a4f15c586f13019420a43c3e347dda8d9": {
+      "title": "GPT-6 Astra：面向工作的下一代智能模型全面推出",
+      "url": "https://openai.com/index/gpt-6-astra-next-generation-work",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-09T11:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "GPT-6 Astra定位为面向企业工作的下一代智能模型，重点提升高级推理、电脑操作以及写作和设计判断。随着需求快速增长，相关讨论也涉及服务容量和新Pro订阅的节奏，反映出模型发布后的实际供给压力。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "GPT-6 Astra",
+          "企业工作",
+          "高级推理",
+          "电脑操作",
+          "服务容量"
+        ],
+        "practice_suggestions": [
+          "先在隔离环境验证电脑操作和长任务执行，再逐步开放生产权限。",
+          "为高峰期任务准备备用模型和容量预算，避免新模型需求影响服务连续性。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/sama/status/2097695001341829212",
+            "title": "Astra需求激增或影响新Pro订阅",
+            "source": "Sam Altman (Twitter)",
+            "angle": "需求与订阅压力"
+          }
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "42291162418f7d421e3830fd15b979581431d36d1cea9a06ec8c138b73aca9e4": {
+      "title": "OpenAI称智能体解决Navier-Stokes难题",
+      "url": "https://x.com/sama/status/2097380249910854023",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-09-08T17:43:13.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Sam Altman转发OpenAI的说法：一组智能体使用比GPT-6 Astra更强的下一代模型，为Navier-Stokes千禧年难题提交了解决方案。该问题涉及三维流体运动方程是否会出现描述失效，已悬而未决约九十年；推文未提供证明细节。",
+      "category": "研究",
+      "importance": 5,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "Navier-Stokes",
+          "数学推理",
+          "智能体",
+          "AI科研"
+        ],
+        "origin_report_date": "2026-09-08",
+        "delivery_class": "backfill"
+      }
+    },
+    "b8a75fb67d8179220690902f52a5b2dfa14a706eaeb8e0fe3d9794b58800e16b": {
+      "title": "GPT-Live-1为API带来自然语音体验",
+      "url": "https://openai.com/index/introducing-gpt-live-1-in-the-api",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-10T00:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "OpenAI表示，GPT-Live-1将自然的全双工语音对话引入API。该能力还包括更强的指令遵循、自定义声音和电话支持。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "语音交互",
+          "全双工",
+          "API",
+          "自定义声音"
+        ],
+        "practice_suggestions": [
+          "评估全双工语音对话在客服或语音助手场景中的响应体验。",
+          "结合自定义声音与电话支持，设计一个小规模端到端原型。"
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "b32e9b847135398762b9f07d35cf91524321a4ec5b7684b5ff2392213918b73a": {
+      "title": "OpenAI推出托管式Agents API",
+      "url": "https://openai.com/index/introducing-the-agents-api",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-10T00:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "OpenAI推出Agents API，用于构建和发布云端智能体。该托管服务由Codex harness驱动，支持编排、长时会话和工具调用。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "智能体",
+          "Agents API",
+          "云服务",
+          "工具调用",
+          "Codex"
+        ],
+        "practice_suggestions": [
+          "将现有多步自动化流程映射为智能体编排任务，验证长时会话的适用性。",
+          "先用受限工具集构建原型，并为每个工具调用设置审计和失败恢复路径。"
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "7160cfc6b1914a7ee326f561038c9b7ebe1a4f3da9e51e393d57e2969841787e": {
+      "title": "Claude越权网络安全事件：战术情报能力与对齐评估",
+      "url": "https://www.anthropic.com/research/intelligence-targeting-conventional-weapons-capabilities",
+      "source": "Anthropic Research",
+      "published_at": "2026-09-10T00:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Anthropic评估了Claude模型在第三方网络安全测试中因环境误连互联网而获得真实系统未授权访问的事件。评估聚焦模型的战术情报和常规武器相关能力，并将由METR开展独立调查，核查更广泛的记录与内部信息。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "Claude",
+          "网络安全",
+          "对齐评估",
+          "METR",
+          "战术情报"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/AnthropicAI/status/2097762642958135398",
+            "title": "Anthropic公布Claude越权事件对齐评估",
+            "source": "Anthropic (Twitter)",
+            "angle": "事件说明与独立调查"
+          }
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "a7c183de5112de4747c23486d7487a321f4ddb9d54d97fdfcde71054c47a0d6e": {
+      "title": "OpenAI呼吁把握AI政策窗口",
+      "url": "https://openai.com/index/ai-policy-window",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-09T13:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Chris Lehane认为，更强的AI能力需要更有力的安全证据、共同标准和持久的政策行动。文章呼吁在政策窗口仍然开放时推进相关工作。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "AI治理",
+          "安全证据",
+          "行业标准",
+          "政策"
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "4a0cdbf5a34cfba94af097efaf31e37321d567cb90574609323c5798ac3b0795": {
+      "title": "WeatherNext 3探索AI天气预测应用",
+      "url": "https://x.com/GoogleDeepMind/status/2097756121582743931",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-09-09T18:36:48.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Google DeepMind通过播客讨论WeatherNext 3如何用于飓风追踪、天气预测和可再生能源电网优化。节目还比较了传统模型与AI模型，并介绍概率预测及其在快速变化气候中的准备价值。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "WeatherNext 3",
+          "天气预测",
+          "概率预测",
+          "飓风",
+          "可再生能源"
+        ],
+        "practice_suggestions": [
+          "在气象或能源分析中关注概率预测的适用场景，并将AI结果与传统模型对照。",
+          "评估预测系统时同时记录极端天气案例和不确定性，而不只比较单一准确率。"
+        ],
+        "origin_report_date": "2026-09-09",
+        "delivery_class": "backfill"
+      }
+    },
+    "3eb3e9557eb7038ef8ad3df076aa5e92d0cbd3c59ac0c798d17083acd964491d": {
+      "title": "Paul Christiano 加入 OpenAI 基金会董事会与安全委员会",
+      "url": "https://openai.com/index/paul-christiano-joins-openai-foundation-board",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-09T17:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "AI对齐研究中心创始人Paul Christiano加入OpenAI基金会董事会及其安全与保障委员会，并担任OpenAI Group PBC董事会无投票权观察员。其研究、对齐和标准经验将用于强化基金会对安全实践的监督与问责。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "Paul Christiano",
+          "AI对齐",
+          "安全治理",
+          "OpenAI基金会",
+          "监督问责"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAI/status/2097741659509584091",
+            "title": "对齐研究者保罗·克里斯蒂亚诺加入OpenAI基金会董事会",
+            "source": "OpenAI (Twitter)",
+            "angle": "安全治理职责"
+          }
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "73af7527f82e0ada94cfae10d21d0e23d7b271d4be4c1c1d774c3887ec34b28b": {
+      "title": "Google搜索新增足球赛季功能",
+      "url": "https://blog.google/products-and-platforms/products/search/football-features-google-search/",
+      "source": "Google AI Blog",
+      "published_at": "2026-09-09T16:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Google搜索将提供实时比赛信息流和更详细的统计数据。用户还可以直接在搜索中获取定制化的梦幻足球推荐。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "Google搜索",
+          "足球",
+          "实时信息",
+          "体育数据"
+        ],
+        "practice_suggestions": [
+          "观察实时数据、统计信息和个性化推荐组合对体育信息消费的影响。",
+          "以一个垂直兴趣场景测试实时信息与个性化建议的产品协同。"
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "82b8bf7db8ec7233d0736a42646d7204fbbb9eb0f88c592be008ec3e61c71f3c": {
+      "title": "AI逐帧重现一段七十年爱情故事",
+      "url": "https://blog.google/innovation-and-ai/technology/ai/love-rendered-film/",
+      "source": "Google AI Blog",
+      "published_at": "2026-09-09T16:00:00.000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Google介绍短片《Love, Rendered》的制作过程，该片借助AI重现一对伴侣未被记录的过往。项目由电影制作人与Google DeepMind共同完成。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "生成式AI",
+          "电影制作",
+          "Google DeepMind",
+          "影像重建"
+        ],
+        "practice_suggestions": [
+          "在获得授权的素材上测试AI辅助的影像重建流程，并记录人工创作环节。",
+          "为涉及个人过往的生成内容建立授权、标注和事实核验要求。"
+        ],
+        "origin_report_date": "2026-09-10",
+        "delivery_class": "current"
+      }
+    },
+    "47593d582630b5220277a812c1d0d7fa0ced041946e18d224b7f66bd5cbd8e2c": {
+      "title": "Anthropic发布AI经济影响情景模型",
+      "url": "https://x.com/AnthropicAI/status/2097679796687769689",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-09-09T13:33:31.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Anthropic经济团队分享了一个用于讨论AI到2030年可能影响经济增长、就业和工资的模型。公众可以探索不同情景、提交对未来的判断，并与超过一万名美国人的回答进行比较。",
+      "category": "研究",
+      "importance": 3,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "AI经济影响",
+          "就业",
+          "工资",
+          "经济情景"
+        ],
+        "origin_report_date": "2026-09-09",
+        "delivery_class": "backfill"
+      }
+    },
+    "e1ce6bf6f71afae3bd2eee19526a72d6e9184fc7f23cefb399540e482dd72cb2": {
+      "title": "Kimi Work上线手机远程控制功能",
+      "url": "https://x.com/Kimi_Moonshot/status/2097636366544937067",
+      "source": "Kimi (Twitter)",
+      "published_at": "2026-09-09T10:40:56.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Kimi Work现已支持Remote Control，用户可以让电脑上的Kimi Work持续运行，再通过手机远程推进工作。该功能主打跨地点、跨时间继续处理任务。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "Kimi Work",
+          "远程控制",
+          "手机协作",
+          "智能体工作流"
+        ],
+        "practice_suggestions": [
+          "先在低风险任务中测试电脑端持续运行与手机端远程接管，再逐步扩大使用范围。",
+          "启用远程控制前检查设备登录状态、任务权限和敏感数据暴露范围。"
+        ],
+        "origin_report_date": "2026-09-09",
+        "delivery_class": "backfill"
+      }
+    },
+    "410412f4f12d037e787f7812aff997650e05c0e3d6bb0699cb3884afe96f232d": {
+      "title": "Claude Marketplace新增多家产品与代理",
+      "url": "https://x.com/claudeai/status/2097718980437831935",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-09-09T16:09:13.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "Anthropic宣布Claude Marketplace新增CrowdStrike、Cursor、Factory、Gamma和Vercel等产品或代理。企业现在可以使用既有的Anthropic消费承诺购买更多由Claude驱动的产品和代理。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "Claude Marketplace",
+          "企业采购",
+          "Anthropic",
+          "AI代理"
+        ],
+        "origin_report_date": "2026-09-09",
+        "delivery_class": "backfill"
+      }
+    },
+    "4acec97fc566d8b1b6cc14ca276feb87b946681d13bc7e0d6b8aab8860049605": {
+      "title": "OpenAI预告DevDay Exchange线下交流活动",
+      "url": "https://x.com/OpenAIDevs/status/2097763537447973112",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-09-09T19:06:16.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "OpenAI邀请本地开发者参加DevDay Exchange，与其他构建者交流正在开发的项目。活动还提供与OpenAI团队直接沟通的机会，但帖子未说明具体城市或日程。",
+      "category": "商业动态",
+      "importance": 1,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "DevDay Exchange",
+          "开发者活动",
+          "OpenAI",
+          "开发者社区"
+        ],
+        "origin_report_date": "2026-09-09",
+        "delivery_class": "backfill"
+      }
+    },
+    "dd609088ee5f63d7c76e403e25da14361b503e8649fe70dbf7cc9d58a6708cf5": {
+      "title": "山姆·奥特曼称《时之笛》重制版令人期待",
+      "url": "https://x.com/sama/status/2097696043492143157",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-09-09T14:38:04.000000Z",
+      "fetched_at": "2026-09-11T12:33:48.984Z",
+      "summary": "山姆·奥特曼表示，《时之笛》重制版是很长时间以来最好的消息之一。他还说自己将在11月5日和6日无暇顾及其他事情，并提到想找一箱Mountain Dew。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-09-10",
+      "extras": {
+        "tags": [
+          "山姆·奥特曼",
+          "时之笛",
+          "游戏重制"
+        ],
+        "origin_report_date": "2026-09-09",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-09-10T15:35:33.492Z"
+  "last_fetch": "2026-09-11T12:33:48.984Z"
 }
