@@ -1,18 +1,302 @@
-[stdin]:3
-const live='https://openai.com/index/introducing-gpt-live-1-in-the-api';for(const [u,angle] of [['https://x.com/OpenAIDevs/status/2098099269551149398','API 上线与代理接入'],['https://x.com/OpenAIDevs/status/2098118242548281588','生产语音代理基准']]){const a=by(u);if(a){a.duplicate_of=live;a.angle=angle;}}const lc=by(live);Object.assign(lc,{title:'GPT-Live-1：API 全双工语音代理上线',summary:'GPT-Live-1将自然的全双工语音对话引入API，支持更强的指令遵循、自定义声音和电话场景。开发者公告补充了语音代理的接入方式，并从任务完成、对话往返、响应速度和工具使用等维度公布生产基准。',tags:['GPT-Live-1','语音代理','全双工','API','电话支持'],importance:4,category:'产品与功能',practice_suggestions:['先用受限工具集搭建语音代理原型，测试打断、轮次控制和任务完成率。','在上线前比较延迟、工具调用和电话场景下的失败恢复表现。']});
-                                                                                                                                                                                                                                                                                                                            ^
-
-TypeError: Cannot convert undefined or null to object
-    at Function.assign (<anonymous>)
-    at [stdin]:3:317
-    at runScriptInThisContext (node:internal/vm:209:10)
-    at node:internal/process/execution:449:12
-    at [stdin]-wrapper:6:24
-    at runScriptInContext (node:internal/process/execution:447:60)
-    at evalFunction (node:internal/process/execution:87:30)
-    at evalScript (node:internal/process/execution:99:3)
-    at node:internal/main/eval_stdin:53:5
-    at ReadStream.<anonymous> (node:internal/process/execution:200:5)
-
-Node.js v22.17.1
-
+{
+  "analyzed_at": "2026-09-12T12:38:14.121Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-09-11.json",
+  "trend_paragraph": "- **AI辅助生物研究**：Codex与ChatGPT被用于从现存和灭绝基因组中寻找抗菌分子，目标是应对耐药感染。\n- **企业数据智能化**：ChatGPT Work推出金融服务版，结合内置金融数据与GPT-6 Astra支持研究、建模和客户材料制作。\n- **政府与网络防御**：OpenAI与GSA扩大政府AI访问并提供网络防御支持，强调公共部门部署中的安全边界。\n- **个性化生活助手**：Google Search新增跑步赛事提醒和定制训练计划，把实时信息与个人目标结合起来。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials",
+      "source": "OpenAI Blog",
+      "title": "研究团队用 Codex 和 ChatGPT 搜索抗菌分子",
+      "summary": "César de la Fuente 的实验室使用 Codex 和 ChatGPT 搜索活体及已灭绝生物的基因组。目标是寻找可用于对抗耐药感染的抗菌候选分子。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "ChatGPT",
+        "抗菌分子",
+        "基因组",
+        "耐药感染"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://openai.com/index/put-data-to-work",
+      "source": "OpenAI Blog",
+      "title": "ChatGPT Work 推出 Data agent",
+      "summary": "ChatGPT Work 的 Data agent 可以连接公司数据，并通过自然语言帮助用户发现洞察。它还支持使用 AI 构建交互式仪表板，让数据分析和展示在同一工作流中完成。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Work",
+        "Data agent",
+        "企业数据",
+        "数据分析",
+        "交互式仪表板"
+      ],
+      "practice_suggestions": [
+        "选择一份低敏感度的团队数据，测试 Data agent 能否通过自然语言生成有用洞察和仪表板。",
+        "在接入公司数据前确认权限边界、数据来源和可共享范围。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "source": "OpenAI Blog",
+      "title": "ChatGPT Financial Services：GPT-6 Astra 驱动金融工作流",
+      "summary": "OpenAI推出面向金融服务团队的ChatGPT Work体验，将内置金融数据与GPT-6 Astra的推理能力结合起来。团队可以开展研究、构建金融模型，并制作面向客户的材料；配套产品公告进一步说明了其面向金融工作流的定制化定位。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Work",
+        "金融服务",
+        "GPT-6 Astra",
+        "金融数据",
+        "金融建模"
+      ],
+      "practice_suggestions": [
+        "用脱敏数据验证金融研究、建模和客户材料生成的准确性。",
+        "为高风险金融输出设置人工复核、数据来源追溯和权限边界。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://openai.com/index/expanding-ai-access-us-government",
+      "source": "OpenAI Blog",
+      "title": "OpenAI 与 GSA 扩大政府 AI 使用和网络防御支持",
+      "summary": "OpenAI 与美国总务管理局将为符合条件的联邦、州、地方和部落政府提供零许可费方案，并将使用费用降低 50%。合作还包括扩大的网络防御支持。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "GSA",
+        "美国政府",
+        "网络防御",
+        "AI 使用"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://blog.google/products-and-platforms/products/search/running-race-training-tips/",
+      "source": "Google AI Blog",
+      "title": "Google Search 提供跑步比赛备赛建议",
+      "summary": "Google Search 可以帮助跑者准备比赛，包括提供报名提醒和个性化训练计划。文章还提到其他备赛辅助功能，但未在给定内容中展开说明。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Google Search",
+        "跑步",
+        "训练计划",
+        "报名提醒"
+      ],
+      "practice_suggestions": [
+        "用自己的比赛日期和训练目标测试 Search 生成的备赛信息，并核对关键日期。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://x.com/trq212/status/2098157600361861579",
+      "source": "Thariq (Twitter)",
+      "title": "用深度访谈让 Claude 更了解用户",
+      "summary": "这条推文建议在 Claude 对话中使用一段提示词，让 Claude 通过自由文本或选择题深入了解用户的生活和需求。提示词还建议把访谈内容保存到记忆中，以便后续协作时提供更多上下文。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "提示词",
+        "用户画像",
+        "记忆",
+        "个性化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2098138736642933143",
+      "source": "Claude (Twitter)",
+      "title": "Claude 社区将在全球举办 Fable 5.1 Build Days",
+      "summary": "Claude 社区将在 9 月 11 日至 25 日期间于全球多个城市举办 Fable 5.1 Build Days。参与者可以带着问题或想法参加，也可以直接到场了解活动，并通过 Luma 报名。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "Claude",
+        "Fable 5.1",
+        "Build Days",
+        "开发者社区",
+        "线下活动"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2098090911137972271",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code 桌面版支持弹出独立面板",
+      "summary": "Claude Code 桌面应用现在可以把任意面板弹出到独立窗口。用户可以将差异对比或终端移到第二块屏幕，同时让 Claude 在主窗口继续工作，也可以并排或上下排列多个会话。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "桌面应用",
+        "多窗口",
+        "终端",
+        "开发体验"
+      ],
+      "practice_suggestions": [
+        "在双屏环境中把差异对比或终端弹出到独立窗口，测试多会话并行工作的效率。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2098120133549895978",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Managed Agents 增加会话查看器",
+      "summary": "Claude Managed Agents 新增 ant CLI 会话查看器，运行 `ant beta:sessions connect` 可以从终端连接到正在运行的会话。使用 `--web` 参数还可以打开一个由本地服务提供的网页界面。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Managed Agents",
+        "ant CLI",
+        "会话查看器",
+        "Web 界面",
+        "开发工具"
+      ],
+      "practice_suggestions": [
+        "在测试环境中用 `ant beta:sessions connect` 连接运行中的会话，并比较终端与本地 Web 界面的排查体验。",
+        "为团队记录会话查看、接管和故障排查的操作流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2098097512544444447",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic 发布 AI 滥用威胁情报报告",
+      "summary": "Anthropic 发布迄今最详细的威胁情报报告之一，涵盖 Claude 被尝试用于网络攻击、影响行动、监控、生物学和武器制造等场景。Anthropic 表示已中断报告中的每项行动，并将相关经验用于强化安全措施，适当情况下也与当局和其他 AI 公司共享信息。",
+      "category": "政策与安全",
+      "importance": 5,
+      "tags": [
+        "Anthropic",
+        "威胁情报",
+        "AI 滥用",
+        "网络攻击",
+        "安全防护"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2098118191029624911",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT推出金融服务版",
+      "summary": "OpenAI推出面向金融服务的定制版ChatGPT Work体验，将内置金融数据与GPT-6 Astra的推理能力结合。团队可用它开展研究、构建金融模型并制作定制化客户材料。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Work",
+        "金融服务",
+        "金融数据",
+        "金融建模",
+        "GPT-6 Astra"
+      ],
+      "practice_suggestions": [
+        "选择一个低风险金融研究流程，评估内置数据与模型推理对研究和建模的帮助。",
+        "用脱敏数据制作客户材料原型，并为模型输出设置人工复核环节。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/introducing-chatgpt-financial-services",
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill",
+      "angle": "产品体验与数据能力"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098099269551149398",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Live-1登陆API",
+      "summary": "GPT-Live-1现已通过API提供，开发者可以为应用加入更自然的来回语音交互。语音代理能够在说话时持续聆听，并可配合开发者选择的模型和代理运行框架工作。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "GPT-Live-1",
+        "语音代理",
+        "API",
+        "实时交互"
+      ],
+      "practice_suggestions": [
+        "用一个受限场景原型测试语音代理在连续聆听和来回对话中的体验。",
+        "比较不同模型与代理框架组合的响应质量，并记录中断和恢复情况。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098118242548281588",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Live-1公布生产语音代理基准结果",
+      "summary": "OpenAI Devs介绍了GPT-Live-1面向生产语音代理的评测维度，包括任务完成、来回对话、轮次切换、响应速度和工具使用。该帖表示评测结果已发布，但提供的内容未包含具体分数或结论。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "GPT-Live-1",
+        "语音代理",
+        "基准测试",
+        "任务完成",
+        "工具使用"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098130570048045453",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Agents API进入公开测试",
+      "summary": "OpenAI推出进入公开测试阶段的Agents API，用于更快构建和运行基于Codex harness的云端代理。该服务由OpenAI负责编排、长时会话和上下文管理，开发者可以专注于代理自身的差异化能力。",
+      "category": "产品与功能",
+      "importance": 5,
+      "tags": [
+        "Agents API",
+        "云端代理",
+        "Codex harness",
+        "长时会话",
+        "上下文管理"
+      ],
+      "practice_suggestions": [
+        "将一个需要多步编排的内部流程迁移到公开测试环境，验证长时会话和上下文管理。",
+        "为代理配置最小权限工具集，并记录编排失败、超时和上下文丢失情况。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-10",
+      "delivery_class": "backfill"
+    }
+  ]
+}
