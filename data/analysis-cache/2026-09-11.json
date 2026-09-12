@@ -1,0 +1,18 @@
+[stdin]:3
+const live='https://openai.com/index/introducing-gpt-live-1-in-the-api';for(const [u,angle] of [['https://x.com/OpenAIDevs/status/2098099269551149398','API 上线与代理接入'],['https://x.com/OpenAIDevs/status/2098118242548281588','生产语音代理基准']]){const a=by(u);if(a){a.duplicate_of=live;a.angle=angle;}}const lc=by(live);Object.assign(lc,{title:'GPT-Live-1：API 全双工语音代理上线',summary:'GPT-Live-1将自然的全双工语音对话引入API，支持更强的指令遵循、自定义声音和电话场景。开发者公告补充了语音代理的接入方式，并从任务完成、对话往返、响应速度和工具使用等维度公布生产基准。',tags:['GPT-Live-1','语音代理','全双工','API','电话支持'],importance:4,category:'产品与功能',practice_suggestions:['先用受限工具集搭建语音代理原型，测试打断、轮次控制和任务完成率。','在上线前比较延迟、工具调用和电话场景下的失败恢复表现。']});
+                                                                                                                                                                                                                                                                                                                            ^
+
+TypeError: Cannot convert undefined or null to object
+    at Function.assign (<anonymous>)
+    at [stdin]:3:317
+    at runScriptInThisContext (node:internal/vm:209:10)
+    at node:internal/process/execution:449:12
+    at [stdin]-wrapper:6:24
+    at runScriptInContext (node:internal/process/execution:447:60)
+    at evalFunction (node:internal/process/execution:87:30)
+    at evalScript (node:internal/process/execution:99:3)
+    at node:internal/main/eval_stdin:53:5
+    at ReadStream.<anonymous> (node:internal/process/execution:200:5)
+
+Node.js v22.17.1
+
