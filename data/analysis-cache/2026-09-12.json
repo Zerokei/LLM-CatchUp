@@ -1,0 +1,271 @@
+{
+  "analyzed_at": "2026-09-13T15:34:11.606Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-09-12.json",
+  "trend_paragraph": "- **基础设施规模化**：Habitat演进为全球分布式存储平台，支撑ChatGPT和Codex等产品的十亿用户与每秒数千万请求。\n- **代码质量自验证**：GPT-6 Astra帮助Devin测试自己的工作，推动软件代理从生成代码进一步走向验证结果。\n- **代理工程化交付**：从高吞吐存储到自动测试闭环，OpenAI展示了将模型能力嵌入生产系统的工程路径。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "source": "OpenAI Blog",
+      "title": "Habitat：支撑十亿用户的全球分布式存储平台",
+      "summary": "OpenAI介绍Habitat如何从Python库演进为全球分布式在线存储平台，为ChatGPT和Codex等产品提供基础设施。平台目前服务超过十亿ChatGPT用户，并处理每秒约2200万次请求；开发团队还通过Rust重写应对持续增长的规模。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Habitat",
+        "分布式存储",
+        "ChatGPT",
+        "Codex",
+        "Rust重写"
+      ],
+      "practice_suggestions": [
+        "为高增长服务建立请求峰值、容量和故障恢复指标，并持续压测。",
+        "评估关键基础设施从动态语言迁移到Rust等系统语言的收益与迁移成本。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-12",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "source": "OpenAI Blog",
+      "title": "GPT-6 Astra：助力 Devin 自测并扩展开发者实践",
+      "summary": "Cognition使用GPT-6 Astra增强Devin测试自身产出的能力，目标是帮助工程师减少代码审查负担并更快交付。围绕该模型，开发者还发起Product Hunt挑战赛，并建议通过更具体的技能触发条件、相关指导和明确完成标准来提升使用效果。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-6 Astra",
+        "Devin",
+        "代码测试",
+        "开发者挑战",
+        "技能与提示"
+      ],
+      "practice_suggestions": [
+        "让代理先为自己的代码生成测试并执行，再把关键结果交给人工复核。",
+        "为项目技能和提示定义明确触发条件、上下文范围与完成标准。",
+        "用小型公开项目参加挑战赛，记录模型在构建、测试和迭代环节的贡献。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-12",
+      "delivery_class": "current"
+    },
+    {
+      "url": "https://x.com/trq212/status/2098490139798655427",
+      "source": "Thariq (Twitter)",
+      "title": "仅看通过率已难以准确解读模型评测",
+      "summary": "Thariq认为，如今仅凭基准测试的通过或失败分数已很难解读模型表现。部分失败源于过于严格的隐藏测试，甚至可能出现模型答案比评测预期更合理的情况。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "模型评测",
+        "基准测试",
+        "隐藏测试",
+        "通过率"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2098500999656923145",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code新增插件评测功能",
+      "summary": "Claude Code新增插件评测功能，可创建测试用例、运行插件或技能并为结果打分。它还支持在不加载插件的情况下重新运行测试，以比较插件带来的实际差异。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Code",
+        "插件评测",
+        "技能",
+        "测试用例",
+        "效果对比"
+      ],
+      "practice_suggestions": [
+        "为常用插件建立覆盖核心任务的测试用例，并分别记录加载与不加载插件时的结果。",
+        "用固定评分标准比较质量、成本和耗时，避免只凭单次演示判断插件价值。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2098508880921899197",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Tag协助团队处理值班告警",
+      "summary": "Claude Tag可在Slack告警触发后提取指标、比较部署差异并检查功能开关。它会定位可能原因并提出修复方案，待团队批准后合并。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Tag",
+        "值班响应",
+        "Slack",
+        "告警诊断",
+        "自动修复"
+      ],
+      "practice_suggestions": [
+        "先为只读指标、部署差异和功能开关配置工具权限，再让代理生成修复建议。",
+        "将批准和合并保留为人工闸门，并审计每次告警的证据、建议与最终变更。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098441627056664928",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-6 Astra挑战赛开放Product Hunt提交",
+      "summary": "OpenAI Devs宣布GPT-6 Astra挑战赛已在Product Hunt开放提交，项目需在9月18日前提交。Product Hunt称前五名发布项目各可获得1万美元OpenAI API额度，以及最多两名队员一年的ChatGPT Pro。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "GPT-6 Astra",
+        "Product Hunt",
+        "开发者活动",
+        "API额度"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill",
+      "angle": "Product Hunt 挑战赛"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098445843485557174",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Yelp用GPT-Live-1让预约电话更自然",
+      "summary": "OpenAI Devs介绍，GPT-Live-1能够在说话时持续听取来电者内容，因此对话中可以被打断、补充细节或改变方向。Yelp正使用这项能力，让餐厅预约电话更自然。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "GPT-Live-1",
+        "语音对话",
+        "Yelp",
+        "餐厅预约"
+      ],
+      "practice_suggestions": [
+        "在预约类语音流程中测试打断、补充信息和改口等非脚本交互。",
+        "用任务完成率、转人工率和通话时长评估全双工语音体验。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098480213244117065",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI建议为GPT-6 Astra重写技能与提示",
+      "summary": "OpenAI Devs建议用户重新审视技能、AGENTS.md和任务提示，以更好发挥GPT-6 Astra的能力。建议包括让技能触发条件更具体、只在相关时加载指导，并明确完成标准。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "GPT-6 Astra",
+        "技能",
+        "AGENTS.md",
+        "提示工程"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/cognition-devin-testing-with-astra",
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill",
+      "angle": "技能与提示实践"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098480882030137747",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "ChatGPT Sites新增协作与私有发布能力",
+      "summary": "ChatGPT表示，Sites上线三个月后已创建超过500万个站点，并新增团队共同编辑、私下分享和自定义域名等能力。用户还可以让ChatGPT检查站点数据库，编辑者也能查看；从提示到部署的时间缩短了一半。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "ChatGPT Sites",
+        "协作编辑",
+        "私有分享",
+        "数据库",
+        "自定义域名"
+      ],
+      "practice_suggestions": [
+        "用一个低风险内部工具测试共同编辑、私有分享和自定义域名的完整发布流程。",
+        "在上线前核对站点数据库的访问边界，并分别验证创建、编辑和查看权限。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098502006935814272",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Habitat存储平台年增长超过十倍",
+      "summary": "OpenAI Devs介绍，Habitat是支撑ChatGPT和Codex的在线存储平台，规模同比增长超过十倍。Rust重写之前，其Python服务峰值每秒处理超过2000万次请求。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Habitat",
+        "在线存储",
+        "Rust",
+        "Python",
+        "Codex"
+      ],
+      "practice_suggestions": [
+        "对高流量存储服务分别测量重写前后的吞吐、延迟和资源占用。",
+        "将语言迁移拆成可回滚阶段，并为峰值流量设置容量和故障演练指标。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://openai.com/index/scaling-storage-one-billion-users-part-one",
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill",
+      "angle": "容量与性能数据"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2098509226335412479",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Rosalind进入API与Codex",
+      "summary": "OpenAI Devs介绍GPT-Rosalind已用于API和Codex，面向生物学研究提供更强的生物推理能力。它可连接论文与实验结果、权衡生物靶点证据，并据此规划下一步测试。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "GPT-Rosalind",
+        "生物推理",
+        "科学研究",
+        "API",
+        "Codex"
+      ],
+      "practice_suggestions": [
+        "用论文和实验结果作为输入，尝试让模型归纳证据并比较不同生物靶点。",
+        "将模型给出的下一步测试计划与研究团队的实验设计和证据核对。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2098417966647808219",
+      "source": "Google DeepMind (Twitter)",
+      "title": "用姿态控制模型重建未拍摄的记忆",
+      "summary": "Google DeepMind介绍纪录片《Love, Rendered》如何将修复后的档案照片与姿态控制模型结合，重现Burt和Ethelle初次见面时的举止与细微表情。完整影片可在YouTube观看。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "姿态控制",
+        "档案照片",
+        "纪录片",
+        "表情重建",
+        "生成影像"
+      ],
+      "practice_suggestions": [
+        "在影像叙事中，可尝试将修复后的历史照片与姿态控制结合，重建未被拍摄的场景。",
+        "对重建的人物举止和微表情进行逐项核验，确保表达符合可用的历史素材。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-09-11",
+      "delivery_class": "backfill"
+    }
+  ]
+}
