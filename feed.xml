@@ -5,8 +5,78 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 11 Sep 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 12 Sep 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-09-12</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-12.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-09-12.md</guid>
+      <pubDate>Sat, 12 Sep 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-09-12</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>基础设施规模化</strong>：Habitat演进为全球分布式存储平台，支撑ChatGPT和Codex等产品的十亿用户与每秒数千万请求。</li>
+<li><strong>代码质量自验证</strong>：GPT-6 Astra帮助Devin测试自己的工作，推动软件代理从生成代码进一步走向验证结果。</li>
+<li><strong>代理工程化交付</strong>：从高吞吐存储到自动测试闭环，OpenAI展示了将模型能力嵌入生产系统的工程路径。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/cognition-devin-testing-with-astra">GPT-6 Astra：助力 Devin 自测并扩展开发者实践</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
+<li><strong>标签</strong>: <code>GPT-6 Astra</code> <code>Devin</code> <code>代码测试</code> <code>开发者挑战</code> <code>技能与提示</code></li>
+</ul>
+<p><strong>摘要</strong>: Cognition使用GPT-6 Astra增强Devin测试自身产出的能力，目标是帮助工程师减少代码审查负担并更快交付。围绕该模型，开发者还发起Product Hunt挑战赛，并建议通过更具体的技能触发条件、相关指导和明确完成标准来提升使用效果。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2098441627056664928">GPT-6 Astra挑战赛开放Product Hunt提交</a> · OpenAI Devs (Twitter) · Product Hunt 挑战赛</li>
+<li><a href="https://x.com/OpenAIDevs/status/2098480213244117065">OpenAI建议为GPT-6 Astra重写技能与提示</a> · OpenAI Devs (Twitter) · 技能与提示实践</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>让代理先为自己的代码生成测试并执行，再把关键结果交给人工复核。</li>
+<li>为项目技能和提示定义明确触发条件、上下文范围与完成标准。</li>
+<li>用小型公开项目参加挑战赛，记录模型在构建、测试和迭代环节的贡献。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://openai.com/index/scaling-storage-one-billion-users-part-one">Habitat：支撑十亿用户的全球分布式存储平台</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Habitat</code> <code>分布式存储</code> <code>ChatGPT</code> <code>Codex</code> <code>Rust重写</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI介绍Habitat如何从Python库演进为全球分布式在线存储平台，为ChatGPT和Codex等产品提供基础设施。平台目前服务超过十亿ChatGPT用户，并处理每秒约2200万次请求；开发团队还通过Rust重写应对持续增长的规模。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://x.com/OpenAIDevs/status/2098502006935814272">Habitat存储平台年增长超过十倍</a> · OpenAI Devs (Twitter) · 容量与性能数据</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>为高增长服务建立请求峰值、容量和故障恢复指标，并持续压测。</li>
+<li>评估关键基础设施从动态语言迁移到Rust等系统语言的收益与迁移成本。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-09-11 · 模型发布</strong> — OpenAI Devs介绍GPT-Rosalind已用于API和Codex，面向生物学研究提供更强的生物推理能力。它可连接论文与实验结果、权衡生物靶点证据，并据此规划下一步测试。 · <a href="https://x.com/OpenAIDevs/status/2098509226335412479">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-09-11 · 产品与功能</strong> — Claude Tag可在Slack告警触发后提取指标、比较部署差异并检查功能开关。它会定位可能原因并提出修复方案，待团队批准后合并。 · <a href="https://x.com/ClaudeDevs/status/2098508880921899197">Claude Devs (Twitter)</a></li>
+<li><strong>2026-09-11 · 产品与功能</strong> — Claude Code新增插件评测功能，可创建测试用例、运行插件或技能并为结果打分。它还支持在不加载插件的情况下重新运行测试，以比较插件带来的实际差异。 · <a href="https://x.com/ClaudeDevs/status/2098500999656923145">Claude Devs (Twitter)</a></li>
+<li><strong>2026-09-11 · 产品与功能</strong> — ChatGPT表示，Sites上线三个月后已创建超过500万个站点，并新增团队共同编辑、私下分享和自定义域名等能力。用户还可以让ChatGPT检查站点数据库，编辑者也能查看；从提示到部署的时间缩短了一半。 · <a href="https://x.com/OpenAIDevs/status/2098480882030137747">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-09-11 · 产品与功能</strong> — OpenAI Devs介绍，GPT-Live-1能够在说话时持续听取来电者内容，因此对话中可以被打断、补充细节或改变方向。Yelp正使用这项能力，让餐厅预约电话更自然。 · <a href="https://x.com/OpenAIDevs/status/2098445843485557174">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-09-11 · 教程与观点</strong> — Thariq认为，如今仅凭基准测试的通过或失败分数已很难解读模型表现。部分失败源于过于严格的隐藏测试，甚至可能出现模型答案比评测预期更合理的情况。 · <a href="https://x.com/trq212/status/2098490139798655427">Thariq (Twitter)</a></li>
+<li><strong>2026-09-11 · 产品与功能</strong> — Google DeepMind介绍纪录片《Love, Rendered》如何将修复后的档案照片与姿态控制模型结合，重现Burt和Ethelle初次见面时的举止与细微表情。完整影片可在YouTube观看。 · <a href="https://x.com/GoogleDeepMind/status/2098417966647808219">Google DeepMind (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-09-11</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-11.html</link>
@@ -3329,92 +3399,6 @@
 <li>分别记录准确率、任务完成率、延迟和成本，不要仅依据榜单名次切换模型。</li>
 </ul>
 </blockquote>
-<hr>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-08-06</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-08-06.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-08-06.md</guid>
-      <pubDate>Thu, 06 Aug 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-08-06</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>语音代理进入编码</strong>：Codex Voice 将口述想法、启动会话和长任务跟进串联起来，代理交互开始从输入框扩展到持续的工作线程管理。</li>
-<li><strong>多模态编码代理升级</strong>：Meta 的 Muse Code 能处理多文件工程和视频输入，长程规划、视觉理解与代码验证正在合并为同一开发入口。</li>
-<li><strong>AI安全延伸至心理健康</strong>：OpenAI 与美国心理学会合作推进青少年 AI 使用指导，行业开始把专业证据、风险防护和产品设计放在一起。</li>
-<li><strong>使用数据反映行为变化</strong>：OpenAI 的全球 ChatGPT Signals 数据显示，AI 正从提问工具转向执行任务、学习和工作协作，产品评估需要关注真实行为而非调用量。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://x.com/AIatMeta/status/2085084709277565213">Muse Code与Muse Spark 1.2发布：长程多模态编码代理</a></h3>
-<ul>
-<li><strong>来源</strong>: Meta AI (Twitter)</li>
-<li><strong>分类</strong>: 模型发布</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐⭐ (5/5)</li>
-<li><strong>标签</strong>: <code>Muse Code</code> <code>Muse Spark 1.2</code> <code>编码代理</code> <code>多模态</code> <code>终端代理</code> <code>持久子代理</code></li>
-</ul>
-<p><strong>摘要</strong>: Meta 发布 Muse Code beta，这是一个由 Muse Spark 1.2 驱动的终端编码代理，能够规划、实现并验证大型仓库中的多文件改动，并通过持久子代理减少人工介入。演示中，Muse Code 读取房屋飞行视频并生成带预订能力的视觉网站；Muse Spark 1.2 同时在 Muse Code 和 Meta Model API 提供更广泛的访问。落地前需要评估长程任务的权限、验证质量、成本和失败恢复。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/AIatMeta/status/2085084718416949323">Muse Code演示视频驱动的多模态建站</a> · Meta AI (Twitter) · 视频驱动建站演示</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在隔离仓库用多文件变更测试 Muse Code 的规划、实现、验证和失败恢复。</li>
-<li>用视频到网站等多模态任务记录模型质量、人工介入次数、延迟和成本。</li>
-<li>正式接入前限制仓库权限并审计持久子代理的状态、凭据和网络访问。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://openai.com/index/openai-and-apa-partner-to-advance-responsible-ai">OpenAI与美国心理学会合作推进青少年AI心理健康</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>青少年心理健康</code> <code>AI安全</code> <code>心理学会</code> <code>责任使用</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI与美国心理学会合作，推进基于证据的人工智能使用指导、资源建设和安全防护。合作重点是降低人工智能对青少年心理健康的潜在风险，并推动更负责任的使用方式。</p>
-<hr>
-<h3>3. <a href="https://x.com/OpenAIDevs/status/2085068107958411518">Codex Voice：边聊边启动编码与长任务</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Devs (Twitter)</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Codex Voice</code> <code>语音编程</code> <code>长任务</code> <code>多线程</code> <code>代理工作流</code></li>
-</ul>
-<p><strong>摘要</strong>: Codex Voice 支持用户通过语音展开想法，在目标明确后启动新的编码会话，并在多个工作线程之间持续检查进展。相关案例显示，用户可以在通勤或学习途中口述实验计划，让 Codex 保留上下文、生成草稿并继续执行工具任务；SEO 研究与内容分发也可以通过语音驱动。使用时仍需在低风险环境验证任务确认、权限边界、长任务中止和敏感信息处理。</p>
-<p>📎 <strong>多角度报道</strong>:</p>
-<ul>
-<li><a href="https://x.com/OpenAIDevs/status/2085068143907746098">用户分享GPT-Live辅助完成实验草稿</a> · OpenAI Devs (Twitter) · 学习与实验草稿</li>
-</ul>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在测试仓库用语音启动一个小型编码任务，验证会话切换、进度查询、确认和中止机制。</li>
-<li>为长任务限制敏感文件与账户权限，并保留工具调用日志和人工复核节点。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://openai.com/index/how-the-world-is-putting-chatgpt-to-work">OpenAI发布全球ChatGPT使用趋势数据</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT</code> <code>使用趋势</code> <code>全球采用</code> <code>用户行为</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI发布新的Signals数据，展示全球不同国家和地区使用ChatGPT的情况。数据覆盖采用程度、使用趋势和行为变化，有助于观察人们如何从提问转向用ChatGPT完成实际工作。</p>
-<hr>
-<h3>5. <a href="https://x.com/demishassabis/status/2085034334914769203">哈萨比斯转任DeepMind董事长兼首席科学家</a></h3>
-<ul>
-<li><strong>来源</strong>: Demis Hassabis (Twitter)</li>
-<li><strong>分类</strong>: 商业动态</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google DeepMind</code> <code>高管变动</code> <code>Alphabet</code> <code>AGI战略</code></li>
-</ul>
-<p><strong>摘要</strong>: Demis Hassabis宣布转任Google DeepMind董事长和Alphabet首席科学家，以便聚焦长期战略与科学突破，并继续推进Isomorphic Labs的疾病攻克工作。Koray Kavukcuoglu将接任DeepMind高级副总裁并负责日常领导，公告体现了管理职责与长期科研方向的重新分工。</p>
 <hr>
 ]]></description>
     </item>
