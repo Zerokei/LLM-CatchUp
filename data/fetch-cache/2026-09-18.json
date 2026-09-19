@@ -1,0 +1,608 @@
+{
+  "date": "2026-09-18",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-09-19T05:01:14−07:00",
+  "window_start": "2026-09-17T00:00:00−07:00",
+  "window_end": "2026-09-18T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "degraded_stale",
+      "error": "newest item is 420.0h old, exceeds 336h threshold",
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1210,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How Cooley is accelerating IPO work with ChatGPT",
+          "url": "https://openai.com/index/cooley-gopublic",
+          "published_at": "2026-09-17T12:00:00.000Z",
+          "description": "Cooley built GO Public with ChatGPT Work to bring intelligence to the IPO process, helping lawyers surface issues earlier and focus judgment where it matters most.",
+          "full_text": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Making global data easier to explore",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/",
+          "published_at": "2026-09-17T20:00:00.000Z",
+          "description": "Google and the UN system have launched the UN System Data Commons, a new open platform making global statistics accessible and easy to search.",
+          "full_text": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Partnering with Accenture on embedded evaluation",
+          "url": "https://www.anthropic.com/news/accenture-embedded-evaluation",
+          "published_at": "2026-09-18T00:00:00.000Z",
+          "description": null,
+          "full_text": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100638355872706571",
+          "title": "Projects brings the architecture of Claude Tag to Claude Code.\n\nIt has one agent per project that manages memory and spins off subagents for tasks. \n\nYou can ask it to be proactive, to do things on a ",
+          "url": "https://x.com/trq212/status/2100638355872706571",
+          "published_at": "2026-09-17T17:29:46.000000Z",
+          "description": "Projects brings the architecture of Claude Tag to Claude Code.\n\nIt has one agent per project that manages memory and spins off subagents for tasks. \n\nYou can ask it to be proactive, to do things on a schedule, etc.\n\nIt feels a lot nicer than a bunch of sessions, try it out!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Projects now run from one conversation, starting in Claude Code. You describe what needs doing, and Claude directs parallel threads that keep working after you close your laptop.\n\nIn beta today for select Pro and Max users in cloud sessions; coming to all Claude users soon. https://t.co/GYzoKbxS23",
+            "url": "https://x.com/claudeai/status/2100632677904744716"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/claudeai/status/2100632677904744716"
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100632677904744716",
+          "title": "Projects now run from one conversation, starting in Claude Code. You describe what needs doing, and Claude directs parallel threads that keep working after you close your laptop.\n\nIn beta today for se",
+          "url": "https://x.com/claudeai/status/2100632677904744716",
+          "published_at": "2026-09-17T17:07:12.000000Z",
+          "description": "Projects now run from one conversation, starting in Claude Code. You describe what needs doing, and Claude directs parallel threads that keep working after you close your laptop.\n\nIn beta today for select Pro and Max users in cloud sessions; coming to all Claude users soon. https://t.co/GYzoKbxS23",
+          "expanded_urls": [],
+          "source": "Claude (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100633571543367691",
+          "title": "Today we're rolling out Projects in Claude Code on desktop and web.\n\nA project is one conversation with Claude. It splits the work into threads itself, runs them as parallel cloud sessions, passes con",
+          "url": "https://x.com/ClaudeDevs/status/2100633571543367691",
+          "published_at": "2026-09-17T17:10:45.000000Z",
+          "description": "Today we're rolling out Projects in Claude Code on desktop and web.\n\nA project is one conversation with Claude. It splits the work into threads itself, runs them as parallel cloud sessions, passes context between them, and keeps going when you leave.\n\nIn beta for select users. https://t.co/j4k7rludhV",
+          "expanded_urls": [],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100646837799834096",
+          "title": "Today we’re opening applications for the Life Sciences Verification Program.\n\nThrough the LSVP, life science professionals can use our models—including, for the first time, Mythos—with a new set of sa",
+          "url": "https://x.com/AnthropicAI/status/2100646837799834096",
+          "published_at": "2026-09-17T18:03:28.000000Z",
+          "description": "Today we’re opening applications for the Life Sciences Verification Program.\n\nThrough the LSVP, life science professionals can use our models—including, for the first time, Mythos—with a new set of safeguards designed to enable the full range of biology-related work. We designed these new safeguards to provide a better experience for biologists and more protection from risk of misuse.\n\nThe program is launching in beta for teams of all kinds—from academic labs to startups, pharma companies, and more. We will continue to improve the program and expand access to individual Pro and Max plans over time.\n\nLearn more about these access grants and apply: https://t.co/uALS2lZuN4",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/uALS2lZuN4",
+              "expanded_url": "https://www.anthropic.com/news/life-sciences-verification-program",
+              "display_url": "anthropic.com/news/life-scie…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2100684274114699295",
+          "title": "AI systems are getting more powerful, and they're increasingly being used to build the next version of themselves. We want to illuminate that progress for the public.\n\nToday, we're sharing three measu",
+          "url": "https://x.com/AnthropicAI/status/2100684274114699295",
+          "published_at": "2026-09-17T20:32:14.000000Z",
+          "description": "AI systems are getting more powerful, and they're increasingly being used to build the next version of themselves. We want to illuminate that progress for the public.\n\nToday, we're sharing three measurements that help track AI development:\n1. How much AI R&D is done by AI.\n2. How well AI agents are overseen.\n3. How compute is allocated.\n\nWe provide a snapshot of these metrics from inside Anthropic. Any frontier developer could publish the same measures, and third parties could verify them.\n\nAs the world considers pacing the frontier, we should do everything possible to minimize the gap between what frontier labs know and what the public knows. This means better measuring the development of AI, publishing our findings, and giving society an opportunity to decide how to use this information.\n\nRead the full post and methodology: https://t.co/iPFz8Z4ugE",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/iPFz8Z4ugE",
+              "expanded_url": "https://www.anthropic.com/institute/measuring-pace-of-ai-development",
+              "display_url": "anthropic.com/institute/meas…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2100701581109072332",
+          "title": "Biologists use specialized open-source models for tasks like modeling the structure of molecular systems, designing drug-like molecules, and predicting the effects of genetic mutations. But these mode",
+          "url": "https://x.com/AnthropicAI/status/2100701581109072332",
+          "published_at": "2026-09-17T21:41:00.000000Z",
+          "description": "Biologists use specialized open-source models for tasks like modeling the structure of molecular systems, designing drug-like molecules, and predicting the effects of genetic mutations. But these models are often expensive to run, potentially limiting their impact.\n\nIn our latest Science Blog, we share how Claude was able to optimize inference for more than 30 open-source models, making them 4x faster on average, partly by writing custom software for GPUs. We’re open sourcing all of the optimization code.\n\nRead more: https://t.co/qiuN1jpgpA",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/qiuN1jpgpA",
+              "expanded_url": "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling",
+              "display_url": "anthropic.com/research/claud…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100679992720142459",
+          "title": "Astra for Law: Frontier intelligence built for your practice.\n\nA new offering powered by GPT-6 Astra with tools, settings, and context to support the expertise and judgment of lawyers and legal techno",
+          "url": "https://x.com/OpenAI/status/2100679992720142459",
+          "published_at": "2026-09-17T20:15:13.000000Z",
+          "description": "Astra for Law: Frontier intelligence built for your practice.\n\nA new offering powered by GPT-6 Astra with tools, settings, and context to support the expertise and judgment of lawyers and legal technology firms. https://t.co/qxVRXkvp4o",
+          "expanded_urls": [],
+          "source": "OpenAI (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 7,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100677280297324759",
+          "title": "You handle the reps. Codex handles the repo.\n\nTalk to the voice agent in Codex, powered by GPT-Live-1.",
+          "url": "https://x.com/OpenAIDevs/status/2100677280297324759",
+          "published_at": "2026-09-17T20:04:26.000000Z",
+          "description": "You handle the reps. Codex handles the repo.\n\nTalk to the voice agent in Codex, powered by GPT-Live-1.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "cdngdev",
+            "text": "you can use codex voice from your phone now, connecting to your computer from anywhere!!\n\n@axbehr and i got to star in this new codex ad, showing how much you can get done while working out.\n\nbtw, this is powered by the new gpt-live-1 https://t.co/EAn5ubiODW",
+            "url": "https://x.com/cdngdev/status/2100665093784563865"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 7,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100586760036143330",
+          "title": "Researchers at @BroadInstitute, @UniofExeter, and beyond are already using AlphaGenome Atlas to better identify potential disease-causing DNA variants and interpret their role. 🧵 https://t.co/j4OuSz0",
+          "url": "https://x.com/GoogleDeepMind/status/2100586760036143330",
+          "published_at": "2026-09-17T14:04:45.000000Z",
+          "description": "Researchers at @BroadInstitute, @UniofExeter, and beyond are already using AlphaGenome Atlas to better identify potential disease-causing DNA variants and interpret their role. 🧵 https://t.co/j4OuSz0Djv",
+          "expanded_urls": [],
+          "source": "Google DeepMind (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 542.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2100481236364079277",
+          "title": "We’re sharing how GLM-5.3 helped build and optimize the inference infrastructure serving GLM-5.3-Flash.\n\nThe system went from its first successful run to production readiness in less than two weeks, w",
+          "url": "https://x.com/Zai_org/status/2100481236364079277",
+          "published_at": "2026-09-17T07:05:26.000000Z",
+          "description": "We’re sharing how GLM-5.3 helped build and optimize the inference infrastructure serving GLM-5.3-Flash.\n\nThe system went from its first successful run to production readiness in less than two weeks, with end-to-end throughput tripling relative to the initial baseline.\n\nThe key was dense feedback: local correctness tests, execution traces, microbenchmarks, and end-to-end measurements that enabled targeted hypothesis testing rather than reliance on aggregate performance metrics alone.\n\nhttps://t.co/yUf6OpJD7c",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/yUf6OpJD7c",
+              "expanded_url": "https://z.ai/blog/glm-built-its-inference-infrastructure",
+              "display_url": "z.ai/blog/glm-built…"
+            }
+          ],
+          "source": "Z.ai (Twitter)",
+          "origin_report_date": "2026-09-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 212.3h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    }
+  }
+}
