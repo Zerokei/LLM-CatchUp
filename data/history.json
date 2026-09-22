@@ -1,218 +1,5 @@
 {
   "articles": {
-    "3dca707bb39947f4b3124ee234c5ea03e411600207020cfe9171020bdd3bb08f": {
-      "title": "字节 Seed2.1 发布：强化 Agent、代码与多模态",
-      "url": "https://seed.bytedance.com/en/blog/seed2-1-officially-released-advancing-ai-productivity",
-      "source": "ByteDance Seed",
-      "published_at": "2026-06-23T00:00:00.000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "字节 Seed 团队发布 Seed2.1 模型家族，面向真实生产力场景强化通用 Agent、端到端代码交付、多模态理解和长上下文能力。Seed2.1 Pro 在 GDPVal、MobileWorld、CharXiv-RQ、MeasureBench、ERQA、TVBench 等评测中强调领先或强竞争表现，并已面向豆包和火山引擎用户开放。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "Seed2.1",
-          "字节跳动",
-          "Agent",
-          "代码模型",
-          "多模态"
-        ],
-        "practice_suggestions": [
-          "优先用 Seed2.1 复测多步骤办公、GUI 操作和代码交付任务，验证端到端稳定性。",
-          "在长文档、图表和视频理解任务上与现有模型做同题对比，关注错误率而非单次答案质量。",
-          "将复杂研发任务拆成执行、评估和诊断子代理，检验 Seed2.1 的长周期协作能力。"
-        ]
-      }
-    },
-    "b63e5cb33bb0ec81fc69112856bd79cc3137bbdb6ac4f289eb0b32824e1d9589": {
-      "title": "OpenAI Daybreak 扩展：安全模型与开源修复闭环",
-      "url": "https://openai.com/index/daybreak-securing-the-world",
-      "source": "OpenAI Blog",
-      "published_at": "2026-06-22T10:00:00.000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "OpenAI 扩展 Daybreak，将 GPT-5.5-Cyber、Codex Security 插件、CyberGym 红队环境和 Trusted Access for Cyber 打包成面向防御方的安全能力组合。Patch the Planet 与 Trail of Bits、HackerOne、Calif 合作，帮助开源维护者从漏洞发现走到验证、补丁、测试和合并，并已在多个关键项目中发现数百个问题、合并数十个补丁。Daybreak Cyber Partner Program 让安全厂商在受控访问下把 GPT-5.5 能力嵌入产品，同时 OpenAI 也在与政府和关键基础设施运营方建立防御合作。整体重点不是制造更多告警，而是用模型和专家审查把漏洞治理推进到可落地的修复闭环。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "OpenAI Daybreak",
-          "GPT-5.5-Cyber",
-          "Codex Security",
-          "Patch the Planet",
-          "开源安全",
-          "漏洞修复"
-        ],
-        "practice_suggestions": [
-          "用 Codex Security 对关键代码库先做授权扫描，并要求输出证据、严重性和补丁建议。",
-          "把漏洞发现、人工复核、测试、披露和合并状态串成闭环，避免只增加扫描告警。",
-          "在使用 GPT-5.5-Cyber 前明确可信访问、数据边界、审批和审计流程。",
-          "安全团队可复用模糊测试、历史 CVE 变体分析和差分测试工作流。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAI/status/2069104288417390688",
-            "title": "OpenAI 用 Patch the Planet 推动开源修复",
-            "source": "OpenAI (Twitter)",
-            "angle": "开源与伙伴计划"
-          },
-          {
-            "url": "https://x.com/sama/status/2069121360744550796",
-            "title": "Sam Altman 概述 OpenAI 安全新组合",
-            "source": "Sam Altman (Twitter)",
-            "angle": "安全战略解读"
-          },
-          {
-            "url": "https://x.com/OpenAI/status/2069104283824640023",
-            "title": "OpenAI Daybreak 扩展：GPT-5.5-Cyber 与 Codex Security",
-            "source": "OpenAI (Twitter)",
-            "angle": "能力组合总览"
-          },
-          {
-            "url": "https://openai.com/index/patch-the-planet",
-            "title": "Patch the Planet 用 AI 支援开源安全修补",
-            "source": "OpenAI Blog",
-            "angle": "开源修复计划"
-          }
-        ]
-      }
-    },
-    "64748ac3266300d1d5f0bff327d2c56e40302b237f3caf33b99ead3987648184": {
-      "title": "Claude Tag 让 Slack 团队直接委派 Claude",
-      "url": "https://www.anthropic.com/news/introducing-claude-tag",
-      "source": "Anthropic Blog",
-      "published_at": "2026-06-23T00:00:00.000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "Anthropic 发布 Claude Tag，先在 Slack 中让团队通过 @Claude 委派任务，并把 Claude 接入选定频道、工具、数据和代码库。它强调多人协作、长期记忆、主动提醒和异步执行，面向 Claude Enterprise 与 Team 客户开放测试，并被定位为 Claude Code 向团队化代理演进的一步。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude Tag",
-          "Slack",
-          "Claude Code",
-          "团队协作",
-          "异步代理"
-        ],
-        "practice_suggestions": [
-          "在私有 Slack 频道先试点 Claude Tag，限定可访问工具和数据源。",
-          "为不同团队建立分离的 Claude 身份，避免销售、工程等上下文串用。",
-          "把长耗时但可审查的任务交给 Claude 异步执行，并设置支出和日志审计。"
-        ]
-      }
-    },
-    "b4b4b4f57a35ddf1d1548e5f38feecd4ff74bf4bf51e7de55544857324d1bce2": {
-      "title": "Grok 接入 Interactive Brokers 投资组合",
-      "url": "https://x.com/xai/status/2069200658633469970",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-06-22T23:27:35.000000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "xAI 宣布 Grok 现在可连接 Interactive Brokers，为用户提供围绕投资组合的高质量、及时信息。被引用的 IBKR 文案强调该集成用于研究投资和分析投资组合，交易仍需用户批准。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Grok",
-          "Interactive Brokers",
-          "投资分析",
-          "金融 AI"
-        ],
-        "practice_suggestions": [
-          "评估 Grok 连接券商账户时的数据权限、审计记录和撤权流程。",
-          "将 AI 生成的投资分析限定为研究输入，保留人工确认交易的硬约束。"
-        ]
-      }
-    },
-    "480508a9ca16ad815100a8e84cf7acfa353c1ab146fa436ce0db7a8f237592c6": {
-      "title": "Omio 用 OpenAI 推进对话式旅行",
-      "url": "https://openai.com/index/omio",
-      "source": "OpenAI Blog",
-      "published_at": "2026-06-23T00:00:00.000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "Omio 将 OpenAI 模型接入实时交通库存和预订系统，让用户用自然语言发现可预订的火车、巴士、渡轮和航班方案。公司还在内部推广 ChatGPT 和 Codex，称许多产品原型可用过去约五分之一的时间完成，同时保留人工负责和治理机制。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "Omio",
-          "对话式旅行",
-          "Codex",
-          "AI 原生"
-        ]
-      }
-    },
-    "8699d9a4c2414d2f95b8a1de4a519160e4f2e5408417fac4f5ae6fb8cf6bded9": {
-      "title": "Mistral 团队规模达千人",
-      "url": "https://x.com/MistralAI/status/2069077356266795207",
-      "source": "Mistral AI (Twitter)",
-      "published_at": "2026-06-22T15:17:37.000000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "Mistral 宣布其全球团队正式达到 1000 人，并把这一节点定位为公司继续扩张和服务客户的新阶段。推文同时引导候选人查看开放职位，重点是招聘和组织增长而非产品或模型更新。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Mistral",
-          "团队扩张",
-          "招聘",
-          "欧洲 AI"
-        ]
-      }
-    },
-    "afeecc30d14b3bac35b36442ae38f8fd4a178e3c86633b55f8d3d6f91ccc3ff7": {
-      "title": "Google DeepMind 与 A24 建立创作者研究合作",
-      "url": "https://x.com/GoogleDeepMind/status/2069066675895337405",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-06-22T14:35:11.000000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "Google DeepMind 宣布与电影公司 A24 启动研究合作，目标是让未来 AI 工具在设计阶段纳入创作者视角。该消息更偏向创意产业合作与产品研究输入，尚未披露具体模型、功能或商业化细节。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Google DeepMind",
-          "A24",
-          "创作者工具",
-          "研究合作"
-        ]
-      }
-    },
-    "3e1d62e09498bbe3e7bcdcf9f42eb203ec6990951d85b7069a96b40ee49e12c2": {
-      "title": "Claude 社区大使计划开放日本申请",
-      "url": "https://x.com/ClaudeDevs/status/2069202892368773468",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-06-22T23:36:28.000000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "Claude Devs 宣布 Japan Claude Community Ambassador program 启动，面向日本各地招募社区大使。官方称全球大使此前已在 37 个国家、107 个城市举办 290 多场聚会，覆盖 4 万多名参与者。",
-      "category": "商业动态",
-      "importance": 1,
-      "extras": {
-        "tags": [
-          "Claude",
-          "开发者社区",
-          "日本",
-          "大使计划"
-        ]
-      }
-    },
-    "0f589207f0f412aef893bf1f55776baf013574150cb243d06a6b9c4061116f5b": {
-      "title": "Codex 被开发者用于探索 Apple 新框架",
-      "url": "https://x.com/OpenAIDevs/status/2069153778553737605",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-06-22T20:21:18.000000Z",
-      "fetched_at": "2026-06-24T12:37:01.535Z",
-      "summary": "OpenAI Devs 转述 iOS 与 macOS 开发者 Paul Solt 的案例，称 Codex 像研究伙伴一样帮助他探索新框架。该帖重点是开发者工作流示例，而不是新的 Codex 功能发布。",
-      "category": "教程与观点",
-      "importance": 1,
-      "extras": {
-        "tags": [
-          "Codex",
-          "iOS",
-          "macOS",
-          "开发者工作流"
-        ]
-      }
-    },
     "696a04f722f5b25ff9af19884bf955a41fe23593c70000b9f2d0c7c940144590": {
       "title": "OpenAI回顾半年API模型与工具更新",
       "url": "https://x.com/OpenAIDevs/status/2069499656305090671",
@@ -18136,7 +17923,108 @@
         "origin_report_date": "2026-09-19",
         "delivery_class": "backfill"
       }
+    },
+    "d2871d486c61275aa18316221b2aa4fe0c0c7a730e7f24a395d9c1672c5c3fc3": {
+      "title": "V7 用 GPT-5.6 将企业文件转化为智能体记忆",
+      "url": "https://openai.com/index/v7",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-21T00:00:00.000Z",
+      "fetched_at": "2026-09-22T15:31:22.230Z",
+      "summary": "V7 利用 GPT-5.6 将分散在企业文件中的信息整理为智能体可调用的机构记忆。它旨在帮助智能体基于有来源链接的上下文完成复杂工作。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-09-21",
+      "extras": {
+        "tags": [
+          "企业智能体",
+          "机构记忆",
+          "GPT-5.6",
+          "知识管理"
+        ],
+        "practice_suggestions": [
+          "选取一组内部文档试用 V7，检查智能体能否准确回答跨文件问题并附上来源。",
+          "用一项真实复杂工作流评估 V7 的上下文覆盖率与结果可追溯性。"
+        ],
+        "origin_report_date": "2026-09-21",
+        "delivery_class": "current"
+      }
+    },
+    "25006c908d18f75cbda4d4ce3b6f615fcc4df877a353b479b9ac9f2c120c2c2f": {
+      "title": "Qwen-Image-2.1：7B 开源模型统一生成、编辑与部署",
+      "url": "https://x.com/Alibaba_Qwen/status/2101659302792679789",
+      "source": "Qwen (Twitter)",
+      "published_at": "2026-09-20T13:06:39.000000Z",
+      "fetched_at": "2026-09-22T15:31:22.230Z",
+      "summary": "Qwen-Image-2.1 是开放权重的 7B 图像模型，将生成与编辑整合在同一检查点，并支持原生 RGBA 透明图层、最多 10 张参考图和局部控制。模型面向全景图、信息图与虚拟试穿等场景，亦已获得 vLLM-Omni、ComfyUI 和 SGLang-Diffusion 首日支持。用户可通过 Hugging Face Spaces 在线体验；SGLang-Diffusion 还提供 RTX 4090 CPU 卸载运行数据、并行推理、LoRA 与兼容 API。",
+      "category": "模型发布",
+      "importance": 4,
+      "report_date": "2026-09-21",
+      "extras": {
+        "tags": [
+          "Qwen-Image-2.1",
+          "开源权重",
+          "图像生成",
+          "图像编辑",
+          "RGBA透明图层",
+          "多参考图",
+          "推理部署"
+        ],
+        "practice_suggestions": [
+          "用同一组提示词对比生成、局部编辑和最多 10 张参考图输入下的结果。",
+          "检查 RGBA 输出与文字渲染是否满足实际合成需求。",
+          "在 ComfyUI 或 vLLM-Omni 中试部署；有相应显卡时再用 SGLang-Diffusion 测量延迟和显存。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/Alibaba_Qwen/status/2101670804794884242",
+            "title": "Qwen-Image-2.1 发布即获 vLLM-Omni 支持",
+            "source": "Qwen (Twitter)",
+            "angle": "vLLM-Omni 首日部署"
+          },
+          {
+            "url": "https://x.com/Alibaba_Qwen/status/2101670814953455780",
+            "title": "ComfyUI 已支持 Qwen-Image-2.1 图像生成与编辑",
+            "source": "Qwen (Twitter)",
+            "angle": "ComfyUI 工作流支持"
+          },
+          {
+            "url": "https://x.com/Alibaba_Qwen/status/2101866671900401913",
+            "title": "Qwen-Image-2.1 推出浏览器在线体验入口",
+            "source": "Qwen (Twitter)",
+            "angle": "浏览器在线体验"
+          },
+          {
+            "url": "https://x.com/Alibaba_Qwen/status/2101866688425984233",
+            "title": "SGLang-Diffusion 首日支持 Qwen-Image-2.1",
+            "source": "Qwen (Twitter)",
+            "angle": "SGLang 性能与服务能力"
+          }
+        ],
+        "origin_report_date": "2026-09-20",
+        "delivery_class": "backfill"
+      }
+    },
+    "910d21393b56ccfe714e808a36896238752aedd37d919dbf37021356db3c52f5": {
+      "title": "游戏公会经历展示虚拟责任感的价值与边界",
+      "url": "https://x.com/trq212/status/2101844435353145452",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-09-21T01:22:18.000000Z",
+      "fetched_at": "2026-09-22T15:31:22.230Z",
+      "summary": "作者认为，电子游戏能为现实中缺少高 stakes 与责任感的年轻人提供承担责任的机会，但这种体验也有边界，最终仍需走向现实成长。引用的玩家故事讲述一名 14 岁少年因认真改进游戏表现，从团队新人逐步成为公会招募者。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-09-21",
+      "extras": {
+        "tags": [
+          "游戏文化",
+          "青少年",
+          "责任感",
+          "成长"
+        ],
+        "origin_report_date": "2026-09-20",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-09-21T15:34:56.300Z"
+  "last_fetch": "2026-09-22T15:31:22.230Z"
 }
