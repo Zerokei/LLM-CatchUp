@@ -1,566 +1,5 @@
 {
   "articles": {
-    "1df76d0ceeb27c71c563fed7c5326d7f6de04e056412028de9bb6700a64e4ec3": {
-      "title": "GPT-5.5 Instant 升级对话意图与约束处理",
-      "url": "https://x.com/OpenAI/status/2069843083701915755",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-06-24T18:00:21.000000Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "OpenAI 宣布推出新版 GPT-5.5 Instant，称其对话体验更自然，能更好理解问题意图并相应调整回答。新版还提升了复杂约束遵循能力，并让购物、本地推荐等场景更有用、更连贯；付费用户当天开始推送，免费用户次日推送。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "GPT-5.5",
-          "Instant",
-          "对话体验",
-          "约束遵循",
-          "推荐"
-        ],
-        "practice_suggestions": [
-          "用现有提示词回归测试复杂约束、多轮澄清和推荐类任务。",
-          "对比新旧 Instant 在延迟、成本和回答一致性上的变化，再调整默认模型路由。",
-          "将购物或本地推荐场景加入人工评测集，检查是否出现过度自信推荐。"
-        ]
-      }
-    },
-    "0cd36b15a9317ad33d2c59ce86b08ef64e55421ac2bf93842b7fe2db24675a31": {
-      "title": "Qwen-AgentWorld：35B 开源世界模型与智能体基准",
-      "url": "https://x.com/Alibaba_Qwen/status/2069720365442719867",
-      "source": "Qwen (Twitter)",
-      "published_at": "2026-06-24T09:52:43.000000Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "Qwen 发布 Qwen-AgentWorld-35B-A3B、AgentWorldBench 和配套论文，把「语言世界建模」作为提升智能体能力的核心路线。该 MoE 模型总参数 35B、激活 3B，支持 256K 上下文，可在 MCP、搜索、终端、SWE、Web、OS、Android 七类环境中模拟智能体交互。Qwen 称它在 AgentWorldBench 上超过 Claude Opus 4.8 与 GPT-5.4，并且通过环境预测能力在 Terminal-Bench 2.0、SWE-Bench、WideSearch、BFCL v4 等任务上带来迁移收益。开源材料覆盖论文、博客、GitHub、HuggingFace 和 ModelScope，便于团队复现实验和接入评测。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "Qwen-AgentWorld",
-          "世界模型",
-          "AgentWorldBench",
-          "智能体环境",
-          "开源模型",
-          "SWE-Bench",
-          "256K上下文"
-        ],
-        "practice_suggestions": [
-          "优先复现 MCP、Terminal、SWE 三类环境评测，判断是否适合替代真实环境做训练前筛选。",
-          "用 AgentWorldBench 跑现有智能体栈的对照评测，重点观察长上下文和工具调用稳定性。",
-          "把可控模拟环境接入智能体回归测试，记录哪些失败模式能提前暴露。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/Alibaba_Qwen/status/2069720397747220493",
-            "title": "Qwen 用世界建模提升智能体泛化",
-            "source": "Qwen (Twitter)",
-            "angle": "基准收益"
-          }
-        ]
-      }
-    },
-    "3d99cf87d464b7af5461cdf1dc29e5bd6c5c008df9a0bfc30a0f3b0c56ddb179": {
-      "title": "OpenAI 研究：Codex 正把工作从聊天推向代理",
-      "url": "https://openai.com/index/how-agents-are-transforming-work",
-      "source": "OpenAI Blog",
-      "published_at": "2026-06-25T02:00:00.000Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "OpenAI 的研究称，代理式 AI 正把知识工作的单位从一次性对话转向可委派的长周期任务，Codex 在公司内部已成为各部门的主要 AI 工作工具。到 2026 年 5 月，80.6% 的个人用户至少提交过一个估计超过 30 分钟人工工作量的 Codex 请求，非开发者采用速度也显著快于开发者。文章强调，代理工具正在让法律、财务、招聘等非技术岗位承担更多自动化、数据处理和技术执行任务。",
-      "category": "研究",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "代理式AI",
-          "Codex",
-          "知识工作",
-          "非开发者采用",
-          "生产力"
-        ]
-      }
-    },
-    "2d7d2801799c924ba27903c62e5b4300bf09d932c56be8784989d45038602b5e": {
-      "title": "Claude 代理身份模型：独立凭据 + 统一治理",
-      "url": "https://x.com/ClaudeDevs/status/2069895377080443271",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-06-24T21:28:09.000000Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "Claude Devs 介绍「agent identity」访问模型：当 Claude 被加入团队频道或共享工作区时，它使用自己的独立凭据，而不是借用某个成员的个人权限。这样每个连接系统都能在日志中记录 Claude 自身的操作，管理员也可以一次撤销访问并统一控制权限边界。该模型的重点是在让 Claude 参与共享协作的同时，避免暴露个人私有文件并提升企业审计能力。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Claude",
-          "agent identity",
-          "代理凭据",
-          "权限治理",
-          "企业审计",
-          "协作安全"
-        ],
-        "practice_suggestions": [
-          "为企业 AI 代理配置独立账号和最小权限，避免复用员工 OAuth 凭据。",
-          "在 Slack、文档、代码仓库等连接系统中确认代理操作能独立落日志。",
-          "建立代理访问的集中撤权和定期复核流程。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/ClaudeDevs/status/2069895389415874907",
-            "title": "Claude 代理身份便于统一审计与撤权",
-            "source": "Claude Devs (Twitter)",
-            "angle": "审计与撤权"
-          }
-        ]
-      }
-    },
-    "d852d27deb7dbc1cce050231920228287177c22ea5d955c953a78adda898e00d": {
-      "title": "Berkeley RDI 关注 GPT-5.5-Cyber 与 CyberGym",
-      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-june-e4a",
-      "source": "Berkeley RDI",
-      "published_at": "2026-06-24T16:01:32.129Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "Berkeley RDI 本期 Agentic AI Weekly 提到 OpenAI 新发布的 GPT-5.5-Cyber 模型，以及其在 CyberGym 上的进展。可用正文很短，主要是对该研究亮点的提示，没有展开具体实验数据或方法细节。",
-      "category": "研究",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Berkeley RDI",
-          "GPT-5.5-Cyber",
-          "CyberGym",
-          "安全评测",
-          "代理研究"
-        ]
-      }
-    },
-    "72dd10fc02847b4a0078b4aa9f2468e8f73d27594b4d2c7554c6cf128212af05": {
-      "title": "Grok Build 接入 MongoDB 官方插件",
-      "url": "https://x.com/xai/status/2069809728088350789",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-06-24T15:47:49.000000Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "xAI 宣布 Grok Build 可使用 MongoDB 官方插件，支持查询数据、优化索引和管理数据库。该更新把数据库操作纳入 Grok Build 的工具生态，适合需要在生成应用或数据工作流中直接访问 MongoDB 的团队试用。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Grok Build",
-          "MongoDB",
-          "插件",
-          "数据库管理",
-          "索引优化"
-        ],
-        "practice_suggestions": [
-          "在测试环境连接 MongoDB 插件，验证查询、索引建议和权限边界。",
-          "为生产数据库配置只读或最小权限凭据，避免让代理直接持有高危写权限。"
-        ]
-      }
-    },
-    "1ea0843e9d058f1bdee7a437daa66132939aa2aa299d56955a453074c61b8889": {
-      "title": "Kimi API 上架 AWS Marketplace",
-      "url": "https://x.com/Kimi_Moonshot/status/2069718757338202140",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-06-24T09:46:19.000000Z",
-      "fetched_at": "2026-06-26T12:37:36.892Z",
-      "summary": "Moonshot 宣布 Kimi API 已上线 AWS Marketplace，企业可通过 AWS 统一账单购买和使用。符合条件的客户还能将 Kimi API 用量计入 AWS EDP 承诺，降低已有 AWS 客户的采购和预算摩擦。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Kimi",
-          "AWS Marketplace",
-          "API",
-          "企业采购"
-        ]
-      }
-    },
-    "21b7b7e2f6327d46cc20273e91ec81d5e1f501c1e22368858b0a022a26847e81": {
-      "title": "Codex 扩展：移动端全量 + 云端插件",
-      "url": "https://x.com/OpenAIDevs/status/2070254532911882707",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-06-25T21:15:18.000000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "Codex 在 ChatGPT 移动应用中正式全量开放，加入一对一设备配对、通知、目标、侧边聊天、文件预览和行内审阅评论，让长耗时编码任务更容易在手机上跟进。同一天，DigitalOcean 插件让用户用一句提示创建运行在自己云账户中的持久化开发环境，Codex 可在用户离开后继续工作。OpenAI Devs 还补充了长线程、连接和 diff 处理改进，并通过 Builders Unscripted 展示 GPT-5.5 与多 agent Codex 工作流的创意软件实践。 OpenAI Devs 表示 Codex 移动端修复了多项体验问题，包括更好处理长线程、更可靠的连接以及改进 diff 处理。该更新偏向稳定性和开发者体验优化，而非新能力发布。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Codex",
-          "移动端",
-          "DigitalOcean",
-          "云开发环境",
-          "代码审阅",
-          "多智能体"
-        ],
-        "practice_suggestions": [
-          "用长耗时编码任务测试移动端通知、文件预览和行内审阅流程。",
-          "试跑 DigitalOcean 插件，验证环境创建、依赖安装和后台持续运行。",
-          "检查云账户权限、费用上限和闲置环境回收策略。",
-          "把移动端配对纳入团队设备安全规范。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAIDevs/status/2070261549391024403",
-            "title": "DigitalOcean 插件接入 Codex 云开发",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "云开发插件"
-          },
-          {
-            "url": "https://x.com/OpenAIDevs/status/2070276212984094805",
-            "title": "OpenAI Devs 分享创意 Codex 工作流",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "创意工作流访谈"
-          }
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAIDevs/status/2070254532911882707",
-          "https://x.com/OpenAIDevs/status/2070254534606352727"
-        ]
-      }
-    },
-    "428742c5ed7296bbfa6fd438a82d334fd4aba59cac9e1d89fb597b61b2a9b218": {
-      "title": "Claude Tag 展示多人主动智能体",
-      "url": "https://x.com/ClaudeDevs/status/2070235730295865661",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-06-25T20:00:35.000000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "Claude Tag 被定位为建立在 Claude Code 之上的主动式多人智能体，核心特征是记忆、身份和持续协作。官方深度解析说明它如何从单次编码助手走向可参与团队流程的代理形态，Thariq 的补充则把它放到后续访谈和视频演示场景中。这个发布对 Claude Code 用户的意义在于，团队协作、长期上下文和 agent 身份管理正在成为产品层能力。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude Tag",
-          "Claude Code",
-          "多人智能体",
-          "长期记忆",
-          "协作工作流",
-          "主动代理"
-        ],
-        "practice_suggestions": [
-          "阅读官方 deep dive，提炼记忆、身份和权限边界的设计模式。",
-          "选择一个跨人协作开发任务，验证主动式 agent 是否减少交接成本。",
-          "把现有 Claude Code 工作流区分为单人任务和多人任务，评估迁移优先级。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/trq212/status/2070238581147455842",
-            "title": "Thariq 预告 Claude Tag 深聊",
-            "source": "Thariq (Twitter)",
-            "angle": "访谈与演示补充"
-          }
-        ]
-      }
-    },
-    "fc94a5bb8cba9b38a33d3f7dd967b8fc0c747abeb2298ea7e02f1fb5b18fe521": {
-      "title": "Gemini Flash 支持原生电脑操作",
-      "url": "https://x.com/GoogleDeepMind/status/2070180509523546481",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-06-25T16:21:10.000000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "Google DeepMind 宣布 Gemini 3.5 Flash 支持原生 computer use，开发者可构建能观察并操作浏览器、移动端和桌面界面的自定义智能体。这把界面操作能力直接纳入模型工具链，对自动化测试、办公流程和跨应用代理开发都有现实意义。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Gemini",
-          "Computer Use",
-          "智能体",
-          "自动化",
-          "多端交互"
-        ],
-        "practice_suggestions": [
-          "选取一个浏览器或桌面重复流程，验证 Gemini 原生 computer use 的可靠性边界。",
-          "为代理操作增加权限隔离、审计日志和人工确认节点。",
-          "对比现有 Playwright 或 RPA 方案，评估模型驱动操作的成本和成功率。"
-        ]
-      }
-    },
-    "41879d61cf677babbbad16f8bed6c77714ce28471f833b1d441bec7f8388bcbf": {
-      "title": "Anthropic 经济指数聚焦使用节奏",
-      "url": "https://www.anthropic.com/research/economic-index-june-2026-report",
-      "source": "Anthropic Research",
-      "published_at": "2026-06-26T00:00:00.000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "Anthropic 更新 Economic Index 方法，提升采样频率、引入输出分类器，并按 Claude 对话与 1P API 提供更细粒度数据。报告显示 Claude 使用会随工作周、日内节奏和税务截止日期波动，输出类型与产品形态强相关，而更高算力通常对应更高价值的产出。调查还发现，更自动化使用 Claude 的人更预期 AI 会承担更多任务，同时对薪酬、工作安全和工作意义更乐观。",
-      "category": "研究",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "Economic Index",
-          "Claude",
-          "劳动力影响",
-          "使用行为"
-        ]
-      }
-    },
-    "ca04820b85186683a16550b01103ed7b3b4b63c994f99268853af72f92793003": {
-      "title": "OpenAI 披露 Codex 重塑内部工作",
-      "url": "https://x.com/OpenAI/status/2070196105745518913",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-06-25T17:23:08.000000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "OpenAI 将 agentic AI 描述为把知识工作从短对话转向可委托的长周期任务，并以 Codex 在公司内部的采用作为早期样本。文章称 Codex 已成为 OpenAI 各部门的主要 AI 工具，非开发者使用增长尤其快，个人用户也越来越多地发起估计超过 30 分钟甚至数小时的人类工作量任务。这个案例凸显 agent 工具正在扩展员工跨职能完成技术和知识工作的边界。 OpenAI 文章称 agentic AI 正把知识工作的单位从单次互动转为可委托的长周期任务，Codex 在 OpenAI 内部已成为各部门的主要 AI 工具。到 2026 年 5 月，80.6% 的抽样个人用户至少提出过一个估计超过 30 分钟人工工作量的 Codex 请求，非开发者采用增长尤其快；OpenAI 认为这预示 agent 会扩展员工跨任务边界完成工作的能力。",
-      "category": "研究",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Codex",
-          "智能体工作",
-          "OpenAI",
-          "非开发者采用",
-          "知识工作"
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAI/status/2070196105745518913",
-          "https://x.com/OpenAI/status/2070196107699970398"
-        ]
-      }
-    },
-    "14531ebca9f85c084aff634af4fe8e08eb3e22698535c10354aeef72695013f1": {
-      "title": "Google Finance 推出投资组合与应用",
-      "url": "https://blog.google/products-and-platforms/products/search/google-finance-updates-june-2026/",
-      "source": "Google AI Blog",
-      "published_at": "2026-06-25T16:00:00.000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "新版 Google Finance 结束测试并在全球推出投资组合功能，可整合持仓、展示表现和资产配置洞察，还支持用截图、CSV、PDF 或自然语言导入资产。它新增可定时运行的市场情报任务，并发布 Android 应用，提供自选股、实时数据、新闻流、AI 研究工具和股价异动解释。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Google Finance",
-          "投资组合",
-          "AI 研究",
-          "金融应用"
-        ],
-        "practice_suggestions": [
-          "试用投资组合导入能力，评估截图、CSV 和自然语言录入的准确性。",
-          "设置一个每日盘前简报任务，观察其对自选股和持仓的个性化程度。"
-        ]
-      }
-    },
-    "16800c2e1e4e2454d70b84dfeb183e02c2361b11852493607eae771bdcbf75f6": {
-      "title": "SuperGrok 订阅接入 T3code",
-      "url": "https://x.com/xai/status/2070195830192320600",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-06-25T17:22:02.000000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "xAI 宣布 SuperGrok 和 X 订阅现在可以在 T3code 中使用。这是订阅权益向第三方开发工具扩展的增量更新，有助于提升 Grok 在编码场景中的触达。",
-      "category": "产品与功能",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "xAI",
-          "SuperGrok",
-          "T3code",
-          "订阅权益",
-          "编码工具"
-        ],
-        "practice_suggestions": [
-          "已有 SuperGrok 或 X 订阅的开发者可在 T3code 中验证可用额度和模型体验。",
-          "对团队编码助手选型补充 Grok 订阅接入成本对比。"
-        ]
-      }
-    },
-    "14fa5583708e0f6e57411c45fa1615f51b5e9fe84fab1acc7e0f21b2a19577c7": {
-      "title": "Anthropic 加入 RAISE US 联盟",
-      "url": "https://x.com/AnthropicAI/status/2070183531612172697",
-      "source": "Anthropic (Twitter)",
-      "published_at": "2026-06-25T16:33:10.000000Z",
-      "fetched_at": "2026-06-27T12:36:38.113Z",
-      "summary": "Anthropic 宣布以创始伙伴身份加入 RAISE US，这是一个关注美国劳动力适应 AI 转型的非营利联盟。该组织由 Gina Raimondo 和 Eric Holcomb 共同领导，计划通过雇主行动、AI 培训和政策创新帮助工人训练、转岗并适应更强 AI 带来的变化。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "RAISE US",
-          "劳动力",
-          "AI 培训",
-          "政策创新"
-        ]
-      }
-    },
-    "30f48121decc708b123e76182ad5478a2e1413a7c39b75bd8f4a904078e89cfb": {
-      "title": "GPT-5.6 Sol 预览：三模型分层 + 安全栈升级",
-      "url": "https://openai.com/index/previewing-gpt-5-6-sol",
-      "source": "OpenAI Blog",
-      "published_at": "2026-06-26T10:00:00.000Z",
-      "fetched_at": "2026-06-28T12:36:44.732Z",
-      "summary": "OpenAI 预览 GPT-5.6 Sol，将其定位为下一代前沿模型，并强调编码、科学和网络安全能力提升。GPT-5.6 家族同时包含面向日常高效工作的 Terra，以及适合高吞吐、低成本任务的 Luna。官方线程补充说，Sol 在长程网络安全任务上推进性能效率边界，并配套更强的实时防滥用、安全栈、人工红队和大规模自动化测试。Sam Altman 进一步解释，Sol 先按美国政府要求以 limited preview 推出，价格与 GPT-5.5 相同，Terra 约以半价达到 5.5 级表现，7 月还计划把 Sol 提升到 750 token/秒。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "GPT-5.6 Sol",
-          "OpenAI",
-          "模型分层",
-          "网络安全",
-          "安全栈",
-          "推理速度",
-          "Terra"
-        ],
-        "practice_suggestions": [
-          "把 Sol、Terra、Luna 分别纳入高难推理、日常工作和高吞吐任务的评测矩阵。",
-          "为网络安全和自动化任务增加权限、审计、红队样例与人工复核。",
-          "在产品排期中区分 limited preview 与普遍可用，避免过早绑定交付承诺。",
-          "提前压测流式渲染、限流和计费逻辑，验证 750 token/秒场景。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/sama/status/2070607488274358364",
-            "title": "GPT-5.6 Sol 限量预览，Terra 半价补位",
-            "source": "Sam Altman (Twitter)",
-            "angle": "定价与有限预览"
-          },
-          {
-            "url": "https://x.com/OpenAI/status/2070555278576439306",
-            "title": "GPT-5.6 Sol 强化长程网络安全任务",
-            "source": "OpenAI (Twitter)",
-            "angle": "网络安全能力"
-          },
-          {
-            "url": "https://x.com/sama/status/2070609922631537024",
-            "title": "GPT-5.6 Sol 将支持 750 Token/秒",
-            "source": "Sam Altman (Twitter)",
-            "angle": "吞吐提升预告"
-          },
-          {
-            "url": "https://x.com/OpenAI/status/2070555272230384038",
-            "title": "OpenAI 发布 GPT-5.6 Sol、Terra 与 Luna",
-            "source": "OpenAI (Twitter)",
-            "angle": "模型家族定位"
-          }
-        ]
-      }
-    },
-    "d54c9392883cf661cb7720c9f72dc8651ad48d52ebdb6755cd4658e5153fc634": {
-      "title": "OpenAI 首款自研 AI 芯片 Jalapeño 亮相",
-      "url": "https://x.com/sama/status/2070614666288795703",
-      "source": "Sam Altman (Twitter)",
-      "published_at": "2026-06-26T21:06:21.000000Z",
-      "fetched_at": "2026-06-28T12:36:44.732Z",
-      "summary": "Sam Altman 转发 OpenAI 公告称，团队已与 Broadcom 合作打造首款 AI 芯片 Jalapeño。该芯片面向支撑 ChatGPT、Codex、API 与未来智能体产品的 LLM 工作负载，显示 OpenAI 正把平台能力向基础设施层延伸。 Sam Altman 回应称，OpenAI 还没有达到「无限量 token」的使用模式，但团队正在朝这个方向努力。这条信息信号较弱，主要反映 OpenAI 可能继续扩展推理与产品使用额度。",
-      "category": "商业动态",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "Jalapeño",
-          "AI 芯片",
-          "Broadcom",
-          "算力基础设施"
-        ],
-        "thread_urls": [
-          "https://x.com/sama/status/2070614666288795703",
-          "https://x.com/sama/status/2070614769678393846"
-        ]
-      }
-    },
-    "e6e94e6a41c9ad8eae1c749521e233b64d534ea7abdb589d4a1b339d45a69c75": {
-      "title": "Anthropic 量化 Claude 经济影响：使用节奏 + 岗位预期",
-      "url": "https://x.com/AnthropicAI/status/2070528961235575278",
-      "source": "Anthropic (Twitter)",
-      "published_at": "2026-06-26T15:25:47.000000Z",
-      "fetched_at": "2026-06-28T12:36:44.732Z",
-      "summary": "Anthropic 扩展 Claude Economic Index，用小时级采样、输出分类、1P API 数据和用户调查来观察 AI 如何进入工作与生活节奏。数据关注 Claude 使用在工作周、日内时段和税务截止日期附近的波动，也追踪用户实际产出与 token 消耗之间的关系。调查显示，近半受访者预计未来 12 个月内工作职责会显著变化，少于 10% 认为自己会失业，但对同事尤其初级岗位的担忧更高。更自动化使用 Claude 的用户更倾向于预期 AI 会承担更多任务，同时对个人工作影响也更乐观。",
-      "category": "研究",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude",
-          "Economic Index",
-          "AI 经济影响",
-          "工作职责",
-          "使用节奏",
-          "就业预期"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/AnthropicAI/status/2070528969523499460",
-            "title": "Anthropic 调查：近半数人预期工作变化",
-            "source": "Anthropic (Twitter)",
-            "angle": "就业预期调查"
-          }
-        ]
-      }
-    },
-    "c6e3637e866d04bf9f81fa6ca485bd054be4aee17338ac437d08aa03f3662e72": {
-      "title": "Claude Mythos 5 恢复关键基建访问",
-      "url": "https://x.com/AnthropicAI/status/2070665903440871779",
-      "source": "Anthropic (Twitter)",
-      "published_at": "2026-06-27T00:29:57.000000Z",
-      "fetched_at": "2026-06-28T12:36:44.732Z",
-      "summary": "Anthropic 表示，已与美国政府合作恢复部分组织对 Claude Mythos 5 的访问。该模型被定位为其最强网络安全模型，现可重新部署给运营和防御美国关键基础设施的机构，Fable 5 的更广泛恢复仍在协商中。",
-      "category": "政策与安全",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "Claude Mythos 5",
-          "网络安全",
-          "关键基础设施",
-          "政府审查"
-        ]
-      }
-    },
-    "88609c70d2d6c68102cb1b4ce5866c9833557638ba8ec2f2799382dcc4636b19": {
-      "title": "ChatGPT 的 5.5 Instant 模型已更新",
-      "url": "https://x.com/sama/status/2070612055225483692",
-      "source": "Sam Altman (Twitter)",
-      "published_at": "2026-06-26T20:55:58.000000Z",
-      "fetched_at": "2026-06-28T12:36:44.732Z",
-      "summary": "Sam Altman 称，本周 OpenAI 更新了 ChatGPT 中使用的 5.5 Instant 模型。他只给出主观体验反馈，没有披露基准、能力边界或具体变更。",
-      "category": "模型发布",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "ChatGPT",
-          "5.5 Instant",
-          "模型更新"
-        ],
-        "practice_suggestions": [
-          "在常用对话、摘要和代码任务上做小样本回归测试，确认输出风格变化。",
-          "对依赖稳定语气或格式的工作流，保留更新前后的示例对比。"
-        ]
-      }
-    },
-    "90aff32d8e264cc0398103ee0959cabcf3cf9f46e2678024c7fb8547c33ace1b": {
-      "title": "Codex 体验更新：长线程 + 复制粘贴优化",
-      "url": "https://x.com/OpenAIDevs/status/2070922791529091376",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-06-27T17:30:44.000000Z",
-      "fetched_at": "2026-06-29T12:36:01.272Z",
-      "summary": "OpenAI Devs 发布本周 Codex app 生活质量更新，重点改善长线程浏览、线程切换和团队协作中的复制粘贴体验。长对话滚动更顺滑，浏览时能稳定保持当前位置，线程切换也减少后台工作并支持更深的本地历史按需展示。复制到 Slack 时可保留 Markdown 格式，大段文本粘贴不再卡住界面，草稿、图片预览和未读徽标等细节也得到修复。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Codex",
-          "长线程",
-          "复制粘贴",
-          "Markdown",
-          "性能优化",
-          "协作体验"
-        ],
-        "practice_suggestions": [
-          "用现有长线程回放滚动、切换和本地历史加载体验。",
-          "测试从 Codex 复制 Markdown 到 Slack 的格式保留效果。",
-          "用大段日志或代码块验证粘贴稳定性和草稿保留。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAIDevs/status/2070923022870131068",
-            "title": "Codex 改进线程切换与归档聊天体验",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "线程切换与归档"
-          },
-          {
-            "url": "https://x.com/OpenAIDevs/status/2070992443387031709",
-            "title": "Codex 优化复制粘贴与大文本稳定性",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "Markdown 粘贴修复"
-          }
-        ]
-      }
-    },
     "5f8ae94d3d52ae74dcc04545cabfb0442c0afe91eccec520674715a73dc917b9": {
       "title": "HP 扩大 OpenAI Frontier 战略合作",
       "url": "https://openai.com/index/hp-frontier-partnership",
@@ -17974,7 +17413,181 @@
         "origin_report_date": "2026-09-21",
         "delivery_class": "backfill"
       }
+    },
+    "f018333b1a31ee28b9ef573bacfde08aee45fb4847ae39c2746a93342f87dea6": {
+      "title": "GPT-6 Sol与Luna发布：更快、更省，API价格降50%",
+      "url": "https://x.com/OpenAI/status/2102460975790137662",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-09-22T18:12:13.000000Z",
+      "fetched_at": "2026-09-27T15:31:52.360Z",
+      "summary": "OpenAI发布GPT-6 Sol与GPT-6 Luna，称两款模型承接GPT-6 Astra的能力，面向更快、更经济的大规模使用场景。官方表示，两款模型的API价格较GPT-5.6促销价低50%，并将节省归因于缓存和推理效率提升。开发者账号将Sol定位为构建应用、Luna定位为规模化部署；Sam Altman另称两款模型的角色设计很可爱。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-09-26",
+      "extras": {
+        "tags": [
+          "GPT-6",
+          "模型发布",
+          "API定价",
+          "推理效率",
+          "开发者工具"
+        ],
+        "practice_suggestions": [
+          "在同一批真实任务上比较Sol、Luna与现有模型的延迟、质量和总成本，再决定迁移范围。",
+          "按交互速度与吞吐量需求分别评估Sol和Luna，并在上线前核对API价格与缓存命中率。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/sama/status/2102464201335984392",
+            "title": "Sam Altman称赞GPT-6 Sol与Luna角色设计",
+            "source": "Sam Altman (Twitter)",
+            "angle": "角色与品牌形象"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2102461432684282061",
+            "title": "OpenAI开发者账号介绍Sol与Luna的规模化定位",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "开发者定位与部署场景"
+          }
+        ],
+        "origin_report_date": "2026-09-22",
+        "delivery_class": "backfill"
+      }
+    },
+    "2e0abc67d986a3a2a6c017c60f8b0224155d5c4cc32bb245f73b917cdfc30411": {
+      "title": "Claude Opus 5.5发布：性能接近Fable 5.1，成本降低40%",
+      "url": "https://x.com/claudeai/status/2102435511222890900",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-09-22T16:31:01.000000Z",
+      "fetched_at": "2026-09-27T15:31:52.360Z",
+      "summary": "Anthropic发布Claude Opus 5.5，称其在多数任务上达到Fable 5.1水平，单项任务速度约提升30%，运行成本较Opus 5降低约40%。Claude 5.5系列首款模型即日起开放，官方账号确认了上线时间。Claude Code同步提高五小时会话限额20%，并称较低模型价格可让订阅额度多完成约25%的工作；Pro、Max和Team用户还获得一次可择时使用的额度重置。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-09-26",
+      "extras": {
+        "tags": [
+          "Claude Opus 5.5",
+          "模型发布",
+          "Claude Code",
+          "推理效率",
+          "订阅额度"
+        ],
+        "practice_suggestions": [
+          "用代表性工作负载实测Opus 5.5的任务成功率、速度和成本，再调整默认模型。",
+          "在Claude Code中检查五小时限额提升及额度重置是否适合团队工作节奏，并观察实际使用量。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/trq212/status/2102437686967738431",
+            "title": "Claude Opus 5.5主打更低成本与更高使用额度",
+            "source": "Thariq (Twitter)",
+            "angle": "效率、价格与使用额度"
+          },
+          {
+            "url": "https://x.com/ClaudeDevs/status/2102438800836489554",
+            "title": "Claude Code提升Opus 5.5限额并延长订阅使用量",
+            "source": "Claude Devs (Twitter)",
+            "angle": "Claude Code限额与订阅权益"
+          },
+          {
+            "url": "https://x.com/AnthropicAI/status/2102435703535939725",
+            "title": "Anthropic宣布Claude Opus 5.5即日起开放",
+            "source": "Anthropic (Twitter)",
+            "angle": "正式开放时间"
+          }
+        ],
+        "origin_report_date": "2026-09-22",
+        "delivery_class": "backfill"
+      }
+    },
+    "e234dc0896e181cc0270e86759c30285c4d86f280f69e3fbd626c940722545f0": {
+      "title": "OpenAI提出扩大独立前沿模型评估的访问权限",
+      "url": "https://x.com/OpenAI/status/2102447425243828347",
+      "source": "OpenAI (Twitter)",
+      "published_at": "2026-09-22T17:18:22.000000Z",
+      "fetched_at": "2026-09-27T15:31:52.360Z",
+      "summary": "OpenAI表示将支持独立评估者深入接触训练、评测和部署环节，以便第三方质疑假设、发现遗漏风险并独立判断安全措施是否有效。公司同时列出四个优先评估领域，并提出严谨、安全、独立开展评估的原则。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-09-26",
+      "extras": {
+        "tags": [
+          "独立评估",
+          "前沿模型",
+          "安全防护",
+          "第三方审查"
+        ],
+        "origin_report_date": "2026-09-22",
+        "delivery_class": "backfill"
+      }
+    },
+    "08eec3f973b1d6597332c7dbe7a9e0de88cd4c89c43c228329be16cb57315869": {
+      "title": "Sam Altman呼吁建立促进竞争的AI安全标准",
+      "url": "https://x.com/sama/status/2102414347364335917",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-09-22T15:06:56.000000Z",
+      "fetched_at": "2026-09-27T15:31:52.360Z",
+      "summary": "Sam Altman主张让AI实验室以外的群体参与技术发展，并以清晰标准评估安全进展。提案还强调避免权力过度集中、维持新创及开放模型公司的竞争空间，并促进国家和企业比较证据、从失败中学习。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-09-26",
+      "extras": {
+        "tags": [
+          "AI标准",
+          "安全治理",
+          "市场竞争",
+          "权力分散"
+        ],
+        "origin_report_date": "2026-09-22",
+        "delivery_class": "backfill"
+      }
+    },
+    "f4c89fb4dfee6bdd434be0740bc8e294b55629589c862555e774b990a8b658d4": {
+      "title": "Kimi推出可记录重复流程的浏览器扩展",
+      "url": "https://x.com/Kimi_Moonshot/status/2102372557190230244",
+      "source": "Kimi (Twitter)",
+      "published_at": "2026-09-22T12:20:52.000000Z",
+      "fetched_at": "2026-09-27T15:31:52.360Z",
+      "summary": "Kimi推出新版浏览器扩展，用户可在侧边栏与Kimi对话，让它浏览网站并填写表单。对于重复任务，用户可以录制一次操作并保存为技能，之后交由Kimi执行；扩展已上线Kimi官网和Chrome应用商店。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-09-26",
+      "extras": {
+        "tags": [
+          "Kimi",
+          "浏览器扩展",
+          "网页自动化",
+          "技能录制"
+        ],
+        "practice_suggestions": [
+          "挑选一项重复的网页操作，录制并保存为技能，检查后续执行是否稳定且符合预期。",
+          "先在低风险页面测试表单填写和网页导航，并在提交或产生外部影响前加入人工确认。"
+        ],
+        "origin_report_date": "2026-09-22",
+        "delivery_class": "backfill"
+      }
+    },
+    "9de028fbe46cac8b155a7c08a35dfcf47f00596edbfe763bda6c0737c9cb02fb": {
+      "title": "Proaction借助Codex提升销售并节省运营时间",
+      "url": "https://openai.com/index/proaction",
+      "source": "OpenAI Blog",
+      "published_at": "2026-09-25T19:00:00.000Z",
+      "fetched_at": "2026-09-27T15:31:52.360Z",
+      "summary": "车队管理公司Proaction称，借助Codex、GPT-Live-1和GPT-6 Astra，销售额提升了60%，并节省了75小时以上。案例展示了AI工具如何加快现代车队管理业务的构建、运营与销售。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-09-26",
+      "extras": {
+        "tags": [
+          "Codex",
+          "车队管理",
+          "销售增长",
+          "效率提升"
+        ],
+        "origin_report_date": "2026-09-26",
+        "delivery_class": "current"
+      }
     }
   },
-  "last_fetch": "2026-09-23T15:31:15.910Z"
+  "last_fetch": "2026-09-27T15:31:52.360Z"
 }
