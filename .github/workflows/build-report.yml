@@ -30,6 +30,8 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          ref: main
+          fetch-depth: 0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -51,7 +53,13 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Build report
-        run: node scripts/build-report.js
+        run: |
+          dates=$(node scripts/report-build-dates.js)
+          while IFS= read -r date; do
+            [ -n "$date" ] || continue
+            git pull --ff-only origin main
+            REPORT_DATE="$date" node scripts/build-report.js
+          done <<< "$dates"
         env:
           REPORT_DATE: ${{ inputs.report_date }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
