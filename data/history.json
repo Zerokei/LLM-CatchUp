@@ -1,360 +1,5 @@
 {
   "articles": {
-    "769fbd45195bddbcb80b1be8c2d9f36ab73060e9ccf87c4df3f986ef1b0d7230": {
-      "title": "GPT-5.6 Sol将公开上线：Terra与Luna同步预览",
-      "url": "https://x.com/OpenAI/status/2074704958419792299",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-07-08T03:59:42.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "OpenAI预告「GPT-5.6 Sol」将在周四公开发布，并把预览访问扩展到全球，同时还会推出Terra与Luna。Sam Altman随后确认发布时间并鼓励开发者开始构建，但目前尚未披露能力差异、API价格或上下文窗口等细节。作为GPT-5系列后续旗舰模型发布前公告，该事件对开发者路线图和模型选型都有较高优先级。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "GPT-5.6 Sol",
-          "OpenAI",
-          "Terra",
-          "Luna",
-          "旗舰模型",
-          "开发者"
-        ],
-        "practice_suggestions": [
-          "提前整理现有GPT-5工作负载，准备在Sol公开后做质量、延迟和成本回归测试。",
-          "关注Terra与Luna的定位差异，分别验证适合生产、低成本或多模态场景的任务。",
-          "把依赖模型名称的路由、评测和权限配置改成可快速添加新模型的结构。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/sama/status/2074709023807664454",
-            "title": "Altman确认GPT-5.6 Sol周四发布",
-            "source": "Sam Altman (Twitter)",
-            "angle": "Altman确认发布时间"
-          }
-        ]
-      }
-    },
-    "3fb14968493dc68260e4892ed338c85e26c34d1f5bd0189f7fdc8ddef48ad531": {
-      "title": "OpenAI发布全双工语音模型GPT-Live",
-      "url": "https://openai.com/index/introducing-gpt-live",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-08T00:00:00.000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "OpenAI推出「GPT-Live」，用全双工架构让模型能边听边说，减少传统语音模式的停顿、误打断和回合感。GPT-Live会在需要搜索、推理或复杂任务时委托后台前沿模型处理，并已开始驱动新版ChatGPT Voice。OpenAI同时发布GPT-Live-1和GPT-Live-1 mini，并强调语音安全、青少年保护和情感依赖监测。",
-      "category": "模型发布",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "GPT-Live",
-          "语音模型",
-          "ChatGPT Voice",
-          "全双工",
-          "安全评测"
-        ],
-        "practice_suggestions": [
-          "对客服、语言练习和会议助手场景测试打断、停顿和背景噪声下的表现。",
-          "如果依赖语音交互，准备从旧版Voice模式迁移到GPT-Live的验收标准。",
-          "在敏感场景中单独验证自伤、情绪依赖和青少年保护相关响应。"
-        ]
-      }
-    },
-    "fbaad63d3a07d36c29f537c51d6794e6caab5049b14ecfb36ba8086694c1c21c": {
-      "title": "字节发布Seedream 5.0 Pro图像模型",
-      "url": "https://seed.bytedance.com/en/blog/beyond-generation-it-understands-design-introducing-seedream-5-0-pro",
-      "source": "ByteDance Seed",
-      "published_at": "2026-07-08T00:00:00.000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "ByteDance Seed介绍「Seedream 5.0 Pro」，重点提升复杂信息图、密集文字排版、空间定位和局部交互编辑能力。模型支持点选、套索、框选、涂鸦、材质替换、图层分离和多图融合，并强化真实光照、材质、皮肤纹理与多语言文字生成。官方认为其价值从单次生成扩展到专业设计迭代和本地化创作流程。",
-      "category": "模型发布",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "ByteDance Seed",
-          "Seedream 5.0 Pro",
-          "图像生成",
-          "精准编辑",
-          "设计工具"
-        ],
-        "practice_suggestions": [
-          "用真实设计素材测试局部编辑、文字修正和图层分离，而不是只看一次性生成样例。",
-          "将复杂信息图、广告海报和多语言本地化物料作为首批评测场景。",
-          "对比现有图像模型在中文文字、坐标编辑和多图融合上的稳定性。"
-        ]
-      }
-    },
-    "e6a0b84043ed47d916dec6b16d7e0c40dc1462039908a9e9b30fa626932b90a5": {
-      "title": "Claude托管代理展示Fable与Sonnet分层降本",
-      "url": "https://x.com/ClaudeDevs/status/2074606058128224365",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-07-07T21:26:43.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Claude Devs展示了Claude Managed Agents里的两种分层子代理模式：让Sonnet 5执行器在关键节点咨询Fable 5，或让Fable 5担任编排器并把大量token工作委派给Sonnet 5。前者在SWE-bench Pro上以约63%的价格达到Fable 5约92%的得分，后者在BrowseComp上以约46%的价格达到Fable 5约96%的表现。每个子代理还保留自己的缓存，说明Anthropic正在把强模型路由、缓存和任务委派组合成可复用的代理成本优化模式。 在 SWE-bench Pro 上，Sonnet 5 加 Fable 5 顾问工具达到约 92% 的 Fable 5 得分，价格约为 63%。Fable 5 每个任务通常只被调用一次用于指导，主体工作仍由 Sonnet 5 完成。 Claude Devs 提出第二种降本策略：让 Fable 5 负责计划并把任务委派给 Sonnet 5 工作者。由于大部分 token 由较低价格的工作者模型处理，整体成本会低于全程使用强模型。 Anthropic 在 BrowseComp 上测试 Fable 5 编排器加 Sonnet 5 工作者子代理的组合，达到 Fable 5 单独使用 96% 的性能，但价格约为 46%。这种模式把消耗大量 token 的研究步骤委派给 Sonnet 5，并提供了相应 cookbook 示例。 Claude Managed Agents 支持两种子代理模式：向上调用 Fable 5 作为顾问，或向下委派给 Sonnet 5 工作者。每个子代理保留自己的缓存，因此重复调用同一上下文时不必按完整上下文再次付费。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude Managed Agents",
-          "Fable 5",
-          "Sonnet 5",
-          "子代理",
-          "成本优化",
-          "SWE-bench"
-        ],
-        "practice_suggestions": [
-          "把昂贵模型限定为顾问或编排器，优先让低价模型执行长上下文循环。",
-          "用SWE-bench式内部任务比较全强模型、顾问模式和编排模式的质量/成本比。",
-          "为重复子任务启用独立缓存，避免多代理工作流反复支付相同上下文成本。"
-        ],
-        "thread_urls": [
-          "https://x.com/ClaudeDevs/status/2074606058128224365",
-          "https://x.com/ClaudeDevs/status/2074606059864625355",
-          "https://x.com/ClaudeDevs/status/2074606061567574181",
-          "https://x.com/ClaudeDevs/status/2074606063509528855",
-          "https://x.com/ClaudeDevs/status/2074606065170456777"
-        ]
-      }
-    },
-    "520e024080bc5da8694826a6bd3cbce48031afd10e97f4bcf09414754953e861": {
-      "title": "Meta发布Muse媒体模型：图像代理 + 视频预览",
-      "url": "https://x.com/AIatMeta/status/2074577662840832382",
-      "source": "Meta AI (Twitter)",
-      "published_at": "2026-07-07T19:33:53.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Meta Superintelligence Labs发布Muse Image并预览Muse Video，把媒体生成从单次提示词出图推进到可调用工具、自我精修、支持多参考图和社交语境理解的代理式流程。Muse Image已进入Meta AI应用、网页、Instagram Stories和WhatsApp的部分国家，Muse Video则展示了同一底座上的高保真视频与原生音频能力，但音画同步和快速运动物理仍在改进。相关说明还强调Content Seal隐藏水印会随生成图像保留，Meta希望把内容溯源嵌入消费端创作链路。",
-      "category": "模型发布",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Meta",
-          "Muse Image",
-          "Muse Video",
-          "代理式生成",
-          "内容溯源",
-          "多模态"
-        ],
-        "practice_suggestions": [
-          "在品牌素材、社媒图和多参考图编辑任务上抽测Muse Image的指令遵循与文字质量。",
-          "把Content Seal识别纳入AI图片审核流程，验证裁剪和压缩后的可检测性。",
-          "对视频预览只做探索性验证，重点记录音画同步、快速运动和长镜头稳定性。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/AIatMeta/status/2074587881205866817",
-            "title": "Muse Image出现自我精修行为",
-            "source": "Meta AI (Twitter)",
-            "angle": "自我精修与水印"
-          },
-          {
-            "url": "https://x.com/AIatMeta/status/2074600027733860758",
-            "title": "Meta预览Muse视频生成模型",
-            "source": "Meta AI (Twitter)",
-            "angle": "视频模型预览"
-          },
-          {
-            "url": "https://x.com/AIatMeta/status/2074587864923250873",
-            "title": "Muse Image走向代理式图像生成",
-            "source": "Meta AI (Twitter)",
-            "angle": "代理式图像生成"
-          }
-        ]
-      }
-    },
-    "46952be4aa00f314c956c6e64a4c6fc425481c5d55107591a5ca78f025c0ac07": {
-      "title": "Claude Cowork扩展到移动端并整合Chat入口",
-      "url": "https://x.com/claudeai/status/2074525815820169320",
-      "source": "Claude (Twitter)",
-      "published_at": "2026-07-07T16:07:51.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Claude宣布Cowork将登陆移动端和网页端，用户可以在桌面交付任务，再从手机查看完成结果，Beta会先面向Max计划开放。Claude还把Chat与Cowork合并到网页和桌面端的同一主页，让项目和Artifacts跨模式统一管理，降低从对话切换到代理式委派的摩擦。双倍Cowork使用额度也延长到8月5日，显示Anthropic正在推动更大规模的异步代理任务。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude Cowork",
-          "移动端",
-          "网页端",
-          "Chat整合",
-          "Artifacts",
-          "代理工作流"
-        ],
-        "practice_suggestions": [
-          "把适合异步执行的研究、代码整理和文档任务迁移到Cowork，记录完成质量与人工接管点。",
-          "在移动端Beta可用后测试跨设备任务交接，确认通知、附件和Artifacts是否完整。",
-          "重新设计团队Claude项目结构，让Chat和Cowork共享同一上下文资产。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/claudeai/status/2074525819414647044",
-            "title": "Claude整合Chat与Cowork入口",
-            "source": "Claude (Twitter)",
-            "angle": "入口整合与额度"
-          }
-        ]
-      }
-    },
-    "ae0ec71fdcb44d6548b3aa6477b88f413082da9c03eeea9f81df19e2faf8e725": {
-      "title": "Anthropic研究可移除双用途知识模块",
-      "url": "https://www.anthropic.com/research/off-switch-dual-use",
-      "source": "Anthropic Research",
-      "published_at": "2026-07-08T00:00:00.000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Anthropic与AE Studio提出GRAM方法，把网络安全、病毒学等双用途知识路由到可移除的辅助模块中，而不是让知识扩散到整个模型权重。实验显示删除对应模块可接近数据过滤的效果，同时较少损害通用能力，并且比事后遗忘更难被少量微调恢复。作者强调这仍是早期研究，尚未用于Claude生产模型，也未在前沿规模验证。",
-      "category": "政策与安全",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "AI安全",
-          "双用途知识",
-          "模型权重",
-          "GRAM"
-        ]
-      }
-    },
-    "ffb04cef563f4f88eb6b6fa90c4bd3ebdc3aac6bb6318d93405425e5aca74dcd": {
-      "title": "Claude扩大开源维护者Max 20x福利",
-      "url": "https://x.com/ClaudeDevs/status/2074570404035993780",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-07-07T19:05:02.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Claude for Open Source扩大覆盖范围，向更多开源维护者、核心贡献者和关键包维护者开放申请。符合条件者可获得6个月Claude Max 20x使用权益，申请入口由后续帖补充。该计划偏开发者生态扶持，短期影响集中在开源维护工作流。 该帖补充了Claude for Open Source的申请链接，指向Claude官网的联系销售表单。它本身信息量较低，但与前一帖共同构成申请流程的一部分。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Claude",
-          "开源维护者",
-          "Max 20x",
-          "开发者计划",
-          "申请入口"
-        ],
-        "practice_suggestions": [
-          "符合条件的开源项目维护者尽快整理贡献证明并提交申请。",
-          "把获批额度优先用于issue归类、PR审查和发布说明等维护任务。"
-        ],
-        "thread_urls": [
-          "https://x.com/ClaudeDevs/status/2074570404035993780",
-          "https://x.com/ClaudeDevs/status/2074570405264994808"
-        ]
-      }
-    },
-    "22f6f8bad2469a65788eae9220a3c24d26c187ae94d08a329b3836eea387154a": {
-      "title": "Claude Fable 5付费访问延至7月12日",
-      "url": "https://x.com/claudeai/status/2074548242386178258",
-      "source": "Claude (Twitter)",
-      "published_at": "2026-07-07T17:36:58.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Claude将所有付费计划的Fable 5访问期延长至7月12日，并继续允许用户把每周用量额度最多50%用于Fable 5。超过这一比例后，用户可以继续用使用积分访问Fable 5，或切换到其他模型留在剩余额度内。该更新主要是促销访问和额度规则延续，帮助用户继续试用Fable 5。 Claude说明Fable 5促销访问仍按既有规则执行，用户最多可将每周用量额度的50%用于该模型。超过后可继续用使用积分访问Fable 5，或切换到其他模型以留在剩余额度内。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Claude",
-          "Fable 5",
-          "付费计划",
-          "用量限制",
-          "促销访问"
-        ],
-        "practice_suggestions": [
-          "把Fable 5测试集中安排在7月12日前，优先验证高价值复杂任务。",
-          "监控团队每周额度中Fable 5占比，避免超过50%后产生额外积分消耗。"
-        ],
-        "thread_urls": [
-          "https://x.com/claudeai/status/2074548242386178258",
-          "https://x.com/claudeai/status/2074548243971604641"
-        ]
-      }
-    },
-    "2e8d3a14d43fa25f61cd928a4f9a8c97c5ff60854a10170af049bf0bf0fdb3e4": {
-      "title": "DeepMind发布Predicting the Past历史研究Skill",
-      "url": "https://x.com/GoogleDeepMind/status/2074513661750546762",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-07-07T15:19:34.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Google DeepMind发布「Predicting the Past Skill」，把Gemini与Aeneas、Ithaca等古代文本专家模型结合，让历史学者可以用自然语言研究希腊文和拉丁文材料。它把定制分析、可视化、跨来源模式映射和高级AI工具调用封装进Antigravity工作流，降低无代码研究者的使用门槛。团队还通过三个案例展示该Skill可作为历史研究协作伙伴，而不只是单次文本识别工具。 Google DeepMind指出历史AI分析面临三类难点：为每段铭文定制分析和可视化、跨来源映射大规模模式，以及让无代码用户使用高级AI工具。其Antigravity Skill将这些复杂流程转为自然语言操作，面向历史学家的工作流自动化。 Google DeepMind介绍Predicting the Past Skill作为历史研究协作伙伴，并与研究者Thea Sommerschield通过三个案例展示其用途。该平台把专用AI与Gemini推理结合，帮助历史学家以新方式探索古代数据。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "DeepMind",
-          "Predicting the Past",
-          "Gemini",
-          "Aeneas",
-          "Ithaca",
-          "人文AI"
-        ],
-        "practice_suggestions": [
-          "历史、人文或档案团队可用小型语料试跑自然语言分析流程，评估专家校验成本。",
-          "把可视化和跨来源映射步骤拆成可复用模板，减少每个研究问题的重复配置。"
-        ],
-        "thread_urls": [
-          "https://x.com/GoogleDeepMind/status/2074513661750546762",
-          "https://x.com/GoogleDeepMind/status/2074513665299034447",
-          "https://x.com/GoogleDeepMind/status/2074513847306572213"
-        ]
-      }
-    },
-    "2a44ce948b87c338c83002ecf459e175a799024bcdeacc681a9bb924f2bef1fe": {
-      "title": "Gemini API托管代理增强后台任务",
-      "url": "https://blog.google/innovation-and-ai/technology/developers-tools/expanding-managed-agents-gemini-api/",
-      "source": "Google AI Blog",
-      "published_at": "2026-07-07T08:54:00.000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Google 扩展 Gemini API 中的 Managed Agents，新增后台任务、远程 MCP 等能力，目标是帮助开发者构建更可靠的生产级代理。此次更新把长任务执行和外部工具连接进一步托管化，减少团队自行维护代理运行基础设施的负担。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Gemini API",
-          "托管代理",
-          "后台任务",
-          "远程MCP",
-          "生产化"
-        ],
-        "practice_suggestions": [
-          "将现有需要长时间运行的代理任务列出来，评估是否能迁移到 Gemini API 的后台任务机制。",
-          "检查现有 MCP 工具是否适合改造成远程 MCP 服务，并补齐鉴权和审计策略。"
-        ]
-      }
-    },
-    "fe91991bbcd9688356870c7b4582f06afb7a4eb67d511920dcf42c7b3608bf37": {
-      "title": "Thariq测试Fable剪辑59GB演讲素材",
-      "url": "https://x.com/trq212/status/2074584768096907339",
-      "source": "Thariq (Twitter)",
-      "published_at": "2026-07-07T20:02:07.000000Z",
-      "fetched_at": "2026-07-09T12:38:15.755Z",
-      "summary": "Thariq用约59GB演讲原始视频和HTML幻灯片测试Fable/Claude的视频编辑能力，并持续展示从起始提示词到短视频、动画化幻灯片和画面布局的中间结果。实验显示AI可以把静态演示材料转成更动态的片段，也能自动生成YouTube Shorts式包装。短板同样明显：转写和高亮仍混乱，镜头切换与布局需要人工判断，因此目前更像可辅助的工作流实验而非可直接替代剪辑师的成品流程。",
-      "category": "教程与观点",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Fable",
-          "Claude",
-          "AI视频编辑",
-          "演讲剪辑",
-          "工作流实验"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/trq212/status/2074618847693512704",
-            "title": "AI剪辑片段显示自动化包装潜力",
-            "source": "Thariq (Twitter)",
-            "angle": "自动包装效果"
-          },
-          {
-            "url": "https://x.com/trq212/status/2074622734118924561",
-            "title": "Thariq继续评估AI剪辑布局效果",
-            "source": "Thariq (Twitter)",
-            "angle": "布局观感反馈"
-          },
-          {
-            "url": "https://x.com/trq212/status/2074617786408845774",
-            "title": "Thariq用AI处理59GB演讲素材",
-            "source": "Thariq (Twitter)",
-            "angle": "起始提示词"
-          }
-        ]
-      }
-    },
     "e19fbb75eb44457e4dbe61ac0c57dd698fc70ccefdd1c171e2f4db8584de6c3d": {
       "title": "GPT-5.6 发布：Sol、Terra、Luna 三档模型上线",
       "url": "https://openai.com/index/gpt-5-6",
@@ -17878,7 +17523,275 @@
         "origin_report_date": "2026-09-23",
         "delivery_class": "backfill"
       }
+    },
+    "22f7b6027a7397a1e379733b0bbd9c643da6d34e7ee5ca1975d73647348f6e74": {
+      "title": "Opus 5.5降价并开放任务成本估算",
+      "url": "https://x.com/ClaudeDevs/status/2103548467729887677",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-09-25T18:13:31.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Opus 5.5输入与输出token价格较Opus 5下降20%，缓存读取价格下降60%，Claude Code还提供`/usage`任务成本估算工具。用户案例显示，该模型也能长时间运行并生成可交互的镜片实验室，单次运行约1小时26分钟、API费用25.66美元。该更新同时给出价格变化与具体任务成本参照，便于开发者评估迁移收益。",
+      "category": "产品与功能",
+      "importance": 5,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "Claude Opus 5.5",
+          "API定价",
+          "成本计算器",
+          "缓存读取",
+          "代码生成",
+          "交互演示"
+        ],
+        "practice_suggestions": [
+          "用`/usage`成本计算器估算一个常见Claude Code任务的费用。",
+          "对比Opus 5与5.5在相同任务和缓存条件下的成本，再评估迁移收益。",
+          "用Opus 5.5尝试制作一个可交互的概念演示，并预先设定运行时长与费用上限。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/claudeai/status/2103515655760982273",
+            "title": "用户用Opus 5.5制作互动镜头实验室",
+            "source": "Claude (Twitter)",
+            "angle": "交互式光学演示案例"
+          }
+        ],
+        "origin_report_date": "2026-09-25",
+        "delivery_class": "backfill"
+      }
+    },
+    "2bd8707fdab8226a9f675f85f9755994f2b63d5ba4355bb897dec2473e579ae5": {
+      "title": "Anthropic扩展网络安全验证计划",
+      "url": "https://www.anthropic.com/news/cyber-verification-program",
+      "source": "Anthropic Blog",
+      "published_at": "2026-10-06T00:00:00.000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Anthropic推出扩展版网络安全验证计划，向符合条件的安全专业人士开放先进网络能力。参与者也可使用限制较少的安全分类器。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "网络安全",
+          "验证计划",
+          "安全专业人士"
+        ],
+        "origin_report_date": "2026-10-06",
+        "delivery_class": "current"
+      }
+    },
+    "e8a0ab8a7bef01234ce4875848edb068bb615b45404781a5ba19248bc25c5905": {
+      "title": "Claude协助完成九圈散射振幅计算",
+      "url": "https://x.com/AnthropicAI/status/2103541577083719888",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-09-25T17:46:08.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Anthropic称，Claude在Claude Science中根据单条提示，经过数日基本自主运行，在学术研究者可负担的算力预算内完成了平面N=4超杨-米尔斯模型的九圈计算。该问题此前纪录为八圈，结果由Lance Dixon独立验证，计算成本为数千美元。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "Claude",
+          "理论物理",
+          "散射振幅",
+          "科学计算"
+        ],
+        "origin_report_date": "2026-09-25",
+        "delivery_class": "backfill"
+      }
+    },
+    "d2b5b29b4c815525619915dcf133df4d932068a91ccef332cbfb8777febef4ef": {
+      "title": "OpenAI回应欧盟文本溯源规则",
+      "url": "https://openai.com/index/eu-text-provenance",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-05T15:00:00.000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "OpenAI介绍其针对欧盟文本溯源规则的方案，涵盖文本水印的适用范围与检测方式。相关检测将先向研究人员开放。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "欧盟规则",
+          "文本水印",
+          "内容溯源",
+          "研究开放"
+        ],
+        "origin_report_date": "2026-10-06",
+        "delivery_class": "current"
+      }
+    },
+    "6bf05612ed347702d1afc58baa5a28cc2b7804413ea3389ac34deb1e459a3218": {
+      "title": "GPT-6 Astra落地法律文书与车队管理智能体",
+      "url": "https://x.com/OpenAIDevs/status/2103176153393758208",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-09-24T17:34:04.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "GPT-6 Astra被用于把大量法律文件整理为结构化草稿，让律师更多聚焦策略工作；另一个部署案例则用它更快构建车队管理智能体，并以更短的计算机操作运行完成同样工作。两项应用展示模型在专业文档处理和运营自动化中的落地方式，但公开信息未披露效果数据、任务范围或评测细节。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "GPT-6 Astra",
+          "法律科技",
+          "文档处理",
+          "车队管理",
+          "智能体",
+          "计算机操作"
+        ],
+        "practice_suggestions": [
+          "选取一组已脱敏的法律文件，评估生成草稿的结构完整性与事实准确性。",
+          "由律师逐项核对草稿中的引用、结论和遗漏，再判断其是否适合纳入现有工作流。",
+          "选取一项低风险车队管理流程，比较智能体完成同一任务所需的操作轮次与成功率。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAIDevs/status/2103528579212669374",
+            "title": "GPT-6 Astra助力加速车队管理智能体开发",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "车队管理智能体落地"
+          }
+        ],
+        "origin_report_date": "2026-09-24",
+        "delivery_class": "backfill"
+      }
+    },
+    "2d8e70fb45cef7470a5baf361c95df26b5ff7249933c340d169f562e1258ded9": {
+      "title": "ChatGPT推出视觉广告格式",
+      "url": "https://openai.com/index/new-chatgpt-ads-format-and-measurement",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-05T10:00:00.000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "OpenAI在ChatGPT推出新的视觉广告格式，并扩展广告衡量工具。更新还包括归因合作与品牌适配能力，面向广告主。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "ChatGPT",
+          "视觉广告",
+          "广告衡量",
+          "品牌安全"
+        ],
+        "origin_report_date": "2026-10-06",
+        "delivery_class": "current"
+      }
+    },
+    "3bd26f63fab21d2095f22962e2b03d61efc9179bcb8ec6c3c6c078380b280676": {
+      "title": "呼吁AI工具助力创作者",
+      "url": "https://x.com/trq212/status/2103259550325575806",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-09-24T23:05:28.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Thariq称一篇关于AI与创造力的文章发人深省，并希望产品能够更好地赋能和放大创作者的能力。被转发文章主张以创作者参与、署名、同意和报酬等条件推动AI与创意行业合作。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "AI创作",
+          "创意产业",
+          "创作者权益",
+          "人机协作"
+        ],
+        "origin_report_date": "2026-09-24",
+        "delivery_class": "backfill"
+      }
+    },
+    "4edc46a38142fc400bc2da61588c398a67b0b611ca8838a9962ac61ceb0cf01f": {
+      "title": "Claude计划模式或转为可扩展模式",
+      "url": "https://x.com/trq212/status/2103212051065921632",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-09-24T19:56:43.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Thariq称，用户对计划模式的需求不同：有人自行规划，也有人希望Claude以思考和头脑风暴模式协作。他提出将计划模式变成内置模式，并允许扩展或覆盖快捷键模式；这属于计划而非已发布变更。",
+      "category": "产品与功能",
+      "importance": 2,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "Claude",
+          "计划模式",
+          "快捷键",
+          "可扩展模式"
+        ],
+        "practice_suggestions": [
+          "整理你使用计划模式的典型任务，并记录它相对自行规划的价值。",
+          "关注后续模式扩展方案是否允许自定义快捷键或替换默认模式。"
+        ],
+        "origin_report_date": "2026-09-24",
+        "delivery_class": "backfill"
+      }
+    },
+    "f6d832a2f2fd01c9dcad039eb7ccb641e6689dc742e09d6fd6b64d07e28a458e": {
+      "title": "Anthropic恢复部分安全拦截请求计费",
+      "url": "https://x.com/ClaudeDevs/status/2103170368794185758",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-09-24T17:11:05.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Anthropic称将恢复对安全措施拦截请求的计费，范围限于生物学、蒸馏攻击和前沿大模型开发等误报率较低的类别。公司称近期测试中99.7%的相关账户未触发这些计费拦截，分类器误报率低于0.1%，并建议用户通过反馈渠道报告误拦截。",
+      "category": "政策与安全",
+      "importance": 2,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "安全拦截",
+          "计费",
+          "误报率",
+          "蒸馏攻击"
+        ],
+        "origin_report_date": "2026-09-24",
+        "delivery_class": "backfill"
+      }
+    },
+    "06f419665178755f6d5e46f6a1d879b9a1bcf1b8a72928095dbd042ad8fad457": {
+      "title": "分享Claude产出前先审视提示词",
+      "url": "https://x.com/trq212/status/2103150113103458386",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-09-24T15:50:36.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Thariq表示，只有当自己也愿意公开相应提示词时，才会分享Claude生成的代码变更、制品或消息。这一做法把提示词披露意愿作为分享AI产出的个人判断标准。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "Claude",
+          "提示词",
+          "代码审查",
+          "分享规范"
+        ],
+        "origin_report_date": "2026-09-24",
+        "delivery_class": "backfill"
+      }
+    },
+    "950846275971e4c4b280982d0756d06c4b3a18d163d687b35534ee2bd59f3dd2": {
+      "title": "Claude Devs推出思考与构建音乐广播",
+      "url": "https://x.com/ClaudeDevs/status/2103529951408562569",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-09-25T16:59:56.000000Z",
+      "fetched_at": "2026-10-07T15:33:59Z",
+      "summary": "Claude Devs发布名为Claude FM的音乐广播，并将其描述为适合思考和构建时收听的音乐。帖文未提供曲目、播放时长或其他功能细节。",
+      "category": "产品与功能",
+      "importance": 1,
+      "report_date": "2026-10-06",
+      "extras": {
+        "tags": [
+          "Claude FM",
+          "音乐广播",
+          "开发者",
+          "工作场景"
+        ],
+        "practice_suggestions": [
+          "试听Claude FM，判断其音乐是否适合你的专注或开发工作场景。"
+        ],
+        "origin_report_date": "2026-09-25",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-10-07T01:36:12Z"
+  "last_fetch": "2026-10-07T15:33:59Z"
 }
