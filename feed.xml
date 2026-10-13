@@ -5,8 +5,53 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 11 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-10-12</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-12.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-10-12.md</guid>
+      <pubDate>Mon, 12 Oct 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-10-12</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>模型自我复制风险</strong>：Anthropic 的受控测试显示，多类设备可部署小模型推理，但实验依赖弱防护和简化网络条件。</li>
+<li><strong>蒸馏攻击防御</strong>：Anthropic 称新措施可减少 90% 至 99% 被提取的推理 token，同时承认仍需处理误报与集成成本。</li>
+<li><strong>能力与防护并进</strong>：两项研究分别检视模型自主传播门槛和推理数据窃取，部署评估应同时覆盖设备安全与模型输出保护。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://www.anthropic.com/research/self-replicating-ai">小模型或可借物联网设备自主复制传播</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>AI 自我复制</code> <code>物联网安全</code> <code>开源模型</code> <code>网络蠕虫</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 的受控实验显示，9B 模型已能在测试的 9 类硬件中有 8 类部署推理，GLM-5.2 也能在简化网络环境中完成端到端复制；研究者据模型进步趋势估计，小模型可能在今年年底达到相关能力门槛。实验使用弱防护设备和简化攻击条件，复制速度仍可能以天计，论文重点是推理部署可行性而非证明现实中已出现此类蠕虫。</p>
+<hr>
+<h3>2. <a href="https://www.anthropic.com/research/distillation-defenses">Anthropic 强化 Claude 蒸馏攻击防御</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>模型蒸馏</code> <code>推理保护</code> <code>滥用检测</code> <code>账户安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 称，针对窃取 Claude 推理过程的蒸馏攻击，新防护将被提取的推理 token 降低约 90% 至 99%，并已封禁数万相关账户。措施包括限制跨会话、模型和组织转移受保护推理，使用两阶段分类器识别提取请求，以及对高置信度拦截请求限流或收费；公司也承认仍有低于 0.1% 的误报及开发者集成调整成本。</p>
+<hr>
+<h2>往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-09-29 · 模型发布</strong> — GPT-6.1 Sol 强化代理式编码与电脑操作，官方称其表现接近 Astra，适用于复杂重构、代码库调查和跨应用长时代理任务。缓存输入价格为标准输入的 5%，Sam Altman 还称整体价格约为 Astra 的五分之一。官方表示 Ultrafast 速度档将随后支持 Sol，但相关帖子没有提供独立基准条件。 · <a href="https://x.com/OpenAIDevs/status/2104993035507712318">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-09-29 · 产品与功能</strong> — Codex 云端环境允许代理在用户关闭电脑后继续工作，并通过可复用环境预先配置代码仓库、依赖和脚本，减少启动准备。Codex CLI 同步获得全屏界面和并行任务管理能力，面向主要在命令行工作的开发者。团队可按任务类型选择云端持续执行或本地终端协作，并在合并前审查代理产物。 · <a href="https://x.com/OpenAIDevs/status/2104997619152130278">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-09-29 · 产品与功能</strong> — OpenAI 推出 Ultrafast 高速档，称 Codex 生成速度最高达到每秒 300 token、较标准档快 8 倍，API 最高快 6 倍。开发者补充称，Codex 中 Ultrafast 比 Astra Standard 快 8 倍、比 Astra Fast 快 4 倍。Sam Altman 表达了对速度体验的偏好，但未提供额外测量数据。 · <a href="https://x.com/OpenAI/status/2104993966043320759">OpenAI (Twitter)</a></li>
+<li><strong>2026-09-29 · 产品与功能</strong> — Decisions API 允许开发者定义问题与候选答案，由 GPT-6 Luna 为内容分类、请求路由或选择智能体下一步行动。该 API 目前处于限量预览阶段。 · <a href="https://x.com/OpenAIDevs/status/2105003318917697873">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-09-29 · 产品与功能</strong> — Sam Altman 宣布 Dots 上线，将其描述为可全天候工作的 AI 服务，目标是替用户处理事务并释放时间与注意力。该帖未披露具体集成、权限机制或产品细节，功能边界仍需以产品页面为准。 · <a href="https://x.com/sama/status/2104995014208258235">Sam Altman (Twitter)</a></li>
+<li><strong>2026-09-29 · 商业动态</strong> — OpenAI Devs 发起为期 48 小时的 DevDay 编程挑战，共有 10 项任务，并提供 5 台 Codex Micros 作为抽奖奖品。参与者完成任意 5 项挑战即可获得一张抽奖券，活动面向全球开发者开放。 · <a href="https://x.com/OpenAIDevs/status/2105049323239285110">OpenAI Devs (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-10-11</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-11.html</link>
@@ -1696,30 +1741,6 @@
 <p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
 <ul>
 <li><strong>2026-09-13 · 政策与安全</strong> — Sam Altman支持为前沿AI建立一致的安全要求，并提出在能力显著提升的训练前就制定安全案例、监控和评估方案。相关观点认为独立评估者应获得接近员工级别的系统访问权限，以检查对齐和事故风险；同时还需防范AI失控与权力过度集中。 · <a href="https://x.com/sama/status/2099348812305473766">Sam Altman (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-09-13</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-13.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-09-13.md</guid>
-      <pubDate>Sun, 13 Sep 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-09-13</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>暂无新增内容</strong>：该太平洋时区抓取窗口内没有可用于趋势计算的当日新内容。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<p>今日窗口内无新内容。</p>
-<h2>往期补遗</h2>
-<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
-<ul>
-<li><strong>2026-09-12 · 政策与安全</strong> — 围绕前沿AI发展速度与安全治理，倡议提出让第三方评估者以接近员工的权限持续检查系统、报告事件并评估训练中的对齐表现。相关回应支持这一方向，并进一步提出建立行业范围的前沿AI标准机构；讨论也强调应为系统加固和社会审议保留时间。 · <a href="https://x.com/DarioAmodei/status/2098773920774074715">Dario Amodei (Twitter)</a></li>
-<li><strong>2026-09-12 · 产品与功能</strong> — OpenAI Devs宣布GPT-Live-1现已在API中提供，可为应用带来类似ChatGPT的自然来回对话。该能力支持语音代理在说话时继续聆听，并允许开发者选择模型和代理运行框架。 · <a href="https://x.com/OpenAIDevs/status/2098913661993603215">OpenAI Devs (Twitter)</a></li>
-<li><strong>2026-09-12 · 模型发布</strong> — Qwen团队宣布开放权重模型Qwen3.8-27B已在Cerebras上线，提供快速推理体验。Cerebras称该模型在Artificial Analysis Intelligence Index上得分34，并将其与GPT-5.6 Luna、DeepSeekV4 Pro和Claude Sonnet 4.6列为可比模型。 · <a href="https://x.com/Alibaba_Qwen/status/2098676748972122394">Qwen (Twitter)</a></li>
-<li><strong>2026-09-11 · 产品与功能</strong> — Claude Code新增插件评测功能，用于检验技能在新模型发布后是否仍然有效。用户可以创建测试用例、运行插件并评分，再在不加载插件的情况下重跑，以比较插件带来的差异。 · <a href="https://x.com/trq212/status/2098531560643539440">Thariq (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
