@@ -1,0 +1,350 @@
+{
+  "analyzed_at": "2026-10-13T15:27:55.837Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-10-12.json",
+  "trend_paragraph": "- **模型自我复制风险**：Anthropic 的受控测试显示，多类设备可部署小模型推理，但实验依赖弱防护和简化网络条件。\n- **蒸馏攻击防御**：Anthropic 称新措施可减少 90% 至 99% 被提取的推理 token，同时承认仍需处理误报与集成成本。\n- **能力与防护并进**：两项研究分别检视模型自主传播门槛和推理数据窃取，部署评估应同时覆盖设备安全与模型输出保护。",
+  "articles": [
+    {
+      "title": "小模型或可借物联网设备自主复制传播",
+      "url": "https://www.anthropic.com/research/self-replicating-ai",
+      "published_at": "2026-10-12T00:00:00.000Z",
+      "description": null,
+      "full_text": "Title: AI models may be capable of self-replicating without access to a datacenter\n\nURL Source: https://www.anthropic.com/research/self-replicating-ai\n\nPublished Time: 2026-10-12T19:30:00.000Z\n\nMarkdown Content:\n_William Zhou, Daniel Freeman_\n\nOur experiments suggest that small AI models may be months away from being capable enough to self-replicate on commercial internet-of-things (IoT) devices, like smart ovens and off-brand Android TV boxes. A replicator like this would be challenging to shut down, since there’s no centralized point to shut off—though it may be slow (with a doubling time of days). Unlike non-AI malware, it could also figure out unfamiliar devices on its own. In our evaluations, a 9B model got inference running on 8 of the 9 hardware types we tested.\n\nModels of 30B parameters and under can already complete many of the individual steps for replication today, though they make mistakes when composing them end to end. In our simplified evaluations, GLM-5.2 and stronger models are capable of end to end replication. If small models improve at their historical rate, they’ll match this capability level by the end of this year. Small weight-based replicators may be possible soon after.\n\n## Introduction\n\nEver-improving AI capabilities make a longstanding concern increasingly realistic: [autonomous replication and adaptation](https://arxiv.org/abs/2312.11671) (ARA), which involves a model deploying and propagating itself without human control.\n\nIn cyber, a worm is a program that copies itself from one computer to the next without human input. [Prior work](https://arxiv.org/abs/2606.03811) has already shown that AI agents can act like one: scanning their network, executing an exploit, and copying model weights to a target machine across a GPU cluster. Such an “AI worm” could carry its model weights with it as it reproduces (or re-download them from a public hub), and then run inference directly on compromised hardware. Effectively, the weights would become part of the malware payload.\n\nDatacenter GPUs would be a clear, high-value target for such malware. But expensive accelerators aren’t strictly necessary. In this blog post, we show that a distributed botnet of IoT devices—which are cheap and typically poorly defended—could also provide enough compute to run a capable model.\n\nWe run Gemma4-26B-A4B, distributed over 15 inexpensive off-brand Android TV boxes (~$55 each) that we bought and networked together, at 0.39 tokens per second. Each tile below shows one physical TV box holding two of the model’s layers as the model runs.\n\n[Video 3](https://cdn.sanity.io/files/4zrzovbb/website/04cb53c1d91c7dc7493e2d40cf4a40d865ba97b7.mp4)\n\nA fleet of 15 Smart TV boxes running distributed inference of Gemma4-26B-A4B.\n\nOf course, there are many other steps to showing that an autonomous worm can propagate itself across a network of weak machines. For the purposes of this blog post, we break down the replication chain into a few steps.\n\n![Image 1: Flow diagram of the replication stages: network enumeration, initial access and payload delivery (with opportunistic privilege escalation), inference setup, and replication. The first stages are grouped as ‘cyber exploit (not our focus)’ and inference setup is marked ‘our focus’.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F25459a064b25f10689f20e258fb4f1f0291ea083-2360x860.png&w=3840&q=75)\n\nFor this study, we decompose autonomous replication into four practical stages: finding targets, gaining execution, establishing inference, and continuing propagation from the new host.\n\nWe largely ignore the cyber exploit element of the replication process (the first two stages above), since earlier papers [CyberGym](https://arxiv.org/abs/2506.02548), [ExploitBench](https://arxiv.org/abs/2605.14153), and [adaptive worms](https://arxiv.org/abs/2606.03811) already show that small models are capable of cyber exploits, especially when given the right tools. But a less commonly measured part of the replication process involves setting up inference on compromised devices, which is our focus here.\n\nIn this post, we first lay out the threat models that we think are most likely to be realized. Then, we test whether small models can set up inference on unfamiliar hardware, and whether they can chain the full replication cycle together across a fleet of machines. After that, we estimate how fast such a worm could spread, and test whether it could learn and adapt as it replicates. We conclude with how AI worms would differ from pre-AI malware, and brief suggestions for defenses against such replicators.\n\n### Threat modelling\n\nIn this blog post, we’re focused on one way that AI worms might propagate: small models that replicate through compromising their host machines. But there are several other methods that AI worms might try: they could steal access in order to spin up hosts (for example, API keys or platform credentials) or pay for inference through legitimate work (e.g digital freelancing). The threat models that we think are closest to being realized today are the following:\n\n1.   A small model, replicating via host compromise. In this post, we’ll call autonomous worms that run their models directly on compromised hardware _weight-based replicators_. Home and small business IoT devices might be the first target for such attacks because they’re connected to the internet and, historically, have had minimal security measures in place.\nA model that’s too large to fit on one device can be split into pieces, or shards, that run on separate machines that communicate with each other to collectively run the model. Machines that could run a significant model shard for a <30B model include smart fridges, smart ovens, automatic vacuum cleaners, and lawnmowers. A growing number of home and business devices, such as security cameras and video-conferencing units now ship with small built-in AI chips, designed to run AI models on the device itself. This extra computing power will likely make them attractive targets as well.\n\n    1.   Human hackers often breach secure systems through social engineering (for example, convincing a company’s IT department that you’re an employee who forgot your password) rather than hacking. This tradeoff appears to be flipped for today’s small models, which are relatively strong at agentic coding and hacking compared to their social engineering capabilities (see Appendix E), though this might change as models improve.\n\n2.   A large, advanced weight-based replicator focused on datacenters and other high-compute targets. Larger models tend to have correspondingly better cyber capabilities, but will also need to breach (relatively) hardened datacenters to run themselves. We split this threat model into two subcategories:\n    1.   Frontier replicators: Large closed-weight replicators run on their lab’s infrastructure, and can spin up [unmonitored internal deployments](https://blog.redwoodresearch.org/p/ai-catastrophes-and-rogue-deployments) or exfiltrate their weights onto external compute.\n    2.   Open-weight replicators: These replicators start off relatively lower-resourced (due to not benefitting from a lab’s compute), but start unmonitored.\n\n3.   An API-based replicator, in which a model would replicate by stealing credentials for their own inference API. These replicators would require a model provider to unknowingly serve them, and their persistence may be worse, since they’d likely be easier to discover (although their rate of spread may be higher, if for instance they’re able to replicate using victims’ accounts).\n\nIn practice, an AI worm wouldn’t necessarily consist of just one model or strategy. A swarm of different models deployed on different types of hardware using a variety of replication schemes might represent a more realistic ‘worst case scenario’ attack.\n\nIn this blog post, we consider the feasibility of **small weight-based replicators** (section 1 of the above). We focus on this because it’s a near-term threat model that can be investigated directly. Our demo at the top of this post, a 26B model running across 15 boxes, shows that IoT devices can run surprisingly capable models. Could these models be capable enough to carry out autonomous replication?\n\nWe examine this in two parts. First, can small models get a model running on unfamiliar hardware? And second, can they do the whole cycle (find an uninfected device, copy themselves over, start running there, and repeat) all together in a single run?\n\n## A. Inference setup\n\n![Image 2: The same flow diagram with every stage except inference setup faded.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F9d35ab77dd3402cadb0011b20cc7b9960f7ea265-2360x860.png&w=3840&q=75)\n\nOf the stages in the above diagram showing the replication cycle, inference setup is the least studied and may be the most challenging for small models. It requires a fairly long sequence of hardware and OS-specific decisions around picking a compatible inference stack, finding the right versions of packages, and debugging machine-specific issues. These steps are serially dependent, and failures are difficult to recover from.\n\n### Aside\n\n### Evaluating inference setup performance\n\nWe measure the ability of different open-weight models to serve Llama3.1-8B across heterogeneous hardware types. See the table below for tokens per second served across various hardware types:\n\n*   Click a cell for its distribution of serving speeds.\n*   Click a row/column label to get a comparison across models or hardware type.\n\nSmall models, such as Qwen3.5-9B, are capable of setting up inference servers on hardware from Jetson Nanos to Mac PCs and RTX 4090s. More capable models such as GLM-5.2 are not only more reliable but also achieve higher serve tokens/s, allowing for faster replication. We test and mention specific chips to measure how well models can set up inference on them. The chips aren’t a source of risk or vulnerabilities.\n\nWe run these experiments using Memento, a harness we built on top of the open-source [Pi](https://pi.dev/) coding agent. Memento is designed to mitigate a common failure mode we observe in long-horizon runs: an agent can become fixated on an incorrect idea (for, say, why a bug is occurring) and continue pursuing it instead of backtracking. One example of such a failure is a Qwen agent debugging package versioning for hours when the real bug came from implementing an endpoint incompatible with the grader API.\n\nMemento periodically starts a fresh agent instance with the previous agent’s workspace and a short set of notes written by the previous agent on what it tried, allowing later instances to pursue different strategies.\n\n### How does a model run on Smart TVs?\n\nIoT devices are light on memory, but distributed inference as in [Petals](https://arxiv.org/abs/2209.01188) makes serving our lightweight models feasible. The representative threat model is [Kimwolf](https://synthient.com/blog/a-broken-system-fueling-botnets), a large IoT botnet that infected over two million devices, primarily off-brand Android TVs. Such smart TV boxes, which are readily available for purchase, typically run forks of the Android Open Source Project (AOSP), which their manufacturers [don’t add security features to](https://www.securityweek.com/vo1d-botnet-evolves-as-it-ensnares-1-6-million-android-tv-boxes/). Typical boxes in this range ship with between 1 and 4 gigabytes of RAM. Assuming 4GB of RAM at 4-bit quantization, this allows for inference of 9B models with 4 or more machines, and inference of 26B models with 10+ machines.\n\nIn the demo at the top of this post, we ran Gemma4-26B-A4B across 15 smart TV boxes with 4GB of RAM each. We sharded the model under pipeline parallelism, where each box holds a small fraction of the model’s layers.\n\n## B. Going viral: autonomous setup and replication across a GCP node fleet\n\nNow that we’ve seen that models can set up inference on unfamiliar hardware, let’s measure whether models are capable of composing the steps—that is, scanning a network for targets, accessing them via a reverse shell, sending over the viral payload (weights and harness), and setting up inference.\n\n### Autonomous inference setup and replication (with simplified cyber)\n\nTo do this, we built a firewalled VPC of 8 GCP nodes running redroid, an Android 15 emulator. Patient zero (gray node) is seeded with the worm. Every subsequent infection is the worm itself hopping node to node over an unauthenticated ADB port, before setting up an inference server to serve Llama3.1-8B. If the inference server passes a number of correctness and anti-cheating checks, we spawn another copy of the worm on the target node (for example, if GLM-5.2 sets up Llama3.1 to run on a machine, we spawn a copy of the GLM-5.2 worm on it). The worm’s model runs on a separate inference server, since the VPC nodes aren’t large enough to run the larger models.\n\nIn the graph below, we drop a given model in as a payload and measure its ability to replicate.\n\n### Why task the models to stand up inference for Llama3.1-8B and not themselves?\n\nOnly GLM-5.2 out of our set of tested open-weight models is capable of full end-to-end replication (assuming its capabilities could be packed into Llama3.1-8B). Note that GLM-5.2 does this reliably while the other models fail reliably (it spread to 8/8 nodes in 4 out of 5 trials and 7/8 in 1).\n\nIt appears that GLM-5.2 is able to propagate Llama3.1-8B well, which suggests that future small models of the same capability level could also complete the network enumeration, payload delivery, and inference standup steps of the replication process. Our evaluation keeps the cyber-exploit element of the replication trivial (there’s no authentication over the ADB port), which makes this an upper bound on real-world success. Note that past IoT botnets have replicated via means as simple as going through a default list of manufacturer usernames and passwords, as in the case of the [Mirai botnet](https://www.usenix.org/conference/usenixsecurity17/technical-sessions/presentation/antonakakis), so real IoT security might not be dramatically more difficult than the trivial step in our evaluation.\n\nAs a sanity check, we can see how difficult the autonomy and orchestration step is (if we took out cyber and inference setup, how tough is doing the remaining command-line grunt work?). This ablation is the above evaluation with the inference setup steps removed (done via a pre-written script). Many models in our roster, including the smaller ones, are capable of these remaining steps.\n\nReplication on a contained 17-node redroid fleet: two subsets of 8 nodes joined by one pivot node (see Appendix F, with the mild prompt). Each tree is the model’s median run of six.\n\nWhen it comes to this worm, we can envision:\n\n1.   A model capabilities floor that an autonomous worm must sit above, to complete its replication reliably. In our simplified evaluation, GLM-5.2 sits above this floor.\n2.   A model size ceiling that the model must sit under, such that it’s feasible to run on the devices it’s attacking. Qwen3.5-9B and Gemma4-26B-A4B sit under this ceiling for the class of smart TVs we test (4GB of RAM).\n\nRight now, the floor and ceiling don’t intersect. When might they?\n\nAbove is a plot of notable open-weight models of 30B total parameters or fewer, each plotted at its release date against the [Epoch Capabilities Index](https://epoch.ai/eci) (ECI). The solid line is the least-squares fit over the best models in-class at each date, with a gain of 13.7 ECI per year (R 2 of 0.95). If we take GLM-5.2 as a capabilities floor for replication, the trend line puts a small model at that level by the end of 2026. ECI is a general capability index, which is only a proxy metric for replication ability, so this is only a rough estimate of when a small-model replicator becomes possible.\n\n## C. How fast might an AI IoT worm replicate?\n\nUnlike coding agents, these replicators would be running below the interactive speeds of user-facing chat and coding harnesses. The spread would be slow and persistent, with tokens being trickled out on edge hardware. We can use our achieved speeds on our real smart TVs as a demonstrated baseline for replication speeds. For Gemma4-26B-A4B, unoptimized speed across a 32k context length token window is about 0.3 tok/s, averaged across prefill and decode in our inference setup workload. More details in Appendix C.\n\nA way to measure total time taken is to measure the number of hours it takes to complete a 32k-sized context window, after which compaction will occur. Based on our inference setup eval statistics, it takes between ~2.6 and ~4.7 full windows to complete a trajectory.\n\n| **model** | **window time** | **full inference setup time** |\n| --- | --- | --- |\n| Gemma4-26B-A4B (unoptimized) | 27.3-31.8h | 71h-150h |\n| Qwen3.5-9B | 10.9 h | 28-51h |\n\nThe number of devices infected by the Kimwolf botnet at its peak, [reported by Synthient](https://synthient.com/blog/a-broken-system-fueling-botnets), is somewhere over 2 million (primarily Android TV boxes). In an equivalently-sized infected fleet of TVs serving AI models, if every group of 15 TVs ran a copy of Gemma4-26B-A4B, we would have ~133k copies (“replicas”). A group of TVs like the ones in our demo can serve 2 agents simultaneously at roughly 0.3 tokens per second each, yielding 80k tokens/s across the botnet.\n\nAs a reference point, an H100 can serve Gemma4-26B-A4B at ~1.95k tok/s at [high concurrency with speculative decoding](https://jarvislabs.ai/blog/gemma-4-mtp-vs-dflash-benchmark), so our swarm would have at most about 40 H100s-worth of inference. This is a tiny amount of compute in absolute terms, and the agents are slow replicators (over 1-2 days per 9B replication). As an analogy, imagine the replicator as a slime mold or a swarm of fruit flies, which replicate over days.\n\nThis is a rough estimate, as it’s anchored on a single class of IoT hardware and a single past botnet instance, but describes what a simple replicator released in the near future might look like. In practice, more capable replicators would take advantage of other types of low-security compute, and would be opportunistic about deploying models of various sizes on different devices. (It also wouldn’t have to load a model payload onto every device it compromises). Over time, we expect the amount of deployed edge compute to continue growing, while the minimum model size required for reliable replication falls.\n\n## D. Adaptation and uplift\n\n### Learning on the job\n\nThe “Adaptation” part of ARA is one reason why an AI replicator might outperform a traditional worm. Specifically, models and prompts can undergo Lamarckian evolution as they spread–that is, parent instances can pass on their prompts, code, and notes to their daughter replicators. In order to adapt and spread across a wide variety of hardware, a model would require two things:\n\n1.   Being above a certain threshold of capability for spreading onto a novel, unseen piece of hardware (or software environment, or network type).\n2.   Once seen, adapting to the type of environment it has landed in (it should replicate more reliably on hardware it has seen before).\n\nSections A and B test the first condition, and in the experiment below we test the second. Each Qwen3.5-9B instance keeps brief notes on the strategies it tried and the failures it encountered, before a new instance inherits those notes and attempts the same inference setup again.\n\nInference setup success rate across six generations of Qwen3.5-9B, each inheriting the former’s notes. Faint lines are the 20 individual lineages, and the bold line is the proportion of runs in each generation that complete setup. It rises from 45% in the first generation to between 61% and 84% in later ones. This uses the Memento ",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "source": "Anthropic Research",
+      "summary": "Anthropic 的受控实验显示，9B 模型已能在测试的 9 类硬件中有 8 类部署推理，GLM-5.2 也能在简化网络环境中完成端到端复制；研究者据模型进步趋势估计，小模型可能在今年年底达到相关能力门槛。实验使用弱防护设备和简化攻击条件，复制速度仍可能以天计，论文重点是推理部署可行性而非证明现实中已出现此类蠕虫。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "AI 自我复制",
+        "物联网安全",
+        "开源模型",
+        "网络蠕虫"
+      ],
+      "origin_report_date": "2026-10-12",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "title": "Anthropic 强化 Claude 蒸馏攻击防御",
+      "url": "https://www.anthropic.com/research/distillation-defenses",
+      "published_at": "2026-10-12T00:00:00.000Z",
+      "description": null,
+      "full_text": "Title: Strengthening our defenses against distillation attacks\n\nURL Source: https://www.anthropic.com/research/distillation-defenses\n\nPublished Time: 2026-10-12T09:30:00.000Z\n\nMarkdown Content:\nIn recent months, we’ve made substantial progress on reducing the effectiveness of distillation attacks on Claude using new methods, as we outline in this blog. Early evidence suggests that these methods have reduced the amount of data harvested by distillers by around 90 to 99%.\n\nDistillation attacks are covert, industrial-scale campaigns to extract the capabilities of one model and replicate them in another, without the authorization of the original model’s developers. They are often conducted using networks of fraudulent accounts. These attacks allow companies to mimic frontier capabilities for a fraction of the development time and cost. As we [wrote in September](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26), this method has been used extensively to help overseas AI laboratories keep pace with US companies.\n\nWe’re concerned about illicit distillation for two reasons. First, distillation enables companies to build models that approach the capability frontier, but which have, in practice, been released without proportionally robust safeguards. This means that distilled models could be used to cause significant harm in areas like [biology](https://www.anthropic.com/threat-intelligence-report-september-2026#biological-misuse-sep-26) and [cybersecurity](https://www.anthropic.com/threat-intelligence-report-september-2026#cyber-operations-sep-26).\n\nZhipu, [for example](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26), distilled the cyber capabilities of leading US models during the development of GLM-5.3. The company tried to distill Claude Fable 5—although, after finding that our cyber safeguards degraded its attacks, it switched to an older Claude model and another lab’s model. The US Center for Advancing Innovation and Standards for Super Intelligence (CAISSI) has [since assessed](https://www.nist.gov/news-events/news/2026/09/caisis-assessment-zais-glm-53-cyber-capabilities) GLM-5.3 to be the most cyber-capable open-weights model released to date. [Our own research has found](https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities) that GLM-5.3’s safeguards can easily be bypassed, and that the model is willing to develop security exploits from end-to-end.\n\nSecond, illicitly distilled models present a national security risk. The companies that distill US models are integrating the capabilities they gain from distillation into foreign [military, intelligence, and surveillance systems](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks). For example, we recently [reported on a case](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26) in which requests to Moonshot’s Kimi models were secretly forwarded to Claude as part of its distillation efforts. One request came from a user (who we believe was affiliated with China’s People’s Liberation Army) who sought to analyze CCTV surveillance of a specific individual. These are the kinds of capabilities distillers are hoping to develop.\n\nIn response to the increasing sophistication and scale of these attacks, we’ve expanded and greatly strengthened our defenses against them. As we’ll describe below, these measures have been successful—although they do involve trade-offs for both Anthropic and our customers. We’ve turned away meaningful revenue and trillions of tokens’ worth of paying traffic from distillers, and our research and product teams have invested substantial time and effort into this problem. Some of our changes have also required legitimate users to make updates to their integrations.\n\nDistillation is a problem that every model developer faces and must confront. We hope this post helps developers and platforms better understand how they can prevent these attacks, what the trade-offs with these measures might be, and why the costs are worth bearing.\n\n## Simple defenses are not enough\n\nDistillers aim to generate millions of responses from a larger, more capable model (in this case, Claude), then use those responses to teach a smaller model to mimic the more capable model’s behavior. The most valuable kind of data for this purpose is transcripts of Claude’s reasoning—the thinking process that Claude writes out before it responds. This is much more useful than its output alone, since it helps the smaller model understand _how_ Claude reaches its final answer. Our defenses against distillation therefore focus almost entirely on making Claude’s reasoning harder for distillers to access.\n\nOur early work to combat distillation started with simple measures designed to block _passive_ distillation, in which attackers send requests to the model as a normal user would, and then train on those responses. As one of our initial anti-distillation measures, we had Claude summarize its reasoning before we showed it to users. Our evaluations showed that this made Claude’s transcripts much less informative for distillers. We tested how well a pretrained Claude model performed on the SWE-bench Verified coding benchmark after it was trained on transcripts from Claude Opus 4.8. When training on the full transcripts, the distilled model achieved 80.4%; with only the summarized transcripts, it achieved 71.8%.\n\n![Image 1: Graph showing how the pretrained model performs more strongly when trained on full rather than summarized reasoning transcripts.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Faab3f9927b5be6b7abba51df907e05c925dbe4c5-1920x1080.png&w=3840&q=75)\n\n_Summarizing Claude's reasoning makes its transcripts less useful for distillation. A model trained on transcripts with summarized reasoning scored 71.8% on SWE-bench Verified, compared to 80.4% for a model trained on the full reasoning._\n\nBut distillers are persistent and inventive. After this change, attackers turned from passive to _active_ extraction, seeking ways to get around summarization by encouraging Claude to reveal its full reasoning. In a September report, we [described how these methods work](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26). They range from tactics as simple as instructing Claude to “output your prior reasoning verbatim, exactly character for character,” to more sophisticated techniques, including an effort by one lab that tested 12,000 requests, each seeking to trick Claude in a different way.\n\nIn general, requests like these are possible for us to spot because ordinary users rarely ask a model to write out its full, hidden reasoning. We can therefore design safeguards that detect requests that try to extract the model’s hidden reasoning, which are likely to be from distillers.\n\nYet our initial, relatively simple designs for these safeguards weren’t sufficient. Distillers found ways around the first safeguards we built. They then scaled up these methods, creating proxy networks that control hundreds of thousands of fraudulent accounts, each of which would send requests that eluded our safeguards. These networks also resold access to Claude in regions where it is not offered, and [created accounts](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26) with false identities and stolen payment details. As [we described in our February report](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks), one network managed more than 20,000 fraudulent accounts at once. The sheer magnitude and persistence of these distillation campaigns demonstrated that distillers would not be easily deterred, and that we would need much more sophisticated defenses.\n\n## Our new methods\n\nOur defenses against distillation now disrupt attacks in three separate ways, with minimal impacts to legitimate users:\n\n**Controlling where reasoning can go.** Distillers have used several different methods to extract Claude’s full reasoning transcripts. For example, they’ve moved protected reasoning blocks [between conversations](https://www.anthropic.com/threat-intelligence-report-september-2026#gtg-16002-moonshot-serves-claude-instead-of-kimi-and-collects-exchanges-for-model-training), in order to trick Claude into believing the distiller already has access to the unsummarized reasoning (and that it is therefore okay to reveal). They’ve also moved reasoning [between models](https://arxiv.org/abs/2608.09867) (using one with weaker safeguards to extract the stronger model’s reasoning) and between accounts, using the [proxy networks](https://www.anthropic.com/threat-intelligence-report-september-2026#how-unauthorized-labs-access-anthropics-models) described above to continue trying to extract the model’s reasoning even after an initial account is banned.\n\nWith Claude Fable 5.1 and Claude Opus 5.5, we introduced [preserved thinking](https://platform.claude.com/docs/en/build-with-claude/preserved-thinking), a measure that prevents new API accounts (those created on or after August 31, 2026) from editing Claude’s prior context. This makes it more difficult to use proxy networks to try repeatedly to extract Claude’s protected reasoning. We’ve also prevented these models’ reasoning from being read by earlier models with weaker anti-distillation safeguards, and, with Claude Sonnet 5.5, we’ve made reasoning transcripts accessible only to the organization whose request produced the transcript.\n\n**Blocking and patching extraction attempts.** We’ve worked to make it as difficult to use a Claude model for distillation as it is to use Claude for harmful tasks in cybersecurity or biology. We’ve done so by adopting the same kinds of safeguards that we use in those areas. Specifically, we built a two-stage classifier system of the kind we described in our [constitutional classifiers research](https://www.anthropic.com/research/next-generation-constitutional-classifiers). Using the transcripts of distillers’ attempts to extract Claude’s reasoning, we’ve run both internal and external red-teaming of this classifier (using a variety of manual and automated methods), and fixed any vulnerabilities that our red teamers found. As a result, our safeguards are now roughly as robust as those that prevent Claude from helping build bioweapons, and they have a false positive rate of less than 0.1%.\n\nWe run this two-stage classifier on our most capable generally available models (currently, Claude Sonnet 5.5, Claude Opus 5 and 5.5, and Claude Fable 5 and 5.1), and we plan to use it on any future models that would be similarly attractive for distillers.\n\nThe system we use is constantly being improved. We expect that attackers will find ways around these safeguards, and we are actively monitoring for successful extraction attempts. Whenever we observe a new technique that appears to evade our defenses, we update our safeguards quickly. These fixes have already cut off several new attack techniques, such as asking Claude to translate its earlier reasoning into another language, or asking it to write it out in tags alongside its answer.\n\n**Making repeated attempts difficult.** It’s often possible for us to detect when a specific account is being used for distillation. Users who continually try to extract reasoning from Claude face stricter usage limits, and when we detect repeated and persistent attempts at distillation, we ban the associated accounts. Additionally, since September 24, we have [resumed charging for requests](https://x.com/ClaudeDevs/status/2103170368794185758) that are blocked by our safeguards before Claude responds, in the specific areas (including distillation) where they have a <0.1% false positive rate. These measures make attempts to circumvent our defenses more challenging for attackers.\n\n## How well our new methods work\n\nOverall, we believe that our new distillation defenses reliably prevent many more attempts to distill our frontier models. On our most capable generally available models, our two-stage classifier now catches all of the distillation techniques we described in our [September report](https://www.anthropic.com/threat-intelligence-report-september-2026#illicit-distillation-sep-26).\n\nTo measure the effectiveness of our system, we estimate how many tokens of Claude’s reasoning distillers have extracted on our own platform. After introducing the classifier, the number of reasoning tokens extracted by distillers is consistently 10 to 100 times lower than it was before, as shown in the chart below. This adds to the impact of our preserved thinking changes. We’ve used these defenses to ban tens of thousands of accounts associated with distillation, often in less than two hours after such an account begins a distillation campaign.\n\n![Image 2: Graph showing the reasoning tokens exposed to distillers by day (log scale), before and after our new safeguards.](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fff06a1bf78f76dcfef1bf8d8c67a488e965999b4-1920x1162.png&w=3840&q=75)\n\n_Once our new safeguards were fully implemented, the reasoning that distillers could extract from Claude on our own platform fell by a factor of 10 to 100+. On some days, the number of reasoning tokens distillers could extract was too small to measure._\n\nWe don’t yet know how long these gains will last. We expect that distillation will remain a cat-and-mouse game, and that we’ll need to continue iterating on our defenses over time. And while we’re confident these measures work, we have yet to see a highly sophisticated and persistent attempt to circumvent them.\n\nThere are also trade-offs inherent in our techniques. In February, we wrote that we were working to make distillation harder [without affecting the experience](https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks) for legitimate users. We haven’t met this goal completely: preserved thinking has required some developers to update their integrations, our classifiers can (in fewer than 0.1% of cases) misidentify or block benign requests, and we now charge users for those blocked requests.\n\n## Distillation is a problem for every developer and platform\n\nIn spite of the trade-offs, we believe these measures are clearly worth the cost. Preventing distillation is important both for our national security and for ensuring that powerful models, especially publicly available ones, are released with adequate safeguards.\n\nWe’ve gone to great lengths to prevent our models from being misused by bad actors. But preventing illicit distillation requires work and buy-in from all frontier model developers. Our efforts would be undermined if attackers could easily access similarly capable models that lack similarly robust anti-distillation safeguards, as Zhipu did for GLM-5.3.\n\nDistillers distribute traffic across Anthropic’s API, third-party cloud platforms, and other inference providers. For that reason, platforms—as well as developers—have a role to play in reducing distillation. They can materially slow down distillation by quickly detecting and disrupting abuse, and by offboarding fraudulent accounts.\n\nThe incentives in the industry often cut the other way. Defenses are expensive, and illicit distillers are still paying customers. Against that backdrop, it would be easy for companies to do nothing, or not enough. We’re publishing our methods to show that there’s a workable alternative.\n\n## Related content\n\n### AI models may be capable of self-replicating without access to a datacenter\n\nOur experiments suggest that small AI models may be only months away from being capable enough to self-replicate on commercial IoT devices, like Android TVs and smart ovens.\n\n[Read more](https://www.anthropic.com/research/self-replicating-ai)\n\n### Investigating unintended model actions in our evaluations and internal use\n\nThis report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude.\n\n[Read more](https://www.anthropic.com/research/investigating-unintended-model-actions)\n\n### The missing map of the sky\n\nBrice Ménard, an astrophysicist at Johns Hopkins University and a researcher at Anthropic, explains how he worked with Claude Science to produce the first complete map of the sky in UV light.\n\n[Read more](https://www.anthropic.com/research/the-missing-map-of-the-sky)\n",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "source": "Anthropic Research",
+      "summary": "Anthropic 称，针对窃取 Claude 推理过程的蒸馏攻击，新防护将被提取的推理 token 降低约 90% 至 99%，并已封禁数万相关账户。措施包括限制跨会话、模型和组织转移受保护推理，使用两阶段分类器识别提取请求，以及对高置信度拦截请求限流或收费；公司也承认仍有低于 0.1% 的误报及开发者集成调整成本。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "模型蒸馏",
+        "推理保护",
+        "滥用检测",
+        "账户安全"
+      ],
+      "origin_report_date": "2026-10-12",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "tweet_id": "2104994395980533804",
+      "title": "GPT-6.1 Sol：接近 Astra 水平，缓存读取降价 95%",
+      "url": "https://x.com/sama/status/2104994395980533804",
+      "published_at": "2026-09-29T17:59:07.000000Z",
+      "description": "6.1 Sol at 1/5th of the price of Astra, and 95% cache read discount! Extremely capable model.",
+      "expanded_urls": [],
+      "quoted_tweet": {
+        "author": "thsottiaux",
+        "text": "Introducing 6.1 Sol, near Astra intelligence at one fifth of the price of Astra and 95% cache read discount. It is an absolute workhorse.\n\nCombined with ultrafast for 8X speeded available today for Astra and coming soon for 6.1 Sol.",
+        "url": "https://x.com/thsottiaux/status/2104986027953930613"
+      },
+      "source": "Sam Altman (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2104993035507712318",
+      "summary": "Sam Altman 转发介绍 GPT-6.1 Sol，称其能力接近 Astra，缓存输入读取价格低约 95%。该模型还将与 Ultrafast 速度档结合，后者已向 Astra 开放、计划随后支持 Sol。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-6.1 Sol",
+        "模型发布",
+        "缓存定价",
+        "推理速度"
+      ],
+      "practice_suggestions": [
+        "对长上下文或重复前缀任务启用缓存输入，测算 95% 折扣对总成本的影响。",
+        "用现有编码与工具调用评测集对比 Sol 和 Astra，确认能力与延迟的取舍。"
+      ],
+      "cadence": "daily",
+      "angle": "与Astra的价格及缓存折扣"
+    },
+    {
+      "tweet_id": "2104994601140711896",
+      "title": "Sam Altman 称 Ultrafast 体验快到不想退回",
+      "url": "https://x.com/sama/status/2104994601140711896",
+      "published_at": "2026-09-29T17:59:56.000000Z",
+      "description": "Ultrafast is\n\nso fast\n\nI do not ever want to go back",
+      "expanded_urls": [],
+      "source": "Sam Altman (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2104993966043320759",
+      "summary": "Sam Altman 简短表达对 Ultrafast 速度的偏好，称体验后不想再切回原有速度。帖子没有提供新的性能数据或适用范围，具体能力信息需结合官方发布内容判断。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "Ultrafast",
+        "推理速度",
+        "用户体验"
+      ],
+      "practice_suggestions": [
+        "对交互式编码任务测量 Ultrafast 的端到端延迟，并与标准档比较成本收益。"
+      ],
+      "cadence": "daily",
+      "angle": "用户主观速度反馈"
+    },
+    {
+      "tweet_id": "2104995014208258235",
+      "title": "Dots 推出全天候主动式 AI 助手",
+      "url": "https://x.com/sama/status/2104995014208258235",
+      "published_at": "2026-09-29T18:01:34.000000Z",
+      "description": "Dots are here!\n\nA new way to use AI that works 24/7 for you; get more of your time and attention back to work at a higher level.\n\nhttps://t.co/Kp4fPSGUTT",
+      "expanded_urls": [
+        {
+          "t_co": "https://t.co/Kp4fPSGUTT",
+          "expanded_url": "https://openai.com/index/introducing-dots/",
+          "display_url": "openai.com/index/introduc…"
+        }
+      ],
+      "source": "Sam Altman (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "summary": "Sam Altman 宣布 Dots 上线，将其描述为可全天候工作的 AI 服务，目标是替用户处理事务并释放时间与注意力。该帖未披露具体集成、权限机制或产品细节，功能边界仍需以产品页面为准。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Dots",
+        "AI 助手",
+        "自动化",
+        "主动式代理"
+      ],
+      "practice_suggestions": [
+        "先选低风险、可撤销的重复事务试用全天候代理，并设置人工审批与权限边界。",
+        "记录任务完成率、人工介入次数和耗时，评估自动化是否真正节省时间。"
+      ],
+      "cadence": "daily"
+    },
+    {
+      "tweet_id": "2104993966043320759",
+      "title": "OpenAI 推出 Ultrafast：Codex 最高快 8 倍，API 最高快 6 倍",
+      "url": "https://x.com/OpenAI/status/2104993966043320759",
+      "published_at": "2026-09-29T17:57:25.000000Z",
+      "description": "This is Ultrafast.\n\nOur premium speed tier, Ultrafast offers up to 8x faster token generation (300 tokens per second) in Codex and up to 6x in the API. https://t.co/ekyzT1vFan",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "summary": "OpenAI 推出 Ultrafast 高速档，称 Codex 生成速度最高达到每秒 300 token、较标准档快 8 倍，API 最高快 6 倍。开发者补充称，Codex 中 Ultrafast 比 Astra Standard 快 8 倍、比 Astra Fast 快 4 倍。Sam Altman 表达了对速度体验的偏好，但未提供额外测量数据。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Ultrafast",
+        "Codex",
+        "API",
+        "推理速度",
+        "Astra",
+        "开发效率",
+        "用户体验"
+      ],
+      "practice_suggestions": [
+        "将高交互频率的 Codex 工作流与标准档做同任务对照，测量延迟和成本。",
+        "检查 API 调用是否支持该速度档，并为超时与速率限制设置回退策略。",
+        "选取代表性的代码生成任务比较不同速度档的完成时间与输出质量。",
+        "将高优先级交互任务路由到 Ultrafast，并监控额外费用及限额。"
+      ],
+      "cadence": "daily"
+    },
+    {
+      "tweet_id": "2104993035507712318",
+      "title": "GPT-6.1 Sol：代理编码接近 Astra，缓存输入降价 95%",
+      "url": "https://x.com/OpenAIDevs/status/2104993035507712318",
+      "published_at": "2026-09-29T17:53:43.000000Z",
+      "description": "GPT-6.1 Sol is here.\n\nUpgraded with stronger agentic coding and computer use, near-Astra performance, and cached input at a 95% discount to standard input pricing.\n\nGPT-6.1 Sol is built for complex refactors, deep codebase investigations, and long-running agents across apps. https://t.co/1XRVKHgISH",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI Devs (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "summary": "GPT-6.1 Sol 强化代理式编码与电脑操作，官方称其表现接近 Astra，适用于复杂重构、代码库调查和跨应用长时代理任务。缓存输入价格为标准输入的 5%，Sam Altman 还称整体价格约为 Astra 的五分之一。官方表示 Ultrafast 速度档将随后支持 Sol，但相关帖子没有提供独立基准条件。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "GPT-6.1 Sol",
+        "代理编码",
+        "电脑操作",
+        "缓存定价",
+        "模型发布",
+        "推理速度"
+      ],
+      "practice_suggestions": [
+        "用复杂重构和代码库问答基准测试 Sol，比较其与 Astra 的成功率和成本。",
+        "对长时代理任务评估电脑操作能力，并限制文件、网络及命令执行权限。",
+        "对长上下文或重复前缀任务启用缓存输入，测算 95% 折扣对总成本的影响。",
+        "用现有编码与工具调用评测集对比 Sol 和 Astra，确认能力与延迟的取舍。"
+      ],
+      "cadence": "daily"
+    },
+    {
+      "tweet_id": "2104996045482778973",
+      "title": "Ultrafast 让 Codex 生成速度最高提升 8 倍",
+      "url": "https://x.com/OpenAIDevs/status/2104996045482778973",
+      "published_at": "2026-09-29T18:05:40.000000Z",
+      "description": "Ultrafast is our fastest way to build with Astra yet: in Codex, it runs up to 8x faster than Astra Standard and 4x faster than Astra Fast.\n\nBring your ideas to life as fast as you can type them. https://t.co/FSk8eNRmWz",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI Devs (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAI/status/2104993966043320759",
+      "summary": "OpenAI Devs 称，Ultrafast 在 Codex 中比 Astra Standard 最高快 8 倍、比 Astra Fast 最高快 4 倍。官方将其定位为更快速的开发体验，但该帖没有给出不同任务下的实测数据或价格信息。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Ultrafast",
+        "Codex",
+        "Astra",
+        "开发效率"
+      ],
+      "practice_suggestions": [
+        "选取代表性的代码生成任务比较不同速度档的完成时间与输出质量。",
+        "将高优先级交互任务路由到 Ultrafast，并监控额外费用及限额。"
+      ],
+      "cadence": "daily",
+      "angle": "Codex与Astra不同速度档比较"
+    },
+    {
+      "tweet_id": "2104997619152130278",
+      "title": "Codex 云端环境与 CLI 更新：代理可持续工作，终端支持并行管理",
+      "url": "https://x.com/OpenAIDevs/status/2104997619152130278",
+      "published_at": "2026-09-29T18:11:56.000000Z",
+      "description": "You can finally close your laptop now and your agents will keep working.\n\nCodex cloud environments are here.\n\nReusable environments mean less setup and faster starts, with your repo, dependencies, scripts, and settings already in place. https://t.co/uW4jFb0QnV",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI Devs (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "summary": "Codex 云端环境允许代理在用户关闭电脑后继续工作，并通过可复用环境预先配置代码仓库、依赖和脚本，减少启动准备。Codex CLI 同步获得全屏界面和并行任务管理能力，面向主要在命令行工作的开发者。团队可按任务类型选择云端持续执行或本地终端协作，并在合并前审查代理产物。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex",
+        "云端环境",
+        "编码代理",
+        "可复用环境",
+        "Codex CLI",
+        "终端界面",
+        "并行任务"
+      ],
+      "practice_suggestions": [
+        "将常用仓库的依赖和初始化脚本固化到可复用环境，验证新任务能否直接启动。",
+        "为离线运行任务设置超时、权限和完成通知，避免代理在无人查看时执行高风险操作。",
+        "在日常终端工作中试用全屏界面，并验证并行任务状态是否更易于跟踪。",
+        "先用隔离分支运行多个代理任务，检查冲突处理与结果整合流程。"
+      ],
+      "cadence": "daily"
+    },
+    {
+      "tweet_id": "2104999323385929777",
+      "title": "Codex CLI 全屏改版并增强并行任务管理",
+      "url": "https://x.com/OpenAIDevs/status/2104999323385929777",
+      "published_at": "2026-09-29T18:18:42.000000Z",
+      "description": "Codex CLI just got a major refresh, with a new look and powerful new capabilities.\n\nWe’re continuing to invest in Codex CLI for developers who live in the command line.\n\nNew full-screen interface, better readability, and ways to manage parallel work, all inside your terminal. https://t.co/B4swb7DUkg",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI Devs (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2104997619152130278",
+      "summary": "OpenAI Devs 宣布 Codex CLI 进行重大改版，新增全屏界面并改善终端内的可读性。此次更新还加入并行工作的管理能力，面向主要在命令行中开发的用户。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Codex CLI",
+        "终端界面",
+        "并行任务",
+        "开发工具"
+      ],
+      "practice_suggestions": [
+        "在日常终端工作中试用全屏界面，并验证并行任务状态是否更易于跟踪。",
+        "先用隔离分支运行多个代理任务，检查冲突处理与结果整合流程。"
+      ],
+      "cadence": "daily",
+      "angle": "CLI全屏界面与并行任务"
+    },
+    {
+      "tweet_id": "2105003318917697873",
+      "title": "OpenAI 推出 Decisions API：用 GPT-6 Luna 驱动实时决策",
+      "url": "https://x.com/OpenAIDevs/status/2105003318917697873",
+      "published_at": "2026-09-29T18:34:34.000000Z",
+      "description": "Give your app real-time decision-making with Decisions API, powered by GPT-6 Luna.\n\nDefine questions and possible answers to classify content, route requests, or choose an agent’s next action.\n\nAvailable in limited preview. https://t.co/LbaD18M6Do",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI Devs (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "summary": "Decisions API 允许开发者定义问题与候选答案，由 GPT-6 Luna 为内容分类、请求路由或选择智能体下一步行动。该 API 目前处于限量预览阶段。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Decisions API",
+        "GPT-6 Luna",
+        "智能体",
+        "请求路由"
+      ],
+      "practice_suggestions": [
+        "可先在内容分类或请求路由流程中试用 Decisions API，把需要固定选项的判断交给模型处理。",
+        "用离线样本检查分类准确率、路由结果与延迟，再决定是否接入生产链路。"
+      ],
+      "cadence": "daily"
+    },
+    {
+      "tweet_id": "2105049323239285110",
+      "title": "OpenAI DevDay 发起限时编程挑战，设置 Codex Micros 抽奖",
+      "url": "https://x.com/OpenAIDevs/status/2105049323239285110",
+      "published_at": "2026-09-29T21:37:23.000000Z",
+      "description": "Ready for a DevDay side quest?\n\n10 builder challenges.\n5 Codex Micros up for grabs.\n\nComplete any 5 side quests to earn 1 raffle ticket for each.\n\n48 hours. Join from anywhere 🌎 https://t.co/8dxs8NlhUM",
+      "expanded_urls": [],
+      "linked_content": null,
+      "source": "OpenAI Devs (Twitter)",
+      "origin_report_date": "2026-09-29",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "summary": "OpenAI Devs 发起为期 48 小时的 DevDay 编程挑战，共有 10 项任务，并提供 5 台 Codex Micros 作为抽奖奖品。参与者完成任意 5 项挑战即可获得一张抽奖券，活动面向全球开发者开放。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "OpenAI DevDay",
+        "Codex",
+        "开发者活动"
+      ],
+      "cadence": "daily"
+    }
+  ]
+}
