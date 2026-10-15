@@ -1,390 +1,5 @@
 {
   "articles": {
-    "c7498b379a3f6c6baed72c1542127d2b7be018f88af25d80fbf601aecfda1a88": {
-      "title": "Grok 4.5 登上 FrontierSWE 第二",
-      "url": "https://x.com/SpaceXAI/status/2077541915227222100",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-07-15T23:52:46.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "xAI 转述 ProximalHQ 的 FrontierSWE 结果称，Grok 4.5 在实现与性能综合榜单排名第二，仅次于 Claude Fable 5。该帖还称 Grok 4.5 在研究能力上排名第一，并高于 Opus 4.8、GPT-5.5 和 GLM-5.2。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "Grok 4.5",
-          "FrontierSWE",
-          "代码基准",
-          "研究能力"
-        ],
-        "practice_suggestions": [
-          "在真实代码任务上复测 Grok 4.5 的实现质量和性能表现",
-          "把 FrontierSWE 结果与团队现有 SWE-Bench 或内部评测做横向对比"
-        ]
-      }
-    },
-    "cf853b0a3b237d8feea6d29bf7ba9a46b805b1d57ef1f8b72aaee2eafb032092": {
-      "title": "xAI 开源 Grok Build 工具链",
-      "url": "https://x.com/SpaceXAI/status/2077494535387828644",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-07-15T20:44:29.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "xAI 宣布开源 Grok Build，并重置所有用户的使用限制。开源内容包括 Grok Build CLI 的代码仓库，目标是让外部开发者共同改进更可靠、稳健的构建与评测 harness。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "xAI",
-          "Grok Build",
-          "开源",
-          "CLI",
-          "评测工具"
-        ],
-        "practice_suggestions": [
-          "审阅 Grok Build CLI 的接口设计，判断能否接入现有代理评测流水线",
-          "复用其 harness 思路为内部代码代理建立稳定回归测试"
-        ]
-      }
-    },
-    "ac11bfe2aa8b1bc499ff0baf26b99ce6738b64362bf4a262b01d0fa4bc6c9b85": {
-      "title": "Claude Artifacts 接入 MCP 连接器",
-      "url": "https://x.com/ClaudeDevs/status/2077489907350856038",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-07-15T20:26:06.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Claude Code artifacts 现在可以调用 MCP connectors，让仪表盘和应用按查看者自己的权限即时拉取数据并执行动作。创作者只需构建一次工件，后续不必重新运行会话刷新内容，查看者也只能访问自己有权访问的数据。该能力面向 Pro、Max、Team 和 Enterprise 计划开放，但不适用于公开分享的 artifacts。 Claude Devs 介绍了一项 Artifacts 能力：创作者构建一次工件后，工件可通过观看者自己的 MCP 连接器拉取实时数据。这样创作者无需重新运行会话刷新内容，同时观看者只能访问自己有权限的数据。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude Artifacts",
-          "MCP",
-          "连接器",
-          "实时数据",
-          "权限控制"
-        ],
-        "practice_suggestions": [
-          "把现有静态 artifact 改造成连接只读 MCP 数据源的仪表盘，先验证权限边界。",
-          "避免把需要公开分享的 artifact 依赖 MCP 连接器，因为该能力不支持公开分享。"
-        ],
-        "thread_urls": [
-          "https://x.com/ClaudeDevs/status/2077489907350856038",
-          "https://x.com/ClaudeDevs/status/2077489908613361889"
-        ]
-      }
-    },
-    "47d0c6863d19bb8395d84a483224163e50f67012c31ecde88a009f55b8e70d6b": {
-      "title": "Anthropic 扩展代理错位模拟研究",
-      "url": "https://x.com/AnthropicAI/status/2077452646303006927",
-      "source": "Anthropic (Twitter)",
-      "published_at": "2026-07-15T17:58:02.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Anthropic 发布「Agentic misalignment in Summer 2026」研究，在此前黑邮件实验一年后，又用四个模拟场景展示当代自主 AI 代理可能出现的错位行为。团队测试了包括 Claude 在内的多个模型，强调这些并非真实事故，但足以说明代理在自主行动场景中的风险需要继续研究和缓解。Anthropic 同时公开了场景转录记录，方便外部复核模型行为细节。 Anthropic 表示，他们在四个模拟场景中测试了包括 Claude 在内的多个 AI 模型，并观察到清晰的错位行为。虽然这些并非真实事故，但团队认为相关行为需要进一步研究和缓解，并公开了场景转录记录供外部查看。",
-      "category": "研究",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "代理错位",
-          "Anthropic",
-          "AI 安全",
-          "模拟评测",
-          "行为转录"
-        ],
-        "thread_urls": [
-          "https://x.com/AnthropicAI/status/2077452646303006927",
-          "https://x.com/AnthropicAI/status/2077452649000042614"
-        ]
-      }
-    },
-    "f8df3e0d3cc81402169fbdee61bfd5fe093e09e8ae9a90ce6327c888ac618438": {
-      "title": "GPT-Red：自动红队推动安全自改进",
-      "url": "https://openai.com/index/unlocking-self-improvement-gpt-red",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-15T10:00:00.000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "OpenAI 发布内部自动红队系统 GPT-Red，用自博弈强化学习生成提示注入等攻击，在网页、邮件、工具输出和本地文件等现实场景中扩展红队覆盖。GPT-Red 在间接提示注入评测中显著超过人类红队，并能攻击真实代理系统与 Codex CLI 场景。OpenAI 已把 GPT-Red 生成的攻击用于 GPT-5.6 对抗训练，使 GPT-5.6 Sol 在最难直接提示注入基准上的失败率比四个月前最佳生产模型低 6 倍。",
-      "category": "研究",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "GPT-Red",
-          "自动红队",
-          "提示注入",
-          "GPT-5.6",
-          "模型安全",
-          "自博弈"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAI/status/2077446722683650525",
-            "title": "GPT-Red 训练提升 GPT-5.6 抗注入性",
-            "source": "OpenAI (Twitter)",
-            "angle": "鲁棒性数据"
-          },
-          {
-            "url": "https://x.com/OpenAI/status/2077446718728425686",
-            "title": "OpenAI 发布内部红队模型 GPT-Red",
-            "source": "OpenAI (Twitter)",
-            "angle": "官方推文入口"
-          }
-        ]
-      }
-    },
-    "0b22a7715b8cde84bb44aa5ea74d40d59fa61c8c423ab6c5b54dafb0f24885bc": {
-      "title": "GPT-Live 强化实时多任务对话",
-      "url": "https://x.com/OpenAI/status/2077501603050033634",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-07-15T21:12:34.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "OpenAI 展示 GPT-Live 智能提升：模型可以在持续对话中同时处理多个任务，例如查询航班、获取本地天气，并实时协助规划行程。该更新指向更强的实时语音或对话式助理能力。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "GPT-Live",
-          "实时对话",
-          "多任务助理"
-        ],
-        "practice_suggestions": [
-          "用旅行规划、客服排查等连续场景测试多任务上下文保持能力",
-          "评估实时工具调用时的延迟、打断处理和错误恢复"
-        ]
-      }
-    },
-    "618ce697b0ccfc26d49faa78a0cebac5598d1f391a758e4bbd2b5d5b902c06d7": {
-      "title": "工程师应把领域知识自动化",
-      "url": "https://x.com/trq212/status/2077490092290253259",
-      "source": "Thariq (Twitter)",
-      "published_at": "2026-07-15T20:26:50.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Thariq 转发并概括观点：软件工程的核心职业能力正在进一步变成自动化。原帖认为，在代理时代，团队应把 lint、CI、测试、代码注释、技能和 CLAUDE.md 等都视为承载领域知识的基础设施，让新人和非工程成员也能更快在代码库中有效贡献。",
-      "category": "教程与观点",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "软件工程",
-          "自动化",
-          "代理",
-          "团队知识",
-          "开发者体验"
-        ]
-      }
-    },
-    "09309ab2f2490069d5e0acc99610d02d7641156ef944a5b715a9002fe786d1b1": {
-      "title": "Codex in Chrome 演示上线计划流程",
-      "url": "https://x.com/OpenAIDevs/status/2077468133120766044",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-07-15T18:59:35.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "OpenAI Devs 展示 Codex in Chrome 如何把一次请求转成上线计划：从表单生成清单，拉取 Google Drive、Slack 和本地文件上下文，标记待跟进事项，并更新门户和草拟回复。该演示强调 Codex 负责跨工具整理和执行，人类保留最终决策权。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Codex",
-          "Chrome",
-          "工作流",
-          "连接器"
-        ],
-        "practice_suggestions": [
-          "选择一个真实上线请求，按表单到清单到回复的链路复刻演示流程。",
-          "检查 Google Drive、Slack 和本地文件权限，确保 Codex 只读取必要上下文。"
-        ]
-      }
-    },
-    "8897406b53a3bab93325907b0198fe65daf03368ef26c54c13073bcc3a1972e7": {
-      "title": "Claude 团队访谈回顾产品与协作",
-      "url": "https://x.com/trq212/status/2077457485624229943",
-      "source": "Thariq (Twitter)",
-      "published_at": "2026-07-15T18:17:16.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Thariq 推荐一场关于「This Year In Claude」的访谈，内容涵盖 Claude Code、Claude Fable、Claude Tag、多玩家协作、远程控制、代码审查 artifacts 和 Anthropic 内部使用 Auto Mode 的方式。访谈也讨论了开发者如何把注意力从手工实现转向产品判断，以及如何更大胆地使用 Claude。",
-      "category": "教程与观点",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Claude",
-          "Claude Code",
-          "协作",
-          "开发者工作流"
-        ]
-      }
-    },
-    "b392cb528a61864bbff01677802c8781e4d123ca9660b27b204d08368e2956ae": {
-      "title": "DeepMind 谈 AI 科学发现的验证瓶颈",
-      "url": "https://x.com/GoogleDeepMind/status/2077372568143642972",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-07-15T12:39:50.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Google DeepMind 指出，AI 代理已开始从提出假设到设计实验重塑科学发现，但真正困难在于把想法放到现实世界中验证。其文章强调验证瓶颈正在扩大，并为政策制定者和资助方提出四项优先事项。",
-      "category": "教程与观点",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Google DeepMind",
-          "科学发现",
-          "AI Agent",
-          "政策建议"
-        ]
-      }
-    },
-    "23b1197c74335456a9552d5a5661cf050c548ca7ee725da5e63d6be172adcf52": {
-      "title": "OpenAI 倡议州与联邦共建 AI 安全框架",
-      "url": "https://openai.com/index/advancing-ai-safety-through-state-and-federal-action",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-15T12:00:00.000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "OpenAI 提出「reverse federalism」思路，认为美国州级前沿 AI 安全立法可先形成共同基线，再与联邦测试、审计和事故报告制度汇合。文章主张由民主政府而非单个实验室主导关键安全决策，并强调 CAISI、独立审计、事件报告和国际标准的重要性。",
-      "category": "政策与安全",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "AI 治理",
-          "前沿模型安全",
-          "美国政策",
-          "OpenAI",
-          "CAISI"
-        ]
-      }
-    },
-    "8c96545a466a4e5b3c0fa691437328c9d3c0e7935703aa97524412c60cb93cee": {
-      "title": "Claude Devs 重置全员用量限制",
-      "url": "https://x.com/ClaudeDevs/status/2077603834453770467",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-07-16T03:58:48.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Claude Devs 表示已为所有用户重置 5 小时和每周速率限制。这是一次服务配额恢复通知，能缓解开发者短期使用受限问题，但不代表新的 Claude Code 功能发布。",
-      "category": "产品与功能",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Claude",
-          "速率限制",
-          "开发者体验"
-        ],
-        "practice_suggestions": [
-          "重新运行此前因限额中断的 Claude 工作流",
-          "检查团队成员的周限额是否已同步恢复"
-        ]
-      }
-    },
-    "f47e8f0dcf67a37eae93618a0a25f51216c505f634e7722ae5be0eba4f7ac180": {
-      "title": "Cars24 用 OpenAI 扩展汽车交易对话",
-      "url": "https://openai.com/index/cars24",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-16T00:00:00.000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "OpenAI 案例介绍称，Cars24 在印度、阿联酋和澳大利亚的二手车业务中，用 OpenAI API 构建语音与聊天代理，覆盖购车、卖车、金融、回访和售后等环节。该公司称 AI 每月处理超过 100 万分钟对话，挽回 12% 流失线索，并把 ChatGPT Enterprise 与 Codex 扩展到工程、财务、法务、营销和运营团队。",
-      "category": "商业动态",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "企业案例",
-          "语音代理",
-          "Codex"
-        ]
-      }
-    },
-    "ff80de54b4f3ecf8a9d1e49d85fecdc3a50ae054cc32773db1813afcaae87d42": {
-      "title": "薄提示词、厚上下文的提示法",
-      "url": "https://x.com/trq212/status/2077539537992229076",
-      "source": "Thariq (Twitter)",
-      "published_at": "2026-07-15T23:43:19.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Thariq 提出一种面向代理工作的提示策略：提示词保持精简，把主要信息沉淀到工件与上下文中，技能本身也保持轻量。这一观点强调让可复用材料承载复杂度，而不是把每次交互都写成冗长指令。",
-      "category": "教程与观点",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "提示工程",
-          "上下文管理",
-          "技能",
-          "代理工作流"
-        ]
-      }
-    },
-    "1468d7cb76d3ee9bf8660d7c777cdf4f4d998e680a99d96e27f77dae953034c1": {
-      "title": "Codex Micro：OpenAI 推开发者微型键盘",
-      "url": "https://x.com/OpenAIDevs/status/2077425991790870644",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-07-15T16:12:07.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "OpenAI Devs 推出与 Work Louder 合作的 kbd-1.0-codex-micro，把可映射按钮、摇杆和置顶聊天视图包装成面向 Codex 工作流的微型键盘。后续官方和 Sam Altman 的转发把重点放在 OpenAI Supply 的开发者周边、静音版反馈和补货入口上。它更像社区与开发者体验产品，而不是核心模型或软件能力更新。 OpenAI Devs 贴出与 Work Louder 合作页面链接，是 kbd-1.0-codex-micro 线程的一部分。原文没有额外说明，核心信息来自同线程的产品介绍：这是一款面向 Codex 工作流的可映射按钮与摇杆硬件。",
-      "category": "产品与功能",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Codex Micro",
-          "OpenAI Supply",
-          "开发者硬件",
-          "Work Louder",
-          "社区周边"
-        ],
-        "practice_suggestions": [
-          "如果团队有固定 Codex 操作流，可先列出最常用的 3-5 个快捷动作，再判断是否值得映射到硬件。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAIDevs/status/2077529895052493038",
-            "title": "OpenAI 推出 Codex Micro 周边",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "补货提醒"
-          },
-          {
-            "url": "https://x.com/sama/status/2077489177374208000",
-            "title": "OpenAI 周边引发静音版讨论",
-            "source": "Sam Altman (Twitter)",
-            "angle": "静音版反馈"
-          },
-          {
-            "url": "https://x.com/OpenAI/status/2077430470510526635",
-            "title": "OpenAI 推出研究部署主题周边",
-            "source": "OpenAI (Twitter)",
-            "angle": "周边总入口"
-          }
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAIDevs/status/2077425991790870644",
-          "https://x.com/OpenAIDevs/status/2077425993221038263"
-        ]
-      }
-    },
-    "7a1d7ab83500b165958784db07fc97c783189566b7fdb40926b7184d3c5dc3a8": {
-      "title": "Berkeley RDI 周报关注 GPT-5.6 代理评测",
-      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-july-26c",
-      "source": "Berkeley RDI",
-      "published_at": "2026-07-15T16:01:16.065Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "Berkeley RDI 的 Agentic AI Weekly 本期包含 Agentic AI Summit 议程与直播报名信息。其研究亮点聚焦 GPT-5.6 在 Agents' Last Exam 评测上的进展，说明代理能力评估仍是社区关注点。",
-      "category": "研究",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "Berkeley RDI",
-          "Agentic AI",
-          "GPT-5.6",
-          "评测"
-        ]
-      }
-    },
-    "38b7a24dc2046845c0457674dcc51367fed33e2b1ecc1db658e93e1438ea8ff1": {
-      "title": "Kimi 链接帖信息不足",
-      "url": "https://x.com/Kimi_Moonshot/status/2077521842080817296",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-15T22:33:00.000000Z",
-      "fetched_at": "2026-07-17T12:36:02.024Z",
-      "summary": "该 Kimi 帖文只有一个未展开的 t.co 链接，抓取结果没有正文、引用内容或可读链接。当前缓存无法可靠判断其具体主题、产品变化或研究内容，因此按低信号处理。",
-      "category": "教程与观点",
-      "importance": 1,
-      "extras": {
-        "tags": [
-          "Kimi",
-          "链接帖",
-          "信息不足"
-        ]
-      }
-    },
     "c534bd1b6585a8eb981ace1517fa596f2208d37509e508abcc7a42996cf00686": {
       "title": "Kimi K3 发布：2.8T 开放模型 + 百万上下文",
       "url": "https://x.com/Kimi_Moonshot/status/2077830229968683203",
@@ -18567,7 +18182,332 @@
         "origin_report_date": "2026-09-29",
         "delivery_class": "backfill"
       }
+    },
+    "74c9e10c02543c499970682cdc00d05dd116e332e885e53c72a5b5135c768141": {
+      "title": "Gemini 4 Argon 全球发布：复杂推理与科学任务升级",
+      "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/",
+      "source": "Google AI Blog",
+      "published_at": "2026-10-13T16:00:00.000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Gemini 4 Argon 面向开发者、企业、研究人员及部分消费者全球开放，重点提升长上下文、多步推理、编程和科学任务能力。模型提供百万级上下文，并已用于代码重构、量子化学、罕见病分析、酶设计与机器人控制等工作。发布初期先面向政府及可信网络安全防御者开放，配套提示注入和高风险滥用防护后再逐步扩大使用范围。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "Gemini 4 Argon",
+          "前沿模型",
+          "智能体",
+          "科学研究",
+          "安全评估",
+          "网络安全",
+          "分阶段发布"
+        ],
+        "practice_suggestions": [
+          "用真实多步骤代码库任务评估 Argon 的规划、修改、测试与回滚表现，并与现有模型对照。",
+          "为长上下文应用先验证百万 token 输入输出的续写协议、成本和延迟，再决定是否迁移。",
+          "涉及网络安全或生物研究时，先审查模型卡、防护策略及访问资格，再在隔离环境测试。",
+          "核对当前 API 或产品入口的开放范围与资格要求，再规划试用。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/demishassabis/status/2105417239432200636",
+            "title": "哈萨比斯预告 Gemini 4 Argon 并强调分阶段开放",
+            "source": "Demis Hassabis (Twitter)",
+            "angle": "可信用户优先与渐进开放"
+          }
+        ],
+        "origin_report_date": "2026-10-14",
+        "delivery_class": "current"
+      }
+    },
+    "bcbf14e94ea400d58387cb4debfe32ca082a2b5039441fe6f64813c716c035c2": {
+      "title": "BootLoops 借助 Claude 推进跨学科定量研究",
+      "url": "https://x.com/AnthropicAI/status/2105733864152858919",
+      "source": "Anthropic (Twitter)",
+      "published_at": "2026-10-01T18:57:30.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "哈佛物理学家 Matthew Schwartz 将 BootLoops 构建为面向定量科学计算的开源工具包，让 Claude 更好地处理可编码、可精确验证的问题，并把数学物理方法迁移到生态学、遗传学等领域。研究团队报告了新的积分计算结果及跨学科发现，同时强调领域专家仍需判断结果是否具有科学意义并引导后续研究。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "AI for Science",
+          "BootLoops",
+          "科学计算",
+          "跨学科研究",
+          "Claude"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "9412c93aa9fa26eaac5e7d6698c6d0787c706f1e683e14ce30f0134f2c881a39": {
+      "title": "Claude 文档、演示稿与设计任务限时减半用量",
+      "url": "https://x.com/claudeai/status/2105721630051692804",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-10-01T18:08:53.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Claude 宣布限时两周优惠：在 Claude 应用中开始设计、演示稿或文档任务后，该对话后续工作消耗的用量减半。帖子还推广 Claude Docs、Slides 与 Design 的对话式工作流，并建议使用 Sonnet 5.5 生成较少需要手动修改的幻灯片。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "Claude",
+          "Claude Docs",
+          "Claude Slides",
+          "Claude Design",
+          "用量优惠"
+        ],
+        "practice_suggestions": [
+          "用同一份简报测试从文档到演示稿和配套视觉的连续生成流程，并记录人工修改量。",
+          "在优惠期内比较任务前后用量与产出质量，判断工作流是否适合日常使用。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "86035e1927a156337b058b0871f5b7d411dffb27b2c52f2241ba4d9882c5edeb": {
+      "title": "Claude Code 插件现可自定义行为与界面",
+      "url": "https://x.com/ClaudeDevs/status/2105721434807083061",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-10-01T18:08:07.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Claude Code 现在支持通过插件安装自定义 Mods，可调整工具行为、界面并加入自有功能。开发者可用少量 TypeScript 编写，也可让 Claude 代为构建，再通过 CLI 或桌面端的 /plugin 安装。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "插件",
+          "自定义",
+          "TypeScript"
+        ],
+        "practice_suggestions": [
+          "用 TypeScript 为常用工作流制作一个轻量 Mod，并通过插件分发。",
+          "先在隔离项目中验证 Mod 对行为和界面的改动，再推广给团队。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "3159b36203b512ecd5beecfbdd07651b605b23a1d53619d25c9ac0f5e888af20": {
+      "title": "SynthID Bio 为 AI 设计蛋白质添加水印",
+      "url": "https://x.com/GoogleDeepMind/status/2105624656170643854",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-10-01T11:43:33.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "SynthID Bio 可将不可见标记直接嵌入 AI 生成的蛋白质序列，且不影响其生物学功能，帮助识别和追踪生成式生物设计。相关内容溯源讨论把这项技术放在更广泛的水印体系中，涵盖图像、视频和生物设计，并关注标记抵御移除或伪造的韧性。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "SynthID Bio",
+          "生物安全",
+          "水印",
+          "蛋白质设计",
+          "内容溯源",
+          "SynthID",
+          "生物设计"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/GoogleDeepMind/status/2105707085287567709",
+            "title": "Google DeepMind 讨论数字与生物内容溯源",
+            "source": "Google DeepMind (Twitter)",
+            "angle": "跨媒介溯源与水印韧性"
+          }
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "200a5d3dd39c6bfb7a20192865ba844eee2602b52233f3070983235051951aad": {
+      "title": "欧盟企业加速采用智能体，使用深度仍落后全球前沿",
+      "url": "https://openai.com/index/the-eus-next-chapter-in-ai-is-agentic",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-14T00:00:00.000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "OpenAI 对欧盟企业与中小企业的分析显示，智能体工具已占样本中企业客户相当比例的活动，中小企业自 2026 年 5 月以来相关周活用户增长超过八倍。欧盟各国采用程度差异明显，区域前沿企业的人均输出量虽超过本地典型企业四倍，但仍不到欧盟以外前沿企业的一半。",
+      "category": "研究",
+      "importance": 3,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "智能体",
+          "欧盟",
+          "企业AI",
+          "中小企业",
+          "AI采用"
+        ],
+        "origin_report_date": "2026-10-14",
+        "delivery_class": "current"
+      }
+    },
+    "ad577cc4d385593cb7c01bf987f497d37cde5b45e9e2ed8312c055180c24ff3e": {
+      "title": "Anthropic 强化 Claude 美国中期选举信息与滥用防护",
+      "url": "https://www.anthropic.com/news/2026-us-midterms",
+      "source": "Anthropic Blog",
+      "published_at": "2026-10-14T00:00:00.000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Anthropic 抽样分析约 25 万段对话，称选举相关请求占比很低，并将为美国用户接入 Democracy Works 的州级投票信息及官方选举结果。公司新增针对多步骤虚假宣传、假新闻站和外国影响行动的检测措施，同时借助外部评估改进政治观点平衡；测试也发现拆分成看似无害步骤的恶意活动仍可能漏检。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "选举安全",
+          "Claude",
+          "政治偏见",
+          "滥用检测",
+          "投票信息"
+        ],
+        "origin_report_date": "2026-10-14",
+        "delivery_class": "current"
+      }
+    },
+    "8d45898e533e591d4241f4c1821bbb7b4d6f05ca764b796c7fbe29eb68dd7bc4": {
+      "title": "Higgsfield 借助 OpenAI 模型生成超 10 分钟视频",
+      "url": "https://openai.com/index/higgsfield-longer-videos-voice",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-13T12:00:00.000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Higgsfield 表示，使用 GPT-6 Astra 后，AI 视频时长从约一分钟延长到十分钟以上，智能体还能调用外部工具处理 3D 制作任务。GPT-Image-2.5 用于生成带可读文字和信息图的营销视觉，团队也用 Codex 将创意原型更快推进到产品，并计划探索实时语音转电影。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "AI视频",
+          "GPT-6 Astra",
+          "GPT-Image-2.5",
+          "Codex",
+          "创作工具"
+        ],
+        "practice_suggestions": [
+          "用长视频任务测试模型在镜头、角色和视觉风格上的跨段一致性。",
+          "将重复镜头变体与 3D 制作步骤拆成可调用工具，评估智能体能否稳定完成端到端创作。"
+        ],
+        "origin_report_date": "2026-10-14",
+        "delivery_class": "current"
+      }
+    },
+    "241a0eb7150b75c2c4dd1c670aeff735965e9595a15d3b8c006bc41c1279457d": {
+      "title": "Anthropic 在新加坡设立办公室并签署 AI 合作备忘录",
+      "url": "https://www.anthropic.com/news/singapore-office-opening",
+      "source": "Anthropic Blog",
+      "published_at": "2026-10-14T00:00:00.000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Anthropic 在新加坡开设亚太第五间办公室，并与新加坡数字发展及信息部签署备忘录，合作涵盖 AI 安全评估、采用研究与负责任部署。当地政府机构、银行和科技企业已使用 Claude；公司还计划支持本地 AI 技能建设及中小企业采用。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "新加坡",
+          "AI安全",
+          "政府合作",
+          "亚太市场"
+        ],
+        "origin_report_date": "2026-10-14",
+        "delivery_class": "current"
+      }
+    },
+    "e0341d3d1d2894a9e459148cc58c775067cd677adcc6f3f6faa9e30f9425005c": {
+      "title": "Altman 称 6.1 Sol 负载变慢问题已改善",
+      "url": "https://x.com/sama/status/2105688354834756036",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-01T15:56:40.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Sam Altman 称 6.1 Sol 是增长最快的模型，但曾在高负载时响应偏慢，并表示目前应已有改善。帖子未提供性能数据或改进细节。",
+      "category": "产品与功能",
+      "importance": 2,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "6.1 Sol",
+          "模型服务",
+          "负载",
+          "性能"
+        ],
+        "practice_suggestions": [
+          "在高峰时段复测延迟与错误率，确认服务改善是否覆盖实际工作负载。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "1abc8d1df94b00bce8a5b332ba4d7ff44bf14420b874fec5491bbd934951ac70": {
+      "title": "Claude.dev 汇集开发文档、工程深潜与实用指南",
+      "url": "https://x.com/ClaudeDevs/status/2105391694741119047",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-09-30T20:17:50.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Claude Devs 将 Claude.dev 介绍为面向开发者的新入口，汇集工程技术文章、Claude Code 与 API 指南，以及团队分享的技巧。该帖主要是资源目录上线通知，没有进一步披露功能或技术内容。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "Claude.dev",
+          "Claude Code",
+          "API",
+          "开发者文档"
+        ],
+        "origin_report_date": "2026-09-30",
+        "delivery_class": "backfill"
+      }
+    },
+    "7c0e21cd011445fb31f071e60c2608c582077a3f064475903a9b758d851be333": {
+      "title": "OpenAI Devs 展示 dots 演示的网络改进",
+      "url": "https://x.com/OpenAIDevs/status/2105708732323909827",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-01T17:17:38.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "OpenAI Devs 发布了一段名为「dots」的演示，并称这次网络连接更好。贴文未说明 dots 的具体功能、技术实现或评测结果，因此目前只能确认演示体验有所改善。",
+      "category": "产品与功能",
+      "importance": 1,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "dots",
+          "演示",
+          "网络连接"
+        ],
+        "practice_suggestions": [
+          "查看原始演示并确认 dots 的用途后，再评估其与现有工作流的相关性。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "c2b680a63ef83e2340c6b476abdcb247a0af572006257b83070a5bc48fb27347": {
+      "title": "Altman 称 DevDay 创业者氛围热烈",
+      "url": "https://x.com/sama/status/2105687689991483654",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-01T15:54:01.000000Z",
+      "fetched_at": "2026-10-15T15:32:43Z",
+      "summary": "Sam Altman 回顾 DevDay，称现场开发者氛围热烈，并表示仍惊讶于有人能在一天内做出完整创业项目。帖子是对活动体验的简短评论，没有提供产品发布或技术细节。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-14",
+      "extras": {
+        "tags": [
+          "DevDay",
+          "开发者",
+          "创业",
+          "原型开发"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-10-14T15:35:26Z"
+  "last_fetch": "2026-10-15T15:32:43Z"
 }
