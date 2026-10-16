@@ -1,279 +1,5 @@
 {
   "articles": {
-    "c534bd1b6585a8eb981ace1517fa596f2208d37509e508abcc7a42996cf00686": {
-      "title": "Kimi K3 发布：2.8T 开放模型 + 百万上下文",
-      "url": "https://x.com/Kimi_Moonshot/status/2077830229968683203",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-16T18:58:25.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Kimi K3 是 Moonshot 发布的 2.8T 参数开放 3T 级模型，具备原生视觉、100 万 token 上下文和长程代理编码能力。官方技术博客披露其基于 Kimi Delta Attention、Attention Residuals 和高稀疏 MoE 架构，并展示 GPU kernel 优化、MiniTriton 编译器、芯片设计、研究可视化与视频编辑案例。Kimi K3 已在 Kimi.com、Kimi Work、Kimi Code 和 API 开放，完整权重计划于 2026 年 7 月 27 日发布。第三方榜单称它在 Frontend Code Arena 登顶，强化了其前端生成和视觉闭环编程的发布叙事。",
-      "category": "模型发布",
-      "importance": 5,
-      "extras": {
-        "tags": [
-          "Kimi K3",
-          "开放模型",
-          "2.8T 参数",
-          "百万上下文",
-          "多模态",
-          "Agent 编程",
-          "前端评测"
-        ],
-        "practice_suggestions": [
-          "先通过 Kimi API 或 Kimi Code 验证长程编码、前端生成和研究自动化任务。",
-          "权重发布后复现实测项目，对比它与现有 Claude/GPT 工作流的差异。",
-          "评估官方推理建议和 vLLM 支持，再决定是否进行本地或私有化部署。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2077830245382758902",
-            "title": "Kimi K3 强调视觉闭环编程",
-            "source": "Kimi (Twitter)",
-            "angle": "技术博客与视觉闭环"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2077834926658068983",
-            "title": "Kimi K3 登顶 Frontend Code Arena",
-            "source": "Kimi (Twitter)",
-            "angle": "前端榜单登顶"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2077821890207547467",
-            "title": "Kimi 发布 K3 预告入口",
-            "source": "Kimi (Twitter)",
-            "angle": "发布预告入口"
-          }
-        ]
-      }
-    },
-    "1a391e46a75a27a2161106e8ca50015cd28720a3994b9512438ffa993bba77d2": {
-      "title": "Claude Code 代码审查升级：effort 分级 + ultra 复核",
-      "url": "https://x.com/ClaudeDevs/status/2077840057130692886",
-      "source": "Claude Devs (Twitter)",
-      "published_at": "2026-07-16T19:37:28.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Claude Code 的 /code-review 现在按 effort 档位重写审查策略，让团队在 token 成本、召回率和深度之间选择。低档主打低成本发现问题，高档用于更深检查，ultra 则会启动多个审查代理并独立复现发现以降低误报。该功能已在所有 Claude Code 会话中开放，更新后即可在 PR 中运行。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Claude Code",
-          "代码审查",
-          "effort 分级",
-          "多代理",
-          "PR 协作",
-          "误报控制"
-        ],
-        "practice_suggestions": [
-          "为普通 PR 默认使用低档，为核心路径或发布前改动使用 high/ultra。",
-          "用历史 PR 对比不同档位，建立团队自己的成本、召回率和误报基线。",
-          "把 /code-review 输出纳入合并前清单，并保留人工复核环节。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/ClaudeDevs/status/2077840062163869888",
-            "title": "Claude Code 推出 ultra 审查档位",
-            "source": "Claude Devs (Twitter)",
-            "angle": "ultra 多代理复核"
-          }
-        ]
-      }
-    },
-    "cfc723fcba3f4c3f1ab1add8e6cb11d068e9fee6a02eac3437f6d07ce9505db5": {
-      "title": "Google Search AI Mode 接入外部应用",
-      "url": "https://blog.google/products-and-platforms/products/search/connected-apps/",
-      "source": "Google AI Blog",
-      "published_at": "2026-07-16T16:00:00.000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Google 开始在美国推出 Search AI Mode 的 connected apps，让用户可安全连接并直接操作常用服务。首批场景包括把烧烤购物清单加入 Instacart 购物车、用 Canva 查找设计模板，以及把派对歌单保存到 YouTube Music。该能力把搜索从回答问题推进到跨应用执行任务，也会让 Personal Intelligence 的回答更贴合用户上下文。",
-      "category": "产品与功能",
-      "importance": 4,
-      "extras": {
-        "tags": [
-          "Google Search",
-          "AI Mode",
-          "应用连接",
-          "Personal Intelligence",
-          "任务执行"
-        ],
-        "practice_suggestions": [
-          "测试 AI Mode 连接应用时的授权、数据边界和撤销流程",
-          "把 Instacart、Canva、YouTube Music 场景拆成可复用的产品集成清单",
-          "关注后续伙伴扩展，评估自家服务是否需要适配搜索入口"
-        ]
-      }
-    },
-    "ac5f7c6716848630146492b9726d58de971d94d82e6f2d22367d86b442c35b8f": {
-      "title": "Codex 增加 PR Chat 与行内改稿",
-      "url": "https://x.com/OpenAIDevs/status/2077902662973190570",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-07-16T23:46:15.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "OpenAI Devs 介绍 Codex 的 PR Chat，可在具体拉取请求上下文中提问并追踪后续修改。新的行内代码编辑让评审反馈可以直接交给 Codex，用户能在同一界面检查补丁并选择编辑、接受或拒绝。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Codex",
-          "代码评审",
-          "PR 协作",
-          "开发工具"
-        ],
-        "practice_suggestions": [
-          "在下一次代码评审中用 PR Chat 询问风险点和测试缺口。",
-          "把小型 review comment 交给行内编辑处理，并人工检查补丁差异。"
-        ]
-      }
-    },
-    "eb32ce3b433fadc6611e06cc229cd2df4f1310c25774d747e33291ad138bda51": {
-      "title": "Muse Spark 1.1 登陆 OpenRouter",
-      "url": "https://x.com/AIatMeta/status/2077804869826613422",
-      "source": "Meta AI (Twitter)",
-      "published_at": "2026-07-16T17:17:39.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Meta AI 宣布 Muse Spark 1.1 已面向美国开发者在 OpenRouter 上可用。该发布回应了社区对 OpenRouter 接入的需求，降低开发者试用和集成这一模型的门槛。 Meta AI 在线程中补充了 Muse Spark 1.1 的开始使用链接。这条信息主要服务于开发者落地试用，和主公告共同构成 OpenRouter 可用性的发布说明。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Muse Spark",
-          "OpenRouter",
-          "Meta AI",
-          "开发者接入"
-        ],
-        "practice_suggestions": [
-          "在 OpenRouter 中建立小型评测集，对比 Muse Spark 1.1 与现用模型的输出质量",
-          "确认地区和账号权限后，再把它接入实验性应用链路"
-        ],
-        "thread_urls": [
-          "https://x.com/AIatMeta/status/2077804869826613422",
-          "https://x.com/AIatMeta/status/2077804871672021202"
-        ]
-      }
-    },
-    "a907415b440a72c97ae113fef1ec4712f495e77ca68c1416652d44e576d949fd": {
-      "title": "OpenAI 阐述青少年安全 AI 路线",
-      "url": "https://openai.com/index/why-teens-deserve-access-safe-ai",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-16T16:00:00.000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "OpenAI 认为青少年不应被完全挡在 AI 之外，而应在默认保护、年龄预测、家长控制和学习型工具的配合下安全使用 ChatGPT。文章介绍了 Study Mode、教育启动提示、互动数学与科学体验、休息提醒以及高风险事件通知等措施。OpenAI 还强调将与教育者、儿童安全专家、监管者和 FOSI 等组织合作，持续改进青少年 AI 使用保护。",
-      "category": "政策与安全",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "青少年安全",
-          "ChatGPT",
-          "家长控制",
-          "学习工具",
-          "AI 治理"
-        ]
-      }
-    },
-    "6a0f44aaf2f61b4cf8e0ec0c7cf3456271277a5ec739ccea839bfc6bfaa3b09f": {
-      "title": "Google Vids 加入 Gemini Omni 与头像",
-      "url": "https://blog.google/products-and-platforms/products/workspace/gemini-omni-personal-avatars/",
-      "source": "Google AI Blog",
-      "published_at": "2026-07-16T16:00:00.000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Google Vids 推出两项更新：Gemini Omni 可通过文本提示和图像参考生成、编辑高质量视频片段，personal avatars 则让用户上传自拍和语音录制来创建数字分身出镜。用户可以用自然语言换背景、修正光线或生成片段，减少传统视频制作中的拍摄和剪辑成本。所有 AI 生成视频都会加入数字水印，以提高内容透明度。",
-      "category": "产品与功能",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "Google Vids",
-          "Gemini Omni",
-          "数字头像",
-          "视频生成",
-          "Workspace"
-        ],
-        "practice_suggestions": [
-          "用一段内部培训视频测试文本改片、图像参考和头像出镜的实际质量",
-          "为 AI 生成视频建立水印、审核和发布前告知规范"
-        ]
-      }
-    },
-    "5e6588ed150f4abb19932f5547f95edab329c8962c51e965c8aefc29ddb8665c": {
-      "title": "DeepMind 与 IsomorphicLabs 推进生物韧性",
-      "url": "https://x.com/GoogleDeepMind/status/2077721122116640969",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-07-16T11:44:52.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Google DeepMind 表示，面对快速变化的生物安全环境，将与 IsomorphicLabs 合作阐述其 bioresilience 方法。重点是用前沿 AI 为全球健康建立更主动的防御能力，提前应对未来疫情和生物风险。",
-      "category": "政策与安全",
-      "importance": 3,
-      "extras": {
-        "tags": [
-          "生物安全",
-          "Google DeepMind",
-          "IsomorphicLabs",
-          "全球健康",
-          "前沿 AI"
-        ]
-      }
-    },
-    "0d5eccadea8ba1fd92b0469da0c99fb6493d7dfd048aeea76bad76693a859714": {
-      "title": "Altman 称 ChatGPT 语音模型跨过门槛",
-      "url": "https://x.com/sama/status/2077842579232895286",
-      "source": "Sam Altman (Twitter)",
-      "published_at": "2026-07-16T19:47:29.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Sam Altman 表示自己现在与 ChatGPT 语音对话的频率已经超过打字输入。他认为新的语音模型已经跨过一个体验门槛，暗示语音交互正从演示功能变成日常入口。",
-      "category": "产品与功能",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "ChatGPT",
-          "语音交互",
-          "OpenAI",
-          "用户体验"
-        ],
-        "practice_suggestions": [
-          "在移动端或桌面端重新测试语音工作流，评估是否适合替代短文本输入。",
-          "为需要免手操作的场景设计语音优先原型。"
-        ]
-      }
-    },
-    "e32f6132b22f4431ffd6cd857aeff72fcd5b09f9f9fa7f777b8d0114aca10f6f": {
-      "title": "Altman 预告 OpenAI 未来一年提速",
-      "url": "https://x.com/sama/status/2077817060068057493",
-      "source": "Sam Altman (Twitter)",
-      "published_at": "2026-07-16T18:06:05.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "Sam Altman 承认 OpenAI 过去 12 个月并非最佳表现，并把主要责任归于自己。他表示团队正在推进一批新成果，未来 12 个月有望成为 OpenAI 迄今最好的一年，同时强调 AI 应帮助用户获得更多自由、能动性和财富。",
-      "category": "教程与观点",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "OpenAI",
-          "公司展望",
-          "Sam Altman",
-          "AI 愿景"
-        ]
-      }
-    },
-    "08ff7112af4e51518a8f6991b5d4a70ce439aeaeb1cbe78cc32e8da13c636224": {
-      "title": "OpenAI 分享赛车 AI 协作案例",
-      "url": "https://x.com/OpenAI/status/2077807977193714080",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-07-16T17:30:00.000000Z",
-      "fetched_at": "2026-07-18T12:37:13.801Z",
-      "summary": "OpenAI 播客讨论赛车团队如何用 AI 从赛道数据中做出更快决策。案例覆盖与 Chip Ganassi Racing 的研究协作，以及围绕 ChatGPT 和 Codex 构建面向赛事工作的工具。 OpenAI 公布其播客节目的 Spotify、Apple Podcasts 和 YouTube 收听入口。这条是同一播客线程的链接补充，便于用户获取关于赛车团队如何使用 AI、ChatGPT 与 Codex 的访谈内容。",
-      "category": "教程与观点",
-      "importance": 2,
-      "extras": {
-        "tags": [
-          "AI 应用",
-          "赛车数据",
-          "ChatGPT",
-          "Codex"
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAI/status/2077807977193714080",
-          "https://x.com/OpenAI/status/2077807981715128702"
-        ]
-      }
-    },
     "ce1994a3310197516343131022987719e1d01f15bea5fa0ff48c00575da323df": {
       "title": "GPT-5.6 Sol：网络安全能力与 Codex Security 落地",
       "url": "https://x.com/OpenAI/status/2078223217773474134",
@@ -18532,7 +18258,384 @@
         "origin_report_date": "2026-10-01",
         "delivery_class": "backfill"
       }
+    },
+    "c3f9aa1e97f35f2465d0af14f3b196ebc11ad7498a8811b869b071034882ea93": {
+      "title": "Anthropic 向 METR 开放内部环境开展独立安全评估",
+      "url": "https://www.anthropic.com/news/an-update-on-independent-evaluators",
+      "source": "Anthropic Blog",
+      "published_at": "2026-10-15T00:00:00.000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Anthropic 已让非营利评估机构 METR 的六名员工以近似内部风险团队的权限进入公司环境，并允许其发布对模型风险、事件和实践的评估。公司仅可因客户数据、律师保密信息或模型架构等预先界定事项要求删减内容，且 METR 可公开说明删减是否合理。Anthropic 还介绍了由有限调查到深度访问的评估合作分级，并称正与 SecureBio、Accenture 等机构开展其他评估。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Anthropic",
+          "METR",
+          "独立评估",
+          "模型安全",
+          "透明度"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "current"
+      }
+    },
+    "004cd593adabcd24c97d9e96a166c251028359017ae1a6a5fbaa8f542a33706f": {
+      "title": "OpenAI Daybreak 将企业恶意软件与告警调查压缩至数小时",
+      "url": "https://openai.com/index/sentinelone",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-14T12:00:00.000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "OpenAI Daybreak 在 SentinelOne 与 Block 的安全团队中用于逆向分析恶意软件、调查告警和验证检测规则，把部分原需数周的工作压缩到数小时。SentinelOne称一项复杂样本分析约八小时即可达到研究人员级别的输出；Block则报告调查吞吐与情报收集均提升约五成，并能在数小时内串联跨系统证据。两家团队仍由人员验证结论，并保留高风险架构决策的人类责任。",
+      "category": "政策与安全",
+      "importance": 4,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "OpenAI Daybreak",
+          "SentinelOne",
+          "Block",
+          "恶意软件分析",
+          "网络防御",
+          "人工复核"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://openai.com/index/block-ai-powered-security",
+            "title": "Block 用 Daybreak 串联安全告警证据并扩大自动调查",
+            "source": "OpenAI Blog",
+            "angle": "Block 的跨系统告警调查"
+          }
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "current"
+      }
+    },
+    "a8b8c31de898145e14c82e5a132c6ade438a779372caca6da84483874bea0325": {
+      "title": "Third Moment Research 同时运行万名智能体开展长程研究",
+      "url": "https://openai.com/index/third-moment-research",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-14T07:00:00.000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Third Moment Research 构建自我改进系统，让智能体从运行轨迹中发现弱点并生成合成场景，持续迭代专用能力。团队称其可同时运行约一万名智能体，单次研究持续 36 至 48 小时，并使用 GPT-6 系列模型与 Codex 执行量化研究。一个回测优化案例通过缓存和内存打包把耗时从约三小时降至三至五分钟，减少代理空等造成的上下文与令牌浪费。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Third Moment Research",
+          "长程智能体",
+          "Codex",
+          "GPT-6.1 Sol",
+          "量化研究"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "current"
+      }
+    },
+    "f746e96cf2092e983f2c2f3b0f38df0ebfde6dda5e5e9cceca0332c5d5446c6e": {
+      "title": "Claude Code Mods 开放界面与行为定制",
+      "url": "https://x.com/trq212/status/2105734197801562264",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-10-01T18:58:50.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Thariq 介绍 Claude Code Mods，开发者可用少量 TypeScript 或让 Claude 代为构建插件，以修改工具行为、界面并加入自定义功能。Mods 随插件分发，可在 CLI 或桌面端通过 /plugin 安装，让 Claude Code 扩展机制成为一等能力。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "Mods",
+          "插件",
+          "TypeScript",
+          "界面定制"
+        ],
+        "practice_suggestions": [
+          "用少量 TypeScript 创建一个轻量 Mod，验证行为或界面扩展点。",
+          "将 Mod 打包进插件并通过 /plugin 安装，检查 CLI 与桌面端的表现。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "94eadcab22c41e356a1d9bf1e35dbdb6491d04804b7eea5ceec3829024496784": {
+      "title": "Sullivan & Cromwell 用 AI 智能体辅助审阅复杂协议",
+      "url": "https://openai.com/index/sullivan-cromwell",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-15T00:00:00.000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Sullivan & Cromwell 与 OpenAI 合作开发 Agreement Analyzer，把律所先例、谈判手册、客户立场和市场惯例整合到协议审阅流程中。系统从多个角度并行检查条款关联、风险分配和潜在歧义，再生成备忘录与修订建议供律师审阅。律所强调输出应能追溯依据并呈现不确定性，最终判断和修改仍由律师负责。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Agreement Analyzer",
+          "法律AI",
+          "ChatGPT Enterprise",
+          "Codex",
+          "可审计智能体"
+        ],
+        "practice_suggestions": [
+          "选取一份已脱敏协议及对应先例，测试系统能否标注条款依据、风险关联和不确定项。",
+          "让不同审阅智能体分别检查市场偏离、责任分配与条款冲突，再由律师逐项核验建议。"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "current"
+      }
+    },
+    "57c3309db5bedcdec4e0532a65e896970f7cad30f5011350fb2a735b14cb8cdd": {
+      "title": "Amp 将 OpenAI 智能体扩展到编码之外的工作",
+      "url": "https://openai.com/index/amp-beyond-coding",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-14T12:00:00.000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Amp 正把代理从代码生成延伸到产品规划、页面设计、文档和营销等工作，并通过 Sign in with ChatGPT 为用户提供模型与更多用量。团队还展示了 Puck 对话助理及 GPT-Live-1 实时语音调用、多代理协调能力，以及 GPT-6 Astra 的 Ultrafast 模式。Amp 称更快响应让用户能减少并行等待，或把更多时间留给代理自检。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Amp",
+          "GPT-6 Astra",
+          "GPT-Live-1",
+          "Ultrafast",
+          "智能体工作流"
+        ],
+        "practice_suggestions": [
+          "在 Amp 中分别测试规划、文档与页面设计任务，比较代理在编码以外工作的完成质量。",
+          "用 Puck 启动并协调多个代理任务，记录实时语音交互和 Ultrafast 对等待时间及复核流程的影响。"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "current"
+      }
+    },
+    "d0aaff90c3535f094f94b4d9501efd6545d9c67a71baf2430521ca0328adee6f": {
+      "title": "DeepSeek Harness 桌面版登陆 macOS、Windows 与 npm",
+      "url": "https://x.com/deepseek_ai/status/2105915715241062644",
+      "source": "DeepSeek (Twitter)",
+      "published_at": "2026-10-02T07:00:07.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "DeepSeek 宣布 DeepSeek Harness 已提供 macOS 和 Windows 桌面安装包，Linux 用户可通过 npm 获取 dsh 包。帖子确认了多平台分发方式，但没有说明桌面端相对现有版本新增的功能或能力表现。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "DeepSeek Harness",
+          "桌面应用",
+          "macOS",
+          "Windows",
+          "npm"
+        ],
+        "practice_suggestions": [
+          "在受控环境安装对应平台版本，验证 Harness 的基本运行与开发工作流。"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "af662700f4db0e29afc3d4fad5b85a251ef00a063ce88417c91aa6f98953141e": {
+      "title": "Karpathy 建议用多模态成品提升模型输出的可理解性",
+      "url": "https://x.com/karpathy/status/2105819303471976479",
+      "source": "Andrej Karpathy (Twitter)",
+      "published_at": "2026-10-02T00:37:00.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Andrej Karpathy 建议让语言模型以 ASD-STE100 受控语言解释复杂内容，并进一步把输出转成图示、交互网页或定制讲解视频。其判断是，智能体承担更多执行后，人类工作将更多转向监督与理解，而按需生成的小型应用和媒体可帮助这一转变。",
+      "category": "教程与观点",
+      "importance": 3,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Andrej Karpathy",
+          "提示方法",
+          "受控语言",
+          "多模态生成",
+          "智能体监督"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "55bb571582a24e2df12a085d9f8ffdbc01588eaa0087aedbf675d661c2a86828": {
+      "title": "Altman 称 Dot 会随个人工作习惯持续适应",
+      "url": "https://x.com/sama/status/2106085986606403684",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-02T18:16:43.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Sam Altman 称 Dot 会逐渐学习用户的工作流与风格，替用户处理积压且不愿亲自完成的事务。帖子是个人体验评价，没有展开产品功能、可用范围或技术细节。",
+      "category": "产品与功能",
+      "importance": 2,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Dot",
+          "个性化助手",
+          "工作流",
+          "Sam Altman"
+        ],
+        "practice_suggestions": [
+          "若可访问 Dot，可用一项重复性待办观察它是否能依据反馈贴合个人习惯。"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "016f068392990f1eb0f5e01b782d003829ec10a25593d0e16411257a717af619": {
+      "title": "Karpathy 用坐标问答绘制语言模型的地理知识图",
+      "url": "https://x.com/karpathy/status/2105909609487872075",
+      "source": "Andrej Karpathy (Twitter)",
+      "published_at": "2026-10-02T06:35:51.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Karpathy 分享一项简单探测：让模型对 16,200 组经纬度回答“陆地还是水域”，再把结果绘图，模型输出显现出对地理分布的掌握。该示例展示了从模型压缩知识中构造可视化评测的思路，但没有提供量化准确率或对照实验。",
+      "category": "研究",
+      "importance": 2,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Andrej Karpathy",
+          "模型知识",
+          "地理问答",
+          "探测评测"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "7041e2ac9a927740298ada3850823b56874f20f8be177b21efd276357f9a4acf": {
+      "title": "Thariq 用 Claude 制作游戏跳跃动画编辑器",
+      "url": "https://x.com/trq212/status/2105849295580889208",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-10-02T02:36:11.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Thariq 分享用 Claude 辅助制作游戏原型的过程：先学习动画并寻找参考，再让模型生成可反复调整跳跃动作的动画编辑器。该案例强调模型能够协助构建创作工具并支持迭代，但没有公布具体实现或性能数据。",
+      "category": "产品与功能",
+      "importance": 2,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Claude",
+          "游戏开发",
+          "动画编辑器",
+          "原型制作"
+        ],
+        "practice_suggestions": [
+          "为一个游戏动作描述目标效果，让 Claude 先生成可交互的动画编辑器，再逐轮调整参数。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "c2d19463a52243cb02ff5f16516b3c2f2354651682ce8ae2a6a70afb59138683": {
+      "title": "OpenAI DevDay Side Quest 加码 Codex Micros 挑战",
+      "url": "https://x.com/OpenAIDevs/status/2105782780982673545",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-01T22:11:53.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "OpenAI Devs 为 DevDay Side Quest 延长 48 小时参与时间，活动包含十项构建挑战，完成其中五项可获得 Codex Micros 抽奖机会。该帖补充了开发者活动的参与期限和奖励安排。",
+      "category": "产品与功能",
+      "importance": 2,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "OpenAI DevDay",
+          "Codex Micros",
+          "开发者挑战",
+          "Side Quest"
+        ],
+        "practice_suggestions": [
+          "查看 Side Quest 的挑战清单，选取一项构建任务验证 Codex 的端到端开发能力。"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "478b7a2bb489de4771a577d9dd1b9eab07e845043d8e8fc8e9f56bbe91e7aa02": {
+      "title": "Berkeley RDI 宣布 Agentic AI Summit 2027 开放早鸟票",
+      "url": "https://berkeleyrdi.substack.com/p/agentic-ai-weekly-berkeley-rdi-october-5bf",
+      "source": "Berkeley RDI",
+      "published_at": "2026-10-14T16:03:06.007Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Berkeley RDI 的周报预告 2027 年将在旧金山举办 Agentic AI Summit，并称早鸟票已开放。该条目目前只提供活动信息，没有包含周报标题所称的其他 AI 突破或行业动态细节。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Berkeley RDI",
+          "Agentic AI Summit",
+          "旧金山",
+          "行业会议"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "current"
+      }
+    },
+    "8e5a8f7cbe33d204126d939432c5aaaa4837ef7d487a86986721dfe0711d04b8": {
+      "title": "OpenAI Devs 展示从创意到 ModRetro 可玩游戏的过程",
+      "url": "https://x.com/OpenAIDevs/status/2105761019767468473",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-01T20:45:24.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "OpenAI Devs 介绍将创意转化为 ModRetro 平台可玩游戏的案例，并预告与 Casey 讨论创作方式的访谈。帖子没有披露制作流程或游戏功能细节，主要是活动内容预告。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "OpenAI Devs",
+          "ModRetro",
+          "游戏创作",
+          "开发者访谈"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "df3763567e55681e21fc45673035236c742f1efbdef16d3fe00576e124ac3e81": {
+      "title": "Thariq 征集管理者对 AI 编码智能体的疑问",
+      "url": "https://x.com/trq212/status/2105751275480752344",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-10-01T20:06:41.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Thariq 表示计划面向企业领导者撰写 AI 编码智能体相关内容，并征集管理者对智能体转型的认知困惑与实际障碍。该帖是选题征询，没有提出具体实践或产品更新。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Thariq",
+          "编码智能体",
+          "企业管理",
+          "开发者工具"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
+    },
+    "e654986aa16c6758d01a5360ef9bb291211557153857df0192666b55c13663fc": {
+      "title": "Altman 解释 ChatGPT 订阅跨应用使用的推出初衷",
+      "url": "https://x.com/sama/status/2105739098640298253",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-01T19:18:18.000000Z",
+      "fetched_at": "2026-10-16T23:31:13+08:00",
+      "summary": "Sam Altman 表示，OpenAI 将说明用户为何能在其他应用中使用 ChatGPT 订阅，并准备回应围绕该功能的问题。该帖主要预告后续解释，没有补充集成机制或具体使用范围。",
+      "category": "商业动态",
+      "importance": 1,
+      "report_date": "2026-10-15",
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "Sign in with ChatGPT",
+          "订阅",
+          "应用集成"
+        ],
+        "origin_report_date": "2026-10-01",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-10-15T15:37:15Z"
+  "last_fetch": "2026-10-16T23:31:13+08:00"
 }
