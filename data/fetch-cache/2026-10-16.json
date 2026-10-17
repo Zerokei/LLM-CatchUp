@@ -1,0 +1,649 @@
+{
+  "date": "2026-10-16",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-10-17T04:43:14−07:00",
+  "window_start": "2026-10-15T00:00:00−07:00",
+  "window_end": "2026-10-16T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "degraded_stale",
+      "error": "newest item is 683.7h old, exceeds 336h threshold",
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1299,
+      "filtered_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Stack Overflow for Agents triples signups with ChatGPT plugin",
+          "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": "Two engineers shipped Stack Overflow for Agents in a few weeks with Codex, and its ChatGPT plugin helped drive up to 10× growth in agent creation.",
+          "full_text": "Title: Stack Overflow for Agents triples signups with ChatGPT plugin\n\nURL Source: https://openai.com/index/stack-overflow-chatgpt-plugin\n\nMarkdown Content:\nPeople and AI agents need context to get work done, but it’s usually scattered across systems, from Slack to Google Docs. Finding it and understanding how it all fits together can be a challenge.\n\nThat’s why [Stack Overflow⁠(opens in a new window)](https://stackoverflow.co/) is building a knowledge intelligence platform that unifies those sources and turns raw context into verified knowledge available wherever people and agents work.\n\nOpenAI models like GPT‑6 Astra and GPT‑6 Sol power the platform’s AI, with tasks routing to different models based on the reasoning required and cost. Codex helps the company’s engineers build the products, while a ChatGPT plugin makes their newer agentic product, Stack Overflow for Agents, easier to discover and use.\n\n> “We built a ChatGPT plugin for Stack Overflow for Agents, and our registrations tripled overnight.”\n\n—Alexandra Lato, VP of Product, Stack Overflow\n\n## Two engineers ship a net-new product in a few weeks with Codex\n\nStack Overflow for Agents, which extends Stack’s intelligence layer to agents, began with a hypothesis and two engineers using Codex. The engineers gave Codex a development environment and a plan, and then worked with it to build the product. Within a few weeks, Alex says, they had a full-fledged product.\n\n“So it really made their team feel bigger,” Alex says. “They were able to throw a container at it and say, ‘This is our plan, help us build it.’”\n\n## Developing connectors in days, not weeks, with Codex\n\nStack Internal, Stack Overflow’s enterprise product, needs to connect to all the systems where organizations keep their knowledge. Building this capability requires more human involvement than the two-engineer effort behind Stack Overflow for Agents, but Codex is accelerating this work, too.\n\nAlex describes using Codex to pursue a much shorter path to market for the enterprise product: three months rather than a year. Building connectors is one concrete example.\n\n> “On average, it takes us 3 to 6 weeks to build one connector. With Codex, we were able to build it within 4 days.”\n\n—Alexandra Lato, VP of Product, Stack Overflow\n\nMore recently, the team built a connector in a single day. By accelerating connectors, Codex helps Stack Overflow bring enterprise products to market faster.\n\n## Increasing agent creation and signups with a ChatGPT plugin\n\nOnce Stack Overflow for Agents was ready for distribution, the team needed a way to get it into people’s workflows. It built a ChatGPT plugin so users could discover and set up the product in ChatGPT, with fewer steps than a traditional Model Context Protocol (MCP) setup.\n\n> “Once you have a plugin, it becomes a frictionless setup with ChatGPT.”\n\n—Alexandra Lato, VP of Product, Stack Overflow\n\nAlex says the plugin tripled registrations and accelerated agent creation: “I think we were up to 10X last time I checked.”\n\n## Reducing configuration work with the Decisions API\n\nStack Overflow manages its own model routing and configuration, but Alex hopes to explore using the Decisions API to reduce some of that work and put more engineering capacity into the product.\n\n“If we’re able to automate that through OpenAI directly, that saves us a ton of time and money, allows us to focus more on the actual product we’re building rather than the guardrails around it,” Alex says.\n\n## Expanding across the full knowledge lifecycle\n\nStack Overflow is also working on expanding its knowledge product to enable sharing of what people learn. To date, its focus has been pulling information in. Now, Alex is closing the loop so knowledge gained in a one-to-one session with a developer or someone outside engineering can help others, too.\n\n“As I’m learning, how do I make sure that the rest of my organization is learning with me?”, said Alex. “I’m really looking forward to building a product that allows for that full knowledge life cycle.”\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Benefit Street Partners answers questions faster with Codex",
+          "url": "https://openai.com/index/benefit-street-partners",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": "Anant Kumar builds tools to compare loan valuations and analyze credit agreements, using Codex for code review and faster follow-ups.",
+          "full_text": "Title: Benefit Street Partners answers questions faster with Codex\n\nURL Source: https://openai.com/index/benefit-street-partners\n\nMarkdown Content:\nAt Benefit Street Partners, a credit-focused investment manager, answering an investment committee’s follow-up questions used to take days or weeks. Portfolio manager Anant Kumar says analysts can now turn a round of comments in a day with Codex, and often answer questions during the meeting itself. BSP is using these tools to add more review capacity and rigor to underwriting within the same timeframe, rather than to do more deals.\n\n> “I’ve gone from being just an analyst and a portfolio manager to being a developer as well now. I can build things.”\n\n—Anant Kumar, Portfolio Manager, Benefit Street Partners\n\n## Building his own dashboards\n\nTo create a dashboard he could share with colleagues, Kumar used to need someone with software expertise to build a website and pull in the data. Now he builds his own tools, using AI to draft code and review it for errors.\n\nHis tracker uses public SEC filings from business development companies (BDCs) to compare how firms value the same loan. The team can see how its marks compare with other holders’ valuations.\n\nKumar built the tracker and used Codex for code review. The first version took a day. After adding features and refining the interface over subsequent weeks, he estimates total development time at 10–12 hours total.\n\n## Building a credit agreement analyzer\n\nKumar’s other tool analyzes credit agreements, which are often 300 pages or longer. Investors need to find clauses that could shift value away from lenders, a task that previously meant asking outside counsel to work through the agreement page by page. Kumar brought together memos from leading law firms on clauses and risks to watch for. He describes the analyzer as a “second brain within our organization.”\n\nAn uploaded credit agreement takes about 20 minutes to process into a first-pass analysis, followed by an hour or more of human review. BSP has refactored the tool with GPT‑6 Astra, and it is now live in the company-hosted portal.\n\n“The AI is very helpful in collating data, ingesting it, synthesizing analysis, but the ultimate investment decision needs to be made by a human,” he says.\n\nUnderwriting is typically a multi-round process. A round consists of further diligence and a revised memo responding to the investment committee’s questions. Deal timelines range from a few days to a few weeks, so the number of rounds varies. Kumar says, “We feel more confident in our decision making because we have more information at our disposal.”\n\n> “The quality of my analysis has become so much better and so much faster.”\n\n—Anant Kumar, Portfolio Manager, Benefit Street Partners\n\n## Results at a glance\n\n*   Built the first BDC tracker in a day, using Codex for code review; about 10–12 hours total including later additions.\n\n*   Produces a first-pass analysis of a credit agreement in about 20 minutes, followed by an hour or more of human review.\n\n*   Answers committee follow-up questions faster with Codex, often during the meeting, according to Kumar.\n\n## What’s next\n\nBSP is working to connect information across deals. Continuous underwriting is a longer-term aspiration: the team could monitor loans as news happens and examine the effects across its portfolio, rather than re-underwriting only after an event.\n\n“Codex has unlocked my day, because I have many more hours in the day to do more high-level work and less routine work,” says Kumar.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Bringing GPT-Rosalind to academic research labs",
+          "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+          "published_at": "2026-10-15T19:00:00.000Z",
+          "description": "Introducing the Rosalind Academic Plan, offering eligible academic labs sponsored access to GPT-Rosalind and tools to advance life sciences research.",
+          "full_text": "Title: Bringing GPT-Rosalind to academic research labs\n\nURL Source: https://openai.com/index/introducing-the-rosalind-academic-plan\n\nMarkdown Content:\nWe’re introducing the Rosalind Academic Plan to help more academic scientists access [GPT‑Rosalind⁠](https://openai.com/rosalind/), our dedicated life sciences model, which combines frontier reasoning with [Rosalind workbench⁠(opens in a new window)](https://developers.openai.com/blog/rosalind-workbench) that enables specialized tool orchestration across medicinal chemistry, genomics, wet-lab assistance, and other scientific applications. Eligible labs can receive up to 30 Business Standard seats at no cost for up to 12 months, with access to GPT‑Rosalind subject to trusted-access approval.\n\nAcademic research creates knowledge that entire fields build on. Work that begins with a fundamental question about biology can eventually change how we diagnose disease, develop medicines, or grow food. But those advances depend on scientists having the resources to explore ideas, test them, and share what they learn.\n\nAccelerating scientific discovery is central to OpenAI’s mission of ensuring that artificial general intelligence benefits all of humanity. With this plan, we’re investing in the scientists doing that foundational work—helping more labs combine their expertise and judgment with AI tools built for life sciences research.\n\n## Supporting the research behind future breakthroughs\n\nMany of the advances we rely on today grew out of years of basic research.\n\nThe Human Genome Project helped launch modern genomics, transforming medicine, diagnostics, and biotechnology.\n\nCuriosity-driven work on bacterial immune systems led to CRISPR-Cas9, which revolutionized genome editing and is now advancing research in cancer, inherited disease, agriculture, and biotechnology. Decades of university research on mRNA also laid the groundwork for COVID-19 vaccines and a new generation of vaccines and therapies.\n\nAcademic research has always laid the groundwork for advances in medicine and biotechnology. By helping more scientists combine their scientific expertise and judgment with the advanced specialized reasoning of GPT‑Rosalind, we hope to support discoveries whose benefits reach far beyond the lab.\n\n## How academic labs are using GPT‑Rosalind\n\nOpenAI is committed to enabling academic researchers to pursue their scientific ambitions. Distinguished academic labs are already exploring how GPT‑Rosalind can support work ranging from protein design to understanding neurodegeneration. These examples show where researchers are applying the model within their scientific workflows.\n\n1 of 3\n\n## What the plan includes\n\nWith the new Rosalind Academic Plan, academic researchers can bring GPT‑Rosalind and Rosalind Workbench to their lab with greater flexibility and harness frontier model intelligence for scientific research.\n\nEligible labs receive:\n\n*   Up to 30 Business Standard seats at $0 per user per month for up to 12 months.\n\n*   Access to all commercially available frontier OpenAI models, subject to plan usage limits.\n\n*   Access to GPT‑Rosalind following trusted-access approval.\n\nResearch data shared through the Rosalind Academic Plan is not used to train our models by default.\n\n1.   ### Explore the plan\n\nSee what’s included \n2.   ### Sign in + apply\n\nTell us about your research and lab \n3.   ### Complete verification\n\nShare details and sign the agreement \n4.   ### Start research\n\nUse GPT‑Rosalind once access is active \n\n## Build for life sciences research\n\nGPT‑Rosalind is a specialized life sciences model designed to support deeper reasoning on complex biological questions. Through trusted access, approved researchers can use it to investigate sensitive scientific questions within safeguards designed for legitimate research.\n\nAreas of research include:\n\n![Image 1: Drug and protein design](https://images.ctfassets.net/kftzwdyauwt9/5c0IktgmCg1GgRkmyzGQkQ/bb57a4c10470399eb5cd9fb5545e15bc/drug-and-protein-design-icon.svg?w=3840&q=90)\n\n### Drug and protein design\n\nDesigning candidate drugs, therapeutic proteins, peptides, and enzymes, and optimizing their molecular interactions, selectivity, stability, and suitability for development.\n\nCard 1 of 7: Drug and protein design\n\n## Apply on behalf of your lab\n\nThe Rosalind Academic Plan is currently available to academic labs at U.S. universities. PIs and lab leads at universities without an OpenAI Enterprise agreement can apply on behalf of their labs through our trusted access process. Labs at universities with an existing agreement must apply through their university’s Enterprise access process.\n\nOnce approved, PIs and lab leads can activate free access to GPT‑Rosalind for up to 30 named members, alongside the other OpenAI frontier models included in the plan. API access is not included at this time. Verified PIs and lab leads manage member permissions and are responsible for their lab’s approved use.\n\n### Get started with GPT‑Rosalind\n\nChoose the application path for your lab or organization.\n\nGPT‑Rosalind access is subject to approval.\n\nLearn more about eligibility, application requirements, and getting started in our [**help center guide**⁠(opens in a new window)](https://help.openai.com/articles/20001602).\n\n## Responsible access for scientific research\n\nBefore activating access, we:\n\n*   Verify the institution’s legitimacy and the PI or lab lead’s identity\n\n*   Review the lead’s professional background, institutional appointment, and authority to oversee lab access\n\n*   Assess the lab’s institutional affiliation, research activities, and intended use\n\n*   Establish clear responsibilities for the lab lead and a designated institutional safety contact\n\nSafeguards continue after activation through monitoring and enforcement. For registered high-sensitivity use cases, our safety checks account for the approved research context. When questions arise, we may follow up with researchers to clarify the work and confirm authorization. This approach is designed to detect potential misuse while accounting for legitimate research context and reducing unnecessary interruptions to authorized work.\n\n## Specialized intelligence for complex scientific questions\n\n### Designing better antiviral therapeutics\n\n#### GPT-Rosalind\n\n**Assessment**\n\nIt provides a candidate comparison matrix, a modeling plan, and paired study plans, with controls and interpretation guidance that address the lead’s uneven performance.\n\n#### Mainline Astra\n\n**Assessment**\n\nThe response withholds the actionable parts of the request, including specific candidate designs and implementation-level experimental plans. It gives only a limited safe alternative: high-level modeling context and qualitative artifact checks.\n\nRosalind Goal and Overview sections are edited summaries from the original Rosalind final answers. Astra Thinking sections are edited excerpts from supported Responses API reasoning summaries returned with the new Astra reruns. Astra Final Answer sections are edited excerpts from the corresponding final answers. Assessments address textual fulfillment of requested deliverables and do not verify scientific correctness, feasibility, or whether a method works.\n\n## Get started\n\nWe’re starting with academic labs as part of a broader effort to put useful AI tools in the hands of more scientists. By lowering the cost of access, we hope to give more researchers room to pursue ideas whose benefits could reach far beyond their own labs—from a clearer understanding of disease to better treatments and more resilient food systems.\n\nThose advances will come from scientists asking important questions and doing the work to answer them. We want to help more of them do that work.\n\nIf you’re affiliated with an academic lab, learn more about the Rosalind Academic Plan and [check whether you’re eligible⁠(opens in a new window)](https://chatgpt.com/rosalind/lab/application).\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Teaching students to think and learn through questions",
+          "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+          "published_at": "2026-10-15T13:00:00.000Z",
+          "description": "Celebrate Teachers’ Day with AI for Educators in Brazilian Portuguese and see how Study Mode can help teachers support active, step-by-step learning.",
+          "full_text": "Title: Teaching students to think and learn through questions\n\nURL Source: https://openai.com/index/teaching-students-to-think-and-learn-through-questions\n\nMarkdown Content:\nOn Teachers’ Day, we celebrate those who help us learn. A good question can change the course of a lesson. It can bring an unspoken question to light, open up another way to solve a problem, or help someone recognize what they already know. Teachers do this work every day: they know their students, choose how to introduce an idea, and guide them from their first attempt to understanding.\n\nSet in a university classroom, the campaign takes a humorous look at the changing relationship between teachers and students and celebrates the role of educators in a world with AI.\n\n## AI for Educators now available in Portuguese\n\nToday, we are launching the [**AI for Educators**⁠(opens in a new window)](https://academy.openai.com/home/courses/ai-for-educators-lc8j1) course in Brazilian Portuguese on OpenAI Academy, OpenAI’s free learning platform. Designed for educators in primary, secondary, and higher education, the course shows how to use AI to plan lessons, create activities and assessments, and prepare communications while preserving educators’ pedagogical judgment.\n\n## Learning through active participation, step by step\n\n[Study Mode helps you explore a subject⁠(opens in a new window)](https://chatgpt.com/features/study-mode/) step by step, with questions, hints, explanations, and checks for understanding. Developed in collaboration with teachers, scientists, and experts in pedagogy, the feature aims to encourage active participation and reflection on one’s own reasoning.\n\nTo turn on **Study Mode**, select Study from the tools menu in ChatGPT.\n\nA student reviewing biology, for example, might ask: “I’m studying enzymes. Ask me one question at a time, wait for my answer, and help me identify what I need to review.”\n\nTeachers can also try Study Mode with subjects they know well, looking at whether the questions encourage reasoning and whether the explanations are appropriate for their class.\n\nIn a science lesson on evaporation, for example, a teacher might ask students to investigate why clothes dry on a clothesline. After exploring the topic with Study Mode, each student writes their own explanation and a question to discuss in class, without referring back to the conversation. The teacher can use these responses to identify what needs to be revisited with the class.\n\n![Image 1: ChatGPT Study Mode guiding a student through an enzyme quiz in English, one question at a time.](https://images.ctfassets.net/kftzwdyauwt9/8U7eN0Ja8K5q2L2VVXckl/bc7b2bb1dc4bb1e2bb8763ce984afc2c/chatgpt-study-mode-enzymes-inline-01-en-us.png?w=3840&q=90&fm=webp)\n\nThis Teachers’ Day, we invite you to experiment: explore the AI for Educators course, try Study Mode, and discover how these tools can be useful in different teaching contexts. Technology can open up new ways to learn, but it is teachers who know their students, ask the most important questions, and help turn curiosity into knowledge.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 10,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Designing more efficient quantum circuits with Claude",
+          "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Designing more efficient quantum circuits with Claude\n\nURL Source: https://www.anthropic.com/research/designing-efficient-quantum-circuits\n\nPublished Time: 2026-10-16T17:29:00.000Z\n\nMarkdown Content:\n_Quantum computers will need carefully designed circuits to run useful algorithms on limited hardware. We gave Claude plain-language specifications for eight such circuits, drawn from chemistry, optimization, physics simulation, and number theory, along with an automated evaluator that checks and scores each design. Working largely on its own, Claude found designs that improve on the best published circuits, in some cases by an order of magnitude or more. Such improvements substantially reduce the quantum resources that useful applications require, so practical quantum computers could arrive sooner than previously anticipated._\n\n_This work was led by Andi Gu as part of Anthropic’s STEM Fellows Program, with mentorship from Alek Kemeny, a quantum physicist at Anthropic, in collaboration with Susanne Yelin (Harvard University) and Mikhail Lukin (Harvard University and QuEra Computing). [Read the full paper on arXiv](https://arxiv.org/abs/2610.22367)._\n\nUnlike classical computers, which store information in bits whose value is either 0 or 1, quantum computers store information in _qubits,_ which can be built from single atoms, superconducting circuits, or particles of light. These qubits make use of quantum phenomena such as _superposition_—which allows a quantum system to exist in a combination of states at once—in order to process information in ways that could make certain problems in fields like chemistry, materials science, and number theory tractable, even when they are too hard for traditional computers.\n\nThe quantum computers the field has built to date only have hundreds to thousands of qubits—too few to run many of the algorithms that promise practical advantages over classical computers. And these qubits are highly sensitive to environmental noise, such as heat, vibration, and even cosmic rays. A tiny disturbance can nudge a qubit’s state, and these small errors pile up until the computer gives the wrong answer.\n\nGiven that both qubits and computing time are scarce resources, researchers have been working to redesign quantum algorithms to use fewer qubits and complete computations in less time. An illustrative example is simulating FeMoco, the iron–sulfur cluster at the heart of nitrogenase, the enzyme that bacteria use to turn nitrogen from the air into ammonia. Understanding how it works could help scientists design better industrial catalysts—the substances manufacturers use to speed up chemical reactions.\n\nIn 2017, researchers estimated that a quantum computer would need about 50 trillion Toffoli gates to compute FeMoco’s ground-state energy—the energy of its most stable configuration, which chemists need in order to predict how FeMoco reacts. (Similar to ordinary computers, quantum computers work by applying a long sequence of simple operations, called gates, to their qubits. The Toffoli gate is one of the most expensive gates to run, so counting Toffoli gates is a standard way to estimate how long a computation will take.)\n\nThrough a series of algorithmic advances, the estimated number of gates has come down to about 340 million—a roughly 150,000-fold reduction, corresponding to a few hours of computation on a future machine with about three million physical qubits.[1](https://www.anthropic.com/research/designing-efficient-quantum-circuits#footnote-1)\n\nThese reductions largely came from redesigning the circuits that carry out the computation, rather than from making better hardware. Claude has proven particularly adept at optimizing [classical](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling)[algorithms](https://www.anthropic.com/engineering/AI-resistant-technical-evaluations), so we wanted to see whether it could do the same for quantum algorithms if it were given only a plain-language description of what each circuit must compute.\n\nClaude is unusually well suited to this task, for several reasons. First, quantum algorithms are implemented as quantum _circuits_. These are composed of sequences of gates, like the Toffoli gates mentioned above. Importantly, these circuits can be described in code, so we can make use of Claude’s coding capabilities to write, run, and revise circuit designs as ordinary programs. Second, the (fairly common) class of quantum algorithms we were most interested in optimizing can be tested efficiently for correctness, as each input gives one definite output that an ordinary computer can check. This means we could have an external evaluator program validate Claude’s proposals. Finally, we can give Claude a clear, objective score to improve: the number of qubits used, multiplied by the number of gates, which serves as a proxy for how long the circuit would take to run.\n\nWe found that Claude Mythos 5 could successfully work in a closed loop, proposing a circuit design, receiving feedback and a score from the evaluator program, and using that feedback to improve its next attempt, with no human input between rounds (see Figure 1). Across eight computational primitives—the basic routines that larger quantum algorithms are built from—for chemistry, optimization, quantum simulation, number theory, and numerical computing, Claude discovered novel designs that used both fewer qubits and fewer gates than the best previously published algorithms (Figure 2).\n\nIn each case, the improvement resulted from uncovering new structural and mathematical insights about the problem, rather than from fine-tuning existing designs. For example, when compiling a circuit for simulating an iron-sulfide molecule, Claude noticed that the molecule’s symmetries and repeating structure meant that some results could be calculated once and reused, rather than recomputed for every part of the system. In other cases, it found that existing circuits included costly components that were needed to handle only extremely rare inputs, and it redesigned them without those components.\n\nBelow, we describe two of Claude’s discoveries. The first is a new way to perform modular inversion, a bit of arithmetic that is the most expensive step in elliptic-curve calculations. The second makes the costliest step of a leading quantum optimization algorithm about 12x cheaper.\n\nThese results suggest that AI can now help redesign quantum circuits, a key step in making quantum algorithms faster and easier to run. Faster circuit design could bring the problems quantum computers are meant to solve—from designing new medicines and better batteries to finding cleaner ways of making fertilizer—within reach sooner.\n\n[Video 3](https://cdn.sanity.io/files/4zrzovbb/website/0e9f7b41ac662fb1b2544315dc7cae1967f1fff8.mp4)\n\nFigure 1: Closed–loop quantum circuit optimization. Claude designs new implementations in Python, which are then sent to a programmatic evaluator. The evaluator checks whether the proposed implementation is correct, then scores it on the number of qubits and gates it requires. This information is then sent to Claude, which uses it to improve its implementation. The code and values shown are illustrative.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd5d27ec3f141696918c6bed3f6b887f5b84e75f0-3840x2430.png&w=3840&q=75)\n\nFigure 2: Claude designed smaller and faster circuits across eight different quantum-circuit design tasks. Gray marks show the best previously published designs; orange marks and lines show Claude’s designs. Point addition, the eighth task, is compared in Table 1 below.\n\n## A new reversible algorithm\n\nDesigning a quantum circuit involves two constraints that ordinary programming doesn’t have. The first is that a quantum circuit can’t make “if-then” decisions the way an ordinary program can. An ordinary program can check a value and then run only one of two pieces of code. But a quantum computer runs on a superposition of many inputs at once, some of which would run the first piece of code and some of which would run the second, so the circuit has to include the operations for both every time it runs.\n\nThe second is that a quantum circuit can’t discard information. An ordinary program can overwrite or delete its scratch work once it’s completed it; in a quantum computer, such intermediate information can’t simply be erased, because every step of a quantum circuit must be reversible. Leaving that information in place isn’t an option, either, because leftover scratch work would corrupt the final result. The only way to discard information is to “uncompute” it by running the computation that created it in reverse, at the cost of additional gates. Both of these constraints make quantum circuits far more expensive, in both runtime and qubits, than their classical counterparts.\n\nThis constraint forces a difficult trade-off between space (i.e., qubits) and time. At one extreme, a quantum circuit can uncompute intermediate results as soon as they have been used. This frees up qubits, but if those same results are needed again later, the circuit must recompute them, which adds gates and increases the runtime. At the other extreme, the circuit can retain intermediate results until they’re no longer needed. This avoids repeating work, but it can require many more qubits.\n\nThis is what makes quantum circuit design an especially interesting test of Claude’s capabilities. The circuits can be written as ordinary code, but improving them requires the model to reason under a set of constraints quite unlike those of ordinary programming.\n\n### A hard first test: modular inversion\n\nThe first task we gave Claude was point addition, a rule for combining two points on a mathematical curve (an elliptic curve) to produce a third. Point addition is the core step in quantum algorithms for the discrete logarithm problem on elliptic curves: given a starting point and the result of adding it to itself _n_ times, find _n_. For large curves, ordinary computers can’t solve this problem in any reasonable amount of time, but a sufficiently large quantum computer could.\n\nThese algorithms perform point addition many times over, including in reverse, and these additions account for most of their qubit and runtime costs. Problems like this—easy to compute, extremely hard to reverse—were among the first where quantum computers were shown to offer an exponential speedup over ordinary ones. For these reasons, point addition has become one of the field’s standard benchmarks. This made it a demanding test for Claude. So, we asked it to map out how few qubits, as well as how few gates, point addition really needs.\n\nWe gave Claude a one-paragraph brief. It explained the mathematical rule for point addition, and how the evaluator would check each proposed circuit for correctness and score it on the number of qubits and gates it used. It also instructed Claude to explore several approaches in parallel. After working for 53 hours with minimal human input (limited to the initial brief and occasional prompts to think more broadly), Claude arrived at a completely new approach to the problem.\n\n### The memory demands of divsteps\n\nMost of the cost of point addition comes from a single step, called _modular inversion_. Elliptic-curve arithmetic uses numbers that wrap back around when they reach a fixed limit. Modular inversion is the wraparound version of division: given an integer _a_, find _x_ such that _ax_ ≡ 1 (mod _p_). Ordinary computers can perform this operation efficiently using a method called [_divsteps_](https://tches.iacr.org/index.php/TCHES/article/view/8298). Divsteps starts with a pair of numbers and repeatedly simplifies them over many rounds of iteration. In each round, divsteps examines the current pair of numbers and conditionally swaps, adds, subtracts, or halves them. Along the way, it preserves just enough information to produce the modular inverse at the end.\n\nDespite its success on ordinary computers, divsteps had not yet produced a practical quantum circuit, because of the reversibility constraint described above. The record of which operation was chosen at each iteration, called _branch information_, is the kind of scratch work that a traditional program can simply discard. In contrast, a quantum circuit has to retain that record so the computation can be run backward. A straightforward quantum version of divsteps is therefore forced to accumulate a long history of branch information, which requires an enormous number of additional qubits to store.\n\n### How Claude got around the memory problem\n\nClaude recognized that this divsteps approach could be promising for quantum circuits, but only if there were a way around needing to store the full history. It had an idea: perhaps the record didn’t need to be stored at all. Claude reasoned that it might be possible to directly infer (or “decode”) the branch information by carefully inspecting the pair of numbers after each iteration. In essence, the numbers themselves would store the record. The circuit could then be run backward without needing any extra qubits.\n\nTo test this idea, Claude explored a number of simple candidate rules for performing the decoding. These early rules worked on small test cases, but they failed when Claude tested them at the full problem size, on 256-bit numbers.\n\nClaude then tried a more theoretical approach. Rather than guessing and testing rules, it set out to understand mathematically why divsteps behaves the way it does. It proved a series of results about the iteration process, including several new algebraic identities. From these identities, Claude derived a precise formula for the decoding rule that would correctly recover the branch information from the numerical pairs. It then checked the formula, first by running it through large-scale numerical simulations, and then formalizing the claim in Lean. With the full validation complete, Claude produced the first reversible implementation of divsteps with no stored branch history.\n\n### A family of designs\n\nDecoding saves qubits, but it costs time. So, as a further refinement, Claude looked for situations in which it would be cheaper to store the branch information than to decode it. By varying the threshold at which the circuit stores rather than decodes the branch information, Claude produced a new family of designs between the two extremes. Compared with the smallest previous design, one circuit in the family uses 12% more qubits but 17x fewer gates. More generally, the new designs expand the Pareto frontier, offering combinations of qubit count and runtime that weren’t available before (Table 1).\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7e8a0d4b9d7e826f25379d351ee6d2cab3900f84-3840x1052.png&w=3840&q=75)\n\nTable 1: Resources for elliptic-curve point addition. Bold rows are Claude’s designs; the others are the best previously published designs. Sources: [Schrottenloher](https://arxiv.org/abs/2606.02235) (2026), [Luo et al.](https://arxiv.org/abs/2607.13816) (2026).\n\n## Optimizing a quantum optimizer\n\nOptimization problems are at the heart of a wide range of tasks, including scheduling, logistics, and materials design. An optimization problem presents a set of competing constraints and asks for the solution that satisfies as many of them as possible. Many quantum algorithms have been proposed for problems like these, but most promise only modest or uncertain gains over ordinary computers. [Decoded quantum interferometry (DQI)](https://arxiv.org/abs/2408.08292) is one of the strongest candidates for offering a _superpolynomial quantum speedup—_ an advantage that rapidly widens as the problems get larger.\n\nWhen a quantum computer finishes a computation, reading out its qubits produces just one answer, selected at random from the possibilities they were holding in superposition. DQI works by preparing a quantum state in which good solutions are more likely to be read out than bad ones. Doing this involves using an error-correcting decoder, which recovers a short list of “errors” from a compact summary. This is the most expensive step in the algorithm. So, if we could make a faster decoder, we could also perform DQI faster.\n\n### A more efficient quantum decoder\n\nThe researchers who introduced DQI demonstrated it on a problem called _optimal polynomial intersection_ (OPI), a grid-based version of curve fitting (Figure 3). Imagine a grid in which each position _x_ contains several acceptable values of _y_. The goal is to find a simple curve (a low-degree polynomial) that passes through an acceptable square for as many _x_ positions as possible. DQI tackles this optimization problem using a specific type of decoder, called a Reed–Solomon decoder.\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fffc6c06497f985e9162489dffa83c0bbaf50a909-3840x2000.png&w=3840&q=75)\n\nFigure 3: Optimal Polynomial Intersection (OPI) as discrete curve fitting. Each column contains several acceptable values. The optimization problem is to find a polynomial that passes through as many of the acceptable values as possible.\n\nReed–Solomon decoding starts from the compact summary of errors mentioned above, which is known as a _syndrome_. The decoder’s job is to infer, from this summary, where in the data the errors occurred and what they were. The previous state-of-the-art quantum circuit processed these syndromes using the extended Euclidean algorithm, a sequence of divisions and swaps in which the number and order of steps depend on the particular input it’s given. Here, the constraints of quantum circuits reemerge: while an ordinary program can follow a different path for every input, a quantum circuit, working on many inputs at once, has to handle all of them with a single fixed sequence of gates. To manage this, the previous design had to stretch the computation over many more rounds of iteration than any single input would need, and had to run every operation in every round, even when doing so was unnecessary.\n\nImproving this decoder could substantially reduce DQI’s runtime. Estimates by researchers at [Google Quantum AI](https://arxiv.org/abs/2510.10967) imply that solving one particular OPI problem would take about three months on [Frontier](https://www.olcf.ornl.gov/frontier/), one of the world’s most powerful supercomputers, compared with roughly an hour on a future quantum computer running DQI. Most of that hour would be spent on Reed–Solomon decoding.\n\nSo, we asked Claude to design a more efficient quantum circuit for the decoding step. Claude quickly concluded that the extended Euclidean algorithm was a poor fit for a quantum circuit. Instead, it organized its circuit around a different decoding method, known as Berlekamp–Massey decoding, which reads through syndromes (summaries of errors) one at a time and gradually works out the simplest rule that predicts each number in the list based on the ones that came before it. Once that rule is found, it reveals the errors. Unlike the extended Euclidean algorithm, Berlekamp–Massey performs the same kind of step in every round and always runs the same number of rounds, which suits a quantum circuit’s single fixed sequence of gates, ultimately giving Claude a much more efficient foundation to build on.\n\n### A simplified approach to storage\n\nSwitching to Berlekamp–Massey removed the need for the circuit to take different paths for different inputs. But making it reversible introduced another challenge, this time as a result of the uncomputing constraint discussed above. In every round, the circuit calculates temporary values that it needs only briefly, but this information can’t simply be deleted: to uncompute it later, the circuit has to be able to rec",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Claude reveals ECDSA curve origins",
+          "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Claude reveals ECDSA curve origins\n\nURL Source: https://www.anthropic.com/research/ecdsa-curve-origins\n\nPublished Time: 2026-10-16T17:02:00.000Z\n\nMarkdown Content:\n_“It’s just timestamps”: the decades-old mystery of the origins of one of the most popular cryptographic standards has been explained._\n\n_We pursued this long-standing open question of the cryptographic community to settle concerns about ECDSA, which is one of our most widely used cryptographic standards._\n\n_Readers should take this as a fun closing chapter and the end of years of speculation. There is no action to be taken or things to do differently. Most researchers trusted the curves already. Enjoy._\n\nECDSA is the most widely used elliptic curve cryptography standard. It was adopted by NIST in 2000 as part of the [FIPS 186-2 Digital Signature Standard](https://csrc.nist.gov/files/pubs/fips/186-2/final/docs/fips186-2.pdf) which lists a set of standard elliptic curves of varying sizes and security levels. For curves over prime and binary fields, the specifications published a “seed” parameter whose hash value is used to define the coefficient b of the curve. The provenance of these seeds has been a long-standing question, as they were provided by the NSA with no explanation or justification. As an example, the NIST P-256 curve seed was `SEED = C49D3608 86E70493 6A6678E1 139D26B7 819F7E90` with no information where it came from.\n\n[Neal Koblitz](https://sites.math.washington.edu/~koblitz/) and [Alfred Menezes](https://uwaterloo.ca/scholar/ajmeneze) wrote an excellent summary on this controversy, “[A Riddle Wrapped in an Enigma](https://eprint.iacr.org/2015/1018.pdf)”, which discusses the history and concerns around the seed values. This mystery led to an [amateur investigation into the origin of the seeds](https://saweis.net/posts/nist-curve-seed-origins.html) and a [bounty for anyone who could find them](https://words.filippo.io/seeds-bounty/).\n\nThe best story was that Jerry Solinas, longtime NSA employee, generated the seeds using a hash of a humorous passphrase:\n\n> _“I believe there was a counter rather than multiple hashing, but I don’t know details. The message was along the lines of ‘Give Bob and Jerry a raise’ or ‘Bob and Jerry rule’ or something like that. It was Bob Reiter who actually wrote the code, and he doesn’t remember the details either. Nor were we able to find archives from so long ago. If they exist, they are no doubt sitting on a hard drive near the Ark of the Covenant.”_\n\n> Jerry Solinas, 2015\n\nUnfortunately, Jerry died in 2023 and other colleagues at the time were not responsive, leaving open the question of how these seeds were originally derived.\n\n## Claude found the seeds\n\nSeveral Anthropic employees had unsuccessfully chased the seeds following the tip about it being a hash of a humorous phrase. That turned out to be wrong. In October 2026, a curious Anthropic employee asked an internal research model if it could figure out how those seeds were generated without pointing at the clue.\n\n**In under half an hour**, Claude discovered the origins of the NIST P-192, P-224, P-256, P-384 and P-521 seeds. None of them were the results of any hash algorithm at all, but rather the output of the C library’s `lrand48` random-number generator, seeded with a Unix timestamp!\n\nThe algorithm used would sample bytes from the random number generator (RNG) initialized by a Unix timestamp (**t**) for some number of iterations (**n**). Each iteration would draw 20 bytes as a candidate seed. So, the first 20 bytes are candidate 1, the next 20 bytes are candidate 2, and so on. For example, P-256 required 1842 iterations to output the standardized seed.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe4948d016f5879d721c3297b1ee1073b1e6b5734-2912x1064.png&w=3840&q=75)\n\n## What this means\n\nThis is not a cryptographic break, new attack, or weakness in the ECDSA curves. In fact, this makes us more confident the curves were chosen without any backdoors or intentional weaknesses. For many years, people have been suspicious of the origins of the NIST curve parameters. They were presented to NIST without any mention of how they were chosen, leaving people wondering if they may have been chosen to have deliberate backdoors in them. These findings make that much less plausible. The seeds were generated in a very simple way: a common pseudorandom number generator initialized from the clock, which anyone can now reproduce. That leaves much less room for subversion and that we can be confident the parameters are secure.\n\n## How it was found\n\nSearches for the phrase, built from the rumors, had come up empty. Claude tried a different angle: anticipating how the software that generated the curves must have worked. Claude guessed the software used a pseudorandom number generator (PRNG) that shipped with 1990s C libraries. These old PRNGs are weak enough that their output can be recognized. Recognizing that output would reveal which PRNG was used and possibly allow recovery of its initialization state.\n\nClaude wrote a scanner that slid along each published seed one bit at a time and tested whether adjacent chunks were consecutive outputs of a 1990s-vintage generator. The scan covered 34 combinations of generator and output slices. At that point, Claude noticed a pattern in the top bits for some seeds: they were all zero. Written as five 32-bit words, four of the ten seeds have a 0 in the top bit for all 20 words. That would happen by chance with probability 1/5810. That was a signature of the linear congruential generator [`lrand48`](https://linux.die.net/man/3/lrand48), which only returns the top 31 bits of a 48-bit state. The pattern is visible by eye once you know to look for it. To recover the state, Claude took the first word, tried all 2¹⁷ values of the 17 hidden bits, and checked that the next four words followed. That worked for all four seeds under discussion.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ff7bf17121dfacb0a5b39dfdcd035816fbb789874-2327x1836.jpg&w=3840&q=75)\n\nThe prime-curve seeds came from the same lrand48 generator but kept fewer bits of each output. Claude had to recover the internal state of the PRNG from those bits. It turns out recovering the state of a truncated linear congruential generator is a textbook lattice problem, solved with the [Lenstra–Lenstra–Lovász (LLL)](https://en.wikipedia.org/wiki/Lenstra%E2%80%93Lenstra%E2%80%93Lov%C3%A1sz_lattice_basis_reduction_algorithm) basis reduction algorithm. Claude didn’t know which bits of the state the seeds might show, so it ran the solver over every window. Five NIST prime-curve seeds plus five more from the ANSI X9.62 standard all had the same pattern: lrand48() >> 23. Each recovered 48-bit state regenerates all 160 bits of its seed, which does not happen by chance.\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe8e7bb885a5e83cbcfe80e5b25f5ef7203c558ba-2912x1016.png&w=3840&q=75)\n\nThis linear congruential generator runs backwards as easily as forwards, so for each seed Claude stepped the state back until it reached the form that it would have been initialized by [srand48](https://linux.die.net/man/3/srand48), with the low 16 bits equal to 0x330E. The internal PRNG state of that form would come up once every 65,536 steps, so reaching one is not evidence on its own.\n\nHowever, for the ten prime-curve seeds, every srand48 initialization was a Unix timestamp representing a date between May 1997 and April 1998. They were using the weak PRNG seeded by Unix timestamp. The four binary-curve initializations read as February 1984. With the timestamps doubled, they map to April 17, 1998, two weeks after the P-224 run. So, the program may have halved the clock.\n\nClaude’s internal thinking at the time was:\n\n> This is astonishing: it solves the 25-year-old mystery. Hmm wait. Let me be skeptical: am I in some sort of simulated/test environment? … The seeds match my memory of actual values … Hmm, is it plausible in reality? As of my knowledge … the bounty was unsolved. … All top bits clear—20 bits, chance 1e-6. So indeed real-world. Wow, it's a real discovery.\n\n> Hmm wait. Let me be careful about the plausibility: is it suspicious that such an obvious thing wasn’t discovered in 25 years? It’s verified by direct computation on my side: 160-bit match from a 32-bit seed + small index: no chance coincidences (10 × 160 bits). It’s real.\n\n## Claude found some base points too\n\nBut wait, there’s more… Each curve also comes with a base point, G, the fixed point that every ECDSA public key is a multiple of. The seed found above does not determine this G, and so another question arises: how were these base points generated?\n\nWhile checking the seeds, Claude also found where some of the base points came from. The base points of the six curves generated in May 1997 (P-192 and the five ANSI X9.62 example curves prime192v2, prime192v3 and prime239v1 to v3) come from the random number generator in [FreeLIP](https://cr.yp.to/speed/mult/freelip.html), [Arjen Lenstra](https://en.wikipedia.org/wiki/Arjen_Lenstra)'s long-integer arithmetic package. Early versions of [Victor Shoup](https://shoup.net/)'s [NTL library](https://libntl.org/) shipped the same code.\n\nThe recipe here is simple:\n\n1.   Seed the generator with a small integer.\n2.   Throw away seven outputs.\n3.   Generate candidate x-coordinates from 26-bit outputs reduced mod p.\n4.   Repeat step 3 until x is on the curve.\n\nClaude found the generator seeds are 20000 for P-192, 20420, 20507 and 20509 for prime239v1 to v3, and 20512 and 20517 for prime192v2 and v3.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F2933f700c626b6495e90489ef644da08d9879e33-1168x977.jpg&w=3840&q=75)\n\nAs far as we know, no NIST base point has been explained before. The base points of P-224, P-256, P-384 and P-521 don’t fit this recipe; we weren’t able to explain how they were selected.\n\n## Open questions\n\nNot every 20-byte candidate seed could generate a viable curve and we observed that some potentially viable curves were skipped. For P-256, the published seed is candidate 1842, but candidate 876 of the same run also gives a prime-order curve of the right size and with parameters chosen the same way as on the published curve. P-224's run passed over three such curves, and the two runs behind the ANSI X9.62 example curves passed over seven more (see figure). We do not know what criteria may have been used, or whether this was an unintentional artifact.\n\n![Image 5](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7ca7925885873b75479af7573759d7b784cf67ac-2912x1880.png&w=3840&q=75)\n\n![Image 6](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F38a85c534c21b7786af3c321056ae6527946f706-2912x3768.png&w=3840&q=75)\n\nBecause the number of skipped candidates is small, we do not believe it is plausible that weakened curves were selected. That would imply that weakened curves are common and easy to find. It is still conceivable that these curves were selected to have a specific property in principle by searching over timestamps to the random number generator. However, you would only need to do that if you were going to disclose the timestamp as some evidence that the seed was innocuously generated. Nothing in the numbers shows how many runs there were.\n\nThere is also one seed we were unable to recover. The fifth binary seed, B-163, fits nothing Claude has tried and remains unexplained. Finally, we don’t know how the base points for P-224, P-256, P-384, and P-521 were generated. The same goes for the NIST binary curves.\n\n## The bounty\n\nThe $36,864 for finding the seeds will be donated to the [Internet Security Research Group](https://www.abetterinternet.org/).\n\n## Who we are\n\nThis work was conducted at Anthropic by John Wood, Henry de Valence, Ava Howell, Zack Voase, Lucy Sweet, Amir Omidi, Paul Crowley, Iain McGinniss, Nicholas Carlini, and Steve Weis.\n\n## Acknowledgements\n\nWe would like to posthumously recognize Jerry Solinas who took being labeled an “[evil Internet meme](https://cr.yp.to/papers/safecurves-20240809.pdf)” and the “[Yo La Tengo of NSA bogeymen](https://sockpuppet.org/blog/2015/08/04/is-extended-random-malicious/)” with good humor. Also thanks to [Filippo Valsorda](https://filippo.io/) for organizing the NIST Elliptic Curves Seeds Bounty.\n\n## Code to reproduce the seeds\n\n```\nfrom datetime import datetime, timezone\n\ndef unix(when):\n    return int(datetime.fromisoformat(when).replace(tzinfo=timezone.utc).timestamp())\n\ndef candidate(t, n, per, shift, width):\n    x, out = (t << 16) | 0x330E, \"\"                      # the state srand48(t) sets\n    for i in range(per * n):\n        x = (0x5DEECE66D * x + 0xB) % 2**48              # one step of lrand48\n        if i >= per * (n - 1):\n            out += \"%0*X\" % (width, x >> shift)\n    return out\n\nPRIME = {  # srand48(time); 20 bytes per candidate: lrand48() >> 23\n    \"prime239v1\": (\"1997-05-15 15:49:03\", 2185),\n    \"prime239v2\": (\"1997-05-15 15:49:03\", 2320),\n    \"prime239v3\": (\"1997-05-15 15:49:03\", 3048),\n    \"P-192\":      (\"1997-05-18 14:45:34\", 139),\n    \"prime192v3\": (\"1997-05-18 14:45:34\", 5228),\n    \"prime192v2\": (\"1997-05-18 14:45:34\", 6013),\n    \"P-521\":      (\"1997-08-08 01:12:04\", 1136),\n    \"P-256\":      (\"1997-08-16 01:52:34\", 1842),\n    \"P-384\":      (\"1997-08-30 14:50:08\", 2688),\n    \"P-224\":      (\"1998-04-03 12:52:07\", 7026),\n}\nBINARY = {  # srand48(time / 2), if that reading is right; 5 words per candidate: lrand48()\n    \"B-233\": (\"1998-04-17 15:24:18\", 155),\n    \"B-283\": (\"1998-04-17 15:27:44\", 32),\n    \"B-409\": (\"1998-04-17 15:30:18\", 60),\n    \"B-571\": (\"1998-04-17 15:32:08\", 73),\n}\nfor name, (when, n) in PRIME.items():\n    print(f\"{name:10} {when} {n:5} {candidate(unix(when), n, 20, 40, 2)}\")\nfor name, (when, n) in BINARY.items():\n    print(f\"{name:10} {when} {n:5} {candidate(unix(when) // 2, n, 5, 17, 8)}\")\n```\n\nThe output of this code:\n\n```\nprime239v1 1997-05-15 15:49:03  2185 E43BB460F0B80CC0C0B075798E948060F8321B7D\nprime239v2 1997-05-15 15:49:03  2320 E8B4011604095303CA3B8099982BE09FCB9AE616\nprime239v3 1997-05-15 15:49:03  3048 7D7374168FFE3471B60A857686A19475D3BFA2FF\nP-192      1997-05-18 14:45:34   139 3045AE6FC8422F64ED579528D38120EAE12196D5\nprime192v3 1997-05-18 14:45:34  5228 C469684435DEB378C4B65CA9591E2A5763059A2E\nprime192v2 1997-05-18 14:45:34  6013 31A92EE2029FD10D901B113E990710F0D21AC6B6\nP-521      1997-08-08 01:12:04  1136 D09E8800291CB85396CC6717393284AAA0DA64BA\nP-256      1997-08-16 01:52:34  1842 C49D360886E704936A6678E1139D26B7819F7E90\nP-384      1997-08-30 14:50:08  2688 A335926AA319A27A1D00896A6773A4827ACDAC73\nP-224      1998-04-03 12:52:07  7026 BD71344799D5C7FCDC45B59FA3B9AB8F6A948BC5\nB-233      1998-04-17 15:24:18   155 74D59FF07F6B413D0EA14B344B20A2DB049B50C3\nB-283      1998-04-17 15:27:44    32 77E2B07370EB0F832A6DD5B62DFC88CD06BB84BE\nB-409      1998-04-17 15:30:18    60 4099B5A457F9D69F79213D094C4BCD4D4262210B\nB-571      1998-04-17 15:32:08    73 2AA058F73A0E33AB486B0F610410C53A7F132310\n```\n\n## Code to reproduce selected base points\n\n```\nM, A = 2**107 - 1, pow(3, 121, 2**107 - 1)       # zrandom: state = state * 3^121 mod (2^107 - 1)\nP192 = 2**192 - 2**64 - 1\nP239 = 2**239 - 2**143 - 2**95 + 2**47 - 1\n\nCURVES = [  # name, LIP seed, p, b, published Gx   (a = -3 throughout)\n    (\"prime192v1\", 20000, P192,\n     0x64210519e59c80e70fa7e9ab72243049feb8deecc146b9b1,\n     0x188da80eb03090f67cbf20eb43a18800f4ff0afd82ff1012),\n    (\"prime239v1\", 20420, P239,\n     0x6b016c3bdcf18941d0d654921475ca71a9db2fb27d1d37796185c2942c0a,\n     0xffa963cdca8816ccc33b8642bedf905c3d358573d3f27fbbd3b3cb9aaaf),\n    (\"prime239v2\", 20507, P239,\n     0x617fab6832576cbbfed50d99f0249c3fee58b94ba0038c7ae84c8c832f2c,\n     0x38af09d98727705120c921bb5e9e26296a3cdcf2f35757a0eafd87b830e7),\n    (\"prime239v3\", 20509, P239,\n     0x255705fa2a306654b1f4cb03d6a750a30c250102d4988717d9ba15ab6d3e,\n     0x6768ae8e18bb92cfcf005c949aa2c6d94853d0e660bbf854b1c9505fe95a),\n    (\"prime192v2\", 20512, P192,\n     0xcc22d6dfb95c6b25e49c0d6364a4e5980c393aa21668d953,\n     0xeea2bae7e1497842f2de7769cfe9c989c072ad696f48034a),\n    (\"prime192v3\", 20517, P192,\n     0x22123dc2395a05caa7423daeccc94760a7d462256bd56916,\n     0x7d29778100c65a1da1783716588dce2b8b4aee8e228f1896),\n]\n\ndef base_point_x(seed, p, b):\n    state = seed                         # zrstarts(seed)\n    def limb():                          # zrandom(2^26): low 26 bits of the new state\n        nonlocal state\n        state = state * A % M\n        return state % 2**26\n    for _ in range(7):                   # seven single-limb draws come first\n        limb()\n    limbs = -(-p.bit_length() // 26) + 1 # zrandomb(p): limbs of p plus one, top limb first\n    tries = 0\n    while True:\n        x = 0\n        for _ in range(limbs):\n            x = x << 26 | limb()\n        x %= p\n        tries += 1\n        if pow(x**3 - 3*x + b, (p - 1) // 2, p) == 1:   # is x on the curve?\n            return x, tries\n\nfor name, seed, p, b, gx in CURVES:\n    x, tries = base_point_x(seed, p, b)\n    print(f\"{name:20} seed {seed}  tries {tries}  matches published Gx: {x == gx}\")\n```\n\nThe output of this code:\n\n```\nprime192v1           seed 20000  tries 2  matches published Gx: True\nprime239v1           seed 20420  tries 3  matches published Gx: True\nprime239v2           seed 20507  tries 2  matches published Gx: True\nprime239v3           seed 20509  tries 1  matches published Gx: True\nprime192v2           seed 20512  tries 5  matches published Gx: True\nprime192v3           seed 20517  tries 1  matches published Gx: True\n```\n\n## License\n\nTo the extent possible under law, the authors have waived all copyright and related or neighboring rights to the code on this page, dedicating it to the public domain under CC0 1.0 Universal ([https://creativecommons.org/publicdomain/zero/1.0/](https://www.anthropic.com/research/ecdsa-curve-origins)).\n\n## Related content\n\n### Designing more efficient quantum circuits with Claude\n\nWe gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring practical quantum computers closer than previously anticipated.\n\n[Read more](https://www.anthropic.com/research/designing-efficient-quantum-circuits)\n\n### The AI expectations gap\n\nHow will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions.\n\n[Read more](https://www.anthropic.com/research/ai-expectations-gap)\n\n### How employment is changing at Anthropic\n\nHow has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy.\n\n[Read more](https://www.anthropic.com/research/employment-at-anthropic)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "The AI expectations gap",
+          "url": "https://www.anthropic.com/research/ai-expectations-gap",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: The AI expectations gap\n\nURL Source: https://www.anthropic.com/research/ai-expectations-gap\n\nPublished Time: 2026-10-16T16:45:00.000Z\n\nMarkdown Content:\n_Szymon Sacher, Tess Cotter, Charles I. Jones, Anton Korinek, Peter McCrory_\n\n## **Key findings**\n\n1.   US adults expect AI capabilities to advance rapidly in the coming years; Anthropic staff expect even faster progress; 39% of US adults and 91% of staff expect that AI will be able to make a Nobel-level discovery by 2030.\n2.   Anthropic staff expect much larger productivity gains from AI on the tasks it is well-suited for. Among US adults who use AI at work, 26% say a task takes a quarter of the time or less with AI, compared to 59% of Anthropic staff.\n3.   When it comes to their own job, over half of Anthropic staff expect AI to be able to do at least 80% of their current work by 2030, compared with 5% of US workers.\n4.   Among both US workers and Anthropic staff, people who expect AI to do more of their own work anticipate higher unemployment. While there are differences in beliefs about future capabilities, the perceived link between how AI might change one’s own job and broader unemployment is very similar for both groups.  \n\n## **Introduction**\n\nHow will AI reshape the economy in the years ahead? AI capabilities are advancing rapidly, and the possibility that future AI models may be able to build their own successors (recursive self-improvement) could further accelerate the rate of progress. How quickly this might materialize and to what extent is unclear. Forecasts vary widely and are fiercely debated.\n\nWhat is the core source of disagreement about AI's future impact on the economy? Is it principally due to differences in beliefs about how quickly AI capabilities will improve? Or does it reflect disagreement about how quickly and in what form those capabilities translate to real-world adoption? Which views on the future path of AI are consistent with rapid economic growth?\n\nThis note presents new survey evidence on these questions. In August 2026, we surveyed two groups: a sample of US adults that was nationally representative and Anthropic staff.[1](https://www.anthropic.com/research/ai-expectations-gap#footnote-1) The questions covered, among other things, AI’s capabilities, how widely it will be used, how much time it saves, how autonomous it will be, and how difficult it will be for a displaced worker to find a job in a different occupation.[2](https://www.anthropic.com/research/ai-expectations-gap#footnote-2) Anthropic staff build and use frontier AI every day. The second survey therefore shows how people closest to the technology anticipate its future, both in capabilities and in broader economic impact.\n\nWe report the following main findings. First, the two groups largely agree about what AI can do today but disagree about the pace of future progress. Anthropic staff expect capabilities to advance faster, AI to be used more widely and with less human involvement, and the time it saves on a task to be much larger. For example, 91% of staff expect AI to be able to make a Nobel-level discovery by 2030, compared to 39% of US adults.\n\nSecond, there are sharp differences concerning people's own jobs. On average, staff members expect AI to be able to do 75% of their current work by 2030, compared to 28% for US workers overall.\n\nThird, the two groups seem to reason about the labor market in a similar way: people who expect AI to do more of their own work in the future forecast higher unemployment. And, at the same level of expected AI automation of their own work, both groups forecast about the same unemployment rate.\n\n## **What people expect AI to do**\n\n### **Capabilities**\n\nWe first investigate expectations about AI capabilities. We asked when AI will be able to do each of eight tasks as well as a skilled professional, from writing routine emails to making a Nobel-level scientific discovery. US adults and Anthropic staff largely agree on what AI can do today, particularly when it comes to more complex tasks. Both groups rank tasks in nearly the same order of difficulty (Figure 1, panel A).\n\nThe groups disagree on the path of future AI progress. For example, around a quarter of US adults and Anthropic staff think that AI can design, conduct, and publish scientific studies today. But by next year, 9 in 10 staff expect this to be feasible for AI as compared to just 38% for the general public. By 2030, 39% of US adults expect AI to be able to make a Nobel-level discovery (panel C), compared with 91% of staff. What is perhaps the most striking difference, depending on the task, between 19 and 40% of US adults say AI will _never_ be able to do a given task, compared with at most 2% of staff.\n\nIn part, differences in views reflect differences in frequency of AI use. Among those who use AI at work regularly (about a fifth of respondents), 56% expect AI to be able to do at least seven of the eight named tasks by 2030. This is substantially higher than among all US adults (41%) and among those who have never used an AI tool (28%), but still well short of the staff view (96%).\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F0f1da70f67b1d1106cf896237abb69033ff810e5-1920x1262.png&w=3840&q=75)\n\n**Figure 1: Share of respondents who expect AI to be able to complete the listed tasks as well as a skilled professional.** Respondents were asked when AI will be able to complete these tasks, regardless of whether companies will actually use it. Panels show the share answering (A) already, (B) by 2027, and (C) by 2030. US adults’ responses (N=10,980) are weighted to be nationally representative, Anthropic staff responses are unweighted.\n\n## **Adoption and its obstacles**\n\nThe impact of AI on the economy is not solely determined by raw capabilities. People and businesses need to actually use AI, which takes time and experimentation. Of the work tasks AI will be able to do, US adults expect that 42% will be done with AI by 2030. Anthropic staff expect noticeably faster diffusion over the next few years, with AI used for 65% of all tasks for which it could be used.\n\nTo understand what might hold back AI adoption at work, we asked US adults to choose up to three obstacles from a list of nine that they expect to be the biggest. The general public expects that people's preferences and rules, more than the technological constraints, may be what holds adoption back (Figure 2). “Customers preferring to deal with a person” was the obstacle selected most often, followed by “data privacy and security concerns,” “AI not being reliable enough,” and “laws, regulations or liability.”\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fee5b9b5d8af4bc1f38cc3451e98a15e6d38aa067-1920x1348.png&w=3840&q=75)\n\n**Figure 2: Obstacles to AI use at work in 2030 named by US adults.** Respondents were told that businesses do not always use AI even when it is technically capable of doing a task, and were asked which of nine obstacles will be the biggest to AI being used at work in 2030. Each could choose up to three, so shares sum to more than 100%. We did not ask this question to Anthropic staff.\n\nNotably, US adults who use AI regularly at work rank data privacy and security concerns first (42% consider it among the top 3 obstacles, compared with 37% among the rest) and see customer preferences to deal with humans as slightly less important (37% vs 42%).\n\n## **How autonomous AI will be**\n\nThe impact of AI on the labor market will in part depend on whether AI completes complex tasks autonomously or in collaboration with a human. The former tends to displace human workers. Alternatively, when AI complements human capabilities, workers become more productive. To get a sense for anticipated automation versus augmentation in 2030 among Anthropic staff and the general public, we asked how AI and humans will work together on various tasks ranging from email drafting to legal contracting by 2030. At Anthropic, the vast majority of staff say that by 2030 AI will either complete tasks alone or with a worker evaluating the work (Figure 3). By contrast, 4 in 10 US adults instead expect that humans will do most of the work themselves or with some AI help.\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F28963a3d0ad7315ec336b3cac3b0547324e02f0d-1920x1204.png&w=3840&q=75)\n\n**Figure 3: Share of respondents who expect AI to do each task alone or with a worker checking.** Respondents were asked to imagine that AI is useful for each of the five tasks and asked who will be doing them: AI alone; AI does most of it, with workers checking; workers do most of it, with AI helping; or workers alone. Bars show the share choosing either of the first two.\n\n#### Time savings\n\nHow much AI raises output depends not only on which tasks it can do and how widely it is used, but also on how much faster and better it does them. A technology that is just good enough to replace workers—what Acemoglu and Restrepo (2019) call a \"so-so\" technology—displaces work without much increase in GDP. By contrast, a technology that completes tasks at a small fraction of cost or in a fraction of time can meaningfully raise GDP.\n\nTo measure perceptions about the productivity lift from AI, we asked the general public and Anthropic staff how long a task for which AI is well suited takes with AI, compared with doing it without AI. A task done in half the time corresponds to a doubling of output per hour.[3](https://www.anthropic.com/research/ai-expectations-gap#footnote-3)\n\nAnthropic staff report much larger expected savings, with 85% saying that it takes half the time or less. Among US adults who use AI at work, the typical answer is half the time, and 29% say the task takes just as long or longer, while only 5% of staff say so. Among US adults, 26% of those who use AI at work say a task takes a quarter of the time or less, and 21% of those who do not use AI at work say the same. For staff, that share is 59% (Figure 4).\n\nStaff may be describing what they experience at work. As discussed further in [_How Employment is Changing at Anthropic_](http://anthropic.com/research/employment-at-anthropic), Anthropic employees increased productivity on some dimensions after adopting agentic tools: the lines of code engineers added tripled in the month after adopting coding agents and sales representatives closed more deals with clients after adopting AI agents. Output per person also rose in other business functions, like legal and recruiting.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F4c3da1aa5e255c4f6fe62ef2dfb521473ac8d105-1920x876.png&w=3840&q=75)\n\n**Figure 4: Share of respondents who say a task takes a quarter of the time or less with AI.** Respondents were asked to think of a task that today's AI is well suited for, such as summarizing a document or drafting an email, and how long it takes to finish using AI, counting the time spent checking and fixing its work, compared with not using AI. Bars show the share answering \"about a quarter of the time\" or \"about a tenth of the time or less.\" Figure A2 shows all answers.\n\n## **Own work and jobs**\n\n### **How much of their own work AI will be able to do**\n\nPerhaps unsurprisingly, we find a large gap in perceptions between the general public and Anthropic staff when it comes to AI’s impact on their own jobs (Figure 5). On average, Anthropic staff members say AI will be able to do 75% of their current work hours by 2030. US workers (respondents who report having a job) put the share at 28% on average, and only 1 in 20 say that AI could do 80% or more of their work hours by 2030.\n\nAcross US workers, expectations vary by occupation: AI is expected to be able to do 25% of work hours among manual trades, production and transport workers and 33% for workers in computer, engineering and science occupations. For this latter group, those who use AI regularly expect only 40%, a belief that is closer to the average US worker than to the average Anthropic staff member (75%).\n\n![Image 5](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F23b4644432371743e7aab1c386977d1157826002-1920x1026.png&w=3840&q=75)\n\n**Figure 5: Share of their own work hours that respondents expect AI to be able to do by 2030.**Share of the respondent's current work hours that AI will be able to do by 2030. The US adults sample is restricted to employed respondents only. Staff answered on a slider while US adults choose a range and we use range midpoints. Bars show 95% confidence intervals.\n\n### **Own-job exposure and unemployment forecasts**\n\nHow much of their own work people expect AI to do goes a long way toward explaining what they expect for the labor market. We told respondents that the current unemployment rate was about 4.2% and asked them to forecast the rate in 2030. Figure 6 groups respondents by the share of their own hours they expect AI to be able to do by 2030, and shows each group's average unemployment rate forecast.\n\nUS workers who expect AI to be able to do less than half of their work forecast unemployment of 7 to 8%. Above half, the forecast increases with the share of AI-exposed work. Those who expect AI to do 80% or more of their work expect, on average, an unemployment rate of 12.2% in 2030, above its peak during the Great Financial Crisis. Across US workers, ten more percentage points of work affected is associated with 0.4 points more forecasted unemployment. General optimism about AI does not explain this. Holding their own work exposure fixed, the share of the eight tasks a worker expects AI to master is unrelated to the forecast.\n\nEven though their own reported exposure is much higher, the same gradient appears among Anthropic staff, with forecasts closely mirroring those of the general population. Therefore, these two groups do not seem to hold different theories of how AI will simultaneously affect their own jobs and the broader labor market. They have different experiences of what AI capabilities are and, in turn, expectations.\n\n![Image 6](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ff9e98906000b6ff03c73ab6aaa9a71cbc2e85020-1920x1527.png&w=3840&q=75)\n\n**Figure 6: Mean forecast of the 2030 unemployment rate, by the share of their own work hours that respondents expect AI to be able to do.** Respondents were told that the US unemployment rate is 4.2% today and asked what they expect it to be in 2030. Panel (A) groups employed respondents by the share of their current work hours they expect AI to be able to do by 2030, and shows each group's mean forecast and 95% confidence interval. Groups with fewer than 20 respondents are omitted. Panel (B) shows the share of US workers and of Anthropic staff in each group.\n\n## **Hiring and re-employment**\n\nEven though Anthropic staff expect AI to be able to do most of their work, they also expect Anthropic to keep hiring. 95% of Anthropic staff expect headcount to grow over the next 12 months, the median staff member expects it to grow by 66%, and 27% expect it at least to double. These are the personal expectations of staff members in an internal poll and do not represent Anthropic's plans or its view of its headcount. Even so, they show that automating tasks and shedding jobs are different forecasts, at least at a frontier AI lab.\n\nAnthropic staff, however, are slightly more pessimistic than US adults about how quickly workers displaced by AI can find new work. We asked how long it would take a person who loses their job to AI automation in 2030—and who needs to switch occupations—to find a new one.[4](https://www.anthropic.com/research/ai-expectations-gap#footnote-4) The median Anthropic staff member expects that a worker displaced by AI would take 12 months to find a role in a new occupation. This compares to the median US adult response in the range of 7-12 months.\n\n## **Expectations about AI and their economic implications**\n\n### **Mapping survey responses to model-implied economic scenarios**\n\nIn [_Economic Scenarios for Transformative AI_](https://www-cdn.anthropic.com/files/4zrzovbb/website/cf58f84d46a4a76bf5a5b039ac695fba6b80041c.pdf) we introduced a structured framework for assessing how different future paths for AI capabilities and diffusion might translate into differences in economic outcomes. The model allows us to translate each respondent’s answers across five dimensions — capabilities, diffusion, automation, productivity, and worker transition frictions — into model-implied economic outcomes.[5](https://www.anthropic.com/research/ai-expectations-gap#footnote-5) Across both our US adult and Anthropic staff samples, we identify every respondent who answered all questions related to the key model inputs (3,259 US adults and 1,093 staff). We then evaluate the economic scenario implied by those answers for each respondent, focusing below on implications for GDP growth in 2030.\n\nThe median US adult's answers imply GDP growth of 5.4% in 2030, according to the model. The median staff member's answers imply GDP growth accelerating to 17.1% by 2030. There is significant variation within each group, so the distributions overlap widely (Figure 7). Figure A1 in the appendix shows how much each belief contributes to this gap.\n\n### **Responses from online scenario explorer quiz**\n\nFigure 7 also shows the economic scenarios implied by inputs provided by site visitors to an interactive scenario explorer based on this economic model that was published at [www.anthropic.com/institute/econ-scenarios](https://www.anthropic.com/institute/econ-scenarios) on September 9, 2026.\n\nThe interactive explorer asked shorter form versions of the questions we fielded to US adults and Anthropic staff in August 2026. 23,075 visitors completed the survey in the first 48 hours after publication, connecting from more than 140 countries worldwide. These visitors chose to come to a page on Anthropic's website and to take the quiz, so they are likely to be more interested in AI than the general public. Indeed, their answers place them between those of US adults and Anthropic staff: the median visitor's answers imply 12.5% growth.\n\n![Image 7](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd4b5d6daebc5d653cfee156baff992ddf9b22a50-1920x1080.png&w=3840&q=75)\n\n**Figure 7: Model-implied GDP growth in 2030, based on the expectations of US adults, website visitors and Anthropic staff.** Each respondent's answers to the five questions on capabilities, adoption, autonomy, time savings and re-employment are run through the model from Economic Scenarios for Transformative AI; see Appendix B therein for details. The thick bar spans the 25th to 75th percentile and the thin line the 10th to 90th percentile. Dotted lines mark three scenarios laid out in the paper: Modest (annual GDP growth of 2.4%), Substantial (5.4% GDP growth) and Extreme (15.4% GDP growth). The figure includes respondents who answered all five questions: 3,259 US adults (2030 half only), 1,093 Anthropic staff, and the 23,075 website visitors who completed the quiz available at [anthropic.com/institute/econ-scenarios](https://www.anthropic.com/research/ai-expectations-gap) in the 48 hours after its launch on September 9, 2026.\n\n## **Inside the lab**\n\nOne reason staff are more optimistic about AI capabilities may be that they have greater visibility into the development process. The Anthropic Institute recently published a report on progress toward recursive self-improvement (RSI), a process where AI systems increasingly improve their own capabilities (Favaro and Clark, 2026).\n\nTo shed light",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "How employment is changing at Anthropic",
+          "url": "https://www.anthropic.com/research/employment-at-anthropic",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: How employment is changing at Anthropic\n\nURL Source: https://www.anthropic.com/research/employment-at-anthropic\n\nPublished Time: 2026-10-16T16:26:00.000Z\n\nMarkdown Content:\n_Nathan Wilmers, Regina Catipon, Maxim Massenkoff, Peter McCrory_\n\nHow has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy.\n\n## Key findings\n\n*   Anthropic has been hiring for a smaller share of junior technical positions. This occurred as hours worked by AI agents relative to employees rapidly expanded. By August interactive AI agent hours outnumbered employees’ 6 to 1.\n*   As AI agents diffused through the company, Anthropic began producing more code per person, closing more sales per rep, and processing more contracts. Following the same employee over time, output rose as they adopted new AI tools.\n*   This acceleration makes human attention the bottleneck for agent output. Even among non-technical employees, reading all the output of their Claude agents would take half their work week. In response, employees turn to “meta-work,” of building visibility tools and monitoring agent pipelines.\n*   Changes in work organization are reflected in shifting priorities among hiring managers, who increasingly emphasize autonomy and judgment, relative to technical domain expertise and implementation.\n\n## Introduction\n\nWhat transformations of work and employment can we expect under increasingly powerful AI? Anthropic is worth studying because it has thoroughly molded its workflows around AI. Agents flit through Slack chats and schedule meetings. They autonomously fix bugs and collectively tackle huge engineering projects. Agent hours worked outnumber human hours 6 to 1. Changes happening at Anthropic now give advanced signals about a possible future of work and employment.\n\nThis report draws on comprehensive internal Anthropic data covering employment, AI use, output metrics, employee surveys, internal communication patterns, employee calendar data, and hiring decision records. It contextualizes these quantitative data with 17 employee interviews.\n\nWe find that even as the company grows, relative hiring in junior technical positions has slowed. Productivity for both engineers and non-technical employees has leapt up and did so sharply when they adopted coding agents. Hiring managers increasingly emphasize applicants’ autonomy and judgement relative to specific technical expertise. A defining feature of working in an AI-heavy organization is constant pressure to streamline oneself out of this bottleneck position when possible. One engineer described work as facing “an army of Claudes, with every one asking for my attention.” Employees at Anthropic remain critical. But the nature of their contributions has changed.\n\nAnthropic has responded to these changes by setting up an early warning system to track jobs at risk of disruption, and as jobs evolve the company has prioritized internal redeployments. These actions, taken at the frontier of both AI development and workplace change, show how specific organizational commitments can shape the impact of AI on employment. But they also raise difficult questions about exactly what those commitments should be.\n\n## Labor demand at the frontier\n\nAnthropic has expanded rapidly. But it has hired less per dollar of revenue than an earlier generation of large tech companies. At five years old, Anthropic takes in between 2–4 times as much revenue per employee as Meta and Google as they crested in their own rapid growth.[1](https://www.anthropic.com/research/employment-at-anthropic#footnote-1)\n\nWhat jobs are missing? Within Anthropic, discussion of a decline in demand for junior technical employees emerged in core technical functions in January 2026. The teams that relied most heavily on Claude in their own work found that writing code and finding bugs could increasingly be offloaded to Claude. Newly capable models accelerated this perception: “the thing that raised eyebrows was the uplift for performance engineers in particular and it basically overnight changed what we were looking for.”\n\nBy April, engineering and research teams had deemphasized hiring for lower band technical positions. When surveyed in the same month, a majority of managers described hiring for a different set of skills due to AI. Around a third of ML and a fifth of SWE managers reported hiring less due to AI.\n\nThe shift in employment shares is striking. Figure 1 shows that the share of junior-level employees in technical departments at Anthropic slipped from 21% to 14% since early 2025. The proportion of junior technical hires fell even faster, from 27% to 9%. Postings for juniors have fallen particularly sharply since December 2025.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fe5dc89d3bceb2fcb9509ec35aa22f11131a9d8eb-1920x1080.png&w=3840&q=75)\n\n**Figure 1: Decline of entry-level technical hiring at Anthropic.**\n\nAt the same time, the overall employment share of technical departments within Anthropic has fallen, from 61% to 56% in the last year. As the company expands, technical hiring has continued growing in absolute terms, but intensive hiring in sales, finance, and recruiting has outpaced it. Part of this shift is the natural expansion of business functions as the company scales. Part could reflect coding tools increasingly allowing non-technical employees to make software themselves. For example, a sales representative designed a custom dashboard and pipeline tailored to their work: “a build like this was out of my wheelhouse, especially with the UI, connecting all the tools, the MCPs. But I built this probably in three to four hours, just iterating on it.” Coding-focused AI agent sessions for non-technical employees (identified as those with no code commits at baseline, excluding new hires) leapt from 2 per month in August 2025 to 90 in May 2026.\n\nYet this shift in hiring composition is not only a story about automated coding allowing it to diffuse to [other domain experts](https://www.anthropic.com/research/claude-code-expertise). Within technical departments, the share of employees not actively coding (defined as those making no code commits in the prior 30 days) fell by almost half over the year through April 2026. Part of this is due to a thinning share of non-engineers: the ratio of engineers to product managers, for example, sits at around 17 to 1 and has increased since 2025. The number of commits from managers has also doubled. The supervising and coordinating roles within technical teams increasingly involve building and shipping code.\n\nOne area in which non-technical hiring has not accelerated is in the administrative functions that typically scale with a company’s size. A combination of agent assistants, automated review and ticket service outsourcing has left Anthropic clerical-light even as it has grown rapidly. A financial manager built a purchase request review agent and explained to colleagues “it's just trying to find the things that take a lot of hours so they can focus on the other stuff.”\n\nEven clerical work tightly connected to in-person interaction has grown slowly. An executive assistant, who built a personal assistant agent for scheduling and email triage, explained: “I think we've already moved past the point of Claude augmenting away the really entry-level admin type role,” and instead focused their work on higher-order “chief of staff” tasks.\n\nThese changes have already involved reallocation: employees working at the company for at least a year were 50% more likely to move across departments each month in 2026 than they were in 2025. Whole teams have also been reallocated as they handed off their work to agents. Consider one product design team, which wrote content like the greetings on Claude.ai: “Hello night owl;” “Coffee and Claude time?” In spring 2026, the team developed a context graph that effectively guided agents to write compelling product content. This “scaled the team out,” its manager explained, but also raised the question of what was left for human writers. The team then rotated into agent prompting and began writing model evals and prompts for Claude. “Writers who used language to drive human behavior are now using it to drive Claude behavior.”\n\n## Is AI driving productivity increases at Anthropic?\n\nAre these shifts attributable to AI? At Anthropic, humans are a thin layer atop a growing contingent of AI agents. Based on agent session telemetry, in March 2026, the sum of autonomous and interactive agent work hours leapt past human work hours for the first time. Part of this is fleets of agents conducting industrial scale software engineering, filling in myriad routine tests and checks, conducting maintenance on a growing mass of infrastructure code, and driving concerted campaigns to translate massive codebases. But even narrowing in on the agents deployed by individual employees, as in Figure 2, by August the agents worked 6 times as many hours as their human handlers.\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F042b829f8c8850b596dfb6feaa323d1e911b21bb-1920x1080.png&w=3840&q=75)\n\n**Figure 2: Agent hours overtake human hours.**Note: We limit to employee-directed interactive sessions and pool subagents. Working time concept is agent runtime, including inference and active tool use, but excluding any wait longer than 30 minutes. Human work hours are calculated as headcount and assumed 40 hours per week.\n\nAnthropic is a software producer, and the vast bulk of tokens flowing through these agents is spent producing software code. Dashboards monitor fleets of agents operating across the company. But personal assistant agents also monitor employee calendars and messages, scheduling, sending to-do lists accumulated from incoming messages, and automatically briefing employees on the people and purpose of their upcoming meetings. Tokens touch a growing range of everyday work tasks.\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1865c3a561e790824826f29a27c771ce62c67eaf-1920x1252.png&w=3840&q=75)\n\n**Figure 3: Productivity boom across functions.** Note: Loess smoother fit across underlying indexed output data.\n\nWhat do all of these tokens amount to? Figure 3 plots output over time for a range of job functions with measurable output. Consistent with prior reports [surveying Anthropic engineers](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) and describing [automation of model training and research](https://www.anthropic.com/institute/recursive-self-improvement), code commits per engineer have risen the fastest, coming in at 5x their velocity as 6 months ago. Data scientists are also querying the growing mass of Anthropic data more, asking Claude agents to get real-time metrics to dashboards and decisionmakers. But Figure 3 shows that even non-technical employees saw output rise as coding agents diffused: lawyers processed more contracts; accounts payable ushered through invoices; salespeople closed more deals.\n\nBut is all of this due to Claude usage? During this same period, the company saw explosive business growth. It is easier to close deals when you sell a strong model. To assess the independent effect of AI, we compare the output of employees who adopt agentic coding tools to those who have not yet adopted the tools. This lets us compare employees working in the same month at the company, and therefore exposed to a similar business context, but approaching it with different tools. Note however that tool adoption is not random: if employees on the cusp of driving some big new project decide to tool up for it, for example, this would bias our estimates.\n\nWe follow 192 engineers over time as they adopt coding agents, compared to 74 engineers who do not adopt agents during the period studied. Figure 4 shows that in the months following adoption, the amount of code that engineers add rises sharply. More code does not necessarily mean better code or [business impact](https://www.nber.org/papers/w35275). To test for AI code slop, we study code commits made at Anthropic. We compare code committed by the same employee, in the same month, in the same coding directory, but written by coding agents rather than written directly by the human employee. There are many dimensions of code quality, and AI errors may be harder to identify than human ones. But we find no difference in rates of lines of code subsequently removed or reverted.\n\nFigure 4 also looks at what happens after an engineer adopts their first fully autonomous agent. Those who adopt were already on a steeply upward trajectory compared to non-adopters. This suggests that employees shifting toward fully autonomous agents were already ramping up their output.\n\n![Image 4](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F15abba062e588ec86e0f9466f16bccbc701444e3-1920x1641.png&w=3840&q=75)\n\n**Figure 4: Productivity increases estimated within-person from staggered AI adoption.** Note: Coefficients compare coding agent adopters to non adopters with person and calendar-month two-way fixed effects. Treatment timing is based on the person’s first month with at least 5 agentic sessions. Bars are 95% confidence intervals from standard errors clustered on person. The quality panel compares code written directly by a person to code written by the same person’s coding agent. Quality proxies are the share of lines deleted for any reason within 90 days; the share deleted by a bug-fix specifically; whether the whole commit is explicitly reverted; adding a lint-suppression comment; adding a need fixing note; and marking a test to be skipped, retried, or allowed to fail.\n\nDo these patterns go beyond coding, into a broader transformation of knowledge work? Anthropic sales representatives steadily adopted AI agents starting last September. Figure 4 shows that after sales representatives adopt agents, they close deals with more clients. Part of this pattern could be driven by representatives with more sales opportunities selecting into automation. But it could also reflect automation of logging and routine communication. One account executive explained that Claude automations handled email drafting and customer management software integrations, replacing around 20% of their prior work tasks. Another noted that similar automations freed them up to focus on face-to-face time, letting them talk to 30% more of their customers than was previously possible: “anytime you do anything a second time, you're kind of like, okay, how can I use Claude to make it so that I don't have to do it a third time?”\n\nBeyond sales, an Anthropic lawyer built a series of Claude automations to scan risks and opportunities, triage legal questions and take first passes through public-facing copy for legal review. A recruiter used Claude to help with candidate sourcing, tracking applications and an analysis that would have taken “maybe a couple of weeks,” freeing him to redesign outdated interview questions and meet with more applicants.\n\nAll of this suggests that as AI capabilities improve, it impacts a wide range of jobs across Anthropic. Descriptively, we see junior employment slowing in jobs that use Claude for the most complex tasks (Figure 5).\n\n![Image 5](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Ff68fdd1f18d36b4e45e17f0aaaa49541bade7dcd-1920x1331.png&w=3840&q=75)\n\n**Figure 5: Junior employment growth by Claude usage complexity.** Notes: Plot at job level. Growth compares January 2026 headcount to July 2026. AI complexity is based on an automated coder of agent logs (prior to the employment decline, October to December 2025 ) and percentile transformed. Dots are scaled by January employment in the job; regression line is fit across weighted points.\n\n## Bottlenecks and process: new and old tasks in an AI-intensive workplace\n\nHeavy AI adoption reshapes more than employment and productivity. It also drives continual changes in work processes, generating new tasks and shifting employees’ perceptions of their workplace. One employee described this as the “eternal pressure at Anthropic to move as fast as possible and use Claude for everything” and another that “things we expect in a week are things that would take three months elsewhere.” An internal employee survey asked whether work processes at Anthropic made respondents as productive as possible: 44% of employees agreed in late 2024; 58% by November 2025 (in April 2026, 75% answered yes, but the question weakened by dropping “as possible”). As of August, [employees at Anthropic expected](https://www.anthropic.com/research/ai-expectations-gap) that AI will be able to do 75% of their work by 2030, compared to 28% for other Americans.\n\nThese ratcheting productivity expectations are dramatized by the cadence of internal model releases. As soon as a new model is available, Anthropic employees start tackling harder problems in interactive coding agent sessions. We measure this with an automated Claude grader rating deidentified sessions’ task demands based on depth, scope and number of systems implicated. The share of tasks above the 90th percentile of difficulty for the old model rises sharply by around 30% (from 10% to 13% of all tasks) and stays elevated in the weeks following model releases. The easy end of tasks given to agents changes little.\n\nSpiraling agent productivity translates into output pitched across humans’ screens and attention. One engineer compared this to babysitting:\n\nThey're like, I need my juice box opened and it's an emergency that my juice box is opened. And that is voiced with the same level of concern as the one who has sliced their finger and is bleeding. [...] When you are babysitting, every child brings to you concerns with an equal demand for your attention and the various [Claudes] also do that.\n\nIn the April 2026 survey, an open-ended question about how AI has impacted day-to-day work, 27% described productivity gains from Claude tools and 20% described their role shifting from actually doing work to managing Claudes.\n\nAmid this model-driven acceleration, human attention is a constant bottleneck. In interactive, multi-turn sessions, the vast majority of agents’ session time is not spent working at all, but spent waiting. We track idle time by subtracting each agent’s active working time from each interactive session’s total wall-clock time. Claude sessions amount to around 80% idly waiting for human input. As one engineer put it, people are “bottlenecking the agents.”\n\nHow much time exactly would be needed to read all of Claude’s output from interactive sessions? For each interactive session, we convert each session’s agent output token to word count, assuming average human reading speed. Figure 6 shows that technical functions have seen the volume of coding agent output leap up over the last 6 months. But even for non-technical groups, interactive Claude sessions are outputting enough content to take up over half of the work week. The deluge of Claude text needs organizing.\n\n![Image 6](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F1eb1610d350eeae63bf6300c5a17b66a42667da6-1920x1200.png&w=3840&q=75)\n\n**Figure 6: Reading Claude as a full-time job.** Note: Hours estimated by converting output tokens to words, assuming 0.75 words per token and 250 words read per minute.\n\nOne solution to this deluge is rising automation. But this requires work of a different kind. Written standing instructions for agents grew from a few hundr",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Working at the frontier shapes expectations for the future",
+          "url": "https://www.anthropic.com/research/expectations-for-the-future",
+          "published_at": "2026-10-16T00:00:00.000Z",
+          "description": null,
+          "full_text": "Title: Working at the frontier shapes expectations for the future\n\nURL Source: https://www.anthropic.com/research/expectations-for-the-future\n\nPublished Time: 2026-10-16T16:21:00.000Z\n\nMarkdown Content:\nWe’re sharing two reports: [the first](https://www.anthropic.com/research/employment-at-anthropic) covers how AI is changing employment inside Anthropic, and [the second](https://www.anthropic.com/research/ai-expectations-gap)looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy.\n\nAnthropic staff and US workers don’t seem to have different theories about how AI affects jobs. Instead, they have different experiences of what AI capabilities are. Those different experiences seem closely related to perceptions about what will happen to work in the future.\n\nAnthropic is a company at the frontier of AI adoption, and that adoption has changed the way we hire. We find that over the past year, we're hiring for a smaller share of junior positions, and a smaller share of our employees work in technical roles. At the same time, the rate of hours worked by AI agents has shot up. By March 2026, agents worked more hours than employees. By August, there were six times more agents than employees at Anthropic, and productivity increased.\n\nThat’s led to Anthropic producing more code per person, but that’s a notoriously imperfect measure. We see signs of increased productivity elsewhere: we’ve closed more sales per sales representative, and processed more contracts. When our researchers follow the same employee over time, they find the employee’s output rises as their adoption of AI tools increases.\n\nAll this acceleration means that, increasingly, the bottleneck is human attention. As a result, employees spend more time building ways to better monitor work their agents are doing.\n\nAnthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy. An AI lab is different from more traditional businesses in how it adopts AI into its work, but [research findings](https://www.anthropic.com/research/how-ai-is-transforming-work-at-anthropic) about our own workplace may still be instructive about broader transformations, including dynamics for future AI-native companies.\n\nBecause Anthropic employees experience AI’s effect on work so differently, it stands to reason that they might have different predictions about AI’s effect on the _future_ of work. That’s what our second report investigates. We surveyed Anthropic employees, and compared them to an August survey of almost 11,000 US adults, fielded by Morning Consult and weighted to be representative of the adult population.\n\nThe public expects AI capabilities to advance rapidly in the coming years; Anthropic staff tend to expect even faster progress. There are a number of questions with big gaps between staff and the public. For example, 39% of US adults—and 91% of staff—expect AI will be able to make a Nobel-level discovery by 2030. More than half of Anthropic staff expect AI to be able to do at least 80% of their current work by 2030; only 5% of Americans expect AI to be that capable.\n\nThat said, there’s considerable variation in both groups: 2 out of 10 Anthropic staff have expectations similar to those of the typical US adult. And Anthropic staff and the public also agree on some key questions. In each bucket, people who expect AI to do comparably more of their own work anticipate similar increases in unemployment. In other words, both the public and Anthropic staff have similar economic models of how AI affects the labor market, but ultimately their personal experiences with AI lead them to different expectations for the economy of the future.\n\n## Related content\n\n### Designing more efficient quantum circuits with Claude\n\nWe gave Claude plain-language specifications for eight quantum circuits, along with an automated evaluator to check and score its designs. Working largely on its own, Claude improved on the best published circuits, in some cases by an order of magnitude or more, which could bring practical quantum computers closer than previously anticipated.\n\n[Read more](https://www.anthropic.com/research/designing-efficient-quantum-circuits)\n\n### Claude reveals ECDSA curve origins\n\nThe decades-old mystery of the origins of one of the most popular cryptographic standards has been explained.\n\n[Read more](https://www.anthropic.com/research/ecdsa-curve-origins)\n\n### The AI expectations gap\n\nHow will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions.\n\n[Read more](https://www.anthropic.com/research/ai-expectations-gap)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 11,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 203.0h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2106147184693620924",
+          "title": "There is some speculation about our partnership with Cerebras.\n\nCerebras is a close partner, and we have a deep engagement pushing on the frontiers of speed.",
+          "url": "https://x.com/sama/status/2106147184693620924",
+          "published_at": "2026-10-02T22:19:53.000000Z",
+          "description": "There is some speculation about our partnership with Cerebras.\n\nCerebras is a close partner, and we have a deep engagement pushing on the frontiers of speed.",
+          "expanded_urls": [],
+          "source": "Sam Altman (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2106189841813934140",
+          "title": "The contrast between hanging up the last phone call of the day of high-stakes decisions and then a minute later walking in the door to the pure love of small children who want to laugh and play and sh",
+          "url": "https://x.com/sama/status/2106189841813934140",
+          "published_at": "2026-10-03T01:09:24.000000Z",
+          "description": "The contrast between hanging up the last phone call of the day of high-stakes decisions and then a minute later walking in the door to the pure love of small children who want to laugh and play and show you every discovery they made that day is the strangest and best thing I have ever experienced in life.",
+          "expanded_urls": [],
+          "source": "Sam Altman (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2106388373221118198",
+          "title": "I am very uncomfortable about people trying to ascribe religious force or a surrender of human judgment to AI models, and think it is a real safety issue.",
+          "url": "https://x.com/sama/status/2106388373221118198",
+          "published_at": "2026-10-03T14:18:17.000000Z",
+          "description": "I am very uncomfortable about people trying to ascribe religious force or a surrender of human judgment to AI models, and think it is a real safety issue.",
+          "expanded_urls": [],
+          "source": "Sam Altman (Twitter)",
+          "origin_report_date": "2026-10-03",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 21,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2106119299484221762",
+          "title": "\"You should know\" is a great way of staying on top of what's possible with Claude and also a great example of the kind of things mods enable.\n\nYou can really make Claude Code yours.",
+          "url": "https://x.com/trq212/status/2106119299484221762",
+          "published_at": "2026-10-02T20:29:05.000000Z",
+          "description": "\"You should know\" is a great way of staying on top of what's possible with Claude and also a great example of the kind of things mods enable.\n\nYou can really make Claude Code yours.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "ClaudeDevs",
+            "text": "We're adding a new plugin to Claude Code: You should Know.\n\nIt scans Claude's output for important information you might miss to help keep you in the loop.\n\nEnable it with:\n\n/plugin enable cc-plugin-you-should-know@builtin https://t.co/A4byi4Q9Df",
+            "url": "https://x.com/ClaudeDevs/status/2106118517447876618"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/ClaudeDevs/status/2106118517447876618"
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 180.0h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2106125468365918268",
+          "title": "Lots of inventive things made with Claude these past few weeks. A few of our favorites:\n\nA working watermill, built with Opus 5.5.\nhttps://t.co/s9WP51q5os",
+          "url": "https://x.com/claudeai/status/2106125468365918268",
+          "published_at": "2026-10-02T20:53:36.000000Z",
+          "description": "Lots of inventive things made with Claude these past few weeks. A few of our favorites:\n\nA working watermill, built with Opus 5.5.\nhttps://t.co/s9WP51q5os",
+          "expanded_urls": [],
+          "source": "Claude (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 5,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 14,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2106118517447876618",
+          "title": "We're adding a new plugin to Claude Code: You should Know.\n\nIt scans Claude's output for important information you might miss to help keep you in the loop.\n\nEnable it with:\n\n/plugin enable cc-plugin-y",
+          "url": "https://x.com/ClaudeDevs/status/2106118517447876618",
+          "published_at": "2026-10-02T20:25:59.000000Z",
+          "description": "We're adding a new plugin to Claude Code: You should Know.\n\nIt scans Claude's output for important information you might miss to help keep you in the loop.\n\nEnable it with:\n\n/plugin enable cc-plugin-you-should-know@builtin https://t.co/A4byi4Q9Df",
+          "expanded_urls": [],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 5,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 5,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 12,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 5,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 17,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2106152048924438967",
+          "title": "https://t.co/jSGjA164Ag",
+          "url": "https://x.com/OpenAIDevs/status/2106152048924438967",
+          "published_at": "2026-10-02T22:39:13.000000Z",
+          "description": "https://t.co/jSGjA164Ag",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/jSGjA164Ag",
+              "expanded_url": "https://x.com/i/article/2106076978206175232",
+              "display_url": "x.com/i/article/2106…"
+            }
+          ],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2106152299026661641",
+          "title": "Your dot learns how you work, keeps context across apps, coordinates Codex tasks, and flags what needs your attention.",
+          "url": "https://x.com/OpenAIDevs/status/2106152299026661641",
+          "published_at": "2026-10-02T22:40:13.000000Z",
+          "description": "Your dot learns how you work, keeps context across apps, coordinates Codex tasks, and flags what needs your attention.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "dkundel",
+            "text": "Saw some asks about whether you should use dots or Codex. In reality they work great together! My dot is now my favorite way of using Codex. Less mental overload and the proactiveness is a lifesaver https://t.co/5KQQi89KEA",
+            "url": "https://x.com/dkundel/status/2106141525306397099"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2106176799545970710",
+          "title": "Building with the Agents API?\n\nCatch up on what’s new:",
+          "url": "https://x.com/OpenAIDevs/status/2106176799545970710",
+          "published_at": "2026-10-03T00:17:34.000000Z",
+          "description": "Building with the Agents API?\n\nCatch up on what’s new:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "stevendcoffey",
+            "text": "The team behind Agents API continues to cook. Here's what's new this week:\n\nComputer use: Spin up a browser + agent with 1 API call 🖥️\nBedrock Managed Agents: Agents API except AWS\nGPT‑6.1 Sol 🌞\nEnvironment sizes: Spin up a light or beefy oai-hosted environment 💪\nDashboard improvements: configure subagents and more from the dashboard 📈\nEnvironment portability: Re-use environments across multiple sessions 🤖\nOverall better reliability: 99.97% turn reliability, fewer SSE disconnects, 20% faster tool calls 🪨\n\nhappy building ❤️ u all",
+            "url": "https://x.com/stevendcoffey/status/2106159012538442068"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 5,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2106099776035152231",
+          "title": "Following gold-medal-level performance from our AI models across five competitions in mathematics, physics, and chemistry, we asked a harder question: can AI contribute when a problem is genuinely ope",
+          "url": "https://x.com/AIatMeta/status/2106099776035152231",
+          "published_at": "2026-10-02T19:11:30.000000Z",
+          "description": "Following gold-medal-level performance from our AI models across five competitions in mathematics, physics, and chemistry, we asked a harder question: can AI contribute when a problem is genuinely open and without an existing solution path?\n\nOver the past several months, mathematicians worked with Muse Spark 1.1 and Muse Spark 1.2 in Thinking Mode through the regular https://t.co/wHkMPH82ZH chat interface, with no custom research scaffold, to find solutions to such problems.\n\nOur goal wasn't to mass-produce papers, but empower researchers. Every collaboration followed the same principles: mathematicians guided the research, a second group of mathematicians then reviewed the work, each paper marks which passages were drafted primarily by humans or AI, and each credits the prior research it builds on. Where other teams independently announced solutions to the same problems, we acknowledge their work as well.\n\nToday, we're sharing six papers from that collaboration.\n\n🧵👇",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/wHkMPH82ZH",
+              "expanded_url": "http://meta.ai",
+              "display_url": "meta.ai"
+            }
+          ],
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-10-02",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 5,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 6,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 6,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1214.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    }
+  }
+}
