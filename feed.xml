@@ -5,8 +5,122 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 15 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 16 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-10-16</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-16.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-10-16.md</guid>
+      <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-10-16</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>量子电路优化</strong>：Claude Mythos 5 按自然语言规格设计八类电路，迭代搜索在部分资源指标上优于已发表方案。</li>
+<li><strong>密码标准溯源</strong>：Claude 将 NIST 曲线种子追溯到旧版 lrand48 与 Unix 时间戳，为 ECDSA 参数来源给出可复现解释。</li>
+<li><strong>AI就业预期差</strong>：Anthropic 内部观察到初级技术岗位占比下降和智能体工时增长，员工对 AI 进展的判断也显著高于公众。</li>
+<li><strong>垂直工作流扩展</strong>：OpenAI 将 Codex、GPT-Rosalind 与 Study Mode 用于金融审查、生命科学研究和教师教学准备。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://www.anthropic.com/research/designing-efficient-quantum-circuits">Claude 自动改进量子电路，部分指标提升一个数量级</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude Mythos 5</code> <code>量子计算</code> <code>量子电路</code> <code>算法优化</code> <code>自动评估</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 让 Claude Mythos 5 根据自然语言规格设计八类量子电路，并在自动评估器反馈下闭环迭代；结果在量子化学、优化、模拟和数论等任务中超越已发表方案，部分资源指标改善一个数量级以上。案例包括将量子优化算法最昂贵步骤成本降低约 12 倍，显示模型可提出新的结构与数学思路，但这些仍是算法设计进展，并不等同于现有硬件已能运行实用量子计算。</p>
+<hr>
+<h3>2. <a href="https://www.anthropic.com/research/ecdsa-curve-origins">Claude 追溯 NIST 椭圆曲线种子生成方式</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Claude</code> <code>密码学</code> <code>ECDSA</code> <code>NIST</code> <code>随机数生成器</code></li>
+</ul>
+<p><strong>摘要</strong>: Claude 在不到半小时内推断出五条 NIST 椭圆曲线参数种子来自以 Unix 时间戳初始化的旧版 <code>lrand48</code> 随机数生成器，而非此前猜测的口令哈希。Anthropic 表示这是对标准来源的历史解释，不是密码学破解或曲线弱点；结果让种子生成过程更可复现，并降低了人为植入后门的疑虑。</p>
+<hr>
+<h3>3. <a href="https://www.anthropic.com/research/expectations-for-the-future">Anthropic 研究揭示 AI 预期差与内部岗位重组</a></h3>
+<ul>
+<li><strong>来源</strong>: Anthropic Research</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>就业结构</code> <code>AI 预期</code> <code>初级岗位</code> <code>智能体工时</code> <code>劳动力调查</code> <code>Anthropic</code></li>
+</ul>
+<p><strong>摘要</strong>: Anthropic 同日发布两项关于 AI 与工作的研究：内部岗位数据和访谈显示，技术部门初级员工占比及初级技术招聘占比下降，智能体工时快速增长。另一项针对近 1.1 万名美国成年人及公司员工的调查发现，91% 员工预计 AI 到 2030 年能作出诺贝尔级发现，而公众为 39%。两组人对自动化与失业的关联看法相近，但前沿工作经验显著拉大了对能力进展的预期。Anthropic 提醒，其内部属于高强度 AI 采用环境，不宜直接外推至整个经济。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://www.anthropic.com/research/ai-expectations-gap">Anthropic 员工对 AI 能力与就业影响更乐观</a> · Anthropic Research · 员工与公众的能力预期差</li>
+<li><a href="https://www.anthropic.com/research/employment-at-anthropic">Anthropic 内部初级技术岗位占比下降，智能体工时攀升</a> · Anthropic Research · 公司内部岗位与智能体工时</li>
+</ul>
+<hr>
+<h3>4. <a href="https://openai.com/index/stack-overflow-chatgpt-plugin">Stack Overflow for Agents 借 ChatGPT 插件实现注册量增长</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>Stack Overflow</code> <code>ChatGPT 插件</code> <code>Codex</code> <code>智能体</code> <code>企业连接器</code></li>
+</ul>
+<p><strong>摘要</strong>: Stack Overflow 用 Codex 在数周内由两名工程师搭建面向智能体的知识产品，并通过 ChatGPT 插件降低接入门槛。公司称插件上线后注册量增至三倍、智能体创建量一度达到此前的十倍，Codex 也将企业连接器开发从数周缩短至数天。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>评估 ChatGPT 插件是否能减少自家智能体的安装与配置步骤。</li>
+<li>选取一个常用企业系统连接器，试用 Codex 加速实现并记录人工审查时间。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://openai.com/index/introducing-the-rosalind-academic-plan">OpenAI 向高校实验室开放 GPT-Rosalind 学术计划</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-Rosalind</code> <code>生命科学</code> <code>学术研究</code> <code>可信访问</code> <code>OpenAI</code></li>
+</ul>
+<p><strong>摘要</strong>: 新计划面向符合条件的美国高校实验室，提供最多 30 个 Business Standard 席位，最长 12 个月免费，并可在通过可信访问审核后使用生命科学模型 GPT-Rosalind 与 Rosalind Workbench。研究数据默认不用于训练；申请需要核验机构、负责人和研究用途，计划暂不包含 API 访问。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>符合美国高校实验室条件时，核对可信访问审核要求并评估申请资格。</li>
+<li>将药物与蛋白质设计、基因组学等研究任务映射到 Rosalind Workbench 的工具链中试点。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>6. <a href="https://openai.com/index/teaching-students-to-think-and-learn-through-questions">OpenAI 推出葡萄牙语教师课程并介绍 Study Mode</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>教育</code> <code>Study Mode</code> <code>教师培训</code> <code>OpenAI Academy</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI Academy 的 AI for Educators 课程新增巴西葡萄牙语版本，面向不同学段教师，涵盖备课、活动与评估设计及沟通材料制作。文章也介绍 ChatGPT Study Mode 通过逐步提问、提示和理解检查促进主动学习，教师可用熟悉的课程内容检验问题质量与解释是否适龄。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>用一门熟悉的学科测试 Study Mode，检查它是否逐步提问而非直接给出答案。</li>
+<li>教师可按课程目标试用葡萄牙语 AI for Educators 课程中的备课与评估方法。</li>
+</ul>
+</blockquote>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>Codex</code> <code>信贷分析</code> <code>金融科技</code> <code>人工复核</code> — Benefit Street Partners 的投资经理用 Codex 构建 BDC 贷款估值比较工具和信贷协议分析器，协议初筛约 20 分钟完成，之后仍需至少一小时人工复核。团队称投委会追问可从数天或数周缩短到一天内处理，工具用于增加审查深度而非扩大交易量，最终投资判断仍由人作出。 · <a href="https://openai.com/index/benefit-street-partners">OpenAI Blog</a></li>
+</ul>
+<h2>往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-10-02 · 产品与功能</strong> — OpenAI Devs 转发的更新汇总提到，Agents API 可通过一次 API 调用启动浏览器与智能体，并新增 Bedrock Managed Agents、不同规格的托管环境、跨会话复用环境和仪表板子代理配置。该汇总还称工具调用快 20%、整体回合可靠性达 99.97%，并减少 SSE 断连。 · <a href="https://x.com/OpenAIDevs/status/2106176799545970710">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-10-02 · 产品与功能</strong> — Claude Code 新增「You should know」插件，会扫描 Claude 的输出并提示用户可能漏看的重要信息，帮助用户及时发现与当前任务相关的能力或细节。插件可通过「/plugin enable cc-plugin-you-should-know@builtin」启用，也是 Claude Code Mods 扩展机制的一个实例。 · <a href="https://x.com/ClaudeDevs/status/2106118517447876618">Claude Devs (Twitter)</a></li>
+<li><strong>2026-10-02 · 研究</strong> — Meta 称数学家在数月协作中使用 Muse Spark 1.1 和 1.2 的 Thinking Mode，探索没有既定解题路径的开放数学问题，并分享六篇论文。流程包括数学家指导、另一组数学家复核、标注人类与 AI 主要撰写段落，并注明所依据的既有研究；帖子也提到会承认其他团队独立公布的相同问题解答。 · <a href="https://x.com/AIatMeta/status/2106099776035152231">Meta AI (Twitter)</a></li>
+<li><strong>2026-10-03 · 政策与安全</strong> — Altman表示，对人们赋予 AI 模型宗教般权威、或因此放弃自身判断感到不安，并认为这构成真实的安全问题。他强调的是人类应保留判断力，未在这条内容中提出具体缓解方案。 · <a href="https://x.com/sama/status/2106388373221118198">Sam Altman (Twitter)</a></li>
+<li><strong>2026-10-02 · 产品与功能</strong> — OpenAI Devs 描述 Your dot 会学习用户的工作方式、跨应用保留上下文、协调 Codex 任务，并提示需要关注的事项。被引用的用户也称它能减轻认知负担，并对主动提醒表示认可。 · <a href="https://x.com/OpenAIDevs/status/2106152299026661641">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-10-02 · 商业动态</strong> — Sam Altman 表示，围绕 OpenAI 与 Cerebras 合作的外界猜测中，双方确为紧密合作伙伴，并在共同推进更快推理。帖子未披露合作范围、金额或具体产品安排，因此目前只能确认合作关系，不能据此推断交易细节。 · <a href="https://x.com/sama/status/2106147184693620924">Sam Altman (Twitter)</a></li>
+<li><strong>2026-10-02 · 产品与功能</strong> — Claude 分享近期用户创作案例，其中一项是用 Opus 5.5 制作出可运行的水车。帖子未提供制作过程、技术细节或更多性能证据。 · <a href="https://x.com/claudeai/status/2106125468365918268">Claude (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-10-15</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-15.html</link>
@@ -1688,77 +1802,6 @@
 <li><strong>2026-09-18 · 产品与功能</strong> — Claude Code从2.1.277版本开始支持AGENTS.md：当目录中没有CLAUDE.md时，会检查并使用AGENTS.md。用户可以在/config中切换这一行为，从而将通用项目指令文件接入Claude Code工作流。 · <a href="https://x.com/trq212/status/2101009392611278961">Thariq (Twitter)</a></li>
 <li><strong>2026-09-18 · 政策与安全</strong> — Anthropic将与埃森哲合作开展前沿AI的独立评估，这是其近期将评估人员嵌入实际工作流程承诺的一部分。双方预计未来五年各投入至少10亿美元，用于建设相关评估能力。 · <a href="https://x.com/AnthropicAI/status/2101039819870937247">Anthropic (Twitter)</a></li>
 <li><strong>2026-09-18 · 产品与功能</strong> — ChatGPT现在可在大多数插件中连接多个账号，用户可以在同一对话中结合工作、个人和副业账号的上下文。插件开发者无需修改现有实现；增加MCP profile工具后，ChatGPT还能更清楚地标注不同账号。 · <a href="https://x.com/OpenAIDevs/status/2100980899655389392">OpenAI Devs (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-09-18</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-18.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-09-18.md</guid>
-      <pubDate>Fri, 18 Sep 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-09-18</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>专业工作流落地</strong>：Cooley用ChatGPT Work辅助IPO法律工作，显示企业AI正从通用问答转向需要专业判断和数据治理的流程。</li>
-<li><strong>全球数据开放</strong>：Google与联合国推出开放数据平台，降低全球统计数据的搜索和探索门槛，为研究与公共决策提供统一入口。</li>
-<li><strong>嵌入式评估推进</strong>：Anthropic与埃森哲宣布合作开展嵌入式评估，虽然当前抓取正文不足，但方向指向把模型评估放进实际部署流程。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://blog.google/innovation-and-ai/technology/ai/google-un-data-commons-platform/">Google与联合国推出全球数据平台</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>数据平台</code> <code>联合国</code> <code>全球统计</code> <code>开放数据</code></li>
-</ul>
-<p><strong>摘要</strong>: Google与联合国系统推出UN System Data Commons，将全球统计数据集中到开放平台中，降低搜索和探索门槛。当前抓取内容仅说明平台上线及其目标，未提供数据范围、技术架构或使用案例的详细信息。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>先用平台检索跨国指标，再核对原始统计口径和更新时间。</li>
-<li>把常用指标整理成可复用的数据查询模板，减少重复查找。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://openai.com/index/cooley-gopublic">Cooley用ChatGPT加速IPO法律工作</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>ChatGPT Work</code> <code>IPO</code> <code>法律科技</code> <code>企业应用</code></li>
-</ul>
-<p><strong>摘要</strong>: Cooley基于ChatGPT Work构建GO Public，帮助律师更早发现IPO流程中的问题，并把时间集中在需要专业判断的环节。当前抓取内容仅提供项目简介，未说明具体功能、部署方式或实际效果数据。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>为IPO项目建立集中式工作空间，统一沉淀文件、问题和审查结论。</li>
-<li>先用模型做风险线索初筛，再由律师复核关键判断并记录依据。</li>
-</ul>
-</blockquote>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Anthropic</code> <code>埃森哲</code> <code>模型评估</code> <code>企业合作</code> — Anthropic宣布与埃森哲合作推进嵌入式评估，但抓取结果没有提供正文或摘要。现有信息不足以判断合作对象、评估方法、覆盖场景及预期成果。 · <a href="https://www.anthropic.com/news/accenture-embedded-evaluation">Anthropic Blog</a></li>
-</ul>
-<h2>往期补遗</h2>
-<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
-<ul>
-<li><strong>2026-09-17 · 模型发布</strong> — Qwen发布Qwen3.8-Omni-Flash，支持原生音频和视频理解、推理及工具调用，并配备一百万上下文窗口。官方称其在智能体基准上的平均表现提升19.5个百分点、OmniVideoBench用量减少51.8%，视频输入成本降低约89%，同时开源相关插件和实时运行框架。 · <a href="https://x.com/Alibaba_Qwen/status/2100785962414702599">Qwen (Twitter)</a></li>
-<li><strong>2026-09-17 · 产品与功能</strong> — Claude Code Projects允许用户在一个对话中描述目标，由Claude拆分并行线程，让云端会话在用户关闭电脑后继续工作。该功能当时面向部分Pro和Max用户测试，后续开放范围和具体限制未在抓取内容中说明。 · <a href="https://x.com/claudeai/status/2100632677904744716">Claude (Twitter)</a></li>
-<li><strong>2026-09-17 · 政策与安全</strong> — Anthropic开放生命科学验证计划，邀请学术实验室、初创公司和药企申请使用其模型，并为生物学工作提供新的安全防护。计划处于测试阶段，抓取内容未说明申请标准、模型权限和防护措施的具体细节。 · <a href="https://x.com/AnthropicAI/status/2100646837799834096">Anthropic (Twitter)</a></li>
-<li><strong>2026-09-17 · 研究</strong> — Anthropic提出三项用于追踪AI发展的指标：AI参与的研发比例、智能体监督效果，以及算力分配方式，并发布了内部指标快照。该条仅概述指标和公开透明目标，完整方法学、数据口径及第三方验证细节不足。 · <a href="https://x.com/AnthropicAI/status/2100684274114699295">Anthropic (Twitter)</a></li>
-<li><strong>2026-09-17 · 研究</strong> — Anthropic称Claude通过编写GPU定制软件，优化了30多个开源生物分子模型的推理流程，平均速度提升约4倍，并将优化代码开源。抓取内容未提供硬件环境、基准测试方法和各模型的具体提升幅度。 · <a href="https://x.com/AnthropicAI/status/2100701581109072332">Anthropic (Twitter)</a></li>
-<li><strong>2026-09-17 · 产品与功能</strong> — OpenAI宣布推出Astra for Law，以GPT-6 Astra为基础，提供面向律师和法律科技公司的工具、设置与上下文支持。抓取内容未说明产品定价、可用地区、具体工具能力或法律合规边界。 · <a href="https://x.com/OpenAI/status/2100679992720142459">OpenAI (Twitter)</a></li>
-<li><strong>2026-09-17 · 教程与观点</strong> — Z.ai分享称，GLM-5.3-Flash的推理基础设施从首次成功运行到达到生产就绪不到两周，端到端吞吐量较初始基线提升三倍。团队通过本地正确性测试、执行追踪、微基准和端到端测量形成密集反馈，以便定向验证优化假设，而不是只依赖聚合性能指标。 · <a href="https://x.com/Zai_org/status/2100481236364079277">Z.ai (Twitter)</a></li>
-<li><strong>2026-09-17 · 产品与功能</strong> — Muse现已在Mac推出，定位为可在用户明确许可下直接操作电脑的个人代理。首批示例包括整理下载文件夹、查找遗失文件，以及总结消息和笔记，后续能力仍将扩展。 · <a href="https://x.com/AIatMeta/status/2100714755568644409">Meta AI (Twitter)</a></li>
-<li><strong>2026-09-17 · 产品与功能</strong> — OpenAI Devs展示了Codex语音代理，用户可通过手机连接电脑进行开发工作，相关体验由GPT-Live-1驱动。抓取内容主要是宣传文案，未提供具体接入方式、支持平台或功能限制等更多细节。 · <a href="https://x.com/OpenAIDevs/status/2100677280297324759">OpenAI Devs (Twitter)</a></li>
-<li><strong>2026-09-17 · 研究</strong> — Google DeepMind称Broad Institute、埃克塞特大学等研究团队正在使用AlphaGenome Atlas，以识别可能致病的DNA变异并解释其作用。抓取内容只有公告性文字和线程链接，未提供具体研究方法、数据规模或验证结果，细节不足。 · <a href="https://x.com/GoogleDeepMind/status/2100586760036143330">Google DeepMind (Twitter)</a></li>
-<li><strong>2026-09-17 · 政策与安全</strong> — Mistral AI回应有关其系统遭未授权访问的指控，称已完成彻底调查。公司表示没有发现支持该指控的证据，并确认系统未被攻破，但未公布调查范围或技术细节。 · <a href="https://x.com/MistralAI/status/2100824200126529725">Mistral AI (Twitter)</a></li>
-<li><strong>2026-09-17 · 产品与功能</strong> — Codex应用新增分析页，用于查看任务、子代理和单个聊天分别如何贡献用量。官方表示，这些信息可以帮助用户了解用量去向并调整工作流；文中未披露分析指标的完整范围。 · <a href="https://x.com/OpenAIDevs/status/2100733364877803741">OpenAI Devs (Twitter)</a></li>
-<li><strong>2026-09-17 · 产品与功能</strong> — Appshots现可在Windows应用中为ChatGPT提供工作上下文，帮助用户调试问题、提取想复刻的界面或读取其他应用的数据。该功能旨在减少在应用之间反复复制粘贴的操作，但文中未说明具体支持的应用范围。 · <a href="https://x.com/OpenAIDevs/status/2100726653366534560">OpenAI Devs (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>

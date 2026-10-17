@@ -18681,7 +18681,403 @@
         "origin_report_date": "2026-09-29",
         "delivery_class": "backfill"
       }
+    },
+    "d0817155767aa3ab43456e96e09abceaa12a42ca0623f397f41bb639eda1a0df": {
+      "title": "Claude 自动改进量子电路，部分指标提升一个数量级",
+      "url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+      "source": "Anthropic Research",
+      "published_at": "2026-10-16T00:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Anthropic 让 Claude Mythos 5 根据自然语言规格设计八类量子电路，并在自动评估器反馈下闭环迭代；结果在量子化学、优化、模拟和数论等任务中超越已发表方案，部分资源指标改善一个数量级以上。案例包括将量子优化算法最昂贵步骤成本降低约 12 倍，显示模型可提出新的结构与数学思路，但这些仍是算法设计进展，并不等同于现有硬件已能运行实用量子计算。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Claude Mythos 5",
+          "量子计算",
+          "量子电路",
+          "算法优化",
+          "自动评估"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "918cdd953ecffda0b6789e24ddbbf1c913da8d7c807a36ec29e5347c016ec4a9": {
+      "title": "Claude 追溯 NIST 椭圆曲线种子生成方式",
+      "url": "https://www.anthropic.com/research/ecdsa-curve-origins",
+      "source": "Anthropic Research",
+      "published_at": "2026-10-16T00:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Claude 在不到半小时内推断出五条 NIST 椭圆曲线参数种子来自以 Unix 时间戳初始化的旧版 `lrand48` 随机数生成器，而非此前猜测的口令哈希。Anthropic 表示这是对标准来源的历史解释，不是密码学破解或曲线弱点；结果让种子生成过程更可复现，并降低了人为植入后门的疑虑。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Claude",
+          "密码学",
+          "ECDSA",
+          "NIST",
+          "随机数生成器"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "674c86d905c0f32e3408a6cfe9f40269cbc7bd470ff3d12f72a25e02a81aa2ce": {
+      "title": "Anthropic 研究揭示 AI 预期差与内部岗位重组",
+      "url": "https://www.anthropic.com/research/expectations-for-the-future",
+      "source": "Anthropic Research",
+      "published_at": "2026-10-16T00:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Anthropic 同日发布两项关于 AI 与工作的研究：内部岗位数据和访谈显示，技术部门初级员工占比及初级技术招聘占比下降，智能体工时快速增长。另一项针对近 1.1 万名美国成年人及公司员工的调查发现，91% 员工预计 AI 到 2030 年能作出诺贝尔级发现，而公众为 39%。两组人对自动化与失业的关联看法相近，但前沿工作经验显著拉大了对能力进展的预期。Anthropic 提醒，其内部属于高强度 AI 采用环境，不宜直接外推至整个经济。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "就业结构",
+          "AI 预期",
+          "初级岗位",
+          "智能体工时",
+          "劳动力调查",
+          "Anthropic"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://www.anthropic.com/research/ai-expectations-gap",
+            "title": "Anthropic 员工对 AI 能力与就业影响更乐观",
+            "source": "Anthropic Research",
+            "angle": "员工与公众的能力预期差"
+          },
+          {
+            "url": "https://www.anthropic.com/research/employment-at-anthropic",
+            "title": "Anthropic 内部初级技术岗位占比下降，智能体工时攀升",
+            "source": "Anthropic Research",
+            "angle": "公司内部岗位与智能体工时"
+          }
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "5f931ea10d81f6ec41fbd8ff3c353b4d75069dbefa5d29efed1a7dd901bbc810": {
+      "title": "Agents API更新涵盖计算机使用与托管环境",
+      "url": "https://x.com/OpenAIDevs/status/2106176799545970710",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-03T00:17:34.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "OpenAI Devs 转发的更新汇总提到，Agents API 可通过一次 API 调用启动浏览器与智能体，并新增 Bedrock Managed Agents、不同规格的托管环境、跨会话复用环境和仪表板子代理配置。该汇总还称工具调用快 20%、整体回合可靠性达 99.97%，并减少 SSE 断连。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Agents API",
+          "计算机使用",
+          "托管环境",
+          "工具调用",
+          "可靠性"
+        ],
+        "practice_suggestions": [
+          "用单次 API 调用试做浏览器计算机使用流程，验证任务边界和失败处理。",
+          "对照不同环境规格及跨会话复用能力，测试其对实际工作负载的影响。",
+          "在采用更新前，以自己的任务测量工具调用延迟和回合可靠性。"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "afe88b48b941a7d063a22e4c7f8d3d01c83c039f440164de5d10dd8c46c74f00": {
+      "title": "Claude Code 推出「You should know」信息提醒插件",
+      "url": "https://x.com/ClaudeDevs/status/2106118517447876618",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-10-02T20:25:59.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Claude Code 新增「You should know」插件，会扫描 Claude 的输出并提示用户可能漏看的重要信息，帮助用户及时发现与当前任务相关的能力或细节。插件可通过「/plugin enable cc-plugin-you-should-know@builtin」启用，也是 Claude Code Mods 扩展机制的一个实例。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "You should know",
+          "插件",
+          "Mods",
+          "输出提醒"
+        ],
+        "practice_suggestions": [
+          "启用内置插件后，用长篇代码审查或调试对话检验提醒是否相关且不会造成过多干扰。"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/trq212/status/2106119299484221762",
+            "title": "Claude Code插件提醒用户留意容易忽略的信息",
+            "source": "Thariq (Twitter)",
+            "angle": "Thariq 介绍插件与 Mods 用途"
+          }
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "ccbfe2ac81304106fd651fadbb48f96c4e176b2d80d5c91892c2a5cedb1edff9": {
+      "title": "Meta公布Muse Spark协助数学家研究开放问题的六篇论文",
+      "url": "https://x.com/AIatMeta/status/2106099776035152231",
+      "source": "Meta AI (Twitter)",
+      "published_at": "2026-10-02T19:11:30.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Meta 称数学家在数月协作中使用 Muse Spark 1.1 和 1.2 的 Thinking Mode，探索没有既定解题路径的开放数学问题，并分享六篇论文。流程包括数学家指导、另一组数学家复核、标注人类与 AI 主要撰写段落，并注明所依据的既有研究；帖子也提到会承认其他团队独立公布的相同问题解答。",
+      "category": "研究",
+      "importance": 4,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Muse Spark",
+          "数学研究",
+          "人机协作",
+          "同行复核",
+          "开放问题"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "9e63539289a31c8631b61e2dab00ee4355731974576a94679adaae67ea1b4655": {
+      "title": "Stack Overflow for Agents 借 ChatGPT 插件实现注册量增长",
+      "url": "https://openai.com/index/stack-overflow-chatgpt-plugin",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-16T00:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Stack Overflow 用 Codex 在数周内由两名工程师搭建面向智能体的知识产品，并通过 ChatGPT 插件降低接入门槛。公司称插件上线后注册量增至三倍、智能体创建量一度达到此前的十倍，Codex 也将企业连接器开发从数周缩短至数天。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Stack Overflow",
+          "ChatGPT 插件",
+          "Codex",
+          "智能体",
+          "企业连接器"
+        ],
+        "practice_suggestions": [
+          "评估 ChatGPT 插件是否能减少自家智能体的安装与配置步骤。",
+          "选取一个常用企业系统连接器，试用 Codex 加速实现并记录人工审查时间。"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "32165ee6af8945a5bd83e4231d3e052413905bc21e8455b93c147e03ace99490": {
+      "title": "OpenAI 向高校实验室开放 GPT-Rosalind 学术计划",
+      "url": "https://openai.com/index/introducing-the-rosalind-academic-plan",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-15T19:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "新计划面向符合条件的美国高校实验室，提供最多 30 个 Business Standard 席位，最长 12 个月免费，并可在通过可信访问审核后使用生命科学模型 GPT-Rosalind 与 Rosalind Workbench。研究数据默认不用于训练；申请需要核验机构、负责人和研究用途，计划暂不包含 API 访问。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "GPT-Rosalind",
+          "生命科学",
+          "学术研究",
+          "可信访问",
+          "OpenAI"
+        ],
+        "practice_suggestions": [
+          "符合美国高校实验室条件时，核对可信访问审核要求并评估申请资格。",
+          "将药物与蛋白质设计、基因组学等研究任务映射到 Rosalind Workbench 的工具链中试点。"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "a60f4a701f887ae8f46b94e06646a5fb82b2851c561d6cf99f41823c6f66011d": {
+      "title": "OpenAI 推出葡萄牙语教师课程并介绍 Study Mode",
+      "url": "https://openai.com/index/teaching-students-to-think-and-learn-through-questions",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-15T13:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "OpenAI Academy 的 AI for Educators 课程新增巴西葡萄牙语版本，面向不同学段教师，涵盖备课、活动与评估设计及沟通材料制作。文章也介绍 ChatGPT Study Mode 通过逐步提问、提示和理解检查促进主动学习，教师可用熟悉的课程内容检验问题质量与解释是否适龄。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "教育",
+          "Study Mode",
+          "教师培训",
+          "OpenAI Academy"
+        ],
+        "practice_suggestions": [
+          "用一门熟悉的学科测试 Study Mode，检查它是否逐步提问而非直接给出答案。",
+          "教师可按课程目标试用葡萄牙语 AI for Educators 课程中的备课与评估方法。"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "6ae8df282ecd3387c843036b9a0b5bee43e34c2210d87ac5dc34be57810c24a3": {
+      "title": "Altman警告勿把AI奉为信仰或交出判断权",
+      "url": "https://x.com/sama/status/2106388373221118198",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-03T14:18:17.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Altman表示，对人们赋予 AI 模型宗教般权威、或因此放弃自身判断感到不安，并认为这构成真实的安全问题。他强调的是人类应保留判断力，未在这条内容中提出具体缓解方案。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "AI安全",
+          "人类判断",
+          "自动化依赖",
+          "Sam Altman"
+        ],
+        "origin_report_date": "2026-10-03",
+        "delivery_class": "backfill"
+      }
+    },
+    "6ae165f02d45ebce4e0330690553a22ccb8a9178d167ece4ef7ebf71c0d7a6c9": {
+      "title": "Codex Your dot跨应用记忆并协调任务",
+      "url": "https://x.com/OpenAIDevs/status/2106152299026661641",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-02T22:40:13.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "OpenAI Devs 描述 Your dot 会学习用户的工作方式、跨应用保留上下文、协调 Codex 任务，并提示需要关注的事项。被引用的用户也称它能减轻认知负担，并对主动提醒表示认可。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Codex",
+          "Your dot",
+          "跨应用上下文",
+          "任务协调",
+          "主动提醒"
+        ],
+        "practice_suggestions": [
+          "在跨应用工作流程中试用 Your dot，评估上下文衔接是否准确。",
+          "观察任务协调和主动提醒是否减少切换成本，并留意错误或过度提醒。"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "b6756c0a180ee554226c332b456c2b3fe634b3c508ea217138686c0c0ae92870": {
+      "title": "Benefit Street 用 Codex 加快信贷审查与投委会答疑",
+      "url": "https://openai.com/index/benefit-street-partners",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-16T00:00:00.000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Benefit Street Partners 的投资经理用 Codex 构建 BDC 贷款估值比较工具和信贷协议分析器，协议初筛约 20 分钟完成，之后仍需至少一小时人工复核。团队称投委会追问可从数天或数周缩短到一天内处理，工具用于增加审查深度而非扩大交易量，最终投资判断仍由人作出。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Codex",
+          "信贷分析",
+          "金融科技",
+          "人工复核"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "current"
+      }
+    },
+    "bfa8b5302e802ba5c5230202a1b721f4b3e1ac36f02a79188ba470c751ad6747": {
+      "title": "Altman 称 OpenAI 与 Cerebras 深度合作推进推理速度",
+      "url": "https://x.com/sama/status/2106147184693620924",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-02T22:19:53.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Sam Altman 表示，围绕 OpenAI 与 Cerebras 合作的外界猜测中，双方确为紧密合作伙伴，并在共同推进更快推理。帖子未披露合作范围、金额或具体产品安排，因此目前只能确认合作关系，不能据此推断交易细节。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "Cerebras",
+          "合作",
+          "推理速度"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "971c72f24cc594ce29d6652986a29a824398ca1bd6f2ae331b4574acc6243109": {
+      "title": "Claude展示用Opus 5.5制作的可运行水车",
+      "url": "https://x.com/claudeai/status/2106125468365918268",
+      "source": "Claude (Twitter)",
+      "published_at": "2026-10-02T20:53:36.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Claude 分享近期用户创作案例，其中一项是用 Opus 5.5 制作出可运行的水车。帖子未提供制作过程、技术细节或更多性能证据。",
+      "category": "产品与功能",
+      "importance": 2,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Claude",
+          "Opus 5.5",
+          "用户创作",
+          "水车",
+          "生成式AI"
+        ],
+        "practice_suggestions": [
+          "尝试用 Claude 辅助制作一个可运行的小型机械或仿真项目，并记录需要人工校验的部分。"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "f55a1839a8e9355ba16095bfdabfa38e8cfd02996c1224080045691d3b3befd5": {
+      "title": "Altman谈高压决策与亲子时光的反差",
+      "url": "https://x.com/sama/status/2106189841813934140",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-03T01:09:24.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "Altman说，结束一天中最后一通高风险决策电话后，转眼回家面对孩子纯粹的爱与玩乐，是他人生中最奇妙也最美好的体验。内容是个人感受，没有披露具体决策或公司消息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "Sam Altman",
+          "亲子关系",
+          "工作生活",
+          "个人感受"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
+    },
+    "d72e56d92b369e1a0e45bd99e9aff91ca36a3bc8f40d5390dceb7f880b6a1031": {
+      "title": "OpenAI Devs分享一篇站内文章，缓存未含正文",
+      "url": "https://x.com/OpenAIDevs/status/2106152048924438967",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-02T22:39:13.000000Z",
+      "fetched_at": "2026-10-17T12:31:14.774Z",
+      "summary": "OpenAI Devs 帖子只包含指向 X 站内文章的链接，抓取缓存没有文章正文或可辨识的主题信息。无法据此可靠概括文章内容。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-16",
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "开发者",
+          "站内文章",
+          "正文缺失"
+        ],
+        "origin_report_date": "2026-10-02",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-10-16T15:36:09Z"
+  "last_fetch": "2026-10-17T12:31:14.774Z"
 }
