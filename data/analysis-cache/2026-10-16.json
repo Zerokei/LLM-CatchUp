@@ -1,5 +1,5 @@
 {
-  "analyzed_at": "2026-10-17T12:31:14.774Z",
+  "analyzed_at": "2026-10-17T15:30:18.523Z",
   "fetch_cache_ref": "data/fetch-cache/2026-10-16.json",
   "trend_paragraph": "- **量子电路优化**：Claude Mythos 5 按自然语言规格设计八类电路，迭代搜索在部分资源指标上优于已发表方案。\n- **密码标准溯源**：Claude 将 NIST 曲线种子追溯到旧版 lrand48 与 Unix 时间戳，为 ECDSA 参数来源给出可复现解释。\n- **AI就业预期差**：Anthropic 内部观察到初级技术岗位占比下降和智能体工时增长，员工对 AI 进展的判断也显著高于公众。\n- **垂直工作流扩展**：OpenAI 将 Codex、GPT-Rosalind 与 Study Mode 用于金融审查、生命科学研究和教师教学准备。",
   "articles": [
@@ -391,6 +391,212 @@
       "thread_group_id": null,
       "duplicate_of": null,
       "origin_report_date": "2026-10-02",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/demishassabis/status/2106850913474482566",
+      "source": "Demis Hassabis (Twitter)",
+      "title": "Google 概述 AI 加速科学与公共服务的近期进展",
+      "summary": "Demis Hassabis 转发 Sundar Pichai 对 Google AI 应用方向的总结，列举基因组变异图谱、天气预测、AI 经济使用研究和多语言翻译等进展。Google 将重点概括为健康、自然灾害与天气韧性、学习和经济机会；这条内容是对近期工作的概述，没有介绍新的单项产品或研究结果。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "Google",
+        "AI应用",
+        "科学研究",
+        "公共服务"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-04",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/trq212/status/2107192901537329354",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code HTML 规划技能：Lint 降低生成失败并节省 Token",
+      "summary": "Thariq 正在开发 Claude Code HTML 规划技能，以简明语言、代码片段、问题提示和界面 mockup 组织页面方案，并用 linting 减少常见生成错误。后续说明指出，规划过程可复用状态机、图表和代码片段等组件，避免模型反复重建，从而比直接生成原始 HTML 更节省 token。该技能仍在征求反馈，尚未广泛发布。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "HTML规划技能",
+        "Token效率",
+        "Lint",
+        "组件复用"
+      ],
+      "practice_suggestions": [
+        "用该规划模式为一个小型网页功能生成方案，比较其与直接生成 HTML 的 token 消耗和返工次数。",
+        "在技能公开后检查 lint 规则能否覆盖组件复用、状态机和代码片段等常见失败点。",
+        "在相同页面任务上比较规划技能与直接 HTML 生成的 token 用量、组件复用率和修改成本。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-05",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/trq212/status/2107229483015258493",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Projects 云会话可访问本地文件夹",
+      "summary": "Thariq 将 Claude Projects 的新能力称为「local hands」：会话运行在云端，但可按任务需要访问用户授权的本地文件夹，并直接读取或编辑其中的文件。该能力正开始分批推出，Thariq 表示也将进入 Cowork；帖子未给出完整的权限和安全实现细节。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Claude Projects",
+        "本地文件访问",
+        "云端会话",
+        "Cowork"
+      ],
+      "practice_suggestions": [
+        "功能开放后先用专门的测试文件夹验证授权范围、读写行为及撤销访问后的效果。",
+        "评估云端代理访问本地资料时的敏感文件隔离与审计要求。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-05",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/trq212/status/2107294499282293017",
+      "source": "Thariq (Twitter)",
+      "title": "Claude Code 规划技能减少重复生成 HTML 组件",
+      "summary": "Thariq 补充说明，其 Claude Code HTML 规划技能比直接输出 HTML 更节省 token。模型无需每次重建状态机、图表和代码片段等通用组件，因此可把注意力放在页面方案本身；这条帖子是在解释同一技能的设计取舍。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "技能",
+        "Token效率",
+        "组件复用"
+      ],
+      "practice_suggestions": [
+        "在相同页面任务上比较规划技能与直接 HTML 生成的 token 用量、组件复用率和修改成本。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/trq212/status/2107192901537329354",
+      "origin_report_date": "2026-10-05",
+      "delivery_class": "backfill",
+      "angle": "Token 效率与组件复用"
+    },
+    {
+      "url": "https://x.com/trq212/status/2107340728380870868",
+      "source": "Thariq (Twitter)",
+      "title": "Thariq 推荐游戏设计学习资源",
+      "summary": "Thariq 转发并推荐 Wyatt Chang 制作的游戏设计短视频，认为其中包含值得学习的设计经验。帖子没有提供具体方法、课程或 AI 工具信息，主要是一条个人资源推荐。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "游戏设计",
+        "学习资源",
+        "短视频"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-05",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2107164650249101695",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI 将在欧盟为部分生成文本添加水印",
+      "summary": "OpenAI 表示将把内容来源标记扩展到文本，以响应欧盟监管要求，同时承认现有文本水印技术存在明显局限。公司计划在欧盟于未来数周开始为符合条件的 ChatGPT 和 Codex 文本加水印；API 客户则可从今天起在全球为部分模型开启文本水印。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "内容溯源",
+        "文本水印",
+        "欧盟AI法案",
+        "OpenAI"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-05",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2107242397361139938",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Codex CLI 演示语音任务与多项目智能体管理",
+      "summary": "OpenAI Devs 分享 Codex CLI 演示，展示通过语音启动任务、跨项目管理智能体，以及在独立 worktree 中探索另一种实现方向。帖子以视频为主，没有提供版本号、功能限制或更详细的配置说明。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Codex CLI",
+        "语音交互",
+        "智能体",
+        "Worktree"
+      ],
+      "practice_suggestions": [
+        "用隔离 worktree 试验替代实现，并检查 CLI 能否清楚呈现任务状态及文件变更。",
+        "评估语音启动任务和跨项目管理是否适合团队现有终端工作流。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-05",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2107457414387622310",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral Large 4：1 万亿参数的多模态开放权重模型",
+      "summary": "Mistral 发布 Large 4（代号 Le Chonk），总参数量 1 万亿、每次激活 490 亿，并称其在欧美开放权重模型的综合基准中领先。公司还宣称该模型在网络安全、制造和金融等关键负载表现达到前沿水平，在视觉定位上超过闭源模型；API 已开放，开放权重版本预计 10 月底发布。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Mistral Large 4",
+        "开放权重",
+        "多模态",
+        "稀疏模型",
+        "企业部署"
+      ],
+      "practice_suggestions": [
+        "用自有编码、视觉定位或行业任务集复测其 API 表现，并与现用闭源及开放模型比较。",
+        "评估 490 亿激活参数的推理成本、延迟及欧洲区域部署选项。",
+        "等待开放权重发布后再按本地硬件和许可证要求评估自部署。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-06",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2107467399150903714",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral AI 分享内容未在抓取缓存中展开",
+      "summary": "该帖子抓取到的标题和正文只有一个短链接，缓存中没有展开后的目标地址或内容，无法判断它补充了什么信息。现有证据不足以将其归为特定产品更新或新闻事件。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Mistral AI",
+        "链接",
+        "内容缺失"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-06",
+      "delivery_class": "backfill"
+    },
+    {
+      "url": "https://x.com/Zai_org/status/2107272032073437185",
+      "source": "Z.ai (Twitter)",
+      "title": "GLM-5.3 上线 Amazon Bedrock",
+      "summary": "Z.ai 宣布 GLM-5.3 已可通过 Amazon Bedrock 使用，面向企业提供编码和智能体能力。帖子引导用户查看 Bedrock 模型卡并开始接入，但未在正文中给出基准成绩、价格或具体可用区域。",
+      "category": "模型发布",
+      "importance": 3,
+      "tags": [
+        "GLM-5.3",
+        "Amazon Bedrock",
+        "企业AI",
+        "智能体"
+      ],
+      "practice_suggestions": [
+        "在目标 AWS 区域确认 GLM-5.3 的可用性、定价和配额后，用代表性编码任务进行小规模评测。",
+        "比较 Bedrock 接入方式与现有 GLM 部署在权限、延迟和运营成本上的差异。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-10-05",
       "delivery_class": "backfill"
     }
   ]
