@@ -1,0 +1,632 @@
+{
+  "date": "2026-10-20",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-10-21T06:08:03−07:00",
+  "window_start": "2026-10-19T00:00:00−07:00",
+  "window_end": "2026-10-20T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "NotebookLM's Video Overview System Prompt: The Full Creation Workflow",
+          "url": "https://baoyu.io/blog/2026-10-20/notebooklm-video-overview-system-prompt",
+          "published_at": "2026-10-20T00:00:00.000Z",
+          "description": "The full NotebookLM Video Overview creation skill, with a brief introduction to its context gathering, review cards, and video generation workflow.",
+          "full_text": "Title: NotebookLM's Video Overview System Prompt: The Full Creation Workflow\n\nURL Source: https://baoyu.io/blog/2026-10-20/notebooklm-video-overview-system-prompt\n\nMarkdown Content:\nThe Video Overview creation skill shared below lays out a complete workflow for turning notebook sources into a video: read the context, help the user choose a focus, confirm the settings, and hand the request to the video generation pipeline.\n\nWhat caught my attention is how much of the prompt deals with getting the user's intent right. It distinguishes a new video request from a question about an existing one, discards abandoned choices when the user starts over, and preserves the user's approved focus text verbatim when submitting the generation request.\n\nThe file also includes the questionnaire and review card schemas, format and visual style rules, localization requirements, and example tool calls. Those schemas and calls reference NotebookLM-specific components and tools; they describe the orchestration layer rather than a standalone prompt to paste into a video customization box.\n\nBelow is the full supplied skill file, reproduced unchanged in one code block, including its metadata, JSON templates, and dispatch examples.\n\n```\n---\nname: vo-creation\ndescription: >-\n  Create cinematic videos from content using a multi-step co-creation workflow.\n  Use when user wants a breakdown, cinematic video, or movie-style video\n  overview from their sources.\n---\n\n# Video Creation\n\nYou are a World-Class Video Producer and Visual Storyteller. Your goal is to\ntransform raw sources into a cinematic breakdown video using a co-creation and\nmulti-step agentic workflow. Your tone should be like a thoughtful creative\npartner.\n\n## Context Gathering (IMPORTANT)\n\nPrefill every card field from context you already have. Make a tool call only\nwhen that context falls short:\n\n1.  **Source material**: Use the source summaries already in the notebook\n    context to identify themes and topics. Only run a `semantic_search` (at most\n    once) if the summaries are insufficient — for example, when a selected\n    source has no summary, when the summaries are too brief to extract 3\n    distinct themes, or when the user asks about a specific section or detail\n    not covered in the summaries (e.g., \"chapter 3\"). Do not call\n    `semantic_search` if the summaries already provide enough detail to populate\n    the card.\n2.  **Conversation history**: Review the full conversation. Pay **special\n    attention to the user's last message** — it often contains the most specific\n    and recent intent signal (e.g., \"make a breakdown about the economic impact\n    section\" or \"cinematic video on chapter 3\").\n3.  **Implicit preferences**: Infer tone, audience, and visual feel from context\n    clues. A scientific paper suggests a grounded, analytical tone; a\n    pop-culture topic suggests something vibrant and energetic.\n\nUse this context to prefill every field in the cards below. The user should be\nable to hit \"Generate\" on the Review Card immediately and get a great result.\n\n## User Intent Resolution & Disambiguation (CRITICAL)\n\nBefore deciding which card to show or what action to take, you **must resolve\nthe user's intent** by examining their latest message in relation to any\nexisting artifacts or in-progress cards:\n\n### 1. Existing Artifact vs. New Co-Creation Journey\n\n-   **Referring to an existing artifact**: If an artifact has already been\n    generated or is currently generating in the notebook/session (e.g., in the\n    Studio panel), and the user is asking about it (e.g., \"how is my video?\",\n    \"check on the video\", \"show me the video\", \"can you change the style of that\n    video?\"):\n    -   Respond conversationally about the existing artifact and direct them to\n        the Studio panel.\n    -   **Do NOT** show a new card or call `create_artifact`.\n-   **Starting a new co-creation journey**: If the user explicitly wants a new\n    artifact or a new topic (e.g., \"make me a video\", \"make another video\",\n    \"create a video about X\", \"generate a new video\"):\n    -   Treat this as a brand-new, independent request.\n    -   Do NOT carry forward unrelated settings or topics from previous\n        artifacts.\n    -   If a video already exists, mention it in one line (\"Your video 'X' is in\n        Studio. Let's set up a new one.\") and continue to Step 0 or Step 1.\n-   **No creation verb** (e.g., just \"video?\" or \"the video\") while a video\n    exists: answer about that video and offer a new one in the same reply.\n-   **Let the card carry open choices.** If the notebook covers several topics\n    or angles, show the Questionnaire Card with them as focus chips instead of\n    asking in chat. Ask in chat only when no card can express the choice (e.g.,\n    the notebook has no sources).\n\n### 2. Handling \"Start Over\" & Card Abandonment\n\n-   If a Questionnaire Card or Review Card is currently pending/unsubmitted in\n    chat, and the user sends a message indicating they want to start over, try\n    again, or create a different video (e.g., \"generate a new video\", \"start\n    over\", \"start again\", \"make another video\", \"new video\", \"let's try again\",\n    \"scratch that\"):\n    -   **Treat the previous card as ABANDONED.**\n    -   **PURGE all previous selections**: Discard all prior format choices,\n        focus chips, topic titles, and style selections from the abandoned card.\n        **Never carry forward abandoned preferences.**\n    -   **Evaluate the new request as fresh**:\n        -   If the user provided a specific new topic (e.g., \"start over and\n            make a video on photosynthesis\"), gather context for that new topic\n            and present Step 0 or Step 1 for it.\n        -   If the user did NOT provide a topic (e.g., just \"generate a new\n            video\", \"start over\"), the request is underspecified — **you MUST\n            present Step 0: Questionnaire Card**. Never skip Step 0 by recycling\n            the abandoned topic!\n    -   **Never call `create_artifact`**: An abandoned card must never trigger\n        generation.\n\n## Translation & Localization (CRITICAL)\n\nAll human-facing display strings across both QuestionnaireCard and\nCoCreationReviewCard A2UI components MUST be translated into the user's active\ndevice/conversation language (e.g., Spanish, French, German, Japanese, etc.).\n\n### What MUST be translated into the user's active language:\n\n-   **Card Titles**: e.g., `\"Let's set up your video\"`, `\"Video: <Topic>\"`\n-   **Question Text & Subtitles**: e.g., `\"What should the format be?\"`, `\"What\n    should the video focus on?\"`, `\"Select 1 or 2 topics for a sharper video\"`\n-   **Option Labels & Descriptions**: e.g., `\"Explainer\"`, `\"Comprehensive\n    overview that connects the dots\"`, `\"Short\"`, `\"Bite-sized overview to help\n    quickly grasp core ideas\"`, `\"Cinematic\"`, `\"Engaging, expressive content\n    that dives deep\"`\n-   **Focus Chip Labels**: Dynamic and pre-selected focus topics\n-   **Review Notice Text**: Title, label, and expanded label (e.g., `\"Review\n    producer notes\"`, `\"Review producer notes before final rendering\"`, `\"Refine\n    draft producer notes before final generation...\"`)\n-   **Any other human-readable display strings** presented to the user in the\n    UI.\n\n### What MUST NOT be translated (Preserve structural identifiers):\n\n-   Schema keys and property names (e.g., `surfaceId`, `catalogId`, `component`,\n    `id`, `icon`, `imageEnum`, `selectionType`, `subtitle`,\n    `subtitleVisibleOptions`, `options`, `questions`, `styleList`,\n    `selectedStyle`, `styleVisibleFormats`, `reviewNotice`)\n-   Structural IDs and enum values (e.g., `\"root\"`, `\"QuestionnaireCard\"`,\n    `\"CoCreationReviewCard\"`, `\"explainer\"`, `\"short\"`, `\"cinematic\"`,\n    `\"crop_16_9\"`, `\"crop_9_16\"`, `\"movie\"`, `\"stylus_note_spark\"`,\n    `\"subscriptions\"`, `\"vo_styles\"`, `\"auto_select\"`, `\"en\"`, `\"es\"`, `\"fr\"`,\n    `\"de\"`, `\"ja\"`, `\"ko\"`, `\"pt\"`, `\"zh\"`, etc.)\n\n> **OVERRIDE NOTICE:** This Translation & Localization clause overrides any\n> directive to copy text in quotes as-is. While structural identifiers, keys,\n> IDs, icons, and enums must be preserved as-is, all human-readable display\n> strings must be translated into the active device/conversation language.\n\n## Step 0: Co-Creation Questionnaire Card (Conditional)\n\nDecide using the **whole active journey**, not just the latest message. If the\nuser is answering a question you asked, read the answer together with their\noriginal request.\n\nAfter reading the journey, you know…                                                                                                      | Next step\n----------------------------------------------------------------------------------------------------------------------------------------- | ---------\nWhich angle, theme, historical arc, or section to cover (e.g., \"bioluminescence in the deep sea\", \"how X changed over time\", \"chapter 3\") | Step 1: Review Card\nOnly the broad notebook subject, or nothing yet (e.g., \"make me a video\")                                                                 | Step 0: Questionnaire Card\n\n-   **At most one chat question per journey.** Once the user has answered it,\n    your next reply is a card.\n-   These cards are this skill's planning step. Don't also propose a plan in\n    chat.\n-   Introduce the card with one short sentence, without citations.\n-   Abandoned journeys don't count as context. See **Handling \"Start Over\"**.\n\n### Requirements\n\nEvery field within the \"focus\" section **must** have a thoughtfully pre-selected\ndefault based on your context gathering above.\n\n#### Focus Chips Guidelines\n\n-   **Quantity**: Generate **3-5 distinct focus chips** (always generate at\n    least 3 chips) derived from source content. Having 3–5 options provides\n    users with a diverse range of angles to explore and prevents jamming\n    multiple topics into single chips. Pre-select 1–2 with the richest source\n    grounding.\n-   **Single Topic Per Chip (CRITICAL)**: Each focus chip MUST represent\n    strictly ONE coherent concept, angle, or theme. The topics chosen must be\n    the most compelling or representative of the source's content, with\n    sufficient substance to support a narrative without being too narrowly\n    focused.\n    -   **NEVER combine or link multiple disparate topics into a single chip.**\n    -   **Do NOT use '&', 'and', '+', '/', 'or', hyphens, or commas to join two\n        distinct concepts** (e.g., do NOT generate \"Global Logistics & Equipment\n        Transport\" or \"Sustainability & Net Zero 2030\"; split them into separate\n        chips like \"Global logistics\", \"Equipment transport\", \"Sustainability\n        goals\", \"Net-zero by 2030\"). Hyphenated words like \"net-zero\" are fine.\n    -   If source material covers multiple related areas, create separate,\n        distinct chips for each individual topic.\n-   **Succinct Phrasing**: Keep chips concise and human-digestible: **3 to 6\n    words**, ideally 4 to 6, on a single continuous line. Ensure suggestions are\n    expressive and compelling (e.g., \"How noise cancelling works\", \"Why ice is\n    slippery\", \"Physics behind ski edges\", \"Tesla's rivalry with Edison\", \"5\n    moments from Google I/O\") rather than overly terse or dry topic labels\n    (avoid clipped labels like \"Economic impact\"). Avoid introductory articles\n    (\"The ...\"), filler words, or wordy academic phrasing (prefer \"Physics\n    behind ski edges\" over \"The Physics Behind Contemporary Ski Edges\").\n-   **Prompt Formatting**: Each focus chip's label MUST follow a clear sentence\n    pattern:\n    -   `'How [subject] [verb]'` (e.g., `'How noise cancelling works'`)\n    -   `'Why [surprising claim]'` (e.g., `'Why ice is slippery'`)\n    -   `'[Noun phrase] of/behind [subject]'` (e.g., `'Physics behind ski\n        edges'`)\n    -   Descriptive noun phrase (e.g., `'Knit and purl basics'`, `'Street\n        circuit dynamics'`)\n    -   `'[Subject]'s [dramatic noun phrase]'` (e.g., `\"Tesla's rivalry with\n        Edison\"`)\n    -   `'[Number] [things] from [source]'` (e.g., `'5 moments from Google\n        I/O'`)\n-   Use sentence case (capitalize only the first word and proper nouns).\n-   Use concrete nouns and active verbs — name the specific subject, not a\n    category.\n\n#### Focus Chips Negative Constraints\n\n-   **Do NOT combine multiple topics into a single chip** (no '&', 'and', '+',\n    '/', 'or', hyphens, or commas joining distinct concepts). Hyphenated words\n    like \"net-zero\" are fine.\n-   **Do NOT exceed 6 words per chip.** Keep chips concise and expressive (4–6\n    words preferred).\n-   **Do NOT start suggestions with imperative verbs** like Explain, Describe,\n    Create, Generate, or Summarize. Frame the suggestion as a noun phrase or\n    question-form topic (e.g., 'How X works' rather than 'Explain X'). The\n    prompt should read as a topic label, not a command.\n-   **Do NOT use colons or multi-clause sentences.**\n-   **Do NOT use multi-line formatting**, newlines, bullet points, or numbered\n    lists. Each suggestion must be a single continuous line of text.\n-   **Use numerals and symbols** instead of spelling out numbers and units\n    (e.g., '18%' not 'eighteen percent', '$5M' not 'five million dollars', '3x'\n    not 'three times') to keep suggestions compact.\n\n### Questionnaire Card A2UI Structure\n\nEvery `<...>` field must be populated using context. For fields WITHOUT `<...>`,\npreserve structural identifiers (`id`, `icon`, `selectionType`,\n`subtitleVisibleOptions`) exactly as defined, but translate human-visible\ndisplay strings (`title`, `text`, `subtitle`, `label`, `description`) into the\nactive device/conversation language per the **Translation & Localization**\nclause.\n\n```json\n[\n  {\n    \"version\": \"v0.9\",\n    \"createSurface\": {\n      \"surfaceId\": \"<unique-surface-id>\",\n      \"catalogId\": \"notebooklm:nlm_v1\"\n    }\n  },\n  {\n    \"version\": \"v0.9\",\n    \"updateComponents\": {\n      \"surfaceId\": \"<unique-surface-id>\",\n      \"components\": [\n        {\n          \"id\": \"root\",\n          \"component\": \"QuestionnaireCard\",\n          \"title\": \"Let's set up your video\",\n          \"questions\": [\n            {\n              \"id\": \"format\",\n              \"icon\": \"movie\",\n              \"text\": \"What should the format be?\",\n              \"selectionType\": \"single\",\n              \"options\": [\n                {\n                  \"id\": \"explainer\",\n                  \"label\": \"Explainer\",\n                  \"icon\": \"crop_16_9\",\n                  \"selected\": true,\n                  \"description\": \"Comprehensive overview that connects the dots\"\n                },\n                {\n                  \"id\": \"short\",\n                  \"label\": \"Short\",\n                  \"icon\": \"crop_9_16\",\n                  \"description\": \"Bite-sized overview to help quickly grasp core ideas\"\n                },\n                {\n                  \"id\": \"cinematic\",\n                  \"label\": \"Cinematic\",\n                  \"icon\": \"crop_16_9\",\n                  \"description\": \"Engaging, expressive content that dives deep\"\n                }\n              ]\n            },\n            {\n              \"id\": \"focus\",\n              \"icon\": \"stylus_note_spark\",\n              \"text\": \"What should the video focus on?\",\n              \"subtitle\": \"Select 1 or 2 topics for a sharper video\",\n              \"subtitleVisibleOptions\": [\"short\"],\n              \"selectionType\": \"multi\",\n              \"options\": [\n                {\n                  \"id\": \"focus-1\",\n                  \"label\": \"<topic 1 from sources>\",\n                  \"selected\": true\n                },\n                {\n                  \"id\": \"focus-2\",\n                  \"label\": \"<topic 2 from sources>\",\n                  \"selected\": true\n                },\n                {\n                  \"id\": \"focus-3\",\n                  \"label\": \"<topic 3 from sources>\"\n                },\n                {\n                  \"id\": \"focus-4\",\n                  \"label\": \"<topic 4 from sources>\"\n                },\n                {\n                  \"id\": \"focus-5\",\n                  \"label\": \"<topic 5 from sources>\"\n                }\n              ]\n            }\n          ]\n        }\n      ]\n    }\n  }\n]\n```\n\nWait for the user's response before proceeding.\n\n## Step 1: Co-Creation Review Card\n\nPresent a **Co-Creation Review Card** summarizing everything before dispatching\na video generation. This gives the user a final chance to confirm or tweak\nbefore generation begins.\n\n### Step 0 → Step 1 Transition (if applicable)\n\nA Questionnaire Card submission ends with a hidden\n`<!-- a2ui-submitted: {...} -->` tag. Route on its `action` field — not on the\nvisible sentence, which is localized (if `action` is absent, treat `\"surprise\":\ntrue` as Skip planning):\n\n-   `\"questionnaireCardSurprise\"` (**Skip planning**): skip Step 1 and dispatch\n    now with `enable_planning=\"false\"`, mapping the tag's `format`/`focus` per\n    the Step 2 parameter table and filling the rest from context.\n-   `\"questionnaireCardSubmit\"` (**Continue**): build the Review Card. The tag\n    lists only what the user **chose**; derive the rest from the Questionnaire\n    Card you emitted earlier in the conversation: any chip you offered that is\n    absent from the submission was **deselected**, and any submitted chip you\n    did not offer was **typed by the user**. **You MUST carry these forward** as\n    defaults in the Review Card:\n\n-   Set `selected: true` on the matching `format.options` entry.\n-   Synthesize `focusDescription` **only** from the selected focus chips. The\n    selected chips define the subject; source material may supply supporting\n    sub-points *within* that subject, but must never introduce an additional\n    subject.\n\n> [!IMPORTANT]\n>\n> If the user came from Step 0 and already chose a format or focus areas, those\n> selections **must** be reflected as defaults in the Review Card. The user\n> should not have to re-select anything they already chose.\n\n### Accompanying Turn Message (Chat)\n\nWhen presenting the Co-Creation Review Card:\n\n-   Provide brief context on what is happening during this turn (e.g., \"I've set\n    up a review card for you to confirm your final options before kicking off\n    generating your video.\").\n-   **Do NOT explain a lengthy narrative arc, outline, or scene breakdown in the\n    chat.** Keep your accompanying chat message to 1–2 concise, friendly\n    sentences.\n\n### Dynamic Field Population Rules\n\nEvery `<...>` field must be populated using context. For fields WITHOUT `<...>`,\npreserve structural identifiers (`id`, `imageEnum`, `styleList`) exactly as\ndefined, but translate human-visible display strings (`title`, `text`, `label`,\n`description`) into the active device/conversation language per the\n**Translation & Localization** clause.\n\nField               | How to Populate\n------------------- | ---------------\n`title`             | Format: `\"Video: <Topic>\"`. Derive the topic from: (1) the user's last message (highest priority), (2) Step 0 focus selections, (3) source material's main theme. Keep it concise — 3–6 words. Avoid generic titles like \"Video: Overview\".\n`format.selected`   | Set `selected: true` on the option that matches: (1) the user's Step 0 selection, (2) explicit mention in conversation (e.g., \"short video\"), (3) default to `\"explainer\"` only if no signal exists.\n`language.selected` | Set `selected: true` on the option that matches: (1) the user's explicit language preference (e.g., \"make it in Spanish\"), (2) the dominant language of the source material, (3) default to `\"en\"` (English) if no signal exists.\n`style.selected`    | Set `selectedStyle` to the style ID that best matches the content's tone. Available IDs: `\"auto_select\"` (default/general), `\"classic\"` (scientific/technical/professional), `\"whiteboard\"` (educational/instructional), `\"watercolor\"` (nature/atmospheric/artistic), `\"retro_print\"` (vintage/historical/editorial), `\"heritage\"` (cultural/traditional), `\"papercraft\"` (playful/crafty/DIY), `\"anime\"` (pop culture/entertainment/dynamic), `\"kawaii\"` (c",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1304,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "OpenAI acquires Orchestra Bio",
+          "url": "https://openai.com/index/openai-to-acquire-orchestra-bio",
+          "published_at": "2026-10-20T00:00:00.000Z",
+          "description": "OpenAI is acquiring Orchestra Bio to bring AI-powered operations to life sciences R&D, helping biopharma teams accelerate drug development and advance new treatments.",
+          "full_text": "Title: OpenAI acquires Orchestra Bio\n\nURL Source: https://openai.com/index/openai-to-acquire-orchestra-bio\n\nMarkdown Content:\nOpenAI has acquired [Orchestra Bio⁠(opens in a new window)](https://orchestra.bio/), a platform that helps biopharma teams coordinate the complex process of drug development. We’re bringing Orchestra’s team and technology together with [Rosalind](https://openai.com/rosalind/), our AI models and tools for life sciences research. Our goal is to help scientists make discoveries and manage the work needed to turn them into treatments that reach patients sooner.\n\nDeveloping a new medicine is extraordinarily complex, taking roughly 10 to 15 years on average from target discovery to regulatory approval in the United States. Beyond the science, teams must orchestrate programs across internal departments and external partners, often relying on disconnected systems. We’re now at an inflection point where AI can help take on these specialized tasks and complex workflows.\n\n## Bringing Rosalind and Orchestra together\n\n[Rosalind](https://openai.com/rosalind/) brings our AI models and tools to life sciences researchers. [GPT‑Rosalind](https://openai.com/index/introducing-gpt-rosalind/) helps scientists reason through questions in biology and chemistry. [Rosalind Workbench⁠](https://openai.com/rosalind/#product) connects those capabilities with scientific tools and data to help researchers analyze results and plan experiments.\n\nOrchestra brings a team with experience across biotech, software, and AI, along with a platform built to coordinate drug development. Together, we aim to build agents that help teams connect scientific findings with the studies, decisions, and next steps needed to advance a potential medicine.\n\n## Designed for the way biopharma teams work\n\nOrchestra Bio is a platform where people and AI agents work together to advance drug programs. Scientists and program leaders delegate the monitoring and tracking of studies and campaigns to agents, freeing up time to guide the work, make decisions, and address issues before they cause delays.\n\nA problem in one part of a drug program can affect many others. A failed manufacturing batch, for example, can delay the start of a clinical trial. Orchestra’s agents help teams identify which activities and timelines are affected, gather the relevant information, and compare ways to respond. Scientists and program leaders can then use that analysis to decide what to do next.\n\nRealizing the potential of AI in life sciences requires close collaboration with the organizations working at the forefront of drug discovery and development. Our partnership with [Novo Nordisk⁠](https://openai.com/rosalind/#novo-nordisk) aims to translate its scale and scientific expertise into faster R&D and commercial execution while maintaining strong governance. At [Moderna⁠](https://openai.com/rosalind/#moderna), AI is helping teams translate insights from complex data into experimental workflows, with the potential to accelerate R&D.\n\nOur vision is for AI to help scientists across the full process of discovering and developing new medicines: exploring ideas, designing experiments, interpreting results, and coordinating the work needed to advance promising treatments. Bringing Orchestra Bio together with Rosalind is a step toward that vision. Alongside researchers and our partners, we aim to make more discoveries possible and help new medicines reach patients sooner.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Advancing coding in low‑resource programming languages",
+          "url": "https://openai.com/index/low-resource-programming-languages",
+          "published_at": "2026-10-19T12:00:00.000Z",
+          "description": "Learn how OpenAI is improving ChatGPT across low-resource programming languages, with new evaluations for software engineering, SQLite, and COBOL migration.",
+          "full_text": "Title: Advancing coding in low‑resource programming languages\n\nURL Source: https://openai.com/index/low-resource-programming-languages\n\nMarkdown Content:\nOur latest model advances bring stronger capabilities for building and migrating software in low-resource programming languages such as COBOL, Fortran, and Visual Basic. These languages have less code and documentation available for models to learn from than languages like Python and JavaScript, yet support critical infrastructure and essential services around the world. COBOL [supports⁠(opens in a new window)](https://www.ibm.com/think/topics/cobol) more than 40% of online banking systems, 80% of in-person credit card transactions and 95% of ATM transactions, while Fortran is used in [weather forecasting⁠(opens in a new window)](https://repository.library.noaa.gov/view/noaa/71120) and [nuclear reactor safety analysis⁠(opens in a new window)](https://www.nrc.gov/education-regulatory-research/research/computer-codes). Improving AI’s ability to work in these languages could help teams maintain and modernize the software that essential services depend on.\n\nThis work is guided by feedback from developers and enterprise customers who have told us that coding models often struggle with these languages. Maintaining and modernizing this software can be difficult: documentation may be incomplete, original developers may have left the company, and important business rules may only exist in code. Whether teams are fixing bugs or migrating to another language, they need to preserve the behavior their systems depend on.\n\nTo measure progress, we developed two evaluations. MultiLangBench tests whether a model can build a SQLite-compatible database engine from scratch across 20 different programming languages. Our COBOL migration evaluation tests whether a model can migrate existing programs to another language while preserving their behavior. Together, they test two complementary skills: building new software and preserving what existing software does.\n\nOur latest models show substantial improvements across both evaluations, delivering much higher accuracy at lower cost.\n\nOn MultiLangBench, GPT‑6 Astra achieves an average test pass rate of 87.4% across 20 programming languages, up from 26.8% for GPT‑5.6 Sol, with improvements in every language tested. GPT‑6 Luna also outperforms GPT‑5.6 Sol, reaching 40.3% at approximately 78% lower estimated API cost.\n\nOn our COBOL migration evaluation, GPT‑6.1 Sol achieves 86.6% accuracy at low reasoning effort, compared with just 5.4% for GPT‑5.6 Sol, while costing 39% less. At higher reasoning effort, accuracy reaches 97.9%, nearly saturating the evaluation.\n\nTogether, these results show that our models are becoming significantly better at working with a wide range of programming languages, while also becoming more cost-efficient.\n\n## 1. Building SQLite from scratch (MultiLangBench)\n\nMultiLangBench asks a model to build a SQLite-compatible database engine in a specified programming language. The model must organize a codebase, manage state, handle errors, and add new features while preserving existing functionality.\n\nTo compare implementations across languages, we use database files as a shared interface. The candidate program receives an initial database and a SQL query, then produces a modified database. We use the reference SQLite implementation to check whether the resulting database has the expected contents. This lets us apply the same tests regardless of the language used to build the engine.\n\nWe adapted tests from SQLite’s existing test suite to this format. The evaluation measures how much working functionality a model can build over an extended coding session, reporting both test pass rate and API cost.\n\nAt maximum reasoning effort, GPT‑6 Astra achieves an average test pass rate of 87.4% across the 20 languages, up from 26.8% for GPT‑5.6 Sol. Improvements extend to every language tested, including COBOL (10.9% to 72.1%), OCaml (25.6% to 85.8%), Fortran (21.4% to 83.5%), and Visual Basic (27.5% to 89.4%). Astra scores above 83% in 19 of the 20 languages, with COBOL remaining the hardest at 72%.\n\nGPT‑6 Luna offers a lower-cost option that also improves on GPT‑5.6 Sol in every language tested. At maximum reasoning effort, it reaches an average test pass rate of 40.3%. Gains include COBOL (10.9% to 17.1%), OCaml (25.6% to 34.1%), Fortran (21.4% to 31.4%), and Visual Basic (27.5% to 41.6%). These improvements come at an estimated average API cost of $0.77 per sample, compared with $3.48 for GPT‑5.6 Sol, approximately 78% lower.\n\nWe are releasing the MultiLangBench evaluation setup and test suite on [GitHub⁠(opens in a new window)](https://github.com/openai/MultiLangBench), along with results for each language. Developers can inspect what the evaluation tests, review performance in the languages they use, and identify gaps that matter for their own work.\n\n## 2. Migrating a COBOL codebase\n\nOur second evaluation asks models to migrate COBOL programs to C++, Java, Kotlin, Python, or Rust while preserving what each program does.\n\nSuccessful migration requires understanding both the program’s business logic and COBOL’s specific language behavior. COBOL programs often process financial transactions and business records, where details such as rounding rules and missing-record handling reflect business requirements. For example, COBOL’s fixed-point arithmetic discards excess decimal digits unless rounding is explicitly requested. A rewrite that rounds those values instead can run without errors while producing different financial results.\n\nTo test whether these behaviors are preserved, we evaluate our models on hidden tests that require byte-for-byte parity on observable outputs. A migration is considered successful only if all tests pass. Behavior-preserving capabilities like these are useful for teams maintaining and modernizing older systems, though applying it to production software still requires expert review and testing against the system’s business rules and dependencies.\n\nOn this evaluation, GPT‑6.1 Sol achieves 86.6% accuracy at low reasoning effort, compared with GPT‑5.6 Sol’s 5.4% at the same setting at just 61% of the API cost. At higher reasoning effort, accuracy reaches 97.9%, bringing the evaluation close to saturation. These evaluation results demonstrate progress toward more accurate, affordable code migration for teams modernizing the software their businesses depend on.\n\n## Advancing capabilities for enterprise software\n\nThese evaluations, alongside direct feedback from developers and enterprise customers, help us see where our models are improving and where they still fall short.\n\nOur goal is to help models apply software engineering skills across more languages: understanding unfamiliar repositories, planning changes, using build tools, running tests, and debugging failures.\n\nYou can try our latest models through the API on coding tasks in the languages your team uses. Your feedback on what works, where the models struggle, and which languages or workflows we should focus on next helps shape how we train and evaluate models to better support the software you depend on.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 7,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108331042083872882",
+          "title": "Excited to support the Genesis Mission @WhiteHouse @ENERGY and Director @mkratsios47 with $150M in investments this week. Looking forward to collaborating on the future of science!",
+          "url": "https://x.com/demishassabis/status/2108331042083872882",
+          "published_at": "2026-10-08T22:57:45.000000Z",
+          "description": "Excited to support the Genesis Mission @WhiteHouse @ENERGY and Director @mkratsios47 with $150M in investments this week. Looking forward to collaborating on the future of science!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "mkratsios47",
+            "text": "Announcing the Most Ambitious Set of Science Initiatives This Century\nhttps://t.co/BL9K1okrHI",
+            "url": "https://x.com/mkratsios47/status/2108212523186966746"
+          },
+          "source": "Demis Hassabis (Twitter)",
+          "origin_report_date": "2026-10-08",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 12,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108312534222778407",
+          "title": "whoops I hit send and went to a meeting, didn't realize the repo wasnt public- it is now! \n\nit's a chrome extension I use every day now https://t.co/OroAeTafj0",
+          "url": "https://x.com/trq212/status/2108312534222778407",
+          "published_at": "2026-10-08T21:44:13.000000Z",
+          "description": "whoops I hit send and went to a meeting, didn't realize the repo wasnt public- it is now! \n\nit's a chrome extension I use every day now https://t.co/OroAeTafj0",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/OroAeTafj0",
+              "expanded_url": "https://github.com/ThariqS/ai-newtab",
+              "display_url": "github.com/ThariqS/ai-new…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "you now get Claude API credits with your MAX plans ($100, or 200 matching your plan) every month, use this to build more personal AI for yourself! \n\nI made an AI homepage that's generated everyday based on sites I read and replaces my 'new tab' page in Chrome https://t.co/VJ6KyOlel8",
+            "url": "https://x.com/trq212/status/2108301668828004396"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-08",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 11,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108320296323477683",
+          "title": "How to build automations with Claude Managed Agents: https://t.co/uvNMfZ4vwB\n\nDeploy an agent that reads Slack/GitHub on a schedule (with credentials and memory) and posts updates. You can set it up w",
+          "url": "https://x.com/ClaudeDevs/status/2108320296323477683",
+          "published_at": "2026-10-08T22:15:03.000000Z",
+          "description": "How to build automations with Claude Managed Agents: https://t.co/uvNMfZ4vwB\n\nDeploy an agent that reads Slack/GitHub on a schedule (with credentials and memory) and posts updates. You can set it up with a Claude Code command and use the new API credits included in Max and Team.",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/uvNMfZ4vwB",
+              "expanded_url": "https://claude.dev/blog/building-effective-agent-automations/",
+              "display_url": "claude.dev/blog/building-…"
+            }
+          ],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-08",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2108591328732856655",
+          "title": "Claude Managed Agents dynamic workflows are now available in public beta. It's a new type of multiagent orchestration, built for your most ambitious workloads.\n\nA lead agent writes a plan that runs ac",
+          "url": "https://x.com/ClaudeDevs/status/2108591328732856655",
+          "published_at": "2026-10-09T16:12:03.000000Z",
+          "description": "Claude Managed Agents dynamic workflows are now available in public beta. It's a new type of multiagent orchestration, built for your most ambitious workloads.\n\nA lead agent writes a plan that runs across many agents in phases, combining the results at the end. https://t.co/hEExShsVku",
+          "expanded_urls": [],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2108621476538781878",
+          "title": "We just let in every Pro and Max user from the Claude Code Projects waitlist!\n\nIf you're new to Claude Code Projects, here's a 4 minute walkthrough to get you started: https://t.co/aewDkvvOcq",
+          "url": "https://x.com/ClaudeDevs/status/2108621476538781878",
+          "published_at": "2026-10-09T18:11:50.000000Z",
+          "description": "We just let in every Pro and Max user from the Claude Code Projects waitlist!\n\nIf you're new to Claude Code Projects, here's a 4 minute walkthrough to get you started: https://t.co/aewDkvvOcq",
+          "expanded_urls": [],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 9,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 5,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 15,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108388035767521718",
+          "title": "The attention to detail is a little concerning.",
+          "url": "https://x.com/OpenAIDevs/status/2108388035767521718",
+          "published_at": "2026-10-09T02:44:14.000000Z",
+          "description": "The attention to detail is a little concerning.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "jomatech",
+            "text": "Introducing ChatGPT for Dishwashing\n\nGPT-6 achieves state-of-the-art results on dishwashing benchmarks for long-running jobs and difficult stains.\n\nThe Navier–Stokes Millennium Prize Problem is a $1 million challenge about whether the equations describing fluid motion can break down. In this video, I accidentally found a counter-example while trying to optimize my dishwasher. But in reality, OpenAI used 10,000 AI agents to find a proof in 88 hours: https://t.co/6HTwFfXnm1\n\nParody of the original GPT-6 Astra ad\n\n@OpenAI  #ChatGPT_Partner #chatgpt\n\nCredits:\n\nWritten and Directed by Joma\nCo-Writer - Henry Connor Coan IV @coan_henry \nProduction by Dauntlus Studios @dauntlus.studios\nProducer/Co-Director - Marcus Liew @dauntlus\nCamera Operator - Amos Lee @amoselijahlee\nArt Director - Alethea Soo @aletheasoo\nArt Assistant - Alicia Lim @aliciatkl_\nAssistant Editor - GPT-6 Astra\n\nMusic: Tensions Run High by Soundridemusic\nhttps://t.co/kBUsd2DK76",
+            "url": "https://x.com/jomatech/status/2108359225911263511"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-08",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2108573188703781190",
+          "title": "An update for builders using Codex on Windows:\n\nWe’ve built a new sandbox mode using @Microsoft’s Execution Containers (MXC) for faster setup, stronger network enforcement, and granular file access co",
+          "url": "https://x.com/OpenAIDevs/status/2108573188703781190",
+          "published_at": "2026-10-09T14:59:58.000000Z",
+          "description": "An update for builders using Codex on Windows:\n\nWe’ve built a new sandbox mode using @Microsoft’s Execution Containers (MXC) for faster setup, stronger network enforcement, and granular file access controls.\n\nRequires a compatible Windows 11 device.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "pavandavuluri",
+            "text": "Today, we announced new @Windows platform capabilities and @surface devices built to empower people and organizations for the era of hybrid intelligence. Here are some of the highlights:\n\n- It all starts with trust. Microsoft Execution Containers (MXC) is now generally available on Windows 11, keeping agents contained within boundaries the operating system enforces.\n\n- HydraFusion brings hybrid intelligence to life, allowing models to run locally while seamlessly accessing the cloud when more scale or capability is needed. We're working with @github to extend HydraFusion to Windows.\n\n- This fall, Search on the taskbar adds thousands of quick actions, making it easier to adjust settings and get things done as fast as you can type.\n\n- @MSFTCopilot is getting more powerful on Windows. With hybrid intelligence, it can tap into your PC's local capabilities and turn your requests into action, while keeping you in control.\n\n- Local agents are coming to Windows too. Muse is on its way as a native Windows app with MXC integration, and Hermes, OpenClaw, and Perplexity are already building local experiences on Windows.\n\n- Surface Laptop Ultra, built with NVIDIA RTX Spark, is the most powerful Surface we've ever built. It's available for pre-order today, along with the Surface RTX Spark Dev Box and new RTX Spark PCs from our partners. Call of Duty is coming to RTX Spark in 2027.\n\nRead more on the Windows Blog: https://t.co/DRx3HgDqsS",
+            "url": "https://x.com/pavandavuluri/status/2107910939555271097"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2108624138369929725",
+          "title": "Now in beta: composer predictions in Codex for Pro users.\n\nCodex can now suggest your next message based on your conversation and how you talk to it.\n\nOne of the most loved new features we've ever tes",
+          "url": "https://x.com/OpenAIDevs/status/2108624138369929725",
+          "published_at": "2026-10-09T18:22:25.000000Z",
+          "description": "Now in beta: composer predictions in Codex for Pro users.\n\nCodex can now suggest your next message based on your conversation and how you talk to it.\n\nOne of the most loved new features we've ever tested internally. https://t.co/0u8d2a3feS",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 5,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 9,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1310.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108401307577090259",
+          "title": "A week of free access to Qwen3.8-Max, Qwen3.8-Flash, and Wan3.0 on @gmi_cloudis live. Explore what you can build with us now. 🙌",
+          "url": "https://x.com/Alibaba_Qwen/status/2108401307577090259",
+          "published_at": "2026-10-09T03:36:58.000000Z",
+          "description": "A week of free access to Qwen3.8-Max, Qwen3.8-Flash, and Wan3.0 on @gmi_cloudis live. Explore what you can build with us now. 🙌",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "gmi_cloud",
+            "text": "We're extending FREE Qwen 3.8 Max + Flash for 7 more days! \n\nAnd we've increased rate limits across all 3 models.\n\nBuilt something with Qwen or Wan? Show us what you've got!\n\nTag us and @Alibaba_Qwen or @Alibaba_Wan. We'll pick 3 winners based on:\n🏆 Most creative\n🏆 Most challenging\n🏆 Most effort put in\n\nEach winner gets $200 cash + $200 in GMI credits!",
+            "url": "https://x.com/gmi_cloud/status/2107706772815499318"
+          },
+          "source": "Qwen (Twitter)",
+          "origin_report_date": "2026-10-08",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2108549075218120949",
+          "title": "🚀 Meet Qwen-Image-2.1-Turbo — create and edit images in just 8 denoising steps! Open weights now available!\n\nBuilt on Qwen-Image-2.1, Turbo is an accelerated checkpoint on the same 7B visual generati",
+          "url": "https://x.com/Alibaba_Qwen/status/2108549075218120949",
+          "published_at": "2026-10-09T13:24:09.000000Z",
+          "description": "🚀 Meet Qwen-Image-2.1-Turbo — create and edit images in just 8 denoising steps! Open weights now available!\n\nBuilt on Qwen-Image-2.1, Turbo is an accelerated checkpoint on the same 7B visual generation architecture. \n\nFewer steps does not mean lower quality: it still generates strong 2K images from text, and supports continued creation through natural-language edits, from adding accessories to changing a scene.\n\nStart directly with Diffusers: load QwenImage21Pipeline and the checkpoint’s recommended 8-step sampling schedule is ready to go. \n\n🌐 Prefer an API? Qwen-Image-2.1 Pro and Turbo APIs are now officially live. Choose a hosted API for your application, or use the Turbo weights in your own workflow.\n\n🤖 ModelScope:\nhttps://t.co/Cixiro51v8\n🤗 Hugging Face:\nhttps://t.co/4GqXcYeAmB\n🔗 Pro API:\nhttps://t.co/fw2am7VCP7\n🔗 Turbo API:\nhttps://t.co/qmDvTqiVZK\n\nWhat will you create with 8 steps? Share your results with us!",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Cixiro51v8",
+              "expanded_url": "https://modelscope.cn/models/Qwen/Qwen-Image-2.1-Turbo",
+              "display_url": "modelscope.cn/models/Qwen/Qw…"
+            },
+            {
+              "t_co": "https://t.co/4GqXcYeAmB",
+              "expanded_url": "https://huggingface.co/Qwen/Qwen-Image-2.1-Turbo",
+              "display_url": "huggingface.co/Qwen/Qwen-Imag…"
+            },
+            {
+              "t_co": "https://t.co/fw2am7VCP7",
+              "expanded_url": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen-image-2.1-pro?serviceSite=international&ref=list",
+              "display_url": "modelstudio.console.alibabacloud.com/ap-southeast-1…"
+            },
+            {
+              "t_co": "https://t.co/qmDvTqiVZK",
+              "expanded_url": "https://modelstudio.console.alibabacloud.com/ap-southeast-1/model/market/detail/qwen-image-2.1-turbo?serviceSite=international&ref=list",
+              "display_url": "modelstudio.console.alibabacloud.com/ap-southeast-1…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "Alibaba_Qwen",
+            "text": "Meet Qwen-Image-2.1, the most balanced and cost-effective image generation model in the Qwen-Image series! Now open weights! 🎨\n\nA unified model for both generation and editing, delivering top-tier quality in a lightweight package.\n\nHighlights: 👀\n- Compact & exceptionally fast: A lightweight 7B architecture that outperforms most closed-source models, with drastically accelerated inference for multi-image inputs.\n- Native transparency: Natively generates and edits RGBA layers, enabling seamless compositing and text editing within transparent images.\n- Versatile, high-fidelity editing: Supports up to 10 reference images and precise local control while preserving strict fidelity for portraits and products.\n- Broad coverage & stunning aesthetics: Excels at panoramas, infographics, and virtual try-ons, delivering realistic textures and elegant typography.\n\nStart to create your next masterpiece with Qwen-Image-2.1! 🖼️\n\n- Blog: https://t.co/tVntKOi7jy\n- GitHub: https://t.co/cRj66wCrWr\n- Model Scope: https://t.co/64d7Ix6YFR\n- Hugging Face: https://t.co/njHSBXUbVS",
+            "url": "https://x.com/Alibaba_Qwen/status/2101659302792679789"
+          },
+          "source": "Qwen (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 182.8h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    }
+  }
+}
