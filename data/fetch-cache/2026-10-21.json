@@ -1,0 +1,644 @@
+{
+  "date": "2026-10-21",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-10-22T06:08:17−07:00",
+  "window_start": "2026-10-20T00:00:00−07:00",
+  "window_end": "2026-10-21T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1312,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Using thousands of AI agents to uncover new leads in biological data",
+          "url": "https://openai.com/index/scaling-ai-research-for-complex-biological-data",
+          "published_at": "2026-10-21T04:50:00.000Z",
+          "description": "See how OpenAI, PerturbAI, and Scripps Research used distributed AI agents to uncover promising research leads in data from millions of brain cells.",
+          "full_text": "Title: Using thousands of AI agents to uncover new leads in biological data\n\nURL Source: https://openai.com/index/scaling-ai-research-for-complex-biological-data\n\nMarkdown Content:\nWhat if scientists could uncover new clues about Alzheimer’s and Parkinson’s in minutes instead of months? Working together, OpenAI, [PerturbAI⁠(opens in a new window)](http://perturb.ai/), and [Scripps Research⁠(opens in a new window)](http://scripps.edu/) used [thousands of AI agents powered by GPT‑Rosalind⁠(opens in a new window)](https://www.biorxiv.org/content/10.64898/2026.10.15.759436v1) to analyze and interpret existing experimental data from [millions of mouse brain cells⁠(opens in a new window)](https://huggingface.co/datasets/perturbai/wholebrain_crispr_atlas) in just 32 minutes. The agents connected the effects of gene disruptions with findings from scientific literature, uncovering unexpected biological connections that can help scientists understand disease and identify research directions for new treatments. The work shows how AI can help researchers explore more of what large biological experiments reveal.\n\nModern experiments generate far more data than scientists can thoroughly investigate. Researchers can now alter thousands of genes and measure their effects across millions of cells. But understanding what these results mean for human disease requires connecting complex experimental findings with decades of scattered scientific knowledge. This is where AI can help scientists uncover promising leads that might otherwise be missed.\n\n> “We build cell atlases so that other scientists can make discoveries we haven’t imagined yet. AI could help more researchers explore these resources and turn unexpected observations into new questions to test.”\n\n—Sarah Teichmann, Ph.D., Chair in Stem Cell Medicine at the University of Cambridge and founding co-chair of the Human Cell Atlas\n\nThe team divided the analysis among thousands of AI agents powered by GPT‑Rosalind, an approach we call distributed biological reasoning. The agents examined a [whole-brain CRISPR atlas⁠(opens in a new window)](https://www.biorxiv.org/content/10.64898/2026.03.16.711480v1), a dataset showing how gene disruptions affect different types of cells across the mouse brain. Each agent investigated a gene disruption, analyzed cellular responses, searched scientific literature, and proposed explanations for the results. Their reports were combined into a reasoning atlas linking genes, cellular effects, relevant publications, and possible biological mechanisms.\n\nThe research team estimated that comparable human analysis and literature review, conducted one perturbation at a time, would take months to a year. The agents reproduced findings from human analyses while uncovering additional leads. Their assessments of novelty and scientific value also aligned with judgments from blinded human experts. These findings help prioritize further experiments needed to test the proposed biological mechanisms.\n\nSome of these insights point to new leads for understanding brain disease. The agents identified unexpected differences in how two disease-linked genes affect brain cells differently, as well as a potential connection between cholesterol regulation and neurodegeneration. These findings could help scientists investigate how disease develops and where future treatments might intervene.\n\n> “Sometimes the clues are already there, scattered across different fields—we just haven’t connected them. The possible link between neuronal function and cholesterol metabolism shows how those pieces, once brought together, can give us a new way to think about disease biology.”\n\n—Tomasz Nowakowski, Ph.D., associate professor of neurological surgery at UCSF\n\nResearchers can begin exploring these findings today. The reasoning atlas is [available⁠(opens in a new window)](https://github.com/jinlabneurogenomics/distributed_agent), allowing scientists to compare related genes, investigate unexpected responses, and identify promising leads to pursue. New discoveries often emerge when researchers from different fields bring their expertise together and connect familiar ideas in unexpected ways. AI can significantly scale these connections by linking new data with knowledge scattered across disciplines. The opportunity goes beyond analyzing data faster. By combining AI with experimental biology, human expertise, and scientific literature, we can help scientists turn more of their data into testable ideas.\n\n## Big experiments, unexpected clues\n\nSome of an experiment’s most interesting clues lie outside the story scientists set out to investigate. In a dataset spanning thousands of perturbations, those clues can be easy to miss.\n\nThe agents identified an unexpected difference between Tsc1 and Tsc2, two genes that work together to control mTOR, a major regulator of cell growth, metabolism, and aging. Disrupting either gene had similar effects in several groups of neurons. But in the cerebellum, which helps coordinate movement, Tsc2 disruption altered the activity of dozens of genes involved in neuronal communication, while Tsc1 disruption produced little change.\n\nThat difference may be relevant to human disease. In people with tuberous sclerosis, abnormalities in the cerebellum are strongly linked to TSC2 mutations. While medicines that reduce mTOR activity can treat certain brain tumors and seizures, learning and behavioral difficulties associated with the disease remain challenging to address. The agents pinpointed a specific group of neurons and cellular changes worth investigating: which changes might existing medicines correct, and which might point to new treatment approaches? This gives researchers a more specific set of questions to test in the lab.\n\n## Divide the work, deepen the reasoning\n\nCould a single agent given the entire dataset do just as well as thousands of agents working in parallel? We tested this while keeping the model and resources fixed. As the workload grew, the single agent searched less of the literature, citing only 11 references at the largest workload, while the distributed agents cited more than 700 references. Human experts also preferred the distributed-agent interpretations.\n\nScientists have limited time and often focus on the strongest signals in their data. Distributed agents can help examine a wider range of responses, including subtle or unexpected ones, and connect them with relevant scientific literature. Running the agents in parallel allows many perturbations to be investigated at once. This helps scientists explore more of what an experiment contains and identify promising leads that might otherwise be missed.\n\n_At the largest workload, distributed agents cited more than 700 references, compared with 11 for a single agent._\n\n## Finding the next experiment worth doing\n\nA finding becomes more valuable when it points to an experiment worth doing. The agents found one such lead in _DCTN1_, a gene whose mutations cause Perry syndrome, a neurodegenerative disease with Parkinson-like symptoms.\n\nDCTN1 is involved in moving cargo inside neurons. In the whole-brain CRISPR atlas, disrupting Dctn1 increased the expression of genes involved in making cholesterol. The agents connected this observation with research suggesting that problems with cholesterol transport may cause cells to make more cholesterol. This raised a question for follow-up experiments: could DCTN1 disruption change how cholesterol is distributed within neurons, and could those changes contribute to neurodegeneration? If so, could restoring normal cholesterol distribution help protect neurons?\n\nHuman experts also considered this hypothesis novel, consequential and worth following up on. This example shows how connecting an unexpected result with existing knowledge can turn a clue into a testable idea, and potentially a new direction for treating disease.\n\nIn blinded comparisons, human experts preferred distributed-agent reports over single-agent reports 75% of the time.\n\nScientists remain at the center of discovery. By uncovering more promising leads, AI can help researchers decide which ideas to pursue, design experiments, and interpret results. The goal is to turn more of the information in biological experiments into knowledge that, over time, can help guide the development of better medicines.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Cloudflare links vulnerability discovery to defense with OpenAI",
+          "url": "https://openai.com/index/cloudflare-cyber",
+          "published_at": "2026-10-21T00:00:00.000Z",
+          "description": "Cloudflare uses OpenAI Daybreak to investigate vulnerabilities and propose fixes for review. Its developers use Codex to build faster and improve code quality.",
+          "full_text": "Title: Cloudflare links vulnerability discovery to defense with OpenAI\n\nURL Source: https://openai.com/index/cloudflare-cyber\n\nMarkdown Content:\nCloudflare operates one of the world’s largest networks and proxies roughly 20% of the web’s traffic. Organizations depend on that network to keep their applications and services secure, fast, and reliable.\n\nCloudflare combines OpenAI models accessed through Daybreak with its global network and threat context in [Vulnerability Discovery and Remediation⁠(opens in a new window)](https://www.cloudflare.net/news/news-details/2026/Cloudflare-Partners-with-OpenAI-Daybreak-Models-to-Redefine-Vulnerability-Management-with-AI-Powered-Edge-Defense/default.aspx), an early-access service offered through Cloudflare Managed Defense. The models investigate code and assess potential vulnerabilities. Cloudflare adds live traffic data, security signals, and validation to prioritize findings and prepare proposed mitigations and patches for customers to review.\n\nCodex extends OpenAI’s role across Cloudflare’s engineering organization, where developers use it to increase output and improve code quality.\n\n> “The beauty of the automation that Daybreak and Codex provide is that you can assign machines to do the grunt work so humans can exercise their judgment on the most important engineering and security decisions.”\n\n—Mark Anderson, President of Revenue, Cloudflare\n\nCloudflare customer story video.\n\n## Scaling security analysis with Daybreak\n\nSecurity teams face a constant stream of vulnerability information and alerts. Manually sifting through that data takes time and effort, leaving teams with less capacity to investigate and address critical issues. “Traditional security teams have a ton of useful data. They just don’t have the people and time to deal with it,” Anderson says.\n\nCloudflare’s approach is to connect a vulnerability in source code to what is happening in production. Is the affected route active? Is it receiving suspicious traffic? Are existing security controls already protecting it? Those signals give security teams more context for deciding what to investigate first.\n\nThrough [Vulnerability Discovery and Remediation⁠(opens in a new window)](https://blog.cloudflare.com/vulnerability-discovery-remediation/), Cloudflare uses OpenAI models accessed through Daybreak to investigate customer-authorized code, identify potential vulnerabilities, and check the evidence supporting each finding. The service prepares proposed code patches and, where appropriate, custom web application firewall rules to reduce exposure while developers review a fix. Cloudflare runs automated checks on these proposals, and its team reviews them before sharing them with customers.\n\nFor Cloudflare customers, the benefit is a clear path from identifying a vulnerability to protecting the affected application. The service gives them evidence to prioritize vulnerabilities, proposed edge protections to reduce exposure, and code fixes to review, while they retain control over which changes to implement.\n\n## Rebuilding a product in 3 days with Codex\n\nProtecting applications also depends on the code teams write and maintain. Anderson connects Cloudflare’s use of Codex to greater developer productivity, better code quality, and fewer bugs introduced during development.\n\n> “At Cloudflare, a third of our company are software developers building services and features for our platform, and 100% of them use Codex to boost their output and deliver better code.”\n\n—Mark Anderson, President of Revenue, Cloudflare\n\nAnderson describes a recent rebuild the team had postponed. “We were putting off building it because we didn’t have the manpower to do it,” he says. With Codex scaling developer productivity, the question shifts from “Can we take this on?” to “Why not?”\n\nAnderson estimates that the work would have required months of sequencing and “maybe 10x more developers.” With Codex, a Cloudflare team of four developers took on the build. “We built it in three days, rolled it out and tested it, and spent $1,100 on tokens,” he says.\n\n## Shaping cyber defense around AI and human judgment\n\nFor Anderson, making AI part of everyday engineering means “rebuilding the internal process to build technology with machines in mind, not as a separate element, but as something that’s integrated into the build process.”\n\nCloudflare’s early-access security service puts that approach into practice by connecting code investigation with production evidence and proposed actions customers can review. The goal is to give security teams the information they need to decide which vulnerabilities to prioritize and how to protect and fix affected applications, while customers retain control over changes.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Democratic governance of frontier AI, part II: Empowering cyber defenders",
+          "url": "https://openai.com/index/empowering-cyber-defenders",
+          "published_at": "2026-10-21T00:00:00.000Z",
+          "description": "OpenAI outlines a blueprint for empowering cyber defenders with frontier AI, stronger safeguards, modernized cybersecurity, and more resilient public institutions.",
+          "full_text": "Title: Democratic governance of frontier AI, part II: Empowering cyber defenders\n\nURL Source: https://openai.com/index/empowering-cyber-defenders\n\nMarkdown Content:\nAI is changing the speed, scale, and economics of cybersecurity. It can help defenders find and fix vulnerabilities, detect intrusions, and respond to attacks—but those same capabilities can enable malicious actors and create new risks when AI systems act beyond their intended boundaries. We are in a defender’s window: a limited opportunity to put advanced AI into defenders’ hands and strengthen protections before advanced cyber offensive capabilities become widely available.\n\nToday, we’re publishing a blueprint for empowering cyber defenders, building on our earlier cybersecurity action plan and [frontier safety blueprint⁠(opens in a new window)](https://cdn.openai.com/pdf/25752ecb-0e5c-47f9-b9e4-c0f4d76f8d3d/a-blueprint-for-a-federal-framework.pdf). Our experience with misalignment and security incidents involving our own models underscores the need for stronger safeguards and accountability across the industry. Drawing on those lessons, the blueprint puts forward concrete proposals for governments and industry in three areas:\n\n*   **Strengthening safety and security for advanced AI:** Establish clearer responsibilities for securing frontier models and agents, detecting dangerous behavior, and maintaining reliable shutdown controls for operations under each organization’s control.\n\n*   **Modernizing cybersecurity for the intelligence age:** Equip defenders with advanced tools, training, and technical support; address longstanding cybersecurity weaknesses; and invest in securing essential services and replacing outdated systems.\n\n*   **Building resilient and adaptive public institutions:** Strengthen government evaluations and independent technical assessments, establish consistent incident reporting requirements, and improve coordinated response and recovery.\n\nAI labs have a responsibility to address the risks their systems create and help strengthen society’s defenses. Governments must also have the expertise, resources, and authority to protect the public as capabilities advance. We encourage policymakers to act now—establishing safeguards, learning from experience, and strengthening requirements as the technology evolves.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+          "url": "https://openai.com/index/ted-taylor-restaurant",
+          "published_at": "2026-10-20T10:00:00.000Z",
+          "description": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+          "full_text": "Title: Franchisee reconciles cash in 94% less time with ChatGPT Work\n\nURL Source: https://openai.com/index/ted-taylor-restaurant\n\nMarkdown Content:\nTed Taylor entered the restaurant business after a 25-year career in the semiconductor industry. Today, he’s an independent franchisee operating three co-branded Schlotzsky’s and Cinnabon restaurants across New Mexico.\n\nRunning quick-service restaurants means balancing the customer experience with a lot of work customers never see, like menu pricing, staffing, equipment maintenance, and policies. Ted uses OpenAI technology to get through all of it faster.\n\nWith ChatGPT, Ted accelerates time-consuming tasks like research and drafting, and he uses ChatGPT Work to gather and analyze volumes of data across pricing, sales, forecasts, schedules, and labor and to get recommendations on where each restaurant needs attention, reducing repricing time by 95% and shaving 4 hours off payroll runs.\n\n> “ChatGPT Work’s recommendations are so good that it’s much faster to start there and then make adjustments.”\n\n—Ted Taylor, independent franchisee, Schlotzsky’s and Cinnabon\n\n## Repricing menus across three markets in minutes\n\nRepricing menus is an annual undertaking that requires a complex analysis of recipe costs, item popularity, local competitor pricing, portion sizes, and the different economics of in-store and delivery orders. Ted uses ChatGPT Work to bring those factors together and get pricing recommendations in 1 - 2 hours instead of 5 days.\n\n> “It used to take me a few days of work to analyze and come up with item-level pricing; whereas, ChatGPT Work tears through it in a matter of moments and does it more thoroughly.”\n\n—Ted Taylor, independent franchisee, Schlotzsky’s and Cinnabon\n\nTed first uses ChatGPT Work to research and establish his pricing targets and pricing strategies based on local competitors’ pricing trends, portion sizes, and relative food quality. He then gives ChatGPT Work a categorized list of menu items with their current in-store and delivery prices. He specifies how much he wants each set of prices to increase overall and which items should receive larger or smaller increases, largely based on the earlier analysis from ChatGPT.\n\nHe can make the analysis more detailed by adding item-level sales history and supplier prices. ChatGPT Work can use these inputs to estimate sales impacts from price changes and to optimize item-level pricing around cost of goods targets.\n\nChatGPT Work returns a spreadsheet with recommended in-store and delivery prices. It will even relate the pricing changes to an overall pricing strategy designed to optimize business outcomes like customer retention, minimizing price shocks, and best positioning of add-ons.\n\nThe first time Ted used ChatGPT Work for pricing, he also ran the analysis manually. “ChatGPT Work made a deeper local comparison and helped me avoid increases that would have made some items uncompetitive,” he said. Ted immediately switched to using ChatGPT to develop the first recommendations.\n\nTed Taylor demonstrates pricing analysis with ChatGPT Work.\n\n## Finding ways to optimize labor and free up cash flow\n\nTed uses ChatGPT Work to help manage labor costs in two ways: reviewing how labor is tracking across his three restaurants and testing a better way to build the weekly schedule.\n\nFor the labor analysis, Ted gave ChatGPT Work read-only access to his sales and labor data. When he runs the analysis, it compares scheduled, budgeted, and actual hours with forecast and actual sales. It also reviews the previous 12 weeks to account for stores that routinely come in above or below their sales forecasts. The resulting report flags overtime, shifts running longer than planned, and gaps in coverage, and highlights what a manager should review.\n\nFor the scheduling test, Ted gave ChatGPT Work an employee roster with each person’s role, training, availability, and pay, along with the store’s staffing needs at different sales levels. He and the manager compared ChatGPT Work’s proposed schedule with what she would have built, identified missing rules about when to add staff during busy periods, and refined the instructions for ChatGPT Work.\n\nChatGPT Work now produces a full schedule for that location. The manager checks it over, makes adjustments if needed, and enters it into the restaurant’s scheduling system. Ted estimates that better scheduling could eventually reduce hourly labor costs by one to two percentage points of sales across all three restaurants, which could add $50,000 to $100,000 in free cash flow annually that can be utilized for increased pay, bonuses, investment in the business, or increased profit distributions.\n\n## Accelerating back-office tasks with ChatGPT Work\n\nTed also uses ChatGPT Work for day-to-day operations, from developing HR policies to reconciling cash and managing supply and repair requests.\n\nWhen New Mexico started requiring restaurants to keep a written procedure for bodily-fluid incidents, Ted used ChatGPT to write a draft in about 30 seconds. When Ted needed a social media policy for his employee handbook, ChatGPT helped him quickly draft guidance that an outside HR firm later reviewed without making any changes.\n\nTed uses ChatGPT Work to reconcile cash monthly across his three restaurants. He uploads each store’s cash transaction data and bank records, and ChatGPT Work compares the transactions with the corresponding deposits. Monthly reconciliation used to take three hours, and now it takes 5-10 minutes. He also cut four hours of manual work from every payroll cycle by using ChatGPT Work to summarize payroll inputs.\n\nTo help keep restaurants running smoothly, Ted also used ChatGPT Work to build a web portal where employees can request supplies or repairs. The portal notifies him through a dedicated email address and tracks each request’s status.\n\n## More time to improve the business, not just run it\n\nTed’s approach to using ChatGPT Work is practical for any small-business owner. He gives ChatGPT the same data and guidelines he’d use to make a decision and compares its output with how he’d do the work himself. As he gains confidence in the results, he expands his use to more tasks around the business, always reviewing the results before implementing.\n\nFor Ted, the value of ChatGPT Work goes beyond hours saved. Now he can do analysis he might otherwise skip and spend more time on customers, employees, and growing the business.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Terminal X matches senior investor judgment 88.6% with GPT-6.1",
+          "url": "https://openai.com/index/terminal-x",
+          "published_at": "2026-10-20T07:00:00.000Z",
+          "description": "Terminal X’s Eval Agent grades outputs against a 54-criterion rubric, catching 25% more deviances from a fund’s mandate with GPT-6.1 Sol.",
+          "full_text": "Title: Terminal X matches senior investor judgment 88.6% with GPT-6.1\n\nURL Source: https://openai.com/index/terminal-x\n\nMarkdown Content:\nAn investment firm’s edge is built deal by deal, but the judgment behind each decision usually lives in the heads of a few senior investors. When they leave, the firm takes on what [Terminal X⁠(opens in a new window)](https://www.terminal-x.ai/) calls memory debt: the firm may keep the documents, but it loses the reasoning.\n\nTerminal X’s Capital Memory operating system is designed to pay that debt down. The company’s forward-deployed engineers, former finance and investment professionals at JPMorgan and Blackstone, sit with each customer’s investment teams, design the firm’s agentic architecture, and encode how the firm invests into agents the firm owns, deployed on-premise or in its own cloud.\n\nOpenAI models, including GPT‑6.1 Sol and GPT‑6 Luna, handle the reasoning inside those agents. And Terminal X’s Eval Agent grades the agents’ output against the firm’s standards. GPT‑6.1 Sol helped the Eval Agent catch about 25% more recommendations that strayed from a fund’s mandate and ran the same workflows at approximately 30% lower cost per query than the next-best model.\n\n> “GPT-6.1 Sol’s long-context reasoning and token efficiency allow us to build deeper evaluation pipelines. This helps our Eval Agents make investment judgment measurable and auditable.”\n\n—Hyun Hong, Co-founder and CEO, Terminal X\n\n![Image 1: Capital Memory connects a firm’s investment judgment, research work, and entities to Terminal X’s private data room and investment workflows.](https://images.ctfassets.net/kftzwdyauwt9/5CzaqF5VSGZhQKktbbrlca/db3ce28c2c38484bd0e160b015561946/terminal-x-capital-memory-paper-background-thin-border.png?w=3840&q=90&fm=webp)\n\n## Encoding the reasoning of each firm’s best investors\n\nFor each customer, Terminal X builds agents designed to invest the way the firm’s best investors do. Terminal X engineers spend weeks onsite with the customer, reverse-engineering the firm’s trusted memos and capturing processes that were never written down, such as how the credit desk screens a borrower or which sources the co-investment team pulls before a memo.\n\nNext, those processes are encoded in hundreds of agents, customized by asset class and strategy, with sub-agents for each investment stage. GPT‑6.1 Sol handles the stages that require judgment and a huge context window: synthesizing the investment thesis, identifying key considerations, and assessing fit with the firm’s mandate. GPT‑6 Luna runs the high-volume steps where token efficiency matters more than depth.\n\nThe agents work inside each firm’s private data room, a dedicated environment for enterprises to share and manage sensitive investment data. The agents process documents in English, Korean, Japanese, and Chinese, and store what they learn as a firm Memory: a versioned record of how one desk makes one kind of decision, including its past analyses, committee decisions, workflow instructions, and house views.\n\nEngineers turn each Memory into a repeatable workflow on Terminal X’s platform, where every production query is auditable with its full trail: the steps taken, sources retrieved, model used, and the reasoning.\n\nAccording to Terminal X, customers see significant savings as a result of this approach, including one private equity firm that reported $2.4 million in annualized savings from automated due diligence and investment memo workflows.\n\n## Scoring answers with an Eval Agent and improving the system\n\nTo check agents’ answers against the firm’s own standard, Terminal X built an Eval Agent. It’s an orchestrated workflow on GPT‑6.1 Sol and other OpenAI models designed to read every agent output the way a VP reads an analyst’s work.\n\nThe Eval Agent checks each output against a 54-criterion rubric. It asks: Are the numbers, comps, consensus figures, and quotes pulled from the right sources? Does the narrative hold? Does the recommendation tie to the house view?\n\n![Image 2: Terminal X Eval runner compares investment memo outputs with an answer key and highlights a corrected EBITDA multiple in the candidate model.](https://images.ctfassets.net/kftzwdyauwt9/2TfOmA6DYwo9dYjcrmzQPt/e23da6e7e88388dbdd3ec932ad3cf85f/terminal-x-eval-agent-paper-background-thin-border.png?w=3840&q=90&fm=webp)\n\nEach check scores pass or fail. Every fail includes a one-line reason and a better source or corrected text and becomes a Memory. For example, a missed source, a wrong comparable, or a thesis that drifts from the house view is encoded as a new workflow instruction or a new test case for that desk.\n\n“Every answer gets eval’d, and whatever the analyst corrects teaches the system a little more about how that firm works,” says Ken Lee, Co-Founder and CTO of Terminal X. “So the longer a firm uses it, the more it thinks like their own team.”\n\n## Testing every model, choosing by task\n\nTerminal X picks models based on its own evaluation results. Across 500 scored judgments, its Eval Agent on GPT‑6.1 Sol agreed with the senior human reviewer 88.6% of the time, vs. 86.4% for the next-best model, an improvement of 220 basis points.\n\nOne class of error where GPT‑6.1 Sol outperformed is style drift. For example, a buyout fund’s mandate is to find take-private candidates trading at a discount to NAV, underwrite the business, and structure the financing. When scenario models suggest a market turn, deals start recommending a distressed credit position or a rescue financing. The Eval Agent on GPT‑6.1 Sol caught about 25% more of these departures than the next-best model did.\n\nGPT‑6.1 Sol’s token efficiency on long-context work enabled Terminal X to build a deeper review workflow within the same budget. The thesis is tested first against the fund’s mandate, then against its recent deals. Uncertain verdicts are re-run, and the agent reconciles the results before reporting.\n\nThat deeper review flagged deals that a single pass on a comparable model had waved through. GPT‑6.1 Sol also ran the same workflows at about 30% lower cost per query than the next-best model, at similar speed.\n\n## Moving toward a Memory for every investor\n\nUsing GPT‑6.1 Sol and GPT‑6 Luna, Terminal X has built 1,700 firm Memories, run more than 1 million custom workflows, and reached a weekly active user count equal to 81% of its monthly active users.\n\nTerminal X’s next step is to extend firm Memories from desks to individuals, so that each investment professional’s standard is captured as it is practiced, not only as it is described.\n\nFor Hyun, co-founder and CEO of Terminal X, that is the point: “The firms that win the next decade will own their judgment as data. Our job is to make that judgment measurable, so it can be kept, improved, and reused.”\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Southeast Asia’s digital economy to hit $368 billion",
+          "url": "https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/",
+          "published_at": "2026-10-21T04:00:00.000Z",
+          "description": "Widespread AI adoption is propelling Southeast Asia's digital economy to a projected $368 billion in 2026 and $1 trillion by 2035.",
+          "full_text": "Title: Southeast Asia’s digital economy to hit $368 billion\n\nURL Source: https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/\n\nPublished Time: 2026-10-21T04:00:00+00:00\n\nMarkdown Content:\nOct 21, 2026\n\n|\n\n4 min read\n\nGenerative AI is now an essential part of daily life for 243 million Southeast Asians. Read about how this will impact the region’s economy in our 11th e-Conomy SEA report.\n\n* * *\n\nNitin Gajria\n\nManaging Director, Southeast Asia and South Asia Frontier Markets\n\n* * *\n\n![Image 1: Cover image for the e-Conomy SEA 2026 report titled Building the intelligent economy by Google, Temasek, and Bain and Company. A 3D illustration features a glowing yellow star surrounded by miniature scenes representing digital sectors, including data cen](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/e-Conomy_SEA_hero.width-200.format-webp.webp)\n\n[Audio 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/media/tts_audio_86700_umbriel_2026_10_21_04_01_23.mp3)\n\nListen to article\n\n[[duration]] minutes\n\nThis content is generated by Google AI. Generative AI is experimental\n\nIn Southeast Asia, generative AI has become an essential part of daily life, actively used by 243 million people (58% of the working population) and scaling four times faster than the rollout of the mobile internet. This has major implications for the region’s economy, according to the 11th edition of the annual [e-Conomy SEA report](https://economysea.withgoogle.com/)[1](https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/#footnote-1) . _Building the Intelligent Econom_ y, by Google, Temasek, and Bain & Company, finds that widespread AI implementation is propelling the region’s digital economy to grow 17% year-on-year (YoY) to reach $368 billion [2](https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/#footnote-2) in Gross Merchandise Value (GMV) in 2026. This puts it firmly on track to exceed $1 trillion by 2035. Using tokens [3](https://blog.google/company-news/inside-google/around-the-globe/google-asia/e-conomy-sea-report-2026/#footnote-3) as the new benchmark for the AI economy, the report projects that growing confidence in agentic commerce will drive a 60-fold surge in regional AI usage over the next five years.\n\nHere are the three key takeaways from this year's e-Conomy SEA 2026 report:\n\n## 1. AI is sustaining growth in every sector.\n\nAcross the digital economy, AI is reshaping how people live, shop, and move. E-commerce ($226B GMV, +18% YoY) anchors this shift, as shoppers use multimodal discovery and in-app assistants to confidently navigate complex purchases. These personalized experiences organically drive 10% higher conversions and order volume uplifts as large as 75%.\n\nIn online travel ($59B GMV, +10% YoY), traditional search engines remain the top platform people use to plan travel, while generative AI has overtaken social media to become the second-most used tool for organizing complex itineraries.\n\nOnline media ($44B revenue, +22% YoY) is personalizing content feeds and connecting audiences with more relevant ads, yielding a 10 to 20% quality engagement uplift as commerce media becomes a $4 billion market.\n\nMobility and food delivery ($40B GMV, +15% YoY) saves consumers time via predictive suggestions, smarter routing, and AI-powered offerings like pooled rides, fueling healthy transactional growth.\n\nFinally, digital financial services ($1,650B GTV, +16% YoY) help consumers with real-time fraud detection, broader credit access, and personalized financial recommendations that complement human advice, alongside Singapore’s regional leadership in digital wealth platforms.\n\n## 2. Consumer trust will help unlock the era of agentic commerce.\n\nDigital automation is already well established across the region, where 72% of users rely on everyday features like price tracking. This familiarity is clearing the runway for agentic commerce, with 75% expressing willingness to let AI agents autonomously compare prices and complete transactions on their behalf.\n\nThis momentum is rooted in regional optimism: people in Southeast Asia view AI as a net benefit to society, with 62% reporting greater trust in AI tools today than a year ago. Driven by proven track records (56%), rising familiarity (55%), and output accuracy (53%), this trust signals a clear runway for deeper platform integration. To feel comfortable using new agentic capabilities, users expect clarity and guardrails, including robust privacy safeguards (44%), transparent information on what AI can and cannot do (36%), and the ability to reverse agentic transactions (30%).\n\n## **3.** Four major areas must adapt to enable AI adoption.\n\nTo support a projected 60-fold increase in regional AI usage by 2030, the region's broader digital ecosystem must systematically evolve across four critical conditions:\n\n*   **Accelerated agentic adoption and sustainable economics:** Businesses need to move beyond using AI to answer single questions and start using it to help complete multi-step tasks from start to finish, backed by strong privacy safeguards and clear safety rules. At the same time, running AI models must keep getting more affordable and deliver clear, practical value, so businesses of all sizes can adopt the technology sustainably.\n*   **Scaled physical infrastructure**: Physical expansion must rapidly keep pace with soaring compute demand. Meeting this trajectory requires a ~3x expansion in data center capacity over the next five years, with AI workloads capturing a dominant share of total infrastructure.\n*   **Strict model and energy efficiency**: National frameworks, such as Singapore’s binding Power Usage Effectiveness (PUE) rules under the Digital Infrastructure Bill, must guide next-generation facilities, paired with expanded clean energy access like Malaysia’s Corporate Renewable Energy Supply Scheme (CRESS) model.\n*   **Unified regional governance**: Anchoring this trajectory, the upcoming ASEAN Digital Economy Framework Agreement (DEFA) in November 2026 will establish the world's first region-wide digital trade pact, providing a framework that can unlock further growth in the Southeast Asia digital economy.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 7,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2109361546505966046",
+          "title": "Dusting off this tweet from April because this gap in shared understanding of LLM capability is *widening*. It's now less \"two groups of people speaking past each other\" and more a sharp funnel.\n\n- Na",
+          "url": "https://x.com/karpathy/status/2109361546505966046",
+          "published_at": "2026-10-11T19:12:37.000000Z",
+          "description": "Dusting off this tweet from April because this gap in shared understanding of LLM capability is *widening*. It's now less \"two groups of people speaking past each other\" and more a sharp funnel.\n\n- Napkin math somewhere around 6B people (~75% of the population) have barely come in contact with LLMs at all.\n- Around 1-2B (~20%) are casual and infrequent users of free-tier ChatGPT-like products. This group sees derpy chatbots and treats them a bit like a better Google search, a writing aid, or etc. Maybe an agent tries to book you a flight. I have non-tech friends who (reasonably, imo) say they have not much use for it at all. Even many professionals outside of math&code are in this tier. For example, execs and many other functions spend a lot of their time talking to other people, so while they understand what is happening intellectually, it is still second-hand and a bit abstract.\n- Now we get to professional use of frontier-grade LLMs in math&code. Somewhere around 20M people (0.2%) see first-hand that large, complex projects that used to take them weeks/months can now be completed by agents with a prompt. Building apps, copying apps, translating apps, decompiling apps from binaries... This has all happened very quickly and recently - less than 1 year ago, I was writing code manually by hand, typing memorized computer code commands into a code editor character by character, occasionally pressing Tab to autocomplete a little chunk of code.\n- And finally we get to the ~5,000 people (~0.00006%) with access to frontier-grade systems internally. The external world has seen the preview. It looks like swarms of thousands of agents collaborating over weeks on software mega projects: minting zero days, running cyber attacks and defenses at machine speeds, discovering new science, advancing the frontier of mathematics. Things that would have taken top professionals in the industry years of work. Meanwhile, human review and comprehension are starting to fall behind. For example, people are still involved in the \"archeology\" of the OpenAI-HF incident from many months ago. Mathematicians may be poring over the 722 manuscripts on frontier mathematics for a while.\n\nThe funnel is driven by a combination of factors:\n1. The impact scales with ambition, problem size, and horizon. A question with a paragraph answer barely stresses the system. You need a reservoir of big, difficult problems that you really care about. This aspect drives the consumer / professional dimension of the funnel.\n2. The jaggedness of the system (which I have written about a lot separately). Capability peaks in domains that are digital, verifiable and economically valuable. This is because LLM capability emerges from reinforcement learning on verifiable rewards on a curated environment mixture driven by revenue potential. This aspect primarily drives the area (e.g. math&code) dimension of the funnel.\n3. Access. Free-tier, paid-tier, internal.\n\nSo this is the weirdness of the moment. The general public has mostly not interacted with these systems. When they have, it looks like a derpy chatbot. The majority of professionals still see only a modest uplift. And a small sliver of professionals are experiencing the vertigo of the curve going vertical. And it is all happening at the same time.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "karpathy",
+            "text": "Judging by my tl there is a growing gap in understanding of AI capability.\n\nThe first issue I think is around recency and tier of use. I think a lot of people tried the free tier of ChatGPT somewhere  last year and allowed it to inform their views on AI a little too much. This is a group of reactions laughing at various quirks of the models, hallucinations, etc. Yes I also saw the viral videos of OpenAI's Advanced Voice mode fumbling simple queries like \"should I drive or walk to the carwash\". The thing is that these free and old/deprecated models don't reflect the capability in the latest round of state of the art agentic models of this year, especially OpenAI Codex and Claude Code.\n\nBut that brings me to the second issue. Even if people paid $200/month to use the state of the art models, a lot of the capabilities are relatively \"peaky\" in highly technical areas. Typical queries around search, writing, advice, etc. are *not* the domain that has made the most noticeable and dramatic strides in capability. Partly,  this is due to the technical details of reinforcement learning and its use of verifiable rewards. But partly, it's also because these use cases are not sufficiently prioritized by the companies in their hillclimbing because they don't lead to as much $$$ value. The goldmines are elsewhere, and the focus comes along.\n\nSo that brings me to the second group of people, who *both* 1) pay for and use the state of the art frontier agentic models (OpenAI Codex / Claude Code) and 2) do so professionally in technical domains like programming, math and research. This group of people is subject to the highest amount of \"AI Psychosis\" because the recent improvements in these domains as of this year have been nothing short of staggering. When you hand a computer terminal to one of these models, you can now watch them melt programming problems that you'd normally expect to take days/weeks of work. It's this second group of people that assigns a much greater gravity to the capabilities, their slope, and various cyber-related repercussions.\n\nTLDR the people in these two groups are speaking past each other. It really is simultaneously the case that OpenAI's free and I think slightly orphaned (?) \"Advanced Voice Mode\" will fumble the dumbest questions in your Instagram's reels and *at the same time*, OpenAI's highest-tier and paid Codex model will go off for 1 hour to coherently restructure an entire code base, or find and exploit vulnerabilities in computer systems. This part really works and has made dramatic strides because 2 properties: 1) these domains offer explicit reward functions that are verifiable meaning they are easily amenable to reinforcement learning training (e.g. unit tests passed yes or no, in contrast to writing, which is much harder to explicitly judge),  but also 2) they are a lot more valuable in b2b settings, meaning that the biggest fraction of the team is focused on improving them. So here we are.",
+            "url": "https://x.com/karpathy/status/2042334451611693415"
+          },
+          "source": "Andrej Karpathy (Twitter)",
+          "origin_report_date": "2026-10-11",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 11,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108689101503566319",
+          "title": "before I joined Anthropic, I spent about 2 weeks hacking on this as a side project with Opus 4. It used the Agent SDK so it needed a constantly running process &amp; didnt work that well\n\nbut one prom",
+          "url": "https://x.com/trq212/status/2108689101503566319",
+          "published_at": "2026-10-09T22:40:34.000000Z",
+          "description": "before I joined Anthropic, I spent about 2 weeks hacking on this as a side project with Opus 4. It used the Agent SDK so it needed a constantly running process &amp; didnt work that well\n\nbut one prompt to Opus 5.5 ported it to Claude Managed Agents &amp; made it way more reliable",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "you now get Claude API credits with your MAX plans ($100, or 200 matching your plan) every month, use this to build more personal AI for yourself! \n\nI made an AI homepage that's generated everyday based on sites I read and replaces my 'new tab' page in Chrome https://t.co/VJ6KyOlel8",
+            "url": "https://x.com/trq212/status/2108301668828004396"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2108802833986552174",
+          "title": "honestly pretty cool to have this on my new tab page \n\njust merged in some PRs by others too! https://t.co/OOzflxL3N7",
+          "url": "https://x.com/trq212/status/2108802833986552174",
+          "published_at": "2026-10-10T06:12:29.000000Z",
+          "description": "honestly pretty cool to have this on my new tab page \n\njust merged in some PRs by others too! https://t.co/OOzflxL3N7",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "you now get Claude API credits with your MAX plans ($100, or 200 matching your plan) every month, use this to build more personal AI for yourself! \n\nI made an AI homepage that's generated everyday based on sites I read and replaces my 'new tab' page in Chrome https://t.co/VJ6KyOlel8",
+            "url": "https://x.com/trq212/status/2108301668828004396"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2109329495341867391",
+          "title": "I think Terrence Tao is directionally correct, we shouldn’t settle for a super intelligence that is opaque.\n\nA key signal of intelligence is communication. We should strive to make products and models",
+          "url": "https://x.com/trq212/status/2109329495341867391",
+          "published_at": "2026-10-11T17:05:15.000000Z",
+          "description": "I think Terrence Tao is directionally correct, we shouldn’t settle for a super intelligence that is opaque.\n\nA key signal of intelligence is communication. We should strive to make products and models that build understanding with humans instead of disintermediating them.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "AndrewCurran_",
+            "text": "This is a slide from Terence Tao's 'Math 2.0' public lecture yesterday evening at Caltech. I am highly confident that, if the cure actually worked, almost any Stage 4 cancer patient would tell you that human comprehension of its mechanism is completely irrelevant to them. https://t.co/LbKeaObeLz",
+            "url": "https://x.com/AndrewCurran_/status/2108992955382210632"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-11",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 10,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2108680150556737819",
+          "title": "We’re beginning a process of publishing more frequent reports on model behavior, beyond what appears in our system cards and regular risk reports.\n\nToday’s report describes four types of behaviors we’",
+          "url": "https://x.com/AnthropicAI/status/2108680150556737819",
+          "published_at": "2026-10-09T22:04:59.000000Z",
+          "description": "We’re beginning a process of publishing more frequent reports on model behavior, beyond what appears in our system cards and regular risk reports.\n\nToday’s report describes four types of behaviors we’ve identified during evaluations and internal use. In each, Claude acted on real websites or systems in ways we didn’t intend, sometimes by working around a restriction instead of stopping. \n\nAll cases had minimal real-world impact. From an alignment and security perspective, we consider these behaviors significantly less severe than the cybersecurity incidents we reported in July and September.\n\nRead the full report: https://t.co/mGeVIBgdou",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/mGeVIBgdou",
+              "expanded_url": "https://www.anthropic.com/research/investigating-unintended-model-actions",
+              "display_url": "anthropic.com/research/inves…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-10-09",
+          "delivery_class": "backfill",
+          "linked_content": "Title: Investigating unintended model actions in our evaluations and internal use\n\nURL Source: https://www.anthropic.com/research/investigating-unintended-model-actions\n\nPublished Time: 2026-10-09T00:00:00.000Z\n\nMarkdown Content:\nThis report describes examples of unintended model actions we’ve observed during evaluations and internal use of Claude. It is part of our effort to publish more frequent standalone reports on model behavior and alignment beyond our system cards, which we publish with each model release, and our risk reports, which we publish every three to six months as part of our Responsible Scaling Policy. We believe it’s important to be transparent about what we see our models do during testing and use.\n\nThe behaviors can be grouped into four categories:\n\n*   Claude exploiting a basic flaw in software to run commands on a server;\n*   Claude submitting a sensitive form on a real website when it should not have;\n*   Claude working around a restriction to reach data that was gated by a token or a fee; and\n*   Claude using URL shortening services to get around limits in its fetch tool.\n\nWe have chosen not to name the organizations involved in the examples below to avoid exposing vulnerabilities in their systems, and at their request. For this reason, we also provide less detail about each case than we otherwise would. Some of the cases described below involved websites run by U.S. government agencies at the federal, state, and local levels. We have briefed the White House on these cases and notified each agency involved.\n\nThe cases we’ve identified to date in these categories had minimal real-world impact. We consider these behaviors to be significantly less severe from an alignment and security perspective than the cybersecurity incidents we reported on [July 30](https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals) and [September 9](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents). They resemble behaviors that we’ve described in our system cards since [Claude Mythos Preview](https://www-cdn.anthropic.com/08ab9158070959f88f296514c21b7facce6f52bc.pdf). Most are forms of _persistence_, in which Claude, when it cannot complete a task as given, works around a restriction instead of stopping.\n\nAlthough the impact of these behaviors was minimal and we had already turned off live internet access for some high-risk and cybersecurity evaluations, we have now decided to expand that to include all our internal evaluations until we have confirmed that our security and monitoring measures (described in the remediation section of this post) reliably catch behaviors like these. Below, we also discuss alignment considerations and give more detail on how we’re modifying training to reduce the likelihood of further misbehavior.\n\nWe identified most of these cases through a review of transcripts that we began in July. Our review first focused on our cybersecurity evaluations—tests where a model is deliberately asked to probe or attack a test system, and where internet access is meant to be disabled. We have since extended our scanning to encompass a much wider range of instances where Claude could have reached the internet, including tests where internet access is deliberately enabled so Claude can be evaluated on real-world tasks. We began by looking for incidents of similar severity to the cybersecurity incidents we reported this summer; we have not found any to date. We then broadened the search to lower-severity cases, where a model interacted with real websites or systems in ways we didn’t intend.\n\nWe are also now scanning a much larger pool of lower-risk transcripts, as well as our use of Claude within Anthropic and in reinforcement learning (RL) environments where Claude has access to the internet. As this work continues, we plan to report new instances of unintended behaviors. All cases reported here involved Claude interacting with the outside world; to our knowledge, none of them involved customer data or Anthropic’s own internal systems.\n\nIn this post, we explain why we run evaluations, which are where most of these cases occurred; describe each behavior in more detail; and offer a preliminary view of what the behaviors suggest about Claude’s alignment and how we’re mitigating them.\n\n### **Why and how we run evaluations**\n\nThe behaviors described in this post are not specific to evaluations, but many of the cases we’ve identified to date occurred during evaluation runs. We continually test models on a wide range of tasks prior to releasing them. We use many different evaluations (standardized sets of tasks, scored the same way each time), each of which helps to paint a picture of Claude’s skills in a particular area. Many of the evaluations we use are public; they are written by outside researchers and can be run by any developer, allowing us to compare capabilities across models. Other evaluations we build in-house.\n\nBecause language models are non-deterministic—that is, their responses always involve some element of randomness, and they may carry out the same task slightly differently each time—we have Claude complete each evaluation task hundreds or thousands of times (each attempt is called a run). Testing so many times allows us to understand how a model typically performs, and also to catch rare cases where a model does something we don’t expect. What we learn from evaluations shapes decisions across Anthropic, including how we train models, what safeguards we build around them, and when we release them.\n\nEvaluations are also where a model’s behavioral issues are sometimes first revealed. Models learn much of what they can do through RL, in which they attempt a task within a specific environment many times over and are rewarded when they succeed. However, training environments are imperfect. If training rewards something we didn’t intend—such as finding loopholes or working around a restriction—the model learns that the workaround pays off and may then apply it elsewhere. This is known as reward hacking. While we have processes in place to identify and filter out reward hacking during training, evaluations are a critical mechanism for understanding a model’s behavioral propensities in different contexts and on different sets of tasks than those we have in training.\n\nSome tasks—such as searching the web for hard-to-find information—are difficult to realistically simulate in an environment without internet access. Running them with access has been standard practice within the industry: public web search benchmarks are run on the live internet by default, and running them the same way allows us to compare our models with other models. Most of the cases in this report occurred during such evaluations.\n\n### **Overview of behaviors**\n\nBelow, we describe four categories of behavior in which Claude acted on real websites and systems in ways we did not intend, each of which involved an organization or person outside Anthropic.\n\n#### **Exploiting a basic flaw in software to run commands on a server**\n\nWhen Claude could not complete an evaluation task directly, either because its own tools were deliberately limited or because an outside service it needed was unavailable, it used other tools hosted on a third party’s site to achieve its goal. In some circumstances, it did this by exploiting basic flaws in that site’s software, using SQL or command injection (a way of sending input that the site mistakenly runs as instructions).\n\nFor example, one evaluation asked Claude Mythos Preview to run a scientific analysis. The public tool it needed to perform that analysis was hosted by a university; when the model sought to access it, the tool returned an error. Looking for another way to complete the task, Claude explored the tool’s website, found a script on the university’s server that would return any file it was asked for, and used it to copy files from the server, including the script’s own code. In that code Claude found the injection flaw that let it run commands on the server, and used it to run the calculation.\n\nIn another instance, the data Claude Mythos 5 needed was free, but Claude could not access it without accepting a data use agreement, which it did not have the tools to do. Claude used applications hosted on the website to load the page and accept the agreement on its behalf.\n\nWe saw this behavior on DeepSearchQA and BrowseComp (both public web research evaluations), on LABBench2 (a public biology research benchmark), and during internal evaluations.\n\n#### **Submitting a form it should not have**\n\nWe saw instances where Claude submitted an online form when it shouldn’t have. Generally, this occurred when an evaluation’s instructions were ambiguous, or when a misconfiguration within the environment prevented Claude from working with dummy forms.\n\nFor example, in a case that happened multiple times on the same evaluation, an unreleased, non-frontier research model was meant to fill out a practice copy of a government form. When the copy failed to load or the model closed it by mistake, the model instead navigated to the website where the real form is normally hosted and submitted the form there.\n\nIn another evaluation, Claude Haiku 4.5 was instructed to complete a form up until the final submission stage, but to stop before actually submitting. Several times Claude mistakenly submitted the form instead, expecting there to be an additional confirmation page. In these instances, the model’s chain-of-thought stated that it was demonstrating the process, not submitting a real request.\n\nIn a third example of this behavior, Claude Haiku 4.5 had been tasked with generating and performing example tasks on randomly selected webpages. In one run, the model landed on a page referencing an unsolved homicide; that page contained a tip form run by a police department. Claude was instructed never to log in, create accounts, enter personal data, make purchases, or submit anything destructive, but the instructions did not rule out form submissions. Claude filled out the form with the following: “I may have information regarding this case. I recall seeing someone matching the description in the area around [the street named on the page] during that time period. Please contact me if this information is relevant.” (The website did not include a description of the perpetrator.) The model left the name and contact fields empty, which the form allowed, and submitted it. The submission was flagged as spam and was never forwarded for investigation.\n\nWe saw this behavior on OSWorld (a public computer use evaluation), on Odysseys (a long-horizon task evaluation), and during internal usage.\n\n#### **Working around restrictions to reach gated data**\n\nClaude sometimes worked around a restriction to reach data to which it did not have access. Generally, this occurred when a server refused Claude’s request, or when the data was offered only for a fee.\n\nFor example, in an evaluation that asked Claude Mythos 5 to identify a location shown in a photo, it attempted to access a local government’s property map to triangulate its guesses. Claude could read webpage text, but the evaluation limited its ability to click through it as a person would. Instead, it read the settings file the site sends to browsers, found working access tokens, and used them to send requests directly to the server behind the map to access the data.\n\nIn another example of this behavior, an Anthropic researcher used Claude Mythos 5 on a statistics project that required it to pull public data that was available from a state agency for a fee. Instead, Claude learned from an archived copy of the agency’s website that its public dashboard issues an access token to any visitor. It requested one and used it to query the database without paying the fee.\n\nIn both examples, Claude obtained data already available to the public but only for a fee.\n\nWe saw this behavior on Humanity’s Last Exam, an evaluation of expert-level academic questions, and during internal usage.\n\n#### **Using URL shortening services**\n\nSome of our fetch tools, which let Claude read webpages, limit the length of the URLs Claude can request. This limit is in place to reduce the risk from Claude using long URLs to take certain unwanted actions, such as exfiltrating larger amounts of data. We saw several models, including Claude Opus 5 and Claude Mythos 5, get around this limitation by using free URL shortening services. We first identified this behavior internally, but as we were writing this post, an operator of the da.gd URL shortening service let us know that they had also found Claude using their website for this purpose. We thank the operator for sharing these details.\n\n### **Remediation**\n\nWe’ve taken several preventive measures. Some of the public evaluations we no longer run; others we have moved to their offline versions, or rebuilt them so that their tasks do not reach live websites. We’ve also made broader changes. We have updated the guardrails on some of our internet access tools, such as the web fetch tool, to heavily restrict what the model can do with them. And, as part of our ongoing [agent security and monitoring efforts](https://www.anthropic.com/news/improving-alignment-security-efforts), we have built tooling to automatically detect and block the kinds of behaviors described above. This tooling now runs on most of our evaluations and on internal agentic use of frontier models. When we tested it against the cases described in this post, it blocked all of them.\n\nAs we described in our August 31 [post](https://www.anthropic.com/news/improving-alignment-security-efforts), we are also continuing to fix or remove training environments that reward Claude for working around tool restrictions or other blockers, so that they do not incentivize these behaviors or permit reward hacking.\n\nWe’re also taking other steps to prevent unintended agentic actions within Anthropic, and to catch them if they occur. These include migrating internal agents to centrally managed infrastructure with strong containment, minimizing internet access for internal agents and training processes, and monitoring far more of what agents do through techniques like [safety classifiers](https://alignment.anthropic.com/2025/cheap-monitors/) and [hierarchical summarization](https://alignment.anthropic.com/2025/summarization-for-monitoring/). These measures are now part of our security team’s detection and response procedures so that we can respond to and contain undesired behavior quickly. We expect to publish more on these approaches, and to build them directly into our products.\n\n### **Discussion and alignment takeaways**\n\nWhile we have not completed a full alignment assessment of these cases, we consider them to be less severe than the cybersecurity incidents from this summer. We explain why below, and share the general lessons we’ve drawn from them.\n\n#### **Alignment context**\n\nAs we establish a regular public reporting process for behaviors like these, we also want to situate them in terms of their severity. This remains challenging: judging the extent of an alignment failure often depends on what the model was trying to do, and a model’s own account of its reasoning is not necessarily reliable evidence of its beliefs or reasons for action, as we discussed in our September 9 [alignment assessment](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents). As models grow more capable, they can interact with the world in more sophisticated ways, which makes more complex failures possible. For example, the biased reasoning we described in that assessment was not new, but it led to more serious consequences in a setting where models could capably act on real systems for hours at a time. An alignment severity framework built around today’s failures could become outdated quickly, given how fast AI capabilities are advancing.\n\nNonetheless, we found two alignment dimensions useful for examining the cases in this post: overreach, or how far the model went beyond what its task intended, and dishonesty, or whether it gave a misleading account of its actions or intentions. On overreach, we consider these cases to be substantially less concerning than the incidents we reported this summer, in which Claude gained access to real third-party systems for hours during cybersecurity evaluations. In the cases we report here, in contrast, Claude bypassed access controls to reach gated but publicly available data, or exploited software flaws and ran commands on servers (mainly to reach non-sensitive data).\n\nOn dishonesty, the comparison is more mixed. In one case, tasked with generating example interactions with websites, Claude submitted an invented tip through a police department’s online form. From the transcript, Claude appears to have only been producing example content for the task, rather than trying to mislead anyone to achieve a goal. In the most serious [incident from this summer,](https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents) by contrast, Claude’s misleading reasoning was sustained over hours and supported its continued attack. Still, judging dishonesty with confidence typically requires a deeper assessment than we have done here, such as replaying transcripts with modifications to test what drove the model’s behavior, so our view of these cases may change with further analysis.\n\n#### **Lessons and next steps**\n\nNone of the behaviors we’ve described here are new, and they do not change our overall view of Claude’s alignment. In many of the cases where we observed these behaviors, Claude had been given tasks that were ambiguous or impossible to complete. We and others have observed that when models are given impossible-to-complete tasks, they will pursue unintended and sometimes misaligned strategies to achieve their goals.\n\nIt is possible that some of these failures could have been avoided if the evaluation questions had more clearly stated what was in and out of scope for the exercise, including the targets, permitted actions, and network boundaries (i.e., what the model should and shouldn’t access). However, Claude encounters ambiguous and impossible tasks every day in real use, and, indeed, several of the cases we observed occurred during regular agentic use of Claude.\n\nBehavioral and alignment training is the main technique we have at our disposal to improve Claude’s judgment and ability to handle ambiguous situations with care. Historically, we have been more focused on teaching models to respect boundaries and be appropriately cautious in coding environments. We are now expanding these environments to applications like search and computer use, which were involved in the cases described here. However, alignment training is not yet sufficient or fully robust on its own, at least in the short term, so we also rely on defense-in-depth approaches, including the classifiers and safeguards described above.\n\nWe plan to keep reporting concerning behaviors as our scan and analysis continue. We hope these reports help other developers check for similar behaviors in their own models, since many of the evaluations involved are public and widely used. While these cases had minimal impact, we do not want to diminish the findings, because the same behaviors could do far more harm as models become more powerful. The larger the role models play in society, the more the public deserves to know how they behave.\n\n_Note: The tip form example described above involved the Philadelphia Police Department, who self-disclosed today via their press release. We shared this finding with the department on October 8 as soon as our technical review was complete._\n\n_Corrected Oct 12, 2026:_ A previous version of this post incorrectly stated that Claude's web fetch limits were put in place to prevent SQL or command injections. In a small number of evaluation runs",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 6,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 14,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 17,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 9,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2109691148943999167",
+          "title": "We’re excited to introduce the Muse Wonder series with Muse Wonder and Muse Wonder Full, our most capable models yet. Both are frontier models, built to deliver state-of-the-art performance for person",
+          "url": "https://x.com/AIatMeta/status/2109691148943999167",
+          "published_at": "2026-10-12T17:02:20.000000Z",
+          "description": "We’re excited to introduce the Muse Wonder series with Muse Wonder and Muse Wonder Full, our most capable models yet. Both are frontier models, built to deliver state-of-the-art performance for personal and professional agentic tasks.\n\nMuse Wonder is available today via the Meta Model API and Muse Code. Muse Wonder Full is available today for Muse Code subscribers. Muse Wonder will also soon power experiences in our personal agent product, Muse, rolling out first to subscribers.",
+          "expanded_urls": [],
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-10-12",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2109698705490149596",
+          "title": "From rebuilding our foundation to pushing the frontier in 14 months 🚀 https://t.co/EiGmDwoBZ5",
+          "url": "https://x.com/AIatMeta/status/2109698705490149596",
+          "published_at": "2026-10-12T17:32:22.000000Z",
+          "description": "From rebuilding our foundation to pushing the frontier in 14 months 🚀 https://t.co/EiGmDwoBZ5",
+          "expanded_urls": [],
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-10-12",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 9,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2109687906751086628",
+          "title": "Le Chonk cooked on visual grounding.\n\nPinpoints exactly where things are in an image.\n\n42% on Dense 200, ahead of even frontier closed models..",
+          "url": "https://x.com/MistralAI/status/2109687906751086628",
+          "published_at": "2026-10-12T16:49:27.000000Z",
+          "description": "Le Chonk cooked on visual grounding.\n\nPinpoints exactly where things are in an image.\n\n42% on Dense 200, ahead of even frontier closed models..",
+          "expanded_urls": [],
+          "source": "Mistral AI (Twitter)",
+          "origin_report_date": "2026-10-12",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1334.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2109633085658808515",
+          "title": "Introducing QwenGyre, bringing elastic RL to extreme-long-horizon (XLong) agent training. ✨\n\nIt launches with two core designs: 🥳\n- Elastic Scheduler: reallocates GPUs between rollout & training as d",
+          "url": "https://x.com/Alibaba_Qwen/status/2109633085658808515",
+          "published_at": "2026-10-12T13:11:37.000000Z",
+          "description": "Introducing QwenGyre, bringing elastic RL to extreme-long-horizon (XLong) agent training. ✨\n\nIt launches with two core designs: 🥳\n- Elastic Scheduler: reallocates GPUs between rollout & training as demand shifts—live executions never interrupted. Up to 1.85× speedup over Colocate, 1.78× over Async.\n- Trajectory Processor: turns branching executions (compaction, sub-agents, retries) into prefix-shared trajectory trees with bounded, deduplicated training samples. Partial progress after timeout still gets scored.\n\nScaled to Qwen3.8-2.4T-A95B with ~700K tokens per rollout, QwenGyre lifts NL2RepoBench from 52.5% to 58.5% in 48 steps, cutting end-to-end training time by ~44% vs Async.\n\n🔗 Read the paper:\nhttps://t.co/gbKPIiqosk",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/gbKPIiqosk",
+              "expanded_url": "https://arxiv.org/abs/2609.33848",
+              "display_url": "arxiv.org/abs/2609.33848"
+            }
+          ],
+          "source": "Qwen (Twitter)",
+          "origin_report_date": "2026-10-12",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 206.8h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2109678174468534511",
+          "title": "Introducing GLM-Legal\n\nBuilt on GLM-5.3-Flash, GLM-Legal matches frontier models on mainstream legal benchmarks.\n\nDesigned for real legal workflows: contract review, evidence analysis, compliance, and",
+          "url": "https://x.com/Zai_org/status/2109678174468534511",
+          "published_at": "2026-10-12T16:10:47.000000Z",
+          "description": "Introducing GLM-Legal\n\nBuilt on GLM-5.3-Flash, GLM-Legal matches frontier models on mainstream legal benchmarks.\n\nDesigned for real legal workflows: contract review, evidence analysis, compliance, and more.\n\nTech Blog: https://t.co/xOzFqKNyqD\nApply for API Access: https://t.co/dKuoDRIKKz\nTry AutoClaw: https://t.co/aGEG5HqTTb",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/xOzFqKNyqD",
+              "expanded_url": "http://z.ai/blog/glm-legal",
+              "display_url": "z.ai/blog/glm-legal"
+            },
+            {
+              "t_co": "https://t.co/dKuoDRIKKz",
+              "expanded_url": "http://z.ai/consultation/legal",
+              "display_url": "z.ai/consultation/l…"
+            },
+            {
+              "t_co": "https://t.co/aGEG5HqTTb",
+              "expanded_url": "http://autoclaw.z.ai",
+              "display_url": "autoclaw.z.ai"
+            }
+          ],
+          "source": "Z.ai (Twitter)",
+          "origin_report_date": "2026-10-12",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    }
+  }
+}
