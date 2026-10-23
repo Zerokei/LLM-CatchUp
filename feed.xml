@@ -5,8 +5,114 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Wed, 21 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 22 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-10-22</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-22.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-10-22.md</guid>
+      <pubDate>Thu, 22 Oct 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-10-22</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>漏洞协同治理</strong>：OpenAI 的 Patch the Planet 联合 PHP 生态参与者协调披露并修复漏洞，强调以合作降低真实系统风险。</li>
+<li><strong>对话广告成规模</strong>：ChatGPT Ads 扩展至89国并披露独立于回答生成的广告架构，兼顾商业触达与回答中立性。</li>
+<li><strong>企业部署加速</strong>：Uber 向数万员工推广 ChatGPT Work，AT&amp;T 则探索用智能体分流法律事务，呈现横向落地路径。</li>
+<li><strong>云端交付拓宽</strong>：OpenAI 将模型与 Codex 工作流引入 Google Cloud，并以一线部署工程缩短企业采用距离。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities">Patch the Planet推动PHP漏洞协同修复</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>漏洞修复</code> <code>PHP安全</code> <code>协同披露</code> <code>开源维护</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称其Patch the Planet倡议联合PHP维护者、研究者及安全厂商处置了两项关键漏洞，其中一项由GPT‑5.6 Sol辅助发现，Wiz也独立发现并报告了相关问题。文章提出面向高影响漏洞的分阶段协调框架，涵盖验证修复、提前通知受影响方、准备更新与公开部署指引，并提供PHP版本检查器。</p>
+<hr>
+<h3>2. <a href="https://openai.com/index/building-chatgpt-ad-stack">ChatGPT Ads 扩至89国并披露对话式广告架构</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Ads</code> <code>对话式广告</code> <code>广告系统</code> <code>用户信任</code> <code>市场扩张</code> <code>广告主</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 介绍 ChatGPT Ads 使用经后训练的语言模型理解多轮对话意图，并通过工具完成广告检索、相关性评估、排序与竞价。广告选择与回答生成分离，若广告系统超时或无合适广告，ChatGPT 仍正常回答。同期产品扩展至26个新国家、覆盖89国，已有超过10万广告主投放；广告仅面向 Free 与 Go 方案，付费方案维持无广告。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://openai.com/index/chatgpt-ads-expands-26-new-countries">ChatGPT广告扩至26国，覆盖89个国家</a> · OpenAI Blog · 扩至26个新国家及89国覆盖</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>设计对话式商业推荐时，将广告服务与回答生成隔离，确保广告缺失或超时不影响主流程。</li>
+<li>为候选广告设置相关性、资格和安全检查，并记录未展示原因以支持审计。</li>
+<li>符合地区与方案条件的商家可核对 Ads Manager 的开放资格，并分别跟踪触达、互动和转化。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>3. <a href="https://openai.com/index/forward-deployed-engineering-means">OpenAI前线部署工程如何弥合落地差距</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>前线部署工程</code> <code>企业落地</code> <code>Codex</code> <code>模型评测</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI介绍前线部署工程（FDE）如何与客户协作，把模型能力转化为可投入生产、可复用的工作流，并将真实任务中的能力缺口反馈给研究团队。文中举例称，半导体验证任务节省约48%时间，部分方案将定制代码减少约90%；客服语音评测则在六个月内从约60%提升至90%以上。</p>
+<hr>
+<h3>4. <a href="https://openai.com/index/uber-chatgpt-work-rollout">Uber向逾三万员工部署ChatGPT Work</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Work</code> <code>企业部署</code> <code>智能体</code> <code>员工效率</code></li>
+</ul>
+<p><strong>摘要</strong>: Uber将ChatGPT Work从千人试点扩展至全球逾30,000名员工，可连接Google Drive、Gmail、日历和Slack，协助研究、准备会议材料、制作演示文稿及跨应用完成工作流。部署将配合Uber内部AI技能库、获批集成和员工培训，GPT‑6.1 Sol将作为默认能力之一。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先选取研究、会议准备等高频流程开展小范围试点，并记录完成时间与人工返工率。</li>
+<li>部署前梳理Drive、Gmail和Slack的访问权限，按岗位配置获批集成并安排员工培训。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>5. <a href="https://openai.com/index/broad-access-through-consistent-standards">OpenAI拟统一模型分销渠道安全标准</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>使用政策</code> <code>模型分销</code> <code>安全治理</code> <code>滥用调查</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称正与客户和合作伙伴协调模型安全要求，并更新使用政策，要求提供模型直接访问的服务（如路由器或AI网关）先获得审查批准。更新后的政策计划于2026年11月20日生效；文章还提到以SafetyIDs协助调查滥用，同时避免获知终端用户身份。</p>
+<hr>
+<h3>6. <a href="https://openai.com/index/openai-models-google-cloud">OpenAI模型与Codex工作流将登陆Google Cloud</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>云合作</code> <code>Model Garden</code> <code>Codex</code> <code>企业AI</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI与Google Cloud计划将OpenAI前沿模型及Codex智能体工作流接入Google Cloud Model Garden，并通过Google Cloud Marketplace提供购买。企业客户可结合Google Cloud的访问控制和数据治理使用这些模型；服务预计数周内开放，Microsoft仍是OpenAI的主要云合作伙伴。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>法律科技</code> <code>企业知识</code> <code>请求分流</code> <code>人工决策</code> — AT&amp;T正与OpenAI合作，计划把企业积累的法律知识接入法律团队工作流程。设想中的自然语言入口将对请求分类和排序、关联先例与历史材料并提供初步步骤；AT&amp;T强调最终判断仍由律师作出。 · <a href="https://openai.com/index/att-legal">OpenAI Blog</a></li>
+</ul>
+<h2>往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-10-13 · 模型发布</strong> — Google DeepMind 宣布 Gemini 4 Argon 全球开放，定位为可端到端处理高难任务的前沿模型，重点覆盖编程、企业工作流与网络防御。首批访问依账号方案分阶段开放。Demis Hassabis 展示模型生成的巫师棋游戏，补充呈现其物理理解与 3D 建模能力，并说明 Gemini 应用、搜索和 Antigravity 的推出范围。 · <a href="https://x.com/GoogleDeepMind/status/2110039274922131792">Google DeepMind (Twitter)</a></li>
+<li><strong>2026-10-12 · 政策与安全</strong> — Anthropic称，其新防御措施使蒸馏者获取Claude推理数据的数量减少约90%至99%，并介绍了限制推理内容流转、分类器拦截和限制重复尝试等做法。公司同时指出这些措施存在取舍，包括少于0.1%的误报率、部分开发者需调整集成，以及对被拦截请求收费；相关成效为Anthropic披露的数据与评估。 · <a href="https://x.com/AnthropicAI/status/2109795898909950247">Anthropic (Twitter)</a></li>
+<li><strong>2026-10-12 · 研究</strong> — 转推称，Google与BIDMC开展的AMIE前瞻性研究已发表于《柳叶刀》主刊，研究在真实急诊门诊场景中评估患者就诊前使用对话式诊断系统。转述数据显示，临床人员认为系统摘要在75%的案例中有助于就诊准备、在超过半数案例中影响了诊疗思路，AMIE鉴别诊断与医生最终诊断匹配率为90%。 · <a href="https://x.com/demishassabis/status/2109813775377563908">Demis Hassabis (Twitter)</a></li>
+<li><strong>2026-10-12 · 产品与功能</strong> — OpenAI开发者账号介绍将注释与WebMCP结合，为智能体提供更多上下文。帖子以一个应用为例，称自定义注释控件和建议提示可帮助用户在ChatGPT浏览器中编辑场景及更新费用。 · <a href="https://x.com/OpenAIDevs/status/2109716341490106869">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-10-13 · 商业动态</strong> — Mistral AI表示其模型将加入Orbitworks与Loft Orbital的AI卫星星座，并与NVIDIA基础设施合作。引用内容称Altair是首颗已发射卫星，整个星座计划由50颗卫星组成，使用Ministral 3为用户提供快速AI告警与回答。 · <a href="https://x.com/MistralAI/status/2109998925037859091">Mistral AI (Twitter)</a></li>
+<li><strong>2026-10-12 · 商业动态</strong> — OpenAI开发者账号表示Codex大使申请再次开放，面向已向他人展示Codex创作成果的人。项目将支持大使举办线下聚会或分享经验，帖子未说明申请条件或具体支持内容。 · <a href="https://x.com/OpenAIDevs/status/2109705153591029854">OpenAI Devs (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-10-21</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-21.html</link>
@@ -1682,128 +1788,6 @@
 </ul>
 <p><strong>摘要</strong>: Anthropic 的研究文章报告 Claude 能完成名为「Nine Loops」的任务。所给输入没有正文或摘要，因此无法判断任务定义、评测条件或具体结果。</p>
 <hr>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-09-24</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-24.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-09-24.md</guid>
-      <pubDate>Thu, 24 Sep 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-09-24</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>技能教育普及</strong>：OpenAI Academy 两周年之际提出扩大 AI 技能教育，但抓取简介尚未列出新的课程安排或覆盖地区。</li>
-<li><strong>民用网络防御</strong>：OpenAI 将 Daybreak 项目访问扩展至乌克兰政府，支持民用基础设施防护，现有简介未披露部署细节。</li>
-<li><strong>专业工作流落地</strong>：Harvey 与 InVideo 报告将 GPT-6 Astra 用于法律文书和视频调色，后者称效率提升三倍。</li>
-<li><strong>沉浸式协作扩容</strong>：Google Beam 将扩展至五个新国家并与 Industrious 合作，新增市场和上线时间尚未见于快照。</li>
-<li><strong>安全与代理评测</strong>：OpenAI 推出心理健康对话基准，Anthropic 的 Project Swap 则探讨代理代用户交易的情境。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://www.anthropic.com/research/project-swap">Project Swap 研究代理在市场中代表用户交易</a></h3>
-<ul>
-<li><strong>来源</strong>: Anthropic Research</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>Project Swap</code> <code>智能代理</code> <code>市场交易</code> <code>用户偏好</code></li>
-</ul>
-<p><strong>摘要</strong>: Anthropic 在受控的书籍交换市场中，让 Claude 代理根据与参与者的简短对话进行推荐、议价和交易；代理对用户偏好的判断在书籍配对中有 61% 的成对一致率。研究发现交易表现总体良好，市场局限更多来自代理掌握的用户信息不足；所用模型对谈判结果的影响也大于指令差异。</p>
-<hr>
-<h3>2. <a href="https://openai.com/index/introducing-mentalhealthbench">MentalHealthBench：评估 AI 心理健康对话</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 研究</li>
-<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
-<li><strong>标签</strong>: <code>MentalHealthBench</code> <code>心理健康</code> <code>安全评测</code> <code>基准测试</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 发布开放基准 MentalHealthBench，由来自 22 个国家的 80 多名持证心理健康专家共同开发，评估 AI 在真实感对话中的安全、理解情境、尊重用户自主性和提供可行动建议等表现。基准覆盖不同紧急程度与用户类型，并提供细分维度，供研究者复现和扩展评测。</p>
-<hr>
-<h3>3. <a href="https://blog.google/innovation-and-ai/technology/research/google-beam-expansion/">Google Beam 扩展至六国并开放体验网络</a></h3>
-<ul>
-<li><strong>来源</strong>: Google AI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Google Beam</code> <code>国际扩展</code> <code>Industrious</code> <code>视频协作</code></li>
-</ul>
-<p><strong>摘要</strong>: Google Beam 将向美国、加拿大、英国、法国、德国和日本的客户供货，并由 18 家渠道伙伴支持部署。Google 还与 Industrious 建立体验网络，称内部测试中团队连接感提升、后续会议需求下降。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>确认设备在目标地区的供货、部署条件及与 Meet 或 Zoom 的兼容性。</li>
-<li>用实际会议试点评估远程协作体验及后续会议数量变化。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>4. <a href="https://openai.com/index/two-years-of-openai-academy">OpenAI Academy 两周年：扩展社区 AI 培训</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 教程与观点</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>OpenAI Academy</code> <code>AI培训</code> <code>社区教育</code> <code>培训师</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI Academy 两年来举办了 250 多场活动，超过 400 万人参与其课程与内容。OpenAI 正试点社区培训师项目，让合作组织培养讲师，在当地开展实践型 AI 培训。</p>
-<hr>
-<h3>5. <a href="https://openai.com/index/openai-extends-cyber-access-to-ukraine-for-civilian-defense">OpenAI 向乌克兰开放民用网络防御工具</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>Daybreak</code> <code>乌克兰</code> <code>网络防御</code> <code>民用基础设施</code></li>
-</ul>
-<p><strong>摘要</strong>: OpenAI 将 Daybreak 项目提供给乌克兰政府，协助其识别软件漏洞、开发并测试修复方案，以保护民用基础设施。该项目面向获授权的安全工作，也用于检查旧软件、调查可疑活动和验证漏洞。</p>
-<hr>
-<h3>6. <a href="https://openai.com/index/sam-altman-un-security-council-remarks">Altman 在联合国安理会谈 AI 安全治理</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 政策与安全</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>联合国</code> <code>AI安全</code> <code>人类监督</code> <code>国际标准</code></li>
-</ul>
-<p><strong>摘要</strong>: Sam Altman 在联合国安理会谈及 AI 带来的机遇、保持强大系统在人类控制之下，以及国际安全合作的必要性。他呼吁建立前沿 AI 标准，用于能力与风险评估、事故报告和监督，并强调决策应由民主程序参与塑造。</p>
-<hr>
-<h3>7. <a href="https://openai.com/index/harvey-from-context-to-confidence-with-astra">Harvey 借 GPT-6 Astra 改进法律文书起草</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>GPT-6 Astra</code> <code>Harvey</code> <code>法律科技</code> <code>文书起草</code></li>
-</ul>
-<p><strong>摘要</strong>: Harvey 使用 GPT-6 Astra 综合法院信息、律所文件和判例等材料，生成结构更清晰、上下文更完整的法律文书。其记忆面板还可纳入律师的格式与资料偏好，帮助律师将更多时间用于策略工作。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>用脱敏案件材料测试草稿的事实依据、上下文完整度与格式质量。</li>
-<li>将律师偏好作为明确约束输入，并由专业人员复核生成内容。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>8. <a href="https://openai.com/index/invideo-builds-with-gpt-6-astra">invideo 用 GPT-6 Astra 提升视频调色效果</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>GPT-6 Astra</code> <code>invideo</code> <code>视频编辑</code> <code>色彩调校</code></li>
-</ul>
-<p><strong>摘要</strong>: invideo 称 GPT-6 Astra 能规划复杂剪辑，在多步操作中保持原始编辑目标，并更准确地执行时间线修改。其色彩校正与调色成功率提升约三倍，编辑团队还在一天内制作了约 50 种可编辑特效。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>选取代表性素材，对比模型在剪辑规划、时间线定位和调色任务上的成功率。</li>
-<li>记录人工返工与校正耗时，验证案例中的效率提升是否适用于自身流程。</li>
-</ul>
-</blockquote>
-<hr>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Ringg</code> <code>GPT-5.6</code> <code>客服代理</code> <code>多渠道</code> — Ringg 将 GPT-5.6 用于语音、聊天、WhatsApp 和网页客服代理，并称每月处理超过 700 万通接通电话、最多解决 65% 的请求。对适用的实时工作负载从 GPT-4.1 迁移后，模型成本约降低 90%，同时保留所需质量与延迟表现。 · <a href="https://openai.com/index/ringg">OpenAI Blog</a></li>
-</ul>
-<h2>往期补遗</h2>
-<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
-<ul>
-<li><strong>2026-09-22 · 模型发布</strong> — OpenAI Devs表示GPT-6 Sol和Luna当天发布，API价格比GPT-5.6低50%。推文分别以构建和规模化使用概括两款模型的定位。 · <a href="https://x.com/OpenAIDevs/status/2102461432684282061">OpenAI Devs (Twitter)</a></li>
-</ul>
 ]]></description>
     </item>
   </channel>

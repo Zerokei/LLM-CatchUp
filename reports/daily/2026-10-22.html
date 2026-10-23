@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 日报 2026-10-22 · CatchUp</title>
+  <meta name="description" content="CatchUp 日报 — 2026-10-22" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Daily</span>
+            <span>·</span>
+            <span>日报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-10-22</h1>
+          
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">今日趋势</h2>
+<ul>
+<li><strong>漏洞协同治理</strong>：OpenAI 的 Patch the Planet 联合 PHP 生态参与者协调披露并修复漏洞，强调以合作降低真实系统风险。</li>
+<li><strong>对话广告成规模</strong>：ChatGPT Ads 扩展至89国并披露独立于回答生成的广告架构，兼顾商业触达与回答中立性。</li>
+<li><strong>企业部署加速</strong>：Uber 向数万员工推广 ChatGPT Work，AT&amp;T 则探索用智能体分流法律事务，呈现横向落地路径。</li>
+<li><strong>云端交付拓宽</strong>：OpenAI 将模型与 Codex 工作流引入 Google Cloud，并以一线部署工程缩短企业采用距离。</li>
+</ul>
+<hr>
+<h2 id="h-2">文章详情</h2>
+<h3 id="h-3">1. <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities">Patch the Planet推动PHP漏洞协同修复</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>漏洞修复</code> <code>PHP安全</code> <code>协同披露</code> <code>开源维护</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称其Patch the Planet倡议联合PHP维护者、研究者及安全厂商处置了两项关键漏洞，其中一项由GPT‑5.6 Sol辅助发现，Wiz也独立发现并报告了相关问题。文章提出面向高影响漏洞的分阶段协调框架，涵盖验证修复、提前通知受影响方、准备更新与公开部署指引，并提供PHP版本检查器。</p>
+<hr>
+<h3 id="h-4">2. <a href="https://openai.com/index/building-chatgpt-ad-stack">ChatGPT Ads 扩至89国并披露对话式广告架构</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Ads</code> <code>对话式广告</code> <code>广告系统</code> <code>用户信任</code> <code>市场扩张</code> <code>广告主</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 介绍 ChatGPT Ads 使用经后训练的语言模型理解多轮对话意图，并通过工具完成广告检索、相关性评估、排序与竞价。广告选择与回答生成分离，若广告系统超时或无合适广告，ChatGPT 仍正常回答。同期产品扩展至26个新国家、覆盖89国，已有超过10万广告主投放；广告仅面向 Free 与 Go 方案，付费方案维持无广告。</p>
+<p>📎 <strong>多角度报道</strong>:</p>
+<ul>
+<li><a href="https://openai.com/index/chatgpt-ads-expands-26-new-countries">ChatGPT广告扩至26国，覆盖89个国家</a> · OpenAI Blog · 扩至26个新国家及89国覆盖</li>
+</ul>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>设计对话式商业推荐时，将广告服务与回答生成隔离，确保广告缺失或超时不影响主流程。</li>
+<li>为候选广告设置相关性、资格和安全检查，并记录未展示原因以支持审计。</li>
+<li>符合地区与方案条件的商家可核对 Ads Manager 的开放资格，并分别跟踪触达、互动和转化。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-5">3. <a href="https://openai.com/index/forward-deployed-engineering-means">OpenAI前线部署工程如何弥合落地差距</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 教程与观点</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>前线部署工程</code> <code>企业落地</code> <code>Codex</code> <code>模型评测</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI介绍前线部署工程（FDE）如何与客户协作，把模型能力转化为可投入生产、可复用的工作流，并将真实任务中的能力缺口反馈给研究团队。文中举例称，半导体验证任务节省约48%时间，部分方案将定制代码减少约90%；客服语音评测则在六个月内从约60%提升至90%以上。</p>
+<hr>
+<h3 id="h-6">4. <a href="https://openai.com/index/uber-chatgpt-work-rollout">Uber向逾三万员工部署ChatGPT Work</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>ChatGPT Work</code> <code>企业部署</code> <code>智能体</code> <code>员工效率</code></li>
+</ul>
+<p><strong>摘要</strong>: Uber将ChatGPT Work从千人试点扩展至全球逾30,000名员工，可连接Google Drive、Gmail、日历和Slack，协助研究、准备会议材料、制作演示文稿及跨应用完成工作流。部署将配合Uber内部AI技能库、获批集成和员工培训，GPT‑6.1 Sol将作为默认能力之一。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>先选取研究、会议准备等高频流程开展小范围试点，并记录完成时间与人工返工率。</li>
+<li>部署前梳理Drive、Gmail和Slack的访问权限，按岗位配置获批集成并安排员工培训。</li>
+</ul>
+</blockquote>
+<hr>
+<h3 id="h-7">5. <a href="https://openai.com/index/broad-access-through-consistent-standards">OpenAI拟统一模型分销渠道安全标准</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>使用政策</code> <code>模型分销</code> <code>安全治理</code> <code>滥用调查</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称正与客户和合作伙伴协调模型安全要求，并更新使用政策，要求提供模型直接访问的服务（如路由器或AI网关）先获得审查批准。更新后的政策计划于2026年11月20日生效；文章还提到以SafetyIDs协助调查滥用，同时避免获知终端用户身份。</p>
+<hr>
+<h3 id="h-8">6. <a href="https://openai.com/index/openai-models-google-cloud">OpenAI模型与Codex工作流将登陆Google Cloud</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 商业动态</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>云合作</code> <code>Model Garden</code> <code>Codex</code> <code>企业AI</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI与Google Cloud计划将OpenAI前沿模型及Codex智能体工作流接入Google Cloud Model Garden，并通过Google Cloud Marketplace提供购买。企业客户可结合Google Cloud的访问控制和数据治理使用这些模型；服务预计数周内开放，Microsoft仍是OpenAI的主要云合作伙伴。</p>
+<hr>
+<h2 id="h-9">速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>产品与功能</strong> | <code>法律科技</code> <code>企业知识</code> <code>请求分流</code> <code>人工决策</code> — AT&amp;T正与OpenAI合作，计划把企业积累的法律知识接入法律团队工作流程。设想中的自然语言入口将对请求分类和排序、关联先例与历史材料并提供初步步骤；AT&amp;T强调最终判断仍由律师作出。 · <a href="https://openai.com/index/att-legal">OpenAI Blog</a></li>
+</ul>
+<h2 id="h-10">往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-10-13 · 模型发布</strong> — Google DeepMind 宣布 Gemini 4 Argon 全球开放，定位为可端到端处理高难任务的前沿模型，重点覆盖编程、企业工作流与网络防御。首批访问依账号方案分阶段开放。Demis Hassabis 展示模型生成的巫师棋游戏，补充呈现其物理理解与 3D 建模能力，并说明 Gemini 应用、搜索和 Antigravity 的推出范围。 · <a href="https://x.com/GoogleDeepMind/status/2110039274922131792">Google DeepMind (Twitter)</a></li>
+<li><strong>2026-10-12 · 政策与安全</strong> — Anthropic称，其新防御措施使蒸馏者获取Claude推理数据的数量减少约90%至99%，并介绍了限制推理内容流转、分类器拦截和限制重复尝试等做法。公司同时指出这些措施存在取舍，包括少于0.1%的误报率、部分开发者需调整集成，以及对被拦截请求收费；相关成效为Anthropic披露的数据与评估。 · <a href="https://x.com/AnthropicAI/status/2109795898909950247">Anthropic (Twitter)</a></li>
+<li><strong>2026-10-12 · 研究</strong> — 转推称，Google与BIDMC开展的AMIE前瞻性研究已发表于《柳叶刀》主刊，研究在真实急诊门诊场景中评估患者就诊前使用对话式诊断系统。转述数据显示，临床人员认为系统摘要在75%的案例中有助于就诊准备、在超过半数案例中影响了诊疗思路，AMIE鉴别诊断与医生最终诊断匹配率为90%。 · <a href="https://x.com/demishassabis/status/2109813775377563908">Demis Hassabis (Twitter)</a></li>
+<li><strong>2026-10-12 · 产品与功能</strong> — OpenAI开发者账号介绍将注释与WebMCP结合，为智能体提供更多上下文。帖子以一个应用为例，称自定义注释控件和建议提示可帮助用户在ChatGPT浏览器中编辑场景及更新费用。 · <a href="https://x.com/OpenAIDevs/status/2109716341490106869">OpenAI Devs (Twitter)</a></li>
+<li><strong>2026-10-13 · 商业动态</strong> — Mistral AI表示其模型将加入Orbitworks与Loft Orbital的AI卫星星座，并与NVIDIA基础设施合作。引用内容称Altair是首颗已发射卫星，整个星座计划由50颗卫星组成，使用Ministral 3为用户提供快速AI告警与回答。 · <a href="https://x.com/MistralAI/status/2109998925037859091">Mistral AI (Twitter)</a></li>
+<li><strong>2026-10-12 · 商业动态</strong> — OpenAI开发者账号表示Codex大使申请再次开放，面向已向他人展示Codex创作成果的人。项目将支持大使举办线下聚会或分享经验，帖子未说明申请条件或具体支持内容。 · <a href="https://x.com/OpenAIDevs/status/2109705153591029854">OpenAI Devs (Twitter)</a></li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">今日趋势</a></li>
+      <li class="toc-h3"><a href="#h-3">1. Patch the Planet推动PHP漏洞协同修复</a></li>
+      <li class="toc-h3"><a href="#h-4">2. ChatGPT Ads 扩至89国并披露对话式广告架构</a></li>
+      <li class="toc-h3"><a href="#h-5">3. OpenAI前线部署工程如何弥合落地差距</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Uber向逾三万员工部署ChatGPT Work</a></li>
+      <li class="toc-h3"><a href="#h-7">5. OpenAI拟统一模型分销渠道安全标准</a></li>
+      <li class="toc-h3"><a href="#h-8">6. OpenAI模型与Codex工作流将登陆Google Cloud</a></li>
+      <li class="toc-h2"><a href="#h-9">速览</a></li>
+      <li class="toc-h2"><a href="#h-10">往期补遗</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older daily</span>
+        <a href="../daily/2026-10-21.html">2026-10-21</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer daily →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-10-22.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
