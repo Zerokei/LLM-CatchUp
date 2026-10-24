@@ -1,0 +1,618 @@
+{
+  "date": "2026-10-23",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-10-24T05:10:41−07:00",
+  "window_start": "2026-10-22T00:00:00−07:00",
+  "window_end": "2026-10-23T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1318,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+          "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+          "published_at": "2026-10-23T00:00:00.000Z",
+          "description": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.",
+          "full_text": "Title: OpenAI and Poland’s NASK partner to advance AI safety and security\n\nURL Source: https://openai.com/index/openai-nask-ai-safety-security-partnership\n\nMarkdown Content:\nOpenAI and Poland’s NASK National Research Institute have signed an agreement to explore collaboration on AI safety, security and technical research. The partnership will bring together expertise from both organizations to better understand emerging risks, strengthen safeguards, and explore how advanced AI can contribute to a more secure and resilient digital ecosystem.\n\nAs AI systems become more capable, international collaboration between developers and public research institutions will be essential to understanding their risks and building stronger safeguards. OpenAI’s existing work with the US Center for Advancing Standards and Innovation for Super Intelligence (CAISSI), UK AI Security Institute (AISI) and other public research institutions around the world has already helped strengthen safeguards, identify and fix security vulnerabilities in AI agents, and advance frontier AI safety.\n\nThrough the agreement, NASK’s AI Safety Research Center – serving as the Polish Artificial Intelligence Safety Institute (AISI) – and OpenAI will collaborate on AI safety research, exploring ways to evaluate increasingly capable AI systems, identify potential vulnerabilities and strengthen safeguards.\n\nOpenAI has [called](https://openai.com/index/building-standards-next-phase-ai/) for the US to work with countries around the world on international technical standards for frontier AI, drawing on the expertise of AI safety institutes and standards bodies. Common approaches to evaluating capabilities, assessing risks, testing safeguards and reporting incidents can help countries compare evidence and respond to risks that cross borders. The collaboration with NASK reflects the value of bringing national expertise into this wider effort.\n\nIn NASK’s case, this expertise rests on extensive research in AI safety, applied directly to protecting public services and Poland’s digital information ecosystem. Without national partners like NASK, global AI safety standards may remain detached from the realities in which AI is actually used.\n\nThe agreement also builds on OpenAI’s existing work with cyber defenders in Poland. In July, CERT Polska, which operates within NASK, [gained access⁠(opens in a new window)](https://www.nask.pl/aktualnosci/nask-z-przelomowym-narzedziem-od-openai?utm_source=chatgpt.com) to OpenAI’s cyber capable models through Daybreak. The team used OpenAI models to help discover six vulnerabilities in MikroTik RouterOS, including flaws that could be combined to take control of affected devices without authentication. The vendor released fixes, which CERT Polska confirmed prevented the attacks it observed.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Build more responsive apps with the Decisions API",
+          "url": "https://openai.com/index/decisions-api",
+          "published_at": "2026-10-22T19:00:00.000Z",
+          "description": "Fast, focused, low-cost decisions for any application.",
+          "full_text": "Title: Build more responsive apps with the Decisions API\n\nURL Source: https://openai.com/index/decisions-api\n\nMarkdown Content:\nApplications and agents make many small decisions throughout a workflow: how to classify an input, where to route a request, or which action to take next. Individually, they are simple. At scale, their latency and cost add up.\n\nToday, we’re making the Decisions API generally available. Built with [GPT‑6 Luna](https://openai.com/index/introducing-gpt-6-sol-and-luna/), the Decisions API focuses Luna’s intelligence on questions with bounded answers, helping applications and agents make near real-time decisions from text, images, and structured inputs up to 10x faster than GPT‑6 Luna through the Responses API.\n\nSince public beta, we’ve added a native GPT‑Live integration, prompt caching for reused context, and inference residency in the US and EU. Developers can also pass native JSON inputs, include images in question instructions, and ask up to 400 questions per request, twice the previous limit. We’ve also continued to improve latency, including additional capacity in several regions in Asia.\n\n## How teams are using the Decisions API\n\nEarly adoption of Decisions has shown its applicability across a variety of use cases.\n\nAcross OpenAI, teams are applying the Decisions API across product and business workflows. The dots team is using it to reduce response times and improve interactivity. Our Personal Finance team is using it to categorize transaction descriptions, while our Communications team is using Decisions to classify coverage by the themes and scores whether it reinforces or challenges key narratives—helping identify what warrants closer review.\n\nThese early examples show how fast, structured decision-making can turn incoming information into useful action across a wide range of use cases. Customers are applying the Decisions API just as broadly, from accurately attributing AI costs to making language-learning experiences more interactive.\n\n1 of 5\n\n## Select the type of decision your application needs\n\nUsing the Decisions API is simple: developers define a question and its allowed answers, then provide context as text, images, or native JSON. The API returns one of three supported answer types—a probability, choice, or score—that applications can use to determine what happens next. The variety of answer types allows Decisions to be applicable across a wide variety of use cases.\n\nDecisions API supports three answer types:\n\n| Type | Use it to | Main result |\n| --- | --- | --- |\n| predicate | Estimate the probability that a condition is true, such as whether a product has visible damage. | probability: an estimate from 0 to 1 that the condition is true. |\n| choice | Select one of your predefined options, such as whether an agent should continue, retry, or ask for clarification. | choice: one of your supplied values. The response also includes probabilities and confidence. |\n| score | Rate an input against ordered levels in a rubric, such as the severity of damage. | score: the probability-weighted average of the level indices. |\n\n## Build real-time voice experiences with the Decisions API and GPT‑Live\n\nWith [GPT‑Live](https://openai.com/index/introducing-gpt-live-1-in-the-api/), you can bring natural, expressive conversation to your voice applications, with smooth interruption handling that keeps conversations flowing. Decisions API now [integrates natively with GPT‑Live⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/decisions-voice), helping applications make fast, focused decisions during live conversations. A customer support agent can decide whether to ask a clarifying question, route a request, or escalate an issue. An avatar can adjust its facial expressions as a user speaks to it, and based on the user’s words, respond with a wink or a smile to create a more interactive experience.\n\nThe example below uses transcript updates to select an avatar’s expression. Add this configuration to `session.triggers` in an existing GPT‑Live session.\n\nLive emits a `decision.event`; the application reads the selected `reaction` and animates the character accordingly. [Learn more about connecting voice to Decisions API. ⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/decisions-voice)\n\n## Try Decisions with GPT‑Live for yourself\n\n[Audio 4](https://openai.com/index/decisions-api)\n\n## Expression palette\n\nTap a face to preview it.\n\n## Live decisions\n\nWatch as the Decisions API chooses a facial expression based on what each of you says.\n\n### Your words\n\nWatch the reaction as you speak.\n\n### Assistant’s words\n\nWatch the face as the assistant replies.\n\nTry saying\n\nI rehearsed my audition for my cat. She walked out halfway through.\n\nThis demo is time-limited. By using it, you agree to OpenAI's [Terms⁠](https://openai.com/policies/terms-of-use/) and acknowledge our [Privacy Policy⁠](https://openai.com/policies/privacy-policy/).\n\n## Build and evaluate your first decision\n\nDecisions API is generally available today with GPT‑6 Luna through the dedicated Decisions endpoint. See the [pricing and availability guide⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/decisions#pricing-and-availability) for current rates and caching details.\n\nStart with one recurring decision your application makes often. Define the question, the possible answers, and the context needed to distinguish them. Test it on examples that reflect real usage, in the [Decisions Playground⁠(opens in a new window)](https://platform.openai.com/decisions) with your own text or images, or follow the [developer guide⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/decisions) to make your first request.\n\nDecisions API costs $0.10 per million input tokens. Cached input costs $0.01 per million tokens. For 30-minute and 12-hour cached writes, [read our pricing guide.⁠(opens in a new window)](https://developers.openai.com/api/docs/pricing?utm_source=chatgpt.com) You only pay for input tokens: there are no output-token charges. Regional processing is available in the US and EU, and [Zero Data Retention⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/your-data) is available to eligible customers. See [pricing and caching⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/decisions#pricing-and-availability) and [data controls ⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/your-data)for details.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110052931110318464",
+          "title": "I love lasers (really wanted to work on them as a kid)… especially Argon lasers 😀 reminded me of this scene from one of my fave films: ‘synthesize excited bromide in an argon matrix… but that would b",
+          "url": "https://x.com/demishassabis/status/2110052931110318464",
+          "published_at": "2026-10-13T16:59:56.000000Z",
+          "description": "I love lasers (really wanted to work on them as a kid)… especially Argon lasers 😀 reminded me of this scene from one of my fave films: ‘synthesize excited bromide in an argon matrix… but that would be hotter than the sun’ 😂 Val Kilmer was so cool https://t.co/A7BKAJDJhm",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/A7BKAJDJhm",
+              "expanded_url": "https://youtu.be/G-gAbSQGGqM?si=6NQue5-ulgGedGrt&t=50",
+              "display_url": "youtu.be/G-gAbSQGGqM?si…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "demishassabis",
+            "text": "Gemini 4 Argon is amazing for knowledge work and coding - and it’s super fun to build with! We asked it to create this wizard chess game and it's so cool to see Argon's physics understanding & 3D modelling capabilities, makes me nostalgic for Battlechess on the Amiga - fun times!\n\nArgon is rolling out today to Google Ultra and Pro subscribers in the @GeminiApp and Search, and Ultra subscribers in @antigravity! More info & full availability in the blog: https://t.co/7d3791mRNH",
+            "url": "https://x.com/demishassabis/status/2110041008100843835"
+          },
+          "source": "Demis Hassabis (Twitter)",
+          "origin_report_date": "2026-10-13",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 11,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110128453760815153",
+          "title": "The Claude Code hackathon is back, and we're bringing it to Japan!\n\nエンジニアの方も、そうでない方も、日本在住のビルダーならどなたでも応募できます。世界に何を見せてくれるのか、楽しみにしています。\n応募締切は10月26日 23:59（日本時間）：\n\nhttps://t.co/YXVYxl5gdU\n\n#claudejapan2026",
+          "url": "https://x.com/ClaudeDevs/status/2110128453760815153",
+          "published_at": "2026-10-13T22:00:02.000000Z",
+          "description": "The Claude Code hackathon is back, and we're bringing it to Japan!\n\nエンジニアの方も、そうでない方も、日本在住のビルダーならどなたでも応募できます。世界に何を見せてくれるのか、楽しみにしています。\n応募締切は10月26日 23:59（日本時間）：\n\nhttps://t.co/YXVYxl5gdU\n\n#claudejapan2026",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/YXVYxl5gdU",
+              "expanded_url": "https://cerebralvalley.ai/e/built-with-claude-japan2026",
+              "display_url": "cerebralvalley.ai/e/built-with-c…"
+            }
+          ],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-13",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2110421732029063352",
+          "title": "Now in public beta, Claude Platform can send OpenTelemetry traces from the Messages API, Claude Managed Agents, and the Claude SDKs to your observability stack. https://t.co/gXmi5xlkfO",
+          "url": "https://x.com/ClaudeDevs/status/2110421732029063352",
+          "published_at": "2026-10-14T17:25:25.000000Z",
+          "description": "Now in public beta, Claude Platform can send OpenTelemetry traces from the Messages API, Claude Managed Agents, and the Claude SDKs to your observability stack. https://t.co/gXmi5xlkfO",
+          "expanded_urls": [],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-14",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 11,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110047081414987957",
+          "title": "New on our Engineering blog: Creating in-house source control. \n\nIn May, we merged around 2,500 code changes per day. In September, we merged more than 30,000 per day. As a result, we became bottlenec",
+          "url": "https://x.com/AnthropicAI/status/2110047081414987957",
+          "published_at": "2026-10-13T16:36:41.000000Z",
+          "description": "New on our Engineering blog: Creating in-house source control. \n\nIn May, we merged around 2,500 code changes per day. In September, we merged more than 30,000 per day. As a result, we became bottlenecked by developer infrastructure built for human (rather than agent) scale.  \n\nHere, we share how we built a new version control system—and fully migrated our monorepo from git—in five months: https://t.co/wzNkwHs7IN",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/wzNkwHs7IN",
+              "expanded_url": "https://www.anthropic.com/engineering/redesigning-source-control",
+              "display_url": "anthropic.com/engineering/re…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-10-13",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2110289695888511368",
+          "title": "We’ve opened an office in Singapore—our fifth in the Asia-Pacific region. We’ve also signed an MOU with the Government of Singapore on AI safety and responsible adoption.\n\nYou can read more about our ",
+          "url": "https://x.com/AnthropicAI/status/2110289695888511368",
+          "published_at": "2026-10-14T08:40:45.000000Z",
+          "description": "We’ve opened an office in Singapore—our fifth in the Asia-Pacific region. We’ve also signed an MOU with the Government of Singapore on AI safety and responsible adoption.\n\nYou can read more about our new office here: https://t.co/125mBgHLkM",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/125mBgHLkM",
+              "expanded_url": "https://www.anthropic.com/news/singapore-office-opening",
+              "display_url": "anthropic.com/news/singapore…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-10-14",
+          "delivery_class": "backfill",
+          "linked_content": "Title: Anthropic opens Singapore office and signs MOU with the Government of Singapore\n\nURL Source: https://www.anthropic.com/news/singapore-office-opening\n\nPublished Time: 2026-10-14T00:00:00.000Z\n\nMarkdown Content:\nToday, we are expanding our Asia-Pacific operations by opening a new office in Singapore—our fifth in the region—and signing a Memorandum of Understanding (MOU) with the Singapore Ministry of Digital Development and Information. Singapore is one of our most active markets anywhere in the world, and Claude is already powering Singaporean business and government services used by millions of people every day, like GovTech Singapore, Grab, and DBS. Our growing local team will ensure these organizations and many more stay on the frontier with safe, capable AI.\n\n“We’re committed to Singapore for the long term,” said Dale Finlay, General Manager of ASEAN at Anthropic. “Our customers here hold AI to an extremely high standard, especially when it comes to reliability and security. Having a team on the ground means we can get even closer to the organizations putting Claude to work on their hardest problems.”\n\n### Supporting responsible AI in Singapore\n\nKai Fong Chng, Permanent Secretary of the Ministry of Digital Development and Information, and Anthropic co-founder Ben Mann signed the MOU on the sidelines of Singapore International Cyber Week. Minister for Digital Development and Information Josephine Teo and Michael Sellitto, Anthropic Head of APAC Policy, witnessed the signing. It sets out areas of cooperation in AI safety, security, and model evaluation; research on AI adoption and its impact; and responsible adoption across the public and private sectors.\n\n“Singapore has been a leader in responsible AI, with a long track record of investment in model testing and evaluation,” said Mann. “We founded Anthropic on the belief that capability and safety have to go hand in hand. With this MOU, we’ll partner with Singapore to help ensure the transition to powerful AI goes well here, across Asia-Pacific, and around the world.”\n\n“Singapore’s approach to AI has always been to enable innovation while keeping pace with its evolving risks. Trust is critical for businesses, workers, and the public to use AI with confidence,” said Chng. “This partnership with Anthropic reflects the Government’s commitment to scaling up the responsible adoption of AI, deepening capabilities in our companies and government agencies, and delivering impact for Singapore.”\n\nOur work with Singapore goes back to 2023, when we joined the [Generative AI Evaluation Sandbox](https://www.imda.gov.sg/resources/press-releases-factsheets-and-speeches/press-releases/2023/generative-ai-evaluation-sandbox) run by the Infocomm Media Development Authority and the AI Verify Foundation. We later partnered with them on a [red-teaming project](https://www.anthropic.com/news/challenges-in-red-teaming-ai-systems) in English, Mandarin, Malay, and Tamil.\n\nUnder the MOU, we plan to hold technical exchanges with Singapore’s AI safety, security, and assurance institutions on model evaluation, testing standards, and incident response. We do similar work with safety institutes around the world, where sharing technical information provides governments with a clearer view of frontier AI capabilities and risks, while helping developers build safer models.\n\nWe’ll also look for ways to strengthen AI skills in Singapore, help small and medium-sized businesses adopt AI responsibly, and support the government’s goal of building AI capability among public officers. We plan to share research and data with the government, including from the [Anthropic Economic Index](https://www.anthropic.com/economic-index#global-usage), and to offer technical and policy expertise as Singapore develops its rules for AI.\n\n### How Singapore is working with Claude\n\nIn our latest [Economic Index](https://www.anthropic.com/economic-index#country-usage), Singapore ranks second of 121 countries in Claude.ai usage relative to its population, at nearly six times what its size alone would predict.\n\nIn the public sector, more than 1,500 engineers and technical staff at the Government Technology Agency of Singapore (GovTech Singapore) have adopted Claude Code to modernize government systems and speed up software delivery. This has helped GovTech Singapore teams build, maintain, and enhance digital services more efficiently at national scale. The Cyber Security Agency of Singapore is exploring how Claude could help strengthen the country’s cyber defense.\n\nIn financial services, DBS, Southeast Asia’s largest bank, works with Claude across a range of use cases in its Singapore operations—including software development and day-to-day productivity—as part of its broader AI innovation efforts. These applications operate within the bank’s strict security and governance framework. GIC, Singapore’s sovereign wealth fund, is rolling out Claude across its investment and corporate services teams. Organizations in regulated sectors like financial services can now run Claude with [in-region inference](https://aws.amazon.com/blogs/machine-learning/introducing-anthropic-models-on-amazon-bedrock-for-in-region-inference-in-seoul-and-singapore/) on Amazon Bedrock, helping them meet strict data processing requirements.\n\nSingapore’s largest technology companies and startups are building with Claude too. Grab powers BriX, its sales assistant, with Claude. The assistant saves Grab’s sales teams approximately 40,000 hours every quarter and surfaces new sales opportunities. Sea—the business behind Shopee, Garena, and Monee—works with Claude to help Shopee’s customer service chatbot respond faster and more accurately, and thousands of its employees write and debug code with Claude. And Supabase—the developer platform with strong roots in Singapore—is building with Claude Code.\n\n### Building with the developer community\n\nThis week, senior leaders from Anthropic are in Singapore to open the office and meet with customers, developers, and policymakers.\n\nToday, we hosted Builder Summit Singapore, bringing more than 300 developers together with engineering and product leaders from Anthropic. Earlier in the week, Singapore’s Claude community ambassadors held a meetup for more than 700 local builders.\n\nOur Singapore office is now open and hiring. To learn more about joining the team, visit our [careers page](https://www.anthropic.com/careers/jobs?office=4063231008).\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 6,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 12,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 6,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 14,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110399597088477681",
+          "title": "@finkd and @alexandr_wang talk Muse Wonder and all things MSL with @collision.\n\nWatch the full convo: https://t.co/AJ9GHXj3cF https://t.co/cA40AVCOqI",
+          "url": "https://x.com/AIatMeta/status/2110399597088477681",
+          "published_at": "2026-10-14T15:57:27.000000Z",
+          "description": "@finkd and @alexandr_wang talk Muse Wonder and all things MSL with @collision.\n\nWatch the full convo: https://t.co/AJ9GHXj3cF https://t.co/cA40AVCOqI",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/AJ9GHXj3cF",
+              "expanded_url": "https://x.com/collision/status/2109714250226905248",
+              "display_url": "x.com/collision/stat…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "collision",
+            "text": "Cheeky Pint is back! Mark Zuckerberg @finkd and Alexandr Wang @alexandr_wang came to the pub to discuss their new frontier model, Muse Wonder.\n\n00:00:24 Muse’s breakout use cases\n00:07:28 The model is the product\n00:14:35 Muse Wonder\n00:24:56 How frontier models are built\n00:48:26 Betting $100B\n01:07:21 Agentic commerce\n01:19:34 OpenRouter \n01:20:06 Beyond the smartphone\n01:27:00 Funding\n01:34:06 Why AI won’t be winner-take-all\n01:40:46 Meta Superintelligence Labs (MSL)\n02:08:11 Working for Mark Zuckerberg",
+            "url": "https://x.com/collision/status/2109714250226905248"
+          },
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-10-14",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 9,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110078384617464201",
+          "title": "Gemini 4 Argon taught a robot to play cornhole just by watching a video.\n\nIt mapped the physics, coded its own simulation, and taught @Apptronik's Apollo humanoid to sink 7 throws in a row. https://t.",
+          "url": "https://x.com/GoogleDeepMind/status/2110078384617464201",
+          "published_at": "2026-10-13T18:41:04.000000Z",
+          "description": "Gemini 4 Argon taught a robot to play cornhole just by watching a video.\n\nIt mapped the physics, coded its own simulation, and taught @Apptronik's Apollo humanoid to sink 7 throws in a row. https://t.co/JIyoKnVc4q",
+          "expanded_urls": [],
+          "source": "Google DeepMind (Twitter)",
+          "origin_report_date": "2026-10-13",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2110190101707858039",
+          "title": "Over half of reported crimes in Singapore use sophisticated social engineering.\n\nWith @GovTechSG, we’re building on-device fraud detection using our open model Gemma.\n\nBy fine-tuning it on local scam ",
+          "url": "https://x.com/GoogleDeepMind/status/2110190101707858039",
+          "published_at": "2026-10-14T02:05:00.000000Z",
+          "description": "Over half of reported crimes in Singapore use sophisticated social engineering.\n\nWith @GovTechSG, we’re building on-device fraud detection using our open model Gemma.\n\nBy fine-tuning it on local scam tactics, it identifies threats in real time without compromising personal privacy → https://t.co/VdCio2nrHC",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/VdCio2nrHC",
+              "expanded_url": "https://goo.gle/4ygVkJa",
+              "display_url": "goo.gle/4ygVkJa"
+            }
+          ],
+          "source": "Google DeepMind (Twitter)",
+          "origin_report_date": "2026-10-13",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110377713525796942",
+          "title": "Welcome to Mistral, New Material. Let’s bring design to mission-critical AI.",
+          "url": "https://x.com/MistralAI/status/2110377713525796942",
+          "published_at": "2026-10-14T14:30:30.000000Z",
+          "description": "Welcome to Mistral, New Material. Let’s bring design to mission-critical AI.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "newmaterialAI",
+            "text": "New Material joins @MistralAI to design the frontier.\n\nOver the last 6 years we've teamed up with ambitious organisations transforming their industries with AI. Today, we are excited to take it to the next level within Europe's premier frontier AI lab.\n\nhttps://t.co/pqalKytF8q",
+            "url": "https://x.com/newmaterialAI/status/2110370038796464317"
+          },
+          "source": "Mistral AI (Twitter)",
+          "origin_report_date": "2026-10-14",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1382.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2110214931559899630",
+          "title": "Congrats to @lightseekorg on the impressive TokenSpeed results! 🚀 Great to see Qwen3.8-Flash-Next reaching 685 output tokens/s per user on Nvida GPUs. Excited to see the community unlock more of Qwen",
+          "url": "https://x.com/Alibaba_Qwen/status/2110214931559899630",
+          "published_at": "2026-10-14T03:43:40.000000Z",
+          "description": "Congrats to @lightseekorg on the impressive TokenSpeed results! 🚀 Great to see Qwen3.8-Flash-Next reaching 685 output tokens/s per user on Nvida GPUs. Excited to see the community unlock more of Qwen’s inference potential!",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "lightseekorg",
+            "text": "685 output tokens/s per user on @Alibaba_Qwen Qwen3.8-Flash-Next.\n\nRunning TokenSpeed on 4× NVIDIA GB300 with NVFP4.\n\nA look at the kernel and serving optimizations behind the results:\n\n👉 https://t.co/ngSITTWNai\n\n⭐ https://t.co/MJzhCEg7m8 https://t.co/CmIBYUTm5M",
+            "url": "https://x.com/lightseekorg/status/2110199402958856414"
+          },
+          "source": "Qwen (Twitter)",
+          "origin_report_date": "2026-10-13",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 254.8h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    }
+  }
+}
