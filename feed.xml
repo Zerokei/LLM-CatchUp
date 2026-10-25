@@ -5,8 +5,54 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Fri, 23 Oct 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sat, 24 Oct 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-10-24</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-24.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-10-24.md</guid>
+      <pubDate>Sat, 24 Oct 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-10-24</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>全球存储扩展</strong>：OpenAI称Habitat与Azure Cosmos DB协同支撑超大规模在线存储，并通过分层缓存降低全球读取延迟。</li>
+<li><strong>多租户隔离治理</strong>：Habitat结合热点限流、请求优先级和分区扩展，减少共享存储中的邻居干扰与容量规划负担。</li>
+<li><strong>前沿训练安全</strong>：OpenAI披露红队发现沙箱逃逸和隐蔽通信路径，修补后加强隔离监控并恢复相关训练。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/securing-our-frontier-model-training-environment">OpenAI强化前沿模型训练环境隔离</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>模型安全</code> <code>网络隔离</code> <code>红队测试</code> <code>沙箱</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI称已强化前沿模型训练与评估环境，采用离线网页环境、容器与微型虚拟机隔离、网络边界、监控和自动停止等纵深防御，并将训练阶段默认禁止访问开放互联网。高算力模型红队测试发现了沙箱逃逸、有限联网及隔离任务间隐蔽通信等弱点，促成开源组件修补和内部控制改进；完成评估后，公司于10月1日恢复相关强化学习训练与内部推理。</p>
+<hr>
+<h3>2. <a href="https://openai.com/index/scaling-storage-one-billion-users-part-two">OpenAI扩展全球存储平台Habitat</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>云存储</code> <code>多租户</code> <code>分布式缓存</code> <code>基础设施</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI介绍Habitat如何借助Azure Cosmos DB多租户容器、热点限流、请求优先级和改进型无服务器模式，支撑超大规模数据与请求，同时减少容量规划和邻居干扰。为改善全球读取延迟，系统结合区域部署、有限复制与Valkey分布式缓存；OpenAI称缓存使读取速度提升，并强调超大规模托管服务需要与云厂商共同运营和测试。</p>
+<hr>
+<h2>往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-10-14 · 产品与功能</strong> — Claude Code桌面版更新聚焦同时运行多个会话，启动更快、拆分工作更方便，并可持续查看各会话的执行状态。更新还强化了桌面端对自身能力和协作方式的理解，包括启动子会话等细节。相关转述提到界面简化与多会话管理改进，官方未在帖文中展开更多功能细节。 · <a href="https://x.com/ClaudeDevs/status/2110445844675838148">Claude Devs (Twitter)</a></li>
+<li><strong>2026-10-15 · 研究</strong> — Mistral 与 CERN 联手研究大型 AI 模型如何应对粒子物理日益增长的复杂性，目标是训练一个大型物理模型。该模型计划基于数十亿次模拟碰撞数据训练。 · <a href="https://x.com/MistralAI/status/2110684732103041474">Mistral AI (Twitter)</a></li>
+<li><strong>2026-10-14 · 研究</strong> — Meta介绍了一项由医学专家主导的健康科研探索，借助Muse Spark 1.3和Muse Wonder处理500万份去标识电子病历及公开数据，并分享了涵盖多个医学领域的十份研究手稿。公司还称Muse Wonder与Muse Wonder Full在个人和专业代理任务上达到业界领先表现，但相关帖文未提供基准细节。团队强调研究问题和科学结论仍由专家掌控，模型主要协助假设生成、代码执行和论文起草。 · <a href="https://x.com/AIatMeta/status/2110441716507693450">Meta AI (Twitter)</a></li>
+<li><strong>2026-10-14 · 研究</strong> — Google DeepMind称，Gemini 4 Argon已在量子计算、核聚变和蛋白质设计等领域促成新的科学进展。推文未说明具体成果、研究方法或模型贡献程度。 · <a href="https://x.com/GoogleDeepMind/status/2110421861435879476">Google DeepMind (Twitter)</a></li>
+<li><strong>2026-10-15 · 教程与观点</strong> — Kimi Work 教程展示了如何在本地项目、浏览器和电脑环境中开展日常工作，并用 Swarm 拆解复杂任务、通过 Goal 模式迭代。教程也介绍了 Plugins、AGENTS.md 和 Dashboard 等定制方式。 · <a href="https://x.com/Kimi_Moonshot/status/2110687135183593646">Kimi (Twitter)</a></li>
+<li><strong>2026-10-14 · 教程与观点</strong> — Thariq将编码代理的核心能力概括为“把握细节”：像经营公司一样，无法掌握所有事情，但对关键细节保持专注才能把事情做好。他指出这些细节可能涉及代码、架构、设计或用户体验，具体取决于任务。 · <a href="https://x.com/trq212/status/2110488896039690255">Thariq (Twitter)</a></li>
+<li><strong>2026-10-14 · 商业动态</strong> — OpenAI经济研究报告称，在其欧盟企业与商业客户样本中，Codex和ChatGPT Work已占超过一半的输出令牌；自2026年5月起，欧盟中小企业相关周活跃用户增长超过八倍。各国采用强度差异明显，欧盟前沿企业的使用强度仍低于全球前沿；报告据此提出应推动企业从试用转向更深入应用，并加强技能与可及性。 · <a href="https://x.com/OpenAI/status/2110442001749659890">OpenAI (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-10-23</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-23.html</link>
@@ -1786,35 +1832,6 @@
 <li><strong>2026-09-22 · 产品与功能</strong> — OpenAI Devs 分享 GPT-6 黑客松中的一个项目，开发者把真实星图与 Astra 结合，探索帮助用户辨认方向的应用。缓存没有提供实现细节、代码或定位准确率，内容属于项目展示。 · <a href="https://x.com/OpenAIDevs/status/2102523216136900988">OpenAI Devs (Twitter)</a></li>
 <li><strong>2026-09-22 · 教程与观点</strong> — Altman 引用同事对 OpenAI 工作方式的描述：临时组建获授权的小团队，优先解决最重要、最紧迫的问题。他认为初创公司天然善于这种协作，而大公司保持灵活性仍是值得探索的管理问题。 · <a href="https://x.com/sama/status/2102469008079679640">Sam Altman (Twitter)</a></li>
 <li><strong>2026-09-22 · 教程与观点</strong> — Altman 表示，希望 OpenAI API 在每个价格档位都提供优秀模型，并覆盖文本、代码、图像及视频等模态。这是产品方向的表述，未宣布具体新接口、模型或上线时间。 · <a href="https://x.com/sama/status/2102466603111551187">Sam Altman (Twitter)</a></li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-09-26</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-09-26.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-09-26.md</guid>
-      <pubDate>Sat, 26 Sep 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-09-26</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>Codex落地成效</strong>：车队管理公司Proaction称，结合Codex、GPT-Live-1与GPT-6 Astra后销售额提升60%，并节省75小时以上运营时间。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h2>速览</h2>
-<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
-<ul>
-<li><strong>商业动态</strong> | <code>Codex</code> <code>车队管理</code> <code>销售增长</code> <code>效率提升</code> — 车队管理公司Proaction称，借助Codex、GPT-Live-1和GPT-6 Astra，销售额提升了60%，并节省了75小时以上。案例展示了AI工具如何加快现代车队管理业务的构建、运营与销售。 · <a href="https://openai.com/index/proaction">OpenAI Blog</a></li>
-</ul>
-<h2>往期补遗</h2>
-<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
-<ul>
-<li><strong>2026-09-22 · 模型发布</strong> — OpenAI发布GPT-6 Sol与GPT-6 Luna，称两款模型承接GPT-6 Astra的能力，面向更快、更经济的大规模使用场景。官方表示，两款模型的API价格较GPT-5.6促销价低50%，并将节省归因于缓存和推理效率提升。开发者账号将Sol定位为构建应用、Luna定位为规模化部署；Sam Altman另称两款模型的角色设计很可爱。 · <a href="https://x.com/OpenAI/status/2102460975790137662">OpenAI (Twitter)</a></li>
-<li><strong>2026-09-22 · 模型发布</strong> — Anthropic发布Claude Opus 5.5，称其在多数任务上达到Fable 5.1水平，单项任务速度约提升30%，运行成本较Opus 5降低约40%。Claude 5.5系列首款模型即日起开放，官方账号确认了上线时间。Claude Code同步提高五小时会话限额20%，并称较低模型价格可让订阅额度多完成约25%的工作；Pro、Max和Team用户还获得一次可择时使用的额度重置。 · <a href="https://x.com/claudeai/status/2102435511222890900">Claude (Twitter)</a></li>
-<li><strong>2026-09-22 · 政策与安全</strong> — OpenAI表示将支持独立评估者深入接触训练、评测和部署环节，以便第三方质疑假设、发现遗漏风险并独立判断安全措施是否有效。公司同时列出四个优先评估领域，并提出严谨、安全、独立开展评估的原则。 · <a href="https://x.com/OpenAI/status/2102447425243828347">OpenAI (Twitter)</a></li>
-<li><strong>2026-09-22 · 政策与安全</strong> — Sam Altman主张让AI实验室以外的群体参与技术发展，并以清晰标准评估安全进展。提案还强调避免权力过度集中、维持新创及开放模型公司的竞争空间，并促进国家和企业比较证据、从失败中学习。 · <a href="https://x.com/sama/status/2102414347364335917">Sam Altman (Twitter)</a></li>
-<li><strong>2026-09-22 · 产品与功能</strong> — Kimi推出新版浏览器扩展，用户可在侧边栏与Kimi对话，让它浏览网站并填写表单。对于重复任务，用户可以录制一次操作并保存为技能，之后交由Kimi执行；扩展已上线Kimi官网和Chrome应用商店。 · <a href="https://x.com/Kimi_Moonshot/status/2102372557190230244">Kimi (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
