@@ -1,354 +1,5 @@
 {
   "articles": {
-    "5f83f5347c32a35f18a99c26b62ed61e83cebbab35692f8d34d163fc1f88c4a4": {
-      "title": "Claude Mythos 发现后量子签名与 AES 弱点",
-      "url": "https://www.anthropic.com/research/discovering-cryptographic-weaknesses",
-      "source": "Anthropic Research",
-      "published_at": "2026-07-28T00:00:00.000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Anthropic 研究人员借助 Claude Mythos Preview 改进了对后量子签名方案 HAWK 的攻击，并发现了针对七轮 AES 的新攻击方法，前者使有效密钥强度约减半，后者将既有攻击速度提升约 200 至 800 倍。两项结果目前都不会影响生产系统，但展示了前沿模型自主发现密码算法数学缺陷的能力，并推动了 CryptanalysisBench 基准的发布。",
-      "category": "研究",
-      "importance": 5,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "Claude Mythos",
-          "密码学",
-          "后量子密码",
-          "HAWK",
-          "AES"
-        ]
-      }
-    },
-    "09986f306f14327b0e7147142c9735121ed916c38b1f3a0f04aaee227107b357": {
-      "title": "Kimi K3 发布：2.8T MoE 开放模型接近前沿",
-      "url": "https://x.com/Kimi_Moonshot/status/2081760186235289764",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-27T15:14:40.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Moonshot 发布 Kimi K3 权重与技术报告：这是一个约 2.8 万亿参数的稀疏 MoE 模型，具备原生视觉能力和最高 100 万 token 上下文，面向长程编程、知识工作与推理。模型采用 Kimi Delta Attention 等新架构，并配套 GPU 内核、编译器和芯片设计等工作流能力，开放模型的规模与使用范围都进一步逼近前沿闭源模型。发布当天，Together AI、DigitalOcean、Nebius、Fireworks、Baseten 和 Modal 已提供托管入口，其中 Modal 还为 K3 训练了无损 DFlash 推测器以提升推理速度。",
-      "category": "模型发布",
-      "importance": 5,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "Kimi K3",
-          "开放权重",
-          "MoE",
-          "长上下文",
-          "原生视觉",
-          "Agent 编程",
-          "推理部署"
-        ],
-        "practice_suggestions": [
-          "下载 Kimi K3 权重或通过托管 API 试跑长上下文代码库任务，记录上下文稳定性、工具调用成功率与成本。",
-          "使用统一提示词和相同 Agent harness，对比 K3 与当前模型在长程编程和多模态任务上的质量、延迟与价格。",
-          "部署时关注 KDA 的缓存兼容性、推理并行配置，以及模型在高自主性任务中的越权风险。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081804933188501886",
-            "title": "Kimi K3 接入 Together AI 推理服务",
-            "source": "Kimi (Twitter)",
-            "angle": "Together AI 推理入口"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081778998494007793",
-            "title": "Kimi K3 登陆 DigitalOcean Serverless Inference",
-            "source": "Kimi (Twitter)",
-            "angle": "DigitalOcean 无服务器入口"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081771462676123810",
-            "title": "Kimi K3 上线 Nebius Token Factory",
-            "source": "Kimi (Twitter)",
-            "angle": "Nebius API 与性能数据"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081767950588223507",
-            "title": "Kimi K3 登陆 Fireworks，支持部署与微调",
-            "source": "Kimi (Twitter)",
-            "angle": "Fireworks 部署与微调"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081767800419520647",
-            "title": "Kimi K3 上线 Baseten Model APIs",
-            "source": "Kimi (Twitter)",
-            "angle": "Baseten 托管 API"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081767591887122564",
-            "title": "Kimi K3 登陆 Modal，DFlash 加速推理",
-            "source": "Kimi (Twitter)",
-            "angle": "Modal 推测解码加速"
-          },
-          {
-            "url": "https://x.com/Kimi_Moonshot/status/2081757327146045450",
-            "title": "Kimi K3 开放权重版本即将发布",
-            "source": "Kimi (Twitter)",
-            "angle": "开放权重发布预告"
-          }
-        ]
-      }
-    },
-    "1fb26851be6f897faff56248711ef381abb9023da71049e66d95cceeb14c4ade": {
-      "title": "Anthropic：不主张全面禁止开放权重模型",
-      "url": "https://x.com/AnthropicAI/status/2081864750296658008",
-      "source": "Anthropic (Twitter)",
-      "published_at": "2026-07-27T22:10:10.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Anthropic 表示并未主张按类别禁止开放权重模型，认为无危险能力的开放权重模型对企业、开发者和研究者具有公共价值。其主张将政策重点放在限制高端芯片流向威权政府、打击工业规模模型蒸馏，并要求所有足够强大的开放或闭源模型接受安全测试。",
-      "category": "政策与安全",
-      "importance": 4,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "开放权重",
-          "AI 政策",
-          "芯片管制",
-          "模型蒸馏",
-          "安全测试"
-        ]
-      }
-    },
-    "43d93dc5b5ab92331119dcd7f651faee6bdcf77b7ebfd98295b7bc78c6c19dae": {
-      "title": "Kimi 发布 PerceptionBench 视觉感知基准",
-      "url": "https://x.com/Kimi_Moonshot/status/2081813202514681878",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-27T18:45:20.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Kimi 发布 PerceptionBench，从 42 个基准中的模型失败案例归纳出 10 类原子视觉能力，并构建了 3,000 个无需推理或外部知识即可作答的验证题。对 16 个前沿多模态模型的评测显示，没有模型达到 60% 总准确率，感知相关幻觉是平均表现最弱的能力之一。",
-      "category": "研究",
-      "importance": 4,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "PerceptionBench",
-          "多模态模型",
-          "视觉感知",
-          "模型评测",
-          "幻觉"
-        ]
-      }
-    },
-    "d87ceb14221c4524729825862d124c0d091a6738a9e861db78bc70d6b459b8b7": {
-      "title": "AgentENV 开源：扩展智能体训练环境",
-      "url": "https://x.com/Kimi_Moonshot/status/2081762978391843020",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-27T15:25:45.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Moonshot 与 kvcache-ai 联合开源 AgentENV，用于大规模运行分布式智能体环境。其组件服务于 Kimi K3 的智能体强化学习训练，支持快速快照、恢复和分叉，以并行处理大量智能体工作流。",
-      "category": "研究",
-      "importance": 4,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "AgentENV",
-          "智能体",
-          "强化学习",
-          "分布式系统",
-          "开源"
-        ]
-      }
-    },
-    "cf89c7e3e02cc5bab62319fa1b03b860746f4079a9786111a3d45bb3b43036fb": {
-      "title": "通用 Agent 竞争：插件生态与模型能力决定胜负",
-      "url": "https://baoyu.io/blog/2026-07-28/agent-judgments",
-      "source": "宝玉的分享",
-      "published_at": "2026-07-28T00:00:00.000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "文章认为通用 Agent 可能由少数赢家主导，插件生态、Skill 与 MCP 将成为连接专业任务的关键。随着模型能力和成本拉开差距，个人开发者更适合围绕 Agent 插件和传统软件接入寻找机会，而用户应通过持续使用和管理 Agent 获得效率提升。",
-      "category": "教程与观点",
-      "importance": 3,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "Agent",
-          "Skill",
-          "MCP",
-          "插件生态",
-          "开发者机会"
-        ]
-      }
-    },
-    "29992ebb4bda536b3fd22e2f4b9548ae25da42b65bf35e17c93c788d3104c11e": {
-      "title": "GPT-Live 语音模型开放至教育与企业方案",
-      "url": "https://x.com/OpenAI/status/2081794871795589485",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-07-27T17:32:29.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "OpenAI 宣布 GPT-Live 已在全球范围向 ChatGPT 的 Edu、Business 和 Enterprise 方案开放。GPT-Live 是面向自然人机交互的新一代语音模型，此次更新扩大了其在组织客户中的可用范围。",
-      "category": "产品与功能",
-      "importance": 3,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "GPT-Live",
-          "ChatGPT Voice",
-          "语音模型",
-          "企业版",
-          "教育版"
-        ],
-        "practice_suggestions": [
-          "在教育或企业工作区启用 GPT-Live，测试会议问答、培训辅导和客户支持等语音场景。",
-          "为语音交互设置权限、录音和敏感信息处理规则，再逐步扩大使用范围。"
-        ]
-      }
-    },
-    "053554c1d50b638fffd76a5ab3ac750d6b1389aecf768cef6f3d7c36c03c47af": {
-      "title": "MoonEP 开源：优化大规模 MoE 通信",
-      "url": "https://x.com/Kimi_Moonshot/status/2081763086281973847",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-27T15:26:11.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Moonshot 开源了 MoonEP，这是面向分布式 MoE 工作负载的高性能通信库。项目重点降低大规模 MoE 训练和推理中的专家并行通信开销，并发布在 GitHub 上。",
-      "category": "研究",
-      "importance": 3,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "MoonEP",
-          "MoE",
-          "专家并行",
-          "分布式训练",
-          "开源"
-        ]
-      }
-    },
-    "214c594a6eed4d53c26edee91ecfe64341ada5ae78959f224b1eeb1a9ded0d24": {
-      "title": "FlashKDA 开源：Kimi Delta Attention 提速",
-      "url": "https://x.com/Kimi_Moonshot/status/2081762799202746420",
-      "source": "Kimi (Twitter)",
-      "published_at": "2026-07-27T15:25:03.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "Moonshot 开源了基于 CUTLASS 的 FlashKDA，用于实现 Kimi Delta Attention 内核。该实现宣称在 H20 上相较 flash-linear-attention 基线获得 1.72 至 2.22 倍的预填充加速，并可作为其即插即用后端。",
-      "category": "研究",
-      "importance": 3,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "FlashKDA",
-          "Kimi Delta Attention",
-          "CUTLASS",
-          "H20",
-          "推理优化"
-        ]
-      }
-    },
-    "8ea381231243054d4a11ba7d438ed213a68c203880a2b7e85d99c7e0bf5fbff6": {
-      "title": "Sam Altman 转发用户对 GPT-5.6 Sol 的认可",
-      "url": "https://x.com/sama/status/2081832600591892712",
-      "source": "Sam Altman (Twitter)",
-      "published_at": "2026-07-27T20:02:25.000000Z",
-      "fetched_at": "2026-07-29T13:43:48.497Z",
-      "summary": "这条推文仅回复「wrong」，引用用户称 GPT-5.6 Sol 已经满足其全部需求，甚至希望 OpenAI 暂停发布新模型。内容属于对模型偏好的简短互动，没有提供新的产品或技术信息。",
-      "category": "教程与观点",
-      "importance": 1,
-      "report_date": "2026-07-28",
-      "extras": {
-        "tags": [
-          "Sam Altman",
-          "GPT-5.6 Sol",
-          "用户反馈"
-        ]
-      }
-    },
-    "db9d0913513df69e6eee2103c352167bdc6b0fd41d292f61fb456bed2e3c7061": {
-      "title": "OpenAI：AI 重组工作边界，ChatGPT 走向端到端执行",
-      "url": "https://openai.com/index/how-ai-is-expanding-what-people-do-at-work",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-27T03:30:00.000Z",
-      "fetched_at": "2026-07-29T15:35:25.304Z",
-      "summary": "OpenAI 对超过 80 万条美国 ChatGPT 用户消息的分析发现，16.8% 的工作相关消息和 43.5% 的职业特定消息涉及其他职业的任务，客户体验、设计、人力资源和法律等岗位尤其明显。小型企业中的用户更常借助 AI 承担岗位外工作，说明 AI 可能先改变任务分工，再改变职位描述。与此同时，ChatGPT 已能从手机读取上下文、规划多人旅行、搭建协作网站并衔接后续行动，产品形态正从问答工具走向端到端任务执行。",
-      "category": "研究",
-      "importance": 4,
-      "report_date": "2026-07-27",
-      "extras": {
-        "tags": [
-          "ChatGPT",
-          "任务交叉",
-          "智能体",
-          "职业转型",
-          "端到端执行"
-        ],
-        "practice_suggestions": [
-          "把复杂需求拆成规划、方案比较、协作页面和执行确认四个阶段，逐阶段验收结果。",
-          "为涉及多人和外部服务的任务设置共享信息范围与最终操作确认点，避免模型直接提交错误预订或邮件。",
-          "在小团队中选择一个跨职能、低风险流程试点，记录 AI 减少交接次数后的质量与责任边界变化。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/sama/status/2081396796174282900",
-            "title": "ChatGPT 可从手机自主规划旅行并搭建协作网站",
-            "source": "Sam Altman (Twitter)",
-            "angle": "端到端任务执行"
-          }
-        ]
-      }
-    },
-    "688b06fb84f51f177c70597ddbed8f667858bb3cd8b9f4b4620209c1a995810b": {
-      "title": "Anthropic 明确反对一刀切禁止开放权重模型",
-      "url": "https://www.anthropic.com/news/position-open-weights-models",
-      "source": "Anthropic Blog",
-      "published_at": "2026-07-27T00:00:00.000Z",
-      "fetched_at": "2026-07-29T15:35:25.304Z",
-      "summary": "Anthropic 表示从未主张全面禁止开放权重模型，并认为无危险能力的开放权重模型能为企业、开发者和研究者提供公共价值。公司更支持限制向威权国家供应先进芯片、打击工业规模的模型蒸馏，以及要求所有足够强大的开放或闭源模型接受强制安全测试。Anthropic 强调，开放权重带来的网络、生物和对齐风险应通过发布前实证测试来判断，而不是预先以模型是否开放作结论。",
-      "category": "政策与安全",
-      "importance": 3,
-      "report_date": "2026-07-27",
-      "extras": {
-        "tags": [
-          "开放权重",
-          "AI 安全",
-          "芯片管制",
-          "模型蒸馏",
-          "安全测试"
-        ]
-      }
-    },
-    "3997d2841b82166e2f53ac130982656ae03468324f3d00aad220328ae0623a9d": {
-      "title": "ChatGPT Voice 让用户通过语音远程操控电脑",
-      "url": "https://x.com/sama/status/2081513071135346814",
-      "source": "Sam Altman (Twitter)",
-      "published_at": "2026-07-26T22:52:43.000000Z",
-      "fetched_at": "2026-07-29T15:35:25.304Z",
-      "summary": "Sam Altman 转发的用户体验显示，ChatGPT Voice 可以通过耳机在徒步、驾车或咖啡馆等场景中持续协助工作，并控制一台作为总部设备的电脑。这个设想把语音从对话入口推进为跨设备的工作控制层，用户可以随时获取项目简报、安排下一步并启动新任务。若相关连接能力稳定可用，工作场景将不再强依赖固定的桌面和显示器。",
-      "category": "产品与功能",
-      "importance": 3,
-      "report_date": "2026-07-27",
-      "extras": {
-        "tags": [
-          "ChatGPT Voice",
-          "语音助手",
-          "跨设备控制",
-          "移动办公"
-        ],
-        "practice_suggestions": [
-          "为固定电脑配置明确的项目目录和权限边界，再从手机语音发起低风险任务。",
-          "先用语音完成项目简报和草稿生成，涉及发送邮件、改动代码或预约操作时保留人工确认。"
-        ]
-      }
-    },
-    "7b68f4f0be7a0fcc372615ad5188279e6c2bee0f504020fe74eda9a686b2b510": {
-      "title": "Anthropic 与 Cognizant 扩大 Claude 企业合作",
-      "url": "https://www.anthropic.com/news/cognizant-anthropic",
-      "source": "Anthropic Blog",
-      "published_at": "2026-07-27T00:00:00.000Z",
-      "fetched_at": "2026-07-29T15:35:25.304Z",
-      "summary": "Anthropic 与 Cognizant 扩大合作，将 Claude 更深地嵌入 Cognizant 的工程、IT 运维和行业解决方案，并共同扩大 Claude 认证人才规模。Cognizant 已有超过 3 万名员工完成 Claude 培训，其部署案例包括合同智能、承保风险导航和客户体验系统。此次合作显示企业服务商正把 Claude 从试验工具整合为面向制造、生命科学和保险客户的生产平台。",
-      "category": "商业动态",
-      "importance": 2,
-      "report_date": "2026-07-27",
-      "extras": {
-        "tags": [
-          "Claude",
-          "Cognizant",
-          "企业部署",
-          "合作伙伴",
-          "AI 工程"
-        ]
-      }
-    },
     "eb71f165025c2507b7b7067abfaf7b4dd62559816723e433f19a86477a150965": {
       "title": "GPT-5.6：提升前沿智能与推理效率",
       "url": "https://openai.com/index/gpt-5-6-frontier-intelligence-efficiency",
@@ -18821,7 +18472,249 @@
         "origin_report_date": "2026-10-15",
         "delivery_class": "backfill"
       }
+    },
+    "35e334c198740f7416638922d137b34400b1d3f32a340ea04060840443b03b8a": {
+      "title": "GPT-6.1 Terra发布，强化视觉与电脑操作",
+      "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-26T00:00:00.000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "OpenAI发布GPT-6.1 Terra，重点提升视觉推理、电脑操作、写作和编码能力，并称其在多项基准上较前代更快、成本更低且事实错误率下降。该模型即日起向ChatGPT Work、Codex用户及API开发者开放，API标准输入价格较GPT-5.6 Terra和GPT-6.1 Sol低50%。",
+      "category": "模型发布",
+      "importance": 5,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "GPT-6.1 Terra",
+          "视觉推理",
+          "电脑操作",
+          "模型定价"
+        ],
+        "practice_suggestions": [
+          "将高频表单录入或发票处理任务接入模型，评估端到端准确率与成本。",
+          "用现有电脑操作基准复测关键桌面工作流，再决定是否迁移。"
+        ],
+        "origin_report_date": "2026-10-26",
+        "delivery_class": "current"
+      }
+    },
+    "41610e5e4b4579b7bb9922f2d74bbbe7b98e05cda5cb9667a789bb4e42abdb61": {
+      "title": "Claude Code Review向团队与企业开放",
+      "url": "https://x.com/ClaudeDevs/status/2110866210573386065",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-10-15T22:51:37.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Claude Code Review现已面向Claude Team和Enterprise计划正式开放，官方称审查速度更快并能发现更多重要缺陷。管理员可为各代码仓库选择Quick、Standard或Deep审查级别。",
+      "category": "产品与功能",
+      "importance": 4,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Claude Code",
+          "代码审查",
+          "企业版",
+          "开发工具"
+        ],
+        "practice_suggestions": [
+          "为不同风险等级的代码仓库选择合适审查深度，并对照人工审查结果评估漏报。",
+          "在试点仓库记录审查耗时与有效缺陷数，再决定团队推广范围。"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "backfill"
+      }
+    },
+    "ada9c191fa304f2b09c930773d5186f66835a58101f7493dbb8a87f6a7e28bb9": {
+      "title": "GPT-Live-1新增语音定制与国际预设音色",
+      "url": "https://x.com/OpenAIDevs/status/2111142258867335430",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-16T17:08:32.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "OpenAI Devs介绍了GPT-Live-1应用的语音选择方式：开发者可通过提示词塑造语音，也可从新增的国际预设音色中选择。推文指向操作指南，但未列明音色清单或支持语言。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "GPT-Live-1",
+          "语音",
+          "音色定制",
+          "开发者"
+        ],
+        "practice_suggestions": [
+          "为目标应用试配提示词音色与预设音色，并让目标用户进行可懂度和风格盲测。"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
+    },
+    "8e33f3874f1043b1d75ce4fb3e3528cdc793b4188e909827dcd0d3a13557e35e": {
+      "title": "Sam Altman看好自动化可解释性研究",
+      "url": "https://x.com/sama/status/2111130577789493706",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-16T16:22:07.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Sam Altman转发Nick Cammarata的观点，称借助现代智能体工具和更深入分析，规模化神经网络中的多数神经元及其回路可能具有可解释性。原帖据此对机械可解释性研究的进展转为乐观，但这属于研究者判断，并非已给出验证细节的研究结果。",
+      "category": "研究",
+      "importance": 3,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "可解释性",
+          "机械解释性",
+          "智能体",
+          "对齐研究"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
+    },
+    "e6e33db39d167ac4f3d82bf77aafe352acdd9fc711bf7a7b3135a60f97e8e365": {
+      "title": "四个Gemini智能体协作通关Minecraft",
+      "url": "https://x.com/GoogleDeepMind/status/2111127991401247033",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-10-16T16:11:50.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Google DeepMind称，四个Gemini 4 Argon智能体在沙盒中仅凭代码和文本协作，历时27小时击败Minecraft末影龙，并编写了2783个程序。它们通过聊天分工、共享笔记和调试完成任务，全程没有人工协助。",
+      "category": "研究",
+      "importance": 3,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Gemini 4 Argon",
+          "多智能体",
+          "Minecraft",
+          "协作"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
+    },
+    "234a8ce266da83fdf3d597c66bc3d551258e8e4a80fc59b0ce0d20d059b22ed1": {
+      "title": "DeepMind介绍AI助力疾病研究与医疗",
+      "url": "https://x.com/GoogleDeepMind/status/2111038207240388770",
+      "source": "Google DeepMind (Twitter)",
+      "published_at": "2026-10-16T10:15:04.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Google DeepMind概述其模型和工具与科学家合作的医疗应用，包括定位罕见遗传变异及加快药物发现。推文称相关工作旨在推动实验室成果进入实际医疗，但未提供具体项目数据或临床结果。",
+      "category": "研究",
+      "importance": 3,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "医疗AI",
+          "遗传变异",
+          "药物发现",
+          "科研合作"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
+    },
+    "a33e04a2f4b6e3bd9c6962aa3b0e2cc69f35b416661479b8e880a85caa007b00": {
+      "title": "Meta全语种语音识别入选年度发明",
+      "url": "https://x.com/AIatMeta/status/2110861420321759269",
+      "source": "Meta AI (Twitter)",
+      "published_at": "2026-10-15T22:32:35.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Meta表示，Omnilingual ASR语音识别模型套件入选《时代》2026年度最佳发明，支持1600多种语言。公司称其中约500种低资源语言此前未被任何语音识别系统覆盖。",
+      "category": "模型发布",
+      "importance": 3,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Meta",
+          "语音识别",
+          "多语言",
+          "低资源语言"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "backfill"
+      }
+    },
+    "344de0c0488060ceaf9c3c2e9a0b08f562d0dfddccd3ea632eab88e5dba7add7": {
+      "title": "Codex硬件项目社区网站上线",
+      "url": "https://x.com/OpenAIDevs/status/2110855363616763922",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-15T22:08:31.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "OpenAI称其使用Codex构建了一个硬件项目社区网站，用户可浏览社区项目并分享自己的作品。推文未披露网站的具体功能或技术实现。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Codex",
+          "硬件项目",
+          "开发者社区"
+        ],
+        "practice_suggestions": [
+          "在社区发布一个小型硬件项目，检验分享流程是否适合团队协作。"
+        ],
+        "origin_report_date": "2026-10-15",
+        "delivery_class": "backfill"
+      }
+    },
+    "63ea1549482e0636e475e6b722b6b272232bf2f4ff7e1264d3a4707b51052f2b": {
+      "title": "Navier-Stokes纪念衫印有解答推理末句",
+      "url": "https://x.com/sama/status/2111139227761266699",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-16T16:56:29.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Sam Altman表示，Navier-Stokes里程碑纪念衫背面印着该解答思维链的最后一句。推文没有说明里程碑的具体内容或解题方法。",
+      "category": "研究",
+      "importance": 2,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Navier-Stokes",
+          "数学",
+          "推理"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
+    },
+    "c48afeb8804a853a6898d0a453993e3020407e266b01f83267bc5937146a4327": {
+      "title": "Mistral Large 4在工程与天文学基准表现亮眼",
+      "url": "https://x.com/MistralAI/status/2111056939841163336",
+      "source": "Mistral AI (Twitter)",
+      "published_at": "2026-10-16T11:29:30.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Mistral AI称，Large 4在Ulam的私有基准STEMBench工程和天文学评测中得分较好。推文未提供具体分数或评测方法，相关表现尚缺少更多公开信息。",
+      "category": "研究",
+      "importance": 2,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Mistral Large 4",
+          "模型评测",
+          "工程",
+          "天文学"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
+    },
+    "029cca74954be923601431371f923be0fccf459ba116b475daf5621e335c306f": {
+      "title": "Sam Altman称赞新款Roadster",
+      "url": "https://x.com/sama/status/2111131677351432197",
+      "source": "Sam Altman (Twitter)",
+      "published_at": "2026-10-16T16:26:29.000000Z",
+      "fetched_at": "2026-10-27T17:11:01.246Z",
+      "summary": "Sam Altman在推文中称赞新款Roadster的外观，并向Elon Musk致意。推文未提供车型规格、上市时间或其他产品信息。",
+      "category": "商业动态",
+      "importance": 1,
+      "report_date": "2026-10-26",
+      "extras": {
+        "tags": [
+          "Roadster",
+          "汽车",
+          "产品评价"
+        ],
+        "origin_report_date": "2026-10-16",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-10-26T15:31:56.086Z"
+  "last_fetch": "2026-10-27T17:11:01.246Z"
 }
