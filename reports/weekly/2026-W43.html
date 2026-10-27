@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CatchUp 周报 2026-W43 · CatchUp</title>
+  <meta name="description" content="CatchUp 周报 — 2026-W43" />
+  <link rel="icon" type="image/svg+xml" href="../../assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="../../assets/favicon.svg" />
+  <link rel="alternate" type="application/rss+xml" title="CatchUp RSS" href="../../feed.xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT,WONK@0,9..144,300..900,0..100,0..1;1,9..144,300..900,0..100,0..1&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500;600&family=Noto+Serif+SC:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+:root {
+  --paper: #f3eee4;
+  --paper-deep: #ebe3d2;
+  --ink: #1a1916;
+  --ink-soft: #4a463e;
+  --ink-mute: #837b6d;
+  --rule: #cfc6b3;
+  --rule-soft: #e0d8c6;
+  --accent: #a3211a;
+  --highlight: rgba(163, 33, 26, 0.08);
+  --font-display: "Fraunces", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-body: "Spectral", "Noto Serif SC", "Songti SC", "STSong", serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  --measure: 68ch;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0; background: var(--paper); color: var(--ink);
+  font-family: var(--font-body); font-weight: 400; font-size: 17px; line-height: 1.7;
+  font-feature-settings: "kern", "liga", "calt";
+  -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  position: relative; min-height: 100vh; overflow-x: hidden;
+}
+body::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.1 0 0 0 0 0.1 0 0 0 0 0.09 0 0 0 0.45 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
+  mix-blend-mode: multiply; opacity: 0.18;
+}
+body::after {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+  background: radial-gradient(ellipse at center, transparent 55%, rgba(50, 40, 25, 0.07) 100%);
+}
+.container {
+  position: relative; z-index: 2;
+  max-width: 1080px; margin: 0 auto;
+  padding: clamp(1.25rem, 3vw, 2.5rem) clamp(1.25rem, 4vw, 3rem) 4rem;
+}
+.reading-layout { display: block; }
+.reading-layout.has-toc {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 220px;
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: start;
+}
+.reading-layout > article { min-width: 0; max-width: 720px; }
+
+/* Anchor offset for sticky/in-page jumps so the heading isn't flush with the top edge. */
+.prose h2[id], .prose h3[id] { scroll-margin-top: 1.5rem; }
+.topnav {
+  display: flex; justify-content: space-between; align-items: baseline;
+  padding-bottom: 1.5rem; border-bottom: 1px solid var(--rule-soft); margin-bottom: 3rem;
+}
+.topnav .back {
+  font-family: var(--font-display); font-style: italic; font-weight: 500;
+  font-variation-settings: "opsz" 24, "SOFT" 30, "WONK" 0;
+  font-size: 1.5rem; color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .back:hover { color: var(--accent); }
+.topnav .back .dot { color: var(--accent); font-style: normal; }
+.topnav .feed-link {
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.topnav .feed-link:hover { color: var(--accent); }
+
+article header { margin-bottom: 2.5rem; }
+article header .meta {
+  display: flex; gap: 0.75rem; align-items: baseline;
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+  color: var(--ink-mute); margin-bottom: 1rem;
+}
+article header .meta .cadence-en { color: var(--accent); font-weight: 600; }
+article header .meta .issue-no { font-variant-numeric: tabular-nums; margin-left: auto; }
+
+.report-title {
+  font-family: var(--font-display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 500;
+  font-variation-settings: "opsz" 96, "SOFT" 30, "WONK" 0;
+  line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 0.4rem; color: var(--ink);
+  font-variant-numeric: tabular-nums;
+}
+.report-subtitle {
+  font-family: var(--font-body); font-style: italic; font-size: 1rem;
+  color: var(--ink-mute); margin: 0 0 1.5rem;
+}
+.primary-rule {
+  border: none; height: 1px; background: var(--ink); opacity: 0.7; margin: 1.75rem 0 2.5rem;
+}
+
+/* ---------- PROSE ---------- */
+.prose { font-size: 17px; line-height: 1.75; max-width: var(--measure); }
+.prose h2 {
+  font-family: var(--font-display); font-size: 1.55rem; font-weight: 600;
+  font-variation-settings: "opsz" 96, "SOFT" 50, "WONK" 0;
+  line-height: 1.25; letter-spacing: -0.01em;
+  margin: 3rem 0 1rem; padding-bottom: 0.4rem;
+  border-bottom: 1px solid var(--rule); color: var(--ink);
+}
+.prose h3 {
+  font-family: var(--font-display); font-style: italic; font-size: 1.2rem; font-weight: 500;
+  font-variation-settings: "opsz" 48, "SOFT" 80;
+  margin: 2rem 0 0.75rem; color: var(--ink); letter-spacing: -0.005em;
+}
+.prose h4 {
+  font-family: var(--font-mono); font-size: 0.78rem; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin: 1.75rem 0 0.6rem;
+}
+.prose p { margin: 0 0 1.1rem; }
+.prose strong { font-weight: 600; color: var(--ink); }
+.prose em { font-style: italic; }
+.prose a {
+  color: var(--ink); text-decoration: none;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-position: 0 100%; background-repeat: no-repeat; background-size: 100% 1px;
+  padding-bottom: 1px; transition: background-size 0.2s ease, color 0.2s ease;
+}
+.prose a:hover { color: var(--accent); background-size: 100% 2px; }
+.prose ul, .prose ol { margin: 0 0 1.1rem; padding-left: 1.5rem; }
+.prose li { margin-bottom: 0.4rem; }
+.prose ul li::marker { color: var(--accent); }
+.prose code {
+  font-family: var(--font-mono); font-size: 0.88em;
+  background: var(--paper-deep); padding: 0.1em 0.35em; border-radius: 2px;
+  color: var(--ink);
+}
+.prose pre {
+  font-family: var(--font-mono); font-size: 0.85rem; line-height: 1.55;
+  background: var(--paper-deep); border-left: 2px solid var(--accent);
+  padding: 1rem 1.25rem; overflow-x: auto; margin: 1.25rem 0;
+}
+.prose pre code { background: none; padding: 0; }
+/* Vintage callout box for "> 实践建议" blockquotes: double-rule frame
+   with a paper-deep tint and an italic accent label at the top. */
+.prose blockquote {
+  margin: 2rem 0;
+  padding: 1.1rem 1.4rem 0.95rem;
+  background: var(--paper-deep);
+  border: 1px solid var(--ink);
+  box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--ink);
+  font-style: normal;
+  color: var(--ink);
+}
+.prose blockquote > p:first-child {
+  margin: 0 0 0.6rem;
+  padding-bottom: 0.45rem;
+  border-bottom: 1px solid var(--rule);
+}
+.prose blockquote > p:first-child > strong {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.98rem;
+  font-weight: 600;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+}
+.prose blockquote ul, .prose blockquote ol { margin: 0; padding-left: 1.2rem; }
+.prose blockquote li { margin-bottom: 0.3rem; color: var(--ink-soft); }
+.prose blockquote li:last-child { margin-bottom: 0; }
+.prose blockquote li::marker { color: var(--accent); }
+.prose blockquote p { margin-bottom: 0.55rem; }
+.prose blockquote p:last-child { margin-bottom: 0; }
+.prose table {
+  width: 100%; border-collapse: collapse; margin: 1.5rem 0;
+  font-size: 0.92rem; font-variant-numeric: tabular-nums;
+}
+.prose th {
+  text-align: left; font-family: var(--font-mono); font-size: 11px; font-weight: 600;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  padding: 0.6rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--ink);
+}
+.prose td {
+  padding: 0.55rem 0.75rem 0.55rem 0; border-bottom: 1px solid var(--rule-soft);
+  vertical-align: top;
+}
+.prose hr {
+  border: none; text-align: center; margin: 2.5rem 0; height: 1rem; position: relative;
+}
+.prose hr::before {
+  content: "§"; font-family: var(--font-display); font-size: 1.25rem; color: var(--accent);
+  position: absolute; left: 50%; transform: translateX(-50%);
+  background: var(--paper); padding: 0 0.75rem;
+}
+.prose hr::after {
+  content: ""; position: absolute; top: 50%; left: 0; right: 0; height: 1px;
+  background: var(--rule); z-index: -1;
+}
+
+/* ---------- TOC ---------- */
+.toc {
+  position: sticky;
+  top: 1.5rem;
+  align-self: start;
+  max-height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 1rem;
+  border-left: 1px solid var(--rule-soft);
+}
+.toc-label {
+  font-family: var(--font-mono); font-size: 10.5px; font-weight: 600;
+  letter-spacing: 0.22em; text-transform: uppercase; color: var(--accent);
+  margin-bottom: 0.85rem; padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--rule);
+}
+.toc ul { list-style: none; margin: 0; padding: 0; }
+.toc li { margin: 0.1rem 0; }
+.toc li.toc-h2 {
+  font-family: var(--font-display); font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 50, "WONK" 0;
+  font-size: 0.95rem;
+  margin-top: 0.85rem;
+}
+.toc li.toc-h2:first-child { margin-top: 0; }
+.toc li.toc-h3 {
+  font-family: var(--font-body); font-size: 0.78rem; line-height: 1.4;
+  letter-spacing: 0;
+}
+.toc a {
+  color: var(--ink-soft); text-decoration: none;
+  display: block; padding: 0.2rem 0 0.2rem 0.55rem;
+  border-left: 2px solid transparent;
+  margin-left: -0.55rem;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.toc a:hover { color: var(--accent); border-left-color: var(--accent); }
+.toc::-webkit-scrollbar { width: 4px; }
+.toc::-webkit-scrollbar-thumb { background: var(--rule); }
+
+@media (max-width: 960px) {
+  .reading-layout.has-toc { grid-template-columns: 1fr; }
+  .toc { display: none; }
+}
+
+/* ---------- ENDNAV ---------- */
+.endnav {
+  display: grid; grid-template-columns: 1fr auto 1fr; align-items: baseline;
+  gap: 1rem; padding-top: 2rem; margin-top: 4rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 11px; font-weight: 500;
+  letter-spacing: 0.22em; text-transform: uppercase;
+}
+.endnav a, .endnav .dim {
+  color: var(--ink); text-decoration: none;
+  transition: color 0.18s ease;
+}
+.endnav a:hover { color: var(--accent); }
+.endnav .dim { color: var(--rule); }
+.endnav .center { text-align: center; }
+.endnav .right { text-align: right; }
+.endnav .label { display: block; color: var(--ink-mute); font-size: 9.5px; margin-bottom: 0.4rem; }
+
+footer.colophon {
+  margin-top: 3rem; padding-top: 2rem;
+  border-top: 1px solid var(--rule-soft);
+  font-family: var(--font-mono); font-size: 10px; font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; color: var(--ink-mute);
+  text-align: center;
+}
+footer.colophon a { color: var(--ink-mute); text-decoration: none; }
+footer.colophon a:hover { color: var(--accent); }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important; transition-duration: 0.01ms !important;
+  }
+}
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+@media (max-width: 600px) {
+  .endnav { grid-template-columns: 1fr; gap: 1.25rem; text-align: center; }
+  .endnav .right { text-align: center; }
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <header class="topnav">
+      <a href="../../" class="back">← <em>CatchUp</em><span class="dot">.</span></a>
+      <a href="../../feed.xml" class="feed-link">RSS</a>
+    </header>
+
+    <div class="reading-layout has-toc">
+      <article>
+        <header>
+          <div class="meta">
+            <span class="cadence-en">Weekly</span>
+            <span>·</span>
+            <span>周报</span>
+            <span class="issue-no">Nº </span>
+          </div>
+          <h1 class="report-title">2026-W43</h1>
+          <p class="report-subtitle">10月19日 – 25日</p>
+          <hr class="primary-rule" />
+        </header>
+
+        <div class="prose"><h2 id="h-1">本周趋势</h2>
+<ul>
+<li><strong>模型能力扩展</strong>：GPT-6.1 Terra强化视觉推理与电脑操作，低资源语言评测则显示模型能力正延伸到传统代码迁移任务。</li>
+<li><strong>智能体进入科研</strong>：GPT-Rosalind智能体分析脑细胞CRISPR数据并提出待验证线索，显示多智能体可加速复杂文献与数据整合。</li>
+<li><strong>安全工程落地</strong>：Cloudflare与OpenAI探索漏洞调查和补丁建议，PHP协同披露及前沿训练隔离进一步凸显人工复核与分层防护的重要性。</li>
+<li><strong>企业部署深化</strong>：Uber扩大ChatGPT Work覆盖面，OpenAI也推进模型进入Google Cloud，并用前线部署工程弥合模型能力与生产流程的差距。</li>
+<li><strong>产品边界与治理并进</strong>：ChatGPT Ads扩展至更多国家，同时通过广告与回答流程分离维护用户体验；模型分销政策则将安全审查纳入渠道规则。</li>
+</ul>
+<h2 id="h-2">Top 10 最重要文章</h2>
+<h3 id="h-3">1. <a href="https://openai.com/index/introducing-gpt-6-1-terra">GPT-6.1 Terra发布，强化视觉与电脑操作</a> ⭐⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 模型发布 | <strong>日期</strong>: 10/25</li>
+<li><strong>标签</strong>: <code>GPT-6.1 Terra</code> <code>视觉推理</code> <code>电脑操作</code> <code>模型定价</code></li>
+</ul>
+<p><strong>摘要</strong>: GPT-6.1 Terra提升视觉推理、电脑操作、写作和编码能力，并称多项基准上更快、成本更低且事实错误率下降。模型已向ChatGPT Work、Codex及API用户开放，标准输入价格较指定前代低50%。</p>
+<h3 id="h-4">2. <a href="https://openai.com/index/low-resource-programming-languages">OpenAI提升低资源编程语言能力</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 研究 | <strong>日期</strong>: 10/19</li>
+<li><strong>标签</strong>: <code>低资源语言</code> <code>代码迁移</code> <code>COBOL</code> <code>评测基准</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI公布覆盖COBOL、Fortran和Visual Basic的编码与迁移评测，包括构建SQLite兼容引擎和保持行为一致的COBOL迁移。文中报告GPT-6 Astra与GPT-6.1 Sol在相关基准上的进展，并称测试集已公开。</p>
+<h3 id="h-5">3. <a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data">数千智能体助力挖掘脑细胞数据线索</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 研究 | <strong>日期</strong>: 10/20</li>
+<li><strong>标签</strong>: <code>生物医学</code> <code>多智能体</code> <code>脑科学</code> <code>基因扰动</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI、PerturbAI与Scripps Research使用数千个GPT-Rosalind智能体，在32分钟内分析数百万个小鼠脑细胞CRISPR数据并关联文献。研究复现部分既有发现并提出新线索，但相关机制仍需实验验证。</p>
+<h3 id="h-6">4. <a href="https://openai.com/index/cloudflare-cyber">Cloudflare 携手 OpenAI 用 AI 排查并修复漏洞</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 10/20</li>
+<li><strong>标签</strong>: <code>网络安全</code> <code>漏洞修复</code> <code>Daybreak</code> <code>Codex</code></li>
+</ul>
+<p><strong>摘要</strong>: Cloudflare将通过Daybreak接入的OpenAI模型用于调查经授权代码、识别漏洞并结合线上信号排序。系统可提出补丁和WAF规则，但经过自动检查和人工审核后才由客户决定是否采用。</p>
+<h3 id="h-7">5. <a href="https://openai.com/index/coordinated-disclosure-of-critical-vulnerabilities">Patch the Planet推动PHP漏洞协同修复</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 10/21</li>
+<li><strong>标签</strong>: <code>漏洞修复</code> <code>PHP安全</code> <code>协同披露</code> <code>开源维护</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI与PHP维护者、研究者和安全厂商处置两项关键漏洞，其中一项由GPT-5.6 Sol辅助发现。倡议提出分阶段协调披露流程，覆盖修复验证、提前通知、更新准备和公开部署指引。</p>
+<h3 id="h-8">6. <a href="https://openai.com/index/building-chatgpt-ad-stack">ChatGPT Ads 扩至89国并披露对话式广告架构</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 10/21</li>
+<li><strong>标签</strong>: <code>ChatGPT Ads</code> <code>对话式广告</code> <code>广告系统</code> <code>用户信任</code></li>
+</ul>
+<p><strong>摘要</strong>: ChatGPT Ads使用模型理解多轮对话意图，并通过独立流程完成广告检索、相关性评估、排序与竞价；广告系统异常时，ChatGPT仍可正常回答。产品扩展至89国，付费方案维持无广告。</p>
+<h3 id="h-9">7. <a href="https://openai.com/index/decisions-api">OpenAI Decisions API正式开放，支持低延迟结构化判断</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 10/22</li>
+<li><strong>标签</strong>: <code>Decisions API</code> <code>结构化判断</code> <code>低延迟</code> <code>开发者工具</code></li>
+</ul>
+<p><strong>摘要</strong>: Decisions API可对文本、图像和结构化输入执行概率判断、选择或评分，并支持单次处理最多400个问题。OpenAI称其相较经Responses API调用GPT-6 Luna最高快10倍，并加入提示缓存与区域处理选项。</p>
+<h3 id="h-10">8. <a href="https://openai.com/index/securing-our-frontier-model-training-environment">OpenAI强化前沿模型训练环境隔离</a> ⭐⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 10/23</li>
+<li><strong>标签</strong>: <code>模型安全</code> <code>网络隔离</code> <code>红队测试</code> <code>沙箱</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI强化训练与评估环境的离线隔离、网络边界、监控及自动停止机制。红队测试发现沙箱逃逸、有限联网和隔离任务间隐蔽通信等问题，推动补丁与控制改进，随后公司恢复相关强化学习训练。</p>
+<h3 id="h-11">9. <a href="https://openai.com/index/uber-chatgpt-work-rollout">Uber向逾三万员工部署ChatGPT Work</a> ⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 产品与功能 | <strong>日期</strong>: 10/21</li>
+<li><strong>标签</strong>: <code>ChatGPT Work</code> <code>企业部署</code> <code>智能体</code> <code>员工效率</code></li>
+</ul>
+<p><strong>摘要</strong>: Uber将ChatGPT Work从千人试点扩大至全球逾30,000名员工，并连接Drive、Gmail、日历和Slack以支持研究、会议准备和跨应用工作流。部署配合内部技能库、获批集成和员工培训。</p>
+<h3 id="h-12">10. <a href="https://openai.com/index/openai-nask-ai-safety-security-partnership">OpenAI与波兰NASK合作推进人工智能安全研究</a> ⭐⭐⭐</h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog | <strong>分类</strong>: 政策与安全 | <strong>日期</strong>: 10/22</li>
+<li><strong>标签</strong>: <code>人工智能安全</code> <code>国际合作</code> <code>风险评估</code> <code>网络防护</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI与波兰国家研究机构NASK将围绕AI安全、风险评估、漏洞识别和防护措施开展研究。双方也计划推动评测、风险判断与事件报告方法的国际协作。</p>
+<h2 id="h-13">分类概览</h2>
+<h3 id="h-14">模型发布</h3>
+<p>本周重点是GPT-6.1 Terra发布，视觉推理和电脑操作能力是主要升级方向。该模型同时覆盖ChatGPT Work、Codex和API入口，降低了将新能力接入既有工作流的门槛。公开摘要还强调速度、成本和事实错误率改善，迁移前仍应以本地任务复测。</p>
+<h3 id="h-15">研究</h3>
+<p>研究侧有两条实践路径：一是针对COBOL等低资源语言构建可复现的编码与迁移基准，二是以多智能体处理大规模脑细胞CRISPR数据。后者提出的新线索仍需实验验证，说明模型可加快假设生成和资料整合，但不能替代科学确认。两类工作都把评测数据与验证流程放在能力展示的核心位置。</p>
+<h3 id="h-16">产品与功能</h3>
+<p>产品更新涵盖低延迟结构化决策、对话式广告、企业工作流和安全运营。Decisions API提供面向高频判断任务的专用接口，ChatGPT Ads则把广告决策与回答生成拆分。Uber的部署案例以及餐饮和投资场景展示了企业采用方式，但都需要权限控制、人工审核和独立评测。Cloudflare的安全工具也坚持让补丁建议经过测试与人工批准。</p>
+<h3 id="h-17">商业动态</h3>
+<p>本周商业消息包括OpenAI收购Orchestra Bio、计划将模型与Codex工作流接入Google Cloud，以及东南亚数字经济与生成式AI使用规模报告。前两项分别关系到生命科学研发协作和云渠道覆盖，区域报告则提供了市场采用背景。它们反映AI能力正沿着行业软件、云平台和区域基础设施多条路径扩散。</p>
+<h3 id="h-18">政策与安全</h3>
+<p>安全议题从训练环境隔离延伸到漏洞披露、模型分销规则和防御者能力建设。红队结果揭示隔离边界仍可能出现逃逸或隐蔽通信，PHP协同修复倡议强调分阶段通知和修复验证。OpenAI与NASK的合作及网络防御蓝图进一步提出评估、事件响应和治理机制。多篇内容共同指向纵深防御与外部复核的重要性。</p>
+<h3 id="h-19">教程与观点</h3>
+<p>前线部署工程文章讨论如何把客户真实任务中的能力缺口反馈给研究团队，并将解决方案沉淀为可复用工作流。NotebookLM视频概览拆解则展示了从资料理解、主题确认到审核与生成的多步创作流程。两者分别从企业落地和个人工具编排出发，强调流程设计与人工检查仍是成果质量的重要部分。</p>
+<h2 id="h-20">本周值得上手试试</h2>
+<ol>
+<li><strong>GPT-6.1 Terra</strong> — 将高频表单录入或发票任务接入模型，评估端到端准确率与成本。</li>
+<li><strong>GPT-6.1 Terra</strong> — 用现有电脑操作基准复测关键桌面工作流，再决定是否迁移。</li>
+<li><strong>Cloudflare Daybreak</strong> — 在经授权的代码库中试点漏洞调查，并要求模型输出证据与受影响路由。</li>
+<li><strong>Cloudflare Daybreak</strong> — 将补丁和 WAF 规则作为待审建议，完成测试与人工审批后再部署。</li>
+<li><strong>ChatGPT Work（餐饮运营）</strong> — 从只读销售、成本和排班数据开始，让模型生成可核验的分析建议。</li>
+<li><strong>ChatGPT Work（餐饮运营）</strong> — 由经理复核价格与排班建议，记录调整原因和实际结果。</li>
+<li><strong>GPT-6.1（Terminal X评估）</strong> — 为投资分析建立可追溯评测标准，逐项核对数据来源、论证和授权边界。</li>
+<li><strong>GPT-6.1（Terminal X评估）</strong> — 用本机构历史案例盲测，并独立核验厂商报告的准确率与成本数据。</li>
+<li><strong>ChatGPT Ads</strong> — 将广告服务与回答生成隔离，确保广告缺失或超时不影响主流程。</li>
+<li><strong>ChatGPT Ads</strong> — 为候选广告设置相关性、资格和安全检查，并记录未展示原因以支持审计。</li>
+<li><strong>ChatGPT Ads</strong> — 符合地区与方案条件的商家核对 Ads Manager 开放资格，分别跟踪触达、互动和转化。</li>
+<li><strong>ChatGPT Work（Uber企业部署）</strong> — 选择研究或会议准备等高频流程小范围试点，记录完成时间与人工返工率。</li>
+<li><strong>ChatGPT Work（Uber企业部署）</strong> — 部署前梳理 Drive、Gmail 和 Slack 权限，按岗位配置获批集成并安排员工培训。</li>
+<li><strong>Decisions API</strong> — 从边界清晰的高频分类或路由任务开始，定义允许答案并用真实样本验证准确率与置信度。</li>
+<li><strong>Decisions API</strong> — 分别记录接入前后的延迟、输入成本和缓存命中率，并确认区域处理与数据保留设置。</li>
+<li><strong>AT&amp;T法律请求分流</strong> — 从单一法律请求类型试点自然语言 intake，由律师抽查分类、优先级和引用材料。</li>
+<li><strong>AT&amp;T法律请求分流</strong> — 配置权限与审计记录，限制敏感案件材料访问，并由律师确认最终意见。</li>
+</ol>
+<h2 id="h-21">值得深读</h2>
+<ul>
+<li><a href="https://openai.com/index/introducing-gpt-6-1-terra">GPT-6.1 Terra发布，强化视觉与电脑操作</a> — 了解新模型在视觉、电脑操作、编码和定价上的完整变化。</li>
+<li><a href="https://openai.com/index/scaling-ai-research-for-complex-biological-data">数千智能体助力挖掘脑细胞数据线索</a> — 查看多智能体如何处理大规模生物数据，以及哪些线索仍待实验确认。</li>
+<li><a href="https://openai.com/index/securing-our-frontier-model-training-environment">OpenAI强化前沿模型训练环境隔离</a> — 深入了解红队测试发现的隔离弱点与训练环境防护改造。</li>
+<li><a href="https://openai.com/index/building-chatgpt-ad-stack">ChatGPT Ads 扩至89国并披露对话式广告架构</a> — 了解多轮对话广告的检索、排序和回答隔离设计。</li>
+<li><a href="https://openai.com/index/low-resource-programming-languages">OpenAI提升低资源编程语言能力</a> — 查看低资源语言代码迁移评测和公开基准的设计。</li>
+</ul>
+</div>
+      </article>
+  <aside class="toc" aria-label="On this page">
+    <div class="toc-label">本期目录</div>
+    <ul>
+      <li class="toc-h2"><a href="#h-1">本周趋势</a></li>
+      <li class="toc-h2"><a href="#h-2">Top 10 最重要文章</a></li>
+      <li class="toc-h3"><a href="#h-3">1. GPT-6.1 Terra发布，强化视觉与电脑操作 ⭐⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-4">2. OpenAI提升低资源编程语言能力 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-5">3. 数千智能体助力挖掘脑细胞数据线索 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-6">4. Cloudflare 携手 OpenAI 用 AI 排查并修复漏洞 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-7">5. Patch the Planet推动PHP漏洞协同修复 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-8">6. ChatGPT Ads 扩至89国并披露对话式广告架构 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-9">7. OpenAI Decisions API正式开放，支持低延迟结构化判断 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-10">8. OpenAI强化前沿模型训练环境隔离 ⭐⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-11">9. Uber向逾三万员工部署ChatGPT Work ⭐⭐⭐</a></li>
+      <li class="toc-h3"><a href="#h-12">10. OpenAI与波兰NASK合作推进人工智能安全研究 ⭐⭐⭐</a></li>
+      <li class="toc-h2"><a href="#h-13">分类概览</a></li>
+      <li class="toc-h3"><a href="#h-14">模型发布</a></li>
+      <li class="toc-h3"><a href="#h-15">研究</a></li>
+      <li class="toc-h3"><a href="#h-16">产品与功能</a></li>
+      <li class="toc-h3"><a href="#h-17">商业动态</a></li>
+      <li class="toc-h3"><a href="#h-18">政策与安全</a></li>
+      <li class="toc-h3"><a href="#h-19">教程与观点</a></li>
+      <li class="toc-h2"><a href="#h-20">本周值得上手试试</a></li>
+      <li class="toc-h2"><a href="#h-21">值得深读</a></li>
+    </ul>
+  </aside>
+    </div>
+
+    <nav class="endnav" aria-label="Issue navigation">
+      <span class="left">
+        <span class="label">← Older weekly</span>
+        <a href="../weekly/2026-W42.html">2026-W42</a>
+      </span>
+      <span class="center">
+        <span class="label">Index</span>
+        <a href="../../">All issues</a>
+      </span>
+      <span class="right">
+        <span class="label">Newer weekly →</span>
+        <span class="dim">None</span>
+      </span>
+    </nav>
+
+    <footer class="colophon">
+      <a href="https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/weekly/2026-W43.md" target="_blank" rel="noopener">View source on GitHub</a>
+    </footer>
+  </div>
+</body>
+</html>
