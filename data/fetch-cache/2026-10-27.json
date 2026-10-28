@@ -1,0 +1,646 @@
+{
+  "date": "2026-10-27",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-10-28T07:22:53−07:00",
+  "window_start": "2026-10-26T00:00:00−07:00",
+  "window_end": "2026-10-27T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1332,
+      "filtered_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "How Check Point accelerates vulnerability research with Daybreak",
+          "url": "https://openai.com/index/check-point-daybreak",
+          "published_at": "2026-10-27T00:00:00.000Z",
+          "description": "With OpenAI Daybreak, Check Point speeds up the research behind new security protections, enabling its analysts to turn vulnerability intelligence into customer defenses faster.",
+          "full_text": "Title: How Check Point accelerates vulnerability research with Daybreak\n\nURL Source: https://openai.com/index/check-point-daybreak\n\nMarkdown Content:\nCheck Point’s vulnerability research workflow used to take hours to complete. As part of the OpenAI Daybreak Defense Network, the company uses Daybreak to reduce that work to minutes, according to Jonathan Zanger, CTO of Check Point. Daybreak gives defenders access to OpenAI’s frontier cyber models that can analyze vulnerabilities, reason through attack paths, and identify security gaps in code and configurations.\n\nCheck Point helps secure over 100,000 organizations through its AI, workspace, cloud, and network security products. Check Point Research brings vulnerability research expertise to the company’s prevention-first approach, investigating emerging vulnerabilities and translating findings into protections for customers. Daybreak accelerates that research, shortening the path from understanding a vulnerability to developing a defense.\n\n> “OpenAI is putting frontier cybersecurity intelligence in the hands of defenders and enabling companies like Check Point to turn this intelligence into threat prevention.”\n\n—Jonathan Zanger, CTO, Check Point\n\n## Turning vulnerability research into customer protection\n\n“We’re seeing more cyber threats, and those threats are becoming increasingly sophisticated,” Zanger says. For Check Point, keeping pace means quickly turning information about newly disclosed vulnerabilities into protections for customers. “When a new vulnerability emerges, our job is to make sure our customers are protected against it as fast as possible.”\n\nThat work depends on expert analysts who investigate vulnerabilities and translate their findings into security signatures or indicators of compromise that Check Point’s systems use to recognize threats. This research requires specialized expertise, and the team’s capacity was previously constrained by the number of analysts available to do it.\n\nCheck Point uses OpenAI Daybreak to automate more of this workflow. “We leverage Daybreak to speed up and automate this process, and we can now do it in minutes instead of hours,” Zanger says. The value comes from the models’ ability to reason about security problems.\n\n> “OpenAI Daybreak can understand vulnerabilities, analyze different attack patterns and scan the code to identify gaps.”\n\n—Jonathan Zanger, CTO, Check Point\n\nZanger also points to advances in understanding complex code and configurations, and identifying how systems could be exposed to attack. Check Point now considers those capabilities mature enough to incorporate into its cybersecurity workflows. For vulnerability research, Daybreak supports the investigative work that informs the development of a signature or indicator of compromise, giving analysts a faster path from understanding a threat to developing protections.\n\n## Developing autonomous network security with Daybreak\n\nCheck Point is also working with OpenAI to develop its Agentic Network Security Orchestration solution using Daybreak. The approach Zanger describes would combine continuous monitoring of customer environments with clearly defined operating boundaries and human approval for consequential actions. Customers would set their security objectives, and the system would explain its findings, recommended actions, and associated risks so they could decide how to proceed.\n\nWith vulnerability research now taking minutes to complete, Check Point’s next priority is remediation. The company is looking to use Daybreak’s capabilities to make it easier for their security teams to address the gaps they identify.\n\n> “Combining OpenAI’s Daybreak with our existing security workflows unlocks a level of automation that can prevent threats in real time.”\n\n—Jonathan Zanger, CTO, Check Point\n\nFor Check Point customers, faster research supports the development of protections against newly discovered vulnerabilities. With Daybreak, Check Point aims to extend that progress toward more autonomous defenses, with customers setting security objectives and approving consequential actions.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
+          "url": "https://openai.com/index/greptile-code-review-codex-astra",
+          "published_at": "2026-10-26T22:00:00.000Z",
+          "description": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.",
+          "full_text": "Title: Greptile takes bug detection beyond code review with GPT-6 Astra\n\nURL Source: https://openai.com/index/greptile-code-review-codex-astra\n\nMarkdown Content:\n[Greptile⁠(opens in a new window)](https://www.greptile.com/) builds AI agents that review and test code changes with full context of the codebase. “We are in the business of reducing bugs and making the world’s software more reliable,” says Co-founder and CEO Daksh Gupta.\n\nFor Daksh, that mission requires testing an application’s behavior as well as reading its code, and GPT‑6 Astra’s computer use gives Greptile a way to automate testing at scale.\n\n## Testing applications at scale with GPT‑6 Astra\n\nValidating a pull request involves checking whether the code is logically correct, does what the developer intended, is secure, and avoids breaking existing functionality. For some of that testing, you need to actually run the application because reading the code alone might not reveal the problem.\n\nDaksh gives the example of a button that disappears when a website is viewed on an iPhone. With GPT‑6 Astra, Greptile can start a development server for a pull request, resize the browser to an iPhone-sized viewport, and simulate a user moving through the application. The model’s visual understanding lets it inspect the screen and spot the hidden button.\n\n“A QA firm testing all of your changes is just impractically slow considering how fast we’re able to ship code with these models,” he says. With GPT‑6 Astra, Greptile can automate this kind of application testing at scale.\n\n## Strengthening customers’ defenses with Daybreak\n\nDaksh says more powerful models also make it easier for attackers to exploit applications, putting companies at risk, even those that previously would not have been typical targets.\n\n“We want to make it very easy for even a startup to secure their systems,” says Daksh. “With Daybreak, we’re able to do this in a way that is very safe, and we can ensure that our customers have more sophisticated defense mechanisms than the adversaries have offense mechanisms.”\n\n## Reducing bugs and rework with Codex\n\nGreptile’s Knowledge Base indexes a company’s codebase and documents how it works in a form people and agents can read. The company makes that documentation available to Codex through a Model Context Protocol (MCP) server.\n\nThis allows Codex to write code that follows the customer’s existing patterns, and thousands of customers have connected Codex to Greptile’s knowledge base, according to Daksh.\n\nTo measure the impact, the team tracks how often AI-generated code is reverted. “When we provide agents with context, fewer reverts happen and customers save time and save inference,” Daksh says. Customers can put those savings toward new work instead of reworking the same changes.\n\nGreptile also uses Codex to build its own software and agents. “We are massive users of Codex,” Daksh says. “We have enormous amounts of usage across every single function, engineering in particular.”\n\n## Looking ahead to faster development with Ultrafast\n\nFor Greptile, Daksh explains, the only real bottleneck is how quickly the team can turn ideas into working software. He says model intelligence is already sufficient for many tasks, so he sees Ultrafast as a way to speed up development.\n\nHis longer-term goal is to make changing and shipping critical enterprise software as easy as shipping a side project, with OpenAI helping Greptile build the validation that requires.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Working with academic communities to build scientific understanding",
+          "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+          "published_at": "2026-10-26T14:30:00.000Z",
+          "description": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+          "full_text": "Title: Working with academic communities to build scientific understanding\n\nURL Source: https://openai.com/index/building-scientific-understanding-with-academic-communities\n\nMarkdown Content:\nWe are announcing three new discoveries in mathematics, computer science, and physics about harmonic analysis, complexity theory, and quantum field theory.\n\nOur release process continues to evolve in response to feedback from the associated academic communities. In our view, these manuscripts are best understood as a form of raw research data. To convert this raw research data into scientific understanding, in this release we are experimenting with a new approach. We reached out to external experts and asked them to act as shepherds, organizing groups to understand the new results. They advised three different release strategies:\n\n*   For the math result, release the AI output, leaving researchers free to organize their own efforts to explain the result.\n\n*   For the computer science result, form an external group of collaborators to explain the result, while making the AI output publicly available for anyone to examine and build on.\n\n*   For the physics result, form an external group of collaborators and defer to them on the release of materials.\n\nWe do not yet know which of these three approaches will be most useful, and we welcome feedback on what works and what we can improve.\n\nThe external collaborations will follow four principles:\n\n1.   **Transparency.** We are transparent about the existence of our collaborations. Participants will not be asked to sign nondisclosure agreements and will be free to discuss the work, share intermediate products, and publish their conclusions.\n\n2.   **No Academic Credit.** We do not seek academic credit for the discoveries produced by our internal models. Inviting a researcher to help steward a collaboration also does not imply that they or their working group made the original discovery.\n\n3.   **Recognition.**This group should receive recognition for the understanding they develop, the writeups they author, and the other materials they create. The group will also help ensure that the work appropriately credits researchers, techniques, and ideas that it draws on.\n\n4.   **Independence.**Participation is voluntary and unpaid. Working-group members participate independently, and their conclusions are their own. They do not speak on behalf of OpenAI, and OpenAI does not speak on their behalf.\n\nWe will turn over materials and artifacts related to these results to the collaborations. For the computer science collaboration, the group has decided to make the natural language proof and Lean formalization public immediately, and we are publishing them directly to our GitHub repository. For the physics collaboration, the group has decided to hold off on releasing the AI-produced artifacts and instead work on writing it up themselves.\n\nAll of these approaches involve tradeoffs. On the one hand, the collaborations empower experts to foster unpacking the results and contextualizing them in the broader academic community. On the other hand, choosing initial shepherds necessarily shapes who gets involved first and creates asymmetry of information. We welcome feedback on how to broaden participation and make this process more useful.\n\n## Local smoothing and the Kakeya conjecture\n\nThe result in mathematics concerns harmonic analysis. In 1991, Sogge proposed the local smoothing conjecture, which concerns the behavior of waves as they become focused. In particular, the conjecture states that the most extreme focusing must be short-lived. The amount of focusing at a typical random time is always much smaller than what can happen at the worst-case time. This is a familiar pattern throughout mathematics: what can happen in the worst case is more extreme than what is observed after averaging. Because of how fundamental this conjectured phenomenon is, it also has wide ranging implications throughout mathematical analysis. For instance, it implies the Kakeya conjecture and Stein’s restriction conjecture.\n\nIn 2019, [Guth, Wang, and Zhang⁠(opens in a new window)](https://annals.math.princeton.edu/2020/192-2/p06) proved the local smoothing conjecture in two spatial dimensions. In 2025, [Wang and Zahl⁠(opens in a new window)](https://www.ias.edu/news/once-century-proof-settles-maths-kakeya-conjecture) proved the Kakeya conjecture in three dimensions. Our models produced a proof of the local smoothing conjecture in every dimension and therefore also resolve the Kakeya conjecture and Stein’s restriction conjecture in all dimensions. The new proof is based on a novel auxiliary partial differential equation.\n\nWe obtained our AI output on October 18th, 2026, which was formalized in Lean the following day, and then we reached out to an expert to discuss forming a collaboration around this result. Following their recommendation, we decided to release the AI output publicly, following the same strategy for this result as our October 6th, 2026 [release⁠](https://openai.com/index/sharing-ai-progress-in-mathematics/). We have released both an [AI natural language output writeup⁠(opens in a new window)](https://github.com/openai/math/blob/main/preprints/Local-smoothing-for-the-Euclidean-wave-equation-October-25-2026/paper.pdf) produced by our models and a[Lean proof⁠(opens in a new window)](https://github.com/openai/math/blob/main/lean/docs/079.md) in our public GitHub repository.\n\n## The Exponential Time Hypothesis is false\n\nThe computer science collaboration will understand and explain a result concerning the Exponential Time Hypothesis (ETH), a longstanding conjecture about the computational complexity of Boolean formula satisfiability, a problem deeply related to the P vs. NP problem. The ETH has been widely believed to be true, and has been used in hundreds of papers to derive conditional computational hardness results across a wide variety of fields including graph theory, computational biology, databases, computational geometry, and more. Surprisingly, our system has recently proved that the ETH is false, a result that was subsequently verified in Lean. The refutation of the ETH reopens questions about how much faster these tasks could become, and may help guide the search for better algorithms. Finding such algorithms, and turning theoretical advances into practical improvements, will require significant further research.\n\nThis work will be verified and shepherded by a group led by Russell Impagliazzo (UC San Diego), Ramamohan Paturi (UC San Diego), and Ryan Williams (MIT). All three are experts in algorithm design and complexity theory.\n\nWe have agreed to the group’s requests that all raw data of the results be made public to facilitate independent verification by the community, and that OpenAI commit to funding a conference to understand the implications of this work on the field as a whole. The group invites the community to help organize an open examination of the ETH claim and to discuss the broader questions that AI-generated breakthroughs raise about verification, access, credit, and the future of research.\n\nOur AI found its natural language disproof for the ETH on October 16th, 2026 and then subsequently we formalized the result in Lean on October 17th, 2026, which led us to develop the collaboration described here. To that end, we have released both an [AI natural language output writeup⁠(opens in a new window)](https://github.com/openai/math/blob/main/preprints/The-Exponential-Time-Hypothesis-is-False-October-25-2026/paper.pdf) produced by our models and a [Lean proof⁠(opens in a new window)](https://github.com/openai/math/blob/main/lean/docs/378.md) in our public GitHub repository.\n\nComputational complexity has many open questions and conjectures, whose proofs or refutations have so far eluded the best efforts of scientists. We hope that humans with AI can provide new understanding in this field, and shed light on the inherent capabilities and limits of efficient computation.\n\n## Existence of quantum chromodynamics and completions of the Standard Model\n\nThe physics collaboration will understand and explain a result that gives a mathematically rigorous existence proof of certain interacting quantum field theories containing gauge fields and fermions in four dimensions, including Quantum Chromodynamics (QCD) and a unified completion of the Standard Model of particle physics. Our work builds on [Balaban’s approach⁠(opens in a new window)](https://www.worldscientific.com/doi/abs/10.1142/S0129055X13300100) in constructive quantum field theory. As a subproblem, this work also includes a proof of the existence of pure Yang–Mills theory, which is part of the [Quantum Yang–Mills Theory Clay Mathematics Institute Millennium Prize problem⁠(opens in a new window)](https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf).\n\nThe Standard Model describes the interaction of fundamental subatomic particles for three of the four fundamental forces, excepting gravity. The existence proof pertains to the simplest grand unified theory that includes the gauge fields and fermions of the Standard Model (as the Standard Model itself cannot be extrapolated to arbitrarily short distances). QCD describes the interaction of particles such as quarks and gluons via the strong force. Pure Yang–Mills theory only describes the self-interactions of the gluons, the force carriers, rather than matter such as quarks.\n\nDavid Gross will lead a group including Michael Douglas, Arthur Jaffe, Igor Klebanov, and Nikita Nekrasov that will shepherd this work.\n\n*   Gross’s 1973 work on asymptotic freedom in Yang-Mills theories helped establish QCD as the theory of the strong interactions and earned him a share of the [2004 Nobel Prize in Physics⁠(opens in a new window)](https://www.nobelprize.org/prizes/physics/2004/gross/facts/). Asymptotic freedom is also the key mechanism underlying the existence of these theories as mathematically rigorous objects.\n\n*   Jaffe formulated the [Quantum Yang-Mills Theory Millenium Prize problem⁠(opens in a new window)](https://www.claymath.org/wp-content/uploads/2022/06/yangmills.pdf) with Witten and also envisioned the idea of Millennium Prize problems and co-founded the Clay Mathematics Institute.\n\n*   Douglas has already been a steward of this problem over the last 20 years, [reporting on its status in 2004⁠(opens in a new window)](https://www.claymath.org/library/annual_report/douglas_quantum_yang_mills.pdf) and then providing a [comprehensive update on the progress⁠(opens in a new window)](https://www.nature.com/articles/s42254-025-00909-2) at the beginning of this year.\n\n*   Klebanov helped pioneer the application of gauge–string duality to confinement, an important property of QCD, and now directs the [Simons Collaboration on Confinement and QCD Strings⁠(opens in a new window)](https://simonsconfinementcollaboration.org/),\n\n*   Nekrasov has done groundbreaking work on exact methods for generalizations of Yang–Mills theory and won the Dannie Heineman Prize for Mathematical Physics in 2023.\n\nThe group requests that all communications with any and all members of the group regarding this effort be directed to the following email account: YANGMILLS4D@gmail.com.\n\nOur models produced a natural language proof for Yang–Mills existence on September 9th, 2026, and then subsequently produced a proof for QCD on September 18th, 2026. Given the length and complexity of the work, we postponed release until the Lean formalization completed. We finished our formalization of Yang–Mills’ existence on October 16th, 2026, which led us to develop the collaboration described here.\n\nWe hope that these results mark the beginning of a transition in which quantum field theory, the most important framework in modern theoretical physics, becomes a mathematically rigorous field. We are excited to provide resources for academic-led progress towards that goal.\n\n## Supporting scientists\n\nWe are committed to supporting the broader work of understanding and building on these results. These collaborations complement our recently announced [$5 million contribution⁠(opens in a new window)](https://www.simonsfoundation.org/news/simons-foundation-launches-15m-effort-to-help-mathematicians-navigate-ai-era/) to the Simons Foundation. Managed and awarded by the Simons Foundation, that funding will support workshops, conferences, and special programs to help researchers understand and build on results produced by AI. We are committed to ensuring funding for researchers to independently examine, explain, and build on the results above.\n\nWe continue to invite feedback on the best way to disclose results and engage with scientists to accelerate discovery.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+          "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+          "published_at": "2026-10-26T13:45:00.000Z",
+          "description": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+          "full_text": "Title: GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases\n\nURL Source: https://openai.com/index/gpt-6-1-sol-coderabbit-code-security\n\nMarkdown Content:\nAs AI accelerates software development, engineering and application-security teams need ways to investigate code changes and address vulnerabilities while keeping people in control. CodeRabbit is using [GPT‑6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/) as the primary model in its security agent to extend review beyond individual changes and help developers understand risks across complex codebases.\n\nA pull request can affect shared libraries, dependencies and safeguards elsewhere in an application. GPT‑6.1 Sol helps CodeRabbit connect behavior across files and components to surface potential security issues. CodeRabbit’s review is independent of the agent that wrote the code and complements established scanners. Its system also uses other frontier models and security tooling.\n\nDuring pull-request review, Sol helps analyze changes as developers work. In Deep Scan, it supports broader investigation across repositories, including dependencies and how components interact. CodeRabbit Secure extends that investigation to linked repositories, such as a shared authentication library, to help teams understand how a weakness could affect the wider system.\n\nCodeRabbit reports using GPT‑6.1 Sol to flag security-related issues across thousands of repositories and organizations. These findings feed into the pull-request workflows developers already use to review and improve their code.\n\nCodeRabbit Secure connects investigation to remediation. For user-selected findings, it can attempt exploit verification in an isolated sandbox without testing production systems. For supported issues, it can draft a pull request with a proposed fix for a person to review and approve.\n\nThis work shows how frontier reasoning can support software security: understanding risks beyond an individual change, helping validate findings and turning them into proposed fixes. Human reviewers remain responsible for deciding which changes to ship.\n\nLearn more about GPT‑6.1 Sol [here](https://openai.com/index/introducing-gpt-6-1-sol/). Learn more about CodeRabbit Secure [here⁠(opens in a new window)](https://www.coderabbit.ai/security).\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "ChatGPT’s expanding world of work",
+          "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+          "published_at": "2026-10-26T10:00:00.000Z",
+          "description": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+          "full_text": "Title: ChatGPT’s expanding world of work\n\nURL Source: https://openai.com/index/chatgpt-expanding-world-of-work\n\nMarkdown Content:\nToday, we are releasing [OpenAI Signals data that explores](https://openai.com/signals/data/) 165 work activities across nearly 100 countries, revealing how consumers use ChatGPT for work. This data gives researchers a new way to study AI’s role in the economy, with new information on the work activities people bring to ChatGPT—from preparing instructional materials and developing marketing content to programming and analyzing business data.\n\nResearchers can use this data to explore how ChatGPT use for work differs across countries, track changes over time, and match this data to other economic indicators. The release connects ChatGPT usage to 165 work activity categories called Intermediate Work Activities (IWAs). IWAs are commonly-used categories of tasks for the kinds of work people do across occupations. The data is represented quarterly, spanning a period from the first quarter of 2025 through the third quarter of 2026.\n\n## Understanding how people use AI for work at a deeper level\n\nOur new data draws on O*NET, a standardized framework that groups occupation-specific tasks into broader categories of work activities shared across occupations. Using a common framework helps researchers compare ChatGPT use with other types of occupational and employment data.\n\nThe interactive chart below can be used to explore these work activities within a specific country over time, moving from broad activity groups to more specific activities. The data shows wide variation across countries in how people use ChatGPT for work.\n\nExplore the work people bring to ChatGPT. Select an activity group to see the tasks within it, see how those change over time, or choose a country to explore its mix of work-related messages.\n\nConnecting this data to IWAs revealed that work-related use became less concentrated in the most common activities. That means that countries tended to specialize in their work over time, and different countries specialized in different types of work. These differences might reflect variation in the kind of work done across countries or varying access to AI tools. Exploring these questions is one example of many that researchers can pursue with this new data.\n\nAcross 74 countries observed in every quarter, the ten most common activities represented an average of 51.1% of each country’s classified work messages in Q3 2026, down from 56.0% in Q1 2025.\n\n## How researchers can use this data\n\nConnecting ChatGPT usage data with IWAs lets researchers compare ChatGPT messages with activities performed across U.S. jobs. The paired visualizations below compare how people use ChatGPT with the activities performed across U.S. jobs. This comparison shows the difference in how people use ChatGPT for work and the actual work being done in the U.S. economy. The two distributions differ substantially, largely because about 43% of the employment-weighted task mix for mapped U.S. occupations falls into Other IWAs, outside the individually reported categories. These include activities such as moving materials, operating vehicles, and maintaining health or medical records. These omitted categories did not meet our threshold for consistent representation in the original U.S. ChatGPT sample.\n\nSelect an activity to see how much it appears in ChatGPT usage versus the overall U.S. economy.\n\n## Explore the data\n\nThis release builds on OpenAI Signals, our ongoing effort to share evidence about how people use AI. The data covers work-related messages on individual ChatGPT plans and does not include enterprise messages or Codex use. We invite researchers to explore the data, connect it with other sources, and investigate what these patterns mean for workers and businesses.\n\nTo protect users’ privacy, researchers do not read individual conversations. Automated systems classify messages after identifying information is removed. We publish aggregated statistics, withhold results for small groups, and add statistical noise to protect individual messages.\n\n## Citation\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "How Fanatics and OpenAI streamline the fan experience",
+          "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+          "published_at": "2026-10-26T07:00:00.000Z",
+          "description": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
+          "full_text": "Title: How Fanatics and OpenAI streamline the fan experience\n\nURL Source: https://openai.com/index/fanatics-streamline-fan-experience\n\nMarkdown Content:\nFanatics and OpenAI are collaborating to improve the fan experience. As part of that work, Fanatics is launching an OpenAI-powered version of Shop the Look, which uses AI models to recommend coordinated merchandise to help fans complete their game-day outfits.\n\nFanatics, a global digital sports platform, uses ChatGPT Work and Codex across Fanatics Corporate, Commerce, Collectibles, and Betting and Gaming.\n\n![Image 1: Two mobile devices show a Shohei Ohtani Dodgers jersey product page on the left and Fanatics’ Shop the Look merchandise recommendations on the right, over navy jersey mesh.](https://images.ctfassets.net/kftzwdyauwt9/4rIAPDbiFjOxnC5MWjqHuG/a433240db2ad07e2d722688241a0940e/fanatics-shop-the-look-two-mobile-devices.png?w=3840&q=90&fm=webp)\n\n## Helping fans complete the look\n\nShop the Look is now live across many sites across the Fanatics network—including Fanatics.com and the official NFL, NBA, MLB and NHL online stores. With it, fans can more easily find recommended merchandise to match with items they’re looking to wear. When fans browse for their favorite team’s jersey, Shop the Look suggests coordinated outfits on the product page, using in-stock items that match their team and intended style.\n\n![Image 2: Two mobile devices show Florida Panthers and Notre Dame Shop the Look merchandise recommendations side by side over navy jersey mesh.](https://images.ctfassets.net/kftzwdyauwt9/7sq9v6shWmR4OkGRdvEe99/295daad84e9f8d98814655b8426b58fa/fanatics-shop-the-look-nhl-notre-dame-mesh.png?w=3840&q=90&fm=webp)\n\nOpenAI models draw on enriched product data, team and inventory information to assemble the recommendations. Fanatics’ merchandising rules keep the selections compatible and relevant, and looks are refreshed daily as catalogs change.\n\n## Building and testing the first 50 looks in 24 hours\n\nUsing Codex, OpenAI and the Fanatics engineering team quickly developed custom recommendation tools to enrich product and catalog data, find compatible merchandise, evaluate recommendations, and generate looks for each product.\n\nTesting the new approach on 50 products took less than a day to complete. Fanatics reviewed the looks and gave feedback directly to the builders. After a couple days of iteration, the company approved the minimum viable product that same week. OpenAI helped design the solution which enabled Fanatics to implement the new Shop the Look experience in their production environment and scale the approach across thousands of products.\n\nAfter testing the recommendations across roughly 30,000 MLB products, the OpenAI-powered Shop the Look experience achieved 10% higher engagement than the previous experience.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "How Ultrafast cut incident investigation from hours to minutes at OpenAI",
+          "url": "https://openai.com/index/openai-cut-incident-investigation",
+          "published_at": "2026-10-26T07:00:00.000Z",
+          "description": "See how OpenAI engineers use Codex Ultrafast to investigate incidents in minutes. Explore faster security analysis, code refactoring, and daily workflows.",
+          "full_text": "Title: How Ultrafast cut incident investigation from hours to minutes at OpenAI\n\nURL Source: https://openai.com/index/openai-cut-incident-investigation\n\nMarkdown Content:\n_This is part of our series sharing internal examples of how OpenAI is using its own technology and APIs. These tools are being used internally, at OpenAI, and are shared here as illustrative examples of how frontier AI is supporting use cases across our teams._\n\nUltrafast is a high-speed mode in Codex, and for engineers at OpenAI, it’s become the default for incident response. When something breaks, engineers often don’t have time to wait minutes for an answer while the issue compounds. With Ultrafast, they can investigate multiple potential causes at once and get answers without splitting their attention.\n\nAaron Friel discusses faster incident investigation with Codex Ultrafast.\n\n## Finding the needle in the haystack\n\nAaron Friel, Member of the Technical Staff at OpenAI, is usually the one running point on an incident. He spins up a Slack channel for incident response and then points Codex at the problem, asking Codex to monitor, investigate, and answer any questions as they come in. “In any incident, there are usually many hops along the way of what could have gone wrong, and finding the right needle in the right haystack is really the chief job of the people on that channel,” he says. “Using Ultrafast, I’m able to essentially search all of those haystacks at the same time, and respond to incidents much faster.”\n\nAJ Trbojevic, Member of the Technical Staff and a Datacenter Security Architect, says investigations into security issues used to take an hour or two to pull structured and unstructured data together, normalize it, and provide context to make a decision. “Now that happens in 10 to 15 minutes,” he says. “And at times it’s near real time.”\n\nAdam Perry and Sayan Sisodiya both work on the core agent team, building the code that lets Codex take actions, run commands, and use tools. Ultrafast has changed how they operate during security incidents. “Before, I’d ask Codex to look into something, and then go look into it myself at the same time, because I knew it wouldn’t be fast enough to just wait on,” Adam says. “Now with Ultrafast, Codex is fast enough that I can just stay focused instead of splitting my attention.”\n\nSayan appreciates how Ultrafast lets him get immediate answers from multiple data sources: “Beyond just digging through logs in an incident, I use Codex to dig through Slack to see if there are references to changes that might be suspect or people talking about similar symptoms elsewhere in Slack,” he says.\n\n## Fast responses in under 30 seconds\n\nIf it takes more than 30 seconds to find an answer with AI, Jeff Niu, another Member of the Technical Staff, says he’ll check Slack or chat with a coworker. But most of his work is now under that threshold with Ultrafast. He used to ask Codex a question, switch over to something else while it thought, and come back having lost his train of thought. Now that conversation happens in real time; it helps him stay focused on the task at hand.\n\nUltrafast also makes Jeff more willing to tackle large refactors, because reworking existing code takes less time. “Technical debt is much easier to pay down now than it ever was before,” he says. “Code is cheap, and now it’s very quick to produce. A refactor that used to cost a lot happens almost instantly.”\n\n## Working as a copilot\n\nAdam keeps a running Codex thread that he calls his chief of staff. Every morning it tells him what meetings he has and which messages he might have forgotten to reply to. “It’s already looked at all the data to write that summary, so when I ask a followup, it’s not waiting to go fetch more,” he says. “I can just keep asking questions in the same conversation just like an actual chief of staff.”\n\nSayan uses Codex to do tedious manual work in the browser, like filling out forms—something he’d previously avoided because it was too slow. “It would open a browser, sit there thinking for five seconds, click something, sit there again,” he says. With the latest models’ improvements in computer use, he’s more comfortable letting Codex handle that work. “Now I’m totally fine letting it click through the browser and it’s fast enough that I’m not losing time by not doing it myself.”\n\nAcross incident response, daily planning, and refactoring, Ultrafast lets OpenAI’s Technical Staff work with Codex at the pace of their questions. They can follow up on an answer, try another approach, and keep working without losing their train of thought. That shorter wait also changes what they’re willing to take on, from a refactor they’d put off to a routine task that’s finally worth delegating.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Our newest AI Quest: Mapping the human brain",
+          "url": "https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/",
+          "published_at": "2026-10-26T16:00:00.000Z",
+          "description": "Learn AI literacy via Google’s latest AI Quests lesson on neuroscience, “Polar Peaks.”",
+          "full_text": "Title: Our newest AI Quest: Mapping the human brain\n\nURL Source: https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/\n\nPublished Time: 2026-10-26T16:00:00+00:00\n\nMarkdown Content:\n[Skip to main content](https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/#jump-content)\n\n[![Image 2](https://blog.google/static/blogv2/images/super-g-aurora.svg?version=pr20261009-1701)](https://blog.google/ \"News from Google\")\nOur newest AI Quest: Mapping the human brain\n\n*    Innovation & AI \n*    Products & platforms \n*    Company news \n*   [Feed](https://blog.google/feed)\n\n[Newsletter](https://blog.google/newsletter-subscribe/)\n\n Back \n### Innovation & AI\n\n[See all in Innovation & AI](https://blog.google/innovation-and-ai/)\n*    Models & Research \n    *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n    *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n    *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n    *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n    *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n    *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n*    Products \n    *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n    *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n    *   [Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/)\n    *   [See all](https://blog.google/innovation-and-ai/products/)\n\n*    Infrastructure & cloud \n    *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n    *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n    *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\n*    Technology \n    *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n    *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n    *   [See all](https://blog.google/innovation-and-ai/technology/)\n\n* * *\n\nLearn more:\n\n*   [Google DeepMind blog](https://deepmind.google/blog/)\n*   [Google Research blog](https://research.google/blog/)\n*   [Google Developers blog](https://developers.googleblog.com/)\n*   [Google Cloud blog](https://cloud.google.com/blog)\n\n Back \n### Products & platforms\n\n[See all in Products & platforms](https://blog.google/products-and-platforms/)\n*    Products \n    *   [Search](https://blog.google/products-and-platforms/products/search/)\n    *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n    *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n    *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n    *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n    *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n    *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n    *   [See all](https://blog.google/products-and-platforms/products/)\n\n*    Platforms \n    *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n    *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n    *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n    *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n*    Devices \n    *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n    *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n    *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n    *   [Chromebook](https://blog.google/products-and-platforms/devices/chromebooks/)\n    *   [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/)\n    *   [See all](https://blog.google/products-and-platforms/devices/)\n\n* * *\n\nLearn more:\n\n*   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n*   [Waze blog](https://blog.google/waze/)\n\n Back \n### Company news\n\n[See all in Company news](https://blog.google/company-news/)\n*    Outreach & initiatives \n    *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n    *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n    *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n    *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n    *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n    *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n    *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n*    Leadership \n    *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n    *   [More authors](https://blog.google/authors/)\n    *   [See all](https://blog.google/authors/)\n\n*    Inside Google \n    *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n    *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n    *   [See all](https://blog.google/company-news/inside-google/)\n\n* * *\n\nLearn more:\n\n*   [Google Security blog](https://blog.google/security/)\n\n*    Innovation & AI \n\n### Innovation & AI\n\n[See all in Innovation & AI](https://blog.google/innovation-and-ai/) \n\n    *   Models & Research\n\n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/ \"See all Models & Research articles\")\n\n    *   Products\n\n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/)\n        *   [See all](https://blog.google/innovation-and-ai/products/ \"See all Products articles\")\n\n    *   Infrastructure & cloud\n\n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/ \"See all Infrastructure & cloud articles\")\n\n    *   Technology\n\n        *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/innovation-and-ai/technology/ \"See all Technology articles\")\n\nLearn more:\n\n[Google DeepMind blog](https://deepmind.google/blog/)[Google Research blog](https://research.google/blog/)[Google Developers blog](https://developers.googleblog.com/)[Google Cloud blog](https://cloud.google.com/blog)\n\n*    Products & platforms \n\n### Products & platforms\n\n[See all in Products & platforms](https://blog.google/products-and-platforms/) \n\n    *   Products\n\n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/ \"See all Products articles\")\n\n    *   Platforms\n\n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/ \"See all Platforms articles\")\n\n    *   Devices\n\n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebook](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/)\n        *   [See all](https://blog.google/products-and-platforms/devices/ \"See all Devices articles\")\n\nLearn more:\n\n[Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)[Waze blog](https://blog.google/waze/)\n\n*    Company news \n\n### Company news\n\n[See all in Company news](https://blog.google/company-news/) \n\n    *   Outreach & initiatives\n\n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/ \"See all Outreach & initiatives articles\")\n\n    *   Leadership\n\n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/ \"See all Leadership articles\")\n\n    *   Inside Google\n\n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/ \"See all Inside Google articles\")\n\nLearn more:\n\n[Google Security blog](https://blog.google/security/)\n\n*   [Feed](https://blog.google/feed)\n\nOur newest AI Quest: Mapping the human brain\n\n[Share](https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n\n[x.com](https://twitter.com/intent/tweet?text=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%20%40google&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)[Facebook](https://www.facebook.com/sharer/sharer.php?caption=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&u=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)[LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/&title=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain)[Mail](mailto:?subject=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AOur%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%0A%0ALearn%20AI%20literacy%20via%20Google%E2%80%99s%20latest%20AI%20Quests%20lesson%20on%20neuroscience,%20%E2%80%9CPolar%20Peaks.%E2%80%9D%0A%0Ahttps://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n\nCopy link\n\n [] \n\nPreferences\n*     \n\nLinks\n*   [Images](https://blog.google/image-library/ \"Images\")\n*   [RSS feed](https://blog.google/rss/)\n\n*   [x.com](https://twitter.com/intent/tweet?text=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%20%40google&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   [Facebook](https://www.facebook.com/sharer/sharer.php?caption=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&u=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/&title=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain)\n*   [Mail](mailto:?subject=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AOur%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%0A%0ALearn%20AI%20literacy%20via%20Google%E2%80%99s%20latest%20AI%20Quests%20lesson%20on%20neuroscience,%20%E2%80%9CPolar%20Peaks.%E2%80%9D%0A%0Ahttps://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   Copy link \n\nNewsletter\n\nBreadcrumb\n1.   [Home](https://blog.google/ \"News from Google\")\n2.   [Products & Platforms](https://blog.google/products-and-platforms/)\n3.   [Products](https://blog.google/products-and-platforms/products/)\n4.   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n\n# Our newest AI Quest: Mapping the human brain\n\nOct 26, 2026\n\n|\n2 min read\n\n*   [x.com](https://twitter.com/intent/tweet?text=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%20%40google&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   [Facebook](https://www.facebook.com/sharer/sharer.php?caption=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&u=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/&title=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain)\n*   [Mail](mailto:?subject=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AOur%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%0A%0ALearn%20AI%20literacy%20via%20Google%E2%80%99s%20latest%20AI%20Quests%20lesson%20on%20neuroscience,%20%E2%80%9CPolar%20Peaks.%E2%80%9D%0A%0Ahttps://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   Copy link \n\nOur third lesson in our AI Quests series, “Polar Peaks,” teaches students key AI literacy skills while delving into neuroscience.\n\n* * *\n\nRonit Levavi Morad\n\nSenior Director, Google Research\n\n Share \n\n*   [x.com](https://twitter.com/intent/tweet?text=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%20%40google&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   [Facebook](https://www.facebook.com/sharer/sharer.php?caption=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&u=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   [LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=https://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/&title=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain)\n*   [Mail](mailto:?subject=Our%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain&body=Check%20out%20this%20article%20on%20the%20Keyword:%0A%0AOur%20newest%20AI%20Quest%3A%20Mapping%20the%20human%20brain%0A%0ALearn%20AI%20literacy%20via%20Google%E2%80%99s%20latest%20AI%20Quests%20lesson%20on%20neuroscience,%20%E2%80%9CPolar%20Peaks.%E2%80%9D%0A%0Ahttps://blog.google/products-and-platforms/products/education/ai-quests-polar-peaks/)\n*   Copy link \n\n* * *\n\n[Video 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_videos/AI-Quests-Blog-Video-Open.mp4#t=0.001)\n\n[Audio 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/media/tts_audio_86746_umbriel_2026_10_26_16_00_34.mp3)\n\n Listen to article \n\n[[duration]] minutes\n\nThis content is generated by Google AI. Generative AI is experimental\n\nVoice Umbriel Speed 1X\n\nVoice Umbriel Gacrux\n\nSpeed 0.75X 1X 1.5X 2X\n\n Read AI-generated summary \n\nGoogle Research and the Stanford Accelerator for Learning just launched \"Polar Peaks,\" an interactive quest that teaches students ages 11 to 14 how to map the human brain using artificial intelligence. This program helps students practice data cleaning and model testing while emphasizing the need for human oversight in technology. You can access new teacher training modules through the Google AI Educator Series to help bring these lessons into your classroom.\n\n Summaries were generated by Google AI. Generative AI is experimental. \n\n*   \"Our newest AI Quest: Mapping the human brain\" teaches students how AI works responsibly.\n*   Students ages 11 to 14 act as researchers to map neurons and solve mysteries.\n*   The game shows how AI helps scientists study the brain and speed up research.\n*   New training modules help teachers bring these AI lessons into their classrooms.\n*   This award-winning program helps kids learn critical thinking and AI literacy skills.\n\n Summaries were generated by Google AI. Generative AI is experimental. \n\nGoogle launched a new game called \"Polar Peaks\" that lets you act like a scientist to map the human brain using AI. You’ll learn how to solve real-world problems while discovering how to use AI responsibly. It’s a fun way to see how researchers use technology to make big scientific breakthroughs. Teachers even get special training to help you explore these challenges in class.\n\n Summaries were generated by Google AI. Generative AI is experimental. \n\n#### Explore other styles:\n\n*    General summary \n*    Bullet points \n*    Basic explainer \n\nToday, we’re launching “Polar Peaks”, our third quest in the [AI Quests](https://research.google/ai-quests/intl/en_us) series, created by Google Research and the [Stanford Accelerator for Learning](https://acceleratelearning.stanford.edu/) to teach students [how AI works and how to use it responsibly.](https://blog.google/products-and-platforms/products/education/ai-quests/%5C) AI Quests invites students ages 11 to 14 to step into the shoes of Google researchers to tackle some of humanity’s biggest challenges.\n\nMore than 400,000 quests have been completed to date, localized to 10 languages. Alongside the new quest, we’re also releasing training modules for teachers.\n\n## Polar Peaks: A journey to map the human brain\n\nIn the first two quests, students tackle flood forecasting and eye disease detection, inspired by Google Research’s [Flood Forecasting initiative](https://sites.research.google/gr/floodforecasting/) and AI model for [diabetic retinopathy](https://blog.google/company-news/inside-google/around-the-globe/google-asia/arda-diabetic-retinopathy-india-thailand/) screening. Our newest quest, “Polar Peaks,” has students travel to the frontiers of neuroscience and see how AI can speed up scientific research.\n\n[Video 4](https://storage.googleapis.com/gweb-uniblog-publish-prod/original_videos/Gameplay.mp4#t=0.001)\n\nWith the guidance of in-game mentors, students scan and map the neurons in the brain to better understand the game character’s memory loss. They complete tasks ",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111177834127601902",
+          "title": "Six projects from the last few weeks that caught our attention:\n\nA wildfire analysis prototype that maps the fire’s spread over time and tracks hot spots, made with Opus 5.5. https://t.co/yagXxk13V1",
+          "url": "https://x.com/claudeai/status/2111177834127601902",
+          "published_at": "2026-10-16T19:29:54.000000Z",
+          "description": "Six projects from the last few weeks that caught our attention:\n\nA wildfire analysis prototype that maps the fire’s spread over time and tracks hot spots, made with Opus 5.5. https://t.co/yagXxk13V1",
+          "expanded_urls": [],
+          "source": "Claude (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111168901723906176",
+          "title": "Claude writes about 90% of Claude Code's code.\n\nFrom June to September, merged PRs more than doubled while the share reverted fell by more than 40%.\n\nWe wrote about how we changed code review to get t",
+          "url": "https://x.com/ClaudeDevs/status/2111168901723906176",
+          "published_at": "2026-10-16T18:54:24.000000Z",
+          "description": "Claude writes about 90% of Claude Code's code.\n\nFrom June to September, merged PRs more than doubled while the share reverted fell by more than 40%.\n\nWe wrote about how we changed code review to get there, and how to adopt it:\n\nhttps://t.co/9sZe64g3mb",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/9sZe64g3mb",
+              "expanded_url": "https://claude.dev/blog/solving-code-review-at-anthropic/",
+              "display_url": "claude.dev/blog/solving-c…"
+            }
+          ],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2111209208012210409",
+          "title": "We keep improving performance across Claude, and you may have noticed it starts responding sooner!\n\nClaude Code now gzips the conversation it sends on every turn, so it reaches the model faster. Cloud",
+          "url": "https://x.com/ClaudeDevs/status/2111209208012210409",
+          "published_at": "2026-10-16T21:34:34.000000Z",
+          "description": "We keep improving performance across Claude, and you may have noticed it starts responding sooner!\n\nClaude Code now gzips the conversation it sends on every turn, so it reaches the model faster. Cloud sessions also start up as soon as you start typing. https://t.co/rT8ICmKjuf",
+          "expanded_urls": [],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111152183240511640",
+          "title": "New from our STEM Fellows Program: Designing more efficient quantum circuits with Claude.\n\nGiven plain-language instructions, Claude Mythos 5 designed quantum circuits that improve on the best publish",
+          "url": "https://x.com/AnthropicAI/status/2111152183240511640",
+          "published_at": "2026-10-16T17:47:58.000000Z",
+          "description": "New from our STEM Fellows Program: Designing more efficient quantum circuits with Claude.\n\nGiven plain-language instructions, Claude Mythos 5 designed quantum circuits that improve on the best published ones, sometimes by an order of magnitude or more.\n\nMore efficient circuits reduce the resources needed by quantum algorithms, which could bring quantum computing applications in chemistry and materials science within reach sooner.\n\nRead more: https://t.co/QCvoJLDmBo",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/QCvoJLDmBo",
+              "expanded_url": "https://www.anthropic.com/research/designing-efficient-quantum-circuits",
+              "display_url": "anthropic.com/research/desig…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": "Title: Designing more efficient quantum circuits with Claude\n\nURL Source: https://www.anthropic.com/research/designing-efficient-quantum-circuits\n\nPublished Time: 2026-10-16T00:00:00.000Z\n\nMarkdown Content:\nUnlike classical computers, which store information in bits whose value is either 0 or 1, quantum computers store information in _qubits,_ which can be built from single atoms, superconducting circuits, or particles of light. These qubits make use of quantum phenomena such as _superposition_—which allows a quantum system to exist in a combination of states at once—in order to process information in ways that could make certain problems in fields like chemistry, materials science, and number theory tractable, even when they are too hard for traditional computers.\n\nThe quantum computers the field has built to date only have hundreds to thousands of qubits—too few to run many of the algorithms that promise practical advantages over classical computers. And these qubits are highly sensitive to environmental noise, such as heat, vibration, and even cosmic rays. A tiny disturbance can nudge a qubit’s state, and these small errors pile up until the computer gives the wrong answer.\n\nGiven that both qubits and computing time are scarce resources, researchers have been working to redesign quantum algorithms to use fewer qubits and complete computations in less time. An illustrative example is simulating FeMoco, the iron–sulfur cluster at the heart of nitrogenase, the enzyme that bacteria use to turn nitrogen from the air into ammonia. Understanding how it works could help scientists design better industrial catalysts—the substances manufacturers use to speed up chemical reactions.\n\nIn 2017, researchers estimated that a quantum computer would need about 50 trillion Toffoli gates to compute FeMoco’s ground-state energy—the energy of its most stable configuration, which chemists need in order to predict how FeMoco reacts. (Similar to ordinary computers, quantum computers work by applying a long sequence of simple operations, called gates, to their qubits. The Toffoli gate is one of the most expensive gates to run, so counting Toffoli gates is a standard way to estimate how long a computation will take.)\n\nThrough a series of algorithmic advances, the estimated number of gates has come down to about 340 million—a roughly 150,000-fold reduction, corresponding to a few hours of computation on a future machine with about three million physical qubits.[1](https://www.anthropic.com/research/designing-efficient-quantum-circuits#footnote-1)\n\nThese reductions largely came from redesigning the circuits that carry out the computation, rather than from making better hardware. Claude has proven particularly adept at optimizing [classical](https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling)[algorithms](https://www.anthropic.com/engineering/AI-resistant-technical-evaluations), so we wanted to see whether it could do the same for quantum algorithms if it were given only a plain-language description of what each circuit must compute.\n\nClaude is unusually well suited to this task, for several reasons. First, quantum algorithms are implemented as quantum _circuits_. These are composed of sequences of gates, like the Toffoli gates mentioned above. Importantly, these circuits can be described in code, so we can make use of Claude’s coding capabilities to write, run, and revise circuit designs as ordinary programs. Second, the (fairly common) class of quantum algorithms we were most interested in optimizing can be tested efficiently for correctness, as each input gives one definite output that an ordinary computer can check. This means we could have an external evaluator program validate Claude’s proposals. Finally, we can give Claude a clear, objective score to improve: the number of qubits used, multiplied by the number of gates, which serves as a proxy for how long the circuit would take to run.\n\nWe found that Claude Mythos 5 could successfully work in a closed loop, proposing a circuit design, receiving feedback and a score from the evaluator program, and using that feedback to improve its next attempt, with no human input between rounds (see Figure 1). Across eight computational primitives—the basic routines that larger quantum algorithms are built from—for chemistry, optimization, quantum simulation, number theory, and numerical computing, Claude discovered novel designs that used both fewer qubits and fewer gates than the best previously published algorithms (Figure 2).\n\nIn each case, the improvement resulted from uncovering new structural and mathematical insights about the problem, rather than from fine-tuning existing designs. For example, when compiling a circuit for simulating an iron-sulfide molecule, Claude noticed that the molecule’s symmetries and repeating structure meant that some results could be calculated once and reused, rather than recomputed for every part of the system. In other cases, it found that existing circuits included costly components that were needed to handle only extremely rare inputs, and it redesigned them without those components.\n\nBelow, we describe two of Claude’s discoveries. The first is a new way to perform modular inversion, a bit of arithmetic that is the most expensive step in elliptic-curve calculations. The second makes the costliest step of a leading quantum optimization algorithm about 12x cheaper.\n\nThese results suggest that AI can now help redesign quantum circuits, a key step in making quantum algorithms faster and easier to run. Faster circuit design could bring the problems quantum computers are meant to solve—from designing new medicines and better batteries to finding cleaner ways of making fertilizer—within reach sooner.\n\n[Video 3](https://cdn.sanity.io/files/4zrzovbb/website/0e9f7b41ac662fb1b2544315dc7cae1967f1fff8.mp4)\n\nClosed-loop quantum circuit optimization. Claude designs new implementations in Python, which are then sent to a programmatic evaluator. The evaluator checks whether the proposed implementation is correct, then scores it on the number of qubits and gates it requires. This information is then sent to Claude, which uses it to improve its implementation. The code and values shown are illustrative.\n\n![Image 1](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fd5d27ec3f141696918c6bed3f6b887f5b84e75f0-3840x2430.png&w=3840&q=75)\n\nClaude designed smaller and faster circuits across eight different quantum-circuit design tasks. Gray marks show the best previously published designs; orange marks and lines show Claude’s designs. Point addition, the eighth task, is compared in Table 1 below.\n\n### A new reversible algorithm\n\nDesigning a quantum circuit involves two constraints that ordinary programming doesn’t have. The first is that a quantum circuit can’t make “if-then” decisions the way an ordinary program can. An ordinary program can check a value and then run only one of two pieces of code. But a quantum computer runs on a superposition of many inputs at once, some of which would run the first piece of code and some of which would run the second, so the circuit has to include the operations for both every time it runs.\n\nThe second is that a quantum circuit can’t discard information. An ordinary program can overwrite or delete its scratch work once it’s completed it; in a quantum computer, such intermediate information can’t simply be erased, because every step of a quantum circuit must be reversible. Leaving that information in place isn’t an option, either, because leftover scratch work would corrupt the final result. The only way to discard information is to “uncompute” it by running the computation that created it in reverse, at the cost of additional gates. Both of these constraints make quantum circuits far more expensive, in both runtime and qubits, than their classical counterparts.\n\nThis constraint forces a difficult trade-off between space (i.e., qubits) and time. At one extreme, a quantum circuit can uncompute intermediate results as soon as they have been used. This frees up qubits, but if those same results are needed again later, the circuit must recompute them, which adds gates and increases the runtime. At the other extreme, the circuit can retain intermediate results until they’re no longer needed. This avoids repeating work, but it can require many more qubits.\n\nThis is what makes quantum circuit design an especially interesting test of Claude’s capabilities. The circuits can be written as ordinary code, but improving them requires the model to reason under a set of constraints quite unlike those of ordinary programming.\n\n#### A hard first test: modular inversion\n\nThe first task we gave Claude was point addition, a rule for combining two points on a mathematical curve (an elliptic curve) to produce a third. Point addition is the core step in quantum algorithms for the discrete logarithm problem on elliptic curves: given a starting point and the result of adding it to itself _n_ times, find _n_. For large curves, ordinary computers can’t solve this problem in any reasonable amount of time, but a sufficiently large quantum computer could.\n\nThese algorithms perform point addition many times over, including in reverse, and these additions account for most of their qubit and runtime costs. Problems like this—easy to compute, extremely hard to reverse—were among the first where quantum computers were shown to offer an exponential speedup over ordinary ones. For these reasons, point addition has become one of the field’s standard benchmarks. This made it a demanding test for Claude. So, we asked it to map out how few qubits, as well as how few gates, point addition really needs.\n\nWe gave Claude a one-paragraph brief. It explained the mathematical rule for point addition, and how the evaluator would check each proposed circuit for correctness and score it on the number of qubits and gates it used. It also instructed Claude to explore several approaches in parallel. After working for 53 hours with minimal human input (limited to the initial brief and occasional prompts to think more broadly), Claude arrived at a completely new approach to the problem.\n\n#### The memory demands of divsteps\n\nMost of the cost of point addition comes from a single step, called _modular inversion_. Elliptic-curve arithmetic uses numbers that wrap back around when they reach a fixed limit. Modular inversion is the wraparound version of division: given an integer _a_, find _x_ such that _ax_ ≡ 1 (mod _p_). Ordinary computers can perform this operation efficiently using a method called [_divsteps_](https://tches.iacr.org/index.php/TCHES/article/view/8298). Divsteps starts with a pair of numbers and repeatedly simplifies them over many rounds of iteration. In each round, divsteps examines the current pair of numbers and conditionally swaps, adds, subtracts, or halves them. Along the way, it preserves just enough information to produce the modular inverse at the end.\n\nDespite its success on ordinary computers, divsteps had not yet produced a practical quantum circuit, because of the reversibility constraint described above. The record of which operation was chosen at each iteration, called _branch information_, is the kind of scratch work that a traditional program can simply discard. In contrast, a quantum circuit has to retain that record so the computation can be run backward. A straightforward quantum version of divsteps is therefore forced to accumulate a long history of branch information, which requires an enormous number of additional qubits to store.\n\n#### How Claude got around the memory problem\n\nClaude recognized that this divsteps approach could be promising for quantum circuits, but only if there were a way around needing to store the full history. It had an idea: perhaps the record didn’t need to be stored at all. Claude reasoned that it might be possible to directly infer (or “decode”) the branch information by carefully inspecting the pair of numbers after each iteration. In essence, the numbers themselves would store the record. The circuit could then be run backward without needing any extra qubits.\n\nTo test this idea, Claude explored a number of simple candidate rules for performing the decoding. These early rules worked on small test cases, but they failed when Claude tested them at the full problem size, on 256-bit numbers.\n\nClaude then tried a more theoretical approach. Rather than guessing and testing rules, it set out to understand mathematically why divsteps behaves the way it does. It proved a series of results about the iteration process, including several new algebraic identities. From these identities, Claude derived a precise formula for the decoding rule that would correctly recover the branch information from the numerical pairs. It then checked the formula, first by running it through large-scale numerical simulations, and then formalizing the claim in Lean. With the full validation complete, Claude produced the first reversible implementation of divsteps with no stored branch history.\n\n#### A family of designs\n\nDecoding saves qubits, but it costs time. So, as a further refinement, Claude looked for situations in which it would be cheaper to store the branch information than to decode it. By varying the threshold at which the circuit stores rather than decodes the branch information, Claude produced a new family of designs between the two extremes. Compared with the smallest previous design, one circuit in the family uses 12% more qubits but 17x fewer gates. More generally, the new designs expand the Pareto frontier, offering combinations of qubit count and runtime that weren’t available before (Table 1).\n\n![Image 2](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2F7e8a0d4b9d7e826f25379d351ee6d2cab3900f84-3840x1052.png&w=3840&q=75)\n\nResources for elliptic-curve point addition. Bold rows are Claude’s designs; the others are the best previously published designs. Sources: [Schrottenloher](https://arxiv.org/abs/2606.02235) (2026), [Luo et al.](https://arxiv.org/abs/2607.13816) (2026).\n\n### Optimizing a quantum optimizer\n\nOptimization problems are at the heart of a wide range of tasks, including scheduling, logistics, and materials design. An optimization problem presents a set of competing constraints and asks for the solution that satisfies as many of them as possible. Many quantum algorithms have been proposed for problems like these, but most promise only modest or uncertain gains over ordinary computers. [Decoded quantum interferometry (DQI)](https://arxiv.org/abs/2408.08292) is one of the strongest candidates for offering a _superpolynomial quantum speedup—_ an advantage that rapidly widens as the problems get larger.\n\nWhen a quantum computer finishes a computation, reading out its qubits produces just one answer, selected at random from the possibilities they were holding in superposition. DQI works by preparing a quantum state in which good solutions are more likely to be read out than bad ones. Doing this involves using an error-correcting decoder, which recovers a short list of “errors” from a compact summary. This is the most expensive step in the algorithm. So, if we could make a faster decoder, we could also perform DQI faster.\n\n#### A more efficient quantum decoder\n\nThe researchers who introduced DQI demonstrated it on a problem called _optimal polynomial intersection_ (OPI), a grid-based version of curve fitting (Figure 3). Imagine a grid in which each position _x_ contains several acceptable values of _y_. The goal is to find a simple curve (a low-degree polynomial) that passes through an acceptable square for as many _x_ positions as possible. DQI tackles this optimization problem using a specific type of decoder, called a Reed-Solomon decoder.\n\n![Image 3](https://www.anthropic.com/_next/image?url=https%3A%2F%2Fwww-cdn.anthropic.com%2Fimages%2F4zrzovbb%2Fwebsite%2Fffc6c06497f985e9162489dffa83c0bbaf50a909-3840x2000.png&w=3840&q=75)\n\nOptimal Polynomial Intersection (OPI) as discrete curve fitting. Each column contains several acceptable values. The optimization problem is to find a polynomial that passes through as many of the acceptable values as possible.\n\nReed-Solomon decoding starts from the compact summary of errors mentioned above, which is known as a _syndrome_. The decoder’s job is to infer, from this summary, where in the data the errors occurred and what they were. The previous state-of-the-art quantum circuit processed these syndromes using the extended Euclidean algorithm, a sequence of divisions and swaps in which the number and order of steps depend on the particular input it’s given. Here, the constraints of quantum circuits reemerge: while an ordinary program can follow a different path for every input, a quantum circuit, working on many inputs at once, has to handle all of them with a single fixed sequence of gates. To manage this, the previous design had to stretch the computation over many more rounds of iteration than any single input would need, and had to run every operation in every round, even when doing so was unnecessary.\n\nImproving this decoder could substantially reduce DQI’s runtime. Estimates by researchers at [Google Quantum AI](https://arxiv.org/abs/2510.10967) imply that solving one particular OPI problem would take about three months on [Frontier](https://www.olcf.ornl.gov/frontier/), one of the world’s most powerful supercomputers, compared with roughly an hour on a future quantum computer running DQI. Most of that hour would be spent on Reed-Solomon decoding.\n\nSo, we asked Claude to design a more efficient quantum circuit for the decoding step. Claude quickly concluded that the extended Euclidean algorithm was a poor fit for a quantum circuit. Instead, it organized its circuit around a different decoding method, known as Berlekamp-Massey decoding, which reads through syndromes (summaries of errors) one at a time and gradually works out the simplest rule that predicts each number in the list based on the ones that came before it. Once that rule is found, it reveals the errors. Unlike the extended Euclidean algorithm, Berlekamp-Massey performs the same kind of step in every round and always runs the same number of rounds, which suits a quantum circuit’s single fixed sequence of gates, ultimately giving Claude a much more efficient foundation to build on.\n\n#### A simplified approach to storage\n\nSwitching to Berlekamp-Massey removed the need for the circuit to take different paths for different inputs. But making it reversible introduced another challenge, this time as a result of the uncomputing constraint discussed above. In every round, the circuit calculates temporary values that it needs only briefly, but this information can’t simply be deleted: to uncompute it later, the circuit has to be able to recover that information.\n\nStoring this information would have been prohibitively expensive. So Claude took the same kind of approach as it had for divsteps: it found a way to reconstruct most of this information from the circuit’s current state, so it didn’t need to be stored. However, a few exceptional values couldn’t be recovered in this way and had to be saved.\n\nSetting aside enough memory for the worst possible case, in which an exceptional value arises in 35 different rounds, would take 665 qubits. Instead, Claude wrote a high-speed simulator and ran 403 million sample decodings to measure how often these exceptions actually occurred. Almost every run needed to save one value at most. So Claude’s circuit sets aside room for just one saved value, or 19 qubits. About one run in 10,000 needs more than that and fails, which is well within the error rate the task allows. These improvements replaced large, worst-case reserves with a small, fixed number of qubits and gates (Figure 4).\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2111881963657412903",
+          "title": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.\n\nIt will start off with 5% of our shares. For",
+          "url": "https://x.com/AnthropicAI/status/2111881963657412903",
+          "published_at": "2026-10-18T18:07:51.000000Z",
+          "description": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new wholly owned entity dedicated entirely to the public benefit.\n\nIt will start off with 5% of our shares. For every 50% increase in the company’s value over a set baseline, we can contribute up to an extra 2%, subject to our board’s discretion.\n\nIn total, this means that roughly 20% of Anthropic’s shares are committed to the public good. Our co-founders have already pledged to donate 80% of their equity, and around half our employees are donating a portion of their equity as part of a donation matching program we’ve run since our founding.\n\nIn the post below, we share more details about our new fund.\n\nhttps://t.co/XzDntVH0vH",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/XzDntVH0vH",
+              "expanded_url": "https://www.anthropic.com/news/public-benefit-fund",
+              "display_url": "anthropic.com/news/public-be…"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-10-18",
+          "delivery_class": "backfill",
+          "linked_content": "Title: Investing in the public benefit\n\nURL Source: https://www.anthropic.com/news/public-benefit-fund\n\nPublished Time: 2026-10-18T00:00:00.000Z\n\nMarkdown Content:\nToday, we’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund,a new wholly owned entity with a structure that increases the stake as the company grows. Subject to stockholder approval, 5% of Anthropic’s shares will be committed today, with an additional 2% added at the board’s discretion for every 50% increase in the company’s value above a set baseline.\n\nAs a public benefit corporation, most of our work in pursuit of our mission takes place inside the company: research relevant to AI safety and interpretability; applied biomedical research; discounts on Claude for nonprofits and scientific institutions. These activities have both a public benefit component and for-profit value, so we house them directly in the company.\n\nThe Anthropic Public Benefit Fund will have increased flexibility and scale, enabling us to pursue our mission in new ways: for example, we might explore large donations to traditional nonprofits or direct distributions to specific populations.\n\nOne example is labor market impacts. AI may generate enormous economic value, but it could also cause instability for many workers. Anthropic has already committed [$200 million](https://www.anthropic.com/news/economic-futures-research-fund-agenda) to studying and addressing this issue, but given the pace of AI progress, bolder approaches may be needed. The Fund will have the versatility to pursue them.\n\nWe’re establishing the Anthropic Public Benefit Fund as an LLC—rather than a 501(c)(3) or other format—to give adjustability between different forms of giving. None of the Anthropic equity held by the LLC will be used for lobbying or political giving, in the US or abroad.\n\nBecause of the way the Fund is structured, the more Anthropic grows, the larger the share of the company that can be dedicated expressly to the public good. It is common practice for tech companies to offer escalating compensation awards to their executives. We are instead directing that equity to the public benefit.\n\nThis builds on commitments our co-founders and employees have already made. When Anthropic was founded, our co-founders pledged to donate 80% of their equity holdings, and since founding we have also operated an equity donation match program that allows employees to pledge equity which Anthropic matches. Approximately half of our employees participate in this program. When combined with today’s announcement, roughly 20% of Anthropic shares will be dedicated to the public good, plus any additional percentage that could be added if the company reaches specific valuation milestones.\n\nIn the coming months, we will share more about the Anthropic Public Benefit Fund’s structure and governance, including the valuation milestones that may add to its stake. We will also report on our progress to date against our mission in an upcoming public benefit report.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 11,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111192259073094035",
+          "title": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.\n\nAnd now, multiple agents can tackle different parts of a task in parallel. You can follow each a",
+          "url": "https://x.com/OpenAI/status/2111192259073094035",
+          "published_at": "2026-10-16T20:27:13.000000Z",
+          "description": "GPT-6 Astra Pro in ChatGPT got an upgrade with faster responses and improved use of plugins and tools.\n\nAnd now, multiple agents can tackle different parts of a task in parallel. You can follow each agent’s progress and open completed tasks to review their work.\n\nNow available to Pro users in the Chat tab.",
+          "expanded_urls": [],
+          "source": "OpenAI (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 15,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111211411766399288",
+          "title": "Put your dot on call.\n\nAli, an engineer at OpenAI, used his dot to triage an on-call incident at 3am.\n\nHis dot investigated the issue and started a Codex thread, so he could steer the work from his ph",
+          "url": "https://x.com/OpenAIDevs/status/2111211411766399288",
+          "published_at": "2026-10-16T21:43:19.000000Z",
+          "description": "Put your dot on call.\n\nAli, an engineer at OpenAI, used his dot to triage an on-call incident at 3am.\n\nHis dot investigated the issue and started a Codex thread, so he could steer the work from his phone in the ChatGPT app. https://t.co/xLhtGUSzsx",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2111213093577691337",
+          "title": "Here’s how our engineers use Codex at OpenAI to dig through our codebase, find what needs attention, and chip away at the maintenance backlog:",
+          "url": "https://x.com/OpenAIDevs/status/2111213093577691337",
+          "published_at": "2026-10-16T21:50:00.000000Z",
+          "description": "Here’s how our engineers use Codex at OpenAI to dig through our codebase, find what needs attention, and chip away at the maintenance backlog:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "rrroim",
+            "text": "Software maintenance is changing. A few months ago, I had to tell Codex exactly where to look for dead code. Now it can find candidates in Slack, check them against production telemetry, and draft cleanup PRs. Here’s how we do this at OpenAI.\n\nhttps://t.co/PdQl43nLeQ",
+            "url": "https://x.com/rrroim/status/2111171952849334585"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-16",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2111585491237650691",
+          "title": "Looking for a weekend project?\n\nHere’s what the community has been building and how you can replicate it yourself:\n\nhttps://t.co/J7mgdmgt9C",
+          "url": "https://x.com/OpenAIDevs/status/2111585491237650691",
+          "published_at": "2026-10-17T22:29:47.000000Z",
+          "description": "Looking for a weekend project?\n\nHere’s what the community has been building and how you can replicate it yourself:\n\nhttps://t.co/J7mgdmgt9C",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/J7mgdmgt9C",
+              "expanded_url": "https://youcanjustbuildthings.openai.chatgpt.site",
+              "display_url": "…anjustbuildthings.openai.chatgpt.site"
+            }
+          ],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 13,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1478.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111375640717033777",
+          "title": "🚀 DeepSeek-V4.1-Flash-1017 is here!\n\nStronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost. Now live on ou",
+          "url": "https://x.com/deepseek_ai/status/2111375640717033777",
+          "published_at": "2026-10-17T08:35:54.000000Z",
+          "description": "🚀 DeepSeek-V4.1-Flash-1017 is here!\n\nStronger benchmark performance, faster task completion, and shorter outputs than the previous version—a Pareto improvement in performance and cost. Now live on our website, app, and API.\n\n🛠️ Optimized for @DeepSeekHarness, Tencent CodeBuddy, WorkBuddy, and more. Upgrade to DeepSeek Harness v0.2.1-rc.1 or later for the best experience with the new model.\n\n1/4",
+          "expanded_urls": [],
+          "source": "DeepSeek (Twitter)",
+          "origin_report_date": "2026-10-17",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    }
+  }
+}
