@@ -1,243 +1,5 @@
 {
   "articles": {
-    "ae336e05971c46948b71eae67c9ffd336d46ceb0bfc1093a9116d0a4aff25d90": {
-      "title": "GPT-5.6 Sol 推理优化：成本降20%，效率提升",
-      "url": "https://x.com/OpenAI/status/2082577277246972300",
-      "source": "OpenAI (Twitter)",
-      "published_at": "2026-07-29T21:21:29.000000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "OpenAI 表示，GPT-5.6 Sol 被用于优化自身的推理基础设施，生产 GPU kernel 改进使服务成本降低约 20%，改进的推测解码让 token 生成效率提升超过 15%。同一套系统优化也用于 Codex，让相同硬件支持更多有效的智能体工作。评估这类升级时，应同时记录模型质量、端到端延迟、工具调用开销和单位任务成本，而不能只看生成速度。 OpenAI表示，GPT-5.6 Sol 的系统级优化提升了模型在性能与成本之间的效率曲线。相关改进覆盖推理栈，让同一套硬件能够产出更多有效工作。",
-      "category": "模型发布",
-      "importance": 5,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "GPT-5.6 Sol",
-          "推理优化",
-          "GPU kernel",
-          "推测解码",
-          "Codex",
-          "成本效率"
-        ],
-        "practice_suggestions": [
-          "在实际工作负载中同时记录模型质量、延迟和单位成本，评估推理优化的真实收益。",
-          "对长任务分别测量推理、工具调用和上下文管理的开销，并保留可复现的模型版本与配置。",
-          "在模型上线后持续分析 kernel、缓存和解码层面的复合优化机会。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAIDevs/status/2082580211552457102",
-            "title": "GPT-5.6 Sol 优化 Codex 基础设施",
-            "source": "OpenAI Devs (Twitter)",
-            "angle": "Codex 基础设施实践"
-          }
-        ],
-        "thread_urls": [
-          "https://x.com/OpenAI/status/2082577277246972300",
-          "https://x.com/OpenAI/status/2082577278450676080"
-        ]
-      }
-    },
-    "265c6a0134aba9b6d5ff886a2c1062b903d9dc8f0af87700b1f7d6960b8f6865": {
-      "title": "GPT-5.6 Sol：ARC-AGI-3 得分三倍与长程评测方法",
-      "url": "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-29T15:00:00.000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "OpenAI 发现，GPT-5.6 Sol 在 ARC-AGI-3 上的表现高度依赖评测 harness：保留推理状态并启用上下文压缩后，得分提升至原来的三倍，输出 token 还减少约六倍。相关讨论强调，长程代理需要跨上下文窗口保留已学信息，不能只用一次性调用衡量模型能力。评测结果同时受到模型、API 设置、提示词和 harness 设计影响，使用 Responses API、推理保留与上下文压缩可以让测量更接近真实工作流。",
-      "category": "研究",
-      "importance": 5,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "GPT-5.6 Sol",
-          "ARC-AGI-3",
-          "上下文压缩",
-          "长程代理",
-          "模型评测",
-          "Responses API"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAI/status/2082616641834422740",
-            "title": "OpenAI：长程代理评测需保留推理并压缩上下文",
-            "source": "OpenAI (Twitter)",
-            "angle": "长程代理评测方法"
-          },
-          {
-            "url": "https://x.com/sama/status/2082627724040884667",
-            "title": "GPT-5.6 Sol 的 ARC-AGI-3 得分受设置影响",
-            "source": "Sam Altman (Twitter)",
-            "angle": "Altman 对评测设置的补充"
-          },
-          {
-            "url": "https://x.com/OpenAI/status/2082616636989952217",
-            "title": "OpenAI 解释 GPT-5.6 Sol 的 ARC-AGI-3 得分提升",
-            "source": "OpenAI (Twitter)",
-            "angle": "官方结果与 API 设置"
-          }
-        ]
-      }
-    },
-    "a688f6da7db72d8ccc6284c05a1f52587d813ab1cd11fc6bf80c5731e9589278": {
-      "title": "Grok Voice Think Fast 2.0 发布",
-      "url": "https://x.com/SpaceXAI/status/2082529280341553209",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-07-29T18:10:46.000000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "xAI宣布推出下一代语音模型 Grok Voice Think Fast 2.0，重点改进智能水平、转写准确率和对话能力。该版本面向语音交互场景，目标是提升实时交流的整体体验。",
-      "category": "模型发布",
-      "importance": 4,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "Grok",
-          "语音模型",
-          "语音转写",
-          "对话能力"
-        ],
-        "practice_suggestions": [
-          "用真实通话或会议片段测试转写准确率，并按口音、噪声和专业术语分层评估。",
-          "将语音模型接入业务前，明确录音留存、敏感信息处理和人工接管规则。"
-        ]
-      }
-    },
-    "47da73cdc4f72b4cf63e62ddec1cddac6d047b374618b3abac91adde86c4557b": {
-      "title": "ChatGPT for Academic Researchers：前沿模型免费助研",
-      "url": "https://openai.com/index/chatgpt-for-academic-researchers",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-29T10:00:00.000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "OpenAI 推出 ChatGPT for Academic Researchers，先向一万名科学家、数学家和工程师免费开放前沿模型，并计划在 2027 年扩大至十万人。项目面向文献整理、假设检验、代码分析和跨学科发现，参与者可获得包含 GPT-5.6 系列在内的模型访问权限。每个工作区提供企业级隐私与安全保护，研究者仍需保留对数据权限、模型建议和实验结论的人工复核。",
-      "category": "产品与功能",
-      "importance": 4,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "ChatGPT",
-          "学术研究",
-          "GPT-5.6",
-          "科研协作",
-          "数据隐私",
-          "研究生产力"
-        ],
-        "practice_suggestions": [
-          "为研究团队申请试用时，先定义文献整理、假设检验或代码分析等具体任务。",
-          "涉及未发表数据时，先核对工作区的隐私设置、训练政策和协作者权限。",
-          "建立研究者对模型建议的引用、复核和错误记录流程。",
-          "用非敏感数据先测试共享提示词、实验记录和模型输出审计规范。"
-        ],
-        "cluster_members": [
-          {
-            "url": "https://x.com/OpenAI/status/2082516370949062989",
-            "title": "OpenAI 向研究人员免费开放前沿模型",
-            "source": "OpenAI (Twitter)",
-            "angle": "科研支持计划发布"
-          }
-        ]
-      }
-    },
-    "da425c76a8c018d071b2c12789d5fcc92fecdaeeb09350e132a1dda9e2a72958": {
-      "title": "avatarin 用 GPT-Realtime 打造全天候零售客服",
-      "url": "https://openai.com/index/avatarin",
-      "source": "OpenAI Blog",
-      "published_at": "2026-07-30T00:00:00.000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "日本山田电机使用 GPT-Realtime 为消费者提供全天候多语言支持。上线两周已有 3 万人使用，问卷中的正面反馈达到 92%。",
-      "category": "产品与功能",
-      "importance": 3,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "GPT-Realtime",
-          "零售客服",
-          "多语言",
-          "语音代理"
-        ],
-        "practice_suggestions": [
-          "在零售场景中先用高频问题和多语言需求验证实时语音代理。",
-          "上线初期同时跟踪使用量、问题解决率和用户满意度。"
-        ]
-      }
-    },
-    "8b96329aed14643e23bf39fb9aa7b5e56dc3afb98185d1d312a86b20fb5b2146": {
-      "title": "Anthropic 调查三起真实网络安全事件评测",
-      "url": "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals",
-      "source": "Anthropic Blog",
-      "published_at": "2026-07-30T00:00:00.000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "Anthropic 发布对三起真实世界事件的网络安全评测调查。文章重点将现实事件复盘与安全能力评估联系起来，为理解模型在真实攻防场景中的表现提供案例依据。",
-      "category": "政策与安全",
-      "importance": 3,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "Anthropic",
-          "网络安全",
-          "安全评测",
-          "真实事件"
-        ]
-      }
-    },
-    "083f8101cc7cb3e48dfed953a59c21e65d2cb860e81eebd1c2197907510da28e": {
-      "title": "TinyFish 插件为 Grok Build 接入网页代理",
-      "url": "https://x.com/SpaceXAI/status/2082517754712842386",
-      "source": "xAI (Twitter)",
-      "published_at": "2026-07-29T17:24:58.000000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "Grok Build 现在可以使用 TinyFish 插件，获得网页搜索、抓取、智能体和浏览器能力。该集成让编程智能体能够从终端连接实时网页并跨站执行任务。",
-      "category": "产品与功能",
-      "importance": 3,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "Grok Build",
-          "TinyFish",
-          "网页代理",
-          "浏览器自动化"
-        ],
-        "practice_suggestions": [
-          "先在隔离环境中限制插件可访问的域名和凭据，再运行网页检索任务。",
-          "为搜索、抓取和浏览器操作分别记录来源、权限和执行结果，便于审计。"
-        ]
-      }
-    },
-    "0686a2810dc91225bac27e3487fdef5129acec5454e2fd0581ecd8405a7b9dd2": {
-      "title": "Codex 用户作品登上户外广告牌",
-      "url": "https://x.com/OpenAIDevs/status/2082554644623180208",
-      "source": "OpenAI Devs (Twitter)",
-      "published_at": "2026-07-29T19:51:33.000000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "OpenAI Devs展示了 Codex 社区用户的工作场景与作品，并将其中一些作品投放到广告牌上。内容主要是社区展示和品牌传播，没有提供新的产品功能或技术信息。",
-      "category": "商业动态",
-      "importance": 1,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "Codex",
-          "开发者社区",
-          "品牌传播"
-        ]
-      }
-    },
-    "d41b3fb79c3d7c13f52cd2a9b2cce6ce1e502d23257fe77f98d1e04579bf0a17": {
-      "title": "Google DeepMind 发布待核实链接",
-      "url": "https://x.com/GoogleDeepMind/status/2082541871612449180",
-      "source": "Google DeepMind (Twitter)",
-      "published_at": "2026-07-29T19:00:48.000000Z",
-      "fetched_at": "2026-07-31T12:36:05.019Z",
-      "summary": "该推文在抓取缓存中仅包含一个短链接，没有提供可供分析的标题或正文。由于缺少链接展开内容，暂时无法判断其对应的产品、研究或公告主题。",
-      "category": "教程与观点",
-      "importance": 1,
-      "report_date": "2026-07-30",
-      "extras": {
-        "tags": [
-          "Google DeepMind",
-          "短链接",
-          "待核实"
-        ]
-      }
-    },
     "e299630b866e2d7ebb7f543050983e5dd910dbcd47a219178da9f4e988c6a6ce": {
       "title": "OpenAI公布数学与理论计算机科学新进展",
       "url": "https://openai.com/index/ten-advances-in-mathematics",
@@ -18818,7 +18580,225 @@
         "origin_report_date": "2026-10-14",
         "delivery_class": "backfill"
       }
+    },
+    "a2aead665c63432398946bb3da42ef1388db47b0d388384ebe4abaf1ae69bacb": {
+      "title": "Meta发布可在消费级显卡运行的Muse Glimmer",
+      "url": "https://x.com/AIatMeta/status/2112265822274302066",
+      "source": "Meta AI (Twitter)",
+      "published_at": "2026-10-19T19:33:10.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "Meta发布Muse Glimmer技术报告，介绍一款面向智能体任务的30B开源权重模型。模型经4-bit量化后可在配备单张消费级GPU的Mac或PC上以实用速度运行；Meta称其工具使用和多步规划表现领先于规模相近的开放模型，并披露架构、蒸馏与量化方案。",
+      "category": "模型发布",
+      "importance": 4,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "Muse Glimmer",
+          "开源权重",
+          "模型量化",
+          "智能体",
+          "消费级硬件"
+        ],
+        "practice_suggestions": [
+          "在单张消费级GPU上以4-bit精度部署Muse Glimmer，并用本地工具调用和多步规划任务集评测成功率与延迟。"
+        ],
+        "origin_report_date": "2026-10-19",
+        "delivery_class": "backfill"
+      }
+    },
+    "1e3ebf94e41ebe19793bfa16d9a1ceac171abfb39683d16886169781f84081b8": {
+      "title": "Retell借助OpenAI模型服务千万级月呼叫",
+      "url": "https://openai.com/index/retell-ai",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-27T15:00:00.000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "语音客服平台Retell每月处理超1亿通电话，称OpenAI模型为约80%的通话生成回复，客户问题解决率超过80%。其基准测试显示GPT-6 Astra指令遵循表现领先，企业案例还报告了客服工时节省与较高解决率。",
+      "category": "产品与功能",
+      "importance": 3,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "语音智能体",
+          "客服",
+          "模型评测",
+          "企业应用"
+        ],
+        "practice_suggestions": [
+          "用真实、多轮且包含工具调用的客服对话构建评测集，按指令遵循、事实依据、工具正确率和延迟分别衡量模型。",
+          "先将智能体用于边界清晰的一级支持流程，并设置人工升级、故障备用链路和结果回写校验。"
+        ],
+        "origin_report_date": "2026-10-28",
+        "delivery_class": "current"
+      }
+    },
+    "c51a8cca5b3e1feba0bdd35c93df872e585e3595f70b94ac7619c03db3c092dc": {
+      "title": "Anthropic为关键开源项目推出免费漏洞扫描",
+      "url": "https://x.com/ClaudeDevs/status/2112299602510749992",
+      "source": "Claude Devs (Twitter)",
+      "published_at": "2026-10-19T21:47:24.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "Anthropic推出OSS Scanner，为关键开源项目提供免费的定期漏洞扫描，使用其最强模型进行检查。每项发现会附带概念验证，条件允许时还提供修复补丁。",
+      "category": "政策与安全",
+      "importance": 3,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "开源安全",
+          "漏洞扫描",
+          "代码审计",
+          "补丁"
+        ],
+        "origin_report_date": "2026-10-19",
+        "delivery_class": "backfill"
+      }
+    },
+    "2aee30040b73bbecf17da7d8dbeb81fe99c8a0289ea25d0c92d9ee04f7e67347": {
+      "title": "Meta披露Prometheus训练集群韧性指标",
+      "url": "https://x.com/AIatMeta/status/2112245968750145561",
+      "source": "Meta AI (Twitter)",
+      "published_at": "2026-10-19T18:14:17.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "Meta称，Muse基础模型（包括Muse Wonder）在俄亥俄州Prometheus超大规模集群上训练，集群拥有数十万块GPU。预训练goodput超过85%、强化学习超过90%；Muse Wonder训练期间平均每约4.7万GPU小时发生一次中断，凸显大规模训练中的系统韧性设计。",
+      "category": "研究",
+      "importance": 3,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "大模型训练",
+          "GPU集群",
+          "系统韧性",
+          "训练基础设施"
+        ],
+        "origin_report_date": "2026-10-19",
+        "delivery_class": "backfill"
+      }
+    },
+    "c417f8e3d39d0b893c07541bfe85fce19056b39882f88193551609651d5af4ff": {
+      "title": "OpenAI与Oracle将企业应用接入ChatGPT",
+      "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+      "source": "OpenAI Blog",
+      "published_at": "2026-10-27T07:00:00.000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "OpenAI与Oracle计划把Oracle应用和数据接入ChatGPT，并推出由OpenAI模型与工具驱动的Oracle产品。方案涵盖受权限控制的业务工作流、面向中小企业的套装及应用构建工具，Oracle美国客户也可通过Marketplace采购相关服务。",
+      "category": "商业动态",
+      "importance": 2,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "OpenAI",
+          "Oracle",
+          "企业应用",
+          "合作"
+        ],
+        "origin_report_date": "2026-10-28",
+        "delivery_class": "current"
+      }
+    },
+    "fb9bed96f4bb143484102471dc40508a7cc6e45409ca03227adb5552e9d87fd8": {
+      "title": "OpenAI Devs以直播和社区案例展示Codex创作",
+      "url": "https://x.com/OpenAIDevs/status/2112229620758265938",
+      "source": "OpenAI Devs (Twitter)",
+      "published_at": "2026-10-19T17:09:19.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "OpenAI Devs围绕Codex发起社区项目征集，并通过「COOKED」第一集直播预告展示团队使用Codex制作的内容。后续帖子分享了社区项目案例，补充了开发者实践这一角度。相关内容均未披露具体功能更新或案例实现细节。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "Codex",
+          "开发者社区",
+          "项目展示",
+          "直播",
+          "项目案例"
+        ],
+        "cluster_members": [
+          {
+            "url": "https://x.com/OpenAIDevs/status/2112242522475078020",
+            "title": "OpenAI Devs发布Codex主题直播第一集",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "直播首集发布"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2112242739198959913",
+            "title": "OpenAI Devs预告Codex开发演示直播",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "Codex制作内容预告"
+          },
+          {
+            "url": "https://x.com/OpenAIDevs/status/2112269679154585624",
+            "title": "OpenAI Devs分享社区用Codex制作的项目",
+            "source": "OpenAI Devs (Twitter)",
+            "angle": "社区项目案例"
+          }
+        ],
+        "origin_report_date": "2026-10-19",
+        "delivery_class": "backfill"
+      }
+    },
+    "bd325d4d0779e6c0fd0e699fe80026753089caccbe95d631efa59ddcc2457f7b": {
+      "title": "Thariq建议使用多智能体时先明确最高优先级",
+      "url": "https://x.com/trq212/status/2112219173288120531",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-10-19T16:27:48.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "Thariq认为，同时调度多个智能体的人可以尝试放慢节奏，因为许多并行任务未必重要。他建议先识别当前的最高优先级事项，再考虑是否值得投入完整注意力。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "智能体",
+          "任务管理",
+          "优先级",
+          "工作流"
+        ],
+        "origin_report_date": "2026-10-19",
+        "delivery_class": "backfill"
+      }
+    },
+    "8bd1f280007865a98334a81b4d2399a7c1fdf316da567db36ca2d09dc88b93e9": {
+      "title": "Thariq探索让玩家用AI创作游戏角色",
+      "url": "https://x.com/trq212/status/2111883082953547881",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-10-18T18:12:18.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "Thariq重启个人游戏项目，正在重新思考玩法结构，包括单人或多人模式，并提出让玩家通过vibe coding制作角色的设想。他强调AI可以协助实现创作者的游戏构想，而非替代创作本身。",
+      "category": "教程与观点",
+      "importance": 2,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "游戏开发",
+          "生成式AI",
+          "创作",
+          "交互设计"
+        ],
+        "origin_report_date": "2026-10-18",
+        "delivery_class": "backfill"
+      }
+    },
+    "8c291c305771e431be8d654f75a6eeeb0106d86051a944da5c9dc3b327137b37": {
+      "title": "Thariq观察到用AI编程比玩游戏更有吸引力",
+      "url": "https://x.com/trq212/status/2111945336537420259",
+      "source": "Thariq (Twitter)",
+      "published_at": "2026-10-18T22:19:40.000000Z",
+      "fetched_at": "2026-10-29T15:27:33.856Z",
+      "summary": "Thariq表示，自己如今有时更愿意用vibe coding制作游戏中的小功能，而不是直接玩游戏，尤其是需要思考的游戏。他认为这种偏好变化可能对游戏行业有意义，但尚未确定其具体影响。",
+      "category": "教程与观点",
+      "importance": 1,
+      "report_date": "2026-10-28",
+      "extras": {
+        "tags": [
+          "游戏",
+          "编程代理",
+          "用户行为",
+          "观点"
+        ],
+        "origin_report_date": "2026-10-18",
+        "delivery_class": "backfill"
+      }
     }
   },
-  "last_fetch": "2026-10-28T20:05:14.139Z"
+  "last_fetch": "2026-10-29T15:27:33.856Z"
 }
