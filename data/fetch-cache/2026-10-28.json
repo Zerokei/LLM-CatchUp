@@ -1,0 +1,598 @@
+{
+  "date": "2026-10-28",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-10-29T07:36:28−07:00",
+  "window_start": "2026-10-27T00:00:00−07:00",
+  "window_end": "2026-10-28T00:00:00−07:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1334,
+      "filtered_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Retell uses OpenAI models to help power 100M monthly calls",
+          "url": "https://openai.com/index/retell-ai",
+          "published_at": "2026-10-27T15:00:00.000Z",
+          "description": "GPT-6 Astra tops Retell’s voice agent benchmark, while Codex helps it reach a $1.6M annual revenue run rate per employee.",
+          "full_text": "Title: Retell uses OpenAI models to help power 100M monthly calls\n\nURL Source: https://openai.com/index/retell-ai\n\nMarkdown Content:\n[Retell AI⁠(opens in a new window)](https://www.retellai.com/) is a voice AI platform for contact center operations, helping businesses build agents that can answer questions, take action, and connect a caller with a person when needed. Its platform now serves more than 4,000 businesses, with monthly call volume growing from 30 million in early 2026 to more than 100 million by September.\n\nAs Retell serves more enterprises with complex workflows, it uses OpenAI models to keep call quality and reliability high. Today, OpenAI models generate responses for 80% of calls on Retell, with customers achieving resolution rates above 80%. Retell has also surpassed 1 trillion tokens consumed across OpenAI models, reflecting the scale of that adoption.\n\nRetell’s engineers use Codex throughout development, from researching unfamiliar code to building features and debugging issues, and GPT‑6 Astra to test front-end interfaces.\n\n> “We choose models the way our customers choose vendors: on real calls, not demos. OpenAI keeps earning its spot.”\n\n—Bing Wu, Co-founder and CEO, Retell AI\n\nProduct demonstration of Retell AI’s voice agent platform.\n\n## Choosing OpenAI models for the demands of a live call\n\nEnterprise voice agents need to follow company policies and stay within their assigned roles, even as conversations change. Retell built its vCX benchmark to compare dozens of models using difficult, multi-turn conversations drawn from real production scenarios.\n\nIt tests how well models follow instructions, stay grounded in the information they are given, call the right tools, and use natural conversational language. In Retell’s October 13, 2026 benchmark, GPT‑6 Astra ranked first for instruction following at 89.7%.\n\n![Image 1: Bar chart ranking five models on Retell’s vCX instruction-following benchmark, led by GPT-6 Astra at 89.7%.](https://images.ctfassets.net/kftzwdyauwt9/6a0pYiVoGAAH0sutAfOxaS/93dce3f41d38db59e85991d128c2a3f7/retell-ai-voice-agent-benchmark.png?w=3840&q=90&fm=webp)\n\nRetell also shared evaluations conducted before the launch of the GPT‑6 Astra model that showed GPT‑5.5 ranking highest among models on both non-hallucination rate (88.0%) and tool-call correctness (88.3%) with reasoning enabled, outperforming Gemini‑3.1‑Pro and Claude‑4.6 on both measures. It also led on non-hallucination rate with reasoning off.\n\nRetell says new customers who choose OpenAI models continue using them. Customers also have access to OpenAI Realtime models through the Realtime API and OpenAI text-to-speech as a voice engine. Retell makes new OpenAI models available the day they launch and reruns its benchmark as models improve.\n\n## Resolving more than 80% of customer requests with agents\n\nContact center teams use Retell to define their agents’ business context, goals, and rules. Developers can further configure workflows and integrations.\n\nDuring a call, Retell’s harness runs the audio models, tracks the conversation, and manages when the agent speaks, listens, or responds to interruptions. OpenAI models, including GPT‑6.1 Sol, GPT‑6 Astra, and GPT‑5.5, use the customer’s instructions and conversation context to generate responses and request tool calls. Retell executes those calls through integrations with the customer’s systems and can write outcomes back to a customer record.\n\nWhen human judgment is needed, the voice agent briefs the representative with context, answers their follow-up questions, and confirms they are ready before connecting the customer. After a call, Retell uses GPT‑5.6 Terra to analyze the transcript and extract outcomes and other data.\n\n![Image 2: Diagram showing how Retell uses OpenAI models during a customer call, connecting live audio, conversation state, context, tools, and customer systems.](https://images.ctfassets.net/kftzwdyauwt9/5jwXY5fNsxAACfHrYAiPGt/5d702045aa6b1ae3cd2e64df003dd62c/retell-ai-call-architecture-diagram.png?w=3840&q=90&fm=webp)\n\nWith this approach, Retell reports customer resolution rates above 80%. At electronics company Anker, agents handle Tier‑1 post-sales support in the US and UK, including order tracking, warranty checks, and troubleshooting. Anker reported an 80.4% case resolution rate and a Net Promoter Score (NPS) of 63. Its team also said the agents’ tone, pacing, and warmth met the standard they expected of a human agent.\n\nAt Pine Park Health, Retell agents handle appointment reminders and proactive scheduling and record the outcomes in patients’ medical charts. The team recovered medical-assistant time equivalent to 2.1 full-time roles and redirected it to patient care. Its scheduling agent achieved a 55.7% booking rate when it reached a patient.\n\n## Keeping calls responsive as volume grows\n\nDaytime traffic on Retell’s platform can reach more than 50 times its overnight low. To help keep calls responsive even at peak demand, Retell uses dedicated servers with OpenAI, shared across its customers. In Retell’s October 13, 2026 benchmark, GPT‑6 Astra and GPT‑6 Sol each recorded median first-sentence latency of 883 milliseconds, with GPT‑5.6 Luna ranking highest at 497 milliseconds.\n\nOpenAI’s regional API endpoints allow developers to route traffic to specific geographic regions, which helps Retell reduce network travel time and meet customers’ data residency requirements in industries such as healthcare and financial services.\n\nRetell also builds redundancy into each layer of the service. It runs its own telephony stack with a second stack ready to take over, along with backups for voice and model services, to help keep calls running when a service fails.\n\n## Using Codex to research, build, and debug\n\nAs Retell’s enterprise growth brings more requests for custom workflows and integrations, its engineers often need to work in unfamiliar parts of the codebase. Before writing code, they give Codex a high-level requirement. Codex surveys the code, checks it against actual data, and explains what needs to change. One engineer said Codex did this research better and much faster than he could.\n\nDuring implementation, engineers say Codex often catches details they had not considered. For debugging, Codex cross-references logs and database records with the code to investigate what is happening. Retell’s engineers also use Codex in their work with customers building on OpenAI models to speed up tasks such as writing the instructions that guide how a model responds in a customer’s application.\n\nTo test changes to its web interface, Retell relies on GPT‑6 Astra’s computer use. When an engineer opens a front-end pull request, GPT‑6 Astra opens the interface, clicks through it, tests flows, tries to break them, and reports the issues it finds. Retell says earlier models could not perform this work reliably.\n\nRetell continues to hire, but its engineering team hasn’t needed to grow at the same pace as the business. Retell reports $1.6 million in annual revenue run rate per employee.\n\n> “By using Codex, the engineering team has a virtual teammate that can pair with them on any kind of difficult task.”\n\n—Bing Wu, Co-founder and CEO, Retell AI\n\n## Putting customer expertise to work\n\nEvery business knows how it wants to serve its customers. Retell’s goal is to let the people closest to that work apply their expertise directly, using advanced voice AI and a platform that lets them build, test, and improve their own agents. Next, Retell plans to expand quality assurance and simulation, support more languages, and develop knowledge base auto-learning.\n\nAs OpenAI models continue to advance, Retell expects its customers to deliver world-class service to millions of callers, on their own terms.\n\n“No one knows a company’s customers better than the company itself. We give them the power to act on that expertise and improve AI agents directly. The goal is for them to build an in-house team of internally deployed engineers who own and run it all,” says Bing.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+          "url": "https://openai.com/index/oracle-apps-in-chatgpt",
+          "published_at": "2026-10-27T07:00:00.000Z",
+          "description": "OpenAI and Oracle are expanding their partnership to bring business applications and AI agents into ChatGPT and power new Oracle offerings.",
+          "full_text": "Title: OpenAI expands partnership with Oracle to bring its apps to ChatGPT\n\nURL Source: https://openai.com/index/oracle-apps-in-chatgpt\n\nMarkdown Content:\nOpenAI and Oracle are bringing Oracle applications and data into ChatGPT and powering new Oracle products and services with OpenAI models and products. Together, we aim to help businesses use AI to run core operations, build better applications, and strengthen security.\n\nThis builds on our commercial relationship across the OpenAI API, ChatGPT Work, and Codex. Oracle[reported⁠](https://openai.com/index/oracle/) 130,000 active ChatGPT users and more than 95,000 active Codex users. Its recruiting team uses ChatGPT Work for market research that once took two to four days to compile, with preparation now taking 15–20 minutes.\n\nOpenAI and Oracle share a vision for an agent-ready enterprise where people and AI agents work across business applications in one connected environment. Our goal is to make Oracle software easier to discover, use, and manage, with simpler administration, unified sign-in, and access governed by each organization’s permissions and approvals. This would help businesses scale AI across core operations and get more value from the software they already use.\n\n## Working with Oracle in ChatGPT\n\nOracle is developing [Oracle AI Workspace⁠](https://openai.com/business/partners/oracle/) to bring that vision into ChatGPT through integrations with Oracle applications and data. The goal is to let people describe what they need to accomplish, find the right information, and complete approved business workflows in one place.\n\nFor example, a new finance team member could use ChatGPT to investigate costs, understand purchasing decisions, and identify what remains before month-end close. The intended experience would bring information from finance, procurement, and planning applications together, helping more employees use Oracle software within their organization’s permissions and approvals.\n\n## Bringing AI to Oracle’s products\n\nAlongside Oracle AI Workspace, Oracle is announcing updates and new offerings built with OpenAI models and tools:\n\n*   **Oracle AI Security Mesh** is designed to help customers find and fix vulnerabilities in applications and infrastructure using OpenAI cyber models. Oracle manages the testing infrastructure, helping customers put these capabilities to work safely and within their authorized scope.\n\n*   **Oracle AI SMB Bundle** combines ChatGPT Business and Codex with Oracle applications and recurring Oracle Cloud Infrastructure credits to help small businesses build products and manage operations.\n\n*   **Oracle App Composer** is designed to help teams build apps with Codex and other AI tools, connect them to approved Oracle data and workflows, and share them across their organization. Oracle manages deployment on Oracle Cloud Infrastructure, with company permissions and access controls built in.\n\n## Access OpenAI through Oracle Marketplace\n\nOracle customers in the U.S. can purchase access to the OpenAI API, Codex, and ChatGPT Work through [Oracle Marketplace⁠](https://openai.com/index/openai-on-oracle-cloud/), using existing procurement processes and eligible Oracle Universal Credits.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2111883082953547881",
+          "title": "I'm coming back to my game side project, and now that I feel confident in the theme, I want to revisit what the actual gameplay and hook is.\n\nIs it a 1v1 or 3v3 or single player? What if you could vib",
+          "url": "https://x.com/trq212/status/2111883082953547881",
+          "published_at": "2026-10-18T18:12:18.000000Z",
+          "description": "I'm coming back to my game side project, and now that I feel confident in the theme, I want to revisit what the actual gameplay and hook is.\n\nIs it a 1v1 or 3v3 or single player? What if you could vibe code your own characters?\n\nhttps://t.co/GnNk3fnhNm https://t.co/9Gjoqotsk1",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/GnNk3fnhNm",
+              "expanded_url": "https://x.com/trq212/status/2105333496768319969?s=46",
+              "display_url": "x.com/trq212/status/…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "trq212",
+            "text": "As a personal side project, I've been prototyping a video game.\n\nAs a former games founder, the process of making a game is deeply satisfying and creative, don't outsource that to AI. Use AI to work with you to bring your vision to life.\n\nHere's how I'm trying it: https://t.co/9biKl3ZeTz",
+            "url": "https://x.com/trq212/status/2105333496768319969"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-18",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2111945336537420259",
+          "title": "I've realized I often would prefer to vibe code little parts of games than actually play games these days. \n\nEspecially cerebral ones that require some thinking like League.\n\nI'm not quite sure what t",
+          "url": "https://x.com/trq212/status/2111945336537420259",
+          "published_at": "2026-10-18T22:19:40.000000Z",
+          "description": "I've realized I often would prefer to vibe code little parts of games than actually play games these days. \n\nEspecially cerebral ones that require some thinking like League.\n\nI'm not quite sure what this really means for games but I think it's important?",
+          "expanded_urls": [],
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-18",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2112219173288120531",
+          "title": "I think most people multi-tasking with agents could benefit from slowing down\n\nmost of the stuff you're doing wont really matter- what's your P0? what would it look like if you gave it your full atten",
+          "url": "https://x.com/trq212/status/2112219173288120531",
+          "published_at": "2026-10-19T16:27:48.000000Z",
+          "description": "I think most people multi-tasking with agents could benefit from slowing down\n\nmost of the stuff you're doing wont really matter- what's your P0? what would it look like if you gave it your full attention?",
+          "expanded_urls": [],
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 5,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2112299602510749992",
+          "title": "We launched OSS Scanner, which gives critical open source projects free, periodic vulnerability scans from our strongest models.\n\nEach finding includes a proof-of-concept, and a patch where possible.\n",
+          "url": "https://x.com/ClaudeDevs/status/2112299602510749992",
+          "published_at": "2026-10-19T21:47:24.000000Z",
+          "description": "We launched OSS Scanner, which gives critical open source projects free, periodic vulnerability scans from our strongest models.\n\nEach finding includes a proof-of-concept, and a patch where possible.\n\nhttps://t.co/aonfpNG3WO",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/aonfpNG3WO",
+              "expanded_url": "https://red.anthropic.com/oss-scanner",
+              "display_url": "red.anthropic.com/oss-scanner"
+            }
+          ],
+          "source": "Claude Devs (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 10,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 4,
+      "current_count": 0,
+      "backfill_count": 4,
+      "pending_count": 12,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2112229620758265938",
+          "title": "What have you been cooking with Codex?",
+          "url": "https://x.com/OpenAIDevs/status/2112229620758265938",
+          "published_at": "2026-10-19T17:09:19.000000Z",
+          "description": "What have you been cooking with Codex?",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2112242522475078020",
+          "title": "COOKED: Ep. 1 🧑‍🍳 https://t.co/EHSalmUTN0",
+          "url": "https://x.com/OpenAIDevs/status/2112242522475078020",
+          "published_at": "2026-10-19T18:00:35.000000Z",
+          "description": "COOKED: Ep. 1 🧑‍🍳 https://t.co/EHSalmUTN0",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/EHSalmUTN0",
+              "expanded_url": "https://x.com/i/broadcasts/1RKZzBELBbXKB",
+              "display_url": "x.com/i/broadcasts/1…"
+            }
+          ],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2112242739198959913",
+          "title": "Here’s what we’re cooking with Codex:\n\nhttps://t.co/EHSalmUTN0",
+          "url": "https://x.com/OpenAIDevs/status/2112242739198959913",
+          "published_at": "2026-10-19T18:01:27.000000Z",
+          "description": "Here’s what we’re cooking with Codex:\n\nhttps://t.co/EHSalmUTN0",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/EHSalmUTN0",
+              "expanded_url": "https://x.com/i/broadcasts/1RKZzBELBbXKB",
+              "display_url": "x.com/i/broadcasts/1…"
+            }
+          ],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2112269679154585624",
+          "title": "Cool projects our community is cooking with Codex: https://t.co/ELMZpMHmFL",
+          "url": "https://x.com/OpenAIDevs/status/2112269679154585624",
+          "published_at": "2026-10-19T19:48:30.000000Z",
+          "description": "Cool projects our community is cooking with Codex: https://t.co/ELMZpMHmFL",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 3,
+        "returned_tweets": 6,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 182.8h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2112245968750145561",
+          "title": "We trained our Muse foundational models, including Muse Wonder, at Prometheus, our gigawatt-scale supercluster in New Albany, Ohio.\n\nAcross a supercluster with hundreds of thousands of GPUs, even one ",
+          "url": "https://x.com/AIatMeta/status/2112245968750145561",
+          "published_at": "2026-10-19T18:14:17.000000Z",
+          "description": "We trained our Muse foundational models, including Muse Wonder, at Prometheus, our gigawatt-scale supercluster in New Albany, Ohio.\n\nAcross a supercluster with hundreds of thousands of GPUs, even one underperforming host can slow an entire training run. We engineered Prometheus for resilience at scale, achieving 85%+ goodput on pretraining, 90%+ on reinforcement learning and ~47K GPU hours mean time between interruptions during Muse Wonder training.\n\nTake a look at the tech powering Prometheus: https://t.co/WSFODnGRST",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/WSFODnGRST",
+              "expanded_url": "https://go.meta.me/4yXXApZ",
+              "display_url": "go.meta.me/4yXXApZ"
+            }
+          ],
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2112265822274302066",
+          "title": "Today we published a technical report on Muse Glimmer, our 30B open-weight model built for agentic tasks on consumer hardware.\n\nIt runs at practical speeds on a Mac or PC with a single consumer GPU at",
+          "url": "https://x.com/AIatMeta/status/2112265822274302066",
+          "published_at": "2026-10-19T19:33:10.000000Z",
+          "description": "Today we published a technical report on Muse Glimmer, our 30B open-weight model built for agentic tasks on consumer hardware.\n\nIt runs at practical speeds on a Mac or PC with a single consumer GPU at 4-bit precision, and leads comparably-sized open models on tool use and multi-step planning.\n\nRead about the model architecture, distillation recipe, quantization and more: https://t.co/H7n9qeDhxn",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/H7n9qeDhxn",
+              "expanded_url": "https://go.meta.me/4Bcvxol",
+              "display_url": "go.meta.me/4Bcvxol"
+            }
+          ],
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-10-19",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 3,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1502.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 339.3h old, exceeds 336h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    }
+  }
+}
