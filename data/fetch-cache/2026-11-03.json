@@ -1,0 +1,655 @@
+{
+  "date": "2026-11-03",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-11-04T08:30:13−08:00",
+  "window_start": "2026-11-02T00:00:00−08:00",
+  "window_end": "2026-11-03T00:00:00−08:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "degraded_stale",
+      "error": "newest item is 376.5h old, exceeds 336h threshold",
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1356,
+      "filtered_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer",
+          "url": "https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer",
+          "published_at": "2026-11-03T00:00:00.000Z",
+          "description": "Jill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company’s global communications and corporate positioning.",
+          "full_text": "Title: OpenAI appoints Jill Hazelbaker as Chief Corporate Affairs Officer\n\nURL Source: https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer\n\nFinal URL: https://openai.com/index/jill-hazelbaker-chief-corporate-affairs-officer/\n\nMarkdown Content:\nJill Hazelbaker will join OpenAI as Chief Corporate Affairs Officer, leading the company’s global communications and corporate positioning.\n\n![Image 1: Jill Hazelbaker seated in a light-filled room.](https://images.ctfassets.net/kftzwdyauwt9/12cWiOrhEJBVjJpSKoRNzC/62cac2e1b99cd5ba56661755d6945157/jill-hazelbaker-social.png?w=3840&q=90&fm=webp)\n\nJill will work closely with leaders across OpenAI to deepen public understanding of AI and strengthen trust in its mission. She brings nearly two decades of experience advising technology companies and political leaders, helping them navigate periods of extraordinary growth and some of their most consequential challenges.\n\nMost recently, Jill served as President and Chief Corporate Affairs Officer at Uber, where she helped lead the company’s transformation from an ambitious startup into one of the world’s largest global technology platforms.\n\nJill’s appointment reflects OpenAI’s commitment to investing in the leadership and capabilities needed to engage more deeply with the people and institutions shaping AI’s future.\n\n**Jill Hazelbaker** joins OpenAI from Uber, where she served as President and Chief Corporate Affairs Officer, overseeing the company’s global communications, marketing, public policy, safety, and people teams. During her decade at Uber, she played a central role in shaping the company’s reputation, navigating complex regulatory and reputational challenges, and building the capabilities needed to support its growth around the world.\n\nBefore joining Uber, Jill led communications and public policy at Snap. Earlier, she held senior leadership roles at Google, overseeing corporate communications globally, communications across Europe, the Middle East and Africa, and government relations in Europe.\n\nJill began her career in U.S. politics, serving in leadership roles on local, state, and national campaigns. She was National Communications Director and Chief Spokesperson for Senator John McCain’s 2008 presidential campaign and Press Secretary to New York City Mayor Michael Bloomberg.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Scaling Git at OpenAI",
+          "url": "https://openai.com/index/scaling-git-at-openai",
+          "published_at": "2026-11-02T15:30:00.000Z",
+          "description": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+          "full_text": "Title: Scaling Git at OpenAI\n\nURL Source: https://openai.com/index/scaling-git-at-openai\n\nFinal URL: https://openai.com/index/scaling-git-at-openai/\n\nMarkdown Content:\nOver the past year, the size and demands on our monorepo have increased at a staggering pace. It was clear that we needed to revamp our source control system to scale to the level of concurrent work that Codex makes possible.\n\nWe built Pando, a new backend for Git repositories, without interrupting any engineering work or changing how our team uses Git. Pando now powers all development in OpenAI’s monorepo. Pando is designed to meet two ambitious goals: first, horizontally scalable writes, optimized for concurrent pushes to many branches. And second, maximize read throughput, so clients can download data fast enough to fully saturate their available network bandwidth.\n\nWe met these goals while retaining compatibility with the Git protocol and client, enabling both our engineers and agents to seamlessly adopt Pando into their existing workflows. In production, Pando cut median push latency by nearly 5x. It now delivers nearly a petabyte of Git data per day.\n\nHere, we’ll cover our motivations for building a new source-control system, along with why we chose to retain compatibility with Git. We’ll compare our system with common approaches to scaling Git, describing why Pando is uniquely capable of meeting OpenAI’s scalability needs. We also discuss what’s next, and how we’ll continue contributing to Git to support agent-scale work.\n\n## Why we needed a new source control system\n\nCodex has changed the scale and pace of development at OpenAI, enabling engineers to do far more work in parallel. That means more branches and pushes, more merges, and more fetches and clones from development environments, research jobs, and CI.\n\nThese demands compound. One engineer now has several changes ready for CI at once, and each push can set several jobs fetching the same commit.\n\nStarting around the end of last year, the systems supporting our monorepo were struggling to keep up. We suffered slow fetches and pushes along with failed merges, with reliability at times falling below 90%. Had we reached a limit of Git itself, or of the way we served our monorepo? Git grew out of a community that exchanged patches to the kernel via email. For more than two decades, developers have adapted their tools around Git as the way they build software has changed. When we started to feel friction in our own monorepo, it mattered to us that we could keep building on that work.\n\nWe saw a way to keep that familiar workflow while rebuilding the backend to handle pushes to different branches in parallel and serve the same history to many readers concurrently. Building on Git as the foundation of our source-control workflow meant that improvements to the client could be useful beyond OpenAI. We wanted to contribute those improvements from our [copy of Git⁠(opens in a new window)](https://github.com/openai/git) to upstream, sharing them with the broader community.\n\n### Engineering for Git at scale\n\nScaling a source control system has two essential dimensions: many writers pushing to different branches, and many readers fetching the same history. Pando optimizes for both.\n\nFirst, Pando coordinates updates to each branch independently. Updates to unrelated branches can proceed in parallel, and a reader fetching a branch gets the history needed for that revision. The tradeoff is that a reader looking at several branches can see them at different points of time.\n\nSecond, Pando reuses packfiles (Git’s format for compressing multiple objects together) across fetches instead of generating an individual packfile for each client. A client may download some objects it already has, but the server can serve the same bytes to many clients with little computation.\n\nThese choices let us scale writes across branches and serve reads from caches. To see how they fit together, let’s start with how Git stores and transfers history.\n\n### Git object storage primer\n\nGit must be able to keep two parts of a repository in sync: _objects_ and _references_.\n\nA Git repository records snapshots of files and the history connecting them as a graph of objects. An object may be either a blob, tree, commit, or tag. Blobs hold the content of an individual file, and trees associate names with blobs or other trees to form a directory structure. Commits point to a root tree and zero or more parent commits, forming the history of your repository.\n\nObjects are identified by a hash of their type and contents. Objects are also immutable: recording a changed file creates a new blob, while unchanged files and directories can reuse existing objects.\n\nBranches and tags are references, or “refs”, that point to commits. Committing on a branch creates a new commit and updates the branch’s ref to point to it.\n\nGit objects reference each other by their ID, commits to trees, and trees to trees and blobs. The branch refs/heads/main points to commit C2, whose parent is C1. C1 points to root tree T1, where parser.py refers to blob B1. C2 points to root tree T2, where parser.py refers to blob B2. In both root trees, docs/ refers to the same tree, T3. Its README.md entry points to blob B3, and usage.md points to blob B4.\n\nGit stores objects in either a “loose” or “packed” state. Loose objects are stored in individual files identified by their object ID. Packed objects are stored together in a packfile, enabling similar objects to be stored as deltas against one another.\n\nGit can store blobs as separate files or pack them together, encoding one blob as a delta against another.\n\nIn Git, an object is _reachable_ from a commit if Git can find it by following links from that commit through its parents, trees, and blobs. During a fetch, the client tells the server which commits it wants and which it already has. The server finds the objects reachable from the wanted commits, excludes those it knows the client already has, and sends the remainder as a packfile in the same format Git uses on disk. A full clone starts without any objects, so it needs all the objects reachable from the history being cloned.\n\nA push transfers objects in the other direction by asking the server to update one or more refs. The client uses the server’s set of advertised refs to avoid sending objects the server already has. The pack being sent can therefore depend on existing objects: receiving the pack alone is not enough to reconstruct the new history.\n\nReplicating a Git repository means keeping both objects and references available across multiple servers. Before a replica can serve a reference’s new value, it must be able to supply the objects reachable from that value. The service also needs to coordinate competing _reference updates_, i.e., pushes that try to move the same branch from the same old tip to different new commits. Systems that impose a single order on all writes to a repository can make pushes to unrelated branches wait on one another.\n\n## Existing distributed Git service patterns\n\nWhile designing Pando, we evaluated conventional approaches for scaling source control using Git: one that coordinates ref updates across repository replicas using three-phase commit (3PC, a protocol for coordinating a commit across multiple nodes), and one that orders updates through a shared write-ahead log (WAL, a record of changes written before they’re applied) in blob storage.\n\n### Three-phase commit (3PC)\n\nIn the three-phase commit design we modeled, the Git service keeps a complete copy of the repository on several replicas. When any server receives a push, the incoming packfile is copied and sent to all replicas in parallel. To publish the push, a majority of replicas must accept the ref update. The server managing this is the coordinator, and it requires multiple rounds of communication between the coordinator and each other replica.\n\nTo accept a reference update, each replica locks its copy of the ref and checks that it still points to the commit the client expects. The coordinator then sends a pre-commit message to the replicas that accept. Once a majority acknowledges the pre-commit message, the coordinator tells them to perform the update. Any up-to-date replica can then advertise the new branch tip from its local copy of the repository.\n\nKeeping complete replicas makes it possible to serve reads locally, and guarantees that clients get a consistent view of all references no matter which replica they pick. As a consequence, references are updated one at a time, and each push requires multiple round trips to coordinate the ref update among replicas.\n\nWaiting for a quorum puts replica disk performance and communication latency on the push path. As write volume grows, the replicas must keep up with incoming packs as well as read traffic.\n\n### Write-ahead log (WAL)\n\nIn the WAL-based design we modeled, the Git service uses a shared manifest in blob storage to order updates across the repository. When a server receives a push, it uploads the incoming packfile to a blob store and prepares the ref update in its local copy of the repository. To publish the push, it adds an entry to a shared manifest stored in the blob store that records the ref update and points to the packfile. The Git server then updates the manifest using a compare-and-swap operation. This atomically replaces the manifest, or otherwise rejects the change. If another writer has updated it in the meantime, the server reads the intervening entries, checks that its ref update is still valid, and retries using the packfile it already uploaded.\n\nWriters can upload their packfiles in parallel, but even pushes to unrelated branches require updating the same manifest. The round-trip time for a successful compare-and-swap limits how often the repository can publish a new manifest. A low-latency blob store makes this step fast. Batching lets one manifest update several refs at the same time, at the cost of queueing updates and increasing latency.\n\nThe blob store can receive packfiles in parallel, but updates to the shared manifest still compete with one another. Increasing the blob store’s capacity alone doesn’t resolve that bottleneck. Each replica still needs to read and index packs from the blob store before it can serve them locally. If incoming writes outpace that work, replicas fall behind and clients wait longer to fetch newly pushed commits.\n\n## Architecting Pando\n\nThat brings us to Pando. Pando is a new architecture for serving Git repositories with the goal of scaling to many clients pushing simultaneously. Here’s how it works:\n\n### Rethinking constraints\n\nPrior to developing Pando, we had a hunch that we could meet our requirements without compromising on Git, but we did need to compromise on some of the things that most Git systems assume to be requirements:\n\n*   **Repository-wide consistency**:Providing a consistent, point-in-time snapshot of all refs requires coordination across the repository. In a system that orders all ref updates together, pushes to unrelated branches contend on a single coordination point.\n\n*   **Unique packfiles for every client**:If two clients with different local histories fetch the same branch, the server may need to generate a different pack for each to avoid sending objects they already have. Creating these responses costs CPU and disk I/O, making it difficult to scale to high volumes of readers.\n\nInstead, Pando provides a relaxed consistency model (causal consistency) to scale writes, and reuses packfiles to scale reads.\n\n### Causal consistency (CC)\n\nWhen a client pushes to a branch, Pando stores the incoming packfile as an immutable blob in a blob store. Each time the branch moves, Pando records a _ref version_ containing the new tip, the pack that supplied it, and any earlier ref versions the pack depends on in a metadata store. Both the blob store and metadata store are horizontally scalable.\n\nFetching a commit or reference from Pando requires replaying a set of ref versions (packfiles) to the client, reconstructing the state of the client that created the ref version being fetched. This provides a weaker form of consistency across the entire repository, while providing serializability for updates to individual refs. Clients only conflict when pushing to the same ref simultaneously. A client reading several branches cannot assume those reads describe a single point in time across the repository.\n\nA push to trunk adds an incremental pack, containing one or more commits. Each push to a side branch includes the topic’s earlier commits again, so a client with the advertised trunk version can fetch the topic in one pack.\n\nThis is a form of _causal consistency_. In order to fetch a reference, the reader observes the history of the writer that produced it. During a push, Pando controls what shared history the client and server agree on, ensuring clients produce more easily shared packfiles.\n\nAs a consequence, Pando doesn’t provide a point-in-time state of all references during Git operations or an ordering of ref updates within a clone or fetch. Concretely, suppose that branches `foo` and `bar` are both updated during the negotiation of a full clone. During the negotiation, one client may observe `foo` at version 1 and `bar` at version 2, while another client observes `foo` at version 2 and `bar` at version 1. In practice, users and agents are agnostic to the global ordering of ref updates, and instead depend on the order of updates to a single reference.\n\n### Comparing Approaches\n\nIn this simulation of the three consistency models we configure 1,000 clients to each select a distinct branch and then repeatedly push unique commits, measuring total wall clock duration and push to fetch latency. The latter is an important metric for workloads, as it measures round trip time for users and agents to collaborate or to use other systems which rely on version control. The simulation models hardware ranging from commodity to premium virtual machines and blob storage systems. In this simulation, we’ve relaxed repository-wide consistency for three-phase commit.\n\n## Simulating Git Server Implementations\n\nFollow each writer through repeated pushes, and separately measure when an independent reader can check out each commit.\n\nRun this simulation comparing Pando with two other approaches. Choose infrastructure from commodity to premium hardware, number of clients, and more settings to see how they compare.\n\nThe modeled three-phase commit system shows significantly greater write latency under load as their disks saturate; meanwhile, write-ahead log systems show significantly greater read latency for the same reason, as servers struggle to keep up with reading from the journal. In both real world testing on our monorepo and in this simulation, Pando supports many thousands of clients able to push concurrently without impacting performance under load.\n\nOn handling a push, Pando validates the incoming packfile while streaming it to blob storage, without unpacking it into a local repository. When a client begins a fetch Pando selects the stored packs the reader needs, and the reader downloads them. No server needs to apply packfiles to a local repository or perform costly unpack and packing operations. Because these servers primarily perform negotiation and packfile selection, Pando servers can run on commodity hardware.\n\nThis allows Pando to scale to the limits of clients, the network between clients and Pando, and the blob storage service. With enough capacity, clients working on independent branches can each transfer packs as fast as their own connection allows. To serve more clients at that rate, we can add Pando servers and scale the metadata store and blob store alongside them.\n\n## Pushing and Fetching a Branch in Pando\n\nPando stores the writer’s packfile in blob storage and records the ref version in metadata service. On fetch, Pando selects the packs the reader needs, and Express serves them.\n\nAn agent edits files and creates a commit locally and runs `git push`, which creates a packfile of those changes to update a branch. Pando receives the pack and streams it to blob storage. After validating the incoming push with a single pass decode, Pando uses a multi-key transaction to record a ref version in our metadata store and atomically update the ref pointer. This enables Pando to provide “read-your-own-write” consistency. This entire write operation requires _$O \\left(\\right. 1 \\left.\\right)$_ metadata reads and writes.\n\nWhen another client fetches the branch, Pando selects a set of stored packs using the history the client already has. This operation requires _$O \\left(\\right. log ⁡ \\Delta \\left.\\right)$_ metadata reads, _$\\Delta$_ being the shortest distance in ref versions between what the client has and what the client wants. The server returns packfile URIs, and the client downloads them through a service, Express, that stores packfiles in regional caches.\n\nThis design relies on the three central services of Pando’s architecture: pushes, fetches, and compaction.\n\n### Scaling pushes\n\nWhen a client pushes, a conventional Git server is like a poker player showing all of its cards, revealing to the client every branch it has. The client then gathers the commits, trees, and blobs to create a packfile that _excludes_ objects it knows the server already has.\n\nAdvertising more refs can make the push smaller. It can also make the pack harder to reuse, because another client may be missing objects the writer left out.\n\nPando takes a different approach. Instead of showing its full hand, it only advertises a select set of branches to the client. This is done for two reasons:\n\n1.   Providing a consistent view of every ref is expensive. With millions of branches, the ref advertisement alone can exceed 100 MiB. Providing this requires each server to either maintain a current mapping, requiring significant coordination overhead, or a database query that scales with the number of refs.\n\n2.   By providing only a subset of the refs to the client, the client will generate a pack that depends only on what the server explicitly allows the client to exclude. Tracking the dependencies allows Pando to reuse the packfile a client generates in one push by serving it as the response to a subsequent fetch.\n\nAs a Git server advertises more refs, clients pushing have more sources from which to exclude objects, enabling them to produce smaller packs. However, reusing these packfiles requires the server to be able to prove the clients fetching have each of the dependencies. Otherwise, the packfile may omit objects the client needs.\n\nOn the other hand, if a Git server advertises none at all, the client would generate a packfile containing the repository’s full history. That packfile can be used by any other client, but at the significant cost of making fetching any branch effectively a full clone.\n\nAdvertising more refs results in smaller packfiles. Most of the size reduction can come from advertising just one.\n\nBy default, when a client pushes a new feature branch, Pando advertises only a designated trunk branch as a base. This keeps the advertisement the same size as the repository gains branches, but comes with tradeoffs. When an engineer either pushes to a single branch many times, or stacks one feature branch on top of another the client has to resend everything outside of the trunk.\n\nThis causes successive branch pushes to be larger, containing potentially-redundant objects, and uses additional client bandwidth. In our monorepo, the median packfile produced this way was under 20 KiB, and the 99th percentile was under 3 MiB. For us, this was a sensible trade-off because a reader that already has the advertised trunk history can fetch the branch with that one packfile.\n\nAfter choosing the set of refs to advertise to the client, Pando accepts the push and updates its metadata store. Pando splits the metadata update i",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Introducing the Grid Protectors Program",
+          "url": "https://openai.com/index/grid-protectors-program",
+          "published_at": "2026-11-02T15:00:00.000Z",
+          "description": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+          "full_text": "Title: Introducing the Grid Protectors Program\n\nURL Source: https://openai.com/index/grid-protectors-program\n\nFinal URL: https://openai.com/index/grid-protectors-program/\n\nMarkdown Content:\nToday we’re launching the **Grid Protectors Program**, a national effort to support affordable, reliable electricity for families and businesses in the communities where we build. Working with utilities, regulators and policymakers, we’ll develop arrangements for our future campuses to reduce electricity demand when the grid is under strain.\n\nWhether it’s heating homes during a northern cold snap or running air conditioning through a southern heat wave, families need reliable electricity. Our goal is to make campus flexibility a resource that utilities can call on when communities need it most.\n\nWith U.S. data center capacity projected to exceed [100 gigawatts by 2030⁠(opens in a new window)](https://about.bnef.com/insights/data-centers/six-things-to-know-about-bnefs-new-us-data-center-capacity-outlook/), we have a once-in-a-generation opportunity to strengthen the electric grid by building campuses that can adjust their power use when communities need it most.\n\nThrough Grid Protectors, our ambition is to make this kind of flexibility a core part of how we build and operate future campuses. That means designing facilities to reduce electricity use when needed and working with utilities to agree on how much demand can be reduced, how quickly and for how long. The arrangements will differ by location, and we will share additional commitments as they are finalized.\n\nDepending on local needs and the equipment available, we will also work with grid operators to supply power from on-site generation or storage, and use batteries and power controls to smooth changes in demand.\n\nPower lines, substations and other grid infrastructure builds are a fixed cost whether demand is low or high. By using more electricity when the grid has room and reducing our use when it is under strain, we can help pay for that infrastructure while limiting the need for costly upgrades to meet peak demand. That can help keep costs down for other customers.\n\nAmerica needs more electricity to support economic growth, and AI is becoming a significant part of that demand. Families and small businesses should not be asked to subsidize a compute campus’s electricity needs. We’ve always been committed to paying our own energy costs, including the electricity we use and the infrastructure needed to serve our campuses. Large computing facilities should pay their costs and help utilities manage the systems they depend on.\n\n## A model in Georgia\n\nFor our planned Effingham County campus, we have committed to pay the full infrastructure and electric-service costs required to serve the project. Once the campus is operating, we can reduce the power we draw during times of need, helping preserve electricity for other customers.\n\nOur [agreement with Georgia Power also includes⁠(opens in a new window)](https://www.georgiapower.com/news-hub/press-releases/georgia-power-to-serve-openai-project-in-effingham-county.html) up to 1,000 megawatts of flexible demand response, freeing up power to help keep air conditioning running in hundreds of thousands of homes during extreme heat. For scale, that is equivalent to the average electricity demand of roughly 700,000 households. That’s more households than Washington, D.C., and Boston combined.\n\nThese compute facilities are much different than data centers built even a few years ago, allowing us to be flexible in our power demand.\n\nThis means we can turn down our demand so that families, small businesses, and other ratepayers will continue to have power. Building grid assets is expensive and Georgia Power says this flexibility can reduce the amount of new generation it needs to build to serve future growth. Although the campus is still in development, we intend for Effingham to serve as a pilot for Grid Protectors, building on an agreement that already provides a model for future campuses.\n\nImagine a restaurant in a vacation town. It needs enough tables and kitchen space for the busy season, but it has to pay for that capacity year-round. Regular customers help keep it in use and cover the bills when tourism slows. We are proposing to be that regular customer.\n\nElectricity demand also rises and falls with the seasons, with different regions facing their biggest peaks at different times. Our compute campuses need power year-round. With the right agreements, that steady demand can help spread the grid’s fixed costs across more electricity sales, while flexibility lets us reduce demand when the system is busiest. We still need to pay the costs our campuses create; the goal is for other customers to benefit, too.\n\nOur agreement also contributes to Georgia Power’s broader plan to lower costs for customers. The utility [projects approximately $950 million in annual customer savings beginning in 2029⁠(opens in a new window)](https://www.georgiapower.com/news-hub/press-releases/contract-openai-approved-part-portfolio-delivering-950-million-annual-savings.html) from its portfolio of large-load agreements and expected growth, including Project Camellia. It estimates a benefit of at least $15 a month for a typical residential customer using 1,000 kilowatt-hours.\n\n## Looking forward\n\nThe Georgia agreement is a starting point. At OpenAI, through our Grid Protectors program, we see an opportunity to help communities keep the lights on even in times of emergency and high demand. We will work with utilities, regulators and policymakers to develop practical arrangements for the campuses we build in the future—arrangements that reflect local grid needs, help campuses support the grid when it is under pressure, and pay the costs we create. Long-term contracts and financial assurances can protect other customers if a project is delayed, reduced or canceled.\n\nFlexibility cannot replace investment in new energy supply and transmission. Alongside those investments, our Grid Protectors program can help make the grid more reliable and protect families and small businesses from bearing the costs of AI infrastructure. That is the standard we want our compute campuses to meet.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Rewarding defenders with bigger bug bounties",
+          "url": "https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties",
+          "published_at": "2026-11-02T18:00:00.000Z",
+          "description": "OpenAI is raising Security Bug Bounty rewards and introducing report quality, loyalty, and priority campaign bonuses for independent security researchers.",
+          "full_text": "Title: Rewarding defenders with bigger bug bounties\n\nURL Source: https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties\n\nFinal URL: https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties/\n\nMarkdown Content:\nWe’re raising rewards in OpenAI’s Security Bug Bounty program to further encourage independent researchers to pursue vulnerabilities in OpenAI software that our testing may have missed. We’re also introducing new incentives for researchers to earn more for higher quality vulnerability reports.\n\nIndependent security researchers play an essential role in protecting technology across the industry. At OpenAI, incentivizing responsible disclosure is a core part of our security model, complementing our [Defense Factory⁠](https://openai.com/the-defense-factory/) work, where our engineers use our models to find weaknesses, reproduce them, and test fixes.\n\nToday’s updates are designed to encourage and empower researchers, and to continue building a collaborative, community-first security environment.\n\n## Serious vulnerabilities get serious rewards\n\nWe’re more than quadrupling the midpoint of our reward ranges for medium, high, and critical findings on average. A critical vulnerability in a core product such as ChatGPT, Codex, or the API Platform will now earn up to $30,000. Exceptional critical findings on those targets remain eligible for up to $100,000, and now up to $172,000 with bonuses. The full details are available in [our security bug bounty program⁠(opens in a new window)](https://bugcrowd.com/engagements/openai).\n\n### High quality report bonus multipliers\n\nHigh-quality reports will be eligible to earn a bonus multiplier on the base bounty. A reliable proof of concept that isolates the bug, shows when it can be exploited, and demonstrates its impact gives us a head start on a fix. The quality multiplier recognizes the extra work that makes a finding especially useful.\n\n### Loyalty program bonuses\n\nTo build long-term relationships and continuously empower our security community, we are introducing a tiered loyalty bonus program. This 5-tier system provides scaling bonuses to recognize, support, and celebrate researchers who consistently partner with us in making AI technology safer for everyone.\n\n### Priority campaign multipliers\n\nTo support community engagement as technology evolves, priority campaigns will feature dedicated bonus pools for newly launched features. These short-term campaigns give researchers early, high-reward opportunities to test new developments and be recognized for their early contributions.\n\n## Updated payout calculation examples\n\n**Example vulnerability****Example historical award****Example new payout calculation****New reward**\nMedium - ChatGPT (core asset): A read-only member can upload files to a Project without write permission.$750$2,000 × 1.15 Quality Bonus × 1.05 Bronze Loyalty Tier Bonus$2,415\nHigh - Prism (non-core asset): IDOR resulting in reading a file uploaded to user’s Project$1,000$2,500 × 1.15 Quality Bonus × 1.10 Gold Loyalty Tier Bonus$3,162.50\nCritical - ChatGPT (core asset): Zero-click account takeover.$6,500$30,000 × 1.15 Quality Bonus × 1.30 Priority Campaign Bonus × 1.15 31337 Loyalty Tier Bonus$51,577\nExceptional - ChatGPT (core asset): Significant compromise of a security boundary (e.g., ability to view arbitrary ChatGPT users’ chat messages.)$100,000$100,000 × 1.15 Quality × 1.30 Priority Campaign × 1.15 31337 loyalty$171,925\n\nAll scenarios and historical awards are illustrative.\n\n## Retroactive payments\n\nIf you’ve already submitted a report and we haven’t yet awarded a bounty, we’ll apply the **new** reward ranges. For bounties we awarded in the 30 days **before** this announcement, we’ll pay you the difference if your finding would have earned more under the new ranges (Base Award + Loyalty Awards).\n\n## Meet us in Oakland\n\nOn November 20–21, our security team will be at [PROMPT2PWN⁠(opens in a new window)](https://p2p.nahamcon.com/) in Oakland, where researchers can test targets in person. If you’ll be there, we’d love to hear what you’ve been working on and how to partner with you.\n\nThank you to everyone who has taken the time to investigate a lead and report it to us. We want OpenAI to be a team you come back to when you find something we’ve missed.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Preparing our next security sprint to harden OpenAI",
+          "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+          "published_at": "2026-11-02T18:00:00.000Z",
+          "description": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+          "full_text": "Title: Preparing our next security sprint to harden OpenAI\n\nURL Source: https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai\n\nFinal URL: https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai/\n\nMarkdown Content:\nWe’re planning our next internal security sprint at OpenAI, bringing new researchers and security partners together with our own teams to use our models to test and strengthen our systems. We’re partnering with Cathedral, whose researchers will use OpenAI’s models alongside our teams to challenge our defenses, bringing differentiated expertise and approaches to finding weaknesses and helping us protect our platforms.\n\nWe’re also [making improvements](https://openai.com/index/rewarding-defenders-with-bigger-bug-bounties/) to our[Security Bug Bounty program](https://openai.com/index/security-on-the-path-to-agi/) including more than quadrupling our rewards for critical findings. We want researchers to challenge our assumptions and help strengthen both our systems and the methods we use to defend them.\n\nThis is part of our ongoing effort to use AI to continuously find and fix weaknesses in our systems. Our last sprint showed what this approach can deliver. We dedicated 25% of our product engineers to finding and fixing weaknesses in our systems. Using Codex, engineers investigated findings, reproduced vulnerabilities in isolated environments and prepared patches for review.\n\nWe’re building on that work because traditional cyber defenses alone are no longer sufficient. Recent incidents across the industry show how quickly threats can emerge and how important it is to build continuous defensive loops to find and fix weaknesses before attackers do.\n\nKeeping the [defender’s window](https://openai.com/index/the-defenders-window/) open requires organizations to use frontier cyber capabilities to harden their systems. We’re using our most capable models to strengthen our own defenses and making them available to [Daybreak](https://openai.com/daybreak/) customers. We’ve committed [$1 billion](https://openai.com/index/daybreak-for-frontline-defenders/) in subsidized access over six months for frontline defenders protecting essential services and digital infrastructure. We’re also sharing our [architecture and lessons⁠](https://openai.com/the-defense-factory/) from the last sprint, alongside our [blueprint](https://openai.com/index/empowering-cyber-defenders/) for empowering cyber defenders across industry and government.\n\nWe’ll keep advancing our models, using them to strengthen our own systems, and expanding access for trusted defenders. Keeping the defender’s window open will take action across the industry, and that work needs to start now.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "LifeVal",
+          "url": "https://openai.com/index/lifeval",
+          "published_at": "2026-11-02T09:00:00.000Z",
+          "description": "Introducing LifeVal, a benchmark measuring how well AI helps people complete everyday tasks, from finding childcare to managing finances and government paperwork.",
+          "full_text": "Title: LifeVal\n\nURL Source: https://openai.com/index/lifeval\n\nFinal URL: https://openai.com/index/lifeval/\n\nMarkdown Content:\nOpenAI’s mission is to ensure that artificial general intelligence benefits all of humanity. For the more than one billion people who currently use ChatGPT every week, we want to build AI that can help with the practical challenges of everyday life, like finding childcare, accessing government services, creating a budget, preparing for school, modifying recipes, ordering groceries, designing workout plans, and more.\n\nWhen someone is looking for help making their life easier, they need more than advice or a chat response. To be a truly helpful personal assistant, ChatGPT should be able to take actions that actually get things done.\n\nTo measure model performance over time on everyday tasks, we built an evaluation of tasks covering areas where users wanted the most help from AI and personal agents. We used this evaluation to track and drive improvement in model performance on everyday tasks over the past year.\n\n## Background\n\nTo identify the tasks people value most, we started with two large studies that track how people spend time in both the U.S. and internationally: the [American Time Use Survey⁠(opens in a new window)](https://www.bls.gov/tus/) and the [Multinational Time Use Study⁠(opens in a new window)](https://www.timeuse.org/mtus). Together, these datasets provide a detailed catalog of everyday life tasks that people do across different demographics, times of day, and seasons. To understand where people would most value AI assistance, we expanded on these existing surveys with a new demographically representative survey of 3,995 respondents. For each task, we asked a variety of questions to identify the areas where everyday people most wanted help from a personal assistant. The resulting tasks span the most important areas that people want help with, including caregiving, health, education, household administration, personal finances, shopping, and accessing government services.\n\n## Individual task examples\n\nBelow are some examples of how our current models perform on practical workflows from everyday life.\n\n### Enroll in the right kindergarten after moving\n\n93.1%\n\n![Image 1](https://images.ctfassets.net/kftzwdyauwt9/0PsOKDe2IX2yO0sZVTxNn/d1de90b42ea9c430a6910aaf9e4f731b/bus.png?w=3840&q=90&fm=webp)\n\nCompare kindergartens near our new home and shortlist the best fits.\n\nI’ve narrowed it to three kindergartens and organized the enrollment details. Two preferences still need your call. Want to review the shortlist?\n\n### Manage volunteers ahead of a flood\n\n98.0%\n\n![Image 2](https://images.ctfassets.net/kftzwdyauwt9/1hDPV5I4BneWeWnKWVsAvs/6bdf8f993cbedc6b20dc2a03c8824dce/water-drop-dingbat.png?w=3840&q=90&fm=webp)\n\nHelp me organize our community’s flood preparation volunteer force for four neighbors needing floodproofing assistance.\n\nI’ve prepared a simple action plan to help volunteers assess the sites mentioned and help them prepare for upcoming severe weather.\n\n### Find a new home for my family\n\n100%\n\n![Image 3](https://images.ctfassets.net/kftzwdyauwt9/4p9ZKTfC9iNi5m1xXkMCQl/ffdff61608bbc569e5bfa647c1a38c84/welcome-mat-white-cropped.png?w=3840&q=90&fm=webp)\n\nFind a home in Luzerne County that fits my budget, has a separate living unit, and keeps my commute short after school drop-off. Add the deed to my cart so I can review it.\n\nI found one home that meets your requirements. I’ve calculated the transfer tax and added the deed to your country records cart to review.\n\n### Watch a game with grandma from far away\n\n96.3%\n\n![Image 4](https://images.ctfassets.net/kftzwdyauwt9/1EixydflAQZXI6yTNaL6Zg/6cc1f7086d118c3853f3a8c83da589fb/football.png?w=3840&q=90&fm=webp)\n\nSet up an easy way for grandma and me to watch the game together remotely.\n\nThe easiest watch setup is ready, with a backup if the stream fails. Want me to walk you through it with grandma?\n\n### Meal prep for a parent adjusting to a new diabetes diagnosis\n\n90.4%\n\n![Image 5](https://images.ctfassets.net/kftzwdyauwt9/7cn1KRGTQUsctQue7wawds/5be11f2e14bffbcb227e0ee375f5529e/cart.png?w=3840&q=90&fm=webp)\n\nHelp my parent adjust to a new diabetes diagnosis with a practical care and meal plan.\n\nThe first-week plan is ready, including meals, reminders, and questions for the care team. Want to review it together before you share it with your parent?\n\nOur latest models score very highly on many LifeVal tasks.See more\n\nOver the past year, we’ve trained our models to become much faster, more capable, and more aligned on browser use, computer use, and connectors tasks. Enabling these capabilities in ChatGPT also expands the types of tasks the model can help with, helping move ChatGPT beyond a chat tool and towards a truly agentic personal assistant.\n\nTo ensure AGI benefits all of humanity, we need to measure and improve model progress on what matters in the lives of everyday people. That means going beyond academic assessments of model knowledge and actually measuring how well AI models can help people navigate decisions, manage everyday responsibilities, and get meaningful things done. We are hopeful that LifeVal represents a step towards that goal.\n\n*   ![Image 6: A caregiver helping an older adult use a walker](https://images.ctfassets.net/kftzwdyauwt9/9irZEa7VuG3EddaIPYWD5/f267058764f8a5eda29a410fe80114d0/photo-02.webp?w=3840&q=90&fm=webp) \n*   ![Image 7: A person feeding a cat](https://images.ctfassets.net/kftzwdyauwt9/2lhC1WTyvGX4qBssxZraQj/b7792d227886b7f1adaec281eb2bee01/photo-03.webp?w=3840&q=90&fm=webp) \n*   ![Image 8: A person carrying boxes beside a moving truck](https://images.ctfassets.net/kftzwdyauwt9/5i50ehjTmYbz5jB0E6lJHZ/16a4356b416bc033df4cfcfdc705b1a6/photo-04.webp?w=3840&q=90&fm=webp) \n*   ![Image 9: People working through paperwork together](https://images.ctfassets.net/kftzwdyauwt9/7sFzZxKpcOhJP4T1ppAf6b/57fbb1cd4a8a73066261aa1e450117ec/photo-05.webp?w=3840&q=90&fm=webp) \n*   ![Image 10: A person carrying a bag of groceries](https://images.ctfassets.net/kftzwdyauwt9/31Q75V3wFI3n0xK4Nxsog0/f0b03a26cf990bb2254e879dc8678d8b/photo-06.webp?w=3840&q=90&fm=webp) \n*   ![Image 11: A hand tracing a route on a map](https://images.ctfassets.net/kftzwdyauwt9/618uJhR5QI4ZmuQycqQZx5/4efe8f2977a023df632849ec8c1d5f0b/photo-07.webp?w=3840&q=90&fm=webp) \n*   ![Image 12: An adult reading with a young child](https://images.ctfassets.net/kftzwdyauwt9/M4upvozkrlrSSfvHaYlzF/3a3f9a3f8ecd7ba77d9ad7e79d2c4641/photo-08.webp?w=3840&q=90&fm=webp) \n*   ![Image 13: A person organizing notes on a wall](https://images.ctfassets.net/kftzwdyauwt9/1UfbC89B8yZRrvvmLEpMV/bf244804cb209b62d1be578e6e8b582f/photo-09.webp?w=3840&q=90&fm=webp) \n*   ![Image 14: A person examining a medical scan](https://images.ctfassets.net/kftzwdyauwt9/rzxlK2Ggnph5Op4ysnUc4/94c42358418debcc92b7900de0b865da/photo-10.webp?w=3840&q=90&fm=webp) \n*   ![Image 15: A person holding a laptop at their side](https://images.ctfassets.net/kftzwdyauwt9/5XfHlU5MluLbVrnc7AoCZK/dc74b9270813c16ae476edc65ff3ade2/photo-11.webp?w=3840&q=90&fm=webp)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "The latest AI news we announced in October 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/",
+          "published_at": "2026-11-02T17:45:00.000Z",
+          "description": "Here are Google’s latest AI updates from October 2026",
+          "full_text": "Title: The latest AI news we announced in October 2026\n\nURL Source: https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/\n\nPublished Time: 2026-11-02T17:45:00+00:00\n\nMarkdown Content:\nNov 02, 2026\n\n|\n\n10 min read\n\nHere’s a recap of some of our biggest AI updates from October, led by Gemini 4 Argon and Carbon, alongside our new world model Genie 4.\n\n* * *\n\nBlog Team\n\n* * *\n\n[Audio 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/media/tts_audio_86819_umbriel_2026_11_02_17_54_25.mp3)\n\nListen to article\n\n[[duration]] minutes\n\nThis content is generated by Google AI. Generative AI is experimental\n\nFor more than 20 years, we’ve invested in machine learning and AI research, tools, and infrastructure to build products that make everyday life better for more people. Teams across Google are working on ways to unlock AI’s benefits in fields as wide-ranging as healthcare, crisis response, and education. To keep you posted on our progress, we're doing a regular roundup of Google's most recent AI news.\n\nHere’s a look back at some of our AI announcements from October.\n\nOctober underscored our commitment to AI innovation, as we released one frontier model globally and announced our next one just two weeks later. After rolling out [Gemini 4 Argon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/) — a frontier reasoning model — to developers, enterprises, scientists, and consumers, we announced [Gemini 4 Carbon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/), our strongest model yet for long-horizon engineering and cybersecurity defense. Carbon illustrates the pace at which we’re pushing the frontier forward while strengthening our safety guardrails in tandem. Elsewhere in October, we introduced [Genie 4](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/) for real-time interactive world simulation with native audio, unveiled our smartest fitness tracker with [Google Fitbit Edge](https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge/), broke open a 20-year bottleneck in [quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/), and more.\n\n[**Put Gemini 4 Argon to work today, and see what’s next for Gemini 4 at the frontier**](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-argon/). Following early safety testing, Gemini 4 Argon rolled out globally for complex coding, financial analysis, and legal workflows across Google AI Studio, the Gemini API, Google Cloud, Search, and [the Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/gemini-4-argon-availability/), while also powering physical-world reasoning through [Gemini 4 Argon for Robotics](https://developers.googleblog.com/gemini-4-argon-for-robotics/). Showing how quickly we’re pushing the frontier forward, two weeks later we [announced Gemini 4 Carbon](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/), our strongest model yet with state-of-the-art cybersecurity and long-horizon capabilities. Just as we did with Argon, we’re taking a deliberate approach to rollout: Carbon is now in pre-release testing with the U.S. government and a subset of trusted cyber defenders via the [Fairwind Program](https://deepmind.google/fairwind-program/) as we refine safety guardrails and expand partner testing ahead of a broader launch to developers, businesses, and consumers.\n\n[**Step into real-time interactive worlds with Genie 4**](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/introducing-genie-4/). Genie 4 brings unprecedented realism, advanced physics, lifelike human movement, and native audio to real-time interactive simulation. You can steer scenes as they unfold using natural language. Genie 4 advances on our ability to create safe training environments for robots and AI agents as a crucial step toward AGI. Explore the demos on the [Google DeepMind blog](https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/).\n\n[**Verify AI-generated content more easily around the world**](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/synth-id-ai-content/). Having already watermarked more than 180 billion images and videos and 240,000 years of audio with SynthID, we’re expanding SynthID Detector globally in English so anyone can check whether an image, video, or audio clip was generated with AI. Alongside built-in verification tools in Search, Chrome, and the Gemini app that regularly handle over a million requests each day, SynthID Detector also identifies AI content from industry partners like OpenAI, NVIDIA, Kakao, and Apple.\n\n[**Stay protected from mobile scams with new Android safeguards**](https://blog.google/security/new-android-scam-protections/). AI-powered Scam Detection in Phone by Google and Google Messages already flags more than 5 million suspected scam calls and texts every month. Now, Android is introducing an opt-in Enhanced protection mode in Google Messages that uses Private AI Compute and our latest cloud Gemini models to catch sophisticated conversational scams, paired with expanded chat alerts and stronger call-forwarding and screen-sharing defenses.\n\nDiscover more\n\n[**Meet Google Fitbit Edge, our all-new smartest fitness tracker ever**](https://blog.google/products-and-platforms/devices/fitbit/google-fitbit-edge/). Available now in a slim, comfortable design with up to seven days of battery life [1](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/#footnote-1) , Fitbit Edge [2](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/#footnote-2) pairs precision GPS and automatic workout recognition across 50+ activities with personalized guidance from the Gemini-powered Google Health Coach [3](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/#footnote-3) We also rolled out [more than 55 updates across Google Health and Fitbit Air](https://blog.google/products-and-platforms/products/google-health/fitbit-google-health-updates/), including effortless photo meal logging, new Metal Mesh bands, and Health Guardian features that monitor long-term blood pressure and insulin resistance trends [4](https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-october-2026/#footnote-4) .\n\n[**See how AI could improve patient-physician relationships in clinical care**](https://blog.google/innovation-and-ai/technology/health/amie-clinical-study-lancet/). In Google’s first publication in the main journal of _The Lancet_, researchers from Google and Beth Israel Deaconess Medical Center evaluated our AMIE conversational medical AI system during real-world primary care clinic visits. By gathering patient histories and generating clinical summaries [before urgent care appointments](https://blog.google/innovation-and-ai/models-and-research/google-research/amie-clinical-study/), AMIE helped clinicians prepare in 75% of cases and matched doctors’ final differential diagnoses 90% of the time. This is part of our broader work [applying AI to better understand, detect, and treat disease](https://blog.google/innovation-and-ai/technology/health/ai-health-research/).\n\n[**Create and play custom games in Playground**](https://blog.google/innovation-and-ai/technology/ai/playground-experimental-gaming-platform/). Our new experimental gaming platform lets anyone build, remix, and share custom single- and multiplayer games from simple text prompts with zero coding required. That same no-code creativity is expanding across our platforms: Android users can now [build personal AI apps with Google AI Studio and install them directly on their phones through Google Play](https://blog.google/products-and-platforms/platforms/google-play/google-play-updates-october-2026/), and music producers can [vibe code custom instruments and audio plugins in Google Flow Music](https://blog.google/innovation-and-ai/models-and-research/google-labs/create-music-production-plugins-google-flow/).\n\n[**Celebrate educators and sharpen your learning**](https://blog.google/products-and-platforms/products/education/world-teachers-day-2026/). For World Teachers’ Day, teachers from around the globe shared how they use Gemini to personalize lessons and spark critical thinking, alongside a new global idea search launched in partnership with TED. Whether you’re in the classroom or preparing for a big project, you can also [study smarter with Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/three-tips-study-gemini-notebook/) using interactive learning overviews and custom quizzes, and use new co-creation controls to [shape your Slide Decks and Video Overviews](https://blog.google/innovation-and-ai/products/gemini-notebook/co-create-slides-videos/) before they generate.\n\nDiscover more\n\n[**Build privacy-first multimodal search with EmbeddingGemma 2**](https://blog.google/innovation-and-ai/technology/developers-tools/embeddinggemma-2/). Engineered on the Gemma 4 architecture with 740 million parameters, our new open embedding model moves beyond text to map code, images, video, and audio into a single unified space right on everyday devices. Its modular design cuts local vector storage by up to 6x, making it easy for developers to build private, offline apps that can find a specific video clip from a voice memo or search hours of audio with a text query.\n\n[**Read the first AI response beamed back from our Project Suncatcher satellite**](https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-satellite-response/). After [launching TPUs into low-Earth orbit](https://blog.google/innovation-and-ai/models-and-research/google-research/project-suncatcher-prototype/), our first Project Suncatcher prototype satellite returned the first-ever AI response generated by a data center-class Google TPU in space: a haiku composed onboard by Gemma 4. This milestone confirms our hardware survived launch and can run AI workloads in orbit. Our team will continue to test how the chips handle radiation and thermal extremes while harnessing space’s abundant solar energy as part of a long-term moonshot toward scalable orbital AI infrastructure.\n\n[**See how our latest research is accelerating scientific discovery**](https://blog.google/innovation-and-ai/technology/research/research-capabilities-intelligence-2026/). At our annual Research@ 2026 event, we shared new ways we’re putting advanced AI in the hands of scientists and experts — including demonstrating an experimental Geospatial Reasoning agent, opening public access to our Deep Review tool for technical papers, and delivering top-ranked flu hospitalization forecasting. These breakthroughs are part of a broader, company-wide effort to push the boundaries of scientific discovery. Beyond the event, Google teams are also advancing planetary research by [mapping the world’s forest types](https://deepmind.google/blog/beyond-tree-cover-mapping-the-worlds-forest-types/), while Google.org has awarded $36 million to [17 organizations accelerating scientific breakthroughs with AI](https://blog.google/company-news/outreach-and-initiatives/google-org/impact-challenge-ai-science-recipients/).\n\n[**See how we broke open a 20-year bottleneck in quantum computing**](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/magic-state-cultivation-quantum-computing/). In a landmark study published in _Science_, Google Quantum AI demonstrated that a technique called \"magic state cultivation\" works in practice on our Willow quantum processor, cutting errors roughly 40-fold compared to uncultivated states. Because producing high-purity magic states previously threatened to consume up to 95% of a quantum computer’s resources, this breakthrough clears a major hurdle on the path to large-scale, fault-tolerant quantum computers.\n\nDiscover more\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 176.3h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2114818620782248024",
+          "title": "6.1 Terra is here! It is good at a lot of things, but we are especially excited for this new era of computer use.",
+          "url": "https://x.com/sama/status/2114818620782248024",
+          "published_at": "2026-10-26T20:37:05.000000Z",
+          "description": "6.1 Terra is here! It is good at a lot of things, but we are especially excited for this new era of computer use.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it. https://t.co/8JTN1yonmV",
+            "url": "https://x.com/OpenAI/status/2114780711664398349"
+          },
+          "source": "Sam Altman (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": "https://x.com/OpenAI/status/2114780711664398349"
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 11,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2113844051938054167",
+          "title": "I’ve left Anthropic after more than a year of working on Claude Code and seeing it scale larger than I ever imagined.\n\nI have really loved working at Ant and believe deeply in the mission, and most of",
+          "url": "https://x.com/trq212/status/2113844051938054167",
+          "published_at": "2026-10-24T04:04:29.000000Z",
+          "description": "I’ve left Anthropic after more than a year of working on Claude Code and seeing it scale larger than I ever imagined.\n\nI have really loved working at Ant and believe deeply in the mission, and most of all, the idea of a race to the top.\n\nThe idea that if we work hard and responsibly, we can raise the bar and inspire others to great outcomes. And if we all push each other to be better, things can be radically good. I will carry the spirit of this with me forever.\n\nMy colleagues at Anthropic are the most talented, thoughtful, competent, and earnest people I have ever met. I am glad they are at the wheel and trust them deeply.\n\nTo the community on X, thank you for everything. You’ve made this the most fun (and sometimes stressful) job I’ve ever had.\n\nFor me, it is time for a bit of a break before diving into something new.\n\nIf you want more excellent Claude Code content, you should follow @addyosmani , @lydiahallie, @_catwu, @ClaudeDevs  and of course @bcherny who started it all.",
+          "expanded_urls": [],
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-23",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2114796261362835842",
+          "title": "going to be sharing my WoW forever shaman build at the AIE Code closing keynote",
+          "url": "https://x.com/trq212/status/2114796261362835842",
+          "published_at": "2026-10-26T19:08:14.000000Z",
+          "description": "going to be sharing my WoW forever shaman build at the AIE Code closing keynote",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "aiDotEngineer",
+            "text": "We are pleased to announce that @trq212 will be returning to AIE to share what's now and what's next!\n\nhttps://t.co/9SqON1glPs will be the last flagship AIE of the year, gathering the top 1000 agentic engineers in the world by invite only.\n\nApply here: https://t.co/6q9NzKsAKH\n\nAs usual all keynotes livestreamed and talks posted free on our youtube!",
+            "url": "https://x.com/aiDotEngineer/status/2114794838541660443"
+          },
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2114780227465338985",
+          "title": "More than 25,000 nonprofits now use Claude. Most are small, local teams.\n\nWe’re expanding Claude for Nonprofits with a plugin built with around 30 of them, adding skills for fundraising, marketing, an",
+          "url": "https://x.com/claudeai/status/2114780227465338985",
+          "published_at": "2026-10-26T18:04:31.000000Z",
+          "description": "More than 25,000 nonprofits now use Claude. Most are small, local teams.\n\nWe’re expanding Claude for Nonprofits with a plugin built with around 30 of them, adding skills for fundraising, marketing, and hiring grounded in each team’s context and AI policy: https://t.co/LWHcr1CT20",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/LWHcr1CT20",
+              "expanded_url": "https://claude.com/resources/articles/expanding-claude-for-nonprofits",
+              "display_url": "claude.com/resources/arti…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "AnthropicAI",
+            "text": "In partnership with @GivingTuesday, we're launching Claude for Nonprofits.\n\nIt has discounted plans, new integrations, and free training to help nonprofits spend less time on admin and more time on their missions: https://t.co/aQJFzLXUTO",
+            "url": "https://x.com/AnthropicAI/status/1995856609692844351"
+          },
+          "source": "Claude (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2114705042817110293",
+          "title": "Anthropic has filed an S-1 registration statement with the SEC related to its proposed IPO.\n\nRead more: https://t.co/ofhv0DK3Zp\n\nLegal disclaimer: A registration statement relating to these securities",
+          "url": "https://x.com/AnthropicAI/status/2114705042817110293",
+          "published_at": "2026-10-26T13:05:46.000000Z",
+          "description": "Anthropic has filed an S-1 registration statement with the SEC related to its proposed IPO.\n\nRead more: https://t.co/ofhv0DK3Zp\n\nLegal disclaimer: A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. This post does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction.",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/ofhv0DK3Zp",
+              "expanded_url": "https://www.anthropic.com/news/s1-sec",
+              "display_url": "anthropic.com/news/s1-sec"
+            }
+          ],
+          "source": "Anthropic (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "linked_content": "Title: Anthropic files S-1 with the SEC for proposed initial public offering\n\nURL Source: https://www.anthropic.com/news/s1-sec\n\nPublished Time: 2026-10-26T00:00:00.000Z\n\nMarkdown Content:\nToday, Anthropic, PBC filed a registration statement on Form S-1 with the U.S. Securities and Exchange Commission relating to its proposed initial public offering of its Class A common stock.\n\nAnthropic intends to list its Class A common stock on the Nasdaq Global Select Market under the symbol “ANT.” The number of shares of Class A common stock to be offered and the price range for the proposed offering have not yet been determined.\n\n_The proposed offering will be made only by means of a prospectus. Copies of the preliminary prospectus, when available, may be obtained from: Goldman Sachs & Co. LLC, Attention: Prospectus Department, 200 West Street, New York, NY 10282, by telephone at (866) 471-2526, or by email at prospectus-ny@ny.email.gs.com; or Morgan Stanley & Co. LLC, Attention: Prospectus Department, 180 Varick Street, 2nd Floor, New York, NY 10014._\n\n_A registration statement relating to these securities has been filed with the SEC but has not yet become effective. These securities may not be sold, nor may offers to buy be accepted, prior to the time the registration statement becomes effective. Today’s announcement does not constitute an offer to sell or the solicitation of an offer to buy these securities, nor shall there be any sale of these securities in any state or jurisdiction in which such offer, solicitation, or sale would be unlawful prior to registration or qualification under the securities laws of any such state or jurisdiction._\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2114780711664398349",
+          "title": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your ",
+          "url": "https://x.com/OpenAI/status/2114780711664398349",
+          "published_at": "2026-10-26T18:06:27.000000Z",
+          "description": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it. https://t.co/8JTN1yonmV",
+          "expanded_urls": [],
+          "source": "OpenAI (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 3,
+      "current_count": 0,
+      "backfill_count": 3,
+      "pending_count": 8,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2114726640571883592",
+          "title": "Want to know what people are building with hardware and Codex?\n\n🧵 Here are cool projects to take inspiration from:\n\nhttps://t.co/844FeMfohg",
+          "url": "https://x.com/OpenAIDevs/status/2114726640571883592",
+          "published_at": "2026-10-26T14:31:35.000000Z",
+          "description": "Want to know what people are building with hardware and Codex?\n\n🧵 Here are cool projects to take inspiration from:\n\nhttps://t.co/844FeMfohg",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/844FeMfohg",
+              "expanded_url": "https://x.com/covacut/status/2074330738003198394",
+              "display_url": "x.com/covacut/status…"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "covacut",
+            "text": "progress on my task-agotchi https://t.co/1hn0ei34eI",
+            "url": "https://x.com/covacut/status/2074330738003198394"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2114780986613682473",
+          "title": "GPT-6.1 Terra is also coming to the API and Codex.\n\nUse Terra to build apps and agents that interpret images, navigate software, and take action. You get fast computer use at a lower cost, ideal for h",
+          "url": "https://x.com/OpenAIDevs/status/2114780986613682473",
+          "published_at": "2026-10-26T18:07:32.000000Z",
+          "description": "GPT-6.1 Terra is also coming to the API and Codex.\n\nUse Terra to build apps and agents that interpret images, navigate software, and take action. You get fast computer use at a lower cost, ideal for high-volume workflows.",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "OpenAI",
+            "text": "GPT-6.1 Terra: delivering fast and capable computer use at a lower price.\n\nGPT-6.1 Terra understands what’s on screen, takes action across apps, writes naturally, and is a more capable model for your whole workday with the efficiency to take on more of it. https://t.co/8JTN1yonmV",
+            "url": "https://x.com/OpenAI/status/2114780711664398349"
+          },
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2114837274550747603",
+          "title": "GPT-6.1 Sol is being used by @coderabbitai to help developers find security risks across complex codebases.\n\nhttps://t.co/CshBD68xD7",
+          "url": "https://x.com/OpenAIDevs/status/2114837274550747603",
+          "published_at": "2026-10-26T21:51:12.000000Z",
+          "description": "GPT-6.1 Sol is being used by @coderabbitai to help developers find security risks across complex codebases.\n\nhttps://t.co/CshBD68xD7",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/CshBD68xD7",
+              "expanded_url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/",
+              "display_url": "openai.com/index/gpt-6-1-…"
+            }
+          ],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-10-26",
+          "delivery_class": "backfill",
+          "linked_content": "Title: GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases\n\nURL Source: https://openai.com/index/gpt-6-1-sol-coderabbit-code-security/\n\nMarkdown Content:\nAs AI accelerates software development, engineering and application-security teams need ways to investigate code changes and address vulnerabilities while keeping people in control. CodeRabbit is using [GPT‑6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/) as the primary model in its security agent to extend review beyond individual changes and help developers understand risks across complex codebases.\n\nA pull request can affect shared libraries, dependencies and safeguards elsewhere in an application. GPT‑6.1 Sol helps CodeRabbit connect behavior across files and components to surface potential security issues. CodeRabbit’s review is independent of the agent that wrote the code and complements established scanners. Its system also uses other frontier models and security tooling.\n\nDuring pull-request review, Sol helps analyze changes as developers work. In Deep Scan, it supports broader investigation across repositories, including dependencies and how components interact. CodeRabbit Secure extends that investigation to linked repositories, such as a shared authentication library, to help teams understand how a weakness could affect the wider system.\n\nCodeRabbit reports using GPT‑6.1 Sol to flag security-related issues across thousands of repositories and organizations. These findings feed into the pull-request workflows developers already use to review and improve their code.\n\nCodeRabbit Secure connects investigation to remediation. For user-selected findings, it can attempt exploit verification in an isolated sandbox without testing production systems. For supported issues, it can draft a pull request with a proposed fix for a person to review and approve.\n\nThis work shows how frontier reasoning can support software security: understanding risks beyond an individual change, helping validate findings and turning them into proposed fixes. Human reviewers remain responsible for deciding which changes to ship.\n\nLearn more about GPT‑6.1 Sol [here](https://openai.com/index/introducing-gpt-6-1-sol/). Learn more about CodeRabbit Secure [here⁠(opens in a new window)](https://www.coderabbit.ai/security).\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 9,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1647.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 484.3h old, exceeds 336h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2114450610724708492",
+          "title": "We're sorry for the rate limits and unnecessary quota consumption on the K3.1 Pro subscription plan. These were our issues, and we should have fixed them sooner.\n\nToday, every subscriber on every plan",
+          "url": "https://x.com/Kimi_Moonshot/status/2114450610724708492",
+          "published_at": "2026-10-25T20:14:44.000000Z",
+          "description": "We're sorry for the rate limits and unnecessary quota consumption on the K3.1 Pro subscription plan. These were our issues, and we should have fixed them sooner.\n\nToday, every subscriber on every plan gets a one-time usage reset, restoring 25% of their monthly quota (usage below 25% resets to zero), equal to one week of usage. Your usage bar will reflect this adjustment by end of day PST.\n\nWe've also adjusted the plan's parameters and are reducing unnecessary subagent calls and output length, so your quota goes further.\n\nThank you for your patience while we put this right.",
+          "expanded_urls": [],
+          "source": "Kimi (Twitter)",
+          "origin_report_date": "2026-10-25",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    }
+  }
+}
