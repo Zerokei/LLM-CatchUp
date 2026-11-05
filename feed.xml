@@ -5,8 +5,96 @@
     <link>https://github.com/Zerokei/LLM-CatchUp</link>
     <description>每日自动抓取的 AI / LLM 进展摘要（日报 / 周报 / 月报）。</description>
     <language>zh-CN</language>
-    <lastBuildDate>Tue, 03 Nov 2026 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Wed, 04 Nov 2026 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://zerokei.github.io/LLM-CatchUp/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>CatchUp 日报 2026-11-04</title>
+      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-11-04.html</link>
+      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-11-04.md</guid>
+      <pubDate>Wed, 04 Nov 2026 00:00:00 GMT</pubDate>
+      <category>daily</category>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-11-04</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>图像创作能力扩展</strong>：Images 2.6 将 GIF、局部编辑与 SVG 导出带入 ChatGPT、Codex 和 API。</li>
+<li><strong>模型进入工程现场</strong>：OpenAI 展示模型用于 CAD、PCB 与仿真，并报告 BenchCAD 2.0 的工程设计评测结果。</li>
+<li><strong>安全能力嵌入防线</strong>：GPT-5.6 Cyber 进入 AWS GovCloud，Cisco 则将 OpenAI 模型与网络遥测结合用于威胁响应。</li>
+<li><strong>企业流程加速自动化</strong>：DevRev 与 Heimstaden 案例显示智能体和 Codex 正进入客服及物业运营等业务流程。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://openai.com/index/introducing-images-2-6">Images 2.6 上线：生成提速并支持 GIF</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 模型发布</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Images 2.6</code> <code>图像生成</code> <code>GIF</code> <code>图像编辑</code> <code>API</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 发布 Images 2.6，面向 ChatGPT、Codex 和 API，图像生成速度提升 50%，并新增 GIF 动画、局部标注编辑、SVG 导出及复杂度控制。API 提供偏速度的 Flare 与偏细节和编辑一致性的 Sunburst 两种配置，开发者可按任务权衡延迟与质量。该版本已在全球 ChatGPT 和 Codex 上线，API 亦可使用。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>为营销素材或角色内容试用 GIF 生成，并检查循环衔接和品牌元素一致性。</li>
+<li>在 API 工作流中分别评估 Flare 与 Sunburst，以任务延迟和细节要求选择配置。</li>
+<li>把局部标注、SVG 导出和复杂度参数纳入现有设计流程的小规模测试。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>2. <a href="https://openai.com/index/accelerating-engineering-for-the-physical-world">OpenAI 展示模型加速实体产品工程设计</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 研究</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>工程设计</code> <code>CAD</code> <code>BenchCAD 2.0</code> <code>硬件</code> <code>仿真</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 展示模型在机械、电气与系统工程中的应用，包括 CAD、PCB、仿真和制造图纸，并称内部硬件团队自 2 月以来的模型使用量增长 23 倍。在 BenchCAD 2.0 上，较新的内部模型平均得分为 0.875，高于 GPT-6 Astra 高推理设置下的 0.594；团队同时指出模型仍会遗漏制造公差和装配约束。OpenAI 正与 Chip Ganassi Racing 探索扫描件转 CAD 等流程，并与 Mazda 合作研究车辆空气动力学和碰撞安全设计。</p>
+<hr>
+<h3>3. <a href="https://openai.com/index/daybreak-red-aws-govcloud">Daybreak Red 将 GPT-5.6 Cyber 带入 AWS GovCloud</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>GPT-5.6 Cyber</code> <code>网络安全</code> <code>AWS GovCloud</code> <code>漏洞研究</code></li>
+</ul>
+<p><strong>摘要</strong>: OpenAI 将网络安全模型 GPT-5.6 Cyber 通过 Amazon Bedrock 提供给获批的 AWS GovCloud（US-East）客户，用于授权漏洞研究、利用验证和安全测试。该服务面向政府防御团队，配有更严格的身份核验、监控与访问控制；推理数据不会用于训练模型。使用者仍需由合格安全人员审查模型发现和修复建议，且需分别完成 OpenAI 审批与 AWS 开通。</p>
+<blockquote>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>核对团队是否符合 Daybreak Red 与 AWS GovCloud 的双重准入要求，再规划受控试点。</li>
+<li>将模型用于漏洞复现和修复评估时，保留人工审查、隔离环境及访问审计。</li>
+</ul>
+</blockquote>
+<hr>
+<h3>4. <a href="https://openai.com/index/cisco-cyber">Cisco 将网络遥测与 OpenAI 模型用于安全防御</a></h3>
+<ul>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>网络安全</code> <code>Cisco</code> <code>威胁检测</code> <code>Daybreak</code> <code>智能体安全</code></li>
+</ul>
+<p><strong>摘要</strong>: Cisco 介绍其将网络遥测与 OpenAI 模型结合，以关联分散的安全信号、加快威胁调查和漏洞响应，并将能力接入现有扫描工作流。Cisco 高管称 Daybreak 与 GPT-6 Astra 帮助提升漏洞发现和修复效率；双方还通过 Daybreak Defense Network 探索更快识别暴露面并实施控制。面向智能体安全，Cisco 强调需同时保护智能体、检测非预期行为，并以近实时方式运行防护。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
+<ul>
+<li><strong>商业动态</strong> | <code>DevRev</code> <code>企业智能体</code> <code>客户服务</code> <code>GPT-6.1 Sol</code> <code>Codex</code> — DevRev 将 GPT-6 Astra 与 GPT-6.1 Sol 用于 Computer 和 Operator，处理客户及员工请求，并通过企业知识、权限控制和可追溯、可撤销操作连接实际业务流程。公司称 GPT-6.1 Sol 在其 Enterprise-Bench 评估中兼顾推理能力、响应速度与服务成本。DevRev 内部工程团队已转为使用 Codex，销售工程师也用模型制作演示；其长期目标是让智能体在人工监督下完成更复杂的服务请求。 · <a href="https://openai.com/index/devrev-enterprise-self-service">OpenAI Blog</a></li>
+<li><strong>商业动态</strong> | <code>房地产</code> <code>企业AI</code> <code>Codex</code> <code>流程自动化</code> <code>成本优化</code> — 欧洲住宅运营商 Heimstaden 将 ChatGPT Enterprise 与 Codex 用于租赁、房源广告、环境风险评估和采购等流程，并以员工审核和数据安全规则保留人工责任。公司称荷兰虚拟布置房屋图片的成本下降超过 99%，Codex 还帮助两名员工在两个月内评估 20,112 项资产，替代原估算需五人工作一年的流程。Heimstaden 正逐步部署采购智能平台，并与合作方开发支持 MCP 工作流的物业管理系统。 · <a href="https://openai.com/index/heimstaden">OpenAI Blog</a></li>
+</ul>
+<h2>往期补遗</h2>
+<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
+<ul>
+<li><strong>2026-10-28 · 模型发布</strong> — Google DeepMind公布Gemini 4 Carbon，称其为下一代前沿模型，并在网络安全与长程任务能力上达到业界领先水平。推文未披露评测名称、分数、开放范围或可用时间，具体领先幅度仍待更多信息验证。 · <a href="https://x.com/GoogleDeepMind/status/2115489356437651654">Google DeepMind (Twitter)</a></li>
+<li><strong>2026-10-28 · 产品与功能</strong> — Mistral推出面向智能体应用的Responses API公开预览，将模型回答、推理内容和工具调用作为独立项目返回，便于应用逐步处理交互过程。该接口支持Mistral托管的全部聊天模型，包括Large 4，定位是比Chat Completions更适合构建智能体的调用方式。 · <a href="https://x.com/MistralAI/status/2115443720371814478">Mistral AI (Twitter)</a></li>
+<li><strong>2026-10-27 · 研究</strong> — Anthropic与六家生物医药机构合作，并自行启动罕见病药物研发，探索Claude在药物设计、制造、监管文件和临床试验规划等环节的作用。早期案例包括生成约3.5万种抗体设计、将部分研发文书审核时间缩短89%，以及在CAR-T实验中改进受体设计；相关成果仍处于临床前阶段，尚需进一步验证。 · <a href="https://x.com/AnthropicAI/status/2115178675050307942">Anthropic (Twitter)</a></li>
+<li><strong>2026-10-27 · 模型发布</strong> — Google DeepMind推出Genie 4，将其定位为更逼真、交互性更强的世界模型，用户可以实时探索动态生成的环境。场景中的人物动作、反应和声音会随交互变化；Demis Hassabis补充称模型结合实时物理与推理能力。现有公告尚未给出公开评测、访问范围或技术细节。 · <a href="https://x.com/GoogleDeepMind/status/2115114028338962672">Google DeepMind (Twitter)</a></li>
+<li><strong>2026-10-28 · 产品与功能</strong> — Claude for Legal 新增预置成果模板库，覆盖合同审查、监管动态扫描和引文核查等法律工作。用户可从内置示例开始，加入自己的文档与连接器，再将成果分享给企业内其他同事。 · <a href="https://x.com/claudeai/status/2115467192276025500">Claude (Twitter)</a></li>
+<li><strong>2026-10-28 · 研究</strong> — Mistral转发的Voice Arena评测显示，Voxtral Mini Transcribe 3在说话人分离与语音识别榜单的9款模型中以40.4% DER排名第二，并优于更大的Small版本。评测使用139段对话及人工核验参考文本；漏检语音仍是主要误差来源，占Mini总DER的82%。 · <a href="https://x.com/MistralAI/status/2115380768394379474">Mistral AI (Twitter)</a></li>
+<li><strong>2026-10-27 · 商业动态</strong> — Anthropic通过美国总务管理局OneGov协议，将Claude Enterprise、Claude for Government和Claude API的40%折扣扩展至联邦、州、地方及部落政府，预计可为政府节省约10亿美元。协议还包含落地支持项目，且无需最低消费承诺；这是商业采购与公共部门推广安排，并非模型或产品能力发布。 · <a href="https://x.com/AnthropicAI/status/2115207004293853358">Anthropic (Twitter)</a></li>
+<li><strong>2026-10-27 · 教程与观点</strong> — Thariq 认为开源软件需要新的分发方式，让用户能借助智能体修改软件，同时自动接收上游更新。他指出现有编程智能体能够辅助此类操作，但尚不会自动完成上游合并；帖子提出的是工具生态方向的观察，没有给出具体实现方案。 · <a href="https://x.com/trq212/status/2115188992861970693">Thariq (Twitter)</a></li>
+<li><strong>2026-10-27 · 教程与观点</strong> — Thariq 分享一项个人实验：打造支持写作、开发等自定义模式的 AI 原生 macOS Dock，帮助自己保持专注。其智能体可新增和调整模式，并利用 Jev 实时判断用户活动与通知后采取行动；目前内容描述的是个人原型，而非正式发布的产品。 · <a href="https://x.com/trq212/status/2115135857669881939">Thariq (Twitter)</a></li>
+</ul>
+]]></description>
+    </item>
     <item>
       <title>CatchUp 日报 2026-11-03</title>
       <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-11-03.html</link>
@@ -2012,65 +2100,6 @@
 <li><a href="https://www.anthropic.com/research/self-replicating-ai">小模型或可借物联网设备自主复制传播</a> — 阅读实验环境与硬件假设，区分能力演示和现实威胁证据。</li>
 <li><a href="https://www.anthropic.com/news/anthropic-cyber-mission">Anthropic网络安全使命推出OSS Scanner</a> — 评估模型生成漏洞报告如何接入开源维护者的验证和修复流程。</li>
 <li><a href="https://openai.com/index/sharing-ai-progress-in-mathematics">OpenAI公布前沿模型数学研究进展</a> — 查看公开Lean证明及其对模型参与数学研究的可验证性。</li>
-</ul>
-]]></description>
-    </item>
-    <item>
-      <title>CatchUp 日报 2026-10-10</title>
-      <link>https://zerokei.github.io/LLM-CatchUp/reports/daily/2026-10-10.html</link>
-      <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-10-10.md</guid>
-      <pubDate>Sat, 10 Oct 2026 00:00:00 GMT</pubDate>
-      <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-10-10</h1>
-<h2>今日趋势</h2>
-<ul>
-<li><strong>安全运营自动化</strong>：Sophos 称借助 OpenAI Daybreak 将威胁调查时间缩短 96%，并自动处理 52% 的 MDR 案件。</li>
-<li><strong>浏览器测试降本</strong>：Asana 案例显示 Codex 中的浏览器代理测试成本降低 76 倍、速度提升 5 倍，支持以实测指标评估模型配置。</li>
-<li><strong>效率验证边界</strong>：两则 OpenAI 客户案例展示安全处置与浏览器测试的效率收益，落地时仍需同时监测任务质量和人工复核要求。</li>
-</ul>
-<hr>
-<h2>文章详情</h2>
-<h3>1. <a href="https://openai.com/index/sophos">Sophos 借助 Daybreak 将威胁调查时间缩短 96%</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>网络安全</code> <code>Daybreak</code> <code>威胁调查</code> <code>MDR</code></li>
-</ul>
-<p><strong>摘要</strong>: Sophos 将 OpenAI 的 Daybreak 用于托管式检测与响应（MDR），使网络威胁调查时间减少 96%，并自动处理 52% 的 MDR 案件。该案例强调自动化仍由人工监督，展示 AI 安全工具在企业运营中的落地方式。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>评估将 AI 分诊接入安全运营流程，并为高风险处置保留人工审批。</li>
-<li>以调查耗时、自动处理率和误报率衡量安全自动化成效。</li>
-</ul>
-</blockquote>
-<hr>
-<h3>2. <a href="https://openai.com/index/asana-browser-agent">Asana 用 GPT-6.1 Sol 将浏览器测试成本降至原来的 1/76</a></h3>
-<ul>
-<li><strong>来源</strong>: OpenAI Blog</li>
-<li><strong>分类</strong>: 产品与功能</li>
-<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
-<li><strong>标签</strong>: <code>浏览器代理</code> <code>Codex</code> <code>GPT-6.1 Sol</code> <code>推理成本</code></li>
-</ul>
-<p><strong>摘要</strong>: Asana 在 Codex 中使用 GPT-6 Astra 改进浏览器代理测试，并称测试成本降低 76 倍、速度提升 5 倍。由此，团队可以在面向客户的代理中采用能力更强的模型，同时控制推理成本。</p>
-<blockquote>
-<p><strong>实践建议</strong></p>
-<ul>
-<li>在浏览器自动化任务中同时记录成功率、运行时长和单次任务成本，再比较不同模型配置。</li>
-<li>先用基准测试筛选高性价比模型，再逐步扩展到客户工作流。</li>
-</ul>
-</blockquote>
-<hr>
-<h2>往期补遗</h2>
-<p>以下内容此前尚未进入正式日报，不参与今日趋势统计。</p>
-<ul>
-<li><strong>2026-09-29 · 模型发布</strong> — OpenAI 宣称 GPT-6.1 Sol 的智能水平接近 GPT-6 Astra，而价格约为其五分之一。公司将其定位为当前性能成本比突出的模型，但该帖未列出具体基准或价格口径。 · <a href="https://x.com/OpenAI/status/2104986129686741046">OpenAI (Twitter)</a></li>
-<li><strong>2026-09-29 · 产品与功能</strong> — Codex Security Cloud 将默认提供由 Daybreak Blue 驱动的网络安全模型，可扫描完整 GitHub 仓库并持续审查新提交。它还会调查和合并重复发现、准备修复方案供团队审核，并可在本地电脑关闭时继续运行；产品以插件形式提供给 Codex 桌面端和网页端。 · <a href="https://x.com/OpenAI/status/2104987422308335828">OpenAI (Twitter)</a></li>
-<li><strong>2026-09-29 · 产品与功能</strong> — OpenAI 推出 dots，这是一种由 GPT-6 Astra 驱动、可持续运行并拥有独立云端电脑的智能体。它可访问用户连接的插件与上下文，处理反馈分诊、构建问题分析以及代码修改和测试，并把完整 PR 交由用户审阅。用户可检查其云端环境，也可连接自己的电脑；具体权限边界和可用范围仍需在实际部署中确认。 · <a href="https://x.com/OpenAI/status/2104980481876070819">OpenAI (Twitter)</a></li>
-<li><strong>2026-09-29 · 研究</strong> — Anthropic 通过 Anthropic Interviewer 发起新一轮研究，征集用户对 AI 使用体验及其社会角色的看法，并允许参与者选择公开回答。公司表示，研究结果将用于 Anthropic Institute 的研究和决策；上一轮曾收集 8.1 万人的意见。 · <a href="https://x.com/AnthropicAI/status/2104982629884063840">Anthropic (Twitter)</a></li>
-<li><strong>2026-09-29 · 教程与观点</strong> — Thariq 分享了自己参与 Latent Space 播客的片段，讨论从 harness engineering 到前沿模型发展节奏等话题。其摘录提出，能力更强的模型可能需要更少验证，从而在成本与效果权衡上占优，但帖子没有提供量化证据。 · <a href="https://x.com/trq212/status/2104983034152063339">Thariq (Twitter)</a></li>
-<li><strong>2026-09-29 · 商业动态</strong> — OpenAI DevDay 当日在旧金山举行，官方称这是公司迄今规模最大的一届，并安排直播。Sam Altman 在直播前预告将有新内容，但相关帖子没有披露具体产品或技术细节。 · <a href="https://x.com/OpenAIDevs/status/2104953943910683015">OpenAI Devs (Twitter)</a></li>
 </ul>
 ]]></description>
     </item>
