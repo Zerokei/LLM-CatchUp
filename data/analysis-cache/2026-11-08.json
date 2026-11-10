@@ -1,5 +1,5 @@
 {
-  "analyzed_at": "2026-11-09T19:50:07.003Z",
+  "analyzed_at": "2026-11-10T20:42:07Z",
   "fetch_cache_ref": "data/fetch-cache/2026-11-08.json",
   "trend_paragraph": "- **暂无新增内容**：该太平洋时区抓取窗口内没有可用于趋势计算的当日新内容。",
   "articles": [
@@ -62,9 +62,10 @@
         "在桌面端并行运行独立任务，并利用用量明细复盘成本。"
       ],
       "thread_group_id": null,
-      "duplicate_of": null,
+      "duplicate_of": "https://x.com/ClaudeDevs/status/2118063143167693011",
       "origin_report_date": "2026-11-03",
-      "delivery_class": "backfill"
+      "delivery_class": "backfill",
+      "angle": "十月功能更新回顾"
     },
     {
       "url": "https://x.com/ClaudeDevs/status/2117680635561312732",
@@ -145,8 +146,8 @@
     {
       "url": "https://x.com/MistralAI/status/2117562068220195097",
       "source": "Mistral AI (Twitter)",
-      "title": "Mistral Large 4 开放权重：百万上下文与智能体实测",
-      "summary": "Mistral Large 4 开放权重，官方称其在代码智能体与网络安全任务上具备前沿能力，且比预览版更紧凑高效，并发布研发技术报告。模型还被用于构建可实时追踪约 1.9 万颗卫星及碎片的 3D 应用，完成用户视角测试和严格验证。与此同时，Open Math OS 已向获批团队提供该模型，规格为 1.05 万亿参数、100 万 token 上下文，支持数学家与智能体协作并由社区掌控数据。",
+      "title": "Mistral Large 4开放权重：百万上下文与安全智能体演示",
+      "summary": "Mistral Large 4以开放权重形式提供，并面向获批团队支持1.05万亿参数和100万token上下文的数学研究工作区。围绕该模型的演示包括构建可追踪约1.9万颗卫星及碎片的实时3D应用，以及由133个智能体协作分析Django漏洞并生成修补。后者展示了从代码梳理、攻击场景测试到补丁生成的流程，但尚未提供独立复现或补丁发布状态。",
       "category": "模型发布",
       "importance": 5,
       "tags": [
@@ -161,7 +162,8 @@
       "practice_suggestions": [
         "核对模型许可证、硬件需求和技术报告评测条件，再规划本地部署并与现有模型同条件比较。",
         "将卫星追踪演示拆解为需求生成、实现、自测和验证流程，评估其在内部原型中的适用性。",
-        "确认 Open Math OS 的获批访问条件，并测试百万上下文任务表现及数据权限控制。"
+        "确认 Open Math OS 的获批访问条件，并测试百万上下文任务表现及数据权限控制。",
+        "在隔离的测试仓库中复现演示流程，并让独立测试验证漏洞与补丁。"
       ],
       "thread_group_id": null,
       "duplicate_of": null,
@@ -214,6 +216,206 @@
       "origin_report_date": "2026-11-03",
       "delivery_class": "backfill",
       "angle": "研究平台接入与长上下文"
+    },
+    {
+      "url": "https://x.com/sama/status/2117794005165748448",
+      "source": "Sam Altman (Twitter)",
+      "title": "人类应始终掌控未来",
+      "summary": "Sam Altman强调，人不应被降格为按照AI系统偏好行事，也不应把未来的决定权让渡给超级智能。他主张这一原则应成为约束AI发展的根本要求。",
+      "category": "政策与安全",
+      "importance": 3,
+      "tags": [
+        "人类控制",
+        "超级智能",
+        "AI治理"
+      ],
+      "origin_report_date": "2026-11-03",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2118063143167693011",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Code后台子代理更新：用量降低约99%",
+      "summary": "Claude Code后台子代理改用简短状态笔记，每30秒更新进度，避免每次重读完整对话，官方称每次更新的用量成本降低约99%。这项优化有助于长时间运行的子代理减少限额消耗。此前十月更新还加入mods、改善桌面端并行会话，并提供更清晰的用量信息，整体扩展了自定义和多任务开发能力。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude Code",
+        "子代理",
+        "用量优化",
+        "开发工具",
+        "桌面应用",
+        "多会话",
+        "用量分析"
+      ],
+      "practice_suggestions": [
+        "在长任务中启用后台子代理，并对比更新前后的用量消耗。",
+        "将状态更新用于监控耗时任务，检查其是否仍能准确反映子代理进度。",
+        "检查团队当前 Claude Code 版本，试用 mods 并评估是否适合沉淀常用工作流。",
+        "在桌面端并行运行独立任务，并利用用量明细复盘成本。"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2117710942826123294",
+      "source": "Anthropic (Twitter)",
+      "title": "FlashProve让大模型推理结果可验证",
+      "summary": "Anthropic开源FlashProve零知识证明原型，可验证回复是否由指定模型权重针对给定输入生成，同时不泄露模型权重。团队报告称，单张H100可为Llama 4 Maverick生成约每秒110个token的证明，证明文件约19 MB，但生成证明仍比普通推理耗费更多计算资源。",
+      "category": "研究",
+      "importance": 5,
+      "tags": [
+        "FlashProve",
+        "零知识证明",
+        "推理验证",
+        "模型安全"
+      ],
+      "origin_report_date": "2026-11-03",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2118073665296228863",
+      "source": "Anthropic (Twitter)",
+      "title": "Claude协助解析原核生物vault颗粒结构",
+      "summary": "Anthropic团队报告发现细菌及噬菌体相关蛋白可组装成vault样颗粒，并借助Claude完成序列筛查、实验方案迭代和冷冻电镜结构分析。团队称部分纯化流程从约三天缩短至90分钟、初步结构模型约34小时完成，同时指出Claude曾犯实验设计和图像处理错误，研究结果仍待进一步验证。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "AI辅助科研",
+        "结构生物学",
+        "蛋白质"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2117692475775258785",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI探索AI辅助实体工程设计",
+      "summary": "OpenAI称ChatGPT和Codex正被用于机械设计、电气工程与仿真，帮助硬件团队加快迭代。公司还在与行业合作方测试相关工作流，但此帖未提供具体工具能力或量化结果。",
+      "category": "产品与功能",
+      "importance": 2,
+      "tags": [
+        "ChatGPT",
+        "Codex",
+        "硬件工程",
+        "仿真"
+      ],
+      "practice_suggestions": [
+        "选择一个机械或电气设计任务，让ChatGPT或Codex协助生成候选方案，再由工程师按约束逐项校核。",
+        "在仿真前记录人工基线耗时，并比较AI辅助流程的迭代速度和错误率。"
+      ],
+      "origin_report_date": "2026-11-03",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2118119451401048497",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI展示自动化内核漏洞修复流水线",
+      "summary": "OpenAI称其安全研究团队用一款尚未发布的网络安全模型搭建了自动发现、利用验证并生成补丁的流水线。单次运行验证并为Linux内核948个本地提权漏洞生成补丁，API总成本为120万美元；帖子未说明这些补丁的独立审计或部署状态。",
+      "category": "研究",
+      "importance": 4,
+      "tags": [
+        "网络安全",
+        "漏洞发现",
+        "Linux内核",
+        "自动修复"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2118083933233357132",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI开发者账号分享文章链接",
+      "summary": "该推文正文仅包含一个指向X站内文章的短链，没有提供文章主题、摘要或具体主张。由于现有输入无法读取文章内容，无法可靠判断其讨论事项。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "OpenAI开发者",
+        "X文章",
+        "内容待核实"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2117925908572991748",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral展示多智能体发现并修复Django漏洞",
+      "summary": "Mistral称其用Large 4及133个智能体分析一个近期Django漏洞，依次完成代码梳理、漏洞搜寻、攻击场景测试和问题确认，随后由Le Chonk生成修补。该帖是加速演示，未提供漏洞编号、独立复现结果或修补发布状态。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "Mistral Large 4",
+        "多智能体",
+        "Django",
+        "漏洞修复"
+      ],
+      "practice_suggestions": [
+        "在隔离的测试仓库中复现演示流程，并让独立测试验证漏洞与补丁。",
+        "为多智能体安全审查记录每个阶段的输入、证据和人工批准点。"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/MistralAI/status/2117562068220195097",
+      "angle": "Django漏洞修复演示"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2118051904899166279",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral预告Studio与Vibe线上交流",
+      "summary": "Mistral预告将于11月5日举办Office Hours，主题为Studio与Vibe，并邀请Studio团队成员参与。帖子邀请用户提前提问，但未披露产品更新或技术细节。",
+      "category": "商业动态",
+      "importance": 1,
+      "tags": [
+        "Mistral",
+        "Studio",
+        "Vibe",
+        "线上活动"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
+    },
+    {
+      "url": "https://x.com/Kimi_Moonshot/status/2118010528123773297",
+      "source": "Kimi (Twitter)",
+      "title": "Moonshot发布Kimi K3.1 Pro模型权重",
+      "summary": "Moonshot宣布开放Kimi K3.1 Pro的模型权重，并表示将继续推进开放智能。帖子未给出模型规模、许可证、基准测试或部署要求等细节。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "Kimi K3.1 Pro",
+        "开放权重",
+        "Moonshot",
+        "大语言模型"
+      ],
+      "practice_suggestions": [
+        "先核对模型卡、许可证和硬件要求，再在隔离环境中下载权重运行小规模评测。",
+        "用自有任务集比较Kimi K3.1 Pro与当前基线模型的质量、延迟和推理成本。"
+      ],
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null
     }
   ]
 }
