@@ -1,0 +1,358 @@
+{
+  "analyzed_at": "2026-11-12T15:30:23.114Z",
+  "fetch_cache_ref": "data/fetch-cache/2026-11-10.json",
+  "trend_paragraph": "- **企业安全智能体**：Cogent与OpenAI将漏洞调查、修复和验证串成工作流，客户案例显示平均修复时间下降75%。\n- **模型研究管控**：OpenAI的Control Room可在安全风险出现时停止研究推理任务，并以故障关闭机制限制未授权运行。\n- **自由职业任务重组**：OpenAI与Upwork观察到AI相关项目更常组合多种技能，相关任务组合多样性在两年间提高45%。\n- **智能体提升交付**：CodeRabbit称团队借助Codex在人员不变时显著扩大软件交付量，并把审查和低风险变更纳入自动化流程。\n- **历史资料转为可检索资产**：制造企业Kuken用AI检索七十年工程图纸，将维修资料定位时间从近一小时缩短至数分钟。",
+  "articles": [
+    {
+      "url": "https://openai.com/index/ai-effect-on-freelance-work",
+      "source": "OpenAI Blog",
+      "title": "AI正重塑自由职业需求与项目范围",
+      "summary": "OpenAI与Upwork的研究显示，AI相关自由职业项目覆盖聊天机器人、视频制作、营销自动化等更多领域，客户也更常把不同技能组合在同一项目中。2023年至2025年，相关岗位任务组合多样性提高45%，固定预算和项目工时也高于其他工作；研究认为这并非简单的岗位替代。",
+      "category": "研究",
+      "importance": 3,
+      "tags": [
+        "自由职业",
+        "就业",
+        "AI技能",
+        "劳动力市场"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/cogent-security",
+      "source": "OpenAI Blog",
+      "title": "Cogent用智能体自动调查并修复企业漏洞",
+      "summary": "Cogent将OpenAI模型、企业资产知识图谱和权限策略结合，让智能体从漏洞调查、修复规划执行到结果验证贯通处理，并可按客户要求设置审批或有限自主执行。公司称，一家汽车客户的严重漏洞平均修复时间下降75%，一家IT服务客户的漏洞分诊吞吐量提升至5倍。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "网络安全",
+        "智能体",
+        "漏洞修复",
+        "企业AI"
+      ],
+      "practice_suggestions": [
+        "先将企业资产、漏洞、责任人和依赖关系汇入统一上下文图谱。",
+        "按风险等级配置只读调查、审批后修复和受限自动修复权限，并验证每次修复结果。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+      "source": "OpenAI Blog",
+      "title": "ChatGPT Enterprise上架AWS Marketplace",
+      "summary": "ChatGPT Enterprise现可通过AWS Marketplace采购和管理，企业可沿用现有AWS账单与采购流程，并将符合条件的支出计入AWS承诺消费。该渠道提供与直接向OpenAI采购相同的模型和功能，医疗及金融行业版本也可通过Marketplace获取。",
+      "category": "商业动态",
+      "importance": 2,
+      "tags": [
+        "企业采购",
+        "AWS",
+        "ChatGPT",
+        "云市场"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/control-room",
+      "source": "OpenAI Blog",
+      "title": "OpenAI部署Control Room紧急停止研究任务",
+      "summary": "OpenAI的Control Room集中追踪研究基础设施中的模型推理任务，并可在安全或安保问题出现时阻止任务继续生成。停止指令最迟35秒生效；系统在推理层逐次校验任务授权，并采用故障关闭设计，服务不可用时拒绝推理请求。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "AI安全",
+        "推理监控",
+        "故障关闭",
+        "模型治理"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/coderabbit-codex-daybreak",
+      "source": "OpenAI Blog",
+      "title": "CodeRabbit借助Codex扩展代码交付与审查",
+      "summary": "CodeRabbit以OpenAI模型审查和治理智能体生成的代码，并称团队使用Codex后，在人数不变的情况下近半年软件交付量约增至20倍。其新产品CodeRabbit Secure结合Daybreak模型扫描并修复漏洞；团队还用智能体处理事件分流及低风险变更。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "代码审查",
+        "Codex",
+        "软件智能体",
+        "应用安全"
+      ],
+      "practice_suggestions": [
+        "建立包含已知缺陷的回归基准，持续比较不同模型对代码问题的检出率。",
+        "先将低风险变更和事件分流接入可审计的PR流程，再逐步扩大自动执行范围。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://openai.com/index/kuken",
+      "source": "OpenAI Blog",
+      "title": "Kuken用AI数分钟检索七十年工程图纸",
+      "summary": "Kuken Industries使用OpenAI API检索积累了70年的冷却塔工程图纸，工程师为维修寻找对应图纸的时间据称从接近一小时缩短至4.5分钟。案例显示，AI检索可帮助制造企业利用历史工程资料加快维修定位。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "制造业",
+        "工程图纸",
+        "知识检索",
+        "企业AI"
+      ],
+      "practice_suggestions": [
+        "先对历史图纸做OCR、元数据整理和可检索索引，并保留版本及设备型号信息。",
+        "用真实维修问题测试检索准确率，要求系统返回原始图纸供工程师核验。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "current",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/trq212/status/2118124218839859700",
+      "source": "Thariq (Twitter)",
+      "title": "用户设想应用自动生成快捷指令",
+      "summary": "发帖者以祈愿式图文表达希望苹果允许应用替用户创建快捷指令。内容是对潜在功能的设想，并非苹果已发布的功能消息。",
+      "category": "教程与观点",
+      "importance": 1,
+      "tags": [
+        "Apple",
+        "快捷指令",
+        "自动化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/trq212/status/2118399561324699655",
+      "source": "Thariq (Twitter)",
+      "title": "用智能体设置基于位置的洗衣提醒",
+      "summary": "发帖者分享一种智能体提示词：记录洗衣时间，若超过五天未洗，则在工作日回家半小时后提醒，并允许用户确认或延后。示例展示了将生活记录、时间条件、位置触发和持续提醒组合成个人自动化。",
+      "category": "教程与观点",
+      "importance": 2,
+      "tags": [
+        "个人智能体",
+        "位置提醒",
+        "提示词",
+        "生活自动化"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-05",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2118403114890137895",
+      "source": "Claude (Twitter)",
+      "title": "Claude在美国测试个人财务功能",
+      "summary": "Claude在美国推出个人财务功能测试版，用户可连接自行选择的账户，以日常语言询问余额和交易情况。账户访问为只读，Claude不能转账、管理资金或进行投资。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "个人理财",
+        "只读连接",
+        "金融AI"
+      ],
+      "practice_suggestions": [
+        "先用只读权限连接测试账户，验证余额与交易问答是否准确并标明数据来源。",
+        "上线前明确数据授权范围、撤销连接方式和财务建议边界。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-05",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2118124944928432327",
+      "source": "OpenAI (Twitter)",
+      "title": "ChatGPT Images 2.6新增GIF与参考图",
+      "summary": "OpenAI宣布ChatGPT Images 2.6支持GIF和参考图，并表示将有两款图像生成API模型推出，生成速度提升50%。这次更新同时扩展了产品创作形式与开发者侧能力。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "ChatGPT Images",
+        "图像生成",
+        "GIF",
+        "API"
+      ],
+      "practice_suggestions": [
+        "用同一提示词和参考图对比新旧模型的主体一致性、编辑控制及生成耗时。",
+        "若集成API，先用小批量任务验证速度提升和输出质量，再调整并发与成本预算。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/OpenAIDevs/status/2118124753340756055",
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "angle": "ChatGPT端GIF与参考图",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2118390190246879554",
+      "source": "OpenAI (Twitter)",
+      "title": "GPT-6 Cyber提升漏洞研究与安全对齐能力",
+      "summary": "OpenAI推出面向授权安全研究的GPT-6 Cyber，在ExploitGym得分48.5%，并将越界攻击规避率提升至无部署提示时99.93%、有提示时100%。该模型已协助发现Linux内核与Firefox漏洞并提出修复方案，目前通过Daybreak Red向获批客户开放。",
+      "category": "模型发布",
+      "importance": 5,
+      "tags": [
+        "网络安全",
+        "漏洞研究",
+        "模型对齐",
+        "GPT-6",
+        "防御工具"
+      ],
+      "practice_suggestions": [
+        "在隔离且明确授权的环境中评估其漏洞发现和补丁验证能力。",
+        "为安全代理设置目标范围、网络白名单和人工复核流程。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-05",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2118124753340756055",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "GPT-Image-2.6登陆Codex与API，新增GIF和参考图",
+      "summary": "GPT-Image-2.6进入Codex与API，并带来Flare和Sunburst两款生成速度提升约50%的图像模型。Sunburst在中高质量设置下能更稳定地保留连续编辑细节，ChatGPT端则新增GIF生成与参考图支持。此次更新同时扩展了开发者的生成和编辑能力，以及普通用户的创作形式。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "GPT-Image-2.6",
+        "图像生成",
+        "Codex",
+        "API",
+        "GIF",
+        "参考图"
+      ],
+      "practice_suggestions": [
+        "在现有图像工作流中对比Flare与Sunburst的生成速度和编辑一致性。",
+        "针对连续修改任务测试Sunburst在中高质量设置下的细节保留效果。",
+        "用参考图测试主体一致性，并比较GIF输出在目标平台上的可用性。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-04",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2118386439675420743",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "Private Safety Processing支持API安全审查",
+      "summary": "Private Safety Processing允许OpenAI对相关API请求进行安全审查，同时让记录保留在客户自己的环境中。审查由自动化安全代理执行，OpenAI人员无法访问客户提示词或回复内容。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "API安全",
+        "隐私",
+        "数据处理",
+        "安全审查"
+      ],
+      "practice_suggestions": [
+        "检查API数据留存策略，评估该机制是否满足内部隐私与安全审查要求。",
+        "在启用前确认本地记录存储、自动审查及访问权限配置符合组织政策。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-05",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2118412135340572850",
+      "source": "Meta AI (Twitter)",
+      "title": "Meta在美国推出Muse实时头像",
+      "summary": "Meta开始在美国Muse应用中推出Muse Realtime Avatar，将实时语音能力扩展为可交互的表情化头像。该功能旨在让用户与个人智能体进行更自然的实时交流。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "实时语音",
+        "数字头像",
+        "个人智能体",
+        "Meta"
+      ],
+      "practice_suggestions": [
+        "在可用地区试用实时头像，评估语音对话中的响应延迟和交互自然度。",
+        "为面向用户的语音代理原型比较纯语音与头像呈现的体验差异。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-05",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/MistralAI/status/2118370229466153299",
+      "source": "Mistral AI (Twitter)",
+      "title": "Mistral Studio新增托管智能体与应用能力",
+      "summary": "Mistral为Studio推出托管智能体和应用，并扩展工作流、企业连接、可观测性与评测能力。官方强调用户可加快构建和部署，同时保留部署环境的选择与控制权。",
+      "category": "产品与功能",
+      "importance": 4,
+      "tags": [
+        "智能体",
+        "企业应用",
+        "工作流",
+        "可观测性",
+        "评测"
+      ],
+      "practice_suggestions": [
+        "用一个现有业务流程验证Studio的托管智能体、企业连接和评测功能。",
+        "部署前检查可观测性覆盖范围及目标环境的部署控制选项。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-05",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/Alibaba_Qwen/status/2118674834632978755",
+      "source": "Qwen (Twitter)",
+      "title": "Qwen发布内容未明的预告",
+      "summary": "Qwen账号发布了一条简短预告，称某项新进展即将开始，并附有链接。帖文没有说明具体产品、模型或发布时间，现有信息不足以判断其实际内容。",
+      "category": "产品与功能",
+      "importance": 1,
+      "tags": [
+        "Qwen",
+        "发布预告",
+        "信息有限"
+      ],
+      "practice_suggestions": [
+        "待官方公布具体内容后，再评估其与现有模型或产品的差异。"
+      ],
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "origin_report_date": "2026-11-06",
+      "delivery_class": "backfill",
+      "cadence": "daily"
+    }
+  ]
+}
