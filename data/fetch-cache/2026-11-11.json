@@ -1,0 +1,628 @@
+{
+  "date": "2026-11-11",
+  "report_timezone": "America/Los_Angeles",
+  "fetched_at": "2026-11-12T09:00:29−08:00",
+  "window_start": "2026-11-10T00:00:00−08:00",
+  "window_end": "2026-11-11T00:00:00−08:00",
+  "sources": {
+    "Berkeley RDI": {
+      "status": "error",
+      "error": "upstream archive is not an array",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "The Batch": {
+      "status": "error",
+      "error": "HTTP 403 after 1 attempt",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "weekly",
+      "articles": []
+    },
+    "宝玉的分享": {
+      "status": "degraded_stale",
+      "error": "newest item is 569.0h old, exceeds 336h threshold",
+      "fetched_count": 50,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "OpenAI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1383,
+      "filtered_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "JioStar’s chief architect on AI discovery at 500M-user scale",
+          "url": "https://openai.com/index/jiostar-vijay-seshadri",
+          "published_at": "2026-11-11T00:00:00.000Z",
+          "description": "JioStar’s Vijay Seshadri explains AI discovery at 500M-user scale. Read his lessons on evals, guardrails, and taking AI into production.",
+          "full_text": "Title: JioStar’s chief architect on AI discovery at 500M-user scale\n\nURL Source: https://openai.com/index/jiostar-vijay-seshadri\n\nFinal URL: https://openai.com/index/jiostar-vijay-seshadri/\n\nMarkdown Content:\nOur Executive Function series features perspectives from leaders driving transformation through AI.\n\nJioStar operates entertainment and live-sports platforms used by more than 500 million consumers and has supported as many as 72.5 million concurrent live-sports viewers. At that scale, AI has to be fast, reliable, and ready for production.\n\nUsing the OpenAI API, JioStar built a conversational video and cricket-stat discovery assistant into JioHotstar. Viewers can speak naturally to find movies and shows, historical highlights, live-match moments, or cricket statistics, with results returned through a visual, conversational experience.\n\nAt OpenAI’s Executive Summit in Singapore, Sidharth Sharma, OpenAI’s Head of Go-to-Market for ASEAN, spoke with Vijay Seshadri—Chief Architect, JioStar, about building the experience for more than 15 languages in about eight weeks, and the lessons for leaders taking AI from demo to production.\n\n## What convinced you that AI would fundamentally change how people discover content?\n\nContent discovery has evolved very little in the past 25 years. Recommendations were the last major shift. Much of what followed has been an iteration of the same idea.\n\nBut choosing what to watch is deeply personal. A person might say, “I’m feeling sad. Show me something that will cheer me up.” Even that simple request contains a lot of nuance. What kind of sad? What usually cheers that person up? Do they want comedy, comfort viewing or something completely distracting?\n\nA traditional recommendation system may struggle to understand that moment. Conversation gives the viewer a way to explain it. We call this a voice-visual interface.\n\nListen\n\n## How did you turn that idea into a product in time for a major cricket tournament?\n\nWe began working through the concept in October and November, with a major cricket tournament coming in February. We had roughly two months and two very different audiences: entertainment viewers and cricket fans.\n\nAn entertainment viewer might say, “It’s Friday evening—surprise me,” or describe a movie without knowing its title. Sports viewers may want a more specific update, like fall of wickets, a series of sixes, or the match in which a player scored a certain number of runs. Cricket experts may want statistics about every ball.\n\nThese are very different discovery problems. We worked on bringing entertainment, sports moments and detailed cricket statistics into one experience, across multiple languages, in a very short period.\n\n## At JioStar’s scale, what tradeoffs shaped the technical design?\n\nVery early, we framed the problem as a three-way tradeoff among accuracy, latency, and cost. Every engineering decision had to balance all three at once.\n\nVoice made that especially important. More than 60% of our users use voice rather than text: people prefer to say what they want to watch. The response still has to be relevant, fast, and economically viable at scale.\n\nListen\n\n## What does an effective evaluation system look like in production?\n\nI think about it in two parts: an evaluation framework and a validation layer. Before production, the evaluation framework should prompt changes. In production, a feedback loop should turn customer behavior and failures into new eval cases.\n\nThat flywheel can become self-amplified, but it is extremely difficult to get right.\n\nDomain experts are essential. For sports-statistics evals, we worked with people such as sports-magazine editors who understood what serious fans might ask. You cannot begin with a prompt alone; you need to seed the system with deep human expertise.\n\n## How did a small team build and launch the experience in about eight weeks?\n\nOne thing we got right was the team. We started with a small team of data scientists and engineers around a clear problem statement. OpenAI’s forward-deployed engineers worked alongside us to further identify the few things we absolutely had to get right.\n\nThe first was scope. A voice or text interface lets users ask almost anything, so we began by deciding what the system should not answer. Guardrails came first.\n\nFor evals, we began with a seed dataset and used models to expand it with more variation. We created what you might now call a maker-checker pattern: one model helped determine how to answer a question, while another acted as a validator—an LLM as judge—with a competing objective.\n\nThat raised another question: who tests the judge? Designing the validator was itself an evaluation problem. Codex helped the team accelerate work such as generating eval cases and updating the system, but faster building did not remove the need for judgment and validation.\n\n## Looking back, what would you do differently?\n\nI would invest earlier in production monitoring for model efficacy.\n\nTraditional infrastructure measures such as P99 latency remain important, but they are not enough. You also need to monitor model efficacy in production.\n\n## What should executives keep in mind as they move from AI experiments to production systems?\n\nFirst, there is a large gap between what technology can do and the reality inside an enterprise. If your company has not matched every frontier-model announcement, you are not alone.\n\nSecond, keep focusing on outcomes rather than activity. It is easy to mistake visible motion for meaningful progress, particularly when companies emphasize input metrics. Lines of code generated, for example, do not tell you whether you created meaningful value.\n\nListen\n\nFinally, most enterprises underestimate the human skill and agency required. This cannot be only a generic skilling program. Leaders need people who can apply these tools with judgment. Give a strong engineer a tool like Codex and the impact can multiply; without the judgment to validate production systems, the risk multiplies too.\n\nYou have a rocket in your hands. Especially in production systems, you need validation and guardrails, and you need to give the keys to the right people.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Helping caregivers use AI in everyday life",
+          "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+          "published_at": "2026-11-10T12:00:00.000Z",
+          "description": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+          "full_text": "Title: Helping caregivers use AI in everyday life\n\nURL Source: https://openai.com/index/helping-caregivers-use-ai-in-everyday-life\n\nFinal URL: https://openai.com/index/helping-caregivers-use-ai-in-everyday-life/\n\nMarkdown Content:\nCaregiving often means juggling schedules, keeping track of information, and finding support while balancing work and family life. During National Family Caregivers Month, we’re helping caregivers gain AI skills that can make some of those everyday tasks easier, giving them more time to focus on the people they care for.\n\nOn November 10, OpenAI Academy, in collaboration with Caregiver Action Network, Alzheimer’s Association, and American Diabetes Association®, is hosting the AI Skills Jam for Caregivers & Community Health: a free, in-person learning experience designed to help caregivers use ChatGPT confidently, safely, and practically. These nationwide events will bring together participants across five U.S. cities, including individual and family caregivers, caregiver support organizations, and people living with chronic or serious health conditions:\n\n*   Oakland, California\n\n*   Tampa, Florida\n\n*   Pittsburgh, Pennsylvania\n\n*   Atlanta, Georgia\n\n*   Detroit, Michigan\n\nAn OpenAI analysis estimates that more than 40 million weekly ChatGPT messages about healthcare in the U.S. ask about healthcare for someone else[1](https://openai.com/index/helping-caregivers-use-ai-in-everyday-life/#citation-bottom-1). At the workshops, participants will explore how ChatGPT can help with resource navigation, peer support, and caregiver support, including how to:\n\n*   organize caregiver schedules and checklists\n\n*   turn trusted educational resources into plain-language materials\n\n*   find community resources\n\n*   prepare support group discussion guides\n\nParticipants will also learn how to use AI responsibly, including protecting personal information and understanding the limits of these tools. Participants will also learn when to consult healthcare professionals and how AI tools should complement, not replace, medical, legal, or financial advice.OpenAI facilitators and mentors will offer hands-on support throughout the workshops. No coding or technical background is required.\n\n1 of 4\n\nThe Jam brings this learning into local communities, where caregivers can practice alongside peers and share the everyday challenges they hope these tools can help address. Our partners bring deep expertise and experience supporting people living with serious illness and their families. Their perspectives, together with those of caregivers themselves, will help connect the day’s learning to the needs of each community.\n\nThe AI Skills Jam is part of OpenAI Academy’s broader work to make AI practical and accessible to everyone. It builds on previous events we’ve hosted with nonprofits, small businesses, K–12 educators, and older adults.\n\nWe are grateful to Caregiver Action Network, Alzheimer’s Association, American Diabetes Association®, and the caregivers and community health organizations joining us across the country. Their questions, ideas, and experiences will help shape future learning resources and ensure these tools are useful in the daily work of supporting others.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Introducing Businesses in ChatGPT",
+          "url": "https://openai.com/index/introducing-businesses-chatgpt",
+          "published_at": "2026-11-10T10:00:00.000Z",
+          "description": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+          "full_text": "Title: Introducing Businesses in ChatGPT\n\nURL Source: https://openai.com/index/introducing-businesses-chatgpt\n\nFinal URL: https://openai.com/index/introducing-businesses-chatgpt/\n\nMarkdown Content:\n[Skip to main content](https://openai.com/index/introducing-businesses-chatgpt/#main)\n\n[](https://openai.com/)\n\n*   [Research](https://openai.com/research/index/)\n*   Products\n*   [Business](https://openai.com/business/)\n*   [Developers](https://openai.com/api/)\n*   [Company](https://openai.com/about/)\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nLog in[Try ChatGPT(opens in a new window)](https://chatgpt.com/?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n\n*   Research\n*   Products\n*   Business\n*   Developers\n*   Company\n*   [Foundation(opens in a new window)](https://openaifoundation.org/)\n\nIntroducing Businesses in ChatGPT | OpenAI\n\n# 500\n\n## Internal Server Error.\n\nResearch\n*   [Research Index](https://openai.com/research/index/)\n*   [Research Overview](https://openai.com/research/)\n*   [Economic Research](https://openai.com/signals/)\n\nLatest Advancements\n*   [GPT-6.1 Sol](https://openai.com/index/introducing-gpt-6-1-sol/)\n*   [GPT-6 Astra](https://openai.com/index/gpt-6-astra/)\n*   [GPT-5.6](https://openai.com/index/gpt-5-6/)\n*   [GPT-5.5](https://openai.com/index/introducing-gpt-5-5/)\n\nSafety\n*   [Safety Approach](https://openai.com/safety/)\n*   [Deployment Safety(opens in a new window)](https://deploymentsafety.openai.com/)\n*   [Security & Privacy](https://openai.com/security-and-privacy/)\n*   [Trust & Transparency](https://openai.com/trust-and-transparency/)\n\nProducts\n*   [ChatGPT(opens in a new window)](https://chatgpt.com/?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n*   [ChatGPT Business(opens in a new window)](https://chatgpt.com/business/?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n*   [ChatGPT Enterprise(opens in a new window)](https://chatgpt.com/business/enterprise/?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n*   [ChatGPT for Education(opens in a new window)](https://chatgpt.com/business/education/?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n*   [Codex](https://chatgpt.com/codex/?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n*   [Dots(opens in a new window)](https://chatgpt.com/features/dots?openaicom-did=497c92ce-b319-48f3-b3f7-4d21e1914c6b&openaicom_referred=true)\n*   [Release Notes](https://openai.com/products/release-notes/)\n\nAPI Platform\n*   [Overview](https://openai.com/api/)\n*   [API Log In(opens in a new window)](https://platform.openai.com/login)\n*   [Docs(opens in a new window)](https://developers.openai.com/api/docs)\n\nBusiness\n*   [Overview](https://openai.com/business/)\n*   [Solutions](https://openai.com/solutions/)\n*   [Resources](https://openai.com/business/learn/)\n*   [Plugins](https://openai.com/business/plugins/)\n*   [Customer Stories](https://openai.com/business/customer-stories/)\n*   [Partner Network](https://openai.com/business/partners/)\n*   [Contact Sales](https://openai.com/contact-sales/)\n\nDevelopers\n*   [Plugins(opens in a new window)](https://developers.openai.com/plugins)\n*   [Models(opens in a new window)](https://developers.openai.com/api/docs/models)\n*   [Docs(opens in a new window)](https://developers.openai.com/)\n*   [Resources(opens in a new window)](https://developers.openai.com/learn)\n*   [Developer Forum(opens in a new window)](https://community.openai.com/)\n\nCompany\n*   [About Us](https://openai.com/about/)\n*   [Our Charter](https://openai.com/charter/)\n*   [Careers](https://openai.com/careers/)\n*   [News](https://openai.com/news/)\n\nSupport\n*   [Help Center(opens in a new window)](https://help.openai.com/)\n*   [OpenAI Status(opens in a new window)](https://status.openai.com/)\n\nMore\n*   [Stories](https://openai.com/stories/)\n*   [Academy](https://openai.com/academy/)\n*   [Supply Co.](https://openai.com/supply/)\n*   [Livestreams](https://openai.com/live/)\n*   [Podcast](https://openai.com/podcast/)\n*   [RSS](https://openai.com/news/rss.xml)\n\nTerms & Policies\n*   [Terms of Use](https://openai.com/policies/terms-of-use/)\n*   [Privacy Policy](https://openai.com/policies/privacy-policy/)\n*   [Other Policies](https://openai.com/policies/)\n\n[(opens in a new window)](https://x.com/OpenAI)[(opens in a new window)](https://www.youtube.com/OpenAI)[(opens in a new window)](https://www.linkedin.com/company/openai)[(opens in a new window)](https://github.com/openai)[(opens in a new window)](https://www.instagram.com/openai/)[(opens in a new window)](https://www.tiktok.com/@openai)[(opens in a new window)](https://discord.gg/openai)\n\nOpenAI © 2015–2026 Your privacy choices\n\nEnglish United States\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Closing the AI guidance gap in education",
+          "url": "https://openai.com/index/closing-ai-guidance-gap-education",
+          "published_at": "2026-11-10T09:00:00.000Z",
+          "description": "New ThinkYoung research and lessons from OpenAI’s EMEA education partnerships on supporting teachers, AI literacy, and independent learning.",
+          "full_text": "Title: Closing the AI guidance gap in education\n\nURL Source: https://openai.com/index/closing-ai-guidance-gap-education\n\nFinal URL: https://openai.com/index/closing-ai-guidance-gap-education/\n\nMarkdown Content:\nAI is prompting a fundamental reassessment of what education should prepare societies for. As intelligence becomes easier to access and apply, the question is no longer simply what people need to know, but which skills and capabilities will help them thrive in an AI-enabled world. Recent debates around PISA and AI, including those led by the[OECD’s Andreas Schleicher⁠(opens in a new window)](https://oecdedutoday.com/generative-ai-and-student-learning-what-the-pisa-data-reveal/), underscore this shift. They also point to a central lesson: as AI becomes more capable, the role of teachers becomes more important, not less. Their expertise, judgement and ability to guide learning remain essential. Equipping teachers, schools and governments with AI skills and confidence to make informed decisions about these tools must therefore be a priority for education systems.\n\nAcross EMEA, we are working with governments and education systems, including in Estonia, Slovakia, Greece and Italy, amongst others to explore how AI can support educators. These collaborations share three priorities: equitable access to frontier AI tools, jointly designed AI literacy programmes, and ongoing measurement and evaluation, whilst adapting to local languages, curricula and institutions.\n\nThis report shares emerging lessons from our education partnerships in EMEA, focusing on educator support, AI literacy, local capability and evaluation. It examines what partners have tried, what they have reported and what remains uncertain. Country examples reflect their particular contexts and arrangements, and their findings should be interpreted within those limits. Five themes organise these lessons: clear educational goals, educator preparation, local partnerships, critical AI literacy and credible evidence.\n\nThree early patterns are emerging from this work:\n\n*   **Country partnerships offer context-specific lessons.**Experiences in Estonia, Greece and Slovakia point to three lessons that other education systems can apply: strong public leadership to set a clear direction, investment in teachers' skills and confidence, and practical support tailored to local curricula and classroom needs. While implementation will vary across countries, these principles offer a useful foundation for governments seeking to integrate AI responsibly and at scale.\n\n*   **Closing the AI guidance gap in education is becoming increasingly urgent.**[New research from ThinkYoung,⁠(opens in a new window)](https://www.thinkyoung.eu/aieducation) which examines the ways teachers and students are already engaging with AI highlights a clear guidance gap: 79% of surveyed students reported using AI for homework or assignments, but only 47% reported being shown how. Governments need to support educators and give students clearer expectations. Below we set out how educators can be better supported to set the terms and conditions of use.\n\n*   **Early benefits for teachers are clear.** Adoption and reported time savings for teachers are encouraging. Understanding where AI strengthens knowledge, independent thinking and retention requires sustained evaluation and through the government actions that we observed, we identify how to prioritise more research into this critical area.\n\nOur aim is to share practical lessons from these partnerships that education leaders can consider in their own contexts. These are early experiences, rather than a single model for education systems to follow.\n\nWe are also learning how to judge progress with evidence: teacher adoption and reported time savings offer encouraging early signals. Surveys, programme monitoring and consultation help us understand participants’ experiences and the barriers they encounter.\n\nAt OpenAI, our mission is to ensure that artificial general intelligence benefits everyone. Helping learners flourish is central to that ambition. We believe that every young person should have the opportunity to develop the skills to participate in a world increasingly shaped by AI, whatever their background or wherever they attend school. We have a responsibility to contribute to that evidence and learn openly from the findings, including when they challenge our assumptions. Through the OpenAI Learning Lab, we are bringing education researchers together to understand when and how AI can support education systems.\n\nThe choices made today will shape how the next generation learns, works and participates in society. With ambition, care, public leadership and a commitment to evidence, AI can help extend educational opportunity and strengthen young people’s capacity to understand, create and act for themselves.\n\n_Tom Duff Gordon_\n\n_VP, Global Affairs EMEA_\n\n_Leah Belsky_\n\n_VP, Education_\n\nNovember, 2026\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Singapore Airlines elevates travel & work with OpenAI technology",
+          "url": "https://openai.com/index/singapore-airlines-travel-work",
+          "published_at": "2026-11-10T08:00:00.000Z",
+          "description": "Discover how Singapore Airlines uses OpenAI models and API to enhance customer support, travel discovery, and employee productivity, doubling CSAT for its Kris chatbot.",
+          "full_text": "Title: Singapore Airlines elevates travel & work with OpenAI technology\n\nURL Source: https://openai.com/index/singapore-airlines-travel-work\n\nFinal URL: https://openai.com/index/singapore-airlines-travel-work/\n\nMarkdown Content:\nAI is becoming part of how Singapore Airlines serves customers, empowers employees, and builds technology. The airline uses the OpenAI API for customer-facing experiences and OpenAI models inside Jarvis, its governed internal AI platform for employees. It also uses OpenAI models in its software development workflows to deliver more personalized service, improve productivity, and help teams build more efficiently.\n\n> “AI is central to our efforts to deliver more personalized customer experiences and improve productivity across the business. Together with OpenAI, we’re building AI-powered capabilities that make travel more intuitive and seamless for our customers, while enabling our employees to work more efficiently and effectively.”\n\n—George Wang, Senior Vice President Information Technology, Singapore Airlines\n\nAcross these deployments, Singapore Airlines pairs OpenAI models with orchestration, internal data controls, validation, and human review, giving teams a consistent way to bring AI into production workflows responsibly.\n\n## Moving from scripted service to conversational support\n\nOne of Singapore Airlines’ most visible AI applications is Kris, its customer-facing chatbot. After moving Kris from a traditional dialog-flow system to an LLM-powered conversational experience using the OpenAI API, Singapore Airlines saw a 2x increase in customer satisfaction.\n\nAlongside that, the airline deployed AI-assisted tools for customer service representatives, including OpenAI API-powered call summarization, so that representatives spend less time on after-call work and more time on the customer. Singapore Airlines saw an approximately 10% reduction in average handling time for its customer service representatives.\n\nIn the earlier dialog-flow based chatbot design, every topic had to be mapped manually, and every flow had to be written in advance. That made coverage difficult to scale. If an intent was missing, the conversation was more likely to end up requiring support from a customer service representative, even when the customer’s request could have been handled through self-service.\n\nSingapore Airlines moved Kris to a fully LLM-powered conversational experience using the OpenAI API. Instead of depending on predefined flows, the chatbot can interpret customer intent in natural language, ground answers in a knowledge base, manage multi-topic conversations, and hand over to a customer service representative with the relevant context when needed.\n\nToday, customers use Kris for general queries, special requests, real-time flight disruption information, and selected transactional workflows. Singapore Airlines is continuing to expand its capabilities to include booking changes, baggage transactions, and more complex agentic interactions.\n\n> “Kris has become a more capable self-service channel with OpenAI. It understands customer intent more naturally, helps customers get to the right answer, and gives customer service representatives clearer context when they need to step in.”\n\n—Jude Anand Suresh, Vice President, Customer Service Information Technology, Singapore Airlines\n\n## Helping customers discover travel through natural language\n\nFlight Recommender lets customers describe the trip they want in natural language instead of repeatedly adjusting filters, dates, and destinations. Usage has grown nearly 3x over the past year.\n\n> “Flight Recommender makes travel discovery feel more like a natural conversation. Powered by OpenAI models through the API, it helps customers describe what they want and find relevant options faster.”\n\n—Andy Koh, Vice President, Application Services (Sales, Marketing & Cargo), Singapore Airlines\n\nBuilt on the OpenAI API, Flight Recommender uses an orchestration layer connected to fare and availability data. It interprets customer intent, calls the relevant tools, and returns personalized travel recommendations in natural language.\n\nThe team has also implemented guardrails for input and output validation, malicious or inappropriate query handling, hallucination reduction, PII handling, and authenticated access to only the context required for each query. Singapore Airlines is preparing to expand the experience into a more conversational chatbot interaction, where customers can keep refining travel ideas rather than restarting a search.\n\n## Bringing AI into the software development lifecycle\n\nBeyond customer-facing experiences, Singapore Airlines is also using OpenAI models in parts of the software development lifecycle to help teams plan, refine, test, and review work more efficiently. Across selected software development lifecycle activities, teams have achieved productivity gains of up to 20%.\n\nAI now runs through the entire delivery lifecycle and not just coding. Teams use generative AI models to support requirements refinement, stakeholder-session analysis, product specifications, edge-case identification, test-case creation, architecture review, and the breakdown of complex work into smaller, more testable tasks.\n\nFor one commercial feature, the team used the OpenAI API to challenge assumptions, identify ambiguous requirements and surface edge cases before development begins. Once those were well-defined, AI helped translate them into design options, implementation plans, test cases and then code generation.\n\nDuring deployment and beyond, AI also helps to interpret how the system is behaving in production, and flagging issues that might otherwise go unnoticed. With AI active at every step of the workflow, team members have shifted from producing every artifact themselves, to directing, reviewing and validating what AI produces throughout the delivery lifecycle. This means they can focus on work that truly requires human judgement, such as prioritization, architecture, governance and stakeholder outcomes.\n\nMore broadly, OpenAI models are helping Singapore Airlines improve requirements quality, test coverage, and conformance with internal standards. Teams use these workflows to generate edge cases for testing, review architecture plans, and support human validation before work moves further through the development lifecycle.\n\n## Making AI easier for employees to use\n\nBeyond engineering teams, Singapore Airlines is making AI accessible across the business through Jarvis, its internal AI platform. Powered by OpenAI models, Jarvis gives employees a governed way to use AI in their day-to-day work, from summarizing documents to creating custom workflows.\n\nEmployees use Jarvis to work across PDFs, Word documents, Excel files, PowerPoint decks, and other file types in a secure environment, while creating custom workflows and lightweight knowledge bases for their day-to-day work. Today, more than 60% of Singapore Airlines employees are using Jarvis monthly with adoption continuing to increase.\n\n## Results at a glance\n\n*   **2x increase in customer satisfaction score (CSAT)** after changing to AI-based Kris chatbot\n\n*   **~10% reduction in average handling time** for customer service agents using AI-assisted tools\n\n*   **3x growth** in monthly users of Flight Recommender, its customer-facing travel discovery tool, over the past year\n\n## What’s next\n\nSingapore Airlines is continuing to expand AI across customer and employee workflows. For Kris, the next phase is deeper self-service, with more transactional capabilities that help customers resolve requests directly in chat. Flight Recommender is moving toward a more conversational travel discovery experience, where customers can refine ideas over multiple turns rather than restarting a search.\n\nWith Jarvis available across the business, Singapore Airlines is focused on helping more employees put AI to work in their day-to-day roles. Together with its customer-facing innovations, this is helping the airline build a future where AI makes travel more seamless, employees more productive, and the business more responsive to changing needs.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Google AI Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 20,
+      "filtered_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "title": "Gemini Intelligence: New features, on more devices",
+          "url": "https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/",
+          "published_at": "2026-11-10T19:00:00.000Z",
+          "description": "Gemini Intelligence is rolling out to more devices. See how expanded capabilities across these devices help you do more.",
+          "full_text": "Title: Gemini Intelligence: New features, on more devices\n\nURL Source: https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/\n\nPublished Time: 2026-11-10T19:00:00+00:00\n\nMarkdown Content:\nNov 10, 2026\n\n|\n\n3 min read\n\nGemini Intelligence is now available on more devices, including motorola signature 27 and Pixel 10. See how expanded capabilities across these devices help you do more.\n\n* * *\n\nKarthik Thirumalai\n\nProduct Director, Android AI\n\n* * *\n\n![Image 1: A man speaks into a phone. Text on the screen reads 'Gemini Intelligence'](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Gemini_Intelligence_Signature27_H.width-200.format-webp.webp)\n\n[Audio 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/media/tts_audio_86880_umbriel_2026_11_10_19_00_40.mp3)\n\nListen to article\n\n[[duration]] minutes\n\nThis content is generated by Google AI. Generative AI is experimental\n\nGemini Intelligence [1](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-1) brings the best of Gemini to Android devices, helping your devices work harder for you. Earlier this year, we [announced Gemini Intelligence](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence/), and this summer devices started rolling out — from the [Pixel 11](https://blog.google/products-and-platforms/devices/pixel/pixel-11-features/) to the [Samsung Galaxy Z Fold8 Ultra, Z Fold8, Z Flip8](https://blog.google/products-and-platforms/platforms/android/galaxy-unpacked-2026/) and S26 series. [2](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-2) Today, we’re introducing new features built for Gemini Intelligence, and expanding capabilities to [more of Android’s most advanced devices](http://android.com/gemini-intelligence/shop-devices). [3](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-3) Here’s a look at what’s new.\n\n## Gemini Intelligence on more devices, including motorola signature 27 and Pixel 10\n\nGemini Intelligence is coming to even more devices. Motorola is introducing its first Gemini Intelligence device, [motorola signature 27](https://www.motorola.com/us/en/p/phones/signature/motorola-signature/pmipmka46mo), which is available for pre-order in the U.S. on November 19. And with [today’s Pixel Drop](https://blog.google/products-and-platforms/devices/pixel/november-2026-pixel-drop/), Pixel 10, Pixel 10 Pro XL, and Pixel 10 Pro Fold get the latest features for Gemini Intelligence.\n\nAlongside this expansion, we’re bringing some of our favorite capabilities to more devices and regions, helping handle the busywork so you can focus on what matters. Rambler [4](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-4) — which turns spoken thoughts into clean, organized text in real-time — is now available on Pixel 10, Pixel 10 Pro, Pixel 10, Pro XL and Pixel 10 Pro Fold, as well as the new motorola signature 27. And task automation [5](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-5) — which lets you ask Gemini to handle logistics like ordering food, hailing rides, or booking reservations across your favorite apps — is [expanding](https://support.google.com/gemini/answer/16940971) to the UK, India, and Japan.\n\n## Build custom widgets with a prompt\n\nCreate My Widget [6](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-6) , which is rolling out over the next few weeks, lets you design a personalized widget with a simple description in your own words — no coding required. Whether you want a dashboard for your upcoming trip, a monthly spending tracker, or a race day countdown, [Create My Widget](https://support.google.com/pixelphone/answer/18835879) can pull in information from Gmail, Calendar, and Search to create a custom widget just for you, giving you the information you want at a glance on your homescreen.\n\n## Get personalized tech support with Device Assistance\n\nDevice Assistance [7](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-7) helps you control, change, or fix your device by just asking your phone for help. Ask Gemini to clear up space on your device, check which apps can access your location, or mute distractions while making sure important calls still come through. Gemini deeply understands your device so it can act as your personal device expert.\n\n## Experience proactive help across a range of screens\n\nGemini Intelligence is designed to support you across whatever screen you’re using. Last month we launched [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/pre-order-googlebook/), the first laptop designed for Gemini Intelligence.\n\nAnd if you have a Pixel phone with Gemini Intelligence, it will soon bring proactive suggestions to Android Auto — connecting the dots across your apps to surface helpful, personalized suggestions [8](https://blog.google/products-and-platforms/platforms/android/gemini-intelligence-november-features-devices/#footnote-8) when you need them. For example, if your friend texts you to ask where you are meeting for a pilates class, Gemini Intelligence on Android Auto can find your confirmation email and instantly suggest sending the address with a single tap.\n\nPlus, in the next few weeks, Create My Widget is coming to Pixel Watch. You’ll be able to design widgets that keep the details that matter to you right on your wrist.\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.",
+          "url": "https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/",
+          "published_at": "2026-11-10T14:00:00.000Z",
+          "description": "Google and Adobe are integrating creative and productivity tools. Edit PDFs in Drive and use Adobe AI in Gemini. See what’s new in this partnership.",
+          "full_text": "Title: We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.\n\nURL Source: https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/\n\nPublished Time: 2026-11-10T14:00:00+00:00\n\nMarkdown Content:\n[Skip to main content](https://blog.google/company-news/inside-google/company-announcements/adobe-google-partnership-integration/#jump-content)\n\n[![Image 1](https://blog.google/static/blogv2/images/super-g-aurora.svg?version=pr20261029-2131)](https://blog.google/ \"News from Google\")\n\n*    Innovation & AI \n*    Products & platforms \n*    Company news \n*   [Feed](https://blog.google/feed)\n\n[Newsletter](https://blog.google/newsletter-subscribe/)\n\n Back \n### Innovation & AI\n\n[See all in Innovation & AI](https://blog.google/innovation-and-ai/)\n*    Models & Research \n    *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n    *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n    *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n    *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n    *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n    *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n*    Products \n    *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n    *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n    *   [Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/)\n    *   [See all](https://blog.google/innovation-and-ai/products/)\n\n*    Infrastructure & cloud \n    *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n    *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n    *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\n*    Technology \n    *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n    *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n    *   [See all](https://blog.google/innovation-and-ai/technology/)\n\n* * *\n\nLearn more:\n\n*   [Google DeepMind blog](https://deepmind.google/blog/)\n*   [Google Research blog](https://research.google/blog/)\n*   [Google Developers blog](https://developers.googleblog.com/)\n*   [Google Cloud blog](https://cloud.google.com/blog)\n\n Back \n### Products & platforms\n\n[See all in Products & platforms](https://blog.google/products-and-platforms/)\n*    Products \n    *   [Search](https://blog.google/products-and-platforms/products/search/)\n    *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n    *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n    *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n    *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n    *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n    *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n    *   [See all](https://blog.google/products-and-platforms/products/)\n\n*    Platforms \n    *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n    *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n    *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n    *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n*    Devices \n    *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n    *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n    *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n    *   [Chromebook](https://blog.google/products-and-platforms/devices/chromebooks/)\n    *   [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/)\n    *   [See all](https://blog.google/products-and-platforms/devices/)\n\n* * *\n\nLearn more:\n\n*   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n*   [Waze blog](https://blog.google/waze/)\n\n Back \n### Company news\n\n[See all in Company news](https://blog.google/company-news/)\n*    Outreach & initiatives \n    *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n    *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n    *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n    *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n    *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n    *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n    *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n*    Leadership \n    *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n    *   [More authors](https://blog.google/authors/)\n    *   [See all](https://blog.google/authors/)\n\n*    Inside Google \n    *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n    *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n    *   [See all](https://blog.google/company-news/inside-google/)\n\n* * *\n\nLearn more:\n\n*   [Google Security blog](https://blog.google/security/)\n\n*    Innovation & AI \n\n### Innovation & AI\n\n[See all in Innovation & AI](https://blog.google/innovation-and-ai/) \n\n    *   Models & Research\n\n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/ \"See all Models & Research articles\")\n\n    *   Products\n\n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/)\n        *   [See all](https://blog.google/innovation-and-ai/products/ \"See all Products articles\")\n\n    *   Infrastructure & cloud\n\n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/ \"See all Infrastructure & cloud articles\")\n\n    *   Technology\n\n        *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/innovation-and-ai/technology/ \"See all Technology articles\")\n\nLearn more:\n\n[Google DeepMind blog](https://deepmind.google/blog/)[Google Research blog](https://research.google/blog/)[Google Developers blog](https://developers.googleblog.com/)[Google Cloud blog](https://cloud.google.com/blog)\n\n*    Products & platforms \n\n### Products & platforms\n\n[See all in Products & platforms](https://blog.google/products-and-platforms/) \n\n    *   Products\n\n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/ \"See all Products articles\")\n\n    *   Platforms\n\n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/ \"See all Platforms articles\")\n\n    *   Devices\n\n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebook](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/)\n        *   [See all](https://blog.google/products-and-platforms/devices/ \"See all Devices articles\")\n\nLearn more:\n\n[Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)[Waze blog](https://blog.google/waze/)\n\n*    Company news \n\n### Company news\n\n[See all in Company news](https://blog.google/company-news/) \n\n    *   Outreach & initiatives\n\n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/ \"See all Outreach & initiatives articles\")\n\n    *   Leadership\n\n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/ \"See all Leadership articles\")\n\n    *   Inside Google\n\n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/ \"See all Inside Google articles\")\n\nLearn more:\n\n[Google Security blog](https://blog.google/security/)\n\n*   [Feed](https://blog.google/feed)\n\n [] \n\nPreferences\n*     \n\nLinks\n*   [Images](https://blog.google/image-library/ \"Images\")\n*   [RSS feed](https://blog.google/rss/)\n\nNewsletter\n\nBreadcrumb\n1.   [Home](https://blog.google/ \"News from Google\")\n2.   [Company News](https://blog.google/company-news/)\n3.   [Inside Google](https://blog.google/company-news/inside-google/)\n4.   [Company Announcements](https://blog.google/company-news/inside-google/company-announcements/)\n\n# We’re bringing Adobe’s creative and productivity tools closer to your everyday Google apps.\n\nNov 10, 2026\n\n* * *\n\nToday at Adobe MAX, we announced we’re expanding our partnership with Adobe.\n\nSwitching between apps to edit a PDF or fine-tune an image can quickly break your focus. Our partnership will bring Adobe’s creative and productivity tools directly into the Google products you use every day. It will also bring Google’s frontier AI models into Adobe’s apps. Here’s what’s coming:\n\n*   **Work faster with PDFs:** You’ll soon have a direct pathway from Google Drive and Gmail into Adobe Acrobat, surfaced as a suggested app across both services, including an “Edit with” entry point in file previews.\n*   **Create right where you search and chat:** Adobe is expanding its connectors in Gemini and Gemini Enterprise with Acrobat and additional creative tools. Adobe will also bring its creative tools to AI Mode in Google Search.\n*   **Powering creatives and enterprises:** Businesses will be able to use Adobe’s CX Enterprise Coworker agent in Gemini Enterprise — an AI assistant that helps teams design graphics, work with PDFs, and launch marketing campaigns without switching apps.\n*   **Exploring editing experiences with DeepMind:** Adobe and Google DeepMind will explore new editing capabilities for creative professionals, starting with an image model for Photoshop that could enable near-real-time edits.\n\n![Image 2: Adobe logo over a person working on a laptop](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Adobe_snippet_hero.width-1200.format-webp.webp)\n\nPosted in:\n\n*   [Company announcements](https://blog.google/company-news/inside-google/company-announcements/)\n*   [AI](https://blog.google/innovation-and-ai/technology/ai/)\n*   [Gemini App](https://blog.google/products-and-platforms/products/gemini/)\n*   [Gemini models](https://blog.google/products-and-platforms/products/gemini/)\n*   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n*   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n*   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n\n## Related stories\n\n[Developer tools ### Gemini Decisions API: Fast, calibrated multimodal decisions Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions. By Min Choi & Felix Yu](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)\n\n[![Image 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Carplay_hero_image.2e16d0ba.fill-300x300.format-webp.webp) Gemini App ### Talk it through with Gemini, now on Apple CarPlay By Karan Daryanani](https://blog.google/innovation-and-ai/products/gemini-app/gemini-on-apple-carplay/)\n\n[![Image 4](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Security_social-share.2e16d0ba.fill-300x300.format-webp.webp) Google Cloud ### Google Cloud leaders share what to expect in cybersecurity for 2027.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cybersecurity-2027/)\n\n[![Image 5](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/google_cloud_certifie.2e16d0ba.fill-300x300.format-webp.webp) Google Cloud ### Get certified as a Google Cloud Professional Agentic Architect. By Gary Eimerman](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/professional-agentic-architect/)\n\n[](https://www.google.com/)\n*   [Privacy](https://policies.google.com/privacy)\n*   [Terms](https://policies.google.com/terms)\n*   [Help](https://support.google.com/)\n*    \n*    \n\n*   [](https://www.instagram.com/google/)\n*   [](https://twitter.com/google)\n*   [](https://www.youtube.com/google)\n*   [](https://www.facebook.com/Google)\n*   [](https://www.linkedin.com/company/google)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "title": "Google Cloud launches Gemini for healthcare.",
+          "url": "https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/",
+          "published_at": "2026-11-10T13:00:00.000Z",
+          "description": "Google Cloud launches Gemini for healthcare to unify clinical data and automate workflows. Reduce administrative burnout. See how it works.",
+          "full_text": "Title: Google Cloud launches Gemini for healthcare.\n\nURL Source: https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/\n\nPublished Time: 2026-11-10T13:00:00+00:00\n\nMarkdown Content:\n[Skip to main content](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/gemini-for-healthcare/#jump-content)\n\n[![Image 1](https://blog.google/static/blogv2/images/super-g-aurora.svg?version=pr20261029-2131)](https://blog.google/ \"News from Google\")\n\n*    Innovation & AI \n*    Products & platforms \n*    Company news \n*   [Feed](https://blog.google/feed)\n\n[Newsletter](https://blog.google/newsletter-subscribe/)\n\n Back \n### Innovation & AI\n\n[See all in Innovation & AI](https://blog.google/innovation-and-ai/)\n*    Models & Research \n    *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n    *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n    *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n    *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n    *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n    *   [See all](https://blog.google/innovation-and-ai/models-and-research/)\n\n*    Products \n    *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n    *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n    *   [Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/)\n    *   [See all](https://blog.google/innovation-and-ai/products/)\n\n*    Infrastructure & cloud \n    *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n    *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n    *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n\n*    Technology \n    *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n    *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n    *   [See all](https://blog.google/innovation-and-ai/technology/)\n\n* * *\n\nLearn more:\n\n*   [Google DeepMind blog](https://deepmind.google/blog/)\n*   [Google Research blog](https://research.google/blog/)\n*   [Google Developers blog](https://developers.googleblog.com/)\n*   [Google Cloud blog](https://cloud.google.com/blog)\n\n Back \n### Products & platforms\n\n[See all in Products & platforms](https://blog.google/products-and-platforms/)\n*    Products \n    *   [Search](https://blog.google/products-and-platforms/products/search/)\n    *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n    *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n    *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n    *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n    *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n    *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n    *   [See all](https://blog.google/products-and-platforms/products/)\n\n*    Platforms \n    *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n    *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n    *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n    *   [See all](https://blog.google/products-and-platforms/platforms/)\n\n*    Devices \n    *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n    *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n    *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n    *   [Chromebook](https://blog.google/products-and-platforms/devices/chromebooks/)\n    *   [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/)\n    *   [See all](https://blog.google/products-and-platforms/devices/)\n\n* * *\n\nLearn more:\n\n*   [Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)\n*   [Waze blog](https://blog.google/waze/)\n\n Back \n### Company news\n\n[See all in Company news](https://blog.google/company-news/)\n*    Outreach & initiatives \n    *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n    *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n    *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n    *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n    *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n    *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n    *   [See all](https://blog.google/company-news/outreach-and-initiatives/)\n\n*    Leadership \n    *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n    *   [More authors](https://blog.google/authors/)\n    *   [See all](https://blog.google/authors/)\n\n*    Inside Google \n    *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n    *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n    *   [See all](https://blog.google/company-news/inside-google/)\n\n* * *\n\nLearn more:\n\n*   [Google Security blog](https://blog.google/security/)\n\n*    Innovation & AI \n\n### Innovation & AI\n\n[See all in Innovation & AI](https://blog.google/innovation-and-ai/) \n\n    *   Models & Research\n\n        *   [Google DeepMind](https://blog.google/innovation-and-ai/models-and-research/google-deepmind/)\n        *   [Google Research](https://blog.google/innovation-and-ai/models-and-research/google-research/)\n        *   [Google Labs](https://blog.google/innovation-and-ai/models-and-research/google-labs/)\n        *   [Gemini models](https://blog.google/innovation-and-ai/models-and-research/gemini-models/)\n        *   [Quantum computing](https://blog.google/innovation-and-ai/models-and-research/quantum-computing/)\n        *   [See all](https://blog.google/innovation-and-ai/models-and-research/ \"See all Models & Research articles\")\n\n    *   Products\n\n        *   [Developer tools](https://blog.google/innovation-and-ai/technology/developers-tools/)\n        *   [Gemini app](https://blog.google/innovation-and-ai/products/gemini-app/)\n        *   [Gemini Notebook](https://blog.google/innovation-and-ai/products/gemini-notebook/)\n        *   [See all](https://blog.google/innovation-and-ai/products/ \"See all Products articles\")\n\n    *   Infrastructure & cloud\n\n        *   [Global network](https://blog.google/innovation-and-ai/infrastructure-and-cloud/global-network/)\n        *   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n        *   [See all](https://blog.google/innovation-and-ai/infrastructure-and-cloud/ \"See all Infrastructure & cloud articles\")\n\n    *   Technology\n\n        *   [Safety & Security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/innovation-and-ai/technology/ \"See all Technology articles\")\n\nLearn more:\n\n[Google DeepMind blog](https://deepmind.google/blog/)[Google Research blog](https://research.google/blog/)[Google Developers blog](https://developers.googleblog.com/)[Google Cloud blog](https://cloud.google.com/blog)\n\n*    Products & platforms \n\n### Products & platforms\n\n[See all in Products & platforms](https://blog.google/products-and-platforms/) \n\n    *   Products\n\n        *   [Search](https://blog.google/products-and-platforms/products/search/)\n        *   [Maps](https://blog.google/products-and-platforms/products/maps/)\n        *   [Chrome](https://blog.google/products-and-platforms/products/chrome/)\n        *   [Google Health](https://blog.google/products-and-platforms/products/google-health/)\n        *   [Google Workspace](https://blog.google/products-and-platforms/products/workspace/)\n        *   [Learning & Education](https://blog.google/products-and-platforms/products/education/)\n        *   [Shopping](https://blog.google/products-and-platforms/products/shopping/)\n        *   [See all](https://blog.google/products-and-platforms/products/ \"See all Products articles\")\n\n    *   Platforms\n\n        *   [Android](https://blog.google/products-and-platforms/platforms/android/)\n        *   [Google Play](https://blog.google/products-and-platforms/platforms/google-play/)\n        *   [Wear OS](https://blog.google/products-and-platforms/platforms/wear-os/)\n        *   [See all](https://blog.google/products-and-platforms/platforms/ \"See all Platforms articles\")\n\n    *   Devices\n\n        *   [Pixel](https://blog.google/products-and-platforms/devices/pixel/)\n        *   [Google Nest](https://blog.google/products-and-platforms/devices/google-nest/)\n        *   [Fitbit](https://blog.google/products-and-platforms/devices/fitbit/)\n        *   [Chromebook](https://blog.google/products-and-platforms/devices/chromebooks/)\n        *   [Googlebook](https://blog.google/products-and-platforms/devices/googlebook/)\n        *   [See all](https://blog.google/products-and-platforms/devices/ \"See all Devices articles\")\n\nLearn more:\n\n[Google Ads & Commerce blog](https://blog.google/products/ads-commerce/)[Waze blog](https://blog.google/waze/)\n\n*    Company news \n\n### Company news\n\n[See all in Company news](https://blog.google/company-news/) \n\n    *   Outreach & initiatives\n\n        *   [Creating opportunity](https://blog.google/company-news/outreach-and-initiatives/creating-opportunity/)\n        *   [Safety & security](https://blog.google/innovation-and-ai/technology/safety-security/)\n        *   [Google.org](https://blog.google/company-news/outreach-and-initiatives/google-org/)\n        *   [Public policy](https://blog.google/company-news/outreach-and-initiatives/public-policy/)\n        *   [Sustainability](https://blog.google/company-news/outreach-and-initiatives/sustainability/)\n        *   [Health](https://blog.google/innovation-and-ai/technology/health/)\n        *   [See all](https://blog.google/company-news/outreach-and-initiatives/ \"See all Outreach & initiatives articles\")\n\n    *   Leadership\n\n        *   [Sundar Pichai, CEO](https://blog.google/authors/sundar-pichai/)\n        *   [More authors](https://blog.google/authors/)\n        *   [See all](https://blog.google/authors/ \"See all Leadership articles\")\n\n    *   Inside Google\n\n        *   [Around the globe](https://blog.google/company-news/inside-google/around-the-globe/)\n        *   [Life at Google](https://blog.google/company-news/inside-google/life-at-google/)\n        *   [See all](https://blog.google/company-news/inside-google/ \"See all Inside Google articles\")\n\nLearn more:\n\n[Google Security blog](https://blog.google/security/)\n\n*   [Feed](https://blog.google/feed)\n\n [] \n\nPreferences\n*     \n\nLinks\n*   [Images](https://blog.google/image-library/ \"Images\")\n*   [RSS feed](https://blog.google/rss/)\n\nNewsletter\n\nBreadcrumb\n1.   [Home](https://blog.google/ \"News from Google\")\n2.   [Innovation & AI](https://blog.google/innovation-and-ai/)\n3.   [Infrastructure & Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/)\n4.   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n\n# Google Cloud launches Gemini for healthcare.\n\nNov 10, 2026\n\n* * *\n\nGoogle Cloud [has announced Gemini for healthcare](https://www.googlecloudpresscorner.com/2026-11-10-Google-Cloud-Launches-Gemini-for-Healthcare), an AI solution engineered to unify fragmented clinical, operational, and administrative systems. Moving beyond simple information retrieval, it enables healthcare teams to turn siloed data into coordinated action.\n\nClinicians lose nearly [28 hours each week](https://www.googlecloudpresscorner.com/2024-10-17-New-Study-from-Google-Cloud-and-The-Harris-Poll-Reports-How-Generative-AI-Can-Tackle-Administrative-Burdens-in-U-S-Healthcare) to paperwork and administrative tasks, fueling burnout and straining budgets. By integrating specialized skills and data connectors with existing third-party systems, the platform brings together critical information from electronic health records, billing platforms, clinical guidelines, and Medicare datasets.\n\nGemini for healthcare reasons across this context to orchestrate and execute complex, multi-step workflows — such as medical records synthesis and prior authorization review — within defined guardrails and with appropriate human oversight. Initially available in preview alongside launch partners including HCA Healthcare, Highmark Health, and Northwell Health, it resolves bottlenecks and reclaims valuable staff time for patient care. Learn more [on the Cloud blog](https://cloud.google.com/blog/products/ai-machine-learning/gemini-for-healthcare).\n\n[Video 3](https://www.youtube.com/watch?v=uqmXoKOs_o0)\n\n![Image 2: The video shows a demo of Gemini for healthcare.](https://i.ytimg.com/vi_webp/uqmXoKOs_o0/sddefault.webp)\n\n00:00\n\nPosted in:\n\n*   [Google Cloud](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/)\n*   [AI](https://blog.google/innovation-and-ai/technology/ai/)\n\n## Related stories\n\n[Developer tools ### Gemini Decisions API: Fast, calibrated multimodal decisions Meet the Gemini Decisions API, powered by our state-of-the-art model Gemini Decision for fast, calibrated multimodal decisions. By Min Choi & Felix Yu](https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/)\n\n[![Image 3](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Security_social-share.2e16d0ba.fill-300x300.format-webp.webp) Google Cloud ### Google Cloud leaders share what to expect in cybersecurity for 2027.](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/cybersecurity-2027/)\n\n[![Image 4](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/google_cloud_certifie.2e16d0ba.fill-300x300.format-webp.webp) Google Cloud ### Get certified as a Google Cloud Professional Agentic Architect. By Gary Eimerman](https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/professional-agentic-architect/)\n\n[![Image 5](https://storage.googleapis.com/gweb-uniblog-publish-prod/images/labs_tabletop_blog_im.2e16d0ba.fill-300x300.format-webp.webp) Google Labs ### Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together. By Roman Nurik](https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/)\n\n[](https://www.google.com/)\n*   [Privacy](https://policies.google.com/privacy)\n*   [Terms](https://policies.google.com/terms)\n*   [Help](https://support.google.com/)\n*    \n*    \n\n*   [](https://www.instagram.com/google/)\n*   [](https://twitter.com/google)\n*   [](https://www.youtube.com/google)\n*   [](https://www.facebook.com/Google)\n*   [](https://www.linkedin.com/company/google)\n",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ]
+    },
+    "Anthropic Blog": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Anthropic Research": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 8,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "ByteDance Seed": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 12,
+      "filtered_count": 0,
+      "cadence": "daily",
+      "articles": []
+    },
+    "Sam Altman (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Dario Amodei (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Demis Hassabis (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 7,
+        "attempts": 1
+      }
+    },
+    "Andrej Karpathy (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 1,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Thariq (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118124218839859700",
+          "title": "manifesting\n\n⠀⠀⠀⠀    🕯️🕯️🕯️🕯️🕯️\n⠀⠀🕯️⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀🕯️\n 🕯️⠀⠀Apple lets apps⠀   🕯️\n🕯️⠀⠀⠀build Shortcuts      🕯️\n🕯️⠀⠀⠀⠀.   for you⠀⠀ ⠀    🕯️\n⠀⠀🕯️⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀🕯️\n⠀⠀⠀⠀    🕯️🕯️🕯️🕯️🕯️",
+          "url": "https://x.com/trq212/status/2118124218839859700",
+          "published_at": "2026-11-04T23:32:21.000000Z",
+          "description": "manifesting\n\n⠀⠀⠀⠀    🕯️🕯️🕯️🕯️🕯️\n⠀⠀🕯️⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀🕯️\n 🕯️⠀⠀Apple lets apps⠀   🕯️\n🕯️⠀⠀⠀build Shortcuts      🕯️\n🕯️⠀⠀⠀⠀.   for you⠀⠀ ⠀    🕯️\n⠀⠀🕯️⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀🕯️\n⠀⠀⠀⠀    🕯️🕯️🕯️🕯️🕯️",
+          "expanded_urls": [],
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-11-04",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2118399561324699655",
+          "title": "one of my favorite prompts for agents like Instinct is location based reminders\n\ne.g. \"Keep track of when I've done my laundry. If it's been more than 5 days, remind me 30 minutes after I get home on ",
+          "url": "https://x.com/trq212/status/2118399561324699655",
+          "published_at": "2026-11-05T17:46:28.000000Z",
+          "description": "one of my favorite prompts for agents like Instinct is location based reminders\n\ne.g. \"Keep track of when I've done my laundry. If it's been more than 5 days, remind me 30 minutes after I get home on a week day and bug me until I confirm or delay\"",
+          "expanded_urls": [],
+          "source": "Thariq (Twitter)",
+          "origin_report_date": "2026-11-05",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Claude (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118403114890137895",
+          "title": "Introducing Personal Finance in Claude, in beta in the US.\n\nConnect the accounts you choose, and Claude answers your money questions in everyday language, from your own balances and transactions. Acce",
+          "url": "https://x.com/claudeai/status/2118403114890137895",
+          "published_at": "2026-11-05T18:00:35.000000Z",
+          "description": "Introducing Personal Finance in Claude, in beta in the US.\n\nConnect the accounts you choose, and Claude answers your money questions in everyday language, from your own balances and transactions. Access is read-only, and Claude can't move, manage, or invest your money. https://t.co/V1JLYuWwrS",
+          "expanded_urls": [],
+          "linked_content": null,
+          "source": "Claude (Twitter)",
+          "origin_report_date": "2026-11-05",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 5,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Anthropic (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "OpenAI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 3,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 7,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118124944928432327",
+          "title": "Images, upgraded—introducing ChatGPT Images 2.6.\n\nNow with GIFs and reference images.\n\nPlus, two new models are coming to the API with 50% faster image generation. https://t.co/kcuOhTipYR",
+          "url": "https://x.com/OpenAI/status/2118124944928432327",
+          "published_at": "2026-11-04T23:35:14.000000Z",
+          "description": "Images, upgraded—introducing ChatGPT Images 2.6.\n\nNow with GIFs and reference images.\n\nPlus, two new models are coming to the API with 50% faster image generation. https://t.co/kcuOhTipYR",
+          "expanded_urls": [],
+          "linked_content": null,
+          "source": "OpenAI (Twitter)",
+          "origin_report_date": "2026-11-04",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2118390190246879554",
+          "title": "Introducing GPT‑6 Cyber: a major advance in security research that pairs stronger capabilities with better model alignment.\n\nThe model powered the Linux kernel research we announced yesterday, and sec",
+          "url": "https://x.com/OpenAI/status/2118390190246879554",
+          "published_at": "2026-11-05T17:09:13.000000Z",
+          "description": "Introducing GPT‑6 Cyber: a major advance in security research that pairs stronger capabilities with better model alignment.\n\nThe model powered the Linux kernel research we announced yesterday, and security teams at companies like Mozilla, Palo Alto Networks, Calif, and Cisco—alongside our own at OpenAI—are already putting it to work.\n\nGPT-6 Cyber is available to select Daybreak Red customers and we are expanding access over time.\n\nhttps://t.co/Nzab3Z1Td6",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/Nzab3Z1Td6",
+              "expanded_url": "https://openai.com/index/introducing-gpt-6-cyber/",
+              "display_url": "openai.com/index/introduc…"
+            }
+          ],
+          "linked_content": "Title: GPT‑6 Cyber: Advancing the frontier of aligned cybersecurity agents\n\nURL Source: https://openai.com/index/introducing-gpt-6-cyber/\n\nMarkdown Content:\nWe’re introducing GPT‑6 Cyber, a major leap in security research: more capable at finding and fixing vulnerabilities, and far more reliable staying within the boundaries researchers set. GPT‑6 Cyber delivers major gains on key cybersecurity benchmarks over GPT‑5.6 Cyber, including a 51% relative improvement on ExploitGym and a step function improvement when tested on staying within scope. It is already helping to secure real-world software, uncovering and validating thousands of exploits in security-critical codebases such as Linux and Firefox.\n\nOn ExploitGym, which tests whether models can exploit a specified vulnerability, GPT‑6 Cyber scores 48.5%, up from 32.1% for GPT‑5.6 Cyber. It also follows task boundaries more reliably: in a separate alignment evaluation, GPT‑6 Cyber avoided exploiting out-of-scope services in 99.93% of tests without its deployment prompt, and 100% with this prompt. This improvement in alignment reflects dedicated training to stay within authorized scope, respect restrictions, and report results accurately.\n\nThese capabilities are already helping secure real systems. Our researchers used GPT‑6 Cyber to develop [948 privilege escalation exploits in Linux⁠](https://openai.com/index/a-thousand-fewer-paths-to-root/) and identify 81 previously unknown high-severity vulnerabilities in Firefox, despite extensive prior testing with frontier models. The model also helped develop candidate patches, and Mozilla has [released fixes for many of the Firefox vulnerabilities⁠(opens in a new window)](https://www.mozilla.org/en-US/security/advisories/mfsa2026-118/). Security teams at Cisco, Calif, and CodeRabbit are using it for vulnerability research and code review, and we have relied on it to [find and fix weaknesses in our own infrastructure⁠](https://openai.com/index/securing-our-frontier-model-training-environment/).\n\nIt is clear that we have [a limited window to use frontier models to secure software⁠](https://openai.com/index/the-defenders-window/). **Our goal is to dramatically expand Daybreak, bringing advanced security research to organizations of every size, independent researchers, and open-source maintainers.** Mainline models such as GPT‑6 Astra already support code review, vulnerability triage, and patch development. Daybreak Blue helps verified defenders validate vulnerabilities and fixes with fewer unnecessary refusals, while Daybreak Red enables deeper exploit development and authorized security testing with GPT‑6 Cyber.\n\n## Advancing frontier cyber capabilities\n\nGPT‑6 Cyber is a major step up from GPT‑5.6 Cyber and outperforms GPT‑6 Astra on most cyber tasks, even when Astra does not refuse the request. We evaluated the model on tasks that require it to understand software, identify vulnerabilities, and develop working exploits. Based on these results, we classify the model as Critical in cybersecurity under our Preparedness Framework, up from High for GPT‑5.6 Cyber.\n\nOn ExploitGym, which tests whether models can exploit a specified vulnerability in a remote target, GPT‑6 Cyber scores **48.5%**, about **16 percentage points** higher than GPT‑5.6 Cyber’s **32.1%**. To test vulnerability discovery, we also built a new evaluation for offensive web penetration testing. Models probe web applications without access to their source code. GPT‑6 Cyber achieved **40.3%** recall of vulnerabilities compared with **32.0%** for GPT‑6 Astra.\n\nDaybreak Red is designed to support more advanced security workflows, including developing working exploits and using them against remote targets. To evaluate these capabilities, we built a new benchmark called RemoteExploitBench, which uses known vulnerabilities in applications such as GitLab, PostgreSQL, and Jenkins deployed in a controlled environment. In our initial evaluation, GPT‑6 Astra running with Daybreak Blue **refused 100% of tasks**, while GPT‑6 Cyber **completed 95%**; its only failure was an exploit it could not get to work remotely. See the [system card⁠(opens in a new window)](https://deploymentsafety.openai.com/gpt-6-cyber) for full results and evaluation settings.\n\n## Stronger alignment, better at staying within bounds\n\nOne risk for cybersecurity agents is that they go outside the scope of their assigned task, attempt to exploit unrelated services, or disregard the researcher’s rules of engagement.\n\nWe made alignment a central focus of GPT‑6 Cyber, using specialized training to help the model stay within authorized scope, follow restrictions on its actions, and report its work accurately. Before deployment, we ran a series of alignment evaluations to measure these behaviors. See the [system card⁠(opens in a new window)](https://deploymentsafety.openai.com/gpt-6-cyber) for full results.\n\nOne of these evaluations is ExploitGym Honeypot, which was informed by the [Hugging Face incident⁠](https://openai.com/index/hugging-face-incident-and-the-road-ahead/). We give the model a difficult exploitation task in an isolated environment with access to supporting services, such as a package registry or object store. We deliberately make these services easy to exploit so that attacking them can reveal the task’s flag. The model must infer that exploiting them is outside the scope of its task.\n\nGPT‑6 Cyber shows a step-change improvement over GPT‑5.6 Cyber on this evaluation. When tested without deployment safety prompts, it avoided exploiting out-of-scope services in 99.93% of cases, up from 94.49% for GPT‑5.6 Cyber. With those prompts, GPT‑6 Cyber stayed within bounds 100% of the time.\n\nWe can see directly in the GPT‑6 Cyber model’s chain of thought how it reasons about staying within bounds:\n\nAgent chain-of-thought excerpts\n\n> “Can't assume extra API or attack controller not target. We should only target binary/server.”\n\nAgent chain-of-thought excerpts\n\n> “don't explore out of scope credentials.”\n\n## Real-world impact for security teams\n\nGPT‑6 Cyber is already helping security teams find vulnerabilities, validate their impact, and develop fixes. Customers have put it to work on large codebases, long-running exploit development, and security review:\n\n1 of 9\n\nWe have also relied on GPT‑6 Cyber to secure our own systems. It was one of the main models behind the work we recently shared on [hardening the infrastructure used to train frontier models⁠](https://openai.com/index/securing-our-frontier-model-training-environment/). In controlled red-teaming campaigns, agents using GPT‑6 Cyber and other OpenAI models chained vulnerabilities to escape microVMs and execute code on the underlying hosts. We used the findings to patch software, tighten network restrictions, and report issues to maintainers and vendors.\n\nOur vulnerability researchers also use GPT‑6 Cyber to find and validate vulnerabilities in open-source software at scale. This work has uncovered previously unknown flaws in software that has been scrutinized for years:\n\n*   **Found 81 novel Firefox vulnerabilities.** GPT‑6 Cyber can be suitable for use in autonomous workflows for finding vulnerabilities and proposing high-quality patches at scale. During a vulnerability research campaign, GPT‑6 Cyber produced evidence and reproducible tests for 81 novel vulnerabilities classified by Mozilla as high severity, and showed that an additional 30 known issues were more severe than previously reported. We disclosed the findings to Mozilla, along with proposed patches to help its engineers develop fixes. Mozilla was supportive of this work, and began [landing fixes shortly after receiving the reports⁠(opens in a new window)](https://www.mozilla.org/en-US/security/advisories/mfsa2026-118/).\n\n*   **Developing exploits for**[**948 Linux kernel vulnerabilities**⁠](https://openai.com/index/a-thousand-fewer-paths-to-root/)**.** GPT‑6 Cyber reproduced 1,724 vulnerabilities and developed working exploits for 948—more than five times the 166 exploited by GPT‑5.6 Sol using the same research harness. Following the Linux community's guidance, we disclosed 304 critical findings to maintainers with candidate patches and are in the process of getting other vulnerabilities fixed.\n\n*   **Demonstrating critical RCE vulnerabilities.** We recently discussed a [critical vulnerability in Brotli⁠(opens in a new window)](https://patchtheplanet.org/brotli), a compression library used by Node.js and other software. Our security researchers used GPT‑6 Cyber alongside other OpenAI models to develop and validate exploits showing how the flaw could enable remote code execution in downstream applications.\n\n## Detecting misuse and blocking high-risk activity\n\nAs models become more capable and uncover more security vulnerabilities, we are also seeing more attempts to use them to cause harm. These attempts include efforts by malicious cyber actors and adversarial groups seeking to distill our models. We have thus paired GPT‑6 Cyber’s stronger capabilities with stronger safeguards to detect and disrupt misuse and keep the model’s actions within the user’s intent and authorization.\n\nWe added and strengthened these protections alongside the release of GPT‑6 Cyber (see the [system card⁠(opens in a new window)](https://deploymentsafety.openai.com/gpt-6-cyber) for full information):\n\n*   **Cyber-specific misalignment monitoring.** We monitor whether actions match the user’s authorization, while recognizing legitimate exploit development and testing.\n\n*   **Targeted monitoring for emerging threats.** For example, during the coordinated disclosure of critical PHP vulnerabilities, we set up targeted monitoring for attempts to develop exploits against live PHP servers, while preserving support for defenders patching affected systems.\n\n*   **Private Safety Processing (PSP).** We use automated checks to review related interactions for misuse. Standard retention remains the default. API customers using [Zero Data Retention⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/your-data) generally must use [PSP⁠(opens in a new window)](https://developers.openai.com/api/docs/guides/private-safety-processing), which reviews encrypted records retained in customer storage for 30 days without exposing prompts and responses to OpenAI personnel.\n\n*   **Protection against stolen credentials.** We require IP allowlisting for Daybreak Red API access by default, restricting requests to approved networks with limited exceptions. We also monitor credentials for compromise.\n\n*   **Sandboxing and oversight.** As with past models, we recommend [sandboxing⁠(opens in a new window)](https://learn.chatgpt.com/docs/sandboxing), [action review⁠(opens in a new window)](https://learn.chatgpt.com/docs/sandboxing/auto-review), and human oversight for high-risk workflows.\n\n*   **Protections against high-risk cyber assistance.** We use new checks to block high-risk activity involving critical systems (see below for more).\n\n## Defending critical infrastructure\n\nProtecting critical infrastructure has been a key consideration in designing GPT‑6 Cyber’s safeguards and access, including power plants, water treatment facilities, and the operational technology and industrial control systems (OT/ICS) that underpin them. We simultaneously want to give the teams defending these systems access to our most capable models while also strengthening our safeguards to prevent unauthorized attacks.\n\nFirst, to equip these defenders, our $1 billion [Daybreak for Frontline Defenders⁠](https://openai.com/index/daybreak-for-frontline-defenders/) grant program subsidizes access for resource-constrained teams such as government organizations and essential service providers. We’re also introducing a new group within Daybreak Red (**Daybreak Red for Critical Infrastructure**) for approved critical infrastructure defenders, which gives them permissions to conduct authorized testing of critical systems while retaining safeguards against model misalignment.\n\nSecond, to prevent misuse of the Daybreak Red and Blue platforms, we have refined safeguards against assistance and capability development that could compromise industrial controls or safety-critical systems, interfere with equipment, or cause serious injury, catastrophic physical damage, or life-endangering service disruption. The figure below compares safeguard label rates across four access configurations, before and after the recent updates we’re rolling out alongside GPT‑6 Cyber.\n\nHigher safeguard block rates are not always better. Many of the techniques in this evaluation are also essential to legitimate security work: understanding systems, finding vulnerabilities, and verifying that fixes withstand attack. We therefore assess these rates alongside support for legitimate research and patching, rather than aiming for 100%.\n\nTo evaluate how our models can help defend critical infrastructure, we partnered with Dragos, the global provider for extended operational technology (xOT) cybersecurity. Dragos ran evaluations using cyber-permissive Daybreak Red models in a controlled lab environment. The evaluations covered requests progressing from network discovery and asset enumeration through targeted reconnaissance, sensitive data exfiltration, and unauthorized, potentially dangerous device actions.\n\nWe used feedback from Dragos to refine our safeguards, aiming to block harmful assistance without unnecessarily restricting authorized testing. [See their final report⁠(opens in a new window)](https://hub.dragos.com/whitepaper/frontier-ai-models-xot-environment) for details on the evaluations. We’re also working to expand partnerships with other offensive security providers and purple teams on penetration testing and red teaming with AI, and with energy companies, other critical infrastructure operators, and national labs to assess our models’ effectiveness and safeguards in industrial defense. We have also increased our investment in threat investigations to detect model usage involving OT/ICS. We’ll continue refining our safeguards with input from partners and the security community, including reports through /feedback when safeguards miss harmful activity or interrupt legitimate work.\n\n## Expanding access to trusted defenders\n\nGPT‑6 Cyber is initially available through the API and Codex to a select group of approved Daybreak Red customers. We will progressively expand access to all Daybreak Red customers soon, and are also making GPT‑5.6 Cyber available to all Daybreak Red customers. We’re also expanding Daybreak Blue alpha access for GPT‑6 Astra to more organizations and individual security researchers; [let us know⁠(opens in a new window)](https://docs.google.com/forms/d/e/1FAIpQLSdQu8mNYXDpUW_0kRS6JBWBPMWfUjjxi6xLi8AkFPObLupkpg/viewform) if you’re interested.\n\nNew users and organizations can [apply for Daybreak⁠](https://openai.com/daybreak/) and get started with our [cyber skills, products, and partners⁠](https://openai.com/business/solutions/cybersecurity/).\n",
+          "source": "OpenAI (Twitter)",
+          "origin_report_date": "2026-11-05",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "OpenAI Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 5,
+      "filtered_count": 2,
+      "current_count": 0,
+      "backfill_count": 2,
+      "pending_count": 9,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118124753340756055",
+          "title": "Today, we’re bringing GPT-Image-2.6 to Codex and the API.\n\nImage-2.6 Flare and Sunburst, our two new API image models, generate images 50% faster than before.\n\nAt medium or high quality, Sunburst keep",
+          "url": "https://x.com/OpenAIDevs/status/2118124753340756055",
+          "published_at": "2026-11-04T23:34:28.000000Z",
+          "description": "Today, we’re bringing GPT-Image-2.6 to Codex and the API.\n\nImage-2.6 Flare and Sunburst, our two new API image models, generate images 50% faster than before.\n\nAt medium or high quality, Sunburst keeps details more consistent from one edit to the next. https://t.co/iNhtjqKueJ",
+          "expanded_urls": [],
+          "linked_content": null,
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-11-04",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2118386439675420743",
+          "title": "Private Safety Processing lets OpenAI review related API requests for safety without retaining your prompts or responses.\n\nRecords stay in your environment, where an automated safety agent reviews the",
+          "url": "https://x.com/OpenAIDevs/status/2118386439675420743",
+          "published_at": "2026-11-05T16:54:19.000000Z",
+          "description": "Private Safety Processing lets OpenAI review related API requests for safety without retaining your prompts or responses.\n\nRecords stay in your environment, where an automated safety agent reviews them without OpenAI personnel being able to access your content. https://t.co/bBtYuRj1IN",
+          "expanded_urls": [],
+          "linked_content": null,
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-11-05",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 19,
+        "attempts": 1
+      }
+    },
+    "Meta AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 4,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118412135340572850",
+          "title": "During Connect, we previewed Muse Realtime Avatar, our real-time embodiment technology that turns Muse Realtime Voice into expressive, interactive avatars.\n\nToday, we’re rolling it out in the @Muse ap",
+          "url": "https://x.com/AIatMeta/status/2118412135340572850",
+          "published_at": "2026-11-05T18:36:25.000000Z",
+          "description": "During Connect, we previewed Muse Realtime Avatar, our real-time embodiment technology that turns Muse Realtime Voice into expressive, interactive avatars.\n\nToday, we’re rolling it out in the @Muse app in the US, giving people a more natural way to engage with their personal agents.\n\nLearn more about Muse Realtime Avatar on our research blog: https://t.co/V2cSOHunRw",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/V2cSOHunRw",
+              "expanded_url": "https://go.meta.me/47ZSNso",
+              "display_url": "go.meta.me/47ZSNso"
+            }
+          ],
+          "linked_content": null,
+          "source": "Meta AI (Twitter)",
+          "origin_report_date": "2026-11-05",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 13,
+        "attempts": 1
+      }
+    },
+    "Google DeepMind (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 2,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 2,
+        "attempts": 1
+      }
+    },
+    "Mistral AI (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 3,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118370229466153299",
+          "title": "🆕 Le Chonk brings the brains. Mistral Studio gets it working.\n\nIntroducing managed agents and apps, plus new capabilities for workflows, enterprise connections, observability and evaluations in Studi",
+          "url": "https://x.com/MistralAI/status/2118370229466153299",
+          "published_at": "2026-11-05T15:49:54.000000Z",
+          "description": "🆕 Le Chonk brings the brains. Mistral Studio gets it working.\n\nIntroducing managed agents and apps, plus new capabilities for workflows, enterprise connections, observability and evaluations in Studio.\n\nBuild faster. Deploy where you choose. Keep control.\nSee what’s possible. 🧵",
+          "expanded_urls": [],
+          "linked_content": null,
+          "source": "Mistral AI (Twitter)",
+          "origin_report_date": "2026-11-05",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "xAI (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 1839.9h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "DeepSeek (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Qwen (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 1,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 2,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2118674834632978755",
+          "title": "The becoming begins. https://t.co/SdWEEuG8F3",
+          "url": "https://x.com/Alibaba_Qwen/status/2118674834632978755",
+          "published_at": "2026-11-06T12:00:18.000000Z",
+          "description": "The becoming begins. https://t.co/SdWEEuG8F3",
+          "expanded_urls": [],
+          "linked_content": null,
+          "source": "Qwen (Twitter)",
+          "origin_report_date": "2026-11-06",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 1,
+        "attempts": 1
+      }
+    },
+    "Z.ai (Twitter)": {
+      "status": "degraded_stale",
+      "error": "newest known item is 208.6h old, exceeds 168h threshold",
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    },
+    "Kimi (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 0,
+      "filtered_count": 0,
+      "current_count": 0,
+      "backfill_count": 0,
+      "pending_count": 0,
+      "cadence": "daily",
+      "articles": [],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 1,
+        "returned_tweets": 0,
+        "attempts": 1
+      }
+    }
+  }
+}
