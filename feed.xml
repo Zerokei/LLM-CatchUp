@@ -64,64 +64,48 @@
       <guid isPermaLink="false">https://github.com/Zerokei/LLM-CatchUp/blob/main/reports/daily/2026-11-12.md</guid>
       <pubDate>Thu, 12 Nov 2026 00:00:00 GMT</pubDate>
       <category>daily</category>
-      <description><![CDATA[<h1>CatchUp 日报 — 2026-11-12（fallback，自动回退版）</h1>
+      <description><![CDATA[<h1>CatchUp 日报 — 2026-11-12</h1>
+<h2>今日趋势</h2>
+<ul>
+<li><strong>多模态决策接口</strong>：Google推出Gemini Decisions API，可批量处理文本、图像与音视频判断，为模型路由和策略检查提供低延迟选项。</li>
+<li><strong>协作式AI空间</strong>：Google Labs的Tabletop让多人共同把资料转成行程、投票和费用分摊等互动成果，探索生成式工具的协作形态。</li>
+<li><strong>专业服务流程重构</strong>：澳洲律所Gilbert + Tobin把ChatGPT与Codex接入多步骤工作，并保留人员审核以释放时间处理客户服务和复杂判断。</li>
+<li><strong>儿童AI安全研究</strong>：OpenAI承诺投入200万美元研究青少年使用AI的风险与机会，并开发共享评估工具支持更系统的安全衡量。</li>
+</ul>
+<hr>
+<h2>文章详情</h2>
+<h3>1. <a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/">Google推出Gemini Decisions多模态决策API</a></h3>
+<ul>
+<li><strong>来源</strong>: Google AI Blog</li>
+<li><strong>分类</strong>: 产品与功能</li>
+<li><strong>重要性</strong>: ⭐⭐⭐⭐ (4/5)</li>
+<li><strong>标签</strong>: <code>Gemini</code> <code>多模态</code> <code>决策API</code> <code>模型路由</code></li>
+</ul>
+<p><strong>摘要</strong>: Google发布由Gemini Decision 1驱动的Decisions API，可针对文本、图像、音频、视频和PDF，在一次请求中完成最多1000个是非判断、选项选择或评分问题。API返回概率与置信度，官方称端到端延迟约150至250毫秒，输入价格为每百万token 0.10美元且不收输出token费用，适用于模型路由、工具选择和策略检查等固定选项任务。</p>
 <blockquote>
-<p>Claude 分析环节未在预期窗口内产出；以下为仅标题+链接的兜底版本。</p>
+<p><strong>实践建议</strong></p>
+<ul>
+<li>对照生成式模型调用与Decisions API，测试固定选项分类任务的延迟、校准度和总成本。</li>
+<li>利用返回的置信度设定人工复核阈值，并将低置信度样本路由到备用模型或人工处理。</li>
+</ul>
 </blockquote>
 <hr>
-<h2>OpenAI Blog</h2>
+<h3>2. <a href="https://openai.com/index/children-first-declaration">OpenAI投入200万美元研究儿童AI安全</a></h3>
 <ul>
-<li><a href="https://openai.com/index/children-first-declaration">Supporting research on AI and children’s safety</a></li>
-<li><a href="https://openai.com/index/gilbert-tobin-sam-nickless">Gilbert + Tobin rethinks the business of law with AI</a></li>
-<li><a href="https://openai.com/index/chatgpt-plus-for-veterans">ChatGPT Plus for veterans and servicemembers</a></li>
+<li><strong>来源</strong>: OpenAI Blog</li>
+<li><strong>分类</strong>: 政策与安全</li>
+<li><strong>重要性</strong>: ⭐⭐⭐ (3/5)</li>
+<li><strong>标签</strong>: <code>儿童安全</code> <code>AI风险</code> <code>研究资助</code> <code>评估工具</code></li>
 </ul>
-<h2>Google AI Blog</h2>
+<p><strong>摘要</strong>: OpenAI承诺投入200万美元，支持研究AI对儿童与青少年的风险和机会，并开发共享评估工具。此举聚焦建立更系统的衡量方式，以帮助相关方识别并应对儿童使用AI时的安全问题。</p>
+<hr>
+<h2>速览</h2>
+<p>以下为重要度 ★★ 的简讯，仅列分类、标签与一句话摘要。</p>
 <ul>
-<li><a href="https://blog.google/innovation-and-ai/technology/developers-tools/gemini-decisions-api/">Gemini Decisions API: Fast, calibrated multimodal decisions</a></li>
-<li><a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/">Try Tabletop: Customizable, collaborative spaces for groups to plan, play and do more together.</a></li>
-<li><a href="https://blog.google/company-news/outreach-and-initiatives/arts-culture/esther-mahlangu/">Experience the art and legacy of Dr. Esther Mahlangu</a></li>
+<li><strong>商业动态</strong> | <code>法律行业</code> <code>企业AI</code> <code>智能体工作流</code> <code>治理</code> — 澳大利亚律所Gilbert + Tobin从员工自主试用起步，逐步引入ChatGPT Enterprise、ChatGPT Work和Codex，构建多步骤工作流，并由人员审核和批准结果。该所称已启用用户中有87%活跃使用AI；其负责人强调，当前价值主要在于释放员工时间，投入客户服务、辅导和复杂判断，而非裁员降本。 · <a href="https://openai.com/index/gilbert-tobin-sam-nickless">OpenAI Blog</a></li>
+<li><strong>产品与功能</strong> | <code>Google Labs</code> <code>协作</code> <code>生成式AI</code> <code>群组规划</code> — Google Labs推出Tabletop实验，可让群组通过链接实时协作，把资料和想法生成行程、投票、费用分摊表或比赛签表等互动空间。产品目前通过候补名单向美国18岁以上用户开放，体现生成式AI从单人创作向多人共同规划工具延伸。 · <a href="https://blog.google/innovation-and-ai/models-and-research/google-labs/tabletop/">Google AI Blog</a></li>
+<li><strong>商业动态</strong> | <code>退伍军人</code> <code>ChatGPT</code> <code>职业转型</code> <code>AI培训</code> — OpenAI表示，过去一年已有超过2万名退伍军人及转业军人领取一年免费的ChatGPT Plus，用于求职规划、简历整理和面试练习。OpenAI Academy与社区伙伴还举办培训，帮助军人家庭学习使用AI，并计划继续开展相关活动。 · <a href="https://openai.com/index/chatgpt-plus-for-veterans">OpenAI Blog</a></li>
 </ul>
-<h2>Thariq (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/trq212/status/2118788283564179513">feels like it&#39;s really coming together https://t.co/L1WyogpiW1</a></li>
-<li><a href="https://x.com/trq212/status/2118822238262853904">a pattern I’m liking: creator apps like Instagram Edits and Roblox Studio shipping with built-in MCPs, so agents can do some of the work while power users can collaborate and continue the work in tool</a></li>
-</ul>
-<h2>Claude Devs (Twitter)</h2>
-<ul>
-<li>[We&#39;ve made it easier to get your repo running in Claude Code cloud sessions on Pro, Max, and Ultra.</li>
-</ul>
-<p>Claude figures out what dependencies, network access, and API keys it needs, then saves the environ](<a href="https://x.com/ClaudeDevs/status/2118795192090386454">https://x.com/ClaudeDevs/status/2118795192090386454</a>)</p>
-<h2>Anthropic (Twitter)</h2>
-<ul>
-<li>[New on our Science Blog: How AI is beginning to change scientific modeling.</li>
-</ul>
-<p>Scientific models help researchers explain and predict real-world systems—like how a single nerve cell fires, or what happe](<a href="https://x.com/AnthropicAI/status/2118792930211107115">https://x.com/AnthropicAI/status/2118792930211107115</a>)</p>
-<ul>
-<li><a href="https://x.com/AnthropicAI/status/2118814753154064501">Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs mor</a></li>
-</ul>
-<h2>OpenAI (Twitter)</h2>
-<ul>
-<li>[A new way to measure how AI agents handle the routine analyses of wet-lab science—BioBasicsBench.</li>
-</ul>
-<p>Developed with Ligo, a biotech company focused on enzyme design, the benchmark draws on 100 tasks fro](<a href="https://x.com/OpenAI/status/2118782708767965238">https://x.com/OpenAI/status/2118782708767965238</a>)</p>
-<ul>
-<li>[We partnered with @fmf_org and its member firms on a new framework to help identify when bypassing an AI system&#39;s safeguards could enable serious cyber harm, and prioritize stronger protections.</li>
-</ul>
-<p>&quot;...](<a href="https://x.com/OpenAI/status/2118795218099253606">https://x.com/OpenAI/status/2118795218099253606</a>)</p>
-<h2>Meta AI (Twitter)</h2>
-<ul>
-<li><a href="https://x.com/AIatMeta/status/2118768974779634084">Today we&#39;re bringing specialized models trained using Muse Wonder to @Muse and Meta AI, giving users access to some of Muse Wonder&#39;s frontier capabilities for complex tasks at work and in everyday lif</a></li>
-</ul>
-<h2>Google DeepMind (Twitter)</h2>
-<ul>
-<li>[We’re sharing new research demonstrating how AI agents can accelerate the science of stress-testing encryption.</li>
-</ul>
-<p>Guided by humans, our models uncovered two major weaknesses in legacy 1024-bit RSA cryp](<a href="https://x.com/GoogleDeepMind/status/2118755418675765656">https://x.com/GoogleDeepMind/status/2118755418675765656</a>)</p>
-<h2>Mistral AI (Twitter)</h2>
-<ul>
-<li>[Transcribing speech is one thing. Knowing when someone is done speaking is another.</li>
-</ul>
-<p>🎙 Voxtral 3’s end-of-turn detection helps developers identify when a user has finished speaking, making it easier ](<a href="https://x.com/MistralAI/status/2118744719870066936">https://x.com/MistralAI/status/2118744719870066936</a>)</p>
 ]]></description>
     </item>
     <item>
