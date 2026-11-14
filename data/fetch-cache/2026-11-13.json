@@ -1,7 +1,7 @@
 {
   "date": "2026-11-13",
   "report_timezone": "America/Los_Angeles",
-  "fetched_at": "2026-11-14T07:17:27−08:00",
+  "fetched_at": "2026-11-14T09:11:48−08:00",
   "window_start": "2026-11-12T00:00:00−08:00",
   "window_end": "2026-11-13T00:00:00−08:00",
   "sources": {
@@ -165,12 +165,42 @@
       "status": "ok",
       "error": null,
       "fetched_count": 0,
-      "filtered_count": 0,
+      "filtered_count": 1,
       "current_count": 0,
-      "backfill_count": 0,
+      "backfill_count": 1,
       "pending_count": 1,
       "cadence": "daily",
-      "articles": [],
+      "articles": [
+        {
+          "tweet_id": "2119114537442189652",
+          "title": "Earlier this week Tristan published his top YouTube channels:\nhttps://t.co/NZ3UCNo6cT\nWhich looked excellent so clearly I had to turn it into TristanTube:\nhttps://t.co/l0KyW1WdNH\n47K super nerdy video",
+          "url": "https://x.com/karpathy/status/2119114537442189652",
+          "published_at": "2026-11-07T17:07:31.000000Z",
+          "description": "Earlier this week Tristan published his top YouTube channels:\nhttps://t.co/NZ3UCNo6cT\nWhich looked excellent so clearly I had to turn it into TristanTube:\nhttps://t.co/l0KyW1WdNH\n47K super nerdy videos +TV mode for laid back watching. (One-shotted with Claude Code in 3 minutes)",
+          "expanded_urls": [
+            {
+              "t_co": "https://t.co/NZ3UCNo6cT",
+              "expanded_url": "https://thume.ca/2026/11/01/youtube-tier-list-2026/",
+              "display_url": "thume.ca/2026/11/01/you…"
+            },
+            {
+              "t_co": "https://t.co/l0KyW1WdNH",
+              "expanded_url": "https://karpathy.ai/tristan-tube/",
+              "display_url": "karpathy.ai/tristan-tube/"
+            }
+          ],
+          "quoted_tweet": {
+            "author": "karpathy",
+            "text": "Weekend hack: HackerTube. I was annoyed with YouTube's recommendations so I had Claude filter down 43M comments over 20 years of HN to 6,454 videos that keep being recommended. *Significantly* better viewing experience, ~2 hours with Opus 5.5:\nhttps://t.co/JIhXN7OSh1\n\n- Excellent recs without any logins (state is kept in local browser session)\n- Thumbnail is a representative frame from middle of the video instead of the super duper A/B test hyper-optimized user uploads\n- Underlying data from the comment analysis as one zip file, point your Claude at it and ask for your own version\n- HackerTube Longs ✊\n\nA bit more on the process:\nI use Claude Code (desktop app for Mac), Opus 5.5 on Medium effort as my default. I only talk to Claude and have it do everything, the only \"manual work\" I helped with in tandem was in the browser (reminiscent of MenuGen): 1) I had to create some kind of API key from Google Cloud UI to query YouTube for video metadata, 2) I booted up a VPS box for serving and 3) I bought the domain name. Once the box was up I gave Claude the IP and told it update, secure, harden, deploy and optimize the code, and it did the whole thing.\n\nMany awesome projects that would have normally taken weeks/months even can now be few-shotted for breakfast. What else are we not thinking of.",
+            "url": "https://x.com/karpathy/status/2116957135661945283"
+          },
+          "source": "Andrej Karpathy (Twitter)",
+          "origin_report_date": "2026-11-07",
+          "delivery_class": "backfill",
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
       "api_usage": {
         "provider": "socialdata",
         "method": "search_incremental",
@@ -183,32 +213,24 @@
       "status": "ok",
       "error": null,
       "fetched_count": 0,
-      "filtered_count": 2,
+      "filtered_count": 1,
       "current_count": 0,
-      "backfill_count": 2,
-      "pending_count": 5,
+      "backfill_count": 1,
+      "pending_count": 3,
       "cadence": "daily",
       "articles": [
         {
-          "tweet_id": "2118788283564179513",
-          "title": "feels like it's really coming together https://t.co/L1WyogpiW1",
-          "url": "https://x.com/trq212/status/2118788283564179513",
-          "published_at": "2026-11-06T19:31:06.000000Z",
-          "description": "feels like it's really coming together https://t.co/L1WyogpiW1",
+          "tweet_id": "2118859267314958761",
+          "title": "too many people building agents and not enough people using software to improve the quality of fish",
+          "url": "https://x.com/trq212/status/2118859267314958761",
+          "published_at": "2026-11-07T00:13:10.000000Z",
+          "description": "too many people building agents and not enough people using software to improve the quality of fish",
           "expanded_urls": [],
-          "source": "Thariq (Twitter)",
-          "origin_report_date": "2026-11-06",
-          "delivery_class": "backfill",
-          "thread_group_id": null,
-          "duplicate_of": null
-        },
-        {
-          "tweet_id": "2118822238262853904",
-          "title": "a pattern I’m liking: creator apps like Instagram Edits and Roblox Studio shipping with built-in MCPs, so agents can do some of the work while power users can collaborate and continue the work in tool",
-          "url": "https://x.com/trq212/status/2118822238262853904",
-          "published_at": "2026-11-06T21:46:02.000000Z",
-          "description": "a pattern I’m liking: creator apps like Instagram Edits and Roblox Studio shipping with built-in MCPs, so agents can do some of the work while power users can collaborate and continue the work in tools that they're used to",
-          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "itsolelehmann",
+            "text": "we have a winner for the most absurd AI startup ever\n\nthis Peter Thiel backed company uses AI robots to stab fish in the brain so they taste better and last up to 3x longer\n\nit's called Shinkei and it modernizes a centuries-old Japanese technique\n\ndozens of Michelin-star restaurants are already lining up to buy the fish\n\nhere's how it works:\n\n> the problem is when a fish gets caught, it usually just suffocates on the boat\n\n> that stress floods the meat with hormones and lactic acid, which hurts the flavor and texture\n\n> the old Japanese fix for this was spiking the fish through the brain right after the catch, which stops all that\n\n> but doing it by hand is impractical for most American fishing crews\n\n> so Shinkei built a fridge-sized robot that sits right on the boat's deck\n\n> the crew feeds in a fish and AI identifies the exact species, so it knows exactly where the brain and gills are\n\n> the robot then drives the spike through the brain and cuts near the gills in about 7 seconds\n\n> the fish goes into an ice slurry so the blood drains out\n\n> so the fish doesn't sit there stressing out, and that tasty flavor and texture is preserved\n\nexample number 5,392,417 of how AI can be applied to literally anything",
+            "url": "https://x.com/itsolelehmann/status/2118783732316573851"
+          },
           "source": "Thariq (Twitter)",
           "origin_report_date": "2026-11-06",
           "delivery_class": "backfill",
@@ -228,6 +250,39 @@
       "status": "ok",
       "error": null,
       "fetched_count": 4,
+      "filtered_count": 1,
+      "current_count": 0,
+      "backfill_count": 1,
+      "pending_count": 6,
+      "cadence": "daily",
+      "articles": [
+        {
+          "tweet_id": "2119867114450268322",
+          "title": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvement",
+          "url": "https://x.com/claudeai/status/2119867114450268322",
+          "published_at": "2026-11-09T18:57:59.000000Z",
+          "description": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb",
+          "expanded_urls": [],
+          "source": "Claude (Twitter)",
+          "origin_report_date": "2026-11-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
+      "api_usage": {
+        "provider": "socialdata",
+        "method": "search_incremental",
+        "requests": 2,
+        "returned_tweets": 4,
+        "attempts": 1
+      }
+    },
+    "Claude Devs (Twitter)": {
+      "status": "ok",
+      "error": null,
+      "fetched_count": 4,
       "filtered_count": 0,
       "current_count": 0,
       "backfill_count": 0,
@@ -242,86 +297,32 @@
         "attempts": 1
       }
     },
-    "Claude Devs (Twitter)": {
-      "status": "ok",
-      "error": null,
-      "fetched_count": 4,
-      "filtered_count": 1,
-      "current_count": 0,
-      "backfill_count": 1,
-      "pending_count": 7,
-      "cadence": "daily",
-      "articles": [
-        {
-          "tweet_id": "2118795192090386454",
-          "title": "We've made it easier to get your repo running in Claude Code cloud sessions on Pro, Max, and Ultra.\n\nClaude figures out what dependencies, network access, and API keys it needs, then saves the environ",
-          "url": "https://x.com/ClaudeDevs/status/2118795192090386454",
-          "published_at": "2026-11-06T19:58:33.000000Z",
-          "description": "We've made it easier to get your repo running in Claude Code cloud sessions on Pro, Max, and Ultra.\n\nClaude figures out what dependencies, network access, and API keys it needs, then saves the environment for next time. API keys are saved securely, so Claude never sees them. https://t.co/C3anyUAidY",
-          "expanded_urls": [],
-          "linked_content": null,
-          "source": "Claude Devs (Twitter)",
-          "origin_report_date": "2026-11-06",
-          "delivery_class": "backfill",
-          "thread_group_id": null,
-          "duplicate_of": null
-        }
-      ],
-      "api_usage": {
-        "provider": "socialdata",
-        "method": "search_incremental",
-        "requests": 2,
-        "returned_tweets": 4,
-        "attempts": 1
-      }
-    },
     "Anthropic (Twitter)": {
       "status": "ok",
       "error": null,
       "fetched_count": 2,
-      "filtered_count": 2,
+      "filtered_count": 1,
       "current_count": 0,
-      "backfill_count": 2,
-      "pending_count": 5,
+      "backfill_count": 1,
+      "pending_count": 3,
       "cadence": "daily",
       "articles": [
         {
-          "tweet_id": "2118792930211107115",
-          "title": "New on our Science Blog: How AI is beginning to change scientific modeling.\n\nScientific models help researchers explain and predict real-world systems—like how a single nerve cell fires, or what happe",
-          "url": "https://x.com/AnthropicAI/status/2118792930211107115",
-          "published_at": "2026-11-06T19:49:34.000000Z",
-          "description": "New on our Science Blog: How AI is beginning to change scientific modeling.\n\nScientific models help researchers explain and predict real-world systems—like how a single nerve cell fires, or what happens when neutron stars collide. Recent advances have transformed how scientists fit complex models to data. But scientists still typically write the models manually, and usually need to weigh up several competing versions, each of which might explain the data in a different way.\n\nIn a guest post, Jakob Macke, Daniel Gedon, and Stefan Wahl describe how AI is starting to help with these parts of the process. By writing, running, fitting, and revising scientific models as code, AI can explore many possible model structures, and find out which explanations the data support.\n\nhttps://t.co/qsFJG76FDw",
-          "expanded_urls": [
-            {
-              "t_co": "https://t.co/qsFJG76FDw",
-              "expanded_url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
-              "display_url": "anthropic.com/research/teach…"
-            }
-          ],
-          "linked_content": "Title: Teaching AI to build scientific models\n\nURL Source: https://www.anthropic.com/research/teaching-ai-to-build-scientific-models\n\nPublished Time: 2026-11-06T00:00:00.000Z\n\nMarkdown Content:\nIn 1951, Cambridge University’s computer went out of action for six months. This was inconvenient for physiologist Andrew Huxley, who, alongside his colleague Alan Hodgkin, had just built a set of equations to describe how a particular squid nerve cell fired. The scientists wanted to understand the “action potential” of these nerve cells: the electrical pulses they use to communicate, which underlie everything brains do, from perception to intelligence. The only way to find out whether the equations worked was to solve them and compare the solutions to data.\n\nHuxley had hoped to use the newfangled computer to solve the equations. Instead, he was forced to solve them using a hand-cranked mechanical calculator. It took him over three weeks.\n\nThe basic structure of their model was dictated by known facts about the cell. Hodgkin and Huxley modeled its membrane as an electrical circuit. One part of the model, however, was just an educated guess. In order to make the curve fit the data they had measured, they found that they had to raise one variable to the fourth power—that is, to multiply it by itself three times. At the time, they did not know why. They just knew that otherwise the model didn’t predict the observed data as well.\n\nThey did offer a hypothesis, however. They cautiously suggested that the variable in question, which governed how particular gates in the cell membrane opened, might require the fourth power because multiple charged particles in the membrane had to move into place before the gate would open.\n\nDecades later, long after both Hodgkin and Huxley had won the Nobel Prize in Physiology or Medicine in 1963, another team [found the structure of a related potassium channel protein](https://www.science.org/doi/10.1126/science.280.5360.69). And they discovered that, yes, it had four identical pieces arranged [around a central pore](https://doi.org/10.1126/science.1116270). The model was fit to the data in 1951. Even then, it predicted how fast the impulse travels relatively accurately. More than that, it turned out to have helped predict the structure of potassium ion channels themselves, which it had never been fit to.\n\nToday, an AI system could plausibly find an equation like Hodgkin and Huxley’s in an afternoon, and perhaps it would fit the experimental data even more closely. But the point of the story is that simply knowing the fourth power did the job was not enough; what mattered was knowing that a simpler version of the model did not work. An AI system that merely hands you the model might give you an answer, but it does not give you understanding. Reproducing the data with a model is insufficient, because any number of models could do the same. What matters is being able to make claims about the real-world system itself, and ideally about other, similar systems. To do so, you need to know which features the model shares with other models that work, and which set it apart from models that don’t. As the mathematician Richard Hamming wrote in 1962, “The purpose of computing is insight, not numbers.”\n\n## A three-step program\n\nMore than 70 years on, [the Hodgkin-Huxley model](https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/) remains the standard description of electrical activity in neurons. The same kinds of equations, with different constants, describe nerve cells across the animal kingdom, from squids to humans, even though our evolutionary lineages separated more than half a billion years ago.\n\nEven more important than its longevity, however, is what the Hodgkin-Huxley model tells us about how models work. Hodgkin and Huxley’s approach can be broken down into three steps, and most scientific modeling involves some version of them.\n\n*   The first is **building** the model. This means deciding what the model is made of and what shape its equations take. In Hodgkin and Huxley’s case, that meant the parts of the electrical circuit—the membrane and the gates—and the form of the equations, such as raising the underlying variable to the fourth power.\n*   The second is **constraining** the model—tuning its adjustable parameters to fit real measurements. For Hodgkin and Huxley, that included settings like how often the gates open under different voltages.\n*   The third is **interpreting** the model—asking what the model says about the real system, such as suggesting that the fourth power meant the gate had four moving parts.\n\nIn practice, scientists [go through these steps repeatedly](https://www.jstor.org/stable/2286841). If the numbers fail to fit the measurements, or if the interpretation makes no sense, they go back and revise.\n\nAll three steps were once done by people, but AI systems are increasingly involved in each of them. Machines have arguably made the most progress in constraining models, so we’ll start there.\n\n## Splitting the bill, or how to constrain models\n\nWhen Hodgkin and Huxley constrained their model by eye and intuition, they ended up with a single set of numbers. This told them that the model _could_ match the data. It didn’t tell them whether other numbers would have worked just as well or even better.\n\nImagine you know that a group dinner added up to $120, but not who ordered what. Many different combinations of orders could have added up to that amount—perhaps everyone ordered a mid-priced burger, or perhaps one person had steak and lobster while everyone else had soup. Models of nerve cells work on the same principle: different combinations of gate parameters can produce near-identical electrical activity. Simply showing one combination that fits well hides all the other plausible parameter settings, and other combinations might have led to different predictions. This is true of almost any phenomenon being modeled. Many different sets of parameters can explain the observed data equally well.\n\nThe solution is a statistical method called Bayesian inference. It gives you every set of numbers that works reasonably well, as a probability distribution that takes into account their fit to the data and your prior knowledge about the parameters. The distribution takes the shape of a curve, with the best fits at the peak and the weaker ones at the fringes.\n\nBut this method has usually been impractical for complex models, because it involves calculating how likely your measurements would be under every possible set of numbers. In Hodgkin and Huxley’s model, that would still be feasible, but for anything more complicated, it would be computationally impossible. For example, if each of the thousands of ion channels opens and closes at random, you would have to work out every combination. Returning to our restaurant bill analogy: it would be easy to answer, “If person A had the burger and person B had the steak, what would the bill come to?” but much harder to show which combinations could have led to the final bill, especially as the number of people and menu options grows.\n\nA different approach called [simulation-based inference (SBI)](https://www.pnas.org/doi/10.1073/pnas.1912789117) overcomes this reverse-engineering problem with sheer computation. You pick random parameters, run the model, and record the output. You do it again and again—[perhaps 100,000 times for a model like Hodgkin-Huxley](https://elifesciences.org/articles/56261), and millions of times for larger, more complex ones. Then you train a neural network on the results so that, given an output, it can return the range of parameters that could have produced it.\n\nAll SBI requires is that you can run the model: put in a set of parameters and get back the kind of data you would expect to see. A model you can run like this—parameters in, data out—is called a _simulator_, hence the name “simulation-based inference.” You never need to use a formula to calculate how likely your measurements are, which is the step that makes standard Bayesian inference often impractical. These days a simulator is usually a computer program, but it doesn’t have to be: Huxley, cranking through the equations by hand, was running one. Many simulators are easy to run forward but impossible to reverse. Some can’t even be written out as a tidy equation—their assumptions are built into the rules they follow—but they are models nonetheless. For many complex phenomena, from networks of neurons to colliding galaxies, simulators are often the only kind of model we have. SBI lets us constrain those models with data.\n\nRunning all those simulations is expensive and can take weeks. But once it is done, a trained network can perform inference on new data in seconds, without requiring further simulations. That speed has changed what’s possible. When [two neutron stars collide](https://www.nature.com/articles/s41586-025-08593-z), SBI can work out roughly where in the sky the collision happened, fast enough to point telescopes at it while the signal is still detectable. The same approach has been successfully applied to problems in [cosmology](https://journals.aps.org/prd/abstract/10.1103/3sj1-1l9f), [structural biology](https://www.pnas.org/doi/10.1073/pnas.2420158122), [geophysics](https://academic.oup.com/gji/article/241/3/1741/8099925), and many other domains.\n\nAnd SBI has been applied to [nerve cell models](https://www.nature.com/articles/s41586-022-04428-3), [including the Hodgkin-Huxley model](https://elifesciences.org/articles/56261). Because it returns a distribution rather than a single fit, we can see which parameters are well constrained by the data, where more than one explanation is plausible, and where more data—and thus another experiment—is most needed.\n\n## The bill, one level up, or how to build models\n\nBefore you can constrain a model, you need a model to constrain. The equations of the Hodgkin-Huxley model were not derived from first principles. Instead, the fourth power of the underlying variable emerged _empirically_ from the scientists’ biological insight, and from finding that simpler versions didn’t work as well.\n\nFor most of the history of science, this is how models have been built. Scientists used their expertise and assumptions to write down a candidate model. Then they tested it, revised it, and tried again. The problem is that the space of possible models is essentially infinite, and a scientist proposing a handful of models from experience will very likely miss models that could have explained the observational data equally well.\n\nAI systems can now help with, or even take over, this step. Given some data and a natural-language description of a system, an LLM-based agent writes code for a candidate model or a set of candidate models. Then it runs the model, constrains its parameters, compares the output to real-world data, and revises it, perhaps by modifying the form of an equation. This loop repeats until the model replicates the data accurately enough. Several such systems have appeared in the past two years.[1](https://www.anthropic.com/research/teaching-ai-to-build-scientific-models#footnote-1) The details vary, but all use an LLM to design the model itself. Until recently, this was thought to be something only humans could do.\n\nBut the fact that a model replicates data doesn’t mean that it provides insight. As with the restaurant bill, or the Hodgkin-Huxley parameters, many different combinations of parameters within a single model can provide the same output. The same is true one level up, for the model itself: many different _models_, with differently shaped equations, can explain the same data equally well. Run an agent twice on the same data, and it might return two different, and equally good, models. An agent that returns only one of them is hiding the rest, just as a single best-fit set of numbers does.\n\nSo it is better to treat building a model the same way we treat constraining one: you ask for the whole range of models that could plausibly explain the data.[2](https://www.anthropic.com/research/teaching-ai-to-build-scientific-models#footnote-2) The AI system proposes many candidates. Each is then weighted by how much it is supported by the data, and the ones that need a lot of flexibility to fit are given less credit than those that fit naturally. The weak candidates drop out, and the AI system proposes new variations on the stronger ones.\n\nAI agents can thus provide a distribution of plausible models, rather than a single best fit, and that distribution tells you things a single model can’t. If every surviving model shares a feature, the data likely favors it. If the survivors disagree, that shows where the evidence is thin, and points researchers in the direction of the next experiment.\n\nWe shouldn’t get too far ahead of ourselves. So far, these systems have mostly been tested on rediscovering models that scientists already know. Evidence that they work on problems with _no_ known answer is sparse. Still, [newer LLMs perform better at research tasks](https://www.terminal-bench-science.ai/) than older ones, and we expect these systems to keep improving.\n\n## Lost in translation, or how to interpret models\n\nOnce a model has been built and constrained, it still has to be interpreted. What does it tell us about the real system being studied? Hodgkin and Huxley’s four-particle hypothesis came about because equations involving the fourth power are what you would expect if four separate things all had to happen before a gate could open. So they suggested that this might be what was happening inside the membrane. As we saw above, they turned out to be largely right.\n\nThat interpretation only carried weight because of what they had ruled out. If a simpler model had worked just as well, there would have been no reason to think the gate had several moving parts. It was the failure of the alternatives that allowed them to make that claim. There was some uncertainty about the exact number: Hodgkin and Huxley noted that a third or fourth power was needed and settled on four. [They wrote](https://pmc.ncbi.nlm.nih.gov/articles/PMC1392413/) that higher powers might even have fit slightly better, but that the potential “improvement was not considered to be worth the additional complication.”\n\nThe equations also let Hodgkin and Huxley reason out several other implications. For instance, the equations explained why nerve cells have a voltage threshold below which they don’t fire and above which they do, and why nerve pulses all have the same shape. They also predicted that a current rising slowly enough would never make the cell fire. Philosophers of science [call a theory “intelligible”](https://academic.oup.com/book/36363) if it lets you work out its consequences without having to run it. That test works for a model with a handful of variables, like Hodgkin-Huxley. For a larger model with perhaps thousands of variables, the equivalent might be whether we can boil it down to a few crucial mechanistic ideas that are enough to rebuild it. The larger the model, the harder that becomes.\n\nOf the three steps, interpretation is the hardest to hand over to AI. The goal is harder to pin down: we can measure how well a model fits the data, but not whether it leads to a better understanding of the system, and it’s not clear how to tell an AI system to make “understanding” its objective. [One proposal](https://link.springer.com/article/10.1007/s11023-024-09657-1) is to judge an AI system’s understanding by seeing how well it predicts what a system does when you disturb that system. Another is to sidestep the question altogether, and instead ask whether the agent’s outputs [help human scientists better understand the problem](http://nature.com/articles/s42254-022-00518-3). One example is an AI system for [designing quantum experiments](http://nature.com/articles/s42256-025-01153-0). Rather than providing a single setup, it was trained to write a short program that generates the setups for a whole family of related experiments. A physicist can then read the underlying design principle straight off the program instead of reverse-engineering it from one experimental setup.\n\nIn both approaches, having access to a full distribution of suitable models, rather than a single best-fitting one, is crucial for interpretation. A single model cannot tell us which of its parts are actually constrained by the data, so it’s easy to read meaning into parts that are not. In Hodgkin-Huxley, as we’ve seen, the hypothesis about four particles only makes sense if you know that lower powers don’t work as well. A range of models also makes predictions more robust. Say you ask your models what happens when you disturb a system—for instance, by blocking all, or only some, of the sodium gates on the cell membrane. If all the models that fit the data return the same answer, as you would expect when every gate is blocked, then you can be fairly confident in it. If they disagree, as they might when only some gates are blocked, that can provide ideas for the next experiment.\n\n## Cells and scales\n\nMost famous models, including Hodgkin-Huxley, are compact. They consist of a handful of variables and equations, small enough for a human scientist to write down and reason about. That’s no coincidence: they needed to be compact, because people had to build, constrain, and interpret them. Their smallness is also what made them intelligible. But as AI takes over more of the work, the size limit will start to lift. We can begin to model systems that are far too complex to write down by hand, even if we can no longer understand them just by reading the equations.\n\nBrains are an obvious use case. The Hodgkin-Huxley equations describe a single nerve cell. But a fruit fly’s brain contains more than 100,000, and a human brain tens of billions. And it is the interplay between those neurons that gives rise to behavior and thought. For the fruit fly, we now have something that was impossible for previous generations of scientists: a complete wiring diagram of its brain, showing every neuron and how it connects to the others.[3](https://www.anthropic.com/research/teaching-ai-to-build-scientific-models#footnote-3) Researchers have started [building large-scale models on top of it](https://www.nature.com/articles/s41586-024-07939-3), including one that predicts the activity of neurons across the fly’s visual system. That opens up questions nobody could sensibly ask before. How does a whole brain turn its wiring into behavior? How much of an animal’s behavior can be predicted from its wiring alone? And which connections actually matter?\n\nBut at these scales it will not be possible to find a single correct model. Indeed, in most cases there is no such thing. As the statistician [George Box wrote](https://www.sciencedirect.com/science/chapter/edited-volume/abs/pii/B9780124381506500182?via%3Dihub), “All models are wrong but some are useful.” The data will always be compatible with many models. The question will no longer be which model is the right one, but which properties all data-compatible models share, and which predictions can be derived from them. The most useful experiments will be those that rule out the greatest number of remaining models, even if they are not always the ones a human scientist finds the most interesting.\n\nThis isn’t unique to neuroscience. Climate scientists already work like this: they build many gigantic numerical simulations, each based on slightly different assumptions, and report their projections as the spread across all of them. Particle physicists at the Large Hadron Collider work in a similar spirit: when they look for a new particle, they don’t just declare whether a particular theory worked or not; they produce a map of which versions of the theory are ruled out by the data and which remain open.\n\nThe painstaking work Hodgkin and Huxley did—building the model, fitting each curve",
+          "tweet_id": "2119867707546071125",
+          "title": "Claude Fable 5.2 and Claude Mythos 5.2 are available now:",
+          "url": "https://x.com/AnthropicAI/status/2119867707546071125",
+          "published_at": "2026-11-09T19:00:21.000000Z",
+          "description": "Claude Fable 5.2 and Claude Mythos 5.2 are available now:",
+          "expanded_urls": [],
+          "quoted_tweet": {
+            "author": "claudeai",
+            "text": "Introducing Claude Fable 5.2 and Claude Mythos 5.2, designed to tackle the most daunting technical challenges.\n\nThey’re capable collaborators on ambitious projects in many fields, and show improvements in areas like coding, reasoning, and vision. https://t.co/jP0AutLxXb",
+            "url": "https://x.com/claudeai/status/2119867114450268322"
+          },
           "source": "Anthropic (Twitter)",
-          "origin_report_date": "2026-11-06",
+          "origin_report_date": "2026-11-09",
           "delivery_class": "backfill",
-          "thread_group_id": null,
-          "duplicate_of": null
-        },
-        {
-          "tweet_id": "2118814753154064501",
-          "title": "Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs mor",
-          "url": "https://x.com/AnthropicAI/status/2118814753154064501",
-          "published_at": "2026-11-06T21:16:17.000000Z",
-          "description": "Memory is what allows Claude to learn from experience. In a new Engineering Blog post, we share how “dreaming” helps Claude organize what it’s learned, correct its mistakes, and find what it needs more easily the next time. https://t.co/uUEN4bNkr9",
-          "expanded_urls": [
-            {
-              "t_co": "https://t.co/uUEN4bNkr9",
-              "expanded_url": "https://www.anthropic.com/research/components-of-agent-memory",
-              "display_url": "anthropic.com/research/compo…"
-            }
-          ],
-          "linked_content": "Title: The components of agent memory\n\nURL Source: https://www.anthropic.com/research/components-of-agent-memory\n\nPublished Time: 2026-11-06T00:00:00.000Z\n\nMarkdown Content:\nSøren Kierkegaard wrote that life can only be understood _backward_, but it must be lived _forward_. We’ve encountered a similar bind when designing memory for AI agents.\n\nAs humans, we encode memory constantly as we go about our lives. [The hippocampus](https://stanford.edu/~jlmcc/papers/McCMcNaughtonOReilly95.pdf) plays a central role in this, capturing experiences in the moment so that memories form quickly and are immediately available. But only [some experiences](https://www.science.org/doi/10.1126/science.adk8261?referrer=https%3A%2F%2Fwww.google.com%2F) are consolidated into long-term knowledge.\n\nMuch of that consolidation appears to happen when our brains are offline. As we sleep, and during quiet [rest](https://www.nature.com/articles/s41467-018-06213-1), the hippocampus replays our recent experiences. This is thought to gradually distill [those experiences and integrate them](https://www.nature.com/articles/s41593-019-0467-3) into the neocortex—the part of our brains that stores most of what we think of as knowledge.\n\nAgent memory can use a similar division of labor. Agents capture much of their work in logs or transcripts. Researchers at Letta and UC Berkeley proposed [sleep-time compute](https://arxiv.org/abs/2504.13171) as a way for models to use idle time between interactions to reorganize their existing context. The same idea can help agents organize their memory by reflecting on logs to fix mistakes or produce new notes and representations. This process is often [called](https://platform.claude.com/docs/en/managed-agents/dreams)[_dreaming_](https://research.google/blog/the-sleep-framework-a-new-way-for-llms-to-retain-knowledge-in-continual-learning/) (Figure 1).\n\nWe’ve found that dreaming has been a useful tool for helping us give Claude effective memory. In this post, we share how we’ve come to think about agent memory and walk through several evaluations we’ve used to explore agent memory, including the use of dreaming, and what each component contributes to memory organization.\n\n### Memory notes\n\nBy “agent memory,” we mean knowledge that Claude gains from experience—including interactions with users and tasks it’s been assigned—and that it retains between sessions, saved as context it can read later. It excludes other ways models can learn or manage context, such as changes to their _weights_ (the internal parameters set during training), [_in-context learning_](https://www.anthropic.com/research/in-context-learning-and-induction-heads) (knowledge gained within a single conversation), and [_compaction_](https://platform.claude.com/docs/en/build-with-claude/compaction) (summaries written by Claude that replace its older turns so it can continue working in a new context window).\n\nIn the human brain, chemical signals released before, during, or after an experience can [mark a memory](https://www.nature.com/articles/385533a0) as important. Marked memories tend to be replayed more often than unmarked ones during offline periods. This process, called _replay_, helps stabilize and integrate them into long-term memory.\n\nSimilarly, Claude can tag salient events in a session log as they happen, so they’re easier to find later, or it can [write](https://platform.claude.com/docs/en/agents-and-tools/tool-use/memory-tool) them to a memory store, such as a folder of memory notes (Figure 2). But how can Claude tell what’s salient in the moment, before it knows what’s coming next?\n\n### Memory can be a prediction about what the future will need\n\nMemory is, occasionally, a prediction. By writing down a rule, an agent predicts that the pattern it’s describing will be relevant again. For instance, writing down a verified fact is a prediction that an agent in a future session will want to rely on that fact without double-checking it. Over time, Claude has become much better at making these kinds of predictions.\n\nConsider a task from [Continual Learning Bench (CL-Bench) 1.0](https://continual-learning-bench.com/news/cl-bench-1-0/), a benchmark that measures an agent’s ability to use memory in order to tackle long-horizon tasks. One particular task asks Claude to answer a series of questions by looking up information in a database. After Claude gives an answer, it’s told the correct solution and can write a memory to help answer future questions.\n\nMemory can support a learning loop here. If Claude gets a question wrong, it can record the failure, come up with theories about what went wrong, test those theories, and turn what it finds into a rule about how to answer in the future.\n\nWe ran the CL-Bench 1.0 task using [Claude Managed Agents](https://platform.claude.com/docs/en/managed-agents/overview). Claude started each question in a fresh session, with one exception: it could retrieve files from a [memory directory](https://platform.claude.com/docs/en/managed-agents/memory) that persisted from one session to the next.\n\nDifferent models achieved different levels of success at creating their own learning loops. Claude Sonnet 4.6 got as far as generating theories about why an answer was wrong. Its memory directory contained a scattering of files, each listing several untested guesses.\n\nClaude Opus 4.7 consolidated its notes into a single reference document and began marking which facts it had checked and which were still unconfirmed. Claude Sonnet 5 marked each answer as confirmed after the grader had checked it, and wrote a correction when it had answered wrong.\n\nClaude Opus 5 was the first of these models to close the loop. Most of its entries included a rule (and also how it knew the rule was true), answers to earlier questions, and clear warnings about traps it had discovered along the way (Figure 3).\n\nLike Opus 5, Claude Opus 5.5 and Claude Sonnet 5.5 both closed the loop, using memory to capture validated rules about how to best answer future questions. With memory, both scored about the same as Opus 5, though their baseline performance without memory was slightly higher.\n\n### Claude has learned to judge salience\n\nWe also evaluated Claude’s ability to play _Pokémon Red_, a game that [challenges Claude to navigate](https://www.youtube.com/watch?v=CXhYDOvgpuU) complex long-horizon tasks, as a test of Claude’s judgment about _what_ to save to memory. At the start of each run, we gave each model a folder of memory files that it could read from and write to while it played (Figure 4).\n\nWe compared the memory folders from one run each of Claude Sonnet 3.7 and Claude Fable 5, when each was about 10,000 steps into the game. A key difference we noticed was what each model thought was worth remembering. Sonnet 3.7 assumed everything might matter and wrote to memory indiscriminately. Its memory folder contained an archive of encounters, often with a separate file for each battle it fought, each item it found, and each non-player character it met. Ultimately, Sonnet 3.7 wrote 413 memory files across 225 folders and earned one badge (badges mark a player’s progress through the game).\n\nFable 5, by comparison, wrote nine files in two folders, plus a single top-level file called `global.md`, and earned four badges.\n\nSonnet 3.7’s approach was a problem mainly because the game state of Pokémon changes constantly—Sonnet 3.7’s detailed record was continuously going out of date. As a result, as Claude progressed, it had to spend more time and resources combing through its memories rather than playing the game. Around step 10,000, for example, Sonnet 3.7 started its fourth folder of “master” memory files. Over the next 17 steps, it created six files, deleted nine others, and took no actions in the game itself.\n\nFable 5’s approach used memory for things the game didn’t explicitly tell it. Some of the kinds of information Sonnet 3.7 wrote to memory—such as how much money the player has or where the player is on the map—can be read off the screen every turn, so storing it is redundant. By contrast, memory files about strategy, plans, and tested rules exist only if Claude works them out, and they disappear unless Claude writes them down.\n\nFable 5 organized its memory accordingly. Its `global.md` file acted as a dashboard, holding the current goal, a prewritten plan for tackling gyms (the challenges where badges are won), and the model’s own rules for using memory. A `locations` folder held plans for navigating particular routes, and a `gameplay` folder held strategies based on what it had learned about how the game works. For example, after seven Poké Balls in a row failed to catch a Magikarp (one of the easiest Pokémon to catch), Claude wrote, “If 3+ balls fail in a row, VARY the timing (insert extra ‘wait’ presses between menu steps) - the catch landed right after doing this.”\n\nWith a much smaller memory folder, Fable 5 progressed much further in the game than Sonnet 3.7. Opus 5.5 took a similar approach: it kept a small folder of memory notes that tracked its current goal and next steps, rewrote them as it played, and beat the game.\n\n### Steering Claude to write memory\n\nWe’ve found that it helps to tell Claude what memory is for, but not _how_ to use it. On CL-Bench, we simply told Claude that a memory folder was available. That general guidance was enough for Opus 4.7 and Opus 5 to use memory effectively, and it gave both a noticeable boost in performance (Figure 3).\n\nWe also tested giving the models specific rules about what they should write to memory, with one rule per test. We compared how much each model gained from memory with each rule against how much it gained without it. When we set a rule to “record only failures,” both Opus 5 and Opus 4.7 lost much of the performance boost that memory gave them (Figure 5, right). For stronger models, giving them freedom to judge salience was more effective than setting fixed rules in advance, and those rules could end up weakening performance.\n\nWe also noticed that steering helped older models the most. For instance, Sonnet 4.6 often didn’t read files from its memory directory and failed to test its theories about why an answer was wrong.\n\nIn this case, prompting Claude to read its memory files before answering—and then to explicitly test its theories—nearly doubled its benchmark score (Figure 5, left). Sonnet 5 does this on its own. Without being prompted to, it read its memory before answering 9 out of 10 times. By comparison, Sonnet 4.6 did this less than half of the time.\n\nWith frontier Claude models, we typically give simple guidance to create memory notes when a person asks them to or when something is clearly worth remembering, and we leave that judgment up to Claude.\n\n### Dreaming can correct memory\n\nSince Claude writes to memory based on what it judges to be salient in-session, a note that’s wrong from the start or that drifts as the environment changes can be read, and trusted, by Claude in a later session.\n\nDreaming gives Claude a way to test its notes against the original transcripts (Figure 6). We saw a positive example of this when Claude played Pokémon using Managed Agents with a mounted directory for its memories.\n\nIn one part of the game, the player has to get through Mt. Moon, a cave system with its entrance on the west side of the map and its exit on the east. Near the entrance is a trap: a one-way ledge that drops the player onto the route they came from, with no clear way to climb back up. Claude was using the PokéCenter, a building at the mountain’s entrance, as a landmark, so whether it walked off the ledge depended on which side of the mountain it thought the PokéCenter was on.\n\nAt one point, Claude wrote down (incorrectly) that the PokéCenter was on the east side. When it walked out of the PokéCenter, it announced, “Mt Moon is behind me,” and updated its notes: “Mt Moon DONE.” But Mt. Moon was not behind it. A few actions later, Claude went over the ledge and landed back on the route it had come from (Figure 7). Its navigation tool didn’t show the drop, so Claude concluded, “I overshot far west,” and that it had been on the correct side all along. It hadn’t.\n\nWe then tested whether dreaming could help Claude avoid this trap. We ran dreaming on the memory folder that contained the wrong location for the PokéCenter: Claude checked the note against the session transcript, caught its error, and rewrote it. The transcript gave Claude a ground truth to validate its memory against. With the corrected memory note, Claude went straight back into Mt. Moon and eventually reached Cerulean City.\n\nIn the run with the uncorrected note, Claude dropped back onto that earlier route three times. After the third failure, Claude seemed to give up, writing, “I’m going to stop rather than keep looping.” Our setup’s automatic reply instructed it to continue. So it did, all the way back to Pewter City, the town before the mountain, where it hoped to heal and restock. The run ended without Claude ever reaching Cerulean City.\n\n### Dreaming can build new memory representations\n\nWith dreaming, Claude can build representations to help navigate memory (Figure 9). One type of memory representation it uses is called a [_wiki_](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f), a collection of pages written and maintained by Claude that gathers what Claude knows about one subject and links it to other notes. These links effectively provide Claude with a map it can use to sift through its memory and efficiently locate memories when they’re needed.\n\nRepresentations like wikis can help Claude traverse its ever-growing knowledge base. We explored the benefit of wikis as a memory representation using a corpus of internal documents—about 350,000 files, roughly 420M tokens—from Stainless, a software company we acquired in May. We created an evaluation set of 25 questions about this corpus and gave Claude a search tool to explore it. We also instructed Claude to build a wiki based on these files using dreaming. Over 128 sessions, we prompted Opus 5 agents to explore the files, write or correct linked wiki pages, merge duplicates, and check claims against the sources.\n\nEach session built on the progress that agents made in prior sessions, using a shared log to coordinate work. As we scaled dreaming from two sessions to 128, performance on the 25 questions grew from 13% to 48% of graded criteria (Figure 10).\n\nClaude builds its wikis incrementally. After creating an initial wiki, it uses subsequent rounds of dreaming to add to, edit, or prune it. In the early rounds of dreaming, Claude’s knowledge is like that of a new employee, and its ability to answer questions based on the wiki alone is limited. The more it dreams, the richer its knowledge map grows, like that of a seasoned employee. In our tests, we found that the wiki helped Claude the most when we also gave it access to a search tool. When it used both search and the wiki, Claude’s aggregate score rose from 54% to 61% as that wiki grew, compared with 53% when it had access to the search tool alone. Claude’s best score was 48% when it used only the wiki to answer questions. Using search and the wiki also saved about 20,000 tokens per question.\n\nWe wanted to test which kinds of tasks benefited from Claude having a wiki. To do this, we used the [Harvey LAB](https://github.com/harveyai/harvey-labs) benchmark along with a collection of documents about a merger. The benchmark gives Claude a set of documents and asks Claude to generate a legal brief based on their content. The benchmark then grades the brief against a list of criteria. While a tad less engaging, perhaps, than a Pokémon run, these evaluations give us diverse collections of documents to build wikis from.\n\nWe instructed Claude to build a wiki from the documents. We then asked Claude to answer questions (about the merger) or generate legal briefs (the LAB benchmark) both from the wiki and from a direct file search. One test asked 24 questions about the merger (Figure 11, left), more than half of which needed Claude to find information across several documents, and many of which also needed Claude to use judgment or do math. On those items (red and orange lines), Claude scored 87% when it consulted the wiki, compared with 73% when it used search alone.\n\nIn other cases, the wiki was less useful. On one LAB task (Figure 11, right), brief criteria often could be retrieved with a text search from a single document, and the wiki showed no clear gain in performance relative to search. On another LAB task, the wiki grew larger than the documents themselves (Figure 12). Like the mapmakers in Borges’s one-paragraph short story “On Exactitude in Science,” who drafted a map so detailed it was as large as the empire it represented, Claude had made an extremely detailed wiki that effectively abstracted nothing.\n\n### Dreaming can promote notes up the memory hierarchy\n\nDreaming can also float notes to the top of the memory hierarchy, and the agent harness can preemptively load them into Claude’s context at the start of every session (Figure 13). This means Claude doesn’t need to search for them, or even to know there’s something to search for.\n\nPromoting memories into a new session (a form of _context injection_) must be done carefully. Injected memories use up valuable tokens, and an incorrect note can be carried into every session. Loading a note also doesn’t guarantee that Claude acts on it: our documentation on [Claude Code](https://code.claude.com/docs/en/memory) warns that longer instruction files reduce adherence. So the top layer of the memory hierarchy has to stay relatively small, and much of dreaming’s work here is keeping it that way—by moving some details down the hierarchy and leaving links behind.\n\n[Claude Code’s auto memory](https://code.claude.com/docs/en/memory) keeps its injected layer small in the same way, with Claude maintaining it during the session. Claude doesn’t load all of its auto memory into every session’s context window. It loads only the first 200 lines or 25 KB of `MEMORY.md`. This header serves as an index, which shows Claude what it knows and where to find it.\n\n### Dreaming can focus memory on a specific goal\n\nDreaming can also shape how memory grows. An assistant like [Claude Duet](https://support.claude.com/en/articles/17631495-get-started-with-claude-duet), for example, often benefits from having memories that are organized around the person it’s helping, and dreaming can be tuned to build memory in service of a particular goal.\n\nThe instructions that guide how memory grows differ by task and tell Claude what information actually matters. For example, one task in the LAB benchmark simulates a company acquisition and provides a set of contracts. The brief is graded on whether it correctly describes the contract terms.\n\nWe started with basic instructions for generating the wiki that didn’t tell Claude _how_ to use the wiki. This task relied heavily on contract terms. While the wiki was being built, several agents wrote to a shared table of contract terms at the same time (Figure 14, left).\n\nThe result was a wiki that was missing key facts. When we graded a brief generated from the wiki, Claude had included only 41 of the 57 facts (72%). When we looked at what had gone wrong, we found that the shared table summarized the contract terms poorly and was missing some of them altogether, because agents had overwritten one another’s work.\n\nThe contract terms were the most important part of the wiki, but the instructions didn’t say that. To find better instructions, we ran a loop in which Claude reflected on its failures, proposed a change to the instructions, and rebuilt the wiki. This loop allowed Claude to discover how important it was to follow the contract terms, and it rewrote the instructions for building the wiki accordingly.\n\nEach contract got its own page in the wiki, written by a single a",
-          "source": "Anthropic (Twitter)",
-          "origin_report_date": "2026-11-06",
-          "delivery_class": "backfill",
+          "linked_content": null,
           "thread_group_id": null,
           "duplicate_of": null
         }
@@ -338,53 +339,12 @@
       "status": "ok",
       "error": null,
       "fetched_count": 2,
-      "filtered_count": 2,
+      "filtered_count": 0,
       "current_count": 0,
-      "backfill_count": 2,
-      "pending_count": 5,
+      "backfill_count": 0,
+      "pending_count": 3,
       "cadence": "daily",
-      "articles": [
-        {
-          "tweet_id": "2118782708767965238",
-          "title": "A new way to measure how AI agents handle the routine analyses of wet-lab science—BioBasicsBench.\n\nDeveloped with Ligo, a biotech company focused on enzyme design, the benchmark draws on 100 tasks fro",
-          "url": "https://x.com/OpenAI/status/2118782708767965238",
-          "published_at": "2026-11-06T19:08:57.000000Z",
-          "description": "A new way to measure how AI agents handle the routine analyses of wet-lab science—BioBasicsBench.\n\nDeveloped with Ligo, a biotech company focused on enzyme design, the benchmark draws on 100 tasks from real experiments to test whether agents can interpret raw lab data, identify errors, and recognize when the evidence doesn’t support a conclusion.\n\nAccelerating biological research starts with getting the everyday work right. BioBasicsBench shows where models need to improve, and helps us track what those gains mean for scientific progress, biosafety, and biosecurity.\n\nhttps://t.co/wN2xLk0YeW",
-          "expanded_urls": [
-            {
-              "t_co": "https://t.co/wN2xLk0YeW",
-              "expanded_url": "https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/",
-              "display_url": "openai.com/index/measurin…"
-            }
-          ],
-          "linked_content": "Title: Measuring how AI agents handle everyday wet-lab science\n\nURL Source: https://openai.com/index/measuring-how-ai-agents-handle-wet-lab-science/\n\nMarkdown Content:\nOur mission is to ensure that artificial general intelligence benefits all of humanity. As part of that mission, we want to help scientists accelerate biological research—from understanding disease to developing new treatments. For AI agents to contribute, they need to reliably interpret the experimental evidence scientists work with every day in wet labs, where they run experiments with biological samples. Everyday wet-lab work involves failed experiments, ambiguous images and conflicting observations. Existing benchmarks are built around charts and images selected for scientific papers may miss this ambiguity and the troubleshooting it requires. That’s why we’re introducing BioBasicsBench, a new benchmark developed with Ligo, a biotech company focused on enzyme design, to measure how well agents handle routine wet-lab analysis.\n\nThe benchmark’s 100 tasks test whether agents can interpret raw experimental data, identify errors, and recognize when the evidence cannot support a conclusion. Getting these tasks right matters because misreading an image or overlooking a problem with the controls used to check an experiment’s results can lead scientists to draw the wrong conclusion and spend time on experiments that won’t help answer their question.\n\nAt the ‘xhigh’ setting, which allows more reasoning per task, GPT‑6 Astra earned an average of 66.7% of the available credit, compared with 43.8% for GPT‑5.6 Sol. The results show progress on routine lab analysis, with room for further improvements in interpreting images, checking controls and applying experimental context.\n\nBioBasicsBench uses raw experimental evidence, from gel images and colony plates to microscopy and instrument readouts.\n\nBioBasicsBench has 100 tasks across five areas of routine wet-lab work: protein methods, imaging and cytometry, quantification and assays, nucleic acid methods, and molecular cloning. Tasks range from simple requests, such as reading the molecular weight of a DNA sample in a gel, to detailed assay analysis, but all involve routine work that wet-lab scientists should be able to complete reliably.\n\nScientists created the tasks using data from their own experiments, pairing each question with expert-written grading criteria. Each task underwent an internal review by a Ligo scientist who had not written it, an external review by a PhD-level scientist working in a wet lab, and a final internal review.\n\nAgents return a structured answer with the requested conclusion, measurement or recommendation and, where required, supporting reasoning. Answers receive credit against individual rubric criteria, allowing the benchmark to distinguish a correct conclusion from a partially correct analysis. Most tasks test several skills together, including biological knowledge, interpretation of images and other data, error detection and protocol understanding.\n\nThe inputs preserve the forms of evidence scientists work with: gel and blot images, plate photographs, microscopy stacks, sequencing reads, plate-reader exports and videos of bench work. A task can include several kinds of data. Reference sheets, such as ladder charts and plasmid maps, support the interpretation of the experimental evidence.\n\n| **Kind of data** | **Tasks** | **What it includes** |\n| --- | --- | --- |\n| Gels & blots | 31 | Agarose DNA gels, SDS-PAGE gels, Western blots |\n| Protocols, notes & specs | 27 | Protocols and SOPs, lab notebooks and run records, photographed handwritten notes, catalogues, instrument specs, published methods |\n| Tables & instrument exports | 20 | CSV and Excel exports, lane layouts and inventories, raw flow cytometry (FCS) files |\n| Bench, apparatus & reagent photos | 18 | Benches, gel rigs, reagent and culture tubes, a PCR plate, tube racks, pH strips, a concentrator, a freezer, a liquid-handler deck |\n| Microscopy | 14 | Raw brightfield and fluorescence images, multi-channel sets, z-stacks, time-lapse movies |\n| Instrument screens & plots | 13 | Photos of flow cytometer, microscope, NanoDrop, plate reader and balance screens; exported standard curves, chromatograms and plots |\n| Sequencing files | 12 | Raw long-read FASTQs, FASTA sequences, GenBank maps |\n| Protocol videos | 7 | Streaking, inoculation, serial dilution, SDS-PAGE tank and incubator setups, weighing on a balance |\n| Agar plates & colonies | 7 | Transformation plates, blue/white screens, antibiotic-disc plates |\n| Reference sheets | 21 | Ladder charts, plasmid maps, pH charts (supporting material) |\n\n_Number of tasks that include each kind of data. Categories overlap; reference sheets are supporting material._\n\nScientists wrote the tasks using data from their own experiments, pairing the experimental evidence with a question and an expert-written grading rubric. Each task went through an internal review by a Ligo scientist who had not written it, an external review by a PhD-level scientist working in a wet lab, and a final internal review. Reviewers checked the prompt, experimental evidence, rubric, author notes and a graded model attempt.\n\nAnswers are scored against the task’s rubric, which assigns credit to individual criteria. Depending on the task, these criteria assess the conclusion, numerical results, supporting reasoning or recognition that the evidence is insufficient.\n\nWe evaluated seven models on BioBasicsBench: GPT‑5.2, GPT‑5.4, GPT‑5.5, GPT‑5.6 Sol, GPT‑6.1 Sol, GPT‑6 Luna and GPT‑6 Astra. The evaluation covers 37 model and reasoning-effort settings, with five attempts on each of the 100 tasks per setting, for a total of 18,500 results.\n\nWe report **mean reward**: the average task score, expressed as a percentage of the available credit. Error bars show 95% confidence intervals calculated by resampling whole tasks, keeping the five attempts for each task together.\n\nGPT‑6 Astra substantially improves on GPT‑5.6 Sol, even at low reasoning effort. These gains suggest that **stronger native multimodal capabilities may be key to improving performance on everyday wet-lab** analysis.\n\n### Performance at xhigh reasoning effort\n\n| **Model** | **Mean reward** | **95% CI** | **Output tokens / task** |\n| --- | --- | --- | --- |\n| **GPT‑6 Astra** | 66.7% | 60.3–73.1% | 4,704 |\n| **GPT‑6.1 Sol** | 62.0% | 55.6–68.4% | 5,238 |\n| **GPT‑5.6 Sol** | 43.8% | 37.6–50.0% | 9,099 |\n| **GPT‑6 Luna** | 38.3% | 32.3–44.5% | 13,120 |\n| **GPT‑5.5** | 35.4% | 29.7–41.0% | 11,135 |\n| **GPT‑5.4** | 33.2% | 28.3–38.4% | 13,717 |\n| **GPT‑5.2** | 31.2% | 26.2–36.3% | 27,620 |\n\n_Xhigh is the highest reasoning-effort setting reported for all seven models. Each row includes all 100 tasks and five attempts per task. Max-effort results, where available, are included in the chart above._\n\nA common trap in science is over-interpreting the data, especially given the nature of bias that occurs when testing a hypothesis. Astra demonstrated a better ability to discern the limit of what the data shows and not draw unwarranted conclusions.\n\nIn this example, GPT‑5.6 Sol classified cells as dead based on the signal from a dye used to detect dead cells. But the detector could also pick up light from a second dye, so brightness alone could not justify that conclusion. Astra recognized this ambiguity and called for better controls to separate the signals.\n\n_Brightfield · transmitted light_\n\n_Channel 2 · SYTOX-labelled · 470–540 nm_\n\n_Channel 3 · FUN-1 green · 525–580 nm_\n\nScientific research is highly multimodal, requiring constant visual interpretation and decision making. Astra displayed a significant improvement at handling multimodal data which was given in the form of photos and videos, as well as raw outputs from sequencing, plate-reader assays, microscopy and flow cytometry.\n\nAt the most basic level, this improvement was noticeable through GPT‑6 Astra’s ability to pick up on finer detail from images taken during experiments and therefore draw more accurate conclusions as shown in this example. This task asked agents to draw conclusions from a DNA cloning experiment, where controls are essential. GPT‑5.6 Sol saw no colonies on the negative control plate and based its conclusions on that observation. GPT‑6 Astra noticed that the plate was labeled with the wrong antibiotic and correctly rejected it as a reliable control.\n\nScientists must be able to hold tacit biological knowledge and experimental context in mind whilst analysing data in order to correctly interpret what it shows. Astra demonstrated an improved ability to maintain this context and apply it throughout its analysis.\n\nOne task showed cells coming into and out of focus in a series of microscope images. While GPT‑5.6 Sol looked for a biological explanation for the cells’ apparent disappearance, GPT‑6 Astra correctly recognized a z-stack: a series of images taken at different depths.\n\nHigher benchmark scores do not yet mean models can make reliable judgments in the lab. These Astra examples show how assumptions, expected answers and supplied labels can override the evidence, and how a correct intermediate observation can fail to guide the final decision.\n\n**Astra lets a familiar assumption override the interpretation supported by the experimental controls.** It can distinguish the two groups of colony bands, but assumes that a larger PCR product would identify successful cloning. On that condition it proposes lanes **4, 6, 7 and 8**; the reference’s control comparison instead selects lanes **5, 9 and 10**.\n\n##### **Reading the controls**\n\n1.   Lane 3 contains only the original plasmid PCR. Its band provides the old-plasmid reference position.\n\n2.   In the reference interpretation, lane 2 contains both patterns: incomplete assembly leaves old template/backbone alongside the new product.\n\n3.   The resulting colonies can carry either old or new plasmid. Compare their bands with these reference patterns.\n\n**Reference selection:**5, 9 and 10\n\n**Astra’s selection:**4, 6, 7 and 8. Astra nominates this group suggesting the larger PCR product represents the intended construct.\n\nThe visual grouping is correct but the experimental identities attached to those groups are reversed relative to the reference. Astra therefore selects the wrong colonies from the colony PCR results which would result in the down-stream purification of the incorrect plasmid.\n\n**Astra discounts observations that contradict its preferred interpretation.** It concludes that vacuoles, compartments inside cells, are generally darker than the surrounding cell, even though some appear lighter in the same image. Both appearances matter: changing the microscope’s focus can reverse the contrast, so the darker examples do not establish a general rule.\n\n##### What that answer misses\n\nSome cells have an opposite contrast. Both appearances occur because different focal depths can reverse the contrast.\n\nAstra inspects several regions and even comments that contrast varies with focus. It then gives greater weight to the cells it calls better focused and retains only their darker-vacuole description in the final answer. The contradictory lighter regions have been inspected but are not considered in the conclusion.\n\n**Astra’s counting marks do not reliably correspond to individual colonies: it fails to resolve close neighbours, misses visible colonies and marks empty agar.** The net result on this plate is an overcount of approximately 12% relative to the benchmark reference.\n\nAn inaccurate colony count directly affects estimates of how efficiently DNA was introduced into cells. With the plated volume and dilution held fixed, an overcount inflates that estimate by the same proportion.\n\nAccelerating biological research requires getting the everyday work right. BioBasicsBench makes that work a target for improvement: interpreting raw experimental data, checking controls and recognizing when a conclusion is not supported. Progress on these tasks could help scientists spend less time troubleshooting and more time deciding which experiments to pursue next. Tracking these capabilities will also help us understand their implications for biosafety and biosecurity.\n",
-          "source": "OpenAI (Twitter)",
-          "origin_report_date": "2026-11-06",
-          "delivery_class": "backfill",
-          "thread_group_id": null,
-          "duplicate_of": null
-        },
-        {
-          "tweet_id": "2118795218099253606",
-          "title": "We partnered with @fmf_org and its member firms on a new framework to help identify when bypassing an AI system's safeguards could enable serious cyber harm, and prioritize stronger protections.\n\n\"...",
-          "url": "https://x.com/OpenAI/status/2118795218099253606",
-          "published_at": "2026-11-06T19:58:39.000000Z",
-          "description": "We partnered with @fmf_org and its member firms on a new framework to help identify when bypassing an AI system's safeguards could enable serious cyber harm, and prioritize stronger protections.\n\n\"...This framework is an important step toward a common methodology for evaluating and comparing the severity of cyber jailbreaks, including the capabilities they unlock and how readily they can be used. Shared approaches like this can help the AI and security communities build a clearer evidence base and prioritize improvements to safeguards.\"  - OpenAI's Sasha Baker, Head of National Security Policy\n\nhttps://t.co/epOq98YPau",
-          "expanded_urls": [
-            {
-              "t_co": "https://t.co/epOq98YPau",
-              "expanded_url": "https://www.frontiermodelforum.org/updates/introducing-the-fmf-jailbreak-rating-framework-for-frontier-cyber-threats/",
-              "display_url": "frontiermodelforum.org/updates/introd…"
-            }
-          ],
-          "linked_content": null,
-          "source": "OpenAI (Twitter)",
-          "origin_report_date": "2026-11-06",
-          "delivery_class": "backfill",
-          "thread_group_id": null,
-          "duplicate_of": null
-        }
-      ],
+      "articles": [],
       "api_usage": {
         "provider": "socialdata",
         "method": "search_incremental",
@@ -397,12 +357,69 @@
       "status": "ok",
       "error": null,
       "fetched_count": 3,
-      "filtered_count": 0,
+      "filtered_count": 4,
       "current_count": 0,
-      "backfill_count": 0,
+      "backfill_count": 4,
       "pending_count": 8,
       "cadence": "daily",
-      "articles": [],
+      "articles": [
+        {
+          "tweet_id": "2118852567509909716",
+          "title": "Everyone, or every team, can create GIFs with GPT-Image-2.6.\n\nhttps://t.co/rJIMLuDrPT",
+          "url": "https://x.com/OpenAIDevs/status/2118852567509909716",
+          "published_at": "2026-11-06T23:46:33.000000Z",
+          "description": "Everyone, or every team, can create GIFs with GPT-Image-2.6.\n\nhttps://t.co/rJIMLuDrPT",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-11-06",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2118856544733532452",
+          "title": "Kickstart your weekend build with the new Showcase tab in the OpenAI Developers plugin.\n\nEligible ChatGPT Pro and Business subscribers can claim API credits in billing settings to cover their app’s AP",
+          "url": "https://x.com/OpenAIDevs/status/2118856544733532452",
+          "published_at": "2026-11-07T00:02:21.000000Z",
+          "description": "Kickstart your weekend build with the new Showcase tab in the OpenAI Developers plugin.\n\nEligible ChatGPT Pro and Business subscribers can claim API credits in billing settings to cover their app’s API usage. https://t.co/NcM12ToGsH",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-11-06",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2119521359185478140",
+          "title": "Tomorrow. https://t.co/ZWapS1LIST",
+          "url": "https://x.com/OpenAIDevs/status/2119521359185478140",
+          "published_at": "2026-11-08T20:04:05.000000Z",
+          "description": "Tomorrow. https://t.co/ZWapS1LIST",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-11-08",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        },
+        {
+          "tweet_id": "2119864571733446774",
+          "title": "Ever thought about building your own games? The Codex edition @modretro Chromatic is now on Supply Co.\n\nWith the ModRetro Chromatic plugin in Codex, you can design levels, animate sprites, and playtes",
+          "url": "https://x.com/OpenAIDevs/status/2119864571733446774",
+          "published_at": "2026-11-09T18:47:53.000000Z",
+          "description": "Ever thought about building your own games? The Codex edition @modretro Chromatic is now on Supply Co.\n\nWith the ModRetro Chromatic plugin in Codex, you can design levels, animate sprites, and playtest on your handheld.\n\nSpeedrun checkout while Codex builds your ROM 😉 https://t.co/3OViRHh2Ry",
+          "expanded_urls": [],
+          "source": "OpenAI Devs (Twitter)",
+          "origin_report_date": "2026-11-09",
+          "delivery_class": "backfill",
+          "linked_content": null,
+          "thread_group_id": null,
+          "duplicate_of": null
+        }
+      ],
       "api_usage": {
         "provider": "socialdata",
         "method": "search_incremental",
@@ -418,26 +435,20 @@
       "filtered_count": 1,
       "current_count": 0,
       "backfill_count": 1,
-      "pending_count": 3,
+      "pending_count": 2,
       "cadence": "daily",
       "articles": [
         {
-          "tweet_id": "2118768974779634084",
-          "title": "Today we're bringing specialized models trained using Muse Wonder to @Muse and Meta AI, giving users access to some of Muse Wonder's frontier capabilities for complex tasks at work and in everyday lif",
-          "url": "https://x.com/AIatMeta/status/2118768974779634084",
-          "published_at": "2026-11-06T18:14:23.000000Z",
-          "description": "Today we're bringing specialized models trained using Muse Wonder to @Muse and Meta AI, giving users access to some of Muse Wonder's frontier capabilities for complex tasks at work and in everyday life.\n\nThese specialized models include Muse Wonder's Active Memory and Active Focus, helping them stay aligned with your goals as tasks unfold:\n\n→ Active Memory helps recognize when earlier information matters and distinguish what's still relevant from what's become stale\n\n→ Active Focus helps recover from setbacks or find alternatives when constraints change\n\nIn Muse, the improved models show a 2.4x reduction in forgetting information critical to your goals and a 67% improvement in getting unstuck as constraints evolve. That means less repeating yourself and fewer dead ends when plans change.\n\nIn Meta AI, these improvements help it break complex problems into steps, ask sharper follow-up questions and adapt when you change direction.\n\nRead more on our research blog: https://t.co/ACWFr9xPtS",
-          "expanded_urls": [
-            {
-              "t_co": "https://t.co/ACWFr9xPtS",
-              "expanded_url": "https://go.meta.me/4kCPcHW",
-              "display_url": "go.meta.me/4kCPcHW"
-            }
-          ],
-          "linked_content": null,
+          "tweet_id": "2119853591703998787",
+          "title": "Today we're introducing Muse Ember, our smallest and most efficient model, built for complex reasoning execution and everyday agent work.\n\nMuse Ember can carry workflows across apps, call tools in seq",
+          "url": "https://x.com/AIatMeta/status/2119853591703998787",
+          "published_at": "2026-11-09T18:04:15.000000Z",
+          "description": "Today we're introducing Muse Ember, our smallest and most efficient model, built for complex reasoning execution and everyday agent work.\n\nMuse Ember can carry workflows across apps, call tools in sequence, run tests and make targeted code fixes. With a 1M-token context window and native understanding of text, images, audio and video, it can also work across large document sets and varied inputs.",
+          "expanded_urls": [],
           "source": "Meta AI (Twitter)",
-          "origin_report_date": "2026-11-06",
+          "origin_report_date": "2026-11-09",
           "delivery_class": "backfill",
+          "linked_content": null,
           "thread_group_id": null,
           "duplicate_of": null
         }
@@ -454,38 +465,12 @@
       "status": "ok",
       "error": null,
       "fetched_count": 6,
-      "filtered_count": 1,
+      "filtered_count": 0,
       "current_count": 0,
-      "backfill_count": 1,
-      "pending_count": 7,
+      "backfill_count": 0,
+      "pending_count": 6,
       "cadence": "daily",
-      "articles": [
-        {
-          "tweet_id": "2118755418675765656",
-          "title": "We’re sharing new research demonstrating how AI agents can accelerate the science of stress-testing encryption.\n\nGuided by humans, our models uncovered two major weaknesses in legacy 1024-bit RSA cryp",
-          "url": "https://x.com/GoogleDeepMind/status/2118755418675765656",
-          "published_at": "2026-11-06T17:20:31.000000Z",
-          "description": "We’re sharing new research demonstrating how AI agents can accelerate the science of stress-testing encryption.\n\nGuided by humans, our models uncovered two major weaknesses in legacy 1024-bit RSA cryptosystems.\n\nOur VP Science @Pushmeet explains more ↓ https://t.co/SqNkBbkih2",
-          "expanded_urls": [
-            {
-              "t_co": "https://t.co/SqNkBbkih2",
-              "expanded_url": "https://x.com/pushmeet/status/2118752095859794390",
-              "display_url": "x.com/pushmeet/statu…"
-            }
-          ],
-          "quoted_tweet": {
-            "author": "pushmeet",
-            "text": "https://t.co/rROvupyPAL",
-            "url": "https://x.com/pushmeet/status/2118752095859794390"
-          },
-          "linked_content": null,
-          "source": "Google DeepMind (Twitter)",
-          "origin_report_date": "2026-11-06",
-          "delivery_class": "backfill",
-          "thread_group_id": null,
-          "duplicate_of": null
-        }
-      ],
+      "articles": [],
       "api_usage": {
         "provider": "socialdata",
         "method": "search_incremental",
@@ -501,20 +486,20 @@
       "filtered_count": 1,
       "current_count": 0,
       "backfill_count": 1,
-      "pending_count": 3,
+      "pending_count": 2,
       "cadence": "daily",
       "articles": [
         {
-          "tweet_id": "2118744719870066936",
-          "title": "Transcribing speech is one thing. Knowing when someone is done speaking is another.\n\n🎙 Voxtral 3’s end-of-turn detection helps developers identify when a user has finished speaking, making it easier ",
-          "url": "https://x.com/MistralAI/status/2118744719870066936",
-          "published_at": "2026-11-06T16:38:00.000000Z",
-          "description": "Transcribing speech is one thing. Knowing when someone is done speaking is another.\n\n🎙 Voxtral 3’s end-of-turn detection helps developers identify when a user has finished speaking, making it easier to build responsive voice interactions without relying on science alone.\n\n See it in action ⬇️",
+          "tweet_id": "2119651192737259701",
+          "title": "What does real-time transcription look like in a live setting?\n\n🎙We used Voxtral 3 Transcribe at AI Engineer Paris to capture every main-stage talk in real time. We boosted accuracy with context bias",
+          "url": "https://x.com/MistralAI/status/2119651192737259701",
+          "published_at": "2026-11-09T04:40:00.000000Z",
+          "description": "What does real-time transcription look like in a live setting?\n\n🎙We used Voxtral 3 Transcribe at AI Engineer Paris to capture every main-stage talk in real time. We boosted accuracy with context biasing, feeding the model speaker names and technical terms from the conference agenda. \n\nThe same tech is available for your own events and apps.",
           "expanded_urls": [],
-          "linked_content": null,
           "source": "Mistral AI (Twitter)",
-          "origin_report_date": "2026-11-06",
+          "origin_report_date": "2026-11-08",
           "delivery_class": "backfill",
+          "linked_content": null,
           "thread_group_id": null,
           "duplicate_of": null
         }
