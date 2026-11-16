@@ -1,5 +1,5 @@
 {
-  "analyzed_at": "2026-11-15T15:46:48.610Z",
+  "analyzed_at": "2026-11-16T16:17:55.476Z",
   "fetch_cache_ref": "data/fetch-cache/2026-11-14.json",
   "trend_paragraph": "- **代理执行购买**：ChatGPT Wallet让Work、Codex和Dots中的代理可在用户批准后完成购物，具体支付流程仍待更多细节披露。\n- **旧系统自动化**：Shield用GPT-6 Astra驱动Forge代理操作缺少API的IT门户，并报告任务速度提升35%至40%。\n- **自主权限可配置**：Wallet要求用户批准购买，Shield则允许技术人员为旧门户任务设置自主执行或人工审批边界。",
   "articles": [
@@ -90,8 +90,8 @@
     {
       "url": "https://x.com/claudeai/status/2119867114450268322",
       "source": "Claude (Twitter)",
-      "title": "Claude Fable 5.2与Mythos 5.2面向复杂技术工作",
-      "summary": "Anthropic发布Claude Fable 5.2和Claude Mythos 5.2，定位为协助处理高难度技术工作的模型。官方称两者在编程、推理和视觉能力上有所提升，但目前没有公布基准成绩或具体能力细节。相关公告确认模型已开放，团队可围绕实际任务验证效果与适用范围。",
+      "title": "Claude Fable 5.2与Mythos 5.2面向复杂技术任务",
+      "summary": "Anthropic发布Claude Fable 5.2和Claude Mythos 5.2，定位为应对高难度技术挑战的协作模型，并称Fable 5.2较前代最高提速30%、API价格下调。早期演示展示了模型从自然语言提示设计可工作的电子设备，以及通过代码构建细胞三维模型。开发者可通过Claude Platform和Claude Code使用Fable 5.2，官方模型指南则比较不同版本的适用场景并建议按任务调配推理强度与模型规模。公告未提供这些演示的独立评测基准。",
       "category": "模型发布",
       "importance": 5,
       "tags": [
@@ -99,12 +99,13 @@
         "Claude Mythos 5.2",
         "编程",
         "推理",
-        "视觉"
+        "视觉",
+        "API定价"
       ],
       "practice_suggestions": [
-        "用团队常见的复杂编码任务对新旧模型进行盲测。",
+        "选取一项复杂编码任务，比较新模型在规划、实现和调试环节的表现。",
         "分别构造推理和视觉评测集，记录准确率、延迟与成本。",
-        "确认组织当前订阅或API环境是否已提供这两个版本。"
+        "确认组织当前订阅或API环境是否已提供Fable 5.2，并按模型指南评估价格与速度。"
       ],
       "thread_group_id": null,
       "duplicate_of": null,
@@ -134,7 +135,7 @@
       "duplicate_of": "https://x.com/claudeai/status/2119867114450268322",
       "origin_report_date": "2026-11-09",
       "delivery_class": "backfill",
-      "angle": "Anthropic补充开放信息",
+      "angle": "开放状态补充",
       "cadence": "daily"
     },
     {
@@ -270,6 +271,218 @@
       "duplicate_of": null,
       "origin_report_date": "2026-11-08",
       "delivery_class": "backfill",
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2119899459761131615",
+      "source": "Claude (Twitter)",
+      "title": "Claude Fable 5.2展示跨领域项目能力",
+      "summary": "Anthropic展示Claude Fable 5.2与Mythos 5.2的预发布测试成果，称模型可从一段提示设计出三种可工作的电子设备。示例包括家庭语音助手中枢，体现其将自然语言需求转化为复杂项目原型的能力。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Fable 5.2",
+        "原型设计",
+        "电子设备"
+      ],
+      "practice_suggestions": [
+        "用单段需求提示模型生成一个可运行的硬件或软件原型，再检查结构、可行性与边界条件。"
+      ],
+      "origin_report_date": "2026-11-09",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2119867114450268322",
+      "cadence": "daily",
+      "angle": "复杂原型生成"
+    },
+    {
+      "url": "https://x.com/claudeai/status/2120174844822298730",
+      "source": "Claude (Twitter)",
+      "title": "Fable 5.2用代码构建细胞三维模型",
+      "summary": "Anthropic分享Fable 5.2的早期实验：模型逐个构建细胞器，以代码生成细胞三维模型。该案例展示了模型把复杂生物结构拆分为可组合部件并完成可视化的能力。",
+      "category": "模型发布",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "Fable 5.2",
+        "三维建模",
+        "代码生成"
+      ],
+      "practice_suggestions": [
+        "尝试让模型按组件逐步生成可交互的科学结构模型，并核对关键结构与比例。"
+      ],
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2119867114450268322",
+      "cadence": "daily",
+      "angle": "生物结构可视化"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2119868698613956992",
+      "source": "Claude Devs (Twitter)",
+      "title": "Claude Fable 5.2上线并提速降价",
+      "summary": "Claude Fable 5.2现已可通过Claude Platform和Claude Code使用。官方称其较Fable 5.1最高快30%，输入与输出价格分别从每百万token 10/50美元降至8/40美元。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Claude",
+        "Fable 5.2",
+        "模型定价",
+        "推理速度"
+      ],
+      "practice_suggestions": [
+        "在相同提示和任务集上对比新旧模型的完成时间、质量与token成本，再决定是否迁移。"
+      ],
+      "origin_report_date": "2026-11-09",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2119867114450268322",
+      "cadence": "daily",
+      "angle": "速度与价格信息"
+    },
+    {
+      "url": "https://x.com/ClaudeDevs/status/2119898687803621427",
+      "source": "Claude Devs (Twitter)",
+      "title": "Anthropic发布Claude模型选型指南",
+      "summary": "Anthropic发布面向开发者的模型选择指南，比较Fable 5.2、Opus 5.5、Sonnet与Haiku的适用场景。指南还建议通过调整推理 effort 或让子代理使用较小模型来控制成本。",
+      "category": "教程与观点",
+      "importance": 3,
+      "tags": [
+        "Claude",
+        "模型选型",
+        "子代理",
+        "成本优化"
+      ],
+      "origin_report_date": "2026-11-09",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": "https://x.com/claudeai/status/2119867114450268322",
+      "cadence": "daily",
+      "angle": "模型选型建议"
+    },
+    {
+      "url": "https://x.com/AnthropicAI/status/2120117722230968385",
+      "source": "Anthropic (Twitter)",
+      "title": "Anthropic启动拟议IPO路演",
+      "summary": "Anthropic启动拟议首次公开募股路演，计划发行8.25亿股A类普通股，其中约8.01亿股由公司发售，其余来自现有股东。预计发行价为每股70至78美元，并申请以ANT为代码在纳斯达克上市；注册声明尚未生效，发行仍受监管程序约束。",
+      "category": "商业动态",
+      "importance": 4,
+      "tags": [
+        "Anthropic",
+        "IPO",
+        "纳斯达克",
+        "融资"
+      ],
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2119913172039868579",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI部署模型工作负载安全控制室",
+      "summary": "OpenAI推出Control Room，集中追踪研究基础设施中的推理工作负载，并在安全或安保问题出现时停止任务。它覆盖训练采样、评估和数据处理等任务，通过推理层授权拦截输出，收到停止指令后最多35秒生效；若控制服务故障则采取拒绝推理的失效关闭策略。",
+      "category": "政策与安全",
+      "importance": 4,
+      "tags": [
+        "OpenAI",
+        "Control Room",
+        "模型安全",
+        "失效关闭"
+      ],
+      "origin_report_date": "2026-11-09",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAI/status/2120202353907486826",
+      "source": "OpenAI (Twitter)",
+      "title": "OpenAI预告面向安全团队的网络安全工具",
+      "summary": "OpenAI预告将在11月12日的Cyber at the Frontier线上主题演讲发布网络安全相关消息。公司称曾利用前沿模型发现并修复自身代码与基础设施漏洞，并将把经验转化为帮助客户安全团队加强防御的工具和实践方案。",
+      "category": "政策与安全",
+      "importance": 2,
+      "tags": [
+        "OpenAI",
+        "网络安全",
+        "漏洞修复",
+        "安全工具"
+      ],
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/OpenAIDevs/status/2119883176726409645",
+      "source": "OpenAI Devs (Twitter)",
+      "title": "OpenAI dot支持连接多台本地电脑",
+      "summary": "OpenAI dot现可连接多台本地电脑，并允许用户为具体任务选择执行设备。用户可以让专用机器负责构建和测试应用，同时继续在笔记本上编写代码。",
+      "category": "产品与功能",
+      "importance": 3,
+      "tags": [
+        "OpenAI dot",
+        "多设备",
+        "开发工具",
+        "并行任务"
+      ],
+      "practice_suggestions": [
+        "把耗时的构建与测试任务分配到专用设备，同时在主机上继续开发，比较整体等待时间。"
+      ],
+      "origin_report_date": "2026-11-09",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/AIatMeta/status/2119912647034642817",
+      "source": "Meta AI (Twitter)",
+      "title": "Muse Ember及其他模型登陆Google Cloud",
+      "summary": "Meta宣布将Muse Ember带到Google Cloud，并同时提供Muse Wonder与Muse Spark 1.3。Muse Ember被介绍为面向复杂推理和日常代理任务的小型高效模型，可跨应用执行工作流、调用工具并运行测试，支持百万token上下文及文本、图像、音频和视频输入。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Meta",
+        "Muse Ember",
+        "Google Cloud",
+        "多模态"
+      ],
+      "practice_suggestions": [
+        "在Google Cloud环境中测试跨应用工具链与长上下文任务，并评估延迟、成本及多模态输入质量。"
+      ],
+      "origin_report_date": "2026-11-09",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
+      "cadence": "daily"
+    },
+    {
+      "url": "https://x.com/GoogleDeepMind/status/2120169787896525104",
+      "source": "Google DeepMind (Twitter)",
+      "title": "Gemini Robotics 2.5掌握数百种日常技能",
+      "summary": "Google DeepMind发布Gemini Robotics 2.5，称其能够学习数百种日常操作技能。演示范围包括叠衣、摆放糕点，以及在工厂自主分拣汽车零件，体现模型向多任务实体机器人操作拓展。",
+      "category": "模型发布",
+      "importance": 4,
+      "tags": [
+        "Google DeepMind",
+        "Gemini Robotics",
+        "具身智能",
+        "机器人"
+      ],
+      "practice_suggestions": [
+        "针对目标场景拆分并测试机器人技能，重点观察跨物体、环境变化时的泛化与安全性。"
+      ],
+      "origin_report_date": "2026-11-10",
+      "delivery_class": "backfill",
+      "thread_group_id": null,
+      "duplicate_of": null,
       "cadence": "daily"
     }
   ]
