@@ -32,7 +32,7 @@ function zonedDateTimeToUtc(dateStr, timeZone = PACIFIC_TZ, hour = 0, minute = 0
       hour: '2-digit',
       minute: '2-digit',
       second: '2-digit',
-      hour12: false,
+      hourCycle: 'h23',
     }).formatToParts(utc).filter((p) => p.type !== 'literal').map((p) => [p.type, p.value]));
 
     const observedAsUtc = Date.UTC(
@@ -68,11 +68,11 @@ function isoInZone(date = new Date(), timeZone = PACIFIC_TZ) {
     hour: '2-digit',
     minute: '2-digit',
     second: '2-digit',
-    hour12: false,
+    hourCycle: 'h23',
     timeZoneName: 'longOffset',
   });
   const formatted = fmt.format(date).replace(' ', 'T');
-  return formatted.replace(' GMT', '');
+  return formatted.replace(' GMT', '').replace('\u2212', '-');
 }
 
 module.exports = {
