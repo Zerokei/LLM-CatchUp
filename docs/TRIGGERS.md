@@ -1,8 +1,8 @@
 # CatchUp Scheduled Triggers
 
-Codex permits only one active heartbeat per task. To keep every result in the pinned `CatchUp Daily Report` task, CatchUp uses one unified heartbeat rather than separate daily, repair, weekly, and monthly heartbeats.
+BabaDuck starts each scheduled run in the published `CatchUp` Codex Cloud environment. One unified prompt routes the daily, repair, weekly, and monthly work.
 
-## Unified Codex heartbeat (Asia/Shanghai)
+## Codex Cloud report schedule (Asia/Shanghai)
 
 | Automation | Schedule | Source-of-truth prompt |
 |---|---|---|
@@ -17,7 +17,7 @@ The scheduler routes work as follows:
 | Tuesday and Wednesday 23:30 | Also run the weekly prompt; Wednesday retries the same completed week. |
 | 2nd and 3rd day of each month at 23:30 | Also run the monthly prompt; day 3 retries the same completed month. |
 
-The heartbeat uses failed-run-only notifications. Successful run details still accumulate in the pinned task without producing routine success notifications.
+Each cloud run records the combined result. The scheduler checks the runtime before doing work so a legacy Mac heartbeat using the repository prompt skips analysis and publication.
 
 The automation prompt must remain a short pointer to `docs/prompts/report-scheduler.md`. The scheduler and every child workflow live in `docs/prompts/`; never paste a second copy into the automation.
 
@@ -31,4 +31,4 @@ The automation prompt must remain a short pointer to `docs/prompts/report-schedu
 
 The normal order is fetch → daily analyzer → fallback floor → same-date analyzer retry → delayed repair. Weekly and monthly publish only after their complete target windows contain formal rather than fallback daily files.
 
-Local automation definitions live under the Codex automations directory. Discover the live automation ID before updating it rather than relying on an old ID in documentation.
+Use the cloud schedule to change production times. Retire a legacy Mac heartbeat from its own device after confirming its automation ID and target thread.

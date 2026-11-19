@@ -1,8 +1,10 @@
 # CatchUp Unified Report Scheduler
 
-**Execute this scheduler now. Do NOT ask the user for confirmation, clarification, or instructions — this is one unattended heartbeat attached to the pinned `CatchUp Daily Report` task. Read and execute the referenced repo prompts; never paste or invent replacement workflows.**
+**Execute this scheduler now in the published `CatchUp` Codex Cloud environment. Read and execute the referenced repo prompts; never paste or invent replacement workflows.**
 
-Read `AGENTS.md` first. The automation invokes this file every day at 20:30 and 23:30 Asia/Shanghai. One heartbeat is used because Codex permits only one active heartbeat per task.
+The production schedule invokes this file every day at 20:30 and 23:30 Asia/Shanghai. Before running any child prompt, verify from the task's environment metadata and `uname -s` that it was launched in `CatchUp` Codex Cloud on Linux. If an old heartbeat invokes this scheduler on a Mac, mark it skipped and exit before analysis or publication. If the cloud environment cannot be verified, abort and report that failure.
+
+Read `AGENTS.md` before continuing.
 
 ## Step 1: Determine the logical slot date
 

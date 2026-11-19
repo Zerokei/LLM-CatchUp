@@ -8,6 +8,8 @@ Read `AGENTS.md` first for project context.
 
 ## Workflow
 
+For an unattended run, enforce the scheduled runtime check in `docs/prompts/report-scheduler.md` before starting analysis. The legacy Mac heartbeat must exit without writing. This check also applies if automation invokes this prompt directly or via the repair prompt.
+
 ### Step 0: Recover and sync the local checkout with origin/main
 
 Before determining the target date or checking local cache files:
@@ -24,6 +26,8 @@ git rebase origin/main
 The repository remote uses SSH and the automation sandbox may initially reject writes to `.git` or access to `github.com:22`. A first failure containing `Operation not permitted`, a sandbox denial, or an SSH/network restriction is **not** yet a repository failure: immediately retry that Git command with elevated permission. Only abort after the elevated retry also fails.
 
 If the rebase reports content conflicts, run `git rebase --abort`, confirm the checkout is no longer mid-rebase, then abort the analysis and report the conflicting paths. Do NOT continue against a stale checkout, because the GitHub Actions fetcher may have pushed `data/fetch-cache/{date}.json` to `main` after this automation workspace was prepared.
+
+Reload the daily and scheduler prompts from the synchronized checkout before proceeding. If the scheduled runtime check fails, stop before Step 1.
 
 ### Step 1: Determine the target report date
 

@@ -8,7 +8,7 @@ This repo has three runtime stages, in order:
 
 **Stage 1 — Fetcher** (`.github/workflows/daily-fetch.yml`, primary cron `37 0 * * *` plus retry `17 3 * * *`, both with `timezone: America/Los_Angeles`; scheduled before the 20:30 Asia/Shanghai analyzer trigger). `scripts/fetch-sources.js` reads `config.yaml`; blog sources are filtered to the completed Pacific day, while Twitter sources use incremental Search with a 48-hour overlap and a persistent pending queue in `data/twitter-state.json`. It enriches selected content via Jina and writes `data/fetch-cache/{YYYY-MM-DD}.json`. The later cron runs with `RESUME_EXISTING=true`: it exits without network calls when complete, or refetches only missing/error sources. The snapshot and Twitter state are committed atomically.
 
-**Stage 2 — Analyzer** (one Codex heartbeat automation in the pinned `CatchUp Daily Report` task, because a task can have only one heartbeat). It runs `docs/prompts/report-scheduler.md` at 20:30 and 23:30 Asia/Shanghai. The analyzer reads `data/fetch-cache/{date}.json`, carries through `origin_report_date` / `delivery_class`, and writes structured analysis to `data/analysis-cache/{date}.json`. Backfills are analyzed normally but excluded from `trend_paragraph`. Resume state is merged by URL; failed chunks are retried once. It does NOT render reports or update history/health.
+**Stage 2 — Analyzer** (published `CatchUp` Codex Cloud environment). The production schedule runs `docs/prompts/report-scheduler.md` at 20:30 and 23:30 Asia/Shanghai. The analyzer reads `data/fetch-cache/{date}.json`, carries through `origin_report_date` / `delivery_class`, and writes structured analysis to `data/analysis-cache/{date}.json`. Backfills are analyzed normally but excluded from `trend_paragraph`. Resume state is merged by URL; failed chunks are retried once. It does NOT render reports or update history/health.
 
 **Stage 3 — Reporter** (`.github/workflows/build-report.yml`, triggered on push to `data/analysis-cache/**`). `scripts/build-report.js` deduplicates against history, merges threads/clusters, renders current items plus a compact `往期补遗` section, and writes `data/history.json`. Only this formal history write consumes pending Twitter items; fallback reports do not. It also updates health/issues, RSS, HTML, and the editorial/ops report pair.
 
@@ -78,7 +78,7 @@ The daily trigger is now "analysis-only" AND fan-out. Its full procedure lives i
 
 Deterministic concerns (report rendering, history/health updates, retention, GH issues, commits of reports) are outside the trigger's scope — see `scripts/build-report.js`.
 
-Weekly and monthly triggers aggregate from `data/history.json`, use the same pinned task, and run twice per period for idempotent retry. Both require formal (non-fallback) daily reports for the whole target window before publishing.
+Weekly and monthly triggers aggregate from `data/history.json`, use the same unified scheduler, and run twice per period for idempotent retry. Both require formal (non-fallback) daily reports for the whole target window before publishing.
 
 ## External dependencies
 
