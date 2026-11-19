@@ -1,5 +1,9 @@
 # LLM-CatchUp
 
+> **项目已停止自动更新。** 历史日报、周报和月报可在下方归档中查看。
+>
+> 如果你想继续跟进 AI 模型发布、产品更新和研究进展，推荐 [**Advance Intelligence**](https://www.advanceintelligence.ai/)。它每天从公开的 X 来源中整理值得关注的消息，附上原帖和相关出处，也提供每日五条的邮件精选。
+
 一个由 Claude Code 驱动的 AI 新闻聚合器。每天早上自动抓取近 20 个高信号源（官方博客、研究页、精选 newsletter、Twitter/X 账号），用 LLM 做摘要、分类、重要度打分，生成中文日报 / 周报 / 月报。
 
 ## 工作方式
